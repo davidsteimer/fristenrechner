@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "releaseManifest",
+  "releaseId": "2026-08-29-ap5-candidate.1",
+  "releaseStatus": "candidate",
+  "createdOn": "2026-08-29",
+  "immutable": true,
+  "coverage": {
+    "from": "2026-08-29",
+    "to": "2028-12-31"
+  },
+  "profileIds": ["stpo", "zpo", "bgg", "vwvg", "vrpg-be"],
+  "calendarIds": ["ch-federal-calendar", "be-public-holidays"],
+  "sourceSummary": {
+    "latestReviewedOn": "2026-08-29",
+    "legalBasisReviewStatus": "verified",
+    "technicalValidationStatus": "passed",
+    "sourceIds": [
+      "SRC-STPO-20250401",
+      "SRC-ZPO-20260701",
+      "SRC-BGG-20260401",
+      "SRC-VWVG-20220701",
+      "SRC-VRPG-BE-20230801",
+      "SRC-FRG-BE-20210401",
+      "SRC-BUNDESFEIERTAG-19940701",
+      "JUD-BE-VG-200-2026-421"
+    ]
+  },
+  "providerContract": {
+    "pathMode": "manifestRelative",
+    "byteIdentityRequired": true,
+    "supportedProviders": ["github", "sharepointMirror", "manualImport"],
+    "networkFallback": "lastVerifiedRelease"
+  },
+  "compatibility": {
+    "minimumConsumerFormatVersion": "1.0.0",
+    "unknownMajorVersionHandling": "reject",
+    "unknownCoreFieldHandling": "reject",
+    "extensionsHandling": "ignoreNamespaced"
+  },
+  "checksumAlgorithm": "sha256",
+  "artifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "role": "legalProfile",
+      "contentId": "bgg",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 7423,
+      "sha256": "cb36491172837768a00778a57d7e1daf301279b323f6aa208510b2f831ee5de6"
+    },
+    {
+      "path": "profiles/stpo.json",
+      "role": "legalProfile",
+      "contentId": "stpo",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 5872,
+      "sha256": "a85dcdd3b632973f805e7e9e841af557e705bb2210e642fe06051d2dcff8d5d0"
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "role": "legalProfile",
+      "contentId": "vrpg-be",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 7777,
+      "sha256": "f8d20a687818d4669ab13ff00969d1e7e3eda3280d6e2e690b7de0170ef26821"
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "role": "legalProfile",
+      "contentId": "vwvg",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 7016,
+      "sha256": "7bf5ede4e9b2c1f0b3a7b8dc8aecfd5692eece545ce4ccade4b7129f30d72ea7"
+    },
+    {
+      "path": "profiles/zpo.json",
+      "role": "legalProfile",
+      "contentId": "zpo",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 8931,
+      "sha256": "82e2516f5ada81bffdb2ab13dd08b84ba24bc73377bf4e520643dbd3d77676b7"
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "role": "calendar",
+      "contentId": "be-public-holidays",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+      "byteLength": 11587,
+      "sha256": "4876940c407f124458e64c606f93018c3ecc0a6be518a616565a263f34bd17e1"
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "role": "calendar",
+      "contentId": "ch-federal-calendar",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+      "byteLength": 5549,
+      "sha256": "8e95157e02eb46a42ce53d52035660f6cd0f5b0ad70be7ae1807be6ae84a2967"
+    }
+  ]
+}

@@ -21,6 +21,13 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Quellenregister mit amtlichen Primärquellen, Gültigkeitsständen und ergänzender Rechtsprechung
 - Register der offenen Fachfragen und verbindlichen Sicherheitsgrenzen für AP5
 - Fachlicher Startbestand für die Golden Cases in AP6
+- JSON-Schemata für gemeinsame Datentypen, Rechtsprofile, Kalender und Release-Manifeste
+- Providerneutrales AP5-Referenzrelease mit fünf Rechtsprofilen, zwei Kalendern, 47 Regeln, 36 Feiertagen und zehn Stillstandsperioden
+- Quellen-, Gültigkeits-, Prüf- und Kompatibilitätsmetadaten in allen Datenartefakten
+- SHA-256-Prüfsummen und Dateigrössen für sieben Releaseartefakte
+- Automatisierte Schema-, Referenz-, Konsistenz-, Kalender- und Prüfsummenvalidierung mit sechs Negativtests
+- Architekturvertrag für byteidentische GitHub-, SharePoint-Mirror- und manuelle Datenprovider
+- Vorgeschlagener Architekturentscheid DEC-2026-012 zum Datenrelease-Format
 
 ### Changed
 
@@ -28,5 +35,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Projektstatus nach Abschluss von AP2 aktualisiert und operative Aufgabensteuerung mit GitHub verlinkt
 - Projektstatus nach Abschluss von AP3 aktualisiert und dauerhaften Entscheidungsnachweis verlinkt
 - Projektstatus nach Abschluss von AP4 aktualisiert und fachrechtliche Dokumentation verlinkt
+- Projektstatus nach Abschluss von AP5 aktualisiert und maschinenlesbares Datenmodell verlinkt
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

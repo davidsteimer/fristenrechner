@@ -31,6 +31,12 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | [DEC-2026-010](DEC-2026-010-projekt-und-produktsprachen.md) | A | beschlossen | Interne Projektführung Deutsch, Produkttexte Deutsch und Französisch | – |
 | [DEC-2026-011](DEC-2026-011-codex-ohne-formelle-verantwortung.md) | A | beschlossen | Codex ist dokumentiertes Arbeitsinstrument ohne formelle Verantwortung | – |
 
+## Laufende Ergänzungen
+
+| ID | Klasse | Status | Kurzentscheid | Ersetzt durch |
+| --- | --- | --- | --- | --- |
+| [DEC-2026-012](DEC-2026-012-providerneutrales-datenrelease-format.md) | B | vorgeschlagen | Strikte JSON-Schemata und manifestbasierte, providerneutrale Datenreleases | – |
+
 ## Quellen des Startbestands
 
 - [Konzept Fristenrechner Schweiz, Version 1.0](../../outputs/2026-08-28_Konzept_Fristenrechner_Schweiz_V1.0.pdf)

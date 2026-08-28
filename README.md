@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP4 abgeschlossen. Die fünf MVP-Rechtsprofile sind mit amtlichen Quellen, Gültigkeit, Ausnahmen, Feiertagsanknüpfung und offenen Fachfragen dokumentiert. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung. Als Nächstes folgt AP5 mit dem versionierten Datenmodell für Rechtsregeln und Kalenderdaten.
+> **Projektstatus:** Arbeitspaket AP5 abgeschlossen. Die fünf MVP-Rechtsprofile sowie die eidgenössischen und bernischen Kalenderdaten liegen als streng validierbares Referenzrelease mit Manifest und Prüfsummen vor. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung. Als Nächstes folgt AP6 mit den quellenbasierten Golden Cases.
 
 ## Zweck
 
@@ -27,6 +27,8 @@ Die Produktsprache ist Deutsch und Französisch. Persönliche Voreinstellungen w
 Vorgesehen ist eine clientseitige SharePoint-Framework-Lösung mit React und Fluent UI. Ein deterministischer TypeScript-Rechenkern bleibt von Oberfläche, Microsoft-365-Integration und Datenquelle getrennt. Die Berechnung arbeitet ausschliesslich mit Kalenderdaten ohne Uhrzeiten und ohne Zeitzonenabhängigkeit.
 
 Der Pilot bezieht versionierte Rechts- und Kalenderdaten aus einem öffentlichen GitHub-Release. Eine Provider-Schnittstelle bereitet den späteren Wechsel auf einen tenantinternen SharePoint-Mirror vor. Der Rechenkern kennt die konkrete Datenquelle nicht.
+
+Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet JSON Schema Draft 2020-12, ISO-Kalenderdaten, ein unveränderliches Manifest und SHA-256-Prüfsummen. GitHub, SharePoint-Mirror und manueller Import liefern dasselbe Format als byteidentische Dateien.
 
 ## Qualitätsgrundsätze
 

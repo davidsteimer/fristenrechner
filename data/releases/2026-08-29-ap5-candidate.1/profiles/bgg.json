@@ -1,0 +1,222 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "legalProfile",
+  "profileId": "bgg",
+  "lawCode": "BGG",
+  "jurisdiction": { "level": "federal", "code": "CH" },
+  "validity": {
+    "dataValidFrom": "2026-08-29",
+    "dataValidTo": null
+  },
+  "review": {
+    "reviewedOn": "2026-08-29",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "docs/fachrecht/rechtsmatrix-mvp.md"
+  },
+  "calculationContract": {
+    "acceptedDeadlineUnits": ["day"],
+    "dateInputSemantics": "legallyRelevantDeliveryOrEventDate",
+    "timeModel": "dateOnlyNoTimezone",
+    "unknownSpecialLawHandling": "block",
+    "unsupportedInputHandling": "block"
+  },
+  "calendarPolicy": {
+    "holidayAnchor": "partyOrRepresentativeCanton",
+    "jurisdictionSelection": "explicit",
+    "conflictHandling": "requireConfirmation",
+    "manualOverride": true,
+    "overrideReasonRequired": true
+  },
+  "selectors": [
+    {
+      "selectorId": "deliveryMethod",
+      "required": false,
+      "selectionMode": "explicit",
+      "unknownHandling": "warn",
+      "options": [
+        { "value": "signatureMailUncollected", "labelKey": "selector.deliveryMethod.signatureMailUncollected" },
+        { "value": "otherLegallyRelevantDate", "labelKey": "selector.deliveryMethod.otherLegallyRelevantDate" }
+      ]
+    },
+    {
+      "selectorId": "subjectMatter",
+      "required": true,
+      "selectionMode": "explicit",
+      "unknownHandling": "block",
+      "options": [
+        { "value": "general", "labelKey": "selector.subjectMatter.general" },
+        { "value": "interimMeasures", "labelKey": "selector.subjectMatter.interimMeasures" },
+        { "value": "billOfExchange", "labelKey": "selector.subjectMatter.billOfExchange" },
+        { "value": "votingRights", "labelKey": "selector.subjectMatter.votingRights" },
+        { "value": "internationalCriminalAssistance", "labelKey": "selector.subjectMatter.internationalCriminalAssistance" },
+        { "value": "internationalTaxAssistance", "labelKey": "selector.subjectMatter.internationalTaxAssistance" },
+        { "value": "publicProcurement", "labelKey": "selector.subjectMatter.publicProcurement" },
+        { "value": "unknown", "labelKey": "selector.subjectMatter.unknown" }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "SRC-BGG-20260401",
+      "sourceType": "statute",
+      "title": "Bundesgerichtsgesetz, SR 173.110",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2006/218/de",
+      "documentVersionDate": "2026-04-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "BGG-DELIV-001",
+      "phase": "delivery",
+      "priority": 10,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [
+        { "selector": "deliveryMethod", "operator": "in", "values": ["signatureMailUncollected"] }
+      ],
+      "effect": {
+        "type": "deliveryDate",
+        "mode": "seventhDayAfterFailedAttempt",
+        "daysAfterFailedAttempt": 7,
+        "requiresConfirmation": true
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 44 Abs. 2" }
+      ],
+      "warningKey": "warning.deliveryFiction.confirmApplicability"
+    },
+    {
+      "ruleId": "BGG-START-001",
+      "phase": "start",
+      "priority": 100,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": { "type": "deadlineStart", "offsetCalendarDays": 1 },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 44 Abs. 1" }
+      ]
+    },
+    {
+      "ruleId": "BGG-COUNT-001",
+      "phase": "count",
+      "priority": 200,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": { "type": "counting", "mode": "calendarDaysExcludingSuspensions" },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 44 bis 46" }
+      ]
+    },
+    {
+      "ruleId": "BGG-SUSP-001",
+      "phase": "count",
+      "priority": 210,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": {
+        "type": "suspension",
+        "mode": "useSet",
+        "suspensionSetId": "ch-court-holidays-2026-2028"
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 1" }
+      ]
+    },
+    {
+      "ruleId": "BGG-SUSP-EXC-001",
+      "phase": "count",
+      "priority": 220,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [
+        {
+          "selector": "subjectMatter",
+          "operator": "in",
+          "values": [
+            "interimMeasures",
+            "billOfExchange",
+            "votingRights",
+            "internationalCriminalAssistance",
+            "internationalTaxAssistance",
+            "publicProcurement"
+          ]
+        }
+      ],
+      "effect": { "type": "suspensionException", "action": "disableSuspension" },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2" }
+      ]
+    },
+    {
+      "ruleId": "BGG-END-001",
+      "phase": "end",
+      "priority": 300,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineEnd",
+        "shift": "nextWorkingDay",
+        "nonWorkingDays": ["saturday", "sunday", "publicHoliday"]
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 45 Abs. 1" }
+      ]
+    },
+    {
+      "ruleId": "BGG-HOL-001",
+      "phase": "end",
+      "priority": 310,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": { "type": "holidayAnchor", "anchor": "partyOrRepresentativeCanton" },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 45 Abs. 2" }
+      ],
+      "warningKey": "warning.holidayAnchor.confirmJurisdiction"
+    },
+    {
+      "ruleId": "BGG-COMP-001",
+      "phase": "compliance",
+      "priority": 400,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": {
+        "type": "submission",
+        "timing": "onOrBeforeLastDay",
+        "channels": ["competentAuthority", "swissPost", "swissDiplomaticMission"]
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 48" }
+      ]
+    },
+    {
+      "ruleId": "BGG-EXT-001",
+      "phase": "guardrail",
+      "priority": 500,
+      "status": "active",
+      "validity": { "dataValidFrom": "2026-08-29", "dataValidTo": null },
+      "conditions": [],
+      "effect": {
+        "type": "extension",
+        "statutoryDeadlineExtendable": false,
+        "authoritySetDeadlineExtendable": true,
+        "requiresTimelyReasonedRequest": true
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 47" }
+      ],
+      "warningKey": "warning.extension.noAutomaticExtension"
+    }
+  ]
+}

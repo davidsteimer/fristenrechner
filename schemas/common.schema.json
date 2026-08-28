@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/common.schema.json",
+  "title": "Gemeinsame Datentypen des Fristenrechners Schweiz",
+  "type": "object",
+  "$defs": {
+    "isoDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "code"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["federal", "cantonal"]
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^(CH|[A-Z]{2})$"
+        }
+      }
+    },
+    "validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataValidFrom", "dataValidTo"],
+      "properties": {
+        "dataValidFrom": {
+          "$ref": "#/$defs/isoDate"
+        },
+        "dataValidTo": {
+          "oneOf": [
+            { "$ref": "#/$defs/isoDate" },
+            { "type": "null" }
+          ]
+        },
+        "legalEffectiveFrom": {
+          "oneOf": [
+            { "$ref": "#/$defs/isoDate" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/isoDate"
+        },
+        "to": {
+          "$ref": "#/$defs/isoDate"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewedOn", "status", "reviewedBy", "basis"],
+      "properties": {
+        "reviewedOn": {
+          "$ref": "#/$defs/isoDate"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["verified", "technicalValidated", "candidate", "monitored"]
+        },
+        "reviewedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "sourceType",
+        "title",
+        "authority",
+        "url",
+        "documentVersionDate",
+        "reviewedOn",
+        "reviewStatus"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "sourceType": {
+          "type": "string",
+          "enum": ["statute", "ordinance", "caseLaw", "officialDossier"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "documentVersionDate": {
+          "oneOf": [
+            { "$ref": "#/$defs/isoDate" },
+            { "type": "null" }
+          ]
+        },
+        "reviewedOn": {
+          "$ref": "#/$defs/isoDate"
+        },
+        "reviewStatus": {
+          "type": "string",
+          "enum": ["verified", "monitored", "withdrawn"]
+        }
+      }
+    },
+    "sourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "locator"],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selector", "operator", "values"],
+      "properties": {
+        "selector": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "operator": {
+          "const": "in"
+        },
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          }
+        }
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Reservierter Namensraum für transportierte, vom Kern ignorierbare Erweiterungen.",
+      "patternProperties": {
+        "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$": true
+      },
+      "additionalProperties": false
+    }
+  }
+}

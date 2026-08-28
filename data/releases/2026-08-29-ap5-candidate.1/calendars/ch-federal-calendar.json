@@ -1,0 +1,175 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ch-federal-calendar",
+  "jurisdiction": { "level": "federal", "code": "CH" },
+  "coverage": {
+    "from": "2025-12-18",
+    "to": "2029-01-02"
+  },
+  "inherits": [],
+  "review": {
+    "reviewedOn": "2026-08-29",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "docs/fachrecht/rechtsmatrix-mvp.md und docs/fachrecht/quellenregister.md"
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "ordinance",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-ZPO-20260701",
+      "sourceType": "statute",
+      "title": "Schweizerische Zivilprozessordnung, SR 272",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2010/262/de",
+      "documentVersionDate": "2026-07-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-BGG-20260401",
+      "sourceType": "statute",
+      "title": "Bundesgerichtsgesetz, SR 173.110",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2006/218/de",
+      "documentVersionDate": "2026-04-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-VWVG-20220701",
+      "sourceType": "statute",
+      "title": "Verwaltungsverfahrensgesetz, SR 172.021",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de",
+      "documentVersionDate": "2022-07-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "holidays": [
+    {
+      "holidayId": "CH-2026-08-01-NATIONAL-DAY",
+      "date": "2026-08-01",
+      "kind": "federalHoliday",
+      "labelKey": "holiday.ch.nationalDay",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        { "sourceId": "SRC-BUNDESFEIERTAG-19940701", "locator": "Art. 1" }
+      ]
+    },
+    {
+      "holidayId": "CH-2027-08-01-NATIONAL-DAY",
+      "date": "2027-08-01",
+      "kind": "federalHoliday",
+      "labelKey": "holiday.ch.nationalDay",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        { "sourceId": "SRC-BUNDESFEIERTAG-19940701", "locator": "Art. 1" }
+      ]
+    },
+    {
+      "holidayId": "CH-2028-08-01-NATIONAL-DAY",
+      "date": "2028-08-01",
+      "kind": "federalHoliday",
+      "labelKey": "holiday.ch.nationalDay",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        { "sourceId": "SRC-BUNDESFEIERTAG-19940701", "locator": "Art. 1" }
+      ]
+    }
+  ],
+  "suspensionSets": [
+    {
+      "suspensionSetId": "ch-court-holidays-2026-2028",
+      "applicableProfileIds": ["zpo", "bgg", "vwvg"],
+      "sourceRefs": [
+        { "sourceId": "SRC-ZPO-20260701", "locator": "Art. 145 Abs. 1" },
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 1" },
+        { "sourceId": "SRC-VWVG-20220701", "locator": "Art. 22a Abs. 1" }
+      ],
+      "periods": [
+        {
+          "periodId": "YEAR-END-2025-2026",
+          "startsOn": "2025-12-18",
+          "endsOn": "2026-01-02",
+          "inclusive": true,
+          "labelKey": "suspension.ch.yearEnd"
+        },
+        {
+          "periodId": "EASTER-2026",
+          "startsOn": "2026-03-29",
+          "endsOn": "2026-04-12",
+          "inclusive": true,
+          "labelKey": "suspension.ch.easter"
+        },
+        {
+          "periodId": "SUMMER-2026",
+          "startsOn": "2026-07-15",
+          "endsOn": "2026-08-15",
+          "inclusive": true,
+          "labelKey": "suspension.ch.summer"
+        },
+        {
+          "periodId": "YEAR-END-2026-2027",
+          "startsOn": "2026-12-18",
+          "endsOn": "2027-01-02",
+          "inclusive": true,
+          "labelKey": "suspension.ch.yearEnd"
+        },
+        {
+          "periodId": "EASTER-2027",
+          "startsOn": "2027-03-21",
+          "endsOn": "2027-04-04",
+          "inclusive": true,
+          "labelKey": "suspension.ch.easter"
+        },
+        {
+          "periodId": "SUMMER-2027",
+          "startsOn": "2027-07-15",
+          "endsOn": "2027-08-15",
+          "inclusive": true,
+          "labelKey": "suspension.ch.summer"
+        },
+        {
+          "periodId": "YEAR-END-2027-2028",
+          "startsOn": "2027-12-18",
+          "endsOn": "2028-01-02",
+          "inclusive": true,
+          "labelKey": "suspension.ch.yearEnd"
+        },
+        {
+          "periodId": "EASTER-2028",
+          "startsOn": "2028-04-09",
+          "endsOn": "2028-04-23",
+          "inclusive": true,
+          "labelKey": "suspension.ch.easter"
+        },
+        {
+          "periodId": "SUMMER-2028",
+          "startsOn": "2028-07-15",
+          "endsOn": "2028-08-15",
+          "inclusive": true,
+          "labelKey": "suspension.ch.summer"
+        },
+        {
+          "periodId": "YEAR-END-2028-2029",
+          "startsOn": "2028-12-18",
+          "endsOn": "2029-01-02",
+          "inclusive": true,
+          "labelKey": "suspension.ch.yearEnd"
+        }
+      ]
+    }
+  ]
+}
