@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP2 abgeschlossen. Repository, öffentliches MVP-Backlog und Arbeitsfluss sind eingerichtet. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung. Als Nächstes folgt AP3 mit der Übernahme der initialen Projektentscheide.
+> **Projektstatus:** Arbeitspaket AP3 abgeschlossen. Die elf beschlossenen Grundsatzentscheide sind als stabile DEC-Dateien mit Quellen, Folgen und Ablösungskette dokumentiert. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung. Als Nächstes folgt AP4 mit der quellenbasierten Rechtsmatrix für den MVP.
 
 ## Zweck
 
@@ -57,7 +57,7 @@ Das Vorhaben wird schlank nach HERMES 2022 agil geführt. Es gilt ein WIP-Limit 
 
 David Steimer nimmt in der aktuellen Einpersonenphase alle menschlichen Projekt-, Fach-, Prüf- und Betriebsrollen wahr. Die Rollen bleiben als Zielmodell getrennt dokumentiert. Codex unterstützt als KI-Arbeitsinstrument, übernimmt aber keine formelle Freigabe-, Organ- oder Haftungsverantwortung.
 
-Materielle Entscheide werden ab AP3 mit stabilen DEC-Nummern unter `docs/entscheidungen/` dokumentiert. Chatnachrichten allein gelten nicht als dauerhafter Entscheidungsnachweis.
+Materielle Entscheide werden mit stabilen DEC-Nummern im [Entscheidungsregister](docs/entscheidungen/README.md) dokumentiert. Chatnachrichten allein gelten nicht als dauerhafter Entscheidungsnachweis.
 
 ## Projektgrundlagen
 
