@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP3 abgeschlossen. Die elf beschlossenen Grundsatzentscheide sind als stabile DEC-Dateien mit Quellen, Folgen und Ablösungskette dokumentiert. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung. Als Nächstes folgt AP4 mit der quellenbasierten Rechtsmatrix für den MVP.
+> **Projektstatus:** Arbeitspaket AP4 abgeschlossen. Die fünf MVP-Rechtsprofile sind mit amtlichen Quellen, Gültigkeit, Ausnahmen, Feiertagsanknüpfung und offenen Fachfragen dokumentiert. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung. Als Nächstes folgt AP5 mit dem versionierten Datenmodell für Rechtsregeln und Kalenderdaten.
 
 ## Zweck
 
@@ -58,6 +58,8 @@ Das Vorhaben wird schlank nach HERMES 2022 agil geführt. Es gilt ein WIP-Limit 
 David Steimer nimmt in der aktuellen Einpersonenphase alle menschlichen Projekt-, Fach-, Prüf- und Betriebsrollen wahr. Die Rollen bleiben als Zielmodell getrennt dokumentiert. Codex unterstützt als KI-Arbeitsinstrument, übernimmt aber keine formelle Freigabe-, Organ- oder Haftungsverantwortung.
 
 Materielle Entscheide werden mit stabilen DEC-Nummern im [Entscheidungsregister](docs/entscheidungen/README.md) dokumentiert. Chatnachrichten allein gelten nicht als dauerhafter Entscheidungsnachweis.
+
+Die fachliche Grundlage des MVP liegt in der [Rechtsmatrix](docs/fachrecht/rechtsmatrix-mvp.md). Das zugehörige [Quellenregister](docs/fachrecht/quellenregister.md) und die [offenen Fachfragen](docs/fachrecht/offene-fachfragen.md) verhindern, dass ungeklärte Annahmen als sichere Automatik in die Anwendung gelangen.
 
 ## Projektgrundlagen
 

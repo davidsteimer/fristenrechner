@@ -17,11 +17,16 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Öffentliches GitHub Project für den MVP mit fünf Projektstatus, WIP-Limit 1 und den Planungsfeldern Priorität, Typ, Release, Rechtsgebiet, Gemeinwesen, Sprache, Aufwand und Entscheidbezug
 - Neun MVP-Epics sowie die ausführungsbereiten Startpakete AP3 bis AP7
 - Entscheidungsregister mit einheitlicher Vorlage und DEC-2026-001 bis DEC-2026-011
+- Quellenbasierte Rechtsmatrix für StPO, ZPO, BGG, VwVG und VRPG Bern mit stabilen Arbeits-IDs
+- Quellenregister mit amtlichen Primärquellen, Gültigkeitsständen und ergänzender Rechtsprechung
+- Register der offenen Fachfragen und verbindlichen Sicherheitsgrenzen für AP5
+- Fachlicher Startbestand für die Golden Cases in AP6
 
 ### Changed
 
 - Öffentliche Word- und PDF-Projektgrundlagen datensparsam bereinigt
 - Projektstatus nach Abschluss von AP2 aktualisiert und operative Aufgabensteuerung mit GitHub verlinkt
 - Projektstatus nach Abschluss von AP3 aktualisiert und dauerhaften Entscheidungsnachweis verlinkt
+- Projektstatus nach Abschluss von AP4 aktualisiert und fachrechtliche Dokumentation verlinkt
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main
