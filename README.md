@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Projektbasis, Arbeitspaket AP1. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung.
+> **Projektstatus:** Arbeitspaket AP2 abgeschlossen. Repository, öffentliches MVP-Backlog und Arbeitsfluss sind eingerichtet. Es besteht noch keine funktionsfähige oder fachlich freigegebene Anwendung. Als Nächstes folgt AP3 mit der Übernahme der initialen Projektentscheide.
 
 ## Zweck
 
@@ -53,7 +53,7 @@ Die technische Projektstruktur wird im Machbarkeitspaket nach dem SPFx-Spike kon
 
 ## Projektführung
 
-Das Vorhaben wird schlank nach HERMES 2022 agil geführt. Es gilt ein WIP-Limit von einem wesentlichen Arbeitspaket. Ein Arbeitspaket umfasst höchstens fünf Nettoarbeitstage. GitHub Issues und ein GitHub Project werden ab AP2 zur operativen Aufgabenliste.
+Das Vorhaben wird schlank nach HERMES 2022 agil geführt. Es gilt ein WIP-Limit von einem wesentlichen Arbeitspaket. Ein Arbeitspaket umfasst höchstens fünf Nettoarbeitstage. Die [GitHub Issues](https://github.com/davidsteimer/fristenrechner/issues) und das öffentliche [GitHub Project «Fristenrechner Schweiz · MVP»](https://github.com/users/davidsteimer/projects/1) bilden die einzige operative Aufgabenliste.
 
 David Steimer nimmt in der aktuellen Einpersonenphase alle menschlichen Projekt-, Fach-, Prüf- und Betriebsrollen wahr. Die Rollen bleiben als Zielmodell getrennt dokumentiert. Codex unterstützt als KI-Arbeitsinstrument, übernimmt aber keine formelle Freigabe-, Organ- oder Haftungsverantwortung.
 
