@@ -27,7 +27,8 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - SHA-256-Prüfsummen und Dateigrössen für sieben Releaseartefakte
 - Automatisierte Schema-, Referenz-, Konsistenz-, Kalender- und Prüfsummenvalidierung mit sechs Negativtests
 - Architekturvertrag für byteidentische GitHub-, SharePoint-Mirror- und manuelle Datenprovider
-- Vorgeschlagener Architekturentscheid DEC-2026-012 zum Datenrelease-Format
+- Beschlossener Architekturentscheid DEC-2026-012 zum Datenrelease-Format
+- Freigegebenes AP5-Referenzrelease `2026-08-29-ap5-approved.1` mit maschinenlesbaren Freigabemetadaten
 
 ### Changed
 
@@ -36,5 +37,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Projektstatus nach Abschluss von AP3 aktualisiert und dauerhaften Entscheidungsnachweis verlinkt
 - Projektstatus nach Abschluss von AP4 aktualisiert und fachrechtliche Dokumentation verlinkt
 - Projektstatus nach Abschluss von AP5 aktualisiert und maschinenlesbares Datenmodell verlinkt
+- Abnahme des AP5-Referenzrelease und Beschluss von DEC-2026-012 dokumentiert, ohne den veröffentlichten Candidate rückwirkend zu verändern
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

@@ -8,8 +8,9 @@
 | Zeichenkodierung | UTF-8 |
 | Datumsmodell | ISO-Vollformat `JJJJ-MM-TT`, ohne Uhrzeit und Zeitzone |
 | Integritätsprüfung | SHA-256 über die exakten Dateibytes |
-| Referenzrelease | `data/releases/2026-08-29-ap5-candidate.1` |
-| Architekturentscheid | [DEC-2026-012, vorgeschlagen](../entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md) |
+| Referenzrelease | `data/releases/2026-08-29-ap5-approved.1` |
+| Freigabe | David Steimer, 29. August 2026 |
+| Architekturentscheid | [DEC-2026-012, beschlossen](../entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md) |
 
 ## 1. Ziel und Abgrenzung
 
@@ -36,6 +37,8 @@ Das Format berechnet keine Frist und klassifiziert keinen Sachverhalt. Es beschr
 Das Manifest ist der einzige Einstiegspunkt. Es listet jedes Nutzartefakt mit relativem Pfad, Rolle, Inhalts-ID, Schema-ID, Medientyp, Dateigrösse und SHA-256-Prüfsumme. Nicht gelistete JSON-Dateien und gelistete, aber fehlende Dateien machen das Release ungültig.
 
 Das Manifest enthält keine Prüfsumme über sich selbst. Seine Vertrauenswürdigkeit muss durch den freigegebenen Abrufort und später allenfalls durch eine zusätzliche Signatur abgesichert werden. Die Artefaktprüfsummen verhindern, dass ein Manifest mit nur teilweise oder verändert geladenen Nutzdaten aktiviert wird.
+
+Der freigegebene Referenzbestand wurde mit einer neuen Release-ID aus dem technisch validierten Candidate abgeleitet. Die fachlichen Regeln, Feiertage und Stillstandsperioden blieben unverändert. Der Prüfstatus der sieben Nutzartefakte wurde auf `verified` gesetzt und mit neuen Prüfsummen versehen. Das neue Manifest dokumentiert den Status `approved` und die menschliche Freigabe im qualifizierten Erweiterungsfeld `steimer.approval`. Der veröffentlichte Candidate bleibt unverändert erhalten.
 
 ## 3. Schemata
 

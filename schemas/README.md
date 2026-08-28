@@ -18,7 +18,7 @@ Die AP5-Schemata definieren das providerneutrale Austauschformat für Rechtsprof
 - Datumswerte sind ISO-Vollformate `JJJJ-MM-TT` ohne Uhrzeit und Zeitzone.
 - Strukturelle Rückwärtskompatibilität, Datenrelease und Schemaänderung werden getrennt versioniert.
 
-Ein veröffentlichtes Schema wird nicht stillschweigend semantisch umgedeutet. Inkompatible Änderungen benötigen eine neue Hauptversion und einen dokumentierten Migrationsentscheid. Einzelheiten stehen im [Datenrelease-Format](../docs/architektur/datenrelease-format.md) und im vorgeschlagenen [DEC-2026-012](../docs/entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md).
+Ein veröffentlichtes Schema wird nicht stillschweigend semantisch umgedeutet. Inkompatible Änderungen benötigen eine neue Hauptversion und einen dokumentierten Migrationsentscheid. Einzelheiten stehen im [Datenrelease-Format](../docs/architektur/datenrelease-format.md) und im beschlossenen [DEC-2026-012](../docs/entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md).
 
 ## Validierung
 
@@ -28,6 +28,6 @@ Die Schemata werden selbst gegen den Metaschema-Dialekt geprüft. Anschliessend 
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-data.txt
 .venv/bin/python tests/data/validate_release.py \
-  data/releases/2026-08-29-ap5-candidate.1 \
+  data/releases/2026-08-29-ap5-approved.1 \
   --self-test
 ```

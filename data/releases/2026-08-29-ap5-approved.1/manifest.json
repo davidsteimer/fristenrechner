@@ -1,0 +1,117 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "releaseManifest",
+  "releaseId": "2026-08-29-ap5-approved.1",
+  "releaseStatus": "approved",
+  "createdOn": "2026-08-29",
+  "immutable": true,
+  "coverage": {
+    "from": "2026-08-29",
+    "to": "2028-12-31"
+  },
+  "profileIds": ["stpo", "zpo", "bgg", "vwvg", "vrpg-be"],
+  "calendarIds": ["ch-federal-calendar", "be-public-holidays"],
+  "sourceSummary": {
+    "latestReviewedOn": "2026-08-29",
+    "legalBasisReviewStatus": "verified",
+    "technicalValidationStatus": "passed",
+    "sourceIds": [
+      "SRC-STPO-20250401",
+      "SRC-ZPO-20260701",
+      "SRC-BGG-20260401",
+      "SRC-VWVG-20220701",
+      "SRC-VRPG-BE-20230801",
+      "SRC-FRG-BE-20210401",
+      "SRC-BUNDESFEIERTAG-19940701",
+      "JUD-BE-VG-200-2026-421"
+    ]
+  },
+  "providerContract": {
+    "pathMode": "manifestRelative",
+    "byteIdentityRequired": true,
+    "supportedProviders": ["github", "sharepointMirror", "manualImport"],
+    "networkFallback": "lastVerifiedRelease"
+  },
+  "compatibility": {
+    "minimumConsumerFormatVersion": "1.0.0",
+    "unknownMajorVersionHandling": "reject",
+    "unknownCoreFieldHandling": "reject",
+    "extensionsHandling": "ignoreNamespaced"
+  },
+  "checksumAlgorithm": "sha256",
+  "extensions": {
+    "steimer.approval": {
+      "approvedOn": "2026-08-29",
+      "approvedBy": "David Steimer",
+      "approvalType": "human",
+      "approvalScope": "ap5ReferenceRelease",
+      "decisionId": "DEC-2026-012"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "role": "legalProfile",
+      "contentId": "bgg",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 7494,
+      "sha256": "91761c2bf5d92ec7e1c7f9b529616de8f18e58446335d2ba903949cf3a382483"
+    },
+    {
+      "path": "profiles/stpo.json",
+      "role": "legalProfile",
+      "contentId": "stpo",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 5943,
+      "sha256": "7b9f7ff156eec954e73f404eff28e00e49767b8e8f0a2d044fd479c0339b2163"
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "role": "legalProfile",
+      "contentId": "vrpg-be",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 7848,
+      "sha256": "cba452429ab6703be2dcdf961d1f7b5474fd826385217dee94ec88ad091e4e72"
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "role": "legalProfile",
+      "contentId": "vwvg",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 7087,
+      "sha256": "cb9fb33a6e7e89fd87cd1aec92e391283748a464c2eaa2de53aebce1ab00de60"
+    },
+    {
+      "path": "profiles/zpo.json",
+      "role": "legalProfile",
+      "contentId": "zpo",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 9002,
+      "sha256": "ebaebcde4dc89c2e177399bc898a52f32299bb2dcb7acc474f2a2632db2d8631"
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "role": "calendar",
+      "contentId": "be-public-holidays",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+      "byteLength": 11655,
+      "sha256": "6ba26cd595b64e7f90843f549e3467fe2f1043c4318f1daa9d1d992f617b1777"
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "role": "calendar",
+      "contentId": "ch-federal-calendar",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+      "byteLength": 5617,
+      "sha256": "e35e0dbc067730fd951dc33cba206ee018e6e56f39d63d7f91cacd604cceb6d3"
+    }
+  ]
+}

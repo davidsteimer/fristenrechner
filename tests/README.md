@@ -32,7 +32,7 @@ Ausführung:
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-data.txt
 .venv/bin/python tests/data/validate_release.py \
-  data/releases/2026-08-29-ap5-candidate.1 \
+  data/releases/2026-08-29-ap5-approved.1 \
   --self-test
 ```
 

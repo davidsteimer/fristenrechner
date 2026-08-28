@@ -1,11 +1,11 @@
 ---
 id: DEC-2026-012
 titel: "Providerneutrales und manifestbasiertes Datenrelease-Format"
-status: vorgeschlagen
+status: beschlossen
 vorgeschlagen_am: 2026-08-29
-entscheidungsdatum: null
+entscheidungsdatum: 2026-08-29
 klasse: B
-entschieden_durch: null
+entschieden_durch: "David Steimer"
 quelle:
   - "Arbeitspaket AP5, GitHub-Issue #12"
   - "DEC-2026-003"
@@ -38,7 +38,7 @@ AP4 hat 47 fachliche Regeln mit stabilen Arbeits-IDs sowie nationale und bernisc
    - Vorteil: Kleine Dateien und schnelle Verarbeitung.
    - Nachteil: Schlechte Prüfbarkeit, unnötige Werkzeuge und für den überschaubaren MVP kein angemessener Nutzen.
 
-## Entscheidvorschlag
+## Entscheid
 
 Der Fristenrechner verwendet ab Formatversion `1.0.0` folgende Regeln:
 
@@ -53,7 +53,7 @@ Der Fristenrechner verwendet ab Formatversion `1.0.0` folgende Regeln:
 - Ein einmal publiziertes Release wird nicht überschrieben. Jede Korrektur erhält eine neue Release-ID und neue Prüfsummen.
 - Der letzte vollständig validierte Datenstand darf bei einem Netzwerkausfall als Fallback verwendet werden. Ein teilweise geladenes oder nicht validiertes Release wird nie aktiviert.
 
-Dieser Entscheid ist bis zur Prüfung durch David Steimer als `vorgeschlagen` gekennzeichnet. Die AP5-Implementierung bildet den prüfbaren Referenzvorschlag.
+David Steimer hat diesen Architekturentscheid am 29. August 2026 zusammen mit dem AP5-Referenzrelease bestätigt. Der Entscheid ist damit `beschlossen`.
 
 ## Begründung
 
@@ -102,4 +102,4 @@ Für dieses spezialisierte Regel- und Kalenderpaket besteht kein unmittelbar pas
 
 ## Verantwortlichkeit
 
-Der Vorschlag wurde mit Codex ausgearbeitet. Der Architekturentscheid wird erst mit der dokumentierten Annahme durch David Steimer beschlossen. Codex übernimmt keine formelle Freigabe- oder Haftungsverantwortung.
+Der Entscheid wurde mit Codex ausgearbeitet und durch David Steimer beschlossen. Codex übernimmt keine formelle Freigabe- oder Haftungsverantwortung.

@@ -2,9 +2,9 @@
 
 Dieser Bereich enthält versionierte, maschinenlesbare Fachdaten. Jeder Datenstand liegt in einem eigenen, unveränderlichen Unterverzeichnis von `releases/`.
 
-## Referenzbestand
+## Freigegebener Referenzbestand
 
-Der AP5-Referenzbestand [`2026-08-29-ap5-candidate.1`](releases/2026-08-29-ap5-candidate.1/README.md) enthält:
+Der abgenommene AP5-Referenzbestand [`2026-08-29-ap5-approved.1`](releases/2026-08-29-ap5-approved.1/README.md) enthält:
 
 - Rechtsprofile für StPO, ZPO, BGG, VwVG und VRPG Bern
 - alle 47 stabilen Regel-IDs aus der Rechtsmatrix
@@ -13,7 +13,9 @@ Der AP5-Referenzbestand [`2026-08-29-ap5-candidate.1`](releases/2026-08-29-ap5-c
 - Quellen-, Gültigkeits- und Prüfmetadaten
 - ein Release-Manifest mit sieben Nutzartefakten und SHA-256-Prüfsummen
 
-Der Status `candidate` bezeichnet eine technisch validierte Referenzfassung. Er ist keine produktive Freigabe.
+Der Status `approved` bezeichnet den durch David Steimer freigegebenen Fachdatenstand für die weitere Umsetzung. Er ist keine produktive Freigabe der noch zu entwickelnden Anwendung.
+
+Der vorangehende Candidate [`2026-08-29-ap5-candidate.1`](releases/2026-08-29-ap5-candidate.1/README.md) bleibt als unveränderlicher Nachweis erhalten. Im freigegebenen Release sind die fachlichen Regeln, Feiertage und Stillstandsperioden unverändert. Prüfstatus, prüfende Person, Manifest, Release-ID und Prüfsummen bilden die Abnahme neu ab.
 
 ## Releasegrundsätze
 

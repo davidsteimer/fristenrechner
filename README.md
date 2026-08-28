@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP5 abgeschlossen. Die fünf MVP-Rechtsprofile sowie die eidgenössischen und bernischen Kalenderdaten liegen als streng validierbares Referenzrelease mit Manifest und Prüfsummen vor. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung. Als Nächstes folgt AP6 mit den quellenbasierten Golden Cases.
+> **Projektstatus:** Arbeitspaket AP5 abgeschlossen und abgenommen. Die fünf MVP-Rechtsprofile sowie die eidgenössischen und bernischen Kalenderdaten liegen im freigegebenen Referenzrelease `2026-08-29-ap5-approved.1` mit Manifest und Prüfsummen vor. DEC-2026-012 ist beschlossen. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung. Als Nächstes folgt AP6 mit den quellenbasierten Golden Cases.
 
 ## Zweck
 
