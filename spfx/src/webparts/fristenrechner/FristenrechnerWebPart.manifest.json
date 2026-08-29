@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "596c7f1c-4d3e-4da8-a7be-27a96024f37c",
+  "alias": "FristenrechnerWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsTab"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": {
+        "default": "Tools",
+        "de-de": "Werkzeuge",
+        "fr-fr": "Outils"
+      },
+      "title": {
+        "default": "Fristenrechner Schweiz",
+        "fr-fr": "Calculateur de délais suisse"
+      },
+      "description": {
+        "default": "Schweizer Verfahrensfristen nachvollziehbar berechnen",
+        "fr-fr": "Calculer les délais de procédure suisses de manière traçable"
+      },
+      "officeFabricIconFontName": "Calendar",
+      "properties": {
+        "providerKind": "github",
+        "githubBaseUrl": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/33b4c2891acf5966974cc94b616aa3972c067767/data/releases/2026-08-29-ap5-approved.1",
+        "sharePointMirrorPath": ""
+      }
+    }
+  ]
+}

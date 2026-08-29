@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom';
 import { initializeIcons } from '@fluentui/react';
 
 import { FristenrechnerApp } from '../FristenrechnerApp';
+import './preview.css';
 import '../styles.css';
 import { calculationData } from './data';
 import { qaPreset } from './qaPresets';

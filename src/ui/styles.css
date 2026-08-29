@@ -1,17 +1,5 @@
 /* SPDX-License-Identifier: AGPL-3.0-only */
 
-:root {
-  color-scheme: light;
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  background: #eef2f2;
-}
-
-body {
-  margin: 0;
-  color: #172126;
-  background: #eef2f2;
-}
-
 .fr-app,
 .fr-app * {
   box-sizing: border-box;
@@ -29,8 +17,10 @@ body {
   width: min(1120px, calc(100% - 32px));
   margin: 32px auto;
   padding: 32px;
+  color: var(--fr-text);
   border-top: 6px solid var(--fr-copper);
   background: var(--fr-snow);
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   box-shadow: 0 14px 40px rgb(18 44 64 / 12%);
 }
 

@@ -4,7 +4,7 @@
 
 Dieses Modul ist der AP9-Kandidat der funktionalen MVP-Rechneroberfläche. Es verbindet den freigegebenen AP8-Rechenkern mit React 17.0.1 und Fluent UI React v8.106.4. Die Komponente bleibt von SharePoint, Teams, SPFx und einem konkreten Datenprovider unabhängig.
 
-Der Kandidat ist technisch geprüft, aber noch nicht durch David Steimer abgenommen. Er ist kein produktiv installierter Release.
+Der Kandidat wurde von David Steimer als Grundlage für die gestartete SPFx-Produktintegration AP10 übernommen. Er ist für sich allein kein produktiv installierter Release.
 
 ## Öffentliche Schnittstelle
 

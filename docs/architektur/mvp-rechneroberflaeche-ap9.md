@@ -4,7 +4,7 @@
 | --- | --- |
 | Arbeitspaket | AP9, GitHub-Issue #20 |
 | Stand | 29. August 2026 |
-| Status | Kandidat, bereit zur Abnahme |
+| Status | als Grundlage für AP10 abgenommen |
 | Verantwortliche Person | David Steimer |
 | KI-Arbeitsinstrument | Codex ohne formelle Freigabe- oder Haftungsverantwortung |
 | Datenbasis | `2026-08-29-ap5-approved.1` |
@@ -83,4 +83,4 @@ Die Prüfung orientiert sich im AP9-Umfang an WCAG 2.1 AA und damit am im Projek
 
 ## 6. Abgrenzung und nächster Schritt
 
-Nicht enthalten sind SPFx-Produktpaketierung, Providerintegration, Tenantinstallation, produktive Releasefreigabe, Gastzugriffe und Outlook-Export. Kontextbezogene Hilfetexte werden in [Issue #21](https://github.com/davidsteimer/fristenrechner/issues/21), eine zusätzliche visuelle Kennzeichnung von Auswahl und Übersteuerungen in [Issue #22](https://github.com/davidsteimer/fristenrechner/issues/22) für einen Folgerelease geprüft. Der nächste technische Schritt ist die Übernahme der hostneutralen UI in das produktive SPFx-WebPart mit dem bereits im Spike geprüften Release-Service. AP9 bleibt bis zur Abnahme durch David Steimer offen.
+Nicht enthalten sind SPFx-Produktpaketierung, Providerintegration, Tenantinstallation, produktive Releasefreigabe, Gastzugriffe und Outlook-Export. Kontextbezogene Hilfetexte werden in [Issue #21](https://github.com/davidsteimer/fristenrechner/issues/21), eine zusätzliche visuelle Kennzeichnung von Auswahl und Übersteuerungen in [Issue #22](https://github.com/davidsteimer/fristenrechner/issues/22) für einen Folgerelease geprüft. David Steimer hat den AP9-Stand mit dem Auftrag zum Start von AP10 als Integrationsgrundlage übernommen. Die SPFx-Produktintegration wird in [AP10](spfx-produktintegration-ap10.md) getrennt nachgewiesen.

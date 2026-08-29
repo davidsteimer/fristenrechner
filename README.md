@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Der AP9-Kandidat der [funktionalen MVP-Rechneroberfläche](src/ui/README.md) ist implementiert und technisch geprüft. Er verbindet React 17 und Fluent UI v8 hostneutral mit dem abgenommenen AP8-Rechenkern. Alle 65 TypeScript-Tests bestehen. Darin sind sämtliche 15 freigegebenen Golden Cases und die drei Sperrfälle nochmals über das UI-Eingabemodell abgedeckt. AP9 wartet auf die Abnahme durch David Steimer. Die SPFx-Produktintegration und Tenantinstallation folgen in einem weiteren Arbeitspaket. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
+> **Projektstatus:** AP10 hat den abgenommenen AP8-Rechenkern und die AP9-MVP-Oberfläche in ein gemeinsames SPFx-WebPart für SharePoint und Microsoft Teams integriert. Der lokale Installationskandidat `0.1.0.0` ist reproduzierbar gebaut und paketiert. Alle 65 bestehenden TypeScript-Tests und alle 11 SPFx-Provider- und Integrationsprüfungen bestehen. Die reale Installation und Laufzeitprüfung im steimer.ch-Testtenant ist noch offen. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -32,6 +32,8 @@ Der in AP8 implementierte [Rechenkern v0.1](src/core/README.md) verwendet reine 
 
 Die in AP9 implementierte [MVP-Rechneroberfläche](src/ui/README.md) zeigt die zuständige Behörde, gefilterte Rechtsprofile, profilspezifische Merkmale, automatische Parameter, kontrollierte Übersteuerungen, Resultate und die Rechenspur auf Deutsch und Französisch. Der kanzleiorientierte Hauptablauf führt von den Eingaben direkt zu den Aktionen und zum Resultat. Der [AP9-Prüfnachweis](docs/architektur/mvp-rechneroberflaeche-ap9.md) dokumentiert den automatisierten und browserbasierten Kandidatenstand.
 
+Die [SPFx-Produktlösung](spfx/README.md) synchronisiert diese hostneutralen Quellen vor dem Build und bindet sie über einen dünnen Hostadapter ein. GitHub- und SharePoint-Provider liefern nach vollständiger Validierung dasselbe AP8-Datenmodell. Das Paket unterstützt `SharePointWebPart` und `TeamsTab`, enthält seine Client-Assets und beantragt keine zusätzlichen API-Berechtigungen. Der [AP10-Prüfnachweis](docs/architektur/spfx-produktintegration-ap10.md) dokumentiert den lokalen Installationskandidaten und die noch ausstehenden Tenanttests.
+
 Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet JSON Schema Draft 2020-12, ISO-Kalenderdaten, ein unveränderliches Manifest und SHA-256-Prüfsummen. GitHub, SharePoint-Mirror und manueller Import liefern dasselbe Format als byteidentische Dateien.
 
 ## Qualitätsgrundsätze
@@ -52,6 +54,7 @@ Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet
 | `schemas/` | Maschinenlesbare Schemata für Regeln, Kalender und Releases |
 | `tests/` | Unit Tests, Golden Cases, Datenvalidierung und UI-Tests |
 | `spike/spfx/` | Zeitlich begrenzter SPFx-Minimalprototyp mit Build-, Paket- und Providernachweisen |
+| `spfx/` | Produktive SPFx-Lösung und installierbares Paket für SharePoint und Teams |
 | `docs/` | Architektur, Betrieb, Fachpflege und Entscheide |
 | `outputs/` | Freigegebene Projektgrundlagen in Word und PDF |
 | `LICENSES/` | Lizenztexte und Abgrenzung der lizenzierten Werktypen |
