@@ -33,6 +33,19 @@ npm ci
 npm run check
 ```
 
+## AP9-Rechneroberfläche
+
+Die TypeScript-Tests unter [`tests/ui/`](ui/) prüfen:
+
+- datengetriebene Gemeinwesen- und Profilfilterung für Bund und Bern
+- sicheres Verwerfen eines ausgefilterten kantonalen Defaults
+- sichtbare Ableitung von Eingabedatumssemantik und Fristenstillstand
+- Auslösbarkeit aller 15 freigegebenen und aller 3 gesperrten AP6-Fälle über das UI-Eingabemodell
+- lokale Defaults ohne Empfangsdatum
+- vollständige Auflösung der Selektoren, Warnungen und Sperrgründe auf Deutsch und Französisch
+
+Der Gesamtlauf umfasst 62 TypeScript-Tests. Die browserbasierte Prüfung von Resultat, Sperren, Filterwechsel, Übersteuerung, Tastaturreihenfolge und Mobile-Layout ist im [AP9-Prüfnachweis](../docs/architektur/mvp-rechneroberflaeche-ap9.md) dokumentiert.
+
 ## AP6-Golden-Case-Validierung
 
 Der Validator [`tests/golden/validate_golden_cases.py`](golden/validate_golden_cases.py) prüft Schemata, Quellen- und Regelverweise, Datenrelease-Abdeckung, Mindestfallgruppen und Rechenspuren. Er berechnet alle 15 freigegebenen Fristergebnisse aus dem freigegebenen AP5-Release unabhängig neu. Drei offene Fachfälle müssen die Berechnung blockieren. Ein absichtlich unvollständiger Datensatz sowie vier semantisch manipulierte Varianten müssen abgewiesen werden.

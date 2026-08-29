@@ -2,7 +2,7 @@
   "name": "fristenrechner-schweiz",
   "version": "0.1.0",
   "private": true,
-  "description": "Hostneutraler Rechenkern des Fristenrechners Schweiz",
+  "description": "Hostneutraler Rechenkern und MVP-Oberfläche des Fristenrechners Schweiz",
   "license": "AGPL-3.0-only",
   "type": "module",
   "engines": {
@@ -11,13 +11,24 @@
   "packageManager": "npm@10.9.8",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test tests/core/*.test.ts",
-    "check": "npm run typecheck && npm run test",
+    "test": "node --import tsx --test tests/core/*.test.ts tests/ui/*.test.ts",
+    "build:ui": "node scripts/build-ui-preview.mjs",
+    "preview:ui": "node scripts/ui-preview-server.mjs",
+    "check": "npm run typecheck && npm run test && npm run build:ui",
     "test:oracle": "python3 tests/golden/validate_golden_cases.py"
   },
   "devDependencies": {
     "@types/node": "26.4.0",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "esbuild": "0.28.2",
     "tsx": "4.23.12",
     "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "@fluentui/react": "8.106.4",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "tslib": "2.3.1"
   }
 }

@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** AP8 mit dem hostneutralen TypeScript-Rechenkern v0.1 ist fachlich und technisch abgenommen. Alle 15 freigegebenen Golden Cases und die drei Sperrfälle bestehen im automatisierten Test. Das WIP-Limit ist wieder frei. Der frühere SPFx-Machbarkeitsspike ist abgeschlossen und DEC-2026-013 zur gemeinsamen Zielarchitektur beschlossen. Die produktive Oberfläche und ihre SPFx-Integration folgen in weiteren Arbeitspaketen. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
+> **Projektstatus:** Der AP9-Kandidat der [funktionalen MVP-Rechneroberfläche](src/ui/README.md) ist implementiert und technisch geprüft. Er verbindet React 17 und Fluent UI v8 hostneutral mit dem abgenommenen AP8-Rechenkern. Alle 62 TypeScript-Tests bestehen. Darin sind sämtliche 15 freigegebenen Golden Cases und die drei Sperrfälle nochmals über das UI-Eingabemodell abgedeckt. AP9 wartet auf die Abnahme durch David Steimer. Die SPFx-Produktintegration und Tenantinstallation folgen in einem weiteren Arbeitspaket. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -29,6 +29,8 @@ Vorgesehen ist eine clientseitige SharePoint-Framework-Lösung mit React und Flu
 Der Pilot bezieht versionierte Rechts- und Kalenderdaten aus einem öffentlichen GitHub-Release. Eine Provider-Schnittstelle bereitet den späteren Wechsel auf einen tenantinternen SharePoint-Mirror vor. Der Rechenkern kennt die konkrete Datenquelle nicht.
 
 Der in AP8 implementierte [Rechenkern v0.1](src/core/README.md) verwendet reine ISO-Kalenderdatumsarithmetik, verarbeitet die typisierten AP5-Regeleffekte und blockiert ungeklärte Eingaben ohne scheinbar plausibles Fristende. Die automatisierten TypeScript-Tests laufen zusätzlich zum unabhängigen Python-Testorakel aus AP6.
+
+Die in AP9 implementierte [MVP-Rechneroberfläche](src/ui/README.md) zeigt Gemeinwesen, gefilterte Rechtsprofile, profilspezifische Merkmale, automatische Parameter, kontrollierte Übersteuerungen, Resultate und die Rechenspur auf Deutsch und Französisch. Der [AP9-Prüfnachweis](docs/architektur/mvp-rechneroberflaeche-ap9.md) dokumentiert den automatisierten und browserbasierten Kandidatenstand.
 
 Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet JSON Schema Draft 2020-12, ISO-Kalenderdaten, ein unveränderliches Manifest und SHA-256-Prüfsummen. GitHub, SharePoint-Mirror und manueller Import liefern dasselbe Format als byteidentische Dateien.
 
