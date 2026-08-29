@@ -9,7 +9,7 @@
 | Arbeitspaket | `SPK-SPFX-01`, GitHub-Issue #16 |
 | Zeitbox | höchstens 4,5 Nettoarbeitstage, tatsächlich weniger als ein Nettoarbeitstag |
 | Ergebnis | **Go-Empfehlung** |
-| Entscheidung | DEC-2026-013 bleibt bis zum Entscheid von David Steimer vorgeschlagen |
+| Entscheidung | DEC-2026-013 am 29. August 2026 beschlossen |
 
 ## 1. Antwort auf die Entscheidungsfrage
 
@@ -106,6 +106,12 @@ Empfohlen wird deshalb:
 
 Die Empfehlung ist ein technisches Go, keine produktive Freigabe. Fachlogik, vollständige Bedienoberfläche, Betriebsautomatisierung und fachliche Abnahme folgen in eigenen Arbeitspaketen.
 
-## 8. Ausstehender Entscheid
+## 8. Entscheid und Abgrenzung
 
-David Steimer entscheidet als Architekturverantwortlicher über DEC-2026-013. Codex hat den Spike ausgeführt und die Go-Empfehlung vorbereitet, übernimmt aber keine formelle Freigabe- oder Haftungsverantwortung.
+David Steimer hat DEC-2026-013 als Architekturverantwortlicher beschlossen.
+
+Der SharePoint-Mirror ist in der konkreten Teams-Registerkarte absichtlich nicht konfiguriert. Die Teams-Registerkarte ist eine eigene WebPart-Instanz und übernimmt den Mirrorpfad der SharePoint-Testseite nicht. Das ist keine Sperre der gemeinsamen Architektur. Der produktive Mirrorstandort für Teams wird in einem Folgepaket festgelegt, konfiguriert und separat geprüft.
+
+Externe und Gastzugriffe sind ebenfalls absichtlich nicht freigegeben. Sie waren kein Prüfziel von AP7. Ein allfälliger Gastbetrieb benötigt vor der Aktivierung ein eigenes Berechtigungs-, Sicherheits- und Laufzeitkonzept.
+
+Codex hat den Spike ausgeführt und die Entscheidungsgrundlage vorbereitet, übernimmt aber keine formelle Freigabe- oder Haftungsverantwortung.

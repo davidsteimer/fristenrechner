@@ -58,5 +58,7 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - AP7 nach Prüfung des ausführungsbereiten SPFx-Machbarkeitsspikes abgenommen
 - `SPK-SPFX-01` technisch abgeschlossen, alle 14 Prüfungen bestanden und Zeitbox deutlich unterschritten
 - Technischen SharePoint-Paketnamen nach realer App-Katalog-Validierung auf eine `NameDefinition`-konforme Form bereinigt
+- DEC-2026-013 nach Prüfung des Tenant-Spikes beschlossen und SPFx als gemeinsame Zielarchitektur für SharePoint und Teams festgelegt
+- Teams-Mirror als bewusst unkonfiguriert sowie Gastzugriffe als bewusst gesperrt dokumentiert
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Der SPFx-Machbarkeitsspike `SPK-SPFX-01` ist technisch abgeschlossen. Alle Prüfungen T01 bis T14 sind bestanden. Dasselbe `.sppkg` läuft in SharePoint Online und Microsoft Teams. GitHub und ein byteidentischer SharePoint-Mirror liefern denselben vollständig validierten AP5-Datenrelease. Die Empfehlung lautet Go. DEC-2026-013 bleibt bis zum Entscheid von David Steimer vorgeschlagen. Es besteht noch keine produktiv freigegebene Anwendung.
+> **Projektstatus:** Der SPFx-Machbarkeitsspike `SPK-SPFX-01` ist technisch abgeschlossen. Alle Prüfungen T01 bis T14 sind bestanden. Dasselbe `.sppkg` läuft in SharePoint Online und Microsoft Teams. GitHub und ein byteidentischer SharePoint-Mirror liefern denselben vollständig validierten AP5-Datenrelease. DEC-2026-013 zur gemeinsamen SPFx-Zielarchitektur ist beschlossen. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -52,7 +52,7 @@ Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet
 | `outputs/` | Freigegebene Projektgrundlagen in Word und PDF |
 | `LICENSES/` | Lizenztexte und Abgrenzung der lizenzierten Werktypen |
 
-Die technische Projektstruktur wurde mit dem im [AP7-Ausführungsplan](docs/architektur/spfx-machbarkeitsspike-ap7.md) abgegrenzten SPFx-Spike erfolgreich geprüft. Der [Ergebnisbericht](docs/architektur/spfx-spike-ergebnisbericht.md) und das [Testprotokoll](docs/architektur/spfx-spike-testprotokoll.md) dokumentieren die vollständige Evidenz und die Go-Empfehlung. Der dauerhafte Quellcodebaum wird nach dem Entscheid zu DEC-2026-013 übernommen.
+Die technische Projektstruktur wurde mit dem im [AP7-Ausführungsplan](docs/architektur/spfx-machbarkeitsspike-ap7.md) abgegrenzten SPFx-Spike erfolgreich geprüft. Der [Ergebnisbericht](docs/architektur/spfx-spike-ergebnisbericht.md) und das [Testprotokoll](docs/architektur/spfx-spike-testprotokoll.md) dokumentieren die vollständige Evidenz. Der dauerhafte Quellcodebaum wird gestützt auf den beschlossenen Architekturentscheid DEC-2026-013 übernommen.
 
 ## Projektführung
 

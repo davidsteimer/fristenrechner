@@ -95,6 +95,8 @@ Die Arbeitsschritte wurden nicht minutenweise verrechnet. Issue-, Build- und Lau
 | F-03 | Der Tenant hatte zu Beginn keinen App-Katalog | einmalige administrative Aktivierung war nötig | Tenant-App-Katalog als Bereitstellungsvoraussetzung dokumentieren | nein |
 | F-04 | Der technische Paketname mit Gedankenstrich verletzte die SharePoint-`NameDefinition` | erste Paketvalidierung schlug fehl | technischer Paketname wurde auf `Fristenrechner Schweiz SPFx Machbarkeitsspike` bereinigt, der sichtbare Produkttitel bleibt unverändert | nein |
 | F-05 | Tenantweite Aktivierung allein lud die Teams-Konfiguration auf der Teamwebsite noch nicht | erster Konfigurationsversuch endete mit einer generischen SharePoint-Ladefehlermeldung | App auf der zum Team gehörenden SharePoint-Website zusätzlich installieren | nein |
+| F-06 | Der SharePoint-Mirrorpfad ist in der konkreten Teams-Registerkarte absichtlich leer | der Spike weist den Teams-Host und den GitHub-Provider nach, nicht einen zweiten Mirrorstandort auf der Teamwebsite | Mirror für Teams erst nach Festlegung des tenantinternen Standorts konfigurieren und separat prüfen | ja, im produktiven Deploymentpaket |
+| F-07 | Externe und Gastzugriffe wurden absichtlich nicht freigegeben oder geprüft | aus dem internen Tenanttest darf keine Freigabe für Gastkonten abgeleitet werden | allfälligen Gastbetrieb in einem eigenen Sicherheits- und Berechtigungstest behandeln | ja, nur falls Gastbetrieb benötigt wird |
 
 ## 8. Entscheidungsempfehlung
 
@@ -123,4 +125,4 @@ Keine.
 | Rolle | Person | Entscheid | Datum |
 | --- | --- | --- | --- |
 | Technische Durchführung | David Steimer mit Codex | durchgeführt, Go empfohlen | 29. August 2026 |
-| Architekturentscheid | David Steimer | DEC-2026-013 noch zu entscheiden | offen |
+| Architekturentscheid | David Steimer | DEC-2026-013 beschlossen | 29. August 2026 |

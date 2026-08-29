@@ -1,9 +1,9 @@
 ---
 id: DEC-2026-013
 titel: "SPFx als gemeinsame Zielarchitektur für SharePoint und Teams"
-status: vorgeschlagen
+status: beschlossen
 vorgeschlagen_am: 2026-08-29
-entscheidungsdatum: null
+entscheidungsdatum: 2026-08-29
 klasse: B
 entschieden_durch: "David Steimer"
 quelle:
@@ -39,9 +39,9 @@ AP7 hat deshalb einen auf 4,5 Nettoarbeitstage begrenzten Machbarkeitsspike fest
    - Vorteil: tiefe M365-Integration und rasche Formularentwicklung.
    - Nachteil: Lizenz- und Tenantabhängigkeit, erschwerte Open-Source-Verteilung und ungeeignete Kontrolle über deterministische Fachlogik und Datenreleasevalidierung.
 
-## Empfohlener Entscheid
+## Entscheid
 
-Gestützt auf den abgeschlossenen Tenant-Spike wird Option 1 zur Beschlussfassung empfohlen:
+Gestützt auf den abgeschlossenen Tenant-Spike wird Option 1 beschlossen:
 
 - Der Fristenrechner wird als einzelnes SPFx-WebPart für `SharePointWebPart` und `TeamsTab` umgesetzt.
 - UI-Komponenten, Datenprovider, Releasevalidierung, persistenter Aktivstand und späterer Rechenkern bleiben hostneutral.
@@ -54,7 +54,14 @@ Gestützt auf den abgeschlossenen Tenant-Spike wird Option 1 zur Beschlussfassun
 - Ein Tenant-App-Katalog und die lokale Installation auf jeder verwendeten SharePoint-Website sind verbindliche Bereitstellungsvoraussetzungen.
 - Für eine Teams-Registerkarte wird die App zusätzlich auf der zum Team gehörenden SharePoint-Website installiert.
 
-David Steimer entscheidet als Architekturverantwortlicher über `beschlossen` oder `verworfen`.
+David Steimer hat den Entscheid am 29. August 2026 nach Prüfung der Spike-Ergebnisse und Klärung der nachfolgenden Abgrenzungen bestätigt.
+
+### Bestätigte Abgrenzungen
+
+- Der SharePoint-Mirror war in der konkreten Teams-Registerkarte des Spikes absichtlich nicht konfiguriert. Eine neue WebPart-Instanz übernimmt keine Eigenschaften der SharePoint-Testseite. Der Standardwert des Mirrorpfads ist bewusst leer.
+- Diese Konfiguration ist keine architektonische Sperre. Der Mirrorprovider gehört zum gemeinsamen WebPart. Für einen Mirrorbetrieb in Teams wird der Release entweder auf der zum Team gehörenden SharePoint-Website bereitgestellt oder der Provider vor der produktiven Nutzung für einen ausdrücklich getesteten, tenantinternen Cross-Site-Abruf erweitert.
+- Externe und Gastzugriffe wurden im Spike absichtlich nicht freigegeben. AP7 prüfte den Betrieb mit einem authentifizierten internen Testkonto und normalen Leserechten, nicht ein Extranet- oder Gastbetriebsszenario.
+- Gastzugriffe bleiben gesperrt, bis Berechtigungsmodell, Datenfreigabe, Teams-App-Richtlinie und Verhalten des SharePoint-Mirrors in einem eigenen Sicherheits- und Betriebstest geprüft und freigegeben sind.
 
 ## Begründung
 
@@ -66,7 +73,7 @@ Die reale Laufzeitprüfung bestätigt CORS für den gepinnten GitHub-Abruf, norm
 
 ### Auswirkungen
 
-- Der dauerhafte Produktcode kann nach Beschluss aus dem Spike in die reguläre `src/`-Struktur überführt werden.
+- Der dauerhafte Produktcode kann aus dem Spike in die reguläre `src/`-Struktur überführt werden.
 - SharePoint und Teams verwenden dasselbe `.sppkg` und dieselbe Component-ID.
 - Die erstmalige Bereitstellung bleibt adminarm, aber nicht adminfrei.
 - Tenant-, Site- und Mirrorpfade bleiben konfigurierbar.
@@ -78,12 +85,16 @@ Die reale Laufzeitprüfung bestätigt CORS für den gepinnten GitHub-Abruf, norm
 - GitHub kann durch CORS, Tenantnetzwerk oder Sicherheitsrichtlinien blockiert sein.
 - IndexedDB kann durch Browser- oder Tenantvorgaben eingeschränkt werden.
 - Tenant- und Browserbedingungen können in anderen Zielumgebungen abweichen. Die Übertragbarkeit wird deshalb bei jedem Rollout geprüft.
+- Ein nicht konfigurierter Mirrorpfad macht den SharePoint-Mirror in der betreffenden WebPart-Instanz absichtlich unverfügbar.
+- Gastzugriffe sind weder nachgewiesen noch freigegeben und dürfen nicht aus dem erfolgreichen internen Tenanttest abgeleitet werden.
 - Neun moderate Auditbefunde in der Buildtoolchain bleiben bis zu einem kompatiblen Microsoft-Update beobachtet. Die produktiven Abhängigkeiten melden null bekannte Schwachstellen.
 
 ### Folgearbeiten und Rückabwicklung
 
 - Bei blockiertem GitHub-Abruf wird der SharePoint-Mirror bereits im Pilot primärer Provider.
 - Der Tenant-App-Katalog und die lokale Installation auf der Zielsite werden in der Deploymentanleitung als Voraussetzungen dokumentiert.
+- Der produktive Teams-Mirrorpfad wird erst nach Festlegung des tenantinternen Mirrorstandorts konfiguriert und in Teams separat geprüft.
+- Ein allfälliger Gastbetrieb erhält vor seiner Aktivierung ein eigenes Arbeitspaket mit Sicherheits-, Berechtigungs- und Laufzeittests.
 - Falls dasselbe WebPart nicht stabil in beiden Hosts läuft, wird Option 3 bewertet. Zwei vollständige Produktcodebasen werden nicht eingeführt.
 - Eine Ablösung erfolgt mit einer neuen DEC-ID und gegenseitigen Verweisen in `ersetzt` und `ersetzt_durch`.
 
@@ -100,4 +111,4 @@ Die reale Laufzeitprüfung bestätigt CORS für den gepinnten GitHub-Abruf, norm
 
 ## Verantwortlichkeit
 
-Der Entscheidungsentwurf wurde mit Codex auf Basis der vollständigen Spike-Evidenz vorbereitet. David Steimer trifft den Architekturentscheid. Codex übernimmt keine formelle Freigabe- oder Haftungsverantwortung.
+Der Entscheid wurde mit Codex auf Basis der vollständigen Spike-Evidenz vorbereitet und von David Steimer bestätigt. Codex übernimmt keine formelle Freigabe- oder Haftungsverantwortung.

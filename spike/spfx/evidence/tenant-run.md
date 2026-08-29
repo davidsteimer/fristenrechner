@@ -54,6 +54,14 @@ Die vollständigen Bildschirmbelege wurden lokal im gitignorierten QA-Verzeichni
 8. Deutsch und Französisch wurden vollständig gerendert.
 9. Nach einem erneuten Laden stellte die Komponente den letzten gültigen Stand aus IndexedDB wieder her.
 
+Der SharePoint-Mirrorpfad blieb in dieser konkreten Teams-Registerkarte absichtlich leer. WebPart-Eigenschaften werden je Instanz gespeichert und nicht von der SharePoint-Testseite übernommen. Der reale Mirrornachweis erfolgte auf der SharePoint-Testsite. Für einen späteren Mirrorbetrieb in Teams muss der Release auf der Teamwebsite bereitgestellt oder der Provider für einen ausdrücklich getesteten tenantinternen Cross-Site-Abruf erweitert werden.
+
+## Externe und Gastzugriffe
+
+Externe und Gastzugriffe wurden absichtlich nicht aktiviert oder geprüft. AP7 verlangte ein internes Testkonto mit normalen Leserechten auf Site und Mirror. Der Test umfasste kein Extranet- oder Gastbetriebsszenario.
+
+Aus dem erfolgreichen internen Tenantlauf folgt deshalb keine Freigabe für Gastkonten. Ein allfälliger Gastbetrieb benötigt vor seiner Aktivierung einen eigenen Nachweis für SharePoint- und Teams-Berechtigungen, App-Richtlinien, Datenfreigabe und Mirrorzugriff.
+
 ## Berechtigungen
 
 | Prüfung | Ergebnis |
