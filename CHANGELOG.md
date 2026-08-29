@@ -40,6 +40,10 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - GitHub- und SharePoint-Mirrorprovider mit vollständiger Schema-, Prüfsummen-, Referenz- und Abdeckungsvalidierung
 - Atomare IndexedDB-Aktivierung, lokaler Fallback und sechs automatisierte positive und negative Spike-Tests
 - Reproduzierbarer Node-22-Build, geprüftes `.sppkg`, Paketinventar, lokaler Zwischenbericht und vorgeschlagener Entscheid DEC-2026-013
+- Tenant-App-Katalog, dedizierte SharePoint-Testsite und tenantbereinigter Laufzeitnachweis für den SPFx-Spike
+- Erfolgreiche Ausführung desselben Spike-Pakets in SharePoint Online und als Teams-Kanalregisterkarte
+- Reale Validierung des byteidentischen AP5-Release über GitHub und einen SharePoint-Mirror
+- Vollständiges Testprotokoll T01 bis T14 und technischer Ergebnisbericht mit Go-Empfehlung
 
 ### Changed
 
@@ -52,6 +56,7 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Projektstatus nach technischer Fertigstellung von AP6 auf fachliche Prüfung aktualisiert
 - AP6 nach fachlicher Prüfung der Falltabelle abgenommen und Referenzerwartungen auf `approved` gesetzt
 - AP7 nach Prüfung des ausführungsbereiten SPFx-Machbarkeitsspikes abgenommen
-- `SPK-SPFX-01` gestartet und lokale Nachweise abgeschlossen, Tenantprüfungen weiterhin offen
+- `SPK-SPFX-01` technisch abgeschlossen, alle 14 Prüfungen bestanden und Zeitbox deutlich unterschritten
+- Technischen SharePoint-Paketnamen nach realer App-Katalog-Validierung auf eine `NameDefinition`-konforme Form bereinigt
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

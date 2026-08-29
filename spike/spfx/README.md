@@ -38,6 +38,14 @@ Die WebPart-Eigenschaften enthalten:
 
 Der Mirrorpfad bezeichnet den serverrelativen Bibliotheksordner, in dem `manifest.json` und die im Manifest genannten Unterordner liegen. Der Abruf erfolgt mit `SPHttpClient` im Benutzerkontext. Das Paket beantragt keine Graph- oder Entra-API-Berechtigungen.
 
+## Tenantnachweis
+
+Das Paket wurde am 29. August 2026 in einem nicht produktiven M365-Tenant über einen Tenant-App-Katalog aktiviert. Dasselbe WebPart lief auf einer modernen SharePoint-Seite und als Teams-Kanalregisterkarte. Der gepinnte GitHub-Provider und ein byteidentischer SharePoint-Mirror aktivierten denselben vollständig validierten AP5-Datenrelease.
+
+Der öffentliche, tenantbereinigte Nachweis steht in [`evidence/tenant-run.md`](evidence/tenant-run.md). Interne URLs, IDs und Screenshots bleiben ausserhalb des öffentlichen Repository.
+
+Für die reale Teams-Konfiguration musste die App zusätzlich auf der zum Team gehörenden SharePoint-Website installiert werden. Ein Tenant-App-Katalog macht die App verfügbar, ersetzt diese lokale Site-Installation aber nicht.
+
 ## Lizenz
 
 Der Programmcode steht unter AGPL-3.0-only. Die übrigen Inhalte des Hauptprojekts behalten ihre jeweils ausgewiesene Lizenz.
