@@ -15,9 +15,9 @@ Die Kandidaten `0.1.0.0` und `0.1.0.1` sind abgelöst. `0.1.0.0` lokalisierte di
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 | Version | `0.1.0.2` |
 | Dateigrösse | 152'144 Bytes |
-| SHA-256 | `19ba114148c496612dbd117ff08d66366288386b8be7653f19e45bbeb586cd07` |
+| SHA-256 | `29cafe3a648e5302edec960ef1bace7905e054cf2e8f4015cba82460b226eff0` |
 
-Die Prüfsumme ist unmittelbar vor dem Upload erneut zu vergleichen.
+Der Installationskandidat wurde mit Node.js `22.23.2` gebaut. Die Prüfsumme ist unmittelbar vor dem Upload erneut zu vergleichen.
 
 ## Voraussetzungen
 

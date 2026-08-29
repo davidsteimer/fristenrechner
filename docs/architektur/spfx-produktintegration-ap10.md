@@ -120,8 +120,10 @@ Externe und Gastzugriffe bleiben ausserhalb von AP10. Aus einer erfolgreichen in
 Das korrigierte Paket ist 152'144 Bytes gross. Seine SHA-256-Prüfsumme lautet:
 
 ```text
-19ba114148c496612dbd117ff08d66366288386b8be7653f19e45bbeb586cd07
+29cafe3a648e5302edec960ef1bace7905e054cf2e8f4015cba82460b226eff0
 ```
+
+Der finale Installationskandidat wurde mit der vorgesehenen Toolchain unter Node.js `22.23.2` gebaut. Der zuvor unter der lokalen Hilfslaufzeit Node.js 24 erzeugte Archivstand wurde nicht zur Tenantinstallation freigegeben und durch den vorliegenden Node-22-Build ersetzt.
 
 ## 6. Tenantprüfung
 
