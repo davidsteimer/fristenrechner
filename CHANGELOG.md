@@ -36,6 +36,10 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Erwarteter Negativdatensatz mit fehlender Fristdauer
 - Unabhängiger AP6-Validator mit vollständiger Nachrechnung gegen den freigegebenen AP5-Datenrelease und vier semantischen Negativtests
 - Ausführungsplan für den SPFx-Machbarkeitsspike mit Minimalprototyp, 14 Prüfungen, Tenantvoraussetzungen und 4,5-Tage-Zeitbox
+- SPFx-1.23.2-Minimalprototyp mit gemeinsamer SharePoint- und Teams-Component-ID, Fluent UI React v8 sowie Deutsch und Französisch
+- GitHub- und SharePoint-Mirrorprovider mit vollständiger Schema-, Prüfsummen-, Referenz- und Abdeckungsvalidierung
+- Atomare IndexedDB-Aktivierung, lokaler Fallback und sechs automatisierte positive und negative Spike-Tests
+- Reproduzierbarer Node-22-Build, geprüftes `.sppkg`, Paketinventar, lokaler Zwischenbericht und vorgeschlagener Entscheid DEC-2026-013
 
 ### Changed
 
@@ -48,5 +52,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Projektstatus nach technischer Fertigstellung von AP6 auf fachliche Prüfung aktualisiert
 - AP6 nach fachlicher Prüfung der Falltabelle abgenommen und Referenzerwartungen auf `approved` gesetzt
 - AP7 nach Prüfung des ausführungsbereiten SPFx-Machbarkeitsspikes abgenommen
+- `SPK-SPFX-01` gestartet und lokale Nachweise abgeschlossen, Tenantprüfungen weiterhin offen
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

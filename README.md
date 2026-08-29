@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP7 ist abgenommen. Der SPFx-Machbarkeitsspike für SharePoint und Teams ist mit Minimalprototyp, Testprotokoll, Tenantvoraussetzungen und einer Zeitbox von 4,5 Nettoarbeitstagen ausführungsbereit geplant. Das Folgepaket `SPK-SPFX-01` ist vorbereitet, aber noch nicht gestartet. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung.
+> **Projektstatus:** `SPK-SPFX-01` ist als einziges wesentliches Arbeitspaket in Durchführung. Der lokale SPFx-Minimalprototyp baut reproduzierbar, besteht sechs automatisierte Tests und liegt als geprüftes `.sppkg` vor. Die Laufzeitnachweise in SharePoint Online und Microsoft Teams sowie der reale SharePoint-Mirror sind noch offen. Es besteht noch keine produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -47,11 +47,12 @@ Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet
 | `data/` | Versionierte Rechtsprofile, Feiertage und Fristenstillstände |
 | `schemas/` | Maschinenlesbare Schemata für Regeln, Kalender und Releases |
 | `tests/` | Unit Tests, Golden Cases, Datenvalidierung und UI-Tests |
+| `spike/spfx/` | Zeitlich begrenzter SPFx-Minimalprototyp mit Build-, Paket- und Providernachweisen |
 | `docs/` | Architektur, Betrieb, Fachpflege und Entscheide |
 | `outputs/` | Freigegebene Projektgrundlagen in Word und PDF |
 | `LICENSES/` | Lizenztexte und Abgrenzung der lizenzierten Werktypen |
 
-Die technische Projektstruktur wird nach dem im [AP7-Ausführungsplan](docs/architektur/spfx-machbarkeitsspike-ap7.md) abgegrenzten SPFx-Spike konkretisiert. Der dauerhafte Quellcodebaum wird erst nach einem positiven Machbarkeitsentscheid übernommen.
+Die technische Projektstruktur wird mit dem im [AP7-Ausführungsplan](docs/architektur/spfx-machbarkeitsspike-ap7.md) abgegrenzten SPFx-Spike geprüft. Der [Zwischenbericht](docs/architektur/spfx-spike-ergebnisbericht.md) trennt bestandene lokale Nachweise von offenen Tenantprüfungen. Der dauerhafte Quellcodebaum wird erst nach einem positiven Machbarkeitsentscheid übernommen.
 
 ## Projektführung
 

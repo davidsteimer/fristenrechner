@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "fristenrechner-spike-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/fristenrechnerSpike/FristenrechnerSpikeWebPart.js",
+          "manifest": "./src/webparts/fristenrechnerSpike/FristenrechnerSpikeWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FristenrechnerSpikeWebPartStrings": "lib/webparts/fristenrechnerSpike/loc/{locale}.js"
+  }
+}

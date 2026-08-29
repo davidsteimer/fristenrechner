@@ -36,6 +36,7 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | ID | Klasse | Status | Kurzentscheid | Ersetzt durch |
 | --- | --- | --- | --- | --- |
 | [DEC-2026-012](DEC-2026-012-providerneutrales-datenrelease-format.md) | B | beschlossen | Strikte JSON-Schemata und manifestbasierte, providerneutrale Datenreleases | – |
+| [DEC-2026-013](DEC-2026-013-spfx-zielarchitektur.md) | B | vorgeschlagen | Gemeinsames SPFx-WebPart für SharePoint und Teams, vorbehaltlich der Tenanttests | – |
 
 ## Quellen des Startbestands
 
