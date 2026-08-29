@@ -47,6 +47,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Abnahme des AP5-Referenzrelease und Beschluss von DEC-2026-012 dokumentiert, ohne den veröffentlichten Candidate rückwirkend zu verändern
 - Projektstatus nach technischer Fertigstellung von AP6 auf fachliche Prüfung aktualisiert
 - AP6 nach fachlicher Prüfung der Falltabelle abgenommen und Referenzerwartungen auf `approved` gesetzt
-- AP7 als ausführungsbereiter SPFx-Machbarkeitsspike dokumentiert und zur Prüfung gestellt
+- AP7 nach Prüfung des ausführungsbereiten SPFx-Machbarkeitsspikes abgenommen
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

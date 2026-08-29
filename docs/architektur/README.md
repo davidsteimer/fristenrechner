@@ -8,4 +8,4 @@ Dieses Verzeichnis dokumentiert stabile technische Verträge, Schnittstellen und
 - [Ausführungsplan SPFx-Machbarkeitsspike](spfx-machbarkeitsspike-ap7.md): Minimalprototyp, Testmatrix, Tenantvoraussetzungen, Zeitbox sowie Go- und Stop-Kriterien
 - [Testprotokoll SPFx-Machbarkeitsspike](spfx-spike-testprotokoll.md): ausfüllbare Evidenz- und Entscheidungsvorlage für das Folgepaket
 
-AP7 plant den technischen Machbarkeitsspike ausführungsbereit. Das AP5-Datenformat legt weder das endgültige SPFx-Projektgerüst noch die konkrete Implementierung des Rechenkerns fest. Diese Entscheide folgen gestützt auf die Evidenz des Spikes.
+AP7 hat den technischen Machbarkeitsspike ausführungsbereit geplant und ist abgenommen. Das AP5-Datenformat legt weder das endgültige SPFx-Projektgerüst noch die konkrete Implementierung des Rechenkerns fest. Diese Entscheide folgen gestützt auf die Evidenz des Spikes.

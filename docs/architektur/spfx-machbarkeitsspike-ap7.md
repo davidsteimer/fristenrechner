@@ -2,10 +2,12 @@
 
 | Merkmal | Festlegung |
 | --- | --- |
-| Dokumentstatus | ausführungsbereit |
+| Dokumentstatus | abgenommen |
 | Planungsstand | 29. August 2026 |
 | Verantwortlich | David Steimer |
 | Ausarbeitung | David Steimer mit Codex |
+| Abgenommen am | 29. August 2026 |
+| Abgenommen durch | David Steimer |
 | Folgepaket | `SPK-SPFX-01` |
 | Maximale Dauer | 4,5 Nettoarbeitstage |
 | Entscheidungsbezug | DEC-2026-003, DEC-2026-008 und DEC-2026-012 |
