@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { translate, translateReason, type Locale } from '../../src/ui/i18n';
+import { translate, translateBlockReason, translateReason, type Locale } from '../../src/ui/i18n';
 import { loadCalculationData } from '../core/fixtures';
 
 const data = loadCalculationData();
@@ -48,6 +48,15 @@ const coreReasons = [
 describe('AP9-Sprachkatalog', () => {
   for (const locale of ['de', 'fr'] as const satisfies readonly Locale[]) {
     it(`${locale} deckt alle datengetriebenen Selektoren und Warnungen ab`, () => {
+      const expectedAuthorityLabel = locale === 'de' ? 'Zuständige Behörde' : 'Autorité compétente';
+      const expectedFederalAuthority = locale === 'de' ? 'Bundesbehörde' : 'Autorité fédérale';
+      const expectedBernAuthority = locale === 'de' ? 'Behörde des Kantons Bern' : 'Autorité du canton de Berne';
+      assert.equal(translate(locale, 'form.authority'), expectedAuthorityLabel);
+      assert.equal(translate(locale, 'authority.CH'), expectedFederalAuthority);
+      assert.equal(translate(locale, 'authority.BE'), expectedBernAuthority);
+      assert.notEqual(translate(locale, 'dataStatus.label'), 'dataStatus.label');
+      assert.notEqual(translate(locale, 'dataStatus.coverage'), 'dataStatus.coverage');
+
       data.profiles.forEach(profile => {
         profile.selectors.forEach(selector => {
           assert.notEqual(translate(locale, `selector.${selector.selectorId}`), `selector.${selector.selectorId}`);
@@ -63,6 +72,16 @@ describe('AP9-Sprachkatalog', () => {
 
     it(`${locale} deckt alle Sperr- und Rechenspurgründe des MVP ab`, () => {
       coreReasons.forEach(reason => assert.notEqual(translateReason(locale, reason), reason));
+      [
+        'deliveryFictionApplicabilityUnconfirmed',
+        'unknownSpecialLaw',
+        'knownSpecialLawOverride',
+        'specialLawCheckUnconfirmed',
+        'holidayAnchorConflictUnresolved',
+        'requiredSelectorMissing',
+        'unknownSelectorValue',
+        'dataCoverageExceeded'
+      ].forEach(reason => assert.notEqual(translateBlockReason(locale, reason), translateReason(locale, reason)));
     });
   }
 });

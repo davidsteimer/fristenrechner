@@ -11,6 +11,7 @@ import { describe, it } from 'node:test';
 const execFileAsync = promisify(execFile);
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const sourcePath = resolve(repositoryRoot, 'preview/index.html');
+const componentPath = resolve(repositoryRoot, 'src/ui/FristenrechnerApp.tsx');
 const outputDirectory = resolve(repositoryRoot, '.work/ui-preview');
 
 describe('AP9-Browservorschau', () => {
@@ -36,5 +37,19 @@ describe('AP9-Browservorschau', () => {
     assert.equal(outputHtml, await readFile(sourcePath, 'utf8'));
     assert.ok(javascript.size > 0);
     assert.ok(stylesheet.size > 0);
+  });
+
+  it('ordnet Hauptaktionen, Resultat, Automatik und Datenstand nach dem Kanzlei-Workflow', async () => {
+    const source = await readFile(componentPath, 'utf8');
+    const actions = source.indexOf('className="fr-actions"');
+    const result = source.indexOf('className="fr-result-region"');
+    const automatic = source.indexOf('className="fr-automatic"');
+    const dataStatus = source.indexOf('className="fr-data-status"');
+
+    assert.ok(actions > 0);
+    assert.ok(result > actions);
+    assert.ok(automatic > result);
+    assert.ok(dataStatus > automatic);
+    assert.doesNotMatch(source, /form\.authority\.help|form\.profile\.filtered/);
   });
 });

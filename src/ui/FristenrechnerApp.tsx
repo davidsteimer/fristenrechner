@@ -22,7 +22,7 @@ import {
   type StorageLike,
   type StoredDefaults
 } from './defaults';
-import { translate, translateReason, type Locale } from './i18n';
+import { translate, translateBlockReason, translateReason, type Locale } from './i18n';
 import {
   automaticCalendarId,
   authorityOptions,
@@ -196,7 +196,7 @@ function ResultPanel({ result, locale }: {
       {result.blockReasonKeys.length > 0 && (
         <div className="fr-result__messages">
           <h3>{translate(locale, 'result.blocks')}</h3>
-          <ul>{result.blockReasonKeys.map(key => <li key={key}>{translateReason(locale, key)}</li>)}</ul>
+          <ul>{result.blockReasonKeys.map(key => <li key={key}>{translateBlockReason(locale, key)}</li>)}</ul>
         </div>
       )}
       {result.warningKeys.length > 0 && (
@@ -210,6 +210,25 @@ function ResultPanel({ result, locale }: {
         <summary>{translate(locale, 'trace.heading')}</summary>
         <ol>{result.trace.map(step => <Trace key={step.sequence} step={step} locale={locale} />)}</ol>
       </details>
+    </section>
+  );
+}
+
+function ValidationPanel({ validation, locale }: {
+  readonly validation: UiValidation;
+  readonly locale: Locale;
+}): React.ReactElement {
+  return (
+    <section className="fr-result fr-result--validation" aria-labelledby="fr-validation-heading">
+      <h2 id="fr-validation-heading">{translate(locale, 'result.heading')}</h2>
+      <MessageBar messageBarType={MessageBarType.error}>
+        {translate(locale, 'validation.blocked')}
+      </MessageBar>
+      <div className="fr-result__messages">
+        <ul>
+          {Object.entries(validation).map(([field, message]) => <li key={field}>{message}</li>)}
+        </ul>
+      </div>
     </section>
   );
 }
@@ -240,6 +259,7 @@ export function FristenrechnerApp({
   const additionalAnchor = form.additionalHolidayAnchor.trim().toUpperCase();
   const hasAnchorConflict = /^(CH|[A-Z]{2})$/.test(additionalAnchor)
     && additionalAnchor !== data.calendars.get(form.calendarId)?.jurisdiction.code;
+  const hasValidationErrors = Object.keys(validation).length > 0;
 
   const mutateForm = (change: Partial<CalculatorFormState>): void => {
     setForm(current => ({ ...current, ...change }));
@@ -434,9 +454,6 @@ export function FristenrechnerApp({
               onChange={onProfileChange}
             />
           </div>
-          <p className="fr-help fr-help--authority">
-            {translate(locale, 'form.authority.help')} {translate(locale, 'form.profile.filtered')}
-          </p>
 
           {profile && profile.selectors.length > 0 && (
             <div className="fr-form__grid fr-form__grid--selectors">
@@ -471,6 +488,41 @@ export function FristenrechnerApp({
           )}
         </section>
 
+        <div className="fr-actions">
+          <PrimaryButton type="submit">{translate(locale, 'form.calculate')}</PrimaryButton>
+          <DefaultButton
+            type="button"
+            onClick={() => {
+              setResult(undefined);
+              setValidation({});
+            }}
+          >
+            {translate(locale, 'form.clearResult')}
+          </DefaultButton>
+          <DefaultButton type="button" onClick={onSaveDefaults}>
+            {translate(locale, 'form.saveDefaults')}
+          </DefaultButton>
+          <DefaultButton type="button" onClick={onResetDefaults}>
+            {translate(locale, 'form.resetDefaults')}
+          </DefaultButton>
+        </div>
+
+        {notification && (
+          <MessageBar
+            className="fr-notification"
+            messageBarType={notification.type}
+            onDismiss={() => setNotification(undefined)}
+          >
+            {notification.text}
+          </MessageBar>
+        )}
+
+        <div className="fr-result-region" aria-live="polite">
+          {hasValidationErrors
+            ? <ValidationPanel validation={validation} locale={locale} />
+            : result && <ResultPanel result={result} locale={locale} />}
+        </div>
+
         <section className="fr-automatic" aria-labelledby="fr-automatic-heading">
           <h2 id="fr-automatic-heading">{translate(locale, 'automatic.heading')}</h2>
           <dl className="fr-automatic__grid">
@@ -487,10 +539,6 @@ export function FristenrechnerApp({
             <div>
               <dt>{translate(locale, 'automatic.suspension')}</dt>
               <dd><strong>{translate(locale, `automatic.suspension.${suspension}`)}</strong></dd>
-            </div>
-            <div>
-              <dt>{translate(locale, 'automatic.dataRelease')}</dt>
-              <dd><code>{data.releaseId}</code><small>{data.coverage.from} – {data.coverage.to}</small></dd>
             </div>
           </dl>
 
@@ -560,34 +608,15 @@ export function FristenrechnerApp({
             )}
           </details>
         </section>
-
-        {notification && (
-          <MessageBar
-            className="fr-notification"
-            messageBarType={notification.type}
-            onDismiss={() => setNotification(undefined)}
-          >
-            {notification.text}
-          </MessageBar>
-        )}
-
-        <div className="fr-actions">
-          <PrimaryButton type="submit">{translate(locale, 'form.calculate')}</PrimaryButton>
-          <DefaultButton type="button" onClick={() => setResult(undefined)}>
-            {translate(locale, 'form.clearResult')}
-          </DefaultButton>
-          <DefaultButton type="button" onClick={onSaveDefaults}>
-            {translate(locale, 'form.saveDefaults')}
-          </DefaultButton>
-          <DefaultButton type="button" onClick={onResetDefaults}>
-            {translate(locale, 'form.resetDefaults')}
-          </DefaultButton>
-        </div>
       </form>
 
-      <div className="fr-result-region" aria-live="polite">
-        {result && <ResultPanel result={result} locale={locale} />}
-      </div>
+      <footer className="fr-data-status">
+        <span>{translate(locale, 'dataStatus.label')}: <code>{data.releaseId}</code></span>
+        <span aria-hidden="true">·</span>
+        <span>
+          {translate(locale, 'dataStatus.coverage')}: {formatIsoDate(data.coverage.from, locale)} – {formatIsoDate(data.coverage.to, locale)}
+        </span>
+      </footer>
     </main>
   );
 }
