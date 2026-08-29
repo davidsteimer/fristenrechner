@@ -11,7 +11,7 @@
 | Rechenkern | AP8 v0.1 |
 | Oberfläche | AP9 v0.1 |
 | Zielarchitektur | DEC-2026-013 |
-| Paketversion | `0.1.0.1` |
+| Paketversion | `0.1.0.2` |
 
 ## 1. Ergebnis des lokalen Integrationsschritts
 
@@ -115,30 +115,32 @@ Externe und Gastzugriffe bleiben ausserhalb von AP10. Aus einer erfolgreichen in
 | L12 | SharePoint- und Teams-Hosts im Manifest | bestanden |
 | L13 | zusätzliche API-Berechtigungen | keine vorhanden |
 | L14 | bestehende AP9-Browservorschau nach CSS-Hosttrennung | bestanden |
-| L15 | unveränderte globale Produktselektoren im SPFx-Bundle | bestanden |
+| L15 | finale Bundle-CSS ohne lokalisierte Klassennamen und ohne wörtlichen `:global`-Marker | bestanden |
 
-Das korrigierte Paket ist 152'184 Bytes gross. Seine SHA-256-Prüfsumme lautet:
+Das korrigierte Paket ist 152'144 Bytes gross. Seine SHA-256-Prüfsumme lautet:
 
 ```text
-d76288ceedd13e25ec1283a0b1659e80ded549e0d0dca51edd0013eab4816d0a
+19ba114148c496612dbd117ff08d66366288386b8be7653f19e45bbeb586cd07
 ```
 
 ## 6. Tenantprüfung
 
 Der Kandidat `0.1.0.0` wurde am 29. August 2026 im steimer.ch-Tenant-App-Katalog aktiviert und auf der dedizierten Testsite installiert. Die Datenvalidierung, die Referenzberechnung, Deutsch und Französisch, lokale Defaults sowie der fachliche Sperrfall bestanden. Die responsive Prüfung T08 deckte dagegen einen technischen Verpackungsfehler auf. SPFx hatte die Klassenselektoren der importierten Produkt-CSS lokalisiert, während die React-Komponente unveränderte `fr-*`-Klassennamen ausgab. Dadurch blieb die Berechnung funktionsfähig, das vorgesehene Produktlayout wurde im Host aber nicht angewendet.
 
-Der korrigierte Kandidat `0.1.0.1` umschliesst die synchronisierte Produkt-CSS ausdrücklich mit Sass `:global`. Eine zusätzliche Integrationsprüfung kontrolliert, dass das finale Bundle den unveränderten Selektor `.fr-actions` enthält und keine lokalisierte Variante erzeugt. Vor der AP10-Abnahme muss `0.1.0.1` im Tenant installiert und die SharePoint-Prüfung wiederholt werden. Erst danach folgen die Teams-Tests.
+Der Kandidat `0.1.0.1` umschloss die synchronisierte Produkt-CSS zwar ausdrücklich mit Sass `:global`, verwendete dafür aber eine gewöhnliche SCSS-Datei. Der SPFx-Build behandelte den Marker deshalb nicht als CSS-Modules-Anweisung und lieferte Regeln wie `:global .fr-actions` aus. Die Browserprüfung bestätigte, dass das Bundle `fristenrechner-web-part_6d505c6b1ca21aa813da.js` geladen wurde und der freigegebene Datenrelease aktiv war. Die Layoutregeln blieben dennoch unwirksam. T08 bestand deshalb auch mit `0.1.0.1` nicht.
+
+Der neue Kandidat `0.1.0.2` erzeugt eine echte `styles.module.scss`. Der CSS-Modules-Schritt entfernt den `:global`-Marker und erhält die fachlich verwendeten `fr-*`-Klassennamen. Ein verpflichtendes Nachbuild-Audit liest das finale, minifizierte Bundle und verlangt eine direkt anwendbare `.fr-actions`-Regel. Es weist sowohl wörtliche `:global .fr-actions`-Selektoren als auch lokalisierte `.fr-actions_*`-Klassen zurück. Vor der AP10-Abnahme muss `0.1.0.2` im Tenant installiert und die SharePoint-Prüfung wiederholt werden. Erst danach folgen die Teams-Tests.
 
 | ID | Prüfung | Status |
 | --- | --- | --- |
-| T01 | Paket im bestehenden Tenant-App-Katalog aktualisieren oder ergänzen | `0.1.0.0` bestanden, Aktualisierung auf `0.1.0.1` ausstehend |
-| T02 | App auf der dedizierten Fristenrechner-Testsite installieren | `0.1.0.0` bestanden, Aktualisierung auf `0.1.0.1` ausstehend |
-| T03 | Rechner auf moderner SharePoint-Seite laden und neu laden | mit `0.1.0.0` bestanden, Wiederholungsprüfung ausstehend |
-| T04 | freigegebenen GitHub-Release automatisch validieren | mit `0.1.0.0` bestanden, Wiederholungsprüfung ausstehend |
-| T05 | Kernfall StPO mit Fristende 28.09.2026 berechnen | mit `0.1.0.0` bestanden, Wiederholungsprüfung ausstehend |
-| T06 | Deutsch, Französisch und lokale Defaults prüfen | mit `0.1.0.0` bestanden, Testzustand zurückgesetzt, Wiederholungsprüfung ausstehend |
-| T07 | Sperrfall ohne scheinbares Fristende prüfen | mit `0.1.0.0` bestanden, Wiederholungsprüfung ausstehend |
-| T08 | responsive Darstellung und Tastaturbedienung prüfen | mit `0.1.0.0` nicht bestanden, Korrektur lokal nachgewiesen |
+| T01 | Paket im bestehenden Tenant-App-Katalog aktualisieren oder ergänzen | `0.1.0.1` bestanden, Aktualisierung auf `0.1.0.2` ausstehend |
+| T02 | App auf der dedizierten Fristenrechner-Testsite installieren | `0.1.0.1` bestanden, Aktualisierung auf `0.1.0.2` ausstehend |
+| T03 | Rechner auf moderner SharePoint-Seite laden und neu laden | mit `0.1.0.1` bestanden, Wiederholungsprüfung mit `0.1.0.2` ausstehend |
+| T04 | freigegebenen GitHub-Release automatisch validieren | mit `0.1.0.1` bestanden, Wiederholungsprüfung mit `0.1.0.2` ausstehend |
+| T05 | Kernfall StPO mit Fristende 28.09.2026 berechnen | mit `0.1.0.0` bestanden, nach dem zweiten CSS-Befund nicht erneut ausgeführt |
+| T06 | Deutsch, Französisch und lokale Defaults prüfen | mit `0.1.0.0` bestanden, Testzustand zurückgesetzt, nach dem zweiten CSS-Befund nicht erneut ausgeführt |
+| T07 | Sperrfall ohne scheinbares Fristende prüfen | mit `0.1.0.0` bestanden, nach dem zweiten CSS-Befund nicht erneut ausgeführt |
+| T08 | responsive Darstellung und Tastaturbedienung prüfen | mit `0.1.0.0` und `0.1.0.1` nicht bestanden, Korrektur `0.1.0.2` lokal nachgewiesen |
 | T09 | App auf der zum Team gehörenden SharePoint-Website installieren | offen |
 | T10 | dieselbe Component-ID als Teams-Kanalregisterkarte laden | offen |
 | T11 | Browserkonsole in beiden Hosts prüfen | offen |
@@ -162,4 +164,4 @@ Der öffentliche Datenrelease, der Spike und die hostneutralen Quellen bleiben d
 
 Die AP9-Oberfläche behält ihre semantischen Beschriftungen, Tastaturreihenfolge, sichtbaren Statusmeldungen und mobilen Layoutregeln. Die globalen Vorschau-Regeln für `html` und `body` wurden aus der Produkt-CSS entfernt und in eine reine Vorschau-CSS verschoben. Damit greift das WebPart nicht in die SharePoint- oder Teams-Seite ausserhalb seiner eigenen `fr-*`-Klassen ein.
 
-Die technische Prüfung orientiert sich weiterhin an WCAG 2.1 AA gemäss eCH-0059. Die erste responsive Prüfung im echten SharePoint-Host hat den CSS-Verpackungsfehler aufgedeckt und damit ihren Zweck erfüllt. Die formelle Konformitätsbewertung bleibt bis zur Wiederholungsprüfung mit `0.1.0.1` und zum Lauf im Teams-Host ausstehend.
+Die technische Prüfung orientiert sich weiterhin an WCAG 2.1 AA gemäss eCH-0059. Die responsive Prüfung im echten SharePoint-Host hat zwei aufeinanderfolgende CSS-Verpackungsfehler aufgedeckt und damit ihren Zweck erfüllt. Die formelle Konformitätsbewertung bleibt bis zur Wiederholungsprüfung mit `0.1.0.2` und zum Lauf im Teams-Host ausstehend.

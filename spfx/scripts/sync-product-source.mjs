@@ -27,7 +27,7 @@ await cp(resolve(sourceRoot, 'ui'), resolve(targetRoot, 'ui'), {
 
 const productStyles = await readFile(resolve(targetRoot, 'ui', 'styles.css'), 'utf8');
 await writeFile(
-  resolve(targetRoot, 'ui', 'styles.global.scss'),
+  resolve(targetRoot, 'ui', 'styles.module.scss'),
   `:global {\n${productStyles}\n}\n`,
   'utf8'
 );

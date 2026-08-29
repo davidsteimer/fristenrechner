@@ -7,7 +7,7 @@ import { ReleaseService } from '../../../core/ReleaseService';
 import type { IReleaseActivationResult, IValidatedRelease } from '../../../core/types';
 import { createCalculationData, type CalculationData } from '../../../product/core';
 import { FristenrechnerApp } from '../../../product/ui';
-import '../../../product/ui/styles.global.scss';
+import '../../../product/ui/styles.module.scss';
 import styles from './Fristenrechner.module.scss';
 import type { IFristenrechnerProps } from './IFristenrechnerProps';
 

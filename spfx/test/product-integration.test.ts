@@ -101,8 +101,8 @@ test('synchronisiert nur die produktiven Kern- und UI-Quellen', async () => {
 
 test('bindet die Produkt-CSS im SPFx-Host ohne lokalisierte fr-Klassennamen ein', async () => {
   const productCss = await readFile(resolve(PROJECT_ROOT, 'src/product/ui/styles.css'), 'utf8');
-  const globalScss = await readFile(resolve(PROJECT_ROOT, 'src/product/ui/styles.global.scss'), 'utf8');
+  const moduleScss = await readFile(resolve(PROJECT_ROOT, 'src/product/ui/styles.module.scss'), 'utf8');
 
-  assert.equal(globalScss, `:global {\n${productCss}\n}\n`);
-  assert.match(globalScss, /\.fr-actions\s*>\s*\*/);
+  assert.equal(moduleScss, `:global {\n${productCss}\n}\n`);
+  assert.match(moduleScss, /\.fr-actions\s*>\s*\*/);
 });

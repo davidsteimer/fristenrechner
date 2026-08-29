@@ -2,9 +2,9 @@
 
 ## Zweck und Geltungsbereich
 
-Diese Anleitung beschreibt die Installation des korrigierten AP10-Kandidaten `0.1.0.1` im nicht produktiven steimer.ch-Testtenant. Sie erteilt keine produktive Freigabe und keine Gastfreigabe.
+Diese Anleitung beschreibt die Installation des korrigierten AP10-Kandidaten `0.1.0.2` im nicht produktiven steimer.ch-Testtenant. Sie erteilt keine produktive Freigabe und keine Gastfreigabe.
 
-Der Kandidat `0.1.0.0` ist abgelöst. Er wurde am 29. August 2026 im Tenant-App-Katalog aktiviert und auf der dedizierten Testsite installiert. Die fachlichen SharePoint-Prüfungen bestanden. Die responsive Prüfung zeigte jedoch, dass SPFx die Produkt-CSS-Klassen beim Build lokalisiert hatte, während die React-Komponente unveränderte Klassennamen ausgab. Vor den weiteren Prüfungen ist deshalb zwingend auf `0.1.0.1` zu aktualisieren.
+Die Kandidaten `0.1.0.0` und `0.1.0.1` sind abgelöst. `0.1.0.0` lokalisierte die Produkt-CSS-Klassen, während die React-Komponente unveränderte Klassennamen ausgab. `0.1.0.1` wurde am 29. August 2026 im Tenant-App-Katalog aktiviert und auf der dedizierten Testsite aktualisiert. Diese Fassung lud das neue Bundle und den korrekten Datenrelease, liess den Sass-Marker `:global` aber wörtlich im ausgelieferten CSS stehen. Vor den weiteren Prüfungen ist deshalb zwingend auf `0.1.0.2` zu aktualisieren.
 
 ## Paketidentität
 
@@ -13,9 +13,9 @@ Der Kandidat `0.1.0.0` ist abgelöst. Er wurde am 29. August 2026 im Tenant-App-
 | Datei | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
-| Version | `0.1.0.1` |
-| Dateigrösse | 152'184 Bytes |
-| SHA-256 | `d76288ceedd13e25ec1283a0b1659e80ded549e0d0dca51edd0013eab4816d0a` |
+| Version | `0.1.0.2` |
+| Dateigrösse | 152'144 Bytes |
+| SHA-256 | `19ba114148c496612dbd117ff08d66366288386b8be7653f19e45bbeb586cd07` |
 
 Die Prüfsumme ist unmittelbar vor dem Upload erneut zu vergleichen.
 
@@ -33,7 +33,7 @@ Das Paket verlangt keine Microsoft-Graph- oder weitere Web-API-Zustimmung.
 
 ## SharePoint
 
-1. Paket im bestehenden App-Katalog hochladen und die installierte Fassung `0.1.0.0` ersetzen.
+1. Paket im bestehenden App-Katalog hochladen und die installierte Fassung `0.1.0.1` ersetzen.
 2. Paketdetails, Version und Solution-ID kontrollieren.
 3. Paket aktivieren, ohne eine API-Zustimmung zu erteilen.
 4. App auf der dedizierten Testsite aktualisieren.
