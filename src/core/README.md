@@ -1,5 +1,7 @@
 # Deterministischer Rechenkern
 
+> **Status:** Version 0.1 wurde am 29. August 2026 durch David Steimer fachlich und technisch abgenommen.
+
 Der Rechenkern aus AP8 berechnet Tagesfristen ausschliesslich aus vollständig validierten, providerneutralen Datenobjekten. Er kennt weder React noch SPFx, SharePoint, Teams, GitHub, Netzwerkzugriffe oder Browserpersistenz.
 
 ## Öffentliche Schnittstelle

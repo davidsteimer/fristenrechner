@@ -65,5 +65,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - DEC-2026-013 nach Prüfung des Tenant-Spikes beschlossen und SPFx als gemeinsame Zielarchitektur für SharePoint und Teams festgelegt
 - Teams-Mirror als bewusst unkonfiguriert sowie Gastzugriffe als bewusst gesperrt dokumentiert
 - Projektstatus nach technischer Umsetzung von AP8 auf Prüfung des Rechenkerns aktualisiert
+- AP8 mit dem hostneutralen TypeScript-Rechenkern v0.1 am 29. August 2026 fachlich und technisch abgenommen
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main
