@@ -21,7 +21,7 @@ Die Schemata definieren das providerneutrale AP5-Austauschformat sowie den sprac
 
 Ein veröffentlichtes Schema wird nicht stillschweigend semantisch umgedeutet. Inkompatible Änderungen benötigen eine neue Hauptversion und einen dokumentierten Migrationsentscheid. Einzelheiten stehen im [Datenrelease-Format](../docs/architektur/datenrelease-format.md) und im beschlossenen [DEC-2026-012](../docs/entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md).
 
-Das AP6-Schema gehört zum Testvertrag und verändert die Formatversion des AP5-Datenrelease nicht. Berechenbare Kandidatenfälle und fachlich offene Sperrfälle werden in getrennten Suites geführt.
+Das AP6-Schema gehört zum Testvertrag und verändert die Formatversion des AP5-Datenrelease nicht. Berechenbare Referenzfälle und fachlich offene Sperrfälle werden in getrennten Suites geführt. Der Status `approved` kennzeichnet die fachliche Abnahme durch David Steimer.
 
 ## Validierung
 

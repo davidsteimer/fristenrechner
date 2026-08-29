@@ -25,7 +25,7 @@ SCHEMA_FILES = (
     "golden-case-suite.schema.json",
 )
 SUITE_FILES = (
-    GOLDEN_DIRECTORY / "candidate" / "golden-cases.json",
+    GOLDEN_DIRECTORY / "approved" / "golden-cases.json",
     GOLDEN_DIRECTORY / "unresolved" / "open-cases.json",
 )
 INVALID_FILE = GOLDEN_DIRECTORY / "invalid" / "missing-deadline-days.json"
@@ -559,11 +559,12 @@ def validate_suite_semantics(
                 errors,
             )
 
-    if suite["suiteStatus"] == "candidate":
+    if suite["suiteStatus"] in {"candidate", "approved"}:
+        expectation_status = suite["suiteStatus"]
         for case in suite["cases"]:
-            if case["expectationStatus"] != "candidate" or case["expected"]["outcome"] != "calculated":
+            if case["expectationStatus"] != expectation_status or case["expected"]["outcome"] != "calculated":
                 errors.append(
-                    f"{suite['suiteId']}: Kandidatensuite enthält nicht berechenbaren Fall"
+                    f"{suite['suiteId']}: Referenzsuite enthält nicht berechenbaren oder falsch klassifizierten Fall"
                 )
     if suite["suiteStatus"] == "unresolved":
         for case in suite["cases"]:
@@ -573,22 +574,22 @@ def validate_suite_semantics(
                 )
 
 
-def validate_coverage(candidate_suite: dict[str, Any], errors: list[str]) -> None:
-    cases = candidate_suite["cases"]
+def validate_coverage(reference_suite: dict[str, Any], errors: list[str]) -> None:
+    cases = reference_suite["cases"]
     if len(cases) < 10:
-        errors.append("Kandidatensuite enthält weniger als zehn Golden Cases")
+        errors.append("Referenzsuite enthält weniger als zehn Golden Cases")
     profiles = {case["profileId"] for case in cases}
     missing_profiles = REQUIRED_PROFILES - profiles
     if missing_profiles:
-        errors.append(f"Kandidatensuite fehlt Profile {sorted(missing_profiles)}")
+        errors.append(f"Referenzsuite fehlt Profile {sorted(missing_profiles)}")
     tags = {tag for case in cases for tag in case["tags"]}
     missing_tags = REQUIRED_TAGS - tags
     if missing_tags:
-        errors.append(f"Kandidatensuite fehlt Mindestabdeckung {sorted(missing_tags)}")
+        errors.append(f"Referenzsuite fehlt Mindestabdeckung {sorted(missing_tags)}")
 
 
 def run_semantic_negative_tests(
-    candidate_suite: dict[str, Any],
+    reference_suite: dict[str, Any],
     unresolved_suite: dict[str, Any],
     manifest: dict[str, Any],
     profiles: dict[str, dict[str, Any]],
@@ -597,15 +598,15 @@ def run_semantic_negative_tests(
 ) -> list[str]:
     mutations: list[tuple[str, dict[str, Any]]] = []
 
-    wrong_result = copy.deepcopy(candidate_suite)
+    wrong_result = copy.deepcopy(reference_suite)
     wrong_result["cases"][0]["expected"]["finalEnd"] = "2026-09-03"
     mutations.append(("falsches Fristende", wrong_result))
 
-    unknown_source = copy.deepcopy(candidate_suite)
+    unknown_source = copy.deepcopy(reference_suite)
     unknown_source["cases"][0]["sourceRefs"][0]["sourceId"] = "SRC-UNKNOWN-999"
     mutations.append(("unbekannte Quelle", unknown_source))
 
-    duplicate_case = copy.deepcopy(candidate_suite)
+    duplicate_case = copy.deepcopy(reference_suite)
     duplicate_case["cases"][1]["caseId"] = duplicate_case["cases"][0]["caseId"]
     mutations.append(("doppelte Fall-ID", duplicate_case))
 
@@ -697,11 +698,11 @@ def main() -> int:
             periods,
         )
 
-        candidate_count = len(suites[0]["cases"])
+        reference_count = len(suites[0]["cases"])
         blocked_count = len(suites[1]["cases"])
         print(
             "VALID: "
-            f"candidateCases={candidate_count}, "
+            f"referenceCases={reference_count}, "
             f"blockedCases={blocked_count}, "
             f"profiles={len(REQUIRED_PROFILES)}, "
             f"dataRelease={manifest['releaseId']}"

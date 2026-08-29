@@ -31,6 +31,7 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Freigegebenes AP5-Referenzrelease `2026-08-29-ap5-approved.1` mit maschinenlesbaren Freigabemetadaten
 - JSON-Schema für sprachneutrale Golden-Case-Suites mit Quellen, Eingaben, Rechenspuren und Erwartungen
 - 15 synthetische, quellenbasierte AP6-Kandidatenfälle für alle fünf MVP-Rechtsprofile
+- Fachlich abgenommene AP6-Referenzsuite mit unveränderten Erwartungen und dokumentierter Freigabe durch David Steimer
 - Drei getrennte Sperrfälle für unbestätigte Zustellfiktion, unbekannte Spezialregel und widersprüchliche Feiertagsanknüpfung
 - Erwarteter Negativdatensatz mit fehlender Fristdauer
 - Unabhängiger AP6-Validator mit vollständiger Nachrechnung gegen den freigegebenen AP5-Datenrelease und vier semantischen Negativtests
@@ -44,5 +45,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Projektstatus nach Abschluss von AP5 aktualisiert und maschinenlesbares Datenmodell verlinkt
 - Abnahme des AP5-Referenzrelease und Beschluss von DEC-2026-012 dokumentiert, ohne den veröffentlichten Candidate rückwirkend zu verändern
 - Projektstatus nach technischer Fertigstellung von AP6 auf fachliche Prüfung aktualisiert
+- AP6 nach fachlicher Prüfung der Falltabelle abgenommen und Referenzerwartungen auf `approved` gesetzt
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

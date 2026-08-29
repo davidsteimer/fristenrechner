@@ -2,7 +2,7 @@
 
 Dieser Bereich enthält die ersten maschinenlesbaren Referenzfälle für den Fristenrechner. Die Fälle verwenden ausschliesslich synthetische Daten und den freigegebenen AP5-Datenrelease `2026-08-29-ap5-approved.1`.
 
-Die berechenbaren Erwartungen tragen bis zur Prüfung durch David Steimer den Status `candidate`. Offene und unvollständige Konstellationen liegen getrennt unter `unresolved/` und erzeugen ausdrücklich kein Fristende.
+Die berechenbaren Erwartungen wurden am 29. August 2026 durch David Steimer fachlich abgenommen und tragen den Status `approved`. Offene und unvollständige Konstellationen liegen getrennt unter `unresolved/` und erzeugen ausdrücklich kein Fristende.
 
 ## Bestand
 
@@ -62,7 +62,7 @@ python3 -m venv .venv
 Erwartete Ausgabe:
 
 ```text
-VALID: candidateCases=15, blockedCases=3, profiles=5, dataRelease=2026-08-29-ap5-approved.1
+VALID: referenceCases=15, blockedCases=3, profiles=5, dataRelease=2026-08-29-ap5-approved.1
 NEGATIVE FIXTURE: missing-deadline-days.json wurde wie erwartet abgewiesen
 SEMANTIC NEGATIVE TESTS: falsches Fristende, unbekannte Quelle, doppelte Fall-ID, falscher Sperrgrund
 ```

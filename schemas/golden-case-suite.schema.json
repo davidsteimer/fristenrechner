@@ -25,7 +25,7 @@
     },
     "suiteStatus": {
       "type": "string",
-      "enum": ["candidate", "unresolved"]
+      "enum": ["candidate", "approved", "unresolved"]
     },
     "review": {
       "$ref": "common.schema.json#/$defs/review"
@@ -358,7 +358,7 @@
         },
         "expectationStatus": {
           "type": "string",
-          "enum": ["candidate", "blocked"]
+          "enum": ["candidate", "approved", "blocked"]
         },
         "dataClassification": { "const": "synthetic" },
         "dataReleaseId": {

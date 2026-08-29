@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP6 technisch abgeschlossen und zur fachlichen Prüfung bereit. 15 berechenbare Golden Cases decken alle fünf MVP-Rechtsprofile, Wochenenden, Feiertage, Schaltjahr, Jahreswechsel, Fristenstillstände und Ausnahmen ab. Drei offene Fachfälle blockieren die Berechnung ausdrücklich. Die Erwartungen tragen bis zur Abnahme durch David Steimer den Status `candidate`. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung.
+> **Projektstatus:** Arbeitspaket AP6 ist fachlich abgenommen. 15 freigegebene Golden Cases decken alle fünf MVP-Rechtsprofile, Wochenenden, Feiertage, Schaltjahr, Jahreswechsel, Fristenstillstände und Ausnahmen ab. Drei offene Fachfälle blockieren die Berechnung ausdrücklich. AP7 plant den SPFx-Machbarkeitsspike für SharePoint und Teams ausführungsbereit. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -63,7 +63,7 @@ Materielle Entscheide werden mit stabilen DEC-Nummern im [Entscheidungsregister]
 
 Die fachliche Grundlage des MVP liegt in der [Rechtsmatrix](docs/fachrecht/rechtsmatrix-mvp.md). Das zugehörige [Quellenregister](docs/fachrecht/quellenregister.md) und die [offenen Fachfragen](docs/fachrecht/offene-fachfragen.md) verhindern, dass ungeklärte Annahmen als sichere Automatik in die Anwendung gelangen.
 
-Der [AP6-Golden-Case-Korpus](tests/golden/README.md) bildet die ersten ausführbaren Referenzerwartungen für den späteren Rechenkern. Berechenbare Kandidatenfälle und bewusst blockierte offene Konstellationen bleiben getrennt.
+Der [AP6-Golden-Case-Korpus](tests/golden/README.md) bildet die ersten fachlich freigegebenen Referenzerwartungen für den späteren Rechenkern. Berechenbare Referenzfälle und bewusst blockierte offene Konstellationen bleiben getrennt.
 
 ## Projektgrundlagen
 

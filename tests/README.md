@@ -9,13 +9,13 @@ Dieser Bereich nimmt die automatisierten Qualitätsnachweise auf. Vorgesehen sin
 - UI- und Accessibility-Tests auf Deutsch und Französisch
 - Build- und Integrationsprüfungen für SharePoint und Teams
 
-Ein Golden Case dokumentiert Eingaben, erwartete Rechenschritte, erwartetes Ergebnis, Rechtsquelle, Gültigkeit und Prüfstatus. Der [AP6-Korpus](golden/README.md) enthält 15 berechenbare Kandidatenfälle, drei getrennte Sperrfälle und einen erwarteten Negativdatensatz.
+Ein Golden Case dokumentiert Eingaben, erwartete Rechenschritte, erwartetes Ergebnis, Rechtsquelle, Gültigkeit und Prüfstatus. Der [AP6-Korpus](golden/README.md) enthält 15 fachlich abgenommene Referenzfälle, drei getrennte Sperrfälle und einen erwarteten Negativdatensatz.
 
-Die [Rechtsmatrix für den MVP](../docs/fachrecht/rechtsmatrix-mvp.md#11-startbestand-für-ap6-golden-cases) enthält den quellenbasierten Startbestand der Fallgruppen. Die maschinenlesbaren Erwartungen unter `golden/candidate/` bleiben bis zur Prüfung durch David Steimer als `candidate` gekennzeichnet.
+Die [Rechtsmatrix für den MVP](../docs/fachrecht/rechtsmatrix-mvp.md#11-startbestand-für-ap6-golden-cases) enthält den quellenbasierten Startbestand der Fallgruppen. Die maschinenlesbaren Erwartungen unter `golden/approved/` wurden am 29. August 2026 durch David Steimer fachlich abgenommen.
 
 ## AP6-Golden-Case-Validierung
 
-Der Validator [`tests/golden/validate_golden_cases.py`](golden/validate_golden_cases.py) prüft Schemata, Quellen- und Regelverweise, Datenrelease-Abdeckung, Mindestfallgruppen und Rechenspuren. Er berechnet alle 15 Fristergebnisse aus dem freigegebenen AP5-Release unabhängig neu. Drei offene Fachfälle müssen die Berechnung blockieren. Ein absichtlich unvollständiger Datensatz sowie vier semantisch manipulierte Varianten müssen abgewiesen werden.
+Der Validator [`tests/golden/validate_golden_cases.py`](golden/validate_golden_cases.py) prüft Schemata, Quellen- und Regelverweise, Datenrelease-Abdeckung, Mindestfallgruppen und Rechenspuren. Er berechnet alle 15 freigegebenen Fristergebnisse aus dem freigegebenen AP5-Release unabhängig neu. Drei offene Fachfälle müssen die Berechnung blockieren. Ein absichtlich unvollständiger Datensatz sowie vier semantisch manipulierte Varianten müssen abgewiesen werden.
 
 Ausführung:
 
