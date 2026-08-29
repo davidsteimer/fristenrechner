@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { mkdir } from 'node:fs/promises';
+import { copyFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
@@ -10,7 +10,7 @@ export const outputDirectory = resolve(repositoryRoot, '.work/ui-preview');
 
 export async function buildUiPreview() {
   await mkdir(outputDirectory, { recursive: true });
-  return build({
+  const result = await build({
     entryPoints: [resolve(repositoryRoot, 'src/ui/preview/main.tsx')],
     outfile: resolve(outputDirectory, 'app.js'),
     bundle: true,
@@ -24,6 +24,11 @@ export async function buildUiPreview() {
     },
     logLevel: 'info'
   });
+  await copyFile(
+    resolve(repositoryRoot, 'preview/index.html'),
+    resolve(outputDirectory, 'index.html')
+  );
+  return result;
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

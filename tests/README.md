@@ -44,7 +44,7 @@ Die TypeScript-Tests unter [`tests/ui/`](ui/) prüfen:
 - lokale Defaults ohne Empfangsdatum
 - vollständige Auflösung der Selektoren, Warnungen und Sperrgründe auf Deutsch und Französisch
 
-Der Gesamtlauf umfasst 62 TypeScript-Tests. Die browserbasierte Prüfung von Resultat, Sperren, Filterwechsel, Übersteuerung, Tastaturreihenfolge und Mobile-Layout ist im [AP9-Prüfnachweis](../docs/architektur/mvp-rechneroberflaeche-ap9.md) dokumentiert.
+Der Gesamtlauf umfasst 64 TypeScript-Tests. Darin enthalten sind zwei Regressionstests für die sichtbare HTML-Fallbackmeldung und die vollständige lokale Buildausgabe. Die browserbasierte Prüfung von Resultat, Sperren, Filterwechsel, Übersteuerung, Tastaturreihenfolge und Mobile-Layout ist im [AP9-Prüfnachweis](../docs/architektur/mvp-rechneroberflaeche-ap9.md) dokumentiert.
 
 ## AP6-Golden-Case-Validierung
 

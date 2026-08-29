@@ -2,23 +2,21 @@
 
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { buildUiPreview, outputDirectory } from './build-ui-preview.mjs';
 
-const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const host = process.env.UI_PREVIEW_HOST ?? '127.0.0.1';
 const port = Number(process.env.UI_PREVIEW_PORT ?? '4173');
 
 await buildUiPreview();
 
 const resources = new Map([
-  ['/', { path: resolve(repositoryRoot, 'preview/index.html'), type: 'text/html; charset=utf-8' }],
-  ['/index.html', { path: resolve(repositoryRoot, 'preview/index.html'), type: 'text/html; charset=utf-8' }],
-  ['/assets/app.js', { path: resolve(outputDirectory, 'app.js'), type: 'text/javascript; charset=utf-8' }],
-  ['/assets/app.js.map', { path: resolve(outputDirectory, 'app.js.map'), type: 'application/json; charset=utf-8' }],
-  ['/assets/app.css', { path: resolve(outputDirectory, 'app.css'), type: 'text/css; charset=utf-8' }],
-  ['/assets/app.css.map', { path: resolve(outputDirectory, 'app.css.map'), type: 'application/json; charset=utf-8' }]
+  ['/', { path: resolve(outputDirectory, 'index.html'), type: 'text/html; charset=utf-8' }],
+  ['/index.html', { path: resolve(outputDirectory, 'index.html'), type: 'text/html; charset=utf-8' }],
+  ['/app.js', { path: resolve(outputDirectory, 'app.js'), type: 'text/javascript; charset=utf-8' }],
+  ['/app.js.map', { path: resolve(outputDirectory, 'app.js.map'), type: 'application/json; charset=utf-8' }],
+  ['/app.css', { path: resolve(outputDirectory, 'app.css'), type: 'text/css; charset=utf-8' }],
+  ['/app.css.map', { path: resolve(outputDirectory, 'app.css.map'), type: 'application/json; charset=utf-8' }]
 ]);
 
 const server = createServer(async (request, response) => {

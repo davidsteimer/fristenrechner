@@ -6,10 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light">
     <title>Fristenrechner Schweiz · AP9-Vorschau</title>
-    <link rel="stylesheet" href="/assets/app.css">
+    <link rel="stylesheet" href="./app.css">
+    <style>
+      .preview-fallback {
+        box-sizing: border-box;
+        max-width: 48rem;
+        margin: 4rem auto;
+        padding: 2rem;
+        border-top: 0.35rem solid #007f86;
+        background: #f5f5f5;
+        color: #172a3a;
+        font: 1rem/1.5 Aptos, "Segoe UI", sans-serif;
+      }
+
+      .preview-fallback h1 {
+        margin-top: 0;
+        font-size: 1.75rem;
+      }
+
+      .preview-fallback code {
+        padding: 0.1rem 0.25rem;
+        background: #fff;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script src="/assets/app.js"></script>
+    <div id="root">
+      <main class="preview-fallback" data-preview-fallback>
+        <h1>Fristenrechner Schweiz</h1>
+        <p>Die lokale AP9-Vorschau wird geladen.</p>
+        <p>
+          Bleibt diese Meldung sichtbar, wurde die Quelldatei direkt geöffnet. Starten Sie im
+          Repository <code>npm run preview:ui</code> und öffnen Sie anschliessend
+          <code>http://127.0.0.1:4173/</code>.
+        </p>
+      </main>
+    </div>
+    <noscript>Diese Vorschau benötigt JavaScript.</noscript>
+    <script src="./app.js"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Der AP9-Kandidat der [funktionalen MVP-Rechneroberfläche](src/ui/README.md) ist implementiert und technisch geprüft. Er verbindet React 17 und Fluent UI v8 hostneutral mit dem abgenommenen AP8-Rechenkern. Alle 62 TypeScript-Tests bestehen. Darin sind sämtliche 15 freigegebenen Golden Cases und die drei Sperrfälle nochmals über das UI-Eingabemodell abgedeckt. AP9 wartet auf die Abnahme durch David Steimer. Die SPFx-Produktintegration und Tenantinstallation folgen in einem weiteren Arbeitspaket. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
+> **Projektstatus:** Der AP9-Kandidat der [funktionalen MVP-Rechneroberfläche](src/ui/README.md) ist implementiert und technisch geprüft. Er verbindet React 17 und Fluent UI v8 hostneutral mit dem abgenommenen AP8-Rechenkern. Alle 64 TypeScript-Tests bestehen. Darin sind sämtliche 15 freigegebenen Golden Cases und die drei Sperrfälle nochmals über das UI-Eingabemodell abgedeckt. AP9 wartet auf die Abnahme durch David Steimer. Die SPFx-Produktintegration und Tenantinstallation folgen in einem weiteren Arbeitspaket. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
 
 ## Zweck
 

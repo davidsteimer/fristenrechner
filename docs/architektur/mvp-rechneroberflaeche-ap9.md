@@ -52,8 +52,8 @@ Die UI speichert kein Empfangsdatum. Sie schreibt keine Daten nach SharePoint, T
 | U03 | AP9-UI-Modell und alle AP6-Fälle | 21 von 21 bestanden | `tests/ui/model.test.ts` |
 | U04 | lokale Defaults und Datenschutz | 4 von 4 bestanden | `tests/ui/defaults.test.ts` |
 | U05 | Sprachabdeckung Deutsch und Französisch | 4 von 4 bestanden | `tests/ui/i18n.test.ts` |
-| U06 | gesamter TypeScript-Testlauf | 62 von 62 bestanden | `npm run test` |
-| U07 | Browser-Bundle | bestanden | `npm run build:ui` |
+| U06 | gesamter TypeScript-Testlauf | 64 von 64 bestanden | `npm run test` |
+| U07 | vollständige lokale Buildausgabe | bestanden | `npm run build:ui`, `tests/ui/preview.test.ts` |
 | B01 | StPO-Wochenendfall | 28.09.2026, bestanden | lokale Browserprüfung in Edge |
 | B02 | Bund filtert VRPG-BE aus | bestanden | vier Bundesprofile, kein kantonales Profil |
 | B03 | Wechsel VRPG-BE zu Bund | bestanden | Auswahl sichtbar auf StPO zurückgesetzt |

@@ -65,6 +65,8 @@ npm run preview:ui
 
 Danach ist die Oberfläche unter `http://127.0.0.1:4173/` erreichbar. Vier reproduzierbare QA-Zustände können über den Parameter `qa` geladen werden:
 
+`preview/index.html` ist die Quelldatei des lokalen Builds und keine eigenständige Anwendung. Beim direkten Öffnen zeigt sie deshalb einen Start- und Diagnosehinweis. `npm run preview:ui` erzeugt `index.html`, JavaScript und CSS gemeinsam unter `.work/ui-preview/` und liefert diesen vollständigen Stand über den lokalen Server aus.
+
 - `?qa=stpo-weekend`
 - `?qa=delivery-block`
 - `?qa=special-law-block`
