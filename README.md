@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Der SPFx-Machbarkeitsspike `SPK-SPFX-01` ist technisch abgeschlossen. Alle Prüfungen T01 bis T14 sind bestanden. Dasselbe `.sppkg` läuft in SharePoint Online und Microsoft Teams. GitHub und ein byteidentischer SharePoint-Mirror liefern denselben vollständig validierten AP5-Datenrelease. DEC-2026-013 zur gemeinsamen SPFx-Zielarchitektur ist beschlossen. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
+> **Projektstatus:** AP8 hat den hostneutralen TypeScript-Rechenkern v0.1 technisch umgesetzt. Alle 15 freigegebenen Golden Cases und die drei Sperrfälle bestehen im automatisierten Test. Der frühere SPFx-Machbarkeitsspike ist abgeschlossen und DEC-2026-013 zur gemeinsamen Zielarchitektur beschlossen. Die produktive Oberfläche und ihre SPFx-Integration folgen in weiteren Arbeitspaketen. Der Teams-Mirror und Gastzugriffe bleiben bis zu ihren ausdrücklich vorgesehenen Folgeprüfungen unkonfiguriert beziehungsweise gesperrt. Es besteht noch keine produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -27,6 +27,8 @@ Die Produktsprache ist Deutsch und Französisch. Persönliche Voreinstellungen w
 Vorgesehen ist eine clientseitige SharePoint-Framework-Lösung mit React und Fluent UI. Ein deterministischer TypeScript-Rechenkern bleibt von Oberfläche, Microsoft-365-Integration und Datenquelle getrennt. Die Berechnung arbeitet ausschliesslich mit Kalenderdaten ohne Uhrzeiten und ohne Zeitzonenabhängigkeit.
 
 Der Pilot bezieht versionierte Rechts- und Kalenderdaten aus einem öffentlichen GitHub-Release. Eine Provider-Schnittstelle bereitet den späteren Wechsel auf einen tenantinternen SharePoint-Mirror vor. Der Rechenkern kennt die konkrete Datenquelle nicht.
+
+Der in AP8 implementierte [Rechenkern v0.1](src/core/README.md) verwendet reine ISO-Kalenderdatumsarithmetik, verarbeitet die typisierten AP5-Regeleffekte und blockiert ungeklärte Eingaben ohne scheinbar plausibles Fristende. Die automatisierten TypeScript-Tests laufen zusätzlich zum unabhängigen Python-Testorakel aus AP6.
 
 Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet JSON Schema Draft 2020-12, ISO-Kalenderdaten, ein unveränderliches Manifest und SHA-256-Prüfsummen. GitHub, SharePoint-Mirror und manueller Import liefern dasselbe Format als byteidentische Dateien.
 
@@ -64,7 +66,7 @@ Materielle Entscheide werden mit stabilen DEC-Nummern im [Entscheidungsregister]
 
 Die fachliche Grundlage des MVP liegt in der [Rechtsmatrix](docs/fachrecht/rechtsmatrix-mvp.md). Das zugehörige [Quellenregister](docs/fachrecht/quellenregister.md) und die [offenen Fachfragen](docs/fachrecht/offene-fachfragen.md) verhindern, dass ungeklärte Annahmen als sichere Automatik in die Anwendung gelangen.
 
-Der [AP6-Golden-Case-Korpus](tests/golden/README.md) bildet die ersten fachlich freigegebenen Referenzerwartungen für den späteren Rechenkern. Berechenbare Referenzfälle und bewusst blockierte offene Konstellationen bleiben getrennt.
+Der [AP6-Golden-Case-Korpus](tests/golden/README.md) bildet die fachlich freigegebenen Referenzerwartungen für den [implementierten Rechenkern](src/core/README.md). Berechenbare Referenzfälle und bewusst blockierte offene Konstellationen bleiben getrennt.
 
 ## Projektgrundlagen
 

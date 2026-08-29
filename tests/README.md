@@ -13,11 +13,31 @@ Ein Golden Case dokumentiert Eingaben, erwartete Rechenschritte, erwartetes Erge
 
 Die [Rechtsmatrix für den MVP](../docs/fachrecht/rechtsmatrix-mvp.md#11-startbestand-für-ap6-golden-cases) enthält den quellenbasierten Startbestand der Fallgruppen. Die maschinenlesbaren Erwartungen unter `golden/approved/` wurden am 29. August 2026 durch David Steimer fachlich abgenommen.
 
+## AP8-Rechenkern
+
+Die TypeScript-Tests unter [`tests/core/`](core/) prüfen:
+
+- alle 15 freigegebenen Golden Cases gegen den hostneutralen Produktkern
+- die drei freigegebenen Sperrfälle samt Rechenspur
+- Schaltjahre, Monats- und Jahreswechsel sowie Wochenenden
+- unbekannte Profile, Kalender und Selektoren
+- Daten- und Kalenderabdeckung
+- spezialgesetzliche Sperren und unbestätigte Voraussetzungen
+- bestätigte Zustellfiktion und Zustellung während eines ZPO-Fristenstillstands
+- bytegleiche Wiederholbarkeit derselben Berechnung
+
+Ausführung mit Node.js 22:
+
+```bash
+npm ci
+npm run check
+```
+
 ## AP6-Golden-Case-Validierung
 
 Der Validator [`tests/golden/validate_golden_cases.py`](golden/validate_golden_cases.py) prüft Schemata, Quellen- und Regelverweise, Datenrelease-Abdeckung, Mindestfallgruppen und Rechenspuren. Er berechnet alle 15 freigegebenen Fristergebnisse aus dem freigegebenen AP5-Release unabhängig neu. Drei offene Fachfälle müssen die Berechnung blockieren. Ein absichtlich unvollständiger Datensatz sowie vier semantisch manipulierte Varianten müssen abgewiesen werden.
 
-Ausführung:
+Ausführung nach Installation von `requirements-data.txt`:
 
 ```bash
 .venv/bin/python tests/golden/validate_golden_cases.py

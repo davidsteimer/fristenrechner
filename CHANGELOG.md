@@ -44,6 +44,10 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Erfolgreiche Ausführung desselben Spike-Pakets in SharePoint Online und als Teams-Kanalregisterkarte
 - Reale Validierung des byteidentischen AP5-Release über GitHub und einen SharePoint-Mirror
 - Vollständiges Testprotokoll T01 bis T14 und technischer Ergebnisbericht mit Go-Empfehlung
+- Hostneutraler TypeScript-Rechenkern v0.1 mit reiner ISO-Kalenderdatumsarithmetik, Fristbeginn, Stillständen, Endverschiebung, Sperrlogik und vollständiger Rechenspur
+- Struktureller Adapter vom vollständig validierten AP5-Release auf providerneutrale Berechnungsdaten
+- Automatisierte AP8-Tests für 15 freigegebene Golden Cases, drei Sperrfälle sowie zusätzliche Datums-, Zustell-, Stillstands- und Sicherheitsgrenzen
+- Reproduzierbarer Root-Toolchain mit Node.js 22, TypeScript 5.8.3 und gesperrtem `package-lock.json`
 
 ### Changed
 
@@ -60,5 +64,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Technischen SharePoint-Paketnamen nach realer App-Katalog-Validierung auf eine `NameDefinition`-konforme Form bereinigt
 - DEC-2026-013 nach Prüfung des Tenant-Spikes beschlossen und SPFx als gemeinsame Zielarchitektur für SharePoint und Teams festgelegt
 - Teams-Mirror als bewusst unkonfiguriert sowie Gastzugriffe als bewusst gesperrt dokumentiert
+- Projektstatus nach technischer Umsetzung von AP8 auf Prüfung des Rechenkerns aktualisiert
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main
