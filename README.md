@@ -2,7 +2,7 @@
 
 Der Fristenrechner Schweiz ist eine vollständig webbasierte Anwendung zur nachvollziehbaren Berechnung verfahrensrechtlicher Fristen. Die Lösung ist für Microsoft 365 konzipiert und soll auf modernen SharePoint-Seiten sowie als Registerkarte in Microsoft Teams funktionieren.
 
-> **Projektstatus:** Arbeitspaket AP6 ist fachlich abgenommen. 15 freigegebene Golden Cases decken alle fünf MVP-Rechtsprofile, Wochenenden, Feiertage, Schaltjahr, Jahreswechsel, Fristenstillstände und Ausnahmen ab. Drei offene Fachfälle blockieren die Berechnung ausdrücklich. AP7 plant den SPFx-Machbarkeitsspike für SharePoint und Teams ausführungsbereit. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung.
+> **Projektstatus:** Arbeitspaket AP6 ist fachlich abgenommen. AP7 hat den SPFx-Machbarkeitsspike für SharePoint und Teams mit Minimalprototyp, Testprotokoll, Tenantvoraussetzungen und einer Zeitbox von 4,5 Nettoarbeitstagen ausführungsbereit geplant. Der Plan ist zur Prüfung bereit. Es besteht noch keine funktionsfähige oder produktiv freigegebene Anwendung.
 
 ## Zweck
 
@@ -51,7 +51,7 @@ Das [AP5-Datenrelease-Format](docs/architektur/datenrelease-format.md) verwendet
 | `outputs/` | Freigegebene Projektgrundlagen in Word und PDF |
 | `LICENSES/` | Lizenztexte und Abgrenzung der lizenzierten Werktypen |
 
-Die technische Projektstruktur wird im Machbarkeitspaket nach dem SPFx-Spike konkretisiert. AP1 legt bewusst noch kein künstliches Anwendungsskelett fest.
+Die technische Projektstruktur wird nach dem im [AP7-Ausführungsplan](docs/architektur/spfx-machbarkeitsspike-ap7.md) abgegrenzten SPFx-Spike konkretisiert. Der dauerhafte Quellcodebaum wird erst nach einem positiven Machbarkeitsentscheid übernommen.
 
 ## Projektführung
 

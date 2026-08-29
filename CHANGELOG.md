@@ -35,6 +35,7 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Drei getrennte Sperrfälle für unbestätigte Zustellfiktion, unbekannte Spezialregel und widersprüchliche Feiertagsanknüpfung
 - Erwarteter Negativdatensatz mit fehlender Fristdauer
 - Unabhängiger AP6-Validator mit vollständiger Nachrechnung gegen den freigegebenen AP5-Datenrelease und vier semantischen Negativtests
+- Ausführungsplan für den SPFx-Machbarkeitsspike mit Minimalprototyp, 14 Prüfungen, Tenantvoraussetzungen und 4,5-Tage-Zeitbox
 
 ### Changed
 
@@ -46,5 +47,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Abnahme des AP5-Referenzrelease und Beschluss von DEC-2026-012 dokumentiert, ohne den veröffentlichten Candidate rückwirkend zu verändern
 - Projektstatus nach technischer Fertigstellung von AP6 auf fachliche Prüfung aktualisiert
 - AP6 nach fachlicher Prüfung der Falltabelle abgenommen und Referenzerwartungen auf `approved` gesetzt
+- AP7 als ausführungsbereiter SPFx-Machbarkeitsspike dokumentiert und zur Prüfung gestellt
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

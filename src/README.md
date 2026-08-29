@@ -8,4 +8,4 @@ Dieser Bereich nimmt ab dem technischen Spike den Anwendungscode auf. Vorgesehen
 - `providers` für GitHub- und SharePoint-Datenquellen
 - `webparts` für die SharePoint-Framework-Integration
 
-Der konkrete SPFx-Verzeichnisbaum wird erst nach dem Machbarkeitsnachweis festgelegt. Damit vermeidet AP1 ein Gerüst, das der tatsächlich unterstützten Toolchain vorgreift.
+Der [AP7-Ausführungsplan](../docs/architektur/spfx-machbarkeitsspike-ap7.md) legt für den Machbarkeitsnachweis einen isolierten Prototyp unter `spike/spfx/` fest. Der dauerhafte SPFx-Verzeichnisbaum wird erst nach dem Machbarkeitsentscheid übernommen.

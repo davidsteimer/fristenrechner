@@ -5,5 +5,7 @@ Dieses Verzeichnis dokumentiert stabile technische Verträge, Schnittstellen und
 ## Dokumente
 
 - [Datenrelease-Format](datenrelease-format.md): Struktur, Validierung, Providervertrag, Versionierung und Fehlerbehandlung der Regel- und Kalenderdaten
+- [Ausführungsplan SPFx-Machbarkeitsspike](spfx-machbarkeitsspike-ap7.md): Minimalprototyp, Testmatrix, Tenantvoraussetzungen, Zeitbox sowie Go- und Stop-Kriterien
+- [Testprotokoll SPFx-Machbarkeitsspike](spfx-spike-testprotokoll.md): ausfüllbare Evidenz- und Entscheidungsvorlage für das Folgepaket
 
-Die technische Anwendungsarchitektur wird im Machbarkeitspaket AP7 weiter konkretisiert. Das AP5-Datenformat legt weder das endgültige SPFx-Projektgerüst noch die konkrete Implementierung des Rechenkerns fest.
+AP7 plant den technischen Machbarkeitsspike ausführungsbereit. Das AP5-Datenformat legt weder das endgültige SPFx-Projektgerüst noch die konkrete Implementierung des Rechenkerns fest. Diese Entscheide folgen gestützt auf die Evidenz des Spikes.
