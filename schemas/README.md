@@ -1,6 +1,6 @@
 # Datenschemata
 
-Die AP5-Schemata definieren das providerneutrale Austauschformat für Rechtsprofile, Feiertage, Fristenstillstände und Datenreleases.
+Die Schemata definieren das providerneutrale AP5-Austauschformat sowie den sprachneutralen AP6-Testvertrag.
 
 | Datei | Zweck |
 | --- | --- |
@@ -8,6 +8,7 @@ Die AP5-Schemata definieren das providerneutrale Austauschformat für Rechtsprof
 | `legal-profile.schema.json` | Rechtsprofile, explizite Selektoren und typisierte Regeleffekte |
 | `calendar.schema.json` | Feiertage, Kalendervererbung und inklusive Stillstandsperioden |
 | `release-manifest.schema.json` | Release-ID, Providervertrag, Kompatibilität, Artefakte und SHA-256-Prüfsummen |
+| `golden-case-suite.schema.json` | Synthetische Referenzfälle, Eingaben, Quellen, Rechenspur und erwartete Ergebnisse |
 
 ## Grundregeln
 
@@ -19,6 +20,8 @@ Die AP5-Schemata definieren das providerneutrale Austauschformat für Rechtsprof
 - Strukturelle Rückwärtskompatibilität, Datenrelease und Schemaänderung werden getrennt versioniert.
 
 Ein veröffentlichtes Schema wird nicht stillschweigend semantisch umgedeutet. Inkompatible Änderungen benötigen eine neue Hauptversion und einen dokumentierten Migrationsentscheid. Einzelheiten stehen im [Datenrelease-Format](../docs/architektur/datenrelease-format.md) und im beschlossenen [DEC-2026-012](../docs/entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md).
+
+Das AP6-Schema gehört zum Testvertrag und verändert die Formatversion des AP5-Datenrelease nicht. Berechenbare Kandidatenfälle und fachlich offene Sperrfälle werden in getrennten Suites geführt.
 
 ## Validierung
 

@@ -1,0 +1,618 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/golden-case-suite.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "goldenCaseSuite",
+  "suiteId": "ap6-candidate-golden-cases",
+  "suiteStatus": "candidate",
+  "review": {
+    "reviewedOn": "2026-08-29",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP4-Rechtsmatrix, AP5-Referenzrelease und erneute Quellenprüfung für AP6"
+  },
+  "cases": [
+    {
+      "caseId": "GC-STPO-START-001",
+      "titleKey": "goldenCase.stpo.startNextDay",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["start-next-day", "stpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 90 Abs. 1", "ruleIds": ["STPO-START-001"] }
+      ],
+      "input": {
+        "inputDate": "2026-09-01",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 1,
+        "calendarId": "be-public-holidays",
+        "selectors": {},
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2026-09-01",
+        "deadlineStart": "2026-09-02",
+        "provisionalEnd": "2026-09-02",
+        "finalEnd": "2026-09-02",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["STPO-START-001", "STPO-COUNT-001", "STPO-SUSP-001", "STPO-END-001", "STPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2026-09-01", "outputDate": "2026-09-01", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2026-09-02", "ruleIds": ["STPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2026-09-02", "outputDate": "2026-09-02", "deadlineDays": 1, "ruleIds": ["STPO-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "returnResult", "outputDate": "2026-09-02", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-STPO-SATURDAY-002",
+      "titleKey": "goldenCase.stpo.endOnSaturday",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["end-saturday-or-sunday", "stpo", "weekend-shift"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 90 Abs. 1 und 2", "ruleIds": ["STPO-START-001", "STPO-END-001"] }
+      ],
+      "input": {
+        "inputDate": "2026-09-16",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": {},
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2026-09-16",
+        "deadlineStart": "2026-09-17",
+        "provisionalEnd": "2026-09-26",
+        "finalEnd": "2026-09-28",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["saturday", "sunday"], "holidayIds": [] },
+        "appliedRuleIds": ["STPO-START-001", "STPO-COUNT-001", "STPO-SUSP-001", "STPO-END-001", "STPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2026-09-16", "outputDate": "2026-09-16", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2026-09-17", "ruleIds": ["STPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2026-09-17", "outputDate": "2026-09-26", "deadlineDays": 10, "ruleIds": ["STPO-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2026-09-26", "outputDate": "2026-09-28", "ruleIds": ["STPO-END-001"], "reasonKeys": ["saturday", "sunday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2026-09-28", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-STPO-NATIONAL-DAY-003",
+      "titleKey": "goldenCase.stpo.nationalDay",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["holiday-national-or-bern", "national-holiday", "stpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 90 Abs. 2", "ruleIds": ["STPO-END-001", "STPO-HOL-001"] },
+        { "sourceId": "SRC-BUNDESFEIERTAG-19940701", "locator": "Art. 1", "ruleIds": ["STPO-HOL-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-07-22",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": {},
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-07-22",
+        "deadlineStart": "2027-07-23",
+        "provisionalEnd": "2027-08-01",
+        "finalEnd": "2027-08-02",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["sunday", "publicHoliday"], "holidayIds": ["CH-2027-08-01-NATIONAL-DAY"] },
+        "appliedRuleIds": ["STPO-START-001", "STPO-COUNT-001", "STPO-SUSP-001", "STPO-END-001", "STPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-07-22", "outputDate": "2027-07-22", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-07-23", "ruleIds": ["STPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2027-07-23", "outputDate": "2027-08-01", "deadlineDays": 10, "ruleIds": ["STPO-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2027-08-01", "outputDate": "2027-08-02", "ruleIds": ["STPO-END-001", "STPO-HOL-001"], "reasonKeys": ["sunday", "publicHoliday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-08-02", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-STPO-EASTER-004",
+      "titleKey": "goldenCase.stpo.easterWithoutSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["no-suspension", "stpo", "easter"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 89 Abs. 2 und Art. 90", "ruleIds": ["STPO-SUSP-001", "STPO-START-001", "STPO-END-001"] },
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c", "ruleIds": ["STPO-HOL-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-03-19",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": {},
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-03-19",
+        "deadlineStart": "2027-03-20",
+        "provisionalEnd": "2027-03-29",
+        "finalEnd": "2027-03-30",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["publicHoliday"], "holidayIds": ["BE-2027-03-29-EASTER-MONDAY"] },
+        "appliedRuleIds": ["STPO-START-001", "STPO-COUNT-001", "STPO-SUSP-001", "STPO-END-001", "STPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-03-19", "outputDate": "2027-03-19", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-03-20", "ruleIds": ["STPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2027-03-20", "outputDate": "2027-03-29", "deadlineDays": 10, "ruleIds": ["STPO-COUNT-001", "STPO-SUSP-001"], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2027-03-29", "outputDate": "2027-03-30", "ruleIds": ["STPO-END-001", "STPO-HOL-001"], "reasonKeys": ["publicHoliday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-03-30", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-STPO-LEAP-YEAR-005",
+      "titleKey": "goldenCase.stpo.leapYear",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["leap-year", "stpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 90 Abs. 1", "ruleIds": ["STPO-START-001", "STPO-COUNT-001"] }
+      ],
+      "input": {
+        "inputDate": "2028-02-19",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": {},
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2028-02-19",
+        "deadlineStart": "2028-02-20",
+        "provisionalEnd": "2028-02-29",
+        "finalEnd": "2028-02-29",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["STPO-START-001", "STPO-COUNT-001", "STPO-SUSP-001", "STPO-END-001", "STPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2028-02-19", "outputDate": "2028-02-19", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2028-02-20", "ruleIds": ["STPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2028-02-20", "outputDate": "2028-02-29", "deadlineDays": 10, "ruleIds": ["STPO-COUNT-001"], "reasonKeys": ["leapDayIncluded"] },
+          { "sequence": 4, "operation": "returnResult", "outputDate": "2028-02-29", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-ZPO-WEEKEND-DELIVERY-006",
+      "titleKey": "goldenCase.zpo.ordinaryMailSaturday",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "zpo",
+      "tags": ["delivery-fiction", "ordinary-mail", "zpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-ZPO-20260701", "locator": "Art. 142 Abs. 1, 1bis und 3", "ruleIds": ["ZPO-DELIV-001", "ZPO-START-001", "ZPO-END-001"] }
+      ],
+      "input": {
+        "inputDate": "2026-09-12",
+        "inputDateSemantics": "observedOrdinaryMailDeliveryDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "deliveryMethod": "ordinaryMailWeekendOrHoliday", "procedureVariant": "ordinary" },
+        "confirmations": { "deliveryFictionApplicabilityConfirmed": true, "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2026-09-14",
+        "deadlineStart": "2026-09-15",
+        "provisionalEnd": "2026-09-24",
+        "finalEnd": "2026-09-24",
+        "suspension": { "enabled": true, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["ZPO-DELIV-001", "ZPO-START-001", "ZPO-COUNT-001", "ZPO-SUSP-001", "ZPO-END-001", "ZPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2026-09-12", "outputDate": "2026-09-14", "ruleIds": ["ZPO-DELIV-001"], "reasonKeys": ["ordinaryMailWeekendOrHoliday"] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2026-09-15", "ruleIds": ["ZPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2026-09-15", "outputDate": "2026-09-24", "deadlineDays": 10, "ruleIds": ["ZPO-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "returnResult", "outputDate": "2026-09-24", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-ZPO-EASTER-SUSPENSION-007",
+      "titleKey": "goldenCase.zpo.easterSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "zpo",
+      "tags": ["suspension", "easter", "zpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-ZPO-20260701", "locator": "Art. 142 Abs. 1 und Art. 145 Abs. 1", "ruleIds": ["ZPO-START-001", "ZPO-SUSP-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-03-19",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "procedureVariant": "ordinary" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-03-19",
+        "deadlineStart": "2027-03-20",
+        "provisionalEnd": "2027-04-13",
+        "finalEnd": "2027-04-13",
+        "suspension": { "enabled": true, "periodIds": ["EASTER-2027"], "skippedCalendarDays": 15 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["ZPO-START-001", "ZPO-COUNT-001", "ZPO-SUSP-001", "ZPO-END-001", "ZPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-03-19", "outputDate": "2027-03-19", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-03-20", "ruleIds": ["ZPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "applySuspension", "inputDate": "2027-03-20", "outputDate": "2027-04-13", "skippedCalendarDays": 15, "periodIds": ["EASTER-2027"], "ruleIds": ["ZPO-SUSP-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "countDeadlineDays", "inputDate": "2027-03-20", "outputDate": "2027-04-13", "deadlineDays": 10, "ruleIds": ["ZPO-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-04-13", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-ZPO-SUMMARY-EASTER-008",
+      "titleKey": "goldenCase.zpo.summaryWithoutSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "zpo",
+      "tags": ["suspension-exception", "easter", "zpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-ZPO-20260701", "locator": "Art. 145 Abs. 2 und Art. 142 Abs. 3", "ruleIds": ["ZPO-SUSP-EXC-001", "ZPO-END-001"] },
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c", "ruleIds": ["ZPO-HOL-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-03-19",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "procedureVariant": "summary" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-03-19",
+        "deadlineStart": "2027-03-20",
+        "provisionalEnd": "2027-03-29",
+        "finalEnd": "2027-03-30",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["publicHoliday"], "holidayIds": ["BE-2027-03-29-EASTER-MONDAY"] },
+        "appliedRuleIds": ["ZPO-START-001", "ZPO-COUNT-001", "ZPO-SUSP-001", "ZPO-SUSP-EXC-001", "ZPO-END-001", "ZPO-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-03-19", "outputDate": "2027-03-19", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-03-20", "ruleIds": ["ZPO-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2027-03-20", "outputDate": "2027-03-29", "deadlineDays": 10, "ruleIds": ["ZPO-COUNT-001", "ZPO-SUSP-EXC-001"], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2027-03-29", "outputDate": "2027-03-30", "ruleIds": ["ZPO-END-001", "ZPO-HOL-001"], "reasonKeys": ["publicHoliday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-03-30", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-BGG-SUMMER-SUSPENSION-009",
+      "titleKey": "goldenCase.bgg.summerSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "bgg",
+      "tags": ["suspension", "summer", "bgg"],
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 44 Abs. 1 und Art. 46 Abs. 1", "ruleIds": ["BGG-START-001", "BGG-SUSP-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-07-13",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "subjectMatter": "general" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-07-13",
+        "deadlineStart": "2027-07-14",
+        "provisionalEnd": "2027-08-24",
+        "finalEnd": "2027-08-24",
+        "suspension": { "enabled": true, "periodIds": ["SUMMER-2027"], "skippedCalendarDays": 32 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["BGG-START-001", "BGG-COUNT-001", "BGG-SUSP-001", "BGG-END-001", "BGG-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-07-13", "outputDate": "2027-07-13", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-07-14", "ruleIds": ["BGG-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "applySuspension", "inputDate": "2027-07-14", "outputDate": "2027-08-24", "skippedCalendarDays": 32, "periodIds": ["SUMMER-2027"], "ruleIds": ["BGG-SUSP-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "countDeadlineDays", "inputDate": "2027-07-14", "outputDate": "2027-08-24", "deadlineDays": 10, "ruleIds": ["BGG-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-08-24", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-BGG-PROCUREMENT-010",
+      "titleKey": "goldenCase.bgg.procurementWithoutSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "bgg",
+      "tags": ["suspension-exception", "public-procurement", "bgg"],
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2 Bst. e", "ruleIds": ["BGG-SUSP-EXC-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-07-13",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "subjectMatter": "publicProcurement" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-07-13",
+        "deadlineStart": "2027-07-14",
+        "provisionalEnd": "2027-07-23",
+        "finalEnd": "2027-07-23",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["BGG-START-001", "BGG-COUNT-001", "BGG-SUSP-001", "BGG-SUSP-EXC-001", "BGG-END-001", "BGG-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-07-13", "outputDate": "2027-07-13", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-07-14", "ruleIds": ["BGG-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2027-07-14", "outputDate": "2027-07-23", "deadlineDays": 10, "ruleIds": ["BGG-COUNT-001", "BGG-SUSP-EXC-001"], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "returnResult", "outputDate": "2027-07-23", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VWVG-YEAR-END-011",
+      "titleKey": "goldenCase.vwvg.yearEndSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "vwvg",
+      "tags": ["suspension", "year-boundary", "vwvg"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VWVG-20220701", "locator": "Art. 20 Abs. 1 und Art. 22a Abs. 1 Bst. c", "ruleIds": ["VWVG-START-001", "VWVG-SUSP-001"] }
+      ],
+      "input": {
+        "inputDate": "2026-12-16",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "subjectMatter": "general" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2026-12-16",
+        "deadlineStart": "2026-12-17",
+        "provisionalEnd": "2027-01-11",
+        "finalEnd": "2027-01-11",
+        "suspension": { "enabled": true, "periodIds": ["YEAR-END-2026-2027"], "skippedCalendarDays": 16 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["VWVG-START-001", "VWVG-COUNT-001", "VWVG-SUSP-001", "VWVG-END-001", "VWVG-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2026-12-16", "outputDate": "2026-12-16", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2026-12-17", "ruleIds": ["VWVG-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "applySuspension", "inputDate": "2026-12-17", "outputDate": "2027-01-11", "skippedCalendarDays": 16, "periodIds": ["YEAR-END-2026-2027"], "ruleIds": ["VWVG-SUSP-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "countDeadlineDays", "inputDate": "2026-12-17", "outputDate": "2027-01-11", "deadlineDays": 10, "ruleIds": ["VWVG-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-01-11", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VWVG-INTERIM-012",
+      "titleKey": "goldenCase.vwvg.interimMeasuresWithoutSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "vwvg",
+      "tags": ["suspension-exception", "interim-measures", "vwvg"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VWVG-20220701", "locator": "Art. 22a Abs. 2 Bst. a und Art. 20 Abs. 3", "ruleIds": ["VWVG-SUSP-EXC-001", "VWVG-END-001"] },
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c", "ruleIds": ["VWVG-HOL-001"] }
+      ],
+      "input": {
+        "inputDate": "2026-12-16",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "subjectMatter": "interimMeasures" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2026-12-16",
+        "deadlineStart": "2026-12-17",
+        "provisionalEnd": "2026-12-26",
+        "finalEnd": "2026-12-28",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["saturday", "sunday", "publicHoliday"], "holidayIds": ["BE-2026-12-26-ST-STEPHEN"] },
+        "appliedRuleIds": ["VWVG-START-001", "VWVG-COUNT-001", "VWVG-SUSP-001", "VWVG-SUSP-EXC-001", "VWVG-END-001", "VWVG-HOL-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2026-12-16", "outputDate": "2026-12-16", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2026-12-17", "ruleIds": ["VWVG-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2026-12-17", "outputDate": "2026-12-26", "deadlineDays": 10, "ruleIds": ["VWVG-COUNT-001", "VWVG-SUSP-EXC-001"], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2026-12-26", "outputDate": "2026-12-28", "ruleIds": ["VWVG-END-001", "VWVG-HOL-001"], "reasonKeys": ["saturday", "sunday", "publicHoliday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2026-12-28", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-BERN-HOLIDAY-013",
+      "titleKey": "goldenCase.vrpgBe.ascension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "vrpg-be",
+      "tags": ["holiday-national-or-bern", "bern-holiday", "vrpg-be"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 1 bis 3", "ruleIds": ["VRPGBE-START-001", "VRPGBE-END-001", "VRPGBE-LEX-001"] },
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b", "ruleIds": ["VRPGBE-HOL-001", "VRPGBE-HOL-002"] }
+      ],
+      "input": {
+        "inputDate": "2027-04-26",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "specialLawStatus": "noKnownOverride" },
+        "confirmations": { "specialLawChecked": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-04-26",
+        "deadlineStart": "2027-04-27",
+        "provisionalEnd": "2027-05-06",
+        "finalEnd": "2027-05-07",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["publicHoliday"], "holidayIds": ["BE-2027-05-06-ASCENSION"] },
+        "appliedRuleIds": ["VRPGBE-START-001", "VRPGBE-COUNT-001", "VRPGBE-END-001", "VRPGBE-HOL-001", "VRPGBE-HOL-002", "VRPGBE-LEX-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-04-26", "outputDate": "2027-04-26", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-04-27", "ruleIds": ["VRPGBE-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2027-04-27", "outputDate": "2027-05-06", "deadlineDays": 10, "ruleIds": ["VRPGBE-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2027-05-06", "outputDate": "2027-05-07", "ruleIds": ["VRPGBE-END-001", "VRPGBE-HOL-001", "VRPGBE-HOL-002"], "reasonKeys": ["publicHoliday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-05-07", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-CORPUS-CHRISTI-014",
+      "titleKey": "goldenCase.vrpgBe.corpusChristiOutsideBern",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "vrpg-be",
+      "tags": ["holiday-anchor", "case-law", "vrpg-be"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 2", "ruleIds": ["VRPGBE-END-001", "VRPGBE-HOL-001"] },
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2", "ruleIds": ["VRPGBE-HOL-002"] },
+        { "sourceId": "JUD-BE-VG-200-2026-421", "locator": "E. 4 und 6", "ruleIds": ["VRPGBE-HOL-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-05-18",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 9,
+        "calendarId": "be-public-holidays",
+        "selectors": { "specialLawStatus": "noKnownOverride" },
+        "confirmations": { "specialLawChecked": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-05-18",
+        "deadlineStart": "2027-05-19",
+        "provisionalEnd": "2027-05-27",
+        "finalEnd": "2027-05-27",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["VRPGBE-START-001", "VRPGBE-COUNT-001", "VRPGBE-END-001", "VRPGBE-HOL-001", "VRPGBE-HOL-002", "VRPGBE-LEX-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-05-18", "outputDate": "2027-05-18", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2027-05-19", "ruleIds": ["VRPGBE-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2027-05-19", "outputDate": "2027-05-27", "deadlineDays": 9, "ruleIds": ["VRPGBE-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "returnResult", "outputDate": "2027-05-27", "ruleIds": ["VRPGBE-HOL-001", "VRPGBE-HOL-002"], "reasonKeys": ["notBernPublicHoliday"] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-BERCHTOLD-015",
+      "titleKey": "goldenCase.vrpgBe.berchtoldDay",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "vrpg-be",
+      "tags": ["holiday-national-or-bern", "year-boundary", "vrpg-be"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 2", "ruleIds": ["VRPGBE-END-001", "VRPGBE-HOL-001"] },
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c", "ruleIds": ["VRPGBE-HOL-002"] }
+      ],
+      "input": {
+        "inputDate": "2026-12-23",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "specialLawStatus": "noKnownOverride" },
+        "confirmations": { "specialLawChecked": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2026-12-23",
+        "deadlineStart": "2026-12-24",
+        "provisionalEnd": "2027-01-02",
+        "finalEnd": "2027-01-04",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["saturday", "sunday", "publicHoliday"], "holidayIds": ["BE-2027-01-02-BERCHTOLD-DAY"] },
+        "appliedRuleIds": ["VRPGBE-START-001", "VRPGBE-COUNT-001", "VRPGBE-END-001", "VRPGBE-HOL-001", "VRPGBE-HOL-002", "VRPGBE-LEX-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2026-12-23", "outputDate": "2026-12-23", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "setDeadlineStart", "outputDate": "2026-12-24", "ruleIds": ["VRPGBE-START-001"], "reasonKeys": [] },
+          { "sequence": 3, "operation": "countDeadlineDays", "inputDate": "2026-12-24", "outputDate": "2027-01-02", "deadlineDays": 10, "ruleIds": ["VRPGBE-COUNT-001"], "reasonKeys": [] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDate": "2027-01-02", "outputDate": "2027-01-04", "ruleIds": ["VRPGBE-END-001", "VRPGBE-HOL-001", "VRPGBE-HOL-002"], "reasonKeys": ["saturday", "sunday", "publicHoliday"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2027-01-04", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    }
+  ]
+}

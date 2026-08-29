@@ -29,6 +29,11 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Architekturvertrag für byteidentische GitHub-, SharePoint-Mirror- und manuelle Datenprovider
 - Beschlossener Architekturentscheid DEC-2026-012 zum Datenrelease-Format
 - Freigegebenes AP5-Referenzrelease `2026-08-29-ap5-approved.1` mit maschinenlesbaren Freigabemetadaten
+- JSON-Schema für sprachneutrale Golden-Case-Suites mit Quellen, Eingaben, Rechenspuren und Erwartungen
+- 15 synthetische, quellenbasierte AP6-Kandidatenfälle für alle fünf MVP-Rechtsprofile
+- Drei getrennte Sperrfälle für unbestätigte Zustellfiktion, unbekannte Spezialregel und widersprüchliche Feiertagsanknüpfung
+- Erwarteter Negativdatensatz mit fehlender Fristdauer
+- Unabhängiger AP6-Validator mit vollständiger Nachrechnung gegen den freigegebenen AP5-Datenrelease und vier semantischen Negativtests
 
 ### Changed
 
@@ -38,5 +43,6 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - Projektstatus nach Abschluss von AP4 aktualisiert und fachrechtliche Dokumentation verlinkt
 - Projektstatus nach Abschluss von AP5 aktualisiert und maschinenlesbares Datenmodell verlinkt
 - Abnahme des AP5-Referenzrelease und Beschluss von DEC-2026-012 dokumentiert, ohne den veröffentlichten Candidate rückwirkend zu verändern
+- Projektstatus nach technischer Fertigstellung von AP6 auf fachliche Prüfung aktualisiert
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/commits/main

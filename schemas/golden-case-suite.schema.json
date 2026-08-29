@@ -1,0 +1,390 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/golden-case-suite.schema.json",
+  "title": "Golden-Case-Suite des Fristenrechners Schweiz",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "suiteId",
+    "suiteStatus",
+    "review",
+    "cases"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/golden-case-suite.schema.json"
+    },
+    "formatVersion": { "const": "1.0.0" },
+    "dataKind": { "const": "goldenCaseSuite" },
+    "suiteId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "suiteStatus": {
+      "type": "string",
+      "enum": ["candidate", "unresolved"]
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/goldenCase" }
+    }
+  },
+  "$defs": {
+    "sourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "locator", "ruleIds"],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "ruleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inputDate",
+        "inputDateSemantics",
+        "deadlineDays",
+        "calendarId",
+        "selectors",
+        "confirmations",
+        "holidayAnchorCandidates"
+      ],
+      "properties": {
+        "inputDate": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "inputDateSemantics": {
+          "type": "string",
+          "enum": [
+            "legallyRelevantDeliveryOrEventDate",
+            "observedOrdinaryMailDeliveryDate",
+            "failedDeliveryAttemptDate"
+          ]
+        },
+        "deadlineDays": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365
+        },
+        "calendarId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "selectors": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          }
+        },
+        "confirmations": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          },
+          "additionalProperties": { "type": "boolean" }
+        },
+        "holidayAnchorCandidates": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(CH|[A-Z]{2})$"
+          }
+        }
+      }
+    },
+    "suspensionResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "periodIds", "skippedCalendarDays"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "periodIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        },
+        "skippedCalendarDays": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "endShiftResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applied", "reasonKeys", "holidayIds"],
+      "properties": {
+        "applied": { "type": "boolean" },
+        "reasonKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["saturday", "sunday", "publicHoliday"]
+          }
+        },
+        "holidayIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        }
+      }
+    },
+    "traceStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence", "operation", "ruleIds", "reasonKeys"],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "operation": {
+          "type": "string",
+          "enum": [
+            "resolveInputDate",
+            "setDeadlineStart",
+            "countDeadlineDays",
+            "applySuspension",
+            "shiftDeadlineEnd",
+            "returnResult",
+            "blockCalculation"
+          ]
+        },
+        "inputDate": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "outputDate": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "deadlineDays": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365
+        },
+        "skippedCalendarDays": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "periodIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        },
+        "ruleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        },
+        "reasonKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9.]*$"
+          }
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "suspension",
+        "endShift",
+        "appliedRuleIds",
+        "warningKeys",
+        "blockReasonKeys",
+        "trace"
+      ],
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "enum": ["calculated", "blocked"]
+        },
+        "legallyRelevantDate": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "deadlineStart": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "provisionalEnd": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "finalEnd": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "suspension": {
+          "$ref": "#/$defs/suspensionResult"
+        },
+        "endShift": {
+          "$ref": "#/$defs/endShiftResult"
+        },
+        "appliedRuleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        },
+        "warningKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9.]*$"
+          }
+        },
+        "blockReasonKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9.]*$"
+          }
+        },
+        "trace": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/traceStep" }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "outcome": { "const": "calculated" } },
+            "required": ["outcome"]
+          },
+          "then": {
+            "required": [
+              "legallyRelevantDate",
+              "deadlineStart",
+              "provisionalEnd",
+              "finalEnd"
+            ],
+            "properties": {
+              "blockReasonKeys": { "maxItems": 0 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "outcome": { "const": "blocked" } },
+            "required": ["outcome"]
+          },
+          "then": {
+            "properties": {
+              "blockReasonKeys": { "minItems": 1 }
+            },
+            "not": {
+              "anyOf": [
+                { "required": ["deadlineStart"] },
+                { "required": ["provisionalEnd"] },
+                { "required": ["finalEnd"] }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "goldenCase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId",
+        "titleKey",
+        "expectationStatus",
+        "dataClassification",
+        "dataReleaseId",
+        "profileId",
+        "tags",
+        "sourceRefs",
+        "input",
+        "expected"
+      ],
+      "properties": {
+        "caseId": {
+          "type": "string",
+          "pattern": "^(GC|OPEN)-[A-Z0-9-]+$"
+        },
+        "titleKey": {
+          "type": "string",
+          "pattern": "^goldenCase\\.[a-z][a-zA-Z0-9.]*$"
+        },
+        "expectationStatus": {
+          "type": "string",
+          "enum": ["candidate", "blocked"]
+        },
+        "dataClassification": { "const": "synthetic" },
+        "dataReleaseId": {
+          "const": "2026-08-29-ap5-approved.1"
+        },
+        "profileId": {
+          "type": "string",
+          "enum": ["stpo", "zpo", "bgg", "vwvg", "vrpg-be"]
+        },
+        "tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/sourceReference" }
+        },
+        "input": { "$ref": "#/$defs/input" },
+        "expected": { "$ref": "#/$defs/expected" }
+      }
+    }
+  }
+}

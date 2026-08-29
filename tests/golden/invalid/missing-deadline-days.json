@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/golden-case-suite.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "goldenCaseSuite",
+  "suiteId": "ap6-invalid-missing-deadline",
+  "suiteStatus": "candidate",
+  "review": {
+    "reviewedOn": "2026-08-29",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "Erwarteter Negativdatensatz für die AP6-Schemavalidierung"
+  },
+  "cases": [
+    {
+      "caseId": "GC-ZPO-INVALID-001",
+      "titleKey": "goldenCase.invalid.missingDeadlineDays",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "zpo",
+      "tags": ["invalid", "missing-deadline"],
+      "sourceRefs": [
+        { "sourceId": "SRC-ZPO-20260701", "locator": "Art. 142 Abs. 1", "ruleIds": ["ZPO-START-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-09-01",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "calendarId": "be-public-holidays",
+        "selectors": { "procedureVariant": "ordinary" },
+        "confirmations": { "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "calculated",
+        "legallyRelevantDate": "2027-09-01",
+        "deadlineStart": "2027-09-02",
+        "provisionalEnd": "2027-09-11",
+        "finalEnd": "2027-09-13",
+        "suspension": { "enabled": true, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": true, "reasonKeys": ["saturday", "sunday"], "holidayIds": [] },
+        "appliedRuleIds": ["ZPO-START-001"],
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "blockCalculation", "inputDate": "2027-09-01", "ruleIds": [], "reasonKeys": ["missingDeadlineDays"] }
+        ]
+      }
+    }
+  ]
+}

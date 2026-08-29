@@ -1,0 +1,115 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/golden-case-suite.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "goldenCaseSuite",
+  "suiteId": "ap6-unresolved-cases",
+  "suiteStatus": "unresolved",
+  "review": {
+    "reviewedOn": "2026-08-29",
+    "status": "monitored",
+    "reviewedBy": "Codex",
+    "basis": "docs/fachrecht/offene-fachfragen.md und verbindliche Sicherheitsgrenzen aus AP4"
+  },
+  "cases": [
+    {
+      "caseId": "OPEN-STPO-DELIVERY-FICTION-001",
+      "titleKey": "goldenCase.open.deliveryFictionUnconfirmed",
+      "expectationStatus": "blocked",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["blocked", "incomplete-input", "delivery-fiction", "stpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 85 Abs. 4 Bst. a", "ruleIds": ["STPO-DELIV-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-09-01",
+        "inputDateSemantics": "failedDeliveryAttemptDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": { "deliveryMethod": "registeredMailUncollected" },
+        "confirmations": { "deliveryFictionApplicabilityConfirmed": false, "holidayAnchorConfirmed": true },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "blocked",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["STPO-DELIV-001"],
+        "warningKeys": ["warning.deliveryFiction.confirmApplicability"],
+        "blockReasonKeys": ["deliveryFictionApplicabilityUnconfirmed"],
+        "trace": [
+          { "sequence": 1, "operation": "blockCalculation", "inputDate": "2027-09-01", "ruleIds": ["STPO-DELIV-001"], "reasonKeys": ["deliveryFictionApplicabilityUnconfirmed"] }
+        ]
+      }
+    },
+    {
+      "caseId": "OPEN-VRPGBE-SPECIAL-LAW-002",
+      "titleKey": "goldenCase.open.unknownSpecialLaw",
+      "expectationStatus": "blocked",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "vrpg-be",
+      "tags": ["blocked", "unknown-special-law", "vrpg-be"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 3", "ruleIds": ["VRPGBE-LEX-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-09-01",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 30,
+        "calendarId": "be-public-holidays",
+        "selectors": { "specialLawStatus": "unknown" },
+        "confirmations": { "specialLawChecked": false },
+        "holidayAnchorCandidates": ["BE"]
+      },
+      "expected": {
+        "outcome": "blocked",
+        "legallyRelevantDate": "2027-09-01",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["VRPGBE-LEX-001"],
+        "warningKeys": ["warning.specialLaw.confirmNoOverride"],
+        "blockReasonKeys": ["unknownSpecialLaw"],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-09-01", "outputDate": "2027-09-01", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "blockCalculation", "inputDate": "2027-09-01", "ruleIds": ["VRPGBE-LEX-001"], "reasonKeys": ["unknownSpecialLaw"] }
+        ]
+      }
+    },
+    {
+      "caseId": "OPEN-STPO-HOLIDAY-ANCHOR-003",
+      "titleKey": "goldenCase.open.holidayAnchorConflict",
+      "expectationStatus": "blocked",
+      "dataClassification": "synthetic",
+      "dataReleaseId": "2026-08-29-ap5-approved.1",
+      "profileId": "stpo",
+      "tags": ["blocked", "holiday-anchor", "jurisdiction-conflict", "stpo"],
+      "sourceRefs": [
+        { "sourceId": "SRC-STPO-20250401", "locator": "Art. 90 Abs. 2", "ruleIds": ["STPO-HOL-001"] }
+      ],
+      "input": {
+        "inputDate": "2027-09-01",
+        "inputDateSemantics": "legallyRelevantDeliveryOrEventDate",
+        "deadlineDays": 10,
+        "calendarId": "be-public-holidays",
+        "selectors": {},
+        "confirmations": { "holidayAnchorConfirmed": false },
+        "holidayAnchorCandidates": ["BE", "FR"]
+      },
+      "expected": {
+        "outcome": "blocked",
+        "legallyRelevantDate": "2027-09-01",
+        "suspension": { "enabled": false, "periodIds": [], "skippedCalendarDays": 0 },
+        "endShift": { "applied": false, "reasonKeys": [], "holidayIds": [] },
+        "appliedRuleIds": ["STPO-HOL-001"],
+        "warningKeys": ["warning.holidayAnchor.confirmJurisdiction"],
+        "blockReasonKeys": ["holidayAnchorConflictUnresolved"],
+        "trace": [
+          { "sequence": 1, "operation": "resolveInputDate", "inputDate": "2027-09-01", "outputDate": "2027-09-01", "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "blockCalculation", "inputDate": "2027-09-01", "ruleIds": ["STPO-HOL-001"], "reasonKeys": ["holidayAnchorConflictUnresolved"] }
+        ]
+      }
+    }
+  ]
+}

@@ -5,10 +5,11 @@ Dieser Bereich enthält die fachrechtliche Arbeitsgrundlage des Fristenrechners.
 - die [Rechtsmatrix für den MVP](rechtsmatrix-mvp.md)
 - das [Quellenregister](quellenregister.md)
 - die [offenen Fachfragen und Sicherheitsgrenzen](offene-fachfragen.md)
+- den [maschinenlesbaren AP6-Golden-Case-Korpus](../../tests/golden/README.md)
 
 ## Verbindlichkeit im Projekt
 
-Die Rechtsmatrix beschreibt den fachlich geprüften Sollzustand für AP5 und AP6. Sie ist noch kein ausführbares Regelwerk und keine Rechtsauskunft für einen konkreten Fall. Maschinenlesbare Regeln entstehen erst in AP5. Golden Cases entstehen in AP6.
+Die Rechtsmatrix beschreibt den fachlich geprüften Sollzustand für AP5 und AP6. Sie ist keine Rechtsauskunft für einen konkreten Fall. Die maschinenlesbaren Regeln aus AP5 und die Golden Cases aus AP6 bilden gemeinsam den prüfbaren Testvertrag für den späteren Rechenkern.
 
 Für jede spätere Regel gelten mindestens folgende Nachweise:
 
