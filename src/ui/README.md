@@ -35,7 +35,7 @@ Die Bedienfolge lautet:
 
 Das Feld `Zuständige Behörde` unterscheidet zwischen `Bundesbehörde` und `Behörde des Kantons Bern`. Für die Bundesbehörde erscheinen nur Bundesprofile. Für die Behörde des Kantons Bern erscheinen Bundesprofile und das Profil `VRPG-BE`. Diese Filterung wird aus `jurisdiction.level` und `jurisdiction.code` des validierten Datenrelease abgeleitet. Der Feldwert beschreibt weiterhin das Gemeinwesen der Behörde und keinen geografischen Behördensitz.
 
-Die vier Hauptaktionen stehen unmittelbar nach den Eingabefeldern. Ein berechnetes oder gesperrtes Resultat erscheint vor den automatisch bestimmten Parametern. Ungültige Pflichtangaben werden zusätzlich zu den Feldmeldungen im Resultatbereich handlungsorientiert zusammengefasst. Der Regel- und Kalenderstand bleibt als zurückhaltende Informationszeile am Seitenende sichtbar.
+Die vier Hauptaktionen stehen unmittelbar nach den Eingabefeldern in einem zweispaltigen Raster. Sie sind gleich breit wie die Eingabefelder und belegen zwei Zeilen. Auf schmalen Ansichten wechseln sie in eine Spalte. Ein berechnetes oder gesperrtes Resultat erscheint vor den automatisch bestimmten Parametern. Ungültige Pflichtangaben werden zusätzlich zu den Feldmeldungen im Resultatbereich handlungsorientiert zusammengefasst. Der Regel- und Kalenderstand bleibt als zurückhaltende Informationszeile am Seitenende sichtbar.
 
 Die Oberfläche führt keine eigene Fristberechnung durch. Sie bildet Eingaben auf den Vertrag des AP8-Kerns ab und zeigt dessen Resultat unverändert an. Unbestätigte Zustellfiktionen, ungeklärte spezialgesetzliche Regeln und widersprüchliche Feiertagsanknüpfungen führen zu einer Sperre ohne Fristende.
 

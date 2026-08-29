@@ -17,7 +17,7 @@ AP9 liefert einen durchgängigen hostneutralen UI-Schnitt vom Empfangsdatum bis 
 
 Die Oberfläche setzt die in Issue #17 beschriebene Skalierungslogik bereits im MVP um. Die zuständige Behörde steht vor dem Erlass und filtert die Profilmenge datengetrieben. Ein nicht mehr zulässiges Profil wird bei einem Wechsel verworfen und durch einen zulässigen MVP-Default ersetzt.
 
-Die AP9-Korrekturschleife vom 29. August 2026 richtet die Oberfläche auf den typischen Kanzlei-Workflow aus. Benutzerinnen und Benutzer erfassen primär das Zustelldatum, prüfen die meist konstanten Standards und lösen die Berechnung aus. Die Hauptaktionen stehen deshalb direkt unter den Eingaben. Resultate und handlungsorientierte Fehlermeldungen erscheinen vor den automatischen Parametern. Der Regel- und Kalenderstand wurde in eine kompakte Informationszeile am Seitenende verschoben. Der bisherige Erklärungstext zum Gemeinwesen entfällt. Die Auswahl heisst neu `Zuständige Behörde` mit den Werten `Bundesbehörde` und `Behörde des Kantons Bern`.
+Die AP9-Korrekturschleife vom 29. August 2026 richtet die Oberfläche auf den typischen Kanzlei-Workflow aus. Benutzerinnen und Benutzer erfassen primär das Zustelldatum, prüfen die meist konstanten Standards und lösen die Berechnung aus. Die vier Hauptaktionen stehen deshalb direkt unter den Eingaben in einem zweispaltigen Raster mit den Spaltenbreiten der Eingabefelder. Resultate und handlungsorientierte Fehlermeldungen erscheinen vor den automatischen Parametern. Der Regel- und Kalenderstand wurde in eine kompakte Informationszeile am Seitenende verschoben. Der bisherige Erklärungstext zum Gemeinwesen entfällt. Die Auswahl heisst neu `Zuständige Behörde` mit den Werten `Bundesbehörde` und `Behörde des Kantons Bern`.
 
 ## 2. Lieferumfang
 
@@ -66,7 +66,7 @@ Die UI speichert kein Empfangsdatum. Sie schreibt keine Daten nach SharePoint, T
 | B07 | Tastaturreihenfolge | bestanden | Sprache, Datum, Frist, zuständige Behörde, Erlass, Zusatzmerkmal, Hauptaktionen |
 | B08 | Mobile bei 390 Pixeln | bestanden | Dokumentbreite entspricht Inhaltsbreite, kein horizontales Überlaufen |
 | B09 | Browserkonsole | bestanden | keine anwendungsseitigen Fehler oder Warnungen im Schlusslauf |
-| B10 | Kanzlei-Workflow | bestanden | Hauptaktionen vor Resultat, Resultat vor Automatik, Datenstand am Seitenende |
+| B10 | Kanzlei-Workflow | bestanden | je zwei gleich breite Hauptaktionen auf zwei Zeilen vor Resultat, Resultat vor Automatik, Datenstand am Seitenende |
 | B11 | handlungsorientierte Validierung | bestanden | fehlendes Datum im Feld und im Resultatbereich erklärt |
 | B12 | Standardaktionen | bestanden | Speichern und Zurücksetzen mit sichtbarer Bestätigung, weiterhin ohne Empfangsdatum |
 | A01 | eigene Textfarben | bestanden | Navy 14,38:1, Teal 5,77:1, Muted 5,91:1, Copper 5,01:1 |

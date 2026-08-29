@@ -12,6 +12,7 @@ const execFileAsync = promisify(execFile);
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const sourcePath = resolve(repositoryRoot, 'preview/index.html');
 const componentPath = resolve(repositoryRoot, 'src/ui/FristenrechnerApp.tsx');
+const stylesPath = resolve(repositoryRoot, 'src/ui/styles.css');
 const outputDirectory = resolve(repositoryRoot, '.work/ui-preview');
 
 describe('AP9-Browservorschau', () => {
@@ -41,6 +42,7 @@ describe('AP9-Browservorschau', () => {
 
   it('ordnet Hauptaktionen, Resultat, Automatik und Datenstand nach dem Kanzlei-Workflow', async () => {
     const source = await readFile(componentPath, 'utf8');
+    const styles = await readFile(stylesPath, 'utf8');
     const actions = source.indexOf('className="fr-actions"');
     const result = source.indexOf('className="fr-result-region"');
     const automatic = source.indexOf('className="fr-automatic"');
@@ -51,5 +53,13 @@ describe('AP9-Browservorschau', () => {
     assert.ok(automatic > result);
     assert.ok(dataStatus > automatic);
     assert.doesNotMatch(source, /form\.authority\.help|form\.profile\.filtered/);
+    assert.match(
+      styles,
+      /\.fr-actions\s*\{[\s\S]*?display:\s*grid;[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\);[\s\S]*?gap:\s*10px 24px;/
+    );
+    assert.match(
+      styles,
+      /@media \(max-width: 640px\)[\s\S]*?\.fr-actions\s*\{[\s\S]*?grid-template-columns:\s*1fr;/
+    );
   });
 });
