@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { cp, mkdir, rm } from 'node:fs/promises';
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -24,5 +24,12 @@ await cp(resolve(sourceRoot, 'ui'), resolve(targetRoot, 'ui'), {
   recursive: true,
   filter: source => !source.includes('/preview') && isProductSource(source)
 });
+
+const productStyles = await readFile(resolve(targetRoot, 'ui', 'styles.css'), 'utf8');
+await writeFile(
+  resolve(targetRoot, 'ui', 'styles.global.scss'),
+  `:global {\n${productStyles}\n}\n`,
+  'utf8'
+);
 
 console.log('Synchronisiert: Rechenkern und Rechneroberfläche');
