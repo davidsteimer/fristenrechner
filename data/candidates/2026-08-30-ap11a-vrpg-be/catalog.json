@@ -1,0 +1,1435 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "specialRegimeCatalog",
+  "catalogId": "ap11a-vrpg-be-special-regimes",
+  "profileId": "vrpg-be",
+  "jurisdiction": { "level": "cantonal", "code": "BE" },
+  "validity": {
+    "dataValidFrom": "2026-08-30",
+    "dataValidTo": null
+  },
+  "review": {
+    "reviewedOn": "2026-08-30",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP11A-Quellenabgleich. Fachliche Abnahme durch David Steimer ausstehend."
+  },
+  "scope": {
+    "de": "Bekannte und praktisch relevante Spezialregime zum bernischen VRPG mit Schwerpunkt politische Rechte sowie unmittelbar relevante bundesrechtliche Weiterzüge.",
+    "fr": "Régimes spéciaux connus et pertinents en pratique par rapport à la LPJA bernoise, avec un accent sur les droits politiques et les recours fédéraux directement pertinents."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-VRPG-BE-20230801",
+      "sourceType": "statute",
+      "title": "Gesetz über die Verwaltungsrechtspflege, BSG 155.21",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/155.21",
+      "documentVersionDate": "2023-08-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-PRG-BE-CURRENT",
+      "sourceType": "statute",
+      "title": "Gesetz über die politischen Rechte, BSG 141.1",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/141.1",
+      "documentVersionDate": null,
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-PRV-BE-CURRENT",
+      "sourceType": "ordinance",
+      "title": "Verordnung über die politischen Rechte, BSG 141.112",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/141.112",
+      "documentVersionDate": null,
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-BPR-20221023",
+      "sourceType": "statute",
+      "title": "Bundesgesetz über die politischen Rechte, SR 161.1",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1978/688_688_688/de",
+      "documentVersionDate": "2022-10-23",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-VPR-20220701",
+      "sourceType": "ordinance",
+      "title": "Verordnung über die politischen Rechte, SR 161.11",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1978/712_712_712/de",
+      "documentVersionDate": "2022-07-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-BGG-20260401",
+      "sourceType": "statute",
+      "title": "Bundesgerichtsgesetz, SR 173.110",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2006/218/de",
+      "documentVersionDate": "2026-04-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-ATSG-20240101",
+      "sourceType": "statute",
+      "title": "Allgemeiner Teil des Sozialversicherungsrechts, SR 830.1",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2002/510/de",
+      "documentVersionDate": "2024-01-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-VWVG-20220701",
+      "sourceType": "statute",
+      "title": "Verwaltungsverfahrensgesetz, SR 172.021",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de",
+      "documentVersionDate": "2022-07-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BGER-9C-757-2007",
+      "sourceType": "caseLaw",
+      "title": "BGer 9C_757/2007 vom 3. Januar 2008",
+      "authority": "Bundesgericht",
+      "url": "https://mcp.opencaselaw.ch/entscheid/bger_9C_757_2007#e-3",
+      "documentVersionDate": "2008-01-03",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BGER-8C-620-2007",
+      "sourceType": "caseLaw",
+      "title": "BGer 8C_620/2007 vom 9. Juni 2008",
+      "authority": "Bundesgericht",
+      "url": "https://mcp.opencaselaw.ch/entscheid/bger_8C_620_2007#e-3-3",
+      "documentVersionDate": "2008-06-09",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BE-VG-100-2016-347",
+      "sourceType": "caseLaw",
+      "title": "VGer BE 100.2016.347U vom 29. Juni 2017, BVR 2017 S. 459",
+      "authority": "Verwaltungsgericht des Kantons Bern",
+      "url": "https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_100-2016-347_2017-06-29.pdf",
+      "documentVersionDate": "2017-06-29",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BE-VG-100-2017-270",
+      "sourceType": "caseLaw",
+      "title": "VGer BE 100.2017.270 vom 12. Dezember 2017",
+      "authority": "Verwaltungsgericht des Kantons Bern",
+      "url": "https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_100-2017-270_2017-12-12.pdf",
+      "documentVersionDate": "2017-12-12",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BE-VG-100-2021-189",
+      "sourceType": "caseLaw",
+      "title": "VGer BE 100.2021.189U vom 22. Oktober 2021, BVR 2022 S. 5",
+      "authority": "Verwaltungsgericht des Kantons Bern",
+      "url": "https://mcp.opencaselaw.ch/entscheid/be_verwaltungsgericht_100_2021_189",
+      "documentVersionDate": "2021-10-22",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BGER-1C-275-2009",
+      "sourceType": "caseLaw",
+      "title": "BGer 1C_275/2009 vom 1. Oktober 2009",
+      "authority": "Bundesgericht",
+      "url": "https://mcp.opencaselaw.ch/entscheid/bger_1C_275_2009#e-3-3-2",
+      "documentVersionDate": "2009-10-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-PRG-MATERIALS-2018",
+      "sourceType": "officialDossier",
+      "title": "Vortrag des Regierungsrates zur PRG-Revision 2018",
+      "authority": "Regierungsrat des Kantons Bern",
+      "url": "https://www.rrgr-service.apps.be.ch/api/rr/documents/document/b784c1f0933d4f629bc0fed1a4cd78ae-332/6/2016.STA.10699-vortrag-04.04.2018-de.pdf",
+      "documentVersionDate": "2018-04-04",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-RRB-498-2024",
+      "sourceType": "officialDossier",
+      "title": "RRB Nr. 498/2024, Regierungsstatthalter-Ersatzwahl Emmental",
+      "authority": "Regierungsrat des Kantons Bern",
+      "url": "https://www.rrgr-service.apps.be.ch/api/rr/documents/document/aee15674d95b4e61b5affa25eefd4d69-332/9/2024.STA.698-RRB-DF-286698.pdf",
+      "documentVersionDate": "2024-05-22",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    }
+  ],
+  "calendarProfiles": [
+    {
+      "calendarProfileId": "C_BE",
+      "calendarId": "be-public-holidays",
+      "holidayAnchor": "berneseProceduralLaw",
+      "endShiftPolicy": "nextWorkingDay",
+      "labels": {
+        "de": "Bernische Samstage, Sonntage und anerkannte Feiertage",
+        "fr": "Samedis, dimanches et jours fériés reconnus selon le droit bernois"
+      }
+    },
+    {
+      "calendarProfileId": "C_BGG",
+      "calendarId": "be-public-holidays",
+      "holidayAnchor": "partyOrRepresentativeCanton",
+      "endShiftPolicy": "nextWorkingDay",
+      "labels": {
+        "de": "BGG-Kalender, im Kandidatenbestand mit Anknüpfung Kanton Bern",
+        "fr": "Calendrier LTF, avec rattachement au canton de Berne dans les cas candidats"
+      }
+    },
+    {
+      "calendarProfileId": "C_FED_PROC",
+      "calendarId": "be-public-holidays",
+      "holidayAnchor": "partyOrRepresentativeCanton",
+      "endShiftPolicy": "nextWorkingDay",
+      "labels": {
+        "de": "Bundesverfahrenskalender, Anknüpfung im konkreten Fall erforderlich",
+        "fr": "Calendrier de procédure fédérale, rattachement à déterminer dans le cas concret"
+      }
+    },
+    {
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "calendarId": null,
+      "holidayAnchor": "authorityConfiguration",
+      "endShiftPolicy": "manualReview",
+      "labels": {
+        "de": "Strikter Wahltermin aus amtlicher Anordnung, keine stille Verschiebung",
+        "fr": "Échéance électorale stricte selon l'acte officiel, sans report automatique"
+      }
+    }
+  ],
+  "suspensionProfiles": [
+    {
+      "suspensionProfileId": "S0_NONE",
+      "mode": "none",
+      "suspensionSetId": null,
+      "labels": {
+        "de": "Kein Fristenstillstand",
+        "fr": "Pas de suspension des délais"
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 bis 44" },
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2 Bst. c" }
+      ]
+    },
+    {
+      "suspensionProfileId": "S_BGG",
+      "mode": "useSet",
+      "suspensionSetId": "ch-court-holidays-2026-2028",
+      "labels": {
+        "de": "Fristenstillstand nach BGG",
+        "fr": "Suspension des délais selon la LTF"
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 46" }
+      ]
+    },
+    {
+      "suspensionProfileId": "S_ATSG",
+      "mode": "useSet",
+      "suspensionSetId": "ch-court-holidays-2026-2028",
+      "labels": {
+        "de": "Fristenstillstand nach ATSG",
+        "fr": "Suspension des délais selon la LPGA"
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-ATSG-20240101", "locator": "Art. 38 Abs. 4" }
+      ]
+    },
+    {
+      "suspensionProfileId": "S_VWVG",
+      "mode": "useSet",
+      "suspensionSetId": "ch-court-holidays-2026-2028",
+      "labels": {
+        "de": "Fristenstillstand nach VwVG",
+        "fr": "Suspension des délais selon la PA"
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-VWVG-20220701", "locator": "Art. 22a" }
+      ]
+    }
+  ],
+  "filingProfiles": [
+    {
+      "filingProfileId": "F0_NA",
+      "labels": { "de": "Keine Parteieingabe", "fr": "Aucun acte de partie" },
+      "preservationMode": "notApplicable",
+      "deadlineDimension": "dateOnly",
+      "acceptedChannels": [],
+      "acceptedEvidence": [],
+      "originalRequired": false,
+      "cutoffTime": null,
+      "timezone": null,
+      "sourceRefs": [
+        { "sourceId": "SRC-BPR-20221023", "locator": "Art. 79 Abs. 1" }
+      ]
+    },
+    {
+      "filingProfileId": "F1_DISPATCH",
+      "labels": { "de": "Aufgabe oder Übergabe wahrt die Frist", "fr": "La remise ou le dépôt sauvegarde le délai" },
+      "preservationMode": "dispatch",
+      "deadlineDimension": "dateOnly",
+      "acceptedChannels": ["competentAuthority", "swissPost", "swissDiplomaticMission", "incompetentBernOrFederalAuthority"],
+      "acceptedEvidence": ["authorityReceipt", "postalDispatch"],
+      "originalRequired": false,
+      "cutoffTime": null,
+      "timezone": null,
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 42 Abs. 2 und 3" }
+      ]
+    },
+    {
+      "filingProfileId": "F2_RECEIPT",
+      "labels": { "de": "Eingang bei der zuständigen Behörde erforderlich", "fr": "Réception par l'autorité compétente requise" },
+      "preservationMode": "receipt",
+      "deadlineDimension": "dateOnly",
+      "acceptedChannels": ["competentAuthority"],
+      "acceptedEvidence": ["authorityReceipt"],
+      "originalRequired": false,
+      "cutoffTime": null,
+      "timezone": null,
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 16, 68, 130 und 147" }
+      ]
+    },
+    {
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "labels": { "de": "Originaleingang bis 12.00 Uhr", "fr": "Réception de l'original jusqu'à 12 h 00" },
+      "preservationMode": "originalReceipt",
+      "deadlineDimension": "dateAndTime",
+      "acceptedChannels": ["competentAuthority"],
+      "acceptedEvidence": ["authorityReceipt"],
+      "originalRequired": true,
+      "cutoffTime": "12:00:00",
+      "timezone": "Europe/Zurich",
+      "sourceRefs": [
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "filingProfileId": "F4_REGISTERED",
+      "labels": { "de": "Eingeschriebene Postaufgabe", "fr": "Dépôt postal recommandé" },
+      "preservationMode": "registeredDispatch",
+      "deadlineDimension": "dateOnly",
+      "acceptedChannels": ["swissPost"],
+      "acceptedEvidence": ["registeredPostalDispatch"],
+      "originalRequired": false,
+      "cutoffTime": null,
+      "timezone": null,
+      "sourceRefs": [
+        { "sourceId": "SRC-BPR-20221023", "locator": "Art. 77 Abs. 2" }
+      ]
+    },
+    {
+      "filingProfileId": "F5_E_RECEIPT",
+      "labels": { "de": "Elektronische Quittung", "fr": "Quittance électronique" },
+      "preservationMode": "electronicReceipt",
+      "deadlineDimension": "dateAndTime",
+      "acceptedChannels": ["electronicSystem"],
+      "acceptedEvidence": ["electronicReceipt"],
+      "originalRequired": false,
+      "cutoffTime": "23:59:59",
+      "timezone": "Europe/Zurich",
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 48 Abs. 2" }
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "gateId": "G1_PREP_ACT",
+      "type": "preparatoryActChallenge",
+      "status": "supported",
+      "leftOperand": "finalDeadline",
+      "operator": "lte",
+      "rightInputId": "pollDate",
+      "onTrue": "requireImmediateChallenge",
+      "labels": {
+        "de": "Vorbereitungshandlung sofort anfechten, wenn die Frist nicht erst nach dem Urnengang endet",
+        "fr": "Attaquer immédiatement l'acte préparatoire si le délai n'échoit pas après le scrutin"
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 3" },
+        { "sourceId": "JUD-BE-VG-100-2016-347", "locator": "E. 3.2 bis 3.4" },
+        { "sourceId": "JUD-BE-VG-100-2017-270", "locator": "E. 4.1 und 4.3" },
+        { "sourceId": "JUD-BE-VG-100-2021-189", "locator": "E. 4.1 und 4.2" }
+      ]
+    }
+  ],
+  "legalOverrides": [
+    {
+      "overrideId": "OVR-PRG69-EMPTY",
+      "kind": "emptyReference",
+      "status": "blocked",
+      "targetRegimeIds": ["prg-be-69-empty-reference"],
+      "warningRequired": true,
+      "confirmationRequired": false,
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2019-07-01" },
+      "labels": {
+        "de": "Art. 66 PRV nennt Art. 69 PRG, obwohl dieser aufgehoben ist und keine ausführbare Frist enthält.",
+        "fr": "L'art. 66 OPDP mentionne l'art. 69 LDP, bien que celui-ci soit abrogé et ne contienne aucun délai exécutable."
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" },
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 69" }
+      ]
+    },
+    {
+      "overrideId": "OVR-PRG111A-CROSSREF",
+      "kind": "staleCrossReference",
+      "status": "supported",
+      "targetRegimeIds": ["prg-be-111a-replacement-candidacy"],
+      "warningRequired": true,
+      "confirmationRequired": false,
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2019-07-01" },
+      "labels": {
+        "de": "Art. 66 PRV verweist noch auf Art. 111 Abs. 1 PRG. Die Frist steht heute in Abs. 1a. Gesetzesmaterialien und RRB Nr. 498/2024 bestätigen Donnerstag, 12.00 Uhr, Originaleingang.",
+        "fr": "L'art. 66 OPDP renvoie encore à l'art. 111 al. 1 LDP. Le délai figure désormais à l'al. 1a. Les travaux législatifs et l'ACE no 498/2024 confirment le jeudi à 12 h 00 et la réception de l'original."
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" },
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 111 Abs. 1 und 1a" },
+        { "sourceId": "SRC-PRG-MATERIALS-2018", "locator": "Erläuterungen zu Art. 111" },
+        { "sourceId": "SRC-RRB-498-2024", "locator": "Ziff. 6.5.2" }
+      ]
+    },
+    {
+      "overrideId": "OVR-DYNAMIC-AUTHORITY-DATE",
+      "kind": "dynamicAuthorityOrder",
+      "status": "open",
+      "targetRegimeIds": ["prg-be-16-postal-vote", "bpr-21-nomination-deadline", "vpr-8a-election-notice"],
+      "warningRequired": true,
+      "confirmationRequired": true,
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "labels": {
+        "de": "Das konkrete Datum oder die Leerungszeit stammt aus einer kommunalen oder kantonalen Anordnung und muss fallbezogen belegt werden.",
+        "fr": "La date concrète ou l'heure de la dernière levée résulte d'un acte communal ou cantonal et doit être établie pour le cas concerné."
+      },
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 16" },
+        { "sourceId": "SRC-BPR-20221023", "locator": "Art. 21" },
+        { "sourceId": "SRC-VPR-20220701", "locator": "Art. 8a" }
+      ]
+    }
+  ],
+  "deadlineRules": [
+    {
+      "ruleId": "VRPGBE-SPEC-REL-GENERAL-001",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "eventDate", "role": "trigger", "valueType": "date", "labelKey": "input.eventDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "eventDate", "direction": "after", "anchorBoundary": "excluded", "durationInputId": "deadlineDays" },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 1 und 2, Art. 42 Abs. 2" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-FIXED-VOTE-016",
+      "status": "open",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [
+        { "inputId": "authorityDeadlineDate", "role": "authoritativeDeadline", "valueType": "date", "labelKey": "input.authorityDeadlineDate" },
+        { "inputId": "authorityDeadlineTime", "role": "authoritativeDeadline", "valueType": "localTime", "labelKey": "input.authorityDeadlineTime" }
+      ],
+      "calculation": { "type": "R5_FIXED", "deadlineDateInputId": "authorityDeadlineDate", "deadlineTimeInputId": "authorityDeadlineTime", "authoritativeSourceRequired": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F2_RECEIPT",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 16" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-OFFSET-068",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R2_OFFSET", "anchorInputId": "pollDate", "offsetDays": -76 },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 68" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-OFFSET-074",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R2_OFFSET", "anchorInputId": "pollDate", "offsetDays": -72 },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 74 Abs. 1" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-OFFSET-075",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R2_OFFSET", "anchorInputId": "pollDate", "offsetDays": -69 },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 75 und Art. 79 Abs. 2" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-OFFSET-098",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R2_OFFSET", "anchorInputId": "pollDate", "offsetDays": -62 },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 98" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-OFFSET-101",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R2_OFFSET", "anchorInputId": "pollDate", "offsetDays": -58 },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 101 Abs. 1" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-WEEKDAY-110",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "firstBallotDate", "role": "trigger", "valueType": "date", "labelKey": "input.firstBallotDate" }],
+      "calculation": { "type": "R3_WEEKDAY", "anchorInputId": "firstBallotDate", "weekday": "tuesday", "direction": "after", "ordinal": 1, "strict": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 110 Abs. 1" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-WEEKDAY-111",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2019-07-01" },
+      "anchors": [{ "inputId": "firstBallotDate", "role": "trigger", "valueType": "date", "labelKey": "input.firstBallotDate" }],
+      "calculation": { "type": "R3_WEEKDAY", "anchorInputId": "firstBallotDate", "weekday": "thursday", "direction": "after", "ordinal": 1, "strict": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-PRG111A-CROSSREF"],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 111 Abs. 1a" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" },
+        { "sourceId": "SRC-RRB-498-2024", "locator": "Ziff. 6.5.2" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-TUESDAY-121",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "firstBallotDate", "role": "trigger", "valueType": "date", "labelKey": "input.firstBallotDate" }],
+      "calculation": { "type": "R3_WEEKDAY", "anchorInputId": "firstBallotDate", "weekday": "tuesday", "direction": "after", "ordinal": 1, "strict": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 121 in Verbindung mit Art. 110" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-THURSDAY-121",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "firstBallotDate", "role": "trigger", "valueType": "date", "labelKey": "input.firstBallotDate" }],
+      "calculation": { "type": "R3_WEEKDAY", "anchorInputId": "firstBallotDate", "weekday": "thursday", "direction": "after", "ordinal": 1, "strict": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 121 in Verbindung mit Art. 111 Abs. 1a" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-REL-130",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "referendumPeriodEndDate", "role": "trigger", "valueType": "date", "labelKey": "input.referendumPeriodEndDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "referendumPeriodEndDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 30, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F2_RECEIPT",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 130" }]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-REL-147",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "depositDate", "role": "trigger", "valueType": "date", "labelKey": "input.depositDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "depositDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 7, "unit": "month" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F2_RECEIPT",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 147" }]
+    },
+    {
+      "ruleId": "PRGBE-SPEC-DUAL-165",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [
+        { "inputId": "discoveryDate", "role": "trigger", "valueType": "date", "labelKey": "input.discoveryDate" },
+        { "inputId": "publicationDate", "role": "longstop", "valueType": "date", "labelKey": "input.publicationDate" },
+        { "inputId": "pollDate", "role": "comparison", "valueType": "date", "labelKey": "input.pollDate" }
+      ],
+      "calculation": {
+        "type": "R4_DUAL",
+        "branches": [
+          { "branchId": "discovery", "anchorInputId": "discoveryDate", "anchorBoundary": "excluded", "duration": { "value": 3, "unit": "day" } },
+          { "branchId": "publication", "anchorInputId": "publicationDate", "anchorBoundary": "excluded", "duration": { "value": 3, "unit": "day" } }
+        ],
+        "selection": "earliest"
+      },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": ["G1_PREP_ACT"],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 165 Abs. 1 bis 3" }]
+    },
+    {
+      "ruleId": "VRPGBE-SPEC-REL-671",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2010-11-01" },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "pollDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 10, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 1" }]
+    },
+    {
+      "ruleId": "VRPGBE-SPEC-REL-672",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2011-01-01" },
+      "anchors": [{ "inputId": "pollDate", "role": "trigger", "valueType": "date", "labelKey": "input.pollDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "pollDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 30, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 2" }]
+    },
+    {
+      "ruleId": "VRPGBE-SPEC-REL-673",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2009-01-01" },
+      "anchors": [
+        { "inputId": "preparatoryActNoticeDate", "role": "trigger", "valueType": "date", "labelKey": "input.preparatoryActNoticeDate" },
+        { "inputId": "pollDate", "role": "comparison", "valueType": "date", "labelKey": "input.pollDate" }
+      ],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "preparatoryActNoticeDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 10, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": ["G1_PREP_ACT"],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 3" },
+        { "sourceId": "JUD-BE-VG-100-2016-347", "locator": "E. 3.4" }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-SPEC-REL-081",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2009-01-01" },
+      "anchors": [{ "inputId": "decisionNoticeDate", "role": "trigger", "valueType": "date", "labelKey": "input.decisionNoticeDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "decisionNoticeDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 10, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 81 Abs. 2" }]
+    },
+    {
+      "ruleId": "BPR-SPEC-FIXED-021",
+      "status": "open",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "authorityDeadlineDate", "role": "authoritativeDeadline", "valueType": "date", "labelKey": "input.authorityDeadlineDate" }],
+      "calculation": { "type": "R5_FIXED", "deadlineDateInputId": "authorityDeadlineDate", "authoritativeSourceRequired": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F2_RECEIPT",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "sourceRefs": [{ "sourceId": "SRC-BPR-20221023", "locator": "Art. 21" }]
+    },
+    {
+      "ruleId": "BPR-SPEC-WEEKDAY-029",
+      "status": "open",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "nominationDeadlineDate", "role": "trigger", "valueType": "date", "labelKey": "input.nominationDeadlineDate" }],
+      "calculation": { "type": "R3_WEEKDAY", "anchorInputId": "nominationDeadlineDate", "weekday": "monday", "direction": "after", "ordinal": 2, "strict": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F2_RECEIPT",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "sourceRefs": [{ "sourceId": "SRC-BPR-20221023", "locator": "Art. 29 Abs. 4" }]
+    },
+    {
+      "ruleId": "BPR-SPEC-DUAL-077",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [
+        { "inputId": "discoveryDate", "role": "trigger", "valueType": "date", "labelKey": "input.discoveryDate" },
+        { "inputId": "publicationDate", "role": "longstop", "valueType": "date", "labelKey": "input.publicationDate" }
+      ],
+      "calculation": {
+        "type": "R4_DUAL",
+        "branches": [
+          { "branchId": "discovery", "anchorInputId": "discoveryDate", "anchorBoundary": "excluded", "duration": { "value": 3, "unit": "day" } },
+          { "branchId": "publication", "anchorInputId": "publicationDate", "anchorBoundary": "excluded", "duration": { "value": 3, "unit": "day" } }
+        ],
+        "selection": "earliest"
+      },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F4_REGISTERED",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-BPR-20221023", "locator": "Art. 77 Abs. 2" }]
+    },
+    {
+      "ruleId": "BPR-SPEC-REL-079",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "complaintReceiptDate", "role": "trigger", "valueType": "date", "labelKey": "input.complaintReceiptDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "complaintReceiptDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 10, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BE", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F0_NA",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [
+        { "sourceId": "SRC-BPR-20221023", "locator": "Art. 79 Abs. 1" },
+        { "sourceId": "JUD-BGER-1C-275-2009", "locator": "E. 3.3.2" }
+      ]
+    },
+    {
+      "ruleId": "VPR-SPEC-FIXED-008",
+      "status": "open",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null, "legalEffectiveFrom": "2022-07-01" },
+      "anchors": [{ "inputId": "authorityDeadlineDate", "role": "authoritativeDeadline", "valueType": "date", "labelKey": "input.authorityDeadlineDate" }],
+      "calculation": { "type": "R5_FIXED", "deadlineDateInputId": "authorityDeadlineDate", "authoritativeSourceRequired": true },
+      "resultPolicy": { "calendarProfileId": "C_FIXED_REVIEW", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "manualReview", "strictFixedDate": true },
+      "filingProfileId": "F2_RECEIPT",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "sourceRefs": [{ "sourceId": "SRC-VPR-20220701", "locator": "Art. 8a" }]
+    },
+    {
+      "ruleId": "BGG-SPEC-REL-101",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "decisionNoticeDate", "role": "trigger", "valueType": "date", "labelKey": "input.decisionNoticeDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "decisionNoticeDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 30, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BGG", "suspensionProfileId": "S_BGG", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-BGG-20260401", "locator": "Art. 44 bis 48 und Art. 100 Abs. 1" }]
+    },
+    {
+      "ruleId": "BGG-SPEC-REL-103",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "decisionNoticeDate", "role": "trigger", "valueType": "date", "labelKey": "input.decisionNoticeDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "decisionNoticeDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 5, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BGG", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2 Bst. c und Art. 100 Abs. 3 Bst. b" }]
+    },
+    {
+      "ruleId": "BGG-SPEC-REL-104",
+      "status": "supported",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "decisionNoticeDate", "role": "trigger", "valueType": "date", "labelKey": "input.decisionNoticeDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "decisionNoticeDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 3, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_BGG", "suspensionProfileId": "S0_NONE", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2 Bst. c und Art. 100 Abs. 4" }]
+    },
+    {
+      "ruleId": "ATSG-SPEC-REL-060",
+      "status": "open",
+      "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+      "anchors": [{ "inputId": "decisionNoticeDate", "role": "trigger", "valueType": "date", "labelKey": "input.decisionNoticeDate" }],
+      "calculation": { "type": "R1_RELATIVE", "anchorInputId": "decisionNoticeDate", "direction": "after", "anchorBoundary": "excluded", "duration": { "value": 30, "unit": "day" } },
+      "resultPolicy": { "calendarProfileId": "C_FED_PROC", "suspensionProfileId": "S_ATSG", "endShiftPolicy": "nextWorkingDay", "strictFixedDate": false },
+      "filingProfileId": "F1_DISPATCH",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "sourceRefs": [{ "sourceId": "SRC-ATSG-20240101", "locator": "Art. 38, 39 und 60" }]
+    }
+  ],
+  "regimes": [
+    {
+      "regimeId": "vrpg-be-general",
+      "level": "cantonal",
+      "lawCode": "VRPG-BE",
+      "provision": "Art. 41 Abs. 1 und 2, Art. 42 Abs. 2",
+      "labels": { "de": "Allgemeine VRPG-Frist", "fr": "Délai général selon la LPJA" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.generalRule",
+      "calculationRuleIds": ["VRPGBE-SPEC-REL-GENERAL-001"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 und 42" },
+        { "sourceId": "JUD-BGER-9C-757-2007", "locator": "E. 3" },
+        { "sourceId": "JUD-BGER-8C-620-2007", "locator": "E. 3.3" }
+      ]
+    },
+    {
+      "regimeId": "prg-be-16-postal-vote",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 16",
+      "labels": { "de": "Briefliche Stimmabgabe", "fr": "Vote par correspondance" },
+      "status": "open",
+      "statusReasonKey": "status.open.dynamicAuthorityDate",
+      "calculationRuleIds": ["PRGBE-SPEC-FIXED-VOTE-016"],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 16" }]
+    },
+    {
+      "regimeId": "prv-be-66-filing-overlay",
+      "regimeKind": "filingOverlay",
+      "level": "cantonal",
+      "lawCode": "PRV-BE",
+      "provision": "Art. 66",
+      "labels": { "de": "Originaleingang bis 12.00 Uhr für die genannten PRG-Fristen", "fr": "Réception de l'original jusqu'à 12 h 00 pour les délais LDP mentionnés" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.filingOverlay",
+      "calculationRuleIds": [],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-PRG69-EMPTY", "OVR-PRG111A-CROSSREF"],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }]
+    },
+    {
+      "regimeId": "prg-be-68-grand-council-nomination",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 68",
+      "labels": { "de": "Grossratswahlvorschläge", "fr": "Propositions de candidatures au Grand Conseil" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-068"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 68" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "regimeId": "prg-be-69-empty-reference",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 69",
+      "labels": { "de": "Aufgehobener Art. 69 PRG", "fr": "Art. 69 LDP abrogé" },
+      "status": "blocked",
+      "statusReasonKey": "status.blocked.emptyReference",
+      "calculationRuleIds": [],
+      "filingProfileId": null,
+      "calendarProfileId": null,
+      "suspensionProfileId": null,
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-PRG69-EMPTY"],
+      "implementationScope": "documentationOnly",
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 69" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "regimeId": "prg-be-74-multiple-nomination",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 74 Abs. 1",
+      "labels": { "de": "Erklärung bei Mehrfachvorschlag", "fr": "Déclaration en cas de candidatures multiples" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-074"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 74 Abs. 1" }]
+    },
+    {
+      "regimeId": "prg-be-75-list-correction",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 75",
+      "labels": { "de": "Änderung und Mängelbehebung", "fr": "Modification et correction des défauts" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-075"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 75" }]
+    },
+    {
+      "regimeId": "prg-be-79-list-connection",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 79 Abs. 2",
+      "labels": { "de": "Listen- und Unterlistenverbindungen", "fr": "Apparentements et sous-apparentements" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-075"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 79 Abs. 2" }]
+    },
+    {
+      "regimeId": "prg-be-98-majority-nomination",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 98",
+      "labels": { "de": "Wahlvorschläge Regierungsrat und Ständerat", "fr": "Propositions de candidatures au Conseil-exécutif et au Conseil des États" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-098"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 98" }]
+    },
+    {
+      "regimeId": "prg-be-101-withdrawal",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 101 Abs. 1",
+      "labels": { "de": "Rückzug von Wahlvorschlägen", "fr": "Retrait des propositions de candidatures" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-101"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 101 Abs. 1" }]
+    },
+    {
+      "regimeId": "prg-be-110-second-ballot-withdrawal",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 110 Abs. 1",
+      "labels": { "de": "Rückzug vor dem zweiten Wahlgang", "fr": "Retrait avant le second tour" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-WEEKDAY-110"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 110 Abs. 1" }]
+    },
+    {
+      "regimeId": "prg-be-111-paragraph-1-cross-reference",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 111 Abs. 1",
+      "labels": { "de": "Berechtigung zur Ersatzkandidatur ohne eigene Frist", "fr": "Droit de proposer une candidature de remplacement sans délai propre" },
+      "status": "blocked",
+      "statusReasonKey": "status.blocked.staleCrossReference",
+      "calculationRuleIds": [],
+      "filingProfileId": null,
+      "calendarProfileId": null,
+      "suspensionProfileId": null,
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-PRG111A-CROSSREF"],
+      "implementationScope": "documentationOnly",
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 111 Abs. 1" },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66" }
+      ]
+    },
+    {
+      "regimeId": "prg-be-111a-replacement-candidacy",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 111 Abs. 1a",
+      "labels": { "de": "Ersatzkandidatur für den zweiten Wahlgang", "fr": "Candidature de remplacement pour le second tour" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.practiceConfirmed",
+      "calculationRuleIds": ["PRGBE-SPEC-WEEKDAY-111"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-PRG111A-CROSSREF"],
+      "implementationScope": "mvp02",
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 111 Abs. 1a" },
+        { "sourceId": "SRC-RRB-498-2024", "locator": "Ziff. 6.5.2" }
+      ]
+    },
+    {
+      "regimeId": "prg-be-117-prefect-nomination",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 117",
+      "labels": { "de": "Regierungsstatthalterwahl, Verweis auf Art. 98 bis 101", "fr": "Élection préfectorale, renvoi aux art. 98 à 101" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.referenceChain",
+      "calculationRuleIds": ["PRGBE-SPEC-OFFSET-098", "PRGBE-SPEC-OFFSET-101"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 117" }]
+    },
+    {
+      "regimeId": "prg-be-121-prefect-second-ballot",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 121",
+      "labels": { "de": "Zweiter Wahlgang der Regierungsstatthalterwahl", "fr": "Second tour de l'élection préfectorale" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-TUESDAY-121", "PRGBE-SPEC-THURSDAY-121"],
+      "filingProfileId": "F3_ORIGINAL_1200",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 121" }]
+    },
+    {
+      "regimeId": "prg-be-130-referendum-signatures",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 130",
+      "labels": { "de": "Einreichung der Referendumsunterschriften", "fr": "Dépôt des signatures référendaires" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-REL-130"],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 130" }]
+    },
+    {
+      "regimeId": "prg-be-147-initiative-signatures",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 147",
+      "labels": { "de": "Einreichung der Initiativunterschriften", "fr": "Dépôt des signatures d'une initiative" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-REL-147"],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 147" }]
+    },
+    {
+      "regimeId": "prg-be-165-political-rights-complaint",
+      "level": "cantonal",
+      "lawCode": "PRG-BE",
+      "provision": "Art. 165 Abs. 1 bis 3",
+      "labels": { "de": "Beschwerde in kantonalen Wahl- und Abstimmungssachen", "fr": "Recours en matière d'élections et de votations cantonales" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["PRGBE-SPEC-DUAL-165"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": ["G1_PREP_ACT"],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 165" }]
+    },
+    {
+      "regimeId": "vrpg-be-67a-1-municipal-election",
+      "level": "cantonal",
+      "lawCode": "VRPG-BE",
+      "provision": "Art. 67a Abs. 1",
+      "labels": { "de": "Beschwerde in kommunalen Wahlsachen", "fr": "Recours en matière d'élections communales" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["VRPGBE-SPEC-REL-671"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 1" }]
+    },
+    {
+      "regimeId": "vrpg-be-67a-2-municipal-vote",
+      "level": "cantonal",
+      "lawCode": "VRPG-BE",
+      "provision": "Art. 67a Abs. 2",
+      "labels": { "de": "Beschwerde in kommunalen Abstimmungssachen", "fr": "Recours en matière de votations communales" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["VRPGBE-SPEC-REL-672"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 2" }]
+    },
+    {
+      "regimeId": "vrpg-be-67a-3-preparatory-act",
+      "level": "cantonal",
+      "lawCode": "VRPG-BE",
+      "provision": "Art. 67a Abs. 3",
+      "labels": { "de": "Kommunale Vorbereitungshandlung", "fr": "Acte préparatoire communal" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.caseLawConfirmed",
+      "calculationRuleIds": ["VRPGBE-SPEC-REL-673"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": ["G1_PREP_ACT"],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 3" },
+        { "sourceId": "JUD-BE-VG-100-2016-347", "locator": "E. 3.4" },
+        { "sourceId": "JUD-BE-VG-100-2021-189", "locator": "E. 4.1 und 4.2" }
+      ]
+    },
+    {
+      "regimeId": "vrpg-be-81-2-municipal-appeal",
+      "level": "cantonal",
+      "lawCode": "VRPG-BE",
+      "provision": "Art. 81 Abs. 2",
+      "labels": { "de": "Weiterzug in kommunalen Wahl- und Vorbereitungssachen", "fr": "Recours ultérieur en matière d'élections communales et d'actes préparatoires" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["VRPGBE-SPEC-REL-081"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 81 Abs. 2" }]
+    },
+    {
+      "regimeId": "bpr-21-nomination-deadline",
+      "level": "federal",
+      "lawCode": "BPR",
+      "provision": "Art. 21 Abs. 1 und 2",
+      "labels": { "de": "Wahlanmeldeschluss Nationalratswahl", "fr": "Délai pour le dépôt des candidatures au Conseil national" },
+      "status": "open",
+      "statusReasonKey": "status.open.cantonalConfiguration",
+      "calculationRuleIds": ["BPR-SPEC-FIXED-021"],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-BPR-20221023", "locator": "Art. 21" }]
+    },
+    {
+      "regimeId": "bpr-29-list-correction",
+      "level": "federal",
+      "lawCode": "BPR",
+      "provision": "Art. 29 Abs. 4",
+      "labels": { "de": "Bereinigung der Nationalratslisten", "fr": "Mise au point des listes au Conseil national" },
+      "status": "open",
+      "statusReasonKey": "status.open.cantonalConfiguration",
+      "calculationRuleIds": ["BPR-SPEC-WEEKDAY-029"],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-BPR-20221023", "locator": "Art. 29 Abs. 4" }]
+    },
+    {
+      "regimeId": "bpr-77-political-rights-complaint",
+      "level": "federal",
+      "lawCode": "BPR",
+      "provision": "Art. 77 Abs. 2",
+      "labels": { "de": "Beschwerde in eidgenössischen politischen Rechten", "fr": "Recours en matière de droits politiques fédéraux" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["BPR-SPEC-DUAL-077"],
+      "filingProfileId": "F4_REGISTERED",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-BPR-20221023", "locator": "Art. 77 Abs. 2" }]
+    },
+    {
+      "regimeId": "bpr-79-government-decision",
+      "level": "federal",
+      "lawCode": "BPR",
+      "provision": "Art. 79 Abs. 1",
+      "labels": { "de": "Entscheidfrist der Kantonsregierung", "fr": "Délai de décision du gouvernement cantonal" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.caseLawConfirmed",
+      "calculationRuleIds": ["BPR-SPEC-REL-079"],
+      "filingProfileId": "F0_NA",
+      "calendarProfileId": "C_BE",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "followup",
+      "sourceRefs": [
+        { "sourceId": "SRC-BPR-20221023", "locator": "Art. 79 Abs. 1" },
+        { "sourceId": "JUD-BGER-1C-275-2009", "locator": "E. 3.3.2" }
+      ]
+    },
+    {
+      "regimeId": "vpr-8a-election-notice",
+      "level": "federal",
+      "lawCode": "VPR",
+      "provision": "Art. 8a",
+      "labels": { "de": "Meldung des Wahlanmeldeschlusses", "fr": "Communication du délai pour le dépôt des candidatures" },
+      "status": "open",
+      "statusReasonKey": "status.open.authorityConfiguration",
+      "calculationRuleIds": ["VPR-SPEC-FIXED-008"],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-VPR-20220701", "locator": "Art. 8a" }]
+    },
+    {
+      "regimeId": "vpr-8d-hour-deadlines",
+      "level": "federal",
+      "lawCode": "VPR",
+      "provision": "Art. 8d",
+      "labels": { "de": "Meldungen innert 72 oder 24 Stunden", "fr": "Communications dans les 72 ou 24 heures" },
+      "status": "blocked",
+      "statusReasonKey": "status.blocked.hourDurationUnsupported",
+      "calculationRuleIds": [],
+      "filingProfileId": null,
+      "calendarProfileId": null,
+      "suspensionProfileId": null,
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "documentationOnly",
+      "sourceRefs": [{ "sourceId": "SRC-VPR-20220701", "locator": "Art. 8d Abs. 3 und 4" }]
+    },
+    {
+      "regimeId": "vpr-8e-list-connection-receipt",
+      "level": "federal",
+      "lawCode": "VPR",
+      "provision": "Art. 8e",
+      "labels": { "de": "Eingang von Listenverbindungserklärungen", "fr": "Réception des déclarations d'apparentement" },
+      "status": "open",
+      "statusReasonKey": "status.open.deadlineFromElectionOrder",
+      "calculationRuleIds": [],
+      "filingProfileId": "F2_RECEIPT",
+      "calendarProfileId": "C_FIXED_REVIEW",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-VPR-20220701", "locator": "Art. 8e" }]
+    },
+    {
+      "regimeId": "bgg-100-1-general-appeal",
+      "level": "federal",
+      "lawCode": "BGG",
+      "provision": "Art. 100 Abs. 1",
+      "labels": { "de": "Allgemeine Beschwerde ans Bundesgericht", "fr": "Recours général au Tribunal fédéral" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.primarySource",
+      "calculationRuleIds": ["BGG-SPEC-REL-101"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BGG",
+      "suspensionProfileId": "S_BGG",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-BGG-20260401", "locator": "Art. 44 bis 48 und Art. 100 Abs. 1" }]
+    },
+    {
+      "regimeId": "bgg-100-3b-federal-vote",
+      "level": "federal",
+      "lawCode": "BGG",
+      "provision": "Art. 100 Abs. 3 Bst. b",
+      "labels": { "de": "Weiterzug gegen Regierungsentscheid zu eidgenössischer Abstimmung", "fr": "Recours contre la décision gouvernementale relative à une votation fédérale" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.noSuspension",
+      "calculationRuleIds": ["BGG-SPEC-REL-103"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BGG",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "mvp02",
+      "sourceRefs": [{ "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2 Bst. c und Art. 100 Abs. 3 Bst. b" }]
+    },
+    {
+      "regimeId": "bgg-100-4-national-council-election",
+      "level": "federal",
+      "lawCode": "BGG",
+      "provision": "Art. 100 Abs. 4",
+      "labels": { "de": "Weiterzug gegen Regierungsentscheid zur Nationalratswahl", "fr": "Recours contre la décision gouvernementale relative à l'élection du Conseil national" },
+      "status": "supported",
+      "statusReasonKey": "status.supported.noSuspension",
+      "calculationRuleIds": ["BGG-SPEC-REL-104"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_BGG",
+      "suspensionProfileId": "S0_NONE",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-BGG-20260401", "locator": "Art. 46 Abs. 2 Bst. c und Art. 100 Abs. 4" }]
+    },
+    {
+      "regimeId": "atsg-60-social-insurance",
+      "level": "federal",
+      "lawCode": "ATSG",
+      "provision": "Art. 38, 39 und 60",
+      "labels": { "de": "Sozialversicherungsrechtliche Beschwerde", "fr": "Recours en matière d'assurances sociales" },
+      "status": "open",
+      "statusReasonKey": "status.open.subjectMatterGate",
+      "calculationRuleIds": ["ATSG-SPEC-REL-060"],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_FED_PROC",
+      "suspensionProfileId": "S_ATSG",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-ATSG-20240101", "locator": "Art. 38, 39 und 60" }]
+    },
+    {
+      "regimeId": "vwvg-federal-administrative-procedure",
+      "level": "federal",
+      "lawCode": "VwVG",
+      "provision": "Art. 20 bis 22a",
+      "labels": { "de": "Bundesverwaltungsverfahren mit Frist aus Spezialnorm", "fr": "Procédure administrative fédérale avec délai issu d'une norme spéciale" },
+      "status": "open",
+      "statusReasonKey": "status.open.deadlineFromSpecialLaw",
+      "calculationRuleIds": [],
+      "filingProfileId": "F1_DISPATCH",
+      "calendarProfileId": "C_FED_PROC",
+      "suspensionProfileId": "S_VWVG",
+      "gateIds": [],
+      "legalOverrideIds": [],
+      "implementationScope": "followup",
+      "sourceRefs": [{ "sourceId": "SRC-VWVG-20220701", "locator": "Art. 20 bis 22a" }]
+    }
+  ]
+}

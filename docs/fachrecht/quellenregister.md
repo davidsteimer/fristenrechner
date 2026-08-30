@@ -32,6 +32,20 @@ Ein technischer Spiegel erleichtert die Recherche, wird aber nicht als alleinige
 
 Die französischen Fassungen der bernischen Erlasse sind über dieselben BELEX-Geschäfte verfügbar. Für die Produktübersetzung sind die amtlichen französischen Begriffe zu übernehmen. Die internen Regel-IDs bleiben sprachneutral.
 
+### Ergänzende Primärquellen AP11A
+
+| Quellen-ID | Erlass oder Dossier | Relevante Bestimmungen | Amtliche Fundstelle | Prüfung |
+| --- | --- | --- | --- | --- |
+| `SRC-PRG-BE-CURRENT` | Gesetz über die politischen Rechte, BSG 141.1 | Art. 16, 68, 69, 74, 75, 79, 98, 101, 110, 111, 117, 121, 130, 147 und 165 | [BELEX](https://www.belex.sites.be.ch/app/de/texts_of_law/141.1) | konsolidierte Fassung vollständig abgeglichen am 30.08.2026 |
+| `SRC-PRV-BE-CURRENT` | Verordnung über die politischen Rechte, BSG 141.112 | Art. 66 | [BELEX](https://www.belex.sites.be.ch/app/de/texts_of_law/141.112) | konsolidierte Fassung vollständig abgeglichen am 30.08.2026 |
+| `SRC-BPR-20221023` | Bundesgesetz über die politischen Rechte, SR 161.1 | Art. 21, 29, 77 und 79 | [Fedlex](https://www.fedlex.admin.ch/eli/cc/1978/688_688_688/de) | 30.08.2026 |
+| `SRC-VPR-20220701` | Verordnung über die politischen Rechte, SR 161.11 | Art. 8a, 8d und 8e | [Fedlex](https://www.fedlex.admin.ch/eli/cc/1978/712_712_712/de) | 30.08.2026 |
+| `SRC-ATSG-20240101` | Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts, SR 830.1 | Art. 38, 39 und 60 | [Fedlex](https://www.fedlex.admin.ch/eli/cc/2002/510/de) | 30.08.2026 |
+| `SRC-PRG-MATERIALS-2018` | Vortrag des Regierungsrates zur PRG-Revision 2018 | Erläuterungen zu Art. 111 PRG | [Geschäftsdokument](https://www.rrgr-service.apps.be.ch/api/rr/documents/document/b784c1f0933d4f629bc0fed1a4cd78ae-332/6/2016.STA.10699-vortrag-04.04.2018-de.pdf) | vollständig gelesen am 30.08.2026 |
+| `SRC-RRB-498-2024` | RRB Nr. 498/2024 zur Regierungsstatthalter-Ersatzwahl Emmental | Ziff. 6.5.2 | [Regierungsratsbeschluss](https://www.rrgr-service.apps.be.ch/api/rr/documents/document/aee15674d95b4e61b5affa25eefd4d69-332/9/2024.STA.698-RRB-DF-286698.pdf) | vollständig gelesen am 30.08.2026 |
+
+Die Erlasse BGG, VwVG und VRPG sind bereits im AP4-Bestand registriert. AP11A hat zusätzlich die für Spezialregime relevanten Art. 100 BGG, Art. 20, 21 und 22a VwVG sowie Art. 41, 42, 67a und 81 VRPG erneut geprüft.
+
 ## 3. Rechtsprechung zur Abgrenzung
 
 | Nachweis-ID | Entscheid | Relevanz | Fundstelle | Status |
@@ -41,6 +55,19 @@ Die französischen Fassungen der bernischen Erlasse sind über dieselben BELEX-G
 | `JUD-BGER-1C-592-2025` | BGer 1C_592/2025 vom 27.02.2026 | Bestätigt die geltende Zustellungspraxis für A-Post Plus und hält fest, dass der neue Bundeserlass im Entscheidzeitpunkt noch nicht in Kraft war. | [Bundesgericht](https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F27-02-2026-1C_592-2025&lang=de&type=show_document&zoom=) | vollständig gelesen am 29.08.2026 |
 
 Die beiden bernischen Links führen zu technischen Volltextkopien, weil bei der Recherche keine stabile öffentliche Direktadresse des bernischen Gerichts ermittelt werden konnte. Die tragenden gesetzlichen Regeln bleiben durch BELEX belegt.
+
+### Ergänzende Rechtsprechung AP11A
+
+| Nachweis-ID | Entscheid | Relevanz | Fundstelle | Status |
+| --- | --- | --- | --- | --- |
+| `JUD-BGER-9C-757-2007` | BGer 9C_757/2007 vom 03.01.2008 | Art. 41 Abs. 3 VRPG ist deklaratorisch und hat keinen eigenen Regelungsgehalt. | [Volltext](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=show_document&highlight_docid=aza://03-01-2008-9C_757-2007) | E. 3 geprüft am 30.08.2026 |
+| `JUD-BGER-8C-620-2007` | BGer 8C_620/2007 vom 09.06.2008 | Bestätigt die deklaratorische Bedeutung von Art. 41 Abs. 3 VRPG. | [Volltext](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=show_document&highlight_docid=aza://09-06-2008-8C_620-2007) | E. 3.3 geprüft am 30.08.2026 |
+| `JUD-BE-VG-100-2016-347` | VGer BE 100.2016.347U vom 29.06.2017, BVR 2017 S. 459 | Sofortige Anfechtung von Vorbereitungshandlungen nach Art. 67a Abs. 3 VRPG. | [Volltextkopie](https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_100-2016-347_2017-06-29.pdf) | vollständig gelesen am 30.08.2026 |
+| `JUD-BE-VG-100-2017-270` | VGer BE 100.2017.270 vom 12.12.2017 | Abgrenzung der sofort anzufechtenden Vorbereitungshandlung. | [Volltextkopie](https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_100-2017-270_2017-12-12.pdf) | vollständig gelesen am 30.08.2026 |
+| `JUD-BE-VG-100-2021-189` | VGer BE 100.2021.189U vom 22.10.2021, BVR 2022 S. 5 | Anwendung von Art. 67a Abs. 3 VRPG auf Vorbereitungshandlungen. | [Volltextkopie](https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_100-2021-189_2021-10-22.pdf) | vollständig gelesen am 30.08.2026 |
+| `JUD-BGER-1C-275-2009` | BGer 1C_275/2009 vom 01.10.2009 | Zehntägige Entscheidfrist nach Art. 77 Abs. 1 BPR und Verschiebung des Fristendes auf den nächsten Werktag. | [Volltext](https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?azaclir=aza&highlight_docid=aza%3A%2F%2F01-10-2009-1C_275-2009&lang=de&type=highlight_simple_query) | E. 3.3.2 geprüft am 30.08.2026 |
+
+Die private Arbeitsmappe ist eine fachliche Arbeitshilfe und wird weder als Primärquelle noch als öffentliches Projektartefakt geführt. Ihre Inhalte wurden vor der Modellierung gegen die hier registrierten Quellen geprüft.
 
 ## 4. Beschlossene, aber noch nicht aktivierte Rechtsänderung
 

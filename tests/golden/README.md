@@ -80,3 +80,15 @@ Die Referenzerwartungen beruhen auf der geprüften AP4-Rechtsmatrix und wurden f
 - [VGer BE SH 200 2026 421 vom 26. Juni 2026](https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_200-2026-421_2026-06-26.pdf)
 
 Der Rechtsfall zu Fronleichnam verwendet nicht die echten Falldaten des Urteils. Er übernimmt ausschliesslich den abstrakten Grundsatz zur bernischen Feiertagsanknüpfung und verwendet ein anderes, synthetisches Datum.
+
+## AP11A-Kandidatenfälle
+
+Die acht Fälle unter [`candidates/ap11a-vrpg-be-special-cases.json`](candidates/ap11a-vrpg-be-special-cases.json) sind noch nicht Teil des abgenommenen AP6-Korpus. Sie verwenden den Kandidaten-Testvertrag 2.0, weil Spezialregime mehrere Datumswerte, Uhrzeiten, feste Abstände, Wochentage, konkurrierende Anknüpfungen, Fristwahrungsprofile und Prüfschranken benötigen.
+
+Die Kandidatenprüfung läuft getrennt:
+
+```bash
+.venv/bin/python tests/special-regimes/validate_special_regime_candidates.py
+```
+
+Die bestehenden 15 Referenzfälle und drei Sperrfälle bleiben unter dem Testvertrag 1.0 unverändert.

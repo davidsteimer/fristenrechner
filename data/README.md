@@ -28,3 +28,7 @@ Der vorangehende Candidate [`2026-08-29-ap5-candidate.1`](releases/2026-08-29-ap
 - Amtliche oder fremde Inhalte werden nicht allein durch ihre Aufnahme unter CC BY-SA 4.0 gestellt.
 
 Die fachliche Vorlage bleibt die [Rechtsmatrix für den MVP](../docs/fachrecht/rechtsmatrix-mvp.md). Das technische Format ist im [Datenrelease-Format](../docs/architektur/datenrelease-format.md) beschrieben.
+
+## Kandidatenbestände
+
+Nicht freigegebene Fachdaten liegen getrennt unter `candidates/` und werden von keinem produktiven Manifest referenziert. Der [AP11A-Kandidat zu den VRPG-Spezialregimen](candidates/2026-08-30-ap11a-vrpg-be/README.md) enthält das vorgeschlagene Komponentenmodell, 34 inventarisierte Regime und acht synthetische Prüffälle. Eine Übernahme in `releases/` erfolgt frühestens nach fachlicher Abnahme und der in DEC-2026-014 vorgeschlagenen Formatevolution.

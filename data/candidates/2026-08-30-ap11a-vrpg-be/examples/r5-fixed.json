@@ -1,0 +1,27 @@
+{
+  "ruleId": "PRGBE-EXAMPLE-FIXED-001",
+  "status": "open",
+  "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+  "anchors": [
+    { "inputId": "authorityDeadlineDate", "role": "authoritativeDeadline", "valueType": "date", "labelKey": "input.authorityDeadlineDate" },
+    { "inputId": "authorityDeadlineTime", "role": "authoritativeDeadline", "valueType": "localTime", "labelKey": "input.authorityDeadlineTime" }
+  ],
+  "calculation": {
+    "type": "R5_FIXED",
+    "deadlineDateInputId": "authorityDeadlineDate",
+    "deadlineTimeInputId": "authorityDeadlineTime",
+    "authoritativeSourceRequired": true
+  },
+  "resultPolicy": {
+    "calendarProfileId": "C_FIXED_REVIEW",
+    "suspensionProfileId": "S0_NONE",
+    "endShiftPolicy": "manualReview",
+    "strictFixedDate": true
+  },
+  "filingProfileId": "F2_RECEIPT",
+  "gateIds": [],
+  "legalOverrideIds": ["OVR-DYNAMIC-AUTHORITY-DATE"],
+  "sourceRefs": [
+    { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 16" }
+  ]
+}

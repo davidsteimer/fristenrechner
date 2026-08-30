@@ -1,0 +1,24 @@
+{
+  "ruleId": "PRGBE-INVALID-RULE-001",
+  "status": "supported",
+  "validity": { "dataValidFrom": "2026-08-30", "dataValidTo": null },
+  "anchors": [
+    { "inputId": "eventDate", "role": "trigger", "valueType": "date", "labelKey": "input.eventDate" }
+  ],
+  "calculation": {
+    "type": "R9_GUESS",
+    "anchorInputId": "eventDate"
+  },
+  "resultPolicy": {
+    "calendarProfileId": "C_BE",
+    "suspensionProfileId": "S0_NONE",
+    "endShiftPolicy": "nextWorkingDay",
+    "strictFixedDate": false
+  },
+  "filingProfileId": "F1_DISPATCH",
+  "gateIds": [],
+  "legalOverrideIds": [],
+  "sourceRefs": [
+    { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41" }
+  ]
+}

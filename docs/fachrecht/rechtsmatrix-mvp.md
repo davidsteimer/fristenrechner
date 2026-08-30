@@ -157,6 +157,18 @@ Primärquellen sind das Gesetz über die Verwaltungsrechtspflege, BSG 155.21, St
 - Spezialgesetzliche Fristregeln bleiben vorbehalten. Das Profil darf den Nutzer darüber nicht im Unklaren lassen.
 - Die Fristwiederherstellung nach Art. 43 Abs. 2 VRPG wird nicht berechnet.
 
+### Ergänzung AP11A vom 30. August 2026
+
+Die vertiefte Prüfung von Art. 41 Abs. 3 VRPG präzisiert `VRPGBE-LEX-001`:
+
+- Art. 41 Abs. 3 VRPG ist deklaratorisch. Die Bestimmung schafft keine eigene Berechnungsregel und übernimmt nicht pauschal eine andere Verfahrensordnung.
+- Eine Spezialregel wird aus ihrer unmittelbaren gesetzlichen Grundlage modelliert. Fristberechnung und Fristwahrung sind getrennte Komponenten.
+- Die bekannten Muster umfassen relative Tagesfristen, feste Abstände, bestimmte Wochentage, konkurrierende Anknüpfungen sowie behördlich festgelegte Daten und Uhrzeiten.
+- Eine offene, aufgehobene oder technisch nicht unterstützte Referenz sperrt die Berechnung. Es gibt keinen stillen Rückfall auf die allgemeine Frist nach Art. 41 Abs. 1 und 2 VRPG.
+- Art. 67a Abs. 3 VRPG wird als zusätzliche Prüfschranke behandelt. Eine Vorbereitungshandlung ist sofort anzufechten, wenn die berechnete Frist nicht erst nach dem Wahl- oder Abstimmungstag endet.
+
+Die vollständige Zuordnung steht in der [AP11A-Fachanalyse](vrpg-be-spezialregime-ap11a.md). Der maschinenlesbare Bestand bleibt bis zur fachlichen Abnahme ein Kandidat.
+
 ## 9. Gültigkeitsmatrix
 
 | Quellen-ID | Erlass oder Regel | Verwendeter Stand | Im MVP gültig ab | Gültig bis | Nächste zwingende Prüfung |

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/filing-profile.schema.json",
+  "title": "Einreichungsprofil für die Fristwahrung",
+  "$ref": "#/$defs/filingProfile",
+  "$defs": {
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["de", "fr"],
+      "properties": {
+        "de": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "fr": { "type": "string", "minLength": 1, "maxLength": 300 }
+      }
+    },
+    "filingProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "filingProfileId",
+        "labels",
+        "preservationMode",
+        "deadlineDimension",
+        "acceptedChannels",
+        "acceptedEvidence",
+        "originalRequired",
+        "cutoffTime",
+        "timezone",
+        "sourceRefs"
+      ],
+      "properties": {
+        "filingProfileId": {
+          "type": "string",
+          "pattern": "^F[0-9]+_[A-Z0-9_]+$"
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "preservationMode": {
+          "type": "string",
+          "enum": [
+            "notApplicable",
+            "dispatch",
+            "receipt",
+            "originalReceipt",
+            "registeredDispatch",
+            "electronicReceipt"
+          ]
+        },
+        "deadlineDimension": {
+          "type": "string",
+          "enum": ["dateOnly", "dateAndTime"]
+        },
+        "acceptedChannels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "competentAuthority",
+              "swissPost",
+              "swissDiplomaticMission",
+              "incompetentBernOrFederalAuthority",
+              "electronicSystem"
+            ]
+          }
+        },
+        "acceptedEvidence": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["none", "authorityReceipt", "postalDispatch", "registeredPostalDispatch", "electronicReceipt"]
+          }
+        },
+        "originalRequired": {
+          "type": "boolean"
+        },
+        "cutoffTime": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+            },
+            { "type": "null" }
+          ]
+        },
+        "timezone": {
+          "oneOf": [
+            { "const": "Europe/Zurich" },
+            { "type": "null" }
+          ]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "deadlineDimension": { "const": "dateOnly" } },
+            "required": ["deadlineDimension"]
+          },
+          "then": {
+            "properties": {
+              "cutoffTime": { "type": "null" },
+              "timezone": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "preservationMode": { "const": "originalReceipt" } },
+            "required": ["preservationMode"]
+          },
+          "then": {
+            "properties": {
+              "deadlineDimension": { "const": "dateAndTime" },
+              "originalRequired": { "const": true },
+              "cutoffTime": { "type": "string" },
+              "timezone": { "const": "Europe/Zurich" },
+              "acceptedChannels": { "contains": { "const": "competentAuthority" } },
+              "acceptedEvidence": { "contains": { "const": "authorityReceipt" } }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "preservationMode": { "const": "registeredDispatch" } },
+            "required": ["preservationMode"]
+          },
+          "then": {
+            "properties": {
+              "acceptedChannels": { "contains": { "const": "swissPost" } },
+              "acceptedEvidence": { "contains": { "const": "registeredPostalDispatch" } },
+              "originalRequired": { "const": false }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "preservationMode": { "const": "electronicReceipt" } },
+            "required": ["preservationMode"]
+          },
+          "then": {
+            "properties": {
+              "deadlineDimension": { "const": "dateAndTime" },
+              "acceptedChannels": { "contains": { "const": "electronicSystem" } },
+              "acceptedEvidence": { "contains": { "const": "electronicReceipt" } }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "preservationMode": { "const": "notApplicable" } },
+            "required": ["preservationMode"]
+          },
+          "then": {
+            "properties": {
+              "acceptedChannels": { "maxItems": 0 },
+              "acceptedEvidence": { "maxItems": 0 },
+              "originalRequired": { "const": false },
+              "cutoffTime": { "type": "null" },
+              "timezone": { "type": "null" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-golden-case-suite.schema.json",
+  "title": "Golden-Case-Suite für besondere Fristenregime",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "suiteId",
+    "suiteStatus",
+    "catalogId",
+    "catalogFormatVersion",
+    "review",
+    "cases"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-golden-case-suite.schema.json"
+    },
+    "formatVersion": { "const": "2.0.0" },
+    "dataKind": { "const": "goldenCaseSuite" },
+    "suiteId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "suiteStatus": { "const": "candidate" },
+    "catalogId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "catalogFormatVersion": { "const": "1.0.0" },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/goldenCase"
+      }
+    }
+  },
+  "$defs": {
+    "sourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "locator", "ruleIds"],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "ruleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9-]*$"
+          }
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "regimeId",
+        "ruleId",
+        "dateValues",
+        "localTimeValues",
+        "integerValues",
+        "calendarProfileId",
+        "suspensionProfileId",
+        "filingProfileId",
+        "overrideConfirmations"
+      ],
+      "properties": {
+        "regimeId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "ruleId": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+-[0-9]{3}$"
+        },
+        "dateValues": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": { "pattern": "^[a-z][a-zA-Z0-9]*$" },
+          "additionalProperties": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          }
+        },
+        "localTimeValues": {
+          "type": "object",
+          "propertyNames": { "pattern": "^[a-z][a-zA-Z0-9]*$" },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+          }
+        },
+        "integerValues": {
+          "type": "object",
+          "propertyNames": { "pattern": "^[a-z][a-zA-Z0-9]*$" },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 365
+          }
+        },
+        "calendarProfileId": {
+          "type": "string",
+          "pattern": "^C_[A-Z0-9_]+$"
+        },
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^S[0-9]?_[A-Z0-9_]+$"
+        },
+        "filingProfileId": {
+          "type": "string",
+          "pattern": "^F[0-9]+_[A-Z0-9_]+$"
+        },
+        "overrideConfirmations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^OVR-[A-Z0-9-]+$"
+          }
+        }
+      }
+    },
+    "deadline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["date", "localTime", "timezone"],
+      "properties": {
+        "date": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "localTime": {
+          "oneOf": [
+            { "type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" },
+            { "type": "null" }
+          ]
+        },
+        "timezone": {
+          "oneOf": [
+            { "const": "Europe/Zurich" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "gateResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gateId", "matched", "action"],
+      "properties": {
+        "gateId": { "const": "G1_PREP_ACT" },
+        "matched": { "type": "boolean" },
+        "action": {
+          "type": "string",
+          "enum": ["requireImmediateChallenge", "none"]
+        }
+      }
+    },
+    "filingRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filingProfileId", "preservationMode", "originalRequired", "cutoffTime", "timezone"],
+      "properties": {
+        "filingProfileId": {
+          "type": "string",
+          "pattern": "^F[0-9]+_[A-Z0-9_]+$"
+        },
+        "preservationMode": {
+          "type": "string",
+          "enum": ["notApplicable", "dispatch", "receipt", "originalReceipt", "registeredDispatch", "electronicReceipt"]
+        },
+        "originalRequired": { "type": "boolean" },
+        "cutoffTime": {
+          "oneOf": [
+            { "type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" },
+            { "type": "null" }
+          ]
+        },
+        "timezone": {
+          "oneOf": [
+            { "const": "Europe/Zurich" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "traceStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence", "operation", "ruleIds", "reasonKeys"],
+      "properties": {
+        "sequence": { "type": "integer", "minimum": 1 },
+        "operation": {
+          "type": "string",
+          "enum": [
+            "resolveAnchors",
+            "calculateRelative",
+            "calculateOffset",
+            "calculateWeekday",
+            "calculateDualBranches",
+            "selectDualDeadline",
+            "acceptFixedDeadline",
+            "applySuspension",
+            "shiftDeadlineEnd",
+            "evaluateGate",
+            "resolveFilingRequirement",
+            "returnResult",
+            "blockCalculation"
+          ]
+        },
+        "inputDates": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "common.schema.json#/$defs/isoDate" }
+        },
+        "outputDate": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "ruleIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9-]*$" }
+        },
+        "reasonKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9.]*$" }
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "provisionalDeadline",
+        "finalDeadline",
+        "appliedRuleIds",
+        "appliedOverrideIds",
+        "gateResults",
+        "filingRequirement",
+        "warningKeys",
+        "blockReasonKeys",
+        "trace"
+      ],
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "enum": ["calculated", "blocked", "manualReview"]
+        },
+        "provisionalDeadline": {
+          "$ref": "#/$defs/deadline"
+        },
+        "finalDeadline": {
+          "$ref": "#/$defs/deadline"
+        },
+        "appliedRuleIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9-]*$" }
+        },
+        "appliedOverrideIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^OVR-[A-Z0-9-]+$" }
+        },
+        "gateResults": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/gateResult" }
+        },
+        "filingRequirement": {
+          "$ref": "#/$defs/filingRequirement"
+        },
+        "warningKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9.]*$" }
+        },
+        "blockReasonKeys": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9.]*$" }
+        },
+        "trace": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/traceStep" }
+        }
+      }
+    },
+    "goldenCase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseId",
+        "titleKey",
+        "expectationStatus",
+        "dataClassification",
+        "profileId",
+        "tags",
+        "sourceRefs",
+        "input",
+        "expected"
+      ],
+      "properties": {
+        "caseId": {
+          "type": "string",
+          "pattern": "^GC-[A-Z0-9-]+$"
+        },
+        "titleKey": {
+          "type": "string",
+          "pattern": "^goldenCase\\.[a-z][a-zA-Z0-9.]*$"
+        },
+        "expectationStatus": { "const": "candidate" },
+        "dataClassification": { "const": "synthetic" },
+        "profileId": { "const": "vrpg-be" },
+        "tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/sourceReference" }
+        },
+        "input": { "$ref": "#/$defs/input" },
+        "expected": { "$ref": "#/$defs/expected" }
+      }
+    }
+  }
+}

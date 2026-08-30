@@ -1,11 +1,17 @@
 # Fachrechtliche Grundlagen
 
-Dieser Bereich enthält die fachrechtliche Arbeitsgrundlage des Fristenrechners. Der Stand von Arbeitspaket AP4 umfasst:
+Dieser Bereich enthält die fachrechtliche Arbeitsgrundlage des Fristenrechners. Der abgenommene Stand von Arbeitspaket AP4 umfasst:
 
 - die [Rechtsmatrix für den MVP](rechtsmatrix-mvp.md)
 - das [Quellenregister](quellenregister.md)
 - die [offenen Fachfragen und Sicherheitsgrenzen](offene-fachfragen.md)
 - den [maschinenlesbaren AP6-Golden-Case-Korpus](../../tests/golden/README.md)
+
+AP11A ergänzt als noch nicht abgenommener Kandidat:
+
+- die [Fachanalyse der bekannten VRPG-Spezialregime](vrpg-be-spezialregime-ap11a.md)
+- den [maschinenlesbaren AP11A-Kandidatenkatalog](../../data/candidates/2026-08-30-ap11a-vrpg-be/README.md)
+- acht [synthetische Kandidatenfälle](../../tests/golden/candidates/ap11a-vrpg-be-special-cases.json)
 
 ## Verbindlichkeit im Projekt
 

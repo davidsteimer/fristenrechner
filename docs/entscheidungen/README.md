@@ -37,6 +37,7 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | --- | --- | --- | --- | --- |
 | [DEC-2026-012](DEC-2026-012-providerneutrales-datenrelease-format.md) | B | beschlossen | Strikte JSON-Schemata und manifestbasierte, providerneutrale Datenreleases | – |
 | [DEC-2026-013](DEC-2026-013-spfx-zielarchitektur.md) | B | beschlossen | Gemeinsames SPFx-WebPart für SharePoint und Teams, gestützt auf den erfolgreichen Tenant-Spike | – |
+| [DEC-2026-014](DEC-2026-014-komponentenweise-fachdatenformatevolution.md) | B | vorgeschlagen | Komponentenmodell und neue Format-Hauptversion für Spezialregime | – |
 
 ## Quellen des Startbestands
 
@@ -44,4 +45,4 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 - [Projekt- und Realisierungsplan, Version 1.0](../../outputs/2026-08-28_Projekt-und-Realisierungsplan_Fristenrechner_Schweiz_V1.0.pdf)
 - [Arbeitspaket AP3](https://github.com/davidsteimer/fristenrechner/issues/11)
 
-Stand des Registers: 29. August 2026
+Stand des Registers: 30. August 2026

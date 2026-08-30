@@ -1,0 +1,347 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-golden-case-suite.schema.json",
+  "formatVersion": "2.0.0",
+  "dataKind": "goldenCaseSuite",
+  "suiteId": "ap11a-vrpg-be-special-candidates",
+  "suiteStatus": "candidate",
+  "catalogId": "ap11a-vrpg-be-special-regimes",
+  "catalogFormatVersion": "1.0.0",
+  "review": {
+    "reviewedOn": "2026-08-30",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "Acht neutrale Kandidaten aus der Facharbeitsmappe. Fachliche Abnahme durch David Steimer ausstehend."
+  },
+  "cases": [
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T01",
+      "titleKey": "goldenCase.vrpgBe.special.relativeNextDay",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "relative", "vrpg-be"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 1 und 2", "ruleIds": ["VRPGBE-SPEC-REL-GENERAL-001"] }
+      ],
+      "input": {
+        "regimeId": "vrpg-be-general",
+        "ruleId": "VRPGBE-SPEC-REL-GENERAL-001",
+        "dateValues": { "eventDate": "2026-09-04" },
+        "localTimeValues": {},
+        "integerValues": { "deadlineDays": 10 },
+        "calendarProfileId": "C_BE",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F1_DISPATCH",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "calculated",
+        "provisionalDeadline": { "date": "2026-09-14", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-09-14", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["VRPGBE-SPEC-REL-GENERAL-001"],
+        "appliedOverrideIds": [],
+        "gateResults": [],
+        "filingRequirement": { "filingProfileId": "F1_DISPATCH", "preservationMode": "dispatch", "originalRequired": false, "cutoffTime": null, "timezone": null },
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-09-04"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateRelative", "inputDates": ["2026-09-04"], "outputDate": "2026-09-14", "ruleIds": ["VRPGBE-SPEC-REL-GENERAL-001"], "reasonKeys": ["anchorDayExcluded"] },
+          { "sequence": 3, "operation": "applySuspension", "outputDate": "2026-09-14", "ruleIds": [], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "resolveFilingRequirement", "outputDate": "2026-09-14", "ruleIds": [], "reasonKeys": ["dispatchSuffices"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2026-09-14", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T02",
+      "titleKey": "goldenCase.vrpgBe.special.relativeWeekendShift",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "relative", "weekend-shift"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 41 Abs. 1 und 2", "ruleIds": ["VRPGBE-SPEC-REL-GENERAL-001"] }
+      ],
+      "input": {
+        "regimeId": "vrpg-be-general",
+        "ruleId": "VRPGBE-SPEC-REL-GENERAL-001",
+        "dateValues": { "eventDate": "2026-09-03" },
+        "localTimeValues": {},
+        "integerValues": { "deadlineDays": 3 },
+        "calendarProfileId": "C_BE",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F1_DISPATCH",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "calculated",
+        "provisionalDeadline": { "date": "2026-09-06", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-09-07", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["VRPGBE-SPEC-REL-GENERAL-001"],
+        "appliedOverrideIds": [],
+        "gateResults": [],
+        "filingRequirement": { "filingProfileId": "F1_DISPATCH", "preservationMode": "dispatch", "originalRequired": false, "cutoffTime": null, "timezone": null },
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-09-03"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateRelative", "inputDates": ["2026-09-03"], "outputDate": "2026-09-06", "ruleIds": ["VRPGBE-SPEC-REL-GENERAL-001"], "reasonKeys": ["anchorDayExcluded"] },
+          { "sequence": 3, "operation": "applySuspension", "outputDate": "2026-09-06", "ruleIds": [], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDates": ["2026-09-06"], "outputDate": "2026-09-07", "ruleIds": ["VRPGBE-SPEC-REL-GENERAL-001"], "reasonKeys": ["sunday"] },
+          { "sequence": 5, "operation": "resolveFilingRequirement", "outputDate": "2026-09-07", "ruleIds": [], "reasonKeys": ["dispatchSuffices"] },
+          { "sequence": 6, "operation": "returnResult", "outputDate": "2026-09-07", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T03",
+      "titleKey": "goldenCase.vrpgBe.special.offsetBeforePoll",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "offset", "original-receipt"],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 68", "ruleIds": ["PRGBE-SPEC-OFFSET-068"] },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66", "ruleIds": ["PRGBE-SPEC-OFFSET-068"] }
+      ],
+      "input": {
+        "regimeId": "prg-be-68-grand-council-nomination",
+        "ruleId": "PRGBE-SPEC-OFFSET-068",
+        "dateValues": { "pollDate": "2026-03-29" },
+        "localTimeValues": {},
+        "integerValues": {},
+        "calendarProfileId": "C_FIXED_REVIEW",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F3_ORIGINAL_1200",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "manualReview",
+        "provisionalDeadline": { "date": "2026-01-12", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-01-12", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["PRGBE-SPEC-OFFSET-068"],
+        "appliedOverrideIds": [],
+        "gateResults": [],
+        "filingRequirement": { "filingProfileId": "F3_ORIGINAL_1200", "preservationMode": "originalReceipt", "originalRequired": true, "cutoffTime": "12:00:00", "timezone": "Europe/Zurich" },
+        "warningKeys": ["warning.fixedDate.verifyElectionOrder"],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-03-29"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateOffset", "inputDates": ["2026-03-29"], "outputDate": "2026-01-12", "ruleIds": ["PRGBE-SPEC-OFFSET-068"], "reasonKeys": ["offsetMinus76Days"] },
+          { "sequence": 3, "operation": "shiftDeadlineEnd", "outputDate": "2026-01-12", "ruleIds": [], "reasonKeys": ["manualReviewRequired"] },
+          { "sequence": 4, "operation": "resolveFilingRequirement", "outputDate": "2026-01-12", "ruleIds": [], "reasonKeys": ["originalReceiptBy1200"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2026-01-12", "ruleIds": [], "reasonKeys": ["candidateNotApproved"] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T04",
+      "titleKey": "goldenCase.vrpgBe.special.nextTuesday",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "weekday", "original-receipt"],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 110 Abs. 1", "ruleIds": ["PRGBE-SPEC-WEEKDAY-110"] },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66", "ruleIds": ["PRGBE-SPEC-WEEKDAY-110"] }
+      ],
+      "input": {
+        "regimeId": "prg-be-110-second-ballot-withdrawal",
+        "ruleId": "PRGBE-SPEC-WEEKDAY-110",
+        "dateValues": { "firstBallotDate": "2026-03-29" },
+        "localTimeValues": {},
+        "integerValues": {},
+        "calendarProfileId": "C_FIXED_REVIEW",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F3_ORIGINAL_1200",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "manualReview",
+        "provisionalDeadline": { "date": "2026-03-31", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-03-31", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["PRGBE-SPEC-WEEKDAY-110"],
+        "appliedOverrideIds": [],
+        "gateResults": [],
+        "filingRequirement": { "filingProfileId": "F3_ORIGINAL_1200", "preservationMode": "originalReceipt", "originalRequired": true, "cutoffTime": "12:00:00", "timezone": "Europe/Zurich" },
+        "warningKeys": ["warning.fixedDate.verifyElectionOrder"],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-03-29"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateWeekday", "inputDates": ["2026-03-29"], "outputDate": "2026-03-31", "ruleIds": ["PRGBE-SPEC-WEEKDAY-110"], "reasonKeys": ["firstTuesdayAfterAnchor"] },
+          { "sequence": 3, "operation": "shiftDeadlineEnd", "outputDate": "2026-03-31", "ruleIds": [], "reasonKeys": ["manualReviewRequired"] },
+          { "sequence": 4, "operation": "resolveFilingRequirement", "outputDate": "2026-03-31", "ruleIds": [], "reasonKeys": ["originalReceiptBy1200"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2026-03-31", "ruleIds": [], "reasonKeys": ["candidateNotApproved"] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T05",
+      "titleKey": "goldenCase.vrpgBe.special.nextThursdayOverride",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "legal-override", "weekday"],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 111 Abs. 1a", "ruleIds": ["PRGBE-SPEC-WEEKDAY-111"] },
+        { "sourceId": "SRC-PRV-BE-CURRENT", "locator": "Art. 66", "ruleIds": ["PRGBE-SPEC-WEEKDAY-111"] },
+        { "sourceId": "SRC-RRB-498-2024", "locator": "Ziff. 6.5.2", "ruleIds": ["PRGBE-SPEC-WEEKDAY-111"] }
+      ],
+      "input": {
+        "regimeId": "prg-be-111a-replacement-candidacy",
+        "ruleId": "PRGBE-SPEC-WEEKDAY-111",
+        "dateValues": { "firstBallotDate": "2026-03-29" },
+        "localTimeValues": {},
+        "integerValues": {},
+        "calendarProfileId": "C_FIXED_REVIEW",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F3_ORIGINAL_1200",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "manualReview",
+        "provisionalDeadline": { "date": "2026-04-02", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-04-02", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["PRGBE-SPEC-WEEKDAY-111"],
+        "appliedOverrideIds": ["OVR-PRG111A-CROSSREF"],
+        "gateResults": [],
+        "filingRequirement": { "filingProfileId": "F3_ORIGINAL_1200", "preservationMode": "originalReceipt", "originalRequired": true, "cutoffTime": "12:00:00", "timezone": "Europe/Zurich" },
+        "warningKeys": ["warning.fixedDate.verifyElectionOrder", "warning.override.prg111aCrossReference"],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-03-29"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateWeekday", "inputDates": ["2026-03-29"], "outputDate": "2026-04-02", "ruleIds": ["PRGBE-SPEC-WEEKDAY-111"], "reasonKeys": ["firstThursdayAfterAnchor"] },
+          { "sequence": 3, "operation": "shiftDeadlineEnd", "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": ["manualReviewRequired"] },
+          { "sequence": 4, "operation": "resolveFilingRequirement", "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": ["originalReceiptBy1200"] },
+          { "sequence": 5, "operation": "returnResult", "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": ["candidateNotApproved"] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T06",
+      "titleKey": "goldenCase.vrpgBe.special.dualEarliest",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "dual", "political-rights"],
+      "sourceRefs": [
+        { "sourceId": "SRC-PRG-BE-CURRENT", "locator": "Art. 165 Abs. 1 bis 3", "ruleIds": ["PRGBE-SPEC-DUAL-165"] }
+      ],
+      "input": {
+        "regimeId": "prg-be-165-political-rights-complaint",
+        "ruleId": "PRGBE-SPEC-DUAL-165",
+        "dateValues": { "discoveryDate": "2026-03-30", "publicationDate": "2026-04-03", "pollDate": "2026-04-01" },
+        "localTimeValues": {},
+        "integerValues": {},
+        "calendarProfileId": "C_BE",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F1_DISPATCH",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "calculated",
+        "provisionalDeadline": { "date": "2026-04-02", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-04-02", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["PRGBE-SPEC-DUAL-165"],
+        "appliedOverrideIds": [],
+        "gateResults": [{ "gateId": "G1_PREP_ACT", "matched": false, "action": "none" }],
+        "filingRequirement": { "filingProfileId": "F1_DISPATCH", "preservationMode": "dispatch", "originalRequired": false, "cutoffTime": null, "timezone": null },
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-03-30", "2026-04-01", "2026-04-03"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateDualBranches", "inputDates": ["2026-03-30", "2026-04-03"], "ruleIds": ["PRGBE-SPEC-DUAL-165"], "reasonKeys": ["discoveryPlus3Days", "publicationPlus3Days"] },
+          { "sequence": 3, "operation": "selectDualDeadline", "inputDates": ["2026-04-02", "2026-04-06"], "outputDate": "2026-04-02", "ruleIds": ["PRGBE-SPEC-DUAL-165"], "reasonKeys": ["earliestBranch"] },
+          { "sequence": 4, "operation": "applySuspension", "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 5, "operation": "evaluateGate", "inputDates": ["2026-04-01", "2026-04-02"], "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": ["deadlineAfterPoll"] },
+          { "sequence": 6, "operation": "resolveFilingRequirement", "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": ["dispatchSuffices"] },
+          { "sequence": 7, "operation": "returnResult", "outputDate": "2026-04-02", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T07",
+      "titleKey": "goldenCase.vrpgBe.special.preparatoryActGate",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "gate", "preparatory-act"],
+      "sourceRefs": [
+        { "sourceId": "SRC-VRPG-BE-20230801", "locator": "Art. 67a Abs. 3", "ruleIds": ["VRPGBE-SPEC-REL-673"] },
+        { "sourceId": "JUD-BE-VG-100-2016-347", "locator": "E. 3.4", "ruleIds": ["VRPGBE-SPEC-REL-673"] }
+      ],
+      "input": {
+        "regimeId": "vrpg-be-67a-3-preparatory-act",
+        "ruleId": "VRPGBE-SPEC-REL-673",
+        "dateValues": { "preparatoryActNoticeDate": "2026-03-10", "pollDate": "2026-03-29" },
+        "localTimeValues": {},
+        "integerValues": {},
+        "calendarProfileId": "C_BE",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F1_DISPATCH",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "calculated",
+        "provisionalDeadline": { "date": "2026-03-20", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-03-20", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["VRPGBE-SPEC-REL-673"],
+        "appliedOverrideIds": [],
+        "gateResults": [{ "gateId": "G1_PREP_ACT", "matched": true, "action": "requireImmediateChallenge" }],
+        "filingRequirement": { "filingProfileId": "F1_DISPATCH", "preservationMode": "dispatch", "originalRequired": false, "cutoffTime": null, "timezone": null },
+        "warningKeys": ["warning.preparatoryAct.challengeNow"],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-03-10", "2026-03-29"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateRelative", "inputDates": ["2026-03-10"], "outputDate": "2026-03-20", "ruleIds": ["VRPGBE-SPEC-REL-673"], "reasonKeys": ["anchorDayExcluded"] },
+          { "sequence": 3, "operation": "applySuspension", "outputDate": "2026-03-20", "ruleIds": [], "reasonKeys": ["suspensionDisabled"] },
+          { "sequence": 4, "operation": "evaluateGate", "inputDates": ["2026-03-20", "2026-03-29"], "outputDate": "2026-03-20", "ruleIds": [], "reasonKeys": ["deadlineNotAfterPoll"] },
+          { "sequence": 5, "operation": "resolveFilingRequirement", "outputDate": "2026-03-20", "ruleIds": [], "reasonKeys": ["dispatchSuffices"] },
+          { "sequence": 6, "operation": "returnResult", "outputDate": "2026-03-20", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    },
+    {
+      "caseId": "GC-VRPGBE-SPECIAL-T08",
+      "titleKey": "goldenCase.vrpgBe.special.bggFederalVoteNoSuspension",
+      "expectationStatus": "candidate",
+      "dataClassification": "synthetic",
+      "profileId": "vrpg-be",
+      "tags": ["ap11a", "bgg", "no-suspension", "weekend-shift"],
+      "sourceRefs": [
+        { "sourceId": "SRC-BGG-20260401", "locator": "Art. 45, Art. 46 Abs. 2 Bst. c und Art. 100 Abs. 3 Bst. b", "ruleIds": ["BGG-SPEC-REL-103"] }
+      ],
+      "input": {
+        "regimeId": "bgg-100-3b-federal-vote",
+        "ruleId": "BGG-SPEC-REL-103",
+        "dateValues": { "decisionNoticeDate": "2026-12-22" },
+        "localTimeValues": {},
+        "integerValues": {},
+        "calendarProfileId": "C_BGG",
+        "suspensionProfileId": "S0_NONE",
+        "filingProfileId": "F1_DISPATCH",
+        "overrideConfirmations": []
+      },
+      "expected": {
+        "outcome": "calculated",
+        "provisionalDeadline": { "date": "2026-12-27", "localTime": null, "timezone": null },
+        "finalDeadline": { "date": "2026-12-28", "localTime": null, "timezone": null },
+        "appliedRuleIds": ["BGG-SPEC-REL-103"],
+        "appliedOverrideIds": [],
+        "gateResults": [],
+        "filingRequirement": { "filingProfileId": "F1_DISPATCH", "preservationMode": "dispatch", "originalRequired": false, "cutoffTime": null, "timezone": null },
+        "warningKeys": [],
+        "blockReasonKeys": [],
+        "trace": [
+          { "sequence": 1, "operation": "resolveAnchors", "inputDates": ["2026-12-22"], "ruleIds": [], "reasonKeys": [] },
+          { "sequence": 2, "operation": "calculateRelative", "inputDates": ["2026-12-22"], "outputDate": "2026-12-27", "ruleIds": ["BGG-SPEC-REL-103"], "reasonKeys": ["anchorDayExcluded"] },
+          { "sequence": 3, "operation": "applySuspension", "outputDate": "2026-12-27", "ruleIds": [], "reasonKeys": ["suspensionDisabledByVotingRightsException"] },
+          { "sequence": 4, "operation": "shiftDeadlineEnd", "inputDates": ["2026-12-27"], "outputDate": "2026-12-28", "ruleIds": ["BGG-SPEC-REL-103"], "reasonKeys": ["sunday"] },
+          { "sequence": 5, "operation": "resolveFilingRequirement", "outputDate": "2026-12-28", "ruleIds": [], "reasonKeys": ["dispatchSuffices"] },
+          { "sequence": 6, "operation": "returnResult", "outputDate": "2026-12-28", "ruleIds": [], "reasonKeys": [] }
+        ]
+      }
+    }
+  ]
+}
