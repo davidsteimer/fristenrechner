@@ -3,8 +3,8 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Freischaltungsentscheid, Installation und Betrieb durch eine Microsoft-365-IT |
-| Produktstand | AP10, Installationskandidat `0.1.0.2` |
-| Stand | 29. August 2026 |
+| Produktstand | MVP 0.2, definitives Paket `0.2.0.0` vor Tenantabnahme |
+| Stand | 31. August 2026 |
 | Zielplattform | SharePoint Online, optional Microsoft Teams |
 
 ## 1. Entscheid für die IT in Kürze
@@ -53,9 +53,9 @@ Für eine reine SharePoint-Installation auf einer einzelnen Site Collection kann
 | Merkmal | Wert |
 | --- | --- |
 | Paket | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Version | `0.1.0.2` |
-| Grösse | 152'144 Bytes |
-| SHA-256 | `29cafe3a648e5302edec960ef1bace7905e054cf2e8f4015cba82460b226eff0` |
+| Version | `0.2.0.0` |
+| Grösse | 166'470 Bytes |
+| SHA-256 | `391c13b360a4d359bc3252d5f74f8d8e875287c20729b86b6a58cd1c519f6fc5` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 
@@ -114,7 +114,7 @@ Microsoft weist darauf hin, dass benutzerdefinierte Apps und deren Nutzung im Te
 Die Standardkonfiguration verwendet den auf einen unveränderlichen Commit gepinnten Datenrelease:
 
 ```text
-https://raw.githubusercontent.com/davidsteimer/fristenrechner/33b4c2891acf5966974cc94b616aa3972c067767/data/releases/2026-08-29-ap5-approved.1
+https://raw.githubusercontent.com/davidsteimer/fristenrechner/bd7c148741626de168af72fa5273dc5fdf24b923/data/releases/2026-08-31-mvp-02-approved.1
 ```
 
 Voraussetzung ist ein ausgehender HTTPS-Zugriff auf `raw.githubusercontent.com`. Die Anwendung lädt nur die versionierten Regel- und Kalenderdateien. Eingegebene Fristdaten werden nicht an GitHub gesendet.
@@ -130,23 +130,25 @@ Empfohlene Ordnerstruktur:
 ```text
 /sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/
 └── releases/
-    └── 2026-08-29-ap5-approved.1/
+    └── 2026-08-31-mvp-02-approved.1/
         ├── manifest.json
         ├── calendars/
         │   ├── be-public-holidays.json
         │   └── ch-federal-calendar.json
-        └── profiles/
-            ├── bgg.json
-            ├── stpo.json
-            ├── vrpg-be.json
-            ├── vwvg.json
-            └── zpo.json
+        ├── profiles/
+        │   ├── bgg.json
+        │   ├── stpo.json
+        │   ├── vrpg-be.json
+        │   ├── vwvg.json
+        │   └── zpo.json
+        └── special-regimes/
+            └── vrpg-be.json
 ```
 
 Einrichtung:
 
 1. Neuen, versionsbezogenen Ordner in einer Dokumentbibliothek der Zielwebsite erstellen.
-2. `manifest.json` sowie sämtliche darin referenzierten Kalender- und Profildateien mit unveränderten Dateinamen und Verzeichnissen hochladen.
+2. `manifest.json` sowie sämtliche darin referenzierten Kalender-, Profil- und Spezialregimedateien mit unveränderten Dateinamen und Verzeichnissen hochladen.
 3. Sicherstellen, dass die Dateien byteidentisch mit dem freigegebenen Datenrelease sind.
 4. Leserecht für alle vorgesehenen Nutzerinnen und Nutzer der App erteilen.
 5. WebPart beziehungsweise Teams-Registerkarte bearbeiten und den Eigenschaftenbereich öffnen.
@@ -154,7 +156,7 @@ Einrichtung:
 7. Als `SharePoint-Mirrorpfad` den serverrelativen Ordner eintragen, beispielsweise:
 
 ```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-08-29-ap5-approved.1
+/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-08-31-mvp-02-approved.1
 ```
 
 Massgebend ist der tatsächliche URL-Pfad der Bibliothek, nicht ihr allenfalls übersetzter Anzeigename. Der Pfad kann aus der Ordneradresse der Zielwebsite übernommen werden.

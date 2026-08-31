@@ -6,6 +6,7 @@ import { extname, relative, resolve } from 'node:path';
 import test from 'node:test';
 
 import { ReleaseValidator } from '../src/core/ReleaseValidator';
+import { PINNED_GITHUB_RELEASE_URL } from '../src/core/config';
 import type { IReleaseProvider } from '../src/core/types';
 import {
   calculateDeadline,
@@ -22,6 +23,9 @@ const RELEASE_ROOT = resolve(
   '2026-08-31-mvp-02-approved.1'
 );
 
+const EXPECTED_PINNED_RELEASE_URL =
+  'https://raw.githubusercontent.com/davidsteimer/fristenrechner/bd7c148741626de168af72fa5273dc5fdf24b923/data/releases/2026-08-31-mvp-02-approved.1';
+
 class DirectoryProvider implements IReleaseProvider {
   public readonly id = 'fixture:ap11c';
   public readonly kind = 'github' as const;
@@ -30,6 +34,10 @@ class DirectoryProvider implements IReleaseProvider {
     return new Uint8Array(await readFile(resolve(RELEASE_ROOT, relativePath)));
   }
 }
+
+test('pinnt den MVP-0.2-Datenrelease auf den freigegebenen Git-Commit', () => {
+  assert.equal(PINNED_GITHUB_RELEASE_URL, EXPECTED_PINNED_RELEASE_URL);
+});
 
 async function productSourceFiles(directory: string): Promise<string[]> {
   const entries = await readdir(directory, { withFileTypes: true });

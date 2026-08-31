@@ -3,8 +3,8 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Technische Beurteilung und Übergabe an eine Microsoft-365-IT |
-| Produktstand | AP10, Installationskandidat `0.1.0.2` |
-| Stand | 29. August 2026 |
+| Produktstand | MVP 0.2, definitives Paket `0.2.0.0` vor Tenantabnahme |
+| Stand | 31. August 2026 |
 | Zielplattform | SharePoint Online und Microsoft Teams |
 | Lizenz | Programmcode AGPL-3.0-only, Dokumentation und kuratierte Daten grundsätzlich CC BY-SA 4.0 |
 | Repository | `davidsteimer/fristenrechner` |
@@ -75,16 +75,16 @@ npm ci
 npm run build
 ```
 
-`npm run check` führt Typprüfung, 65 Kern- und UI-Tests sowie den Build der Browservorschau aus. Der SPFx-Build führt zusätzlich 12 Provider- und Integrationsprüfungen, TypeScript-, Sass-, ESLint- und Webpack-Prüfungen sowie ein Audit der finalen Bundle-CSS aus.
+`npm run check` führt Typprüfung, 103 Kern- und UI-Tests sowie den Build der Browservorschau aus. Der SPFx-Build führt zusätzlich 15 Provider- und Integrationsprüfungen, TypeScript-, Sass-, ESLint- und Webpack-Prüfungen sowie ein Audit der finalen Bundle-CSS aus.
 
 Das auslieferbare Paket hat folgende Identität:
 
 | Merkmal | Wert |
 | --- | --- |
 | Datei | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Paketversion | `0.1.0.2` |
-| Grösse | 152'144 Bytes |
-| SHA-256 | `29cafe3a648e5302edec960ef1bace7905e054cf2e8f4015cba82460b226eff0` |
+| Paketversion | `0.2.0.0` |
+| Grösse | 166'470 Bytes |
+| SHA-256 | `391c13b360a4d359bc3252d5f74f8d8e875287c20729b86b6a58cd1c519f6fc5` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 | Unterstützte Hosts | `SharePointWebPart`, `TeamsTab` |
@@ -93,7 +93,7 @@ Das auslieferbare Paket hat folgende Identität:
 
 ## 5. Daten- und Sicherheitsmodell
 
-Der MVP verwendet standardmässig den freigegebenen Datenrelease `2026-08-29-ap5-approved.1`. Die GitHub-Adresse ist auf den vollständigen Commit `33b4c2891acf5966974cc94b616aa3972c067767` gepinnt. Ein frei beweglicher Branch wie `main` wird als produktive Datenquelle abgewiesen.
+Der MVP verwendet standardmässig den freigegebenen Datenrelease `2026-08-31-mvp-02-approved.1`. Die GitHub-Adresse ist auf den vollständigen Commit `bd7c148741626de168af72fa5273dc5fdf24b923` gepinnt. Ein frei beweglicher Branch wie `main` wird als produktive Datenquelle abgewiesen.
 
 Vor der Aktivierung prüft die Anwendung unter anderem:
 

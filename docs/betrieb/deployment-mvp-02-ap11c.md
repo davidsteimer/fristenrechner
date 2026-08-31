@@ -1,6 +1,6 @@
 # Deployment MVP 0.2 nach AP11C
 
-Diese Anleitung beschreibt die kontrollierte Aktualisierung vom tenantgeprüften Paket `0.1.0.2` auf das definitive MVP-0.2-Paket `0.2.0.0`. AP11C wurde am 31. August 2026 durch David Steimer abgenommen. Der freigegebene Datenrelease trägt die ID `2026-08-31-mvp-02-approved.1`.
+Diese Anleitung beschreibt die kontrollierte Aktualisierung vom tenantgeprüften Paket `0.1.0.2` auf das definitive MVP-0.2-Paket `0.2.0.0`. AP11C wurde am 31. August 2026 durch David Steimer abgenommen. Der freigegebene Datenrelease trägt die ID `2026-08-31-mvp-02-approved.1` und ist auf den vollständigen Git-Commit `bd7c148741626de168af72fa5273dc5fdf24b923` gepinnt.
 
 ## 1. Identität des lokalen Pakets
 
@@ -11,11 +11,12 @@ Diese Anleitung beschreibt die kontrollierte Aktualisierung vom tenantgeprüften
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | WebPart-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 | Paketversion | `0.2.0.0` |
-| SHA-256 | `49d4fe8995e4e982e8e5e9cb8666425d68689f0e882c34b39995f54694ff142e` |
+| Grösse | 166'470 Bytes |
+| SHA-256 | `391c13b360a4d359bc3252d5f74f8d8e875287c20729b86b6a58cd1c519f6fc5` |
 | Zielhosts | SharePoint Online und Microsoft Teams |
 | zusätzliche API-Berechtigungen | keine |
 
-Die Prüfsumme gilt exakt für den am 31. August 2026 lokal gebauten Kandidaten. Jeder spätere Build benötigt eine neue Prüfsumme und einen neuen Nachweis.
+Die Prüfsumme gilt exakt für das am 31. August 2026 mit dem freigegebenen Datenquellen-Pin definitiv gebaute Paket. Jeder spätere Build benötigt eine neue Prüfsumme und einen neuen Nachweis.
 
 ## 2. Zwingende Voraussetzungen
 
