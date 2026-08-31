@@ -102,6 +102,35 @@ Die SharePoint-Prüfung muss zuerst bestanden sein.
 
 Jeder Test hält Datum, Host, Paketversion, Release-ID, Provider und Ergebnis fest. Bildschirmbilder sind für T05, T06, T09 und T11 sinnvoll. Sie ersetzen die protokollierten Eingaben und Sollwerte nicht.
 
+### 6.1 Durchführungsprotokoll vom 31. August 2026
+
+Die Matrix wurde nach der tenantweiten Aktivierung des Pakets `0.2.0.0` vollständig auf der dedizierten SharePoint-Testsite und in der bestehenden Teams-Registerkarte `Fristenrechner Schweiz – Teams` im Kanal `Fristenrechner` ausgeführt. Codex führte die Arbeiten als dokumentiertes KI-Arbeitsinstrument im Auftrag und unter der tenantseitigen Freigabe von David Steimer aus. Die fachliche Freigabe- und Haftungsverantwortung bleibt bei David Steimer.
+
+Verwendete Datenquellen:
+
+- öffentlicher, unveränderlich gepinnter GitHub-Release unter Commit `bd7c148741626de168af72fa5273dc5fdf24b923`
+- Testsite-Mirror unter `/sites/fristenrechner-test/Freigegebene Dokumente/FristenrechnerDataMirror/2026-08-31-mvp-02-approved.1`
+- Teamsite-Mirror unter `/sites/Entwicklungsumgebung/Freigegebene Dokumente/Fristenrechner/2026-08-31-mvp-02-approved.1`
+
+| ID | Host und Provider | Ergebnis | Status |
+| --- | --- | --- | --- |
+| T01 | Tenant-App-Katalog | Paket `0.2.0.0` mit Solution-ID `13090feb-a6bf-40fa-9d3c-ec8d90516a60` aktiviert. Das WebPart hat die ID `596c7f1c-4d3e-4da8-a7be-27a96024f37c`. Es erschienen keine neuen API-Berechtigungsanträge. | bestanden |
+| T02 | SharePoint-Testsite und Teamsite | Beide bestehenden Installationen laden das neue Produktbundle `fristenrechner-web-part_f107d1b0185ac0c3fafb.js`. Die Testseite und die bestehende Teams-Registerkarte blieben verwendbar. | bestanden |
+| T03 | SharePoint-Mirror | Aktiviert wurde ausschliesslich der freigegebene Format-2-Release `2026-08-31-mvp-02-approved.1` mit Abdeckung vom 01.01.2026 bis 31.12.2028. | bestanden |
+| T04 | SharePoint-Testsite, Mirror | StPO, Empfang 16.09.2026, 10 Tage ergibt den Fristablauf 28.09.2026. Fristbeginn 17.09.2026, rechnerisches Fristende 26.09.2026, Verschiebung bejaht. | bestanden |
+| T05 | SharePoint-Testsite, Mirror | PRG-BE Art. 111 Abs. 1a mit erstem Wahlgang 29.03.2026 ergibt 02.04.2026. Die Oberfläche verlangt Originaleingang bis 12.00 Uhr und weist die Zeitzone `Europe/Zurich` aus. | bestanden |
+| T06 | SharePoint-Testsite, Mirror | VRPG-BE Art. 67a Abs. 3 mit Eröffnung 10.03.2026 und Urnengang 29.03.2026 ergibt 20.03.2026. Der zwingende Hinweis zur sofortigen Anfechtung erscheint. | bestanden |
+| T07 | SharePoint-Testsite, Mirror | Sämtliche sichtbaren Regime mit Status «Offen», «Gesperrt» oder «Folgerelease» sind mit `aria-disabled=true` als nicht auswählbar markiert. | bestanden |
+| T08 | SharePoint-Testsite, Mirror | Weder die VRPG-BE-Fristtypen noch die ZPO-Verfahrensarten enthalten die Option «Noch nicht geklärt». «Bitte wählen» bleibt als neutraler Ausgangswert verfügbar. | bestanden |
+| T09 | SharePoint und Teams, Mirror | Eingaben, Resultate, Fristwahrung, Warnungen und Rechenspur wurden auf Deutsch und Französisch geprüft. Der Spezialfall nach Art. 111 Abs. 1a PRG-BE wird auf Französisch einschliesslich Originaleingang bis 12.00 Uhr korrekt dargestellt. | bestanden |
+| T10 | SharePoint-Testsite, Mirror | Gemeinwesen, Erlass und Fristtyp blieben nach dem Speichern und Neuladen erhalten. Das Ereignisdatum blieb leer. Die für den Test gesetzten lokalen Defaults wurden anschliessend zurückgesetzt. | bestanden |
+| T11 | SharePoint und Teams, Mirror | Die SharePoint-Seite wurde bei 390 Pixeln und in breiter Ansicht visuell geprüft. Die Teams-Registerkarte wurde in ihrer schmalen Hostspalte geprüft. Die Rechneroberfläche zeigte kein horizontales Überlaufen. | bestanden |
+| T12 | SharePoint und Teams, Mirror | Der StPO-Referenzfall ergab in beiden Hosts 28.09.2026 mit identischem Fristbeginn 17.09.2026, rechnerischem Fristende 26.09.2026 und verschobenem Ende. | bestanden |
+| T13 | GitHub, Testsite-Mirror und Teamsite-Mirror | GitHub und Mirror aktivierten denselben Release. Die QuickXor-Prüfsummen aller neun Releaseartefakte stimmten auf beiden Sites mit den lokalen freigegebenen Dateien überein. Das Manifest hat lokal SHA-256 `df590c4e83b47a6307a63f688c9accc26c028eef7d7c3c9dad9a64308bf1a79b`. | bestanden |
+| T14 | SharePoint-Testsite, manipulierter Mirrorpfad | Ein absichtlich nicht vorhandener Mirrorpfad führte zu HTTP 404. Die App behielt den letzten vollständig validierten Release `2026-08-31-mvp-02-approved.1` bei und zeigte den vorgesehenen Warnhinweis. Danach wurde der gültige Mirrorpfad wiederhergestellt und veröffentlicht. | bestanden |
+
+Die Testsite und die Teams-Registerkarte sind nach Abschluss auf den jeweiligen SharePoint-Mirror konfiguriert. In beiden Instanzen ist der freigegebene Datenstand `2026-08-31-mvp-02-approved.1` sichtbar. Dieses Protokoll dokumentiert die technische Durchführung. Es erteilt keine Produktiv-, Gast- oder organisationsweite Betriebsfreigabe.
+
 ## 7. Rollback
 
 Ein Rollback trennt Code und Daten:
