@@ -123,8 +123,14 @@
               "originalRequired": { "const": true },
               "cutoffTime": { "type": "string" },
               "timezone": { "const": "Europe/Zurich" },
-              "acceptedChannels": { "contains": { "const": "competentAuthority" } },
-              "acceptedEvidence": { "contains": { "const": "authorityReceipt" } }
+              "acceptedChannels": {
+                "type": "array",
+                "contains": { "const": "competentAuthority" }
+              },
+              "acceptedEvidence": {
+                "type": "array",
+                "contains": { "const": "authorityReceipt" }
+              }
             }
           }
         },
@@ -135,8 +141,14 @@
           },
           "then": {
             "properties": {
-              "acceptedChannels": { "contains": { "const": "swissPost" } },
-              "acceptedEvidence": { "contains": { "const": "registeredPostalDispatch" } },
+              "acceptedChannels": {
+                "type": "array",
+                "contains": { "const": "swissPost" }
+              },
+              "acceptedEvidence": {
+                "type": "array",
+                "contains": { "const": "registeredPostalDispatch" }
+              },
               "originalRequired": { "const": false }
             }
           }
@@ -149,8 +161,14 @@
           "then": {
             "properties": {
               "deadlineDimension": { "const": "dateAndTime" },
-              "acceptedChannels": { "contains": { "const": "electronicSystem" } },
-              "acceptedEvidence": { "contains": { "const": "electronicReceipt" } }
+              "acceptedChannels": {
+                "type": "array",
+                "contains": { "const": "electronicSystem" }
+              },
+              "acceptedEvidence": {
+                "type": "array",
+                "contains": { "const": "electronicReceipt" }
+              }
             }
           }
         },
@@ -161,8 +179,8 @@
           },
           "then": {
             "properties": {
-              "acceptedChannels": { "maxItems": 0 },
-              "acceptedEvidence": { "maxItems": 0 },
+              "acceptedChannels": { "type": "array", "maxItems": 0 },
+              "acceptedEvidence": { "type": "array", "maxItems": 0 },
               "originalRequired": { "const": false },
               "cutoffTime": { "type": "null" },
               "timezone": { "type": "null" }

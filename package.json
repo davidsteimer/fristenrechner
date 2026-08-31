@@ -1,6 +1,6 @@
 {
   "name": "fristenrechner-schweiz",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Hostneutraler Rechenkern und MVP-Oberfläche des Fristenrechners Schweiz",
   "license": "AGPL-3.0-only",
@@ -12,6 +12,14 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/core/*.test.ts tests/ui/*.test.ts",
+    "build:data:ap11b:candidate": "node scripts/build-ap11b-candidate.mjs",
+    "build:data:ap11b:approved": "node scripts/promote-ap11b-release.mjs",
+    "build:data:ap11b": "npm run build:data:ap11b:candidate && npm run build:data:ap11b:approved",
+    "test:data:ap11b": ".venv/bin/python tests/data/validate_release.py data/releases/2026-08-30-ap11b-approved.1 --self-test && .venv/bin/python tests/special-regimes/validate_special_regime_release.py",
+    "build:data:ap11c:candidate": "node scripts/build-ap11c-candidate.mjs",
+    "build:data:ap11c:approved": "node scripts/promote-ap11c-release.mjs",
+    "build:data:ap11c": "npm run build:data:ap11c:candidate && npm run build:data:ap11c:approved",
+    "test:data:ap11c": ".venv/bin/python tests/data/validate_release.py data/releases/2026-08-30-ap11c-candidate.1 --self-test && .venv/bin/python tests/data/validate_release.py data/releases/2026-08-31-mvp-02-approved.1 --self-test && .venv/bin/python tests/data/validate_ap11c_release.py data/releases/2026-08-30-ap11c-candidate.1 && .venv/bin/python tests/data/validate_ap11c_release.py data/releases/2026-08-31-mvp-02-approved.1",
     "build:ui": "node scripts/build-ui-preview.mjs",
     "preview:ui": "node scripts/ui-preview-server.mjs",
     "check": "npm run typecheck && npm run test && npm run build:ui",

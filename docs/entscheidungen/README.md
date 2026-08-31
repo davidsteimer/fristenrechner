@@ -37,7 +37,7 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | --- | --- | --- | --- | --- |
 | [DEC-2026-012](DEC-2026-012-providerneutrales-datenrelease-format.md) | B | beschlossen | Strikte JSON-Schemata und manifestbasierte, providerneutrale Datenreleases | – |
 | [DEC-2026-013](DEC-2026-013-spfx-zielarchitektur.md) | B | beschlossen | Gemeinsames SPFx-WebPart für SharePoint und Teams, gestützt auf den erfolgreichen Tenant-Spike | – |
-| [DEC-2026-014](DEC-2026-014-komponentenweise-fachdatenformatevolution.md) | B | vorgeschlagen | Komponentenmodell und neue Format-Hauptversion für Spezialregime | – |
+| [DEC-2026-014](DEC-2026-014-komponentenweise-fachdatenformatevolution.md) | B | beschlossen | Komponentenmodell, getrennte Terminherkunft und neue Format-Hauptversion für Spezialregime | – |
 
 ## Quellen des Startbestands
 

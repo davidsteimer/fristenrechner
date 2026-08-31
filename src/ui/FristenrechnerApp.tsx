@@ -12,8 +12,19 @@ import {
   TextField
 } from '@fluentui/react';
 
-import { calculateDeadline } from '../core';
-import type { CalculationData, CalculationResult, LegalProfile, TraceStep } from '../core';
+import { calculateDeadline, calculateSpecialDeadline, parseIsoDate } from '../core';
+import type {
+  CalculatedDeadlineDefinition,
+  CalculationData,
+  CalculationResult,
+  DeadlineDefinition,
+  FilingProfile,
+  LegalProfile,
+  SpecialDeadlineResult,
+  SpecialRegime,
+  SpecialTraceStep,
+  TraceStep
+} from '../core';
 import {
   clearDefaults,
   initialDefaults,
@@ -27,13 +38,20 @@ import {
   automaticCalendarId,
   authorityOptions,
   createCalculationInput,
+  createSpecialCalculationInput,
   defaultSelectors,
+  effectiveSelectors,
+  GENERAL_SPECIAL_REGIME_ID,
   inputDateSemantics,
   isCalendarOverride,
+  isGeneralCalculation,
   profilesForAuthority,
   reconcileProfileId,
+  reconcileSpecialSelection,
   requiresDeliveryFictionConfirmation,
-  requiresSpecialLawConfirmation,
+  specialCatalogForProfile,
+  specialRegimeOptions,
+  specialSelection,
   suspensionPresentation,
   type CalculatorFormState
 } from './model';
@@ -45,11 +63,12 @@ export interface FristenrechnerAppProps {
 }
 
 interface UiValidation {
-  readonly inputDate?: string;
-  readonly deadlineDays?: string;
-  readonly overrideReason?: string;
-  readonly additionalHolidayAnchor?: string;
+  readonly [field: string]: string | undefined;
 }
+
+type UiResult =
+  | { readonly kind: 'general'; readonly value: CalculationResult }
+  | { readonly kind: 'special'; readonly value: SpecialDeadlineResult };
 
 type Notification = { readonly type: MessageBarType; readonly text: string };
 
@@ -76,7 +95,14 @@ function stateFromDefaults(
     additionalHolidayAnchor: '',
     holidayAnchorConfirmed: false,
     deliveryFictionConfirmed: false,
-    specialLawChecked: false
+    specialLawChecked: defaults.specialRegimeId === GENERAL_SPECIAL_REGIME_ID
+      || defaults.selectors.specialLawStatus === 'noKnownOverride',
+    specialRegimeId: defaults.specialRegimeId,
+    specialDefinitionId: defaults.specialDefinitionId,
+    specialDateValues: {},
+    specialLocalTimeValues: {},
+    specialIntegerValues: {},
+    specialOverrideConfirmations: []
   };
   return {
     ...base,
@@ -104,6 +130,22 @@ function formatIsoDate(value: string, locale: Locale): string {
 function profileLabel(profile: LegalProfile, locale: Locale): string {
   const translated = translate(locale, `profile.${profile.profileId}`);
   return translated === `profile.${profile.profileId}` ? profile.lawCode : translated;
+}
+
+function localizedLabel(value: { readonly labels: { readonly de: string; readonly fr: string } }, locale: Locale): string {
+  return value.labels[locale];
+}
+
+function formatLocalTime(value: string | null, locale: Locale): string {
+  if (!value) return '–';
+  const compact = value.slice(0, 5).replace(':', locale === 'de' ? '.' : ' h ');
+  return locale === 'de' ? `${compact} Uhr` : compact;
+}
+
+function specialDefinitionLabel(definition: DeadlineDefinition, locale: Locale): string {
+  const translated = translate(locale, `special.definition.${definition.deadlineDefinitionId}`);
+  if (translated !== `special.definition.${definition.deadlineDefinitionId}`) return translated;
+  return definition.sourceRefs.map(source => source.locator).join(' · ') || definition.deadlineDefinitionId;
 }
 
 function dateInputLabel(locale: Locale, state: CalculatorFormState): string {
@@ -214,6 +256,146 @@ function ResultPanel({ result, locale }: {
   );
 }
 
+function SpecialTrace({
+  step,
+  locale
+}: {
+  readonly step: SpecialTraceStep;
+  readonly locale: Locale;
+}): React.ReactElement {
+  return (
+    <li className="fr-trace__item">
+      <div className="fr-trace__number" aria-hidden="true">{step.sequence}</div>
+      <div>
+        <h4>{translate(locale, `special.trace.${step.operation}`)}</h4>
+        {(step.inputDates?.length || step.outputDate) && (
+          <p className="fr-trace__dates">
+            {step.inputDates?.map(date => formatIsoDate(date, locale)).join(' · ') || '–'}
+            {step.outputDate ? ` → ${formatIsoDate(step.outputDate, locale)}` : ''}
+          </p>
+        )}
+        {step.reasonKeys.length > 0 && (
+          <p>{step.reasonKeys.map(key => translateReason(locale, key)).join(' · ')}</p>
+        )}
+        {step.ruleIds.length > 0 && (
+          <p className="fr-trace__rules">
+            {translate(locale, 'trace.rules')}: {step.ruleIds.join(', ')}
+          </p>
+        )}
+      </div>
+    </li>
+  );
+}
+
+function SpecialResultPanel({
+  result,
+  locale,
+  regime,
+  definition,
+  filingProfile
+}: {
+  readonly result: SpecialDeadlineResult;
+  readonly locale: Locale;
+  readonly regime?: SpecialRegime;
+  readonly definition?: DeadlineDefinition;
+  readonly filingProfile?: FilingProfile;
+}): React.ReactElement {
+  const completed = result.outcome !== 'blocked';
+  const messageType = result.outcome === 'blocked'
+    ? MessageBarType.blocked
+    : result.outcome === 'manualReview'
+      ? MessageBarType.severeWarning
+      : MessageBarType.success;
+  return (
+    <section className="fr-result fr-result--special" aria-labelledby="fr-result-heading">
+      <h2 id="fr-result-heading">{translate(locale, 'result.heading')}</h2>
+      <MessageBar messageBarType={messageType}>
+        {translate(locale, `special.result.${result.outcome}`)}
+      </MessageBar>
+
+      {completed && result.finalDeadline && result.provisionalDeadline && (
+        <>
+          <div className="fr-result__hero">
+            <span>{translate(locale, 'result.finalEnd')}</span>
+            <strong>{formatIsoDate(result.finalDeadline.date, locale)}</strong>
+          </div>
+          <dl className="fr-result__grid">
+            <div>
+              <dt>{translate(locale, 'result.provisionalEnd')}</dt>
+              <dd>{formatIsoDate(result.provisionalDeadline.date, locale)}</dd>
+            </div>
+            <div>
+              <dt>{translate(locale, 'special.result.filingMode')}</dt>
+              <dd>{filingProfile ? localizedLabel(filingProfile, locale) : result.filingRequirement?.filingProfileId}</dd>
+            </div>
+            <div>
+              <dt>{translate(locale, 'special.result.cutoff')}</dt>
+              <dd>{formatLocalTime(result.filingRequirement?.cutoffTime ?? null, locale)}</dd>
+            </div>
+            <div>
+              <dt>{translate(locale, 'special.result.timezone')}</dt>
+              <dd>{result.filingRequirement?.timezone ?? '–'}</dd>
+            </div>
+            <div>
+              <dt>{translate(locale, 'special.result.original')}</dt>
+              <dd>{translate(locale, result.filingRequirement?.originalRequired ? 'result.yes' : 'result.no')}</dd>
+            </div>
+            <div>
+              <dt>{translate(locale, 'special.result.rule')}</dt>
+              <dd>{definition ? specialDefinitionLabel(definition, locale) : '–'}</dd>
+            </div>
+          </dl>
+          {result.filingRequirement && (
+            <div className="fr-filing">
+              <h3>{translate(locale, 'special.result.filingRequirements')}</h3>
+              <dl>
+                <div>
+                  <dt>{translate(locale, 'special.result.channels')}</dt>
+                  <dd>{result.filingRequirement.acceptedChannels.length > 0
+                    ? result.filingRequirement.acceptedChannels
+                      .map(channel => translate(locale, `special.channel.${channel}`)).join(' · ')
+                    : '–'}</dd>
+                </div>
+                <div>
+                  <dt>{translate(locale, 'special.result.evidence')}</dt>
+                  <dd>{result.filingRequirement.acceptedEvidence.length > 0
+                    ? result.filingRequirement.acceptedEvidence
+                      .map(evidence => translate(locale, `special.evidence.${evidence}`)).join(' · ')
+                    : '–'}</dd>
+                </div>
+              </dl>
+            </div>
+          )}
+        </>
+      )}
+
+      {regime && (
+        <p className="fr-result__basis">
+          <strong>{translate(locale, 'special.result.legalBasis')}:</strong>{' '}
+          {regime.lawCode} {regime.provision} · {localizedLabel(regime, locale)}
+        </p>
+      )}
+      {result.blockReasonKeys.length > 0 && (
+        <div className="fr-result__messages">
+          <h3>{translate(locale, 'result.blocks')}</h3>
+          <ul>{result.blockReasonKeys.map(key => <li key={key}>{translateBlockReason(locale, key)}</li>)}</ul>
+        </div>
+      )}
+      {result.warningKeys.length > 0 && (
+        <div className="fr-result__messages">
+          <h3>{translate(locale, 'result.warnings')}</h3>
+          <ul>{result.warningKeys.map(key => <li key={key}>{translate(locale, key)}</li>)}</ul>
+        </div>
+      )}
+
+      <details className="fr-trace" open={result.outcome === 'blocked'}>
+        <summary>{translate(locale, 'trace.heading')}</summary>
+        <ol>{result.trace.map(step => <SpecialTrace key={step.sequence} step={step} locale={locale} />)}</ol>
+      </details>
+    </section>
+  );
+}
+
 function ValidationPanel({ validation, locale }: {
   readonly validation: UiValidation;
   readonly locale: Locale;
@@ -246,20 +428,44 @@ export function FristenrechnerApp({
   const [calendarOverrideEnabled, setCalendarOverrideEnabled] = React.useState(
     () => isCalendarOverride(data, data.profiles.get(initialForm.profileId), initialForm.calendarId)
   );
-  const [result, setResult] = React.useState<CalculationResult>();
+  const [result, setResult] = React.useState<UiResult>();
   const [validation, setValidation] = React.useState<UiValidation>({});
   const [notification, setNotification] = React.useState<Notification>();
 
   const profile = data.profiles.get(form.profileId);
   const availableProfiles = profilesForAuthority(data, form.authorityCode);
+  const specialCatalog = specialCatalogForProfile(data, form.profileId);
+  const regimeOptions = specialRegimeOptions(data, form.profileId);
+  const selection = specialSelection(
+    data,
+    form.profileId,
+    form.specialRegimeId,
+    form.specialDefinitionId
+  );
+  const specialRegime = selection.regime;
+  const specialDefinition = selection.definition;
+  const specialFilingProfile = specialCatalog?.filingProfiles.find(item => item.filingProfileId === (
+    specialRegime?.filingProfileId ?? specialDefinition?.filingProfileId
+  ));
+  const generalMode = isGeneralCalculation(data, form);
+  const calculatedDefinition = specialDefinition?.deadlineOrigin === 'CALCULATED'
+    ? specialDefinition as CalculatedDeadlineDefinition
+    : undefined;
+  const specialDurationInputId = calculatedDefinition?.calculation.type === 'R1_RELATIVE'
+    ? calculatedDefinition.calculation.durationInputId
+    : undefined;
   const automaticCalendar = automaticCalendarId(data, profile);
   const fixedCalendar = profile?.calendarPolicy.jurisdictionSelection === 'fixedBern';
   const manualOverride = isCalendarOverride(data, profile, form.calendarId);
-  const suspension = suspensionPresentation(profile, form.selectors);
+  const selectors = effectiveSelectors(data, form);
+  const suspension = suspensionPresentation(profile, selectors);
   const additionalAnchor = form.additionalHolidayAnchor.trim().toUpperCase();
   const hasAnchorConflict = /^(CH|[A-Z]{2})$/.test(additionalAnchor)
     && additionalAnchor !== data.calendars.get(form.calendarId)?.jurisdiction.code;
   const hasValidationErrors = Object.keys(validation).length > 0;
+  const visibleSelectors = generalMode
+    ? profile?.selectors.filter(definition => !(specialCatalog && definition.selectorId === 'specialLawStatus')) ?? []
+    : [];
 
   const mutateForm = (change: Partial<CalculatorFormState>): void => {
     setForm(current => ({ ...current, ...change }));
@@ -269,29 +475,72 @@ export function FristenrechnerApp({
 
   const selectOptions = (definition: NonNullable<typeof profile>['selectors'][number]): IDropdownOption[] => [
     ...(definition.required ? [{ key: '', text: translate(locale, 'form.select') }] : []),
-    ...definition.options.map(option => ({ key: option.value, text: translate(locale, option.labelKey) }))
+    ...definition.options
+      .filter(option => option.value !== 'unknown')
+      .map(option => ({ key: option.value, text: translate(locale, option.labelKey) }))
   ];
 
   const validate = (): UiValidation => {
-    const errors: {
-      inputDate?: string;
-      deadlineDays?: string;
-      overrideReason?: string;
-      additionalHolidayAnchor?: string;
-    } = {};
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(form.inputDate)) {
-      errors.inputDate = translate(locale, 'form.inputDate.required');
+    const errors: Record<string, string> = {};
+    if (generalMode) {
+      if (!parseIsoDate(form.inputDate)) {
+        errors.inputDate = translate(locale, 'form.inputDate.required');
+      }
+      const days = Number(form.deadlineDays);
+      if (!Number.isInteger(days) || days < 1 || days > 365) {
+        errors.deadlineDays = translate(locale, 'form.deadlineDays.required');
+      }
+      visibleSelectors.forEach(definition => {
+        if (definition.required && !form.selectors[definition.selectorId]) {
+          errors[`selector.${definition.selectorId}`] = translate(locale, 'form.requiredSelection');
+        }
+      });
+      if (manualOverride && form.calendarOverrideReason.trim().length < 3) {
+        errors.overrideReason = translate(locale, 'override.reason.required');
+      }
+      if (additionalAnchor && !/^(CH|[A-Z]{2})$/.test(additionalAnchor)) {
+        errors.additionalHolidayAnchor = translate(locale, 'anchor.additional.invalid');
+      }
+      return errors;
     }
-    const days = Number(form.deadlineDays);
-    if (!Number.isInteger(days) || days < 1 || days > 365) {
-      errors.deadlineDays = translate(locale, 'form.deadlineDays.required');
+
+    if (!specialRegime) {
+      errors.specialRegime = translate(locale, 'special.validation.regime');
+      return errors;
     }
-    if (manualOverride && form.calendarOverrideReason.trim().length < 3) {
-      errors.overrideReason = translate(locale, 'override.reason.required');
+    if (!calculatedDefinition) {
+      errors.specialDefinition = translate(locale, 'special.validation.definition');
+      return errors;
     }
-    if (additionalAnchor && !/^(CH|[A-Z]{2})$/.test(additionalAnchor)) {
-      errors.additionalHolidayAnchor = translate(locale, 'anchor.additional.invalid');
+    calculatedDefinition.anchors.forEach(anchor => {
+      const key = `special.${anchor.inputId}`;
+      if (anchor.valueType === 'date' && !parseIsoDate(form.specialDateValues[anchor.inputId] ?? '')) {
+        errors[key] = translate(locale, 'special.validation.date');
+      }
+      if (anchor.valueType === 'localTime'
+        && !/^(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?$/.test(form.specialLocalTimeValues[anchor.inputId] ?? '')) {
+        errors[key] = translate(locale, 'special.validation.time');
+      }
+    });
+    if (calculatedDefinition.calculation.type === 'R1_RELATIVE'
+      && calculatedDefinition.calculation.durationInputId) {
+      const inputId = calculatedDefinition.calculation.durationInputId;
+      const value = Number(form.specialIntegerValues[inputId]);
+      if (!Number.isInteger(value) || value < 1 || value > 365) {
+        errors[`special.${inputId}`] = translate(locale, 'special.validation.integer');
+      }
     }
+    const overrideIds = new Set([
+      ...specialRegime.legalOverrideIds,
+      ...calculatedDefinition.legalOverrideIds
+    ]);
+    specialCatalog?.legalOverrides
+      .filter(override => overrideIds.has(override.overrideId) && override.confirmationRequired)
+      .forEach(override => {
+        if (!form.specialOverrideConfirmations.includes(override.overrideId)) {
+          errors[`override.${override.overrideId}`] = translate(locale, 'special.validation.override');
+        }
+      });
     return errors;
   };
 
@@ -304,7 +553,17 @@ export function FristenrechnerApp({
       setResult(undefined);
       return;
     }
-    setResult(calculateDeadline(createCalculationInput(data, form), data));
+    if (generalMode) {
+      setResult({ kind: 'general', value: calculateDeadline(createCalculationInput(data, form), data) });
+      return;
+    }
+    const input = createSpecialCalculationInput(data, form);
+    if (!input) {
+      setValidation({ specialDefinition: translate(locale, 'special.validation.definition') });
+      setResult(undefined);
+      return;
+    }
+    setResult({ kind: 'special', value: calculateSpecialDeadline(input, data) });
   };
 
   const onAuthorityChange = (_event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption): void => {
@@ -313,6 +572,12 @@ export function FristenrechnerApp({
     }
     const profileId = reconcileProfileId(data, option.key, form.profileId);
     const nextProfile = data.profiles.get(profileId);
+    const special = reconcileSpecialSelection(
+      data,
+      profileId,
+      '',
+      ''
+    );
     mutateForm({
       authorityCode: option.key,
       profileId,
@@ -320,7 +585,13 @@ export function FristenrechnerApp({
       calendarId: automaticCalendarId(data, nextProfile),
       calendarOverrideReason: '',
       deliveryFictionConfirmed: false,
-      specialLawChecked: false
+      specialLawChecked: false,
+      specialRegimeId: special.regimeId,
+      specialDefinitionId: special.definitionId,
+      specialDateValues: {},
+      specialLocalTimeValues: {},
+      specialIntegerValues: {},
+      specialOverrideConfirmations: []
     });
     setCalendarOverrideEnabled(false);
   };
@@ -330,13 +601,25 @@ export function FristenrechnerApp({
       return;
     }
     const nextProfile = data.profiles.get(option.key);
+    const special = reconcileSpecialSelection(
+      data,
+      option.key,
+      '',
+      ''
+    );
     mutateForm({
       profileId: option.key,
       selectors: defaultSelectors(nextProfile),
       calendarId: automaticCalendarId(data, nextProfile),
       calendarOverrideReason: '',
       deliveryFictionConfirmed: false,
-      specialLawChecked: false
+      specialLawChecked: false,
+      specialRegimeId: special.regimeId,
+      specialDefinitionId: special.definitionId,
+      specialDateValues: {},
+      specialLocalTimeValues: {},
+      specialIntegerValues: {},
+      specialOverrideConfirmations: []
     });
     setCalendarOverrideEnabled(false);
   };
@@ -348,19 +631,54 @@ export function FristenrechnerApp({
     mutateForm({
       selectors: { ...form.selectors, [selectorId]: option.key },
       deliveryFictionConfirmed: selectorId === 'deliveryMethod' ? false : form.deliveryFictionConfirmed,
-      specialLawChecked: selectorId === 'specialLawStatus' ? false : form.specialLawChecked
+      specialLawChecked: selectorId === 'specialLawStatus'
+        ? option.key === 'noKnownOverride'
+        : form.specialLawChecked
+    });
+  };
+
+  const onSpecialRegimeChange = (
+    _event: React.FormEvent<HTMLDivElement>,
+    option?: IDropdownOption
+  ): void => {
+    if (typeof option?.key !== 'string') return;
+    const special = reconcileSpecialSelection(data, form.profileId, option.key, '');
+    mutateForm({
+      specialRegimeId: special.regimeId,
+      specialDefinitionId: special.definitionId,
+      specialDateValues: {},
+      specialLocalTimeValues: {},
+      specialIntegerValues: {},
+      specialOverrideConfirmations: [],
+      specialLawChecked: special.regimeId === GENERAL_SPECIAL_REGIME_ID
+    });
+  };
+
+  const onSpecialDefinitionChange = (
+    _event: React.FormEvent<HTMLDivElement>,
+    option?: IDropdownOption
+  ): void => {
+    if (typeof option?.key !== 'string') return;
+    mutateForm({
+      specialDefinitionId: option.key,
+      specialDateValues: {},
+      specialLocalTimeValues: {},
+      specialIntegerValues: {},
+      specialOverrideConfirmations: []
     });
   };
 
   const onSaveDefaults = (): void => {
     const defaults: StoredDefaults = {
-      version: 1,
+      version: 2,
       locale,
       authorityCode: form.authorityCode,
       profileId: form.profileId,
       deadlineDays: Number.isInteger(Number(form.deadlineDays)) ? Number(form.deadlineDays) : 10,
       selectors: form.selectors,
-      calendarId: form.calendarId
+      calendarId: form.calendarId,
+      specialRegimeId: form.specialRegimeId,
+      specialDefinitionId: form.specialDefinitionId
     };
     const saved = saveDefaults(storage, defaults);
     setNotification({
@@ -417,25 +735,29 @@ export function FristenrechnerApp({
         <section aria-labelledby="fr-form-heading">
           <h2 id="fr-form-heading">{translate(locale, 'form.heading')}</h2>
           <div className="fr-form__grid">
-            <TextField
-              required
-              label={dateInputLabel(locale, form)}
-              type="date"
-              value={form.inputDate}
-              {...(validation.inputDate ? { errorMessage: validation.inputDate } : {})}
-              onChange={(_event, value) => mutateForm({ inputDate: value ?? '' })}
-            />
-            <TextField
-              required
-              label={translate(locale, 'form.deadlineDays')}
-              type="number"
-              min={1}
-              max={365}
-              step={1}
-              value={form.deadlineDays}
-              {...(validation.deadlineDays ? { errorMessage: validation.deadlineDays } : {})}
-              onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })}
-            />
+            {generalMode && (
+              <>
+                <TextField
+                  required
+                  label={dateInputLabel(locale, form)}
+                  type="date"
+                  value={form.inputDate}
+                  {...(validation.inputDate ? { errorMessage: validation.inputDate } : {})}
+                  onChange={(_event, value) => mutateForm({ inputDate: value ?? '' })}
+                />
+                <TextField
+                  required
+                  label={translate(locale, 'form.deadlineDays')}
+                  type="number"
+                  min={1}
+                  max={365}
+                  step={1}
+                  value={form.deadlineDays}
+                  {...(validation.deadlineDays ? { errorMessage: validation.deadlineDays } : {})}
+                  onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })}
+                />
+              </>
+            )}
             <Dropdown
               required
               label={translate(locale, 'form.authority')}
@@ -453,37 +775,154 @@ export function FristenrechnerApp({
               selectedKey={form.profileId}
               onChange={onProfileChange}
             />
+            {specialCatalog && (
+              <div className="fr-special-picker">
+                <Dropdown
+                  required
+                  label={translate(locale, 'special.regime.label')}
+                  options={[
+                    { key: '', text: translate(locale, 'form.select') },
+                    ...regimeOptions.map(option => {
+                      const label = `${option.regime.lawCode} ${option.regime.provision} · ${localizedLabel(option.regime, locale)}`;
+                      return {
+                        key: option.regime.regimeId,
+                        text: option.presentationStatus === 'supported'
+                          ? label
+                          : `${label} · ${translate(locale, `special.status.${option.presentationStatus}`)}`,
+                        disabled: !option.selectable
+                      };
+                    })
+                  ]}
+                  selectedKey={form.specialRegimeId}
+                  {...(validation.specialRegime ? { errorMessage: validation.specialRegime } : {})}
+                  onChange={onSpecialRegimeChange}
+                />
+                <p className="fr-special-picker__description">
+                  {translate(locale, 'special.regime.description')}
+                </p>
+              </div>
+            )}
           </div>
 
-          {profile && profile.selectors.length > 0 && (
+          {visibleSelectors.length > 0 && (
             <div className="fr-form__grid fr-form__grid--selectors">
-              {profile.selectors.map(definition => (
+              {visibleSelectors.map(definition => (
                 <Dropdown
                   key={definition.selectorId}
                   required={definition.required}
                   label={translate(locale, `selector.${definition.selectorId}`)}
                   options={selectOptions(definition)}
                   selectedKey={form.selectors[definition.selectorId] ?? ''}
+                  errorMessage={validation[`selector.${definition.selectorId}`] ?? ''}
                   onChange={(_event, option) => onSelectorChange(definition.selectorId, option)}
                 />
               ))}
             </div>
           )}
 
-          {requiresDeliveryFictionConfirmation(form.selectors) && (
+          {!generalMode && calculatedDefinition && specialRegime && (
+            <section className="fr-special-inputs" aria-labelledby="fr-special-inputs-heading">
+              <div className="fr-special-inputs__heading">
+                <div>
+                  <h3 id="fr-special-inputs-heading">{localizedLabel(specialRegime, locale)}</h3>
+                  <p>{specialRegime.lawCode} {specialRegime.provision}</p>
+                </div>
+              </div>
+              <div className="fr-form__grid">
+                {specialRegime.deadlineDefinitionIds.length > 1 && (
+                  <Dropdown
+                    required
+                    label={translate(locale, 'special.definition.label')}
+                    options={specialRegime.deadlineDefinitionIds.map(definitionId => {
+                      const definition = specialCatalog?.deadlineDefinitions
+                        .find(item => item.deadlineDefinitionId === definitionId);
+                      return {
+                        key: definitionId,
+                        text: definition ? specialDefinitionLabel(definition, locale) : definitionId
+                      };
+                    })}
+                    selectedKey={form.specialDefinitionId}
+                    {...(validation.specialDefinition ? { errorMessage: validation.specialDefinition } : {})}
+                    onChange={onSpecialDefinitionChange}
+                  />
+                )}
+                {calculatedDefinition.anchors.map(anchor => anchor.valueType === 'date' ? (
+                  <TextField
+                    key={anchor.inputId}
+                    required
+                    label={translate(locale, anchor.labelKey)}
+                    type="date"
+                    value={form.specialDateValues[anchor.inputId] ?? ''}
+                    errorMessage={validation[`special.${anchor.inputId}`] ?? ''}
+                    onChange={(_event, value) => mutateForm({
+                      specialDateValues: {
+                        ...form.specialDateValues,
+                        [anchor.inputId]: value ?? ''
+                      }
+                    })}
+                  />
+                ) : (
+                  <TextField
+                    key={anchor.inputId}
+                    required
+                    label={translate(locale, anchor.labelKey)}
+                    type="time"
+                    value={form.specialLocalTimeValues[anchor.inputId] ?? ''}
+                    errorMessage={validation[`special.${anchor.inputId}`] ?? ''}
+                    onChange={(_event, value) => mutateForm({
+                      specialLocalTimeValues: {
+                        ...form.specialLocalTimeValues,
+                        [anchor.inputId]: value ?? ''
+                      }
+                    })}
+                  />
+                ))}
+                {specialDurationInputId && (
+                  <TextField
+                    required
+                    label={translate(locale, `input.${specialDurationInputId}`)}
+                    type="number"
+                    min={1}
+                    max={365}
+                    step={1}
+                    value={form.specialIntegerValues[specialDurationInputId] ?? ''}
+                    errorMessage={validation[`special.${specialDurationInputId}`] ?? ''}
+                    onChange={(_event, value) => mutateForm({
+                      specialIntegerValues: {
+                        ...form.specialIntegerValues,
+                        [specialDurationInputId]: value ?? ''
+                      }
+                    })}
+                  />
+                )}
+              </div>
+              {specialCatalog?.legalOverrides
+                .filter(override => (
+                  specialRegime.legalOverrideIds.includes(override.overrideId)
+                  || calculatedDefinition.legalOverrideIds.includes(override.overrideId)
+                ) && override.confirmationRequired)
+                .map(override => (
+                  <Checkbox
+                    key={override.overrideId}
+                    className="fr-confirmation"
+                    label={localizedLabel(override, locale)}
+                    checked={form.specialOverrideConfirmations.includes(override.overrideId)}
+                    onChange={(_event, checked) => mutateForm({
+                      specialOverrideConfirmations: checked
+                        ? [...new Set([...form.specialOverrideConfirmations, override.overrideId])]
+                        : form.specialOverrideConfirmations.filter(item => item !== override.overrideId)
+                    })}
+                  />
+                ))}
+            </section>
+          )}
+
+          {generalMode && requiresDeliveryFictionConfirmation(selectors) && (
             <Checkbox
               className="fr-confirmation"
               label={translate(locale, 'confirmation.delivery')}
               checked={form.deliveryFictionConfirmed}
               onChange={(_event, checked) => mutateForm({ deliveryFictionConfirmed: Boolean(checked) })}
-            />
-          )}
-          {requiresSpecialLawConfirmation(form.selectors) && (
-            <Checkbox
-              className="fr-confirmation"
-              label={translate(locale, 'confirmation.specialLaw')}
-              checked={form.specialLawChecked}
-              onChange={(_event, checked) => mutateForm({ specialLawChecked: Boolean(checked) })}
             />
           )}
         </section>
@@ -520,29 +959,82 @@ export function FristenrechnerApp({
         <div className="fr-result-region" aria-live="polite">
           {hasValidationErrors
             ? <ValidationPanel validation={validation} locale={locale} />
-            : result && <ResultPanel result={result} locale={locale} />}
+            : result?.kind === 'general'
+              ? <ResultPanel result={result.value} locale={locale} />
+              : result?.kind === 'special' && (
+                <SpecialResultPanel
+                  result={result.value}
+                  locale={locale}
+                  {...(specialRegime ? { regime: specialRegime } : {})}
+                  {...(specialDefinition ? { definition: specialDefinition } : {})}
+                  {...(specialFilingProfile ? { filingProfile: specialFilingProfile } : {})}
+                />
+              )}
         </div>
 
         <section className="fr-automatic" aria-labelledby="fr-automatic-heading">
           <h2 id="fr-automatic-heading">{translate(locale, 'automatic.heading')}</h2>
-          <dl className="fr-automatic__grid">
-            <div>
-              <dt>{translate(locale, 'automatic.calendar')}</dt>
-              <dd>
-                <strong>{translate(locale, `calendar.${form.calendarId}`)}</strong>
-                <span className={`fr-status ${manualOverride ? 'fr-status--override' : ''}`}>
-                  {translate(locale, manualOverride ? 'automatic.override' : 'automatic.status')}
-                </span>
-                <small>{translate(locale, fixedCalendar ? 'automatic.calendarReason.fixed' : 'automatic.calendarReason.pilot')}</small>
-              </dd>
-            </div>
-            <div>
-              <dt>{translate(locale, 'automatic.suspension')}</dt>
-              <dd><strong>{translate(locale, `automatic.suspension.${suspension}`)}</strong></dd>
-            </div>
-          </dl>
+          {generalMode ? (
+            <dl className="fr-automatic__grid">
+              <div>
+                <dt>{translate(locale, 'automatic.calendar')}</dt>
+                <dd>
+                  <strong>{translate(locale, `calendar.${form.calendarId}`)}</strong>
+                  <span className={`fr-status ${manualOverride ? 'fr-status--override' : ''}`}>
+                    {translate(locale, manualOverride ? 'automatic.override' : 'automatic.status')}
+                  </span>
+                  <small>{translate(locale, fixedCalendar ? 'automatic.calendarReason.fixed' : 'automatic.calendarReason.pilot')}</small>
+                </dd>
+              </div>
+              <div>
+                <dt>{translate(locale, 'automatic.suspension')}</dt>
+                <dd><strong>{translate(locale, `automatic.suspension.${suspension}`)}</strong></dd>
+              </div>
+            </dl>
+          ) : (
+            <dl className="fr-automatic__grid fr-automatic__grid--special">
+              <div>
+                <dt>{translate(locale, 'special.automatic.regime')}</dt>
+                <dd>
+                  <strong>{specialRegime ? `${specialRegime.lawCode} ${specialRegime.provision}` : '–'}</strong>
+                  <small>{specialRegime ? localizedLabel(specialRegime, locale) : '–'}</small>
+                </dd>
+              </div>
+              <div>
+                <dt>{translate(locale, 'special.automatic.rule')}</dt>
+                <dd><strong>{specialDefinition ? specialDefinitionLabel(specialDefinition, locale) : '–'}</strong></dd>
+              </div>
+              <div>
+                <dt>{translate(locale, 'automatic.calendar')}</dt>
+                <dd><strong>{specialCatalog?.calendarProfiles.find(item => item.calendarProfileId === (
+                  specialRegime?.calendarProfileId ?? calculatedDefinition?.resultPolicy.calendarProfileId
+                ))?.labels[locale] ?? '–'}</strong></dd>
+              </div>
+              <div>
+                <dt>{translate(locale, 'automatic.suspension')}</dt>
+                <dd><strong>{specialCatalog?.suspensionProfiles.find(item => item.suspensionProfileId === (
+                  specialRegime?.suspensionProfileId ?? calculatedDefinition?.resultPolicy.suspensionProfileId
+                ))?.labels[locale] ?? '–'}</strong></dd>
+              </div>
+              <div>
+                <dt>{translate(locale, 'special.automatic.filing')}</dt>
+                <dd><strong>{specialFilingProfile ? localizedLabel(specialFilingProfile, locale) : '–'}</strong></dd>
+              </div>
+              <div>
+                <dt>{translate(locale, 'special.automatic.overrides')}</dt>
+                <dd><strong>{[
+                  ...(specialRegime?.legalOverrideIds ?? []),
+                  ...(calculatedDefinition?.legalOverrideIds ?? [])
+                ].length > 0 ? [...new Set([
+                    ...(specialRegime?.legalOverrideIds ?? []),
+                    ...(calculatedDefinition?.legalOverrideIds ?? [])
+                  ])].map(overrideId => specialCatalog?.legalOverrides
+                    .find(item => item.overrideId === overrideId)?.labels[locale] ?? overrideId).join(' · ') : translate(locale, 'special.automatic.none')}</strong></dd>
+              </div>
+            </dl>
+          )}
 
-          {!fixedCalendar && (
+          {generalMode && !fixedCalendar && (
             <div className="fr-override">
               <Checkbox
                 label={translate(locale, 'override.toggle')}
@@ -582,7 +1074,7 @@ export function FristenrechnerApp({
             </div>
           )}
 
-          <details className="fr-anchor">
+          {generalMode && <details className="fr-anchor">
             <summary>{translate(locale, 'anchor.heading')}</summary>
             <TextField
               className="fr-anchor__field"
@@ -606,7 +1098,7 @@ export function FristenrechnerApp({
                 onChange={(_event, checked) => mutateForm({ holidayAnchorConfirmed: Boolean(checked) })}
               />
             )}
-          </details>
+          </details>}
         </section>
       </form>
 

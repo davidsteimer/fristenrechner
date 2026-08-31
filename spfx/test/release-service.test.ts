@@ -21,7 +21,14 @@ const RELEASE_ROOT = resolve(
   '..',
   'data',
   'releases',
-  '2026-08-29-ap5-approved.1'
+  '2026-08-31-mvp-02-approved.1'
+);
+const AP11C_CANDIDATE_ROOT = resolve(
+  process.cwd(),
+  '..',
+  'data',
+  'releases',
+  '2026-08-30-ap11c-candidate.1'
 );
 
 type ByteTransform = (path: string, bytes: Uint8Array) => Uint8Array;
@@ -31,26 +38,39 @@ class DirectoryProvider implements IReleaseProvider {
 
   public constructor(
     public readonly id: string,
-    private readonly transform: ByteTransform = (_path, bytes) => bytes
+    private readonly transform: ByteTransform = (_path, bytes) => bytes,
+    private readonly releaseRoot: string = RELEASE_ROOT
   ) {}
 
   public async fetchBytes(relativePath: string): Promise<Uint8Array> {
-    const bytes = new Uint8Array(await readFile(resolve(RELEASE_ROOT, relativePath)));
+    const bytes = new Uint8Array(await readFile(resolve(this.releaseRoot, relativePath)));
     return this.transform(relativePath, bytes);
   }
 }
 
-test('validiert den freigegebenen AP5-Release vollständig', async () => {
+test('validiert den freigegebenen MVP-0.2-Format-2-Release vollständig', async () => {
   const release = await new ReleaseValidator().validateProvider(
     new DirectoryProvider('fixture:github')
   );
 
-  assert.equal(release.releaseId, '2026-08-29-ap5-approved.1');
-  assert.equal(release.formatVersion, '1.0.0');
-  assert.equal(release.artifacts.length, 7);
+  assert.equal(release.releaseId, '2026-08-31-mvp-02-approved.1');
+  assert.equal(release.formatVersion, '2.0.0');
+  assert.equal(release.artifacts.length, 8);
   assert.deepEqual([...release.profileIds].sort(), ['bgg', 'stpo', 'vrpg-be', 'vwvg', 'zpo']);
   assert.deepEqual([...release.calendarIds].sort(), ['be-public-holidays', 'ch-federal-calendar']);
+  assert.deepEqual(release.specialRegimeCatalogIds, ['vrpg-be-special-regimes-2026-08-30']);
   assert.match(release.manifestSha256, /^[a-f0-9]{64}$/);
+});
+
+test('weist den noch nicht freigegebenen AP11C-Datenkandidaten ab', async () => {
+  await assert.rejects(
+    new ReleaseValidator().validateProvider(new DirectoryProvider(
+      'fixture:ap11c-candidate',
+      (_path, bytes) => bytes,
+      AP11C_CANDIDATE_ROOT
+    )),
+    /Nur freigegebene Datenreleases/
+  );
 });
 
 test('weist für zwei Provider byteidentische Aktivstände nach', async () => {
@@ -113,7 +133,7 @@ test('weist eine unbekannte Format-Hauptversion ab', async () => {
       return bytes;
     }
     const manifest = JSON.parse(new TextDecoder().decode(bytes));
-    manifest.formatVersion = '2.0.0';
+    manifest.formatVersion = '3.0.0';
     return new TextEncoder().encode(JSON.stringify(manifest));
   });
 

@@ -2,7 +2,7 @@
 
 | Merkmal | Wert |
 | --- | --- |
-| Stand | 29. August 2026 |
+| Stand | 30. August 2026 |
 | Zweck | Unsicherheit sichtbar halten und stille Fehlannahmen verhindern |
 | Verantwortlich | David Steimer |
 
@@ -20,7 +20,7 @@ Nicht jede offene Frage blockiert AP5. Sie blockiert aber jede Automatik, die oh
 | `OF-006` | Wie wird die Verfahrensart für die Stillstandsausnahmen zuverlässig bestimmt? | ZPO, BGG, VwVG | explizite Auswahl mit sichtbarer Herleitung und Übersteuerung. Keine Ableitung allein aus einem freien Text | UI- und Datenmodellentscheid in AP5 | hoch |
 | `OF-007` | Soll der Rechner Fristwiederherstellung oder bewilligte Erstreckungen berechnen? | alle | nicht berechnen. Nur auf die Möglichkeit und die notwendige Einzelfallprüfung hinweisen | separate fachliche und produktbezogene Erweiterung | niedrig |
 | `OF-008` | Wie werden weitere Kantone und kommunale Besonderheiten fachlich freigegeben? | künftige Profile | nicht aus allgemeinen Ferienkalendern ableiten. Pro Kanton amtliche Rechtsgrundlage, Rechtsprechungsprüfung und Golden Cases verlangen | Beginn eines weiteren Kantons | mittel |
-| `OF-009` | Wie wird eine fallbezogene Wahl- oder Abstimmungsanordnung technisch erfasst und als autoritativ bestätigt? | PRG, BPR, VPR | Regime bleibt `open`. Datum, Uhrzeit und Quellenbeleg dürfen nicht automatisch geschätzt werden | Umsetzung einer dynamischen Behördenanordnung in AP11B oder später | hoch |
+| `OF-009` | Wie wird eine fallbezogene Wahl- oder Abstimmungsanordnung technisch erfasst und als autoritativ bestätigt? | PRG, BPR, VPR | AP11B hat `R5_FIXED` entfernt und berechnete von behördlich gesetzten Komponenten getrennt. Das Hintergrundregime bleibt `open`. Datum, Uhrzeit und Quellenbeleg dürfen nicht automatisch geschätzt werden. Rein autoritative Termine sind vertraglich im Rechen-GUI verborgen | spätere Erfassungs- und Bestätigungsfunktion mit Quellenbeleg fachlich festlegen | hoch |
 | `OF-010` | Wird der leere Verweis auf Art. 69 PRG in Art. 66 PRV amtlich bereinigt? | PRG und PRV Bern | Referenz dokumentieren, Berechnung sperren und Rechtsänderung überwachen | Änderung der konsolidierten PRV- oder PRG-Fassung | mittel |
 | `OF-011` | Sollen Stundenfristen unterstützt werden? | insbesondere Art. 8d VPR | ausserhalb des MVP. Betroffenes Regime bleibt `blocked` | separater Produkt- und Datenmodellentscheid | niedrig |
 | `OF-012` | Welche zusätzlichen Fachrechtsangaben sind für ATSG und VwVG nötig, bevor das passende Bundesverfahren sicher gewählt werden kann? | ATSG und VwVG | Kandidatenregime bleiben `open`. Kein automatischer Wechsel allein aufgrund des VRPG-Profils | Aufnahme dieser Weiterzüge in den produktiven Umfang | mittel |

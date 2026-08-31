@@ -5,8 +5,11 @@ import addFormats from 'ajv-formats';
 
 import calendarSchema from './schemas/calendar.schema.json';
 import commonSchema from './schemas/common.schema.json';
+import deadlineDefinitionSchema from './schemas/deadline-definition.schema.json';
+import filingProfileSchema from './schemas/filing-profile.schema.json';
 import legalProfileSchema from './schemas/legal-profile.schema.json';
 import releaseManifestSchema from './schemas/release-manifest.schema.json';
+import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
 import { assertSafeReleasePath } from './path';
 import type {
   IReleaseArtifactDescriptor,
@@ -113,6 +116,7 @@ export class ReleaseValidator {
   private readonly manifestValidator: ValidateFunction;
   private readonly legalProfileValidator: ValidateFunction;
   private readonly calendarValidator: ValidateFunction;
+  private readonly specialRegimeCatalogValidator: ValidateFunction;
 
   public constructor() {
     const ajv = new Ajv2020({
@@ -122,9 +126,12 @@ export class ReleaseValidator {
     });
     addFormats(ajv, ['date', 'uri']);
     ajv.addSchema(commonSchema);
+    ajv.addSchema(filingProfileSchema);
+    ajv.addSchema(deadlineDefinitionSchema);
     this.manifestValidator = ajv.compile(releaseManifestSchema);
     this.legalProfileValidator = ajv.compile(legalProfileSchema);
     this.calendarValidator = ajv.compile(calendarSchema);
+    this.specialRegimeCatalogValidator = ajv.compile(specialRegimeCatalogSchema);
   }
 
   public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
@@ -133,7 +140,7 @@ export class ReleaseValidator {
 
     if (isObject(manifestValue) && typeof manifestValue.formatVersion === 'string') {
       const major = Number.parseInt(manifestValue.formatVersion.split('.')[0], 10);
-      if (major !== 1) {
+      if (major !== 1 && major !== 2) {
         throw new Error(`Unbekannte Hauptversion des Datenformats: ${manifestValue.formatVersion}`);
       }
     }
@@ -155,6 +162,9 @@ export class ReleaseValidator {
       coverageTo: manifest.coverage.to,
       profileIds: [...manifest.profileIds],
       calendarIds: [...manifest.calendarIds],
+      ...(manifest.specialRegimeCatalogIds
+        ? { specialRegimeCatalogIds: [...manifest.specialRegimeCatalogIds] }
+        : {}),
       manifestSha256: await sha256(manifestBytes),
       manifestBytes,
       artifacts,
@@ -205,10 +215,16 @@ export class ReleaseValidator {
     const parsed = decodeJson(bytes, descriptor.path);
     const validator = descriptor.role === 'legalProfile'
       ? this.legalProfileValidator
-      : this.calendarValidator;
+      : descriptor.role === 'calendar'
+        ? this.calendarValidator
+        : this.specialRegimeCatalogValidator;
     assertSchema(validator, parsed, descriptor.path);
 
-    const idProperty = descriptor.role === 'legalProfile' ? 'profileId' : 'calendarId';
+    const idProperty = descriptor.role === 'legalProfile'
+      ? 'profileId'
+      : descriptor.role === 'calendar'
+        ? 'calendarId'
+        : 'catalogId';
     if (parsed[idProperty] !== descriptor.contentId) {
       throw new Error(`Content-ID und Inhalt stimmen für ${descriptor.path} nicht überein.`);
     }
@@ -226,11 +242,22 @@ export class ReleaseValidator {
   ): void {
     const profiles = artifacts.filter(artifact => artifact.descriptor.role === 'legalProfile');
     const calendars = artifacts.filter(artifact => artifact.descriptor.role === 'calendar');
+    const specialRegimeCatalogs = artifacts.filter(
+      artifact => artifact.descriptor.role === 'specialRegimeCatalog'
+    );
     const profileIds = profiles.map(artifact => artifact.descriptor.contentId);
     const calendarIds = calendars.map(artifact => artifact.descriptor.contentId);
+    const specialRegimeCatalogIds = specialRegimeCatalogs.map(
+      artifact => artifact.descriptor.contentId
+    );
 
     assertSameIds('Profil-IDs', manifest.profileIds, profileIds);
     assertSameIds('Kalender-IDs', manifest.calendarIds, calendarIds);
+    assertSameIds(
+      'Spezialregimekatalog-IDs',
+      manifest.specialRegimeCatalogIds ?? [],
+      specialRegimeCatalogIds
+    );
 
     const knownProfiles = new Set(manifest.profileIds);
     const knownCalendars = new Set(manifest.calendarIds);
@@ -255,6 +282,10 @@ export class ReleaseValidator {
           throw new Error(`Kalenderabdeckung ungenügend: ${calendar.descriptor.contentId}`);
         }
       }
+    });
+    specialRegimeCatalogs.forEach(catalog => {
+      collectStringValues(catalog.parsed, 'calendarId', referencedCalendars);
+      collectStringValues(catalog.parsed, 'profileId', referencedProfiles);
     });
 
     Array.from(referencedCalendars).concat(Array.from(inheritedCalendars)).forEach(calendarId => {

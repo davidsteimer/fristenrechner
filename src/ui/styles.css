@@ -119,6 +119,45 @@
   border-top: 1px solid var(--fr-line);
 }
 
+.fr-special-picker {
+  grid-column: 1 / -1;
+}
+
+.fr-special-picker .ms-Dropdown-title {
+  white-space: normal;
+}
+
+.fr-special-picker__description {
+  margin: 6px 0 0;
+  color: var(--fr-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.fr-special-inputs {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid var(--fr-line);
+  border-left: 5px solid var(--fr-teal);
+  border-radius: 4px;
+  background: #fbfcfb;
+}
+
+.fr-special-inputs__heading {
+  margin-bottom: 20px;
+}
+
+.fr-special-inputs__heading h3 {
+  margin: 10px 0 4px;
+  color: var(--fr-navy);
+  font-size: 19px;
+}
+
+.fr-special-inputs__heading p {
+  margin-bottom: 0;
+  color: var(--fr-muted);
+}
+
 .fr-confirmation {
   margin-top: 20px;
   padding: 14px;
@@ -246,6 +285,10 @@
   border-left-color: var(--fr-copper);
 }
 
+.fr-result--special {
+  border-left-color: var(--fr-copper);
+}
+
 .fr-result__hero {
   display: flex;
   gap: 16px;
@@ -282,6 +325,46 @@
 
 .fr-result__messages {
   margin-top: 22px;
+}
+
+.fr-result__basis {
+  margin-top: 22px;
+  padding: 14px;
+  border-left: 4px solid var(--fr-teal);
+  background: var(--fr-glacier);
+  line-height: 1.5;
+}
+
+.fr-filing {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid var(--fr-line);
+  border-radius: 4px;
+  background: #fbfcfb;
+}
+
+.fr-filing h3 {
+  margin-bottom: 14px;
+}
+
+.fr-filing dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.fr-filing dt {
+  margin-bottom: 5px;
+  color: var(--fr-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.fr-filing dd {
+  margin: 0;
+  line-height: 1.5;
 }
 
 .fr-result__messages ul {
@@ -369,7 +452,8 @@
   }
 
   .fr-automatic__grid,
-  .fr-result__grid {
+  .fr-result__grid,
+  .fr-filing dl {
     grid-template-columns: 1fr;
   }
 }
@@ -392,7 +476,8 @@
   }
 
   .fr-form,
-  .fr-result {
+  .fr-result,
+  .fr-special-inputs {
     padding: 18px 14px;
   }
 
@@ -425,6 +510,8 @@
   .fr-app,
   .fr-form,
   .fr-result,
+  .fr-special-inputs,
+  .fr-filing,
   .fr-automatic__grid > div {
     border: 1px solid CanvasText;
   }

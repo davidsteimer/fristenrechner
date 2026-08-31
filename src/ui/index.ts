@@ -19,7 +19,6 @@ export {
   reconcileProfileId,
   reconcileSelectors,
   requiresDeliveryFictionConfirmation,
-  requiresSpecialLawConfirmation,
   suspensionPresentation
 } from './model';
 export type { AuthorityOption, CalculatorFormState, SuspensionPresentation } from './model';

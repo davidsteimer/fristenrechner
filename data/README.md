@@ -2,7 +2,7 @@
 
 Dieser Bereich enthält versionierte, maschinenlesbare Fachdaten. Jeder Datenstand liegt in einem eigenen, unveränderlichen Unterverzeichnis von `releases/`.
 
-## Freigegebener Referenzbestand
+## Freigegebene Referenzbestände
 
 Der abgenommene AP5-Referenzbestand [`2026-08-29-ap5-approved.1`](releases/2026-08-29-ap5-approved.1/README.md) enthält:
 
@@ -16,6 +16,10 @@ Der abgenommene AP5-Referenzbestand [`2026-08-29-ap5-approved.1`](releases/2026-
 Der Status `approved` bezeichnet den durch David Steimer freigegebenen Fachdatenstand für die weitere Umsetzung. Er ist keine produktive Freigabe der noch zu entwickelnden Anwendung.
 
 Der vorangehende Candidate [`2026-08-29-ap5-candidate.1`](releases/2026-08-29-ap5-candidate.1/README.md) bleibt als unveränderlicher Nachweis erhalten. Im freigegebenen Release sind die fachlichen Regeln, Feiertage und Stillstandsperioden unverändert. Prüfstatus, prüfende Person, Manifest, Release-ID und Prüfsummen bilden die Abnahme neu ab.
+
+Der abgenommene AP11B-Referenzbestand [`2026-08-30-ap11b-approved.1`](releases/2026-08-30-ap11b-approved.1/README.md) ergänzt das Format 2.0.0, 36 bekannte VRPG-Spezialregime und die getrennte Modellierung berechneter und behördlich gesetzter Termine. Seine acht Nutzartefakte sind byteidentisch mit dem vorangehenden AP11B-Kandidaten. Die Freigabe betrifft Datenmodell und Rechenkern. AP11C übernimmt diesen Bestand als fachliche Basis für Oberfläche und SPFx.
+
+Der freigegebene MVP-0.2-Datenstand [`2026-08-31-mvp-02-approved.1`](releases/2026-08-31-mvp-02-approved.1/README.md) übernimmt die mit AP11C abgenommene Benutzeroberfläche und entfernt die redundanten `unknown`-Optionen aus ZPO und VRPG-BE. Die sechs unveränderten Nutzartefakte sind byteidentisch mit dem AP11C-Kandidaten. Bei ZPO und VRPG-BE unterscheiden sich ausschliesslich die nachgeführten menschlichen Prüfmetadaten.
 
 ## Releasegrundsätze
 
@@ -31,4 +35,8 @@ Die fachliche Vorlage bleibt die [Rechtsmatrix für den MVP](../docs/fachrecht/r
 
 ## Kandidatenbestände
 
-Nicht freigegebene Fachdaten liegen getrennt unter `candidates/` und werden von keinem produktiven Manifest referenziert. Der [AP11A-Kandidat zu den VRPG-Spezialregimen](candidates/2026-08-30-ap11a-vrpg-be/README.md) enthält das vorgeschlagene Komponentenmodell, 34 inventarisierte Regime und acht synthetische Prüffälle. Eine Übernahme in `releases/` erfolgt frühestens nach fachlicher Abnahme und der in DEC-2026-014 vorgeschlagenen Formatevolution.
+Nicht produktiv migrierte Fachdaten liegen getrennt unter `candidates/` und werden von keinem Release-Manifest referenziert. Der [fachlich abgenommene AP11A-Ausgangsbestand](candidates/2026-08-30-ap11a-vrpg-be/README.md) bleibt mit seinem damaligen Format 1.0.0, 34 Regimen und dem provisorischen `R5_FIXED` unverändert nachvollziehbar.
+
+Der [AP11B-Releasekandidat](releases/2026-08-30-ap11b-candidate.1/README.md) bleibt als unveränderlicher technischer Vorläufer des freigegebenen AP11B-Referenzbestands erhalten. Sein Status `candidate` wird nicht nachträglich umgeschrieben.
+
+Der [AP11C-Datenkandidat](releases/2026-08-30-ap11c-candidate.1/README.md) entfernt ausschliesslich die nicht mehr sichtbaren `unknown`-Optionen aus den ZPO- und VRPG-BE-Pflichtauswahlen. Regeln, Spezialregime, Kalender und Quellen bleiben gegenüber AP11B unverändert. Der Kandidat bleibt als unveränderlicher Vorläufer erhalten und wird vom produktiven Release-Service weiterhin abgewiesen.

@@ -163,11 +163,11 @@ Die vertiefte Prüfung von Art. 41 Abs. 3 VRPG präzisiert `VRPGBE-LEX-001`:
 
 - Art. 41 Abs. 3 VRPG ist deklaratorisch. Die Bestimmung schafft keine eigene Berechnungsregel und übernimmt nicht pauschal eine andere Verfahrensordnung.
 - Eine Spezialregel wird aus ihrer unmittelbaren gesetzlichen Grundlage modelliert. Fristberechnung und Fristwahrung sind getrennte Komponenten.
-- Die bekannten Muster umfassen relative Tagesfristen, feste Abstände, bestimmte Wochentage, konkurrierende Anknüpfungen sowie behördlich festgelegte Daten und Uhrzeiten.
+- Die bekannten Rechenmuster umfassen relative Fristen, feste Abstände, bestimmte Wochentage und konkurrierende Anknüpfungen. Autoritativ festgelegte Daten und Uhrzeiten werden als eigene Terminherkunft im Hintergrund geführt und nicht als Rechenart behandelt.
 - Eine offene, aufgehobene oder technisch nicht unterstützte Referenz sperrt die Berechnung. Es gibt keinen stillen Rückfall auf die allgemeine Frist nach Art. 41 Abs. 1 und 2 VRPG.
 - Art. 67a Abs. 3 VRPG wird als zusätzliche Prüfschranke behandelt. Eine Vorbereitungshandlung ist sofort anzufechten, wenn die berechnete Frist nicht erst nach dem Wahl- oder Abstimmungstag endet.
 
-Die vollständige Zuordnung steht in der [AP11A-Fachanalyse](vrpg-be-spezialregime-ap11a.md). Der maschinenlesbare Bestand bleibt bis zur fachlichen Abnahme ein Kandidat.
+Die vollständige Zuordnung steht in der [AP11A-Fachanalyse](vrpg-be-spezialregime-ap11a.md). David Steimer hat AP11A und AP11B am 30. August 2026 abgenommen. Der daraus hervorgegangene Referenzrelease `2026-08-30-ap11b-approved.1` verwendet das versionierte Format 2.0.0. Die Einbindung in Benutzeroberfläche und SPFx bleibt einer gesonderten Abnahme vorbehalten.
 
 ## 9. Gültigkeitsmatrix
 

@@ -1,15 +1,18 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 export { calculateDeadline } from './calculateDeadline';
+export { calculateSpecialDeadline } from './calculateSpecialDeadline';
 export { createCalculationData, CoreDataError, resolveCalendar } from './data';
 export {
   addCalendarDays,
+  addCalendarMonths,
   compareIsoDates,
   isDateWithin,
   isLeapDay,
   isLeapYear,
   isoDateFromOrdinal,
   parseIsoDate,
+  weekdayIndex,
   weekdayReason
 } from './date';
 export type {
@@ -31,3 +34,21 @@ export type {
   ValidatedReleaseArtifactLike,
   ValidatedReleaseLike
 } from './types';
+export type {
+  AuthoritativeDeadlineDefinition,
+  BlockedSpecialDeadlineResult,
+  CalculatedDeadlineDefinition,
+  CompletedSpecialDeadlineResult,
+  DeadlineDefinition,
+  DeadlineOrigin,
+  FilingProfile,
+  FilingRequirement,
+  SpecialCalculation,
+  SpecialCalculationContext,
+  SpecialDeadlineInput,
+  SpecialDeadlineResult,
+  SpecialDeadlineValue,
+  SpecialRegime,
+  SpecialRegimeCatalog,
+  SpecialTraceStep
+} from './specialTypes';

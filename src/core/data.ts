@@ -10,6 +10,7 @@ import type {
   SuspensionSet,
   ValidatedReleaseLike
 } from './types';
+import type { SpecialRegimeCatalog } from './specialTypes';
 
 type JsonObject = Record<string, unknown>;
 
@@ -27,11 +28,19 @@ function assertIsoDate(value: string, label: string): void {
   }
 }
 
-function assertDocument(value: unknown, kind: 'legalProfile' | 'calendar', id: string): JsonObject {
+function assertDocument(
+  value: unknown,
+  kind: 'legalProfile' | 'calendar' | 'specialRegimeCatalog',
+  id: string
+): JsonObject {
   if (!isObject(value) || value.dataKind !== kind) {
     throw new CoreDataError(`Das validierte Artefakt ${id} ist kein ${kind}.`);
   }
-  const idProperty = kind === 'legalProfile' ? 'profileId' : 'calendarId';
+  const idProperty = kind === 'legalProfile'
+    ? 'profileId'
+    : kind === 'calendar'
+      ? 'calendarId'
+      : 'catalogId';
   if (value[idProperty] !== id) {
     throw new CoreDataError(`Content-ID und Dokument-ID stimmen bei ${id} nicht überein.`);
   }
@@ -64,7 +73,7 @@ function assertCalendarReferences(calendars: ReadonlyMap<string, CalendarData>):
 
 export function createCalculationData(release: ValidatedReleaseLike): CalculationData {
   const majorVersion = Number.parseInt(release.formatVersion.split('.')[0] ?? '', 10);
-  if (majorVersion !== 1) {
+  if (majorVersion !== 1 && majorVersion !== 2) {
     throw new CoreDataError(`Nicht unterstützte Hauptversion des Datenformats: ${release.formatVersion}`);
   }
   assertIsoDate(release.coverageFrom, 'Releaseabdeckung');
@@ -75,6 +84,7 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
 
   const profiles = new Map<string, LegalProfile>();
   const calendars = new Map<string, CalendarData>();
+  const specialRegimeCatalogs = new Map<string, SpecialRegimeCatalog>();
   release.artifacts.forEach(artifact => {
     const document = assertDocument(artifact.parsed, artifact.descriptor.role, artifact.descriptor.contentId);
     if (artifact.descriptor.role === 'legalProfile') {
@@ -82,6 +92,16 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
         throw new CoreDataError(`Doppeltes Rechtsprofil: ${artifact.descriptor.contentId}`);
       }
       profiles.set(artifact.descriptor.contentId, document as unknown as LegalProfile);
+      return;
+    }
+    if (artifact.descriptor.role === 'specialRegimeCatalog') {
+      if (specialRegimeCatalogs.has(artifact.descriptor.contentId)) {
+        throw new CoreDataError(`Doppelter Spezialregimekatalog: ${artifact.descriptor.contentId}`);
+      }
+      specialRegimeCatalogs.set(
+        artifact.descriptor.contentId,
+        document as unknown as SpecialRegimeCatalog
+      );
       return;
     }
     if (calendars.has(artifact.descriptor.contentId)) {
@@ -92,14 +112,35 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
 
   assertSameIds('Profil-IDs', release.profileIds, [...profiles.keys()]);
   assertSameIds('Kalender-IDs', release.calendarIds, [...calendars.keys()]);
+  assertSameIds(
+    'Spezialregimekatalog-IDs',
+    release.specialRegimeCatalogIds ?? [],
+    [...specialRegimeCatalogs.keys()]
+  );
   assertCalendarReferences(calendars);
+
+  specialRegimeCatalogs.forEach(catalog => {
+    if (!profiles.has(catalog.profileId)) {
+      throw new CoreDataError(
+        `Spezialregimekatalog ${catalog.catalogId} verweist auf das unbekannte Profil ${catalog.profileId}.`
+      );
+    }
+    catalog.calendarProfiles.forEach(calendarProfile => {
+      if (calendarProfile.calendarId !== null && !calendars.has(calendarProfile.calendarId)) {
+        throw new CoreDataError(
+          `Spezialregimekatalog ${catalog.catalogId} verweist auf den unbekannten Kalender ${calendarProfile.calendarId}.`
+        );
+      }
+    });
+  });
 
   return {
     releaseId: release.releaseId,
     formatVersion: release.formatVersion,
     coverage: { from: release.coverageFrom, to: release.coverageTo },
     profiles,
-    calendars
+    calendars,
+    specialRegimeCatalogs
   };
 }
 

@@ -7,7 +7,11 @@ import test from 'node:test';
 
 import { ReleaseValidator } from '../src/core/ReleaseValidator';
 import type { IReleaseProvider } from '../src/core/types';
-import { calculateDeadline, createCalculationData } from '../src/product/core';
+import {
+  calculateDeadline,
+  calculateSpecialDeadline,
+  createCalculationData
+} from '../src/product/core';
 
 const PROJECT_ROOT = process.cwd();
 const REPOSITORY_ROOT = resolve(PROJECT_ROOT, '..');
@@ -15,11 +19,11 @@ const RELEASE_ROOT = resolve(
   REPOSITORY_ROOT,
   'data',
   'releases',
-  '2026-08-29-ap5-approved.1'
+  '2026-08-31-mvp-02-approved.1'
 );
 
 class DirectoryProvider implements IReleaseProvider {
-  public readonly id = 'fixture:ap10';
+  public readonly id = 'fixture:ap11c';
   public readonly kind = 'github' as const;
 
   public async fetchBytes(relativePath: string): Promise<Uint8Array> {
@@ -57,9 +61,31 @@ test('verbindet den validierten Release mit dem produktiven Rechenkern', async (
     holidayAnchorCandidates: ['BE']
   }, data);
 
-  assert.equal(data.releaseId, '2026-08-29-ap5-approved.1');
+  assert.equal(data.releaseId, '2026-08-31-mvp-02-approved.1');
   assert.equal(result.outcome, 'calculated');
   assert.equal(result.finalEnd, '2026-09-28');
+});
+
+test('verbindet den Format-2-Release mit der Spezialregimeberechnung', async () => {
+  const release = await new ReleaseValidator().validateProvider(new DirectoryProvider());
+  const data = createCalculationData(release);
+  const result = calculateSpecialDeadline({
+    profileId: 'vrpg-be',
+    regimeId: 'vrpg-be-general',
+    ruleId: 'VRPGBE-SPEC-REL-GENERAL-001',
+    dateValues: { eventDate: '2026-09-04' },
+    localTimeValues: {},
+    integerValues: { deadlineDays: 10 },
+    calendarProfileId: 'C_BE',
+    suspensionProfileId: 'S0_NONE',
+    filingProfileId: 'F1_DISPATCH',
+    overrideConfirmations: []
+  }, data);
+
+  assert.equal(data.specialRegimeCatalogs.size, 1);
+  assert.equal(result.outcome, 'calculated');
+  assert.equal(result.finalDeadline?.date, '2026-09-14');
+  assert.equal(result.filingRequirement?.preservationMode, 'dispatch');
 });
 
 test('exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-Freigabe', async () => {
@@ -75,6 +101,7 @@ test('exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-F
   assert.deepEqual(manifest.supportedHosts, ['SharePointWebPart', 'TeamsTab']);
   assert.equal(manifest.id, '596c7f1c-4d3e-4da8-a7be-27a96024f37c');
   assert.equal(packageSolution.solution.includeClientSideAssets, true);
+  assert.equal(packageSolution.solution.version, '0.2.0.0');
   assert.equal('webApiPermissionRequests' in packageSolution.solution, false);
 });
 

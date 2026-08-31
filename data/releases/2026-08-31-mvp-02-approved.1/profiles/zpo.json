@@ -1,0 +1,410 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "legalProfile",
+  "profileId": "zpo",
+  "lawCode": "ZPO",
+  "jurisdiction": {
+    "level": "federal",
+    "code": "CH"
+  },
+  "validity": {
+    "dataValidFrom": "2026-08-29",
+    "dataValidTo": null
+  },
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "AP11C am 31. August 2026 abgenommen. GitHub-Issues #25 und #30. Materielle Regeln unverändert, redundante UI-Option unknown entfernt."
+  },
+  "calculationContract": {
+    "acceptedDeadlineUnits": [
+      "day"
+    ],
+    "dateInputSemantics": "legallyRelevantDeliveryOrEventDate",
+    "timeModel": "dateOnlyNoTimezone",
+    "unknownSpecialLawHandling": "block",
+    "unsupportedInputHandling": "block"
+  },
+  "calendarPolicy": {
+    "holidayAnchor": "courtLocation",
+    "jurisdictionSelection": "explicit",
+    "conflictHandling": "requireConfirmation",
+    "manualOverride": true,
+    "overrideReasonRequired": true
+  },
+  "selectors": [
+    {
+      "selectorId": "deliveryMethod",
+      "required": false,
+      "selectionMode": "explicit",
+      "unknownHandling": "warn",
+      "options": [
+        {
+          "value": "ordinaryMailWeekendOrHoliday",
+          "labelKey": "selector.deliveryMethod.ordinaryMailWeekendOrHoliday"
+        },
+        {
+          "value": "registeredMailUncollected",
+          "labelKey": "selector.deliveryMethod.registeredMailUncollected"
+        },
+        {
+          "value": "otherLegallyRelevantDate",
+          "labelKey": "selector.deliveryMethod.otherLegallyRelevantDate"
+        }
+      ]
+    },
+    {
+      "selectorId": "procedureVariant",
+      "required": true,
+      "selectionMode": "explicit",
+      "unknownHandling": "block",
+      "options": [
+        {
+          "value": "ordinary",
+          "labelKey": "selector.procedureVariant.ordinary"
+        },
+        {
+          "value": "conciliation",
+          "labelKey": "selector.procedureVariant.conciliation"
+        },
+        {
+          "value": "summary",
+          "labelKey": "selector.procedureVariant.summary"
+        },
+        {
+          "value": "schkgJudicialAction",
+          "labelKey": "selector.procedureVariant.schkgJudicialAction"
+        },
+        {
+          "value": "schkgSupervisoryComplaint",
+          "labelKey": "selector.procedureVariant.schkgSupervisoryComplaint"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "SRC-ZPO-20260701",
+      "sourceType": "statute",
+      "title": "Schweizerische Zivilprozessordnung, SR 272",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2010/262/de",
+      "documentVersionDate": "2026-07-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "ZPO-DELIV-001",
+      "phase": "delivery",
+      "priority": 10,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2025-01-01"
+      },
+      "conditions": [
+        {
+          "selector": "deliveryMethod",
+          "operator": "in",
+          "values": [
+            "ordinaryMailWeekendOrHoliday"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "deliveryDate",
+        "mode": "nextWorkingDayAfterWeekendOrHoliday",
+        "requiresConfirmation": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 142 Abs. 1bis"
+        }
+      ],
+      "warningKey": "warning.deliveryFiction.confirmApplicability"
+    },
+    {
+      "ruleId": "ZPO-DELIV-002",
+      "phase": "delivery",
+      "priority": 20,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [
+        {
+          "selector": "deliveryMethod",
+          "operator": "in",
+          "values": [
+            "registeredMailUncollected"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "deliveryDate",
+        "mode": "seventhDayAfterFailedAttempt",
+        "daysAfterFailedAttempt": 7,
+        "requiresConfirmation": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 138 Abs. 3 Bst. a"
+        }
+      ],
+      "warningKey": "warning.deliveryFiction.confirmApplicability"
+    },
+    {
+      "ruleId": "ZPO-START-001",
+      "phase": "start",
+      "priority": 100,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineStart",
+        "offsetCalendarDays": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 142 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-COUNT-001",
+      "phase": "count",
+      "priority": 200,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "counting",
+        "mode": "calendarDaysExcludingSuspensions"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 142, Art. 145 und Art. 146"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-SUSP-001",
+      "phase": "count",
+      "priority": 210,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "suspension",
+        "mode": "useSet",
+        "suspensionSetId": "ch-court-holidays-2026-2028"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 145 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-SUSP-002",
+      "phase": "start",
+      "priority": 110,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deliveryDuringSuspension",
+        "mode": "firstDayAfterSuspension"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 146 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-SUSP-EXC-001",
+      "phase": "count",
+      "priority": 220,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [
+        {
+          "selector": "procedureVariant",
+          "operator": "in",
+          "values": [
+            "conciliation",
+            "summary"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "suspensionException",
+        "action": "disableSuspension"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 145 Abs. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-SCHKG-001",
+      "phase": "count",
+      "priority": 230,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2025-01-01"
+      },
+      "conditions": [],
+      "effect": {
+        "type": "suspensionRouting",
+        "selector": "procedureVariant",
+        "cases": [
+          {
+            "value": "schkgJudicialAction",
+            "suspensionEnabled": true
+          },
+          {
+            "value": "schkgSupervisoryComplaint",
+            "suspensionEnabled": false
+          }
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 145 Abs. 4"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-END-001",
+      "phase": "end",
+      "priority": 300,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineEnd",
+        "shift": "nextWorkingDay",
+        "nonWorkingDays": [
+          "saturday",
+          "sunday",
+          "publicHoliday"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 142 Abs. 3"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-HOL-001",
+      "phase": "end",
+      "priority": 310,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "holidayAnchor",
+        "anchor": "courtLocation"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 142 Abs. 1bis und 3"
+        }
+      ],
+      "warningKey": "warning.holidayAnchor.confirmJurisdiction"
+    },
+    {
+      "ruleId": "ZPO-COMP-001",
+      "phase": "compliance",
+      "priority": 400,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "submission",
+        "timing": "onOrBeforeLastDay",
+        "channels": [
+          "competentAuthority",
+          "swissPost",
+          "swissDiplomaticMission"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 143"
+        }
+      ]
+    },
+    {
+      "ruleId": "ZPO-EXT-001",
+      "phase": "guardrail",
+      "priority": 500,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "extension",
+        "statutoryDeadlineExtendable": false,
+        "authoritySetDeadlineExtendable": true,
+        "requiresTimelyReasonedRequest": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 144"
+        }
+      ],
+      "warningKey": "warning.extension.noAutomaticExtension"
+    }
+  ]
+}

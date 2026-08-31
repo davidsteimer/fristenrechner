@@ -25,12 +25,12 @@
       "type": "string",
       "pattern": "^[a-z][a-z0-9-]*$"
     },
-    "suiteStatus": { "const": "candidate" },
+    "suiteStatus": { "type": "string", "enum": ["candidate", "approved"] },
     "catalogId": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9-]*$"
     },
-    "catalogFormatVersion": { "const": "1.0.0" },
+    "catalogFormatVersion": { "type": "string", "enum": ["1.0.0", "2.0.0"] },
     "review": {
       "$ref": "common.schema.json#/$defs/review"
     },
@@ -160,6 +160,39 @@
         }
       }
     },
+    "calculationContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "releaseId",
+        "catalogId",
+        "profileId",
+        "regimeId",
+        "ruleId",
+        "deadlineOrigin",
+        "calendarProfileId",
+        "calendarId",
+        "suspensionProfileId",
+        "filingProfileId"
+      ],
+      "properties": {
+        "releaseId": { "type": "string", "minLength": 1 },
+        "catalogId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "profileId": { "const": "vrpg-be" },
+        "regimeId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "ruleId": { "type": "string", "pattern": "^[A-Z][A-Z0-9-]*$" },
+        "deadlineOrigin": { "type": "string", "enum": ["CALCULATED", "AUTHORITATIVE"] },
+        "calendarProfileId": { "type": "string", "pattern": "^C_[A-Z0-9_]+$" },
+        "calendarId": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+            { "type": "null" }
+          ]
+        },
+        "suspensionProfileId": { "type": "string", "pattern": "^S[0-9]?_[A-Z0-9_]+$" },
+        "filingProfileId": { "type": "string", "pattern": "^F[0-9]+_[A-Z0-9_]+$" }
+      }
+    },
     "gateResult": {
       "type": "object",
       "additionalProperties": false,
@@ -198,6 +231,16 @@
             { "const": "Europe/Zurich" },
             { "type": "null" }
           ]
+        },
+        "acceptedChannels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "acceptedEvidence": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
         }
       }
     },
@@ -221,6 +264,7 @@
             "shiftDeadlineEnd",
             "evaluateGate",
             "resolveFilingRequirement",
+            "applyLegalOverride",
             "returnResult",
             "blockCalculation"
           ]
@@ -264,6 +308,9 @@
         "outcome": {
           "type": "string",
           "enum": ["calculated", "blocked", "manualReview"]
+        },
+        "calculationContext": {
+          "$ref": "#/$defs/calculationContext"
         },
         "provisionalDeadline": {
           "$ref": "#/$defs/deadline"
@@ -329,7 +376,7 @@
           "type": "string",
           "pattern": "^goldenCase\\.[a-z][a-zA-Z0-9.]*$"
         },
-        "expectationStatus": { "const": "candidate" },
+        "expectationStatus": { "type": "string", "enum": ["candidate", "approved"] },
         "dataClassification": { "const": "synthetic" },
         "profileId": { "const": "vrpg-be" },
         "tags": {

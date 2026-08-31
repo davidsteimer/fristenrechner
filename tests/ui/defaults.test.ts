@@ -12,6 +12,7 @@ import {
   type StorageLike
 } from '../../src/ui/defaults';
 import { loadCalculationData } from '../core/fixtures';
+import { calculationData as ap11cData } from '../../src/ui/preview/data';
 
 class MemoryStorage implements StorageLike {
   private readonly values = new Map<string, string>();
@@ -34,6 +35,7 @@ const data = loadCalculationData();
 describe('AP9-lokale Defaults', () => {
   it('verwendet Bern und StPO als sicheren MVP-Ausgangspunkt', () => {
     const defaults = initialDefaults(data);
+    assert.equal(defaults.version, 2);
     assert.equal(defaults.authorityCode, 'BE');
     assert.equal(defaults.profileId, 'stpo');
     assert.equal(defaults.calendarId, 'be-public-holidays');
@@ -74,5 +76,57 @@ describe('AP9-lokale Defaults', () => {
     assert.equal(saveDefaults(storage, initialDefaults(data)), true);
     assert.equal(clearDefaults(storage), true);
     assert.equal(storage.getItem(DEFAULTS_STORAGE_KEY), null);
+  });
+
+  it('migriert alte Defaults und verwirft unknown sowie veraltete Spezialauswahlen', () => {
+    const storage = new MemoryStorage();
+    storage.setItem(DEFAULTS_STORAGE_KEY, JSON.stringify({
+      version: 1,
+      locale: 'fr',
+      authorityCode: 'BE',
+      profileId: 'vrpg-be',
+      deadlineDays: 30,
+      selectors: {
+        deliveryMethod: 'otherLegallyRelevantDate',
+        specialLawStatus: 'unknown'
+      },
+      calendarId: 'be-public-holidays',
+      specialRegimeId: 'removed-regime'
+    }));
+
+    const loaded = loadDefaults(ap11cData, storage);
+    assert.equal(loaded.version, 2);
+    assert.equal(loaded.selectors.specialLawStatus, undefined);
+    assert.equal(loaded.specialRegimeId, '');
+    assert.equal(loaded.specialDefinitionId, '');
+  });
+
+  it('persistiert weder leere noch unbekannte Pflichtauswahlen', () => {
+    const storage = new MemoryStorage();
+    const defaults = {
+      ...initialDefaults(ap11cData),
+      profileId: 'zpo',
+      selectors: { procedureVariant: '', specialLawStatus: 'unknown' }
+    };
+    assert.equal(saveDefaults(storage, defaults), true);
+    const raw = storage.getItem(DEFAULTS_STORAGE_KEY) ?? '';
+    assert.doesNotMatch(raw, /unknown/);
+    assert.doesNotMatch(raw, /procedureVariant/);
+    assert.doesNotMatch(raw, /specialLawStatus/);
+  });
+
+  it('speichert «Bitte wählen» beim Fristtyp ausdrücklich als Standard', () => {
+    const storage = new MemoryStorage();
+    const defaults = {
+      ...initialDefaults(ap11cData),
+      profileId: 'vrpg-be',
+      specialRegimeId: '',
+      specialDefinitionId: ''
+    };
+
+    assert.equal(saveDefaults(storage, defaults), true);
+    assert.match(storage.getItem(DEFAULTS_STORAGE_KEY) ?? '', /"specialRegimeId":""/);
+    assert.equal(loadDefaults(ap11cData, storage).specialRegimeId, '');
+    assert.equal(loadDefaults(ap11cData, storage).specialDefinitionId, '');
   });
 });

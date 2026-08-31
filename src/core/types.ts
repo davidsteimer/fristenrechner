@@ -32,6 +32,7 @@ export interface RuleEffect {
 export interface RuleValidity {
   readonly dataValidFrom: IsoDate;
   readonly dataValidTo: IsoDate | null;
+  readonly legalEffectiveFrom?: IsoDate | null;
 }
 
 export interface LegalRule {
@@ -123,7 +124,7 @@ export interface CalendarData {
 
 export interface ValidatedReleaseArtifactLike {
   readonly descriptor: {
-    readonly role: 'legalProfile' | 'calendar';
+    readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog';
     readonly contentId: string;
   };
   readonly parsed: unknown;
@@ -136,6 +137,7 @@ export interface ValidatedReleaseLike {
   readonly coverageTo: IsoDate;
   readonly profileIds: readonly string[];
   readonly calendarIds: readonly string[];
+  readonly specialRegimeCatalogIds?: readonly string[];
   readonly artifacts: readonly ValidatedReleaseArtifactLike[];
 }
 
@@ -148,6 +150,7 @@ export interface CalculationData {
   };
   readonly profiles: ReadonlyMap<string, LegalProfile>;
   readonly calendars: ReadonlyMap<string, CalendarData>;
+  readonly specialRegimeCatalogs: ReadonlyMap<string, import('./specialTypes').SpecialRegimeCatalog>;
 }
 
 export type TraceOperation =

@@ -90,6 +90,18 @@ export function addCalendarDays(value: IsoDate, days: number): IsoDate {
   return isoDateFromOrdinal(parsed.ordinal + days);
 }
 
+export function addCalendarMonths(value: IsoDate, months: number): IsoDate {
+  const parsed = parseIsoDate(value);
+  if (!parsed) {
+    throw new Error(`Ungültiges ISO-Kalenderdatum: ${value}`);
+  }
+  const monthIndex = parsed.month - 1 + months;
+  const year = parsed.year + floorDiv(monthIndex, 12);
+  const month = modulo(monthIndex, 12) + 1;
+  const day = Math.min(parsed.day, daysInMonth(year, month));
+  return `${pad(year, 4)}-${pad(month, 2)}-${pad(day, 2)}`;
+}
+
 export function compareIsoDates(left: IsoDate, right: IsoDate): number {
   const parsedLeft = parseIsoDate(left);
   const parsedRight = parseIsoDate(right);
@@ -116,6 +128,14 @@ export function weekdayReason(value: IsoDate): 'saturday' | 'sunday' | undefined
     return 'sunday';
   }
   return undefined;
+}
+
+export function weekdayIndex(value: IsoDate): number {
+  const parsed = parseIsoDate(value);
+  if (!parsed) {
+    throw new Error(`Ungültiges ISO-Kalenderdatum: ${value}`);
+  }
+  return modulo(parsed.ordinal + 3, 7);
 }
 
 export function isLeapDay(value: IsoDate): boolean {

@@ -2,14 +2,15 @@
 
 | Merkmal | Wert |
 | --- | --- |
-| Arbeitspaket | AP5 |
-| Formatversion | 1.0.0 |
+| Arbeitspaket | AP5 und AP11B |
+| Formatversion | 1.0.0 und 2.0.0 |
 | Schema-Dialekt | JSON Schema Draft 2020-12 |
 | Zeichenkodierung | UTF-8 |
 | Datumsmodell | ISO-Vollformat `JJJJ-MM-TT`, ohne Uhrzeit und Zeitzone |
 | Integritätsprüfung | SHA-256 über die exakten Dateibytes |
-| Referenzrelease | `data/releases/2026-08-29-ap5-approved.1` |
-| Freigabe | David Steimer, 29. August 2026 |
+| Format-1-Referenzrelease | `data/releases/2026-08-29-ap5-approved.1` |
+| Format-2-Referenzrelease | `data/releases/2026-08-30-ap11b-approved.1` |
+| Freigaben | David Steimer, 29. und 30. August 2026 |
 | Architekturentscheid | [DEC-2026-012, beschlossen](../entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md) |
 
 ## 1. Ziel und Abgrenzung
@@ -36,9 +37,23 @@ Das Format berechnet keine Frist und klassifiziert keinen Sachverhalt. Es beschr
 
 Das Manifest ist der einzige Einstiegspunkt. Es listet jedes Nutzartefakt mit relativem Pfad, Rolle, Inhalts-ID, Schema-ID, Medientyp, Dateigrösse und SHA-256-Prüfsumme. Nicht gelistete JSON-Dateien und gelistete, aber fehlende Dateien machen das Release ungültig.
 
+Format 2.0.0 ergänzt den Baum um genau eine neue Artefaktrolle:
+
+```text
+<release-id>/
+└── special-regimes/
+    └── vrpg-be.json
+```
+
+Das Manifest muss dazu `specialRegimeCatalogIds` und mindestens ein Artefakt der Rolle `specialRegimeCatalog` enthalten. Format 1.0.0 darf diese Felder nicht enthalten. Dadurch bleibt die Hauptversion eindeutig und ein Format-1-Consumer kann den neuen Bestand sicher ablehnen.
+
+Ab Format 2 bezeichnet `coverage` den gesamten zeitlichen Horizont, in dem mindestens ein Releasebestandteil rechnen darf. Ein einzelnes allgemeines Rechtsprofil kann mit `validity.dataValidFrom` oder `dataValidTo` enger begrenzt sein. Der Consumer muss deshalb zuerst die Release- und Kalenderabdeckung und danach die Gültigkeit des konkret verwendeten Profils oder der Fristdefinition prüfen. Diese Präzisierung erlaubt die abgenommenen Spezialfälle aus dem Frühjahr 2026, ohne den allgemeinen AP5-Profilen rückwirkend eine frühere Datengültigkeit zuzuschreiben.
+
 Das Manifest enthält keine Prüfsumme über sich selbst. Seine Vertrauenswürdigkeit muss durch den freigegebenen Abrufort und später allenfalls durch eine zusätzliche Signatur abgesichert werden. Die Artefaktprüfsummen verhindern, dass ein Manifest mit nur teilweise oder verändert geladenen Nutzdaten aktiviert wird.
 
-Der freigegebene Referenzbestand wurde mit einer neuen Release-ID aus dem technisch validierten Candidate abgeleitet. Die fachlichen Regeln, Feiertage und Stillstandsperioden blieben unverändert. Der Prüfstatus der sieben Nutzartefakte wurde auf `verified` gesetzt und mit neuen Prüfsummen versehen. Das neue Manifest dokumentiert den Status `approved` und die menschliche Freigabe im qualifizierten Erweiterungsfeld `steimer.approval`. Der veröffentlichte Candidate bleibt unverändert erhalten.
+Der Format-1-Referenzbestand wurde mit einer neuen Release-ID aus dem technisch validierten Candidate abgeleitet. Die fachlichen Regeln, Feiertage und Stillstandsperioden blieben unverändert. Der Prüfstatus der sieben Nutzartefakte wurde auf `verified` gesetzt und mit neuen Prüfsummen versehen.
+
+Der Format-2-Referenzbestand wurde ebenfalls unter einer neuen Release-ID aus dem validierten AP11B-Kandidaten abgeleitet. Seine acht Nutzartefakte und ihre Prüfsummen sind byteidentisch mit dem Kandidaten. Das neue Manifest dokumentiert den Status `approved` und die menschliche Freigabe im qualifizierten Erweiterungsfeld `steimer.approval`. Beide Kandidaten bleiben unverändert erhalten.
 
 ## 3. Schemata
 
@@ -47,6 +62,9 @@ Der freigegebene Referenzbestand wurde mit einer neuen Release-ID aus dem techni
 | `common.schema.json` | Gemeinsame Typen für Gültigkeit, Abdeckung, Quellen, Prüfstatus, Bedingungen und Erweiterungen |
 | `legal-profile.schema.json` | Rechtsprofil, Berechnungsvertrag, Feiertagsanknüpfung, explizite Selektoren und typisierte Regeleffekte |
 | `calendar.schema.json` | Feiertage, Kalendervererbung und inklusive Stillstandsperioden |
+| `deadline-definition.schema.json` | berechnete Fristdefinitionen R1 bis R4 oder behördlich gesetzte Termine ohne Rechenoperation |
+| `filing-profile.schema.json` | Wahrungsmodus, Kanäle, Nachweise, Original, Annahmeschluss und Zeitzone |
+| `special-regime-catalog-v2.schema.json` | Spezialregime, Komponentenprofile, Gates, Übersteuerungen und Sichtbarkeitsvertrag |
 | `release-manifest.schema.json` | Releasekopf, Providervertrag, Kompatibilität und Artefaktprüfsummen |
 
 Alle Kernobjekte weisen unbekannte Felder ab. Unbekannte Regeltypen sind nicht zulässig. Freie Erweiterungen dürfen nur unter `extensions` stehen und benötigen einen qualifizierten Schlüssel wie `steimer.example`.
@@ -142,7 +160,9 @@ Der AP5-Validator prüft:
 - Reihenfolge und Überlappung von Stillstandsperioden
 - feste und bewegliche Feiertagsdaten für den Referenzbestand 2026 bis 2028
 
-Sechs Negativtests beweisen, dass Prüfsummenfehler, doppelte Regeln, unaufgelöste Quellen, unbekannte Regelarten, verkehrte Periodengrenzen und fehlende Kalendervererbung abgewiesen werden.
+Beim Format-1-Referenzrelease beweisen sechs Negativtests, dass Prüfsummenfehler, doppelte Regeln, unaufgelöste Quellen, unbekannte Regelarten, verkehrte Periodengrenzen und fehlende Kalendervererbung abgewiesen werden.
+
+Beim Format-2-Referenzrelease kommen drei Manipulationen hinzu. Die entfernte Rechenart `R5_FIXED`, ein sichtbar geschalteter Behörden-Termin und ein zwischen Regime und Definition widersprüchliches Einreichungsprofil müssen scheitern. Der Validator prüft zudem, dass der Katalog genau 26 berechnete und 3 behördlich gesetzte Definitionen enthält.
 
 ## 10. Qualitäts- und Sicherheitsgrenzen
 

@@ -1,8 +1,8 @@
 # Deterministischer Rechenkern
 
-> **Status:** Version 0.1 wurde am 29. August 2026 durch David Steimer fachlich und technisch abgenommen.
+> **Status:** Version 0.1 wurde am 29. August 2026 durch David Steimer fachlich und technisch abgenommen. Die AP11B-Erweiterung für Spezialregime wurde am 30. August 2026 abgenommen. AP11C verwendet beide Kernpfade unverändert im lokalen MVP-0.2-Kandidaten.
 
-Der Rechenkern aus AP8 berechnet Tagesfristen ausschliesslich aus vollständig validierten, providerneutralen Datenobjekten. Er kennt weder React noch SPFx, SharePoint, Teams, GitHub, Netzwerkzugriffe oder Browserpersistenz.
+Der Rechenkern aus AP8 berechnet Tagesfristen ausschliesslich aus vollständig validierten, providerneutralen Datenobjekten. AP11B ergänzt dieselbe hostneutrale Schicht um typisierte Spezialregime. Der Kern kennt weder React noch SPFx, SharePoint, Teams, GitHub, Netzwerkzugriffe oder Browserpersistenz.
 
 ## Öffentliche Schnittstelle
 
@@ -11,14 +11,23 @@ Der Einstiegspunkt ist [`index.ts`](index.ts). Die zwei zentralen Funktionen sin
 ```ts
 const data = createCalculationData(validatedRelease)
 const result = calculateDeadline(input, data)
+const specialResult = calculateSpecialDeadline(specialInput, data)
 ```
 
-`createCalculationData` übernimmt die strukturellen Objekte eines bereits vollständig validierten AP5-Release. Die Schnittstelle entspricht absichtlich nur den hostneutralen Feldern von `IValidatedRelease` aus dem SPFx-Spike. Schema-, Prüfsummen- und Netzwerkvalidierung bleiben Aufgabe der vorgelagerten Releasevalidierung.
+`createCalculationData` übernimmt die strukturellen Objekte eines bereits vollständig validierten Format-1- oder Format-2-Release. Die Schnittstelle entspricht absichtlich nur den hostneutralen Feldern von `IValidatedRelease` aus der SPFx-Schicht. Schema-, Prüfsummen- und Netzwerkvalidierung bleiben Aufgabe der vorgelagerten Releasevalidierung.
 
 `calculateDeadline` ist synchron, frei von Seiteneffekten und deterministisch. Gleiche Eingaben und derselbe Datenrelease ergeben bytegleiches JSON. Das Ergebnis ist entweder:
 
 - `calculated` mit rechtlich massgebendem Datum, Fristbeginn, rechnerischem Ende, endgültigem Ende, Stillstand, Endverschiebung und Rechenspur
 - `blocked` mit Sperrgründen und ohne Fristende
+
+`calculateSpecialDeadline` verarbeitet die in Format 2.0.0 enthaltenen Spezialregime. Die Eingabe nennt das Regime, die Fristdefinition, typisierte Datums-, Uhrzeit- und Ganzzahlwerte sowie die automatisch aufgelösten Komponentenprofile. Das Ergebnis ist:
+
+- `calculated` für eine vollständig berechnete Frist
+- `manualReview` für eine berechnete, aber mit der konkreten Wahlanordnung abzugleichende feste Frist
+- `blocked` bei offenen, gesperrten, unvollständigen oder widersprüchlichen Konfigurationen
+
+Das Spezialresultat enthält zusätzlich Einreichungsmodus, zulässige Kanäle, Nachweise, Originalerfordernis, Annahmeschluss, Zeitzone, Gate-Ergebnisse, Übersteuerungen und einen vollständigen Komponentenbezug. `ruleId` bleibt im API als kompatibler Eingabename erhalten. Im Datenmodell heisst dasselbe Identifikationsfeld `deadlineDefinitionId`.
 
 ## Berechnungsablauf
 
@@ -31,6 +40,32 @@ const result = calculateDeadline(input, data)
 7. geordnetes Ergebnis mit angewandten Regel-IDs und Rechenspur zurückgeben
 
 Die Datumsarithmetik in [`date.ts`](date.ts) arbeitet als reine gregorianische Kalenderrechnung. Sie erzeugt keine JavaScript-`Date`-Objekte, Uhrzeiten oder Zeitzonenwerte.
+
+## Spezialregime in AP11B
+
+Der abgenommene AP11B-Kern unterstützt vier Rechenarten:
+
+1. `R1_RELATIVE` für relative Tages- und Monatsdauern
+2. `R2_OFFSET` für einen festen Kalendertagsabstand vor oder nach einem Ereignis
+3. `R3_WEEKDAY` für einen bestimmten Wochentag vor oder nach einem Ereignis
+4. `R4_DUAL` für zwei konkurrierende Anknüpfungen mit frühester oder spätester Frist
+
+Ein von einer Behörde festgelegter Termin trägt die Herkunft `AUTHORITATIVE`. Er besitzt keine Rechenoperation und wird vom Kern stets ohne Fristresultat blockiert. Der Datenvertrag verlangt zusätzlich `uiExposure: hidden`. Damit wird insbesondere verhindert, dass eine eingegebene Behördenfrist unverändert als angeblich berechnete Frist ausgegeben wird.
+
+Art. 16 PRG und Art. 8a VPR sind komponentenweise aufgeteilt. Der gesetzlich berechenbare Grundtermin bleibt nutzbar. Eine kommunale Verlängerung, eine Leerungszeit oder der kantonal festgelegte Wahlanmeldeschluss bleiben quellenpflichtige Hintergrundwerte. Art. 21 BPR ist vollständig als solcher Hintergrundwert modelliert.
+
+Der Spezialkern blockiert unter anderem:
+
+- unbekannte oder nicht zum Regime gehörende Definitionen
+- offene und gesperrte Regime
+- behördlich gesetzte Termine
+- fehlende, zusätzliche oder falsch typisierte Eingabewerte
+- eine Verletzung einer Ankerbedingung, etwa ein anderes Datum als der 1. Januar für das Wahljahr
+- widersprüchliche Kalender-, Stillstands- oder Einreichungsprofile
+- unbekannte oder nicht bestätigte rechtliche Übersteuerungen
+- nicht unterstützte Stillstandskombinationen und Kalenderüberschreitungen
+
+Der Kern fällt nie still auf die allgemeine VRPG-Frist zurück.
 
 ## Sicherheitsgrenzen
 
@@ -66,8 +101,9 @@ Das unabhängige Python-Orakel bleibt getrennt:
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-data.txt
 .venv/bin/python tests/golden/validate_golden_cases.py
+.venv/bin/python tests/special-regimes/validate_special_regime_release.py
 ```
 
-## Noch nicht enthalten
+## Fachliche und technische Grenzen
 
-AP8 enthält keine Benutzeroberfläche, keine Datenbeschaffung, keine produktive SPFx-Integration und keine Fristen in Monaten, Jahren oder Stunden. Die Einbindung in die MVP-Oberfläche folgt in einem eigenen Arbeitspaket.
+Der Rechenkern enthält keine Datenbeschaffung, Browserpersistenz oder produktive SPFx-Aktivierung. Fristen in Jahren oder Stunden sind nicht unterstützt. Monatsarithmetik wird ausschliesslich für gesetzlich modellierte Monatsdauern verwendet. AP11C integriert den Kern über separate Adapter in UI und SPFx, ohne diese Hostaufgaben in den Fachkern zu verschieben.

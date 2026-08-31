@@ -7,10 +7,12 @@ Dieser Bereich enthält die fachrechtliche Arbeitsgrundlage des Fristenrechners.
 - die [offenen Fachfragen und Sicherheitsgrenzen](offene-fachfragen.md)
 - den [maschinenlesbaren AP6-Golden-Case-Korpus](../../tests/golden/README.md)
 
-AP11A ergänzt als noch nicht abgenommener Kandidat:
+AP11A ergänzt als fachlich abgenommener Bestand:
 
 - die [Fachanalyse der bekannten VRPG-Spezialregime](vrpg-be-spezialregime-ap11a.md)
 - den [maschinenlesbaren AP11A-Kandidatenkatalog](../../data/candidates/2026-08-30-ap11a-vrpg-be/README.md)
+
+AP11B überführt diesen Bestand in den fachlich und technisch abgenommenen [Format-2-Referenzrelease](../../data/releases/2026-08-30-ap11b-approved.1/README.md). Die fachliche Klassifikation bleibt unverändert. `R5_FIXED` wird technisch in berechnete und behördlich gesetzte Komponenten getrennt.
 - acht [synthetische Kandidatenfälle](../../tests/golden/candidates/ap11a-vrpg-be-special-cases.json)
 
 ## Verbindlichkeit im Projekt

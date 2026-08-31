@@ -5,8 +5,9 @@
 | Arbeitspaket | AP11A, GitHub-Issue #28 |
 | Eltern-Item | #24 |
 | Prüfstand | 30. August 2026 |
-| Status | Kandidat zur fachlichen Abnahme |
+| Status | fachlich abgenommen, technische Umsetzung in AP11B abgenommen |
 | Verantwortlich für die Abnahme | David Steimer |
+| Abnahmedatum | 30. August 2026 |
 | Maschinenlesbarer Bestand | [`data/candidates/2026-08-30-ap11a-vrpg-be`](../../data/candidates/2026-08-30-ap11a-vrpg-be/README.md) |
 
 ## 1. Ergebnis in Kürze
@@ -14,6 +15,8 @@
 Art. 41 Abs. 3 VRPG ist keine pauschale Verweisung auf eine einzige andere Fristenordnung. Die Bestimmung hält den Vorrang von abweichendem Bundesrecht sowie der Abstimmungs- und Wahlgesetzgebung fest. Welche Frist gilt, wie sie berechnet wird und wodurch sie gewahrt wird, ergibt sich aus der jeweils einschlägigen Spezialnorm.
 
 Das Kandidatenmodell deckt die bekannten, maschinenlesbar fassbaren Muster ab. Von 34 inventarisierten Regimen sind 24 technisch unterstützt, drei bewusst gesperrt und sieben als offen markiert. «Offen» bedeutet nicht «wahrscheinlich richtig». Es bedeutet, dass eine fallbezogene Behördenanordnung, eine zusätzliche Fachrechtsklassifikation oder eine noch nicht unterstützte Fristeinheit nötig ist.
+
+Die fachliche Prüfung hat zudem ergeben, dass ein behördlich festgelegter Termin keine eigene Rechenart ist. Wird beispielsweise der 16. September 2026 aus einer amtlichen Anordnung erfasst, bleibt das Ergebnis der 16. September 2026. Die App übernimmt und dokumentiert den Termin, sie berechnet ihn nicht. Solche Termine bleiben im fachlichen Datenbestand erhalten, werden im MVP aber nicht als Fristtyp auf dem GUI angeboten.
 
 Die beiden Bundesgerichtsurteile 9C_757/2007 E. 3 und 8C_620/2007 E. 3.3 bestätigen, dass Art. 41 Abs. 3 VRPG deklaratorisch ist und keinen eigenen Regelungsgehalt schafft. Die Spezialnorm muss deshalb direkt und nicht über eine schematische VRPG-Verweisung modelliert werden.
 
@@ -27,9 +30,17 @@ Die beiden Bundesgerichtsurteile 9C_757/2007 E. 3 und 8C_620/2007 E. 3.3 bestät
 | `R2_OFFSET` | fester Abstand | 76 Tage vor dem Wahltag | positiver oder negativer Kalendertagsabstand zu einem Ereignis |
 | `R3_WEEKDAY` | bestimmter Wochentag | erster Dienstag nach dem ersten Wahlgang | Wochentag, Richtung, Ordinalzahl und strikte Nachfolge explizit festlegen |
 | `R4_DUAL` | zwei konkurrierende Anknüpfungen | drei Tage seit Kenntnis, spätestens drei Tage nach Publikation | beide Äste berechnen und gemäss Spezialnorm den früheren oder späteren Termin wählen |
-| `R5_FIXED` | behördlich festgelegter Termin | Einreichung gemäss Wahlanordnung | Datum und allenfalls Uhrzeit aus einer autoritativen fallbezogenen Quelle übernehmen |
 
-### 2.2 Fristwahrung
+### 2.2 Terminherkunft
+
+| Herkunft | Bedeutung | Behandlung |
+| --- | --- | --- |
+| `CALCULATED` | Die App ermittelt den Termin mit R1 bis R4 aus einem oder mehreren Ankern | als Fristtyp auf dem GUI zulässig, sofern das Regime unterstützt ist |
+| `AUTHORITATIVE` | Datum und allenfalls Uhrzeit stammen aus einer amtlichen fallbezogenen Quelle | im Hintergrund mit Quelle und Gültigkeit führen, im MVP nicht als Fristtyp auf dem GUI anzeigen |
+
+Das AP11A-Kandidatenschema bildet `AUTHORITATIVE` technisch noch über `R5_FIXED` ab. Diese Bezeichnung ist ein Übergangsabbild und keine fünfte Rechenoperation. AP11B hat sie im freigegebenen Format-2-Referenzrelease durch eine eigenständige Terminherkunft ersetzt. Ein autoritativ festgelegter Termin wird nicht automatisch wegen eines Wochenendes oder Feiertags verschoben. Eine solche Änderung wäre nur zulässig, wenn die massgebende Quelle sie selbst vorsieht.
+
+### 2.3 Fristwahrung
 
 | Profil | Massgebender Vorgang | Typischer Anwendungsfall |
 | --- | --- | --- |
@@ -42,7 +53,7 @@ Die beiden Bundesgerichtsurteile 9C_757/2007 E. 3 und 8C_620/2007 E. 3.3 bestät
 
 Datum, Uhrzeit und Art der Fristwahrung sind eigenständige Dimensionen. Die Eingabe am letzten Tag kann rechtzeitig sein, wenn die Postaufgabe genügt. Sie kann am selben Tag verspätet sein, wenn das Original um 12.00 Uhr bei der Behörde eingegangen sein muss.
 
-### 2.3 Kalender und Stillstand
+### 2.4 Kalender und Stillstand
 
 Die Kandidaten referenzieren Kalenderprofile über stabile IDs. Sie kopieren keine Feiertage in die Spezialregel. Damit bleibt das Spezialregime vom späteren ewigen Kalender getrennt. Gerichtsferien werden ebenfalls als eigenes Profil zugewiesen. Im Bereich der politischen Rechte ist insbesondere die BGG-Ausnahme vom Fristenstillstand ausdrücklich abgebildet.
 
@@ -55,7 +66,8 @@ Die Kandidaten referenzieren Kalenderprofile über stabile IDs. Sie kopieren kei
 | Referendum und Initiative | Art. 130 und 147 PRG | unterstützt als relative Eingangsfrist |
 | Beschwerden in politischen Rechten | Art. 165 PRG, Art. 67a und 81 VRPG, Art. 77 und 79 BPR | unterstützt, einschliesslich dualer Anknüpfung und Vorbereitungshandlung |
 | Weiterzug ans Bundesgericht | Art. 100 Abs. 1, 3 Bst. b und 4 BGG | unterstützt, Stillstandsausnahmen separat modelliert |
-| behördlich angeordnete Termine | Art. 16 PRG, Art. 21 BPR und Art. 8a VPR | offen, weil das konkrete Datum aus einer fallbezogenen Anordnung stammt |
+| autoritativ festgelegter Wahlanmeldeschluss | Art. 21 BPR sowie der nach Art. 8a VPR gemeldete Termin | als Hintergrunddatum mit amtlicher Quelle führen, nicht als Rechenart oder Fristtyp auf dem MVP-GUI anzeigen |
+| gesetzlich berechenbare Termine mit möglicher Behördenkomponente | Art. 16 PRG: Samstag vor dem Urnengang und mögliche kommunale Verlängerung, Art. 8a VPR: Meldung bis 1. März des Wahljahres | berechenbare Grundregel und autoritative Verlängerung oder Konfiguration getrennt modellieren |
 | weitere Bundesverfahren | Art. 60 ATSG sowie VwVG | offen, weil zuerst das anwendbare Fach- und Verfahrensrecht feststehen muss |
 | Stundenfristen | Art. 8d VPR | gesperrt, da der MVP bisher Tagesfristen unterstützt |
 
@@ -69,9 +81,11 @@ Art. 66 PRV nennt weiterhin Art. 69 PRG. Art. 69 PRG ist aufgehoben und enthält
 
 Art. 66 PRV verweist auf Art. 111 Abs. 1 PRG. Die relevante Frist steht nach der Revision in Abs. 1a. Die Gesetzesmaterialien und RRB Nr. 498/2024, Ziffer 6.5.2, belegen die praktische Anwendung mit Donnerstag, 12.00 Uhr und Originaleingang. Das Kandidatenmodell unterstützt die Regel, zeigt den veralteten Querverweis aber zwingend als Warnung.
 
-### 4.3 Dynamische Behördenanordnungen
+### 4.3 Autoritativ festgelegte Termine und Behördenanordnungen
 
-Wo das Gesetz das konkrete Datum oder die Leerungszeit einer Wahl- oder Abstimmungsanordnung überlässt, darf die App den Termin nicht erfinden. Das Modell verlangt eine autoritative fallbezogene Quelle. Solange diese nicht erfasst und bestätigt ist, bleibt die Berechnung offen.
+Wo das Gesetz das konkrete Datum oder die Leerungszeit einer Wahl- oder Abstimmungsanordnung überlässt, darf die App den Termin nicht erfinden. Das Modell verlangt eine autoritative fallbezogene Quelle. Solange diese nicht erfasst und bestätigt ist, bleibt der Hintergrunddatensatz offen. Eine Benutzereingabe mit identischer Rückgabe ist für den MVP kein eigener Anwendungsfall.
+
+Die bisher gemeinsam geführten Regeln sind vor der produktiven Integration aufzuteilen. Der Wahlanmeldeschluss nach Art. 21 BPR bleibt ein autoritativ bestimmter Termin. Art. 8a VPR unterscheidet den gemeldeten Wahlanmeldeschluss vom berechenbaren Meldetermin am 1. März des Wahljahres. Art. 16 PRG enthält eine aus dem Urnengang berechenbare Grundregel und daneben eine mögliche kommunale Verlängerung beziehungsweise Leerungszeit.
 
 ### 4.4 Vorbereitungshandlungen
 
@@ -96,4 +110,4 @@ Alle Fälle sind synthetisch. Sie verwenden keine Namen, Aktenzeichen oder Falld
 
 Der Katalog ist eine gezielte Inventur der bekannten und für den Berner MVP praktisch relevanten Regeln. Er behauptet keine absolute Vollständigkeit sämtlicher kantonaler und bundesrechtlicher Spezialmaterien. Der angestrebte hohe Abdeckungsgrad wird durch klare Auswahl, sichtbare Parameter, Quellenprüfung und Sperren erreicht, nicht durch eine Scheingenauigkeit von «100 Prozent».
 
-Vor der Umsetzung in AP11B sind insbesondere die sieben offenen Regime fachlich zu priorisieren. Neue oder geänderte Spezialnormen benötigen weiterhin eine amtliche Quelle, einen Prüfstatus und mindestens einen positiven sowie einen negativen oder grenzwertigen Testfall.
+Die sieben offenen Regime bleiben auch nach der technischen Umsetzung in AP11B gesperrt. Vor ihrer Aktivierung sind sie fachlich zu priorisieren und abschliessend zu klären. Neue oder geänderte Spezialnormen benötigen weiterhin eine amtliche Quelle, einen Prüfstatus und mindestens einen positiven sowie einen negativen oder grenzwertigen Testfall.

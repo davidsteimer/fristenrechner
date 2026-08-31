@@ -42,5 +42,5 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  process.stdout.write(`AP9 UI preview: http://${host}:${port}\n`);
+  process.stdout.write(`MVP 0.2 UI preview: http://${host}:${port}\n`);
 });

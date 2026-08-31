@@ -10,7 +10,7 @@ export interface IReleaseProvider {
 
 export interface IReleaseArtifactDescriptor {
   readonly path: string;
-  readonly role: 'legalProfile' | 'calendar';
+  readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog';
   readonly contentId: string;
   readonly mediaType: 'application/json';
   readonly schemaId: string;
@@ -30,6 +30,7 @@ export interface IReleaseManifest {
   };
   readonly profileIds: readonly string[];
   readonly calendarIds: readonly string[];
+  readonly specialRegimeCatalogIds?: readonly string[];
   readonly checksumAlgorithm: 'sha256';
   readonly artifacts: readonly IReleaseArtifactDescriptor[];
 }
@@ -47,6 +48,7 @@ export interface IValidatedRelease {
   readonly coverageTo: string;
   readonly profileIds: readonly string[];
   readonly calendarIds: readonly string[];
+  readonly specialRegimeCatalogIds?: readonly string[];
   readonly manifestSha256: string;
   readonly manifestBytes: Uint8Array;
   readonly artifacts: readonly IValidatedArtifact[];

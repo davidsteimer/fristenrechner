@@ -7,19 +7,22 @@ import {
   authorityOptions,
   isProfileAllowed,
   reconcileProfileId,
+  reconcileSpecialSelection,
   reconcileSelectors
 } from './model';
 
 export const DEFAULTS_STORAGE_KEY = 'fristenrechner.defaults.v1';
 
 export interface StoredDefaults {
-  readonly version: 1;
+  readonly version: 2;
   readonly locale: Locale;
   readonly authorityCode: string;
   readonly profileId: string;
   readonly deadlineDays: number;
   readonly selectors: Readonly<Record<string, string>>;
   readonly calendarId: string;
+  readonly specialRegimeId: string;
+  readonly specialDefinitionId: string;
 }
 
 export interface StorageLike {
@@ -36,20 +39,28 @@ export function initialDefaults(data: CalculationData): StoredDefaults {
   const authorityCode = authorityOptions(data).some(option => option.code === 'BE') ? 'BE' : 'CH';
   const profileId = reconcileProfileId(data, authorityCode, 'stpo');
   const profile = data.profiles.get(profileId);
+  const special = reconcileSpecialSelection(
+    data,
+    profileId,
+    '',
+    ''
+  );
   return {
-    version: 1,
+    version: 2,
     locale: 'de',
     authorityCode,
     profileId,
     deadlineDays: 10,
     selectors: reconcileSelectors(profile, {}),
-    calendarId: automaticCalendarId(data, profile)
+    calendarId: automaticCalendarId(data, profile),
+    specialRegimeId: special.regimeId,
+    specialDefinitionId: special.definitionId
   };
 }
 
 export function sanitizeDefaults(data: CalculationData, value: unknown): StoredDefaults {
   const fallback = initialDefaults(data);
-  if (!isRecord(value) || value.version !== 1) {
+  if (!isRecord(value) || (value.version !== 1 && value.version !== 2)) {
     return fallback;
   }
   const authorityCode = typeof value.authorityCode === 'string'
@@ -77,14 +88,24 @@ export function sanitizeDefaults(data: CalculationData, value: unknown): StoredD
   const calendarId = profile?.calendarPolicy.jurisdictionSelection === 'fixedBern'
     ? automaticCalendar
     : candidateCalendarId;
+  const special = reconcileSpecialSelection(
+    data,
+    profileId,
+    typeof value.specialRegimeId === 'string'
+      ? value.specialRegimeId
+      : '',
+    typeof value.specialDefinitionId === 'string' ? value.specialDefinitionId : ''
+  );
   return {
-    version: 1,
+    version: 2,
     locale: value.locale === 'fr' ? 'fr' : 'de',
     authorityCode,
     profileId,
     deadlineDays,
     selectors: reconcileSelectors(profile, rawSelectors),
-    calendarId
+    calendarId,
+    specialRegimeId: special.regimeId,
+    specialDefinitionId: special.definitionId
   };
 }
 
@@ -105,7 +126,12 @@ export function saveDefaults(storage: StorageLike | undefined, defaults: StoredD
     return false;
   }
   try {
-    storage.setItem(DEFAULTS_STORAGE_KEY, JSON.stringify(defaults));
+    storage.setItem(DEFAULTS_STORAGE_KEY, JSON.stringify({
+      ...defaults,
+      selectors: Object.fromEntries(
+        Object.entries(defaults.selectors).filter(([, value]) => value !== '' && value !== 'unknown')
+      )
+    }));
     return true;
   } catch {
     return false;

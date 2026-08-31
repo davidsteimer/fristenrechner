@@ -26,7 +26,7 @@
       "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest.schema.json"
     },
     "formatVersion": {
-      "const": "1.0.0"
+      "enum": ["1.0.0", "2.0.0"]
     },
     "dataKind": {
       "const": "releaseManifest"
@@ -58,6 +58,15 @@
       }
     },
     "calendarIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "specialRegimeCatalogIds": {
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
@@ -153,6 +162,30 @@
       "$ref": "common.schema.json#/$defs/extensions"
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "formatVersion": { "const": "2.0.0" } },
+        "required": ["formatVersion"]
+      },
+      "then": {
+        "required": ["specialRegimeCatalogIds"],
+        "properties": {
+          "artifacts": {
+            "type": "array",
+            "contains": {
+              "type": "object",
+              "required": ["role"],
+              "properties": { "role": { "const": "specialRegimeCatalog" } }
+            }
+          }
+        }
+      },
+      "else": {
+        "not": { "required": ["specialRegimeCatalogIds"] }
+      }
+    }
+  ],
   "$defs": {
     "artifact": {
       "type": "object",
@@ -173,7 +206,7 @@
         },
         "role": {
           "type": "string",
-          "enum": ["legalProfile", "calendar"]
+          "enum": ["legalProfile", "calendar", "specialRegimeCatalog"]
         },
         "contentId": {
           "type": "string",
@@ -186,7 +219,8 @@
           "type": "string",
           "enum": [
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
-            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json"
+            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json"
           ]
         },
         "byteLength": {

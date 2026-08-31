@@ -63,7 +63,13 @@ describe('AP9-UI-Modell', () => {
         additionalHolidayAnchor: goldenCase.input.holidayAnchorCandidates[1] ?? '',
         holidayAnchorConfirmed: goldenCase.input.confirmations.holidayAnchorConfirmed === true,
         deliveryFictionConfirmed: goldenCase.input.confirmations.deliveryFictionApplicabilityConfirmed === true,
-        specialLawChecked: goldenCase.input.confirmations.specialLawChecked === true
+        specialLawChecked: goldenCase.input.confirmations.specialLawChecked === true,
+        specialRegimeId: '',
+        specialDefinitionId: '',
+        specialDateValues: {},
+        specialLocalTimeValues: {},
+        specialIntegerValues: {},
+        specialOverrideConfirmations: []
       };
       assert.equal(automaticCalendarId(data, profile), 'be-public-holidays');
 

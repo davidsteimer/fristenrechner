@@ -5,7 +5,12 @@ import type {
   CalculationInput,
   InputDateSemantics,
   LegalProfile,
-  LegalRule
+  LegalRule,
+  SpecialDeadlineInput,
+  SpecialRegime,
+  SpecialRegimeCatalog,
+  DeadlineDefinition,
+  CalculatedDeadlineDefinition
 } from '../core';
 
 export interface AuthorityOption {
@@ -26,11 +31,30 @@ export interface CalculatorFormState {
   readonly holidayAnchorConfirmed: boolean;
   readonly deliveryFictionConfirmed: boolean;
   readonly specialLawChecked: boolean;
+  readonly specialRegimeId: string;
+  readonly specialDefinitionId: string;
+  readonly specialDateValues: Readonly<Record<string, string>>;
+  readonly specialLocalTimeValues: Readonly<Record<string, string>>;
+  readonly specialIntegerValues: Readonly<Record<string, string>>;
+  readonly specialOverrideConfirmations: readonly string[];
+}
+
+export interface SpecialRegimeOption {
+  readonly regime: SpecialRegime;
+  readonly selectable: boolean;
+  readonly presentationStatus: 'supported' | 'followup' | 'open' | 'blocked';
+}
+
+export interface SpecialSelection {
+  readonly catalog: SpecialRegimeCatalog | undefined;
+  readonly regime: SpecialRegime | undefined;
+  readonly definition: DeadlineDefinition | undefined;
 }
 
 export type SuspensionPresentation = 'enabled' | 'disabled' | 'pending';
 
 const DEFAULT_PROFILE_ID = 'stpo';
+export const GENERAL_SPECIAL_REGIME_ID = 'vrpg-be-general';
 
 function conditionsMatch(rule: LegalRule, selectors: Readonly<Record<string, string>>): boolean {
   return rule.conditions.every(condition => condition.values.includes(selectors[condition.selector] ?? ''));
@@ -88,6 +112,86 @@ export function defaultSelectors(profile: LegalProfile | undefined): Record<stri
     const direct = definition.options.find(option => option.value === 'otherLegallyRelevantDate');
     return direct ? [[definition.selectorId, direct.value]] : [];
   }));
+}
+
+export function specialCatalogForProfile(
+  data: CalculationData,
+  profileId: string
+): SpecialRegimeCatalog | undefined {
+  return [...data.specialRegimeCatalogs.values()].find(catalog => catalog.profileId === profileId);
+}
+
+function presentationStatus(regime: SpecialRegime): SpecialRegimeOption['presentationStatus'] {
+  if (regime.status === 'blocked') return 'blocked';
+  if (regime.status === 'open') return 'open';
+  return regime.implementationScope === 'mvp02' ? 'supported' : 'followup';
+}
+
+export function specialRegimeOptions(
+  data: CalculationData,
+  profileId: string
+): SpecialRegimeOption[] {
+  const catalog = specialCatalogForProfile(data, profileId);
+  if (!catalog) return [];
+  return catalog.regimes
+    .filter(regime => regime.uiExposure !== 'hidden' && regime.regimeKind !== 'filingOverlay')
+    .map(regime => ({
+      regime,
+      selectable: regime.status === 'supported'
+        && regime.implementationScope === 'mvp02'
+        && regime.uiExposure === 'visible'
+        && regime.deadlineDefinitionIds.length > 0,
+      presentationStatus: presentationStatus(regime)
+    }));
+}
+
+export function specialSelection(
+  data: CalculationData,
+  profileId: string,
+  regimeId: string,
+  definitionId: string
+): SpecialSelection {
+  const catalog = specialCatalogForProfile(data, profileId);
+  const regime = specialRegimeOptions(data, profileId)
+    .find(option => option.selectable && option.regime.regimeId === regimeId)?.regime;
+  const definition = regime
+    ? catalog?.deadlineDefinitions.find(item => item.deadlineDefinitionId === definitionId
+      && regime.deadlineDefinitionIds.includes(item.deadlineDefinitionId))
+    : undefined;
+  return { catalog, regime, definition };
+}
+
+export function reconcileSpecialSelection(
+  data: CalculationData,
+  profileId: string,
+  regimeId: string,
+  definitionId: string
+): { readonly regimeId: string; readonly definitionId: string } {
+  const options = specialRegimeOptions(data, profileId);
+  const regime = options.find(option => option.selectable && option.regime.regimeId === regimeId)?.regime;
+  if (!regime) return { regimeId: '', definitionId: '' };
+  const selectedDefinitionId = regime.deadlineDefinitionIds.includes(definitionId)
+    ? definitionId
+    : regime.deadlineDefinitionIds[0] ?? '';
+  return { regimeId: regime.regimeId, definitionId: selectedDefinitionId };
+}
+
+export function isGeneralCalculation(data: CalculationData, state: CalculatorFormState): boolean {
+  return !specialCatalogForProfile(data, state.profileId)
+    || state.specialRegimeId === GENERAL_SPECIAL_REGIME_ID;
+}
+
+export function effectiveSelectors(
+  data: CalculationData,
+  state: CalculatorFormState
+): Readonly<Record<string, string>> {
+  if (!specialCatalogForProfile(data, state.profileId)) return state.selectors;
+  return {
+    ...state.selectors,
+    specialLawStatus: state.specialRegimeId === GENERAL_SPECIAL_REGIME_ID
+      ? 'noKnownOverride'
+      : 'knownOverride'
+  };
 }
 
 export function reconcileSelectors(
@@ -193,7 +297,9 @@ export function createCalculationInput(
   data: CalculationData,
   state: CalculatorFormState
 ): CalculationInput {
-  const selectors = Object.fromEntries(Object.entries(state.selectors).filter(([, value]) => value !== ''));
+  const selectors = Object.fromEntries(
+    Object.entries(effectiveSelectors(data, state)).filter(([, value]) => value !== '')
+  );
   const candidates = holidayAnchorCandidates(data, state.calendarId, state.additionalHolidayAnchor);
   return {
     profileId: state.profileId,
@@ -211,10 +317,41 @@ export function createCalculationInput(
   };
 }
 
-export function requiresDeliveryFictionConfirmation(selectors: Readonly<Record<string, string>>): boolean {
-  return inputDateSemantics(selectors) !== 'legallyRelevantDeliveryOrEventDate';
+export function createSpecialCalculationInput(
+  data: CalculationData,
+  state: CalculatorFormState
+): SpecialDeadlineInput | undefined {
+  const selection = specialSelection(
+    data,
+    state.profileId,
+    state.specialRegimeId,
+    state.specialDefinitionId
+  );
+  const definition = selection.definition;
+  const regime = selection.regime;
+  if (!selection.catalog || !regime || !definition || definition.deadlineOrigin !== 'CALCULATED') {
+    return undefined;
+  }
+  const calculated = definition as CalculatedDeadlineDefinition;
+  const integerValues = Object.fromEntries(
+    Object.entries(state.specialIntegerValues)
+      .filter(([, value]) => value !== '')
+      .map(([key, value]) => [key, Number(value)])
+  );
+  return {
+    profileId: state.profileId,
+    regimeId: regime.regimeId,
+    ruleId: definition.deadlineDefinitionId,
+    dateValues: state.specialDateValues,
+    localTimeValues: state.specialLocalTimeValues,
+    integerValues,
+    calendarProfileId: regime.calendarProfileId ?? calculated.resultPolicy.calendarProfileId,
+    suspensionProfileId: regime.suspensionProfileId ?? calculated.resultPolicy.suspensionProfileId,
+    filingProfileId: regime.filingProfileId ?? definition.filingProfileId,
+    overrideConfirmations: state.specialOverrideConfirmations
+  };
 }
 
-export function requiresSpecialLawConfirmation(selectors: Readonly<Record<string, string>>): boolean {
-  return selectors.specialLawStatus === 'noKnownOverride';
+export function requiresDeliveryFictionConfirmation(selectors: Readonly<Record<string, string>>): boolean {
+  return inputDateSemantics(selectors) !== 'legallyRelevantDeliveryOrEventDate';
 }

@@ -25,6 +25,9 @@ SCHEMA_FILES = (
     "common.schema.json",
     "legal-profile.schema.json",
     "calendar.schema.json",
+    "filing-profile.schema.json",
+    "deadline-definition.schema.json",
+    "special-regime-catalog-v2.schema.json",
     "release-manifest.schema.json",
 )
 MANIFEST_SCHEMA_ID = (
@@ -38,6 +41,10 @@ PROFILE_SCHEMA_ID = (
 CALENDAR_SCHEMA_ID = (
     "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
     "main/schemas/calendar.schema.json"
+)
+SPECIAL_CATALOG_SCHEMA_ID = (
+    "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
+    "main/schemas/special-regime-catalog-v2.schema.json"
 )
 
 
@@ -491,6 +498,253 @@ def check_inheritance(
         visit(start_id)
 
 
+def index_unique(
+    items: list[dict[str, Any]],
+    id_field: str,
+    label: str,
+    errors: list[str],
+) -> dict[str, dict[str, Any]]:
+    result: dict[str, dict[str, Any]] = {}
+    for item in items:
+        item_id = item[id_field]
+        if item_id in result:
+            errors.append(f"{label}: doppelte ID {item_id}")
+        result[item_id] = item
+    return result
+
+
+def calculated_anchor_ids(definition: dict[str, Any]) -> set[str]:
+    calculation = definition.get("calculation")
+    if not isinstance(calculation, dict):
+        return set()
+    calculation_type = calculation["type"]
+    if calculation_type in {"R1_RELATIVE", "R2_OFFSET", "R3_WEEKDAY"}:
+        return {calculation["anchorInputId"]}
+    if calculation_type == "R4_DUAL":
+        return {
+            branch["anchorInputId"]
+            for branch in calculation["branches"]
+        }
+    return set()
+
+
+def check_special_catalog(
+    catalog: dict[str, Any],
+    display_path: str,
+    profile_ids: set[str],
+    calendar_ids: set[str],
+    errors: list[str],
+) -> tuple[set[str], int, int]:
+    check_local_sources(catalog, display_path, errors)
+    calendars = index_unique(
+        catalog["calendarProfiles"],
+        "calendarProfileId",
+        f"{display_path}: Kalenderprofile",
+        errors,
+    )
+    suspensions = index_unique(
+        catalog["suspensionProfiles"],
+        "suspensionProfileId",
+        f"{display_path}: Stillstandsprofile",
+        errors,
+    )
+    filings = index_unique(
+        catalog["filingProfiles"],
+        "filingProfileId",
+        f"{display_path}: Einreichungsprofile",
+        errors,
+    )
+    gates = index_unique(
+        catalog["gates"],
+        "gateId",
+        f"{display_path}: Gates",
+        errors,
+    )
+    overrides = index_unique(
+        catalog["legalOverrides"],
+        "overrideId",
+        f"{display_path}: Overrides",
+        errors,
+    )
+    definitions = index_unique(
+        catalog["deadlineDefinitions"],
+        "deadlineDefinitionId",
+        f"{display_path}: Fristdefinitionen",
+        errors,
+    )
+    regimes = index_unique(
+        catalog["regimes"],
+        "regimeId",
+        f"{display_path}: Regime",
+        errors,
+    )
+    requested_suspensions: set[str] = set()
+
+    if catalog["profileId"] not in profile_ids:
+        errors.append(
+            f"{display_path}: unbekanntes Rechtsprofil {catalog['profileId']}"
+        )
+    for profile_id, calendar_profile in calendars.items():
+        calendar_id = calendar_profile["calendarId"]
+        if calendar_id is not None and calendar_id not in calendar_ids:
+            errors.append(
+                f"{display_path}: Kalenderprofil {profile_id} verweist auf "
+                f"unbekannten Kalender {calendar_id}"
+            )
+    for profile_id, suspension in suspensions.items():
+        if suspension["mode"] == "useSet":
+            requested_suspensions.add(suspension["suspensionSetId"])
+
+    for definition_id, definition in definitions.items():
+        anchor_ids = [anchor["inputId"] for anchor in definition["anchors"]]
+        if len(anchor_ids) != len(set(anchor_ids)):
+            errors.append(f"{display_path}: Definition {definition_id} mit doppeltem Anker")
+        if definition["deadlineOrigin"] == "CALCULATED":
+            unknown_anchors = calculated_anchor_ids(definition) - set(anchor_ids)
+            if unknown_anchors:
+                errors.append(
+                    f"{display_path}: Definition {definition_id} verwendet unbekannte "
+                    f"Anker {sorted(unknown_anchors)}"
+                )
+            result_policy = definition["resultPolicy"]
+            if result_policy["calendarProfileId"] not in calendars:
+                errors.append(
+                    f"{display_path}: Definition {definition_id} mit unbekanntem Kalenderprofil"
+                )
+            if result_policy["suspensionProfileId"] not in suspensions:
+                errors.append(
+                    f"{display_path}: Definition {definition_id} mit unbekanntem Stillstandsprofil"
+                )
+        else:
+            authoritative = definition["authoritativeDeadline"]
+            authoritative_ids = {authoritative["dateValueId"]}
+            if "timeValueId" in authoritative:
+                authoritative_ids.add(authoritative["timeValueId"])
+            if authoritative_ids - set(anchor_ids):
+                errors.append(
+                    f"{display_path}: behördlich gesetzte Definition {definition_id} "
+                    "verwendet unbekannte Werte"
+                )
+        if definition["filingProfileId"] not in filings:
+            errors.append(
+                f"{display_path}: Definition {definition_id} mit unbekanntem Einreichungsprofil"
+            )
+        for gate_id in definition["gateIds"]:
+            if gate_id not in gates:
+                errors.append(f"{display_path}: Definition {definition_id} mit unbekanntem Gate")
+            elif gates[gate_id]["rightInputId"] not in anchor_ids:
+                errors.append(
+                    f"{display_path}: Definition {definition_id}, Gate {gate_id} "
+                    "verwendet unbekannten Vergleichsanker"
+                )
+        for override_id in definition["legalOverrideIds"]:
+            if override_id not in overrides:
+                errors.append(
+                    f"{display_path}: Definition {definition_id} mit unbekanntem Override"
+                )
+
+    for regime_id, regime in regimes.items():
+        definition_ids = regime["deadlineDefinitionIds"]
+        unknown_definitions = set(definition_ids) - set(definitions)
+        if unknown_definitions:
+            errors.append(
+                f"{display_path}: Regime {regime_id} mit unbekannten Definitionen "
+                f"{sorted(unknown_definitions)}"
+            )
+        if (
+            regime["status"] == "supported"
+            and not definition_ids
+            and regime.get("regimeKind", "deadline") != "filingOverlay"
+        ):
+            errors.append(
+                f"{display_path}: unterstütztes Regime {regime_id} ohne Fristdefinition"
+            )
+        if regime["status"] == "blocked" and definition_ids:
+            errors.append(
+                f"{display_path}: gesperrtes Regime {regime_id} enthält Fristdefinitionen"
+            )
+        if regime.get("regimeKind", "deadline") == "filingOverlay" and definition_ids:
+            errors.append(
+                f"{display_path}: Einreichungs-Overlay {regime_id} enthält Fristdefinitionen"
+            )
+        for field, available in (
+            ("filingProfileId", filings),
+            ("calendarProfileId", calendars),
+            ("suspensionProfileId", suspensions),
+        ):
+            value = regime[field]
+            if value is not None and value not in available:
+                errors.append(
+                    f"{display_path}: Regime {regime_id} mit unbekanntem {field}={value}"
+                )
+        for definition_id in definition_ids:
+            definition = definitions.get(definition_id)
+            if definition is None:
+                continue
+            if definition["status"] != regime["status"]:
+                errors.append(
+                    f"{display_path}: Status von Regime {regime_id} und Definition "
+                    f"{definition_id} widersprechen sich"
+                )
+            if definition["filingProfileId"] != regime["filingProfileId"]:
+                errors.append(
+                    f"{display_path}: Einreichungsprofil von Regime {regime_id} und "
+                    f"Definition {definition_id} widersprechen sich"
+                )
+            if definition["deadlineOrigin"] == "CALCULATED":
+                policy = definition["resultPolicy"]
+                if policy["calendarProfileId"] != regime["calendarProfileId"]:
+                    errors.append(
+                        f"{display_path}: Kalenderprofil von Regime {regime_id} und "
+                        f"Definition {definition_id} widersprechen sich"
+                    )
+                if policy["suspensionProfileId"] != regime["suspensionProfileId"]:
+                    errors.append(
+                        f"{display_path}: Stillstandsprofil von Regime {regime_id} und "
+                        f"Definition {definition_id} widersprechen sich"
+                    )
+            elif regime["uiExposure"] != "hidden":
+                errors.append(
+                    f"{display_path}: behördlich gesetztes Regime {regime_id} "
+                    "muss im Rechen-GUI verborgen bleiben"
+                )
+            if set(definition["gateIds"]) != set(regime["gateIds"]):
+                errors.append(
+                    f"{display_path}: Gates von Regime {regime_id} und Definition "
+                    f"{definition_id} widersprechen sich"
+                )
+            if set(definition["legalOverrideIds"]) != set(regime["legalOverrideIds"]):
+                errors.append(
+                    f"{display_path}: Overrides von Regime {regime_id} und Definition "
+                    f"{definition_id} widersprechen sich"
+                )
+
+    for override_id, override in overrides.items():
+        for regime_id in override["targetRegimeIds"]:
+            regime = regimes.get(regime_id)
+            if regime is None:
+                errors.append(
+                    f"{display_path}: Override {override_id} mit unbekanntem Ziel {regime_id}"
+                )
+            elif override_id not in regime["legalOverrideIds"]:
+                errors.append(
+                    f"{display_path}: Override {override_id} ohne Rückverweis von {regime_id}"
+                )
+
+    actual_origins = {
+        origin: sum(
+            definition["deadlineOrigin"] == origin
+            for definition in definitions.values()
+        )
+        for origin in ("CALCULATED", "AUTHORITATIVE")
+    }
+    if actual_origins != {"CALCULATED": 26, "AUTHORITATIVE": 3}:
+        errors.append(
+            f"{display_path}: unerwartete Herkunftsverteilung {actual_origins}"
+        )
+    return requested_suspensions, len(definitions), len(regimes)
+
+
 def validate_release(release_directory: Path) -> dict[str, int]:
     errors: list[str] = []
     schemas, registry = load_schema_registry()
@@ -535,6 +789,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
 
     profiles: dict[str, dict[str, Any]] = {}
     calendars: dict[str, dict[str, Any]] = {}
+    special_catalogs: dict[str, dict[str, Any]] = {}
     requested_suspension_ids: set[str] = set()
     requested_calendar_ids: set[str] = set()
     all_rule_ids: set[str] = set()
@@ -566,6 +821,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         expected_schema_file = {
             "legalProfile": "legal-profile.schema.json",
             "calendar": "calendar.schema.json",
+            "specialRegimeCatalog": "special-regime-catalog-v2.schema.json",
         }[artifact["role"]]
         document_schema_errors = validate_against_schema(
             document,
@@ -579,9 +835,11 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         if document.get("dataKind") != artifact["role"]:
             errors.append(f"{artifact['path']}: Datenart widerspricht der Manifestrolle")
 
-        document_id_field = (
-            "profileId" if artifact["role"] == "legalProfile" else "calendarId"
-        )
+        document_id_field = {
+            "legalProfile": "profileId",
+            "calendar": "calendarId",
+            "specialRegimeCatalog": "catalogId",
+        }[artifact["role"]]
         if document.get(document_id_field) != artifact["contentId"]:
             errors.append(f"{artifact['path']}: Inhalts-ID widerspricht dem Manifest")
 
@@ -605,14 +863,21 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                 if rule_id in all_rule_ids:
                     errors.append(f"Release: doppelte Regel-ID {rule_id}")
                 all_rule_ids.add(rule_id)
-        else:
+        elif artifact["role"] == "calendar":
             calendars[document["calendarId"]] = document
             check_calendar(document, artifact["path"], errors)
+        else:
+            special_catalogs[document["catalogId"]] = document
 
     if set(manifest["profileIds"]) != set(profiles):
         errors.append("manifest.json: Profil-IDs stimmen nicht mit den Artefakten überein")
     if set(manifest["calendarIds"]) != set(calendars):
         errors.append("manifest.json: Kalender-IDs stimmen nicht mit den Artefakten überein")
+    if set(manifest.get("specialRegimeCatalogIds", [])) != set(special_catalogs):
+        errors.append(
+            "manifest.json: Spezialregimekatalog-IDs stimmen nicht mit den "
+            "Artefakten überein"
+        )
     if set(manifest["sourceSummary"]["sourceIds"]) != set(all_sources):
         errors.append("manifest.json: Quellenübersicht ist nicht vollständig oder enthält Überhang")
     if all_sources:
@@ -650,10 +915,16 @@ def validate_release(release_directory: Path) -> dict[str, int]:
     )
     for profile_id, profile in profiles.items():
         valid_to = profile["validity"]["dataValidTo"]
-        if profile["validity"]["dataValidFrom"] > release_coverage["from"]:
-            errors.append(f"Profil {profile_id}: beginnt nach der Release-Abdeckung")
-        if valid_to is not None and valid_to < release_coverage["to"]:
-            errors.append(f"Profil {profile_id}: endet vor der Release-Abdeckung")
+        if manifest["formatVersion"] == "1.0.0":
+            if profile["validity"]["dataValidFrom"] > release_coverage["from"]:
+                errors.append(f"Profil {profile_id}: beginnt nach der Release-Abdeckung")
+            if valid_to is not None and valid_to < release_coverage["to"]:
+                errors.append(f"Profil {profile_id}: endet vor der Release-Abdeckung")
+        else:
+            if profile["validity"]["dataValidFrom"] > release_coverage["to"]:
+                errors.append(f"Profil {profile_id}: beginnt nach dem Release-Zeithorizont")
+            if valid_to is not None and valid_to < release_coverage["from"]:
+                errors.append(f"Profil {profile_id}: endet vor dem Release-Zeithorizont")
     for calendar_id, calendar in calendars.items():
         if calendar["coverage"]["from"] > release_coverage["from"]:
             errors.append(f"Kalender {calendar_id}: beginnt nach der Release-Abdeckung")
@@ -661,6 +932,19 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             errors.append(f"Kalender {calendar_id}: endet vor der Release-Abdeckung")
 
     check_inheritance(calendars, errors)
+    special_definition_count = 0
+    special_regime_count = 0
+    for catalog_id, catalog in special_catalogs.items():
+        requested, definition_count, regime_count = check_special_catalog(
+            catalog,
+            f"Spezialregimekatalog {catalog_id}",
+            set(profiles),
+            set(calendars),
+            errors,
+        )
+        requested_suspension_ids.update(requested)
+        special_definition_count += definition_count
+        special_regime_count += regime_count
     available_suspension_ids = {
         suspension_set["suspensionSetId"]
         for calendar in calendars.values()
@@ -701,6 +985,9 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         ),
         "sources": len(all_sources),
         "artifacts": len(manifest["artifacts"]),
+        "specialCatalogs": len(special_catalogs),
+        "specialDefinitions": special_definition_count,
+        "specialRegimes": special_regime_count,
     }
 
 
@@ -779,6 +1066,72 @@ def run_negative_self_tests(release_directory: Path) -> list[str]:
 
     tests.append(("unbekannte Vererbung", "unbekannter geerbter Kalender", missing_inheritance))
 
+    special_catalog_path = release_directory / "special-regimes" / "vrpg-be.json"
+    if special_catalog_path.is_file():
+        def removed_r5_type(test_directory: Path) -> None:
+            path = test_directory / "special-regimes" / "vrpg-be.json"
+            data = load_json(path)
+            definition = next(
+                item
+                for item in data["deadlineDefinitions"]
+                if item["deadlineOrigin"] == "CALCULATED"
+            )
+            definition["calculation"] = {
+                "type": "R5_FIXED",
+                "deadlineDateInputId": definition["anchors"][0]["inputId"],
+                "authoritativeSourceRequired": True,
+            }
+            rewrite_json(path, data)
+            refresh_artifact_metadata(test_directory, "special-regimes/vrpg-be.json")
+
+        tests.append(("entfernte Rechenart R5", "Schemafehler", removed_r5_type))
+
+        def visible_authoritative_deadline(test_directory: Path) -> None:
+            path = test_directory / "special-regimes" / "vrpg-be.json"
+            data = load_json(path)
+            authoritative_ids = {
+                item["deadlineDefinitionId"]
+                for item in data["deadlineDefinitions"]
+                if item["deadlineOrigin"] == "AUTHORITATIVE"
+            }
+            regime = next(
+                item
+                for item in data["regimes"]
+                if authoritative_ids.intersection(item["deadlineDefinitionIds"])
+            )
+            regime["uiExposure"] = "visible"
+            rewrite_json(path, data)
+            refresh_artifact_metadata(test_directory, "special-regimes/vrpg-be.json")
+
+        tests.append(
+            (
+                "sichtbarer Behörden-Termin",
+                "muss im Rechen-GUI verborgen bleiben",
+                visible_authoritative_deadline,
+            )
+        )
+
+        def special_component_mismatch(test_directory: Path) -> None:
+            path = test_directory / "special-regimes" / "vrpg-be.json"
+            data = load_json(path)
+            regime = next(
+                item
+                for item in data["regimes"]
+                if item["status"] == "supported"
+                and item["deadlineDefinitionIds"]
+            )
+            regime["filingProfileId"] = "F2_RECEIPT"
+            rewrite_json(path, data)
+            refresh_artifact_metadata(test_directory, "special-regimes/vrpg-be.json")
+
+        tests.append(
+            (
+                "widersprüchliches Einreichungsprofil",
+                "Einreichungsprofil von Regime",
+                special_component_mismatch,
+            )
+        )
+
     passed: list[str] = []
     for test_name, expected_text, mutator in tests:
         with tempfile.TemporaryDirectory(prefix="fristenrechner-ap5-") as temp_name:
@@ -813,7 +1166,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--self-test",
         action="store_true",
-        help="führt zusätzlich sechs erwartete Negativtests in temporären Kopien aus",
+        help="führt zusätzlich erwartete Negativtests in temporären Kopien aus",
     )
     return parser.parse_args()
 

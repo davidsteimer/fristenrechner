@@ -3,7 +3,8 @@
 | Merkmal | Wert |
 | --- | --- |
 | Arbeitspaket | AP11A |
-| Status | Funktionsskizze, noch keine UI-Implementierung |
+| Status | fachlich abgenommene Funktionsskizze, noch keine UI-Implementierung |
+| Abnahme | David Steimer, 30. August 2026 |
 | Sprachen | Deutsch und Französisch |
 
 ## 1. Leitidee
@@ -23,7 +24,10 @@ Der Normalfall bleibt schnell. Wer eine allgemeine VRPG-Frist berechnet, sieht w
 | R2 | Wahl- oder Abstimmungstag | jour de l'élection ou de la votation |
 | R3 | Datum des ersten Wahlgangs | date du premier tour |
 | R4 | Kenntnisdatum, Publikationsdatum, allenfalls Urnengang | date de connaissance, date de publication, éventuellement scrutin |
-| R5 | festgelegtes Datum, Uhrzeit, Quelle der Anordnung | date fixée, heure, source de l'acte officiel |
+
+Autoritativ festgelegte Termine werden im MVP nicht in der Auswahl `Fristtyp / Type de délai` angezeigt. Die App soll den Benutzer nicht einen bereits bekannten Termin eingeben lassen, um denselben Wert als vermeintlich berechnetes Ergebnis zurückzugeben. Datum, Uhrzeit, Quelle und Gültigkeit können im Hintergrunddatensatz weitergeführt werden.
+
+Wird später ein amtlicher Termin aus einem gepflegten Datenbestand geladen, kann ihn die App schreibgeschützt mit Quelle anzeigen und für nachgelagerte Funktionen wie den Outlook-Termin verwenden. Dieser Ablauf ist ein Abruf- und Nachweisfall, keine Fristberechnung.
 
 ## 3. Automatisch bestimmte Parameter
 
@@ -58,15 +62,17 @@ Französisch: `Le délai spécial a été calculé. La réception de l'original 
 
 ### Manuelle Kontrolle
 
-Deutsch: `Termin berechnet. Bitte mit der aktuellen Wahl- oder Abstimmungsanordnung abgleichen.`
+Deutsch: `Das Datum wurde aus dem gewählten Ereignis berechnet. Bitte mit der aktuellen Wahl- oder Abstimmungsanordnung abgleichen.`
 
-Französisch: `Date calculée. Veuillez la vérifier dans l'acte actuel relatif à l'élection ou à la votation.`
+Französisch: `La date a été calculée à partir de l'événement sélectionné. Veuillez la vérifier dans l'acte actuel relatif à l'élection ou à la votation.`
 
 ### Offene Voraussetzung
 
 Deutsch: `Das konkrete Datum wird von der zuständigen Behörde festgelegt. Ohne amtliche Anordnung ist keine verlässliche Berechnung möglich.`
 
 Französisch: `La date concrète est fixée par l'autorité compétente. Aucun calcul fiable n'est possible sans acte officiel.`
+
+Dieser Zustand erscheint nur, wenn eine berechenbare Spezialregel von einer zusätzlichen autoritativen Voraussetzung abhängt. Ein rein autoritativ festgelegter Termin wird nicht als auswählbarer Fristtyp angeboten.
 
 ### Gesperrte Regel
 
@@ -86,4 +92,4 @@ Eine Übersteuerung ist nur bei einer dafür vorgesehenen Komponente zulässig. 
 
 ## 6. Abgrenzung AP11A
 
-AP11A legt Eingabevertrag, Sichtbarkeit und Meldungstexte fest. Die produktive Umsetzung, Lokalisierung im Code, Barrierefreiheitsprüfung und visuelle Abnahme erfolgen in AP11B und AP11C.
+AP11A legt Eingabevertrag, Sichtbarkeit und Meldungstexte fest. AP11B setzt Datenmodell, Rechenkern und den Vertragstest für verborgene autoritative Hintergrundregime um. Die Integration in die Benutzeroberfläche, die Lokalisierung im Produktcode, die Barrierefreiheitsprüfung und die visuelle Abnahme erfolgen in AP11C.

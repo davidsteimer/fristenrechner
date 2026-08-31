@@ -1,0 +1,467 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "calendar",
+  "calendarId": "be-public-holidays",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "BE"
+  },
+  "coverage": {
+    "from": "2026-01-01",
+    "to": "2028-12-31"
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-08-29",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "docs/fachrecht/rechtsmatrix-mvp.md, docs/fachrecht/quellenregister.md und dokumentierte Abnahme des AP5-Referenzrelease am 2026-08-29"
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-FRG-BE-20210401",
+      "sourceType": "statute",
+      "title": "Gesetz über die Ruhe an öffentlichen Feiertagen, BSG 555.1",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/555.1",
+      "documentVersionDate": "2021-04-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "holidays": [
+    {
+      "holidayId": "BE-2026-01-01-NEW-YEAR",
+      "date": "2026-01-01",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.newYear",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-01-02-BERCHTOLD-DAY",
+      "date": "2026-01-02",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.berchtoldDay",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-04-03-GOOD-FRIDAY",
+      "date": "2026-04-03",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.goodFriday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-04-05-EASTER",
+      "date": "2026-04-05",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.easter",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-04-06-EASTER-MONDAY",
+      "date": "2026-04-06",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.easterMonday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-05-14-ASCENSION",
+      "date": "2026-05-14",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.ascension",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-05-24-PENTECOST",
+      "date": "2026-05-24",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.pentecost",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-05-25-WHIT-MONDAY",
+      "date": "2026-05-25",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.whitMonday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-09-20-FEDERAL-FAST",
+      "date": "2026-09-20",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.federalFast",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-12-25-CHRISTMAS",
+      "date": "2026-12-25",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.christmas",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2026-12-26-ST-STEPHEN",
+      "date": "2026-12-26",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.stStephen",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-01-01-NEW-YEAR",
+      "date": "2027-01-01",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.newYear",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-01-02-BERCHTOLD-DAY",
+      "date": "2027-01-02",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.berchtoldDay",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-03-26-GOOD-FRIDAY",
+      "date": "2027-03-26",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.goodFriday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-03-28-EASTER",
+      "date": "2027-03-28",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.easter",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-03-29-EASTER-MONDAY",
+      "date": "2027-03-29",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.easterMonday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-05-06-ASCENSION",
+      "date": "2027-05-06",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.ascension",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-05-16-PENTECOST",
+      "date": "2027-05-16",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.pentecost",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-05-17-WHIT-MONDAY",
+      "date": "2027-05-17",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.whitMonday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-09-19-FEDERAL-FAST",
+      "date": "2027-09-19",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.federalFast",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-12-25-CHRISTMAS",
+      "date": "2027-12-25",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.christmas",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2027-12-26-ST-STEPHEN",
+      "date": "2027-12-26",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.stStephen",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-01-01-NEW-YEAR",
+      "date": "2028-01-01",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.newYear",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-01-02-BERCHTOLD-DAY",
+      "date": "2028-01-02",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.berchtoldDay",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-04-14-GOOD-FRIDAY",
+      "date": "2028-04-14",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.goodFriday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-04-16-EASTER",
+      "date": "2028-04-16",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.easter",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-04-17-EASTER-MONDAY",
+      "date": "2028-04-17",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.easterMonday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-05-25-ASCENSION",
+      "date": "2028-05-25",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.ascension",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-06-04-PENTECOST",
+      "date": "2028-06-04",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.pentecost",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-06-05-WHIT-MONDAY",
+      "date": "2028-06-05",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.whitMonday",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-09-17-FEDERAL-FAST",
+      "date": "2028-09-17",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.federalFast",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-12-25-CHRISTMAS",
+      "date": "2028-12-25",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.christmas",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ]
+    },
+    {
+      "holidayId": "BE-2028-12-26-ST-STEPHEN",
+      "date": "2028-12-26",
+      "kind": "cantonalPublicHoliday",
+      "labelKey": "holiday.be.stStephen",
+      "legalEffect": "nonWorkingDayEquivalentToSunday",
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ]
+    }
+  ],
+  "suspensionSets": []
+}
