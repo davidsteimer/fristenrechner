@@ -2,7 +2,7 @@
 
 Diese Anleitung beschreibt die kontrollierte Aktualisierung vom tenantgeprüften Paket `0.2.0.0` auf Release 2 mit Paket `0.3.0.0`. Der Release bündelt AP12, AP13 und GitHub-Issue #18. David Steimer hat AP12A, AP12B, AP12C, AP13 und Issue #18 am 31. August 2026 fachlich beziehungsweise fachlich-technisch abgenommen.
 
-Die lokale Finalisierung ist abgeschlossen. Die nachstehende Tenantmatrix ist noch nicht ausgeführt. Das Dokument trennt deshalb den geprüften Installationskandidaten klar von einer späteren betrieblichen Freigabe.
+Die lokale Finalisierung und die Tenantprüfung sind abgeschlossen. Das Paket `0.3.0.0` wurde am 31. August 2026 auf der dedizierten SharePoint-Testsite und auf der SharePoint-Website des Teams `Entwicklungsumgebung` aktualisiert. Die bestehende Teams-Registerkarte wurde auf den neuen Datenrelease umgestellt. Die Matrix T01 bis T19 wurde vollständig bestanden.
 
 ## 1. Releaseidentität
 
@@ -70,12 +70,12 @@ Der Heft-Build meldet zwei nicht blockierende `@rushstack/no-new-null`-Warnungen
 
 Vor dem Tenantupload müssen vorliegen:
 
-1. veröffentlichter Pin-Commit `f80f4019ff56ca51154ba7cd8b767686dd87a9a4`
-2. freigegebener Datenrelease `2026-08-31-mvp-03-approved.1`
-3. Sicherung des installierten Pakets `0.2.0.0` und seines Datenpfads
-4. Berechtigung zur Aktualisierung des Tenant-App-Katalogs und der beiden Testsites
-5. ein neuer versionsbezogener SharePoint-Mirrorordner, falls der Mirror geprüft wird
-6. Outlook Web und Outlook Desktop für die Importprüfung
+1. [x] veröffentlichter Pin-Commit `f80f4019ff56ca51154ba7cd8b767686dd87a9a4`
+2. [x] freigegebener Datenrelease `2026-08-31-mvp-03-approved.1`
+3. [x] Sicherung des installierten Pakets `0.2.0.0` und seines Datenpfads
+4. [x] Berechtigung zur Aktualisierung des Tenant-App-Katalogs und der beiden Testsites
+5. [x] neue versionsbezogene SharePoint-Mirrorordner auf Testsite und Teamsite
+6. [x] Outlook Web und Outlook Desktop für die Importprüfung
 
 Der AP12C-Kandidatenordner erfüllt die zweite Voraussetzung ausdrücklich nicht. Der Release-Service weist `releaseStatus: candidate` weiterhin ab.
 
@@ -129,27 +129,31 @@ Der Laufzeitpfad darf nicht auf `source-reviews/` zeigen. Die Anwendung lädt au
 
 ## 7. Release-2-Testmatrix
 
-| ID | Host | Prüfung | Soll | Status |
+Ausführungsdatum: 31. August 2026
+
+Ausführender: Codex als dokumentiertes KI-Arbeitsinstrument unter der Projektverantwortung von David Steimer
+
+| ID | Host | Prüfung und Soll | Prüfnachweis | Status |
 | --- | --- | --- | --- | --- |
-| T01 | App-Katalog | Paketidentität | Version 0.3.0.0, richtige IDs, SHA-256 korrekt, keine neue API-Berechtigung | ausstehend |
-| T02 | SharePoint-Testsite | App-Aktualisierung | bestehende Seite bleibt verwendbar und lädt das neue Bundle | ausstehend |
-| T03 | SharePoint-Testsite | Format-3-Aktivierung | nur `2026-08-31-mvp-03-approved.1` wird aktiviert, Abdeckung ab 01.01.2026 offen | ausstehend |
-| T04 | SharePoint-Testsite | allgemeine Regression | StPO, Empfang 16.09.2026, 10 Tage ergibt 28.09.2026 | ausstehend |
-| T05 | SharePoint-Testsite | ewiger Kalender | StPO, Empfang 22.07.2027, 10 Tage ergibt wegen Bundesfeiertag und Wochenende 02.08.2027 | ausstehend |
-| T06 | SharePoint-Testsite | Gerichtsferien | ZPO ordentlich, Zustellung 19.03.2027, 10 Tage ergibt 13.04.2027 | ausstehend |
-| T07 | SharePoint-Testsite | Spezialregime | Art. 111 Abs. 1a PRG-BE mit erstem Wahlgang 29.03.2026 ergibt 02.04.2026 und Originaleingang bis 12.00 Uhr | ausstehend |
-| T08 | SharePoint-Testsite | Sofortanfechtung | Art. 67a Abs. 3 VRPG-BE zeigt den zwingenden Hinweis | ausstehend |
-| T09 | SharePoint-Testsite | Status- und Auswahlgrenzen | nicht berechenbare Regime bleiben deaktiviert, ZPO und VRPG-BE enthalten kein «Noch nicht geklärt» | ausstehend |
-| T10 | SharePoint-Testsite | Sprachen und Defaults | Deutsch und Französisch vollständig, nur freigegebene Defaults bleiben gespeichert | ausstehend |
-| T11 | SharePoint-Testsite | responsive Darstellung | 390 Pixel und breite Spalte ohne horizontales Überlaufen | ausstehend |
-| T12 | Teams | direkte Registerkarte | Host meldet Microsoft Teams und verwendet Paket 0.3.0.0 | ausstehend |
-| T13 | SharePoint und Teams | Hostparität | identische Eingaben ergeben identische Resultate und Rechenspuren | ausstehend |
-| T14 | Teams | Format-3-Mirror | Teamsite-Mirror aktiviert denselben Release und dieselben Artefaktprüfsummen | ausstehend |
-| T15 | Outlook Web | allgemeiner Kalenderexport | ganztägiger freier Termin am Fristablauf, Kategorie `Fristablauf`, Erinnerung 4 Tage 16 Stunden vorher | ausstehend |
-| T16 | Outlook Desktop | Spezialregime und Referenz | korrektes Datum, Sonderzeichen in Referenz intakt, keine persistierte Referenz nach neuer Berechnung | ausstehend |
-| T17 | GitHub und Mirror | Providerparität | Manifest- und Artefaktbytes sind identisch | ausstehend |
-| T18 | SharePoint-Testsite | Fallback | fehlerhafter Mirror ersetzt den letzten validierten Aktivstand nicht | ausstehend |
-| T19 | SharePoint | Governance-Spiegelung | Register, Index und Ereignis sind lesbar, bleiben aber ausserhalb des Laufzeitpfads | ausstehend |
+| T01 | App-Katalog | Paketidentität 0.3.0.0, richtige IDs, korrekte Prüfsumme, keine neue API-Berechtigung | Version `0.3.0.0`, Solution-ID `13090feb-a6bf-40fa-9d3c-ec8d90516a60`, WebPart-ID `596c7f1c-4d3e-4da8-a7be-27a96024f37c`, SHA-256 `a4cbaa646a9338419de51f7629652ecc2f9ada0ac15aeccdcf2211f72bc964e1`, keine API-Anforderung, App aktiviert und gültig | bestanden |
+| T02 | SharePoint-Testsite | bestehende Seite bleibt verwendbar und lädt das neue Bundle | App aktualisiert, veröffentlichte Seite verwendbar, Bundle `fristenrechner-web-part_39c29a6f8ef9fd887dc8.js` geladen | bestanden |
+| T03 | SharePoint-Testsite | nur `2026-08-31-mvp-03-approved.1` wird aktiviert, Abdeckung ab 01.01.2026 offen | sichtbarer Regelstand `2026-08-31-mvp-03-approved.1`, Abdeckung `01.01.2026 – offen, unter Vorbehalt der Quellenprüfung`, Quelle SharePoint-Mirror | bestanden |
+| T04 | SharePoint-Testsite | StPO, Empfang 16.09.2026, 10 Tage ergibt 28.09.2026 | Fristbeginn 17.09.2026, rechnerisches Ende 26.09.2026, Verschiebung auf 28.09.2026 | bestanden |
+| T05 | SharePoint-Testsite | StPO, Empfang 22.07.2027, 10 Tage ergibt wegen Bundesfeiertag und Wochenende 02.08.2027 | rechnerisches Ende 01.08.2027, Sonntag und Bundesfeiertag, Regel `CH-CAL-HOL-NATIONAL-DAY`, Verschiebung auf 02.08.2027 | bestanden |
+| T06 | SharePoint-Testsite | ZPO ordentlich, Zustellung 19.03.2027, 10 Tage ergibt 13.04.2027 | 15 Tage Fristenstillstand aus `EASTER-2027` übersprungen, Fristablauf 13.04.2027 | bestanden |
+| T07 | SharePoint-Testsite | Art. 111 Abs. 1a PRG-BE mit erstem Wahlgang 29.03.2026 ergibt 02.04.2026 und Originaleingang bis 12.00 Uhr | Fristablauf 02.04.2026, Original erforderlich, Originaleingang bis 12.00 Uhr, Zeitzone Europe/Zurich | bestanden |
+| T08 | SharePoint-Testsite | Art. 67a Abs. 3 VRPG-BE zeigt den zwingenden Hinweis | Hinweis auf die sofortige Anfechtung und darauf, dass die ordentliche Frist nicht erst nach dem Urnengang endet, wurde angezeigt | bestanden |
+| T09 | SharePoint-Testsite | nicht berechenbare Regime bleiben deaktiviert, ZPO und VRPG-BE enthalten kein «Noch nicht geklärt» | offene, gesperrte und für Folgereleases vorgesehene Regime waren deaktiviert. Bei ZPO und VRPG-BE war kein Eintrag «Noch nicht geklärt» vorhanden | bestanden |
+| T10 | SharePoint-Testsite | Deutsch und Französisch vollständig, nur freigegebene Defaults bleiben gespeichert | französische Spezialfrist samt Ergebnis, Hinweis und Rechenspur geprüft. Behörde, Erlass und Fristtyp blieben als lokale Defaults erhalten. Datumswerte blieben nach Neuladen leer. Standards danach zurückgesetzt | bestanden |
+| T11 | SharePoint-Testsite | 390 Pixel und breite Spalte ohne horizontales Überlaufen | Bei 390 Pixeln betrugen `innerWidth`, Dokumentbreite und Scrollbreite je 390 Pixel. Bei 1440 Pixeln betrugen alle drei Werte 1440 Pixel. Zusätzlich visuell geprüft | bestanden |
+| T12 | Teams | direkte Registerkarte meldet Microsoft Teams und verwendet Paket 0.3.0.0 | Registerkarte `Fristenrechner Schweiz – Teams` im Kanal `Fristenrechner` geladen. Microsoft-Teams-Host aktiv. Bundle `fristenrechner-web-part_39c29a6f8ef9fd887dc8.js` aus dem Tenant-App-Katalog geladen | bestanden |
+| T13 | SharePoint und Teams | identische Eingaben ergeben identische Resultate und Rechenspuren | StPO, Empfang 16.09.2026 und 10 Tage ergab in beiden Hosts den 28.09.2026 mit Fristbeginn 17.09.2026 und rechnerischem Ende 26.09.2026 | bestanden |
+| T14 | Teams | Teamsite-Mirror aktiviert denselben Release und dieselben Artefaktprüfsummen | Teams-Mirror auf `2026-08-31-mvp-03-approved.1` umgestellt. Registerkarte neu geladen und Aktivstand, Quelle und offener Abdeckungszeitraum erneut geprüft | bestanden |
+| T15 | Outlook Web | ganztägiger freier Termin am Fristablauf, Kategorie `Fristablauf`, Erinnerung 4 Tage 16 Stunden vorher | erzeugte ICS in den primären Kalender `david@steimer.ch` importiert. Vorschau und Ereignisformular bestätigten 28.09.2026, ganztägig, frei, Kategorie `Fristablauf` und Erinnerung 4 Tage 16 Stunden vorher. Testtermin anschliessend gelöscht | bestanden |
+| T16 | Outlook Desktop | Spezialregime und Referenz mit korrektem Datum und ohne persistierte Referenz | VRPG-BE Art. 67a Abs. 3 ergab 20.03.2026. ICS mit Referenz `BE-2026-4711` in den primären Kalender importiert. Outlook Desktop bestätigte vollständigen Betreff, Ganztägigkeit, Status frei und Erinnerung 4 Tage 16 Stunden vorher. Referenz war weder im Local Storage noch im Session Storage vorhanden. Testtermin anschliessend gelöscht und Suche mit null Treffern verifiziert | bestanden |
+| T17 | GitHub und Mirror | Manifest- und Artefaktbytes sind identisch | GitHub-Provider und SharePoint-Mirror aktivierten denselben Release und ergaben für den StPO-Referenzfall dasselbe Resultat. Manifest SHA-256 `74583fa4dc9cab8ed99af3f9202782d90b02e9e47578f1dd9d2da40d19357be8`. Die SharePoint-Prüfsummen der Releaseartefakte stimmten mit den lokalen Originalen überein | bestanden |
+| T18 | SharePoint-Testsite | fehlerhafter Mirror ersetzt den letzten validierten Aktivstand nicht | absichtlich nicht vorhandener Mirrorpfad führte zu `SharePoint-Abruf fehlgeschlagen: 404`. Die App zeigte gleichzeitig weiterhin `2026-08-31-mvp-03-approved.1` als letzten vollständig validierten Datenstand. Gültiger Pfad wiederhergestellt und Seite veröffentlicht | bestanden |
+| T19 | SharePoint | Register, Index und Ereignis sind lesbar, bleiben aber ausserhalb des Laufzeitpfads | `source-register.json`, `index.json` und `events/2026-08-31-initial-consolidation.1.json` auf beiden Sites lesbar. Laufzeitpfade zeigen weiterhin ausschliesslich auf den Releaseordner. Die SharePoint-Prüfsummen der Governance-Dateien stimmten mit den lokalen Originalen überein | bestanden |
 
 Die Erinnerung ist als relative Dauer von exakt 112 Stunden modelliert. Bei einem Wechsel zwischen Sommer- und Winterzeit kann Outlook die lokale Erinnerungsuhrzeit um eine Stunde verschieben. Dieses Verhalten ist dokumentiert und akzeptiert. Es ändert den Termin- und Fristablauftag nicht.
 
@@ -174,6 +178,6 @@ Die mit Release 2 erzeugte `.ics`-Datei ist ein lokales Benutzerartefakt. Ein Pa
 
 ## 9. Freigabegrenze
 
-Der lokale Installationskandidat ist vollständig gebaut und geprüft. Eine Veröffentlichung im öffentlichen Repository, die Aktualisierung des SharePoint-Mirrors und die Installation im steimer.ch-Tenant sind separate externe Schritte. Die betriebliche Freigabe erfolgt erst nach vollständig bestandener Matrix T01 bis T19 und dokumentierter Abnahme durch David Steimer.
+Der Installationskandidat ist vollständig gebaut, veröffentlicht, gespiegelt und im steimer.ch-Tenant geprüft. Die Matrix T01 bis T19 ist vollständig bestanden. Die technische Voraussetzung für die betriebliche Freigabe von MVP 0.3 ist damit erfüllt. Der formelle Releaseentscheid und die fachliche beziehungsweise betriebliche Abnahme verbleiben bei David Steimer.
 
 Codex ist als KI-Arbeitsinstrument dokumentiert, übernimmt aber keine formelle Freigabe- oder Haftungsverantwortung.
