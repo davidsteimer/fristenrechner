@@ -3,7 +3,7 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Freischaltungsentscheid, Installation und Betrieb durch eine Microsoft-365-IT |
-| Produktstand | MVP 0.2, definitives Paket `0.2.0.0` vor Tenantabnahme |
+| Produktstand | Release 2 beziehungsweise MVP 0.3, definitives Paket `0.3.0.0` vor Tenantabnahme |
 | Stand | 31. August 2026 |
 | Zielplattform | SharePoint Online, optional Microsoft Teams |
 
@@ -53,9 +53,9 @@ Für eine reine SharePoint-Installation auf einer einzelnen Site Collection kann
 | Merkmal | Wert |
 | --- | --- |
 | Paket | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Version | `0.2.0.0` |
-| Grösse | 166'470 Bytes |
-| SHA-256 | `391c13b360a4d359bc3252d5f74f8d8e875287c20729b86b6a58cd1c519f6fc5` |
+| Version | `0.3.0.0` |
+| Grösse | 176'665 Bytes |
+| SHA-256 | `a4cbaa646a9338419de51f7629652ecc2f9ada0ac15aeccdcf2211f72bc964e1` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 
@@ -114,7 +114,7 @@ Microsoft weist darauf hin, dass benutzerdefinierte Apps und deren Nutzung im Te
 Die Standardkonfiguration verwendet den auf einen unveränderlichen Commit gepinnten Datenrelease:
 
 ```text
-https://raw.githubusercontent.com/davidsteimer/fristenrechner/bd7c148741626de168af72fa5273dc5fdf24b923/data/releases/2026-08-31-mvp-02-approved.1
+https://raw.githubusercontent.com/davidsteimer/fristenrechner/f80f4019ff56ca51154ba7cd8b767686dd87a9a4/data/releases/2026-08-31-mvp-03-approved.1
 ```
 
 Voraussetzung ist ein ausgehender HTTPS-Zugriff auf `raw.githubusercontent.com`. Die Anwendung lädt nur die versionierten Regel- und Kalenderdateien. Eingegebene Fristdaten werden nicht an GitHub gesendet.
@@ -130,7 +130,7 @@ Empfohlene Ordnerstruktur:
 ```text
 /sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/
 └── releases/
-    └── 2026-08-31-mvp-02-approved.1/
+    └── 2026-08-31-mvp-03-approved.1/
         ├── manifest.json
         ├── calendars/
         │   ├── be-public-holidays.json
@@ -156,7 +156,7 @@ Einrichtung:
 7. Als `SharePoint-Mirrorpfad` den serverrelativen Ordner eintragen, beispielsweise:
 
 ```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-08-31-mvp-02-approved.1
+/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-08-31-mvp-03-approved.1
 ```
 
 Massgebend ist der tatsächliche URL-Pfad der Bibliothek, nicht ihr allenfalls übersetzter Anzeigename. Der Pfad kann aus der Ordneradresse der Zielwebsite übernommen werden.
@@ -235,6 +235,7 @@ Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höher
 - [ ] StPO, Empfang 16.09.2026, zehn Tage ergibt Fristablauf 28.09.2026
 - [ ] Deutsch und Französisch funktionieren
 - [ ] ein fachlicher Sperrfall zeigt kein scheinbares Fristende
+- [ ] der Outlook-kompatible Kalendereintrag enthält Fristdatum, freien Status, Kategorie `Fristablauf` und Erinnerung 4 Tage 16 Stunden vorher
 - [ ] Desktop- und Mobilansicht sind bedienbar
 - [ ] direkte Teams-Registerkarte meldet `Microsoft Teams`
 - [ ] Browserkonsole enthält keinen Fehler des Produktbundles
@@ -260,4 +261,5 @@ Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei 
 - [AP10-Deploymentnachweis](deployment-ap10.md)
 - [AP13: Periodische Quellenprüfung](periodische-quellenpruefung-ap13.md)
 - [Release-Checkliste](release-checkliste.md)
+- [Release-2-Deployment und Testmatrix](deployment-release-2-mvp-03.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)

@@ -61,7 +61,7 @@ Der Build erzeugt `sharepoint/solution/fristenrechner-schweiz.sppkg` mit eingebe
 5. WebPart als Kanalregisterkarte hinzufügen.
 6. Falls verwendet, den Mirrorpfad für jede WebPart-Instanz separat konfigurieren.
 
-Die Bereitstellung ist adminarm, aber nicht adminfrei. Der MVP-0.3-Datenrelease ist freigegeben. Das definitive Paket `0.3.0.0` wird erst nach vollständiger SharePoint-, Teams- und Outlook-Testmatrix betrieblich freigegeben. MVP 0.2 bleibt bis dahin der Rückfallstand. Gastzugriffe sind nicht Bestandteil von Release 2.
+Die Bereitstellung ist adminarm, aber nicht adminfrei. Der MVP-0.3-Datenrelease ist freigegeben. Das definitive Paket `0.3.0.0` wird erst nach vollständiger SharePoint-, Teams- und Outlook-Testmatrix betrieblich freigegeben. Die [Release-2-Deploymentanleitung](../docs/betrieb/deployment-release-2-mvp-03.md) enthält Paketprüfsumme, Mirrorstruktur, Prüfmatrix und Rollback. MVP 0.2 bleibt bis dahin der Rückfallstand. Gastzugriffe sind nicht Bestandteil von Release 2.
 
 ## Lizenz
 

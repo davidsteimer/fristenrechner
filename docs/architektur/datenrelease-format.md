@@ -11,7 +11,8 @@
 | Format-1-Referenzrelease | `data/releases/2026-08-29-ap5-approved.1` |
 | Format-2-Referenzrelease | `data/releases/2026-08-30-ap11b-approved.1` |
 | Format-3-Kandidat | `data/releases/2026-08-31-ap12c-candidate.1` |
-| Freigaben | David Steimer, 29. und 30. August 2026 |
+| Format-3-Produktrelease | `data/releases/2026-08-31-mvp-03-approved.1` |
+| Freigaben | David Steimer, 29. bis 31. August 2026 |
 | Architekturentscheide | [DEC-2026-012](../entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md) und [DEC-2026-015](../entscheidungen/DEC-2026-015-regelbasierte-kalenderkomponente.md), beide beschlossen |
 
 ## 1. Ziel und Abgrenzung
@@ -59,6 +60,8 @@ Das Manifest enthält keine Prüfsumme über sich selbst. Seine Vertrauenswürdi
 Der Format-1-Referenzbestand wurde mit einer neuen Release-ID aus dem technisch validierten Candidate abgeleitet. Die fachlichen Regeln, Feiertage und Stillstandsperioden blieben unverändert. Der Prüfstatus der sieben Nutzartefakte wurde auf `verified` gesetzt und mit neuen Prüfsummen versehen.
 
 Der Format-2-Referenzbestand wurde ebenfalls unter einer neuen Release-ID aus dem validierten AP11B-Kandidaten abgeleitet. Seine acht Nutzartefakte und ihre Prüfsummen sind byteidentisch mit dem Kandidaten. Das neue Manifest dokumentiert den Status `approved` und die menschliche Freigabe im qualifizierten Erweiterungsfeld `steimer.approval`. Beide Kandidaten bleiben unverändert erhalten.
+
+Der Format-3-Produktrelease wurde unter einer neuen Release-ID aus dem validierten AP12C-Kandidaten abgeleitet. Die beiden bereits verifizierten Regelkalender bleiben byteidentisch. Bei den fünf Rechtsprofilen und dem Spezialregimekatalog werden ausschliesslich die Prüfmetadaten auf die menschliche Releasefreigabe nachgeführt. Das Manifest enthält die neuen Artefaktprüfsummen und das qualifizierte Freigabefeld `steimer.approval`. Der Kandidat bleibt unverändert und nicht aktivierbar.
 
 ## 3. Schemata
 
@@ -181,7 +184,7 @@ Beim Format-1-Referenzrelease beweisen sechs Negativtests, dass Prüfsummenfehle
 
 Beim Format-2-Referenzrelease kommen drei Manipulationen hinzu. Die entfernte Rechenart `R5_FIXED`, ein sichtbar geschalteter Behörden-Termin und ein zwischen Regime und Definition widersprüchliches Einreichungsprofil müssen scheitern. Der Validator prüft zudem, dass der Katalog genau 26 berechnete und 3 behördlich gesetzte Definitionen enthält.
 
-Beim Format-3-Kandidaten prüft der Validator zusätzlich offene Abdeckung, Kalenderkomponente 2.0.0, Kalenderregeltypen, Vererbung, Gültigkeit, Overrides, Quellenbezüge und sämtliche Stillstandssatz-Referenzen. Neun gezielte Negativmutationen müssen abgewiesen werden. Ein separater Migrationsvalidator bestätigt zwei byteidentische AP12A-Kalender, 15 Regeln, null alte und neun neue Stillstandssatz-Referenzen.
+Beim Format-3-Kandidaten und beim daraus abgeleiteten Produktrelease prüft der Validator zusätzlich offene Abdeckung, Kalenderkomponente 2.0.0, Kalenderregeltypen, Vererbung, Gültigkeit, Overrides, Quellenbezüge und sämtliche Stillstandssatz-Referenzen. Neun gezielte Negativmutationen müssen abgewiesen werden. Ein separater Migrationsvalidator bestätigt zwei byteidentische AP12A-Kalender, 15 Regeln, null alte und neun neue Stillstandssatz-Referenzen. Beim Produktrelease prüft er zusätzlich die menschliche Freigabe und den Status `verified` sämtlicher Nutzartefakte.
 
 ## 10. Qualitäts- und Sicherheitsgrenzen
 

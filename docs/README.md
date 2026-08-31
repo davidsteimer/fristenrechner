@@ -21,7 +21,7 @@ Der [Vertrag zu Issue #18](architektur/outlook-kalendereintrag-issue-18.md) doku
 
 Die zweisprachigen Interaktionsverträge liegen unter [`ux/`](ux/README.md). AP11A enthält dort die progressive Eingabe, Ergebnisdarstellung und Meldungen für unterstützte, offene und gesperrte Spezialregime.
 
-Für die Beurteilung und Freischaltung in anderen Microsoft-365-Tenants stehen eine [technische Kurzdokumentation](architektur/technische-kurzdokumentation.md) sowie die [Voraussetzungen für Installation und Betrieb](betrieb/installation-und-betrieb-dritttenants.md) mit einer konkreten SharePoint-Mirror-Anleitung zur Verfügung. Die [AP11C-Deploymentanleitung](betrieb/deployment-mvp-02-ap11c.md) ergänzt Update, Format-2-Mirror, Tenanttests und Rollback für MVP 0.2.
+Für die Beurteilung und Freischaltung in anderen Microsoft-365-Tenants stehen eine [technische Kurzdokumentation](architektur/technische-kurzdokumentation.md) sowie die [Voraussetzungen für Installation und Betrieb](betrieb/installation-und-betrieb-dritttenants.md) mit einer konkreten SharePoint-Mirror-Anleitung zur Verfügung. Die [AP11C-Deploymentanleitung](betrieb/deployment-mvp-02-ap11c.md) dokumentiert den Rückfallstand. Die [Release-2-Anleitung](betrieb/deployment-release-2-mvp-03.md) enthält Paketidentität, Format-3-Mirror, erweiterte SharePoint-, Teams- und Outlook-Matrix sowie Rollback.
 
 Der [AP13-Betriebsnachweis](betrieb/periodische-quellenpruefung-ap13.md) definiert die periodische Quellenprüfung, die vier Ergebnisse, die Rollen in Personalunion und die Trennung von Prüfung und Datenrelease. Die [generische Release-Checkliste](betrieb/release-checkliste.md) verankert den Termin 15. November, die Folgemassnahmen und die Spiegelung des Governance-Nachweises.
 

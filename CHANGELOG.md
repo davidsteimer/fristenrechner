@@ -101,6 +101,8 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 - AP12C-Kandidat kontrolliert zum freigegebenen Datenrelease `2026-08-31-mvp-03-approved.1` hochgestuft
 - Issue #18 nach funktionaler Prüfung durch David Steimer abgenommen
 - Produktversion für Release 2 auf 0.3.0 angehoben
+- SPFx-Paketversion auf 0.3.0.0 angehoben und Datenquelle unveränderlich auf Commit `f80f4019ff56ca51154ba7cd8b767686dd87a9a4` gepinnt
+- Definitives Release-2-Paket lokal mit 164 Root- und 17 SPFx-Tests, CSS-Audit und Paketintegritätsprüfung validiert
 
 [Unreleased]: https://github.com/davidsteimer/fristenrechner/compare/v0.3.0...HEAD
 [0.3.0]: https://github.com/davidsteimer/fristenrechner/releases/tag/v0.3.0
