@@ -87,8 +87,13 @@ export interface LegalProfile {
 export interface Holiday {
   readonly holidayId: string;
   readonly date: IsoDate;
+  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday';
   readonly labelKey: string;
   readonly legalEffect: 'nonWorkingDayEquivalentToSunday';
+  readonly sourceRefs: readonly {
+    readonly sourceId: string;
+    readonly locator: string;
+  }[];
 }
 
 export interface SuspensionPeriod {
@@ -126,6 +131,7 @@ export interface ValidatedReleaseArtifactLike {
   readonly descriptor: {
     readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog';
     readonly contentId: string;
+    readonly schemaId?: string;
   };
   readonly parsed: unknown;
 }
@@ -134,7 +140,7 @@ export interface ValidatedReleaseLike {
   readonly releaseId: string;
   readonly formatVersion: string;
   readonly coverageFrom: IsoDate;
-  readonly coverageTo: IsoDate;
+  readonly coverageTo: IsoDate | null;
   readonly profileIds: readonly string[];
   readonly calendarIds: readonly string[];
   readonly specialRegimeCatalogIds?: readonly string[];
@@ -146,11 +152,30 @@ export interface CalculationData {
   readonly formatVersion: string;
   readonly coverage: {
     readonly from: IsoDate;
-    readonly to: IsoDate;
+    readonly to: IsoDate | null;
   };
   readonly profiles: ReadonlyMap<string, LegalProfile>;
   readonly calendars: ReadonlyMap<string, CalendarData>;
+  readonly calendarRuleSets: ReadonlyMap<string, import('./calendarRuleTypes').CalendarRuleSet>;
   readonly specialRegimeCatalogs: ReadonlyMap<string, import('./specialTypes').SpecialRegimeCatalog>;
+}
+
+export interface CalendarGenerationEvidence {
+  readonly releaseId: string;
+  readonly calendarId: string;
+  readonly range: {
+    readonly from: IsoDate;
+    readonly to: IsoDate;
+  };
+  readonly appliedRuleIds: readonly string[];
+  readonly appliedOverrideRuleIds: readonly string[];
+  readonly applications: readonly import('./calendarRuleTypes').CalendarRuleApplication[];
+}
+
+export interface CalendarTraceEvidence {
+  readonly releaseId: string;
+  readonly calendarId: string;
+  readonly applications: readonly import('./calendarRuleTypes').CalendarRuleApplication[];
 }
 
 export type TraceOperation =
@@ -172,6 +197,7 @@ export interface TraceStep {
   readonly periodIds?: readonly string[];
   readonly ruleIds: readonly string[];
   readonly reasonKeys: readonly string[];
+  readonly calendarEvidence?: CalendarTraceEvidence;
 }
 
 export interface SuspensionResult {
@@ -220,4 +246,5 @@ export interface ResolvedCalendar {
   };
   readonly holidaysByDate: ReadonlyMap<IsoDate, readonly Holiday[]>;
   readonly suspensionSets: ReadonlyMap<string, SuspensionSet>;
+  readonly generation?: CalendarGenerationEvidence;
 }

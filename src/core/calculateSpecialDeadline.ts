@@ -9,8 +9,19 @@ import {
   weekdayIndex,
   weekdayReason
 } from './date';
-import { resolveCalendar } from './data';
-import type { CalculationData, IsoDate, ResolvedCalendar, SuspensionPeriod } from './types';
+import {
+  calendarGenerationRangeForDates,
+  isWithinReleaseCoverage,
+  resolveCalendar
+} from './data';
+import { CalendarGenerationError } from './generateCalendar';
+import type {
+  CalculationData,
+  CalendarTraceEvidence,
+  IsoDate,
+  ResolvedCalendar,
+  SuspensionPeriod
+} from './types';
 import type {
   CalculatedDeadlineDefinition,
   DeadlineDefinition,
@@ -248,7 +259,7 @@ function countRelativeWithSuspension(
   let skippedDays = 0;
   const periodIds: string[] = [];
   while (counted < duration.value) {
-    if (!isDateWithin(current, data.coverage.from, data.coverage.to)
+    if (!isWithinReleaseCoverage(current, data)
       || !isDateWithin(current, calendar.coverage.from, calendar.coverage.to)) {
       return undefined;
     }
@@ -283,12 +294,33 @@ function specialCoverage(
   const intersectedFrom = compareIsoDates(from, data.coverage.from) > 0
     ? from
     : data.coverage.from;
-  const intersectedTo = compareIsoDates(to, data.coverage.to) < 0
-    ? to
-    : data.coverage.to;
+  const releaseTo = data.coverage.to ?? '9999-12-31';
+  const intersectedTo = compareIsoDates(to, releaseTo) < 0 ? to : releaseTo;
   return compareIsoDates(intersectedFrom, intersectedTo) <= 0
     ? { from: intersectedFrom, to: intersectedTo }
     : undefined;
+}
+
+function calendarEvidenceForIds(
+  calendar: ResolvedCalendar | undefined,
+  resultIds: readonly string[]
+): CalendarTraceEvidence | undefined {
+  if (!calendar?.generation || resultIds.length === 0) return undefined;
+  const ids = new Set(resultIds);
+  const applications = calendar.generation.applications.filter(application =>
+    [...application.generatedIds, ...application.removedIds].some(id => ids.has(id))
+  );
+  return applications.length > 0
+    ? {
+        releaseId: calendar.generation.releaseId,
+        calendarId: calendar.generation.calendarId,
+        applications
+      }
+    : undefined;
+}
+
+function evidenceRuleIds(evidence: CalendarTraceEvidence | undefined): string[] {
+  return evidence ? unique(evidence.applications.map(application => application.ruleId)) : [];
 }
 
 function deadlineValue(date: IsoDate): SpecialDeadlineValue {
@@ -414,6 +446,7 @@ export function calculateSpecialDeadline(
     ruleIds: [],
     reasonKeys: []
   }];
+  const appliedCalendarRuleIds: string[] = [];
   const calculation = definition.calculation;
   let provisional: IsoDate;
 
@@ -489,9 +522,32 @@ export function calculateSpecialDeadline(
     });
   }
 
-  const calendar = calendarProfile.calendarId === null
-    ? undefined
-    : resolveCalendar(data, calendarProfile.calendarId);
+  const calendarRange = calendarGenerationRangeForDates(data, [...dates, provisional]);
+  let calendar: ResolvedCalendar | undefined;
+  try {
+    calendar = calendarProfile.calendarId === null || !calendarRange
+      ? undefined
+      : resolveCalendar(data, calendarProfile.calendarId, calendarRange);
+  } catch (error) {
+    const reason = error instanceof CalendarGenerationError
+      ? error.reasonKey
+      : 'calendarGenerationFailed';
+    return blocked([reason], {
+      context,
+      ruleIds,
+      overrideIds,
+      inputDates: [...dates, provisional],
+      warnings: ['warning.calendar.generationFailed']
+    });
+  }
+  if (calendarProfile.calendarId !== null && !calendarRange) {
+    return blocked(['dataCoverageExceeded'], {
+      context,
+      ruleIds,
+      overrideIds,
+      inputDates: [...dates, provisional]
+    });
+  }
   if (calendarProfile.calendarId !== null && !calendar) {
     return blocked(['unknownCalendar'], { context, ruleIds, overrideIds, inputDates: dates });
   }
@@ -538,13 +594,16 @@ export function calculateSpecialDeadline(
         return blocked(['dataCoverageExceeded'], { context, ruleIds, inputDates: dates });
       }
       provisional = suspended.date;
+      const suspensionEvidence = calendarEvidenceForIds(calendar, suspended.periodIds);
+      appliedCalendarRuleIds.push(...evidenceRuleIds(suspensionEvidence));
       trace.push({
         operation: 'applySuspension',
         outputDate: provisional,
-        ruleIds: [],
+        ruleIds: evidenceRuleIds(suspensionEvidence),
         reasonKeys: suspended.periodIds.length > 0
           ? [...suspended.periodIds, `skipped${suspended.skippedDays}CalendarDays`]
-          : ['noSuspensionPeriodEncountered']
+          : ['noSuspensionPeriodEncountered'],
+        ...(suspensionEvidence ? { calendarEvidence: suspensionEvidence } : {})
       });
     }
   }
@@ -562,6 +621,7 @@ export function calculateSpecialDeadline(
   } else if (definition.resultPolicy.endShiftPolicy === 'nextWorkingDay') {
     if (!calendar) return blocked(['calendarRequiredForEndShift'], { context, ruleIds, inputDates: dates });
     const shiftReasons: string[] = [];
+    const shiftedHolidayIds: string[] = [];
     const shiftInput = finalDeadline;
     while (true) {
       const weekend = weekdayReason(finalDeadline);
@@ -570,20 +630,24 @@ export function calculateSpecialDeadline(
       if (weekend && !shiftReasons.includes(weekend)) shiftReasons.push(weekend);
       holidays.forEach(holiday => {
         if (!shiftReasons.includes(holiday.labelKey)) shiftReasons.push(holiday.labelKey);
+        if (!shiftedHolidayIds.includes(holiday.holidayId)) shiftedHolidayIds.push(holiday.holidayId);
       });
       finalDeadline = addCalendarDays(finalDeadline, 1);
-      if (!isDateWithin(finalDeadline, data.coverage.from, data.coverage.to)
+      if (!isWithinReleaseCoverage(finalDeadline, data)
         || !isDateWithin(finalDeadline, calendar.coverage.from, calendar.coverage.to)) {
         return blocked(['dataCoverageExceeded'], { context, ruleIds, inputDates: [...dates, finalDeadline] });
       }
     }
     if (shiftReasons.length > 0) {
+      const endShiftEvidence = calendarEvidenceForIds(calendar, shiftedHolidayIds);
+      appliedCalendarRuleIds.push(...evidenceRuleIds(endShiftEvidence));
       trace.push({
         operation: 'shiftDeadlineEnd',
         inputDates: [shiftInput],
         outputDate: finalDeadline,
-        ruleIds,
-        reasonKeys: shiftReasons
+        ruleIds: [...ruleIds, ...evidenceRuleIds(endShiftEvidence)],
+        reasonKeys: shiftReasons,
+        ...(endShiftEvidence ? { calendarEvidence: endShiftEvidence } : {})
       });
     }
   }
@@ -641,7 +705,7 @@ export function calculateSpecialDeadline(
     calculationContext: context,
     provisionalDeadline: deadlineValue(provisional),
     finalDeadline: deadlineValue(finalDeadline),
-    appliedRuleIds: ruleIds,
+    appliedRuleIds: unique([...ruleIds, ...appliedCalendarRuleIds]),
     appliedOverrideIds: overrideIds,
     gateResults,
     filingRequirement: filingResult,

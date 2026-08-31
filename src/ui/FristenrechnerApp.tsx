@@ -17,6 +17,7 @@ import type {
   CalculatedDeadlineDefinition,
   CalculationData,
   CalculationResult,
+  CalendarTraceEvidence,
   DeadlineDefinition,
   FilingProfile,
   LegalProfile,
@@ -33,6 +34,11 @@ import {
   type StorageLike,
   type StoredDefaults
 } from './defaults';
+import {
+  CALENDAR_EXPORT_CONTRACT,
+  createDeadlineCalendarEntry,
+  downloadDeadlineCalendarEntry
+} from './calendarExport';
 import { translate, translateBlockReason, translateReason, type Locale } from './i18n';
 import {
   automaticCalendarId,
@@ -159,6 +165,28 @@ function dateInputLabel(locale: Locale, state: CalculatorFormState): string {
   return translate(locale, 'form.inputDate.direct');
 }
 
+function CalendarEvidence({ evidence, locale }: {
+  readonly evidence: CalendarTraceEvidence;
+  readonly locale: Locale;
+}): React.ReactElement {
+  return (
+    <div className="fr-trace__calendar">
+      <p>
+        {translate(locale, 'trace.calendar')}: <code>{evidence.calendarId}</code>
+        {' · '}{translate(locale, 'trace.dataRelease')}: <code>{evidence.releaseId}</code>
+      </p>
+      <ul>
+        {evidence.applications.map(application => (
+          <li key={`${application.operation}-${application.ruleId}`}>
+            <code>{application.ruleId}</code>
+            {' · '}{application.sourceRefs.map(source => `${source.sourceId} ${source.locator}`).join(', ')}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function Trace({ step, locale }: { readonly step: TraceStep; readonly locale: Locale }): React.ReactElement {
   return (
     <li className="fr-trace__item">
@@ -188,14 +216,76 @@ function Trace({ step, locale }: { readonly step: TraceStep; readonly locale: Lo
             {translate(locale, 'trace.rules')}: {step.ruleIds.join(', ')}
           </p>
         )}
+        {step.calendarEvidence && <CalendarEvidence evidence={step.calendarEvidence} locale={locale} />}
       </div>
     </li>
   );
 }
 
-function ResultPanel({ result, locale }: {
+function CalendarExportTile({
+  deadlineDate,
+  locale,
+  reference,
+  onReferenceChange,
+  wide = false
+}: {
+  readonly deadlineDate: string;
+  readonly locale: Locale;
+  readonly reference: string;
+  readonly onReferenceChange: (value: string) => void;
+  readonly wide?: boolean;
+}): React.ReactElement {
+  const [failed, setFailed] = React.useState(false);
+
+  const createCalendarFile = (): void => {
+    try {
+      const artifact = createDeadlineCalendarEntry({ deadlineDate, locale, reference });
+      downloadDeadlineCalendarEntry(artifact);
+      setFailed(false);
+    } catch {
+      setFailed(true);
+    }
+  };
+
+  return (
+    <div className={`fr-calendar-export${wide ? ' fr-calendar-export--wide' : ''}`}>
+      <dt className="fr-calendar-export__action">
+        <PrimaryButton
+          className="fr-calendar-export__button"
+          type="button"
+          iconProps={{ iconName: 'Calendar' }}
+          onClick={createCalendarFile}
+        >
+          {translate(locale, 'calendar.create')}
+        </PrimaryButton>
+      </dt>
+      <dd>
+        <TextField
+          label={translate(locale, 'calendar.reference')}
+          placeholder={translate(locale, 'calendar.reference.placeholder')}
+          value={reference}
+          maxLength={CALENDAR_EXPORT_CONTRACT.referenceMaxCharacters}
+          onChange={(_event, value) => {
+            setFailed(false);
+            onReferenceChange(value ?? '');
+          }}
+        />
+        <p className="fr-calendar-export__privacy">{translate(locale, 'calendar.privacy')}</p>
+        {failed && (
+          <MessageBar className="fr-calendar-export__error" messageBarType={MessageBarType.error}>
+            {translate(locale, 'calendar.downloadFailed')}
+          </MessageBar>
+        )}
+      </dd>
+    </div>
+  );
+}
+
+function ResultPanel({ result, locale, calendarReference, onCalendarReferenceChange }: {
   readonly result: CalculationResult;
   readonly locale: Locale;
+  readonly calendarReference: string;
+  readonly onCalendarReferenceChange: (value: string) => void;
 }): React.ReactElement {
   return (
     <section className="fr-result" aria-labelledby="fr-result-heading">
@@ -231,6 +321,12 @@ function ResultPanel({ result, locale }: {
               <dt>{translate(locale, 'result.shifted')}</dt>
               <dd>{translate(locale, result.endShift.applied ? 'result.yes' : 'result.no')}</dd>
             </div>
+            <CalendarExportTile
+              deadlineDate={result.finalEnd}
+              locale={locale}
+              reference={calendarReference}
+              onReferenceChange={onCalendarReferenceChange}
+            />
           </dl>
         </>
       )}
@@ -282,6 +378,7 @@ function SpecialTrace({
             {translate(locale, 'trace.rules')}: {step.ruleIds.join(', ')}
           </p>
         )}
+        {step.calendarEvidence && <CalendarEvidence evidence={step.calendarEvidence} locale={locale} />}
       </div>
     </li>
   );
@@ -292,13 +389,17 @@ function SpecialResultPanel({
   locale,
   regime,
   definition,
-  filingProfile
+  filingProfile,
+  calendarReference,
+  onCalendarReferenceChange
 }: {
   readonly result: SpecialDeadlineResult;
   readonly locale: Locale;
   readonly regime?: SpecialRegime;
   readonly definition?: DeadlineDefinition;
   readonly filingProfile?: FilingProfile;
+  readonly calendarReference: string;
+  readonly onCalendarReferenceChange: (value: string) => void;
 }): React.ReactElement {
   const completed = result.outcome !== 'blocked';
   const messageType = result.outcome === 'blocked'
@@ -344,6 +445,15 @@ function SpecialResultPanel({
               <dt>{translate(locale, 'special.result.rule')}</dt>
               <dd>{definition ? specialDefinitionLabel(definition, locale) : '–'}</dd>
             </div>
+            {result.outcome === 'calculated' && (
+              <CalendarExportTile
+                deadlineDate={result.finalDeadline.date}
+                locale={locale}
+                reference={calendarReference}
+                onReferenceChange={onCalendarReferenceChange}
+                wide
+              />
+            )}
           </dl>
           {result.filingRequirement && (
             <div className="fr-filing">
@@ -429,6 +539,7 @@ export function FristenrechnerApp({
     () => isCalendarOverride(data, data.profiles.get(initialForm.profileId), initialForm.calendarId)
   );
   const [result, setResult] = React.useState<UiResult>();
+  const [calendarReference, setCalendarReference] = React.useState('');
   const [validation, setValidation] = React.useState<UiValidation>({});
   const [notification, setNotification] = React.useState<Notification>();
 
@@ -470,6 +581,7 @@ export function FristenrechnerApp({
   const mutateForm = (change: Partial<CalculatorFormState>): void => {
     setForm(current => ({ ...current, ...change }));
     setResult(undefined);
+    setCalendarReference('');
     setValidation({});
   };
 
@@ -549,6 +661,7 @@ export function FristenrechnerApp({
     const errors = validate();
     setValidation(errors);
     setNotification(undefined);
+    setCalendarReference('');
     if (Object.keys(errors).length > 0) {
       setResult(undefined);
       return;
@@ -933,6 +1046,7 @@ export function FristenrechnerApp({
             type="button"
             onClick={() => {
               setResult(undefined);
+              setCalendarReference('');
               setValidation({});
             }}
           >
@@ -960,11 +1074,20 @@ export function FristenrechnerApp({
           {hasValidationErrors
             ? <ValidationPanel validation={validation} locale={locale} />
             : result?.kind === 'general'
-              ? <ResultPanel result={result.value} locale={locale} />
+              ? (
+                <ResultPanel
+                  result={result.value}
+                  locale={locale}
+                  calendarReference={calendarReference}
+                  onCalendarReferenceChange={setCalendarReference}
+                />
+              )
               : result?.kind === 'special' && (
                 <SpecialResultPanel
                   result={result.value}
                   locale={locale}
+                  calendarReference={calendarReference}
+                  onCalendarReferenceChange={setCalendarReference}
                   {...(specialRegime ? { regime: specialRegime } : {})}
                   {...(specialDefinition ? { definition: specialDefinition } : {})}
                   {...(specialFilingProfile ? { filingProfile: specialFilingProfile } : {})}
@@ -1106,7 +1229,9 @@ export function FristenrechnerApp({
         <span>{translate(locale, 'dataStatus.label')}: <code>{data.releaseId}</code></span>
         <span aria-hidden="true">·</span>
         <span>
-          {translate(locale, 'dataStatus.coverage')}: {formatIsoDate(data.coverage.from, locale)} – {formatIsoDate(data.coverage.to, locale)}
+          {translate(locale, 'dataStatus.coverage')}: {formatIsoDate(data.coverage.from, locale)} – {data.coverage.to
+            ? formatIsoDate(data.coverage.to, locale)
+            : translate(locale, 'dataStatus.openEnded')}
         </span>
       </footer>
     </main>

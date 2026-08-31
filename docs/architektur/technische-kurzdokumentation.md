@@ -117,7 +117,7 @@ Empfangsdatum und Fristdauer werden lokal berechnet und nicht an GitHub oder ein
 | Öffentlicher GitHub-Release | HTTPS zu `raw.githubusercontent.com` | Zielnetz erlaubt den Abruf des gepinnten Releases |
 | SharePoint-Mirror | SharePoint-REST auf derselben Website | Angemeldete Person besitzt Leserecht auf dem Mirrorordner |
 
-Mit dem SharePoint-Mirror kann der externe GitHub-Zugriff zur Laufzeit entfallen. Der Mirror ist bereits implementiert. Die automatische jährliche Veröffentlichung neuer Datenreleases und deren automatische Replikation in Dritt-Tenants sind im AP10-Stand noch kein fertiger Betriebsdienst. Das Projektziel, die Kalenderstände jeweils bis zum 15. November für mindestens die beiden Folgejahre zu aktualisieren, bleibt damit ein Folgearbeitspaket.
+Mit dem SharePoint-Mirror kann der externe GitHub-Zugriff zur Laufzeit entfallen. Der Mirror ist bereits implementiert. Die automatische Replikation neuer Datenreleases in Dritt-Tenants ist kein Betriebsdienst und bleibt ein kontrollierter manueller Schritt. AP12 ersetzt die endlichen Kalenderlisten durch versionierte Regeln ohne künstliche Jahresobergrenze. AP13 dokumentiert die fachliche Quellenprüfung jährlich spätestens am 15. November sowie bei jedem früheren Anlass. Eine unveränderte Prüfung erzeugt bewusst keinen neuen Datenrelease. Quellenregister, Prüfindex und Ereignisse können getrennt vom Laufzeitrelease in den tenantinternen Mirror übernommen werden.
 
 ## 7. Nachgewiesener Stand und Grenzen
 

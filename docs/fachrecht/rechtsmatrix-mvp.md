@@ -173,12 +173,12 @@ Die vollständige Zuordnung steht in der [AP11A-Fachanalyse](vrpg-be-spezialregi
 
 | Quellen-ID | Erlass oder Regel | Verwendeter Stand | Im MVP gültig ab | Gültig bis | Nächste zwingende Prüfung |
 | --- | --- | --- | --- | --- | --- |
-| `SRC-STPO-20250401` | StPO Art. 85 und Art. 89 bis 92 | 01.04.2025 | 29.08.2026 als geprüfter Datenstand | offen | vor jedem Datenrelease, spätestens 15.11.2026 |
-| `SRC-ZPO-20260701` | ZPO Art. 138 und Art. 142 bis 146 | 01.07.2026 | 29.08.2026 als geprüfter Datenstand | offen | vor jedem Datenrelease, spätestens 15.11.2026 |
-| `SRC-BGG-20260401` | BGG Art. 44 bis 50 | 01.04.2026 | 29.08.2026 als geprüfter Datenstand | offen | vor jedem Datenrelease, spätestens 15.11.2026 |
-| `SRC-VWVG-20220701` | VwVG Art. 20 bis 24 | 01.07.2022 | 29.08.2026 als geprüfter Datenstand | offen | vor jedem Datenrelease, spätestens 15.11.2026 |
-| `SRC-VRPG-BE-20230801` | VRPG Art. 41 bis 44 | 01.08.2023 | 29.08.2026 als geprüfter Datenstand | offen | vor jedem Datenrelease, spätestens 15.11.2026 |
-| `SRC-FRG-BE-20210401` | FRG Art. 2 | 01.04.2021 | 29.08.2026 als geprüfter Datenstand | offen | vor jedem Kalenderrelease, spätestens 15.11.2026 |
+| `SRC-STPO-20250401` | StPO Art. 85 und Art. 89 bis 92 | 01.04.2025 | 29.08.2026 als geprüfter Datenstand | `unchanged` | vor jedem Datenrelease, spätestens 15.11.2027 |
+| `SRC-ZPO-20260701` | ZPO Art. 138 und Art. 142 bis 146 | 01.07.2026 | 29.08.2026 als geprüfter Datenstand | `unchanged` | vor jedem Datenrelease, spätestens 15.11.2027 |
+| `SRC-BGG-20260401` | BGG Art. 44 bis 50 | 01.04.2026 | 30.08.2026 als geprüfter Datenstand | `unchanged` | vor jedem Datenrelease, spätestens 15.11.2027 |
+| `SRC-VWVG-20220701` | VwVG Art. 20 bis 24 | 01.07.2022 | 30.08.2026 als geprüfter Datenstand | `unchanged` | vor jedem Datenrelease, spätestens 15.11.2027 |
+| `SRC-VRPG-BE-20230801` | VRPG Art. 41 bis 44 | 01.08.2023 | 30.08.2026 als geprüfter Datenstand | `unchanged` | vor jedem Datenrelease, spätestens 15.11.2027 |
+| `SRC-FRG-BE-20210401` | FRG Art. 2 | 01.04.2021 | 29.08.2026 als geprüfter Datenstand | `unchanged` | vor jedem Kalenderrelease, spätestens 15.11.2027 |
 
 Die Angabe «im MVP gültig ab» bezeichnet den Beginn der projektintern geprüften Datenfassung. Sie behauptet nicht, dass sämtliche Normen erst an diesem Tag in Kraft getreten seien. Regelbezogene Inkrafttretensdaten sind im Regelkatalog separat aufgeführt, soweit sie für die Berechnung relevant sind.
 

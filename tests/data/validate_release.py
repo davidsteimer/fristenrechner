@@ -25,6 +25,7 @@ SCHEMA_FILES = (
     "common.schema.json",
     "legal-profile.schema.json",
     "calendar.schema.json",
+    "calendar-rules-v2.schema.json",
     "filing-profile.schema.json",
     "deadline-definition.schema.json",
     "special-regime-catalog-v2.schema.json",
@@ -41,6 +42,10 @@ PROFILE_SCHEMA_ID = (
 CALENDAR_SCHEMA_ID = (
     "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
     "main/schemas/calendar.schema.json"
+)
+CALENDAR_RULE_SCHEMA_ID = (
+    "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
+    "main/schemas/calendar-rules-v2.schema.json"
 )
 SPECIAL_CATALOG_SCHEMA_ID = (
     "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
@@ -469,6 +474,56 @@ def check_calendar(
     return suspension_ids
 
 
+def check_calendar_rules(
+    calendar: dict[str, Any],
+    display_path: str,
+    errors: list[str],
+) -> tuple[set[str], set[str], set[str]]:
+    """Prüft die releaseweiten Beziehungen einer Kalenderkomponente 2.0.0."""
+
+    check_local_sources(calendar, display_path, errors)
+    validity = calendar["validity"]
+    if validity["to"] is not None:
+        check_date_order(
+            validity["from"],
+            validity["to"],
+            f"{display_path}: Gültigkeit",
+            errors,
+        )
+    rule_ids: set[str] = set()
+    suspension_ids: set[str] = set()
+    applicable_profiles: set[str] = set()
+    override_targets: set[str] = set()
+    for rule in calendar["rules"]:
+        rule_id = rule["ruleId"]
+        if rule_id in rule_ids:
+            errors.append(f"{display_path}: doppelte Kalenderregel-ID {rule_id}")
+        rule_ids.add(rule_id)
+        if rule["calendarId"] != calendar["calendarId"]:
+            errors.append(
+                f"{display_path}: Kalenderregel {rule_id} widerspricht der Kalender-ID"
+            )
+        if rule["jurisdiction"] != calendar["jurisdiction"]:
+            errors.append(
+                f"{display_path}: Kalenderregel {rule_id} widerspricht dem Gemeinwesen"
+            )
+        rule_validity = rule["validity"]
+        if rule_validity["to"] is not None:
+            check_date_order(
+                rule_validity["from"],
+                rule_validity["to"],
+                f"{display_path}: Kalenderregel {rule_id}",
+                errors,
+            )
+        effect = rule["effect"]
+        if effect["type"] == "suspensionPeriod":
+            suspension_ids.add(effect["suspensionSetId"])
+            applicable_profiles.update(effect["applicableProfileIds"])
+        if effect["type"] == "explicitDateOverride" and "targetRuleId" in effect:
+            override_targets.add(effect["targetRuleId"])
+    return suspension_ids, applicable_profiles, override_targets
+
+
 def check_inheritance(
     calendars: dict[str, dict[str, Any]],
     errors: list[str],
@@ -793,6 +848,10 @@ def validate_release(release_directory: Path) -> dict[str, int]:
     requested_suspension_ids: set[str] = set()
     requested_calendar_ids: set[str] = set()
     all_rule_ids: set[str] = set()
+    all_calendar_rule_ids: set[str] = set()
+    calendar_override_targets: set[str] = set()
+    calendar_applicable_profiles: set[str] = set()
+    calendar_defined_suspension_ids: set[str] = set()
     all_sources: dict[str, dict[str, Any]] = {}
 
     for artifact in manifest["artifacts"]:
@@ -820,7 +879,11 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             errors.append(f"{artifact['path']}: Schema-ID widerspricht dem Manifest")
         expected_schema_file = {
             "legalProfile": "legal-profile.schema.json",
-            "calendar": "calendar.schema.json",
+            "calendar": (
+                "calendar-rules-v2.schema.json"
+                if manifest["formatVersion"] == "3.0.0"
+                else "calendar.schema.json"
+            ),
             "specialRegimeCatalog": "special-regime-catalog-v2.schema.json",
         }[artifact["role"]]
         document_schema_errors = validate_against_schema(
@@ -865,7 +928,20 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                 all_rule_ids.add(rule_id)
         elif artifact["role"] == "calendar":
             calendars[document["calendarId"]] = document
-            check_calendar(document, artifact["path"], errors)
+            if manifest["formatVersion"] == "3.0.0":
+                suspension_ids, applicable_profiles, override_targets = (
+                    check_calendar_rules(document, artifact["path"], errors)
+                )
+                calendar_defined_suspension_ids.update(suspension_ids)
+                calendar_applicable_profiles.update(applicable_profiles)
+                calendar_override_targets.update(override_targets)
+                for rule in document["rules"]:
+                    rule_id = rule["ruleId"]
+                    if rule_id in all_calendar_rule_ids:
+                        errors.append(f"Release: doppelte Kalenderregel-ID {rule_id}")
+                    all_calendar_rule_ids.add(rule_id)
+            else:
+                check_calendar(document, artifact["path"], errors)
         else:
             special_catalogs[document["catalogId"]] = document
 
@@ -892,6 +968,13 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                 "manifest.json: jüngstes Quellenprüfdatum stimmt nicht mit den "
                 "Artefakten überein"
             )
+
+    unknown_override_targets = calendar_override_targets - all_calendar_rule_ids
+    if unknown_override_targets:
+        errors.append(
+            "Release: Kalender-Overrideziele fehlen "
+            f"{sorted(unknown_override_targets)}"
+        )
         for source_id, source in all_sources.items():
             if source["reviewedOn"] > manifest["createdOn"]:
                 errors.append(
@@ -907,12 +990,13 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                 )
 
     release_coverage = manifest["coverage"]
-    check_date_order(
-        release_coverage["from"],
-        release_coverage["to"],
-        "manifest.json: Release-Abdeckung",
-        errors,
-    )
+    if release_coverage["to"] is not None:
+        check_date_order(
+            release_coverage["from"],
+            release_coverage["to"],
+            "manifest.json: Release-Abdeckung",
+            errors,
+        )
     for profile_id, profile in profiles.items():
         valid_to = profile["validity"]["dataValidTo"]
         if manifest["formatVersion"] == "1.0.0":
@@ -920,16 +1004,25 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                 errors.append(f"Profil {profile_id}: beginnt nach der Release-Abdeckung")
             if valid_to is not None and valid_to < release_coverage["to"]:
                 errors.append(f"Profil {profile_id}: endet vor der Release-Abdeckung")
-        else:
+        elif manifest["formatVersion"] == "2.0.0":
             if profile["validity"]["dataValidFrom"] > release_coverage["to"]:
                 errors.append(f"Profil {profile_id}: beginnt nach dem Release-Zeithorizont")
             if valid_to is not None and valid_to < release_coverage["from"]:
                 errors.append(f"Profil {profile_id}: endet vor dem Release-Zeithorizont")
+        elif valid_to is not None and valid_to < release_coverage["from"]:
+            errors.append(f"Profil {profile_id}: endet vor Beginn der offenen Release-Abdeckung")
     for calendar_id, calendar in calendars.items():
-        if calendar["coverage"]["from"] > release_coverage["from"]:
-            errors.append(f"Kalender {calendar_id}: beginnt nach der Release-Abdeckung")
-        if calendar["coverage"]["to"] < release_coverage["to"]:
-            errors.append(f"Kalender {calendar_id}: endet vor der Release-Abdeckung")
+        if manifest["formatVersion"] == "3.0.0":
+            validity = calendar["validity"]
+            if validity["from"] > release_coverage["from"]:
+                errors.append(f"Kalender {calendar_id}: beginnt nach der Release-Abdeckung")
+            if validity["to"] is not None:
+                errors.append(f"Kalender {calendar_id}: besitzt keine offene Gültigkeit")
+        else:
+            if calendar["coverage"]["from"] > release_coverage["from"]:
+                errors.append(f"Kalender {calendar_id}: beginnt nach der Release-Abdeckung")
+            if calendar["coverage"]["to"] < release_coverage["to"]:
+                errors.append(f"Kalender {calendar_id}: endet vor der Release-Abdeckung")
 
     check_inheritance(calendars, errors)
     special_definition_count = 0
@@ -945,11 +1038,15 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         requested_suspension_ids.update(requested)
         special_definition_count += definition_count
         special_regime_count += regime_count
-    available_suspension_ids = {
-        suspension_set["suspensionSetId"]
-        for calendar in calendars.values()
-        for suspension_set in calendar["suspensionSets"]
-    }
+    available_suspension_ids = (
+        calendar_defined_suspension_ids
+        if manifest["formatVersion"] == "3.0.0"
+        else {
+            suspension_set["suspensionSetId"]
+            for calendar in calendars.values()
+            for suspension_set in calendar["suspensionSets"]
+        }
+    )
     missing_suspensions = requested_suspension_ids - available_suspension_ids
     if missing_suspensions:
         errors.append(
@@ -960,28 +1057,37 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         errors.append(
             f"Release: referenzierte Kalender fehlen {sorted(missing_calendars)}"
         )
-    for calendar in calendars.values():
-        for suspension_set in calendar["suspensionSets"]:
-            unknown_profiles = (
-                set(suspension_set["applicableProfileIds"]) - set(profiles)
+    if manifest["formatVersion"] == "3.0.0":
+        unknown_profiles = calendar_applicable_profiles - set(profiles)
+        if unknown_profiles:
+            errors.append(
+                "Kalenderregeln verwenden unbekannte Profile "
+                f"{sorted(unknown_profiles)}"
             )
-            if unknown_profiles:
-                errors.append(
-                    f"Stillstandssatz {suspension_set['suspensionSetId']}: "
-                    f"unbekannte Profile {sorted(unknown_profiles)}"
+    else:
+        for calendar in calendars.values():
+            for suspension_set in calendar["suspensionSets"]:
+                unknown_profiles = (
+                    set(suspension_set["applicableProfileIds"]) - set(profiles)
                 )
+                if unknown_profiles:
+                    errors.append(
+                        f"Stillstandssatz {suspension_set['suspensionSetId']}: "
+                        f"unbekannte Profile {sorted(unknown_profiles)}"
+                    )
 
     if errors:
         raise ReleaseValidationError(errors)
     return {
         "profiles": len(profiles),
         "rules": len(all_rule_ids),
+        "calendarRules": len(all_calendar_rule_ids),
         "calendars": len(calendars),
-        "holidays": sum(len(calendar["holidays"]) for calendar in calendars.values()),
+        "holidays": sum(len(calendar.get("holidays", [])) for calendar in calendars.values()),
         "suspensionPeriods": sum(
             len(suspension_set["periods"])
             for calendar in calendars.values()
-            for suspension_set in calendar["suspensionSets"]
+            for suspension_set in calendar.get("suspensionSets", [])
         ),
         "sources": len(all_sources),
         "artifacts": len(manifest["artifacts"]),
@@ -1049,9 +1155,16 @@ def run_negative_self_tests(release_directory: Path) -> list[str]:
     def reversed_period(test_directory: Path) -> None:
         path = test_directory / "calendars" / "ch-federal-calendar.json"
         data = load_json(path)
-        period = data["suspensionSets"][0]["periods"][0]
-        period["startsOn"] = "2026-01-03"
-        period["endsOn"] = "2026-01-02"
+        if data["formatVersion"] == "2.0.0":
+            rule = next(
+                item for item in data["rules"]
+                if item["effect"]["type"] == "suspensionPeriod"
+            )
+            rule["validity"] = {"from": "2027-01-01", "to": "2026-12-31"}
+        else:
+            period = data["suspensionSets"][0]["periods"][0]
+            period["startsOn"] = "2026-01-03"
+            period["endsOn"] = "2026-01-02"
         rewrite_json(path, data)
         refresh_artifact_metadata(test_directory, "calendars/ch-federal-calendar.json")
 

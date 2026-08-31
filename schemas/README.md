@@ -1,13 +1,18 @@
 # Datenschemata
 
-Die Schemata definieren das providerneutrale AP5-Austauschformat, den sprachneutralen AP6-Testvertrag und die noch nicht freigegebene AP11A-Erweiterung für Spezialregime.
+Die Schemata definieren die providerneutralen Datenreleaseformate 1.0.0, 2.0.0 und 3.0.0 sowie die sprachneutralen Testverträge.
 
 | Datei | Zweck |
 | --- | --- |
 | `common.schema.json` | Gemeinsame Typen für Quellen, Gültigkeit, Abdeckung, Prüfstatus, Bedingungen und Erweiterungen |
 | `legal-profile.schema.json` | Rechtsprofile, explizite Selektoren und typisierte Regeleffekte |
 | `calendar.schema.json` | Feiertage, Kalendervererbung und inklusive Stillstandsperioden |
+| `calendar-rules-v2.schema.json` | Kalenderkomponente 2.0.0 für versionierte Feiertagsregeln, relative Stillstandsperioden und explizite Overrides |
+| `calendar-rule-reference-suite.schema.json` | AP12A-Referenzvertrag für Parität, Kalenderarithmetik, Overrides und Sperrfälle |
 | `release-manifest.schema.json` | Release-ID, Providervertrag, Kompatibilität, Artefakte und SHA-256-Prüfsummen |
+| `source-register.schema.json` | Tenantneutrales Register produktiver, unterstützender und überwachter amtlicher Quellen |
+| `source-review-event.schema.json` | Append-only-Prüfereignis mit vier Ergebnissen, Nachweis, Auswirkung und Folgemassnahme |
+| `source-review-index.schema.json` | Generierte Suchsicht auf jüngsten Prüfstand, Gemeinwesen, Sachgebiet und betroffene Datenkomponenten |
 | `golden-case-suite.schema.json` | Synthetische Referenzfälle, Eingaben, Quellen, Rechenspur und erwartete Ergebnisse |
 | `deadline-rule.schema.json` | AP11A-Kandidat mit fünf typisierten Rechenarten und benannten Ankern |
 | `filing-profile.schema.json` | AP11A-Kandidat für Aufgabe, Eingang, Original, Uhrzeit, Kanäle und Nachweise |
@@ -18,6 +23,8 @@ Die Schemata definieren das providerneutrale AP5-Austauschformat, den sprachneut
 
 - Schema-Dialekt ist [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12).
 - Die Formatversion des AP5-Referenzbestands ist `1.0.0`.
+- Format `2.0.0` ergänzt die Spezialregimekataloge.
+- Format `3.0.0` verlangt die Kalenderkomponente `2.0.0` und eine nach oben offene Releaseabdeckung.
 - Kernobjekte weisen unbekannte Felder und Regeltypen ab.
 - Qualifizierte, vom Rechenkern ignorierbare Zusatzinformationen sind nur unter `extensions` zulässig.
 - Datumswerte sind ISO-Vollformate `JJJJ-MM-TT` ohne Uhrzeit und Zeitzone.
@@ -30,6 +37,10 @@ Das AP6-Schema gehört zum Testvertrag und verändert die Formatversion des AP5-
 
 Die vier AP11A-Schemata sind Kandidaten. Sie erweitern weder das freigegebene AP5-Release noch die 15 abgenommenen AP6-Fälle. Die vorgeschlagene produktive Formatevolution ist in [DEC-2026-014](../docs/entscheidungen/DEC-2026-014-komponentenweise-fachdatenformatevolution.md) dokumentiert.
 
+AP12A ergänzte ein separates Kandidatenschema für die Kalenderkomponente `2.0.0`. AP12C integriert es gemäss dem beschlossenen [Entscheid DEC-2026-015](../docs/entscheidungen/DEC-2026-015-regelbasierte-kalenderkomponente.md) ausschliesslich in Manifestformat `3.0.0`. `calendar.schema.json` und bestehende Format-1- und Format-2-Releases bleiben unverändert.
+
+AP13 verwendet einen getrennten Governance-Vertrag in Version `1.0.0`. Quellenregister, Prüfereignisse und Index sind keine Artefakte eines Laufzeit-Datenrelease. Ihre Trennung erlaubt die Dokumentation einer unveränderten Prüfung ohne künstliche Neuversionierung der Fachdaten.
+
 ## Validierung
 
 Die Schemata werden selbst gegen den Metaschema-Dialekt geprüft. Anschliessend werden Manifest und alle gelisteten Artefakte strukturell und semantisch validiert:
@@ -41,4 +52,10 @@ python3 -m venv .venv
   data/releases/2026-08-29-ap5-approved.1 \
   --self-test
 .venv/bin/python tests/special-regimes/validate_special_regime_candidates.py
+.venv/bin/python tests/calendar-rules/validate_ap12a_candidates.py
+.venv/bin/python tests/data/validate_release.py \
+  data/releases/2026-08-31-ap12c-candidate.1 \
+  --self-test
+.venv/bin/python tests/data/validate_ap12c_release.py
+.venv/bin/python tests/governance/validate_source_reviews.py --self-test
 ```

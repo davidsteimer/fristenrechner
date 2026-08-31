@@ -8,13 +8,20 @@ import {
   parseIsoDate,
   weekdayReason
 } from './date';
-import { CoreDataError, resolveCalendar } from './data';
+import {
+  calendarGenerationRangeForDates,
+  CoreDataError,
+  isWithinReleaseCoverage,
+  resolveCalendar
+} from './data';
+import { CalendarGenerationError } from './generateCalendar';
 import type {
   BlockedDeadlineResult,
   CalculatedDeadlineResult,
   CalculationData,
   CalculationInput,
   CalculationResult,
+  CalendarTraceEvidence,
   IsoDate,
   LegalProfile,
   LegalRule,
@@ -193,8 +200,32 @@ function selectorBlock(
 }
 
 function ensureCovered(date: IsoDate, data: CalculationData, calendar: ResolvedCalendar): boolean {
-  return isDateWithin(date, data.coverage.from, data.coverage.to)
+  return isWithinReleaseCoverage(date, data)
     && isDateWithin(date, calendar.coverage.from, calendar.coverage.to);
+}
+
+function calendarEvidenceForIds(
+  calendar: ResolvedCalendar,
+  resultIds: readonly string[]
+): CalendarTraceEvidence | undefined {
+  if (!calendar.generation || resultIds.length === 0) {
+    return undefined;
+  }
+  const ids = new Set(resultIds);
+  const applications = calendar.generation.applications.filter(application =>
+    [...application.generatedIds, ...application.removedIds].some(id => ids.has(id))
+  );
+  return applications.length > 0
+    ? {
+        releaseId: calendar.generation.releaseId,
+        calendarId: calendar.generation.calendarId,
+        applications
+      }
+    : undefined;
+}
+
+function calendarEvidenceRuleIds(evidence: CalendarTraceEvidence | undefined): string[] {
+  return evidence ? unique(evidence.applications.map(application => application.ruleId)) : [];
 }
 
 interface DateResolution {
@@ -362,18 +393,28 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
   if (!profile) {
     return blocked({ inputDate: input.inputDate, reasons: ['unknownProfile'], warnings: ['warning.profile.unknown'] });
   }
-  const calendar = resolveCalendar(data, input.calendarId);
+  const calendarRange = calendarGenerationRangeForDates(data, [input.inputDate]);
+  if (!calendarRange) {
+    return blocked({ inputDate: input.inputDate, reasons: ['dataCoverageExceeded'], warnings: ['warning.data.coverageExceeded'] });
+  }
+  let calendar: ResolvedCalendar | undefined;
+  try {
+    calendar = resolveCalendar(data, input.calendarId, calendarRange);
+  } catch (error) {
+    const reason = error instanceof CalendarGenerationError
+      ? error.reasonKey
+      : 'calendarGenerationFailed';
+    return blocked({ inputDate: input.inputDate, reasons: [reason], warnings: ['warning.calendar.generationFailed'] });
+  }
   if (!calendar) {
     return blocked({ inputDate: input.inputDate, reasons: ['unknownCalendar'], warnings: ['warning.calendar.unknown'] });
   }
   if (!ensureCovered(input.inputDate, data, calendar)) {
     return blocked({ inputDate: input.inputDate, reasons: ['dataCoverageExceeded'], warnings: ['warning.data.coverageExceeded'] });
   }
-  if (!isDateWithin(
-    input.inputDate,
-    profile.validity.dataValidFrom,
-    profile.validity.dataValidTo ?? data.coverage.to
-  )) {
+  if (compareIsoDates(input.inputDate, profile.validity.dataValidFrom) < 0
+    || (profile.validity.dataValidTo !== null
+      && compareIsoDates(input.inputDate, profile.validity.dataValidTo) > 0)) {
     return blocked({ inputDate: input.inputDate, reasons: ['profileOutsideValidity'], warnings: ['warning.profile.outsideValidity'] });
   }
 
@@ -615,6 +656,8 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
   const reasonOrder = new Map([['saturday', 0], ['sunday', 1], ['publicHoliday', 2]]);
   shiftReasonKeys.sort((left, right) => (reasonOrder.get(left) ?? 99) - (reasonOrder.get(right) ?? 99));
   shiftedHolidayIds.sort();
+  const suspensionCalendarEvidence = calendarEvidenceForIds(calendar, encounteredPeriodIds);
+  const endShiftCalendarEvidence = calendarEvidenceForIds(calendar, shiftedHolidayIds);
 
   const trace: Omit<TraceStep, 'sequence'>[] = [
     {
@@ -638,8 +681,9 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
       outputDate: provisionalEnd,
       skippedCalendarDays,
       periodIds: encounteredPeriodIds,
-      ruleIds: ruleIds(suspension.baseRules),
-      reasonKeys: []
+      ruleIds: [...ruleIds(suspension.baseRules), ...calendarEvidenceRuleIds(suspensionCalendarEvidence)],
+      reasonKeys: [],
+      ...(suspensionCalendarEvidence ? { calendarEvidence: suspensionCalendarEvidence } : {})
     });
   }
   const countReasonKeys = countedDates.some(isLeapDay) ? ['leapDayIncluded'] : [];
@@ -661,9 +705,11 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
       outputDate: finalEnd,
       ruleIds: [
         endRule.ruleId,
-        ...(shiftedHolidayIds.length > 0 ? ruleIds([...holidayRules, ...holidaySetRules]) : [])
+        ...(shiftedHolidayIds.length > 0 ? ruleIds([...holidayRules, ...holidaySetRules]) : []),
+        ...calendarEvidenceRuleIds(endShiftCalendarEvidence)
       ],
-      reasonKeys: shiftReasonKeys
+      reasonKeys: shiftReasonKeys,
+      ...(endShiftCalendarEvidence ? { calendarEvidence: endShiftCalendarEvidence } : {})
     });
   }
   const fixedCalendarChecked = finalEnd === provisionalEnd
@@ -692,7 +738,11 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
       reasonKeys: shiftReasonKeys,
       holidayIds: shiftedHolidayIds
     },
-    appliedRuleIds: ruleIds(sortRules(appliedRules)),
+    appliedRuleIds: unique([
+      ...ruleIds(sortRules(appliedRules)),
+      ...calendarEvidenceRuleIds(suspensionCalendarEvidence),
+      ...calendarEvidenceRuleIds(endShiftCalendarEvidence)
+    ]),
     warningKeys: [],
     blockReasonKeys: [],
     trace: withSequence(trace)

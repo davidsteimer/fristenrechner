@@ -186,3 +186,25 @@ describe('AP11C-Sprachkatalog', () => {
     ].forEach(key => assert.notEqual(translate('fr', key), translate('de', key)));
   });
 });
+
+describe('Issue #18-Sprachkatalog', () => {
+  const keys = [
+    'calendar.reference',
+    'calendar.reference.placeholder',
+    'calendar.create',
+    'calendar.privacy',
+    'calendar.subject',
+    'calendar.description',
+    'calendar.downloadFailed'
+  ];
+
+  for (const locale of ['de', 'fr'] as const satisfies readonly Locale[]) {
+    it(`${locale} deckt den Kalendereintrag vollständig ab`, () => {
+      keys.forEach(key => assert.notEqual(translate(locale, key), key));
+    });
+  }
+
+  it('enthält eigenständige französische Produkttexte', () => {
+    keys.forEach(key => assert.notEqual(translate('fr', key), translate('de', key)));
+  });
+});

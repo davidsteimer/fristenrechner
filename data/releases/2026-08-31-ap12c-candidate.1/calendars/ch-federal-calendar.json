@@ -1,0 +1,276 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+  "formatVersion": "2.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ch-federal-calendar",
+  "jurisdiction": {
+    "level": "federal",
+    "code": "CH"
+  },
+  "validity": {
+    "from": "2025-12-18",
+    "to": null
+  },
+  "inherits": [],
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "AP12A mit Datenmodell und Referenzvertrag am 2026-08-31 abgenommen. Der Bestand bleibt bis zum Format-3-Release ein nicht aktivierbarer Datenkandidat."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "ordinance",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-ZPO-20260701",
+      "sourceType": "statute",
+      "title": "Schweizerische Zivilprozessordnung, SR 272",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2010/262/de",
+      "documentVersionDate": "2026-07-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-BGG-20260401",
+      "sourceType": "statute",
+      "title": "Bundesgerichtsgesetz, SR 173.110",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2006/218/de",
+      "documentVersionDate": "2026-04-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-VWVG-20220701",
+      "sourceType": "statute",
+      "title": "Verwaltungsverfahrensgesetz, SR 172.021",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de",
+      "documentVersionDate": "2022-07-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "CH-CAL-HOL-NATIONAL-DAY",
+      "calendarId": "ch-federal-calendar",
+      "jurisdiction": {
+        "level": "federal",
+        "code": "CH"
+      },
+      "labelKey": "holiday.ch.nationalDay",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "1994-07-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "effect": {
+        "type": "holiday",
+        "kind": "federalHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "CH-CAL-SUSP-EASTER",
+      "calendarId": "ch-federal-calendar",
+      "jurisdiction": {
+        "level": "federal",
+        "code": "CH"
+      },
+      "labelKey": "suspension.ch.easter",
+      "labels": {
+        "de": "Gerichtsferien über Ostern",
+        "fr": "Féries judiciaires de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 145 Abs. 1"
+        },
+        {
+          "sourceId": "SRC-BGG-20260401",
+          "locator": "Art. 46 Abs. 1"
+        },
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 22a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "easterSunday",
+          "yearOffset": 0,
+          "offsetDays": -7
+        },
+        "endsOn": {
+          "anchor": "easterSunday",
+          "yearOffset": 0,
+          "offsetDays": 7
+        }
+      },
+      "effect": {
+        "type": "suspensionPeriod",
+        "suspensionSetId": "ch-court-holidays",
+        "applicableProfileIds": [
+          "zpo",
+          "bgg",
+          "vwvg"
+        ],
+        "inclusive": true,
+        "resultIdPrefix": "EASTER"
+      }
+    },
+    {
+      "ruleId": "CH-CAL-SUSP-SUMMER",
+      "calendarId": "ch-federal-calendar",
+      "jurisdiction": {
+        "level": "federal",
+        "code": "CH"
+      },
+      "labelKey": "suspension.ch.summer",
+      "labels": {
+        "de": "Gerichtsferien im Sommer",
+        "fr": "Féries judiciaires d'été"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 145 Abs. 1"
+        },
+        {
+          "sourceId": "SRC-BGG-20260401",
+          "locator": "Art. 46 Abs. 1"
+        },
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 22a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 7,
+          "day": 15,
+          "yearOffset": 0,
+          "offsetDays": 0
+        },
+        "endsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 8,
+          "day": 15,
+          "yearOffset": 0,
+          "offsetDays": 0
+        }
+      },
+      "effect": {
+        "type": "suspensionPeriod",
+        "suspensionSetId": "ch-court-holidays",
+        "applicableProfileIds": [
+          "zpo",
+          "bgg",
+          "vwvg"
+        ],
+        "inclusive": true,
+        "resultIdPrefix": "SUMMER"
+      }
+    },
+    {
+      "ruleId": "CH-CAL-SUSP-YEAR-END",
+      "calendarId": "ch-federal-calendar",
+      "jurisdiction": {
+        "level": "federal",
+        "code": "CH"
+      },
+      "labelKey": "suspension.ch.yearEnd",
+      "labels": {
+        "de": "Gerichtsferien über den Jahreswechsel",
+        "fr": "Féries judiciaires de fin d'année"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2025-12-18",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZPO-20260701",
+          "locator": "Art. 145 Abs. 1"
+        },
+        {
+          "sourceId": "SRC-BGG-20260401",
+          "locator": "Art. 46 Abs. 1"
+        },
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 22a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 12,
+          "day": 18,
+          "yearOffset": 0,
+          "offsetDays": 0
+        },
+        "endsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 1,
+          "day": 2,
+          "yearOffset": 1,
+          "offsetDays": 0
+        }
+      },
+      "effect": {
+        "type": "suspensionPeriod",
+        "suspensionSetId": "ch-court-holidays",
+        "applicableProfileIds": [
+          "zpo",
+          "bgg",
+          "vwvg"
+        ],
+        "inclusive": true,
+        "resultIdPrefix": "YEAR-END"
+      }
+    }
+  ]
+}

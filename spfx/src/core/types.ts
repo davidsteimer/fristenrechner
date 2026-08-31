@@ -26,7 +26,7 @@ export interface IReleaseManifest {
   readonly immutable: true;
   readonly coverage: {
     readonly from: string;
-    readonly to: string;
+    readonly to: string | null;
   };
   readonly profileIds: readonly string[];
   readonly calendarIds: readonly string[];
@@ -45,7 +45,7 @@ export interface IValidatedRelease {
   readonly releaseId: string;
   readonly formatVersion: string;
   readonly coverageFrom: string;
-  readonly coverageTo: string;
+  readonly coverageTo: string | null;
   readonly profileIds: readonly string[];
   readonly calendarIds: readonly string[];
   readonly specialRegimeCatalogIds?: readonly string[];

@@ -4,7 +4,7 @@
 
 Dieses Modul ist die mit AP11C erweiterte funktionale MVP-Rechneroberfläche. Es verbindet den allgemeinen AP8-Rechenkern und den in AP11B freigegebenen Spezialregimekern mit React 17.0.1 und Fluent UI React v8.106.4. Die Komponente bleibt von SharePoint, Teams, SPFx und einem konkreten Datenprovider unabhängig.
 
-Der AP9-Stand wurde von David Steimer als Grundlage für AP10 abgenommen. Die AP11C-Erweiterung ist ein lokal geprüfter MVP-0.2-Kandidat. Sie ist noch nicht fachlich abgenommen oder in einem Tenant installiert.
+Der AP9-Stand wurde von David Steimer als Grundlage für AP10 abgenommen. Die AP11C-Erweiterung wurde als MVP 0.2 fachlich abgenommen und im steimer.ch-Tenant geprüft. Die Erweiterungen aus AP12C und Issue #18 sind Bestandteil von Release 2. Sie sind fachlich beziehungsweise fachlich-technisch abgenommen und werden mit dem Paket 0.3.0.0 in SharePoint und Teams geprüft.
 
 ## Öffentliche Schnittstelle
 
@@ -45,6 +45,10 @@ Die Oberfläche führt keine eigene Fristberechnung durch. Sie bildet allgemeine
 
 Spezialresultate weisen Fristablauf und Anforderungen an die Fristwahrung getrennt aus. Dazu gehören insbesondere Eingang oder Aufgabe, Annahmeschluss, Zeitzone, Originalerfordernis, zulässige Kanäle und geeignete Nachweise. Automatische Komponentenprofile und rechtliche Übersteuerungen bleiben sichtbar.
 
+Ein vollständig berechnetes Resultat bietet einen rein clientseitigen Outlook-kompatiblen Kalendereintrag an. Im allgemeinen Resultatraster belegt er die bisher freie Kachel rechts unten. Bei berechneten Spezialregimen erscheint er als breite Zusatzkachel. Blockierte Resultate und Spezialresultate mit noch erforderlicher manueller Prüfung erhalten keinen Export. Die optionale Referenz bleibt im flüchtigen Komponentenstatus und wird bei einer neuen Berechnung, einer fachlichen Eingabeänderung oder beim Zurücksetzen gelöscht.
+
+Die Schaltfläche zur Dateierzeugung bildet zugleich den sichtbaren Kopf der Kachel. Darunter stehen nur die optionale Referenz und der kurze Hinweis zur Nicht-Speicherung. Die erzeugte `.ics`-Datei enthält einen ganztägigen, freien Termin am berechneten Fristablauf, die Kategorie `Fristablauf` und eine Erinnerung 4 Tage 16 Stunden vor Terminbeginn. Die Outlook-Farbzuweisung und die mögliche Abweichung der lokalen Erinnerungsuhrzeit bei einer Zeitumstellung bleiben im [Issue-18-Nachweis](../../docs/architektur/outlook-kalendereintrag-issue-18.md) dokumentiert, werden im kompakten GUI aber nicht zusätzlich erklärt.
+
 Der Feiertagskalender wird im Bern-MVP standardmässig auf den Kanton Bern gesetzt. Bei `VRPG-BE` ist diese Wahl fachlich fest und nicht veränderbar. Bei Bundesprofilen kann sie sichtbar übersteuert werden. Eine tatsächliche Abweichung verlangt eine Begründung. Die Begründung wird im AP9-Kandidaten nicht dauerhaft gespeichert.
 
 ## Lokale Defaults und Datenschutz
@@ -61,6 +65,8 @@ Unter dem versionierten Schlüssel `fristenrechner.defaults.v1` werden nur folge
 - ausgewählte Fristkomponente
 
 Das Empfangsdatum, besondere Ankerdaten, Uhrzeiten, Bestätigungen, Übersteuerungsbegründungen und eine zusätzliche Feiertagsanknüpfung werden nicht als Default gespeichert. Der Inhalt des bestehenden Schlüssels trägt intern Version 2. Version-1-Defaults werden sicher migriert. Nicht mehr zulässige `unknown`-Werte sowie unvereinbare oder nicht sichtbare Spezialauswahlen werden verworfen. Der Speichervertrag wird in [`defaults.ts`](defaults.ts) validiert.
+
+Auch die optionale Referenz des Kalendereintrags wird nie als Default oder anderweitig im Browser gespeichert. Sie fliesst nur in die lokal erzeugte Kalenderdatei ein.
 
 ## Deutsch und Französisch
 
@@ -91,8 +97,8 @@ Die Presets liegen ausschliesslich in [`preview/qaPresets.ts`](preview/qaPresets
 
 Die AP9-Prüfung umfasst semantische Beschriftungen, Tastaturreihenfolge, sichtbaren Fokus, Statusmeldungen mit `aria-live`, Deutsch und Französisch, eine mobile Breite von 390 Pixeln ohne horizontales Überlaufen sowie Farbkontraste der eigenen Gestaltungsfarben. AP11C hat diese Prüfung für Fristtyp, bedingte Anker, Spezialresultat, Fristwahrung, Sofortanfechtungshinweis und die französische Spezialansicht wiederholt. Dies setzt das Qualitätsziel WCAG 2.1 AA nach eCH-0059 für den geprüften Umfang um.
 
-Es handelt sich noch nicht um eine formelle Accessibility-Konformitätsbewertung. Eine erneute Prüfung im echten SharePoint- und Teams-Host sowie ein vollständiger produktiver Audit folgen nach der AP11C-Abnahme.
+Es handelt sich noch nicht um eine formelle Accessibility-Konformitätsbewertung. Eine erneute Prüfung im echten SharePoint- und Teams-Host sowie ein vollständiger produktiver Audit bleiben Teil der Release-2-Qualitätssicherung.
 
 ## Freigabegrenze
 
-Die SPFx-Lösung synchronisiert diese Komponente mechanisch. Der lokale MVP-0.2-Build und die Browserprüfung sind im [AP11C-Nachweis](../../docs/architektur/mvp-02-spezialregime-ap11c.md) dokumentiert. Eine Tenantinstallation setzt einen freigegebenen AP11C-Datenrelease voraus.
+Die SPFx-Lösung synchronisiert diese Komponente mechanisch. Der MVP-0.2-Build und seine Tenantprüfung sind im [AP11C-Nachweis](../../docs/architektur/mvp-02-spezialregime-ap11c.md) dokumentiert. Release 2 verwendet den freigegebenen Datenrelease `2026-08-31-mvp-03-approved.1`. Die betriebliche Freigabe des Pakets 0.3.0.0 setzt die bestandene Release-2-Tenantmatrix voraus.

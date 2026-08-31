@@ -1,0 +1,254 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+  "formatVersion": "2.0.0",
+  "dataKind": "calendar",
+  "calendarId": "be-public-holidays",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "BE"
+  },
+  "validity": {
+    "from": "2026-01-01",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "AP12A mit Datenmodell und Referenzvertrag am 2026-08-31 abgenommen. Der Bestand bleibt bis zum Format-3-Release ein nicht aktivierbarer Datenkandidat."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-FRG-BE-20210401",
+      "sourceType": "statute",
+      "title": "Gesetz über die Ruhe an öffentlichen Feiertagen, BSG 555.1",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/555.1",
+      "documentVersionDate": "2021-04-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "BE-CAL-HOL-NEW-YEAR",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.newYear",
+      "labels": { "de": "Neujahr", "fr": "Nouvel An" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c" }
+      ],
+      "calculation": { "type": "fixedMonthDay", "month": 1, "day": 1 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-BERCHTOLD-DAY",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.berchtoldDay",
+      "labels": { "de": "Berchtoldstag", "fr": "Saint-Berchtold" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c" }
+      ],
+      "calculation": { "type": "fixedMonthDay", "month": 1, "day": 2 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "BERCHTOLD-DAY"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-GOOD-FRIDAY",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.goodFriday",
+      "labels": { "de": "Karfreitag", "fr": "Vendredi saint" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b" }
+      ],
+      "calculation": { "type": "easterOffsetDays", "offsetDays": -2 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-EASTER",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.easter",
+      "labels": { "de": "Ostern", "fr": "Pâques" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b" }
+      ],
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 0 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "EASTER"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-EASTER-MONDAY",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.easterMonday",
+      "labels": { "de": "Ostermontag", "fr": "Lundi de Pâques" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c" }
+      ],
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 1 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-ASCENSION",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.ascension",
+      "labels": { "de": "Auffahrt", "fr": "Ascension" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b" }
+      ],
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 39 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ASCENSION"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-PENTECOST",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.pentecost",
+      "labels": { "de": "Pfingsten", "fr": "Pentecôte" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b" }
+      ],
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 49 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "PENTECOST"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-WHIT-MONDAY",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.whitMonday",
+      "labels": { "de": "Pfingstmontag", "fr": "Lundi de Pentecôte" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c" }
+      ],
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 50 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "WHIT-MONDAY"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-FEDERAL-FAST",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.federalFast",
+      "labels": {
+        "de": "Eidgenössischer Dank-, Buss- und Bettag",
+        "fr": "Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b" }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FEDERAL-FAST"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-CHRISTMAS",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.christmas",
+      "labels": { "de": "Weihnachten", "fr": "Noël" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. b" }
+      ],
+      "calculation": { "type": "fixedMonthDay", "month": 12, "day": 25 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "BE-CAL-HOL-ST-STEPHEN",
+      "calendarId": "be-public-holidays",
+      "jurisdiction": { "level": "cantonal", "code": "BE" },
+      "labelKey": "holiday.be.stStephen",
+      "labels": { "de": "Stephanstag", "fr": "Saint-Étienne" },
+      "priority": 100,
+      "validity": { "from": "2026-01-01", "to": null },
+      "sourceRefs": [
+        { "sourceId": "SRC-FRG-BE-20210401", "locator": "Art. 2 Abs. 1 Bst. c" }
+      ],
+      "calculation": { "type": "fixedMonthDay", "month": 12, "day": 26 },
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ST-STEPHEN"
+      }
+    }
+  ]
+}

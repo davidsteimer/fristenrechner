@@ -7,6 +7,13 @@ export type { StorageLike, StoredDefaults } from './defaults';
 export { translate, translateReason } from './i18n';
 export type { Locale } from './i18n';
 export {
+  CALENDAR_EXPORT_CONTRACT,
+  createDeadlineCalendarEntry,
+  downloadDeadlineCalendarEntry,
+  normalizeCalendarReference
+} from './calendarExport';
+export type { DeadlineCalendarArtifact, DeadlineCalendarEntryOptions } from './calendarExport';
+export {
   automaticCalendarId,
   authorityOptions,
   createCalculationInput,

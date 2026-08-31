@@ -62,4 +62,20 @@ describe('AP9-Browservorschau', () => {
       /@media \(max-width: 640px\)[\s\S]*?\.fr-actions\s*\{[\s\S]*?grid-template-columns:\s*1fr;/
     );
   });
+
+  it('nutzt die freie Kachel rechts unten für den Kalendereintrag', async () => {
+    const source = await readFile(componentPath, 'utf8');
+    const styles = await readFile(stylesPath, 'utf8');
+    const resultGridStart = source.indexOf('<dl className="fr-result__grid">');
+    const resultGridEnd = source.indexOf('</dl>', resultGridStart);
+    const resultGrid = source.slice(resultGridStart, resultGridEnd);
+
+    assert.ok(resultGridStart > 0);
+    assert.ok(resultGrid.indexOf("'result.shifted'") > 0);
+    assert.ok(resultGrid.indexOf('<CalendarExportTile') > resultGrid.indexOf("'result.shifted'"));
+    assert.match(source, /<dt className="fr-calendar-export__action">\s*<PrimaryButton/);
+    assert.doesNotMatch(source, /fr-calendar-export__help|calendar\.help\./);
+    assert.match(styles, /\.fr-result__grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/);
+    assert.match(styles, /\.fr-result__grid > \.fr-calendar-export\s*\{/);
+  });
 });

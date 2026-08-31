@@ -10,6 +10,7 @@ import { ReleaseService } from '../src/core/ReleaseService';
 import { ReleaseValidator } from '../src/core/ReleaseValidator';
 import { GitHubReleaseProvider } from '../src/core/providers/GitHubReleaseProvider';
 import { normalizeSharePointMirrorPath } from '../src/core/providers/sharePointPath';
+import { calculateDeadline, createCalculationData } from '../src/product/core';
 import {
   IndexedDbValidatedReleaseStore,
   MemoryValidatedReleaseStore
@@ -29,6 +30,20 @@ const AP11C_CANDIDATE_ROOT = resolve(
   'data',
   'releases',
   '2026-08-30-ap11c-candidate.1'
+);
+const AP12C_CANDIDATE_ROOT = resolve(
+  process.cwd(),
+  '..',
+  'data',
+  'releases',
+  '2026-08-31-ap12c-candidate.1'
+);
+const MVP_03_RELEASE_ROOT = resolve(
+  process.cwd(),
+  '..',
+  'data',
+  'releases',
+  '2026-08-31-mvp-03-approved.1'
 );
 
 type ByteTransform = (path: string, bytes: Uint8Array) => Uint8Array;
@@ -71,6 +86,43 @@ test('weist den noch nicht freigegebenen AP11C-Datenkandidaten ab', async () => 
     )),
     /Nur freigegebene Datenreleases/
   );
+});
+
+test('weist den noch nicht freigegebenen AP12C-Format-3-Kandidaten ab', async () => {
+  await assert.rejects(
+    new ReleaseValidator().validateProvider(new DirectoryProvider(
+      'fixture:ap12c-candidate',
+      (_path, bytes) => bytes,
+      AP12C_CANDIDATE_ROOT
+    )),
+    /Nur freigegebene Datenreleases/
+  );
+});
+
+test('validiert den freigegebenen MVP-0.3-Format-3-Release und erzeugt den Kalender lokal', async () => {
+  const release = await new ReleaseValidator().validateProvider(new DirectoryProvider(
+    'fixture:mvp-03-approved',
+    (_path, bytes) => bytes,
+    MVP_03_RELEASE_ROOT
+  ));
+  const data = createCalculationData(release);
+  const result = calculateDeadline({
+    profileId: 'stpo',
+    inputDate: '2027-07-22',
+    inputDateSemantics: 'legallyRelevantDeliveryOrEventDate',
+    deadlineDays: 10,
+    calendarId: 'be-public-holidays',
+    selectors: {},
+    confirmations: { holidayAnchorConfirmed: true },
+    holidayAnchorCandidates: ['BE']
+  }, data);
+
+  assert.equal(release.formatVersion, '3.0.0');
+  assert.equal(release.releaseId, '2026-08-31-mvp-03-approved.1');
+  assert.equal(release.coverageTo, null);
+  assert.equal(data.calendarRuleSets.size, 2);
+  assert.equal(result.outcome, 'calculated');
+  assert.equal(result.outcome === 'calculated' ? result.finalEnd : undefined, '2027-08-02');
 });
 
 test('weist für zwei Provider byteidentische Aktivstände nach', async () => {
@@ -133,7 +185,7 @@ test('weist eine unbekannte Format-Hauptversion ab', async () => {
       return bytes;
     }
     const manifest = JSON.parse(new TextDecoder().decode(bytes));
-    manifest.formatVersion = '3.0.0';
+    manifest.formatVersion = '4.0.0';
     return new TextEncoder().encode(JSON.stringify(manifest));
   });
 

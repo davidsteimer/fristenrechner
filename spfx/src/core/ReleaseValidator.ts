@@ -4,12 +4,14 @@ import Ajv2020, { type ErrorObject, type ValidateFunction } from 'ajv/dist/2020'
 import addFormats from 'ajv-formats';
 
 import calendarSchema from './schemas/calendar.schema.json';
+import calendarRulesSchema from './schemas/calendar-rules-v2.schema.json';
 import commonSchema from './schemas/common.schema.json';
 import deadlineDefinitionSchema from './schemas/deadline-definition.schema.json';
 import filingProfileSchema from './schemas/filing-profile.schema.json';
 import legalProfileSchema from './schemas/legal-profile.schema.json';
 import releaseManifestSchema from './schemas/release-manifest.schema.json';
 import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
+import { generateCalendarFromRules, type CalendarRuleSet } from '../product/core';
 import { assertSafeReleasePath } from './path';
 import type {
   IReleaseArtifactDescriptor,
@@ -116,6 +118,7 @@ export class ReleaseValidator {
   private readonly manifestValidator: ValidateFunction;
   private readonly legalProfileValidator: ValidateFunction;
   private readonly calendarValidator: ValidateFunction;
+  private readonly calendarRulesValidator: ValidateFunction;
   private readonly specialRegimeCatalogValidator: ValidateFunction;
 
   public constructor() {
@@ -131,6 +134,7 @@ export class ReleaseValidator {
     this.manifestValidator = ajv.compile(releaseManifestSchema);
     this.legalProfileValidator = ajv.compile(legalProfileSchema);
     this.calendarValidator = ajv.compile(calendarSchema);
+    this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
     this.specialRegimeCatalogValidator = ajv.compile(specialRegimeCatalogSchema);
   }
 
@@ -140,7 +144,7 @@ export class ReleaseValidator {
 
     if (isObject(manifestValue) && typeof manifestValue.formatVersion === 'string') {
       const major = Number.parseInt(manifestValue.formatVersion.split('.')[0], 10);
-      if (major !== 1 && major !== 2) {
+      if (major !== 1 && major !== 2 && major !== 3) {
         throw new Error(`Unbekannte Hauptversion des Datenformats: ${manifestValue.formatVersion}`);
       }
     }
@@ -216,7 +220,9 @@ export class ReleaseValidator {
     const validator = descriptor.role === 'legalProfile'
       ? this.legalProfileValidator
       : descriptor.role === 'calendar'
-        ? this.calendarValidator
+        ? descriptor.schemaId === calendarRulesSchema.$id
+          ? this.calendarRulesValidator
+          : this.calendarValidator
         : this.specialRegimeCatalogValidator;
     assertSchema(validator, parsed, descriptor.path);
 
@@ -264,20 +270,38 @@ export class ReleaseValidator {
     const referencedCalendars = new Set<string>();
     const inheritedCalendars = new Set<string>();
     const referencedProfiles = new Set<string>();
+    const referencedSuspensionSets = new Set<string>();
+    const availableSuspensionSets = new Set<string>();
 
-    profiles.forEach(profile => collectStringValues(profile.parsed, 'calendarId', referencedCalendars));
+    profiles.forEach(profile => {
+      collectStringValues(profile.parsed, 'calendarId', referencedCalendars);
+      collectStringValues(profile.parsed, 'suspensionSetId', referencedSuspensionSets);
+    });
     calendars.forEach(calendar => {
       collectStringArrayValues(calendar.parsed, 'inherits', inheritedCalendars);
       collectStringArrayValues(calendar.parsed, 'applicableProfileIds', referencedProfiles);
+      collectStringValues(calendar.parsed, 'suspensionSetId', availableSuspensionSets);
 
-      if (isObject(calendar.parsed) && isObject(calendar.parsed.coverage)) {
+      if (manifest.formatVersion === '3.0.0'
+        && isObject(calendar.parsed)
+        && isObject(calendar.parsed.validity)) {
+        const from = calendar.parsed.validity.from;
+        const to = calendar.parsed.validity.to;
+        if (
+          typeof from !== 'string'
+          || from > manifest.coverage.from
+          || (to !== null && typeof to !== 'string')
+        ) {
+          throw new Error(`Kalendergültigkeit ungenügend: ${calendar.descriptor.contentId}`);
+        }
+      } else if (isObject(calendar.parsed) && isObject(calendar.parsed.coverage)) {
         const from = calendar.parsed.coverage.from;
         const to = calendar.parsed.coverage.to;
         if (
           typeof from !== 'string' ||
           typeof to !== 'string' ||
           from > manifest.coverage.from ||
-          to < manifest.coverage.to
+          (manifest.coverage.to !== null && to < manifest.coverage.to)
         ) {
           throw new Error(`Kalenderabdeckung ungenügend: ${calendar.descriptor.contentId}`);
         }
@@ -286,6 +310,7 @@ export class ReleaseValidator {
     specialRegimeCatalogs.forEach(catalog => {
       collectStringValues(catalog.parsed, 'calendarId', referencedCalendars);
       collectStringValues(catalog.parsed, 'profileId', referencedProfiles);
+      collectStringValues(catalog.parsed, 'suspensionSetId', referencedSuspensionSets);
     });
 
     Array.from(referencedCalendars).concat(Array.from(inheritedCalendars)).forEach(calendarId => {
@@ -299,5 +324,26 @@ export class ReleaseValidator {
         throw new Error(`Unbekannte Profilreferenz: ${profileId}`);
       }
     });
+    referencedSuspensionSets.forEach(suspensionSetId => {
+      if (!availableSuspensionSets.has(suspensionSetId)) {
+        throw new Error(`Unbekannte Stillstandssatzreferenz: ${suspensionSetId}`);
+      }
+    });
+    if (manifest.formatVersion === '3.0.0'
+      && availableSuspensionSets.has('ch-court-holidays-2026-2028')) {
+      throw new Error('Format 3 enthält noch die abgelaufene Stillstandssatz-ID ch-court-holidays-2026-2028.');
+    }
+
+    if (manifest.formatVersion === '3.0.0') {
+      const ruleSets = calendars.map(calendar => calendar.parsed as CalendarRuleSet);
+      const firstYear = Number.parseInt(manifest.coverage.from.slice(0, 4), 10);
+      const validationRange = {
+        from: manifest.coverage.from,
+        to: `${firstYear + 2}-12-31`
+      };
+      manifest.calendarIds.forEach(calendarId => {
+        generateCalendarFromRules(ruleSets, calendarId, validationRange);
+      });
+    }
   }
 }

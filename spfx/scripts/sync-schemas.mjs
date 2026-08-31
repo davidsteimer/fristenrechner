@@ -12,6 +12,7 @@ const schemaNames = [
   'release-manifest.schema.json',
   'legal-profile.schema.json',
   'calendar.schema.json',
+  'calendar-rules-v2.schema.json',
   'filing-profile.schema.json',
   'deadline-definition.schema.json',
   'special-regime-catalog-v2.schema.json'

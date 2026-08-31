@@ -265,6 +265,7 @@ export interface SpecialTraceStep {
   readonly outputDate?: IsoDate;
   readonly ruleIds: readonly string[];
   readonly reasonKeys: readonly string[];
+  readonly calendarEvidence?: import('./types').CalendarTraceEvidence;
 }
 
 export interface SpecialCalculationContext {

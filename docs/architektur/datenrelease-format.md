@@ -2,16 +2,17 @@
 
 | Merkmal | Wert |
 | --- | --- |
-| Arbeitspaket | AP5 und AP11B |
-| Formatversion | 1.0.0 und 2.0.0 |
+| Arbeitspaket | AP5, AP11B und AP12C |
+| Formatversion | 1.0.0, 2.0.0 und 3.0.0 |
 | Schema-Dialekt | JSON Schema Draft 2020-12 |
 | Zeichenkodierung | UTF-8 |
 | Datumsmodell | ISO-Vollformat `JJJJ-MM-TT`, ohne Uhrzeit und Zeitzone |
 | Integritätsprüfung | SHA-256 über die exakten Dateibytes |
 | Format-1-Referenzrelease | `data/releases/2026-08-29-ap5-approved.1` |
 | Format-2-Referenzrelease | `data/releases/2026-08-30-ap11b-approved.1` |
+| Format-3-Kandidat | `data/releases/2026-08-31-ap12c-candidate.1` |
 | Freigaben | David Steimer, 29. und 30. August 2026 |
-| Architekturentscheid | [DEC-2026-012, beschlossen](../entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md) |
+| Architekturentscheide | [DEC-2026-012](../entscheidungen/DEC-2026-012-providerneutrales-datenrelease-format.md) und [DEC-2026-015](../entscheidungen/DEC-2026-015-regelbasierte-kalenderkomponente.md), beide beschlossen |
 
 ## 1. Ziel und Abgrenzung
 
@@ -49,6 +50,10 @@ Das Manifest muss dazu `specialRegimeCatalogIds` und mindestens ein Artefakt der
 
 Ab Format 2 bezeichnet `coverage` den gesamten zeitlichen Horizont, in dem mindestens ein Releasebestandteil rechnen darf. Ein einzelnes allgemeines Rechtsprofil kann mit `validity.dataValidFrom` oder `dataValidTo` enger begrenzt sein. Der Consumer muss deshalb zuerst die Release- und Kalenderabdeckung und danach die Gültigkeit des konkret verwendeten Profils oder der Fristdefinition prüfen. Diese Präzisierung erlaubt die abgenommenen Spezialfälle aus dem Frühjahr 2026, ohne den allgemeinen AP5-Profilen rückwirkend eine frühere Datengültigkeit zuzuschreiben.
 
+Format 3.0.0 ersetzt die endlichen Kalenderlisten durch die Kalenderkomponente 2.0.0. Die Verzeichnisstruktur und die Artefaktrolle `calendar` bleiben erhalten. Das Manifest verweist für diese Artefakte jedoch zwingend auf `calendar-rules-v2.schema.json`. Die Releaseabdeckung besitzt ein Anfangsdatum und `to: null`. Format 1 und Format 2 verlangen weiterhin ein konkretes Enddatum.
+
+Die offene Format-3-Abdeckung hebt keine fachliche Gültigkeitsgrenze auf. Rechtsprofile, Fristdefinitionen, Kalenderregeln und Overrides behalten ihre eigenen Gültigkeitsangaben. Ein Consumer erzeugt den Kalender nur für einen endlichen, aus der konkreten Berechnung abgeleiteten Arbeitsbereich.
+
 Das Manifest enthält keine Prüfsumme über sich selbst. Seine Vertrauenswürdigkeit muss durch den freigegebenen Abrufort und später allenfalls durch eine zusätzliche Signatur abgesichert werden. Die Artefaktprüfsummen verhindern, dass ein Manifest mit nur teilweise oder verändert geladenen Nutzdaten aktiviert wird.
 
 Der Format-1-Referenzbestand wurde mit einer neuen Release-ID aus dem technisch validierten Candidate abgeleitet. Die fachlichen Regeln, Feiertage und Stillstandsperioden blieben unverändert. Der Prüfstatus der sieben Nutzartefakte wurde auf `verified` gesetzt und mit neuen Prüfsummen versehen.
@@ -62,6 +67,7 @@ Der Format-2-Referenzbestand wurde ebenfalls unter einer neuen Release-ID aus de
 | `common.schema.json` | Gemeinsame Typen für Gültigkeit, Abdeckung, Quellen, Prüfstatus, Bedingungen und Erweiterungen |
 | `legal-profile.schema.json` | Rechtsprofil, Berechnungsvertrag, Feiertagsanknüpfung, explizite Selektoren und typisierte Regeleffekte |
 | `calendar.schema.json` | Feiertage, Kalendervererbung und inklusive Stillstandsperioden |
+| `calendar-rules-v2.schema.json` | versionierte Feiertags- und Stillstandsregeln, Vererbung und explizite Overrides |
 | `deadline-definition.schema.json` | berechnete Fristdefinitionen R1 bis R4 oder behördlich gesetzte Termine ohne Rechenoperation |
 | `filing-profile.schema.json` | Wahrungsmodus, Kanäle, Nachweise, Original, Annahmeschluss und Zeitzone |
 | `special-regime-catalog-v2.schema.json` | Spezialregime, Komponentenprofile, Gates, Übersteuerungen und Sichtbarkeitsvertrag |
@@ -86,7 +92,7 @@ Der Referenzbestand übernimmt alle 47 Arbeits-IDs aus AP4. Selektoren werden ni
 
 ## 5. Kalender
 
-Ein Kalender enthält:
+Ein Kalender der Formate 1 und 2 enthält:
 
 - eine stabile Kalender-ID und ein Gemeinwesen
 - einen lückenlosen Abdeckungszeitraum
@@ -96,6 +102,16 @@ Ein Kalender enthält:
 - Quellen und Prüfstatus
 
 Der bernische Kalender erbt den eidgenössischen Bundesfeiertag aus dem Bundeskalender. Dadurch wird der 1. August nicht doppelt gepflegt. Die Stillstandsperioden des Bundes werden separat über stabile Stillstandssatz-IDs referenziert und nicht automatisch auf jedes Rechtsprofil angewandt.
+
+Ein Format-3-Kalender enthält statt konkreter Jahresdaten:
+
+- versionierte Regeln für Fixdaten, Osterabstände, bestimmte Wochentage und relative Perioden
+- eine nach oben offene fachliche Gültigkeit
+- Vererbung auf Ebene der Regelkalender
+- quellenbelegte Add-, Suppress- und Replace-Overrides
+- stabile Stillstandssatz- und Rechtsprofilreferenzen
+
+Der Consumer validiert zuerst den gesamten Bestand. Anschliessend erzeugt der hostneutrale Generator für jede Berechnung einen endlichen Arbeitskalender. Ein Fehler in Regelauflösung, Gültigkeit, Vererbung oder Overridebehandlung verwirft den Kandidaten oder blockiert die Berechnung. Es gibt keinen stillen Rückfall auf konkrete Vorjahreslisten.
 
 ## 6. Aktivierungsablauf
 
@@ -108,8 +124,9 @@ Ein Consumer aktiviert ein Release nur atomar:
 5. Dateigrösse und SHA-256 jedes Artefakts prüfen.
 6. Jedes Artefakt gegen sein Schema prüfen.
 7. Quellenverweise, Regel-IDs, Kalendervererbung, Gültigkeit, Abdeckung und profilübergreifende Referenzen prüfen.
-8. Erst nach vollständigem Erfolg den bisherigen Datenstand ersetzen.
-9. Bei jedem Fehler den neuen Stand verwerfen und den letzten vollständig validierten Stand beibehalten.
+8. Bei Format 3 alle Kalenderregeln, Overrides und Stillstandssatz-Referenzen auflösen und eine repräsentative Kalendererzeugung durchführen.
+9. Erst nach vollständigem Erfolg den bisherigen Datenstand ersetzen.
+10. Bei jedem Fehler den neuen Stand verwerfen und den letzten vollständig validierten Stand beibehalten.
 
 Ein Teilrelease, ein Mischstand aus zwei Release-IDs oder ein ungeprüfter Netzwerkabruf darf nie an den Rechenkern gelangen.
 
@@ -163,6 +180,8 @@ Der AP5-Validator prüft:
 Beim Format-1-Referenzrelease beweisen sechs Negativtests, dass Prüfsummenfehler, doppelte Regeln, unaufgelöste Quellen, unbekannte Regelarten, verkehrte Periodengrenzen und fehlende Kalendervererbung abgewiesen werden.
 
 Beim Format-2-Referenzrelease kommen drei Manipulationen hinzu. Die entfernte Rechenart `R5_FIXED`, ein sichtbar geschalteter Behörden-Termin und ein zwischen Regime und Definition widersprüchliches Einreichungsprofil müssen scheitern. Der Validator prüft zudem, dass der Katalog genau 26 berechnete und 3 behördlich gesetzte Definitionen enthält.
+
+Beim Format-3-Kandidaten prüft der Validator zusätzlich offene Abdeckung, Kalenderkomponente 2.0.0, Kalenderregeltypen, Vererbung, Gültigkeit, Overrides, Quellenbezüge und sämtliche Stillstandssatz-Referenzen. Neun gezielte Negativmutationen müssen abgewiesen werden. Ein separater Migrationsvalidator bestätigt zwei byteidentische AP12A-Kalender, 15 Regeln, null alte und neun neue Stillstandssatz-Referenzen.
 
 ## 10. Qualitäts- und Sicherheitsgrenzen
 

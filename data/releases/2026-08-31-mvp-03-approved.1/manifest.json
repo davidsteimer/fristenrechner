@@ -1,0 +1,165 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "releaseManifest",
+  "releaseId": "2026-08-31-mvp-03-approved.1",
+  "releaseStatus": "approved",
+  "createdOn": "2026-08-31",
+  "immutable": true,
+  "coverage": {
+    "from": "2026-01-01",
+    "to": null
+  },
+  "profileIds": [
+    "stpo",
+    "zpo",
+    "bgg",
+    "vwvg",
+    "vrpg-be"
+  ],
+  "calendarIds": [
+    "ch-federal-calendar",
+    "be-public-holidays"
+  ],
+  "specialRegimeCatalogIds": [
+    "vrpg-be-special-regimes-2026-08-30"
+  ],
+  "sourceSummary": {
+    "latestReviewedOn": "2026-08-30",
+    "legalBasisReviewStatus": "verified",
+    "technicalValidationStatus": "passed",
+    "sourceIds": [
+      "JUD-BE-VG-100-2016-347",
+      "JUD-BE-VG-100-2017-270",
+      "JUD-BE-VG-100-2021-189",
+      "JUD-BE-VG-200-2026-421",
+      "JUD-BGER-1C-275-2009",
+      "JUD-BGER-8C-620-2007",
+      "JUD-BGER-9C-757-2007",
+      "SRC-ATSG-20240101",
+      "SRC-BGG-20260401",
+      "SRC-BPR-20221023",
+      "SRC-BUNDESFEIERTAG-19940701",
+      "SRC-FRG-BE-20210401",
+      "SRC-PRG-BE-CURRENT",
+      "SRC-PRG-MATERIALS-2018",
+      "SRC-PRV-BE-CURRENT",
+      "SRC-RRB-498-2024",
+      "SRC-STPO-20250401",
+      "SRC-VPR-20220701",
+      "SRC-VRPG-BE-20230801",
+      "SRC-VWVG-20220701",
+      "SRC-ZPO-20260701"
+    ]
+  },
+  "providerContract": {
+    "pathMode": "manifestRelative",
+    "byteIdentityRequired": true,
+    "supportedProviders": [
+      "github",
+      "sharepointMirror",
+      "manualImport"
+    ],
+    "networkFallback": "lastVerifiedRelease"
+  },
+  "compatibility": {
+    "minimumConsumerFormatVersion": "3.0.0",
+    "unknownMajorVersionHandling": "reject",
+    "unknownCoreFieldHandling": "reject",
+    "extensionsHandling": "ignoreNamespaced"
+  },
+  "checksumAlgorithm": "sha256",
+  "extensions": {
+    "steimer.approval": {
+      "approvedOn": "2026-08-31",
+      "approvedBy": "David Steimer",
+      "approvalType": "human",
+      "approvalScope": "mvp03DataRelease",
+      "workPackages": [
+        "AP12A",
+        "AP12B",
+        "AP12C"
+      ],
+      "issues": [
+        26
+      ],
+      "decision": "DEC-2026-015",
+      "candidateReleaseId": "2026-08-31-ap12c-candidate.1",
+      "baseReleaseId": "2026-08-31-mvp-02-approved.1"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "role": "legalProfile",
+      "contentId": "bgg",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "profiles/stpo.json",
+      "role": "legalProfile",
+      "contentId": "stpo",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "role": "legalProfile",
+      "contentId": "vrpg-be",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "role": "legalProfile",
+      "contentId": "vwvg",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "profiles/zpo.json",
+      "role": "legalProfile",
+      "contentId": "zpo",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "role": "calendar",
+      "contentId": "be-public-holidays",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 9073,
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "role": "calendar",
+      "contentId": "ch-federal-calendar",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 7260,
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+    },
+    {
+      "path": "special-regimes/vrpg-be.json",
+      "role": "specialRegimeCatalog",
+      "contentId": "vrpg-be-special-regimes-2026-08-30",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 83715,
+      "sha256": "4adc0d54e55c04a262f8e4e2757da229b1b3078da880d87ebf607decf53b3c9c"
+    }
+  ]
+}

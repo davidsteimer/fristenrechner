@@ -15,6 +15,8 @@ AP11A ergänzt als fachlich abgenommener Bestand:
 AP11B überführt diesen Bestand in den fachlich und technisch abgenommenen [Format-2-Referenzrelease](../../data/releases/2026-08-30-ap11b-approved.1/README.md). Die fachliche Klassifikation bleibt unverändert. `R5_FIXED` wird technisch in berechnete und behördlich gesetzte Komponenten getrennt.
 - acht [synthetische Kandidatenfälle](../../tests/golden/candidates/ap11a-vrpg-be-special-cases.json)
 
+AP13 ergänzt die statische Fachgrundlage um ein [maschinenlesbares Quellenregister und append-only-Prüfprotokoll](../../data/source-reviews/README.md). Der [Betriebsprozess](../betrieb/periodische-quellenpruefung-ap13.md) gilt gleichermassen für allgemeine Fristenregeln, Feiertage und Spezialregime. Eine inhaltlich unveränderte Prüfung wird dokumentiert, löst aber keinen Datenrelease aus.
+
 ## Verbindlichkeit im Projekt
 
 Die Rechtsmatrix beschreibt den fachlich geprüften Sollzustand für AP5 und AP6. Sie ist keine Rechtsauskunft für einen konkreten Fall. Die maschinenlesbaren Regeln aus AP5 und die Golden Cases aus AP6 bilden gemeinsam den prüfbaren Testvertrag für den späteren Rechenkern.
@@ -35,3 +37,5 @@ Amtliche Erlasse gehen Zusammenfassungen und technischen Ableitungen vor. Rechts
 David Steimer nimmt in der aktuellen Einpersonenphase Fachverantwortung, Prüfung und Freigabe wahr. Die Rollen bleiben im Nachweis getrennt ausgewiesen, damit das künftige Betriebskonzept ohne Strukturbruch erweitert werden kann.
 
 Materielle Auslegungs- oder Umfangsentscheide werden im [Entscheidungsregister](../entscheidungen/README.md) dokumentiert. Offene Fragen werden nicht als scheinbar sichere Regeln in den Rechner übernommen.
+
+Die ordentliche Vollprüfung erfolgt jährlich spätestens am 15. November. Frühere Prüfungen sind zusätzlich bei einem Datenrelease, einer angekündigten Rechtsänderung, einem neuen Profil oder Gemeinwesen sowie bei fachlich relevanten Fehlern, Entscheiden oder Zweifeln erforderlich.

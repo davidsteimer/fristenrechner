@@ -62,3 +62,5 @@ Die offenen Punkte werden geprüft:
 5. nach einem fachlich relevanten Fehlerbericht oder Gerichtsentscheid
 
 Die Prüfung wird mit Datum, Quelle, Ergebnis und verantwortlicher Person dokumentiert. Eine blosse Änderung des Abrufdatums ohne inhaltliche Kontrolle genügt nicht.
+
+AP13 setzt diesen Zyklus mit dem [periodischen Quellenprüfprozess](../betrieb/periodische-quellenpruefung-ap13.md), einem [append-only-Prüfprotokoll](../../data/source-reviews/README.md) und einer [generischen Release-Checkliste](../betrieb/release-checkliste.md) um. Der nächste ordentliche Jahrestermin ist spätestens der 15. November 2027. `OF-001` wird unabhängig davon bei jedem früheren Release oder amtlichen Änderungshinweis erneut geprüft.

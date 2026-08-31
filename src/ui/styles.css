@@ -323,6 +323,36 @@
   background: var(--fr-snow);
 }
 
+.fr-result__grid > .fr-calendar-export {
+  border-top: 3px solid var(--fr-teal);
+  background: var(--fr-glacier);
+}
+
+.fr-calendar-export--wide {
+  grid-column: 1 / -1;
+}
+
+.fr-result__grid dt.fr-calendar-export__action {
+  margin-bottom: 10px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.fr-calendar-export__button {
+  width: 100%;
+}
+
+.fr-calendar-export__privacy {
+  margin: 9px 0 0;
+  color: var(--fr-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.fr-calendar-export__error {
+  margin-top: 10px;
+}
+
 .fr-result__messages {
   margin-top: 22px;
 }
@@ -455,6 +485,10 @@
   .fr-result__grid,
   .fr-filing dl {
     grid-template-columns: 1fr;
+  }
+
+  .fr-calendar-export--wide {
+    grid-column: auto;
   }
 }
 

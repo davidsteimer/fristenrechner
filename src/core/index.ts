@@ -2,7 +2,19 @@
 
 export { calculateDeadline } from './calculateDeadline';
 export { calculateSpecialDeadline } from './calculateSpecialDeadline';
-export { createCalculationData, CoreDataError, resolveCalendar } from './data';
+export {
+  calendarGenerationRangeForDates,
+  createCalculationData,
+  CoreDataError,
+  isWithinReleaseCoverage,
+  resolveCalendar
+} from './data';
+export {
+  calculateCalendarRuleOccurrence,
+  calculateGregorianEaster,
+  CalendarGenerationError,
+  generateCalendarFromRules
+} from './generateCalendar';
 export {
   addCalendarDays,
   addCalendarMonths,
@@ -21,6 +33,8 @@ export type {
   CalculationData,
   CalculationInput,
   CalculationResult,
+  CalendarGenerationEvidence,
+  CalendarTraceEvidence,
   CalendarData,
   Holiday,
   InputDateSemantics,
@@ -34,6 +48,14 @@ export type {
   ValidatedReleaseArtifactLike,
   ValidatedReleaseLike
 } from './types';
+export type {
+  CalendarGenerationRange,
+  CalendarRule,
+  CalendarRuleApplication,
+  CalendarRuleOccurrence,
+  CalendarRuleSet,
+  GeneratedCalendar
+} from './calendarRuleTypes';
 export type {
   AuthoritativeDeadlineDefinition,
   BlockedSpecialDeadlineResult,

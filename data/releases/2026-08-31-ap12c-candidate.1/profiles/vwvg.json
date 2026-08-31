@@ -1,0 +1,319 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "legalProfile",
+  "profileId": "vwvg",
+  "lawCode": "VwVG",
+  "jurisdiction": {
+    "level": "federal",
+    "code": "CH"
+  },
+  "validity": {
+    "dataValidFrom": "2026-08-29",
+    "dataValidTo": null
+  },
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP12C-Format-3-Migration. Fachregeln aus MVP 0.2 und AP12A unverändert, Stillstandssatz-ID atomar auf ch-court-holidays migriert. Abnahme durch David Steimer ausstehend."
+  },
+  "calculationContract": {
+    "acceptedDeadlineUnits": [
+      "day"
+    ],
+    "dateInputSemantics": "legallyRelevantDeliveryOrEventDate",
+    "timeModel": "dateOnlyNoTimezone",
+    "unknownSpecialLawHandling": "block",
+    "unsupportedInputHandling": "block"
+  },
+  "calendarPolicy": {
+    "holidayAnchor": "partyOrRepresentativeCanton",
+    "jurisdictionSelection": "explicit",
+    "conflictHandling": "requireConfirmation",
+    "manualOverride": true,
+    "overrideReasonRequired": true
+  },
+  "selectors": [
+    {
+      "selectorId": "deliveryMethod",
+      "required": false,
+      "selectionMode": "explicit",
+      "unknownHandling": "warn",
+      "options": [
+        {
+          "value": "signatureMailUncollected",
+          "labelKey": "selector.deliveryMethod.signatureMailUncollected"
+        },
+        {
+          "value": "otherLegallyRelevantDate",
+          "labelKey": "selector.deliveryMethod.otherLegallyRelevantDate"
+        }
+      ]
+    },
+    {
+      "selectorId": "subjectMatter",
+      "required": true,
+      "selectionMode": "explicit",
+      "unknownHandling": "block",
+      "options": [
+        {
+          "value": "general",
+          "labelKey": "selector.subjectMatter.general"
+        },
+        {
+          "value": "interimMeasures",
+          "labelKey": "selector.subjectMatter.interimMeasures"
+        },
+        {
+          "value": "publicProcurement",
+          "labelKey": "selector.subjectMatter.publicProcurement"
+        },
+        {
+          "value": "unknown",
+          "labelKey": "selector.subjectMatter.unknown"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "SRC-VWVG-20220701",
+      "sourceType": "statute",
+      "title": "Verwaltungsverfahrensgesetz, SR 172.021",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de",
+      "documentVersionDate": "2022-07-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "VWVG-DELIV-001",
+      "phase": "delivery",
+      "priority": 10,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2007-01-01"
+      },
+      "conditions": [
+        {
+          "selector": "deliveryMethod",
+          "operator": "in",
+          "values": [
+            "signatureMailUncollected"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "deliveryDate",
+        "mode": "seventhDayAfterFailedAttempt",
+        "daysAfterFailedAttempt": 7,
+        "requiresConfirmation": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 20 Abs. 2bis"
+        }
+      ],
+      "warningKey": "warning.deliveryFiction.confirmApplicability"
+    },
+    {
+      "ruleId": "VWVG-START-001",
+      "phase": "start",
+      "priority": 100,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineStart",
+        "offsetCalendarDays": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 20 Abs. 1 und 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "VWVG-COUNT-001",
+      "phase": "count",
+      "priority": 200,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "counting",
+        "mode": "calendarDaysExcludingSuspensions"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 20 und Art. 22a"
+        }
+      ]
+    },
+    {
+      "ruleId": "VWVG-SUSP-001",
+      "phase": "count",
+      "priority": 210,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "suspension",
+        "mode": "useSet",
+        "suspensionSetId": "ch-court-holidays"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 22a Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "VWVG-SUSP-EXC-001",
+      "phase": "count",
+      "priority": 220,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [
+        {
+          "selector": "subjectMatter",
+          "operator": "in",
+          "values": [
+            "interimMeasures",
+            "publicProcurement"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "suspensionException",
+        "action": "disableSuspension"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 22a Abs. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "VWVG-END-001",
+      "phase": "end",
+      "priority": 300,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineEnd",
+        "shift": "nextWorkingDay",
+        "nonWorkingDays": [
+          "saturday",
+          "sunday",
+          "publicHoliday"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 20 Abs. 3"
+        }
+      ]
+    },
+    {
+      "ruleId": "VWVG-HOL-001",
+      "phase": "end",
+      "priority": 310,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2007-01-01"
+      },
+      "conditions": [],
+      "effect": {
+        "type": "holidayAnchor",
+        "anchor": "partyOrRepresentativeCanton"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 20 Abs. 3"
+        }
+      ],
+      "warningKey": "warning.holidayAnchor.confirmJurisdiction"
+    },
+    {
+      "ruleId": "VWVG-COMP-001",
+      "phase": "compliance",
+      "priority": 400,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "submission",
+        "timing": "onOrBeforeLastDay",
+        "channels": [
+          "competentAuthority",
+          "swissPost",
+          "swissDiplomaticMission"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 21 und Art. 21a"
+        }
+      ]
+    },
+    {
+      "ruleId": "VWVG-EXT-001",
+      "phase": "guardrail",
+      "priority": 500,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "extension",
+        "statutoryDeadlineExtendable": false,
+        "authoritySetDeadlineExtendable": true,
+        "requiresTimelyReasonedRequest": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VWVG-20220701",
+          "locator": "Art. 22"
+        }
+      ],
+      "warningKey": "warning.extension.noAutomaticExtension"
+    }
+  ]
+}

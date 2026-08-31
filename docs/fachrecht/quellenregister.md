@@ -2,9 +2,11 @@
 
 | Merkmal | Wert |
 | --- | --- |
-| Stand | 29. August 2026 |
+| Stand | 31. August 2026 |
 | Verantwortlich | David Steimer |
 | Umfang | fünf MVP-Rechtsprofile sowie nationale und bernische Feiertage |
+
+Seit AP13 wird dieses menschlich lesbare Fachregister durch das [maschinenlesbare Quellenregister und append-only-Prüfprotokoll](../../data/source-reviews/README.md) ergänzt. Das Maschinenregister umfasst alle 21 im AP12C-Vergleichsrelease produktiv referenzierten Quellen, zwei unterstützende Entscheide und zwei amtliche Monitoringquellen. Der [Betriebsprozess](../betrieb/periodische-quellenpruefung-ap13.md) trennt Quellenprüfung und Datenrelease. Die nachstehenden Tabellen bleiben als fachliche Herleitung erhalten.
 
 ## 1. Quellenhierarchie
 
@@ -78,6 +80,12 @@ Die private Arbeitsmappe ist eine fachliche Arbeitshilfe und wird weder als Prim
 
 Die neue Regel wird erst mit amtlich festgelegtem Inkrafttreten und einer neuen Regelversion in den Rechner übernommen. Eine künftige Norm darf nicht durch blosse Vorwegnahme des politischen Beschlusses aktiviert werden.
 
-## 5. Dokumentations- und Lizenzhinweis
+## 5. Periodischer Prüfstand AP13
+
+Das initiale AP13-Ereignis `2026-08-31-initial-consolidation.1` konsolidiert die fachlich abgenommenen Prüfungen vom 29. und 30. August 2026. Die zwei Monitoringquellen zu BBl 2025 2891 wurden am 31. August 2026 gezielt erneut geprüft. Alle 25 Positionen tragen das Ergebnis `unchanged`. `OF-001` bleibt offen, weil im amtlichen Dossier weiterhin kein Inkrafttretensdatum ausgewiesen ist.
+
+Der nächste ordentliche Jahrestermin ist spätestens der 15. November 2027. Ein früherer Auslöser wie ein neues Datenrelease, eine amtlich angekündigte Änderung, ein neues Gemeinwesen oder ein fachlich relevanter Entscheid geht vor.
+
+## 6. Dokumentations- und Lizenzhinweis
 
 Die Matrix gibt die für die Berechnung nötigen Regeln in eigenen Worten wieder. Sie übernimmt keine vollständigen Erlasstexte. Amtliche Texte, Rechtsprechung, Drittmaterialien und Quellenzitate werden durch die Projektlizenz nicht neu lizenziert. Für die rechtliche Beurteilung bleibt die jeweils aktuelle amtliche Fassung massgebend.

@@ -26,7 +26,7 @@
       "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest.schema.json"
     },
     "formatVersion": {
-      "enum": ["1.0.0", "2.0.0"]
+      "enum": ["1.0.0", "2.0.0", "3.0.0"]
     },
     "dataKind": {
       "const": "releaseManifest"
@@ -46,7 +46,7 @@
       "const": true
     },
     "coverage": {
-      "$ref": "common.schema.json#/$defs/coverage"
+      "$ref": "common.schema.json#/$defs/openCoverage"
     },
     "profileIds": {
       "type": "array",
@@ -165,24 +165,114 @@
   "allOf": [
     {
       "if": {
+        "properties": { "formatVersion": { "const": "1.0.0" } },
+        "required": ["formatVersion"]
+      },
+      "then": {
+        "not": { "required": ["specialRegimeCatalogIds"] },
+        "properties": {
+          "coverage": { "$ref": "common.schema.json#/$defs/coverage" },
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "if": {
+                "type": "object",
+                "properties": { "role": { "const": "calendar" } },
+                "required": ["role"]
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "schemaId": {
+                    "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
         "properties": { "formatVersion": { "const": "2.0.0" } },
         "required": ["formatVersion"]
       },
       "then": {
         "required": ["specialRegimeCatalogIds"],
         "properties": {
+          "coverage": { "$ref": "common.schema.json#/$defs/coverage" },
           "artifacts": {
             "type": "array",
             "contains": {
               "type": "object",
               "required": ["role"],
               "properties": { "role": { "const": "specialRegimeCatalog" } }
+            },
+            "items": {
+              "type": "object",
+              "if": {
+                "type": "object",
+                "properties": { "role": { "const": "calendar" } },
+                "required": ["role"]
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "schemaId": {
+                    "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json"
+                  }
+                }
+              }
             }
           }
         }
+      }
+    },
+    {
+      "if": {
+        "properties": { "formatVersion": { "const": "3.0.0" } },
+        "required": ["formatVersion"]
       },
-      "else": {
-        "not": { "required": ["specialRegimeCatalogIds"] }
+      "then": {
+        "required": ["specialRegimeCatalogIds"],
+        "properties": {
+          "coverage": {
+            "type": "object",
+            "properties": { "to": { "type": "null" } }
+          },
+          "compatibility": {
+            "type": "object",
+            "properties": {
+              "minimumConsumerFormatVersion": { "const": "3.0.0" }
+            }
+          },
+          "artifacts": {
+            "type": "array",
+            "contains": {
+              "type": "object",
+              "required": ["role"],
+              "properties": { "role": { "const": "specialRegimeCatalog" } }
+            },
+            "items": {
+              "type": "object",
+              "if": {
+                "type": "object",
+                "properties": { "role": { "const": "calendar" } },
+                "required": ["role"]
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "schemaId": {
+                    "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   ],
@@ -220,6 +310,7 @@
           "enum": [
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json"
           ]
         },
@@ -231,7 +322,39 @@
           "type": "string",
           "pattern": "^[a-f0-9]{64}$"
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": { "role": { "const": "legalProfile" } },
+            "required": ["role"]
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "schemaId": {
+                "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": { "role": { "const": "specialRegimeCatalog" } },
+            "required": ["role"]
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "schemaId": {
+                "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json"
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

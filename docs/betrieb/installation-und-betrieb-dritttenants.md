@@ -190,7 +190,24 @@ Neue Datenstände werden nicht in den aktiven Ordner hineinkopiert. Das empfohle
 4. Abnahmetest durchführen
 5. früheren Ordner für einen definierten Rückfallzeitraum unverändert aufbewahren
 
-Ein Rückfall erfolgt durch Zurückstellen des Mirrorpfads auf den früheren, vollständig validierten Release. Die automatische jährliche Veröffentlichung und Replikation neuer Mirrorstände ist im aktuellen AP10-Stand noch nicht implementiert. Bis zu einem entsprechenden Folgearbeitspaket ist dies ein kontrollierter manueller Betriebsschritt. Dass die Kalenderstände jeweils bis zum 15. November für mindestens die beiden Folgejahre bereitstehen, muss bis dahin organisatorisch sichergestellt werden.
+Ein Rückfall erfolgt durch Zurückstellen des Mirrorpfads auf den früheren, vollständig validierten Release. Die automatische Replikation neuer Mirrorstände ist nicht implementiert. Die Übernahme bleibt ein kontrollierter manueller Betriebsschritt.
+
+### 6.4 Governance-Nachweis spiegeln
+
+Das AP13-Quellenregister, der generierte Index und die append-only-Prüfereignisse können in einem parallelen Governance-Ordner gespiegelt werden:
+
+```text
+/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/
+├── releases/
+│   └── <releaseId>/
+└── source-reviews/
+    ├── source-register.json
+    ├── index.json
+    └── events/
+        └── <reviewEventId>.json
+```
+
+Der WebPart-Pfad bleibt auf `releases/<releaseId>` eingestellt. `source-reviews` ist keine Laufzeitdatenquelle und muss für die Berechnung nicht erreichbar sein. Die Spiegelung dient der tenantinternen Nachvollziehbarkeit und darf die öffentlichen Dateien nicht inhaltlich verändern.
 
 ## 7. Betrieb und Aktualisierung
 
@@ -198,9 +215,13 @@ Der Fristenrechner benötigt keinen Serverprozess. Der Regelbetrieb umfasst:
 
 - Verfügbarkeit der SharePoint-Website und der konfigurierten Datenquelle
 - rechtzeitige Bereitstellung eines fachlich freigegebenen Datenrelease
+- jährliche fachliche Quellenprüfung spätestens am 15. November sowie anlassbezogene Prüfungen vor Releases und bei Rechtsänderungen
+- unveränderte Dokumentation auch dann, wenn die Prüfung keinen neuen Datenrelease auslöst
 - Prüfung von App-Katalog- und Teams-Richtlinien nach Microsoft-365-Änderungen
 - stichprobenweise Referenzberechnung nach Paket- oder Datenupdate
 - Überwachung der offiziellen SPFx-Kompatibilitätsmatrix vor einem Toolchain-Upgrade
+
+Der regelbasierte Kalender besitzt keine künstliche Jahresobergrenze. Das bedeutet nicht, dass das Recht unveränderlich wäre. Feiertags- und Fristenquellen werden nach dem [AP13-Prozess](periodische-quellenpruefung-ap13.md) kontrolliert. Nur eine fachlich relevante und freigegebene Änderung führt zu einem neuen Datenrelease. Die [Release-Checkliste](release-checkliste.md) verbindet Quellenprüfung, Datenfreigabe, Mirror und Tenanttests.
 
 Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höherer Version ausgeliefert. Das Paket wird im App-Katalog ersetzt und auf den Zielwebsites aktualisiert. Enthält die Änderung auch das Teams-Manifest oder die Teams-Exposition, wird anschliessend die organisationsinterne Teams-App aktualisiert und erneut geprüft.
 
@@ -221,12 +242,13 @@ Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höher
 
 ## 9. Betrieblich offene Punkte vor Produktivsetzung
 
-- zuständige Stelle für fachliche Datenfreigabe und jährliche Aktualisierung
 - technischer Prozess für die Übernahme eines freigegebenen Releases in den Mirror
 - Aufbewahrungsdauer früherer Releases und Rückfallentscheid
 - Zielgruppen und Richtlinien für die Teams-App
 - Supportweg und Zuständigkeit bei fachlichen oder technischen Störungen
 - gesonderte Prüfung, falls Gastzugriffe zugelassen werden sollen
+
+Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei David Steimer. Das Rollenmodell bleibt für einen später getrennten Betrieb dokumentiert.
 
 ## 10. Referenzen
 
@@ -236,4 +258,6 @@ Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höher
 - [Microsoft: Benutzerdefinierte Apps in Teams verwalten](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 - [Technische Kurzdokumentation](../architektur/technische-kurzdokumentation.md)
 - [AP10-Deploymentnachweis](deployment-ap10.md)
+- [AP13: Periodische Quellenprüfung](periodische-quellenpruefung-ap13.md)
+- [Release-Checkliste](release-checkliste.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)

@@ -1,6 +1,6 @@
 # Deterministischer Rechenkern
 
-> **Status:** Version 0.1 wurde am 29. August 2026 durch David Steimer fachlich und technisch abgenommen. Die AP11B-Erweiterung für Spezialregime wurde am 30. August 2026 abgenommen. AP11C verwendet beide Kernpfade unverändert im lokalen MVP-0.2-Kandidaten.
+> **Status:** Version 0.1 wurde am 29. August 2026 durch David Steimer fachlich und technisch abgenommen. Die AP11B-Erweiterung für Spezialregime wurde am 30. August 2026 abgenommen. Der AP12B-Generator und die AP12C-Format-3-Integration für regelbasierte Kalender wurden am 31. August 2026 fachlich-technisch abgenommen.
 
 Der Rechenkern aus AP8 berechnet Tagesfristen ausschliesslich aus vollständig validierten, providerneutralen Datenobjekten. AP11B ergänzt dieselbe hostneutrale Schicht um typisierte Spezialregime. Der Kern kennt weder React noch SPFx, SharePoint, Teams, GitHub, Netzwerkzugriffe oder Browserpersistenz.
 
@@ -12,9 +12,10 @@ Der Einstiegspunkt ist [`index.ts`](index.ts). Die zwei zentralen Funktionen sin
 const data = createCalculationData(validatedRelease)
 const result = calculateDeadline(input, data)
 const specialResult = calculateSpecialDeadline(specialInput, data)
+const generatedCalendar = generateCalendarFromRules(ruleSets, calendarId, requestedRange)
 ```
 
-`createCalculationData` übernimmt die strukturellen Objekte eines bereits vollständig validierten Format-1- oder Format-2-Release. Die Schnittstelle entspricht absichtlich nur den hostneutralen Feldern von `IValidatedRelease` aus der SPFx-Schicht. Schema-, Prüfsummen- und Netzwerkvalidierung bleiben Aufgabe der vorgelagerten Releasevalidierung.
+`createCalculationData` übernimmt die strukturellen Objekte eines bereits vollständig validierten Format-1-, Format-2- oder Format-3-Release. Die Schnittstelle entspricht absichtlich nur den hostneutralen Feldern von `IValidatedRelease` aus der SPFx-Schicht. Schema-, Prüfsummen- und Netzwerkvalidierung bleiben Aufgabe der vorgelagerten Releasevalidierung.
 
 `calculateDeadline` ist synchron, frei von Seiteneffekten und deterministisch. Gleiche Eingaben und derselbe Datenrelease ergeben bytegleiches JSON. Das Ergebnis ist entweder:
 
@@ -66,6 +67,16 @@ Der Spezialkern blockiert unter anderem:
 - nicht unterstützte Stillstandskombinationen und Kalenderüberschreitungen
 
 Der Kern fällt nie still auf die allgemeine VRPG-Frist zurück.
+
+## Regelbasierte Kalender in AP12B und AP12C
+
+`generateCalendarFromRules` verarbeitet die mit AP12A abgenommenen Kalenderkomponenten `2.0.0`. Der hostneutrale Generator unterstützt Fixdaten, Osterabstände, bestimmte Wochentage, relative Perioden und explizite Add-, Suppress- und Replace-Overrides. Er löst Kalendervererbung, Gültigkeit, Prioritäten, IDs und Quellenbezüge deterministisch auf.
+
+Das Resultat enthält einen vollständig aufgelösten `CalendarData`-Bestand sowie eine Regelspur. Fehler werden als `CalendarGenerationError` mit stabilem `reasonKey` ausgegeben. Einzelheiten dokumentiert der [AP12B-Nachweis](../../docs/architektur/ewiger-kalender-ap12b.md).
+
+AP12C bindet diese Komponenten über Manifestformat `3.0.0` in den Datenadapter ein. Der Kern erzeugt pro Berechnung einen begrenzten Arbeitskalender aus den relevanten Eingabedaten. Format 3 besitzt deshalb eine nach oben offene Releaseabdeckung, ohne einen unbegrenzten Kalender im Speicher aufzubauen.
+
+Relevante Feiertags- und Stillstandsregeln werden mit Datenrelease-ID, Kalender-ID, Regel-ID, Overrides und Quellenbezügen in die fachliche Rechenspur übernommen. Format 1 und Format 2 verwenden unverändert ihre endlichen, vorab erzeugten Kalenderlisten. Der [AP12C-Nachweis](../../docs/architektur/ewiger-kalender-ap12c.md) beschreibt Datenmigration, Sicherheitsgrenzen und Tests.
 
 ## Sicherheitsgrenzen
 

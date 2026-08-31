@@ -58,6 +58,22 @@
         }
       }
     },
+    "openCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/isoDate"
+        },
+        "to": {
+          "oneOf": [
+            { "$ref": "#/$defs/isoDate" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
     "review": {
       "type": "object",
       "additionalProperties": false,

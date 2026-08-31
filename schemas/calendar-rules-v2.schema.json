@@ -1,0 +1,446 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+  "title": "Regelbasierter Feiertags- und Stillstandskalender des Fristenrechners Schweiz",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "calendarId",
+    "jurisdiction",
+    "validity",
+    "inherits",
+    "review",
+    "sources",
+    "rules"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json"
+    },
+    "formatVersion": {
+      "const": "2.0.0"
+    },
+    "dataKind": {
+      "const": "calendar"
+    },
+    "calendarId": {
+      "$ref": "#/$defs/calendarId"
+    },
+    "jurisdiction": {
+      "$ref": "common.schema.json#/$defs/jurisdiction"
+    },
+    "validity": {
+      "$ref": "#/$defs/openValidity"
+    },
+    "inherits": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/calendarId"
+      }
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/source"
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/calendarRule"
+      }
+    },
+    "extensions": {
+      "$ref": "common.schema.json#/$defs/extensions"
+    }
+  },
+  "$defs": {
+    "calendarId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "ruleId": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}-CAL-[A-Z0-9-]+$"
+    },
+    "openValidity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "to": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/isoDate" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["de", "fr"],
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "fr": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    },
+    "fixedMonthDay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "month", "day"],
+      "properties": {
+        "type": { "const": "fixedMonthDay" },
+        "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "day": { "type": "integer", "minimum": 1, "maximum": 31 }
+      }
+    },
+    "easterOffsetDays": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "offsetDays"],
+      "properties": {
+        "type": { "const": "easterOffsetDays" },
+        "offsetDays": { "type": "integer", "minimum": -366, "maximum": 366 }
+      }
+    },
+    "nthWeekdayOfMonth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "month", "isoWeekday", "occurrence"],
+      "properties": {
+        "type": { "const": "nthWeekdayOfMonth" },
+        "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "isoWeekday": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "occurrence": { "type": "integer", "minimum": 1, "maximum": 5 }
+      }
+    },
+    "periodBoundary": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["anchor", "month", "day", "yearOffset", "offsetDays"],
+          "properties": {
+            "anchor": { "const": "fixedMonthDay" },
+            "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+            "day": { "type": "integer", "minimum": 1, "maximum": 31 },
+            "yearOffset": { "type": "integer", "minimum": -1, "maximum": 1 },
+            "offsetDays": { "type": "integer", "minimum": -366, "maximum": 366 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["anchor", "yearOffset", "offsetDays"],
+          "properties": {
+            "anchor": { "const": "easterSunday" },
+            "yearOffset": { "type": "integer", "minimum": -1, "maximum": 1 },
+            "offsetDays": { "type": "integer", "minimum": -366, "maximum": 366 }
+          }
+        }
+      ]
+    },
+    "relativePeriod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "startsOn", "endsOn"],
+      "properties": {
+        "type": { "const": "relativePeriod" },
+        "startsOn": { "$ref": "#/$defs/periodBoundary" },
+        "endsOn": { "$ref": "#/$defs/periodBoundary" }
+      }
+    },
+    "explicitDateOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "const": "explicitDateOverride" },
+        "date": { "$ref": "common.schema.json#/$defs/isoDate" },
+        "targetDate": { "$ref": "common.schema.json#/$defs/isoDate" },
+        "replacementDate": { "$ref": "common.schema.json#/$defs/isoDate" }
+      },
+      "oneOf": [
+        {
+          "required": ["date"],
+          "not": {
+            "anyOf": [
+              { "required": ["targetDate"] },
+              { "required": ["replacementDate"] }
+            ]
+          }
+        },
+        {
+          "required": ["targetDate"],
+          "not": {
+            "anyOf": [
+              { "required": ["date"] },
+              { "required": ["replacementDate"] }
+            ]
+          }
+        },
+        {
+          "required": ["targetDate", "replacementDate"],
+          "not": { "required": ["date"] }
+        }
+      ]
+    },
+    "holidayEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "kind", "legalEffect", "resultIdSuffix"],
+      "properties": {
+        "type": { "const": "holiday" },
+        "kind": {
+          "type": "string",
+          "enum": ["federalHoliday", "cantonalPublicHoliday"]
+        },
+        "legalEffect": { "const": "nonWorkingDayEquivalentToSunday" },
+        "resultIdSuffix": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]*$"
+        }
+      }
+    },
+    "suspensionEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "suspensionSetId",
+        "applicableProfileIds",
+        "inclusive",
+        "resultIdPrefix"
+      ],
+      "properties": {
+        "type": { "const": "suspensionPeriod" },
+        "suspensionSetId": { "$ref": "#/$defs/calendarId" },
+        "applicableProfileIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/calendarId" }
+        },
+        "inclusive": { "const": true },
+        "resultIdPrefix": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]*$"
+        }
+      }
+    },
+    "replacementHoliday": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "labelKey", "labels", "legalEffect", "resultIdSuffix"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["federalHoliday", "cantonalPublicHoliday"]
+        },
+        "labelKey": {
+          "type": "string",
+          "pattern": "^holiday\\.[a-z][a-zA-Z0-9]*(?:\\.[a-zA-Z0-9_-]+)+$"
+        },
+        "labels": { "$ref": "#/$defs/labels" },
+        "legalEffect": { "const": "nonWorkingDayEquivalentToSunday" },
+        "resultIdSuffix": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9-]*$"
+        }
+      }
+    },
+    "overrideEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "operation"],
+      "properties": {
+        "type": { "const": "explicitDateOverride" },
+        "operation": {
+          "type": "string",
+          "enum": ["add", "suppress", "replace"]
+        },
+        "targetRuleId": { "$ref": "#/$defs/ruleId" },
+        "replacementHoliday": { "$ref": "#/$defs/replacementHoliday" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": { "operation": { "const": "add" } },
+            "required": ["operation"]
+          },
+          "then": {
+            "type": "object",
+            "required": ["replacementHoliday"],
+            "not": { "required": ["targetRuleId"] }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": { "operation": { "const": "suppress" } },
+            "required": ["operation"]
+          },
+          "then": {
+            "type": "object",
+            "required": ["targetRuleId"],
+            "not": { "required": ["replacementHoliday"] }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": { "operation": { "const": "replace" } },
+            "required": ["operation"]
+          },
+          "then": {
+            "type": "object",
+            "required": ["targetRuleId", "replacementHoliday"]
+          }
+        }
+      ]
+    },
+    "calendarRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleId",
+        "calendarId",
+        "jurisdiction",
+        "labelKey",
+        "labels",
+        "priority",
+        "validity",
+        "sourceRefs",
+        "calculation",
+        "effect"
+      ],
+      "properties": {
+        "ruleId": { "$ref": "#/$defs/ruleId" },
+        "calendarId": { "$ref": "#/$defs/calendarId" },
+        "jurisdiction": { "$ref": "common.schema.json#/$defs/jurisdiction" },
+        "labelKey": {
+          "type": "string",
+          "pattern": "^(holiday|suspension|override)\\.[a-z][a-zA-Z0-9]*(?:\\.[a-zA-Z0-9_-]+)+$"
+        },
+        "labels": { "$ref": "#/$defs/labels" },
+        "priority": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "validity": { "$ref": "#/$defs/openValidity" },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "common.schema.json#/$defs/sourceReference" }
+        },
+        "calculation": {
+          "oneOf": [
+            { "$ref": "#/$defs/fixedMonthDay" },
+            { "$ref": "#/$defs/easterOffsetDays" },
+            { "$ref": "#/$defs/nthWeekdayOfMonth" },
+            { "$ref": "#/$defs/relativePeriod" },
+            { "$ref": "#/$defs/explicitDateOverride" }
+          ]
+        },
+        "effect": {
+          "oneOf": [
+            { "$ref": "#/$defs/holidayEffect" },
+            { "$ref": "#/$defs/suspensionEffect" },
+            { "$ref": "#/$defs/overrideEffect" }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "calculation": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "enum": ["fixedMonthDay", "easterOffsetDays", "nthWeekdayOfMonth"]
+                  }
+                },
+                "required": ["type"]
+              }
+            }
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "effect": {
+                "type": "object",
+                "properties": { "type": { "const": "holiday" } },
+                "required": ["type"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "calculation": {
+                "type": "object",
+                "properties": { "type": { "const": "relativePeriod" } },
+                "required": ["type"]
+              }
+            }
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "effect": {
+                "type": "object",
+                "properties": { "type": { "const": "suspensionPeriod" } },
+                "required": ["type"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "calculation": {
+                "type": "object",
+                "properties": { "type": { "const": "explicitDateOverride" } },
+                "required": ["type"]
+              }
+            }
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "effect": {
+                "type": "object",
+                "properties": { "type": { "const": "explicitDateOverride" } },
+                "required": ["type"]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
