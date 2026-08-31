@@ -15,7 +15,7 @@ Die technischen Verträge liegen unter [`architektur/`](architektur/README.md). 
 
 Das [abgenommene AP12A-Zielmodell](architektur/ewiger-kalender-ap12a.md) beschreibt den noch nicht produktiven Übergang von endlichen Datumslisten zu versionierten Feiertags- und Stillstandsregeln. Der zugehörige Entscheid [DEC-2026-015](entscheidungen/DEC-2026-015-regelbasierte-kalenderkomponente.md) ist beschlossen.
 
-Der [AP12B-Nachweis](architektur/ewiger-kalender-ap12b.md) dokumentiert den abgenommenen hostneutralen TypeScript-Generator. Der [AP12C-Nachweis](architektur/ewiger-kalender-ap12c.md) beschreibt dessen abgenommene Integration in Manifestformat 3.0.0, Rechenkern, Oberfläche und SPFx-Consumer. Der daraus abgeleitete [MVP-0.3-Datenrelease](../data/releases/2026-08-31-mvp-03-approved.1/README.md) ist fachlich und technisch freigegeben. Die Aktivierung in SharePoint und Teams bleibt der Release-2-Testmatrix vorbehalten.
+Der [AP12B-Nachweis](architektur/ewiger-kalender-ap12b.md) dokumentiert den abgenommenen hostneutralen TypeScript-Generator. Der [AP12C-Nachweis](architektur/ewiger-kalender-ap12c.md) beschreibt dessen abgenommene Integration in Manifestformat 3.0.0, Rechenkern, Oberfläche und SPFx-Consumer. Der daraus abgeleitete [MVP-0.3-Datenrelease](../data/releases/2026-08-31-mvp-03-approved.1/README.md) ist fachlich und technisch freigegeben. Release `v0.3.0`, das Paket `0.3.0.0` und die Prüfmatrix T01 bis T19 sind abgeschlossen.
 
 Der [Vertrag zu Issue #18](architektur/outlook-kalendereintrag-issue-18.md) dokumentiert die abgenommene Outlook-kompatible Kalenderdatei, ihre Platzierung in der Resultatkachel, den 112-Stunden-Trigger sowie die Datenschutz- und Berechtigungsgrenzen.
 
@@ -24,6 +24,8 @@ Die zweisprachigen Interaktionsverträge liegen unter [`ux/`](ux/README.md). AP1
 Für die Beurteilung und Freischaltung in anderen Microsoft-365-Tenants stehen eine [technische Kurzdokumentation](architektur/technische-kurzdokumentation.md) sowie die [Voraussetzungen für Installation und Betrieb](betrieb/installation-und-betrieb-dritttenants.md) mit einer konkreten SharePoint-Mirror-Anleitung zur Verfügung. Die [AP11C-Deploymentanleitung](betrieb/deployment-mvp-02-ap11c.md) dokumentiert den Rückfallstand. Die [Release-2-Anleitung](betrieb/deployment-release-2-mvp-03.md) enthält Paketidentität, Format-3-Mirror, erweiterte SharePoint-, Teams- und Outlook-Matrix sowie Rollback.
 
 Der [AP13-Betriebsnachweis](betrieb/periodische-quellenpruefung-ap13.md) definiert die periodische Quellenprüfung, die vier Ergebnisse, die Rollen in Personalunion und die Trennung von Prüfung und Datenrelease. Die [generische Release-Checkliste](betrieb/release-checkliste.md) verankert den Termin 15. November, die Folgemassnahmen und die Spiegelung des Governance-Nachweises.
+
+Der [abgenommene AP14-Ausführungsplan](betrieb/gastzugriff-demobetrieb-ap14.md) bereitet einen isolierten, authentifizierten B2B-Gastbetrieb für Demonstrationen in SharePoint und Teams vor. AP14 ist ausführungsbereit, aber noch nicht gestartet. Bis zur vollständig bestandenen Sicherheits-, Berechtigungs- und Laufzeitprüfung bleiben Gastzugriffe gesperrt.
 
 Freigegebene Managementgrundlagen bleiben zusätzlich als Word- und PDF-Dateien unter `outputs/` erhalten.
 
