@@ -3,8 +3,9 @@
 | Merkmal | Festlegung |
 | --- | --- |
 | Arbeitspaket | AP15 |
-| Dokumentstatus | gestartet, Planungs- und Baselinephase |
+| Dokumentstatus | abgeschlossen |
 | Startdatum | 1. September 2026 |
+| Abschlussdatum | 1. September 2026 |
 | Verantwortlich und entscheidbefugt | David Steimer |
 | Ausarbeitung und technische Unterstützung | David Steimer mit Codex |
 | Methodik | HERMES 2022 agil, schlank in Personalunion |
@@ -209,6 +210,16 @@ AP15 erteilt keine P-Freigabe. Er dokumentiert lediglich, ob eine spätere stati
 | Steimer.ch-Projekt auswerten | abgeschlossen | statischer Green-Produktionspfad, HTTPS, Sicherheitsheader und reversibler Ordnerwechsel sind belegt |
 | AP14 mit Nachtrag abschliessen | abgeschlossen | technischer Nachweis bleibt bestehen, keine Betriebsfreigabe, keine rückwirkende Umwertung von G13 und G17 |
 | AP15-Plan und Matrix erstellen | abgeschlossen | gruppenbasiertes Q-Modell, Hostinggrenze und Entscheidregeln sind festgelegt |
-| aktuelle Tenant- und Gruppenbaseline erheben | in Arbeit | E- und Q-Ressourcen samt vorgesehenen Kanälen sind read-only bestätigt, administrativer Mitglieder- und Rechte-Readback folgt unmittelbar vor Q03 |
-| Q-Zugriffsprinzipal konfigurieren | ausstehend | externe Berechtigungsänderung erst nach aufgelöstem Ziel und bestätigtem Änderungsumfang |
-| Q03 bis Q12 durchführen | ausstehend | Gastaufnahme löst noch keine Betriebsfreigabe aus |
+| aktuelle Tenant- und Gruppenbaseline erheben | abgeschlossen | E- und Q-Ressourcen, Kanäle sowie Mitglieder- und Rechtebaseline wurden unmittelbar vor Q03 rückgelesen |
+| Q-Zugriffsprinzipal konfigurieren | abgeschlossen | Q-Microsoft-365-Gruppe vermittelt Site-, Team-, Mirror- und paketbezogene Leserechte ohne direkte Einzelrechte des Gasts |
+| Q03 bis Q08 durchführen | abgeschlossen | SharePoint, Paket-Assets, read-only Mirror, Teams-VDI und Berechtigungsdelta sind bestanden |
+| Q09 bis Q12 durchführen | abgeschlossen | E-Trennung, vollständiger Gruppenwiderruf, Bestandsschutz, Wiederaufnahme und Betriebsanweisung sind bestanden |
+| AP15 abschliessen und DEC-2026-016 entscheiden | abgeschlossen | 12 von 12 Prüfungen bestanden, begrenzter Q-Demobetrieb freigegeben, P nicht freigegeben |
+
+## 13. AP15-Ergebnis
+
+Q01 bis Q12 sind bestanden. Der zentrale Q-Prinzipal vermittelte ausschliesslich die bezeichneten Q-Rechte. Das Entfernen der Gastperson aus dem privaten Q-Team entzog Q-Site, Q-Teamsite, Mirror und Paketdatei gemeinsam. Die erneute Aufnahme stellte den Gastbetrieb ohne direkte Einzelrechte wieder her.
+
+Das bereinigte Ergebnis steht im [AP15-Testprotokoll](e-q-p-testprotokoll-ap15.md). Aufnahme, Update, Widerruf und Wiederaufnahme sind in der [Betriebsanweisung](q-demobetrieb-ap15-betriebsanweisung.md) beschrieben. David Steimer hat [DEC-2026-016](../entscheidungen/DEC-2026-016-gruppenbasierter-q-demobetrieb.md) am 1. September 2026 beschlossen und den begrenzten Q-Demobetrieb für vollständig freigegebene Releases freigegeben.
+
+Die öffentliche P-Ausprägung bleibt ausdrücklich nicht freigegeben. Eine spätere öffentliche Produktion bleibt auf die bestehende steimer.ch-Hosting-Infrastruktur beschränkt und benötigt einen eigenen Entscheid.
