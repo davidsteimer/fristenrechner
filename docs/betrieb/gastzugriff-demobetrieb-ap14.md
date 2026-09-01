@@ -3,7 +3,7 @@
 | Merkmal | Festlegung |
 | --- | --- |
 | Arbeitspaket | AP14 |
-| Dokumentstatus | abgenommen |
+| Dokumentstatus | abgeschlossen, technischer Nachweis ohne Betriebsfreigabe |
 | Planungsstand | 31. August 2026 |
 | Verantwortlich | David Steimer |
 | Ausarbeitung | David Steimer mit Codex |
@@ -15,7 +15,11 @@
 | Technischer Referenzstand | Fristenrechner `v0.3.0`, SPFx-Paket `0.3.0.0` |
 | Fachdatenstand | `2026-08-31-mvp-03-approved.1` |
 
-David Steimer hat den Ausführungsplan am 31. August 2026 abgenommen. AP14 ist damit ausführungsbereit. Die Abnahme des Plans ist noch keine Freigabe zur Anlage von Demoressourcen, Einladung von Gästen oder Änderung von Tenant-, SharePoint- und Teams-Berechtigungen. Diese Durchführung beginnt erst mit einem ausdrücklichen Startauftrag.
+David Steimer hat den Ausführungsplan am 31. August 2026 abgenommen und AP14 am selben Tag gestartet. G01 bis G03 werden zunächst ohne Änderung des Tenants erhoben. Demoressourcen, Gastidentitäten und Berechtigungen werden erst nach dokumentierter Baseline und unmittelbar bestätigter Zielkonfiguration angelegt beziehungsweise geändert.
+
+**Abschlussstand 1. September 2026:** Die App funktionierte für den authentifizierten B2B-Gast in SharePoint und Teams mit dem unveränderten Paket, dem same-site Mirror, beiden Produktsprachen, Fach- und Sperrfällen, lokalen Standards sowie Kalenderexport. Das bestehende Gastkonto war jedoch bereits vor AP14 Mitglied des internen Entwicklungsteams. Deshalb sind die obligatorischen Isolationsprüfungen G13 und G17 nach der damals geltenden Matrix nicht bestanden. Sämtliche im Rahmen von AP14 neu erteilten Site-, Team- und paketbezogenen App-Katalog-Rechte wurden wieder entzogen. Die internen Referenzumgebungen funktionieren unverändert. Der vollständige Befund steht im [Testprotokoll](gastzugriff-ap14-testprotokoll.md).
+
+**Nachtrag zum Zielbild vom 1. September 2026:** AP14 bleibt als historischer Test unverändert nachvollziehbar. G13 und G17 werden nicht nachträglich auf bestanden gesetzt. Das inzwischen präzisierte Zielbild verlangt jedoch nicht mehr, dass eine Gastidentität im ganzen Tenant ohne andere, unabhängig begründete Berechtigungen ist. Massgebend ist künftig das durch die Q-Aufnahme verursachte Berechtigungsdelta. Die Q-Berechtigungsgruppe darf nur Zugriff auf die bezeichneten Q-Ressourcen vermitteln und keine Rechte auf E oder andere Tenantressourcen erzeugen. AP14 weist damit die technische Gastfähigkeit nach, erteilt aber keine Betriebsfreigabe. Das gruppenbasierte Q-Modell und dessen Delta-, Entzugs- und Regressionstest werden in [AP15](e-q-p-zielarchitektur-ap15.md) umgesetzt. DEC-2026-016 bleibt bis zu dessen Abnahme offen.
 
 ## 1. Zweck und Entscheidungsfrage
 

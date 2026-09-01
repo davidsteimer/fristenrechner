@@ -25,7 +25,9 @@ Für die Beurteilung und Freischaltung in anderen Microsoft-365-Tenants stehen e
 
 Der [AP13-Betriebsnachweis](betrieb/periodische-quellenpruefung-ap13.md) definiert die periodische Quellenprüfung, die vier Ergebnisse, die Rollen in Personalunion und die Trennung von Prüfung und Datenrelease. Die [generische Release-Checkliste](betrieb/release-checkliste.md) verankert den Termin 15. November, die Folgemassnahmen und die Spiegelung des Governance-Nachweises.
 
-Der [abgenommene AP14-Ausführungsplan](betrieb/gastzugriff-demobetrieb-ap14.md) bereitet einen isolierten, authentifizierten B2B-Gastbetrieb für Demonstrationen in SharePoint und Teams vor. AP14 ist ausführungsbereit, aber noch nicht gestartet. Bis zur vollständig bestandenen Sicherheits-, Berechtigungs- und Laufzeitprüfung bleiben Gastzugriffe gesperrt.
+Der [AP14-Ausführungsplan](betrieb/gastzugriff-demobetrieb-ap14.md) und das [zugehörige Testprotokoll](betrieb/gastzugriff-ap14-testprotokoll.md) dokumentieren den abgeschlossenen technischen Nachweis für authentifizierte B2B-Gäste. Die App funktionierte in SharePoint und Teams. Die nach ursprünglicher Matrix nicht bestandenen G13 und G17 werden nicht rückwirkend umgewertet. Das präzisierte Zielbild verlangt künftig jedoch einen Nachweis des durch Q erzeugten Berechtigungsdeltas statt ein im ganzen Tenant unbelastetes Gastkonto. Sämtliche AP14-spezifischen Rechte wurden zurückgenommen und aus AP14 wird keine Betriebsfreigabe abgeleitet.
+
+Der [AP15-Ausführungsplan](betrieb/e-q-p-zielarchitektur-ap15.md) legt die E/Q/P-Landschaft, das gruppenbasierte Q-Berechtigungsmodell und die verbindliche Beschränkung einer späteren öffentlichen Produktion auf das bestehende steimer.ch-Hosting fest. Die bereits nachgewiesene statische Green-Bereitstellung wird als Hosting-Baseline übernommen. AP15 ist gestartet, erteilt aber noch keine Gast- oder Produktionsfreigabe.
 
 Freigegebene Managementgrundlagen bleiben zusätzlich als Word- und PDF-Dateien unter `outputs/` erhalten.
 
