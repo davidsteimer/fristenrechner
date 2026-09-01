@@ -222,4 +222,4 @@ Q01 bis Q12 sind bestanden. Der zentrale Q-Prinzipal vermittelte ausschliesslich
 
 Das bereinigte Ergebnis steht im [AP15-Testprotokoll](e-q-p-testprotokoll-ap15.md). Aufnahme, Update, Widerruf und Wiederaufnahme sind in der [Betriebsanweisung](q-demobetrieb-ap15-betriebsanweisung.md) beschrieben. David Steimer hat [DEC-2026-016](../entscheidungen/DEC-2026-016-gruppenbasierter-q-demobetrieb.md) am 1. September 2026 beschlossen und den begrenzten Q-Demobetrieb für vollständig freigegebene Releases freigegeben.
 
-Die öffentliche P-Ausprägung bleibt ausdrücklich nicht freigegeben. Eine spätere öffentliche Produktion bleibt auf die bestehende steimer.ch-Hosting-Infrastruktur beschränkt und benötigt einen eigenen Entscheid.
+Zum Abschluss von AP15 blieb die öffentliche P-Ausprägung ausdrücklich nicht freigegeben. Die spätere öffentliche Produktion war auf die bestehende steimer.ch-Hosting-Infrastruktur beschränkt und benötigte einen eigenen Entscheid. Diese Folgearbeit wurde mit AP16, DEC-2026-017 und der P-Betriebsfreigabe [DEC-2026-018](../entscheidungen/DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) abgeschlossen.

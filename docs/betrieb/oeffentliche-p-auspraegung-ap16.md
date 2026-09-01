@@ -3,7 +3,7 @@
 | Merkmal | Festlegung |
 | --- | --- |
 | Arbeitspaket | AP16 |
-| Dokumentstatus | fachlich-technisch abgenommen |
+| Dokumentstatus | fachlich-technisch abgenommen, technisch bereitgestellt |
 | Startdatum | 1. September 2026 |
 | Verantwortlich und entscheidbefugt | David Steimer |
 | Ausarbeitung und technische Unterstützung | David Steimer mit Codex |
@@ -13,7 +13,7 @@
 | Vorgänger | AP15 und DEC-2026-016 |
 | Referenzrelease | `v0.3.0` |
 | Fachdatenstand | `2026-08-31-mvp-03-approved.1` |
-| Veröffentlichungsstatus | keine öffentliche P-Freigabe |
+| Veröffentlichungsstatus | öffentlich bereitgestellt und mit DEC-2026-018 für den P-Betrieb freigegeben |
 
 ## 1. Ziel
 
@@ -54,14 +54,14 @@ Die P-Webhülle ist vom bestehenden React-19-Webauftritt technisch entkoppelt. G
 
 Der Kandidat wird für die kanonische Adresse `https://www.steimer.ch/fristenrechner/` gebaut. Sämtliche paketinternen Verweise sind relativ. Das Paket kann deshalb lokal, in einem nicht öffentlichen Stagingordner und später unter dem bezeichneten Unterpfad geprüft werden.
 
-Der Root-Webauftritt muss bei einer späteren Veröffentlichung separat ergänzt werden:
+Bei der erstmaligen Veröffentlichung wurden am Root-Webauftritt separat ergänzt:
 
 - Verweis auf den Fristenrechner
 - Eintrag in `sitemap.xml`
-- allfällige Anpassung von `robots.txt`
+- Prüfung, dass keine Anpassung von `robots.txt` erforderlich ist
 - Prüfung der effektiven Header am öffentlichen Endpunkt
 
-Diese Root-Änderungen sind nicht Bestandteil des AP16-Starts.
+Diese Root-Änderungen waren nicht Bestandteil des AP16-Starts. Sie wurden nach bestandener öffentlicher Prüfung gesondert freigegeben, veröffentlicht und als D12 geprüft.
 
 ## 5. Prüfmatrix
 
@@ -111,9 +111,9 @@ AP16 endet ohne Bereitstellung, wenn insbesondere:
 - der öffentliche Kandidat QA- oder Entwicklungsartefakte enthält
 - die Rückfallfähigkeit des bestehenden Webauftritts nicht gewahrt bleibt
 
-### Öffentliche Freigabe
+### Öffentliche Freigabe und Vollzug
 
-Auch ein vollständig bestandener AP16-Kandidat bleibt nicht öffentlich freigegeben. Die Bereitstellung auf steimer.ch und die anschliessende P-Betriebsfreigabe benötigen einen ausdrücklichen Entscheid von David Steimer. Bis dahin verbleiben sämtliche Buildartefakte lokal oder in einer nicht öffentlichen Prüfablage.
+Die bestandene Kandidatenprüfung allein erteilte keine öffentliche Freigabe. David Steimer hat den konkreten Erstupload, die Vorprüfung, die öffentliche Umschaltung und anschliessend die beiden Root-Änderungen jeweils ausdrücklich freigegeben. Der bezeichnete Kandidat wurde daraufhin veröffentlicht und hat D01 bis D12 vollständig bestanden. Mit [DEC-2026-018](../entscheidungen/DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) hat David Steimer den öffentlichen P-Betrieb anschliessend formell freigegeben.
 
 ## 8. Rollen und Standards
 
@@ -131,6 +131,9 @@ Für die öffentliche Oberfläche gelten eCH-0059 und WCAG 2.1 AA als Qualitäts
 | Kandidatenprüfung | abgeschlossen | P01 bis P15 auf Projektebene bestanden, Nachweis und Deploymentverfahren dokumentiert |
 | AP16-Abnahme | abgeschlossen | am 1. September 2026 durch David Steimer fachlich-technisch abgenommen |
 | DEC-2026-017 | beschlossen | statische P-Zielarchitektur auf der bestehenden steimer.ch-Hosting-Infrastruktur bestätigt |
-| öffentliche P-Freigabe | gesperrt | Upload, Umschaltung und P-Betrieb benötigen separate ausdrückliche Entscheide |
+| Erstupload und Vorprüfung | abgeschlossen | freigegebener Kandidat zunächst in nicht öffentlichen Hostingordner geladen und geprüft |
+| öffentliche Umschaltung | abgeschlossen | `/fristenrechner/` öffentlich geschaltet, D01 bis D11 bestanden |
+| Root-Integration | abgeschlossen | Startseitenverweis und `sitemap.xml` veröffentlicht, D12 bestanden |
+| formeller P-Betriebsentscheid | abgeschlossen | mit DEC-2026-018 durch David Steimer freigegeben |
 
-Der vollständige Befund steht im [AP16-Prüfnachweis](oeffentliche-p-auspraegung-ap16-nachweis.md). Das vorbereitete, noch nicht freigegebene Betriebsverfahren steht in der [Deployment- und Rückfallanleitung](deployment-oeffentliche-p-auspraegung-ap16.md). DEC-2026-017 ist beschlossen. Der Entscheid bestätigt die statische Zielarchitektur, erteilt aber keine Upload-, Umschaltungs- oder P-Betriebsfreigabe.
+Der Kandidatenbefund steht im [AP16-Prüfnachweis](oeffentliche-p-auspraegung-ap16-nachweis.md). Der technische Vollzug und die vollständig bestandene öffentliche Matrix D01 bis D12 stehen im [Produktionsnachweis](produktionsbereitstellung-2026-09-01.md). Die [Deployment- und Rückfallanleitung](deployment-oeffentliche-p-auspraegung-ap16.md) bleibt für spätere Releases verbindlich. DEC-2026-017 bestätigt die statische Zielarchitektur. DEC-2026-018 gibt den öffentlichen P-Betrieb des bezeichneten Stands formell frei.

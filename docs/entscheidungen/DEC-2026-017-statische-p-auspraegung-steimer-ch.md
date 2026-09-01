@@ -20,7 +20,7 @@ ersetzt_durch: null
 
 DEC-2026-016 hat den gruppenbasierten Q-Demobetrieb freigegeben und die öffentliche P-Ausprägung ausdrücklich offengelassen. Für P ist die bestehende steimer.ch-Hosting-Infrastruktur zwingend. Zusätzliche Hosting- oder Serverinfrastruktur soll nicht aufgebaut werden.
 
-AP16 hat einen statischen P-Releasekandidaten aus dem bestehenden hostneutralen Rechenkern, der Produktoberfläche und dem freigegebenen MVP-0.3-Datenstand erstellt. Die Prüfmatrix P01 bis P15 ist auf Projektebene bestanden. Eine öffentliche Bereitstellung ist noch nicht erfolgt.
+AP16 hat einen statischen P-Releasekandidaten aus dem bestehenden hostneutralen Rechenkern, der Produktoberfläche und dem freigegebenen MVP-0.3-Datenstand erstellt. Die Prüfmatrix P01 bis P15 ist auf Projektebene bestanden. Zum Zeitpunkt dieses Architekturentscheids war noch keine öffentliche Bereitstellung erfolgt.
 
 ## Geprüfte Optionen
 
@@ -100,12 +100,14 @@ Die statische Ausprägung ist für einen öffentlichen Rechner sachgerecht, weil
 - [AP16-Ausführungsplan](../betrieb/oeffentliche-p-auspraegung-ap16.md)
 - [AP16-Prüfnachweis](../betrieb/oeffentliche-p-auspraegung-ap16-nachweis.md)
 - [Deployment- und Rückfallanleitung](../betrieb/deployment-oeffentliche-p-auspraegung-ap16.md)
+- [Technische Produktionsbereitstellung vom 1. September 2026](../betrieb/produktionsbereitstellung-2026-09-01.md)
+- [DEC-2026-018](DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md)
 - [DEC-2026-016](DEC-2026-016-gruppenbasierter-q-demobetrieb.md)
 - [GitHub-Issue #33](https://github.com/davidsteimer/fristenrechner/issues/33)
 
 ## Entscheidstatus
 
-David Steimer hat DEC-2026-017 am 1. September 2026 ausdrücklich beschlossen. Freigegeben ist damit die statische P-Zielarchitektur auf der bestehenden steimer.ch-Hosting-Infrastruktur. Der Entscheid erteilt noch keine Upload-, Umschaltungs- oder P-Betriebsfreigabe. Diese Schritte bleiben gesperrt und bedürfen separater ausdrücklicher Entscheide.
+David Steimer hat DEC-2026-017 am 1. September 2026 ausdrücklich beschlossen. Freigegeben wurde damit die statische P-Zielarchitektur auf der bestehenden steimer.ch-Hosting-Infrastruktur. Der Entscheid selbst erteilte keine Upload-, Umschaltungs- oder P-Betriebsfreigabe. Upload, öffentliche Umschaltung und Root-Integration wurden anschliessend mit separaten ausdrücklichen Genehmigungen technisch vollzogen. [DEC-2026-018](DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) gibt den öffentlichen P-Betrieb des geprüften Stands formell frei.
 
 ## Verantwortlichkeit
 

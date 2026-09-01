@@ -80,7 +80,7 @@ Die App benötigt weiterhin keine Microsoft-Graph-, Entra- oder tenantweiten API
 
 Q01 bis Q12 sind bestanden. Der zentrale Q-Prinzipal ist funktionsfähig, auf die bezeichneten Ressourcen begrenzt und mit einem einzigen Mitgliedschaftsentzug widerrufbar. Die Voraussetzungen für einen begrenzten Q-Demobetrieb des geprüften Release sind technisch erfüllt.
 
-David Steimer hat mit [DEC-2026-016](../entscheidungen/DEC-2026-016-gruppenbasierter-q-demobetrieb.md) am 1. September 2026 den begrenzten Q-Demobetrieb für vollständig freigegebene Releases freigegeben. Die öffentliche P-Ausprägung bleibt ausdrücklich nicht freigegeben.
+David Steimer hat mit [DEC-2026-016](../entscheidungen/DEC-2026-016-gruppenbasierter-q-demobetrieb.md) am 1. September 2026 den begrenzten Q-Demobetrieb für vollständig freigegebene Releases freigegeben. Zum Abschluss von AP15 war die öffentliche P-Ausprägung ausdrücklich nicht freigegeben. Sie wurde später gestützt auf AP16 mit [DEC-2026-018](../entscheidungen/DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) freigegeben.
 
 ## 7. Verantwortlichkeit
 

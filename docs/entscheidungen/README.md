@@ -41,6 +41,7 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | [DEC-2026-015](DEC-2026-015-regelbasierte-kalenderkomponente.md) | B | beschlossen | Regelbasierte Kalenderkomponente 2.0 mit Manifest-Hauptformat 3 als sichere Consumergrenze | – |
 | [DEC-2026-016](DEC-2026-016-gruppenbasierter-q-demobetrieb.md) | B | beschlossen | Gruppenbasierter Q-Demobetrieb über die Microsoft-365-Gruppe des privaten Q-Teams | – |
 | [DEC-2026-017](DEC-2026-017-statische-p-auspraegung-steimer-ch.md) | B | beschlossen | Statische öffentliche P-Ausprägung auf der bestehenden steimer.ch-Hosting-Infrastruktur | – |
+| [DEC-2026-018](DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) | A | beschlossen | Öffentlicher P-Betrieb des Berner Fristenrechners auf steimer.ch freigegeben | – |
 
 ## Quellen des Startbestands
 

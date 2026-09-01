@@ -101,7 +101,7 @@ Der Ansatz benötigt keine neuen Graph-, Entra- oder tenantweiten App-Berechtigu
 
 ## Entscheidstatus
 
-David Steimer hat DEC-2026-016 am 1. September 2026 ausdrücklich beschlossen und den begrenzten Q-Demobetrieb für vollständig freigegebene Releases freigegeben. Die öffentliche P-Ausprägung bleibt ausdrücklich nicht freigegeben. Der Entscheid hat damit den Status `beschlossen`.
+David Steimer hat DEC-2026-016 am 1. September 2026 ausdrücklich beschlossen und den begrenzten Q-Demobetrieb für vollständig freigegebene Releases freigegeben. Zum Zeitpunkt dieses Entscheids war die öffentliche P-Ausprägung ausdrücklich nicht freigegeben. Sie wurde später gestützt auf AP16 mit [DEC-2026-018](DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) freigegeben. DEC-2026-016 hat den Status `beschlossen`.
 
 ## Verantwortlichkeit
 

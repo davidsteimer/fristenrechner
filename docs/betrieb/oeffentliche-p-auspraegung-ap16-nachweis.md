@@ -4,14 +4,14 @@
 | --- | --- |
 | Arbeitspaket | AP16 |
 | Prüfdatum | 1. September 2026 |
-| Status | fachlich-technisch abgenommen |
+| Status | fachlich-technisch abgenommen, öffentlich bereitgestellt und für den P-Betrieb freigegeben |
 | Anwendung | `0.3.0` |
 | Datenrelease | `2026-08-31-mvp-03-approved.1` |
 | Manifestformat | `3.0.0` |
 | Kalenderkomponente | `2.0.0` |
-| vorgesehene Adresse | `https://www.steimer.ch/fristenrechner/` |
+| öffentliche Adresse | `https://www.steimer.ch/fristenrechner/` |
 | lokaler Prüfpfad | `http://127.0.0.1:4180/fristenrechner/` |
-| öffentliche Bereitstellung | nicht erfolgt und nicht freigegeben |
+| öffentliche Bereitstellung | abgeschlossen, D01 bis D12 bestanden |
 | fachlich und betrieblich verantwortlich | David Steimer |
 | technische Ausarbeitung | David Steimer mit Codex |
 
@@ -21,7 +21,7 @@ Der statische P-Releasekandidat ist gebaut und hat die AP16-Prüfmatrix P01 bis 
 
 Das Paket benötigt im Browser weder Microsoft 365 noch Microsoft Graph, SharePoint, GitHub, ein CDN, eine Datenbank oder eine serverseitige Anwendungslogik. Sämtliche Laufzeitdateien liegen im statischen Paket. Der Browser übermittelt keine Falldaten oder Berechnungen an einen Server.
 
-Der Nachweis ist kein Entscheid zur öffentlichen Bereitstellung. DEC-2026-017 ist beschlossen. Die konkrete Bereitstellung bleibt jedoch gesperrt, bis David Steimer Upload, Umschaltung und P-Betrieb ausdrücklich freigibt.
+Dieser Abschnitt dokumentiert den vor der Bereitstellung abgenommenen Kandidaten. DEC-2026-017 ist beschlossen. David Steimer hat anschliessend den konkreten Upload, die öffentliche Umschaltung und die Root-Integration einzeln freigegeben. Der Vollzug ist im [Produktionsnachweis](produktionsbereitstellung-2026-09-01.md) dokumentiert. Mit [DEC-2026-018](../entscheidungen/DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) ist auch der öffentliche P-Betrieb formell freigegeben.
 
 ## 2. Kandidatenaufbau
 
@@ -117,23 +117,26 @@ Die eigentlichen Referenzberechnungen und der Kalenderexport werden durch diesel
 
 Der SPFx-Build meldet weiterhin die zwei für Release `0.3.0.0` dokumentierten, nicht blockierenden `@rushstack/no-new-null`-Warnungen. Sie betreffen die bewusst verwendeten JSON-`null`-Werte der offenen Format-3-Abdeckung und optionaler Datenreferenzen. AP16 hat weder den Vertrag noch die Warnungslage verändert.
 
-## 7. Verbleibende Freigabepunkte
+## 7. Technischer Vollzug
 
-Vor einer öffentlichen Bereitstellung sind noch ausdrücklich zu entscheiden und auszuführen:
+Am 1. September 2026 wurden nach den jeweiligen ausdrücklichen Freigaben folgende Schritte ausgeführt:
 
-1. ausdrückliche Freigabe des ersten Uploads und der öffentlichen Prüfung
-2. Sicherung des bestehenden steimer.ch-Webauftritts
-3. Upload in einen nicht öffentlichen temporären Hostingordner
-4. technische Vorprüfung auf dem realen Apache-Hosting
-5. kontrollierte Umschaltung auf `/fristenrechner/`
-6. Prüfung der effektiven öffentlichen Header und des öffentlichen Hauptablaufs
-7. Ergänzung des Root-Webauftritts und von `sitemap.xml`
-8. dokumentierter P-Betriebsentscheid
+1. bestehender steimer.ch-Webauftritt gesichert
+2. Kandidat in einen nicht öffentlichen temporären Hostingordner geladen
+3. Paketidentität und Hostingverhalten vorgeprüft
+4. Kandidat kontrolliert auf `/fristenrechner/` umgeschaltet
+5. öffentliche Matrix D01 bis D11 bestanden
+6. Startseitenverweis und `sitemap.xml` gesondert freigegeben und veröffentlicht
+7. D12 bestanden
 
-Ohne diese Schritte bleibt der Kandidat lokal und nicht öffentlich.
+Die effektiven Paket-, Datei- und Rückfallprüfsummen sowie die Resultate D01 bis D12 stehen im [Produktionsnachweis](produktionsbereitstellung-2026-09-01.md).
 
-## 8. Abnahme
+## 8. Betriebsfreigabe
+
+Der technische Kandidatennachweis und die öffentliche Produktionsprüfung sind abgeschlossen. David Steimer hat den öffentlichen P-Betrieb am 1. September 2026 mit DEC-2026-018 ausdrücklich freigegeben.
+
+## 9. Abnahme
 
 David Steimer hat AP16 am 1. September 2026 fachlich-technisch abgenommen. Die Abnahme bestätigt den gebauten und geprüften Kandidaten. Sie ist nicht gleichbedeutend mit der öffentlichen P-Freigabe.
 
-David Steimer bleibt für die Informationssicherheitsbeurteilung und die spätere P-Freigabe verantwortlich. Codex ist als KI-Arbeitsinstrument dokumentiert und übernimmt keine formelle Freigabe- oder Haftungsverantwortung.
+David Steimer bleibt für die Informationssicherheitsbeurteilung und die Betriebsfreigabe verantwortlich. Codex ist als KI-Arbeitsinstrument dokumentiert und übernimmt keine formelle Freigabe- oder Haftungsverantwortung.

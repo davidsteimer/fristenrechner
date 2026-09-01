@@ -1,6 +1,6 @@
 # Deployment und Rückfall der öffentlichen P-Ausprägung
 
-Diese Anleitung beschreibt die spätere kontrollierte Bereitstellung des in AP16 vorbereiteten statischen Releasekandidaten auf der bestehenden steimer.ch-Hosting-Infrastruktur. Sie erteilt keine Freigabe zur Ausführung. Sämtliche Schritte gegen das öffentliche Hosting setzen einen ausdrücklichen Entscheid von David Steimer voraus.
+Diese Anleitung beschreibt die kontrollierte Bereitstellung des in AP16 vorbereiteten statischen Releasekandidaten auf der bestehenden steimer.ch-Hosting-Infrastruktur. Die erstmalige Bereitstellung wurde am 1. September 2026 nach den erforderlichen Einzelgenehmigungen ausgeführt. Der [Produktionsnachweis](produktionsbereitstellung-2026-09-01.md) dokumentiert den Vollzug. Für spätere Releases erteilt diese Anleitung allein keine Freigabe. Sämtliche Schritte gegen das öffentliche Hosting setzen weiterhin einen ausdrücklichen Entscheid von David Steimer voraus.
 
 ## 1. Betriebsmodell
 
@@ -22,7 +22,7 @@ Vor dem Upload müssen erfüllt sein:
 
 1. [x] AP16 ist fachlich-technisch abgenommen.
 2. [x] DEC-2026-017 ist ausdrücklich beschlossen.
-3. [ ] Die konkrete P-Bereitstellung ist ausdrücklich freigegeben.
+3. [x] Die konkrete erstmalige P-Bereitstellung ist ausdrücklich freigegeben.
 4. Der bestehende Webroot und eine allfällige frühere Version von `/fristenrechner/` sind gesichert.
 5. Apache wertet `.htaccess`, `mod_headers` und wenn vorhanden `mod_expires` im Zielordner aus.
 6. HTTPS und die kanonische Weiterleitung auf `www.steimer.ch` funktionieren.
@@ -53,9 +53,9 @@ Der hochzuladende Inhalt liegt ausschliesslich unter:
 
 Entwicklungsdateien, Quellkarten, `node_modules`, Repositorymetadaten und `.work/ui-preview` gehören nicht auf das Hosting.
 
-## 4. Vorbereiteter Uploadablauf
+## 4. Uploadablauf
 
-Der konkrete Ablauf ist erst nach der P-Freigabe auszuführen:
+Der Ablauf ist für jeden Release erst nach der konkreten Freigabe auszuführen:
 
 1. Bestehenden öffentlichen Webroot und vorhandenen Fristenrechnerordner vollständig sichern.
 2. Kandidat in einen neuen, noch nicht öffentlich verlinkten temporären Ordner hochladen.
@@ -68,6 +68,8 @@ Der konkrete Ablauf ist erst nach der P-Freigabe auszuführen:
 9. P-Betriebsentscheid und effektive Prüfsummen dokumentieren.
 
 Der Upload darf bestehende Dateien nicht einzeln und über längere Zeit überschreiben. Sonst könnten Browser während der Aktualisierung neues HTML mit alten Assets oder umgekehrt erhalten.
+
+Beim erstmaligen Vollzug am 1. September 2026 wurden die Schritte 1 bis 9 abgeschlossen. Die öffentliche Prüfmatrix D01 bis D12 ist vollständig bestanden. Der formelle P-Betriebsentscheid ist mit [DEC-2026-018](../entscheidungen/DEC-2026-018-freigabe-oeffentlicher-p-betrieb.md) dokumentiert. Paket-, Root-, Sitemap- und Rückfallprüfsummen stehen im [Produktionsnachweis](produktionsbereitstellung-2026-09-01.md).
 
 ## 5. Prüfung nach der Umschaltung
 

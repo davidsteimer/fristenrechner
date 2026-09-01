@@ -6,6 +6,17 @@ Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1
 
 ## [Unreleased]
 
+### Added
+
+- Erstmalige öffentliche statische Bereitstellung des Berner Fristenrechners unter `https://www.steimer.ch/fristenrechner/`
+- Produktionsnachweis mit vollständig bestandener öffentlicher Prüfmatrix D01 bis D12, Paketidentität, Sicherheitsheadern, Datenschutzprüfung und Rückfallstand
+
+### Changed
+
+- Root-Webauftritt von steimer.ch um den Verweis auf den Berner Fristenrechner ergänzt
+- `sitemap.xml` von steimer.ch um den öffentlichen Fristenrechner erweitert
+- Öffentlichen P-Betrieb nach vollständig bestandener Prüfmatrix D01 bis D12 mit DEC-2026-018 formell freigegeben
+
 ## [0.3.0] - 2026-08-31
 
 ### Added
