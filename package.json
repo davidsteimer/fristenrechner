@@ -30,7 +30,10 @@
     "test:source-reviews": ".venv/bin/python tests/governance/validate_source_reviews.py --self-test",
     "build:ui": "node scripts/build-ui-preview.mjs",
     "preview:ui": "node scripts/ui-preview-server.mjs",
-    "check": "npm run typecheck && npm run test && npm run build:ui",
+    "build:public": "node scripts/build-public-app.mjs",
+    "preview:public": "node scripts/public-app-server.mjs",
+    "test:public": "node --import tsx --test tests/public-app/*.test.ts",
+    "check": "npm run typecheck && npm run test && npm run test:public && npm run build:ui && npm run build:public",
     "test:oracle": "python3 tests/golden/validate_golden_cases.py"
   },
   "devDependencies": {

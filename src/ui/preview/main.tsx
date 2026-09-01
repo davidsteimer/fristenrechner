@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { initializeIcons } from '@fluentui/react';
 
 import { FristenrechnerApp } from '../FristenrechnerApp';
 import './preview.css';
@@ -15,9 +14,6 @@ if (!root) {
   throw new Error('Preview-Container #root fehlt.');
 }
 
-// SharePoint initialisiert die Fluent-UI-Icons bereits. Die hostneutrale
-// Vorschau tut dies selbst, damit ihr Verhalten dem späteren Host entspricht.
-initializeIcons();
 const initialState = qaPreset(window.location.search);
 
 ReactDOM.render(

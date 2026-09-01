@@ -1,16 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import * as React from 'react';
-import {
-  Checkbox,
-  DefaultButton,
-  Dropdown,
-  type IDropdownOption,
-  MessageBar,
-  MessageBarType,
-  PrimaryButton,
-  TextField
-} from '@fluentui/react';
+import { Checkbox } from '@fluentui/react/lib/Checkbox';
+import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
+import { Dropdown, type IDropdownOption } from '@fluentui/react/lib/Dropdown';
+import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
+import { TextField } from '@fluentui/react/lib/TextField';
 
 import { calculateDeadline, calculateSpecialDeadline, parseIsoDate } from '../core';
 import type {
@@ -592,46 +587,46 @@ export function FristenrechnerApp({
       .map(option => ({ key: option.value, text: translate(locale, option.labelKey) }))
   ];
 
-  const validate = (): UiValidation => {
+  const validate = (translationLocale: Locale = locale): UiValidation => {
     const errors: Record<string, string> = {};
     if (generalMode) {
       if (!parseIsoDate(form.inputDate)) {
-        errors.inputDate = translate(locale, 'form.inputDate.required');
+        errors.inputDate = translate(translationLocale, 'form.inputDate.required');
       }
       const days = Number(form.deadlineDays);
       if (!Number.isInteger(days) || days < 1 || days > 365) {
-        errors.deadlineDays = translate(locale, 'form.deadlineDays.required');
+        errors.deadlineDays = translate(translationLocale, 'form.deadlineDays.required');
       }
       visibleSelectors.forEach(definition => {
         if (definition.required && !form.selectors[definition.selectorId]) {
-          errors[`selector.${definition.selectorId}`] = translate(locale, 'form.requiredSelection');
+          errors[`selector.${definition.selectorId}`] = translate(translationLocale, 'form.requiredSelection');
         }
       });
       if (manualOverride && form.calendarOverrideReason.trim().length < 3) {
-        errors.overrideReason = translate(locale, 'override.reason.required');
+        errors.overrideReason = translate(translationLocale, 'override.reason.required');
       }
       if (additionalAnchor && !/^(CH|[A-Z]{2})$/.test(additionalAnchor)) {
-        errors.additionalHolidayAnchor = translate(locale, 'anchor.additional.invalid');
+        errors.additionalHolidayAnchor = translate(translationLocale, 'anchor.additional.invalid');
       }
       return errors;
     }
 
     if (!specialRegime) {
-      errors.specialRegime = translate(locale, 'special.validation.regime');
+      errors.specialRegime = translate(translationLocale, 'special.validation.regime');
       return errors;
     }
     if (!calculatedDefinition) {
-      errors.specialDefinition = translate(locale, 'special.validation.definition');
+      errors.specialDefinition = translate(translationLocale, 'special.validation.definition');
       return errors;
     }
     calculatedDefinition.anchors.forEach(anchor => {
       const key = `special.${anchor.inputId}`;
       if (anchor.valueType === 'date' && !parseIsoDate(form.specialDateValues[anchor.inputId] ?? '')) {
-        errors[key] = translate(locale, 'special.validation.date');
+        errors[key] = translate(translationLocale, 'special.validation.date');
       }
       if (anchor.valueType === 'localTime'
         && !/^(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?$/.test(form.specialLocalTimeValues[anchor.inputId] ?? '')) {
-        errors[key] = translate(locale, 'special.validation.time');
+        errors[key] = translate(translationLocale, 'special.validation.time');
       }
     });
     if (calculatedDefinition.calculation.type === 'R1_RELATIVE'
@@ -639,7 +634,7 @@ export function FristenrechnerApp({
       const inputId = calculatedDefinition.calculation.durationInputId;
       const value = Number(form.specialIntegerValues[inputId]);
       if (!Number.isInteger(value) || value < 1 || value > 365) {
-        errors[`special.${inputId}`] = translate(locale, 'special.validation.integer');
+        errors[`special.${inputId}`] = translate(translationLocale, 'special.validation.integer');
       }
     }
     const overrideIds = new Set([
@@ -650,7 +645,7 @@ export function FristenrechnerApp({
       .filter(override => overrideIds.has(override.overrideId) && override.confirmationRequired)
       .forEach(override => {
         if (!form.specialOverrideConfirmations.includes(override.overrideId)) {
-          errors[`override.${override.overrideId}`] = translate(locale, 'special.validation.override');
+          errors[`override.${override.overrideId}`] = translate(translationLocale, 'special.validation.override');
         }
       });
     return errors;
@@ -833,7 +828,11 @@ export function FristenrechnerApp({
           selectedKey={locale}
           onChange={(_event, option) => {
             if (option?.key === 'de' || option?.key === 'fr') {
-              setLocale(option.key);
+              const nextLocale = option.key;
+              setLocale(nextLocale);
+              setValidation(current => Object.keys(current).length > 0
+                ? validate(nextLocale)
+                : current);
               setNotification(undefined);
             }
           }}

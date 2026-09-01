@@ -1,0 +1,211 @@
+/* SPDX-License-Identifier: AGPL-3.0-only */
+
+:root {
+  color-scheme: light;
+  --public-navy: #122c40;
+  --public-teal: #2f6f73;
+  --public-glacier: #e7eeee;
+  --public-granite: #566168;
+  --public-snow: #f6f7f5;
+  --public-ink: #172126;
+  --public-page: min(1180px, calc(100vw - 48px));
+  background: var(--public-snow);
+  font-family: Aptos, "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--public-snow);
+  color: var(--public-ink);
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+.public-shell {
+  min-height: 100vh;
+}
+
+.public-skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 10px 14px;
+  transform: translateY(-160%);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--public-navy);
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgb(18 44 64 / 20%);
+}
+
+.public-skip-link:focus {
+  transform: translateY(0);
+}
+
+.public-header {
+  display: flex;
+  width: var(--public-page);
+  min-height: 92px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.public-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--public-navy);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.public-brand__mark {
+  display: grid;
+  width: 42px;
+  gap: 7px;
+}
+
+.public-brand__mark i {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 3px;
+  transform: skewX(-38deg);
+  background: var(--public-teal);
+}
+
+.public-brand__mark i:first-child {
+  width: 30px;
+  margin-left: 12px;
+  background: var(--public-navy);
+}
+
+.public-header p {
+  margin: 0;
+  color: var(--public-navy);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.public-header p span {
+  display: block;
+  margin-top: 4px;
+  color: var(--public-granite);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+}
+
+#fristenrechner-app {
+  padding: 8px 0 36px;
+  background:
+    linear-gradient(180deg, var(--public-navy) 0 240px, var(--public-glacier) 240px 100%);
+  outline: none;
+}
+
+#fristenrechner-app .fr-app {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-family: Aptos, "Segoe UI", Arial, sans-serif;
+}
+
+.public-footer {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.8fr) minmax(260px, 1fr) minmax(280px, 1.2fr);
+  gap: 40px;
+  align-items: start;
+  width: var(--public-page);
+  margin: 0 auto;
+  padding: 42px 0 52px;
+  color: var(--public-granite);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.public-footer__identity,
+.public-footer__links {
+  display: grid;
+  gap: 6px;
+}
+
+.public-footer strong {
+  color: var(--public-navy);
+  letter-spacing: 0.1em;
+}
+
+.public-footer span,
+.public-footer p {
+  margin: 0;
+}
+
+.public-footer a {
+  color: var(--public-teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.public-footer a:hover,
+.public-footer a:focus-visible {
+  color: var(--public-navy);
+}
+
+.public-footer a:focus-visible,
+.public-brand:focus-visible {
+  outline: 3px solid #a6532d;
+  outline-offset: 4px;
+}
+
+@media (max-width: 850px) {
+  :root {
+    --public-page: min(100% - 40px, 680px);
+  }
+
+  .public-footer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --public-page: calc(100% - 32px);
+  }
+
+  .public-header {
+    min-height: 78px;
+  }
+
+  .public-header p {
+    display: none;
+  }
+
+  #fristenrechner-app {
+    background:
+      linear-gradient(180deg, var(--public-navy) 0 180px, var(--public-glacier) 180px 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -22,6 +22,9 @@ describe('AP9-Browservorschau', () => {
     assert.match(html, /data-preview-fallback/);
     assert.match(html, /npm run preview:ui/);
     assert.match(html, /href="\.\/app\.css"/);
+    assert.match(html, /src="\.\/vendor\/react\.js"/);
+    assert.match(html, /src="\.\/vendor\/react-dom\.js"/);
+    assert.match(html, /src="\.\/vendor\/fluent-ui-react\.js"/);
     assert.match(html, /src="\.\/app\.js"/);
     assert.doesNotMatch(html, /<div id="root"><\/div>/);
   });
@@ -34,10 +37,16 @@ describe('AP9-Browservorschau', () => {
     const outputHtml = await readFile(resolve(outputDirectory, 'index.html'), 'utf8');
     const javascript = await stat(resolve(outputDirectory, 'app.js'));
     const stylesheet = await stat(resolve(outputDirectory, 'app.css'));
+    const react = await stat(resolve(outputDirectory, 'vendor/react.js'));
+    const reactDom = await stat(resolve(outputDirectory, 'vendor/react-dom.js'));
+    const fluentUi = await stat(resolve(outputDirectory, 'vendor/fluent-ui-react.js'));
 
     assert.equal(outputHtml, await readFile(sourcePath, 'utf8'));
     assert.ok(javascript.size > 0);
     assert.ok(stylesheet.size > 0);
+    assert.ok(react.size > 0);
+    assert.ok(reactDom.size > 0);
+    assert.ok(fluentUi.size > 0);
   });
 
   it('ordnet Hauptaktionen, Resultat, Automatik und Datenstand nach dem Kanzlei-Workflow', async () => {
@@ -77,5 +86,12 @@ describe('AP9-Browservorschau', () => {
     assert.doesNotMatch(source, /fr-calendar-export__help|calendar\.help\./);
     assert.match(styles, /\.fr-result__grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/);
     assert.match(styles, /\.fr-result__grid > \.fr-calendar-export\s*\{/);
+  });
+
+  it('lokalisiert bestehende Validierungsfehler beim Sprachwechsel neu', async () => {
+    const source = await readFile(componentPath, 'utf8');
+
+    assert.match(source, /const validate = \(translationLocale: Locale = locale\): UiValidation/);
+    assert.match(source, /setValidation\(current => Object\.keys\(current\)\.length > 0\s*\? validate\(nextLocale\)/);
   });
 });
