@@ -3,7 +3,7 @@
 | Merkmal | Festlegung |
 | --- | --- |
 | Arbeitspaket | AP16 |
-| Dokumentstatus | Releasekandidat zur Abnahme |
+| Dokumentstatus | fachlich-technisch abgenommen |
 | Startdatum | 1. September 2026 |
 | Verantwortlich und entscheidbefugt | David Steimer |
 | Ausarbeitung und technische Unterstützung | David Steimer mit Codex |
@@ -129,6 +129,8 @@ Für die öffentliche Oberfläche gelten eCH-0059 und WCAG 2.1 AA als Qualitäts
 | AP16-Plan und Prüfmatrix | abgeschlossen | statischer Kandidat, Unterpfad, Freigabegrenze und Aufwandobergrenze festgelegt |
 | technische Implementierung | abgeschlossen | gemeinsame Datenbindung, statische STEIMER-Webhülle, Unterpfad-Build und lokale Anbieterdateien umgesetzt |
 | Kandidatenprüfung | abgeschlossen | P01 bis P15 auf Projektebene bestanden, Nachweis und Deploymentverfahren dokumentiert |
-| öffentliche P-Freigabe | gesperrt | eigener späterer Entscheid erforderlich |
+| AP16-Abnahme | abgeschlossen | am 1. September 2026 durch David Steimer fachlich-technisch abgenommen |
+| DEC-2026-017 | beschlossen | statische P-Zielarchitektur auf der bestehenden steimer.ch-Hosting-Infrastruktur bestätigt |
+| öffentliche P-Freigabe | gesperrt | Upload, Umschaltung und P-Betrieb benötigen separate ausdrückliche Entscheide |
 
-Der vollständige Befund steht im [AP16-Prüfnachweis](oeffentliche-p-auspraegung-ap16-nachweis.md). Das vorbereitete, noch nicht freigegebene Betriebsverfahren steht in der [Deployment- und Rückfallanleitung](deployment-oeffentliche-p-auspraegung-ap16.md). DEC-2026-017 liegt lediglich als Vorschlag vor.
+Der vollständige Befund steht im [AP16-Prüfnachweis](oeffentliche-p-auspraegung-ap16-nachweis.md). Das vorbereitete, noch nicht freigegebene Betriebsverfahren steht in der [Deployment- und Rückfallanleitung](deployment-oeffentliche-p-auspraegung-ap16.md). DEC-2026-017 ist beschlossen. Der Entscheid bestätigt die statische Zielarchitektur, erteilt aber keine Upload-, Umschaltungs- oder P-Betriebsfreigabe.

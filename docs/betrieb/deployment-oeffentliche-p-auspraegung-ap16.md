@@ -20,9 +20,9 @@ Diese Anleitung beschreibt die spätere kontrollierte Bereitstellung des in AP16
 
 Vor dem Upload müssen erfüllt sein:
 
-1. AP16 ist fachlich-technisch abgenommen.
-2. DEC-2026-017 ist ausdrücklich beschlossen.
-3. Die konkrete P-Bereitstellung ist ausdrücklich freigegeben.
+1. [x] AP16 ist fachlich-technisch abgenommen.
+2. [x] DEC-2026-017 ist ausdrücklich beschlossen.
+3. [ ] Die konkrete P-Bereitstellung ist ausdrücklich freigegeben.
 4. Der bestehende Webroot und eine allfällige frühere Version von `/fristenrechner/` sind gesichert.
 5. Apache wertet `.htaccess`, `mod_headers` und wenn vorhanden `mod_expires` im Zielordner aus.
 6. HTTPS und die kanonische Weiterleitung auf `www.steimer.ch` funktionieren.

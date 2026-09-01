@@ -1,9 +1,9 @@
 ---
 id: DEC-2026-017
 titel: "Statische öffentliche P-Ausprägung auf steimer.ch"
-status: vorgeschlagen
+status: beschlossen
 vorgeschlagen_am: 2026-09-01
-entscheidungsdatum: null
+entscheidungsdatum: 2026-09-01
 klasse: B
 entschieden_durch: "David Steimer"
 quelle:
@@ -43,11 +43,11 @@ AP16 hat einen statischen P-Releasekandidaten aus dem bestehenden hostneutralen 
    - Vorteil: kein zusätzlicher öffentlicher Betrieb.
    - Nachteil: der Rechner bleibt für Demonstrationen und Nutzung auf authentifizierte M365-Zugänge beschränkt.
 
-## Vorgeschlagener Entscheid
+## Entscheid
 
-Die öffentliche P-Ausprägung soll als rein statisches Paket unter `https://www.steimer.ch/fristenrechner/` auf der bestehenden steimer.ch-Hosting-Infrastruktur betrieben werden.
+Die öffentliche P-Ausprägung wird als rein statisches Paket unter `https://www.steimer.ch/fristenrechner/` auf der bestehenden steimer.ch-Hosting-Infrastruktur betrieben.
 
-Verbindlich sollen gelten:
+Verbindlich gelten:
 
 - gemeinsamer hostneutraler Rechenkern und gemeinsame Produktoberfläche mit der SPFx-Ausprägung
 - beim Build eingebetteter, vollständig freigegebener Datenrelease
@@ -61,7 +61,7 @@ Verbindlich sollen gelten:
 - kontrolliertes Deployment und Rückfall nach der AP16-Betriebsanleitung
 - periodische fachliche Quellenprüfung weiterhin nach AP13
 
-Der Entscheid über diese Zielarchitektur soll die konkrete erstmalige Umschaltung nicht automatisch freigeben. Der erste Upload, die öffentliche Prüfung und der P-Betriebsentscheid bleiben eigene, ausdrücklich zu bestätigende Schritte.
+Der Entscheid über diese Zielarchitektur gibt die konkrete erstmalige Umschaltung nicht automatisch frei. Der erste Upload, die öffentliche Prüfung und der P-Betriebsentscheid bleiben eigene, ausdrücklich zu bestätigende Schritte.
 
 ## Begründung
 
@@ -90,7 +90,7 @@ Die statische Ausprägung ist für einen öffentlichen Rechner sachgerecht, weil
 
 ### Folgearbeiten und Rückabwicklung
 
-- Nach Beschluss wird der Kandidat gemäss AP16-Betriebsanleitung zunächst in einen nicht öffentlichen temporären Ordner geladen.
+- Gestützt auf diesen Entscheid wird der Kandidat erst nach separater Freigabe gemäss AP16-Betriebsanleitung zunächst in einen nicht öffentlichen temporären Ordner geladen.
 - Die Umschaltung erfolgt erst nach Sicherung und erfolgreicher Vorprüfung.
 - Bei nicht bestandener öffentlicher Matrix wird der vorherige Verzeichnisstand wiederhergestellt.
 - Eine spätere Änderung des Hosting- oder Laufzeitmodells erhält eine neue DEC-ID mit gegenseitigen Verweisen.
@@ -105,8 +105,8 @@ Die statische Ausprägung ist für einen öffentlichen Rechner sachgerecht, weil
 
 ## Entscheidstatus
 
-DEC-2026-017 ist vorbereitet, aber noch nicht beschlossen. Die öffentliche P-Ausprägung bleibt gesperrt. Weder AP16 noch dieser Entwurf erteilen eine Upload-, Umschaltungs- oder Betriebsfreigabe.
+David Steimer hat DEC-2026-017 am 1. September 2026 ausdrücklich beschlossen. Freigegeben ist damit die statische P-Zielarchitektur auf der bestehenden steimer.ch-Hosting-Infrastruktur. Der Entscheid erteilt noch keine Upload-, Umschaltungs- oder P-Betriebsfreigabe. Diese Schritte bleiben gesperrt und bedürfen separater ausdrücklicher Entscheide.
 
 ## Verantwortlichkeit
 
-Entschieden wird durch David Steimer. Codex hat den Entwurf und die technischen Nachweise vorbereitet, übernimmt aber keine formelle Freigabe- oder Haftungsverantwortung.
+Entschieden durch David Steimer. Codex hat den Entscheidungsentwurf und die technischen Nachweise vorbereitet, übernimmt aber keine formelle Freigabe- oder Haftungsverantwortung.

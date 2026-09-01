@@ -4,7 +4,7 @@
 | --- | --- |
 | Arbeitspaket | AP16 |
 | Prüfdatum | 1. September 2026 |
-| Status | technisch geprüfter Releasekandidat, zur Abnahme |
+| Status | fachlich-technisch abgenommen |
 | Anwendung | `0.3.0` |
 | Datenrelease | `2026-08-31-mvp-03-approved.1` |
 | Manifestformat | `3.0.0` |
@@ -21,7 +21,7 @@ Der statische P-Releasekandidat ist gebaut und hat die AP16-Prüfmatrix P01 bis 
 
 Das Paket benötigt im Browser weder Microsoft 365 noch Microsoft Graph, SharePoint, GitHub, ein CDN, eine Datenbank oder eine serverseitige Anwendungslogik. Sämtliche Laufzeitdateien liegen im statischen Paket. Der Browser übermittelt keine Falldaten oder Berechnungen an einen Server.
 
-Der Nachweis ist kein Entscheid zur öffentlichen Bereitstellung. Die P-Ausprägung bleibt gesperrt, bis David Steimer den vorgeschlagenen Entscheid DEC-2026-017 und die konkrete Bereitstellung ausdrücklich freigibt.
+Der Nachweis ist kein Entscheid zur öffentlichen Bereitstellung. DEC-2026-017 ist beschlossen. Die konkrete Bereitstellung bleibt jedoch gesperrt, bis David Steimer Upload, Umschaltung und P-Betrieb ausdrücklich freigibt.
 
 ## 2. Kandidatenaufbau
 
@@ -121,7 +121,7 @@ Der SPFx-Build meldet weiterhin die zwei für Release `0.3.0.0` dokumentierten, 
 
 Vor einer öffentlichen Bereitstellung sind noch ausdrücklich zu entscheiden und auszuführen:
 
-1. Beschluss oder Verwerfung von DEC-2026-017
+1. ausdrückliche Freigabe des ersten Uploads und der öffentlichen Prüfung
 2. Sicherung des bestehenden steimer.ch-Webauftritts
 3. Upload in einen nicht öffentlichen temporären Hostingordner
 4. technische Vorprüfung auf dem realen Apache-Hosting
@@ -134,6 +134,6 @@ Ohne diese Schritte bleibt der Kandidat lokal und nicht öffentlich.
 
 ## 8. Abnahme
 
-AP16 kann fachlich-technisch abgenommen werden. Eine AP16-Abnahme bestätigt den gebauten und geprüften Kandidaten. Sie ist nicht gleichbedeutend mit der öffentlichen P-Freigabe.
+David Steimer hat AP16 am 1. September 2026 fachlich-technisch abgenommen. Die Abnahme bestätigt den gebauten und geprüften Kandidaten. Sie ist nicht gleichbedeutend mit der öffentlichen P-Freigabe.
 
-David Steimer bleibt für Abnahme, Informationssicherheitsbeurteilung und einen späteren P-Entscheid verantwortlich. Codex ist als KI-Arbeitsinstrument dokumentiert und übernimmt keine formelle Freigabe- oder Haftungsverantwortung.
+David Steimer bleibt für die Informationssicherheitsbeurteilung und die spätere P-Freigabe verantwortlich. Codex ist als KI-Arbeitsinstrument dokumentiert und übernimmt keine formelle Freigabe- oder Haftungsverantwortung.
