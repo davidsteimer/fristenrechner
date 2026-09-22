@@ -2,6 +2,8 @@
 
 Stand: 22. September 2026. **Quellenprüfung abgenommen, lokale Builds geprüft. Begrenzte E-/Q-Installation freigegeben. Ausführung und Zielumgebungsprüfungen sind separat nachzuweisen. GitHub und P bleiben nicht freigegeben.**
 
+Die [E-/Q-Vorprüfung](eq-vorpruefung-mvp04.md) dokumentiert den lokalen Freeze, die aus dem Tenant gesicherte Paketbaseline und den aktuellen Haltepunkt vor jeglichem Tenant-Eingriff. Die Teams-Registerkartenkonfiguration ist noch vollständig aufzunehmen.
+
 David Steimer hat [AP18C abgenommen und den Release beauftragt](../fachrecht/abnahme-ap18c.md). Der Release bündelt AP17 mit der Schweizer Feiertagsgrundlage AP18. Die Produktversion folgt auf MVP 0.3 als `0.4.0`, das SPFx-Paket als `0.4.0.0`. Dies ist keine neue Architekturentscheidung und keine weitere Datenformatänderung.
 
 ## Umfang und unveränderte Grenzen
