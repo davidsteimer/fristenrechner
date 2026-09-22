@@ -2,7 +2,7 @@
 
 Dieser Ordner enthält die produktive SPFx-Lösung des Fristenrechners Schweiz. Dasselbe WebPart und dasselbe `.sppkg` laufen auf modernen SharePoint-Seiten und als Microsoft-Teams-Kanalregisterkarte.
 
-**Stand 22. September 2026:** Der lokal geprüfte MVP-0.4-Stand verbindet die gestufte AP17-Bedienung mit dem AP18-Feiertagskatalog und Manifest-/Consumerformat `4.0.0`. Der Datenrelease `2026-09-22-mvp-04-approved.1` und die vollständige Quellenprüfung sind abgenommen. Das Paket `0.4.0.0` ist gebaut, aber noch nicht veröffentlicht oder in SharePoint und Teams installiert. Die neue Zielumgebungsprüfung steht aus. Der externe Betriebs- und Rückfallstand bleibt MVP 0.3 mit Paket `0.3.0.0`. Der abgeschlossene Machbarkeitsspike bleibt unter [`../spike/spfx/`](../spike/spfx/README.md) unverändert erhalten.
+**Stand 22. September 2026:** MVP 0.4 verbindet die gestufte AP17-Bedienung mit dem AP18-Feiertagskatalog und Manifest-/Consumerformat `4.0.0`. Datenrelease und Quellenprüfung sind abgenommen. Das korrigierte Paket `0.4.0.1` ist auf allen vier E-/Q-Instanzen mit ihren vollständigen SharePoint-Mirrors installiert und geprüft. G01, F01–F09, N01–N04 und U01–U03 sowie die separate AP5-Kompatibilitätsprüfung sind bestanden, die fachliche Q-Abnahme ist erteilt. GitHub-Veröffentlichung und P-Bereitstellung stehen aus, P bleibt auf MVP 0.3. Der [E-/Q-Nachweis](../docs/betrieb/eq-wiederholungsversuch-mvp04-0401.md) und das [lokale Publikationspaket](../docs/betrieb/publikationspaket-mvp04.md) dokumentieren offene Restpunkte. Der lokale [Korrektur- und Paketnachweis](../docs/betrieb/spfx-korrekturkandidat-mvp04-0401.md), die Fehlerhistorie von `0.4.0.0` und der abgeschlossene Machbarkeitsspike unter [`../spike/spfx/`](../spike/spfx/README.md) bleiben unverändert erhalten.
 
 ## Toolchain
 
@@ -31,7 +31,7 @@ Damit existieren weder ein zweiter Rechenkern noch eine zweite Oberfläche für 
 
 Die WebPart-Konfiguration bietet zwei Provider:
 
-- `GitHub`, im vorbereiteten Paket auf den vollständigen Datencommit `739876a0d11b550ea8cc702622ab22af321994a5` des unveränderlichen MVP-0.4-Releases gepinnt. Dieser Commit ist noch nicht veröffentlicht, der Standardpfad deshalb noch nicht öffentlich abrufbar
+- `GitHub`, im Paket auf den vollständigen Datencommit `739876a0d11b550ea8cc702622ab22af321994a5` des unveränderlichen MVP-0.4-Releases gepinnt. Dieser Commit ist noch nicht veröffentlicht, der Standardpfad deshalb noch nicht öffentlich abrufbar
 - `SharePoint-Mirror`, konfigurierbar als serverrelativer Ordner auf derselben SharePoint-Website
 
 Ein Release wird nur nach vollständiger Schema-, Grössen-, Prüfsummen-, Referenz- und Abdeckungsprüfung aktiviert. Format 2 verlangt zusätzlich mindestens einen vollständig validierten Spezialregimekatalog. Format 3 verlangt die Kalenderkomponente 2.0.0, offene Abdeckung sowie vollständig auflösbare Regeln, Overrides und Stillstandssatz-Referenzen. Format 4 ergänzt den vollständigen Feiertagskatalog und die Prüfung seiner begrenzten operativen Projektion. Nur `approved` wird aktiviert. Ein Datenstand mit `candidate` wird auch bei korrekten Prüfsummen abgewiesen. Bei einem Netzfehler bleibt der letzte vollständig validierte Aktivstand in IndexedDB verfügbar. Das Paket beantragt keine Microsoft-Graph- oder sonstigen API-Berechtigungen und benötigt keine Entra-App-Registrierung.
@@ -50,9 +50,9 @@ npm test
 npm run build
 ```
 
-Die Befehle werden im Ordner `spfx/` ausgeführt. Der Build führt 48 Provider- und Integrationstests aus und erzeugt `sharepoint/solution/fristenrechner-schweiz.sppkg` mit eingebetteten Client-Assets. Das vorbereitete Paket trägt die Version `0.4.0.0`, umfasst 202'599 Bytes und hat SHA-256 `eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a`. Vor der Paketierung prüft `npm run audit:bundle` das finale Bundle auf eine direkt anwendbare globale Produkt-CSS. Lokalisierte `fr-*`-Klassennamen und wörtlich ausgelieferte `:global`-Marker führen zum Abbruch. Die lokale SharePoint-Debugumgebung wird mit `npm start` auf Port 4321 gestartet.
+Die Befehle werden im Ordner `spfx/` ausgeführt. Der Build führt 48 Provider- und Integrationstests aus und erzeugt `sharepoint/solution/fristenrechner-schweiz.sppkg` mit eingebetteten Client-Assets. Anschliessend führt `npm run test:built` zwingend 25 zusätzliche [Prüfungen des emittierten und tatsächlich paketierten Codes](test-build/README.md) aus. Das auf E und Q installierte Paket trägt die Version `0.4.0.1`, umfasst 202'616 Bytes und hat SHA-256 `9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346`. Vor der Paketierung prüft `npm run audit:bundle` das finale Bundle auf eine direkt anwendbare globale Produkt-CSS. Lokalisierte `fr-*`-Klassennamen und wörtlich ausgelieferte `:global`-Marker führen zum Abbruch. Die lokale SharePoint-Debugumgebung wird mit `npm start` auf Port 4321 gestartet.
 
-Der unabhängige Neubau ist funktional geprüft, aber wegen dokumentierter Buildvarianz nicht bitidentisch. Die obige Prüfsumme bezeichnet ausschliesslich das vorbereitete Releasepaket, nicht jeden späteren Neubau. Einzelheiten stehen in der [Publikationsvorprüfung](../docs/betrieb/publikationsvorpruefung-mvp04.md#p03-erklärte-buildvarianz-des-spfx-neubaus).
+Beim ursprünglichen Kandidaten `0.4.0.0` wurde ein unabhängiger Neubau funktional geprüft, der wegen dokumentierter Buildvarianz nicht bitidentisch war. Dies ist kein Nachweis eines unabhängigen Zweitbaus von `0.4.0.1`. Die obige Prüfsumme bezeichnet ausschliesslich das auf E und Q geprüfte Korrekturpaket, nicht jeden späteren Neubau. Einzelheiten zur damaligen Buildvarianz stehen in der [Publikationsvorprüfung](../docs/betrieb/publikationsvorpruefung-mvp04.md#p03-erklärte-buildvarianz-des-spfx-neubaus).
 
 ## Bereitstellung
 
@@ -65,7 +65,7 @@ Der unabhängige Neubau ist funktional geprüft, aber wegen dokumentierter Build
 
 Die Bereitstellung ist adminarm, aber nicht adminfrei. Diese Anleitung autorisiert weder einen Upload noch eine Installation. Vor dem GitHub-Betrieb müssen der Datenpin veröffentlicht und die Dateien öffentlich byteweise verifiziert sein. Bei einem Update von MVP 0.3 sind Consumer und Datenpfad gemeinsam umzustellen, weil der alte Consumer Format 4 nicht lesen kann. Bestehende Instanzkonfigurationen werden nicht zwingend durch ein Paketupdate ersetzt.
 
-Die [MVP-0.4-Deploymentanleitung](../docs/betrieb/deployment-mvp-04.md) enthält Paketprüfsumme, vollständige Mirrorstruktur, Zielumgebungsprüfungen und Rollback auf MVP 0.3. E-/Q-/P-Bereitstellung und Betriebsfreigabe bleiben gesonderte Schritte. Die bisherigen SharePoint-, Teams-, Outlook- und Q-Gastnachweise gelten nur für den damaligen Stand und müssen für MVP 0.4 nach dem vorgesehenen Verfahren erneut geprüft werden. Der [Q-Betrieb](../docs/betrieb/q-demobetrieb-ap15-betriebsanweisung.md) bleibt auf das beschlossene Gruppenprinzip begrenzt, ohne neue Berechtigungen durch dieses Paket.
+Die [MVP-0.4-Deploymentanleitung](../docs/betrieb/deployment-mvp-04.md) enthält Paketprüfsumme, vollständige Mirrorstruktur, Zielumgebungsprüfungen und Rollback auf MVP 0.3. Der aktuelle E-/Q-Nachweis belegt Installation, eigene cachefreie Mirrorabrufe, Funktionsprüfungen und tatsächliche Kalenderdateiexporte auf allen vier Instanzen. Die erneuten Outlook-Importtests T15/T16 benötigen gesonderte Autorisierung und sind weiterhin offen, ein Verzicht ist nicht beschlossen. Auch der tatsächliche Gasttest bleibt offen. Die fachliche Q-Abnahme erteilt keine externe Q-Demofreigabe, GitHub-Veröffentlichung oder P-Bereitstellung. Der [Q-Betrieb](../docs/betrieb/q-demobetrieb-ap15-betriebsanweisung.md) bleibt auf das beschlossene Gruppenprinzip begrenzt, ohne neue Berechtigungen durch dieses Paket.
 
 ## Lizenz
 

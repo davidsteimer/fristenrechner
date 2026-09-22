@@ -3,11 +3,11 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Freischaltungsentscheid, Installation und Betrieb durch eine Microsoft-365-IT |
-| Produktstand | MVP 0.4, lokal gebautes und geprüftes Paket `0.4.0.0`, noch nicht veröffentlicht oder bereitgestellt |
+| Produktstand | MVP 0.4, SPFx-Paket `0.4.0.1` auf E und Q installiert und geprüft, fachliche Q-Abnahme erteilt. GitHub und P noch nicht aktualisiert |
 | Stand | 22. September 2026 |
 | Zielplattform | SharePoint Online, optional Microsoft Teams |
 
-Die AP17-/AP18-Fachgrundlagen und die vollständige Quellenprüfung sind abgenommen. **MVP 0.4 ist noch nicht veröffentlicht, in E/Q/P bereitgestellt oder betrieblich freigegeben.** Diese Anleitung bereitet die IT-Freigabe vor und autorisiert keine Installation. Der dokumentierte externe Betriebs- und Rückfallstand bleibt MVP 0.3. Der [MVP-0.4-Releaseplan](deployment-mvp-04.md) führt die getrennten Freigaben und Zielumgebungsprüfungen.
+Die AP17-/AP18-Fachgrundlagen und die vollständige Quellenprüfung sind abgenommen. Nach dem gescheiterten ersten Versuch mit `0.4.0.0` und dem dokumentierten Rückfall wurde das korrigierte Paket `0.4.0.1` auf allen vier internen E-/Q-Instanzen mit ihren vollständigen Format-4-Mirrors installiert und geprüft. **Die fachliche Q-Abnahme ist erteilt. GitHub-Veröffentlichung und P-Bereitstellung stehen weiterhin aus, P bleibt auf MVP 0.3.** Diese Anleitung autorisiert keine zusätzliche Installation oder externe Q-Demo. [E-/Q-Nachweis](eq-wiederholungsversuch-mvp04-0401.md), [lokales Publikationspaket](publikationspaket-mvp04.md) und [Releaseplan](deployment-mvp-04.md) dokumentieren die verbleibenden Grenzen.
 
 ## 1. Entscheid für die IT in Kürze
 
@@ -55,9 +55,9 @@ Für eine reine SharePoint-Installation auf einer einzelnen Site Collection kann
 | Merkmal | Wert |
 | --- | --- |
 | Paket | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Version | `0.4.0.0` |
-| Grösse | 202'599 Bytes |
-| SHA-256 | `eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a` |
+| Version | `0.4.0.1` |
+| Grösse | 202'616 Bytes |
+| SHA-256 | `9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 
@@ -75,7 +75,7 @@ Get-FileHash .\fristenrechner-schweiz.sppkg -Algorithm SHA256
 
 Die Installation ist abzubrechen, wenn Version, Solution-ID oder Prüfsumme abweichen.
 
-Die Prüfsumme bezeichnet das lokal vorbereitete Releasepaket. Wegen dokumentierter SPFx-Buildvarianz kann ein funktional gleicher Neubau eine andere Prüfsumme haben. Er ist nicht automatisch als dieses Installationsartefakt freigegeben. Der [Artefaktnachweis](../../outputs/release-mvp04-2026-09-22/artifact-verification.json) dokumentiert Paket, Datenpin, Mirror und Webbuild.
+Die Prüfsumme bezeichnet das auf E und Q installierte und geprüfte Releasepaket. Wegen dokumentierter SPFx-Buildvarianz kann ein funktional gleicher Neubau eine andere Prüfsumme haben. Er ist nicht automatisch als dieses Installationsartefakt freigegeben. Der [SPFx-Korrekturartefaktnachweis](../../outputs/release-mvp04-spfx-0.4.0.1-2026-09-22/artifact-verification.json) bindet das neue Paket und den unveränderten Datenpin. Der [historische Artefaktnachweis](../../outputs/release-mvp04-2026-09-22/artifact-verification.json) bleibt für das alte Paket sowie den unveränderten Mirror- und Webarchivstand erhalten. Es wurde kein neues Webarchiv des korrigierten Quellstands erzeugt.
 
 ## 4. Installation in SharePoint Online
 
@@ -196,7 +196,7 @@ Neue Datenstände werden nicht in den aktiven Ordner hineinkopiert. Der MVP-0.3-
 
 1. neuen Release in einen neuen versionsbezogenen Ordner hochladen
 2. sämtliche Artefakte und Berechtigungen prüfen
-3. freigegebenes Paket `0.4.0.0` installieren beziehungsweise aktualisieren, bevor eine Instanz den Format-4-Datenpfad erhält
+3. erst nach konkreter Freigabe das hashgebundene Korrekturpaket `0.4.0.1` installieren beziehungsweise aktualisieren, bevor eine Instanz den Format-4-Datenpfad erhält. Das verworfene `0.4.0.0` nicht verwenden
 4. Mirrorpfad jeder betroffenen WebPart- und Teams-Registerkarteninstanz auf den neuen Ordner umstellen
 5. sichtbare Release-ID, Datenquelle und Referenzberechnung prüfen, anschliessend vollständigen Zielumgebungs-Abnahmetest durchführen
 6. früheren Ordner und früheres Paket für einen definierten Rückfallzeitraum unverändert aufbewahren
@@ -257,7 +257,9 @@ Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höher
 - [ ] Browserkonsole enthält keinen Fehler des Produktbundles
 - [ ] SharePoint-Mirror bleibt auch bei gesperrtem Zugriff auf `raw.githubusercontent.com` funktionsfähig, falls der Mirror der gewählte Betriebsmodus ist
 
-Diese Liste ersetzt nicht die vollständige [MVP-0.4-Matrix einschliesslich R04-01 bis R04-10](deployment-mvp-04.md#zielumgebungsprüfung). Die bisherigen Ergebnisse von T01–T19 und des Q-Gastbetriebs beziehen sich auf MVP 0.3. Die neuen Tenantprüfungen stehen noch aus.
+Diese Liste ist eine Vorlage für die jeweilige Zielinstallation und ersetzt nicht die vollständige [MVP-0.4-Matrix](deployment-mvp-04.md#zielumgebungsprüfung). Im bestehenden E-/Q-Tenant sind G01, F01–F09, N01–N04 und U01–U03 auf allen vier Instanzen bestanden, die AP5-Kompatibilität separat. Die fachliche Q-Abnahme ist erteilt. Die Ergebnisse gelten nicht automatisch für einen Dritt-Tenant. Die tatsächlichen ICS-Dateiexporte sind geprüft, die gesondert zu autorisierenden Outlook-Importtests T15/T16 bleiben offen. Ein Verzicht ist nicht beschlossen.
+
+Die stabile schmale Q-Teams-Gegenprüfung ist bei 390 Pixeln in DE/FR bestanden. Die positive manuelle SharePoint-Rückmeldung ist kein neuer Messnachweis zum früheren Hostüberlauf bei 768 Pixeln. Bedingte Live-Negativprüfung, optionale Governance-Nachprüfung und weitere Restpunkte bleiben im [aktuellen Nachweis](eq-wiederholungsversuch-mvp04-0401.md) getrennt ausgewiesen.
 
 ## 9. Betrieblich offene Punkte vor Produktivsetzung
 
@@ -267,7 +269,7 @@ Diese Liste ersetzt nicht die vollständige [MVP-0.4-Matrix einschliesslich R04-
 - Supportweg und Zuständigkeit bei fachlichen oder technischen Störungen
 - gesonderte Prüfung, falls Gastzugriffe zugelassen werden sollen
 
-Für den steimer.ch-Q-Demobetrieb besteht bereits ein freigegebenes [gruppenbasiertes Zugriffsmodell](q-demobetrieb-ap15-betriebsanweisung.md). Es ist keine pauschale Gastfreigabe eines Dritt-Tenants und kein bestandener Gasttest für MVP 0.4. Site, Team, Mirror und Paketassets müssen im jeweiligen Zieltenant gezielt freigegeben und Widerruf sowie Zugriff geprüft werden. Das Paket selbst fordert dafür keine neuen API-Berechtigungen an.
+Für den steimer.ch-Q-Demobetrieb besteht bereits ein freigegebenes [gruppenbasiertes Zugriffsmodell](q-demobetrieb-ap15-betriebsanweisung.md). Es ist keine pauschale Gastfreigabe eines Dritt-Tenants und kein bestandener Gasttest für MVP 0.4. Der tatsächliche Gasttest bleibt offen, ein externer Q-Demobetrieb von MVP 0.4 ist nicht freigegeben. Die vermutete Behinderung der Anmeldung durch KTBE-Richtlinien ist nicht als Ursache nachgewiesen. Site, Team, Mirror und Paketassets müssen im jeweiligen Zieltenant gezielt freigegeben und Widerruf sowie Zugriff geprüft werden. Das Paket selbst fordert dafür keine neuen API-Berechtigungen an.
 
 Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei David Steimer. Das Rollenmodell bleibt für einen später getrennten Betrieb dokumentiert.
 
@@ -282,5 +284,7 @@ Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei 
 - [AP13: Periodische Quellenprüfung](periodische-quellenpruefung-ap13.md)
 - [Release-Checkliste](release-checkliste.md)
 - [MVP-0.4-Deployment und Zielumgebungsprüfung](deployment-mvp-04.md)
+- [Aktueller E-/Q-Nachweis und fachliche Q-Abnahme](eq-wiederholungsversuch-mvp04-0401.md)
+- [Lokales Publikationspaket und verbleibende Freigaben](publikationspaket-mvp04.md)
 - [MVP-0.3-Deployment und historische Testmatrix](deployment-release-2-mvp-03.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)

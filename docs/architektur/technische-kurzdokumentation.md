@@ -3,13 +3,13 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Technische Beurteilung und Übergabe an eine Microsoft-365-IT |
-| Produktstand | MVP 0.4, lokal gebautes und geprüftes Paket `0.4.0.0`, noch nicht veröffentlicht oder bereitgestellt |
+| Produktstand | MVP 0.4, SPFx-Paket `0.4.0.1` auf E und Q installiert und geprüft, fachliche Q-Abnahme erteilt. GitHub und P noch nicht aktualisiert |
 | Stand | 22. September 2026 |
 | Zielplattform | SharePoint Online und Microsoft Teams |
 | Lizenz | Programmcode AGPL-3.0-only, Dokumentation und kuratierte Daten grundsätzlich CC BY-SA 4.0 |
 | Repository | `davidsteimer/fristenrechner` |
 
-Die AP17-/AP18-Fachgrundlagen und die vollständige Quellenprüfung sind abgenommen. Publikation, Installation in E/Q, öffentliche P-Bereitstellung und Betriebsfreigabe von MVP 0.4 stehen noch aus. Der dokumentierte externe Betriebs- und Rückfallstand bleibt MVP 0.3. Diese Unterlage beschreibt den vorbereiteten neuen Stand, sie ist keine Installationsfreigabe.
+Die AP17-/AP18-Fachgrundlagen und die vollständige Quellenprüfung sind abgenommen. Nach dem dokumentierten [Fehler und Rückfall von `0.4.0.0`](../betrieb/eq-vorpruefung-mvp04.md) wurde das korrigierte Paket `0.4.0.1` auf allen vier internen E-/Q-Instanzen mit ihren vollständigen Format-4-Mirrors installiert und geprüft. Die fachliche Q-Abnahme ist erteilt. Der [aktuelle E-/Q-Nachweis](../betrieb/eq-wiederholungsversuch-mvp04-0401.md) und das [lokale Publikationspaket](../betrieb/publikationspaket-mvp04.md) trennen bestandene Prüfungen und offene Grenzen. GitHub-Veröffentlichung und P-Bereitstellung stehen aus, der öffentliche P-Rechner bleibt auf MVP 0.3. Diese Unterlage autorisiert keine zusätzliche Installation oder externe Q-Demo.
 
 ## 1. Kurzbeurteilung der Tenantportabilität
 
@@ -58,7 +58,7 @@ Die statische öffentliche P-Ausprägung verwendet denselben Kern und dieselbe O
 | TypeScript | `5.8.3` |
 | React | `17.0.1` |
 | Fluent UI React | `8.106.4` |
-| Testausführung | Node Test Runner, TypeScript über `tsx` |
+| Testausführung | Node Test Runner, TypeScript über `tsx` sowie direkte ES5- und Paketbundle-Regression ohne Transpiler |
 | Datenformate | JSON, JSON Schema Draft 2020-12, ISO-Kalenderdaten, SHA-256 |
 
 SPFx `1.23.2` ist für SharePoint Online ausgelegt und verwendet die Heft-basierte Toolchain. Microsoft weist für diesen SPFx-Stand Node.js 22, TypeScript bis 5.8 und React 17.0.1 aus. Die Microsoft-Kompatibilitätsmatrix ist die verbindliche Referenz für künftige Toolchain-Aktualisierungen.
@@ -79,23 +79,23 @@ npm ci
 npm run build
 ```
 
-`npm run check` führt Typprüfung, 675 Kern- und UI-Tests, sieben Prüfungen der öffentlichen Webausprägung sowie den Build von Browservorschau und öffentlicher Webausprägung aus. Der SPFx-Build führt zusätzlich 48 Provider- und Integrationsprüfungen, TypeScript-, Sass-, ESLint- und Webpack-Prüfungen sowie ein Audit der finalen Bundle-CSS aus. Diese Prüfläufe sind im abgegrenzten Dateiexport mit frisch aus den Lockdateien installierten Node-Abhängigkeiten bestanden. Weitere Daten-, Kalender-, Archiv- und Quellenprüfungen sind in der [Publikationsvorprüfung](../betrieb/publikationsvorpruefung-mvp04.md) aufgeführt. Die Testgruppen überschneiden sich und werden nicht addiert.
+`npm run check` führt Typprüfung, Kern-/UI-Tests, die Prüfungen der öffentlichen Webausprägung sowie Vorschau- und Webbuild aus. Der historische Dateiexport mit frischen Lockdatei-Abhängigkeiten ist in der [Publikationsvorprüfung](../betrieb/publikationsvorpruefung-mvp04.md) dokumentiert. Für die begrenzte SPFx-Korrektur wurden Typprüfung und inzwischen 676 Kern-/UI-Tests erneut ausgeführt, ohne den bisherigen Webbuild zu überschreiben. Der vollständige SPFx-Build bestand 48 Provider-/Integrationsprüfungen, Compiler-, Lint- und Bundle-CSS-Prüfungen sowie nach der Paketierung 25 neue ES5-/Paketbundle-Prüfungen. Zwei bestehende Lintwarnungen zu `null` in Typverträgen bleiben dokumentiert. Die Pakettests verwenden kontrollierte lokale Hostadapter und ersetzen keine SharePoint-/Teams-Prüfung. Die Testgruppen überschneiden sich und werden nicht addiert.
 
-Das vorbereitete Releasepaket hat folgende Identität:
+Das auf E und Q installierte Releasepaket hat folgende Identität:
 
 | Merkmal | Wert |
 | --- | --- |
 | Datei | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Paketversion | `0.4.0.0` |
-| Grösse | 202'599 Bytes |
-| SHA-256 | `eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a` |
+| Paketversion | `0.4.0.1` |
+| Grösse | 202'616 Bytes |
+| SHA-256 | `9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 | Unterstützte Hosts | `SharePointWebPart`, `TeamsTab` |
 | Client-Assets | im `.sppkg` enthalten |
 | Tenantweite automatische Bereitstellung | nein, Installation pro Zielwebsite |
 
-Ein unabhängiger SPFx-Neubau ist funktional geprüft, jedoch nicht bitidentisch. Die dokumentierte Varianz betrifft interne Modulnummern, konsistente CSS-Kennungen, generierte Paketkennungen und ZIP-Zeitstempel. Die obige Prüfsumme bezeichnet ausschliesslich das vorbereitete Releasepaket. Ein Neubau mit abweichender Prüfsumme benötigt einen eigenen Paketnachweis und darf nicht unter der alten Prüfsumme freigegeben werden.
+Beim ursprünglichen Paket `0.4.0.0` wurde ein unabhängiger SPFx-Neubau funktional geprüft, der nicht bitidentisch war. Die dokumentierte Varianz betrifft interne Modulnummern, konsistente CSS-Kennungen, generierte Paketkennungen und ZIP-Zeitstempel. Dies ist kein Nachweis eines unabhängigen Zweitbaus von `0.4.0.1`. Die obige Prüfsumme bezeichnet ausschliesslich das auf E und Q geprüfte Korrekturpaket. Ein Neubau mit abweichender Prüfsumme benötigt einen eigenen Paketnachweis und darf nicht unter der alten Prüfsumme freigegeben werden.
 
 ## 5. Daten- und Sicherheitsmodell
 
@@ -137,9 +137,11 @@ Mit dem SharePoint-Mirror kann der externe GitHub-Zugriff zur Laufzeit entfallen
 
 ## 7. Nachgewiesener Stand und Grenzen
 
-Der dokumentierte Betriebsstand MVP 0.3 mit Paket `0.3.0.0` wurde in SharePoint und Teams installiert und einschliesslich Outlook nach T01–T19 geprüft. Der begrenzte gruppenbasierte Q-Gastbetrieb ist mit AP15 und DEC-2026-016 freigegeben, der öffentliche statische P-Betrieb mit AP16 und DEC-2026-018. Diese historischen Ergebnisse werden nicht als Zielumgebungsprüfung von MVP 0.4 übernommen.
+Der frühere Betriebsstand MVP 0.3 mit Paket `0.3.0.0` wurde in SharePoint und Teams installiert und einschliesslich Outlook nach T01–T19 geprüft. Der begrenzte gruppenbasierte Q-Gastbetrieb wurde mit AP15 und DEC-2026-016 freigegeben, der öffentliche statische P-Betrieb mit AP16 und DEC-2026-018. Diese historischen Ergebnisse werden nicht als Zielumgebungsprüfung von MVP 0.4 übernommen. Der öffentliche P-Rechner bleibt unverändert auf MVP 0.3.
 
-MVP 0.4 ist lokal gebaut und geprüft. Die [Quellenprüfung](../fachrecht/abnahme-quellenpruefung-mvp04.md) mit 120 unterschiedlichen Quellen-IDs ist durch David Steimer abgenommen. Die beschlossene Behandlung des dokumentierten AI-Quellenkonflikts bleibt unverändert. Der [Deploymentplan](../betrieb/deployment-mvp-04.md) führt die noch ausstehenden SharePoint-, Teams-, Q-Gast- und öffentlichen P-Prüfungen sowie die getrennten Freigaben.
+Für MVP 0.4 sind auf allen vier E-/Q-Instanzen G01, F01–F09, N01–N04 und U01–U03 bestanden. Dies umfasst den eigenen cachefreien Mirrorabruf, Fach- und Sperrfälle, DE/FR, lokale Standards sowie tatsächliche ICS-Dateiexporte und deren Unterdrückung bei veralteten Resultaten. Die historische AP5-Konfiguration ist mit dem neuen Consumer separat geprüft. David Steimer hat Q fachlich abgenommen. Die [Quellenprüfung](../fachrecht/abnahme-quellenpruefung-mvp04.md) mit 120 unterschiedlichen Quellen-IDs ist ebenfalls abgenommen, die Behandlung des AI-Quellenkonflikts bleibt unverändert.
+
+Die stabile schmale Q-Teams-Gegenprüfung bei 390 Pixeln ist in DE/FR bestanden. Zum früher gemessenen SharePoint-Hostüberlauf bei 768 Pixeln liegt die positive manuelle Rückmeldung «Sharepoint ist OK» vor, aber keine neue 768-Pixel-Messung. Sie wird nicht als solche umgedeutet. Der bedingte Live-Negativtest und die optionale Governance-Nachprüfung bleiben vom lokalen Testnachweis getrennt. Die genaue Einordnung der Restpunkte steht im [Publikationspaket](../betrieb/publikationspaket-mvp04.md).
 
 Der Produktumfang bleibt begrenzt: 16 qualifizierte AP17-Zuordnungen, vier gesperrte Sammelpfade und Fallabdeckung 2026–2027. Der Schweizer Katalog enthält 479 Regeln, operativ werden jedoch weiterhin nur zwölf bestehende CH-/BE-Feiertagsregeln projiziert. Es werden keine zusätzlichen kantonalen Fristenprofile freigegeben. Oberfläche Deutsch und Französisch, italienische und rätoromanische Bezeichnungsfelder nur in der Datengrundlage.
 
@@ -147,8 +149,9 @@ Noch nicht Teil dieses Nachweises sind insbesondere:
 
 - produktiver Betrieb in einem Dritt-Tenant
 - Betrieb auf SharePoint Server vor Ort statt SharePoint Online
-- Installation und Aktivierung von MVP 0.4 einschliesslich Format-4-Mirror im Tenantlauf
-- erneute Q-Gastprüfung und öffentliche P-Prüfung für MVP 0.4
+- erneute Outlook-Importtests T15/T16 für MVP 0.4. Sie sind gesondert zu autorisieren, ein Verzicht ist nicht beschlossen
+- tatsächliche Q-Gastprüfung und externe Q-Demofreigabe für MVP 0.4. Die vom Benutzer vermutete Behinderung durch KTBE-Anmelderichtlinien ist keine nachgewiesene Ursache
+- GitHub-Veröffentlichung sowie öffentliche P-Bereitstellung und P-Prüfung für MVP 0.4
 - automatisierte jährliche Datenpublikation und Mirror-Synchronisation
 - formelle WCAG-Konformitätsbewertung
 
@@ -160,7 +163,11 @@ Noch nicht Teil dieses Nachweises sind insbesondere:
 - [Microsoft: Benutzerdefinierte Apps in Teams verwalten](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 - [AP10-Prüfnachweis](spfx-produktintegration-ap10.md)
 - [MVP-0.4-Deployment und Zielumgebungsprüfung](../betrieb/deployment-mvp-04.md)
-- [Paket-, Mirror- und Webnachweis MVP 0.4](../../outputs/release-mvp04-2026-09-22/artifact-verification.json)
+- [Aktueller E-/Q-Nachweis und fachliche Q-Abnahme](../betrieb/eq-wiederholungsversuch-mvp04-0401.md)
+- [Lokales Publikationspaket und verbleibende Freigaben](../betrieb/publikationspaket-mvp04.md)
+- [SPFx-Korrekturpaket 0.4.0.1 und unveränderte Daten](../../outputs/release-mvp04-spfx-0.4.0.1-2026-09-22/artifact-verification.json)
+- [Lokaler Build- und Laufzeitprüfnachweis 0.4.0.1](../../outputs/release-mvp04-spfx-0.4.0.1-2026-09-22/QA-MVP04-SPFX-0401.md)
+- [Historischer Paket-, Mirror- und Webnachweis MVP 0.4](../../outputs/release-mvp04-2026-09-22/artifact-verification.json)
 - [MVP-0.3-Deployment und historische Testmatrix](../betrieb/deployment-release-2-mvp-03.md)
 - [Q-Betriebsanweisung](../betrieb/q-demobetrieb-ap15-betriebsanweisung.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)

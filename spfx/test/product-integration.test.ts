@@ -113,8 +113,8 @@ test('exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-F
   assert.deepEqual(manifest.supportedHosts, ['SharePointWebPart', 'TeamsTab']);
   assert.equal(manifest.id, '596c7f1c-4d3e-4da8-a7be-27a96024f37c');
   assert.equal(packageSolution.solution.includeClientSideAssets, true);
-  assert.equal(packageSolution.solution.version, '0.4.0.0');
-  assert.equal(packageSolution.solution.features[0].version, '0.4.0.0');
+  assert.equal(packageSolution.solution.version, '0.4.0.1');
+  assert.equal(packageSolution.solution.features[0].version, '0.4.0.1');
   assert.equal(manifest.preconfiguredEntries[0].properties.githubBaseUrl, PINNED_GITHUB_RELEASE_URL);
   assert.equal('webApiPermissionRequests' in packageSolution.solution, false);
 });

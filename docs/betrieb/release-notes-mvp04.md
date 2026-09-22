@@ -1,6 +1,6 @@
 # MVP 0.4 · Berner Fristenrechner
 
-Vorbereiteter Releasehinweis vom 22. September 2026. **Noch nicht veröffentlicht oder produktiv bereitgestellt.** Der verbindliche Fortschritt steht im [Release- und Deploymentplan](deployment-mvp-04.md).
+Releasehinweis zum lokal abgeschlossenen Publikationspaket vom 22. September 2026. **Noch nicht veröffentlicht oder produktiv bereitgestellt.** Der verbindliche Fortschritt steht im [Release- und Deploymentplan](deployment-mvp-04.md).
 
 ## Was sich für die Benutzenden ändert
 
@@ -29,10 +29,12 @@ Der Release enthält den abgenommenen Schweizer Feiertagskatalog mit 479 Regeln 
 
 ## Hinweise für Installation und Betrieb
 
-Die Produktversion ist `0.4.0`, das SPFx-Paket `0.4.0.0`. Der Datenrelease verwendet Manifest-/Consumerformat `4.0.0`, Spezialregimekatalog `3.0.0`, Feiertagskatalog `1.0.0` und die unveränderte Kalenderkomponente `2.0.0`.
+Die Produktversion ist `0.4.0`, das geprüfte SPFx-Paket `0.4.0.1`. Das ursprüngliche `0.4.0.0` wurde nach dem E-Test wegen eines ES5-Buildfehlers verworfen. Die [Korrektur](spfx-korrekturkandidat-mvp04-0401.md) verändert keine Fachdaten. Nach gesonderter Autorisierung wurde `0.4.0.1` auf den vier E-/Q-Instanzen installiert und geprüft, die [fachliche Q-Abnahme](eq-wiederholungsversuch-mvp04-0401.md#fachliche-q-abnahme-vom-22-september-2026) ist erteilt. Der Datenrelease verwendet Manifest-/Consumerformat `4.0.0`, Spezialregimekatalog `3.0.0`, Feiertagskatalog `1.0.0` und die unveränderte Kalenderkomponente `2.0.0`.
 
 Der bisherige MVP-0.3-Consumer kann das neue Datenformat nicht laden. Anwendung und Datenpfad müssen deshalb koordiniert aktualisiert werden. Der vollständige SharePoint-Mirror enthält das Manifest und alle neun Nutzartefakte. Die bisherigen Mirrorordner bleiben für den Rückfall erhalten. Bereits konfigurierte Instanzen müssen ausdrücklich auf den neuen Datenpfad umgestellt und danach geprüft werden.
 
 Es werden keine zusätzlichen Microsoft-Graph- oder sonstigen API-Berechtigungen angefordert. Die öffentliche Webausprägung bleibt statisch auf der bestehenden steimer.ch-Infrastruktur. Sie bettet den geprüften Datenstand ein und benötigt keinen Laufzeitabruf von GitHub oder SharePoint.
 
-Lokale technische Prüfung, neue Quellenprüfung, öffentliche Veröffentlichung und Freigabe der Zielumgebungen werden getrennt dokumentiert. Historisch bestandene Abnahmetests ersetzen keine erneute Prüfung von MVP 0.4.
+SharePoint wurde zusätzlich durch David Steimer positiv gegengeprüft. Das ist kein neuer automatisch gemessener 768-Pixel-Test, der frühere Hostbefund wird aber nicht als aktueller Produktblocker geführt. Der tatsächliche Gasttest und die Q-Demofreigabe bleiben offen. Die vom Benutzer vermutete KTBE-Anmeldeursache ist nicht bewiesen, ebenso wenig ein Appfehler. Outlook T15/T16 bleiben ohne ausdrücklichen Verzicht gesondert offen. Diese deklarierten Grenzen verhindern den lokalen Paketabschluss nicht.
+
+Lokale technische Prüfung, Quellenabnahme, fachliche Q-Abnahme, öffentliche Veröffentlichung und betriebliche Freigaben bleiben getrennt dokumentiert. Historische Nachweise werden nicht umdatiert. Der lokale Paketabschluss autorisiert weder einen Git-Push noch eine öffentliche Veröffentlichung oder P-Bereitstellung.

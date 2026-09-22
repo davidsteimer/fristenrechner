@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import {
   assertHolidayCatalog, assertHolidayCatalogProjection, assertHolidayCatalogSchemaContract, evaluateHolidayCatalogRule,
-  isHolidayCatalogScopeMember, projectHolidayRules
+  isHolidayCatalogScopeMember, projectHolidayRules, HolidayCatalogError
 } from '../../src/core/holidayCatalog';
 import type { HolidayCatalog, HolidayCatalogRule } from '../../src/core/holidayCatalogTypes';
 import type { CalendarRuleSet, HolidayCalendarRule } from '../../src/core/calendarRuleTypes';
@@ -13,6 +13,16 @@ const readJson = (path: string): any => JSON.parse(readFileSync(new URL(path, im
 const IMPORT = readJson('../../data/candidates/2026-09-22-ap18c-workbook/holiday-candidate.json');
 const BASELINE: CalendarRuleSet[] = ['ch-federal-calendar', 'be-public-holidays'].map(id =>
   readJson(`../../data/releases/2026-08-31-mvp-03-approved.1/calendars/${id}.json`));
+
+test('catalog errors retain their Error and domain identity', () => {
+  const error = new HolidayCatalogError('holidayCatalog.invalidContract', 'Test error');
+  assert.ok(error instanceof Error);
+  assert.ok(error instanceof HolidayCatalogError);
+  assert.equal(Object.getPrototypeOf(error), HolidayCatalogError.prototype);
+  assert.equal(error.name, 'HolidayCatalogError');
+  assert.equal(error.reasonKey, 'holidayCatalog.invalidContract');
+  assert.equal(error.message, 'Test error');
+});
 
 test('schema interpreter rejects later unsupported keywords instead of weakening validation', () => {
   const schema = readJson('../../schemas/holiday-catalog-v1.schema.json');

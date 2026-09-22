@@ -105,27 +105,29 @@ def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
 
-def inspect_sppkg(data: bytes, solution_config: dict[str, Any]) -> dict[str, Any]:
+def inspect_sppkg(data: bytes, solution_config: dict[str, Any], *,
+                  expected_version: str = "0.4.0.0") -> dict[str, Any]:
+    require(expected_version in {"0.4.0.0", "0.4.0.1"}, "Unsupported explicit SPFx package version")
     files = zip_files(data)
     require("AppManifest.xml" in files, "SPPKG has no AppManifest.xml")
     app = ET.fromstring(files["AppManifest.xml"])
     require(app.get("ProductID") == SOLUTION_ID, "Unexpected solution ID")
-    require(app.get("Version") == "0.4.0.0", "SPPKG is not version 0.4.0.0")
+    require(app.get("Version") == expected_version, f"SPPKG is not version {expected_version}")
     require(app.get("IsDomainIsolated") == "false", "Domain-isolated package not allowed")
     require(app.get("IsClientSideSolution") == "true", "Expected a client-side solution")
     solution = solution_config["solution"]
-    require(solution.get("id") == SOLUTION_ID and solution.get("version") == "0.4.0.0", "Package configuration differs from built solution")
+    require(solution.get("id") == SOLUTION_ID and solution.get("version") == expected_version, "Package configuration differs from built solution")
     require(solution.get("includeClientSideAssets") is True, "Client-side assets must be included")
     require(not solution.get("webApiPermissionRequests") and not solution_config.get("webApiPermissionRequests"), "Unexpected additional API permissions")
     require(solution.get("features") == [{
         "title": "Fristenrechner Schweiz",
         "description": "Aktiviert den Fristenrechner für SharePoint und Microsoft Teams.",
-        "id": FEATURE_ID, "version": "0.4.0.0"
+        "id": FEATURE_ID, "version": expected_version
     }], "Unexpected solution feature configuration")
     feature_name = f"feature_{FEATURE_ID}.xml"
     require(feature_name in files, "Expected feature is missing")
     feature = ET.fromstring(files[feature_name])
-    require(feature.get("Id") == FEATURE_ID and feature.get("Version") == "0.4.0.0", "Built feature identity/version differs")
+    require(feature.get("Id") == FEATURE_ID and feature.get("Version") == expected_version, "Built feature identity/version differs")
     require(feature.get("Scope") == "Web", "Unexpected feature deployment scope")
     components = []
     for name, content in files.items():
@@ -155,8 +157,8 @@ def inspect_sppkg(data: bytes, solution_config: dict[str, Any]) -> dict[str, Any
     for marker in [BASE_URL, RELEASE_ID, '"4.0.0"', "ch-holiday-catalog"]:
         require(marker in script, f"SPFx bundle does not contain required marker: {marker}")
     require(main_name + ".LICENSE.txt" in files, "SPFx bundle licence is missing")
-    return {"solutionId": SOLUTION_ID, "solutionVersion": "0.4.0.0", "featureId": FEATURE_ID,
-            "featureVersion": "0.4.0.0", "webpartId": WEBPART_ID, "webpartVersion": "0.4.0",
+    return {"solutionId": SOLUTION_ID, "solutionVersion": expected_version, "featureId": FEATURE_ID,
+            "featureVersion": expected_version, "webpartId": WEBPART_ID, "webpartVersion": "0.4.0",
             "defaultGithubBaseUrl": BASE_URL, "additionalApiPermissions": [],
             "embeddedPinVerified": True, "entries": inventory(files)}
 

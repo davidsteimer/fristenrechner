@@ -614,7 +614,12 @@ const REFERENCE_HOLIDAYS = REFERENCE_RULES.filter((rule): rule is HolidayCalenda
 
 export class HolidayCatalogError extends Error {
   public override readonly name = 'HolidayCatalogError';
-  public constructor(public readonly reasonKey: string, message: string) { super(message); }
+  public constructor(public readonly reasonKey: string, message: string) {
+    super(message);
+    // SPFx targets ES5: native Error returns its own instance, so restore the
+    // subclass prototype used by the schema interpreter's narrow oneOf catch.
+    Object.setPrototypeOf(this, HolidayCatalogError.prototype);
+  }
 }
 
 function fail(message: string): never {

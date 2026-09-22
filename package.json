@@ -47,6 +47,8 @@
     "check:source-approval:mvp04": "node scripts/verify-mvp04-source-approval.mjs",
     "build:artifacts:mvp04": ".venv/bin/python scripts/prepare_mvp04_artifacts.py",
     "test:artifacts:mvp04": ".venv/bin/python -m unittest discover -s tests/data -p test_mvp04_artifacts.py",
+    "build:artifacts:mvp04:spfx-correction": ".venv/bin/python scripts/prepare_mvp04_spfx_correction.py",
+    "test:artifacts:mvp04:spfx-correction": ".venv/bin/python -m unittest discover -s tests/data -p test_mvp04_spfx_correction.py",
     "build:ui": "node scripts/build-ui-preview.mjs",
     "preview:ui": "node scripts/ui-preview-server.mjs",
     "build:public": "node scripts/build-public-app.mjs",

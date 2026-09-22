@@ -6,6 +6,7 @@ import importlib.util
 import io
 import json
 import shutil
+import subprocess
 import tempfile
 import unittest
 import warnings
@@ -15,6 +16,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
+HISTORICAL_CODE_COMMIT = "c3eaa629d13198d49013a66e8ef2029883139939"
 SPEC = importlib.util.spec_from_file_location("mvp04_artifacts", ROOT / "scripts/prepare_mvp04_artifacts.py")
 audit = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(audit)
@@ -23,10 +25,34 @@ SPEC.loader.exec_module(audit)
 class Mvp04ArtifactTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.artifacts, cls.report = audit.prepare(ROOT)
-        cls.package = (ROOT / audit.SPPKG).read_bytes()
+        # Historical evidence must not depend on the latest mutable SPFx build
+        # or the current package-solution version. Rehydrate only in a temp dir.
+        cls.historical_temp = tempfile.TemporaryDirectory(prefix="mvp04-historical-artifacts-")
+        cls.addClassCleanup(cls.historical_temp.cleanup)
+        cls.historical_root = Path(cls.historical_temp.name)
+        cls.package = (ROOT / audit.ARTIFACT_DIRECTORY / "fristenrechner-schweiz-0.4.0.0.sppkg").read_bytes()
+        audit.require(audit.sha256(cls.package) == "eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a", "Historical package fixture differs")
+        config_bytes = subprocess.run(
+            ["git", "cat-file", "blob", f"{HISTORICAL_CODE_COMMIT}:spfx/config/package-solution.json"],
+            cwd=ROOT, check=True, capture_output=True).stdout
+        cls.config = json.loads(config_bytes)
+        inputs = {audit.SPPKG: cls.package,
+                  "spfx/config/package-solution.json": config_bytes,
+                  audit.ROLLBACK: (ROOT / audit.ROLLBACK).read_bytes()}
+        for relative, content in inputs.items():
+            target = cls.historical_root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(content)
+        shutil.copytree(ROOT / "data/releases" / audit.RELEASE_ID,
+                        cls.historical_root / "data/releases" / audit.RELEASE_ID)
+        archived_web = (ROOT / audit.ARTIFACT_DIRECTORY / "fristenrechner-mvp04-steimer-web.zip").read_bytes()
+        audit.require(audit.sha256(archived_web) == "1131d164d96cffe7ed43206f39b38a1790fa86292542b8d73fa7604f3845d69c", "Historical web fixture differs")
+        for relative, content in audit.zip_files(archived_web).items():
+            target = cls.historical_root / ".work/public-app" / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(content)
+        cls.artifacts, cls.report = audit.prepare(cls.historical_root, ROOT)
         cls.package_files = audit.zip_files(cls.package)
-        cls.config = json.loads((ROOT / "spfx/config/package-solution.json").read_bytes())
         cls.manifest = json.loads((ROOT / "data/releases" / audit.RELEASE_ID / "manifest.json").read_bytes())
 
     def setUp(self):
@@ -36,7 +62,7 @@ class Mvp04ArtifactTests(unittest.TestCase):
 
     def web_fixture(self):
         target = self.fixture / "web"
-        shutil.copytree(ROOT / ".work/public-app", target)
+        shutil.copytree(self.historical_root / ".work/public-app", target)
         return target
 
     def data_fixture(self):
@@ -52,7 +78,7 @@ class Mvp04ArtifactTests(unittest.TestCase):
         return audit.deterministic_zip(files)
 
     def test_actual_artifacts_are_deterministic_and_disk_identical(self):
-        again, report = audit.prepare(ROOT)
+        again, report = audit.prepare(self.historical_root, ROOT)
         self.assertEqual(again, self.artifacts)
         self.assertEqual(report, self.report)
         for name, data in self.artifacts.items():
@@ -91,7 +117,7 @@ class Mvp04ArtifactTests(unittest.TestCase):
         self.assertEqual(len([name for name in files if name.startswith("licenses/")]), 3)
         self.assertFalse(any(name.endswith(".map") or "node_modules" in name for name in files))
         for name, data in files.items():
-            self.assertEqual(data, (ROOT / ".work/public-app" / name).read_bytes())
+            self.assertEqual(data, (self.historical_root / ".work/public-app" / name).read_bytes())
 
     def test_generated_zip_metadata_is_fixed_and_sorted(self):
         for name in ["fristenrechner-mvp04-sharepoint-mirror.zip", "fristenrechner-mvp04-steimer-web.zip"]:
@@ -220,7 +246,7 @@ class Mvp04ArtifactTests(unittest.TestCase):
             return b"changed rollback" if str(file).endswith(audit.ROLLBACK) else real(file)
         with patch.object(audit, "file_bytes", side_effect=changed):
             with self.assertRaisesRegex(audit.ArtifactError, "Rollback package hash differs"):
-                audit.prepare(ROOT)
+                audit.prepare(self.historical_root, ROOT)
 
     def test_writer_is_idempotent_and_refuses_modified_artifacts(self):
         audit.write(self.artifacts, self.report, self.fixture)
