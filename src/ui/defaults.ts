@@ -3,6 +3,13 @@
 import type { CalculationData } from '../core';
 import type { Locale } from './i18n';
 import {
+  EMPTY_VRPG_SELECTION,
+  resolveVrpgSelection,
+  sanitizeVrpgSelection,
+  selectionFromLegacy,
+  type VrpgSelectionState
+} from './vrpgSelection';
+import {
   automaticCalendarId,
   authorityOptions,
   isProfileAllowed,
@@ -14,7 +21,7 @@ import {
 export const DEFAULTS_STORAGE_KEY = 'fristenrechner.defaults.v1';
 
 export interface StoredDefaults {
-  readonly version: 2;
+  readonly version: 3;
   readonly locale: Locale;
   readonly authorityCode: string;
   readonly profileId: string;
@@ -23,6 +30,7 @@ export interface StoredDefaults {
   readonly calendarId: string;
   readonly specialRegimeId: string;
   readonly specialDefinitionId: string;
+  readonly vrpgSelection: VrpgSelectionState;
 }
 
 export interface StorageLike {
@@ -46,7 +54,7 @@ export function initialDefaults(data: CalculationData): StoredDefaults {
     ''
   );
   return {
-    version: 2,
+    version: 3,
     locale: 'de',
     authorityCode,
     profileId,
@@ -54,13 +62,14 @@ export function initialDefaults(data: CalculationData): StoredDefaults {
     selectors: reconcileSelectors(profile, {}),
     calendarId: automaticCalendarId(data, profile),
     specialRegimeId: special.regimeId,
-    specialDefinitionId: special.definitionId
+    specialDefinitionId: special.definitionId,
+    vrpgSelection: EMPTY_VRPG_SELECTION
   };
 }
 
 export function sanitizeDefaults(data: CalculationData, value: unknown): StoredDefaults {
   const fallback = initialDefaults(data);
-  if (!isRecord(value) || (value.version !== 1 && value.version !== 2)) {
+  if (!isRecord(value) || (value.version !== 1 && value.version !== 2 && value.version !== 3)) {
     return fallback;
   }
   const authorityCode = typeof value.authorityCode === 'string'
@@ -96,16 +105,25 @@ export function sanitizeDefaults(data: CalculationData, value: unknown): StoredD
       : '',
     typeof value.specialDefinitionId === 'string' ? value.specialDefinitionId : ''
   );
+  const vrpgSelection = profileId !== 'vrpg-be'
+    ? EMPTY_VRPG_SELECTION
+    : value.version === 3
+      ? sanitizeVrpgSelection(data, value.vrpgSelection)
+      : selectionFromLegacy(data,
+        typeof value.specialRegimeId === 'string' ? value.specialRegimeId : '',
+        typeof value.specialDefinitionId === 'string' ? value.specialDefinitionId : '');
+  const resolved = resolveVrpgSelection(data, vrpgSelection);
   return {
-    version: 2,
+    version: 3,
     locale: value.locale === 'fr' ? 'fr' : 'de',
     authorityCode,
     profileId,
     deadlineDays,
     selectors: reconcileSelectors(profile, rawSelectors),
     calendarId,
-    specialRegimeId: special.regimeId,
-    specialDefinitionId: special.definitionId
+    specialRegimeId: profileId === 'vrpg-be' ? resolved.regimeId : special.regimeId,
+    specialDefinitionId: profileId === 'vrpg-be' ? resolved.definitionId : special.definitionId,
+    vrpgSelection
   };
 }
 
@@ -127,9 +145,25 @@ export function saveDefaults(storage: StorageLike | undefined, defaults: StoredD
   }
   try {
     storage.setItem(DEFAULTS_STORAGE_KEY, JSON.stringify({
-      ...defaults,
+      version: 3,
+      locale: defaults.locale,
+      authorityCode: defaults.authorityCode,
+      profileId: defaults.profileId,
+      deadlineDays: defaults.deadlineDays,
+      calendarId: defaults.calendarId,
+      specialRegimeId: defaults.specialRegimeId,
+      specialDefinitionId: defaults.specialDefinitionId,
+      vrpgSelection: {
+        area: defaults.vrpgSelection.area,
+        law: defaults.vrpgSelection.law,
+        action: defaults.vrpgSelection.action,
+        stage: defaults.vrpgSelection.stage
+      },
       selectors: Object.fromEntries(
-        Object.entries(defaults.selectors).filter(([, value]) => value !== '' && value !== 'unknown')
+        Object.entries(defaults.selectors).filter(([key, value]) => (
+          ['deliveryMethod', 'subjectMatter', 'procedureVariant', 'specialLawStatus'].includes(key)
+          && value !== '' && value !== 'unknown'
+        ))
       )
     }));
     return true;

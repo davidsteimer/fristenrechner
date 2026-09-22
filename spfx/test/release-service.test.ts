@@ -185,7 +185,7 @@ test('weist eine unbekannte Format-Hauptversion ab', async () => {
       return bytes;
     }
     const manifest = JSON.parse(new TextDecoder().decode(bytes));
-    manifest.formatVersion = '4.0.0';
+    manifest.formatVersion = '5.0.0';
     return new TextEncoder().encode(JSON.stringify(manifest));
   });
 

@@ -15,6 +15,7 @@ import {
   resolveCalendar
 } from './data';
 import { CalendarGenerationError } from './generateCalendar';
+import { validateQualifiedSpecialInput } from './qualifiedApplicability';
 import type {
   CalculationData,
   CalendarTraceEvidence,
@@ -252,11 +253,12 @@ function countRelativeWithSuspension(
   periods: readonly SuspensionPeriod[],
   data: CalculationData,
   calendar: ResolvedCalendar
-): { readonly date: IsoDate; readonly periodIds: readonly string[]; readonly skippedDays: number } | undefined {
+): { readonly date: IsoDate; readonly firstCountedDay: IsoDate; readonly periodIds: readonly string[]; readonly skippedDays: number } | undefined {
   if (duration.unit !== 'day' || direction !== 'after') return undefined;
   let current = boundary === 'included' ? anchor : addCalendarDays(anchor, 1);
   let counted = 0;
   let skippedDays = 0;
+  let firstCountedDay: IsoDate | undefined;
   const periodIds: string[] = [];
   while (counted < duration.value) {
     if (!isWithinReleaseCoverage(current, data)
@@ -270,11 +272,12 @@ function countRelativeWithSuspension(
         if (!periodIds.includes(period.periodId)) periodIds.push(period.periodId);
       });
     } else {
+      firstCountedDay ??= current;
       counted += 1;
     }
     if (counted < duration.value) current = addCalendarDays(current, 1);
   }
-  return { date: current, periodIds, skippedDays };
+  return { date: current, firstCountedDay: firstCountedDay!, periodIds, skippedDays };
 }
 
 function specialCoverage(
@@ -375,6 +378,24 @@ export function calculateSpecialDeadline(
   const definition = findById(catalog.deadlineDefinitions, 'deadlineDefinitionId', input.ruleId);
   if (!regime) return blocked(['unknownRegime'], { inputDates: allInputDates(input) });
   if (!definition) return blocked(['unknownDeadlineDefinition'], { inputDates: allInputDates(input) });
+  const qualifiedIdentity = definition.deadlineDefinitionId.startsWith('AP17C-') || regime.regimeId.startsWith('ap17c-');
+  if (qualifiedIdentity && catalog.formatVersion !== '3.0.0') {
+    return blocked(['qualifiedCatalogVersionUnsupported'], { inputDates: allInputDates(input) });
+  }
+  if (qualifiedIdentity && (definition.deadlineOrigin !== 'CALCULATED' || !definition.applicability)) {
+    return blocked(['applicabilityContractMissing'], { inputDates: allInputDates(input) });
+  }
+  if (catalog.formatVersion === '3.0.0' && definition.deadlineOrigin === 'CALCULATED'
+    && (!Object.prototype.hasOwnProperty.call(definition, 'applicability')
+      || (definition.deadlineDefinitionId.startsWith('AP17C-') && !definition.applicability))) {
+    return blocked(['applicabilityContractMissing'], { inputDates: allInputDates(input) });
+  }
+  if (definition.deadlineOrigin === 'CALCULATED' && definition.applicability) {
+    const reason = validateQualifiedSpecialInput(input, data);
+    if (reason) return blocked([reason], { inputDates: allInputDates(input) });
+  } else if (input.applicabilityContext !== undefined) {
+    return blocked(['unexpectedApplicabilityContext'], { inputDates: allInputDates(input) });
+  }
 
   const calendarProfile = findById(catalog.calendarProfiles, 'calendarProfileId', input.calendarProfileId);
   const suspensionProfile = findById(
@@ -448,6 +469,12 @@ export function calculateSpecialDeadline(
   }];
   const appliedCalendarRuleIds: string[] = [];
   const calculation = definition.calculation;
+  const qualifiedCalendarStart = definition.applicability
+    ? addCalendarDays(input.applicabilityContext!.legalTriggerDate, 1)
+    : undefined;
+  let qualifiedFirstCountedDay = qualifiedCalendarStart;
+  let qualifiedSuspensionDays = 0;
+  let qualifiedRollDays = 0;
   let provisional: IsoDate;
 
   if (calculation.type === 'R1_RELATIVE') {
@@ -594,6 +621,8 @@ export function calculateSpecialDeadline(
         return blocked(['dataCoverageExceeded'], { context, ruleIds, inputDates: dates });
       }
       provisional = suspended.date;
+      qualifiedFirstCountedDay = suspended.firstCountedDay;
+      qualifiedSuspensionDays = suspended.skippedDays;
       const suspensionEvidence = calendarEvidenceForIds(calendar, suspended.periodIds);
       appliedCalendarRuleIds.push(...evidenceRuleIds(suspensionEvidence));
       trace.push({
@@ -633,6 +662,7 @@ export function calculateSpecialDeadline(
         if (!shiftedHolidayIds.includes(holiday.holidayId)) shiftedHolidayIds.push(holiday.holidayId);
       });
       finalDeadline = addCalendarDays(finalDeadline, 1);
+      qualifiedRollDays += 1;
       if (!isWithinReleaseCoverage(finalDeadline, data)
         || !isDateWithin(finalDeadline, calendar.coverage.from, calendar.coverage.to)) {
         return blocked(['dataCoverageExceeded'], { context, ruleIds, inputDates: [...dates, finalDeadline] });
@@ -653,6 +683,14 @@ export function calculateSpecialDeadline(
   }
 
   const gateResults: SpecialGateResult[] = [];
+  if (definition.applicability?.caseCoverageTo
+    && compareIsoDates(finalDeadline, definition.applicability.caseCoverageTo) > 0) {
+    return blocked(['applicabilityDateOutsideValidity'], { context, ruleIds, inputDates: [...dates, finalDeadline] });
+  }
+  if (definition.applicability && definition.validity.dataValidTo
+    && compareIsoDates(finalDeadline, definition.validity.dataValidTo) > 0) {
+    return blocked(['applicabilityDateOutsideValidity'], { context, ruleIds, inputDates: [...dates, finalDeadline] });
+  }
   for (const gateId of definition.gateIds) {
     const gate = findById(catalog.gates, 'gateId', gateId);
     if (!gate) return blocked(['unknownGate'], { context, ruleIds, inputDates: dates });
@@ -711,6 +749,16 @@ export function calculateSpecialDeadline(
     filingRequirement: filingResult,
     warningKeys: unique(warnings),
     blockReasonKeys: [],
+    ...(definition.applicability && qualifiedCalendarStart && qualifiedFirstCountedDay ? {
+      qualifiedCalculation: {
+        mappingId: definition.applicability.mappingId,
+        calendarStart: qualifiedCalendarStart,
+        firstCountedDay: qualifiedFirstCountedDay,
+        suspensionDays: qualifiedSuspensionDays,
+        rollDays: qualifiedRollDays,
+        sourceRefs: definition.applicability.sourceRefs
+      }
+    } : {}),
     trace: withSequence(trace)
   };
 }

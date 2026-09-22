@@ -26,7 +26,7 @@
       "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest.schema.json"
     },
     "formatVersion": {
-      "enum": ["1.0.0", "2.0.0", "3.0.0"]
+      "enum": ["1.0.0", "2.0.0", "3.0.0", "4.0.0"]
     },
     "dataKind": {
       "const": "releaseManifest"
@@ -74,6 +74,12 @@
         "type": "string",
         "pattern": "^[a-z][a-z0-9-]*$"
       }
+    },
+    "holidayCatalogIds": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": { "const": "ch-holiday-catalog" }
     },
     "sourceSummary": {
       "type": "object",
@@ -165,6 +171,69 @@
   "allOf": [
     {
       "if": {
+        "properties": { "formatVersion": { "enum": ["1.0.0", "2.0.0", "3.0.0"] } },
+        "required": ["formatVersion"]
+      },
+      "then": {
+        "not": { "required": ["holidayCatalogIds"] },
+        "properties": {
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": { "role": { "not": { "const": "holidayCatalog" } } }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "formatVersion": { "const": "4.0.0" } },
+        "required": ["formatVersion"]
+      },
+      "then": {
+        "required": ["holidayCatalogIds"],
+        "properties": {
+          "compatibility": {
+            "type": "object",
+            "properties": { "minimumConsumerFormatVersion": { "const": "4.0.0" } }
+          },
+          "artifacts": {
+            "type": "array",
+            "minContains": 1,
+            "maxContains": 1,
+            "contains": {
+              "type": "object",
+              "required": ["role", "contentId"],
+              "properties": {
+                "role": { "const": "holidayCatalog" },
+                "contentId": { "const": "ch-holiday-catalog" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "formatVersion": { "enum": ["1.0.0", "2.0.0"] } },
+        "required": ["formatVersion"]
+      },
+      "then": {
+        "properties": {
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": { "schemaId": { "not": { "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json" } } }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
         "properties": { "formatVersion": { "const": "1.0.0" } },
         "required": ["formatVersion"]
       },
@@ -232,7 +301,7 @@
     },
     {
       "if": {
-        "properties": { "formatVersion": { "const": "3.0.0" } },
+        "properties": { "formatVersion": { "enum": ["3.0.0", "4.0.0"] } },
         "required": ["formatVersion"]
       },
       "then": {
@@ -241,12 +310,6 @@
           "coverage": {
             "type": "object",
             "properties": { "to": { "type": "null" } }
-          },
-          "compatibility": {
-            "type": "object",
-            "properties": {
-              "minimumConsumerFormatVersion": { "const": "3.0.0" }
-            }
           },
           "artifacts": {
             "type": "array",
@@ -274,6 +337,20 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": { "formatVersion": { "const": "3.0.0" } },
+        "required": ["formatVersion"]
+      },
+      "then": {
+        "properties": {
+          "compatibility": {
+            "type": "object",
+            "properties": { "minimumConsumerFormatVersion": { "const": "3.0.0" } }
+          }
+        }
+      }
     }
   ],
   "$defs": {
@@ -296,7 +373,7 @@
         },
         "role": {
           "type": "string",
-          "enum": ["legalProfile", "calendar", "specialRegimeCatalog"]
+          "enum": ["legalProfile", "calendar", "specialRegimeCatalog", "holidayCatalog"]
         },
         "contentId": {
           "type": "string",
@@ -311,7 +388,9 @@
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
             "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
-            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json"
+            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json",
+            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json",
+            "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v1.schema.json"
           ]
         },
         "byteLength": {
@@ -324,6 +403,34 @@
         }
       },
       "allOf": [
+        {
+          "if": {
+            "properties": { "role": { "const": "holidayCatalog" } },
+            "required": ["role"]
+          },
+          "then": {
+            "properties": {
+              "contentId": { "const": "ch-holiday-catalog" },
+              "schemaId": { "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v1.schema.json" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "role": { "const": "calendar" } },
+            "required": ["role"]
+          },
+          "then": {
+            "properties": {
+              "schemaId": {
+                "enum": [
+                  "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar.schema.json",
+                  "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json"
+                ]
+              }
+            }
+          }
+        },
         {
           "if": {
             "type": "object",
@@ -349,7 +456,10 @@
             "type": "object",
             "properties": {
               "schemaId": {
-                "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json"
+                "enum": [
+                  "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json",
+                  "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json"
+                ]
               }
             }
           }

@@ -1,0 +1,101 @@
+{
+  "formatVersion": "1.0.0",
+  "dataKind": "sourceReviewApproval",
+  "approvalId": "2026-09-22-mvp-04-source-approval.1",
+  "recordStatus": "approved",
+  "approvedOn": "2026-09-22",
+  "approvedBy": "David Steimer",
+  "declaration": "Ich nehme die Quellenprüfung für MVP 0.4 ab. Die bereits beschlossene Behandlung des dokumentierten AI-Quellenkonflikts bleibt unverändert.",
+  "releaseId": "2026-09-22-mvp-04-approved.1",
+  "scope": {
+    "manifestSources": 38,
+    "catalogSources": 84,
+    "overlap": 2,
+    "uniqueSources": 120
+  },
+  "outcomes": {
+    "unchanged": 119,
+    "unclear": 1,
+    "changed": 0,
+    "unavailable": 0
+  },
+  "knownConflict": {
+    "sourceId": "SRC-AI-RUHETAGE-LISTE-2026",
+    "treatmentUnchanged": true,
+    "officialCorrectionClaimed": false
+  },
+  "evidence": [
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-check.json",
+      "sha256": "1f3c03b1f72e18b4546cbf5e9ebfb38562f23c1f9da509f5bc9cb5b06d37be3e"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-event-candidate.json",
+      "sha256": "5012bc745322ba5f33b0e4e05acdecfaf951fa297adaeb0fa30f092cf63712c1"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/judgment-refresh.json",
+      "sha256": "9502ccba050773f5832effdea6242c9af8184232417ed6e5cd57f73ff09e7785"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-central.json",
+      "sha256": "50a9faf1e3947bd162fb064a153c96338b6cdd1f2e7bef1e16e512f3e4a721b7"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-west.json",
+      "sha256": "fcd4cd39b76ebfe72b1bc0a018848fa5e94017ff219c322d5c28ef79ecb62f1a"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-east.json",
+      "sha256": "c4647458182e320021e364014e909eddb2d5dfcc76c7fa4813f2aca0e0ba6051"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-follow-up.json",
+      "sha256": "1222cde3b5667f7ae5ad61509061a9a177f48c3e6b3a57a2be30679675b50b37"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-review-completeness.json",
+      "sha256": "f4c598d31bd9e1c14458a46f72aa3ec52ce0dd8229dfb63d646bd039feace1b4"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/approval-inputs/source-event-candidate.json",
+      "sha256": "d44bc09888876fcb69a53773a343ac382d37d0515a9fef7c8358119a391cf8ed"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/approval-inputs/source-register-candidate.json",
+      "sha256": "b3aaa1310958f48d6b29fc4ac1c83194ab26fed643ef18b672e2608faadb0ea7"
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/manifest.json",
+      "sha256": "a240b01feb671dbe4374c1e097bc9143d66fd4878cd235b3b490a9c08afec72e"
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap18b-05.md",
+      "sha256": "dfe62187ba2c7de1210b7e5d4f386e89a68ae4794a10f849c31fb9b64cc61843"
+    }
+  ],
+  "transition": {
+    "event": {
+      "beforePath": "outputs/release-mvp04-2026-09-22/approval-inputs/source-event-candidate.json",
+      "beforeSha256": "d44bc09888876fcb69a53773a343ac382d37d0515a9fef7c8358119a391cf8ed",
+      "afterPath": "data/source-reviews/events/2026-09-22-mvp-04-prerelease.1.json",
+      "afterSha256": "87fa74eb772b6d78ced7d31e4062d3bb513e6045510995719676175c855b4883"
+    },
+    "register": {
+      "beforePath": "outputs/release-mvp04-2026-09-22/approval-inputs/source-register-candidate.json",
+      "beforeSha256": "b3aaa1310958f48d6b29fc4ac1c83194ab26fed643ef18b672e2608faadb0ea7",
+      "afterPath": "data/source-reviews/source-register.json",
+      "afterSha256": "0d88146ede01345266edb0c6a7d3827cc1f48a6c5ccc243463eb2d89b48f6a15"
+    }
+  },
+  "permissions": {
+    "sourceReviewApproved": true,
+    "publicationAuthorized": false,
+    "deploymentAuthorized": false,
+    "operatingApproval": false
+  }
+}

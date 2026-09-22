@@ -35,7 +35,7 @@ const data = loadCalculationData();
 describe('AP9-lokale Defaults', () => {
   it('verwendet Bern und StPO als sicheren MVP-Ausgangspunkt', () => {
     const defaults = initialDefaults(data);
-    assert.equal(defaults.version, 2);
+    assert.equal(defaults.version, 3);
     assert.equal(defaults.authorityCode, 'BE');
     assert.equal(defaults.profileId, 'stpo');
     assert.equal(defaults.calendarId, 'be-public-holidays');
@@ -95,7 +95,7 @@ describe('AP9-lokale Defaults', () => {
     }));
 
     const loaded = loadDefaults(ap11cData, storage);
-    assert.equal(loaded.version, 2);
+    assert.equal(loaded.version, 3);
     assert.equal(loaded.selectors.specialLawStatus, undefined);
     assert.equal(loaded.specialRegimeId, '');
     assert.equal(loaded.specialDefinitionId, '');

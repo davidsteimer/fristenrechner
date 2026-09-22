@@ -3,11 +3,13 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Technische Beurteilung und Übergabe an eine Microsoft-365-IT |
-| Produktstand | Release 2 beziehungsweise MVP 0.3, definitives Paket `0.3.0.0` vor Tenantabnahme |
-| Stand | 31. August 2026 |
+| Produktstand | MVP 0.4, lokal gebautes und geprüftes Paket `0.4.0.0`, noch nicht veröffentlicht oder bereitgestellt |
+| Stand | 22. September 2026 |
 | Zielplattform | SharePoint Online und Microsoft Teams |
 | Lizenz | Programmcode AGPL-3.0-only, Dokumentation und kuratierte Daten grundsätzlich CC BY-SA 4.0 |
 | Repository | `davidsteimer/fristenrechner` |
+
+Die AP17-/AP18-Fachgrundlagen und die vollständige Quellenprüfung sind abgenommen. Publikation, Installation in E/Q, öffentliche P-Bereitstellung und Betriebsfreigabe von MVP 0.4 stehen noch aus. Der dokumentierte externe Betriebs- und Rückfallstand bleibt MVP 0.3. Diese Unterlage beschreibt den vorbereiteten neuen Stand, sie ist keine Installationsfreigabe.
 
 ## 1. Kurzbeurteilung der Tenantportabilität
 
@@ -43,6 +45,8 @@ SharePoint-WebPart oder Teams-Registerkarte
 
 Der Rechenkern kennt weder SharePoint noch Teams. Der Hostadapter enthält keine Fristenlogik. Dadurch bleiben Fachlogik, Microsoft-365-Integration und Datenquelle getrennt prüfbar.
 
+Die statische öffentliche P-Ausprägung verwendet denselben Kern und dieselbe Oberfläche. Sie bettet den geprüften Datenrelease beim Build ein und benötigt keinen Laufzeitabruf von GitHub oder SharePoint. Sie läuft auf der bestehenden steimer.ch-Hosting-Infrastruktur und ist nicht Bestandteil einer Dritt-Tenant-SPFx-Installation.
+
 ## 3. Toolchain
 
 | Komponente | Version oder Vorgabe |
@@ -65,7 +69,7 @@ Die Entwicklungswerkzeuge werden nur zum Bauen und Prüfen benötigt. Auf dem Ar
 
 Die hostneutralen Produktquellen liegen unter `src/`. Die produktive Microsoft-365-Integration liegt unter `spfx/`. Vor dem SPFx-Build werden Rechenkern, Oberfläche und Schemata kontrolliert in das SPFx-Projekt synchronisiert. Diese Kopien sind keine zweite fachliche Quelle.
 
-Reproduzierbarer Prüflauf aus einer frischen Arbeitskopie:
+Lokaler Prüflauf aus einer frischen Arbeitskopie mit Node.js `22.23.2`:
 
 ```bash
 npm ci
@@ -75,25 +79,36 @@ npm ci
 npm run build
 ```
 
-`npm run check` führt Typprüfung, 164 Kern- und UI-Tests sowie den Build der Browservorschau aus. Der SPFx-Build führt zusätzlich 17 Provider- und Integrationsprüfungen, TypeScript-, Sass-, ESLint- und Webpack-Prüfungen sowie ein Audit der finalen Bundle-CSS aus.
+`npm run check` führt Typprüfung, 675 Kern- und UI-Tests, sieben Prüfungen der öffentlichen Webausprägung sowie den Build von Browservorschau und öffentlicher Webausprägung aus. Der SPFx-Build führt zusätzlich 48 Provider- und Integrationsprüfungen, TypeScript-, Sass-, ESLint- und Webpack-Prüfungen sowie ein Audit der finalen Bundle-CSS aus. Diese Prüfläufe sind im abgegrenzten Dateiexport mit frisch aus den Lockdateien installierten Node-Abhängigkeiten bestanden. Weitere Daten-, Kalender-, Archiv- und Quellenprüfungen sind in der [Publikationsvorprüfung](../betrieb/publikationsvorpruefung-mvp04.md) aufgeführt. Die Testgruppen überschneiden sich und werden nicht addiert.
 
-Das auslieferbare Paket hat folgende Identität:
+Das vorbereitete Releasepaket hat folgende Identität:
 
 | Merkmal | Wert |
 | --- | --- |
 | Datei | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Paketversion | `0.3.0.0` |
-| Grösse | 176'665 Bytes |
-| SHA-256 | `a4cbaa646a9338419de51f7629652ecc2f9ada0ac15aeccdcf2211f72bc964e1` |
+| Paketversion | `0.4.0.0` |
+| Grösse | 202'599 Bytes |
+| SHA-256 | `eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 | Unterstützte Hosts | `SharePointWebPart`, `TeamsTab` |
 | Client-Assets | im `.sppkg` enthalten |
 | Tenantweite automatische Bereitstellung | nein, Installation pro Zielwebsite |
 
+Ein unabhängiger SPFx-Neubau ist funktional geprüft, jedoch nicht bitidentisch. Die dokumentierte Varianz betrifft interne Modulnummern, konsistente CSS-Kennungen, generierte Paketkennungen und ZIP-Zeitstempel. Die obige Prüfsumme bezeichnet ausschliesslich das vorbereitete Releasepaket. Ein Neubau mit abweichender Prüfsumme benötigt einen eigenen Paketnachweis und darf nicht unter der alten Prüfsumme freigegeben werden.
+
 ## 5. Daten- und Sicherheitsmodell
 
-Release 2 verwendet standardmässig den freigegebenen Datenrelease `2026-08-31-mvp-03-approved.1`. Die GitHub-Adresse ist auf den vollständigen Commit `f80f4019ff56ca51154ba7cd8b767686dd87a9a4` gepinnt. Ein frei beweglicher Branch wie `main` wird als produktive Datenquelle abgewiesen.
+MVP 0.4 verwendet standardmässig den lokal freigegebenen Datenrelease `2026-09-22-mvp-04-approved.1`. Die GitHub-Adresse ist auf den vollständigen Commit `739876a0d11b550ea8cc702622ab22af321994a5` gepinnt. Dieser Commit ist noch nicht veröffentlicht, der neue GitHub-Standardpfad daher noch nicht öffentlich abrufbar. Die Veröffentlichung und der anschliessende öffentliche Bytevergleich sind Voraussetzung für diesen Betriebsmodus. Ein frei beweglicher Branch wie `main` wird als produktive Datenquelle abgewiesen.
+
+| Komponentenvertrag | MVP 0.4 |
+| --- | --- |
+| Manifest-/Consumerformat | `4.0.0` |
+| Spezialregimekatalog | `3.0.0` |
+| Kalenderkomponente | `2.0.0` |
+| Schweizer Feiertagskatalog | `1.0.0` |
+
+Der Consumer verarbeitet weiterhin die Formate 1, 2 und 3. Umgekehrt kann der frühere MVP-0.3-Consumer Format 4 nicht lesen. Deshalb müssen App und Datenpfad koordiniert aktualisiert werden. Der vollständige MVP-0.4-Mirror umfasst Manifest und neun Nutzartefakte, einschliesslich `holiday-catalogs/ch-holiday-catalog.json`.
 
 Vor der Aktivierung prüft die Anwendung unter anderem:
 
@@ -103,6 +118,7 @@ Vor der Aktivierung prüft die Anwendung unter anderem:
 - Dateigrössen und SHA-256-Prüfsummen
 - Content-IDs und Referenzen zwischen Profilen und Kalendern
 - regelbasierte Kalender, Vererbung, Overrides und offene zeitliche Abdeckung
+- vollständigen Feiertagskatalog und dessen nachprüfbare, begrenzte Projektion in die operativen Kalender
 
 Bei einem fehlerhaften oder unvollständigen Release bleibt der letzte vollständig validierte Aktivstand erhalten. Ohne gültigen Aktivstand wird der Rechner gesperrt. Er zeigt kein lediglich plausibel wirkendes Fristende an.
 
@@ -121,14 +137,18 @@ Mit dem SharePoint-Mirror kann der externe GitHub-Zugriff zur Laufzeit entfallen
 
 ## 7. Nachgewiesener Stand und Grenzen
 
-Das frühere Paket `0.2.0.0` wurde im steimer.ch-Testtenant im Tenant-App-Katalog aktiviert, auf einer dedizierten SharePoint-Testsite installiert und als direkte Teams-Kanalregisterkarte geprüft. Der Referenzfall StPO mit Empfang am 16.09.2026 und zehn Tagen ergibt in beiden Hosts den Fristablauf 28.09.2026. Das neue Paket `0.3.0.0` ist lokal vollständig gebaut, geprüft und auf den freigegebenen MVP-0.3-Datencommit gepinnt. Seine SharePoint-, Teams- und Outlook-Matrix steht noch aus.
+Der dokumentierte Betriebsstand MVP 0.3 mit Paket `0.3.0.0` wurde in SharePoint und Teams installiert und einschliesslich Outlook nach T01–T19 geprüft. Der begrenzte gruppenbasierte Q-Gastbetrieb ist mit AP15 und DEC-2026-016 freigegeben, der öffentliche statische P-Betrieb mit AP16 und DEC-2026-018. Diese historischen Ergebnisse werden nicht als Zielumgebungsprüfung von MVP 0.4 übernommen.
+
+MVP 0.4 ist lokal gebaut und geprüft. Die [Quellenprüfung](../fachrecht/abnahme-quellenpruefung-mvp04.md) mit 120 unterschiedlichen Quellen-IDs ist durch David Steimer abgenommen. Die beschlossene Behandlung des dokumentierten AI-Quellenkonflikts bleibt unverändert. Der [Deploymentplan](../betrieb/deployment-mvp-04.md) führt die noch ausstehenden SharePoint-, Teams-, Q-Gast- und öffentlichen P-Prüfungen sowie die getrennten Freigaben.
+
+Der Produktumfang bleibt begrenzt: 16 qualifizierte AP17-Zuordnungen, vier gesperrte Sammelpfade und Fallabdeckung 2026–2027. Der Schweizer Katalog enthält 479 Regeln, operativ werden jedoch weiterhin nur zwölf bestehende CH-/BE-Feiertagsregeln projiziert. Es werden keine zusätzlichen kantonalen Fristenprofile freigegeben. Oberfläche Deutsch und Französisch, italienische und rätoromanische Bezeichnungsfelder nur in der Datengrundlage.
 
 Noch nicht Teil dieses Nachweises sind insbesondere:
 
 - produktiver Betrieb in einem Dritt-Tenant
 - Betrieb auf SharePoint Server vor Ort statt SharePoint Online
-- aktivierter Format-3-SharePoint-Mirror im Tenantlauf
-- Gastzugriffe
+- Installation und Aktivierung von MVP 0.4 einschliesslich Format-4-Mirror im Tenantlauf
+- erneute Q-Gastprüfung und öffentliche P-Prüfung für MVP 0.4
 - automatisierte jährliche Datenpublikation und Mirror-Synchronisation
 - formelle WCAG-Konformitätsbewertung
 
@@ -139,7 +159,10 @@ Noch nicht Teil dieses Nachweises sind insbesondere:
 - [Microsoft: Apps über die SharePoint-App-Website verwalten](https://learn.microsoft.com/en-us/sharepoint/use-app-catalog)
 - [Microsoft: Benutzerdefinierte Apps in Teams verwalten](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 - [AP10-Prüfnachweis](spfx-produktintegration-ap10.md)
-- [Release-2-Deployment und Testmatrix](../betrieb/deployment-release-2-mvp-03.md)
+- [MVP-0.4-Deployment und Zielumgebungsprüfung](../betrieb/deployment-mvp-04.md)
+- [Paket-, Mirror- und Webnachweis MVP 0.4](../../outputs/release-mvp04-2026-09-22/artifact-verification.json)
+- [MVP-0.3-Deployment und historische Testmatrix](../betrieb/deployment-release-2-mvp-03.md)
+- [Q-Betriebsanweisung](../betrieb/q-demobetrieb-ap15-betriebsanweisung.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)
 - [Lizenz](../../LICENSE)
 - [Lizenzabgrenzung](../../LICENSES/README.md)

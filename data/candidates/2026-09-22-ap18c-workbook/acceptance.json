@@ -1,0 +1,42 @@
+{
+  "kind": "workbookAcceptance",
+  "workbookVersion": "0.12",
+  "workbookContractVersion": "0.6.0",
+  "workbookFile": "2026-09-22_Feiertagsmatrix_Schweiz_AP18B-05_V0.12.xlsx",
+  "sha256": "d4fe89932b5d33f7f63516073668accf1a92b141a07388b559c3a6965c1aeb65",
+  "acceptedOn": "2026-09-22",
+  "acceptedBy": "David Steimer",
+  "decision": "DEC-2026-022",
+  "evidence": "docs/fachrecht/abnahme-ap18b-05.md",
+  "runtimeEnabled": false,
+  "boundaries": [
+    {
+      "id": "SO-MAY1-NO-DEADLINE-EFFECT",
+      "appliesToScopes": ["SO-RTG-EXCEPT-BUCHEGGBERG", "SO-RTG-BUCHEGGBERG"],
+      "statement": "Der Solothurner Halbtag am 1. Mai hat keinen Einfluss auf den Fristenlauf. Die ältere offene Frage in der Arbeitsmappe bleibt als historischer Text erhalten.",
+      "evidence": "docs/fachrecht/abnahme-ap18b-03.md"
+    },
+    {
+      "id": "GR-CANTONAL-AUTHORITIES",
+      "appliesToJurisdiction": "CH-GR",
+      "statement": "Erfasst sind Verfahren vor kantonalen Behörden unter der bestätigten Annahme, dass lokale Ruhetage dabei irrelevant sind. Keine allgemeine Freigabe kommunaler Verfahren.",
+      "evidence": "docs/fachrecht/quellenpaket-ap18b-02-ti-gr-abgrenzung.md"
+    },
+    {
+      "id": "NE-INDIVIDUAL-DAYS-RESERVED",
+      "appliesToJurisdiction": "CH-NE",
+      "statement": "Zusätzliche regionale Einzelfestlegungen und gesonderte Verwaltungsschliesstage werden nicht automatisch erzeugt. Ihre mögliche Fristwirkung bleibt vorbehalten. Wiederkehrende feste LPA-Ergänzungen und Le Landeron bleiben erfasst.",
+      "evidence": "docs/architektur/erfassung-ap18b-05.md"
+    },
+    {
+      "id": "NO-INDEPENDENT-MUNICIPAL-LAW",
+      "statement": "Nur Bundesrecht und kantonales Recht. Örtliche Unterschiede aus diesen Grundlagen bleiben erfasst. Eigenständige kommunale Feiertagsregelungen sind ausgeschlossen.",
+      "evidence": "docs/architektur/feiertagsmatrix-ap18a.md"
+    },
+    {
+      "id": "NO-AUTOMATIC-PROCEDURAL-PROFILES",
+      "statement": "Die Abnahme der Erfassungsgrundlage genehmigt weder neue kantonale Fristenprofile noch eine Gleichsetzung arbeitsrechtlicher Feiertage mit prozessualen Feiertagen. Übersetzungen werden nicht zu amtlichen Sprachfassungen.",
+      "evidence": "docs/fachrecht/abnahme-ap18b-05.md"
+    }
+  ]
+}

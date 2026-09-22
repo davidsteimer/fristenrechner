@@ -15,6 +15,8 @@ import type {
   ValidatedReleaseLike
 } from './types';
 import type { SpecialRegimeCatalog } from './specialTypes';
+import type { HolidayCatalog } from './holidayCatalogTypes';
+import { assertHolidayCatalog, assertHolidayCatalogProjection } from './holidayCatalog';
 
 type JsonObject = Record<string, unknown>;
 
@@ -78,7 +80,7 @@ export function calendarGenerationRangeForDates(
 
 function assertDocument(
   value: unknown,
-  kind: 'legalProfile' | 'calendar' | 'specialRegimeCatalog',
+  kind: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog',
   id: string
 ): JsonObject {
   if (!isObject(value) || value.dataKind !== kind) {
@@ -121,7 +123,7 @@ function assertCalendarReferences(calendars: ReadonlyMap<string, CalendarData>):
 
 export function createCalculationData(release: ValidatedReleaseLike): CalculationData {
   const majorVersion = Number.parseInt(release.formatVersion.split('.')[0] ?? '', 10);
-  if (majorVersion !== 1 && majorVersion !== 2 && majorVersion !== 3) {
+  if (majorVersion !== 1 && majorVersion !== 2 && majorVersion !== 3 && majorVersion !== 4) {
     throw new CoreDataError(`Nicht unterstützte Hauptversion des Datenformats: ${release.formatVersion}`);
   }
   assertIsoDate(release.coverageFrom, 'Releaseabdeckung');
@@ -134,16 +136,35 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
   if (majorVersion < 3 && release.coverageTo === null) {
     throw new CoreDataError('Die Formate 1 und 2 benötigen eine endliche Releaseabdeckung.');
   }
-  if (majorVersion === 3 && release.coverageTo !== null) {
-    throw new CoreDataError('Das Format 3 benötigt eine nach oben offene Releaseabdeckung.');
+  if (majorVersion >= 3 && release.coverageTo !== null) {
+    throw new CoreDataError('Die Formate 3 und 4 benötigen eine nach oben offene Releaseabdeckung.');
+  }
+  if (majorVersion === 4 && release.formatVersion !== '4.0.0') {
+    throw new CoreDataError(`Nicht unterstütztes Format-4-Minorformat: ${release.formatVersion}`);
+  }
+  if (majorVersion < 4 && release.holidayCatalogIds !== undefined) {
+    throw new CoreDataError('Ein Feiertagskatalog benötigt Manifestformat 4.');
   }
 
   const profiles = new Map<string, LegalProfile>();
   const calendars = new Map<string, CalendarData>();
   const calendarRuleSets = new Map<string, CalendarRuleSet>();
   const specialRegimeCatalogs = new Map<string, SpecialRegimeCatalog>();
+  const holidayCatalogs = new Map<string, HolidayCatalog>();
   release.artifacts.forEach(artifact => {
+    if (!['legalProfile', 'calendar', 'specialRegimeCatalog', 'holidayCatalog'].includes(artifact.descriptor.role)) {
+      throw new CoreDataError(`Unbekannte Artefaktrolle: ${String(artifact.descriptor.role)}`);
+    }
     const document = assertDocument(artifact.parsed, artifact.descriptor.role, artifact.descriptor.contentId);
+    if (artifact.descriptor.role === 'holidayCatalog') {
+      if (majorVersion !== 4) throw new CoreDataError('Ein Feiertagskatalog benötigt Manifestformat 4.');
+      if (holidayCatalogs.has(artifact.descriptor.contentId)) {
+        throw new CoreDataError(`Doppelter Feiertagskatalog: ${artifact.descriptor.contentId}`);
+      }
+      assertHolidayCatalog(document);
+      holidayCatalogs.set(artifact.descriptor.contentId, document);
+      return;
+    }
     if (artifact.descriptor.role === 'legalProfile') {
       if (profiles.has(artifact.descriptor.contentId)) {
         throw new CoreDataError(`Doppeltes Rechtsprofil: ${artifact.descriptor.contentId}`);
@@ -164,10 +185,10 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
     if (calendars.has(artifact.descriptor.contentId)) {
       throw new CoreDataError(`Doppelter Kalender: ${artifact.descriptor.contentId}`);
     }
-    if (majorVersion === 3) {
+    if (majorVersion >= 3) {
       if (document.formatVersion !== '2.0.0' || !Array.isArray(document.rules) || !isObject(document.validity)) {
         throw new CoreDataError(
-          `Format-3-Kalender ${artifact.descriptor.contentId} ist keine Regelkomponente 2.0.0.`
+          `Format-${majorVersion}-Kalender ${artifact.descriptor.contentId} ist keine Regelkomponente 2.0.0.`
         );
       }
       const ruleSet = document as unknown as CalendarRuleSet;
@@ -199,7 +220,52 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
   );
   assertCalendarReferences(calendars);
 
+  if (majorVersion === 4) {
+    assertSameIds('Feiertagskatalog-IDs', ['ch-holiday-catalog'], release.holidayCatalogIds ?? []);
+    assertSameIds('Feiertagskatalog-Artefakte', release.holidayCatalogIds ?? [], [...holidayCatalogs.keys()]);
+    // The first Format-4 contract integrates data, not new procedural coverage.
+    assertSameIds('Format-4-Rechtsprofile', ['stpo', 'zpo', 'bgg', 'vwvg', 'vrpg-be'], release.profileIds);
+    assertSameIds('Format-4-Spezialkatalog', ['vrpg-be-special-regimes-ap17c'], release.specialRegimeCatalogIds ?? []);
+    if (specialRegimeCatalogs.get('vrpg-be-special-regimes-ap17c')?.formatVersion !== '3.0.0') {
+      throw new CoreDataError('Format 4 benötigt den bestätigten AP17-Spezialkatalog 3.0.0.');
+    }
+    holidayCatalogs.forEach(catalog => assertHolidayCatalogProjection(catalog, [...calendarRuleSets.values()]));
+  }
+
   specialRegimeCatalogs.forEach(catalog => {
+    if (catalog.formatVersion !== '2.0.0' && catalog.formatVersion !== '3.0.0') {
+      throw new CoreDataError(`Nicht unterstütztes Spezialkatalogformat: ${catalog.formatVersion}`);
+    }
+    const qualifiedDefinitionIds = new Set(catalog.regimes.filter(regime => regime.regimeId.startsWith('ap17c-'))
+      .flatMap(regime => [...regime.deadlineDefinitionIds]));
+    catalog.deadlineDefinitions.forEach(definition => {
+      if (!definition.deadlineDefinitionId.startsWith('AP17C-') && !qualifiedDefinitionIds.has(definition.deadlineDefinitionId)) return;
+      if (catalog.formatVersion !== '3.0.0') {
+        throw new CoreDataError(`Qualifizierte Definition benötigt Spezialkatalogformat 3: ${definition.deadlineDefinitionId}`);
+      }
+      if (definition.deadlineOrigin !== 'CALCULATED' || !definition.applicability) {
+        throw new CoreDataError(`Qualifizierte Definition ohne Anwendbarkeitsvertrag: ${definition.deadlineDefinitionId}`);
+      }
+    });
+    if (catalog.formatVersion === '3.0.0') {
+      if (majorVersion < 3) throw new CoreDataError('Spezialkatalogformat 3 benötigt Manifestformat 3 oder 4.');
+      const mappingIds = new Set<string>();
+      catalog.deadlineDefinitions.forEach(definition => {
+        if (definition.deadlineOrigin !== 'CALCULATED') return;
+        if (!Object.prototype.hasOwnProperty.call(definition, 'applicability')) {
+          throw new CoreDataError(`Format-3-Definition ohne Anwendbarkeitsvertrag: ${definition.deadlineDefinitionId}`);
+        }
+        if (definition.deadlineDefinitionId.startsWith('AP17C-') && !definition.applicability) {
+          throw new CoreDataError(`Qualifizierte Format-3-Definition ohne Anwendbarkeit: ${definition.deadlineDefinitionId}`);
+        }
+        if (definition.applicability) {
+          if (mappingIds.has(definition.applicability.mappingId)) {
+            throw new CoreDataError(`Doppelte Anwendbarkeitszuordnung: ${definition.applicability.mappingId}`);
+          }
+          mappingIds.add(definition.applicability.mappingId);
+        }
+      });
+    }
     if (!profiles.has(catalog.profileId)) {
       throw new CoreDataError(
         `Spezialregimekatalog ${catalog.catalogId} verweist auf das unbekannte Profil ${catalog.profileId}.`
@@ -221,7 +287,8 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
     profiles,
     calendars,
     calendarRuleSets,
-    specialRegimeCatalogs
+    specialRegimeCatalogs,
+    holidayCatalogs
   };
 }
 

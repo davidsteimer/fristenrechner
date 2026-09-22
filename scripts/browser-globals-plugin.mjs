@@ -52,6 +52,9 @@ export const browserGlobalsPlugin = {
           export const MessageBarType = runtime.MessageBarType;
           export const PrimaryButton = runtime.PrimaryButton;
           export const TextField = runtime.TextField;
+          export const loadTheme = runtime.loadTheme;
+          export const registerIcons = runtime.registerIcons;
+          export const unregisterIcons = runtime.unregisterIcons;
         `
       };
     });

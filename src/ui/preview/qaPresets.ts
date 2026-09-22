@@ -3,6 +3,12 @@
 import type { CalculatorFormState } from '../model';
 
 const presets: Readonly<Record<string, Partial<CalculatorFormState>>> = {
+  'vrpg-progressive': {
+    authorityCode: 'BE',
+    profileId: 'vrpg-be',
+    vrpgSelection: { area: 'social', law: 'ivg', action: 'ongoing', stage: '' },
+    calendarId: 'be-public-holidays'
+  },
   'stpo-weekend': {
     authorityCode: 'BE',
     profileId: 'stpo',

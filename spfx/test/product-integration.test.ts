@@ -20,14 +20,14 @@ const RELEASE_ROOT = resolve(
   REPOSITORY_ROOT,
   'data',
   'releases',
-  '2026-08-31-mvp-03-approved.1'
+  '2026-09-22-mvp-04-approved.1'
 );
 
 const EXPECTED_PINNED_RELEASE_URL =
-  'https://raw.githubusercontent.com/davidsteimer/fristenrechner/f80f4019ff56ca51154ba7cd8b767686dd87a9a4/data/releases/2026-08-31-mvp-03-approved.1';
+  'https://raw.githubusercontent.com/davidsteimer/fristenrechner/739876a0d11b550ea8cc702622ab22af321994a5/data/releases/2026-09-22-mvp-04-approved.1';
 
 class DirectoryProvider implements IReleaseProvider {
-  public readonly id = 'fixture:ap11c';
+  public readonly id = 'fixture:mvp04';
   public readonly kind = 'github' as const;
 
   public async fetchBytes(relativePath: string): Promise<Uint8Array> {
@@ -35,7 +35,7 @@ class DirectoryProvider implements IReleaseProvider {
   }
 }
 
-test('pinnt den MVP-0.3-Datenrelease auf den freigegebenen Git-Commit', () => {
+test('pinnt den MVP-0.4-Datenrelease auf seinen tatsächlichen unveränderlichen Git-Commit', () => {
   assert.equal(PINNED_GITHUB_RELEASE_URL, EXPECTED_PINNED_RELEASE_URL);
 });
 
@@ -69,12 +69,16 @@ test('verbindet den validierten Release mit dem produktiven Rechenkern', async (
     holidayAnchorCandidates: ['BE']
   }, data);
 
-  assert.equal(data.releaseId, '2026-08-31-mvp-03-approved.1');
+  assert.equal(data.releaseId, '2026-09-22-mvp-04-approved.1');
+  assert.equal(data.formatVersion, '4.0.0');
+  assert.equal(data.holidayCatalogs.size, 1);
+  assert.equal(data.holidayCatalogs.get('ch-holiday-catalog')?.data.rules.length, 479);
+  assert.equal(release.artifacts.length, 9);
   assert.equal(result.outcome, 'calculated');
   assert.equal(result.finalEnd, '2026-09-28');
 });
 
-test('verbindet den Format-3-Release mit der Spezialregimeberechnung', async () => {
+test('verbindet den Format-4-Release mit der Spezialregimeberechnung', async () => {
   const release = await new ReleaseValidator().validateProvider(new DirectoryProvider());
   const data = createCalculationData(release);
   const result = calculateSpecialDeadline({
@@ -109,7 +113,9 @@ test('exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-F
   assert.deepEqual(manifest.supportedHosts, ['SharePointWebPart', 'TeamsTab']);
   assert.equal(manifest.id, '596c7f1c-4d3e-4da8-a7be-27a96024f37c');
   assert.equal(packageSolution.solution.includeClientSideAssets, true);
-  assert.equal(packageSolution.solution.version, '0.3.0.0');
+  assert.equal(packageSolution.solution.version, '0.4.0.0');
+  assert.equal(packageSolution.solution.features[0].version, '0.4.0.0');
+  assert.equal(manifest.preconfiguredEntries[0].properties.githubBaseUrl, PINNED_GITHUB_RELEASE_URL);
   assert.equal('webApiPermissionRequests' in packageSolution.solution, false);
 });
 

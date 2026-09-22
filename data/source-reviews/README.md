@@ -8,6 +8,18 @@ Dieser Ordner trennt die fachliche Quellenprüfung von den unveränderlichen Dat
 | `events/*.json` | Append-only-Protokoll der einzelnen Prüfereignisse |
 | `index.json` | Reproduzierbarer Suchindex mit dem jüngsten Prüfstand und den betroffenen Datenkomponenten |
 
+## Erweiterung für MVP 0.4
+
+Am 22. September 2026 wurde das Register lokal auf 42 Quellen erweitert. David Steimer hat den gesamten neuen Quellenprüfstand mit 120 unterschiedlichen Quellen-IDs [ausdrücklich abgenommen](../../docs/fachrecht/abnahme-quellenpruefung-mvp04.md). Das neue Ereignis `2026-09-22-mvp-04-prerelease.1` prüft alle 38 im MVP-0.4-Manifest deklarierten Quellen erneut. Es enthält unverändert 38 Befunde `unchanged` und ist jetzt `approved`. Das Register ist ebenfalls freigegeben, der Index daraus neu erzeugt. Grundlage ist der dokumentierte menschliche Entscheid, keine automatische Fachfreigabe.
+
+34 Quellen sind produktiv verwendet, drei unterstützend und fünf dem Monitoring zugeordnet. Die drei angekündigten Zukunftsfassungen von AHVG, IVG und IVV sind keine bereits angewendeten Normen. Die historische IVöB-Fassung begründet einen gesperrten Altrechtspfad und bleibt unterstützend. Die ursprüngliche AP13-Prüfung ist byteidentisch erhalten.
+
+Der [neue Quellenabgleich](../../docs/fachrecht/quellenabgleich-mvp04.md) trennt diesen operativen Nachweis vom abgeschlossenen zusätzlichen Vollabgleich des Schweizer Feiertagskatalogs. Dessen 84 Quellen gehören zum eigenständigen Katalogvertrag. Zwei davon überschneiden sich mit dem Manifestbestand. Die weiteren 82 sind auf ausdrücklichen Auftrag vor Veröffentlichung ebenfalls erneut geprüft. 81 dieser zusätzlichen Befunde sind unverändert, die bekannte widersprüchliche AI-Jahresliste bleibt sichtbar und wird gemäss bestehendem Entscheid behandelt. Sie werden dadurch nicht zu operativ verwendeten Fristenquellen oder neu freigegebenen Kantonsprofilen.
+
+Die zusätzlichen Evolutionstests prüfen insbesondere Registerwachstum ohne nachträgliche Änderung des Initialereignisses, vollständige neue Prüfereignisse und die Trennung angewendeter Quellen von Zukunftsmonitoring.
+
+Der [gesonderte Abnahmenachweis](../../outputs/release-mvp04-2026-09-22/source-approval.json) bindet die gesamte Vorlage samt Katalogprüfung und AI-Folgemassnahme. Die vorgelegten Berichte und der ursprüngliche Vollständigkeitsnachweis bleiben byteidentisch, auch wenn sie den damaligen Kandidatenstatus ausweisen. Wiederholte Vorbereitung und Konsolidierung prüfen nach dieser Freigabe nur noch die gebundenen Nachweise und schreiben sie nicht zurück. Die Abnahme bewirkt keine Veröffentlichung oder Bereitstellung.
+
 ## Initialbestand AP13
 
 | Merkmal | Wert |

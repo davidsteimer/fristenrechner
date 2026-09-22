@@ -92,3 +92,33 @@ Die Kandidatenprüfung läuft getrennt:
 ```
 
 Die bestehenden 15 Referenzfälle und drei Sperrfälle bleiben unter dem Testvertrag 1.0 unverändert.
+
+## AP17B-Anwendbarkeitskandidat
+
+Der separate [AP17B-Korpus](candidates/ap17b-anwendbarkeit.json) folgt der am 12. September 2026 durch David Steimer fachlich abgenommenen [Fachmatrix](../../docs/fachrecht/vrpg-anwendbarkeit-ap17b.md). Die [Abnahmenotiz](../../docs/fachrecht/vrpg-anwendbarkeit-ap17b.md#7-abnahme-vom-12-september-2026-und-verbleibende-grenze) bindet den unveränderten Korpus per SHA-256. Er ist weder ein Datenrelease noch Teil der produktiv freigegebenen Golden Cases. Als archivische Kandidatenfassung behält er unverändert `status: draft`, `approvedBy: null` und `runtimeActivation: false`. Die Fachabnahme ist separat dokumentiert und wird nicht in diese technischen Prüfmerkmale zurückgeschrieben.
+
+Er umfasst vier Rechenprofile, 16 Kandidatenzuordnungen und vier ausdrücklich gesperrte Sammelpfade. 28 positive und 32 negative Fälle decken die Zuordnungen, 16 verschiedene Sperrgründe, Stillstandsgrenzen, Sonntage als erste Zähltage, Feiertagsverschiebungen und das Beschaffungs-Übergangsrecht ab. Die Ergebnisse sind **fachlich abgenommene Referenzerwartungen für die spätere Integration**, nicht der heutige Laufzeitstatus.
+
+Ausführung mit Python 3.9 oder neuer, ohne Zusatzpakete:
+
+```bash
+python3 -B tests/golden/validate_ap17b_candidates.py
+```
+
+Am 11. September 2026 tatsächlich bestanden:
+
+```text
+VALID AP17B CANDIDATE: cases=60, positive=28, blocked=32, candidateMappings=16, blockedMappings=4, blockedReasons=16
+NEGATIVE SELF-TESTS: 17 mutations rejected
+DRAFT ONLY: no legal approval, no runtime activation, no production-core import
+```
+
+Der historische Prüftext vom 11. September 2026 bleibt unverändert. Auch eine erneute Ausführung des unveränderten Validators gibt die technische Kandidatenkennzeichnung aus. Sie bewertet keine spätere, separat dokumentierte Fachabnahme. Eine Umstellung des Korpus auf einen freigegebenen Produkt- oder Datenvertrag ist erst Gegenstand der kontrollierten Integration.
+
+Zur Dokumentation des Abschlusses wurde die separate Kandidatenprüfung am 12. September 2026 erneut ausgeführt. Alle 60 Fälle und 17 negativen Selbsttests bestanden unverändert. Die SHA-256-Prüfsummen von Korpus und Validator stimmen mit dem Ausgangsstand vor der Abnahmenotiz überein. Die Prüfungen von Produktcode und SPFx wurden dabei nicht erneut ausgeführt.
+
+Der Validator importiert keinen Produktcode und nicht das bestehende AP6-Orakel. Er prüft die Datumswerte durch tägliches Zählen sowie unabhängig davon durch Intervallschnittrechnung. Als feststehende Kalenderreferenz dient der freigegebene expandierte MVP-0.2-Kalender für CH und BE. Die relevanten Tage wurden gegen den MVP-0.3-Regelkalender abgeglichen. Das Fenster 2026–2027 ist ein synthetisches Testprojektionsfenster und keine zeitliche Rechtsfreigabe. Künftige Normstände müssen vor einem Datenrelease gesondert geprüft werden.
+
+Die Strukturprüfung verlangt eindeutige IDs und Auswahlkombinationen, gültige Quellen- und Profilverweise, feste oder ausdrücklich eingegebene Dauer, alle 60 geplanten Fall-IDs und mindestens einen positiven Fall je Kandidatenzuordnung. Gesperrte Fälle dürfen kein Fristergebnis enthalten. 17 absichtliche Mutationen prüfen unter anderem falsches Ende, falsche Dauer, fehlenden Stillstand, unbekannte Quelle, Auswahlkonflikt, verlorene Fallabdeckung und eine unzulässige Aktivierung oder Freigabemarkierung.
+
+Die fachlichen Voraussetzungen wie geklärte Eröffnung, korrekter Rechtsmittelweg und Feiertagsanknüpfung werden im Testvertrag ausdrücklich vorgegeben. Dieser unabhängige Kandidatentest ist kein Nachweis einer Produkt-, SPFx- oder Hostintegration. Die nachfolgende tatsächliche Integration wird separat im [AP17C-Nachweis](../../docs/architektur/vrpg-integration-ap17c.md) geprüft. `tests/core/ap17c-qualified.test.ts` führt alle 60 Fälle gegen den neuen Rechenkern aus, `tests/ui/ap17c-qualified.test.ts` prüft zusätzlich den UI-Adapter und seine Kontext- und Speichergrenzen. Der hier archivierte Korpus und sein Validator bleiben unverändert.

@@ -1,5 +1,7 @@
 # Quellenregister AP4
 
+**Ergänzung AP17B:** Der separate [Quellenprüfnachweis für Sozialversicherungs- und Beschaffungsrecht](quellenpruefung-ap17b.md) dokumentiert die Stichtagsprüfung vom 11. September 2026 und die aktualisierte VRPG-Fassung vom 1. September 2026. Die [zugehörige Fachmatrix](vrpg-anwendbarkeit-ap17b.md) ist durch David Steimer am 12. September 2026 fachlich abgenommen. Der Quellenprüfstand bleibt der 11. September 2026. Die nachstehenden historischen AP4-Nachweise sowie freigegebene Daten bleiben unverändert.
+
 | Merkmal | Wert |
 | --- | --- |
 | Stand | 31. August 2026 |

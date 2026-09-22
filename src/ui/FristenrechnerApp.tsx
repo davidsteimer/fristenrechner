@@ -6,6 +6,7 @@ import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
 import { Dropdown, type IDropdownOption } from '@fluentui/react/lib/Dropdown';
 import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
 import { TextField } from '@fluentui/react/lib/TextField';
+import { DateInput } from './DateInput';
 
 import { calculateDeadline, calculateSpecialDeadline, parseIsoDate } from '../core';
 import type {
@@ -51,11 +52,32 @@ import {
   reconcileSpecialSelection,
   requiresDeliveryFictionConfirmation,
   specialCatalogForProfile,
-  specialRegimeOptions,
   specialSelection,
   suspensionPresentation,
   type CalculatorFormState
 } from './model';
+import {
+  EMPTY_VRPG_SELECTION,
+  changeVrpgSelection,
+  resolveVrpgSelection,
+  sanitizeVrpgSelection,
+  selectionFromLegacy,
+  vrpgAreaOptions,
+  vrpgLawOptions,
+  vrpgActionOptions,
+  vrpgFixedAction,
+  vrpgStageOptions,
+  type VrpgChoice,
+  type VrpgSelectionState
+} from './vrpgSelection';
+import {
+  EMPTY_VRPG_CONTEXT,
+  vrpgModelScope,
+  vrpgNotificationOptions,
+  vrpgHolidayOptions,
+  qualifiedStage,
+  type VrpgContextState
+} from './vrpgQualification';
 
 export interface FristenrechnerAppProps {
   readonly data: CalculationData;
@@ -82,6 +104,7 @@ function browserStorage(): StorageLike | undefined {
 }
 
 function stateFromDefaults(
+  data: CalculationData,
   defaults: StoredDefaults,
   initialState?: Partial<CalculatorFormState>
 ): CalculatorFormState {
@@ -100,15 +123,34 @@ function stateFromDefaults(
       || defaults.selectors.specialLawStatus === 'noKnownOverride',
     specialRegimeId: defaults.specialRegimeId,
     specialDefinitionId: defaults.specialDefinitionId,
+    vrpgSelection: defaults.vrpgSelection,
+    vrpgContext: EMPTY_VRPG_CONTEXT,
     specialDateValues: {},
     specialLocalTimeValues: {},
     specialIntegerValues: {},
     specialOverrideConfirmations: []
   };
-  return {
+  const merged = {
     ...base,
     ...initialState,
     selectors: initialState?.selectors ?? base.selectors
+  };
+  const vrpgSelection = merged.profileId !== 'vrpg-be'
+    ? EMPTY_VRPG_SELECTION
+    : initialState?.vrpgSelection
+      ? sanitizeVrpgSelection(data, initialState.vrpgSelection)
+      : initialState?.profileId === 'vrpg-be'
+        ? selectionFromLegacy(data, initialState.specialRegimeId ?? '', initialState.specialDefinitionId ?? '')
+        : base.vrpgSelection ?? EMPTY_VRPG_SELECTION;
+  const resolved = resolveVrpgSelection(data, vrpgSelection);
+  return {
+    ...merged,
+    vrpgSelection,
+    ...(merged.profileId === 'vrpg-be' ? {
+      specialRegimeId: resolved.regimeId,
+      specialDefinitionId: resolved.definitionId,
+      specialLawChecked: resolved.kind === 'general'
+    } : {})
   };
 }
 
@@ -144,6 +186,12 @@ function formatLocalTime(value: string | null, locale: Locale): string {
 }
 
 function specialDefinitionLabel(definition: DeadlineDefinition, locale: Locale): string {
+  if (definition.deadlineOrigin === 'CALCULATED' && definition.applicability
+    && definition.calculation.type === 'R1_RELATIVE') {
+    return definition.calculation.duration
+      ? `${definition.calculation.duration.value} ${translate(locale, 'vrpg.unit.day')}`
+      : translate(locale, 'vrpg.orderedDays');
+  }
   const translated = translate(locale, `special.definition.${definition.deadlineDefinitionId}`);
   if (translated !== `special.definition.${definition.deadlineDefinitionId}`) return translated;
   return definition.sourceRefs.map(source => source.locator).join(' · ') || definition.deadlineDefinitionId;
@@ -222,13 +270,11 @@ function CalendarExportTile({
   locale,
   reference,
   onReferenceChange,
-  wide = false
 }: {
   readonly deadlineDate: string;
   readonly locale: Locale;
   readonly reference: string;
   readonly onReferenceChange: (value: string) => void;
-  readonly wide?: boolean;
 }): React.ReactElement {
   const [failed, setFailed] = React.useState(false);
 
@@ -243,7 +289,7 @@ function CalendarExportTile({
   };
 
   return (
-    <div className={`fr-calendar-export${wide ? ' fr-calendar-export--wide' : ''}`}>
+    <div className="fr-calendar-export">
       <dt className="fr-calendar-export__action">
         <PrimaryButton
           className="fr-calendar-export__button"
@@ -291,11 +337,11 @@ function ResultPanel({ result, locale, calendarReference, onCalendarReferenceCha
 
       {result.outcome === 'calculated' && (
         <>
-          <div className="fr-result__hero">
-            <span>{translate(locale, 'result.finalEnd')}</span>
-            <strong>{formatIsoDate(result.finalEnd, locale)}</strong>
-          </div>
           <dl className="fr-result__grid">
+            <div className="fr-result__hero">
+              <dt>{translate(locale, 'result.finalEnd')}</dt>
+              <dd><strong>{formatIsoDate(result.finalEnd, locale)}</strong></dd>
+            </div>
             <div>
               <dt>{translate(locale, 'result.legallyRelevantDate')}</dt>
               <dd>{formatIsoDate(result.legallyRelevantDate, locale)}</dd>
@@ -311,9 +357,7 @@ function ResultPanel({ result, locale, calendarReference, onCalendarReferenceCha
             <div>
               <dt>{translate(locale, 'result.suspensionDays')}</dt>
               <dd>{result.suspension.skippedCalendarDays}</dd>
-            </div>
-            <div>
-              <dt>{translate(locale, 'result.shifted')}</dt>
+              <dt className="fr-result__secondary">{translate(locale, 'result.shifted')}</dt>
               <dd>{translate(locale, result.endShift.applied ? 'result.yes' : 'result.no')}</dd>
             </div>
             <CalendarExportTile
@@ -406,20 +450,41 @@ function SpecialResultPanel({
     <section className="fr-result fr-result--special" aria-labelledby="fr-result-heading">
       <h2 id="fr-result-heading">{translate(locale, 'result.heading')}</h2>
       <MessageBar messageBarType={messageType}>
-        {translate(locale, `special.result.${result.outcome}`)}
+        {translate(locale, result.qualifiedCalculation && result.outcome === 'calculated'
+          ? 'result.calculated' : `special.result.${result.outcome}`)}
       </MessageBar>
 
       {completed && result.finalDeadline && result.provisionalDeadline && (
         <>
-          <div className="fr-result__hero">
-            <span>{translate(locale, 'result.finalEnd')}</span>
-            <strong>{formatIsoDate(result.finalDeadline.date, locale)}</strong>
-          </div>
           <dl className="fr-result__grid">
+            <div className="fr-result__hero">
+              <dt>{translate(locale, 'result.finalEnd')}</dt>
+              <dd><strong>{formatIsoDate(result.finalDeadline.date, locale)}</strong></dd>
+            </div>
             <div>
               <dt>{translate(locale, 'result.provisionalEnd')}</dt>
               <dd>{formatIsoDate(result.provisionalDeadline.date, locale)}</dd>
             </div>
+            {result.qualifiedCalculation ? (
+              <>
+                <div>
+                  <dt>{translate(locale, 'vrpg.calendarStart')}</dt>
+                  <dd>{formatIsoDate(result.qualifiedCalculation.calendarStart, locale)}</dd>
+                </div>
+                <div>
+                  <dt>{translate(locale, 'vrpg.firstCountedDay')}</dt>
+                  <dd>{formatIsoDate(result.qualifiedCalculation.firstCountedDay, locale)}</dd>
+                </div>
+                <div>
+                  <dt>{translate(locale, 'result.suspensionDays')}</dt>
+                  <dd>{result.qualifiedCalculation.suspensionDays}</dd>
+                </div>
+                <div>
+                  <dt>{translate(locale, 'result.shifted')}</dt>
+                  <dd>{translate(locale, result.qualifiedCalculation.rollDays > 0 ? 'result.yes' : 'result.no')}</dd>
+                </div>
+              </>
+            ) : <>
             <div>
               <dt>{translate(locale, 'special.result.filingMode')}</dt>
               <dd>{filingProfile ? localizedLabel(filingProfile, locale) : result.filingRequirement?.filingProfileId}</dd>
@@ -436,6 +501,7 @@ function SpecialResultPanel({
               <dt>{translate(locale, 'special.result.original')}</dt>
               <dd>{translate(locale, result.filingRequirement?.originalRequired ? 'result.yes' : 'result.no')}</dd>
             </div>
+            </>}
             <div>
               <dt>{translate(locale, 'special.result.rule')}</dt>
               <dd>{definition ? specialDefinitionLabel(definition, locale) : '–'}</dd>
@@ -446,11 +512,10 @@ function SpecialResultPanel({
                 locale={locale}
                 reference={calendarReference}
                 onReferenceChange={onCalendarReferenceChange}
-                wide
               />
             )}
           </dl>
-          {result.filingRequirement && (
+          {result.filingRequirement && !result.qualifiedCalculation && (
             <div className="fr-filing">
               <h3>{translate(locale, 'special.result.filingRequirements')}</h3>
               <dl>
@@ -477,7 +542,10 @@ function SpecialResultPanel({
       {regime && (
         <p className="fr-result__basis">
           <strong>{translate(locale, 'special.result.legalBasis')}:</strong>{' '}
-          {regime.lawCode} {regime.provision} · {localizedLabel(regime, locale)}
+          {result.qualifiedCalculation
+            ? <>{localizedLabel(regime, locale)} · {translate(locale, result.qualifiedCalculation.mappingId.startsWith('SOC-')
+              ? 'vrpg.socialLegalBasis' : 'vrpg.procurementLegalBasis')}</>
+            : <>{regime.lawCode} {regime.provision} · {localizedLabel(regime, locale)}</>}
         </p>
       )}
       {result.blockReasonKeys.length > 0 && (
@@ -520,14 +588,20 @@ function ValidationPanel({ validation, locale }: {
   );
 }
 
-export function FristenrechnerApp({
+export function FristenrechnerApp(props: FristenrechnerAppProps): React.ReactElement {
+  // A new immutable data release starts a fresh session. Never display an old
+  // result beside the new release's parameters or evidence.
+  return <CalculatorSession key={props.data.releaseId} {...props} />;
+}
+
+function CalculatorSession({
   data,
   storage: explicitStorage,
   initialState
 }: FristenrechnerAppProps): React.ReactElement {
   const storage = explicitStorage ?? browserStorage();
   const loaded = React.useMemo(() => loadDefaults(data, storage), [data, storage]);
-  const initialForm = React.useMemo(() => stateFromDefaults(loaded, initialState), [loaded, initialState]);
+  const initialForm = React.useMemo(() => stateFromDefaults(data, loaded, initialState), [data, loaded, initialState]);
   const [locale, setLocale] = React.useState<Locale>(loaded.locale);
   const [form, setForm] = React.useState<CalculatorFormState>(initialForm);
   const [calendarOverrideEnabled, setCalendarOverrideEnabled] = React.useState(
@@ -541,7 +615,9 @@ export function FristenrechnerApp({
   const profile = data.profiles.get(form.profileId);
   const availableProfiles = profilesForAuthority(data, form.authorityCode);
   const specialCatalog = specialCatalogForProfile(data, form.profileId);
-  const regimeOptions = specialRegimeOptions(data, form.profileId);
+  const vrpgMode = form.profileId === 'vrpg-be';
+  const vrpgState = form.vrpgSelection ?? EMPTY_VRPG_SELECTION;
+  const vrpgResolution = resolveVrpgSelection(data, vrpgState);
   const selection = specialSelection(
     data,
     form.profileId,
@@ -560,6 +636,17 @@ export function FristenrechnerApp({
   const specialDurationInputId = calculatedDefinition?.calculation.type === 'R1_RELATIVE'
     ? calculatedDefinition.calculation.durationInputId
     : undefined;
+  const primaryAnchor = calculatedDefinition?.anchors.find(anchor => anchor.valueType === 'date');
+  const fixedSpecialDays = calculatedDefinition?.calculation.type === 'R1_RELATIVE'
+    ? calculatedDefinition.calculation.duration
+    : undefined;
+  const qualifiedMode = Boolean(calculatedDefinition?.applicability);
+  const vrpgContext = form.vrpgContext ?? EMPTY_VRPG_CONTEXT;
+  const modelScope = qualifiedMode ? vrpgModelScope(vrpgState) : undefined;
+  const lawOptions = vrpgLawOptions(vrpgState);
+  const actionOptions = vrpgActionOptions(data, vrpgState);
+  const fixedAction = vrpgFixedAction(data, vrpgState);
+  const stageOptions = vrpgStageOptions(vrpgState);
   const automaticCalendar = automaticCalendarId(data, profile);
   const fixedCalendar = profile?.calendarPolicy.jurisdictionSelection === 'fixedBern';
   const manualOverride = isCalendarOverride(data, profile, form.calendarId);
@@ -578,6 +665,7 @@ export function FristenrechnerApp({
     setResult(undefined);
     setCalendarReference('');
     setValidation({});
+    setNotification(undefined);
   };
 
   const selectOptions = (definition: NonNullable<typeof profile>['selectors'][number]): IDropdownOption[] => [
@@ -589,6 +677,18 @@ export function FristenrechnerApp({
 
   const validate = (translationLocale: Locale = locale): UiValidation => {
     const errors: Record<string, string> = {};
+    if (vrpgMode && vrpgResolution.kind === 'incomplete') {
+      if (!vrpgState.area) errors['vrpg.area'] = translate(translationLocale, 'vrpg.required');
+      else if (lawOptions.length > 0 && !vrpgState.law) errors['vrpg.law'] = translate(translationLocale, 'vrpg.required');
+      else if (actionOptions.length > 0 && !vrpgState.action) errors['vrpg.action'] = translate(translationLocale, 'vrpg.required');
+      else if (stageOptions.length > 0 && !vrpgState.stage) errors['vrpg.stage'] = translate(translationLocale, 'vrpg.required');
+      else errors['vrpg.area'] = translate(translationLocale, 'vrpg.invalid');
+      return errors;
+    }
+    if (vrpgMode && vrpgResolution.kind === 'unavailable') {
+      errors['vrpg.action'] = translate(translationLocale, 'vrpg.unavailable');
+      return errors;
+    }
     if (generalMode) {
       if (!parseIsoDate(form.inputDate)) {
         errors.inputDate = translate(translationLocale, 'form.inputDate.required');
@@ -618,6 +718,20 @@ export function FristenrechnerApp({
     if (!calculatedDefinition) {
       errors.specialDefinition = translate(translationLocale, 'special.validation.definition');
       return errors;
+    }
+    if (qualifiedMode) {
+      if (!modelScope) {
+        errors.specialDefinition = translate(translationLocale, 'special.validation.definition');
+      }
+      if (!modelScope?.notification && !vrpgContext.notificationChannel) {
+        errors['context.notificationChannel'] = translate(translationLocale, 'form.requiredSelection');
+      }
+      if (vrpgState.area === 'social' && !vrpgContext.holidayConnections) {
+        errors['context.holidayConnections'] = translate(translationLocale, 'form.requiredSelection');
+      }
+      if (vrpgState.area === 'procurement' && !parseIsoDate(vrpgContext.procedureStartDate)) {
+        errors['context.procedureStartDate'] = translate(translationLocale, 'form.inputDate.required');
+      }
     }
     calculatedDefinition.anchors.forEach(anchor => {
       const key = `special.${anchor.inputId}`;
@@ -693,9 +807,14 @@ export function FristenrechnerApp({
       calendarId: automaticCalendarId(data, nextProfile),
       calendarOverrideReason: '',
       deliveryFictionConfirmed: false,
+      additionalHolidayAnchor: '',
+      holidayAnchorConfirmed: false,
       specialLawChecked: false,
       specialRegimeId: special.regimeId,
       specialDefinitionId: special.definitionId,
+      vrpgSelection: EMPTY_VRPG_SELECTION,
+      vrpgContext: EMPTY_VRPG_CONTEXT,
+      inputDate: '',
       specialDateValues: {},
       specialLocalTimeValues: {},
       specialIntegerValues: {},
@@ -721,9 +840,14 @@ export function FristenrechnerApp({
       calendarId: automaticCalendarId(data, nextProfile),
       calendarOverrideReason: '',
       deliveryFictionConfirmed: false,
+      additionalHolidayAnchor: '',
+      holidayAnchorConfirmed: false,
       specialLawChecked: false,
       specialRegimeId: special.regimeId,
       specialDefinitionId: special.definitionId,
+      vrpgSelection: EMPTY_VRPG_SELECTION,
+      vrpgContext: EMPTY_VRPG_CONTEXT,
+      inputDate: '',
       specialDateValues: {},
       specialLocalTimeValues: {},
       specialIntegerValues: {},
@@ -745,40 +869,36 @@ export function FristenrechnerApp({
     });
   };
 
-  const onSpecialRegimeChange = (
-    _event: React.FormEvent<HTMLDivElement>,
-    option?: IDropdownOption
-  ): void => {
-    if (typeof option?.key !== 'string') return;
-    const special = reconcileSpecialSelection(data, form.profileId, option.key, '');
+  const onVrpgChange = (field: keyof VrpgSelectionState, value: string): void => {
+    let nextSelection = changeVrpgSelection(data, vrpgState, field, value);
+    if (field === 'area' && value === 'procurement') {
+      nextSelection = changeVrpgSelection(data, nextSelection, 'law', 'ivob');
+    }
+    const resolved = resolveVrpgSelection(data, nextSelection);
     mutateForm({
-      specialRegimeId: special.regimeId,
-      specialDefinitionId: special.definitionId,
+      vrpgSelection: nextSelection,
+      vrpgContext: EMPTY_VRPG_CONTEXT,
+      specialRegimeId: resolved.regimeId,
+      specialDefinitionId: resolved.definitionId,
+      inputDate: '',
+      selectors: defaultSelectors(profile),
+      deliveryFictionConfirmed: false,
+      calendarId: automaticCalendar,
+      calendarOverrideReason: '',
+      additionalHolidayAnchor: '',
+      holidayAnchorConfirmed: false,
       specialDateValues: {},
       specialLocalTimeValues: {},
       specialIntegerValues: {},
       specialOverrideConfirmations: [],
-      specialLawChecked: special.regimeId === GENERAL_SPECIAL_REGIME_ID
+      specialLawChecked: resolved.kind === 'general'
     });
-  };
-
-  const onSpecialDefinitionChange = (
-    _event: React.FormEvent<HTMLDivElement>,
-    option?: IDropdownOption
-  ): void => {
-    if (typeof option?.key !== 'string') return;
-    mutateForm({
-      specialDefinitionId: option.key,
-      specialDateValues: {},
-      specialLocalTimeValues: {},
-      specialIntegerValues: {},
-      specialOverrideConfirmations: []
-    });
+    setCalendarOverrideEnabled(false);
   };
 
   const onSaveDefaults = (): void => {
     const defaults: StoredDefaults = {
-      version: 2,
+      version: 3,
       locale,
       authorityCode: form.authorityCode,
       profileId: form.profileId,
@@ -786,7 +906,8 @@ export function FristenrechnerApp({
       selectors: form.selectors,
       calendarId: form.calendarId,
       specialRegimeId: form.specialRegimeId,
-      specialDefinitionId: form.specialDefinitionId
+      specialDefinitionId: form.specialDefinitionId,
+      vrpgSelection: vrpgState
     };
     const saved = saveDefaults(storage, defaults);
     setNotification({
@@ -799,15 +920,108 @@ export function FristenrechnerApp({
     const removed = clearDefaults(storage);
     const defaults = initialDefaults(data);
     setLocale(defaults.locale);
-    setForm(stateFromDefaults(defaults));
+    setForm(stateFromDefaults(data, defaults));
     setCalendarOverrideEnabled(false);
     setResult(undefined);
+    setCalendarReference('');
     setValidation({});
     setNotification({
       type: removed ? MessageBarType.success : MessageBarType.error,
       text: translate(defaults.locale, removed ? 'defaults.reset' : 'defaults.resetFailed')
     });
   };
+
+  const renderVrpgChoice = (
+    field: keyof VrpgSelectionState,
+    labelKey: string,
+    choices: readonly VrpgChoice[],
+    disabled = false
+  ): React.ReactElement => (
+    <Dropdown
+      required
+      className="fr-procedure-choice"
+      label={translate(locale, labelKey)}
+      options={(choices.length > 0 ? choices : vrpgAreaOptions().slice(0, 1))
+        .map(choice => ({ key: choice.key, text: choice.labels[locale] }))}
+      selectedKey={vrpgState[field]}
+      disabled={disabled}
+      errorMessage={validation[`vrpg.${field}`] ?? ''}
+      onChange={(_event, option) => {
+        if (typeof option?.key === 'string') onVrpgChange(field, option.key);
+      }}
+    />
+  );
+
+  const renderSelector = (definition: LegalProfile['selectors'][number]): React.ReactElement => (
+    <Dropdown
+      key={definition.selectorId}
+      required={definition.required}
+      label={translate(locale, `selector.${definition.selectorId}`)}
+      options={selectOptions(definition)}
+      selectedKey={form.selectors[definition.selectorId] ?? ''}
+      errorMessage={validation[`selector.${definition.selectorId}`] ?? ''}
+      onChange={(_event, option) => onSelectorChange(definition.selectorId, option)}
+    />
+  );
+
+  const renderFixedValue = (labelKey: string, value: VrpgChoice): React.ReactElement => (
+    <div className="fr-model-scope">
+      <div className="fr-model-scope__label">{translate(locale, labelKey)}</div>
+      <output
+        className="fr-model-scope__value"
+        aria-label={translate(locale, labelKey)}
+        aria-live="off"
+      >{value.labels[locale]}</output>
+    </div>
+  );
+
+  const renderModelScope = (field: 'matter' | 'triggerKind' | 'notificationChannel', value: VrpgChoice): React.ReactElement =>
+    renderFixedValue(`vrpg.context.${field}`, value);
+
+  const renderContextChoice = (field: keyof VrpgContextState, choices: readonly VrpgChoice[]): React.ReactElement => (
+    <Dropdown
+      required
+      className="fr-procedure-choice"
+      label={translate(locale, `vrpg.context.${field}`)}
+      selectedKey={vrpgContext[field]}
+      options={choices.map(choice => ({ key: choice.key, text: choice.labels[locale] }))}
+      errorMessage={validation[`context.${field}`] ?? ''}
+      onChange={(_event, option) => {
+        if (typeof option?.key !== 'string') return;
+        mutateForm({
+          vrpgContext: { ...vrpgContext, [field]: option.key },
+          ...(field === 'notificationChannel'
+            && ((vrpgContext.notificationChannel === 'official-publication') !== (option.key === 'official-publication'))
+            ? { specialDateValues: {} } : {})
+        });
+      }}
+    />
+  );
+
+  const renderSpecialAnchor = (anchor: CalculatedDeadlineDefinition['anchors'][number]): React.ReactElement => anchor.valueType === 'date' ? (
+    <DateInput
+      key={anchor.inputId}
+      label={qualifiedMode && anchor.inputId === 'legalTriggerDate'
+        ? translate(locale, vrpgContext.notificationChannel === 'official-publication'
+          ? 'vrpg.publicationDate' : 'vrpg.legalServiceDate')
+        : translate(locale, anchor.labelKey)}
+      value={form.specialDateValues[anchor.inputId] ?? ''}
+      errorMessage={validation[`special.${anchor.inputId}`] ?? ''}
+      onChange={value => mutateForm({ specialDateValues: { ...form.specialDateValues, [anchor.inputId]: value } })}
+    />
+  ) : (
+    <TextField
+      key={anchor.inputId}
+      required
+      label={translate(locale, anchor.labelKey)}
+      type="time"
+      value={form.specialLocalTimeValues[anchor.inputId] ?? ''}
+      errorMessage={validation[`special.${anchor.inputId}`] ?? ''}
+      onChange={(_event, value) => mutateForm({
+        specialLocalTimeValues: { ...form.specialLocalTimeValues, [anchor.inputId]: value ?? '' }
+      })}
+    />
+  );
 
   return (
     <main className="fr-app">
@@ -842,33 +1056,65 @@ export function FristenrechnerApp({
       <MessageBar className="fr-disclaimer" messageBarType={MessageBarType.warning}>
         {translate(locale, 'app.disclaimer')}
       </MessageBar>
+      {data.releaseId.includes('-ap17c-candidate.') && (
+        <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
+          {translate(locale, 'vrpg.candidate')}
+        </MessageBar>
+      )}
+      {data.releaseId.includes('-ap18c-candidate.') && (
+        <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
+          {translate(locale, 'app.candidate')}
+        </MessageBar>
+      )}
 
       <form className="fr-form" onSubmit={onSubmit} noValidate>
         <section aria-labelledby="fr-form-heading">
           <h2 id="fr-form-heading">{translate(locale, 'form.heading')}</h2>
           <div className="fr-form__grid">
-            {generalMode && (
-              <>
-                <TextField
-                  required
-                  label={dateInputLabel(locale, form)}
-                  type="date"
-                  value={form.inputDate}
-                  {...(validation.inputDate ? { errorMessage: validation.inputDate } : {})}
-                  onChange={(_event, value) => mutateForm({ inputDate: value ?? '' })}
-                />
-                <TextField
-                  required
-                  label={translate(locale, 'form.deadlineDays')}
-                  type="number"
-                  min={1}
-                  max={365}
-                  step={1}
-                  value={form.deadlineDays}
-                  {...(validation.deadlineDays ? { errorMessage: validation.deadlineDays } : {})}
-                  onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })}
-                />
-              </>
+            {primaryAnchor && !generalMode ? renderSpecialAnchor(primaryAnchor) : (
+              <DateInput
+                key="general-input-date"
+                label={dateInputLabel(locale, form)}
+                value={form.inputDate}
+                {...(vrpgMode && !generalMode ? { disabled: true } : {})}
+                {...(validation.inputDate ? { errorMessage: validation.inputDate } : {})}
+                onChange={value => mutateForm({ inputDate: value })}
+              />
+            )}
+            {generalMode ? (
+              <TextField
+                required
+                label={translate(locale, 'form.deadlineDays')}
+                type="number"
+                min={1}
+                max={365}
+                step={1}
+                value={form.deadlineDays}
+                errorMessage={validation.deadlineDays ?? ''}
+                onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })}
+              />
+            ) : specialDurationInputId ? (
+              <TextField
+                required
+                label={translate(locale, qualifiedMode ? 'vrpg.orderedDays' : `input.${specialDurationInputId}`)}
+                type="number"
+                min={1}
+                max={365}
+                step={1}
+                value={form.specialIntegerValues[specialDurationInputId] ?? ''}
+                errorMessage={validation[`special.${specialDurationInputId}`] ?? ''}
+                onChange={(_event, value) => mutateForm({
+                  specialIntegerValues: { ...form.specialIntegerValues, [specialDurationInputId]: value ?? '' }
+                })}
+              />
+            ) : (
+              <TextField
+                readOnly
+                label={translate(locale, 'vrpg.duration')}
+                value={fixedSpecialDays
+                  ? `${fixedSpecialDays.value} ${translate(locale, `vrpg.unit.${fixedSpecialDays.unit}`)}`
+                  : translate(locale, calculatedDefinition ? 'vrpg.duration.rule' : 'vrpg.duration.pending')}
+              />
             )}
             <Dropdown
               required
@@ -887,147 +1133,75 @@ export function FristenrechnerApp({
               selectedKey={form.profileId}
               onChange={onProfileChange}
             />
-            {specialCatalog && (
-              <div className="fr-special-picker">
-                <Dropdown
-                  required
-                  label={translate(locale, 'special.regime.label')}
-                  options={[
-                    { key: '', text: translate(locale, 'form.select') },
-                    ...regimeOptions.map(option => {
-                      const label = `${option.regime.lawCode} ${option.regime.provision} · ${localizedLabel(option.regime, locale)}`;
-                      return {
-                        key: option.regime.regimeId,
-                        text: option.presentationStatus === 'supported'
-                          ? label
-                          : `${label} · ${translate(locale, `special.status.${option.presentationStatus}`)}`,
-                        disabled: !option.selectable
-                      };
-                    })
-                  ]}
-                  selectedKey={form.specialRegimeId}
-                  {...(validation.specialRegime ? { errorMessage: validation.specialRegime } : {})}
-                  onChange={onSpecialRegimeChange}
-                />
-                <p className="fr-special-picker__description">
-                  {translate(locale, 'special.regime.description')}
-                </p>
-              </div>
+            {vrpgMode && (
+              <>
+                {renderVrpgChoice('area', 'vrpg.area', vrpgAreaOptions())}
+                {generalMode && visibleSelectors.some(item => item.selectorId === 'deliveryMethod')
+                  ? renderSelector(visibleSelectors.find(item => item.selectorId === 'deliveryMethod')!)
+                  : <div className="fr-grid-spacer" aria-hidden="true" />}
+                {lawOptions.length > 0 && (
+                  <>
+                    {vrpgState.area === 'procurement' && vrpgState.law === 'ivob' ? (
+                      <TextField
+                        readOnly
+                        label={translate(locale, 'vrpg.law')}
+                        value={lawOptions.find(option => option.key === 'ivob')?.labels[locale] ?? ''}
+                      />
+                    ) : renderVrpgChoice('law', vrpgState.area === 'political' ? 'vrpg.level' : 'vrpg.law', lawOptions)}
+                    {fixedAction && vrpgState.action === fixedAction.key
+                      ? renderFixedValue('vrpg.action', fixedAction)
+                      : renderVrpgChoice('action', 'vrpg.action', actionOptions, !vrpgState.law)}
+                  </>
+                )}
+                {stageOptions.length > 0 && renderVrpgChoice('stage', 'vrpg.stage', stageOptions)}
+                {qualifiedMode && (
+                  <>
+                    {modelScope && renderModelScope('matter', modelScope.matter)}
+                    {modelScope && renderModelScope('triggerKind', modelScope.triggerKind)}
+                    {modelScope?.notification
+                      ? renderModelScope('notificationChannel', modelScope.notification)
+                      : renderContextChoice('notificationChannel', vrpgNotificationOptions(vrpgState))}
+                    {vrpgState.area === 'social'
+                      ? renderContextChoice('holidayConnections', vrpgHolidayOptions())
+                      : <DateInput
+                        label={translate(locale, 'vrpg.context.procedureStartDate')}
+                        value={vrpgContext.procedureStartDate}
+                        errorMessage={validation['context.procedureStartDate'] ?? ''}
+                        onChange={value => mutateForm({ vrpgContext: { ...vrpgContext, procedureStartDate: value } })}
+                      />}
+                  </>
+                )}
+              </>
             )}
+            {visibleSelectors.filter(item => !vrpgMode || item.selectorId !== 'deliveryMethod').map(renderSelector)}
+            {!generalMode && calculatedDefinition?.anchors
+              .filter(anchor => anchor !== primaryAnchor)
+              .map(renderSpecialAnchor)}
           </div>
 
-          {visibleSelectors.length > 0 && (
-            <div className="fr-form__grid fr-form__grid--selectors">
-              {visibleSelectors.map(definition => (
-                <Dropdown
-                  key={definition.selectorId}
-                  required={definition.required}
-                  label={translate(locale, `selector.${definition.selectorId}`)}
-                  options={selectOptions(definition)}
-                  selectedKey={form.selectors[definition.selectorId] ?? ''}
-                  errorMessage={validation[`selector.${definition.selectorId}`] ?? ''}
-                  onChange={(_event, option) => onSelectorChange(definition.selectorId, option)}
-                />
-              ))}
-            </div>
+          {vrpgMode && vrpgResolution.kind === 'unavailable' && (vrpgState.area === 'social' || vrpgState.area === 'procurement') && (
+            <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.info}>
+              {translate(locale, 'vrpg.unavailable')}
+            </MessageBar>
           )}
-
-          {!generalMode && calculatedDefinition && specialRegime && (
-            <section className="fr-special-inputs" aria-labelledby="fr-special-inputs-heading">
-              <div className="fr-special-inputs__heading">
-                <div>
-                  <h3 id="fr-special-inputs-heading">{localizedLabel(specialRegime, locale)}</h3>
-                  <p>{specialRegime.lawCode} {specialRegime.provision}</p>
-                </div>
-              </div>
-              <div className="fr-form__grid">
-                {specialRegime.deadlineDefinitionIds.length > 1 && (
-                  <Dropdown
-                    required
-                    label={translate(locale, 'special.definition.label')}
-                    options={specialRegime.deadlineDefinitionIds.map(definitionId => {
-                      const definition = specialCatalog?.deadlineDefinitions
-                        .find(item => item.deadlineDefinitionId === definitionId);
-                      return {
-                        key: definitionId,
-                        text: definition ? specialDefinitionLabel(definition, locale) : definitionId
-                      };
-                    })}
-                    selectedKey={form.specialDefinitionId}
-                    {...(validation.specialDefinition ? { errorMessage: validation.specialDefinition } : {})}
-                    onChange={onSpecialDefinitionChange}
-                  />
-                )}
-                {calculatedDefinition.anchors.map(anchor => anchor.valueType === 'date' ? (
-                  <TextField
-                    key={anchor.inputId}
-                    required
-                    label={translate(locale, anchor.labelKey)}
-                    type="date"
-                    value={form.specialDateValues[anchor.inputId] ?? ''}
-                    errorMessage={validation[`special.${anchor.inputId}`] ?? ''}
-                    onChange={(_event, value) => mutateForm({
-                      specialDateValues: {
-                        ...form.specialDateValues,
-                        [anchor.inputId]: value ?? ''
-                      }
-                    })}
-                  />
-                ) : (
-                  <TextField
-                    key={anchor.inputId}
-                    required
-                    label={translate(locale, anchor.labelKey)}
-                    type="time"
-                    value={form.specialLocalTimeValues[anchor.inputId] ?? ''}
-                    errorMessage={validation[`special.${anchor.inputId}`] ?? ''}
-                    onChange={(_event, value) => mutateForm({
-                      specialLocalTimeValues: {
-                        ...form.specialLocalTimeValues,
-                        [anchor.inputId]: value ?? ''
-                      }
-                    })}
-                  />
-                ))}
-                {specialDurationInputId && (
-                  <TextField
-                    required
-                    label={translate(locale, `input.${specialDurationInputId}`)}
-                    type="number"
-                    min={1}
-                    max={365}
-                    step={1}
-                    value={form.specialIntegerValues[specialDurationInputId] ?? ''}
-                    errorMessage={validation[`special.${specialDurationInputId}`] ?? ''}
-                    onChange={(_event, value) => mutateForm({
-                      specialIntegerValues: {
-                        ...form.specialIntegerValues,
-                        [specialDurationInputId]: value ?? ''
-                      }
-                    })}
-                  />
-                )}
-              </div>
-              {specialCatalog?.legalOverrides
-                .filter(override => (
-                  specialRegime.legalOverrideIds.includes(override.overrideId)
-                  || calculatedDefinition.legalOverrideIds.includes(override.overrideId)
-                ) && override.confirmationRequired)
-                .map(override => (
-                  <Checkbox
-                    key={override.overrideId}
-                    className="fr-confirmation"
-                    label={localizedLabel(override, locale)}
-                    checked={form.specialOverrideConfirmations.includes(override.overrideId)}
-                    onChange={(_event, checked) => mutateForm({
-                      specialOverrideConfirmations: checked
-                        ? [...new Set([...form.specialOverrideConfirmations, override.overrideId])]
-                        : form.specialOverrideConfirmations.filter(item => item !== override.overrideId)
-                    })}
-                  />
-                ))}
-            </section>
-          )}
+          {!generalMode && calculatedDefinition && specialRegime && specialCatalog?.legalOverrides
+            .filter(override => (
+              specialRegime.legalOverrideIds.includes(override.overrideId)
+              || calculatedDefinition.legalOverrideIds.includes(override.overrideId)
+            ) && override.confirmationRequired)
+            .map(override => (
+              <Checkbox
+                key={override.overrideId}
+                className="fr-confirmation"
+                label={localizedLabel(override, locale)}
+                checked={form.specialOverrideConfirmations.includes(override.overrideId)}
+                onChange={(_event, checked) => mutateForm({
+                  specialOverrideConfirmations: checked
+                    ? [...new Set([...form.specialOverrideConfirmations, override.overrideId])]
+                    : form.specialOverrideConfirmations.filter(item => item !== override.overrideId)
+                })}
+              />
+            ))}
 
           {generalMode && requiresDeliveryFictionConfirmation(selectors) && (
             <Checkbox
@@ -1118,8 +1292,9 @@ export function FristenrechnerApp({
               <div>
                 <dt>{translate(locale, 'special.automatic.regime')}</dt>
                 <dd>
-                  <strong>{specialRegime ? `${specialRegime.lawCode} ${specialRegime.provision}` : '–'}</strong>
-                  <small>{specialRegime ? localizedLabel(specialRegime, locale) : '–'}</small>
+                  <strong>{specialRegime ? qualifiedMode
+                    ? localizedLabel(specialRegime, locale) : `${specialRegime.lawCode} ${specialRegime.provision}` : '–'}</strong>
+                  {!qualifiedMode && <small>{specialRegime ? localizedLabel(specialRegime, locale) : '–'}</small>}
                 </dd>
               </div>
               <div>
@@ -1130,7 +1305,9 @@ export function FristenrechnerApp({
                 <dt>{translate(locale, 'automatic.calendar')}</dt>
                 <dd><strong>{specialCatalog?.calendarProfiles.find(item => item.calendarProfileId === (
                   specialRegime?.calendarProfileId ?? calculatedDefinition?.resultPolicy.calendarProfileId
-                ))?.labels[locale] ?? '–'}</strong></dd>
+                ))?.labels[locale] ?? '–'}</strong>
+                  {qualifiedMode && vrpgState.area === 'social' && <small>{translate(locale, 'vrpg.anchorExplanation')}</small>}
+                </dd>
               </div>
               <div>
                 <dt>{translate(locale, 'automatic.suspension')}</dt>
@@ -1139,12 +1316,16 @@ export function FristenrechnerApp({
                 ))?.labels[locale] ?? '–'}</strong></dd>
               </div>
               <div>
-                <dt>{translate(locale, 'special.automatic.filing')}</dt>
-                <dd><strong>{specialFilingProfile ? localizedLabel(specialFilingProfile, locale) : '–'}</strong></dd>
+                <dt>{translate(locale, qualifiedMode ? 'vrpg.stage' : 'special.automatic.filing')}</dt>
+                <dd><strong>{qualifiedMode ? qualifiedStage(vrpgState).labels[locale]
+                  : specialFilingProfile ? localizedLabel(specialFilingProfile, locale) : '–'}</strong></dd>
               </div>
               <div>
-                <dt>{translate(locale, 'special.automatic.overrides')}</dt>
-                <dd><strong>{[
+                <dt>{translate(locale, qualifiedMode ? 'vrpg.caseCoverage' : 'special.automatic.overrides')}</dt>
+                <dd><strong>{qualifiedMode && calculatedDefinition?.applicability
+                  ? `${formatIsoDate(calculatedDefinition.applicability.caseCoverageFrom, locale)} – ${calculatedDefinition.applicability.caseCoverageTo
+                    ? formatIsoDate(calculatedDefinition.applicability.caseCoverageTo, locale) : translate(locale, 'dataStatus.openEnded')}`
+                  : !specialRegime ? '–' : [
                   ...(specialRegime?.legalOverrideIds ?? []),
                   ...(calculatedDefinition?.legalOverrideIds ?? [])
                 ].length > 0 ? [...new Set([
@@ -1180,7 +1361,7 @@ export function FristenrechnerApp({
                     selectedKey={form.calendarId}
                     onChange={(_event, option) => {
                       if (typeof option?.key === 'string') {
-                        mutateForm({ calendarId: option.key });
+                        mutateForm({ calendarId: option.key, holidayAnchorConfirmed: false });
                       }
                     }}
                   />

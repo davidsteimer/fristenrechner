@@ -1,6 +1,6 @@
 # Datenschemata
 
-Die Schemata definieren die providerneutralen Datenreleaseformate 1.0.0, 2.0.0 und 3.0.0 sowie die sprachneutralen Testverträge.
+Die Schemata definieren die providerneutralen Datenreleaseformate 1.0.0 bis 4.0.0 sowie die sprachneutralen Testverträge.
 
 | Datei | Zweck |
 | --- | --- |
@@ -8,6 +8,7 @@ Die Schemata definieren die providerneutralen Datenreleaseformate 1.0.0, 2.0.0 u
 | `legal-profile.schema.json` | Rechtsprofile, explizite Selektoren und typisierte Regeleffekte |
 | `calendar.schema.json` | Feiertage, Kalendervererbung und inklusive Stillstandsperioden |
 | `calendar-rules-v2.schema.json` | Kalenderkomponente 2.0.0 für versionierte Feiertagsregeln, relative Stillstandsperioden und explizite Overrides |
+| `holiday-catalog-v1.schema.json` | Feiertagskatalog 1.0.0 mit schweizweitem Fachbestand, Datumssprache, räumlichen Zuordnungen und begrenzter operativer CH-/BE-Projektion |
 | `calendar-rule-reference-suite.schema.json` | AP12A-Referenzvertrag für Parität, Kalenderarithmetik, Overrides und Sperrfälle |
 | `release-manifest.schema.json` | Release-ID, Providervertrag, Kompatibilität, Artefakte und SHA-256-Prüfsummen |
 | `source-register.schema.json` | Tenantneutrales Register produktiver, unterstützender und überwachter amtlicher Quellen |
@@ -17,6 +18,7 @@ Die Schemata definieren die providerneutralen Datenreleaseformate 1.0.0, 2.0.0 u
 | `deadline-rule.schema.json` | AP11A-Kandidat mit fünf typisierten Rechenarten und benannten Ankern |
 | `filing-profile.schema.json` | AP11A-Kandidat für Aufgabe, Eingang, Original, Uhrzeit, Kanäle und Nachweise |
 | `special-regime-catalog.schema.json` | AP11A-Katalog aus Regeln, Profilen, Gates, Übersteuerungen und Regimen |
+| `special-regime-catalog-v3.schema.json` | Bestätigter AP17C-Produktvertrag mit qualifizierter Anwendbarkeit, explizitem Altbestand und gesperrten Mapping-IDs |
 | `special-golden-case-suite.schema.json` | Kandidat des Testvertrags 2.0 für mehrere Daten, Uhrzeiten und Spezialerwartungen |
 
 ## Grundregeln
@@ -25,6 +27,7 @@ Die Schemata definieren die providerneutralen Datenreleaseformate 1.0.0, 2.0.0 u
 - Die Formatversion des AP5-Referenzbestands ist `1.0.0`.
 - Format `2.0.0` ergänzt die Spezialregimekataloge.
 - Format `3.0.0` verlangt die Kalenderkomponente `2.0.0` und eine nach oben offene Releaseabdeckung.
+- Format `4.0.0` verlangt zusätzlich genau einen Feiertagskatalog `1.0.0` und `holidayCatalogIds`. Der erste Vertragsstand ist auf die bisherigen fünf Rechtsprofile und den AP17-Spezialkatalog `3.0.0` begrenzt.
 - Kernobjekte weisen unbekannte Felder und Regeltypen ab.
 - Qualifizierte, vom Rechenkern ignorierbare Zusatzinformationen sind nur unter `extensions` zulässig.
 - Datumswerte sind ISO-Vollformate `JJJJ-MM-TT` ohne Uhrzeit und Zeitzone.
@@ -41,7 +44,11 @@ AP12A ergänzte ein separates Kandidatenschema für die Kalenderkomponente `2.0.
 
 AP13 verwendet einen getrennten Governance-Vertrag in Version `1.0.0`. Quellenregister, Prüfereignisse und Index sind keine Artefakte eines Laufzeit-Datenrelease. Ihre Trennung erlaubt die Dokumentation einer unveränderten Prüfung ohne künstliche Neuversionierung der Fachdaten.
 
+David Steimer hat den Spezialregimekatalog in Komponentenhauptversion `3.0.0` am 12. September 2026 ausdrücklich als technischen Produktvertrag bestätigt. Dies hält [DEC-2026-020](../docs/entscheidungen/DEC-2026-020-qualifizierter-spezialregimekatalog-v3.md) fest. Manifest-Hauptformat `3.0.0`, Rechtsprofile `1.0.0` und Kalenderkomponente `2.0.0` bleiben unverändert. Der neue Komponentenvertrag gehört zum technisch geprüften lokalen [AP17C-Kandidaten](../docs/architektur/vrpg-integration-ap17c.md). David Steimer hat AP17C am selben Tag fachlich abgenommen. Datenpromotion, Veröffentlichung und Deployment bleiben gesonderten Freigaben vorbehalten. Bestehende v2-Kataloge bleiben lesbar. Der produktive Provider weist Kandidaten weiterhin ab.
+
 ## Validierung
+
+Der beschlossene [DEC-2026-023](../docs/entscheidungen/DEC-2026-023-schweizweiter-feiertagskatalog.md) ist im lokalen [AP18C-Integrationskandidaten](../docs/architektur/feiertagskatalog-ap18c.md) umgesetzt. Die neue Katalogrolle wird in älteren Manifestformaten ausdrücklich abgewiesen. Der Browser verwendet für das feste Katalogschema einen begrenzten, auf unterstützte Schlüssel geprüften Validator. SPFx validiert zusätzlich mit AJV, die unabhängige Python-Prüfung mit `jsonschema`. Semantische Gates sichern Referenzen, Gebiete, Freigaben und die unveränderte operative Projektion. Alle Gates liegen vor der Aktivierung und Persistenz. Der historische Format-3-Manifestvertrag wird als unveränderte [Testfixture](../tests/fixtures/ap18c/README.md) geprüft.
 
 Die Schemata werden selbst gegen den Metaschema-Dialekt geprüft. Anschliessend werden Manifest und alle gelisteten Artefakte strukturell und semantisch validiert:
 

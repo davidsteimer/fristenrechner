@@ -309,12 +309,10 @@ def semantic_errors(
                             f"{event['reviewEventId']}/{source_id}: Quelle fehlt im Datenrelease {release_id}"
                         )
 
+    # A later register extension must not rewrite the published initial event.
+    # Validate its original release scope, then validate every declared later scope.
     if initial_events:
         initial_ids = {entry["sourceId"] for entry in initial_events[0]["entries"]}
-        missing_initial = set(sources_by_id) - initial_ids
-        for source_id in sorted(missing_initial):
-            errors.append(f"Initialprüfung: Quelle fehlt {source_id}")
-
         compared_release_ids = initial_events[0]["comparedReleaseIds"]
         compared_productive_ids: set[str] = set()
         for release_id in compared_release_ids:
@@ -323,12 +321,46 @@ def semantic_errors(
                 compared_productive_ids.update(release_sources)
             except ValueError as error:
                 errors.append(str(error))
+        for source_id in sorted(compared_productive_ids - initial_ids):
+            errors.append(f"Initialprüfung: Quelle fehlt {source_id}")
         for source_id in sorted(compared_productive_ids - productive_ids):
             errors.append(f"Quellenregister: produktive Quelle fehlt {source_id}")
-        for source_id in sorted(productive_ids - compared_productive_ids):
-            errors.append(
-                f"Quellenregister: als produktiv markierte Quelle ist im Vergleichsrelease nicht enthalten {source_id}"
-            )
+
+    declared_sources: set[str] = set()
+    referenced_sources: set[str] = set()
+    for release_id in register["scope"]["productiveReleaseIds"]:
+        try:
+            release_sources, usage = release_usage(release_id)
+            declared_sources.update(release_sources)
+            referenced_sources.update(usage)
+        except ValueError as error:
+            errors.append(str(error))
+    for source_id in sorted(declared_sources - set(sources_by_id)):
+        errors.append(f"Quellenregister: deklarierte Releasequelle fehlt {source_id}")
+    for source_id in sorted(productive_ids - declared_sources):
+        errors.append(f"Quellenregister: als produktiv markierte Quelle ist in keinem deklarierten Release enthalten {source_id}")
+    # A sourceSummary may include future-version comparisons without operative
+    # references. Conversely, a reference may substantiate a blocked historical
+    # regime, so supporting remains valid. Do not infer productive from a reference.
+    for source_id in sorted(productive_ids - referenced_sources):
+        errors.append(f"Quellenregister: als produktiv markierte Quelle hat keine Referenz in einem deklarierten Release {source_id}")
+    for source_id in sorted(referenced_sources.intersection(sources_by_id)):
+        if sources_by_id[source_id]["usageStatus"] == "monitoring":
+            errors.append(f"Quellenregister: referenzierte Quelle darf nicht ausschliesslich als Monitoring geführt werden {source_id}")
+
+    for event in events:
+        if event["trigger"] != "preRelease":
+            continue
+        required_ids: set[str] = set()
+        for release_id in event["comparedReleaseIds"]:
+            try:
+                release_sources, _ = release_usage(release_id)
+                required_ids.update(release_sources)
+            except ValueError as error:
+                errors.append(str(error))
+        checked_ids = {entry["sourceId"] for entry in event["entries"]}
+        for source_id in sorted(required_ids - checked_ids):
+            errors.append(f"{event['reviewEventId']}: Pre-Release-Prüfung fehlt für {source_id}")
 
     try:
         expected = expected_index(register, events)

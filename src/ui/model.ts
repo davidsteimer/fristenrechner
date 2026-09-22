@@ -12,6 +12,8 @@ import type {
   DeadlineDefinition,
   CalculatedDeadlineDefinition
 } from '../core';
+import { resolveVrpgSelection, isQualifiedRegimeSelectable, type VrpgSelectionState } from './vrpgSelection';
+import { EMPTY_VRPG_CONTEXT, qualifiedInputFromForm, type VrpgContextState } from './vrpgQualification';
 
 export interface AuthorityOption {
   readonly key: string;
@@ -20,6 +22,8 @@ export interface AuthorityOption {
 }
 
 export interface CalculatorFormState {
+  readonly vrpgSelection?: VrpgSelectionState;
+  readonly vrpgContext?: VrpgContextState;
   readonly authorityCode: string;
   readonly profileId: string;
   readonly inputDate: string;
@@ -138,10 +142,10 @@ export function specialRegimeOptions(
     .map(regime => ({
       regime,
       selectable: regime.status === 'supported'
-        && regime.implementationScope === 'mvp02'
+        && (regime.implementationScope === 'mvp02' || isQualifiedRegimeSelectable(data, regime.regimeId))
         && regime.uiExposure === 'visible'
         && regime.deadlineDefinitionIds.length > 0,
-      presentationStatus: presentationStatus(regime)
+      presentationStatus: isQualifiedRegimeSelectable(data, regime.regimeId) ? 'supported' : presentationStatus(regime)
     }));
 }
 
@@ -177,6 +181,12 @@ export function reconcileSpecialSelection(
 }
 
 export function isGeneralCalculation(data: CalculationData, state: CalculatorFormState): boolean {
+  if (state.profileId === 'vrpg-be' && state.vrpgSelection) {
+    const resolved = resolveVrpgSelection(data, state.vrpgSelection);
+    return resolved.kind === 'general'
+      && state.specialRegimeId === resolved.regimeId
+      && state.specialDefinitionId === resolved.definitionId;
+  }
   return !specialCatalogForProfile(data, state.profileId)
     || state.specialRegimeId === GENERAL_SPECIAL_REGIME_ID;
 }
@@ -185,10 +195,11 @@ export function effectiveSelectors(
   data: CalculationData,
   state: CalculatorFormState
 ): Readonly<Record<string, string>> {
-  if (!specialCatalogForProfile(data, state.profileId)) return state.selectors;
+  if (!specialCatalogForProfile(data, state.profileId)
+    && !(state.profileId === 'vrpg-be' && state.vrpgSelection)) return state.selectors;
   return {
     ...state.selectors,
-    specialLawStatus: state.specialRegimeId === GENERAL_SPECIAL_REGIME_ID
+    specialLawStatus: isGeneralCalculation(data, state)
       ? 'noKnownOverride'
       : 'knownOverride'
   };
@@ -321,6 +332,12 @@ export function createSpecialCalculationInput(
   data: CalculationData,
   state: CalculatorFormState
 ): SpecialDeadlineInput | undefined {
+  if (state.profileId === 'vrpg-be' && state.vrpgSelection) {
+    const resolved = resolveVrpgSelection(data, state.vrpgSelection);
+    if (resolved.kind !== 'special'
+      || state.specialRegimeId !== resolved.regimeId
+      || state.specialDefinitionId !== resolved.definitionId) return undefined;
+  }
   const selection = specialSelection(
     data,
     state.profileId,
@@ -338,6 +355,12 @@ export function createSpecialCalculationInput(
       .filter(([, value]) => value !== '')
       .map(([key, value]) => [key, Number(value)])
   );
+  const applicabilityContext = calculated.applicability && state.vrpgSelection
+    ? qualifiedInputFromForm(state.vrpgSelection, state.vrpgContext ?? EMPTY_VRPG_CONTEXT,
+      state.authorityCode, state.specialDateValues.legalTriggerDate ?? '',
+      calculated.calculation.type === 'R1_RELATIVE' && calculated.calculation.durationInputId
+        ? integerValues[calculated.calculation.durationInputId] : undefined)
+    : undefined;
   return {
     profileId: state.profileId,
     regimeId: regime.regimeId,
@@ -348,7 +371,8 @@ export function createSpecialCalculationInput(
     calendarProfileId: regime.calendarProfileId ?? calculated.resultPolicy.calendarProfileId,
     suspensionProfileId: regime.suspensionProfileId ?? calculated.resultPolicy.suspensionProfileId,
     filingProfileId: regime.filingProfileId ?? definition.filingProfileId,
-    overrideConfirmations: state.specialOverrideConfirmations
+    overrideConfirmations: state.specialOverrideConfirmations,
+    ...(applicabilityContext ? { applicabilityContext } : {})
   };
 }
 

@@ -1,0 +1,49 @@
+{
+  "kind": "mvp04LocalDataPromotion",
+  "releaseId": "2026-09-22-mvp-04-approved.1",
+  "preparedOn": "2026-09-22",
+  "dataStatus": "approved",
+  "implementationAccepted": true,
+  "publicationApproved": false,
+  "deploymentApproved": false,
+  "productionActivation": false,
+  "sourceRefresh": "separateReleaseGate",
+  "candidateReleaseId": "2026-09-22-ap18c-candidate.1",
+  "candidateManifestSha256": "be1bf547e085032f505e71d0d12b891436b2e9a9ec0b67cc33b711f32d5906b7",
+  "manifestSha256": "a240b01feb671dbe4374c1e097bc9143d66fd4878cd235b3b490a9c08afec72e",
+  "unchangedArtifacts": [
+    "profiles/bgg.json",
+    "profiles/stpo.json",
+    "profiles/vrpg-be.json",
+    "profiles/vwvg.json",
+    "profiles/zpo.json",
+    "calendars/be-public-holidays.json",
+    "calendars/ch-federal-calendar.json",
+    "holiday-catalogs/ch-holiday-catalog.json"
+  ],
+  "metadataOnlyChanges": [
+    {
+      "path": "special-regimes/vrpg-be.json",
+      "fields": [
+        "review",
+        "scope"
+      ],
+      "beforeSha256": "e71dc58239f720f4dbfc5be47b862e05852acd5431f6dda36b5bfe7e733aded4",
+      "afterSha256": "f65af0f1aa73a4dc6e0d9a7b80c8ccd89b7196f3ed1d095ae570a451a7bb0638",
+      "legalContentUnchanged": true,
+      "sourceReviewDatesUnchanged": true
+    }
+  ],
+  "holidayCatalog": {
+    "path": "holiday-catalogs/ch-holiday-catalog.json",
+    "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+    "byteLength": 837359,
+    "rules": 479
+  },
+  "validation": {
+    "core": "passed",
+    "python": "passed",
+    "candidateResult": "VALID: profiles=5, rules=47, calendarRules=15, calendars=2, holidays=0, suspensionPeriods=0, sources=38, artifacts=9, specialCatalogs=1, specialDefinitions=45, specialRegimes=52, holidayCatalogs=1, holidayCatalogRules=479",
+    "approvedResult": "VALID: profiles=5, rules=47, calendarRules=15, calendars=2, holidays=0, suspensionPeriods=0, sources=38, artifacts=9, specialCatalogs=1, specialDefinitions=45, specialRegimes=52, holidayCatalogs=1, holidayCatalogRules=479"
+  }
+}

@@ -18,6 +18,8 @@ from typing import Any
 from jsonschema import Draft202012Validator, FormatChecker
 from referencing import Registry, Resource
 
+from holiday_catalog_contract import check_holiday_catalog
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_DIRECTORY = REPOSITORY_ROOT / "schemas"
@@ -29,6 +31,8 @@ SCHEMA_FILES = (
     "filing-profile.schema.json",
     "deadline-definition.schema.json",
     "special-regime-catalog-v2.schema.json",
+    "special-regime-catalog-v3.schema.json",
+    "holiday-catalog-v1.schema.json",
     "release-manifest.schema.json",
 )
 MANIFEST_SCHEMA_ID = (
@@ -50,6 +54,10 @@ CALENDAR_RULE_SCHEMA_ID = (
 SPECIAL_CATALOG_SCHEMA_ID = (
     "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
     "main/schemas/special-regime-catalog-v2.schema.json"
+)
+QUALIFIED_SPECIAL_CATALOG_SCHEMA_ID = (
+    "https://raw.githubusercontent.com/davidsteimer/fristenrechner/"
+    "main/schemas/special-regime-catalog-v3.schema.json"
 )
 
 
@@ -284,6 +292,79 @@ def check_local_sources(
             errors.append(
                 f"{display_path}: Quellenverweis {source_ref['sourceId']} ist nicht lokal aufgelöst"
             )
+
+
+def check_source_chronology(
+    manifest: dict[str, Any],
+    sources: dict[str, dict[str, Any]],
+    referenced_source_ids: set[str],
+    errors: list[str],
+) -> None:
+    """Trennt angewendete Quellen von explizit dokumentierten Zukunftsvergleichen."""
+
+    comparison_ids: set[str] = set()
+    candidate_metadata = manifest.get("extensions", {}).get("steimer.candidate")
+    comparison = (
+        candidate_metadata.get("futureSourceComparison")
+        if isinstance(candidate_metadata, dict)
+        else None
+    )
+    if comparison is not None:
+        if not isinstance(comparison, dict):
+            errors.append("manifest.json: Zukunftsabgleich ist kein Objekt")
+        else:
+            listed_ids = comparison.get("sourceIds")
+            checked_on = comparison.get("checkedOn")
+            valid_date = isinstance(checked_on, str)
+            if valid_date:
+                try:
+                    valid_date = date.fromisoformat(checked_on).isoformat() == checked_on
+                except ValueError:
+                    valid_date = False
+            if not valid_date:
+                errors.append("manifest.json: Zukunftsabgleich ohne gültiges Prüfdatum")
+            elif checked_on > manifest["createdOn"]:
+                errors.append("manifest.json: Zukunftsabgleich liegt nach dem Releasedatum")
+            if not isinstance(comparison.get("finding"), str) or not comparison["finding"].strip():
+                errors.append("manifest.json: Zukunftsabgleich ohne dokumentierten Befund")
+            if (
+                not isinstance(listed_ids, list)
+                or not listed_ids
+                or any(not isinstance(source_id, str) for source_id in listed_ids)
+            ):
+                errors.append("manifest.json: Zukunftsabgleich ohne gültige Quellenliste")
+            else:
+                comparison_ids = set(listed_ids)
+                if len(comparison_ids) != len(listed_ids):
+                    errors.append("manifest.json: Zukunftsabgleich mit doppelter Quellen-ID")
+                unknown_ids = comparison_ids - set(sources)
+                if unknown_ids:
+                    errors.append(
+                        f"manifest.json: Zukunftsabgleich mit unbekannten Quellen {sorted(unknown_ids)}"
+                    )
+                applied_ids = comparison_ids.intersection(referenced_source_ids)
+                if applied_ids:
+                    errors.append(
+                        "Release: Zukunftsvergleichsquelle wird als Normquelle angewendet "
+                        f"{sorted(applied_ids)}"
+                    )
+                if valid_date:
+                    for source_id in comparison_ids.intersection(sources):
+                        if sources[source_id]["reviewedOn"] > checked_on:
+                            errors.append(
+                                f"Quelle {source_id}: Prüfdatum liegt nach dem Zukunftsabgleich"
+                            )
+
+    for source_id, source in sources.items():
+        if source["reviewedOn"] > manifest["createdOn"]:
+            errors.append(f"Quelle {source_id}: Prüfdatum liegt nach dem Releasedatum")
+        document_version_date = source["documentVersionDate"]
+        if (
+            document_version_date is not None
+            and document_version_date > source["reviewedOn"]
+            and source_id not in comparison_ids
+        ):
+            errors.append(f"Quelle {source_id}: Dokumentstand liegt nach dem Prüfdatum")
 
 
 def check_profile(
@@ -786,6 +867,21 @@ def check_special_catalog(
                     f"{display_path}: Override {override_id} ohne Rückverweis von {regime_id}"
                 )
 
+    qualified_mapping_ids = [
+        definition["applicability"]["mappingId"]
+        for definition in definitions.values()
+        if isinstance(definition.get("applicability"), dict)
+    ]
+    if len(qualified_mapping_ids) != len(set(qualified_mapping_ids)):
+        errors.append(f"{display_path}: doppelte qualifizierte Mapping-ID")
+    blocked_mapping_ids = [
+        item["mappingId"] for item in catalog.get("blockedMappings", [])
+    ]
+    if len(blocked_mapping_ids) != len(set(blocked_mapping_ids)):
+        errors.append(f"{display_path}: doppelte gesperrte Mapping-ID")
+    if set(qualified_mapping_ids).intersection(blocked_mapping_ids):
+        errors.append(f"{display_path}: Mapping gleichzeitig berechenbar und gesperrt")
+
     actual_origins = {
         origin: sum(
             definition["deadlineOrigin"] == origin
@@ -793,7 +889,11 @@ def check_special_catalog(
         )
         for origin in ("CALCULATED", "AUTHORITATIVE")
     }
-    if actual_origins != {"CALCULATED": 26, "AUTHORITATIVE": 3}:
+    expected_origins = {
+        "CALCULATED": 26 + len(qualified_mapping_ids),
+        "AUTHORITATIVE": 3,
+    }
+    if actual_origins != expected_origins:
         errors.append(
             f"{display_path}: unerwartete Herkunftsverteilung {actual_origins}"
         )
@@ -845,6 +945,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
     profiles: dict[str, dict[str, Any]] = {}
     calendars: dict[str, dict[str, Any]] = {}
     special_catalogs: dict[str, dict[str, Any]] = {}
+    holiday_catalogs: dict[str, dict[str, Any]] = {}
     requested_suspension_ids: set[str] = set()
     requested_calendar_ids: set[str] = set()
     all_rule_ids: set[str] = set()
@@ -853,6 +954,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
     calendar_applicable_profiles: set[str] = set()
     calendar_defined_suspension_ids: set[str] = set()
     all_sources: dict[str, dict[str, Any]] = {}
+    all_referenced_source_ids: set[str] = set()
 
     for artifact in manifest["artifacts"]:
         pure_path = PurePosixPath(artifact["path"])
@@ -881,10 +983,15 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             "legalProfile": "legal-profile.schema.json",
             "calendar": (
                 "calendar-rules-v2.schema.json"
-                if manifest["formatVersion"] == "3.0.0"
+                if manifest["formatVersion"] in {"3.0.0", "4.0.0"}
                 else "calendar.schema.json"
             ),
-            "specialRegimeCatalog": "special-regime-catalog-v2.schema.json",
+            "specialRegimeCatalog": (
+                "special-regime-catalog-v3.schema.json"
+                if artifact["schemaId"] == QUALIFIED_SPECIAL_CATALOG_SCHEMA_ID
+                else "special-regime-catalog-v2.schema.json"
+            ),
+            "holidayCatalog": "holiday-catalog-v1.schema.json",
         }[artifact["role"]]
         document_schema_errors = validate_against_schema(
             document,
@@ -902,6 +1009,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             "legalProfile": "profileId",
             "calendar": "calendarId",
             "specialRegimeCatalog": "catalogId",
+            "holidayCatalog": "catalogId",
         }[artifact["role"]]
         if document.get(document_id_field) != artifact["contentId"]:
             errors.append(f"{artifact['path']}: Inhalts-ID widerspricht dem Manifest")
@@ -911,6 +1019,9 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             if source_id in all_sources and all_sources[source_id] != source:
                 errors.append(f"Quelle {source_id}: widersprüchliche Metadaten im Release")
             all_sources[source_id] = source
+        all_referenced_source_ids.update(
+            source_ref["sourceId"] for source_ref in collect_source_references(document)
+        )
 
         if artifact["role"] == "legalProfile":
             profiles[document["profileId"]] = document
@@ -928,7 +1039,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                 all_rule_ids.add(rule_id)
         elif artifact["role"] == "calendar":
             calendars[document["calendarId"]] = document
-            if manifest["formatVersion"] == "3.0.0":
+            if manifest["formatVersion"] in {"3.0.0", "4.0.0"}:
                 suspension_ids, applicable_profiles, override_targets = (
                     check_calendar_rules(document, artifact["path"], errors)
                 )
@@ -942,8 +1053,10 @@ def validate_release(release_directory: Path) -> dict[str, int]:
                     all_calendar_rule_ids.add(rule_id)
             else:
                 check_calendar(document, artifact["path"], errors)
-        else:
+        elif artifact["role"] == "specialRegimeCatalog":
             special_catalogs[document["catalogId"]] = document
+        elif artifact["role"] == "holidayCatalog":
+            holiday_catalogs[document["catalogId"]] = document
 
     if set(manifest["profileIds"]) != set(profiles):
         errors.append("manifest.json: Profil-IDs stimmen nicht mit den Artefakten überein")
@@ -954,6 +1067,16 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             "manifest.json: Spezialregimekatalog-IDs stimmen nicht mit den "
             "Artefakten überein"
         )
+    if set(manifest.get("holidayCatalogIds", [])) != set(holiday_catalogs):
+        errors.append("manifest.json: Feiertagskatalog-IDs stimmen nicht mit den Artefakten überein")
+    for catalog_id, catalog in holiday_catalogs.items():
+        check_holiday_catalog(catalog, calendars, f"Feiertagskatalog {catalog_id}", errors)
+    if manifest["formatVersion"] == "4.0.0":
+        if set(profiles) != {"stpo", "zpo", "bgg", "vwvg", "vrpg-be"}:
+            errors.append("Format 4: genau die fünf freigegebenen Rechtsprofile sind erforderlich")
+        if (set(special_catalogs) != {"vrpg-be-special-regimes-ap17c"}
+                or special_catalogs.get("vrpg-be-special-regimes-ap17c", {}).get("formatVersion") != "3.0.0"):
+            errors.append("Format 4: AP17-Spezialkatalog vrpg-be-special-regimes-ap17c im Format 3 erforderlich")
     if set(manifest["sourceSummary"]["sourceIds"]) != set(all_sources):
         errors.append("manifest.json: Quellenübersicht ist nicht vollständig oder enthält Überhang")
     if all_sources:
@@ -975,19 +1098,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
             "Release: Kalender-Overrideziele fehlen "
             f"{sorted(unknown_override_targets)}"
         )
-        for source_id, source in all_sources.items():
-            if source["reviewedOn"] > manifest["createdOn"]:
-                errors.append(
-                    f"Quelle {source_id}: Prüfdatum liegt nach dem Releasedatum"
-                )
-            document_version_date = source["documentVersionDate"]
-            if (
-                document_version_date is not None
-                and document_version_date > source["reviewedOn"]
-            ):
-                errors.append(
-                    f"Quelle {source_id}: Dokumentstand liegt nach dem Prüfdatum"
-                )
+    check_source_chronology(manifest, all_sources, all_referenced_source_ids, errors)
 
     release_coverage = manifest["coverage"]
     if release_coverage["to"] is not None:
@@ -1012,7 +1123,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         elif valid_to is not None and valid_to < release_coverage["from"]:
             errors.append(f"Profil {profile_id}: endet vor Beginn der offenen Release-Abdeckung")
     for calendar_id, calendar in calendars.items():
-        if manifest["formatVersion"] == "3.0.0":
+        if manifest["formatVersion"] in {"3.0.0", "4.0.0"}:
             validity = calendar["validity"]
             if validity["from"] > release_coverage["from"]:
                 errors.append(f"Kalender {calendar_id}: beginnt nach der Release-Abdeckung")
@@ -1040,7 +1151,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         special_regime_count += regime_count
     available_suspension_ids = (
         calendar_defined_suspension_ids
-        if manifest["formatVersion"] == "3.0.0"
+        if manifest["formatVersion"] in {"3.0.0", "4.0.0"}
         else {
             suspension_set["suspensionSetId"]
             for calendar in calendars.values()
@@ -1057,7 +1168,7 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         errors.append(
             f"Release: referenzierte Kalender fehlen {sorted(missing_calendars)}"
         )
-    if manifest["formatVersion"] == "3.0.0":
+    if manifest["formatVersion"] in {"3.0.0", "4.0.0"}:
         unknown_profiles = calendar_applicable_profiles - set(profiles)
         if unknown_profiles:
             errors.append(
@@ -1094,6 +1205,8 @@ def validate_release(release_directory: Path) -> dict[str, int]:
         "specialCatalogs": len(special_catalogs),
         "specialDefinitions": special_definition_count,
         "specialRegimes": special_regime_count,
+        "holidayCatalogs": len(holiday_catalogs),
+        "holidayCatalogRules": sum(len(catalog["data"]["rules"]) for catalog in holiday_catalogs.values()),
     }
 
 
@@ -1142,6 +1255,29 @@ def run_negative_self_tests(release_directory: Path) -> list[str]:
         refresh_artifact_metadata(test_directory, "profiles/stpo.json")
 
     tests.append(("unaufgelöste Quelle", "nicht lokal aufgelöst", unresolved_source))
+
+    def future_source_review(test_directory: Path) -> None:
+        path = test_directory / "profiles" / "stpo.json"
+        data = load_json(path)
+        manifest = load_json(test_directory / "manifest.json")
+        data["sources"][0]["reviewedOn"] = (
+            date.fromisoformat(manifest["createdOn"]) + timedelta(days=1)
+        ).isoformat()
+        rewrite_json(path, data)
+        refresh_artifact_metadata(test_directory, "profiles/stpo.json")
+
+    tests.append(("Quellenprüfung in der Zukunft", "Prüfdatum liegt nach dem Releasedatum", future_source_review))
+
+    def undeclared_future_source_version(test_directory: Path) -> None:
+        path = test_directory / "profiles" / "stpo.json"
+        data = load_json(path)
+        data["sources"][0]["documentVersionDate"] = (
+            date.fromisoformat(data["sources"][0]["reviewedOn"]) + timedelta(days=1)
+        ).isoformat()
+        rewrite_json(path, data)
+        refresh_artifact_metadata(test_directory, "profiles/stpo.json")
+
+    tests.append(("nicht deklarierte Zukunftsfassung", "Dokumentstand liegt nach dem Prüfdatum", undeclared_future_source_version))
 
     def unknown_rule_type(test_directory: Path) -> None:
         path = test_directory / "profiles" / "stpo.json"
@@ -1244,6 +1380,89 @@ def run_negative_self_tests(release_directory: Path) -> list[str]:
                 special_component_mismatch,
             )
         )
+
+        if load_json(special_catalog_path)["formatVersion"] == "3.0.0":
+            def mutate_qualified_catalog(
+                test_directory: Path,
+                mutator: Callable[[dict[str, Any]], None],
+            ) -> None:
+                path = test_directory / "special-regimes" / "vrpg-be.json"
+                data = load_json(path)
+                mutator(data)
+                rewrite_json(path, data)
+                refresh_artifact_metadata(test_directory, "special-regimes/vrpg-be.json")
+
+            def qualified_definitions(data: dict[str, Any]) -> list[dict[str, Any]]:
+                return [
+                    definition for definition in data["deadlineDefinitions"]
+                    if isinstance(definition.get("applicability"), dict)
+                ]
+
+            def missing_qualified_source(test_directory: Path) -> None:
+                def mutate(data: dict[str, Any]) -> None:
+                    qualified_definitions(data)[0]["applicability"]["sourceRefs"][0]["sourceId"] = "SRC-NOT-AVAILABLE"
+                mutate_qualified_catalog(test_directory, mutate)
+
+            tests.append(("unaufgelöste Anwendbarkeitsquelle", "nicht lokal aufgelöst", missing_qualified_source))
+
+            def missing_blocked_source(test_directory: Path) -> None:
+                def mutate(data: dict[str, Any]) -> None:
+                    data["blockedMappings"][0]["sourceRefs"][0]["sourceId"] = "SRC-NOT-AVAILABLE"
+                mutate_qualified_catalog(test_directory, mutate)
+
+            tests.append(("unaufgelöste Sperrquelle", "nicht lokal aufgelöst", missing_blocked_source))
+
+            def duplicate_qualified_mapping(test_directory: Path) -> None:
+                def mutate(data: dict[str, Any]) -> None:
+                    definitions = qualified_definitions(data)
+                    definitions[1]["applicability"]["mappingId"] = definitions[0]["applicability"]["mappingId"]
+                mutate_qualified_catalog(test_directory, mutate)
+
+            tests.append(("doppelte Anwendbarkeitszuordnung", "doppelte qualifizierte Mapping-ID", duplicate_qualified_mapping))
+
+            def contradictory_mapping(test_directory: Path) -> None:
+                def mutate(data: dict[str, Any]) -> None:
+                    data["blockedMappings"][0]["mappingId"] = qualified_definitions(data)[0]["applicability"]["mappingId"]
+                mutate_qualified_catalog(test_directory, mutate)
+
+            tests.append(("gleichzeitig berechenbare und gesperrte Zuordnung", "Mapping gleichzeitig berechenbar und gesperrt", contradictory_mapping))
+
+            def missing_applicability(test_directory: Path) -> None:
+                def mutate(data: dict[str, Any]) -> None:
+                    del qualified_definitions(data)[0]["applicability"]
+                mutate_qualified_catalog(test_directory, mutate)
+
+            tests.append(("fehlende Anwendbarkeitsbedingungen", "Schemafehler", missing_applicability))
+
+            comparison = load_json(release_directory / "manifest.json").get("extensions", {}).get("steimer.candidate", {}).get("futureSourceComparison")
+            if comparison:
+                def applied_future_source(test_directory: Path) -> None:
+                    def mutate(data: dict[str, Any]) -> None:
+                        qualified_definitions(data)[0]["applicability"]["sourceRefs"].append({
+                            "sourceId": comparison["sourceIds"][0],
+                            "locator": "Unzulässige Anwendung des Zukunftsvergleichs",
+                        })
+                    mutate_qualified_catalog(test_directory, mutate)
+
+                tests.append(("Zukunftsquelle in der angewendeten Normspur", "Zukunftsvergleichsquelle wird als Normquelle angewendet", applied_future_source))
+
+                def missing_future_comparison(test_directory: Path) -> None:
+                    path = test_directory / "manifest.json"
+                    data = load_json(path)
+                    del data["extensions"]["steimer.candidate"]["futureSourceComparison"]
+                    rewrite_json(path, data)
+
+                tests.append(("Zukunftsfassung ohne Vergleichsnachweis", "Dokumentstand liegt nach dem Prüfdatum", missing_future_comparison))
+
+                def future_comparison_review(test_directory: Path) -> None:
+                    path = test_directory / "manifest.json"
+                    data = load_json(path)
+                    data["extensions"]["steimer.candidate"]["futureSourceComparison"]["checkedOn"] = (
+                        date.fromisoformat(data["createdOn"]) + timedelta(days=1)
+                    ).isoformat()
+                    rewrite_json(path, data)
+
+                tests.append(("Zukunftsabgleich mit künftigem Prüfdatum", "Zukunftsabgleich liegt nach dem Releasedatum", future_comparison_review))
 
     passed: list[str] = []
     for test_name, expected_text, mutator in tests:

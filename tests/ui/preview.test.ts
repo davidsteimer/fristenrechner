@@ -84,7 +84,7 @@ describe('AP9-Browservorschau', () => {
     assert.ok(resultGrid.indexOf('<CalendarExportTile') > resultGrid.indexOf("'result.shifted'"));
     assert.match(source, /<dt className="fr-calendar-export__action">\s*<PrimaryButton/);
     assert.doesNotMatch(source, /fr-calendar-export__help|calendar\.help\./);
-    assert.match(styles, /\.fr-result__grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,/);
+    assert.match(styles, /\.fr-result__grid\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,/);
     assert.match(styles, /\.fr-result__grid > \.fr-calendar-export\s*\{/);
   });
 

@@ -16,7 +16,10 @@ const resources = new Map([
   ['/app.js', { path: resolve(outputDirectory, 'app.js'), type: 'text/javascript; charset=utf-8' }],
   ['/app.js.map', { path: resolve(outputDirectory, 'app.js.map'), type: 'application/json; charset=utf-8' }],
   ['/app.css', { path: resolve(outputDirectory, 'app.css'), type: 'text/css; charset=utf-8' }],
-  ['/app.css.map', { path: resolve(outputDirectory, 'app.css.map'), type: 'application/json; charset=utf-8' }]
+  ['/app.css.map', { path: resolve(outputDirectory, 'app.css.map'), type: 'application/json; charset=utf-8' }],
+  ...['react', 'react-dom', 'fluent-ui-react'].map(name => [
+    `/vendor/${name}.js`, { path: resolve(outputDirectory, `vendor/${name}.js`), type: 'text/javascript; charset=utf-8' }
+  ])
 ]);
 
 const server = createServer(async (request, response) => {
@@ -42,5 +45,5 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  process.stdout.write(`MVP 0.2 UI preview: http://${host}:${port}\n`);
+  process.stdout.write(`UI preview: http://${host}:${port}\nAP17C: http://${host}:${port}/?candidate=ap17c\nAP18C: http://${host}:${port}/?candidate=ap18c\n`);
 });

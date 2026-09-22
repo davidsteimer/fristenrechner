@@ -1,6 +1,6 @@
 {
   "name": "fristenrechner-schweiz-spfx",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "description": "SPFx-WebPart des Fristenrechners Schweiz für SharePoint und Microsoft Teams",
   "license": "AGPL-3.0-only",
@@ -11,7 +11,7 @@
     "sync": "node scripts/sync-schemas.mjs && node scripts/sync-product-source.mjs",
     "verify:github": "npm run sync && node --import tsx scripts/verify-github-provider.ts",
     "pretest": "npm run sync",
-    "test": "node --import tsx --test test/*.test.ts",
+    "test": "node --import tsx --test --test-timeout=30000 test/*.test.ts",
     "audit:bundle": "node scripts/audit-product-css.mjs",
     "prebuild": "npm run sync",
     "build": "npm test && heft test --clean --production && npm run audit:bundle && heft package-solution --production",

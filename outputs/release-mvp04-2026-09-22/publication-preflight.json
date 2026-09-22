@@ -1,0 +1,2344 @@
+{
+  "formatVersion": "1.0.0",
+  "kind": "publicationPreflight",
+  "reviewedOn": "2026-09-22",
+  "result": "changesAndPublicationDecisionRequired",
+  "publicationAuthorized": false,
+  "deploymentAuthorized": false,
+  "externalWritesPerformed": false,
+  "baseCommit": "81815d45d2950fbdbafcb4406a6928843f16ec2a",
+  "dataPinCommit": "739876a0d11b550ea8cc702622ab22af321994a5",
+  "scope": {
+    "deltaFiles": 336,
+    "deltaBytes": 26338677,
+    "exportFiles": 636,
+    "textFiles": 272,
+    "xlsxFiles": 16,
+    "pngFiles": 47,
+    "sppkgFiles": 1,
+    "auditDocumentsExcludedFromOwnInputInventory": true,
+    "inputInventorySha256": "45ab44076138d0f596300a1f8c66105f039d1c46557408cd6d504a3f62a37bc2",
+    "excluded": [
+      "Userinput/",
+      "Local change of historic Word project plan",
+      "Office lock files",
+      ".work/",
+      "outputs/arbeitskopien/",
+      "Installed dependencies"
+    ]
+  },
+  "findings": [
+    {
+      "id": "P01",
+      "status": "decisionRequired",
+      "category": "localPathMetadata",
+      "description": "Four V0.9/V0.10 original/archive XLSX copies contain x15ac:absPath/@url in xl/workbook.xml. Original path not disclosed in this report. No workbook was changed.",
+      "affectedHashes": [
+        "7663aacdca75d66c565ca6c049c9958dafad792ec46ec0d0515b4cb1505e8453",
+        "57b3c3c668bb00360cf94da159a29509116691f9282419ebc7a87cdf8b88b619"
+      ]
+    },
+    {
+      "id": "P02",
+      "status": "documentationCorrectionRequired",
+      "category": "outdatedEntryPoints",
+      "description": "Root README, SPFx README and linked third-tenant handover documents need consistent source-approval, package, format, pin and mirror information for MVP0.4. Frozen historical evidence must remain unchanged."
+    },
+    {
+      "id": "P03",
+      "status": "explainedBuildVariance",
+      "category": "notBitReproducible",
+      "description": "Rebuilt SPPKG differs only in consistent Webpack module IDs, host CSS suffix, bundle references, generated part IDs and ZIP timestamps. No other AST difference. Not an installable replacement approval."
+    }
+  ],
+  "integrity": {
+    "sourceFilesRechecked": 635,
+    "sourceDifferences": [],
+    "wordPlanFromUnchangedGitBaseline": true,
+    "sourceApprovalEvidenceFilesVerified": 13,
+    "binaryInventoryMatches": [
+      {
+        "category": "images",
+        "files": 47,
+        "pathsAndHashesMatch": true
+      },
+      {
+        "category": "office-and-sppkg",
+        "files": 17,
+        "pathsAndHashesMatch": true
+      }
+    ],
+    "xlsxAndSppkgHashesUnchanged": true
+  },
+  "tests": {
+    "exportRuns": [
+      {
+        "name": "python-env",
+        "exitCode": 0,
+        "seconds": 1.85
+      },
+      {
+        "name": "root-check",
+        "exitCode": 0,
+        "seconds": 28.06
+      },
+      {
+        "name": "calendar-models",
+        "exitCode": 0,
+        "seconds": 12.56
+      },
+      {
+        "name": "archive",
+        "exitCode": 0,
+        "seconds": 0.91
+      },
+      {
+        "name": "data-contracts",
+        "exitCode": 0,
+        "seconds": 2.86
+      },
+      {
+        "name": "data-release",
+        "exitCode": 0,
+        "seconds": 13.94
+      },
+      {
+        "name": "source-governance",
+        "exitCode": 0,
+        "seconds": 19.57
+      },
+      {
+        "name": "source-approval",
+        "exitCode": 0,
+        "seconds": 0.34
+      },
+      {
+        "name": "xlsx-import",
+        "exitCode": 0,
+        "seconds": 10.69
+      },
+      {
+        "name": "golden-oracle",
+        "exitCode": 1,
+        "seconds": 0.59
+      },
+      {
+        "name": "artifacts-build",
+        "exitCode": 0,
+        "seconds": 1.04
+      },
+      {
+        "name": "artifacts-test",
+        "exitCode": 0,
+        "seconds": 2.19
+      }
+    ],
+    "finalReruns": [
+      {
+        "name": "golden-oracle-venv",
+        "command": [
+          "npm",
+          "run",
+          "test:oracle"
+        ],
+        "exitCode": 0
+      },
+      {
+        "name": "artifacts-build-final",
+        "command": [
+          "npm",
+          "run",
+          "build:artifacts:mvp04"
+        ],
+        "exitCode": 0
+      },
+      {
+        "name": "artifacts-test-final",
+        "command": [
+          "npm",
+          "run",
+          "test:artifacts:mvp04"
+        ],
+        "exitCode": 0
+      }
+    ],
+    "initialOracleFailure": "Venv not active, jsonschema unavailable to python3. Unchanged test passed with prepared venv.",
+    "spfxTestsPassed": 48,
+    "spfxFullBuildExitCode": 0
+  },
+  "reproduction": {
+    "mode": "explicitFileExportWithHashes",
+    "freshGitCloneCompleted": false,
+    "rootNpm": {
+      "mode": "freshOfflineCi",
+      "packages": 37
+    },
+    "spfxNpm": {
+      "mode": "freshOfflineCi",
+      "packages": 1329
+    },
+    "nodeVersion": "v22.23.2",
+    "pythonVersion": "3.12",
+    "pythonDependencies": "Copied existing jsonschema 4.25.1 and dependencies into newly created Python 3.12 venv. Not a fresh pip install.",
+    "gitDependency": "Read-only existing immutable Git objects for data pin and rollback blob. No original working files used by these artifact checks.",
+    "historicalWorkbookAuthoringReproduced": false,
+    "acceptedWorkbookImportVerified": true,
+    "webAndMirrorByteIdentical": true
+  },
+  "spfxComparison": {
+    "originalSha256": "eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a",
+    "rebuiltSha256": "dd2e8a00ccb43f7f292ceba94c228e2ae73bd58db8d223a2e38500ddd99ef010",
+    "packageBytesEqual": false,
+    "astDifferenceCount": 342,
+    "numericModuleIdChanges": 336,
+    "numericIdMappings": {
+      "18": 3673,
+      "114": 3799,
+      "127": 3282,
+      "384": 3463,
+      "633": 2586,
+      "650": 4551,
+      "827": 5882,
+      "956": 7845,
+      "1068": 617,
+      "1254": 6653,
+      "1513": 7532,
+      "1576": 1163,
+      "1578": 7935,
+      "1589": 5844,
+      "1700": 3439,
+      "1712": 4227,
+      "1821": 4426,
+      "1896": 4003,
+      "1903": 7216,
+      "2037": 2128,
+      "2258": 6144,
+      "2472": 5333,
+      "2538": 4845,
+      "2547": 7870,
+      "2733": 5944,
+      "2808": 1239,
+      "2829": 208,
+      "3092": 6461,
+      "3241": 396,
+      "3247": 494,
+      "3287": 6250,
+      "3478": 2023,
+      "3523": 2626,
+      "3566": 7923,
+      "3598": 5707,
+      "3907": 5354,
+      "4010": 6105,
+      "4138": 117,
+      "4579": 8708,
+      "4585": 7060,
+      "4596": 6505,
+      "4627": 5520,
+      "4751": 3966,
+      "4945": 7082,
+      "4954": 2079,
+      "5022": 2721,
+      "5171": 1846,
+      "5196": 9857,
+      "5250": 3025,
+      "5280": 8343,
+      "5413": 4042,
+      "5421": 3558,
+      "5532": 9713,
+      "5577": 3252,
+      "5583": 4486,
+      "5794": 7307,
+      "6059": 7652,
+      "6194": 4737,
+      "6254": 9547,
+      "6343": 1520,
+      "6480": 8643,
+      "6496": 3445,
+      "6526": 3835,
+      "6823": 8226,
+      "6956": 9029,
+      "7089": 4588,
+      "7260": 7887,
+      "7287": 422,
+      "7354": 6939,
+      "7398": 3853,
+      "7442": 7433,
+      "7510": 2661,
+      "7592": 5457,
+      "7928": 4495,
+      "8346": 6163,
+      "8358": 2017,
+      "8367": 7106,
+      "8404": 3693,
+      "8443": 9572,
+      "8500": 5765,
+      "8724": 392,
+      "8783": 8660,
+      "8834": 8727,
+      "8847": 2476,
+      "9103": 8182,
+      "9147": 1678,
+      "9437": 518,
+      "9547": 4018,
+      "9637": 4834,
+      "9671": 6378,
+      "9720": 3837,
+      "9754": 3265,
+      "9764": 343,
+      "9892": 5413
+    },
+    "inconsistentMappings": [],
+    "moduleTable": {
+      "countOriginal": 101,
+      "countRebuilt": 101,
+      "allChangedNumericValuesAreModuleIds": true,
+      "allChangedNumericPositionsAreModuleKeysOrCalls": true,
+      "moduleKeyMappingsMatch": true
+    },
+    "otherDifferencesOnlyConsistentHostCssSuffix": true,
+    "rebuiltPackageContractVerified": true,
+    "additionalApiPermissions": [],
+    "originalPackageUnchanged": true
+  },
+  "artifacts": [
+    {
+      "name": "fristenrechner-mvp04-sharepoint-mirror.zip",
+      "equal": true,
+      "sha256": "3a194a29e25eb08a1c503306372671f7d9747951cdb5f31937556c3d41da0536"
+    },
+    {
+      "name": "fristenrechner-mvp04-steimer-web.zip",
+      "equal": true,
+      "sha256": "1131d164d96cffe7ed43206f39b38a1790fa86292542b8d73fa7604f3845d69c"
+    },
+    {
+      "name": "fristenrechner-schweiz-0.4.0.0.sppkg",
+      "equal": true,
+      "sha256": "eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a"
+    }
+  ],
+  "limitations": [
+    "Publication hygiene, not an exhaustive code security audit",
+    "No new legal source review or M365/public production tests",
+    "No claim that arbitrary encoded secrets or image steganography are absent",
+    "No external pin download or publication verification"
+  ],
+  "inputFiles": [
+    {
+      "path": ".gitignore",
+      "byteLength": 459,
+      "sha256": "8cfbf8f50c69fa81b1810be76731957b74f63d7d97054060b5dc97f14458d985",
+      "publicationDelta": true
+    },
+    {
+      "path": "README.md",
+      "byteLength": 19546,
+      "sha256": "bb49fd5299393c80d3a7ea860c2edc4e0fa4263c4ff5c4f2f11c5de9096343fe",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/README.md",
+      "byteLength": 7477,
+      "sha256": "c69c38a923622a22bb456e6e5bd38585339daafd3c24428ea47148cae7dbd6f0",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/candidates/2026-09-22-ap18c-workbook/README.md",
+      "byteLength": 3063,
+      "sha256": "5fcaba589be40b225cfb9ff66d136c72c90203f9add67730a1fee16cc0d3a50e",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/candidates/2026-09-22-ap18c-workbook/acceptance.json",
+      "byteLength": 2262,
+      "sha256": "3d97ec7ce4c02d712761569b0836fdf342552f7e12800034b1bc837adbed54cf",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/candidates/2026-09-22-ap18c-workbook/holiday-candidate.json",
+      "byteLength": 7888548,
+      "sha256": "9553f483678bc5f209099703588402a7dd65cf4d9aac8a00aadb6f9dbe966099",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/candidates/2026-09-22-ap18c-workbook/validation-report.json",
+      "byteLength": 1401,
+      "sha256": "63e79acf1ea341799262f8b71f2ff46439d4de5c7306cda1cf3b429d10876a7e",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/README.md",
+      "byteLength": 1473,
+      "sha256": "10470201a96f6f1b3800ce51dabe43cd023b4d2e41b02b871bf5207a07912ccc",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/calendars/be-public-holidays.json",
+      "byteLength": 9073,
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/calendars/ch-federal-calendar.json",
+      "byteLength": 7260,
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/manifest.json",
+      "byteLength": 6680,
+      "sha256": "e13a5cc8887bb6f16572d87729728511d71b8048690e2ef514c0194f21c61b90",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/profiles/bgg.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/profiles/stpo.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/profiles/vrpg-be.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/profiles/vwvg.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/profiles/zpo.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-12-ap17c-candidate.1/special-regimes/vrpg-be.json",
+      "byteLength": 170692,
+      "sha256": "e71dc58239f720f4dbfc5be47b862e05852acd5431f6dda36b5bfe7e733aded4",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/README.md",
+      "byteLength": 4253,
+      "sha256": "2c0efa80a092cd38b6304de58c73365382257601e75ec88778136afdfe99b5ba",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/calendars/be-public-holidays.json",
+      "byteLength": 9073,
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/calendars/ch-federal-calendar.json",
+      "byteLength": 7260,
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/holiday-catalogs/ch-holiday-catalog.json",
+      "byteLength": 837359,
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/manifest.json",
+      "byteLength": 7645,
+      "sha256": "be1bf547e085032f505e71d0d12b891436b2e9a9ec0b67cc33b711f32d5906b7",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/profiles/bgg.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/profiles/stpo.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/profiles/vrpg-be.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/profiles/vwvg.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/profiles/zpo.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-ap18c-candidate.1/special-regimes/vrpg-be.json",
+      "byteLength": 170692,
+      "sha256": "e71dc58239f720f4dbfc5be47b862e05852acd5431f6dda36b5bfe7e733aded4",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/README.md",
+      "byteLength": 2674,
+      "sha256": "7c31a94336b352d15e52c82c713530e5c122a8f6f44df9211112a6cf0b99a94f",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/calendars/be-public-holidays.json",
+      "byteLength": 9073,
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/calendars/ch-federal-calendar.json",
+      "byteLength": 7260,
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+      "byteLength": 837359,
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/manifest.json",
+      "byteLength": 9029,
+      "sha256": "a240b01feb671dbe4374c1e097bc9143d66fd4878cd235b3b490a9c08afec72e",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/profiles/bgg.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/profiles/stpo.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/profiles/vrpg-be.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/profiles/vwvg.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/profiles/zpo.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/special-regimes/vrpg-be.json",
+      "byteLength": 170923,
+      "sha256": "f65af0f1aa73a4dc6e0d9a7b80c8ccd89b7196f3ed1d095ae570a451a7bb0638",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/source-reviews/README.md",
+      "byteLength": 5455,
+      "sha256": "61b26e9e569b88adb63fe1237a6a3dbeadfb0ac9ee3884c8688c9f9a6a9db98a",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/source-reviews/events/2026-09-22-mvp-04-prerelease.1.json",
+      "byteLength": 49064,
+      "sha256": "87fa74eb772b6d78ced7d31e4062d3bb513e6045510995719676175c855b4883",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/source-reviews/index.json",
+      "byteLength": 60337,
+      "sha256": "b4c55c216df22ed8f9269fc57b28955132713cff176d66b4a4ae07083c15f7e6",
+      "publicationDelta": true
+    },
+    {
+      "path": "data/source-reviews/source-register.json",
+      "byteLength": 31096,
+      "sha256": "0d88146ede01345266edb0c6a7d3827cc1f48a6c5ccc243463eb2d89b48f6a15",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/README.md",
+      "byteLength": 14854,
+      "sha256": "c822896c407b36b3b38a241a3d9745a5a63e4ea8e1533f7038efb028d89b7284",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "byteLength": 9290,
+      "sha256": "14801b50b959e132b6e94ff6f4b9bb9a047f8165e6cfbfcfe9b3621ff534a765",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/ap17c-spfx-pruefung.md",
+      "byteLength": 13041,
+      "sha256": "4406e08f4cc1c5562f6f8255155cdabd778efe7bf16bd5c8b0d814349b1c7980",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/erfassung-ap18b-03.md",
+      "byteLength": 9990,
+      "sha256": "a15eb27ab2f75c0c723a01d5e8b3b20542221fadb68024e11e240e3a14107a8c",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/erfassung-ap18b-04.md",
+      "byteLength": 11215,
+      "sha256": "f5493ef8ee6be8c4859d3eec952221cf77956e3d6a5d04881482ca8069e26644",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/erfassung-ap18b-05.md",
+      "byteLength": 10250,
+      "sha256": "0697eef46e5775b3df61620b0545df1653f5c536e269112c69673cf93807e50c",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/feiertagskatalog-ap18c.md",
+      "byteLength": 8497,
+      "sha256": "5760e57f0efdbddcd1f63cdf45fd4099c80f21a99235e7392b5f382262260a7a",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/feiertagsmatrix-ap18a.md",
+      "byteLength": 29643,
+      "sha256": "73153e8ba552938c85a439ffcdc6b4d24735314616dcb2159509fdb08b9478b6",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/feiertagsquellen-ap18b.md",
+      "byteLength": 17178,
+      "sha256": "b1ff08ef6fa7574bab9a5b9175804dc26bd67f31760376e5510d6caf3145a2cb",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/import-ap18c.md",
+      "byteLength": 11838,
+      "sha256": "e77d379d48c87f96e98b637a54d3c07e9f488a4d0073ad94a9ac560ed25a448f",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/modellcheck-ap18b-03.md",
+      "byteLength": 17462,
+      "sha256": "79ea588a97980637e0c6a0521cea99107924b14ceb3457f36a7dbae4da6aecc5",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/vrpg-bedienung-ap17a.md",
+      "byteLength": 10389,
+      "sha256": "4ed0c5ba6903a02ae902e484ceed2935fe100d093e22d18c49cf36ea5364c886",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/architektur/vrpg-integration-ap17c.md",
+      "byteLength": 22512,
+      "sha256": "eb606bbf68428bef596f087c67842e7f830973d073252b17e8b93a3141a9d8ac",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/betrieb/deployment-mvp-04.md",
+      "byteLength": 12536,
+      "sha256": "8b61216821023b0ab1814724619a32cb435a73cb6fb8408c74ecf705ccaa4cef",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/betrieb/release-notes-mvp04.md",
+      "byteLength": 3965,
+      "sha256": "642b2b8526b0f7782f6a1826cbf76d09eeabfd3c462903c9250cb52dd83f5a1e",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-019-gestufte-vrpg-bedienung.md",
+      "byteLength": 7787,
+      "sha256": "62422b6739ca1015ea0128e9373fe71ae89550ab175bb357386e98cc926611b5",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-020-qualifizierter-spezialregimekatalog-v3.md",
+      "byteLength": 6450,
+      "sha256": "118dc0090c32a9202ed247a357e895403adc508588fa06ad7c2d85edf39f53f0",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-021-arbeitsmappenvertrag-050.md",
+      "byteLength": 4279,
+      "sha256": "466066449f14591cb6fe9fbf726782f71f9d8e74556bbc1a3bf9f00a5d8bd818",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-022-bedingte-feiertagsregeln.md",
+      "byteLength": 4405,
+      "sha256": "8bdf55de355e916454dab0d2b6f1a937568276f9fba81aa62ed7281bcb9e19c0",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-023-schweizweiter-feiertagskatalog.md",
+      "byteLength": 16173,
+      "sha256": "ef9c34fb6cb7116438312cbf9c2e154f0e2f70ecd71a065023ff37c9c4e48045",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "byteLength": 9522,
+      "sha256": "c339509e3cbe87543bc49da8df3d0a79fb9feee0bac38dc4e3a622ee8c000063",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "byteLength": 9880,
+      "sha256": "89de7878a6ce483557a96cd9cb97047ad7de6476f6d6436a8418a483cacc70f0",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap18b-03.md",
+      "byteLength": 4715,
+      "sha256": "fbec994dd928f84630e61fa1f87f6e891ff95ab528b4b1c8a813b242422da69a",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap18b-05.md",
+      "byteLength": 6404,
+      "sha256": "dfe62187ba2c7de1210b7e5d4f386e89a68ae4794a10f849c31fb9b64cc61843",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap18c.md",
+      "byteLength": 2973,
+      "sha256": "f10f2b8f7a82f3c081f5910b016e343d20a157ca7a12d0e0cbac229ab6a6a7ad",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/abnahme-quellenpruefung-mvp04.md",
+      "byteLength": 3965,
+      "sha256": "329bb384dada0d68fd49cd2f4d52068cf62cf2d6597b2148721c065b0b39fd04",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/archivbestaetigung-ap18.md",
+      "byteLength": 8350,
+      "sha256": "6dd00182852bd4ec86e58474b1af8f5dc914eee2a24eef4778622e68b093088a",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/offene-fachfragen.md",
+      "byteLength": 11648,
+      "sha256": "458f8b3c2f7be4fb476f124a05e6b4bbdc2b4f24395eff5af18cd22901c7279a",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-ap17c.md",
+      "byteLength": 13777,
+      "sha256": "2b7cb11ad94b64d731eac91536662c96f53a73c2e9d5a26789eaa3fd0c582276",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp04.md",
+      "byteLength": 21332,
+      "sha256": "2f4772bc6170e8b02cf906f588f9d490cbc0f170ac234bb54e344b09cf763a80",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-01-ag-entwurf.md",
+      "byteLength": 15097,
+      "sha256": "4f6bd44323efa352fb51b0de3dc703e48f3f339592a643d5e256b363cf511c55",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-02-gr-quellen.md",
+      "byteLength": 12861,
+      "sha256": "33b9798fb75eedcea1aae529b04990161e9f04e79ebac26085a0d8f70a109031",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-02-ti-gr-abgrenzung.md",
+      "byteLength": 9323,
+      "sha256": "19d001429868ef8c162f5e38c52e80cafe4649a8e1c49de116cf418ee1dbc632",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-02-ti-quellen.md",
+      "byteLength": 13188,
+      "sha256": "d79795497aec77696eff40579dfbe8fe818487c1a2fdb90db8b34cc75a24594c",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-03-fr-so.md",
+      "byteLength": 20146,
+      "sha256": "708fe7d88e28a85997a077635806087320be79f38694cb3083b60dc8a9b9f23a",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-03-vs-ge.md",
+      "byteLength": 11846,
+      "sha256": "c02b4f45a7f0f783f716ddaaa63eb3a2ec7cc49db404a71d22602173af4d2748",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-04-ost.md",
+      "byteLength": 10567,
+      "sha256": "4d2dfe4ec14e30f9ba704b99465440bb1dc6164f5576f770b1120224a392d3cf",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-04-west.md",
+      "byteLength": 12512,
+      "sha256": "52136a62d213ebf417bd49c577fd6182dcec84562a2a3e67ec44754600999f63",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpaket-ap18b-04-zentral.md",
+      "byteLength": 14609,
+      "sha256": "0309252aca4ccc3660abdfeea79765adfd7acaea52ce902051a128678c7a936e",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefung-ap17b.md",
+      "byteLength": 13147,
+      "sha256": "3aaaf6596ac040329c1a20ee03ba3459bcc35729e35be4aad6769a8a9aa48e91",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefung-ap18a.md",
+      "byteLength": 10946,
+      "sha256": "c3ace3174593a4c5d4e9136cfd66bcfa5d7cf588c7d37eb786bc95aec37a77a7",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/quellenregister.md",
+      "byteLength": 11411,
+      "sha256": "2912684211c8149131be7f07dfcf29c6904c5ce0b8ddfa330f6a9dab694d83a5",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/sprachergänzung-ap18b-02-rg.md",
+      "byteLength": 4274,
+      "sha256": "0c2fffb266b7e7766a0d3c456e5539ec9d496fab9d983170c3df87daee375267",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/sprachergänzung-ap18b-04.md",
+      "byteLength": 5231,
+      "sha256": "e6fd7f26bb894eecd938996b451198bdfdf4cd8acca1b315b57982850c00bb86",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/fachrecht/vrpg-anwendbarkeit-ap17b.md",
+      "byteLength": 22182,
+      "sha256": "f1a3bd165d5c3212dc55518244c34b819762603a6f3fbde3fdaf0917ca8dbb1e",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/ux/README.md",
+      "byteLength": 987,
+      "sha256": "26990b707fd63e50937149c9f76035e42a56b8a23c16a2715433cd6cfaad1442",
+      "publicationDelta": true
+    },
+    {
+      "path": "docs/ux/vrpg-bedienkonzept-ap17.md",
+      "byteLength": 13861,
+      "sha256": "3b4c908cb3817049b844588b8625a149812c3e62a5baf997fea3766f460a8707",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18A_V0.1.xlsx",
+      "byteLength": 37420,
+      "sha256": "3af259515c502ef563cc3097bce0c7e15147d5158ac9590f95c014bbebd81aa4",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18A_V0.2.xlsx",
+      "byteLength": 39063,
+      "sha256": "a06db692fd466d1b6e553ea0e2a255a145aa7bc569c526868746e02f177e964f",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18A_V0.3.xlsx",
+      "byteLength": 38523,
+      "sha256": "7fc8663e35e5f579b951da75fdc57e364d6a3dff8758cbb9f564a0e2fed22bfc",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18A_V0.4.xlsx",
+      "byteLength": 43028,
+      "sha256": "11f47723d4bd9961e177bf0401c015899f41d847e56a32141d72bf82876cd597",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/QA-AP18A-V0.2.md",
+      "byteLength": 5495,
+      "sha256": "b43fe3cf830e143823dd1282f51285df0eafb33b220b3799ee00ae3bf38decfa",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/QA-AP18A-V0.3.md",
+      "byteLength": 4599,
+      "sha256": "9cbcbd729a0f9e0c720a22a75c64dbe12d26cc35761ee6fe980d60a2e79d8b57",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/QA-AP18A-V0.4.md",
+      "byteLength": 5253,
+      "sha256": "314a99c6d2131074b05796d12a214952eb02d8ae52d836a554536836953b358c",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/QA-AP18A.md",
+      "byteLength": 6726,
+      "sha256": "22912e7ceb5cdef09a1ee31358aa54ef6f9c8b2f96c294f7ff06b35479297a64",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v02/saved-01-Übersicht.png",
+      "byteLength": 111982,
+      "sha256": "b42d054b19033d87cd41d72cad4017abd2d4d2cbb4e0140f8377039b2f59f75f",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v02/saved-02-Gemeinwesen.png",
+      "byteLength": 161182,
+      "sha256": "5de08e9e5daef2246e528550ef6decc31f3924b9d7428a5bf93e7bdcd9a23fff",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v02/saved-03-Feiertagsregeln.png",
+      "byteLength": 203396,
+      "sha256": "c3e92c5813fdf7e036aed1f985801423a53d3931211ecad0972d7da3ac06e79a",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v02/saved-04-Geltungsbereiche.png",
+      "byteLength": 28509,
+      "sha256": "827b54ef68c4d53eafbd74222e71f672693912bcdb597ea4f0f23b244bc36f4f",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v02/saved-05-Feiertagskalender.png",
+      "byteLength": 332848,
+      "sha256": "eae478b5c80a7397ca57a7eac84a6356a0bcecbf0d7acdb62b54f91023965d98",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v03/saved-01-Übersicht.png",
+      "byteLength": 113169,
+      "sha256": "da8de7deb446f138c2746c8ac8c2ae7f64ead62666443624bf460a1d668f2234",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v03/saved-02-Gemeinwesen.png",
+      "byteLength": 42142,
+      "sha256": "b59eeaeb9b1cbeddf9b63a512bb8732f8dc14ee6b6eca9377c846d1c7a9128e4",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v03/saved-03-Feiertagsregeln.png",
+      "byteLength": 101403,
+      "sha256": "7ce7765d8d1b50246fd538aa5f298057c7d85b1d2fd03859bb3363418f19dadc",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v03/saved-04-Geltungsbereiche.png",
+      "byteLength": 56909,
+      "sha256": "eeb273d3a2caf6e7355eb7aa2849fb0139e6b829a3aecb04602ba1fce8a792c8",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v03/saved-05-Feiertagskalender.png",
+      "byteLength": 125505,
+      "sha256": "5dd7b352f5a91f44e950048c6f48fa46f58a7e07f16c4d13e48e649847fcc2fb",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v04/saved-01-Übersicht.png",
+      "byteLength": 111492,
+      "sha256": "06033f0623386f33dc4f893185742e99e541dbd852c67d05d3230754ab7b4027",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v04/saved-02-Rechtsquellen.png",
+      "byteLength": 75410,
+      "sha256": "e6cbd8abd7ae7b76dbd207b7b6b169076e48850c779cf2364a033a58760badc3",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v04/saved-03-Gebietszuordnungen.png",
+      "byteLength": 124974,
+      "sha256": "ddd1e910314b98db9583867f3488d697f6a6a1e6af93776763e0bb98730d8c40",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v04/saved-04-Gebietszuordnungen.png",
+      "byteLength": 250477,
+      "sha256": "b0f348b1703c0c963080ba9cee2b362112035396e9be1647824da04a44e1276c",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa-v04/saved-05-Gebietszuordnungen.png",
+      "byteLength": 78941,
+      "sha256": "923b22336dac5ef7fdeaf1ab6b2a3a9c406aa531c3e4ba5ea379a32ecfa42865",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-01-Übersicht.png",
+      "byteLength": 308468,
+      "sha256": "ba1590146db3746261b757a6d398769de25d9061c690bbed0a1f5cc3f6a1c8b6",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-02-Gemeinwesen.png",
+      "byteLength": 401078,
+      "sha256": "19c1030a36e088d0cfde4e3eeee05be28e54691fc77dfec9fe9f2867dbc713f3",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-03-Feiertagsregeln.png",
+      "byteLength": 344521,
+      "sha256": "1de90014e7c0ed8235c07e7fcf4d2b1a72a08d5077749e0ad7d4488368168767",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-04-Geltungsbereiche.png",
+      "byteLength": 178498,
+      "sha256": "d1b15e768a9d11297081c4a17247931cf599d1d221d4417d627391720c2c0c60",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-05-Rechtsquellen.png",
+      "byteLength": 209285,
+      "sha256": "cceef74f282b57c89345f1ae1863b9b63fdfc92385e53bb60202e619785244e1",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-06-Verfahrensbezug.png",
+      "byteLength": 175603,
+      "sha256": "8b978165b2be04bd6fb93266a390187c0b8e76f42fdfa813750a702309bbdb83",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-07-Quellenprüfung.png",
+      "byteLength": 160158,
+      "sha256": "c2fc91a55b685167afd6618b502d7bea1cad15bf0441c331aa547bb0b7a35db5",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-08-Feiertagskalender.png",
+      "byteLength": 343215,
+      "sha256": "b809e276fabe61887ce2f931db3fc1cc2c12c3b2327e9581199c5d8c45ad633d",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-09-Feiertagsregeln.png",
+      "byteLength": 375358,
+      "sha256": "8ebccdee907015450b86c3fd8b20732765b5df359caad3f49e78b94da7337b29",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-10-Feiertagsregeln.png",
+      "byteLength": 47696,
+      "sha256": "9f333b8b402c2c721744621601cacf2525a44764657406b71e268886694cef61",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-11-Rechtsquellen.png",
+      "byteLength": 101973,
+      "sha256": "711460b54b290612ad8707bf8a6020155e3f22c5930edb207f087fce7a6aff37",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-12-Quellenprüfung.png",
+      "byteLength": 66151,
+      "sha256": "ecd6fb48f513a8e5212df2f0d7e602413715741bda2d8bf9f0253621a1b7d3ac",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-13-Geltungsbereiche.png",
+      "byteLength": 20774,
+      "sha256": "ca98e085d0e50bd5d2cabf4a8c77211f4047ce64d09b5ae21eb7336ce17080d8",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18a-2026-09-13/qa/saved-14-Feiertagskalender.png",
+      "byteLength": 272301,
+      "sha256": "24c83c95e3e84155c032e752de00b3b79aecedfa72f7b252fb873311dc728fb2",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-01_AG_V0.5.xlsx",
+      "byteLength": 73777,
+      "sha256": "29990c2b7f53112603f22c6ca9df5c127540907c104b992be81df3803ebdb825",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-01_AG_V0.6.xlsx",
+      "byteLength": 73891,
+      "sha256": "b1c88de49b33a2e702d8387eef150b16791fa30bbc7ce465e01ee30adb3965b2",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/QA-AP18B-01-V0.6.md",
+      "byteLength": 2692,
+      "sha256": "44d2308f6ca8cb6a9f30977e63e4c471b6676c351bcc80a1ac80c6c18bd945c2",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/QA-AP18B-01.md",
+      "byteLength": 6125,
+      "sha256": "c8426c826454d664989eb249e4e49a6d8d41573f88208763c7399c42d7fef5d4",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-01-Übersicht.png",
+      "byteLength": 215226,
+      "sha256": "64eaac576681990cd0f53075cad140ff98d8b0779b1776a3f5f0ff50d7178ee1",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-02-Gemeinwesen.png",
+      "byteLength": 57683,
+      "sha256": "df1eb17ceb3d5e3c0c6861d508b8b0e5260fe6fd98fbd7c01322c1c9b467ef9b",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-03-Feiertagsregeln.png",
+      "byteLength": 219120,
+      "sha256": "80f9f0d4b05a4d185bd2992aa120f41b7d4553c44964a851ac159fca2e648623",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-04-Feiertagsregeln.png",
+      "byteLength": 102758,
+      "sha256": "e16a90239785ce169e2df5092d382b4723a2f0806c61ed0a5bf754e3d6b98faf",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-05-Feiertagskalender.png",
+      "byteLength": 358352,
+      "sha256": "187ebed84ae303b1adc470c93f131d5cdb2cc252aada869d0e35411b299c246b",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-06-Geltungsbereiche.png",
+      "byteLength": 341252,
+      "sha256": "5e4d24cddc6dc257a35fdd9e5c923ea3e67496278971c8f8358051f1640d5181",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-07-Gebietszuordnungen.png",
+      "byteLength": 224274,
+      "sha256": "073791bf5f176d9fa285ad0a96e0a4e1bb410043057e8bff01400de57e81e08a",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-08-Gebietszuordnungen.png",
+      "byteLength": 299766,
+      "sha256": "7e4928c897829056d07b97e2fbc312b4383729dd5c4aeff256a0a2170efe9965",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-09-Rechtsquellen.png",
+      "byteLength": 167307,
+      "sha256": "6c650911a4281ff993d3c35effc62af07ee9efa60464db12f28c6370b6ce3c57",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-10-Verfahrensbezug.png",
+      "byteLength": 258934,
+      "sha256": "13740fbac9361a7b149487a9eb20859309a8bb6743ebca7dc5e17706d5ba8075",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-11-Quellenprüfung.png",
+      "byteLength": 121268,
+      "sha256": "dd5e9cff721f823841b405a351ba6eefe4ecd1ad6c5dce944c7bae71669615a7",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-01-ag-2026-09-13/qa/saved-12-Gebietszuordnungen.png",
+      "byteLength": 77159,
+      "sha256": "7401fd1419a9a7e81a1f195d447d203db415386d3cfd5728596a322fe2b3f1ff",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-02-ti-gr-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-02_TI_GR_V0.7.xlsx",
+      "byteLength": 90733,
+      "sha256": "a66bfff038a284c99f50337e02609a25718473b7a3d810c8e4c69ee455473c40",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-02-ti-gr-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-02_TI_GR_V0.8.xlsx",
+      "byteLength": 91144,
+      "sha256": "d3e3bac17464733fa7bc3c42e63db0b5b42502c177914d6dcd9800ba9320461f",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-02-ti-gr-2026-09-13/QA-AP18B-02-V0.8.md",
+      "byteLength": 3117,
+      "sha256": "e5a325f9cd32a472b305e1adcad39ba5e95604fb3dd8c90954178efaa7f555c9",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-02-ti-gr-2026-09-13/QA-AP18B-02.md",
+      "byteLength": 6843,
+      "sha256": "50321232452055ab720854f964cb7609718b8ba08a85975c2f843b0a7ca3a89e",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-03-vs-fr-so-ge-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-03_VS_FR_SO_GE_V0.9.xlsx",
+      "byteLength": 166170,
+      "sha256": "7663aacdca75d66c565ca6c049c9958dafad792ec46ec0d0515b4cb1505e8453",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-03-vs-fr-so-ge-2026-09-13/QA-AP18B-03-V0.9.md",
+      "byteLength": 7600,
+      "sha256": "79160274fe4dcf493275089fe4d61a848572b10ae5e0f69b14f2926d47f73829",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-04-restkantone-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-04_Restkantone_V0.10.xlsx",
+      "byteLength": 347605,
+      "sha256": "57b3c3c668bb00360cf94da159a29509116691f9282419ebc7a87cdf8b88b619",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-04-restkantone-2026-09-13/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-04_Restkantone_V0.11.xlsx",
+      "byteLength": 340811,
+      "sha256": "37d33d4639cc839fc41c9850de8e6551d546167fe8b9ee7f10ea5f2c062d99fd",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-04-restkantone-2026-09-13/QA-AP18B-04-V0.10.md",
+      "byteLength": 5701,
+      "sha256": "9bf456da435549adfba3a690ebe70a900c22d849d4a0bc7e538a244061a5cd55",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-04-restkantone-2026-09-13/QA-AP18B-04-V0.11.md",
+      "byteLength": 5121,
+      "sha256": "cf13646646fe55adc743cb68f68dd4482de7286916a87a84080514e24b8b6109",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-05-bedingte-feiertage-2026-09-22/2026-09-22_Feiertagsmatrix_Schweiz_AP18B-05_V0.12.xlsx",
+      "byteLength": 391640,
+      "sha256": "d4fe89932b5d33f7f63516073668accf1a92b141a07388b559c3a6965c1aeb65",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18b-05-bedingte-feiertage-2026-09-22/QA-AP18B-05-V0.12.md",
+      "byteLength": 6356,
+      "sha256": "3dc463c4874443cb1cb44c6b8ae60d8aff29f6ec2f09cf5619804aea19e2b710",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18c-product-2026-09-22/C01-iv-einwand.png",
+      "byteLength": 243932,
+      "sha256": "37e7da82b35d7870939237ba7c99e74a32960f19b308cce2cd5cb45e42f3095b",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18c-product-2026-09-22/C07-procurement-fr.png",
+      "byteLength": 235412,
+      "sha256": "297d9151e9274e69972c7b7ad4ed03c0a3b9df894ed7fac55b0285def68f6dca",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18c-product-2026-09-22/C14-social-mobile-fr.png",
+      "byteLength": 252271,
+      "sha256": "797bfb64c84fbc9ab4e673790e5d3125eee0503e5e8a3132565237960e368ae2",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18c-product-2026-09-22/QA-AP18C.md",
+      "byteLength": 9267,
+      "sha256": "1a802e6e9a9fe510cd7a26378f136d494dd1cee4406f92e4312df657cac2eca6",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18c-product-2026-09-22/browser-results.json",
+      "byteLength": 14809,
+      "sha256": "5ea5be8ae79b1c63e8dd0dc46d1bd7b70580d40b3c460aeed126a59a76f2bc04",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/ap18c-product-2026-09-22/build-verification.json",
+      "byteLength": 1263,
+      "sha256": "4bf5da23a499a533365fc9847f5852bf43c76dde2bfbe86104883a4a8917e99e",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/QA-Archiv-und-AP18C.md",
+      "byteLength": 3528,
+      "sha256": "1e0a698d29f75667cf11bf7c598b522e9ab79e67c46b09b3b4d41b58f8206b3a",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/README.md",
+      "byteLength": 1296,
+      "sha256": "4c52075a37cfa9af23c9fae2e801e6e9ea7a2ca41e1fb49a396b73d5e5932216",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/beobachteter-bestand/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-03_VS_FR_SO_GE_V0.9.xlsx",
+      "byteLength": 166170,
+      "sha256": "7663aacdca75d66c565ca6c049c9958dafad792ec46ec0d0515b4cb1505e8453",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/beobachteter-bestand/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-04_Restkantone_V0.10.xlsx",
+      "byteLength": 347605,
+      "sha256": "57b3c3c668bb00360cf94da159a29509116691f9282419ebc7a87cdf8b88b619",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/manifest.json",
+      "byteLength": 2798,
+      "sha256": "4cd4153c1163ef193089d1ca30498a982c117030685cd6565c78edec68579226",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/referenzen/2026-09-13_Feiertagsmatrix_Schweiz_AP18B-04_Restkantone_V0.11.xlsx",
+      "byteLength": 340811,
+      "sha256": "37d33d4639cc839fc41c9850de8e6551d546167fe8b9ee7f10ea5f2c062d99fd",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/referenzen/2026-09-22_Feiertagsmatrix_Schweiz_AP18B-05_V0.12.xlsx",
+      "byteLength": 391640,
+      "sha256": "d4fe89932b5d33f7f63516073668accf1a92b141a07388b559c3a6965c1aeb65",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/v09-drift-diagnostic.json",
+      "byteLength": 3781,
+      "sha256": "412055ae1e1c100fb3d97c890354f3830c11c85eb1c5b1450e8461e4632b45b9",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/archiv/ap18/2026-09-22/v10-drift-diagnostic.json",
+      "byteLength": 138980,
+      "sha256": "2a4d86ce93569085b6e3aeb9ed0e20a72d9d4c4dc0e13071dc0ba641187dd5c7",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/QA-MVP04.md",
+      "byteLength": 7792,
+      "sha256": "0c888797effd525a2c5a95d215a321e4db82e3475e02318fc67fed892988c959",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/approval-inputs/source-event-candidate.json",
+      "byteLength": 49133,
+      "sha256": "d44bc09888876fcb69a53773a343ac382d37d0515a9fef7c8358119a391cf8ed",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/approval-inputs/source-register-candidate.json",
+      "byteLength": 31097,
+      "sha256": "b3aaa1310958f48d6b29fc4ac1c83194ab26fed643ef18b672e2608faadb0ea7",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/artifact-verification.json",
+      "byteLength": 10275,
+      "sha256": "f5ada276a79de7238760e175fcd5d5eb6f886b96bb8faff18d78c870426e0fc0",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-follow-up.json",
+      "byteLength": 1928,
+      "sha256": "1222cde3b5667f7ae5ad61509061a9a177f48c3e6b3a57a2be30679675b50b37",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-central.json",
+      "byteLength": 64265,
+      "sha256": "50a9faf1e3947bd162fb064a153c96338b6cdd1f2e7bef1e16e512f3e4a721b7",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-east.json",
+      "byteLength": 32584,
+      "sha256": "c4647458182e320021e364014e909eddb2d5dfcc76c7fa4813f2aca0e0ba6051",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-west.json",
+      "byteLength": 31602,
+      "sha256": "fcd4cd39b76ebfe72b1bc0a018848fa5e94017ff219c322d5c28ef79ecb62f1a",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/data-promotion.json",
+      "byteLength": 2029,
+      "sha256": "3d669ec88861d475a09b4aaab8ac7a16813ad4bd0fd6582ed0e6533c666a7b60",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/judgment-refresh.json",
+      "byteLength": 13352,
+      "sha256": "9502ccba050773f5832effdea6242c9af8184232417ed6e5cd57f73ff09e7785",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/judgment-refresh.md",
+      "byteLength": 4678,
+      "sha256": "8337694448d412e460bab466d76e289ba0174cc2f773d6da60a124134435c566",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-approval.json",
+      "byteLength": 4010,
+      "sha256": "e956172420aab77e45ea5462ed30e82efab59ea0a993a6682ceddbdea0efd884",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-check.json",
+      "byteLength": 48542,
+      "sha256": "1f3c03b1f72e18b4546cbf5e9ebfb38562f23c1f9da509f5bc9cb5b06d37be3e",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-event-candidate.json",
+      "byteLength": 49169,
+      "sha256": "5012bc745322ba5f33b0e4e05acdecfaf951fa297adaeb0fa30f092cf63712c1",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-review-completeness.json",
+      "byteLength": 125256,
+      "sha256": "f4c598d31bd9e1c14458a46f72aa3ec52ce0dd8229dfb63d646bd039feace1b4",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/ui/C03-correction-suspension.png",
+      "byteLength": 272342,
+      "sha256": "d6da8c504083c33cc7dd567873ad9ecaa9d689428149fb350bdf79ece770dd04",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/ui/C14-social-mobile-fr.png",
+      "byteLength": 262252,
+      "sha256": "d2b5995ccc16a92eacf87c9a5159f6b128ae2a781df79be6dd27f96b81b8d291",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/ui/C19-federal-fixed-fr-tablet.png",
+      "byteLength": 173675,
+      "sha256": "57349e7e55d3cd09290b89a3e6f8353f9bf368f219acabf55233988630b8e5b2",
+      "publicationDelta": true
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/ui/results.json",
+      "byteLength": 14808,
+      "sha256": "61f13aa6aa56d72a06d11cc6406e3e983de90cf989f0151e7a77ebd7514ebfaa",
+      "publicationDelta": true
+    },
+    {
+      "path": "package-lock.json",
+      "byteLength": 31119,
+      "sha256": "e14af9459e22e60f73cad130ffaa825d64fc4bab9e313b425c41e1b4af295575",
+      "publicationDelta": true
+    },
+    {
+      "path": "package.json",
+      "byteLength": 5501,
+      "sha256": "ed9333412b80bcdf0b2e82cd36510a6307aeb520f31ba60879a98ba05315f778",
+      "publicationDelta": true
+    },
+    {
+      "path": "preview/index.html",
+      "byteLength": 1603,
+      "sha256": "bd12471378155106d417c26c1e79716c2f3dd7279465062c10c5e1f27ca0a8a8",
+      "publicationDelta": true
+    },
+    {
+      "path": "schemas/README.md",
+      "byteLength": 7101,
+      "sha256": "dc2bdfdb74e3feacfc266bb6b666eae0d759935e47a39c0ecafca74b624bf48e",
+      "publicationDelta": true
+    },
+    {
+      "path": "schemas/holiday-catalog-v1.schema.json",
+      "byteLength": 27593,
+      "sha256": "03af4aabdfcd34d9f73f14dc01322ce1c77ad34f45e47bddb63cb5f3b58db0a4",
+      "publicationDelta": true
+    },
+    {
+      "path": "schemas/release-manifest.schema.json",
+      "byteLength": 13826,
+      "sha256": "40dd8dc433fa8f56aa69b5d298faed87ccaf6b405e05004dcf4004bf838feb80",
+      "publicationDelta": true
+    },
+    {
+      "path": "schemas/special-regime-catalog-v3.schema.json",
+      "byteLength": 5787,
+      "sha256": "50f8cb02b8e5b5bebffdb97594b9f3c51b89bb58b2ec26c487baea92f3a1854e",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18-workbook-archive.mjs",
+      "byteLength": 6931,
+      "sha256": "6f6f6e065abe9876caa5346b749508eb58bb09bc5e39198e6f5c0c6c021376a6",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18a-area-assignments.mjs",
+      "byteLength": 10443,
+      "sha256": "5aa8c2148028c650d6c5480d26ce2eb4897944a3ca0ab294ad3223f38a701a58",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18a-model.mjs",
+      "byteLength": 15466,
+      "sha256": "6b081c81610b4d0e889ac04f2e3a2d60a9408d7d6049369e7d4161b08e34393d",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-03-cantons.mjs",
+      "byteLength": 3318,
+      "sha256": "1b65ad4f17a9074699717b1bf44c54db52db79ee5ff784e72155f5b2aa862d1c",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-03-contract.mjs",
+      "byteLength": 10400,
+      "sha256": "963306ab13ace92be22a738d5e4c9ef082070b16de35af3e0a61f31686d899eb",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-03-fr-so.mjs",
+      "byteLength": 20340,
+      "sha256": "d3813cbfdf814ce444bd6a555cf807b1e1dcb460485d4cffb094de023cefea6b",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-03-vs-ge.mjs",
+      "byteLength": 16512,
+      "sha256": "07f3d39732edcd3a17c46de154a2b6189109485dc14ca2ff88d85906947a0524",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-03-workbook.mjs",
+      "byteLength": 24419,
+      "sha256": "acd36374ef92d5bbadc91b2b9417824db76af54292f1fa5bea6b67566ae2a08a",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-04-cantons.mjs",
+      "byteLength": 5900,
+      "sha256": "4506ac0333a7e5ce6947f185b9c1f1284d06294cc2265757f97286c36e6a5ca6",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-04-central.mjs",
+      "byteLength": 22035,
+      "sha256": "04dfe4b69a94e3b8a8554904e598021f0989280bd389af1707bf2032a7dcd0fd",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-04-east.mjs",
+      "byteLength": 19128,
+      "sha256": "66c4989d65908a9eaaaf1afdf5a6e315a16f9defc2a367dc5b700d5d3a3d28b9",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-04-west.mjs",
+      "byteLength": 23669,
+      "sha256": "858b32012cda616dabc98f081a913169bf028fb2ad7aef952215d69e50a1aff2",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-05-conditions.mjs",
+      "byteLength": 12613,
+      "sha256": "82189bc1e6e10af9aa6cd75f25596d097c88240e997c03eb37c442e3cc25e3b4",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-05-workbook.mjs",
+      "byteLength": 17081,
+      "sha256": "9fb6633384bb6a5b55d863e8c32bd1cbe3c9e35f1ecbb1adb0bd4c44260ebc64",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-ag-model.mjs",
+      "byteLength": 16394,
+      "sha256": "0f39424c67037ebf786ec83fc8fd5aee0ce39262b3748d7a788354041c849cbb",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-complete-labels.mjs",
+      "byteLength": 6205,
+      "sha256": "25f1d045875583246f422db163f49d88291ec9550a55542d762576973ae68921",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-rg-labels.mjs",
+      "byteLength": 3060,
+      "sha256": "14094d716607a792e212ae8f67f2fbb16e324c571b518f735838dec040b24c33",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18b-ti-gr-model.mjs",
+      "byteLength": 21753,
+      "sha256": "4bed8f15d46e16a6f614dc4938f6d0470cd516c0b7063f19d99da5405a1df173",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18c-import.mjs",
+      "byteLength": 24652,
+      "sha256": "80816886107aa5f5bb3fccdad06dc6b7f95981ed91a61e3455a630df9e0d33f9",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ap18c_read_workbook.py",
+      "byteLength": 22411,
+      "sha256": "d0dbd80f08a2632aff85cb00721274bf52aad3193fac318018b80d79734ab617",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/browser-globals-plugin.mjs",
+      "byteLength": 2089,
+      "sha256": "f4edcdd490d65c6b3f4fab272f72b7ab0485310cd384805961acb7d352e1579a",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/build-ap17c-candidate.mjs",
+      "byteLength": 13969,
+      "sha256": "78c827270d96e587c8e2fc0a07e290d7f038a457b85d2aae5e4907d37d2f3b2b",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/build-ap18a-workbook.mjs",
+      "byteLength": 66990,
+      "sha256": "5a0aa52a433cc322f7e3aca3fa303497eadc9edaf94da4ddd535bcf5dafc24df",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/build-ap18c-candidate.mjs",
+      "byteLength": 2790,
+      "sha256": "430b27a49d7fd548082d72cf5bb8385bf9ec75b820ba8d8b247652dd8c1bffb3",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/build-ap18c-release.mjs",
+      "byteLength": 11147,
+      "sha256": "42f10717df437c37a0aa6b29cea22094838c5716d7f99b1a8a5846c277485a32",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/build-public-app.mjs",
+      "byteLength": 5754,
+      "sha256": "216f253d92ca52b34cf652541dd354ed74731d9fffb7e982b54d69d9c238af43",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap17c-ui.mjs",
+      "byteLength": 20383,
+      "sha256": "ade675efd5053641012b41a0190354a7c26e4dacf7f0d21a73525fabff3cf8e6",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18a-areas.py",
+      "byteLength": 9820,
+      "sha256": "06f94fabb86d237f4c6733787f4c4e31f30a62c36183c4cbabb716c1ac56c52f",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18a-reorder.py",
+      "byteLength": 11511,
+      "sha256": "915038cb7dcbd95eb1ae14d80ef00461aaa860869b1a6e1e2f18b7dd7c697c66",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18a-workbook.py",
+      "byteLength": 4751,
+      "sha256": "841880f339d26208277923c2d6497393ed5f24325fe6a268593fc98eb498f476",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-03-model.mjs",
+      "byteLength": 7573,
+      "sha256": "a145a427bc3deb6c3f5969012ac80b87d64a01fdb12529e174454d276fd61bf1",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-03-workbook.py",
+      "byteLength": 49424,
+      "sha256": "3128ad2799c9eb0c881d4409547ae726b5d32404991e15af28a80703c5d23fad",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-05-workbook.py",
+      "byteLength": 28046,
+      "sha256": "d0b2e6fa5b7ada4ebc539bcf59b464e91914208722a53885800e7645420ff7d6",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-ag-workbook.py",
+      "byteLength": 23144,
+      "sha256": "5dc63517b8c4214a9c0b8e9f9a4c37c2ad08483dd9a08c67843701b18e6486ae",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-complete-labels.py",
+      "byteLength": 22107,
+      "sha256": "38f8b787c3063973975dc6a91538e2798b155d5de7ef72d55c2058234668271c",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-rg-labels.py",
+      "byteLength": 13666,
+      "sha256": "21ff9bb2dae1a9aa6a1599f617555654341c1c4d70244ad4cade75615d545869",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-ap18b-ti-gr-workbook.py",
+      "byteLength": 31774,
+      "sha256": "7f5ff8efabfcda47d9508f0b085a0153501d9aa1e445c5da88f11d4d226117b6",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/check-vrpg-ui.mjs",
+      "byteLength": 9218,
+      "sha256": "078c7dcb1934dc0d2fcb194210a19e6e3119955b4f053fe47b825d49671ec5f4",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/consolidate-mvp04-source-checks.mjs",
+      "byteLength": 10070,
+      "sha256": "a73f98bf1ba3c492c8ecf51fa3919bde0a55cb074a804eac12a7933b196a7e5c",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/diagnose-ap18-v10-archive.py",
+      "byteLength": 16091,
+      "sha256": "9695bea8726a08d14b32ebe01e43a5b736e62c176c8d3d064f8784186fbe700f",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/finalize-ap18a-areas.py",
+      "byteLength": 11258,
+      "sha256": "acca7b392f48d05ff2502d149df270e6a88ab78b9182114602673c5624570a29",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/finalize-ap18a-workbook.py",
+      "byteLength": 9536,
+      "sha256": "3eb35b4842b0aeecbe711122a76ce968fda68ad1034faabf6abd3b78db3a57a3",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/finalize-ap18b-03.py",
+      "byteLength": 29042,
+      "sha256": "e13b0ce22995a24cd686c647fcf5fafa4536e50f679a4d23cff4b1870b93dab9",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/finalize-ap18b-ag.py",
+      "byteLength": 9159,
+      "sha256": "9423a7ac216dba2631c0b3de0a0a4d7aa077f13e47d99ba1debfad9f7e6d2c80",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/finalize-ap18b-labels.py",
+      "byteLength": 8923,
+      "sha256": "3c9ee48b97d42d3cdd14a05bffd996f91bc675784efa6bb2b62a7dea0585f445",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/prepare-mvp04-source-reviews.mjs",
+      "byteLength": 5510,
+      "sha256": "396214cbd306559564ad61a6285227523735d1e8c09fa36b47cbc2fb511bc105",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/prepare_mvp04_artifacts.py",
+      "byteLength": 16355,
+      "sha256": "5ccc465fdf711934f7239a910098d6b4155e8a138d306dfd114280b5cbf75b1c",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/promote-ap18c-release.mjs",
+      "byteLength": 14360,
+      "sha256": "a95e0fa9cd7245f53a35237ace39668457c47a423582fe71ee449725eb8ddc4b",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/reorder-ap18a-workbook.py",
+      "byteLength": 9922,
+      "sha256": "7df058286a2e8efe8badbe02ccbbab43b7933911dff0865e29ee3b90fb10c7dd",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/ui-preview-server.mjs",
+      "byteLength": 2158,
+      "sha256": "7e4b5f7d426cfd43c6a2e72e49159b136af1c74cfb79b8fd5f507701d20eb399",
+      "publicationDelta": true
+    },
+    {
+      "path": "scripts/verify-mvp04-source-approval.mjs",
+      "byteLength": 9570,
+      "sha256": "960940cfdc39767015ad6b13365f087b8647ee1fa034c68d3af34a077167dcdd",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/.gitignore",
+      "byteLength": 615,
+      "sha256": "458e48bf400851cdea95a070d81696f694e045cd4ebcd7405a23beece6512b67",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "byteLength": 1334,
+      "sha256": "dbe9518ad93aedaf27ceed69ef0e623c0819876baedd4af0cf7218d7772550f2",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/package-lock.json",
+      "byteLength": 754829,
+      "sha256": "a7e438048a21de64d42e805fed1c43d97d04d00790170a5e88640c61fc25c607",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/package.json",
+      "byteLength": 2119,
+      "sha256": "b14908fa384ba214a5abb1fbf61527ff682c713cc1f54caa843e2c1719a0bd7e",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/scripts/sync-schemas.mjs",
+      "byteLength": 1413,
+      "sha256": "b8b186be6c59823b4635e86942349458eae03f8797f42e36ecd2f6622b694b5c",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 202599,
+      "sha256": "eaf4c24ae53c8c3166e38025cbe2337029c2dd88930e354030c97e622ffb6a2a",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/src/core/ReleaseValidator.ts",
+      "byteLength": 15497,
+      "sha256": "8632bb5a2e2955041fde94dacd2f8a4d116095c388d52b32457ccb3d6d5385e0",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "byteLength": 233,
+      "sha256": "a5ed5b108e9bf2d73c5aaae4b136e01a364f1a5968cf072e597bcb4068590b77",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/src/core/types.ts",
+      "byteLength": 2350,
+      "sha256": "37290cad9d99254375ec28db399c03ef945622c1bd11414caba98b141324e6ca",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/FristenrechnerWebPart.manifest.json",
+      "byteLength": 1231,
+      "sha256": "7bec6f23cd72cf656556ae75159a0c6680134415a099572c77d5ebc26798ad8e",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/test/holiday-release-contract.test.ts",
+      "byteLength": 12691,
+      "sha256": "87f465dd476de84c02eddebdc3da50edfb6b491344e3688862c4339498769220",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/test/product-integration.test.ts",
+      "byteLength": 6055,
+      "sha256": "34cb0de46ad217e14977c0d204c2ce1699b80f4e6c6d241511a716f7247699a5",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/test/qualified-release-contract.test.ts",
+      "byteLength": 7522,
+      "sha256": "b55baeaac104b025a4250fecfd33d3487c03fd9382f1b8319d5524b4b8ef6fcc",
+      "publicationDelta": true
+    },
+    {
+      "path": "spfx/test/release-service.test.ts",
+      "byteLength": 9066,
+      "sha256": "90e8028396baf7821252a90edd562d5f37c458911fdd21001b1840b9c399697f",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/calculateQualifiedSpecialDeadline.ts",
+      "byteLength": 963,
+      "sha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "byteLength": 30266,
+      "sha256": "6681182b6f34a072069a717b6d5b2b6192e957d1da8aa1069a8f51d41287ef09",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/data.ts",
+      "byteLength": 16904,
+      "sha256": "c4032f16ee7b6c4618403abc9f35abea695febd3b18c844f3729423319485a4e",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/holidayCatalog.ts",
+      "byteLength": 39797,
+      "sha256": "7c64cd6540d9db7ba81e8388666666e2a21b00b3b0693021781193c158655655",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/holidayCatalogTypes.ts",
+      "byteLength": 7059,
+      "sha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/index.ts",
+      "byteLength": 2239,
+      "sha256": "4db42cacba07ea932c0bff0b6795fc4ecbbf0c74d2c151d5fce99c75b838618d",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/qualifiedApplicability.ts",
+      "byteLength": 8794,
+      "sha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/qualifiedTypes.ts",
+      "byteLength": 2537,
+      "sha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/specialTypes.ts",
+      "byteLength": 10491,
+      "sha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/core/types.ts",
+      "byteLength": 7665,
+      "sha256": "48732e14e61b197244469b182dadac9582bc8a8d3837a2953cbf31f554a28247",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/public-app/ap17c-main.tsx",
+      "byteLength": 794,
+      "sha256": "df14deac50fe27a2f6b22d68915315dc6c41f1311a7570bd0c99671899bc11bf",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/public-app/ap18c-main.tsx",
+      "byteLength": 781,
+      "sha256": "18122d4029d0ccdd9f540c2e12fbe08493916c9374f4542c6106ee5d628c4c7b",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "byteLength": 714,
+      "sha256": "4ba1060c9cecf37abf73c45e062aa732dd82c79a4b3708bd19db74c1168be3d4",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/public-app/public.css",
+      "byteLength": 3727,
+      "sha256": "742c9debca8abda3f938223bca04871797ef507de462414bb8441c3beb04858a",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/release/ap17cCandidateData.ts",
+      "byteLength": 2014,
+      "sha256": "27474ab1a3f851039a75c70378d04373ce1804f833741873133f0192e42805d5",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/release/ap18cCandidateData.ts",
+      "byteLength": 2232,
+      "sha256": "14d30978c7a92e859c21932cfd87c649806dc779873c77cbdf0ec488315909b6",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/release/mvp04ReleaseData.ts",
+      "byteLength": 2142,
+      "sha256": "061c5c89ee42183c2419a4296b26eaf2e2e4c4d317880ae5c9bb79139e1671ba",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/DateInput.tsx",
+      "byteLength": 1239,
+      "sha256": "b88bfe13525324d2968a983ef26f4c9854fdff20c345d68c1e6c9bc97d3c85bb",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "byteLength": 59421,
+      "sha256": "3012f172a82543b940f6b41d6487785aea60a74c1d83ac3d7a71d0e9aedd91fb",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/README.md",
+      "byteLength": 15650,
+      "sha256": "e3667f358c41392e4511b02bf6c6c5276860263e2f972d0d44ab1894ec3eb044",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/browserAppearance.tsx",
+      "byteLength": 2833,
+      "sha256": "49235286d98a379d1f81e401b109206f72d1ab2874f39b0da08084a2c976a397",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/defaults.ts",
+      "byteLength": 6181,
+      "sha256": "bb91e9865a95518eed195753c2d0388f2daa98a1053df1125dabc178b94c12a3",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/i18n.ts",
+      "byteLength": 51506,
+      "sha256": "4d4a59a169666fce8cd4263d17a6df39df4f07ab3f1b78cbe804cf51c260a7c5",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/model.ts",
+      "byteLength": 14486,
+      "sha256": "bf1853d15446375f428fcab24c4a063d97ae117fa39f5335b6afd761a21df0a6",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/preview/main.tsx",
+      "byteLength": 1164,
+      "sha256": "64d00536318a0147c7c2084a35510cef0411d7d8bb8aea1452810c63bb20a1a5",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/preview/preview.css",
+      "byteLength": 218,
+      "sha256": "602125ac26970c8101e370a5c7d531872ed8e977b7e106f9c904a146528eb67d",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/preview/qaPresets.ts",
+      "byteLength": 2274,
+      "sha256": "49c39b397344ebe55b9c44bdb9c42c2b876dd1d2f293f2ae102efe74eee63a65",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/qualifiedMessages.ts",
+      "byteLength": 9525,
+      "sha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/styles.css",
+      "byteLength": 10414,
+      "sha256": "1ba65fa1a07c6a55df4a0c987e5c63c20b041711a2d1665f3be21f193ea48939",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/vrpgQualification.ts",
+      "byteLength": 8554,
+      "sha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef",
+      "publicationDelta": true
+    },
+    {
+      "path": "src/ui/vrpgSelection.ts",
+      "byteLength": 17412,
+      "sha256": "2deb86d92734cbc4c66f1837e69280e44310e4866eb24fd79fb7749f46ba5254",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/archive/ap18-workbook-archive.test.mjs",
+      "byteLength": 4992,
+      "sha256": "d2b80edbb33fb5a944006c6ddc52614db2aeba90976d4f5c80542b619748f3c8",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18a-area-assignments.test.mjs",
+      "byteLength": 8940,
+      "sha256": "9454a853ed95dc98825fcf455dea8e523d008405f31a93194bdf794d4410095d",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18a-workbook-model.test.mjs",
+      "byteLength": 14574,
+      "sha256": "d8666e0059a921fe259d6a8af33d1da43690f9aca3b7ef20769f467e5a6ceb57",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-03-cantons.test.mjs",
+      "byteLength": 5310,
+      "sha256": "b77d4a48dad1725529acaf4112d1ff6dc5bfad20f1ac2d31d26f857ee21e80ad",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-03-contract.test.mjs",
+      "byteLength": 12161,
+      "sha256": "0c60eb5b748682f1366ca6988dd277652ea621c9968ad7e8f1be60fa54586258",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-04-cantons.test.mjs",
+      "byteLength": 2869,
+      "sha256": "beb1ee4029dd54c5b3ff322d24d22db24d5815a3afaf7f667d7f125c3d8f9d73",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-04-central.test.mjs",
+      "byteLength": 10025,
+      "sha256": "a2e5fedc782a2fe688f53718463369e6f4dafeadf8eefc8f9cde3397f3ca4809",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-04-east.test.mjs",
+      "byteLength": 8469,
+      "sha256": "f459a43a2872c3e019f12f3799c6ca40cc652d3a610f07f5d107fc361a27eba2",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-04-west.test.mjs",
+      "byteLength": 9216,
+      "sha256": "de3f3058e2f39ab26b59c62be859b5030fecc66c8a8661e6ccf012d8db9875bf",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-05-conditions.test.mjs",
+      "byteLength": 13382,
+      "sha256": "61ddca8cb41f45c9df0b7372fa7c84b2d01f499bc21d5144bb8694ae323ce32b",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-ag-model.test.mjs",
+      "byteLength": 15416,
+      "sha256": "403ca3ec03a442bdbfccbee9dce89fd9d9d13beaef93f5dc71685f413e5be9e6",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-complete-labels.test.mjs",
+      "byteLength": 5180,
+      "sha256": "dce060907c91249573a70b9ca2eb95147e8e8ef5a7fd69cb798a452e4538cc26",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-rg-labels.test.mjs",
+      "byteLength": 1729,
+      "sha256": "66dc18b0b4932701c0641eb02f7e91d7fc0cce992a4dd9b4535c1099308a4d3d",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18b-ti-gr-model.test.mjs",
+      "byteLength": 20034,
+      "sha256": "334d0fad34473421728ff1e0f1af29bd43c3bef68018bee6bab825c0bdb95909",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18c-import.test.mjs",
+      "byteLength": 20966,
+      "sha256": "09048fbe80f2e95d653fa65b00b9aee55de9cdf80777210ea53a6e2e95968e08",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/ap18c-release.test.mjs",
+      "byteLength": 8655,
+      "sha256": "a5b72d2d03635e9e7478638a90fc3e2f997aef5786d3042b6a257bf62e60e239",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/mvp04-promotion.test.mjs",
+      "byteLength": 12690,
+      "sha256": "a48be3c563a26e6be306d01b71f5397059958655aa7acb32c4333cc039b71d32",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/calendar-rules/test_ap18c_reader.py",
+      "byteLength": 11594,
+      "sha256": "8b5547cbef92a63c16f2ffc378b9411fae5e9a59d168a6fd5040aefa7d46ff8d",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/core/ap17c-qualified.test.ts",
+      "byteLength": 20282,
+      "sha256": "838c79e7745fb2a33c1f400ced9e6b7cb45a62f4ea8e5323d13060b3d407e940",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/core/ap18c-integration.test.ts",
+      "byteLength": 8808,
+      "sha256": "9fc8ef451ea6964ba989e9e74e77bbafb95d591d2c755e1fc32060e48dfbab1a",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/core/holiday-catalog.test.ts",
+      "byteLength": 18114,
+      "sha256": "c20113da759c375eee29704cabe57da310d049d274f81ff8036cbd86426c0a2a",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/data/holiday_catalog_contract.py",
+      "byteLength": 19985,
+      "sha256": "5c18fd5b2b3d37234bfba5569f090d681e2de55b824940b50bfd2903252ec979",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/data/test_holiday_catalog_contract.py",
+      "byteLength": 9887,
+      "sha256": "a2d35adc954a8294292655eeca79b453882916567a262c49da02af3104c770f1",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/data/test_mvp04_artifacts.py",
+      "byteLength": 13412,
+      "sha256": "a75460bc82201918f94390133119570a5459a669de6e92721ccaaaf8ac79c84c",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/data/test_previous_consumer_contract.py",
+      "byteLength": 4908,
+      "sha256": "22491b345a2b5a331bb8918bebd5111386071ccf41f21bff99b6bc4015b9ffae",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/data/validate_release.py",
+      "byteLength": 63322,
+      "sha256": "b3dc3f440b501d949e04620420d0043120d0e015f23e51adeb397d9f5617527f",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/fixtures/ap18c/README.md",
+      "byteLength": 1640,
+      "sha256": "052842d9c561e78836fc06792f2a00df9239720f58312ed91264488d93e62d75",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/fixtures/ap18c/manifest-format3.schema.json",
+      "byteLength": 10245,
+      "sha256": "016abce21e480fd24c6ba45213df66622c9216299986cd89a22e95ea751cad55",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/golden/README.md",
+      "byteLength": 9803,
+      "sha256": "4cef9b300e8ab5aec5da1fd7b98ea650287fdfc65c97d44dbe29dee1f976424e",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+      "byteLength": 56152,
+      "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/golden/validate_ap17b_candidates.py",
+      "byteLength": 19044,
+      "sha256": "556732d41293b02cb1f2e4b802cdb280642203860861e43c73778364f427072a",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/governance/mvp04-source-approval.test.mjs",
+      "byteLength": 11867,
+      "sha256": "b37b28b538ab8b8607da1f112dafc24b0d2ac8eabad2d05b3a6e07a6ad7b27ce",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/governance/mvp04-source-coverage.test.mjs",
+      "byteLength": 7104,
+      "sha256": "3dc7c134e0db1d3cde9d2ffd35096bb84516b754ca6277b79964f933a2f8e35c",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/governance/test_source_review_evolution.py",
+      "byteLength": 13514,
+      "sha256": "0cbdceca738995cd4c24cfdd8c0b4f3d2d4258f4007a22e394cd585f1eb200b8",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/governance/validate_source_reviews.py",
+      "byteLength": 20636,
+      "sha256": "aac3a993813ff84be2842ca0b4ff8d7aa031036931abec19e5403dc276d8eb1f",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/public-app/build.test.ts",
+      "byteLength": 6789,
+      "sha256": "7982d9287f5eeb63281e63bd2403a60398dee26e86555308408af1ee5145871e",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/ap17c-qualified.test.ts",
+      "byteLength": 11765,
+      "sha256": "62a48c9b0832169a25c89076d6da79df74b08bd5ed930601af9498aac607d25b",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/ap18c-preview.test.ts",
+      "byteLength": 3813,
+      "sha256": "709e152033cd61c13ebfb7a76c6684d4402a130b404f2c5ae30f298ea7fc8342",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/defaults.test.ts",
+      "byteLength": 4565,
+      "sha256": "18a9fd8dd430df7e78fc17aa65ebc497bc73491f114b458683d3fba33d1ad21e",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/i18n.test.ts",
+      "byteLength": 9031,
+      "sha256": "edfc0b8b2c28a991d5d0380878a5c4112f91bd9521591997c4943eb4ab7f07d9",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/mvp04-release.test.ts",
+      "byteLength": 6494,
+      "sha256": "238a09c1df7eae9057513a7476da0c2b4654071cd465651599982d2238999ac8",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/preview.test.ts",
+      "byteLength": 4677,
+      "sha256": "067638d3f783b4b0810c949c869e93c8d732a5a8622207fd303ffbc2b4d0840c",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/vrpg-integration.test.ts",
+      "byteLength": 18267,
+      "sha256": "f2e39b39ff2f528b9c80ef1becdb2ae9bd98d6fa76cd8ec1201de3dd4d2703e1",
+      "publicationDelta": true
+    },
+    {
+      "path": "tests/ui/vrpg-selection.test.ts",
+      "byteLength": 22042,
+      "sha256": "c768c4634ec2fb8aeaad7f7358018a3bfe88f9a93305d70d6c001e07b98a386a",
+      "publicationDelta": true
+    }
+  ]
+}

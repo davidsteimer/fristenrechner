@@ -2,9 +2,12 @@
 
 export type Locale = 'de' | 'fr';
 
+import { qualifiedMessages } from './qualifiedMessages';
+
 type Dictionary = Readonly<Record<string, string>>;
 
 const de: Dictionary = {
+  'app.candidate': 'AP18C · Lokaler Prüfkandidat. Noch kein freigegebener Datenrelease. Nicht für fristgebundene Handlungen verwenden.',
   'app.badge': 'STEIMER · MVP',
   'app.title': 'Fristenrechner Schweiz',
   'app.intro': 'Verfahrensfristen für Bund und Kanton Bern nachvollziehbar berechnen.',
@@ -19,7 +22,7 @@ const de: Dictionary = {
   'form.inputDate.required': 'Geben Sie ein gültiges Datum ein.',
   'form.deadlineDays': 'Frist in Tagen',
   'form.deadlineDays.required': 'Geben Sie eine ganze Zahl zwischen 1 und 365 ein.',
-  'form.authority': 'Zuständige Behörde',
+  'form.authority': 'Sitz der zuständigen Stelle',
   'authority.CH': 'Bundesbehörde',
   'authority.BE': 'Behörde des Kantons Bern',
   'form.profile': 'Erlass / Verfahrensrecht',
@@ -37,7 +40,20 @@ const de: Dictionary = {
   'profile.zpo': 'Zivilprozessordnung (ZPO)',
   'profile.bgg': 'Bundesgerichtsgesetz (BGG)',
   'profile.vwvg': 'Verwaltungsverfahrensgesetz (VwVG)',
-  'profile.vrpg-be': 'VRPG Kanton Bern',
+  'profile.vrpg-be': 'VRPG Bern und Spezialrecht',
+  'vrpg.area': 'Bereich',
+  'vrpg.law': 'Spezialerlass',
+  'vrpg.level': 'Ebene der politischen Angelegenheit',
+  'vrpg.action': 'Verfahrenshandlung / Situation',
+  'vrpg.stage': 'Verfahrensstadium',
+  'vrpg.duration': 'Fristdauer',
+  'vrpg.duration.rule': 'Nach gewählter Regel',
+  'vrpg.duration.pending': 'Nach vollständiger Auswahl',
+  'vrpg.unit.day': 'Tage',
+  'vrpg.unit.month': 'Monate',
+  'vrpg.required': 'Wählen Sie die noch fehlende Angabe zum Verfahren.',
+  'vrpg.invalid': 'Diese Auswahl passt nicht zusammen. Wählen Sie den Bereich erneut.',
+  'vrpg.unavailable': 'Für diese konkrete Verfahrenshandlung ist im geladenen Datenstand keine freigegebene Berechnung verfügbar. Wählen Sie einen passend abgegrenzten Pfad oder prüfen Sie den Fall ausserhalb des Rechners.',
   'selector.deliveryMethod': 'Art der Zustellung',
   'selector.subjectMatter': 'Verfahrensgegenstand',
   'selector.procedureVariant': 'Verfahrensart',
@@ -321,6 +337,7 @@ const de: Dictionary = {
 
 const fr: Dictionary = {
   ...de,
+  'app.candidate': 'AP18C · Candidat de test local. Ces données ne sont pas encore publiées comme version approuvée. Ne pas utiliser pour des actes soumis à délai.',
   'app.badge': 'STEIMER · MVP',
   'app.title': 'Calculateur de délais suisse',
   'app.intro': 'Calculer de manière traçable les délais de procédure de la Confédération et du canton de Berne.',
@@ -333,7 +350,7 @@ const fr: Dictionary = {
   'form.inputDate.required': 'Saisissez une date valable.',
   'form.deadlineDays': 'Délai en jours',
   'form.deadlineDays.required': 'Saisissez un nombre entier compris entre 1 et 365.',
-  'form.authority': 'Autorité compétente',
+  'form.authority': 'Siège de l’organisme compétent',
   'authority.CH': 'Autorité fédérale',
   'authority.BE': 'Autorité du canton de Berne',
   'form.profile': 'Loi / droit de procédure',
@@ -351,7 +368,20 @@ const fr: Dictionary = {
   'profile.zpo': 'Code de procédure civile (CPC)',
   'profile.bgg': 'Loi sur le Tribunal fédéral (LTF)',
   'profile.vwvg': 'Loi fédérale sur la procédure administrative (PA)',
-  'profile.vrpg-be': 'LPJA du canton de Berne',
+  'profile.vrpg-be': 'LPJA bernoise et droit spécial',
+  'vrpg.area': 'Domaine',
+  'vrpg.law': 'Loi spéciale',
+  'vrpg.level': 'Niveau de l’affaire politique',
+  'vrpg.action': 'Acte de procédure / Situation',
+  'vrpg.stage': 'Stade de la procédure',
+  'vrpg.duration': 'Durée du délai',
+  'vrpg.duration.rule': 'Selon la règle choisie',
+  'vrpg.duration.pending': 'Après sélection complète',
+  'vrpg.unit.day': 'jours',
+  'vrpg.unit.month': 'mois',
+  'vrpg.required': 'Sélectionnez l’indication de procédure encore manquante.',
+  'vrpg.invalid': 'Ces choix ne concordent pas. Sélectionnez à nouveau le domaine.',
+  'vrpg.unavailable': 'Aucun calcul approuvé n’est disponible pour cet acte de procédure dans les données chargées. Choisissez un parcours précisément délimité ou vérifiez le cas en dehors du calculateur.',
   'selector.deliveryMethod': 'Mode de notification',
   'selector.subjectMatter': 'Objet de la procédure',
   'selector.procedureVariant': 'Type de procédure',
@@ -635,7 +665,7 @@ const fr: Dictionary = {
 
 export function translate(locale: Locale, key: string): string {
   const dictionary = locale === 'fr' ? fr : de;
-  return dictionary[key] ?? dictionary[`reason.${key}`] ?? key;
+  return dictionary[key] ?? qualifiedMessages[key]?.[locale] ?? dictionary[`reason.${key}`] ?? key;
 }
 
 export function translateReason(locale: Locale, key: string): string {

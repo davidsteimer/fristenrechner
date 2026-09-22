@@ -10,7 +10,11 @@ import { browserGlobalsPlugin } from './browser-globals-plugin.mjs';
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const publicSourceDirectory = resolve(repositoryRoot, 'public-app');
-export const publicOutputDirectory = resolve(repositoryRoot, '.work/public-app');
+const candidateName = process.env.FRISTENRECHNER_DATA_CANDIDATE;
+if (candidateName && !['ap17c', 'ap18c'].includes(candidateName)) throw new Error('Unbekannter lokaler Datenkandidat.');
+const isCandidate = Boolean(candidateName);
+const entryName = isCandidate ? `${candidateName}-main.tsx` : 'main.tsx';
+export const publicOutputDirectory = resolve(repositoryRoot, isCandidate ? `.work/public-${candidateName}` : '.work/public-app');
 
 function absoluteOutputPath(outputPath) {
   return isAbsolute(outputPath) ? outputPath : resolve(repositoryRoot, outputPath);
@@ -40,7 +44,7 @@ export async function buildPublicApp() {
 
   const result = await build({
     entryPoints: {
-      app: resolve(repositoryRoot, 'src/public-app/main.tsx')
+      app: resolve(repositoryRoot, `src/public-app/${entryName}`)
     },
     outdir: publicOutputDirectory,
     entryNames: 'assets/[name]-[hash]',
@@ -61,7 +65,7 @@ export async function buildPublicApp() {
   });
 
   const entry = Object.entries(result.metafile.outputs)
-    .find(([, metadata]) => metadata.entryPoint?.endsWith('src/public-app/main.tsx'));
+    .find(([, metadata]) => metadata.entryPoint?.endsWith(`src/public-app/${entryName}`));
   if (!entry) {
     throw new Error('Der öffentliche JavaScript-Einstieg wurde im Buildmanifest nicht gefunden.');
   }
@@ -106,8 +110,10 @@ export async function buildPublicApp() {
       resolve(publicOutputDirectory, 'build-manifest.json'),
       `${JSON.stringify({
         application: 'fristenrechner-public',
-        version: '0.3.0',
-        dataReleaseId: '2026-08-31-mvp-03-approved.1',
+        version: isCandidate ? `${candidateName}-local-candidate` : '0.4.0',
+        dataReleaseId: candidateName === 'ap18c' ? '2026-09-22-ap18c-candidate.1'
+          : candidateName === 'ap17c' ? '2026-09-12-ap17c-candidate.1' : '2026-09-22-mvp-04-approved.1',
+        ...(isCandidate ? { status: 'candidate', deployable: false } : {}),
         canonicalUrl: 'https://www.steimer.ch/fristenrechner/',
         basePath: '/fristenrechner/',
         assets: {

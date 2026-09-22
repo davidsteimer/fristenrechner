@@ -12,13 +12,14 @@ const execFileAsync = promisify(execFile);
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const outputDirectory = resolve(repositoryRoot, '.work/public-app');
 
-async function buildCandidate() {
+async function buildCandidate(candidate = '') {
   await execFileAsync(process.execPath, [resolve(repositoryRoot, 'scripts/build-public-app.mjs')], {
-    cwd: repositoryRoot
+    cwd: repositoryRoot,
+    env: { ...process.env, FRISTENRECHNER_DATA_CANDIDATE: candidate }
   });
 }
 
-describe('AP16 statischer P-Releasekandidat', () => {
+describe('Statischer P-Build für MVP 0.4', () => {
   it('erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest', async () => {
     await buildCandidate();
 
@@ -26,8 +27,9 @@ describe('AP16 statischer P-Releasekandidat', () => {
     const manifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
 
     assert.equal(manifest.application, 'fristenrechner-public');
-    assert.equal(manifest.version, '0.3.0');
-    assert.equal(manifest.dataReleaseId, '2026-08-31-mvp-03-approved.1');
+    assert.equal(manifest.version, '0.4.0');
+    assert.equal(manifest.dataReleaseId, '2026-09-22-mvp-04-approved.1');
+    assert.notEqual(manifest.status, 'candidate');
     assert.equal(manifest.basePath, '/fristenrechner/');
     assert.match(manifest.assets.javascript, /^\.\/assets\/app-[A-Z0-9]+\.js$/);
     assert.match(manifest.assets.stylesheet, /^\.\/assets\/app-[A-Z0-9]+\.css$/);
@@ -59,7 +61,7 @@ describe('AP16 statischer P-Releasekandidat', () => {
     assert.doesNotMatch(completeOutput, /\.map$/m);
     assert.doesNotMatch(javascript, /stpo-weekend|vrpg-special-gate|qaPresets/);
     assert.doesNotMatch(javascript, /\bfetch\s*\(|new XMLHttpRequest\b|new WebSocket\b|new EventSource\b/);
-    assert.match(javascript, /2026-08-31-mvp-03-approved\.1/);
+    assert.match(javascript, /2026-09-22-mvp-04-approved\.1/);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-dom-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/fluent-ui-MIT.txt'))).size > 0);
@@ -100,5 +102,28 @@ describe('AP16 statischer P-Releasekandidat', () => {
     assert.match(configuration, /Referrer-Policy "strict-origin-when-cross-origin"/);
     assert.match(configuration, /Cache-Control "no-cache, no-store, must-revalidate"/);
     assert.match(configuration, /Cache-Control "public, max-age=31536000, immutable"/);
+  });
+
+  for (const candidate of ['ap17c', 'ap18c']) {
+    it(`hält den historischen ${candidate}-Prüfkandidaten vom normalen Releasebuild getrennt`, async () => {
+      await buildCandidate(candidate);
+      const candidateDirectory = resolve(repositoryRoot, `.work/public-${candidate}`);
+      const manifest = JSON.parse(await readFile(resolve(candidateDirectory, 'build-manifest.json'), 'utf8'));
+      const javascript = await readFile(resolve(candidateDirectory, manifest.assets.javascript), 'utf8');
+      assert.equal(manifest.version, `${candidate}-local-candidate`);
+      assert.equal(manifest.dataReleaseId, candidate === 'ap18c'
+        ? '2026-09-22-ap18c-candidate.1' : '2026-09-12-ap17c-candidate.1');
+      assert.equal(manifest.status, 'candidate');
+      assert.equal(manifest.deployable, false);
+      assert.ok(javascript.includes(manifest.dataReleaseId));
+      assert.doesNotMatch(javascript, /2026-09-22-mvp-04-approved\.1/);
+      const approvedManifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
+      assert.equal(approvedManifest.version, '0.4.0');
+      assert.equal(approvedManifest.dataReleaseId, '2026-09-22-mvp-04-approved.1');
+    });
+  }
+
+  it('weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen', async () => {
+    await assert.rejects(buildCandidate('unrecognised'), /Unbekannter lokaler Datenkandidat/);
   });
 });

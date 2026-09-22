@@ -1,7 +1,17 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 export { calculateDeadline } from './calculateDeadline';
+export {
+  assertHolidayCatalog,
+  assertHolidayCatalogProjection,
+  evaluateHolidayCatalogRule,
+  projectHolidayRules
+} from './holidayCatalog';
+export type { HolidayCatalog, HolidayCatalogRule } from './holidayCatalogTypes';
 export { calculateSpecialDeadline } from './calculateSpecialDeadline';
+export { calculateQualifiedSpecialDeadline } from './calculateQualifiedSpecialDeadline';
+export { resolveQualifiedSpecialDeadline } from './qualifiedApplicability';
+export type { QualifiedDeadlineInput, QualifiedApplicability, QualifiedCalculationEvidence, QualifiedDeadlineResolution } from './qualifiedTypes';
 export {
   calendarGenerationRangeForDates,
   createCalculationData,

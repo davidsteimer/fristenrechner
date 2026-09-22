@@ -1,0 +1,528 @@
+{
+  "checkedOn": "2026-09-22",
+  "scope": "Erneuter inhaltlicher Abgleich der 25 Katalogquellen für FR, GE, JU, NE, VD und VS gegen die tatsächlich modellierten Feiertagsregeln, Kategorien und räumlichen Geltungsbereiche.",
+  "catalogPath": "data/releases/2026-09-22-mvp-04-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+  "catalogSha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+  "productDataChanged": false,
+  "humanReleaseApproval": false,
+  "summary": {
+    "sources": 25,
+    "unchanged": 25,
+    "changed": 0,
+    "unclear": 0,
+    "unavailable": 0,
+    "meaningOfUnchanged": "Kein Änderungsbedarf an den bereits abgegrenzten modellierten Aussagen festgestellt. Keine neue Freigabe von Fristenprofilen und keine Aufhebung vorhandener Anwendungs- oder Vollständigkeitsvorbehalte.",
+    "retrievalLimitations": [
+      "VD-LEmp: Das kantonale Portal liefert eine JavaScript-Anwendung. Der Normtext wurde deshalb in der ausdrücklich als Spiegel gekennzeichneten LexFind-Kopie des amtlichen PDF geprüft und mit der aktuellen amtlichen DGEM-FAQ sowie den amtlichen Jahreslisten 2026–2028 gegengeprüft.",
+      "NE 941.02 und JU-Jahresblatt: Web-Parser meldete Zugriffsfehler. Direkter Abruf derselben amtlichen PDF-URLs war erfolgreich, die gespeicherten Originalbytes wurden gehasht und vollständig ausgelesen.",
+      "NE RDF: Amtlicher HTML-Volltext statt fehlerhaftem PDF-Webabruf verwendet.",
+      "VS Personalbezüge: Aktuelle Fassung und Art. 29 über die öffentliche amtliche LexWork-API ausgelesen. Ein Suchindex wurde nicht als alleiniger Aktualitätsnachweis verwendet."
+    ]
+  },
+  "checks": [
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VS-RUHE-8222-20130301",
+      "officialUrl": "https://lex.vs.ch/api/de/versions/2105/pdf_file",
+      "retrievalUrl": "https://lex.vs.ch/api/de/versions/2105/pdf_file",
+      "relevantProvisions": "Art. 1 und 2, aktuelle Fassung seit 01.03.2013",
+      "finding": "Sonntagsruhe und Gleichstellung der kirchlich gebotenen Feiertage bestätigen die Grundlage des VS-Basisbereichs. Die ausdrückliche Acht-Tage-Liste stammt ergänzend aus dem Ausführungsreglement. Der bestehende Vorbehalt, diese Aufzählung nicht als abschliessendes kirchliches Verzeichnis zu behandeln, bleibt erhalten.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen PDF-Volltext gelesen und mit VS-PUBLIC-ALL verglichen. Öffentliche API /api/fr/texts_of_law/822.2 bestätigt Version 2105 als aktuell und keine hinterlegte Zukunftsfassung."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+      "officialUrl": "https://lex.vs.ch/api/fr/versions/2108/pdf_file",
+      "retrievalUrl": "https://lex.vs.ch/api/fr/versions/2108/pdf_file",
+      "relevantProvisions": "Art. 1, aktuelle Fassung seit 02.12.1966",
+      "finding": "Die acht ausdrücklich genannten Tage sind Neujahr, Josefstag, Auffahrt, Fronleichnam, Mariä Himmelfahrt, Allerheiligen, Mariä Empfängnis und Weihnachten. Sie entsprechen den acht kantonalen Regeln des Basisbereichs. Der Bundesfeiertag ist zusätzlich separat begründet. Die nicht abschliessende Formulierung bleibt als bestehender Vorbehalt dokumentiert.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen PDF-Volltext mit Datumsalgorithmen und VS-PUBLIC-ALL verglichen. Aktuelle Version 2108 zusätzlich über amtliche API bestätigt."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VS-VEKARG-822100-20161001",
+      "officialUrl": "https://lex.vs.ch/api/de/versions/2103/pdf_file",
+      "retrievalUrl": "https://lex.vs.ch/api/de/versions/2103/pdf_file",
+      "relevantProvisions": "Art. 7 Abs. 1, aktuelle Fassung seit 01.10.2016",
+      "finding": "Die arbeitsrechtliche Liste nennt dieselben acht kantonalen Tage und bestätigt die fixen Daten sowie Auffahrt und Fronleichnam. Der Katalog verwendet diesen Beleg ergänzend und leitet daraus keine eigenständige pauschale Fristenwirkung ab.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Art. 7 im amtlichen PDF gelesen und gegen acht kantonale Basisregeln geprüft. Amtliche API bestätigt aktuelle Version 2103."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VS-RPFLG-1731-20240101",
+      "officialUrl": "https://lex.vs.ch/api/fr/versions/3260/pdf_file",
+      "retrievalUrl": "https://lex.vs.ch/api/fr/versions/3260/pdf_file",
+      "relevantProvisions": "Art. 37 Abs. 1 Bst. a–c, aktuelle Fassung seit 01.01.2024",
+      "finding": "Die LOJ verweist auf bundesrechtliche Feiertage und kantonales Ruhetagsrecht und ergänzt 2. Januar, Ostermontag, Pfingstmontag und 26. Dezember. Genau diese vier zusätzlichen Tage sind getrennt als verfahrensrechtlich gleichgestellte Tage in VS-LOJ-ADDITIONAL modelliert. Sie werden nicht unbesehen auf andere Verfahren übertragen.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Art. 37 im amtlichen PDF gelesen und mit Kategorie, vier Regeln und begrenztem Geltungsbereich verglichen. Aktuelle Version 3260 über amtliche API bestätigt."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VS-PERSONALBEZUEGE-1724-20260501",
+      "officialUrl": "https://lex.vs.ch/data/172.4/fr",
+      "retrievalUrl": "https://lex.vs.ch/api/fr/texts_of_law/172.4",
+      "relevantProvisions": "Art. 1 und 29, aktuelle Version 3607 seit 01.05.2026",
+      "finding": "Der persönliche Geltungsbereich betrifft Staatsangestellte. Art. 29 enthält zusätzliche dienstfreie Tage und Halbtage sowie die Befugnis für weitere dienstfreie Tage. Diese Personalregel wird unverändert nicht als allgemeine Feiertagsliste oder eigenständiges Fristenprofil übernommen. Der Normtext bestätigt gerade diese Abgrenzung.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Aktuelle amtliche JSON-Fassung live abgerufen. current_version, Art. 1 und Art. 29 in selected_version.xhtml_tol geprüft. Version seit 01.05.2026 und keine hinterlegte Zukunftsfassung verifiziert."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-GE-LJF-J145-19910101",
+      "officialUrl": "https://silgeneve.ch/legis/data/rsg_j1_45.htm",
+      "retrievalUrl": "https://silgeneve.ch/legis/data/rsg_j1_45.htm",
+      "relevantProvisions": "Art. 1 Abs. 1 und 2, Fussnote zum Jeûne genevois",
+      "finding": "Die neun gesetzlichen Tage entsprechen GE-OFFICIAL-ALL. Der Genfer Bettag fällt auf den Donnerstag nach dem ersten Septembersonntag, genau wie der modellierte Algorithmus. Die Sonntagsersatzregel nach Abs. 2 ist auf nicht dem eidgenössischen Arbeitsgesetz unterstellte Betriebe begrenzt. Deshalb bleibt die fehlende pauschale Folgetagsautomatik im Katalog richtig.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen HTML-Normvolltext einschliesslich Fussnote, Abs. 2 und Änderungstabelle gelesen und mit neun Regeln sowie deren Bedingungen verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-GE-FEIERTAGE-INFO-20260429",
+      "officialUrl": "https://www.ge.ch/vacances-scolaires-jours-feries/jours-feries-officiels",
+      "retrievalUrl": "https://www.ge.ch/vacances-scolaires-jours-feries/jours-feries-officiels",
+      "relevantProvisions": "Amtliche Feiertagslisten 2026, 2027 und 2028, Stand 29.04.2026",
+      "finding": "Alle 27 veröffentlichten Daten stimmen mit der Auswertung der neun GE-Regeln für 2026–2028 überein. Allgemeiner formulierte Hinweise zu Sonntagsersatz werden nicht über den begrenzten gesetzlichen Geltungsbereich von Art. 1 Abs. 2 LJF hinaus umgesetzt.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Aktuelle amtliche Jahreslisten gelesen und gegen evaluateHolidayCatalogRule abgeglichen. Normativ ist zusätzlich SRC-GE-LJF-J145-19910101 massgebend."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-FR-BAMG-866111-V8126",
+      "officialUrl": "https://bdlf.fr.ch/api/de/versions/8126/pdf_file",
+      "retrievalUrl": "https://bdlf.fr.ch/api/de/versions/8126/pdf_file",
+      "relevantProvisions": "Art. 49 Abs. 1–5, aktuelle Version 8126 seit 01.01.2020",
+      "finding": "Vier gemeinsame Tage sowie je vier katholische beziehungsweise reformierte Ergänzungen bestätigen die zwei getrennten arbeitsrechtlichen Gebietsmengen. Die Anknüpfung erfolgt an Geschäftssitz beziehungsweise Zweigniederlassung, nicht an persönliche Konfession. Einbezug des Bundesfeiertags bleibt gesondert begründet. ROF 2026_043 ändert in diesem Gesetz nur Art. 27, nicht Art. 49.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Deutschen amtlichen PDF-Volltext gelesen. Aktuelle Version über amtliche API bestätigt. Zusätzlich Änderungs-PDF https://bdlf.fr.ch/api/fr/change_documents/file_dictionaries/11849/pdf_file, Teil II Ziff. 13, kontrolliert."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-FR-LEMT-866111-FR-V8126",
+      "officialUrl": "https://bdlf.fr.ch/api/fr/versions/8126/pdf_file",
+      "retrievalUrl": "https://bdlf.fr.ch/api/fr/versions/8126/pdf_file",
+      "relevantProvisions": "Art. 49 al. 1–5, version actuelle 8126 depuis le 01.01.2020",
+      "finding": "Die französische Fassung bestätigt denselben sachlichen und räumlichen Vertrag wie die deutsche. Die Bezeichnungen für den Tag nach Neujahr und den Tag nach Weihnachten rechtfertigen keine zusätzlichen beweglichen Ersatztage. Katholische und reformierte Gebiete bleiben von der kantonsweiten prozessrechtlichen LJ-Liste getrennt.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Französischen amtlichen PDF-Volltext gelesen, mit deutscher Fassung und beiden modellierten Gebietsmengen verglichen. Aktualität und Änderungsnachtrag wie beim deutschen Quellenbeleg geprüft."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-FR-JG-1301-V7926",
+      "officialUrl": "https://bdlf.fr.ch/api/de/versions/7926/pdf_file",
+      "retrievalUrl": "https://bdlf.fr.ch/api/de/versions/7926/pdf_file",
+      "relevantProvisions": "Art. 121 Abs. 1–3, aktuelle Version 7926 seit 01.01.2024",
+      "finding": "Die eigenständige kantonsweite Liste umfasst 15 Tage und stimmt mit FR-JG-ALL überein. Die Verschiebung bei Fristablauf sowie die Ausnahme für strafprozessuale Stundenfristen sind von der blossen Feiertagsmenge zu unterscheiden. Die BAMG-Regionalgruppen werden nicht übertragen. Der geprüfte Reorganisationsnachtrag ROF 2026_043 ändert Art. 121 nicht.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen deutschen PDF-Normtext und einschlägigen Geltungsbereich gelesen. API bestätigt Version 7926 als aktuell. Änderungsnachtrag 2026_043 zusätzlich auf einschlägige Änderung geprüft."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-FR-LJ-1301-FR-V7926",
+      "officialUrl": "https://bdlf.fr.ch/api/fr/versions/7926/pdf_file",
+      "retrievalUrl": "https://bdlf.fr.ch/api/fr/versions/7926/pdf_file",
+      "relevantProvisions": "Art. 121 al. 1–3, version actuelle 7926 depuis le 01.01.2024",
+      "finding": "Die französische Fassung bestätigt die kantonsweite 15-Tage-Liste, die Fristablaufverschiebung und die Ausnahme für in Stunden berechnete strafprozessuale Fristen. Keine Abweichung zur deutschen Fassung oder zum abgegrenzten Katalogmodell festgestellt.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen französischen PDF-Volltext gelesen und gegen FR-JG-ALL sowie deutsche Fassung geprüft. Aktuelle Versionsmetadaten und Reorganisationsnachtrag zusätzlich kontrolliert."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-FR-AMA-FEIERTAGE-2026",
+      "officialUrl": "https://www.fr.ch/de/arbeit-und-unternehmen/arbeitnehmer/feiertage",
+      "retrievalUrl": "https://www.fr.ch/de/arbeit-und-unternehmen/arbeitnehmer/feiertage",
+      "relevantProvisions": "Feiertage 2026 und Fussnote zu reformierten Gemeinden und Orten, Seitenänderung 06.07.2026",
+      "finding": "Alle 18 publizierten Daten der zwei Neunerlisten stimmen. Die reformierte Gebietsliste entspricht den zehn erfassten Gemeinden Courgevaux, Fräschels, Greng, Kerzers, Meyriez, Muntelier, Murten, Ried bei Kerzers, Ulmiz und Mont-Vully sowie den Orten Flamatt und Sensebrügg. Nicht ganz Wünnewil-Flamatt wird erfasst. Freiwillige freie Tage bleiben ausgeschlossen. Der bestehende Vorbehalt eines nicht separat ermittelten Staatsratsbeschlusses bleibt unverändert.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Aktuelle amtliche Seite inklusive Fussnote gelesen. Alle zwölf Gebietszuordnungen und ihre komplementären Ausschlüsse sowie 18 Datumswerte mit dem Katalog verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VD-LEMP-82211-20120401",
+      "officialUrl": "https://prestations.vd.ch/pub/blv-publication/actes/consolide/822.11?id=c3ef83f5-e736-490d-90a7-1753b31d5ef3",
+      "retrievalUrl": "https://www.lexfind.ch/tolv/107233/fr",
+      "relevantProvisions": "Art. 47 Abs. 1 und 2, Fassung seit 01.04.2012, PDF S. 23",
+      "finding": "Die neun dem Sonntag gleichgestellten Tage entsprechen VD-LEMP-ALL. Zusätzliche freie Tage aus Gesamt- oder Normalarbeitsverträgen werden nicht in allgemeine Feiertagsregeln umgedeutet. Der Volltext ist eine LexFind-Kopie des amtlichen PDF mit Generierungsdatum 19.12.2019. Die dortige Liste wird durch die aktuelle amtliche DGEM-FAQ und die amtlichen Jahreslisten 2026–2028 bestätigt.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Kantonales Portal geprüft, dort nur JavaScript-App zugänglich. Amtlichen Normtext im ausdrücklich gekennzeichneten LexFind-Spiegel inhaltlich gelesen und mit aktuellen kantonalen Primärinformationen gegengeprüft. Keine Behauptung eines direkt vom kantonalen Portal geladenen aktuellen PDF."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VD-DGEM-FAQ-2026",
+      "officialUrl": "https://www.vd.ch/fileadmin/user_upload/themes/economie_emploi/emploi/fichiers_pdf/FAQ-droit_du_travail-DGEM.pdf",
+      "retrievalUrl": "https://www.vd.ch/fileadmin/user_upload/themes/economie_emploi/emploi/fichiers_pdf/FAQ-droit_du_travail-DGEM.pdf",
+      "relevantProvisions": "S. 32, Verweise auf Art. 20a ArG und Art. 47 LEmp",
+      "finding": "Die amtliche FAQ nennt genau die neun modellierten Tage. Sie bestätigt den arbeitsrechtlichen Kontext und begründet weder einen zusätzlichen Stephanstag noch eine allgemeine Ersatzregel für Feiertage an ohnehin freien Tagen.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Aktuelles amtliches PDF geöffnet und einschlägige Seite vollständig gegen VD-LEMP-ALL geprüft."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VD-FEIERTAGE-2026",
+      "officialUrl": "https://www.vd.ch/formation/jours-feries-et-vacances-scolaires/jours-feries-et-vacances-scolaires-2026",
+      "retrievalUrl": "https://www.vd.ch/formation/jours-feries-et-vacances-scolaires/jours-feries-et-vacances-scolaires-2026",
+      "relevantProvisions": "Abschnitt Jours fériés officiels 2026 und separater Personalhinweis",
+      "finding": "Alle neun Jahresdaten stimmen mit dem Regelergebnis. Der zusätzliche, grundsätzlich am 26. Dezember gewährte, aber verschiebbare dienstfreie Tag ist ausdrücklich ein Personalthema. Er bleibt aus VD-LEMP-ALL ausgeschlossen. Schulferien werden nicht als Gerichtsferien übernommen.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtliche Jahresliste und abschliessenden Personalhinweis gelesen. Neun Datumswerte gegen evaluateHolidayCatalogRule für 2026 verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VD-FEIERTAGE-2027",
+      "officialUrl": "https://www.vd.ch/formation/jours-feries-et-vacances-scolaires/jours-feries-et-vacances-scolaires-2027",
+      "retrievalUrl": "https://www.vd.ch/formation/jours-feries-et-vacances-scolaires/jours-feries-et-vacances-scolaires-2027",
+      "relevantProvisions": "Abschnitt Jours fériés officiels 2027 und separater Personalhinweis",
+      "finding": "Alle neun Jahresdaten stimmen. Insbesondere wird der Bundesfeiertag am Sonntag, 1. August 2027 geführt, nicht durch eine pauschale Montagssubstitution ersetzt. Der zusätzlich verschiebbare Personaltag bleibt ausgeschlossen.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtliche Jahresliste und Personalhinweis gelesen. Neun Datumswerte gegen evaluateHolidayCatalogRule für 2027 verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-VD-FEIERTAGE-2028",
+      "officialUrl": "https://www.vd.ch/formation/jours-feries-et-vacances-scolaires/jours-feries-et-vacances-scolaires-2028",
+      "retrievalUrl": "https://www.vd.ch/formation/jours-feries-et-vacances-scolaires/jours-feries-et-vacances-scolaires-2028",
+      "relevantProvisions": "Abschnitt Jours fériés officiels 2028 und separater Personalhinweis",
+      "finding": "Alle neun Jahresdaten stimmen, einschliesslich 18. September als Montag nach dem eidgenössischen Bettag. Der am Sonntag liegende 2. Januar wird nicht automatisch verschoben. Dienstfreie Zusatztage und Schulferien bleiben getrennt.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtliche Jahresliste und Personalhinweis gelesen. Neun Datumswerte gegen evaluateHolidayCatalogRule für 2028 verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-NE-LDJF-94102-20100101",
+      "officialUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/941.02.pdf",
+      "retrievalUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/941.02.pdf",
+      "relevantProvisions": "Art. 3 Abs. 1 und 2, Stand 01.01.2010",
+      "finding": "Die sechs kantonalen Basistage plus separat begründeter Bundesfeiertag und die zwei bedingten Ersatztage stimmen. Der 2. Januar beziehungsweise 26. Dezember ist nur dann Ersatzfeiertag, wenn der jeweilige Vortag Sonntag ist. Die im Modell verwendete Montagbedingung ist dazu äquivalent. Die Regierungskompetenz für örtliche oder regionale zusätzliche Feiertage bleibt als bestehender Vorbehalt erhalten.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "sha256": "7efee9699342f6ae5ee96ef858a00106a4be1d3e48d13355dc1c246c5d5ade73",
+      "accessMethod": "Nach Web-Parserfehler dieselbe amtliche PDF-URL direkt geladen und beide Seiten ausgelesen. Art. 3 gegen Basisregeln und onlyMonday-Bedingungen geprüft. Zusätzlich Auswertungen 2026–2028, 2033 und 2034 kontrolliert."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-NE-ADJF-941020-20250527",
+      "officialUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/941.020.pdf",
+      "retrievalUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/941.020.pdf",
+      "relevantProvisions": "Art. 2, Stand 27.05.2025",
+      "finding": "Fronleichnam ist ausdrücklich nur auf dem Gebiet der Gemeinde Le Landeron zusätzlicher Feiertag. Die einzelne Zusatzregel und ihre räumliche Begrenzung entsprechen dem kantonalen Erlass. Daraus wird kein kantonsweiter Feiertag und keine eigenständige kommunale Rechtssetzung abgeleitet.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtliches PDF gelesen und mit NE-LANDERON-ADDITIONAL, der Fronleichnamsregel und Gebietszuordnung verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-NE-LPA-152130-20260101",
+      "officialUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/152.130.pdf",
+      "retrievalUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/152.130.pdf",
+      "relevantProvisions": "Art. 1–3 und Art. 33 Abs. 1–3, in Kraft seit 01.01.2026",
+      "finding": "Art. 33 bestätigt den Fristbeginn am Folgetag, die Verschiebung des Fristablaufs und die Gleichstellung von Tagen mit mindestens halbtägiger Schliessung der kantonalen Verwaltung. Die acht regelmässigen Ergänzungen bleiben deshalb separate verfahrensrechtlich gleichgestellte Tage und keine allgemeinen gesetzlichen Feiertage. Für die Fristablaufwirkung ist die Kennzeichnung als ganzer Tag sachgerecht. Der eingeschränkte Verfahrensbezug bleibt erhalten.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen Normvolltext und gesetzlichen Anwendungsbereich gelesen, Kategorie und Geltungsbereich NE-LPA-ADDITIONAL geprüft. Unregelmässige zusätzliche Schliessungen bleiben vorbehalten."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-NE-RDF-152512-20230101",
+      "officialUrl": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/152.512.pdf",
+      "retrievalUrl": "https://rsn.ne.ch/DATA/program/books/rsne/htm/152.512.htm",
+      "relevantProvisions": "Art. 11 Abs. 1 und 2, Stand 01.01.2023",
+      "finding": "Die regelmässigen Verwaltungsschliessungen bestätigen die acht zusätzlichen Daten gegenüber der gesetzlichen Basis: 2. Januar, Ostermontag, Freitag nach Auffahrt, Pfingstmontag, Bettagsmontag, 24. und 26. Dezember sowie 31. Dezember. Abs. 2 sieht unter Voraussetzungen zusätzliche Ausgleichstage vor. Solche jährlich angeordneten Tage werden unverändert nicht als ewige Regeln erfunden und bleiben vorbehalten.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen HTML-Volltext als Alternative zum gestörten PDF-Webabruf gelesen, insbesondere Art. 11 samt gesetzlichem Versionsstand. Mit acht Ergänzungsregeln und Vorbehalt verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-NE-DELAIS-CIRCULAIRE-20260101",
+      "officialUrl": "https://www.ne.ch/sites/default/files/migration/autorites/DDTE/SCAT/Documents/06_07_Documents_communs/PConstr_CirculaireComputationDelais.pdf",
+      "retrievalUrl": "https://www.ne.ch/sites/default/files/migration/autorites/DDTE/SCAT/Documents/06_07_Documents_communs/PConstr_CirculaireComputationDelais.pdf",
+      "relevantProvisions": "Merkblatt vom 01.01.2026, Ziff. 1, Feiertagsabschnitt auf S. 1",
+      "finding": "Das aktuelle amtliche Merkblatt verbindet ausdrücklich sieben Basistage, bedingten 2. Januar und 26. Dezember, acht regelmässige Verwaltungsergänzungen und Fronleichnam in Le Landeron. Diese Struktur stimmt mit den drei getrennten NE-Geltungsbereichen überein. Die ebenfalls beschriebenen Gerichtsferien und baurechtlichen Sonderfristen werden durch diesen Katalogabgleich nicht zusätzlich freigegeben.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "sha256": "be20afe2fb448f7b718c05cec04eb4c8ab2c9ab9394b1bcb066bcf7115640c52",
+      "accessMethod": "Amtliches zweitseitiges PDF sowohl über Web als auch direkt abgerufen und vollständig ausgelesen. Nur die im Feiertagskatalog verwendeten Aussagen mit dem Modell verglichen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-NE-FEIERTAGE-2026-2027",
+      "officialUrl": "https://www.ne.ch/themes/economie-et-emploi/jours-feries-officiels",
+      "retrievalUrl": "https://www.ne.ch/themes/economie-et-emploi/jours-feries-officiels",
+      "relevantProvisions": "Amtliche allgemeine Feiertagslisten und Verwaltungsergänzungen 2026–2027",
+      "finding": "Die je sieben Basistage und acht zusätzlichen Verwaltungstage stimmen für 2026 und 2027 mit allen 30 Regelergebnissen überein. Die Sonntagsbedingungen der zwei Ersatzfeiertage sind ausdrücklich bestätigt und in beiden Jahren nicht erfüllt. Blosse Ladenöffnungseinschränkungen werden nicht als allgemeine zusätzliche Feiertage behandelt.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Aktuelle amtliche Tabellen und Erläuterungen gelesen, 30 Datumswerte gegen evaluateHolidayCatalogRule verglichen. Bestehende Vorbehalte zu weiteren angeordneten Tagen bleiben bestehen."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-JU-LJF-5551-20230101",
+      "officialUrl": "https://rsju.jura.ch/Htdocs/Files/v/38948.pdf",
+      "retrievalUrl": "https://rsju.jura.ch/Htdocs/Files/v/38948.pdf",
+      "relevantProvisions": "Art. 3, 4 und 9, Gesetz vom 31.08.2022, in Kraft seit 01.01.2023",
+      "finding": "Art. 3 nennt die 15 offiziellen Feiertage, Art. 4 eine engere Neunergruppe für die arbeitsrechtliche Sonntagsgleichstellung. Beide getrennten Katalogmengen stimmen. Art. 9 hebt das frühere Acht-Tage-Dekret ausdrücklich auf. Der auf der amtlichen Informationsseite weiterhin vorhandene Altlink wird deshalb nicht als geltende Rechtsgrundlage übernommen.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "accessMethod": "Amtlichen PDF-Volltext gelesen und beide Tagesmengen, ihre Kategorien und den dokumentierten Umgang mit dem aufgehobenen Dekret geprüft."
+    },
+    {
+      "checkedOn": "2026-09-22",
+      "sourceId": "SRC-JU-FEIERTAGE-2026-2027",
+      "officialUrl": "https://www.jura.ch/Htdocs/Files/v/7818f8eb129d227f2892b240cfbf77d3597c47169f83a6d57891c45fbd7b66df.pdf/2026-2027.pdf?download=1",
+      "retrievalUrl": "https://www.jura.ch/Htdocs/Files/v/7818f8eb129d227f2892b240cfbf77d3597c47169f83a6d57891c45fbd7b66df.pdf/2026-2027.pdf?download=1",
+      "relevantProvisions": "Amtliches Jahresblatt 2026–2027, 13 datierte Feiertage je Jahr und Hinweis zum Saint-Martin-Montag",
+      "finding": "Alle 26 gedruckten Datumswerte stimmen mit den entsprechenden Regeln überein. Oster- und Pfingstsonntag fehlen lediglich in dieser praktischen Jahrestabelle, bleiben aber nach Art. 3 des Gesetzes in der 15-Tage-Menge enthalten. Saint-Martin-Montag wird ausdrücklich nicht als Feiertag bezeichnet und bleibt ausgeschlossen. Die rechtliche Neunergruppe richtet sich nach Art. 4 des Gesetzes, nicht nach einer losgelösten Interpretation der Tabellenformatierung.",
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "sha256": "bd2a085d13d848caa12470dd64624c0371ab030b68941b7a830554e0edcc1c40",
+      "accessMethod": "Nach Web-Parserfehler aktuellen amtlichen Seitenlink bestätigt, dieselbe PDF-URL direkt heruntergeladen und das ganze einseitige Blatt ausgelesen. 26 Daten mit der Regelauswertung verglichen."
+    }
+  ],
+  "dateComparison": {
+    "method": "Amtlich publizierte Datumswerte manuell aus den oben bezeichneten Jahreslisten übertragen, mit evaluateHolidayCatalogRule aus src/core/holidayCatalog.ts gegen den unveränderten Katalog geprüft. JU-Abgleich betrifft die 13 im Jahresblatt ausdrücklich gedruckten Tage, nicht die zwei dort ausgelassenen Sonntage.",
+    "expectedOccurrences": 128,
+    "samples": [
+      {
+        "scope": "GE-OFFICIAL-ALL",
+        "year": 2026,
+        "expected": [
+          "01-01",
+          "04-03",
+          "04-06",
+          "05-14",
+          "05-25",
+          "08-01",
+          "09-10",
+          "12-25",
+          "12-31"
+        ]
+      },
+      {
+        "scope": "GE-OFFICIAL-ALL",
+        "year": 2027,
+        "expected": [
+          "01-01",
+          "03-26",
+          "03-29",
+          "05-06",
+          "05-17",
+          "08-01",
+          "09-09",
+          "12-25",
+          "12-31"
+        ]
+      },
+      {
+        "scope": "GE-OFFICIAL-ALL",
+        "year": 2028,
+        "expected": [
+          "01-01",
+          "04-14",
+          "04-17",
+          "05-25",
+          "06-05",
+          "08-01",
+          "09-07",
+          "12-25",
+          "12-31"
+        ]
+      },
+      {
+        "scope": "FR-BAMG-CATHOLIC",
+        "year": 2026,
+        "expected": [
+          "01-01",
+          "04-03",
+          "05-14",
+          "06-04",
+          "08-01",
+          "08-15",
+          "11-01",
+          "12-08",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "FR-BAMG-REFORMED",
+        "year": 2026,
+        "expected": [
+          "01-01",
+          "01-02",
+          "04-03",
+          "04-06",
+          "05-14",
+          "05-25",
+          "08-01",
+          "12-25",
+          "12-26"
+        ]
+      },
+      {
+        "scope": "VD-LEMP-ALL",
+        "year": 2026,
+        "expected": [
+          "01-01",
+          "01-02",
+          "04-03",
+          "04-06",
+          "05-14",
+          "05-25",
+          "08-01",
+          "09-21",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "VD-LEMP-ALL",
+        "year": 2027,
+        "expected": [
+          "01-01",
+          "01-02",
+          "03-26",
+          "03-29",
+          "05-06",
+          "05-17",
+          "08-01",
+          "09-20",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "VD-LEMP-ALL",
+        "year": 2028,
+        "expected": [
+          "01-01",
+          "01-02",
+          "04-14",
+          "04-17",
+          "05-25",
+          "06-05",
+          "08-01",
+          "09-18",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "NE-LDJF-BASE",
+        "year": 2026,
+        "expected": [
+          "01-01",
+          "03-01",
+          "04-03",
+          "05-01",
+          "05-14",
+          "08-01",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "NE-LDJF-BASE",
+        "year": 2027,
+        "expected": [
+          "01-01",
+          "03-01",
+          "03-26",
+          "05-01",
+          "05-06",
+          "08-01",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "NE-LPA-ADDITIONAL",
+        "year": 2026,
+        "expected": [
+          "01-02",
+          "04-06",
+          "05-15",
+          "05-25",
+          "09-21",
+          "12-24",
+          "12-26",
+          "12-31"
+        ]
+      },
+      {
+        "scope": "NE-LPA-ADDITIONAL",
+        "year": 2027,
+        "expected": [
+          "01-02",
+          "03-29",
+          "05-07",
+          "05-17",
+          "09-20",
+          "12-24",
+          "12-26",
+          "12-31"
+        ]
+      },
+      {
+        "scope": "JU-LJF-OFFICIAL",
+        "year": 2026,
+        "excludeIds": [
+          "JU-LJF-OFFICIAL-DAY-EASTER",
+          "JU-LJF-OFFICIAL-DAY-PENTECOST"
+        ],
+        "expected": [
+          "01-01",
+          "01-02",
+          "04-03",
+          "04-06",
+          "05-01",
+          "05-14",
+          "05-25",
+          "06-04",
+          "06-23",
+          "08-01",
+          "08-15",
+          "11-01",
+          "12-25"
+        ]
+      },
+      {
+        "scope": "JU-LJF-OFFICIAL",
+        "year": 2027,
+        "excludeIds": [
+          "JU-LJF-OFFICIAL-DAY-EASTER",
+          "JU-LJF-OFFICIAL-DAY-PENTECOST"
+        ],
+        "expected": [
+          "01-01",
+          "01-02",
+          "03-26",
+          "03-29",
+          "05-01",
+          "05-06",
+          "05-17",
+          "05-27",
+          "06-23",
+          "08-01",
+          "08-15",
+          "11-01",
+          "12-25"
+        ]
+      }
+    ]
+  }
+}

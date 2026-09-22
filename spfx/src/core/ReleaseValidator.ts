@@ -11,7 +11,15 @@ import filingProfileSchema from './schemas/filing-profile.schema.json';
 import legalProfileSchema from './schemas/legal-profile.schema.json';
 import releaseManifestSchema from './schemas/release-manifest.schema.json';
 import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
-import { generateCalendarFromRules, type CalendarRuleSet } from '../product/core';
+import qualifiedSpecialRegimeCatalogSchema from './schemas/special-regime-catalog-v3.schema.json';
+import holidayCatalogSchema from './schemas/holiday-catalog-v1.schema.json';
+import {
+  assertHolidayCatalog,
+  assertHolidayCatalogProjection,
+  createCalculationData,
+  generateCalendarFromRules,
+  type CalendarRuleSet
+} from '../product/core';
 import { assertSafeReleasePath } from './path';
 import type {
   IReleaseArtifactDescriptor,
@@ -120,6 +128,8 @@ export class ReleaseValidator {
   private readonly calendarValidator: ValidateFunction;
   private readonly calendarRulesValidator: ValidateFunction;
   private readonly specialRegimeCatalogValidator: ValidateFunction;
+  private readonly qualifiedSpecialRegimeCatalogValidator: ValidateFunction;
+  private readonly holidayCatalogValidator: ValidateFunction;
 
   public constructor() {
     const ajv = new Ajv2020({
@@ -136,6 +146,8 @@ export class ReleaseValidator {
     this.calendarValidator = ajv.compile(calendarSchema);
     this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
     this.specialRegimeCatalogValidator = ajv.compile(specialRegimeCatalogSchema);
+    this.qualifiedSpecialRegimeCatalogValidator = ajv.compile(qualifiedSpecialRegimeCatalogSchema);
+    this.holidayCatalogValidator = ajv.compile(holidayCatalogSchema);
   }
 
   public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
@@ -144,7 +156,7 @@ export class ReleaseValidator {
 
     if (isObject(manifestValue) && typeof manifestValue.formatVersion === 'string') {
       const major = Number.parseInt(manifestValue.formatVersion.split('.')[0], 10);
-      if (major !== 1 && major !== 2 && major !== 3) {
+      if (major !== 1 && major !== 2 && major !== 3 && major !== 4) {
         throw new Error(`Unbekannte Hauptversion des Datenformats: ${manifestValue.formatVersion}`);
       }
     }
@@ -159,7 +171,7 @@ export class ReleaseValidator {
 
     this.assertSemanticReferences(manifest, artifacts);
 
-    return {
+    const validated: IValidatedRelease = {
       releaseId: manifest.releaseId,
       formatVersion: manifest.formatVersion,
       coverageFrom: manifest.coverage.from,
@@ -169,11 +181,18 @@ export class ReleaseValidator {
       ...(manifest.specialRegimeCatalogIds
         ? { specialRegimeCatalogIds: [...manifest.specialRegimeCatalogIds] }
         : {}),
+      ...(manifest.holidayCatalogIds
+        ? { holidayCatalogIds: [...manifest.holidayCatalogIds] }
+        : {}),
       manifestSha256: await sha256(manifestBytes),
       manifestBytes,
       artifacts,
       validatedAt: new Date().toISOString()
     };
+    // The shared product boundary must pass before ReleaseService stores a new
+    // active release. A schema-valid catalog alone is not procedural permission.
+    if (manifest.formatVersion === '4.0.0') createCalculationData(validated);
+    return validated;
   }
 
   private assertManifestContract(manifest: IReleaseManifest): void {
@@ -217,14 +236,29 @@ export class ReleaseValidator {
     }
 
     const parsed = decodeJson(bytes, descriptor.path);
-    const validator = descriptor.role === 'legalProfile'
-      ? this.legalProfileValidator
-      : descriptor.role === 'calendar'
-        ? descriptor.schemaId === calendarRulesSchema.$id
-          ? this.calendarRulesValidator
-          : this.calendarValidator
-        : this.specialRegimeCatalogValidator;
+    const validators: Record<string, Record<string, ValidateFunction>> = {
+      legalProfile: { [legalProfileSchema.$id]: this.legalProfileValidator },
+      calendar: {
+        [calendarRulesSchema.$id]: this.calendarRulesValidator,
+        [calendarSchema.$id]: this.calendarValidator
+      },
+      specialRegimeCatalog: {
+        [qualifiedSpecialRegimeCatalogSchema.$id]: this.qualifiedSpecialRegimeCatalogValidator,
+        [specialRegimeCatalogSchema.$id]: this.specialRegimeCatalogValidator
+      },
+      holidayCatalog: { [holidayCatalogSchema.$id]: this.holidayCatalogValidator }
+    };
+    const validator = validators[descriptor.role]?.[descriptor.schemaId];
+    if (!validator) {
+      throw new Error(`Unbekanntes Artefakt-/Schema-Paar für ${descriptor.path}: ${descriptor.role}, ${descriptor.schemaId}`);
+    }
     assertSchema(validator, parsed, descriptor.path);
+    if (parsed.$schema !== descriptor.schemaId || parsed.dataKind !== descriptor.role) {
+      throw new Error(`Schema-ID oder Datenart widerspricht dem Manifest: ${descriptor.path}`);
+    }
+    if (descriptor.role === 'holidayCatalog') {
+      assertHolidayCatalog(parsed);
+    }
 
     const idProperty = descriptor.role === 'legalProfile'
       ? 'profileId'
@@ -251,6 +285,7 @@ export class ReleaseValidator {
     const specialRegimeCatalogs = artifacts.filter(
       artifact => artifact.descriptor.role === 'specialRegimeCatalog'
     );
+    const holidayCatalogs = artifacts.filter(artifact => artifact.descriptor.role === 'holidayCatalog');
     const profileIds = profiles.map(artifact => artifact.descriptor.contentId);
     const calendarIds = calendars.map(artifact => artifact.descriptor.contentId);
     const specialRegimeCatalogIds = specialRegimeCatalogs.map(
@@ -264,6 +299,19 @@ export class ReleaseValidator {
       manifest.specialRegimeCatalogIds ?? [],
       specialRegimeCatalogIds
     );
+    assertSameIds(
+      'Feiertagskatalog-IDs',
+      manifest.holidayCatalogIds ?? [],
+      holidayCatalogs.map(artifact => artifact.descriptor.contentId)
+    );
+    if (manifest.formatVersion === '4.0.0') {
+      if (holidayCatalogs.length !== 1) {
+        throw new Error('Format 4 verlangt genau einen Feiertagskatalog.');
+      }
+      const catalog = holidayCatalogs[0].parsed;
+      assertHolidayCatalog(catalog);
+      assertHolidayCatalogProjection(catalog, calendars.map(calendar => calendar.parsed as CalendarRuleSet));
+    }
 
     const knownProfiles = new Set(manifest.profileIds);
     const knownCalendars = new Set(manifest.calendarIds);
@@ -282,7 +330,7 @@ export class ReleaseValidator {
       collectStringArrayValues(calendar.parsed, 'applicableProfileIds', referencedProfiles);
       collectStringValues(calendar.parsed, 'suspensionSetId', availableSuspensionSets);
 
-      if (manifest.formatVersion === '3.0.0'
+      if ((manifest.formatVersion === '3.0.0' || manifest.formatVersion === '4.0.0')
         && isObject(calendar.parsed)
         && isObject(calendar.parsed.validity)) {
         const from = calendar.parsed.validity.from;
@@ -329,12 +377,12 @@ export class ReleaseValidator {
         throw new Error(`Unbekannte Stillstandssatzreferenz: ${suspensionSetId}`);
       }
     });
-    if (manifest.formatVersion === '3.0.0'
+    if ((manifest.formatVersion === '3.0.0' || manifest.formatVersion === '4.0.0')
       && availableSuspensionSets.has('ch-court-holidays-2026-2028')) {
-      throw new Error('Format 3 enthält noch die abgelaufene Stillstandssatz-ID ch-court-holidays-2026-2028.');
+      throw new Error('Regelkalender enthält noch die abgelaufene Stillstandssatz-ID ch-court-holidays-2026-2028.');
     }
 
-    if (manifest.formatVersion === '3.0.0') {
+    if (manifest.formatVersion === '3.0.0' || manifest.formatVersion === '4.0.0') {
       const ruleSets = calendars.map(calendar => calendar.parsed as CalendarRuleSet);
       const firstYear = Number.parseInt(manifest.coverage.from.slice(0, 4), 10);
       const validationRange = {

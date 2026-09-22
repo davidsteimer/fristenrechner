@@ -4,10 +4,15 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { FristenrechnerApp } from '../FristenrechnerApp';
+import { initializeBrowserAppearance } from '../browserAppearance';
 import './preview.css';
 import '../styles.css';
-import { calculationData } from './data';
+import { mvp04CalculationData } from '../../release/mvp04ReleaseData';
+import { ap17cCandidateCalculationData } from '../../release/ap17cCandidateData';
+import { ap18cCandidateCalculationData } from '../../release/ap18cCandidateData';
 import { qaPreset } from './qaPresets';
+
+initializeBrowserAppearance();
 
 const root = document.getElementById('root');
 if (!root) {
@@ -15,10 +20,13 @@ if (!root) {
 }
 
 const initialState = qaPreset(window.location.search);
+const candidate = new URLSearchParams(window.location.search).get('candidate');
+const previewData = candidate === 'ap18c' ? ap18cCandidateCalculationData
+  : candidate === 'ap17c' ? ap17cCandidateCalculationData : mvp04CalculationData;
 
 ReactDOM.render(
   <React.StrictMode>
-    <FristenrechnerApp data={calculationData} {...(initialState ? { initialState } : {})} />
+    <FristenrechnerApp data={previewData} {...(initialState ? { initialState } : {})} />
   </React.StrictMode>,
   root
 );

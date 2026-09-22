@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
 
 import { translate, translateBlockReason, translateReason, type Locale } from '../../src/ui/i18n';
@@ -51,7 +52,7 @@ const coreReasons = [
 describe('AP9-Sprachkatalog', () => {
   for (const locale of ['de', 'fr'] as const satisfies readonly Locale[]) {
     it(`${locale} deckt alle datengetriebenen Selektoren und Warnungen ab`, () => {
-      const expectedAuthorityLabel = locale === 'de' ? 'Zuständige Behörde' : 'Autorité compétente';
+      const expectedAuthorityLabel = locale === 'de' ? 'Sitz der zuständigen Stelle' : 'Siège de l’organisme compétent';
       const expectedFederalAuthority = locale === 'de' ? 'Bundesbehörde' : 'Autorité fédérale';
       const expectedBernAuthority = locale === 'de' ? 'Behörde des Kantons Bern' : 'Autorité du canton de Berne';
       assert.equal(translate(locale, 'form.authority'), expectedAuthorityLabel);
@@ -87,6 +88,22 @@ describe('AP9-Sprachkatalog', () => {
       ].forEach(reason => assert.notEqual(translateBlockReason(locale, reason), translateReason(locale, reason)));
     });
   }
+});
+
+describe('AP17C-statische Stellenbeschriftung', () => {
+  for (const locale of ['de', 'fr'] as const satisfies readonly Locale[]) {
+    it(`${locale} führt keine kontextabhängigen Sozialversicherungs-Sonderbeschriftungen mehr`, () => {
+      for (const removedKey of ['vrpg.socialAuthority', 'vrpg.bernSocialContext']) {
+        assert.equal(translate(locale, removedKey), removedKey);
+      }
+    });
+  }
+
+  it('verwendet das einheitliche Feldlabel und unveränderte Gemeinwesenoptionen unabhängig vom Bereich', () => {
+    const appSource = readFileSync(new URL('../../src/ui/FristenrechnerApp.tsx', import.meta.url), 'utf8');
+    assert.ok(/label=\{translate\(locale, 'form\.authority'\)\}/.test(appSource), 'Gemeinsames statisches Feldlabel fehlt');
+    assert.equal(/vrpg\.(?:socialAuthority|bernSocialContext)/.test(appSource), false, 'Kontextabhängiger Sonderkey wird noch verwendet');
+  });
 });
 
 describe('AP11C-Sprachkatalog', () => {

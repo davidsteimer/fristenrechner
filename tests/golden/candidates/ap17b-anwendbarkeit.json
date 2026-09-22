@@ -1,0 +1,1892 @@
+{
+  "formatVersion": "ap17b-reference-1",
+  "status": "draft",
+  "approvedBy": null,
+  "runtimeActivation": false,
+  "reviewedAsOf": "2026-09-11",
+  "coverageFrom": "2026-01-01",
+  "coverageTo": "2027-12-31",
+  "coverageMeaning": "Nur synthetisches Arithmetik-Testfenster. Keine materielle oder künftige Rechtsfreigabe. Vor Integration zeitliche Geltung je Norm prüfen.",
+  "scope": "Beschränkte individuelle IV-/AHV-/UVG-Leistungsverfahren und neues bernisches Beschaffungsrecht. Keine produktive Rechtsdatenkomponente.",
+  "sources": [
+    {
+      "id": "ATSG",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2002/510/20240101/de",
+      "version": "2024-01-01"
+    },
+    {
+      "id": "IVG",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/20260101/de",
+      "version": "2026-01-01"
+    },
+    {
+      "id": "AHVG",
+      "url": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/20260101/de",
+      "version": "2026-01-01"
+    },
+    {
+      "id": "UVG",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/20260101/de",
+      "version": "2026-01-01"
+    },
+    {
+      "id": "IVV",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/20250601/de",
+      "version": "2025-06-01"
+    },
+    {
+      "id": "VRPG-BE",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/3424/pdf_file",
+      "version": "2026-09-01"
+    },
+    {
+      "id": "FRG-BE",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/2234/pdf_file",
+      "version": "2021-04-01"
+    },
+    {
+      "id": "IVOEB",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/3138/pdf_file",
+      "version": "2022-02-01"
+    },
+    {
+      "id": "IVOEBG",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/2466/pdf_file",
+      "version": "2022-02-01"
+    },
+    {
+      "id": "IVOEBV",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/3059/pdf_file",
+      "version": "2024-09-01"
+    },
+    {
+      "id": "BGER-8C-767-2008",
+      "url": "https://mcp.opencaselaw.ch/entscheid/bger_8C_767_2008#e-4-3-2",
+      "version": "2009-01-12, E. 4.3.2, Gerichtstext über Rechtsdienst"
+    },
+    {
+      "id": "VGER-BE-100-2024-8",
+      "url": "https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_100-2024-8_2024-04-04.pdf",
+      "version": "2024-04-04, E. 1.1 und 2"
+    },
+    {
+      "id": "VGER-BE-200-2017-814",
+      "url": "https://mcp.opencaselaw.ch/entscheid/be_verwaltungsgericht_200_2017_814#e-1-2",
+      "version": "2018-01-17, E. 1.2, Gerichtstext über Rechtsdienst"
+    },
+    {
+      "id": "IVOEB-OLD",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/391/pdf_file",
+      "version": "2010-07-01, nur historische Abgrenzung"
+    }
+  ],
+  "calculationProfiles": [
+    {
+      "id": "SOC-30",
+      "duration": {
+        "mode": "fixed",
+        "days": 30
+      },
+      "suspension": "atsg",
+      "holidayPolicy": "partyOrRepresentative",
+      "sourceIds": [
+        "ATSG",
+        "FRG-BE"
+      ]
+    },
+    {
+      "id": "SOC-DAYS",
+      "duration": {
+        "mode": "input",
+        "min": 1,
+        "max": 365
+      },
+      "suspension": "atsg",
+      "holidayPolicy": "partyOrRepresentative",
+      "sourceIds": [
+        "ATSG",
+        "FRG-BE"
+      ]
+    },
+    {
+      "id": "PROC-20",
+      "duration": {
+        "mode": "fixed",
+        "days": 20
+      },
+      "suspension": "none",
+      "holidayPolicy": "bern",
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBG",
+        "VRPG-BE",
+        "FRG-BE"
+      ]
+    },
+    {
+      "id": "PROC-DAYS",
+      "duration": {
+        "mode": "input",
+        "min": 1,
+        "max": 365
+      },
+      "suspension": "none",
+      "holidayPolicy": "bern",
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBG",
+        "VRPG-BE",
+        "FRG-BE"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "id": "SOC-IV-PRE",
+      "selection": {
+        "area": "social",
+        "law": "ivg",
+        "action": "preliminary-objection",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-30",
+      "requiredContext": {
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice"
+      },
+      "sourceIds": [
+        "IVG",
+        "ATSG",
+        "IVV"
+      ]
+    },
+    {
+      "id": "SOC-IV-APP",
+      "selection": {
+        "area": "social",
+        "law": "ivg",
+        "action": "appeal",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-30",
+      "requiredContext": {
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-disposition"
+      },
+      "sourceIds": [
+        "IVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-AHV-OBJ",
+      "selection": {
+        "area": "social",
+        "law": "ahvg",
+        "action": "objection",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-30",
+      "requiredContext": {
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition"
+      },
+      "sourceIds": [
+        "AHVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-AHV-APP",
+      "selection": {
+        "area": "social",
+        "law": "ahvg",
+        "action": "appeal",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-30",
+      "requiredContext": {
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision"
+      },
+      "sourceIds": [
+        "AHVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-UV-OBJ",
+      "selection": {
+        "area": "social",
+        "law": "uvg",
+        "action": "objection",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-30",
+      "requiredContext": {
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition"
+      },
+      "sourceIds": [
+        "UVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-UV-APP",
+      "selection": {
+        "area": "social",
+        "law": "uvg",
+        "action": "appeal",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-30",
+      "requiredContext": {
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision"
+      },
+      "sourceIds": [
+        "UVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-IV-ADM",
+      "selection": {
+        "area": "social",
+        "law": "ivg",
+        "action": "ongoing",
+        "stage": "administration"
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-DAYS",
+      "requiredContext": {
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order"
+      },
+      "sourceIds": [
+        "IVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-IV-CORRECTION",
+      "selection": {
+        "area": "social",
+        "law": "ivg",
+        "action": "complaint-correction",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-DAYS",
+      "requiredContext": {
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-correction-day-order"
+      },
+      "sourceIds": [
+        "IVG",
+        "ATSG",
+        "BGER-8C-767-2008"
+      ]
+    },
+    {
+      "id": "SOC-IV-COURT-OTHER",
+      "selection": {
+        "area": "social",
+        "law": "ivg",
+        "action": "ongoing",
+        "stage": "court"
+      },
+      "disposition": "blocked",
+      "profileId": null,
+      "requiredContext": {
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-court-order"
+      },
+      "sourceIds": [
+        "IVG",
+        "ATSG",
+        "BGER-8C-767-2008",
+        "VGER-BE-200-2017-814"
+      ]
+    },
+    {
+      "id": "SOC-AHV-ADM",
+      "selection": {
+        "area": "social",
+        "law": "ahvg",
+        "action": "ongoing",
+        "stage": "administration"
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-DAYS",
+      "requiredContext": {
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order"
+      },
+      "sourceIds": [
+        "AHVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-AHV-CORRECTION",
+      "selection": {
+        "area": "social",
+        "law": "ahvg",
+        "action": "complaint-correction",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-DAYS",
+      "requiredContext": {
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-correction-day-order"
+      },
+      "sourceIds": [
+        "AHVG",
+        "ATSG",
+        "BGER-8C-767-2008"
+      ]
+    },
+    {
+      "id": "SOC-AHV-COURT-OTHER",
+      "selection": {
+        "area": "social",
+        "law": "ahvg",
+        "action": "ongoing",
+        "stage": "court"
+      },
+      "disposition": "blocked",
+      "profileId": null,
+      "requiredContext": {
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-court-order"
+      },
+      "sourceIds": [
+        "AHVG",
+        "ATSG",
+        "BGER-8C-767-2008",
+        "VGER-BE-200-2017-814"
+      ]
+    },
+    {
+      "id": "SOC-UV-ADM",
+      "selection": {
+        "area": "social",
+        "law": "uvg",
+        "action": "ongoing",
+        "stage": "administration"
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-DAYS",
+      "requiredContext": {
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order"
+      },
+      "sourceIds": [
+        "UVG",
+        "ATSG"
+      ]
+    },
+    {
+      "id": "SOC-UV-CORRECTION",
+      "selection": {
+        "area": "social",
+        "law": "uvg",
+        "action": "complaint-correction",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "SOC-DAYS",
+      "requiredContext": {
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-correction-day-order"
+      },
+      "sourceIds": [
+        "UVG",
+        "ATSG",
+        "BGER-8C-767-2008"
+      ]
+    },
+    {
+      "id": "SOC-UV-COURT-OTHER",
+      "selection": {
+        "area": "social",
+        "law": "uvg",
+        "action": "ongoing",
+        "stage": "court"
+      },
+      "disposition": "blocked",
+      "profileId": null,
+      "requiredContext": {
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-court-order"
+      },
+      "sourceIds": [
+        "UVG",
+        "ATSG",
+        "BGER-8C-767-2008",
+        "VGER-BE-200-2017-814"
+      ]
+    },
+    {
+      "id": "PROC-APPEAL",
+      "selection": {
+        "area": "procurement",
+        "law": "ivob",
+        "action": "appeal",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "PROC-20",
+      "requiredContext": {
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition"
+      },
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBG",
+        "IVOEBV",
+        "VRPG-BE"
+      ]
+    },
+    {
+      "id": "PROC-APPEAL-SECOND",
+      "selection": {
+        "area": "procurement",
+        "law": "ivob",
+        "action": "appeal-second-instance",
+        "stage": ""
+      },
+      "disposition": "candidate",
+      "profileId": "PROC-20",
+      "requiredContext": {
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "appeal-decision"
+      },
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBG",
+        "IVOEBV",
+        "VRPG-BE",
+        "VGER-BE-100-2024-8"
+      ]
+    },
+    {
+      "id": "PROC-COURT-DAYS",
+      "selection": {
+        "area": "procurement",
+        "law": "ivob",
+        "action": "ongoing",
+        "stage": "court"
+      },
+      "disposition": "candidate",
+      "profileId": "PROC-DAYS",
+      "requiredContext": {
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "court-day-order"
+      },
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBG",
+        "IVOEBV",
+        "VRPG-BE"
+      ]
+    },
+    {
+      "id": "PROC-INTERNAL-DAYS",
+      "selection": {
+        "area": "procurement",
+        "law": "ivob",
+        "action": "ongoing",
+        "stage": "administrative-appeal"
+      },
+      "disposition": "candidate",
+      "profileId": "PROC-DAYS",
+      "requiredContext": {
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order"
+      },
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBG",
+        "IVOEBV",
+        "VRPG-BE"
+      ]
+    },
+    {
+      "id": "PROC-ADMIN-OTHER",
+      "selection": {
+        "area": "procurement",
+        "law": "ivob",
+        "action": "ongoing",
+        "stage": "administration"
+      },
+      "disposition": "blocked",
+      "profileId": null,
+      "requiredContext": {
+        "matter": "bern-procurement-2019-tender",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-procurement-order"
+      },
+      "sourceIds": [
+        "IVOEB",
+        "IVOEBV",
+        "IVOEB-OLD"
+      ]
+    }
+  ],
+  "referenceCases": [
+    {
+      "id": "AP17B-P01",
+      "mappingId": "SOC-IV-PRE",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-09-17",
+        "firstCountedDay": "2026-09-17",
+        "rawEnd": "2026-10-16",
+        "finalEnd": "2026-10-16",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "IV-Vorbescheid, gesetzlich 30 Tage nach IVG 57a Abs. 3."
+    },
+    {
+      "id": "AP17B-P02",
+      "mappingId": "SOC-IV-APP",
+      "input": {
+        "legalTriggerDate": "2026-03-10",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-03-11",
+        "firstCountedDay": "2026-03-11",
+        "rawEnd": "2026-04-24",
+        "finalEnd": "2026-04-24",
+        "suspensionDays": 15,
+        "rollDays": 0
+      },
+      "rationale": "Direkte IV-Beschwerde, voller Osterstillstand 2026 von 15 Tagen."
+    },
+    {
+      "id": "AP17B-P03",
+      "mappingId": "PROC-COURT-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-03-10",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "court-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 30
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-03-11",
+        "firstCountedDay": "2026-03-11",
+        "rawEnd": "2026-04-09",
+        "finalEnd": "2026-04-09",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Gerichtlich angesetzte 30 Tage, kein Osterstillstand. Vergleich mit P02."
+    },
+    {
+      "id": "AP17B-P04",
+      "mappingId": "SOC-AHV-OBJ",
+      "input": {
+        "legalTriggerDate": "2026-03-28",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-03-29",
+        "firstCountedDay": "2026-04-13",
+        "rawEnd": "2026-05-12",
+        "finalEnd": "2026-05-12",
+        "suspensionDays": 15,
+        "rollDays": 0
+      },
+      "rationale": "AHV-Einsprache, Eröffnung unmittelbar vor Beginn des Osterstillstands."
+    },
+    {
+      "id": "AP17B-P05",
+      "mappingId": "SOC-IV-ADM",
+      "input": {
+        "legalTriggerDate": "2026-04-05",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-04-06",
+        "firstCountedDay": "2026-04-13",
+        "rawEnd": "2026-04-22",
+        "finalEnd": "2026-04-22",
+        "suspensionDays": 7,
+        "rollDays": 0
+      },
+      "rationale": "IV-Verwaltungsverfahren, angeordnete 10 Tage. Empfang innerhalb Stillstand."
+    },
+    {
+      "id": "AP17B-P06",
+      "mappingId": "SOC-AHV-APP",
+      "input": {
+        "legalTriggerDate": "2026-04-12",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-04-13",
+        "firstCountedDay": "2026-04-13",
+        "rawEnd": "2026-05-12",
+        "finalEnd": "2026-05-12",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "AHV-Beschwerde ab Einspracheentscheid, Empfang am letzten Stillstandstag."
+    },
+    {
+      "id": "AP17B-P07",
+      "mappingId": "SOC-UV-OBJ",
+      "input": {
+        "legalTriggerDate": "2026-07-14",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-07-15",
+        "firstCountedDay": "2026-08-16",
+        "rawEnd": "2026-09-14",
+        "finalEnd": "2026-09-14",
+        "suspensionDays": 32,
+        "rollDays": 0
+      },
+      "rationale": "UVG-Einsprache, gesamter Sommerstillstand. Sonntag 16. August zählt als erster Tag."
+    },
+    {
+      "id": "AP17B-P08",
+      "mappingId": "SOC-UV-APP",
+      "input": {
+        "legalTriggerDate": "2026-07-30",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-07-31",
+        "firstCountedDay": "2026-08-16",
+        "rawEnd": "2026-09-14",
+        "finalEnd": "2026-09-14",
+        "suspensionDays": 16,
+        "rollDays": 0
+      },
+      "rationale": "UVG-Beschwerde, nur verbleibende 16 Sommerstillstandstage werden übersprungen."
+    },
+    {
+      "id": "AP17B-P09",
+      "mappingId": "SOC-IV-APP",
+      "input": {
+        "legalTriggerDate": "2026-08-15",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-08-16",
+        "firstCountedDay": "2026-08-16",
+        "rawEnd": "2026-09-14",
+        "finalEnd": "2026-09-14",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Zustellung am letzten Sommerstillstandstag. Beginn am Sonntag, nicht erst Montag."
+    },
+    {
+      "id": "AP17B-P10",
+      "mappingId": "PROC-INTERNAL-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-07-14",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 30
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-07-15",
+        "firstCountedDay": "2026-07-15",
+        "rawEnd": "2026-08-13",
+        "finalEnd": "2026-08-13",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Verwaltungsinternes Beschwerdeverfahren, angeordnete 30 Tage ohne Sommerstillstand."
+    },
+    {
+      "id": "AP17B-P11",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-07-14",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-07-15",
+        "firstCountedDay": "2026-07-15",
+        "rawEnd": "2026-08-03",
+        "finalEnd": "2026-08-03",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Zuschlagsbeschwerde, gesetzliche 20 Tage ohne Sommerstillstand."
+    },
+    {
+      "id": "AP17B-P12",
+      "mappingId": "SOC-IV-PRE",
+      "input": {
+        "legalTriggerDate": "2026-12-10",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "rawEnd": "2027-01-25",
+        "finalEnd": "2027-01-25",
+        "suspensionDays": 16,
+        "rollDays": 0
+      },
+      "rationale": "IV-Einwand über Jahreswechsel, vollständiger Weihnachtsstillstand. 2027 nur bedingte Testprojektion."
+    },
+    {
+      "id": "AP17B-P13",
+      "mappingId": "PROC-COURT-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-12-23",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "court-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-12-24",
+        "firstCountedDay": "2026-12-24",
+        "rawEnd": "2027-01-02",
+        "finalEnd": "2027-01-04",
+        "suspensionDays": 0,
+        "rollDays": 2
+      },
+      "rationale": "Angeordnete 10 Tage. Berchtoldstag und Sonntag verschieben Ende trotz Ferienausschluss."
+    },
+    {
+      "id": "AP17B-P14",
+      "mappingId": "SOC-AHV-APP",
+      "input": {
+        "legalTriggerDate": "2027-03-10",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2027-03-11",
+        "firstCountedDay": "2027-03-11",
+        "rawEnd": "2027-04-24",
+        "finalEnd": "2027-04-26",
+        "suspensionDays": 15,
+        "rollDays": 2
+      },
+      "rationale": "Ostern 2027 und Samstag am rechnerischen Ende. Bedingte Testprojektion, keine künftige Rechtsfreigabe."
+    },
+    {
+      "id": "AP17B-P15",
+      "mappingId": "PROC-INTERNAL-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-03-04",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 30
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-03-05",
+        "firstCountedDay": "2026-03-05",
+        "rawEnd": "2026-04-03",
+        "finalEnd": "2026-04-07",
+        "suspensionDays": 0,
+        "rollDays": 4
+      },
+      "rationale": "Angeordnete 30 Tage. Ende Karfreitag wird über Ostermontag hinaus verschoben."
+    },
+    {
+      "id": "AP17B-P16",
+      "mappingId": "SOC-UV-ADM",
+      "input": {
+        "legalTriggerDate": "2026-12-18",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-12-19",
+        "firstCountedDay": "2027-01-03",
+        "rawEnd": "2027-01-12",
+        "finalEnd": "2027-01-12",
+        "suspensionDays": 15,
+        "rollDays": 0
+      },
+      "rationale": "Angeordnete 10 Tage. Empfang am ersten Winterstillstandstag, erster Zähltag Sonntag 3. Januar."
+    },
+    {
+      "id": "AP17B-P17",
+      "mappingId": "SOC-AHV-ADM",
+      "input": {
+        "legalTriggerDate": "2026-04-05",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-04-06",
+        "firstCountedDay": "2026-04-13",
+        "rawEnd": "2026-04-22",
+        "finalEnd": "2026-04-22",
+        "suspensionDays": 7,
+        "rollDays": 0
+      },
+      "rationale": "AHV-Verwaltungsverfahren, konkret angeordnete 10 Tage statt gesetzlicher Standarddauer."
+    },
+    {
+      "id": "AP17B-P18",
+      "mappingId": "SOC-IV-CORRECTION",
+      "input": {
+        "legalTriggerDate": "2026-04-05",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-correction-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-04-06",
+        "firstCountedDay": "2026-04-13",
+        "rawEnd": "2026-04-22",
+        "finalEnd": "2026-04-22",
+        "suspensionDays": 7,
+        "rollDays": 0
+      },
+      "rationale": "Gerichtliche Tagesnachfrist zur Verbesserung einer IV-Beschwerde, Art. 61 Bst. b ATSG."
+    },
+    {
+      "id": "AP17B-P19",
+      "mappingId": "SOC-AHV-CORRECTION",
+      "input": {
+        "legalTriggerDate": "2026-04-05",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-correction-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-04-06",
+        "firstCountedDay": "2026-04-13",
+        "rawEnd": "2026-04-22",
+        "finalEnd": "2026-04-22",
+        "suspensionDays": 7,
+        "rollDays": 0
+      },
+      "rationale": "Gerichtliche Tagesnachfrist zur Verbesserung einer AHV-Beschwerde, keine beliebige Replikfrist."
+    },
+    {
+      "id": "AP17B-P20",
+      "mappingId": "SOC-UV-CORRECTION",
+      "input": {
+        "legalTriggerDate": "2026-12-18",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-correction-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-12-19",
+        "firstCountedDay": "2027-01-03",
+        "rawEnd": "2027-01-12",
+        "finalEnd": "2027-01-12",
+        "suspensionDays": 15,
+        "rollDays": 0
+      },
+      "rationale": "Gerichtliche Tagesnachfrist zur Verbesserung einer UVG-Beschwerde mit Winterstillstand."
+    },
+    {
+      "id": "AP17B-P21",
+      "mappingId": "PROC-APPEAL-SECOND",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "appeal-decision",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-09-17",
+        "firstCountedDay": "2026-09-17",
+        "rawEnd": "2026-10-06",
+        "finalEnd": "2026-10-06",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Zweite kantonale Beschwerdeinstanz ebenfalls 20 Tage. Neuer Beschwerdeentscheid ist Anker."
+    },
+    {
+      "id": "AP17B-P22",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-06",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-09-07",
+        "firstCountedDay": "2026-09-07",
+        "rawEnd": "2026-09-26",
+        "finalEnd": "2026-09-28",
+        "suspensionDays": 0,
+        "rollDays": 2
+      },
+      "rationale": "Gesetzliche 20 Tage, Samstag am Rohende. Nächster Werktag 28. September."
+    },
+    {
+      "id": "AP17B-P23",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-05-05",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-05-06",
+        "firstCountedDay": "2026-05-06",
+        "rawEnd": "2026-05-25",
+        "finalEnd": "2026-05-26",
+        "suspensionDays": 0,
+        "rollDays": 1
+      },
+      "rationale": "Pfingstmontag als Endtag wird verschoben, keine Gerichtsferien."
+    },
+    {
+      "id": "AP17B-P24",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-12-12",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-12-13",
+        "firstCountedDay": "2026-12-13",
+        "rawEnd": "2027-01-01",
+        "finalEnd": "2027-01-04",
+        "suspensionDays": 0,
+        "rollDays": 3
+      },
+      "rationale": "Neujahr, Berchtoldstag und Sonntag. Kein Weihnachtsstillstand, Testprojektion."
+    },
+    {
+      "id": "AP17B-P25",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-03-20",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-03-21",
+        "firstCountedDay": "2026-03-21",
+        "rawEnd": "2026-04-09",
+        "finalEnd": "2026-04-09",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Zuschlagsbeschwerde über Ostern ohne Stillstand, auch interne Feiertage zählen."
+    },
+    {
+      "id": "AP17B-P26",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "notificationChannel": "official-publication"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-09-17",
+        "firstCountedDay": "2026-09-17",
+        "rawEnd": "2026-10-06",
+        "finalEnd": "2026-10-06",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Rechtlich massgebende Publikation als Eröffnung. Kein Briefempfang erforderlich."
+    },
+    {
+      "id": "AP17B-P27",
+      "mappingId": "PROC-COURT-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-07-10",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "court-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 10
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-07-11",
+        "firstCountedDay": "2026-07-11",
+        "rawEnd": "2026-07-20",
+        "finalEnd": "2026-07-20",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Gerichtliche Anordnung von 10 Tagen, nicht durch 20-Tage-Beschwerdefrist ersetzen."
+    },
+    {
+      "id": "AP17B-P28",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2022-02-01"
+      },
+      "expected": {
+        "status": "calculateAfterApproval",
+        "calendarStart": "2026-09-17",
+        "firstCountedDay": "2026-09-17",
+        "rawEnd": "2026-10-06",
+        "finalEnd": "2026-10-06",
+        "suspensionDays": 0,
+        "rollDays": 0
+      },
+      "rationale": "Einleitung exakt am bernischen Übergangsstichtag fällt unter neuen Kandidaten."
+    },
+    {
+      "id": "AP17B-N01",
+      "mappingId": "SOC-IV-OBJECTION-NOT-SUPPORTED",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unknownMapping"
+      },
+      "rationale": "IV-Einsprache gegen gewöhnliche Leistungsverfügung ist kein freigegebener Regelweg."
+    },
+    {
+      "id": "AP17B-N02",
+      "mappingId": "SOC-IV-COURT-OTHER",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-court-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "mappingBlocked"
+      },
+      "rationale": "Laufendes Gerichtsverfahren ohne präzisierte Handlung bleibt gesperrt."
+    },
+    {
+      "id": "AP17B-N03",
+      "mappingId": "SOC-AHV-COURT-OTHER",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-court-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "mappingBlocked"
+      },
+      "rationale": "Laufendes Gerichtsverfahren ohne präzisierte Handlung bleibt gesperrt."
+    },
+    {
+      "id": "AP17B-N04",
+      "mappingId": "SOC-UV-COURT-OTHER",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-court-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "mappingBlocked"
+      },
+      "rationale": "Laufendes Gerichtsverfahren ohne präzisierte Handlung bleibt gesperrt."
+    },
+    {
+      "id": "AP17B-N05",
+      "mappingId": "PROC-ADMIN-OTHER",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-tender",
+        "deadlineForm": "days",
+        "triggerKind": "unqualified-procurement-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "mappingBlocked"
+      },
+      "rationale": "Allgemeines Vergabeverfahren ist nicht gleich Beschwerdeverfahren. Keine pauschale Angebotsfrist."
+    },
+    {
+      "id": "AP17B-N06",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "CH",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unsupportedAuthority"
+      },
+      "rationale": "Bundesamt in Bern wird durch seinen physischen Sitz nicht zur kantonalen IVöB-Behörde."
+    },
+    {
+      "id": "AP17B-N07",
+      "mappingId": "SOC-IV-PRE",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-disability-aid-subsidies",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "matterMismatch"
+      },
+      "rationale": "Invalidenhilfebeiträge sind nicht individuelle Versicherungsleistungen."
+    },
+    {
+      "id": "AP17B-N08",
+      "mappingId": "SOC-AHV-APP",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "ahv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "triggerKindMismatch"
+      },
+      "rationale": "AHV-Erstverfügung braucht im gewöhnlichen Leistungsweg zunächst Einsprache."
+    },
+    {
+      "id": "AP17B-N09",
+      "mappingId": "SOC-IV-ADM",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "fixedDate",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unsupportedDeadlineForm"
+      },
+      "rationale": "Amtlich vorgegebener Endtermin darf nicht in eine Tagesfrist umgerechnet werden."
+    },
+    {
+      "id": "AP17B-N10",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": false,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "notificationUnconfirmed"
+      },
+      "rationale": "Konkurrierende Publikation und Briefzustellung ohne geklärte Massgeblichkeit."
+    },
+    {
+      "id": "AP17B-N11",
+      "mappingId": "SOC-IV-PRE",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": false,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "holidayAnchorUnconfirmed"
+      },
+      "rationale": "Behördensitz Bern bestätigt nicht den Wohn-/Sitzkanton von Partei und Vertretung."
+    },
+    {
+      "id": "AP17B-N12",
+      "mappingId": "SOC-UV-APP",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision",
+        "holidayCanton": "ZH",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unsupportedHolidayCanton"
+      },
+      "rationale": "Feiertagsanknüpfung ausserhalb des freigegebenen Bern-only-Kandidaten."
+    },
+    {
+      "id": "AP17B-N13",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "procedureStartMissing"
+      },
+      "rationale": "Ohne rechtlich geklärte Einleitung des Vergabeverfahrens keine Wahl des Neurechts."
+    },
+    {
+      "id": "AP17B-N14",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-30"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "procedureStartInvalid"
+      },
+      "rationale": "Ungültiges Datum für die Verfahrenseinleitung."
+    },
+    {
+      "id": "AP17B-N15",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2022-01-31"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "procurementLegacyProcedure"
+      },
+      "rationale": "Am 31. Januar 2022 eingeleitetes Verfahren bleibt alter Rechtslage unterstellt."
+    },
+    {
+      "id": "AP17B-N16",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-09-17"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "procedureStartAfterTrigger"
+      },
+      "rationale": "Die Verfahrenseinleitung darf nicht nach der Eröffnung des Zuschlags liegen."
+    },
+    {
+      "id": "AP17B-N17",
+      "mappingId": "SOC-IV-PRE",
+      "input": {
+        "legalTriggerDate": "2026-02-30",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "triggerDateInvalid"
+      },
+      "rationale": "Ungültiges Eröffnungsdatum."
+    },
+    {
+      "id": "AP17B-N18",
+      "mappingId": "SOC-IV-ADM",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "deadlineDaysInvalid"
+      },
+      "rationale": "Keine angenommene Dauer bei fehlender Tagesanordnung."
+    },
+    {
+      "id": "AP17B-N19",
+      "mappingId": "SOC-IV-PRE",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 60
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unexpectedDeadlineDays"
+      },
+      "rationale": "Gesetzliche 30-Tage-Frist nicht auf frei eingegebene 60 Tage erweitern."
+    },
+    {
+      "id": "AP17B-N20",
+      "mappingId": "SOC-UV-OBJ",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "private-vvg",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "matterMismatch"
+      },
+      "rationale": "Privatrechtliche UV-Zusatzversicherung nach VVG nicht als ATSG-Leistungsverfahren berechnen."
+    },
+    {
+      "id": "AP17B-N21",
+      "mappingId": "SOC-AHV-APP",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "social-assistance",
+        "deadlineForm": "days",
+        "triggerKind": "objection-decision",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "matterMismatch"
+      },
+      "rationale": "Sozialhilfe wird auch durch die Sozialversicherungsabteilung beurteilt, ist aber kein AHVG-Verfahren."
+    },
+    {
+      "id": "AP17B-N22",
+      "mappingId": "SOC-BVG-CLAIM-NOT-SUPPORTED",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "iv-preliminary-notice",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unknownMapping"
+      },
+      "rationale": "BVG-Klage ist kein ATSG-Standardbeschwerdepfad."
+    },
+    {
+      "id": "AP17B-N23",
+      "mappingId": "SOC-UV-APP",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "initial-benefit-disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "triggerKindMismatch"
+      },
+      "rationale": "Ordentliche UVG-Erstverfügung ist nicht der erforderliche Einspracheentscheid."
+    },
+    {
+      "id": "AP17B-N24",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "debriefing",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "triggerKindMismatch"
+      },
+      "rationale": "Debriefing bewirkt keinen automatischen Neubeginn."
+    },
+    {
+      "id": "AP17B-N25",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-tender-challenge",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "matterMismatch"
+      },
+      "rationale": "Noch nicht modellierte Beschwerde gegen Ausschreibung nicht als Zuschlagsbeschwerde etikettieren."
+    },
+    {
+      "id": "AP17B-N26",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "joint-procurement-other-law",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "matterMismatch"
+      },
+      "rationale": "Gemeinschaftsbeschaffung mit abweichendem Recht bleibt ausserhalb."
+    },
+    {
+      "id": "AP17B-N27",
+      "mappingId": "PROC-COURT-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "fixedDate",
+        "triggerKind": "court-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 10
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unsupportedDeadlineForm"
+      },
+      "rationale": "Gerichtliche Anordnung bis zu fixem Datum ist kein N-Tage-Auftrag."
+    },
+    {
+      "id": "AP17B-N28",
+      "mappingId": "SOC-IV-CORRECTION",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "iv-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "court-reply-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 10
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "triggerKindMismatch"
+      },
+      "rationale": "Gewöhnliche Replik darf nicht als Nachfrist zur Beschwerdeverbesserung eingeordnet werden."
+    },
+    {
+      "id": "AP17B-N29",
+      "mappingId": "PROC-INTERNAL-DAYS",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-appeal",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 0
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "deadlineDaysInvalid"
+      },
+      "rationale": "Unverzüglich ist keine bezifferte Tagesdauer."
+    },
+    {
+      "id": "AP17B-N30",
+      "mappingId": "SOC-UV-ADM",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "uvg-individual-benefits",
+        "deadlineForm": "days",
+        "triggerKind": "authority-day-order",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "days": 1.5
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "deadlineDaysInvalid"
+      },
+      "rationale": "Bruchteile von Tagen werden nicht still gerundet."
+    },
+    {
+      "id": "AP17B-N31",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "ZH",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01"
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unsupportedHolidayCanton"
+      },
+      "rationale": "Bernisches Beschwerdeverfahren nicht mit dem Wohnsitzkalender eines Anbieters überschreiben."
+    },
+    {
+      "id": "AP17B-N32",
+      "mappingId": "PROC-APPEAL",
+      "input": {
+        "legalTriggerDate": "2026-09-16",
+        "authorityCode": "BE",
+        "matter": "bern-procurement-2019-award",
+        "deadlineForm": "days",
+        "triggerKind": "disposition",
+        "holidayCanton": "BE",
+        "holidayAnchorConfirmed": true,
+        "notificationConfirmed": true,
+        "procedureStartDate": "2026-02-01",
+        "days": 20
+      },
+      "expected": {
+        "status": "blocked",
+        "reason": "unexpectedDeadlineDays"
+      },
+      "rationale": "Auch eine scheinbar harmlose freie 20-Tage-Eingabe darf die gesetzliche Dauer nicht als editierbar deklarieren."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { IsoDate, RuleValidity } from './types';
+import type { QualifiedApplicability, QualifiedCalculationEvidence, QualifiedDeadlineInput } from './qualifiedTypes';
 
 export interface LocalizedLabels {
   readonly de: string;
@@ -100,6 +101,7 @@ export interface CalculatedDeadlineDefinition extends DeadlineDefinitionBase {
   readonly deadlineOrigin: 'CALCULATED';
   readonly calculation: SpecialCalculation;
   readonly resultPolicy: SpecialResultPolicy;
+  readonly applicability?: QualifiedApplicability | null;
 }
 
 export interface AuthoritativeDeadlineDefinition extends DeadlineDefinitionBase {
@@ -195,7 +197,7 @@ export interface SpecialRegime {
 
 export interface SpecialRegimeCatalog {
   readonly dataKind: 'specialRegimeCatalog';
-  readonly formatVersion: '2.0.0';
+  readonly formatVersion: '2.0.0' | '3.0.0';
   readonly catalogId: string;
   readonly profileId: string;
   readonly validity: RuleValidity;
@@ -206,6 +208,7 @@ export interface SpecialRegimeCatalog {
   readonly legalOverrides: readonly SpecialLegalOverride[];
   readonly deadlineDefinitions: readonly DeadlineDefinition[];
   readonly regimes: readonly SpecialRegime[];
+  readonly blockedMappings?: readonly { readonly mappingId: string; readonly sourceRefs: readonly SpecialSourceReference[] }[];
 }
 
 export interface SpecialDeadlineInput {
@@ -219,6 +222,7 @@ export interface SpecialDeadlineInput {
   readonly suspensionProfileId: string;
   readonly filingProfileId: string;
   readonly overrideConfirmations: readonly string[];
+  readonly applicabilityContext?: QualifiedDeadlineInput;
 }
 
 export interface SpecialDeadlineValue {
@@ -293,6 +297,7 @@ interface SpecialDeadlineResultBase {
   readonly warningKeys: readonly string[];
   readonly blockReasonKeys: readonly string[];
   readonly trace: readonly SpecialTraceStep[];
+  readonly qualifiedCalculation?: QualifiedCalculationEvidence;
 }
 
 export interface CompletedSpecialDeadlineResult extends SpecialDeadlineResultBase {

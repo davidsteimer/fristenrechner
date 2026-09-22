@@ -1,0 +1,1221 @@
+{
+  "checkedOn": "2026-09-22",
+  "recordStatus": "candidate",
+  "performedBy": "Codex als dokumentiertes KI-Arbeitsinstrument, formelle Fachfreigabe durch David Steimer ausstehend",
+  "catalogPath": "data/releases/2026-09-22-mvp-04-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+  "catalogSha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+  "scope": "26 Quellen für CH-Unterstützungsbelege, AG, BL, BS, SO, TI, UR, OW und NW. Bundesfeiertagsgrundlage bereits im operativen Quellencheck. Kein umfassender gesamtschweizerischer Rechtsprechungs-Suchauftrag.",
+  "summary": {
+    "expected": 26,
+    "checked": 26,
+    "unchanged": 26,
+    "changed": 0,
+    "unclear": 0,
+    "unavailable": 0,
+    "currentLawRegistersChecked": 9,
+    "registeredFutureVersions": 0
+  },
+  "technicalNotes": [
+    {
+      "sourceId": "SRC-BS-RLG-811100-20200701",
+      "finding": "Historischer PDF-Link 404, vollständiger amtlicher Text und unveränderte Fassung über aktuelle Gesetzes-API erneut geprüft.",
+      "resolved": true
+    },
+    {
+      "sourceId": "SRC-CH-BK-KANTONSNAMEN-RM-2025-AP18B03",
+      "finding": "Alter Download-Link 502, neuer amtlicher Download aus aktueller Archivseite erfolgreich geprüft.",
+      "resolved": true
+    },
+    {
+      "sourceId": "SRC-BJ-FRISTENHINWEISE-20121217",
+      "finding": "Früher berichteter 502 trat beim erneuten direkten Abruf nicht auf. Original-PDF vollständig lesbar.",
+      "resolved": true
+    }
+  ],
+  "entries": [
+    {
+      "sourceId": "SRC-AG-EGARR-20250901",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/961.200",
+      "retrievalUrl": "https://gesetzessammlungen.ag.ch/api/de/texts_of_law/961.200",
+      "relevantProvisions": [
+        "§ 6"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Alle acht Normzweige von § 6 Abs. 1 mit den acht modellierten räumlichen Feiertagsgruppen verglichen. Acht kantonale ArG-Tage je Gruppe bestätigt, Bundesfeiertag gesondert. Die sechs Gemeinden der Rheinfelden-Gruppe E1 und acht Gemeinden der Gruppe E2 sowie der Ausschluss Bergdietikons aus Baden stimmen. Arbeitsrechtlicher Geltungsbereich bleibt von der ZPO-Liste und operativer Fristwirkung getrennt.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/961.200",
+        "httpStatus": 200,
+        "byteLength": 2297,
+        "sha256": "c9ef39356b748762b877c975b05c8d61d23c6015a95e2b5c5f454f6b58f78b1b"
+      },
+      "evidence": {
+        "url": "https://gesetzessammlungen.ag.ch/api/de/texts_of_law/961.200",
+        "httpStatus": 200,
+        "byteLength": 218072,
+        "sha256": "b1682d2dbfc57519dcf8e1c4cafcb408afbc26a2556ee1cdce19cecb857eee79",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 3837,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.09.2025 (Beschlussdatum: 04.03.2025)",
+        "structured_document_id": 40091,
+        "title": "Einführungsgesetz zum Arbeitsrecht",
+        "abbreviation": "EG ArR"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "AG-WORK-HOL-CORPUS-CHRISTI",
+        "AG-WORK-HOL-BERCHTOLD",
+        "AG-WORK-HOL-A-NEW-YEAR",
+        "AG-WORK-HOL-A-BERCHTOLD",
+        "AG-WORK-HOL-A-GOOD-FRIDAY",
+        "AG-WORK-HOL-A-EASTER-MONDAY",
+        "AG-WORK-HOL-A-ASCENSION",
+        "AG-WORK-HOL-A-WHIT-MONDAY",
+        "AG-WORK-HOL-A-CHRISTMAS",
+        "AG-WORK-HOL-A-ST-STEPHEN",
+        "AG-WORK-HOL-B1-NEW-YEAR",
+        "AG-WORK-HOL-B1-GOOD-FRIDAY",
+        "AG-WORK-HOL-B1-EASTER-MONDAY",
+        "AG-WORK-HOL-B1-ASCENSION",
+        "AG-WORK-HOL-B1-WHIT-MONDAY",
+        "AG-WORK-HOL-B1-CHRISTMAS",
+        "AG-WORK-HOL-B1-ST-STEPHEN",
+        "AG-WORK-HOL-B2-NEW-YEAR",
+        "AG-WORK-HOL-B2-GOOD-FRIDAY",
+        "AG-WORK-HOL-B2-EASTER-MONDAY",
+        "AG-WORK-HOL-B2-ASCENSION",
+        "AG-WORK-HOL-B2-WHIT-MONDAY",
+        "AG-WORK-HOL-B2-CHRISTMAS",
+        "AG-WORK-HOL-B2-ST-STEPHEN",
+        "AG-WORK-HOL-C-NEW-YEAR",
+        "AG-WORK-HOL-C-GOOD-FRIDAY",
+        "AG-WORK-HOL-C-ASCENSION",
+        "AG-WORK-HOL-C-CORPUS-CHRISTI",
+        "AG-WORK-HOL-C-ASSUMPTION",
+        "AG-WORK-HOL-C-ALL-SAINTS",
+        "AG-WORK-HOL-C-CHRISTMAS",
+        "AG-WORK-HOL-C-ST-STEPHEN",
+        "AG-WORK-HOL-D-NEW-YEAR",
+        "AG-WORK-HOL-D-GOOD-FRIDAY",
+        "AG-WORK-HOL-D-ASCENSION",
+        "AG-WORK-HOL-D-CORPUS-CHRISTI",
+        "AG-WORK-HOL-D-ASSUMPTION",
+        "AG-WORK-HOL-D-ALL-SAINTS",
+        "AG-WORK-HOL-D-CHRISTMAS",
+        "AG-WORK-HOL-D-IMMACULATE-CONCEPTION",
+        "AG-WORK-HOL-E1-NEW-YEAR",
+        "AG-WORK-HOL-E1-GOOD-FRIDAY",
+        "AG-WORK-HOL-E1-ASCENSION",
+        "AG-WORK-HOL-E1-CORPUS-CHRISTI",
+        "AG-WORK-HOL-E1-ASSUMPTION",
+        "AG-WORK-HOL-E1-ALL-SAINTS",
+        "AG-WORK-HOL-E1-CHRISTMAS",
+        "AG-WORK-HOL-E1-IMMACULATE-CONCEPTION",
+        "AG-WORK-HOL-E2-NEW-YEAR",
+        "AG-WORK-HOL-E2-GOOD-FRIDAY",
+        "AG-WORK-HOL-E2-EASTER-MONDAY",
+        "AG-WORK-HOL-E2-ASCENSION",
+        "AG-WORK-HOL-E2-WHIT-MONDAY",
+        "AG-WORK-HOL-E2-CHRISTMAS",
+        "AG-WORK-HOL-E2-ST-STEPHEN",
+        "AG-WORK-HOL-E2-ALL-SAINTS",
+        "AG-WORK-HOL-F-NEW-YEAR",
+        "AG-WORK-HOL-F-BERCHTOLD",
+        "AG-WORK-HOL-F-GOOD-FRIDAY",
+        "AG-WORK-HOL-F-ASCENSION",
+        "AG-WORK-HOL-F-CORPUS-CHRISTI",
+        "AG-WORK-HOL-F-ALL-SAINTS",
+        "AG-WORK-HOL-F-CHRISTMAS",
+        "AG-WORK-HOL-F-ST-STEPHEN"
+      ],
+      "relatedScopeIds": [
+        "AG-ARG-BADEN",
+        "AG-ARG-BERGDIETIKON",
+        "AG-ARG-AARAU-BRUGG-KULM-LENZBURG-ZOFINGEN",
+        "AG-ARG-BREMGARTEN",
+        "AG-ARG-LAUFENBURG-MURI",
+        "AG-ARG-RHEINFELDEN-E1",
+        "AG-ARG-RHEINFELDEN-E2",
+        "AG-ARG-ZURZACH"
+      ],
+      "relatedMappingIds": [
+        "MAP-AG-LABOUR",
+        "MAP-AP18B-AG-A",
+        "MAP-AP18B-AG-B1",
+        "MAP-AP18B-AG-C",
+        "MAP-AP18B-AG-D",
+        "MAP-AP18B-AG-E1",
+        "MAP-AP18B-AG-E2",
+        "MAP-AP18B-AG-F"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-AG-EGZPO",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/221.200",
+      "retrievalUrl": "https://gesetzessammlungen.ag.ch/api/de/texts_of_law/221.200",
+      "relevantProvisions": [
+        "§ 21"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "§ 21 Abs. 1 enthält weiterhin die 14 modellierten Tage einschliesslich 1. Mai und Bundesfeiertag. Die kantonsweite zivilprozessuale Feiertagsliste unterscheidet sich bewusst von den regionalen ArG-Gruppen. Keine neue automatische Orts- oder Profilzuordnung.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/221.200",
+        "httpStatus": 200,
+        "byteLength": 2297,
+        "sha256": "c9ef39356b748762b877c975b05c8d61d23c6015a95e2b5c5f454f6b58f78b1b"
+      },
+      "evidence": {
+        "url": "https://gesetzessammlungen.ag.ch/api/de/texts_of_law/221.200",
+        "httpStatus": 200,
+        "byteLength": 436834,
+        "sha256": "f21c9383fea361bff7a1759d8dcb086b40c6e30dda7a869f88057fb3de47fb1e",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 3615,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.01.2022 (Beschlussdatum: 23.03.2021)",
+        "structured_document_id": 30027,
+        "title": "Einführungsgesetz zur Schweizerischen Zivilprozessordnung",
+        "abbreviation": "EG ZPO"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "AG-PROC-DAY-ALL-SAINTS",
+        "AG-PROC-DAY-NEW-YEAR",
+        "AG-PROC-DAY-BERCHTOLD",
+        "AG-PROC-DAY-GOOD-FRIDAY",
+        "AG-PROC-DAY-EASTER-MONDAY",
+        "AG-PROC-DAY-MAY1",
+        "AG-PROC-DAY-ASCENSION",
+        "AG-PROC-DAY-WHIT-MONDAY",
+        "AG-PROC-DAY-CORPUS-CHRISTI",
+        "AG-PROC-DAY-NATIONAL-DAY",
+        "AG-PROC-DAY-ASSUMPTION",
+        "AG-PROC-DAY-IMMACULATE-CONCEPTION",
+        "AG-PROC-DAY-CHRISTMAS",
+        "AG-PROC-DAY-ST-STEPHEN"
+      ],
+      "relatedScopeIds": [
+        "AG-ZPO-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-AG-ZPO"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-BJ-FRISTENHINWEISE-20121217",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.bj.admin.ch/dam/de/sd-web/4Ad6GMn8rA0i/hinweise-kant-feiertage.pdf",
+      "retrievalUrl": "https://www.bj.admin.ch/dam/de/sd-web/4Ad6GMn8rA0i/hinweise-kant-feiertage.pdf",
+      "relevantProvisions": [
+        "Ziff. 1–3, Stand 17.12.2012"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Der früher fehlerhafte amtliche BJ-Link lieferte jetzt den vollständigen historischen Text vom 17.12.2012. Ziffern 1 bis 3 erneut gelesen. Das Verzeichnis ist auf das Europäische Fristenübereinkommen und den Stand 01.01.2011 bezogen. Es ist weder allgemeiner aktueller Ruhetagskatalog noch arbeitsrechtliche Feiertagsliste. Die im Modell dokumentierte methodische Beschränkung ist korrekt.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.bj.admin.ch/dam/de/sd-web/4Ad6GMn8rA0i/hinweise-kant-feiertage.pdf",
+        "httpStatus": 200,
+        "byteLength": 33289,
+        "sha256": "ab51b8b940d054e18f0a519f6a1f65f7b6c98afaa226a86189bb6169a94c6ae7"
+      },
+      "evidence": {
+        "url": "https://www.bj.admin.ch/dam/de/sd-web/4Ad6GMn8rA0i/hinweise-kant-feiertage.pdf",
+        "httpStatus": 200,
+        "byteLength": 33289,
+        "sha256": "ab51b8b940d054e18f0a519f6a1f65f7b6c98afaa226a86189bb6169a94c6ae7",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-AG-AWA-FEIERTAGE",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.ag.ch/media/kanton-aargau/dvi/dokumente/awa/awa/arbeitnehmerschutz-im-betrieb/feiertage.pdf",
+      "retrievalUrl": "https://www.ag.ch/media/kanton-aargau/dvi/dokumente/awa/awa/arbeitnehmerschutz-im-betrieb/feiertage.pdf",
+      "relevantProvisions": [
+        "Amtliche Übersicht zu Art. 20a ArG und § 6 EG ArR"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Amtliches AWA-Merkblatt vollständig gelesen und die Kreuztabelle zusätzlich visuell geprüft. Die sechs Tabellenspalten fassen die acht gesetzlichen räumlichen Normzweige zutreffend zusammen. Die ausgeschlossene 1.-Mai-Regel betrifft diesen Arbeitsrechtskontext, nicht § 21 EG ZPO. Der Merkblatt-Schreibfehler Wegstetten wird nicht übernommen, Modell und Gesetz führen Wegenstetten.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.ag.ch/media/kanton-aargau/dvi/dokumente/awa/awa/arbeitnehmerschutz-im-betrieb/feiertage.pdf",
+        "httpStatus": 200,
+        "byteLength": 32775,
+        "sha256": "fb00f0431d9952275674a960b291cc62d606285eedb2c7fa425cf1d6db5ace24"
+      },
+      "evidence": {
+        "url": "https://www.ag.ch/media/kanton-aargau/dvi/dokumente/awa/awa/arbeitnehmerschutz-im-betrieb/feiertage.pdf",
+        "httpStatus": 200,
+        "byteLength": 32775,
+        "sha256": "fb00f0431d9952275674a960b291cc62d606285eedb2c7fa425cf1d6db5ace24",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-TI-FEIERTAGE-843200",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+      "retrievalUrl": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+      "relevantProvisions": [
+        "RL 843.200, Art. 1"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Art. 1 führt weiterhin alle 15 modellierten offiziellen Tage auf. Die vier variablen Tage Ostermontag, Auffahrt, Pfingstmontag und Fronleichnam sowie die elf Fixdaten entsprechen dem Katalog. Amtliche italienische Bezeichnungen bestätigt. Die sechs nicht arbeitsgesetzlich sonntagsgleichen Tage bleiben offizielle Feiertage. Inkrafttreten 09.02.2010, kein eigener späterer Fassungsstand behauptet.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+        "httpStatus": 200,
+        "byteLength": 26163,
+        "sha256": "96625f12156f624aad977e1ce93ad8e7f52158026fc1b8fbe227d825a831f831"
+      },
+      "evidence": {
+        "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+        "httpStatus": 200,
+        "byteLength": 26163,
+        "sha256": "96625f12156f624aad977e1ce93ad8e7f52158026fc1b8fbe227d825a831f831",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [
+        "TI-CAL-DAY-NEW-YEAR",
+        "TI-CAL-DAY-EPIPHANY",
+        "TI-CAL-DAY-ST-JOSEPH",
+        "TI-CAL-DAY-EASTER-MONDAY",
+        "TI-CAL-DAY-MAY1",
+        "TI-CAL-DAY-ASCENSION",
+        "TI-CAL-DAY-WHIT-MONDAY",
+        "TI-CAL-DAY-CORPUS-CHRISTI",
+        "TI-CAL-DAY-ST-PETER-PAUL",
+        "TI-CAL-DAY-NATIONAL-DAY",
+        "TI-CAL-DAY-ASSUMPTION",
+        "TI-CAL-DAY-ALL-SAINTS",
+        "TI-CAL-DAY-IMMACULATE-CONCEPTION",
+        "TI-CAL-DAY-CHRISTMAS",
+        "TI-CAL-DAY-ST-STEPHEN"
+      ],
+      "relatedScopeIds": [
+        "TI-OFFICIAL-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-TI-LPAMM-ART13",
+        "MAP-TI-LALL-A",
+        "MAP-TI-LALL-B",
+        "MAP-TI-OTHER-PROCESS"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-TI-LALL-843100",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/569",
+      "retrievalUrl": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/569",
+      "relevantProvisions": [
+        "RL 843.100, Art. 6 lit. a und b"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Art. 6 lit. a und b bestätigt die getrennten Gruppen mit neun arbeitsrechtlich sonntagsgleichen und sechs weiteren offiziellen Tagen. Letztere sind Josefstag, 1. Mai, Pfingstmontag, Fronleichnam, Peter und Paul und Mariä Empfängnis. Diese Einteilung wird nicht als Ausschluss der sechs Tage aus Art. 13 LPAmm verwendet.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/569",
+        "httpStatus": 200,
+        "byteLength": 47143,
+        "sha256": "121782ec09c59ba4a45376af22b2da18a7058c05bbbad986f77cd797e47e1462"
+      },
+      "evidence": {
+        "url": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/569",
+        "httpStatus": 200,
+        "byteLength": 47143,
+        "sha256": "121782ec09c59ba4a45376af22b2da18a7058c05bbbad986f77cd797e47e1462",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-TI-LPAMM-165100-20250601",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/151",
+      "retrievalUrl": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/151",
+      "relevantProvisions": [
+        "RL 165.100, Art. 1 und Art. 13 Abs. 3"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Originaltext mit ausdrücklichem Stand 01.06.2025 gelesen. Art. 13 Abs. 3 erfasst weiterhin Samstag, Sonntag und offiziell anerkannte Feiertage. Art. 1 Abs. 2 lässt Spezialrecht vorgehen und Abs. 3 nimmt die dort bezeichneten sofort erledigbaren Erstinstanzverfahren von Titel II aus. Die modellierte beschränkte Zuordnung zu allen 15 offiziellen Tagen bleibt nachvollziehbar.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/151",
+        "httpStatus": 200,
+        "byteLength": 210419,
+        "sha256": "01b1d01834f63e0240be1733b343987df4dfbf26696d525bdd8e6d52433899d5"
+      },
+      "evidence": {
+        "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/151",
+        "httpStatus": 200,
+        "byteLength": 210419,
+        "sha256": "01b1d01834f63e0240be1733b343987df4dfbf26696d525bdd8e6d52433899d5",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-TI-UIL-FEIERTAGE-2026-2027",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www4.ti.ch/dfe/de/uil/legge-lavoro/giorni-festivi-in-ticino-1",
+      "retrievalUrl": "https://www4.ti.ch/dfe/de/uil/legge-lavoro/giorni-festivi-in-ticino-1",
+      "relevantProvisions": [
+        "Amtliche Informationsseite und Jahreslisten 2026/2027"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Alle 15 Datumseinträge für 2026 und alle 15 für 2027 mit Fixdaten und Osterabständen des Katalogs abgeglichen. Die Tagesfolgen stimmen. Die Seite trennt in ihrer Legende arbeitsrechtliche Sonntagsgleichstellung und sonstige offizielle Ruhetage. Für 2028 wird weiterhin keine amtliche Jahresliste behauptet.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www4.ti.ch/dfe/de/uil/legge-lavoro/giorni-festivi-in-ticino-1",
+        "httpStatus": 200,
+        "byteLength": 29214,
+        "sha256": "548cb3f2a235ea7003da95d41afb2b8ca967308206ae3abf968cb92359cd02af"
+      },
+      "evidence": {
+        "url": "https://www4.ti.ch/dfe/de/uil/legge-lavoro/giorni-festivi-in-ticino-1",
+        "httpStatus": 200,
+        "byteLength": 29214,
+        "sha256": "548cb3f2a235ea7003da95d41afb2b8ca967308206ae3abf968cb92359cd02af",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-CH-PARL-BUNDESFEIER-RM-2026",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.parlament.ch/agenda/Pages/agenda-1-august-2026.aspx?lang=1047",
+      "retrievalUrl": "https://www.parlament.ch/agenda/Pages/agenda-1-august-2026.aspx?lang=1047",
+      "relevantProvisions": [
+        "Agendaeintrag: festa naziunala svizra"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Der rumantschsprachige Agenda-Volltext enthält weiterhin die verwendete Bezeichnung Festa naziunala svizra. Ausschliesslich Sprachbeleg, kein gesetzlicher Geltungs- oder Fristenbeleg.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.parlament.ch/agenda/Pages/agenda-1-august-2026.aspx?lang=1047",
+        "httpStatus": 200,
+        "byteLength": 106268,
+        "sha256": "121badf4fd7d4cf46f174ad7e2d0374b6dfbaceaabba01f83c3c63c48a35669d"
+      },
+      "evidence": {
+        "url": "https://www.parlament.ch/agenda/Pages/agenda-1-august-2026.aspx?lang=1047",
+        "httpStatus": 200,
+        "byteLength": 106268,
+        "sha256": "121badf4fd7d4cf46f174ad7e2d0374b6dfbaceaabba01f83c3c63c48a35669d",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-TI-KANTONSNAME-RM",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www4.ti.ch/generale/foederalismus11/rumantsch/foederalismus/preschentaziun",
+      "retrievalUrl": "https://www4.ti.ch/generale/foederalismus11/rumantsch/foederalismus/preschentaziun",
+      "relevantProvisions": [
+        "Infurmaziuns generalas: chantun Tessin"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Die amtliche rumantschsprachige Darstellung verwendet weiterhin chantun Tessin. Bestätigung ausschliesslich des Kantonsnamens, keine Feiertagsnorm und keine amtliche Bestätigung aller übersetzten Produkttexte.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www4.ti.ch/generale/foederalismus11/rumantsch/foederalismus/preschentaziun",
+        "httpStatus": 200,
+        "byteLength": 22470,
+        "sha256": "98615ebed1970f9ebe7d50dad72fdaa3a9f646aa30c2628360143d340e0f792c"
+      },
+      "evidence": {
+        "url": "https://www4.ti.ch/generale/foederalismus11/rumantsch/foederalismus/preschentaziun",
+        "httpStatus": 200,
+        "byteLength": 22470,
+        "sha256": "98615ebed1970f9ebe7d50dad72fdaa3a9f646aa30c2628360143d340e0f792c",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-BGER-7B32-2023-20230906",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://search.bger.ch/ext/eurospider/live/it/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F06-09-2023-7B_32-2023&lang=it&type=show_document&zoom=NO",
+      "retrievalUrl": "https://search.bger.ch/ext/eurospider/live/it/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F06-09-2023-7B_32-2023&lang=it&type=show_document&zoom=NO",
+      "relevantProvisions": [
+        "E. 4.3.2, 4.4 und 5.2"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Amtlicher Volltext, E. 4.3.2, 4.4 und 5.2 erneut gelesen. Der Genfer Ersatzruhetag vom 02.01.2023 wurde im konkreten StPO-Fall nicht als offizieller Feiertag nach Art. 90 Abs. 2 StPO behandelt. Gerichtsschliessung genügte nicht zur Verlängerung. Der Willkürprüfungsrahmen und der konkrete Verfahrenskontext bleiben ausdrücklich begrenzt. Keine pauschale Aussage für alle Prozessordnungen oder alle Genfer Ersatzdaten.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://search.bger.ch/ext/eurospider/live/it/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F06-09-2023-7B_32-2023&lang=it&type=show_document&zoom=NO",
+        "httpStatus": 200,
+        "byteLength": 48036,
+        "sha256": "2e493d18bcbebcd14ffe15d85904eece1b38b09bdc0041626f4d5dc6c59d301e"
+      },
+      "evidence": {
+        "url": "https://search.bger.ch/ext/eurospider/live/it/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F06-09-2023-7B_32-2023&lang=it&type=show_document&zoom=NO",
+        "httpStatus": 200,
+        "byteLength": 48036,
+        "sha256": "2e493d18bcbebcd14ffe15d85904eece1b38b09bdc0041626f4d5dc6c59d301e",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-AP18B03-VSGE-KANTONSNAMEN-IT",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.swisstopo.admin.ch/it/scambio-di-geodati-tra-le-autorita",
+      "retrievalUrl": "https://www.swisstopo.admin.ch/it/scambio-di-geodati-tra-le-autorita",
+      "relevantProvisions": [
+        "Liste der Kantone: Ginevra und Vallese"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Die live gelesene italienische swisstopo-Seite enthält weiterhin Ginevra und Vallese in der Kantonsliste. Ausschliesslich Namensbeleg, keine Feiertagsgrundlage.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.swisstopo.admin.ch/it/scambio-di-geodati-tra-le-autorita",
+        "httpStatus": 200,
+        "byteLength": 341433,
+        "sha256": "67f2f017d42f9fb5ca16cf343726fe88f17e62dbd2fcdbc2ce11e8012d2d770f"
+      },
+      "evidence": {
+        "url": "https://www.swisstopo.admin.ch/it/scambio-di-geodati-tra-le-autorita",
+        "httpStatus": 200,
+        "byteLength": 341433,
+        "sha256": "67f2f017d42f9fb5ca16cf343726fe88f17e62dbd2fcdbc2ce11e8012d2d770f",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-SO-RTG-51241-V4319",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://bgs.so.ch/api/de/versions/4319/pdf_file",
+      "retrievalUrl": "https://bgs.so.ch/api/de/texts_of_law/512.41",
+      "relevantProvisions": [
+        "§ 1",
+        "§ 2",
+        "§ 3"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "§ 2 Abs. 1 enthält weiterhin elf benannte kantonale Ruhetage ausserhalb des Bezirks Bucheggberg und acht dort. Fronleichnam, Mariä Himmelfahrt und Allerheiligen sind ausdrücklich ausgenommen. 1. Mai beginnt erst um 12 Uhr. Das Modell hält diesen Halbtag getrennt und erzeugt keine operative Fristverschiebung daraus. § 2 Abs. 2 ermächtigt zu zusätzlichen kommunalen Tagen, die nicht erhoben werden.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://bgs.so.ch/api/de/versions/4319/pdf_file",
+        "httpStatus": 200,
+        "byteLength": 144155,
+        "sha256": "758f2f4c56ffb5a260b5eec1ff057d798c27b27036510b56a2746ae6aa653efa"
+      },
+      "evidence": {
+        "url": "https://bgs.so.ch/api/de/texts_of_law/512.41",
+        "httpStatus": 200,
+        "byteLength": 82578,
+        "sha256": "2e2b682bfa3ba4aa52606f2cd0339a6f911b4787070d634824cfafb7a3115b1d",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 4319,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.09.2014 (Beschlussdatum: 18.05.2014)",
+        "structured_document_id": 10145,
+        "title": "Gesetz über die öffentlichen Ruhetage",
+        "abbreviation": "Ruhetagsgesetz, RTG"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-NEW-YEAR",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-GOOD-FRIDAY",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-EASTER",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-MAY1",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-ASCENSION",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-PENTECOST",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-CORPUS-CHRISTI",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-ASSUMPTION",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-FEDERAL-FAST",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-ALL-SAINTS",
+        "SO-RTG-EXCEPT-BUCHEGGBERG-DAY-CHRISTMAS",
+        "SO-RTG-BUCHEGGBERG-DAY-NEW-YEAR",
+        "SO-RTG-BUCHEGGBERG-DAY-GOOD-FRIDAY",
+        "SO-RTG-BUCHEGGBERG-DAY-EASTER",
+        "SO-RTG-BUCHEGGBERG-DAY-MAY1",
+        "SO-RTG-BUCHEGGBERG-DAY-ASCENSION",
+        "SO-RTG-BUCHEGGBERG-DAY-PENTECOST",
+        "SO-RTG-BUCHEGGBERG-DAY-FEDERAL-FAST",
+        "SO-RTG-BUCHEGGBERG-DAY-CHRISTMAS"
+      ],
+      "relatedScopeIds": [
+        "SO-RTG-EXCEPT-BUCHEGGBERG",
+        "SO-RTG-BUCHEGGBERG"
+      ],
+      "relatedMappingIds": [
+        "MAP-SO-RTG-EXCEPT-BUCHEGGBERG-REST",
+        "MAP-SO-RTG-EXCEPT-BUCHEGGBERG-DEADLINE",
+        "MAP-SO-RTG-EXCEPT-BUCHEGGBERG-MUNICIPAL",
+        "MAP-SO-RTG-BUCHEGGBERG-REST",
+        "MAP-SO-RTG-BUCHEGGBERG-DEADLINE",
+        "MAP-SO-RTG-BUCHEGGBERG-MUNICIPAL"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-SO-FRISTENKALENDER-2026",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://so.ch/allgemeine-informationen/gesetzliche-feiertage/",
+      "retrievalUrl": "https://so.ch/allgemeine-informationen/gesetzliche-feiertage/",
+      "relevantProvisions": [
+        "Jahresliste 2026 und Hinweis zum Bezirk Bucheggberg"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Alle neun amtlichen Datumseinträge 2026 und der Bucheggberg-Hinweis erneut gelesen. Die Seite nennt den 1. Mai ab 12 Uhr ausdrücklich im Fristenkontext. Das bleibt als Quellenbefund dokumentiert, ohne den abgenommenen Produktausschluss einer halbtägigen Fristverschiebung zu ändern. Arbeits-/Ladenöffnungskalender sind ausdrücklich nicht gleichgesetzt.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://so.ch/allgemeine-informationen/gesetzliche-feiertage/",
+        "httpStatus": 200,
+        "byteLength": 40544,
+        "sha256": "572781b1bdbd8985a678d6459bb098c6d8cb7c8281c26f6601fe360cebb5ccf4"
+      },
+      "evidence": {
+        "url": "https://so.ch/allgemeine-informationen/gesetzliche-feiertage/",
+        "httpStatus": 200,
+        "byteLength": 40544,
+        "sha256": "572781b1bdbd8985a678d6459bb098c6d8cb7c8281c26f6601fe360cebb5ccf4",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-SO-BJ-FEIERTAGSVERZEICHNIS-20110101",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://so.ch/fileadmin/internet/administrator/dokumente/Gesetzliche_Feiertage.pdf",
+      "retrievalUrl": "https://so.ch/fileadmin/internet/administrator/dokumente/Gesetzliche_Feiertage.pdf",
+      "relevantProvisions": [
+        "Stand 01.01.2011, Solothurn, S. 15–16"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Die historischen Seiten 15 bis 16 erneut gelesen. Das Dokument unterscheidet gesetzliche Feiertage, zahlreiche kommunale Tage und gleichbehandelte Tage, darunter Berchtoldstag sowie Bucheggberg-Gleichstellungen. Der Katalog verwendet diesen historischen Übereinkommensbeleg weiterhin nicht als pauschale heutige operative Fristenliste und übernimmt keine selbständigen kommunalen Normen.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://so.ch/fileadmin/internet/administrator/dokumente/Gesetzliche_Feiertage.pdf",
+        "httpStatus": 200,
+        "byteLength": 91861,
+        "sha256": "4a50744a1afb739c94dde71d738ac0c5a1778631a28d02ecfc3678ea9797d9c4"
+      },
+      "evidence": {
+        "url": "https://so.ch/fileadmin/internet/administrator/dokumente/Gesetzliche_Feiertage.pdf",
+        "httpStatus": 200,
+        "byteLength": 91861,
+        "sha256": "4a50744a1afb739c94dde71d738ac0c5a1778631a28d02ecfc3678ea9797d9c4",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-CH-ESTV-KANTONSNAMEN-IT-AP18B03",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.estv.admin.ch/it/imposta-alla-fonte-link-amministrazioni-cantonale",
+      "retrievalUrl": "https://www.estv.admin.ch/it/imposta-alla-fonte-link-amministrazioni-cantonale",
+      "relevantProvisions": [
+        "Link alle autorità cantonali per l’imposta alla fonte"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Die amtliche italienische ESTV-Linkliste führt weiterhin Friburgo und Soletta. Bestätigt nur die verwendeten Kantonsnamen, nicht Rechtsgrundlagen oder alle Produktübersetzungen.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.estv.admin.ch/it/imposta-alla-fonte-link-amministrazioni-cantonale",
+        "httpStatus": 200,
+        "byteLength": 332259,
+        "sha256": "877e35461bc00c960d86f5e0005b49e67d43ef5930260a51a845e234cb59d64c"
+      },
+      "evidence": {
+        "url": "https://www.estv.admin.ch/it/imposta-alla-fonte-link-amministrazioni-cantonale",
+        "httpStatus": 200,
+        "byteLength": 332259,
+        "sha256": "877e35461bc00c960d86f5e0005b49e67d43ef5930260a51a845e234cb59d64c",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-CH-BK-KANTONSNAMEN-RM-2025-AP18B03",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.bk.admin.ch/dam/bk/de/dokumente/komm-ue/Buku2025/BUKU_2025_RM.pdf.download.pdf/BUKU_2025_RM.pdf",
+      "retrievalUrl": "https://www.bk.admin.ch/dam/rm/sd-web/N3eti3Fxfum5/BUKU_2025_RM.pdf",
+      "relevantProvisions": [
+        "Ausgabe 2025, S. 8, Kantonskarte"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Der alte URL lieferte beim Direktabruf HTTP 502. Auf der aktuellen amtlichen Archivseite wurde der migrierte Download derselben Ausgabe 2025 ermittelt, erfolgreich direkt heruntergeladen und die Karte auf Seite 8 textlich sowie visuell geprüft. Friburg und Soloturn sind bestätigt. Sprachbeleg unverändert, kein aktueller Feiertagsnormstand.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.bk.admin.ch/dam/bk/de/dokumente/komm-ue/Buku2025/BUKU_2025_RM.pdf.download.pdf/BUKU_2025_RM.pdf",
+        "httpStatus": 502,
+        "byteLength": 16,
+        "sha256": null
+      },
+      "evidence": {
+        "url": "https://www.bk.admin.ch/dam/rm/sd-web/N3eti3Fxfum5/BUKU_2025_RM.pdf",
+        "httpStatus": 200,
+        "byteLength": 8987792,
+        "sha256": "088e459a6392fbf750a5a625d29acbcc733c713cecdc9389262743e6b000465b",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-UR-LSG-701421-20030101",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://rechtsbuch.ur.ch/api/de/versions/963/pdf_file",
+      "retrievalUrl": "https://rechtsbuch.ur.ch/api/de/texts_of_law/70.1421",
+      "relevantProvisions": [
+        "Art. 9",
+        "Art. 10"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Art. 9 Abs. 1 Bst. b bestätigt die 14 kantonsweiten Ruhetage. Bundesfeiertag ist gesondert über die Bundesquelle verankert. Bst. c hält Gemeindefeiertage getrennt, die nicht erhoben werden. Art. 10 verweist für arbeitsgesetzliche Sonntagsgleichstellung auf die engere KAV-Liste. Die amtliche ungewöhnliche Datierung von Beschluss und Inkrafttreten bleibt unverändert wiedergegeben.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://rechtsbuch.ur.ch/api/de/versions/963/pdf_file",
+        "httpStatus": 200,
+        "byteLength": 133656,
+        "sha256": "3c9bc910fda3d89f2987803aa13cf2da5d77a136dc987f98eca371c1e743e3ce"
+      },
+      "evidence": {
+        "url": "https://rechtsbuch.ur.ch/api/de/texts_of_law/70.1421",
+        "httpStatus": 200,
+        "byteLength": 140125,
+        "sha256": "5d298139cb26a70b591aabfe21eb1f691607e6f3811141a5d97498d4c9444e6c",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 963,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.01.2003 (Beschlussdatum: 09.02.2003)",
+        "structured_document_id": 728,
+        "title": "Gesetz über den Ladenschluss und die Sonntagsruhe",
+        "abbreviation": "LSG"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "UR-LSG-ALL-DAY-NEW-YEAR",
+        "UR-LSG-ALL-DAY-EPIPHANY",
+        "UR-LSG-ALL-DAY-ST-JOSEPH",
+        "UR-LSG-ALL-DAY-GOOD-FRIDAY",
+        "UR-LSG-ALL-DAY-EASTER-MONDAY",
+        "UR-LSG-ALL-DAY-ASCENSION",
+        "UR-LSG-ALL-DAY-WHIT-MONDAY",
+        "UR-LSG-ALL-DAY-CORPUS-CHRISTI",
+        "UR-LSG-ALL-DAY-ASSUMPTION",
+        "UR-LSG-ALL-DAY-ALL-SAINTS",
+        "UR-LSG-ALL-DAY-IMMACULATE-CONCEPTION",
+        "UR-LSG-ALL-DAY-CHRISTMAS",
+        "UR-LSG-ALL-DAY-ST-STEPHEN"
+      ],
+      "relatedScopeIds": [
+        "UR-LSG-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-UR-LSG-ALL-REST",
+        "MAP-UR-LSG-ALL-PROCEDURE",
+        "MAP-UR-LSG-ALL-LABOUR",
+        "MAP-UR-LSG-ALL-LOCAL-OUT"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-UR-KAV-201111-20020201",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://rechtsbuch.ur.ch/data/20.1111/de",
+      "retrievalUrl": "https://rechtsbuch.ur.ch/api/de/texts_of_law/20.1111",
+      "relevantProvisions": [
+        "Art. 6"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Art. 6 bestätigt genau die acht kantonalen ArG-Tage Neujahr, Karfreitag, Auffahrt, Fronleichnam, Mariä Himmelfahrt, Allerheiligen, Mariä Empfängnis und Weihnachten. Bundesfeiertag gesondert. Die vollständige LSG-Liste wird nicht in diese Teilmenge umgedeutet.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://rechtsbuch.ur.ch/data/20.1111/de",
+        "httpStatus": 200,
+        "byteLength": 2291,
+        "sha256": "0391183ed65f514d54f655c9fb92594495ef85cbea2348b04338e2bc559819e6"
+      },
+      "evidence": {
+        "url": "https://rechtsbuch.ur.ch/api/de/texts_of_law/20.1111",
+        "httpStatus": 200,
+        "byteLength": 94474,
+        "sha256": "3f6c0768296913c6407bb401591aca1ecb540208a71b280e365af5ba95b1fe22",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 1120,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.02.2002 (Beschlussdatum: 26.09.2001)",
+        "structured_document_id": 9,
+        "title": "Kantonale Arbeitsverordnung",
+        "abbreviation": "KAV"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-UR-FEIERTAGE-20230406",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.ur.ch/publikationen/6581",
+      "retrievalUrl": "https://www.ur.ch/publikationen/6581",
+      "relevantProvisions": [
+        "Ausgabe 04/2023, Stand 06.04.2023, S. 1"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Die vollständige amtliche Tabelle auf Seite 1 bestätigt die 14 LSG-Tage sowie die neun sonntagsgleichen Tage einschliesslich Bundesfeier. Dreikönige, Josefstag, Oster- und Pfingstmontag sowie Stephanstag bleiben arbeitsgesetzliche Werktage. Die Tabelle wird als ergänzender Listenabgleich und nicht als neue Verfahrensfreigabe verwendet.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.ur.ch/publikationen/6581",
+        "httpStatus": 200,
+        "byteLength": 560485,
+        "sha256": "5046d7558a61ea345a1ad1f2c3d3a2b9abec4887e83bcbd0aad2de239c8e49a7"
+      },
+      "evidence": {
+        "url": "https://www.ur.ch/publikationen/6581",
+        "httpStatus": 200,
+        "byteLength": 560485,
+        "sha256": "5046d7558a61ea345a1ad1f2c3d3a2b9abec4887e83bcbd0aad2de239c8e49a7",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-OW-RTG-9752-20090801",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://gdb.ow.ch/api/de/versions/103/pdf_file",
+      "retrievalUrl": "https://gdb.ow.ch/api/de/texts_of_law/975.2",
+      "relevantProvisions": [
+        "Art. 2"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Art. 2 bestätigt acht Feiertage und fünf hohe Feiertage. Bruderklausenfest am 25.09. ist kantonaler Ruhetag. Ostermontag, Pfingstmontag und Stephanstag stehen nicht in der kantonalen Liste. Kommunaler Lokalfeiertag und engere achtkantonale ArG-Teilmenge sind getrennt. Keine zusätzliche operative Fristwirkung.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://gdb.ow.ch/api/de/versions/103/pdf_file",
+        "httpStatus": 200,
+        "byteLength": 166761,
+        "sha256": "c539cae4b53adb1b11e83d7edc453c6c1941593bc0fb6413c51d557aff870dba"
+      },
+      "evidence": {
+        "url": "https://gdb.ow.ch/api/de/texts_of_law/975.2",
+        "httpStatus": 200,
+        "byteLength": 136446,
+        "sha256": "7aebb5bfaeed2fe6a4b1b7946e87ae4d29bbe4b25c1a4af933a69e6325d59b81",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 103,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.08.2009 (Beschlussdatum: 28.05.2009)",
+        "structured_document_id": 128,
+        "title": "Gesetz über die öffentlichen Ruhetage",
+        "abbreviation": "Ruhetagsgesetz"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "OW-RTG-ALL-DAY-NEW-YEAR",
+        "OW-RTG-ALL-DAY-GOOD-FRIDAY",
+        "OW-RTG-ALL-DAY-EASTER",
+        "OW-RTG-ALL-DAY-ASCENSION",
+        "OW-RTG-ALL-DAY-PENTECOST",
+        "OW-RTG-ALL-DAY-CORPUS-CHRISTI",
+        "OW-RTG-ALL-DAY-ASSUMPTION",
+        "OW-RTG-ALL-DAY-FEDERAL-FAST",
+        "OW-RTG-ALL-DAY-BRUDER-KLAUS",
+        "OW-RTG-ALL-DAY-ALL-SAINTS",
+        "OW-RTG-ALL-DAY-IMMACULATE-CONCEPTION",
+        "OW-RTG-ALL-DAY-CHRISTMAS"
+      ],
+      "relatedScopeIds": [
+        "OW-RTG-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-OW-RTG-ALL-REST",
+        "MAP-OW-RTG-ALL-PROCEDURE",
+        "MAP-OW-RTG-ALL-LABOUR",
+        "MAP-OW-RTG-ALL-LOCAL-OUT"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-NW-RTG-9211-20160101",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://gesetze.nw.ch/app/de/texts_of_law/921.1",
+      "retrievalUrl": "https://gesetze.nw.ch/api/de/texts_of_law/921.1",
+      "relevantProvisions": [
+        "Art. 2"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Art. 2 Abs. 1 bestätigt dreizehn namentliche Tage, darunter Josefstag. Keine Oster-/Pfingstmontags- oder Stephanstagsregel aus dieser Liste. Kommunale Reglemente bleiben ausserhalb der Erhebung. Abs. 2 bestätigt die engere ArG-Teilmenge ohne Josefstag und mit gesondertem Bundesfeiertag.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://gesetze.nw.ch/app/de/texts_of_law/921.1",
+        "httpStatus": 200,
+        "byteLength": 2297,
+        "sha256": "8195be8c5ed340777ce24cd3a596d119e49bce7c5eb723f3724459dc1cff7d72"
+      },
+      "evidence": {
+        "url": "https://gesetze.nw.ch/api/de/texts_of_law/921.1",
+        "httpStatus": 200,
+        "byteLength": 119963,
+        "sha256": "b053c92b7a58d0775561926c04bbb5ca33ea3c9796d52a6e6906af39a8b9f12c",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 668,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.01.2016 (Beschlussdatum: 27.05.2015)",
+        "structured_document_id": 1260,
+        "title": "Gesetz über die öffentlichen Ruhetage",
+        "abbreviation": "Ruhetagsgesetz, RTG"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "NW-RTG-ALL-DAY-NEW-YEAR",
+        "NW-RTG-ALL-DAY-ST-JOSEPH",
+        "NW-RTG-ALL-DAY-GOOD-FRIDAY",
+        "NW-RTG-ALL-DAY-EASTER",
+        "NW-RTG-ALL-DAY-ASCENSION",
+        "NW-RTG-ALL-DAY-PENTECOST",
+        "NW-RTG-ALL-DAY-CORPUS-CHRISTI",
+        "NW-RTG-ALL-DAY-ASSUMPTION",
+        "NW-RTG-ALL-DAY-FEDERAL-FAST",
+        "NW-RTG-ALL-DAY-ALL-SAINTS",
+        "NW-RTG-ALL-DAY-IMMACULATE-CONCEPTION",
+        "NW-RTG-ALL-DAY-CHRISTMAS"
+      ],
+      "relatedScopeIds": [
+        "NW-RTG-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-NW-RTG-ALL-REST",
+        "MAP-NW-RTG-ALL-PROCEDURE",
+        "MAP-NW-RTG-ALL-LABOUR",
+        "MAP-NW-RTG-ALL-LOCAL-OUT"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-BS-RLG-811100-20200701",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.gesetzessammlung.bs.ch/frontend/versions/4927/download_pdf_file?locale=de",
+      "retrievalUrl": "https://www.gesetzessammlung.bs.ch/api/de/texts_of_law/811.100",
+      "relevantProvisions": [
+        "§ 2"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Der alte PDF-URL lieferte HTTP 404. Die amtliche aktuelle Gesetzes-API bestätigt aber weiterhin Version 4927 seit 01.07.2020 und liefert den vollständigen Text. § 2 Abs. 1 enthält die modellierten zwölf benannten Tage. Es sind vier hohe Feiertage, Bettag zählt zu den übrigen Feiertagen. Keine Fasnacht oder 2.-Januar-Regel.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.gesetzessammlung.bs.ch/frontend/versions/4927/download_pdf_file?locale=de",
+        "httpStatus": 404,
+        "byteLength": 2896,
+        "sha256": null
+      },
+      "evidence": {
+        "url": "https://www.gesetzessammlung.bs.ch/api/de/texts_of_law/811.100",
+        "httpStatus": 200,
+        "byteLength": 130381,
+        "sha256": "20aa54f401d70b7ab698d05ea5594d9201a0b7b4c8a98b78607e7cc31b940830",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 4927,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.07.2020 (Beschlussdatum: 13.02.2019)",
+        "structured_document_id": 18534,
+        "title": "Gesetz über öffentliche Ruhetage und Ladenöffnung",
+        "abbreviation": "RLG"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "BS-RLG-ALL-DAY-NEW-YEAR",
+        "BS-RLG-ALL-DAY-GOOD-FRIDAY",
+        "BS-RLG-ALL-DAY-EASTER",
+        "BS-RLG-ALL-DAY-EASTER-MONDAY",
+        "BS-RLG-ALL-DAY-MAY1",
+        "BS-RLG-ALL-DAY-ASCENSION",
+        "BS-RLG-ALL-DAY-PENTECOST",
+        "BS-RLG-ALL-DAY-WHIT-MONDAY",
+        "BS-RLG-ALL-DAY-FEDERAL-FAST",
+        "BS-RLG-ALL-DAY-CHRISTMAS",
+        "BS-RLG-ALL-DAY-ST-STEPHEN"
+      ],
+      "relatedScopeIds": [
+        "BS-RLG-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-BS-RLG-ALL"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-BS-FEIERTAGE-2026-2028",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://www.bs.ch/themen/arbeit-und-steuern/feiertage-im-kanton-basel-stadt",
+      "retrievalUrl": "https://www.bs.ch/themen/arbeit-und-steuern/feiertage-im-kanton-basel-stadt",
+      "relevantProvisions": [
+        "Amtliche Jahreslisten 2026 bis 2028"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Je neun Datumseinträge für 2026, 2027 und 2028 erneut mit den modellierten Fixdaten und Osterabständen abgeglichen. Die drei stets sonntäglichen benannten RLG-Tage fehlen in der Informationsliste, ohne dass daraus ein Widerspruch zur Zwölferliste folgt. Die inzwischen zusätzlich sichtbaren Jahre 2029 bis 2031 werden nicht als neue Produktabdeckung übernommen.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://www.bs.ch/themen/arbeit-und-steuern/feiertage-im-kanton-basel-stadt",
+        "httpStatus": 200,
+        "byteLength": 113909,
+        "sha256": "f07c50ce21d6b372dea4e88b649c5939e150fe92e4aea00046aa816ae1cac084"
+      },
+      "evidence": {
+        "url": "https://www.bs.ch/themen/arbeit-und-steuern/feiertage-im-kanton-basel-stadt",
+        "httpStatus": 200,
+        "byteLength": 113909,
+        "sha256": "f07c50ce21d6b372dea4e88b649c5939e150fe92e4aea00046aa816ae1cac084",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-BL-RTG-547-20191201",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://bl.clex.ch/api/versions/2507/pdf_file_with_annexes",
+      "retrievalUrl": "https://bl.clex.ch/api/de/texts_of_law/547",
+      "relevantProvisions": [
+        "§ 2",
+        "§ 3",
+        "§ 10"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "§ 2 bestätigt zwölf benannte kantonale Tage, darunter ganztägiger 1. Mai und drei benannte Sonntage. § 3 ermächtigt die Gemeinden zu weiteren Tagen, die nicht erhoben werden. § 10 regelt die arbeitsrechtliche Gleichstellung nicht sonntäglicher öffentlicher Ruhetage. Keine Personalhalbtage oder Schliessungen übernommen.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://bl.clex.ch/api/versions/2507/pdf_file_with_annexes",
+        "httpStatus": 200,
+        "byteLength": 235444,
+        "sha256": "9d7442c865dc6bf1b94d6821d11b39228d1721c84fbf91c658391ba46a95020e"
+      },
+      "evidence": {
+        "url": "https://bl.clex.ch/api/de/texts_of_law/547",
+        "httpStatus": 200,
+        "byteLength": 174454,
+        "sha256": "9fd426061ddf3822c2972d4c96fa06925b82461d6651bd5927c309435e880c72",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "currentVersion": {
+        "id": 2507,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.12.2019 (Beschlussdatum: 12.09.2019)",
+        "structured_document_id": 10484,
+        "title": "Gesetz über die öffentlichen Ruhetage und den Sonntagsverkauf",
+        "abbreviation": "Ruhetagsgesetz, RTG"
+      },
+      "futureVersions": [],
+      "relatedRuleIds": [
+        "BL-RTG-ALL-DAY-NEW-YEAR",
+        "BL-RTG-ALL-DAY-GOOD-FRIDAY",
+        "BL-RTG-ALL-DAY-EASTER",
+        "BL-RTG-ALL-DAY-EASTER-MONDAY",
+        "BL-RTG-ALL-DAY-MAY1",
+        "BL-RTG-ALL-DAY-ASCENSION",
+        "BL-RTG-ALL-DAY-PENTECOST",
+        "BL-RTG-ALL-DAY-WHIT-MONDAY",
+        "BL-RTG-ALL-DAY-FEDERAL-FAST",
+        "BL-RTG-ALL-DAY-CHRISTMAS",
+        "BL-RTG-ALL-DAY-ST-STEPHEN"
+      ],
+      "relatedScopeIds": [
+        "BL-RTG-ALL"
+      ],
+      "relatedMappingIds": [
+        "MAP-BL-RTG-ALL",
+        "MAP-BL-MUNICIPAL-EXCLUSION"
+      ],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    },
+    {
+      "sourceId": "SRC-BL-PERSONAL-FEIERTAGE-2026",
+      "checkedOn": "2026-09-22",
+      "sourceUrl": "https://bl-api.webcloud7.ch/politik-und-behorden/direktionen/finanz-und-kirchendirektion/personalamt/arbeitszeiten/dateien_arbeitszeiten/2026_ubersicht-feiertage-arbeitsfreie-tage-kompensationstage-und-netto-sollarbeitszeit.pdf/%40%40download/file/2026_U%CC%88bersicht%20Feiertage%20arbeitsfreie%20Tage%20Kompensationstage%20und%20Netto-Sollarbeitszeit.pdf",
+      "retrievalUrl": "https://bl-api.webcloud7.ch/politik-und-behorden/direktionen/finanz-und-kirchendirektion/personalamt/arbeitszeiten/dateien_arbeitszeiten/2026_ubersicht-feiertage-arbeitsfreie-tage-kompensationstage-und-netto-sollarbeitszeit.pdf/%40%40download/file/2026_U%CC%88bersicht%20Feiertage%20arbeitsfreie%20Tage%20Kompensationstage%20und%20Netto-Sollarbeitszeit.pdf",
+      "relevantProvisions": [
+        "Nur als gesetzliche Feiertage bezeichnete Zeilen zum Datumsabgleich"
+      ],
+      "outcome": "unchanged",
+      "method": "targetedSubstantiveComparison",
+      "finding": "Die als gesetzliche Feiertage bezeichneten Zeilen von Seite 1 stimmen mit dem Normbestand und den Datumsregeln überein. Der gesetzliche 1. Mai ist ganztägig. Fasnachts-, Kompensations- und Büroschliesstage bleiben ausgeschlossen. Seite 2 nennt für 01.01.2026 irrtümlich Mittwoch, während Seite 1 korrekt Donnerstag nennt. Dieser redaktionelle Wochentagsfehler wird weder als Rechtsänderung noch in das Modell übernommen.",
+      "limits": "Keine formelle Fachfreigabe durch Codex. Keine Aktivierung zusätzlicher kantonaler Fristenprofile. Vorhandene Vorbehalte und provisorische Produktübersetzungen bleiben erhalten.",
+      "originalRetrieval": {
+        "url": "https://bl-api.webcloud7.ch/politik-und-behorden/direktionen/finanz-und-kirchendirektion/personalamt/arbeitszeiten/dateien_arbeitszeiten/2026_ubersicht-feiertage-arbeitsfreie-tage-kompensationstage-und-netto-sollarbeitszeit.pdf/%40%40download/file/2026_U%CC%88bersicht%20Feiertage%20arbeitsfreie%20Tage%20Kompensationstage%20und%20Netto-Sollarbeitszeit.pdf",
+        "httpStatus": 200,
+        "byteLength": 166558,
+        "sha256": "5cf71c6f185b467330f2bc85ef9349bb77171fa63944ebd6f3156f7617ade1f3"
+      },
+      "evidence": {
+        "url": "https://bl-api.webcloud7.ch/politik-und-behorden/direktionen/finanz-und-kirchendirektion/personalamt/arbeitszeiten/dateien_arbeitszeiten/2026_ubersicht-feiertage-arbeitsfreie-tage-kompensationstage-und-netto-sollarbeitszeit.pdf/%40%40download/file/2026_U%CC%88bersicht%20Feiertage%20arbeitsfreie%20Tage%20Kompensationstage%20und%20Netto-Sollarbeitszeit.pdf",
+        "httpStatus": 200,
+        "byteLength": 166558,
+        "sha256": "5cf71c6f185b467330f2bc85ef9349bb77171fa63944ebd6f3156f7617ade1f3",
+        "hashMeaning": "Prüfsumme der tatsächlich abgerufenen Prüfkopie, kein behaupteter Hashvergleich mit einer früheren Erfassung."
+      },
+      "relatedRuleIds": [],
+      "relatedScopeIds": [],
+      "relatedMappingIds": [],
+      "followUp": {
+        "required": false,
+        "reason": "Keine relevante Inhaltsabweichung. Technische URL-Migrationen und ergänzende Quellenfehler sind im Befund dokumentiert."
+      }
+    }
+  ]
+}
