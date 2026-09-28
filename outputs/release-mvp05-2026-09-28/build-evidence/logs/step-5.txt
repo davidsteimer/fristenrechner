@@ -1,0 +1,285 @@
+
+> fristenrechner-schweiz-spfx@0.5.0 test:built
+> node --test --test-timeout=60000 test-build/*.test.cjs
+
+TAP version 13
+# Subtest: AP19C2 real packaged consumer rejects actual candidate before fetching any artifacts
+ok 1 - AP19C2 real packaged consumer rejects actual candidate before fetching any artifacts
+  ---
+  duration_ms: 297.859
+  type: 'test'
+  ...
+# Subtest: AP19C2 compiled consumer transports twenty rules, twenty-four bindings and blocks all actual AVIG paths
+ok 2 - AP19C2 compiled consumer transports twenty rules, twenty-four bindings and blocks all actual AVIG paths
+  ---
+  duration_ms: 2768.930792
+  type: 'test'
+  ...
+# {"packagePath":"<repository-root>/.work/mvp05-spfx-build-jPfxpi/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg","packageSha256":"f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39","bundlePath":"ClientSideAssets/fristenrechner-web-part_9b3a89c26cf2e650e64d.js","bundleSha256":"7c1cfd32febb60c9ebe3737558a836a944d3dba5b5daf8af0f3e6c284f6ebb73"}
+# Subtest: AP19C2 actual ES5 product computes all eight AVIG bindings only under isolated synthetic approvals
+ok 3 - AP19C2 actual ES5 product computes all eight AVIG bindings only under isolated synthetic approvals
+  ---
+  duration_ms: 2109.766959
+  type: 'test'
+  ...
+# Subtest: AP19C2 compiled resolver rejects future fund reference dates and office/fund substitutions
+ok 4 - AP19C2 compiled resolver rejects future fund reference dates and office/fund substitutions
+  ---
+  duration_ms: 1739.957167
+  type: 'test'
+  ...
+# Subtest: AP19C2 packaged transport rejects tampered AVIG binding without replacing a valid cache
+ok 5 - AP19C2 packaged transport rejects tampered AVIG binding without replacing a valid cache
+  ---
+  duration_ms: 1499.694333
+  type: 'test'
+  ...
+# Subtest: emitted ES5 HolidayCatalogError retains its own Error subclass identity
+ok 6 - emitted ES5 HolidayCatalogError retains its own Error subclass identity
+  ---
+  duration_ms: 5.611042
+  type: 'test'
+  ...
+# Subtest: the unchanged actual SPPKG AMD bundle executes through its real exported WebPart
+ok 7 - the unchanged actual SPPKG AMD bundle executes through its real exported WebPart
+  ---
+  duration_ms: 272.102083
+  type: 'test'
+  ...
+# {"packagePath":"<repository-root>/.work/mvp05-spfx-build-jPfxpi/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg","packageSha256":"f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39","bundlePath":"ClientSideAssets/fristenrechner-web-part_9b3a89c26cf2e650e64d.js","bundleSha256":"7c1cfd32febb60c9ebe3737558a836a944d3dba5b5daf8af0f3e6c284f6ebb73"}
+# Subtest: packaged HolidayCatalogError is a real subclass, not a relabelled native Error
+ok 8 - packaged HolidayCatalogError is a real subclass, not a relabelled native Error
+  ---
+  duration_ms: 342.243791
+  type: 'test'
+  ...
+# Subtest: emitted ES5 CommonJS
+    # Subtest: accepts all real approved format-4 bytes, including nullable oneOf branches, from an empty store
+    ok 1 - accepts all real approved format-4 bytes, including nullable oneOf branches, from an empty store
+      ---
+      duration_ms: 1264.614792
+      type: 'test'
+      ...
+    # Subtest: retains AP5 format-1 compatibility without a pre-existing active release
+    ok 2 - retains AP5 format-1 compatibility without a pre-existing active release
+      ---
+      duration_ms: 151.832042
+      type: 'test'
+      ...
+    # Subtest: promotes a real format-3 active release to the real format-4 release without fallback
+    ok 3 - promotes a real format-3 active release to the real format-4 release without fallback
+      ---
+      duration_ms: 1229.4825
+      type: 'test'
+      ...
+    # Subtest: rejects invalid oneOf value and does not activate any partial release
+    ok 4 - rejects invalid oneOf value and does not activate any partial release
+      ---
+      duration_ms: 210.9715
+      type: 'test'
+      ...
+    # Subtest: rejects schema-valid but forbidden CH parent and does not activate any partial release
+    ok 5 - rejects schema-valid but forbidden CH parent and does not activate any partial release
+      ---
+      duration_ms: 161.507834
+      type: 'test'
+      ...
+    # Subtest: rejects unknown catalog core field and does not activate any partial release
+    ok 6 - rejects unknown catalog core field and does not activate any partial release
+      ---
+      duration_ms: 136.232542
+      type: 'test'
+      ...
+    # Subtest: rejects unresolvable catalog source and does not activate any partial release
+    ok 7 - rejects unresolvable catalog source and does not activate any partial release
+      ---
+      duration_ms: 174.883208
+      type: 'test'
+      ...
+    # Subtest: rejects a missing catalog on first use without inventing an active release
+    ok 8 - rejects a missing catalog on first use without inventing an active release
+      ---
+      duration_ms: 130.192875
+      type: 'test'
+      ...
+    # Subtest: oneOf propagates an unexpected error unchanged instead of swallowing it as a branch mismatch
+    ok 9 - oneOf propagates an unexpected error unchanged instead of swallowing it as a branch mismatch
+      ---
+      duration_ms: 112.710417
+      type: 'test'
+      ...
+    # Subtest: retains the complete validated format-4 active release after invalid schema or semantics
+    ok 10 - retains the complete validated format-4 active release after invalid schema or semantics
+      ---
+      duration_ms: 954.784458
+      type: 'test'
+      ...
+    # Subtest: a catalog checksum mismatch preserves the previous valid release
+    ok 11 - a catalog checksum mismatch preserves the previous valid release
+      ---
+      duration_ms: 125.527708
+      type: 'test'
+      ...
+    1..11
+ok 9 - emitted ES5 CommonJS
+  ---
+  duration_ms: 4653.764708
+  type: 'suite'
+  ...
+# Subtest: actual packaged AMD bundle
+    # Subtest: accepts all real approved format-4 bytes, including nullable oneOf branches, from an empty store
+    ok 1 - accepts all real approved format-4 bytes, including nullable oneOf branches, from an empty store
+      ---
+      duration_ms: 1569.87475
+      type: 'test'
+      ...
+    # Subtest: retains AP5 format-1 compatibility without a pre-existing active release
+    ok 2 - retains AP5 format-1 compatibility without a pre-existing active release
+      ---
+      duration_ms: 165.146792
+      type: 'test'
+      ...
+    # Subtest: promotes a real format-3 active release to the real format-4 release without fallback
+    ok 3 - promotes a real format-3 active release to the real format-4 release without fallback
+      ---
+      duration_ms: 1167.191959
+      type: 'test'
+      ...
+    # Subtest: rejects invalid oneOf value and does not activate any partial release
+    ok 4 - rejects invalid oneOf value and does not activate any partial release
+      ---
+      duration_ms: 164.675042
+      type: 'test'
+      ...
+    # Subtest: rejects schema-valid but forbidden CH parent and does not activate any partial release
+    ok 5 - rejects schema-valid but forbidden CH parent and does not activate any partial release
+      ---
+      duration_ms: 209.197083
+      type: 'test'
+      ...
+    # Subtest: rejects unknown catalog core field and does not activate any partial release
+    ok 6 - rejects unknown catalog core field and does not activate any partial release
+      ---
+      duration_ms: 134.191625
+      type: 'test'
+      ...
+    # Subtest: rejects unresolvable catalog source and does not activate any partial release
+    ok 7 - rejects unresolvable catalog source and does not activate any partial release
+      ---
+      duration_ms: 182.811333
+      type: 'test'
+      ...
+    # Subtest: rejects a missing catalog on first use without inventing an active release
+    ok 8 - rejects a missing catalog on first use without inventing an active release
+      ---
+      duration_ms: 117.226083
+      type: 'test'
+      ...
+    # Subtest: oneOf propagates an unexpected error unchanged instead of swallowing it as a branch mismatch
+    ok 9 - oneOf propagates an unexpected error unchanged instead of swallowing it as a branch mismatch
+      ---
+      duration_ms: 128.525167
+      type: 'test'
+      ...
+    # Subtest: retains the complete validated format-4 active release after invalid schema or semantics
+    ok 10 - retains the complete validated format-4 active release after invalid schema or semantics
+      ---
+      duration_ms: 986.615583
+      type: 'test'
+      ...
+    # Subtest: a catalog checksum mismatch preserves the previous valid release
+    ok 11 - a catalog checksum mismatch preserves the previous valid release
+      ---
+      duration_ms: 123.929791
+      type: 'test'
+      ...
+    1..11
+ok 10 - actual packaged AMD bundle
+  ---
+  duration_ms: 4949.853792
+  type: 'suite'
+  ...
+# Subtest: AP19C3 real packaged consumer rejects actual candidate before fetching any artifacts
+ok 11 - AP19C3 real packaged consumer rejects actual candidate before fetching any artifacts
+  ---
+  duration_ms: 284.752708
+  type: 'test'
+  ...
+# Subtest: AP19C3 compiled consumer transports twenty-four rules, twenty-eight bindings and blocks all actual KVG paths
+ok 12 - AP19C3 compiled consumer transports twenty-four rules, twenty-eight bindings and blocks all actual KVG paths
+  ---
+  duration_ms: 2767.062917
+  type: 'test'
+  ...
+# {"packagePath":"<repository-root>/.work/mvp05-spfx-build-jPfxpi/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg","packageSha256":"f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39","bundlePath":"ClientSideAssets/fristenrechner-web-part_9b3a89c26cf2e650e64d.js","bundleSha256":"7c1cfd32febb60c9ebe3737558a836a944d3dba5b5daf8af0f3e6c284f6ebb73"}
+# Subtest: AP19C3 actual ES5 product computes all four KVG bindings only under isolated synthetic approvals
+ok 13 - AP19C3 actual ES5 product computes all four KVG bindings only under isolated synthetic approvals
+  ---
+  duration_ms: 2161.411958
+  type: 'test'
+  ...
+# Subtest: AP19C3 compiled resolver rejects a substituted product domicile and missing court reference
+ok 14 - AP19C3 compiled resolver rejects a substituted product domicile and missing court reference
+  ---
+  duration_ms: 1788.341083
+  type: 'test'
+  ...
+# Subtest: AP19C3 packaged transport rejects tampered KVG binding without replacing a valid cache
+ok 15 - AP19C3 packaged transport rejects tampered KVG binding without replacing a valid cache
+  ---
+  duration_ms: 1505.54475
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 actual package activates the approved format-5 release without synthetic approvals
+ok 16 - MVP 0.5 actual package activates the approved format-5 release without synthetic approvals
+  ---
+  duration_ms: 1992.22425
+  type: 'test'
+  ...
+# {"packagePath":"<repository-root>/.work/mvp05-spfx-build-jPfxpi/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg","packageSha256":"f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39","bundlePath":"ClientSideAssets/fristenrechner-web-part_9b3a89c26cf2e650e64d.js","bundleSha256":"7c1cfd32febb60c9ebe3737558a836a944d3dba5b5daf8af0f3e6c284f6ebb73"}
+# Subtest: MVP 0.5 emitted ES5 calculates all 28 actual approved bindings and keeps non-Bern contexts blocked
+ok 17 - MVP 0.5 emitted ES5 calculates all 28 actual approved bindings and keeps non-Bern contexts blocked
+  ---
+  duration_ms: 2980.733333
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 packaged tamper rejection preserves the previously validated active release
+ok 18 - MVP 0.5 packaged tamper rejection preserves the previously validated active release
+  ---
+  duration_ms: 1590.781584
+  type: 'test'
+  ...
+# Subtest: actual ES5 SocialCatalogError retains its error prototype
+ok 19 - actual ES5 SocialCatalogError retains its error prototype
+  ---
+  duration_ms: 2.648334
+  type: 'test'
+  ...
+# Subtest: actual packaged format-5 transport rejects the real candidate before artifact fetch
+ok 20 - actual packaged format-5 transport rejects the real candidate before artifact fetch
+  ---
+  duration_ms: 299.961833
+  type: 'test'
+  ...
+# Subtest: actual packaged consumer retains candidate social approvals and blocks calculation
+ok 21 - actual packaged consumer retains candidate social approvals and blocks calculation
+  ---
+  duration_ms: 2656.724167
+  type: 'test'
+  ...
+# {"packagePath":"<repository-root>/.work/mvp05-spfx-build-jPfxpi/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg","packageSha256":"f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39","bundlePath":"ClientSideAssets/fristenrechner-web-part_9b3a89c26cf2e650e64d.js","bundleSha256":"7c1cfd32febb60c9ebe3737558a836a944d3dba5b5daf8af0f3e6c284f6ebb73"}
+# Subtest: actual bundle rejects object-hash tampering without replacing a valid cache
+ok 22 - actual bundle rejects object-hash tampering without replacing a valid cache
+  ---
+  duration_ms: 1923.285792
+  type: 'test'
+  ...
+1..22
+# tests 42
+# suites 2
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10286.181083

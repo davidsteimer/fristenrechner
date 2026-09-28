@@ -38,16 +38,12 @@ test('MVP 0.4 loads the approved format-4 release including the complete holiday
   assert.deepEqual(approved.holidayCatalogs, candidate.holidayCatalogs);
 });
 
-test('normal web and preview entry points select MVP 0.4 while candidates require an explicit parameter', async () => {
-  const preview = await readFile('src/ui/preview/main.tsx', 'utf8');
-  const publicEntry = await readFile('src/public-app/main.tsx', 'utf8');
-  assert.match(preview, /import \{ mvp04CalculationData \} from '\.\.\/\.\.\/release\/mvp04ReleaseData'/);
-  assert.match(preview, /candidate === 'ap18c' \? ap18cCandidateCalculationData/);
-  assert.match(preview, /candidate === 'ap17c' \? ap17cCandidateCalculationData : mvp04CalculationData/);
-  assert.doesNotMatch(preview, /from '\.\/data'/);
-  assert.match(publicEntry, /import \{ mvp04CalculationData \} from '\.\.\/release\/mvp04ReleaseData'/);
-  assert.match(publicEntry, /<FristenrechnerApp data=\{mvp04CalculationData\}/);
-  assert.doesNotMatch(publicEntry, /ap18c|ap17c|qaPreset|approvedMvp03/i);
+test('historical MVP 0.4 remains an explicit immutable adapter independent of later default releases', async () => {
+  const adapter = await readFile('src/release/mvp04ReleaseData.ts', 'utf8');
+  assert.match(adapter, /data\/releases\/2026-09-22-mvp-04-approved\.1\/manifest.json/);
+  assert.equal((adapter.match(/import .+ from '..\/..\/data\/releases\/2026-09-22-mvp-04-approved\.1\//g) ?? []).length, 10);
+  assert.doesNotMatch(adapter, /candidates\/|mvp05|ap19c/);
+  assert.equal(approved.releaseId, '2026-09-22-mvp-04-approved.1');
 });
 
 test('release promotion does not enable additional cantons, procedural profiles or unmodelled VRPG mappings', () => {

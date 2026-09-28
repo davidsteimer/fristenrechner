@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 export { calculateDeadline } from './calculateDeadline';
+export { assertSocialProcedureCatalog, validateSocialCatalogReferences, canonicalSocialJson, socialObjectSha256 } from './socialCatalog';
+export { resolveSocialDeadline, calculateSocialDeadline } from './socialDeadline';
+export type { SocialProcedureCatalog, SocialDeadlineInput, SocialDeadlineResult } from './socialTypes';
 export {
   assertHolidayCatalog,
   assertHolidayCatalogProjection,

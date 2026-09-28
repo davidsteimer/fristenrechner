@@ -1,0 +1,331 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "legalProfile",
+  "profileId": "vrpg-be",
+  "lawCode": "VRPG-BE",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "BE"
+  },
+  "validity": {
+    "dataValidFrom": "2026-08-29",
+    "dataValidTo": null
+  },
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "AP12C am 31. August 2026 fachlich-technisch abgenommen. Format-3-Datenrelease mit ewigem Kalender für MVP 0.3 im Rahmen der Release-2-Finalisierung freigegeben."
+  },
+  "calculationContract": {
+    "acceptedDeadlineUnits": [
+      "day"
+    ],
+    "dateInputSemantics": "legallyRelevantDeliveryOrEventDate",
+    "timeModel": "dateOnlyNoTimezone",
+    "unknownSpecialLawHandling": "block",
+    "unsupportedInputHandling": "block"
+  },
+  "calendarPolicy": {
+    "holidayAnchor": "berneseProceduralLaw",
+    "jurisdictionSelection": "fixedBern",
+    "conflictHandling": "requireConfirmation",
+    "manualOverride": true,
+    "overrideReasonRequired": true
+  },
+  "selectors": [
+    {
+      "selectorId": "deliveryMethod",
+      "required": false,
+      "selectionMode": "explicit",
+      "unknownHandling": "warn",
+      "options": [
+        {
+          "value": "signatureMailUncollected",
+          "labelKey": "selector.deliveryMethod.signatureMailUncollected"
+        },
+        {
+          "value": "otherLegallyRelevantDate",
+          "labelKey": "selector.deliveryMethod.otherLegallyRelevantDate"
+        }
+      ]
+    },
+    {
+      "selectorId": "specialLawStatus",
+      "required": true,
+      "selectionMode": "explicit",
+      "unknownHandling": "block",
+      "options": [
+        {
+          "value": "noKnownOverride",
+          "labelKey": "selector.specialLawStatus.noKnownOverride"
+        },
+        {
+          "value": "knownOverride",
+          "labelKey": "selector.specialLawStatus.knownOverride"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "SRC-VRPG-BE-20230801",
+      "sourceType": "statute",
+      "title": "Gesetz über die Verwaltungsrechtspflege, BSG 155.21",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/155.21",
+      "documentVersionDate": "2023-08-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-FRG-BE-20210401",
+      "sourceType": "statute",
+      "title": "Gesetz über die Ruhe an öffentlichen Feiertagen, BSG 555.1",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/555.1",
+      "documentVersionDate": "2021-04-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-BE-VG-200-2026-421",
+      "sourceType": "caseLaw",
+      "title": "VGer BE SH 200 2026 421",
+      "authority": "Verwaltungsgericht des Kantons Bern",
+      "url": "https://entscheidsuche.ch/docs/BE_Verwaltungsgericht/BE_VG_001_200-2026-421_2026-06-26.pdf",
+      "documentVersionDate": "2026-06-26",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "VRPGBE-DELIV-001",
+      "phase": "delivery",
+      "priority": 10,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [
+        {
+          "selector": "deliveryMethod",
+          "operator": "in",
+          "values": [
+            "signatureMailUncollected"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "deliveryDate",
+        "mode": "seventhDayAfterFailedAttempt",
+        "daysAfterFailedAttempt": 7,
+        "requiresConfirmation": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 44 Abs. 3"
+        }
+      ],
+      "warningKey": "warning.deliveryFiction.confirmApplicability"
+    },
+    {
+      "ruleId": "VRPGBE-START-001",
+      "phase": "start",
+      "priority": 100,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2009-01-01"
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineStart",
+        "offsetCalendarDays": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 41 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-COUNT-001",
+      "phase": "count",
+      "priority": 200,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "counting",
+        "mode": "calendarDays"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 41 bis 44"
+        }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-END-001",
+      "phase": "end",
+      "priority": 300,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2009-01-01"
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineEnd",
+        "shift": "nextWorkingDay",
+        "nonWorkingDays": [
+          "saturday",
+          "sunday",
+          "publicHoliday"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 41 Abs. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-HOL-001",
+      "phase": "end",
+      "priority": 310,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "holidayAnchor",
+        "anchor": "berneseProceduralLaw"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 41 Abs. 2"
+        },
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2"
+        },
+        {
+          "sourceId": "JUD-BE-VG-200-2026-421",
+          "locator": "E. 4 und 6"
+        }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-HOL-002",
+      "phase": "end",
+      "priority": 320,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "holidaySet",
+        "calendarId": "be-public-holidays",
+        "action": "includeInheritedCalendar"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FRG-BE-20210401",
+          "locator": "Art. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-LEX-001",
+      "phase": "guardrail",
+      "priority": 510,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "specialLaw",
+        "action": "requireExplicitCheck"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 41 Abs. 3"
+        }
+      ],
+      "warningKey": "warning.specialLaw.confirmNoOverride"
+    },
+    {
+      "ruleId": "VRPGBE-COMP-001",
+      "phase": "compliance",
+      "priority": 400,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "submission",
+        "timing": "onOrBeforeLastDay",
+        "channels": [
+          "competentAuthority",
+          "swissPost",
+          "swissDiplomaticMission",
+          "incompetentBernOrFederalAuthority"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 42"
+        }
+      ]
+    },
+    {
+      "ruleId": "VRPGBE-EXT-001",
+      "phase": "guardrail",
+      "priority": 500,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "extension",
+        "statutoryDeadlineExtendable": false,
+        "authoritySetDeadlineExtendable": true,
+        "requiresTimelyReasonedRequest": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VRPG-BE-20230801",
+          "locator": "Art. 43 Abs. 1"
+        }
+      ],
+      "warningKey": "warning.extension.noAutomaticExtension"
+    }
+  ]
+}

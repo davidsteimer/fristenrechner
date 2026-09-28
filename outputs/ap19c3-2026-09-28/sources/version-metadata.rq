@@ -1,0 +1,8 @@
+SELECT ?resource ?predicate ?value WHERE {
+ VALUES ?resource {
+  <https://fedlex.data.admin.ch/eli/cc/2002/510>
+  <https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328>
+  <https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260701>
+ }
+ ?resource ?predicate ?value
+} ORDER BY ?resource ?predicate ?value

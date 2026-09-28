@@ -147,8 +147,24 @@ export async function verifyMvp04SourceApproval(root = repositoryRoot) {
   const approval = parse(await read(approvalPath));
   const paths = new Set([initialPath, ...approval.evidence.map(item => item.path),
     ...Object.values(approval.transition).flatMap(item => [item.beforePath, item.afterPath])]);
-  const files = new Map(await Promise.all([...paths].map(async path => [path, await read(path)])));
-  return validateMvp04SourceApproval(approval, files);
+  let archivedRegisterUsed = false;
+  const files = new Map(await Promise.all([...paths].map(async path => {
+    if (path === registerPath) {
+      // This verifies the historical 2026-09-22 decision, not today's register.
+      // A later append-only review can grow the living register. Its exact old
+      // bytes remain pinned by the unchanged original approval transition.
+      const archive = 'outputs/release-mvp05-2026-09-28/approval-inputs/' + registerPath;
+      try {
+        const bytes = await read(archive);
+        assertHash(bytes, approval.transition.register.afterSha256, archive);
+        archivedRegisterUsed = true;
+        return [path, bytes];
+      } catch (error) { if (error.code !== 'ENOENT') throw error; }
+    }
+    return [path, await read(path)];
+  })));
+  return { ...await validateMvp04SourceApproval(approval, files),
+    validationScope: 'historical-human-decision-not-current-register', archivedRegisterUsed };
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

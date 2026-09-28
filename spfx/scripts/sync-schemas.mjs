@@ -12,6 +12,8 @@ const productSchemaDirectory = resolve(projectRoot, 'src', 'schemas');
 const schemaNames = [
   'common.schema.json',
   'release-manifest.schema.json',
+  'release-manifest-v5.schema.json',
+  'social-procedure-catalog.schema.json',
   'legal-profile.schema.json',
   'calendar.schema.json',
   'calendar-rules-v2.schema.json',

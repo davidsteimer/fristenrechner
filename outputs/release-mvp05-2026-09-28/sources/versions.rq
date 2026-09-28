@@ -1,0 +1,17 @@
+PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
+SELECT DISTINCT ?work ?version ?from ?to WHERE {
+ VALUES ?work {
+ <https://fedlex.data.admin.ch/eli/cc/2002/510>
+ <https://fedlex.data.admin.ch/eli/cc/2007/804>
+ <https://fedlex.data.admin.ch/eli/cc/1959/827_857_845>
+ <https://fedlex.data.admin.ch/eli/cc/63/837_843_843>
+ <https://fedlex.data.admin.ch/eli/cc/1982/1676_1676_1676>
+ <https://fedlex.data.admin.ch/eli/cc/1961/29_29_29>
+ <https://fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184>
+ <https://fedlex.data.admin.ch/eli/cc/1983/1205_1205_1205>
+ <https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328>
+ }
+ ?version jolux:isMemberOf ?work; jolux:dateApplicability ?from.
+ OPTIONAL { ?version jolux:dateEndApplicability ?to }
+ FILTER(str(?from) >= "2024-01-01" && str(?from) <= "2028-01-01")
+} ORDER BY ?work ?from

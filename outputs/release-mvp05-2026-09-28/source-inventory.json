@@ -1,0 +1,1732 @@
+{
+  "inventoryId": "MVP05-SOURCE-INVENTORY-20260928",
+  "kind": "local-release-preparation-inventory",
+  "preparedOn": "2026-09-28",
+  "status": "candidate",
+  "humanApproval": false,
+  "comparedReleaseId": "2026-09-22-mvp-04-approved.1",
+  "candidateReleaseId": "2026-09-28-ap19c3-candidate.1",
+  "candidateManifestSha256": "8e0f7aa1901b1e26878ddead049a35c81cbf540fd6d68002597830f5c7e6b0da",
+  "counts": {
+    "previousManifestSources": 38,
+    "addedAP19ManifestSources": 15,
+    "manifestSources": 53,
+    "holidayCatalogSources": 84,
+    "overlap": 2,
+    "distinctTotal": 135,
+    "AP19ReviewSourceIds": 27,
+    "remainingManifestSourceIds": 26,
+    "catalogOnlySourceIds": 82,
+    "currentGovernanceRegister": 42,
+    "proposedRegisterAfterAdding15": 57
+  },
+  "note": "This inventory keeps historical baseline dates. It is not itself an AP13-approved review event. Other agents may supply later separate reviews for the remaining 26 entries.",
+  "evidenceBindings": [
+    {
+      "path": "outputs/ap19c1-2026-09-25/source-review.json",
+      "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+    },
+    {
+      "path": "outputs/ap19c2-2026-09-28/sources/source-review.json",
+      "sha256": "33d2fe1c6f6e1d54a97f8a9a54c97ce4a58aea56d0158a029ffa2a5d0f43abc3"
+    },
+    {
+      "path": "outputs/ap19c3-2026-09-28/sources/source-review.json",
+      "sha256": "00f16cfb9653d32a73555c9ccd6c22a32af7810aae0068fe540d5497aac1b6e9"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c1.md",
+      "sha256": "14a2549464fda9c193906e1e78bedcd84b1bb95e54934b3d3c8e95a205f1987a"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c2.md",
+      "sha256": "ee13addde7cfb93bcdc2681eb0286b6a50226bd371af108dd06829e93c65198a"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c3.md",
+      "sha256": "1623de9661787266d8b6e8d1881c473c8f28d39605704db01f148fa9c8ca8c67"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-quellenpruefung-mvp04.md",
+      "sha256": "329bb384dada0d68fd49cd2f4d52068cf62cf2d6597b2148721c065b0b39fd04"
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-approval.json",
+      "sha256": "e956172420aab77e45ea5462ed30e82efab59ea0a993a6682ceddbdea0efd884"
+    }
+  ],
+  "addedManifestSourceIds": [
+    "SRC-AP19C-EGELG-BE-20250101",
+    "SRC-AP19C-ELG-20260101",
+    "SRC-AP19C-ELG-20270101",
+    "SRC-AP19C-GSOG-BE",
+    "SRC-AP19C2-AMG-BE-ART35",
+    "SRC-AP19C2-AVIG-20260101",
+    "SRC-AP19C2-AVIV-20260101",
+    "SRC-AP19C2-AVIV-20260801",
+    "SRC-AP19C2-AVIV-20270101",
+    "SRC-AP19C2-AVIV-AS-2025-814",
+    "SRC-AP19C2-AVIV-AS-2026-258",
+    "SRC-AP19C2-AVIV-FUTURE-INDEX-20260928",
+    "SRC-AP19C3-KVG-20260101",
+    "SRC-AP19C3-KVG-20260701",
+    "SRC-AP19C3-KVG-FUTURE-INDEX-20260928"
+  ],
+  "remainingManifestSourceIds": [
+    "JUD-AP17C-VGER-BE-100-2024-8-20240404",
+    "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+    "JUD-BE-VG-100-2016-347",
+    "JUD-BE-VG-100-2017-270",
+    "JUD-BE-VG-100-2021-189",
+    "JUD-BE-VG-200-2026-421",
+    "JUD-BGER-1C-275-2009",
+    "JUD-BGER-8C-620-2007",
+    "JUD-BGER-9C-757-2007",
+    "SRC-AP17C-IVOEB-20220201",
+    "SRC-AP17C-IVOEB-OLD-20100701",
+    "SRC-AP17C-IVOEBG-20220201",
+    "SRC-AP17C-IVOEBV-20240901",
+    "SRC-AP17C-VRPG-BE-20260901",
+    "SRC-BGG-20260401",
+    "SRC-BPR-20221023",
+    "SRC-BUNDESFEIERTAG-19940701",
+    "SRC-PRG-BE-CURRENT",
+    "SRC-PRG-MATERIALS-2018",
+    "SRC-PRV-BE-CURRENT",
+    "SRC-RRB-498-2024",
+    "SRC-STPO-20250401",
+    "SRC-VPR-20220701",
+    "SRC-VRPG-BE-20230801",
+    "SRC-VWVG-20220701",
+    "SRC-ZPO-20260701"
+  ],
+  "unchangedArtifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "profiles/stpo.json",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "profiles/zpo.json",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+    },
+    {
+      "path": "holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+    }
+  ],
+  "entries": [
+    {
+      "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-pinpoint-review-not-a-newer-case-law-search",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-AP17C-VGER-BE-100-2024-8-20240404",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BE-VG-100-2016-347",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BE-VG-100-2017-270",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BE-VG-100-2021-189",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BE-VG-200-2026-421",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BGER-1C-275-2009",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BGER-8C-620-2007",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "JUD-BGER-9C-757-2007",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AG-AWA-FEIERTAGE",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AG-EGARR-20250901",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AG-EGZPO",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AI-INNERRHODEN-ZAHLEN-2025",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AI-RTG-822200-V1327",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AI-RUHETAGE-INFO-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AI-RUHETAGE-LISTE-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": "unclear-accepted-statutory-treatment-preserved"
+    },
+    {
+      "sourceId": "SRC-AI-STK-FEIERTAGE-20150929",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-AHVG-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-AHVG-20270101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-ATSG-20240101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-FRG-BE-20210401",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVG-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVG-20270101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVOEB-20220201",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVOEB-OLD-20100701",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVOEBG-20220201",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVOEBV-20240901",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVV-20250601",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-IVV-20270701",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-UVG-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP17C-VRPG-BE-20260901",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP18B03-VSGE-KANTONSNAMEN-IT",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP18B03-VSGE-KANTONSNAMEN-RM",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-25",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C-ELG-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-25",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C-ELG-20270101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-25",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "fresh-official-original-and-targeted-article-comparison",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C-GSOG-BE",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-25",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AMG-BE-ART35",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIG-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIV-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIV-20260801",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIV-20270101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIV-AS-2025-814",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIV-AS-2026-258",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C2-AVIV-FUTURE-INDEX-20260928",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C3-KVG-20260101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C3-KVG-20260701",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AP19C3-KVG-FUTURE-INDEX-20260928",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-28",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-bounded-official-review",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-AR-ARGV-82211-V1058",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ATSG-20240101",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-identical-official-source-alias",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BGER-7B32-2023-20230906",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BGG-20260401",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BJ-FRISTENHINWEISE-20121217",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BL-PERSONAL-FEIERTAGE-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BL-RTG-547-20191201",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BPR-20221023",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BS-FEIERTAGE-2026-2028",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BS-RLG-811100-20200701",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "inManifest": true,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-CH-BK-KANTONSNAMEN-RM-2025-AP18B03",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-CH-ESTV-KANTONSNAMEN-IT-AP18B03",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-CH-PARL-BUNDESFEIER-RM-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-FR-AMA-FEIERTAGE-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-FR-BAMG-866111-V8126",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-FR-JG-1301-V7926",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-FR-LEMT-866111-FR-V8126",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-FR-LJ-1301-FR-V7926",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-FRG-BE-20210401",
+      "inManifest": true,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": {
+        "reviewId": "MVP05-AP19-SOURCE-PREPARATION-20260928",
+        "mode": "reused-same-day-identical-official-source-alias",
+        "checkedOn": "2026-09-28"
+      },
+      "carryForwardBasis": null,
+      "disposition": "bounded-AP19-review-prepared-awaiting-consolidated-acceptance",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GE-FEIERTAGE-INFO-20260429",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GE-LJF-J145-19910101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GL-FAHRT-IA31-18350524",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GL-FAHRT-RR-20260106",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GL-RTG-IXB211-20190701",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GR-RUHETAGE-520100-IT-V2604",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GR-RUHETAGE-520100-RM-V2604",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GR-VRG-370100-RM-V3521",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-GR-VRG-370100-V3521",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-JU-FEIERTAGE-2026-2027",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-JU-LJF-5551-20230101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-LU-JUSG-260-20260101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-LU-RLG-855-20200501",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-LU-VRG-40-20210901",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NE-ADJF-941020-20250527",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NE-DELAIS-CIRCULAIRE-20260101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NE-FEIERTAGE-2026-2027",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NE-LDJF-94102-20100101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NE-LPA-152130-20260101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NE-RDF-152512-20230101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-NW-RTG-9211-20160101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-OW-RTG-9752-20090801",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-PRG-BE-CURRENT",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-PRG-MATERIALS-2018",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-PRV-BE-CURRENT",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-RRB-498-2024",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SG-KGER-FS20121-20120329",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SG-RLG-5521-V228",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SH-OGE-4020181K-20180824",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SH-RTG-900200-V1886",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SO-BJ-FEIERTAGSVERZEICHNIS-20110101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SO-FRISTENKALENDER-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SO-RTG-51241-V4319",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-STPO-20250401",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SZ-FEIERTAGSREGELUNG-AP18B04",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-SZ-RTG-545110-20180701",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-TG-RTG-8229-V2949",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-TI-FEIERTAGE-843200",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-TI-KANTONSNAME-RM",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-TI-LALL-843100",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-TI-LPAMM-165100-20250601",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-TI-UIL-FEIERTAGE-2026-2027",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-UR-FEIERTAGE-20230406",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-UR-KAV-201111-20020201",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-UR-LSG-701421-20030101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VD-DGEM-FAQ-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VD-FEIERTAGE-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VD-FEIERTAGE-2027",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VD-FEIERTAGE-2028",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VD-LEMP-82211-20120401",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VPR-20220701",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VRPG-BE-20230801",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VS-PERSONALBEZUEGE-1724-20260501",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VS-RPFLG-1731-20240101",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VS-RUHE-8222-20130301",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VS-VEKARG-822100-20161001",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-VWVG-20220701",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZG-FEIERTAGE-2026-2027",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZG-RLG-94231-20250822",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZG-VRG-1621-20251017",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZH-AWA-FEIERTAGE-2026",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZH-GOG-2111-N131",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZH-RLG-8224-N045",
+      "inManifest": false,
+      "inHolidayCatalog": true,
+      "inCurrentGovernanceRegister": false,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "unchanged-nonoperative-catalog-prior-review-carry-forward-proposed",
+      "knownConflict": null
+    },
+    {
+      "sourceId": "SRC-ZPO-20260701",
+      "inManifest": true,
+      "inHolidayCatalog": false,
+      "inCurrentGovernanceRegister": true,
+      "baselineLatestCheckedOn": "2026-09-22",
+      "preparationEvidence": null,
+      "carryForwardBasis": "MVP04-formally-approved-review-20260922",
+      "disposition": "separate-prerelease-check-required",
+      "knownConflict": null
+    }
+  ]
+}

@@ -3,13 +3,13 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Technische Beurteilung und Übergabe an eine Microsoft-365-IT |
-| Produktstand | MVP 0.4, SPFx-Paket `0.4.0.1` auf E und Q installiert und geprüft, fachliche Q-Abnahme erteilt. GitHub und P noch nicht aktualisiert |
-| Stand | 22. September 2026 |
+| Produktstand | MVP 0.5, SPFx-Paket `0.5.0.0` auf vier bestehenden E-/Q-Instanzen installiert und technisch geprüft, fachliche Q-Abnahme erteilt. Noch keine MVP-0.5-Veröffentlichung auf GitHub oder P |
+| Stand | 28. September 2026 |
 | Zielplattform | SharePoint Online und Microsoft Teams |
 | Lizenz | Programmcode AGPL-3.0-only, Dokumentation und kuratierte Daten grundsätzlich CC BY-SA 4.0 |
 | Repository | `davidsteimer/fristenrechner` |
 
-Die AP17-/AP18-Fachgrundlagen und die vollständige Quellenprüfung sind abgenommen. Nach dem dokumentierten [Fehler und Rückfall von `0.4.0.0`](../betrieb/eq-vorpruefung-mvp04.md) wurde das korrigierte Paket `0.4.0.1` auf allen vier internen E-/Q-Instanzen mit ihren vollständigen Format-4-Mirrors installiert und geprüft. Die fachliche Q-Abnahme ist erteilt. Der [aktuelle E-/Q-Nachweis](../betrieb/eq-wiederholungsversuch-mvp04-0401.md) und das [lokale Publikationspaket](../betrieb/publikationspaket-mvp04.md) trennen bestandene Prüfungen und offene Grenzen. GitHub-Veröffentlichung und P-Bereitstellung stehen aus, der öffentliche P-Rechner bleibt auf MVP 0.3. Diese Unterlage autorisiert keine zusätzliche Installation oder externe Q-Demo.
+MVP 0.5 ergänzt die abgenommenen AP17-/AP18-Grundlagen um die erste AP19-Tranche des national modellierten Sozialversicherungsrechts mit ausschliesslich bernischer Freigabe. Die zusammengeführte Quellenprüfung ist abgenommen. Alle vier bestehenden E-/Q-Instanzen verwenden das Paket `0.5.0.0` und ihre vollständigen Format-5-Mirrors. Der [aktuelle E-/Q-Nachweis](../betrieb/eq-installation-mvp05.md) umfasst 123 bestandene technische Prüfpunkte. David Steimer hat Q fachlich abgenommen und die reale Anmeldung mit dem bestehenden B2B-Gast bestätigt. Die [Abnahmenotiz](../betrieb/abnahme-q-mvp05.md) und der [Bereitstellungsplan](../betrieb/deployment-mvp-05.md) trennen diese menschlichen Nachweise von den technischen Tests und nachfolgenden Freigaben. GitHub bleibt nach dokumentiertem Stand auf MVP 0.4, der öffentliche P-Rechner wegen des offenen Hostingbefunds auf MVP 0.3. Diese Unterlage autorisiert keine zusätzliche Installation, neue Gastrechte oder P-Bereitstellung.
 
 ## 1. Kurzbeurteilung der Tenantportabilität
 
@@ -79,36 +79,39 @@ npm ci
 npm run build
 ```
 
-`npm run check` führt Typprüfung, Kern-/UI-Tests, die Prüfungen der öffentlichen Webausprägung sowie Vorschau- und Webbuild aus. Der historische Dateiexport mit frischen Lockdatei-Abhängigkeiten ist in der [Publikationsvorprüfung](../betrieb/publikationsvorpruefung-mvp04.md) dokumentiert. Für die begrenzte SPFx-Korrektur wurden Typprüfung und inzwischen 676 Kern-/UI-Tests erneut ausgeführt, ohne den bisherigen Webbuild zu überschreiben. Der vollständige SPFx-Build bestand 48 Provider-/Integrationsprüfungen, Compiler-, Lint- und Bundle-CSS-Prüfungen sowie nach der Paketierung 25 neue ES5-/Paketbundle-Prüfungen. Zwei bestehende Lintwarnungen zu `null` in Typverträgen bleiben dokumentiert. Die Pakettests verwenden kontrollierte lokale Hostadapter und ersetzen keine SharePoint-/Teams-Prüfung. Die Testgruppen überschneiden sich und werden nicht addiert.
+`npm run check` führt Typprüfung, Kern-/UI-Tests, die Prüfungen der öffentlichen Webausprägung sowie Vorschau- und Webbuild aus. Der [definitive lokale MVP-0.5-Bau](../betrieb/releaseartefakte-mvp-05.md) weist 1’213 Kern-/UI-Tests und zwölf Public-Build-Tests aus. Die gesonderte SPFx-Prüfung bestand 84 Quell-/Transporttests sowie 42 Prüfungen des kompilierten Codes und tatsächlichen Pakets, zusätzlich zum Produktionsbuild und CSS-Audit. Zwei bestehende Lintwarnungen zu `null` in Typverträgen bleiben dokumentiert. Der Heft/Jest-Schritt enthält keine eigenen Jest-Suiten und wird nicht als zusätzlicher Testbestand ausgegeben. Die Pakettests verwenden kontrollierte lokale Hostadapter. Die Zielumgebungsprüfung ist separat dokumentiert. Die Testgruppen überschneiden sich und werden nicht addiert.
+
+Für einen isolierten MVP-0.5-SPFx-Neubau ist vom Repositoryhauptordner `npm run build:spfx:mvp05` vorgesehen. Der gewöhnliche Build im Unterordner `spfx/` schreibt dagegen an seinen Standardausgabepfad. Ein Neubau ersetzt nicht automatisch das bereits freigegebene Artefakt.
 
 Das auf E und Q installierte Releasepaket hat folgende Identität:
 
 | Merkmal | Wert |
 | --- | --- |
-| Datei | `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` |
-| Paketversion | `0.4.0.1` |
-| Grösse | 202'616 Bytes |
-| SHA-256 | `9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346` |
+| Datei | [`outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg`](../../outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg) |
+| Paketversion | `0.5.0.0` |
+| Grösse | 222’393 Bytes |
+| SHA-256 | `f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 | Unterstützte Hosts | `SharePointWebPart`, `TeamsTab` |
 | Client-Assets | im `.sppkg` enthalten |
 | Tenantweite automatische Bereitstellung | nein, Installation pro Zielwebsite |
 
-Beim ursprünglichen Paket `0.4.0.0` wurde ein unabhängiger SPFx-Neubau funktional geprüft, der nicht bitidentisch war. Die dokumentierte Varianz betrifft interne Modulnummern, konsistente CSS-Kennungen, generierte Paketkennungen und ZIP-Zeitstempel. Dies ist kein Nachweis eines unabhängigen Zweitbaus von `0.4.0.1`. Die obige Prüfsumme bezeichnet ausschliesslich das auf E und Q geprüfte Korrekturpaket. Ein Neubau mit abweichender Prüfsumme benötigt einen eigenen Paketnachweis und darf nicht unter der alten Prüfsumme freigegeben werden.
+Die Prüfsumme bezeichnet ausschliesslich das konkret auf E und Q geprüfte Paket. Ein unabhängiger byteidentischer Zweitbau von `0.5.0.0` wird nicht behauptet. Die bei MVP 0.4 dokumentierte SPFx-Buildvarianz bleibt als historische Erfahrung bestehen. Ein Neubau mit abweichender Prüfsumme benötigt einen eigenen Paketnachweis. Der bisherige Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` bleibt im erhaltenen lokalen Ausgangsstand bei `0.4.0.1` und ist **nicht** das oben bezeichnete MVP-0.5-Auslieferungsartefakt.
 
 ## 5. Daten- und Sicherheitsmodell
 
-MVP 0.4 verwendet standardmässig den lokal freigegebenen Datenrelease `2026-09-22-mvp-04-approved.1`. Die GitHub-Adresse ist auf den vollständigen Commit `739876a0d11b550ea8cc702622ab22af321994a5` gepinnt. Dieser Commit ist noch nicht veröffentlicht, der neue GitHub-Standardpfad daher noch nicht öffentlich abrufbar. Die Veröffentlichung und der anschliessende öffentliche Bytevergleich sind Voraussetzung für diesen Betriebsmodus. Ein frei beweglicher Branch wie `main` wird als produktive Datenquelle abgewiesen.
+MVP 0.5 verwendet den lokal freigegebenen Datenrelease `2026-09-28-mvp-05-approved.1`. Die GitHub-Standardadresse ist auf den vollständigen Commit `3109c39730f10d31cb6c57200b36dd5091d7bcd1` gepinnt. Dieser Commit ist noch nicht veröffentlicht, der neue GitHub-Standardpfad daher noch nicht öffentlich abrufbar. E und Q verwenden ausdrücklich ihren jeweils vollständigen SharePoint-Mirror. Veröffentlichung und anschliessender öffentlicher Bytevergleich sind Voraussetzung für den GitHub-Betriebsmodus. Ein frei beweglicher Branch wie `main` wird als produktive Datenquelle abgewiesen.
 
-| Komponentenvertrag | MVP 0.4 |
+| Komponentenvertrag | MVP 0.5 |
 | --- | --- |
-| Manifest-/Consumerformat | `4.0.0` |
+| Manifest-/Consumerformat | `5.0.0` |
+| Sozialverfahrenskatalog | `1.0.0` |
 | Spezialregimekatalog | `3.0.0` |
 | Kalenderkomponente | `2.0.0` |
 | Schweizer Feiertagskatalog | `1.0.0` |
 
-Der Consumer verarbeitet weiterhin die Formate 1, 2 und 3. Umgekehrt kann der frühere MVP-0.3-Consumer Format 4 nicht lesen. Deshalb müssen App und Datenpfad koordiniert aktualisiert werden. Der vollständige MVP-0.4-Mirror umfasst Manifest und neun Nutzartefakte, einschliesslich `holiday-catalogs/ch-holiday-catalog.json`.
+Der Consumer verarbeitet weiterhin die Formate 1 bis 4. Umgekehrt kann der MVP-0.4-Consumer Format 5 nicht lesen. Deshalb müssen App und Datenpfad koordiniert aktualisiert werden. Der vollständige MVP-0.5-Mirror umfasst Manifest und zehn Nutzartefakte, einschliesslich `holiday-catalogs/ch-holiday-catalog.json` und `social-procedures/ch-social-procedures.json`.
 
 Vor der Aktivierung prüft die Anwendung unter anderem:
 
@@ -119,6 +122,7 @@ Vor der Aktivierung prüft die Anwendung unter anderem:
 - Content-IDs und Referenzen zwischen Profilen und Kalendern
 - regelbasierte Kalender, Vererbung, Overrides und offene zeitliche Abdeckung
 - vollständigen Feiertagskatalog und dessen nachprüfbare, begrenzte Projektion in die operativen Kalender
+- Sozialverfahrenskatalog mit getrennten nationalen Regeln, bernischen Anbindungen, rechtlichen Zeitbindungen und hashgebundenen Freigaben. Eine nationale Regel allein gibt noch keine kantonale Anwendung frei
 
 Bei einem fehlerhaften oder unvollständigen Release bleibt der letzte vollständig validierte Aktivstand erhalten. Ohne gültigen Aktivstand wird der Rechner gesperrt. Er zeigt kein lediglich plausibel wirkendes Fristende an.
 
@@ -137,21 +141,20 @@ Mit dem SharePoint-Mirror kann der externe GitHub-Zugriff zur Laufzeit entfallen
 
 ## 7. Nachgewiesener Stand und Grenzen
 
-Der frühere Betriebsstand MVP 0.3 mit Paket `0.3.0.0` wurde in SharePoint und Teams installiert und einschliesslich Outlook nach T01–T19 geprüft. Der begrenzte gruppenbasierte Q-Gastbetrieb wurde mit AP15 und DEC-2026-016 freigegeben, der öffentliche statische P-Betrieb mit AP16 und DEC-2026-018. Diese historischen Ergebnisse werden nicht als Zielumgebungsprüfung von MVP 0.4 übernommen. Der öffentliche P-Rechner bleibt unverändert auf MVP 0.3.
+Der frühere Betriebsstand MVP 0.3 mit Paket `0.3.0.0` wurde in SharePoint und Teams installiert und einschliesslich Outlook nach T01–T19 geprüft. Der begrenzte gruppenbasierte Q-Gastbetrieb wurde mit AP15 und DEC-2026-016 freigegeben, der öffentliche statische P-Betrieb mit AP16 und DEC-2026-018. Diese historischen Ergebnisse werden nicht als Zielumgebungsprüfung von MVP 0.5 übernommen. Der öffentliche P-Rechner bleibt nach letztem dokumentiertem Stand auf MVP 0.3, bis der Hostingbefund geklärt und eine neue Bereitstellung ausdrücklich freigegeben ist.
 
-Für MVP 0.4 sind auf allen vier E-/Q-Instanzen G01, F01–F09, N01–N04 und U01–U03 bestanden. Dies umfasst den eigenen cachefreien Mirrorabruf, Fach- und Sperrfälle, DE/FR, lokale Standards sowie tatsächliche ICS-Dateiexporte und deren Unterdrückung bei veralteten Resultaten. Die historische AP5-Konfiguration ist mit dem neuen Consumer separat geprüft. David Steimer hat Q fachlich abgenommen. Die [Quellenprüfung](../fachrecht/abnahme-quellenpruefung-mvp04.md) mit 120 unterschiedlichen Quellen-IDs ist ebenfalls abgenommen, die Behandlung des AI-Quellenkonflikts bleibt unverändert.
+Für MVP 0.5 sind 123 technische Prüfpunkte im Eigentümerkonto bestanden, verteilt auf vier E-/Q-Instanzen und die historische AP5-Kompatibilität. Dies umfasst jeweils den cachefreien Erstabruf aus dem eigenen Mirror, Fach- und Sperrfälle, DE/FR, lokale Standards, tatsächliche ICS-Dateiexporte sowie den kontrollierten Komponentenladefehler mit sichtbarem Fallback und anschliessender Wiederherstellung. Die AP5-Datenkonfiguration bleibt erhalten. E-SharePoint und Q-Teams wurden bei 390, 768 und 1440 Pixeln ohne horizontales Überlaufen geprüft. Der [Installationsbericht](../betrieb/eq-installation-mvp05.md) bezeichnet den genauen Umfang.
 
-Die stabile schmale Q-Teams-Gegenprüfung bei 390 Pixeln ist in DE/FR bestanden. Zum früher gemessenen SharePoint-Hostüberlauf bei 768 Pixeln liegt die positive manuelle Rückmeldung «Sharepoint ist OK» vor, aber keine neue 768-Pixel-Messung. Sie wird nicht als solche umgedeutet. Der bedingte Live-Negativtest und die optionale Governance-Nachprüfung bleiben vom lokalen Testnachweis getrennt. Die genaue Einordnung der Restpunkte steht im [Publikationspaket](../betrieb/publikationspaket-mvp04.md).
+David hat Q fachlich abgenommen, die reale Anmeldung mit dem bestehenden B2B-Gast bestätigt und Outlook Desktop als manuell geprüft gemeldet. Diese menschlichen Nachweise bleiben von den 123 technischen Punkten getrennt. Die kurze Gastbestätigung enthält keine vollständige Wiederholung der technischen Matrix im Gastkonto. Outlook Web wurde mit einem tatsächlichen Import geprüft und der Testtermin anschliessend entfernt. Der [Outlook-Nachweis](../betrieb/outlook-pruefung-mvp05.md) dokumentiert die kontrollierten Eigenschaften und die Bereinigung, nicht lediglich eine korrekte ICS-Datei. Die nachfolgenden Haltepunkte bleiben im [aktuellen Betriebsnachweis](../betrieb/eq-installation-mvp05.md) ausgewiesen.
 
-Der Produktumfang bleibt begrenzt: 16 qualifizierte AP17-Zuordnungen, vier gesperrte Sammelpfade und Fallabdeckung 2026–2027. Der Schweizer Katalog enthält 479 Regeln, operativ werden jedoch weiterhin nur zwölf bestehende CH-/BE-Feiertagsregeln projiziert. Es werden keine zusätzlichen kantonalen Fristenprofile freigegeben. Oberfläche Deutsch und Französisch, italienische und rätoromanische Bezeichnungsfelder nur in der Datengrundlage.
+Der Produktumfang bleibt begrenzt: 24 nationale Sozialregeln und 28 ausschliesslich bernische Anbindungen für die übernommenen IVG-/AHVG-/UVG-Pfade sowie ELG, AVIG-ALE und KVG-OKP. Die rechtliche Quellen- und Fallabdeckung der Sozialfreigaben bleibt 2026–2027, nicht modellierte oder unzureichend qualifizierte Konstellationen bleiben gesperrt. Die [zusammengeführte Quellenprüfung](../fachrecht/abnahme-quellenpruefung-mvp05.md) ist einschliesslich dokumentierter Wiederverwendung und Vorbehalten abgenommen. Der AI-Quellenkonflikt wird unverändert behandelt. Der Schweizer Feiertagskatalog enthält 479 Regeln, operativ werden weiterhin nur zwölf bestehende CH-/BE-Feiertagsregeln projiziert. Keine Freigabe zusätzlicher Kantone oder weiterer Sozialerlasse. Oberfläche Deutsch und Französisch, italienische und rätoromanische Bezeichnungsfelder nur in der Datengrundlage.
 
 Noch nicht Teil dieses Nachweises sind insbesondere:
 
 - produktiver Betrieb in einem Dritt-Tenant
 - Betrieb auf SharePoint Server vor Ort statt SharePoint Online
-- erneute Outlook-Importtests T15/T16 für MVP 0.4. Sie sind gesondert zu autorisieren, ein Verzicht ist nicht beschlossen
-- tatsächliche Q-Gastprüfung und externe Q-Demofreigabe für MVP 0.4. Die vom Benutzer vermutete Behinderung durch KTBE-Anmelderichtlinien ist keine nachgewiesene Ursache
-- GitHub-Veröffentlichung sowie öffentliche P-Bereitstellung und P-Prüfung für MVP 0.4
+- eine zusätzliche Freigabe neuer Gäste, neuer M365-Rechte oder eines erweiterten Q-Demokreises
+- GitHub-Veröffentlichung sowie öffentliche P-Bereitstellung und P-Prüfung für MVP 0.5
 - automatisierte jährliche Datenpublikation und Mirror-Synchronisation
 - formelle WCAG-Konformitätsbewertung
 
@@ -162,11 +165,11 @@ Noch nicht Teil dieses Nachweises sind insbesondere:
 - [Microsoft: Apps über die SharePoint-App-Website verwalten](https://learn.microsoft.com/en-us/sharepoint/use-app-catalog)
 - [Microsoft: Benutzerdefinierte Apps in Teams verwalten](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 - [AP10-Prüfnachweis](spfx-produktintegration-ap10.md)
-- [MVP-0.4-Deployment und Zielumgebungsprüfung](../betrieb/deployment-mvp-04.md)
-- [Aktueller E-/Q-Nachweis und fachliche Q-Abnahme](../betrieb/eq-wiederholungsversuch-mvp04-0401.md)
-- [Lokales Publikationspaket und verbleibende Freigaben](../betrieb/publikationspaket-mvp04.md)
-- [SPFx-Korrekturpaket 0.4.0.1 und unveränderte Daten](../../outputs/release-mvp04-spfx-0.4.0.1-2026-09-22/artifact-verification.json)
-- [Lokaler Build- und Laufzeitprüfnachweis 0.4.0.1](../../outputs/release-mvp04-spfx-0.4.0.1-2026-09-22/QA-MVP04-SPFX-0401.md)
+- [MVP-0.5-Deployment und Zielumgebungsprüfung](../betrieb/deployment-mvp-05.md)
+- [Aktueller E-/Q-Nachweis](../betrieb/eq-installation-mvp05.md)
+- [Fachliche Q-Abnahme und bestätigte Gastanmeldung](../betrieb/abnahme-q-mvp05.md)
+- [Definitive lokale MVP-0.5-Artefakte und Baunachweise](../betrieb/releaseartefakte-mvp-05.md)
+- [Maschinenlesbarer MVP-0.5-Artefaktnachweis](../../outputs/release-mvp05-2026-09-28/artifact-verification.json)
 - [Historischer Paket-, Mirror- und Webnachweis MVP 0.4](../../outputs/release-mvp04-2026-09-22/artifact-verification.json)
 - [MVP-0.3-Deployment und historische Testmatrix](../betrieb/deployment-release-2-mvp-03.md)
 - [Q-Betriebsanweisung](../betrieb/q-demobetrieb-ap15-betriebsanweisung.md)

@@ -7,6 +7,14 @@ import { Dropdown, type IDropdownOption } from '@fluentui/react/lib/Dropdown';
 import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { DateInput } from './DateInput';
+import { primaryDateField, reconcilePrimaryDate } from './dateTransition';
+import { calculateSocialDeadline } from '../core/socialDeadline';
+import type { SocialDeadlineResult } from '../core/socialTypes';
+import {
+  EMPTY_SOCIAL_CONTEXT, SOCIAL_CANTONS, hasSocialUi, socialInputFromUi,
+  socialJurisdictionLabel, socialJurisdictionDateLabel, socialNeedsJurisdictionDate, socialNeedsPartyDomicile, socialUsesDomicileScope, socialScopeKey, socialUiPath, socialUiSelection,
+  type SocialUiContext, type SocialUiSelection
+} from './socialUi';
 
 import { calculateDeadline, calculateSpecialDeadline, parseIsoDate } from '../core';
 import type {
@@ -44,7 +52,6 @@ import {
   defaultSelectors,
   effectiveSelectors,
   GENERAL_SPECIAL_REGIME_ID,
-  inputDateSemantics,
   isCalendarOverride,
   isGeneralCalculation,
   profilesForAuthority,
@@ -91,7 +98,8 @@ interface UiValidation {
 
 type UiResult =
   | { readonly kind: 'general'; readonly value: CalculationResult }
-  | { readonly kind: 'special'; readonly value: SpecialDeadlineResult };
+  | { readonly kind: 'special'; readonly value: SpecialDeadlineResult }
+  | { readonly kind: 'social'; readonly value: SocialDeadlineResult };
 
 type Notification = { readonly type: MessageBarType; readonly text: string };
 
@@ -195,17 +203,6 @@ function specialDefinitionLabel(definition: DeadlineDefinition, locale: Locale):
   const translated = translate(locale, `special.definition.${definition.deadlineDefinitionId}`);
   if (translated !== `special.definition.${definition.deadlineDefinitionId}`) return translated;
   return definition.sourceRefs.map(source => source.locator).join(' · ') || definition.deadlineDefinitionId;
-}
-
-function dateInputLabel(locale: Locale, state: CalculatorFormState): string {
-  const semantics = inputDateSemantics(state.selectors);
-  if (semantics === 'failedDeliveryAttemptDate') {
-    return translate(locale, 'form.inputDate.failedAttempt');
-  }
-  if (semantics === 'observedOrdinaryMailDeliveryDate') {
-    return translate(locale, 'form.inputDate.observedMail');
-  }
-  return translate(locale, 'form.inputDate.direct');
 }
 
 function CalendarEvidence({ evidence, locale }: {
@@ -429,6 +426,7 @@ function SpecialResultPanel({
   regime,
   definition,
   filingProfile,
+  socialSelection,
   calendarReference,
   onCalendarReferenceChange
 }: {
@@ -437,6 +435,7 @@ function SpecialResultPanel({
   readonly regime?: SpecialRegime;
   readonly definition?: DeadlineDefinition;
   readonly filingProfile?: FilingProfile;
+  readonly socialSelection?: SocialUiSelection;
   readonly calendarReference: string;
   readonly onCalendarReferenceChange: (value: string) => void;
 }): React.ReactElement {
@@ -504,7 +503,8 @@ function SpecialResultPanel({
             </>}
             <div>
               <dt>{translate(locale, 'special.result.rule')}</dt>
-              <dd>{definition ? specialDefinitionLabel(definition, locale) : '–'}</dd>
+              <dd>{socialSelection ? socialSelection.rule.labels[locale]
+                : definition ? specialDefinitionLabel(definition, locale) : '–'}</dd>
             </div>
             {result.outcome === 'calculated' && (
               <CalendarExportTile
@@ -561,9 +561,33 @@ function SpecialResultPanel({
         </div>
       )}
 
-      <details className="fr-trace" open={result.outcome === 'blocked'}>
+      <details className="fr-trace" open={!socialSelection && result.outcome === 'blocked'}>
         <summary>{translate(locale, 'trace.heading')}</summary>
         <ol>{result.trace.map(step => <SpecialTrace key={step.sequence} step={step} locale={locale} />)}</ol>
+        {socialSelection && (
+          <div className="fr-trace__context">
+            <h4>{translate(locale, 'social.scopeLabel')}</h4>
+            <p>{translate(locale, socialScopeKey(socialSelection))}</p>
+            {socialSelection.rule.law === 'avig' && <p>{translate(locale, 'social.avig.limits')}</p>}
+            {socialSelection.rule.law === 'kvg' && <p>{translate(locale, 'social.kvg.limits')}</p>}
+            <p>{translate(locale, 'social.contextNotice')}</p>
+            <p><strong>{translate(locale, 'vrpg.context.triggerKind')}:</strong>{' '}
+              {translate(locale, `social.document.${socialSelection.rule.law === 'ivg' && socialSelection.rule.action === 'appeal' ? 'ivg-appeal' : socialSelection.rule.action}`)}
+            </p>
+            <h4>{translate(locale, 'social.evidence')}</h4>
+            <p>{socialSelection.rule.labels[locale]} · <code>{socialSelection.rule.ruleId}</code>
+              {' · '}<code>{socialSelection.binding.bindingId}</code></p>
+            <p>{[...socialSelection.rule.sourceRefs, ...socialSelection.binding.sourceRefs]
+              .filter((ref, index, refs) => refs.findIndex(other => other.sourceId === ref.sourceId && other.locator === ref.locator) === index)
+              .map((ref, index) => {
+                const source = socialSelection.catalog.sources.find(item => item.sourceId === ref.sourceId);
+                return <React.Fragment key={`${ref.sourceId}-${ref.locator}`}>
+                  {index > 0 ? ' · ' : ''}
+                  {source ? <a href={source.url} target="_blank" rel="noopener noreferrer">{ref.locator}</a> : ref.locator}
+                </React.Fragment>;
+              })}</p>
+          </div>
+        )}
       </details>
     </section>
   );
@@ -604,6 +628,8 @@ function CalculatorSession({
   const initialForm = React.useMemo(() => stateFromDefaults(data, loaded, initialState), [data, loaded, initialState]);
   const [locale, setLocale] = React.useState<Locale>(loaded.locale);
   const [form, setForm] = React.useState<CalculatorFormState>(initialForm);
+  // New case facts never come from local defaults, QA presets or old approvals.
+  const [socialContext, setSocialContext] = React.useState<SocialUiContext>(EMPTY_SOCIAL_CONTEXT);
   const [calendarOverrideEnabled, setCalendarOverrideEnabled] = React.useState(
     () => isCalendarOverride(data, data.profiles.get(initialForm.profileId), initialForm.calendarId)
   );
@@ -618,6 +644,10 @@ function CalculatorSession({
   const vrpgMode = form.profileId === 'vrpg-be';
   const vrpgState = form.vrpgSelection ?? EMPTY_VRPG_SELECTION;
   const vrpgResolution = resolveVrpgSelection(data, vrpgState);
+  const socialPath = vrpgMode ? socialUiPath(data, vrpgState) : undefined;
+  const socialSelection = vrpgMode ? socialUiSelection(data, vrpgState, socialContext.decisionOrigin) : undefined;
+  const avigCourt = socialPath?.rule.law === 'avig' && socialPath.rule.stage === 'cantonal-insurance-court';
+  const domicileScope = socialPath ? socialUsesDomicileScope(socialPath) : false;
   const selection = specialSelection(
     data,
     form.profileId,
@@ -626,7 +656,9 @@ function CalculatorSession({
   );
   const specialRegime = selection.regime;
   const specialDefinition = selection.definition;
-  const specialFilingProfile = specialCatalog?.filingProfiles.find(item => item.filingProfileId === (
+  const specialFilingProfile = socialPath
+    ? socialPath.catalog.filingProfiles.find(item => item.filingProfileId === socialPath.rule.filingProfileId)
+    : specialCatalog?.filingProfiles.find(item => item.filingProfileId === (
     specialRegime?.filingProfileId ?? specialDefinition?.filingProfileId
   ));
   const generalMode = isGeneralCalculation(data, form);
@@ -637,16 +669,17 @@ function CalculatorSession({
     ? calculatedDefinition.calculation.durationInputId
     : undefined;
   const primaryAnchor = calculatedDefinition?.anchors.find(anchor => anchor.valueType === 'date');
+  const primaryDate = primaryDateField(data, form);
   const fixedSpecialDays = calculatedDefinition?.calculation.type === 'R1_RELATIVE'
     ? calculatedDefinition.calculation.duration
     : undefined;
   const qualifiedMode = Boolean(calculatedDefinition?.applicability);
   const vrpgContext = form.vrpgContext ?? EMPTY_VRPG_CONTEXT;
   const modelScope = qualifiedMode ? vrpgModelScope(vrpgState) : undefined;
-  const lawOptions = vrpgLawOptions(vrpgState);
+  const lawOptions = vrpgLawOptions(vrpgState, data);
   const actionOptions = vrpgActionOptions(data, vrpgState);
   const fixedAction = vrpgFixedAction(data, vrpgState);
-  const stageOptions = vrpgStageOptions(vrpgState);
+  const stageOptions = vrpgStageOptions(vrpgState, data);
   const automaticCalendar = automaticCalendarId(data, profile);
   const fixedCalendar = profile?.calendarPolicy.jurisdictionSelection === 'fixedBern';
   const manualOverride = isCalendarOverride(data, profile, form.calendarId);
@@ -668,6 +701,15 @@ function CalculatorSession({
     setNotification(undefined);
   };
 
+  const mutateSelection = (change: Partial<CalculatorFormState>): void => {
+    const transition = reconcilePrimaryDate(data, form, { ...form, ...change });
+    mutateForm({ ...change, inputDate: transition.inputDate, specialDateValues: transition.specialDateValues });
+    if (transition.cleared) {
+      setNotification({ type: MessageBarType.info,
+        text: `${translate(locale, 'form.inputDate.changed')} ${translate(locale, transition.field.labelKey)}.` });
+    }
+  };
+
   const selectOptions = (definition: NonNullable<typeof profile>['selectors'][number]): IDropdownOption[] => [
     ...(definition.required ? [{ key: '', text: translate(locale, 'form.select') }] : []),
     ...definition.options
@@ -677,6 +719,22 @@ function CalculatorSession({
 
   const validate = (translationLocale: Locale = locale): UiValidation => {
     const errors: Record<string, string> = {};
+    if (socialPath) {
+      if (!parseIsoDate(form.inputDate)) errors.inputDate = translate(translationLocale, 'form.inputDate.required');
+      if (socialPath.rule.calculation.durationInputId) {
+        const days = Number(form.specialIntegerValues.deadlineDays);
+        if (!Number.isInteger(days) || days < 1 || days > 365) errors.deadlineDays = translate(translationLocale, 'form.deadlineDays.required');
+      }
+      if (!domicileScope && !socialContext.jurisdictionCanton) errors['social.jurisdiction'] = translate(translationLocale, 'form.requiredSelection');
+      if (!socialContext.holidayConnections) errors['social.holidays'] = translate(translationLocale, 'form.requiredSelection');
+      if (!socialSelection) errors['social.origin'] = translate(translationLocale, 'form.requiredSelection');
+      if (avigCourt && !socialContext.avigJurisdictionCanton) errors['social.avigCanton'] = translate(translationLocale, 'form.requiredSelection');
+      if (socialSelection && socialNeedsPartyDomicile(socialSelection) && !socialContext.partyDomicileCanton) errors['social.partyDomicile'] = translate(translationLocale, 'form.requiredSelection');
+      if (socialSelection && socialNeedsJurisdictionDate(socialSelection) && !parseIsoDate(socialContext.jurisdictionReferenceDate)) {
+        errors['social.jurisdictionDate'] = translate(translationLocale, 'form.inputDate.required');
+      }
+      return errors;
+    }
     if (vrpgMode && vrpgResolution.kind === 'incomplete') {
       if (!vrpgState.area) errors['vrpg.area'] = translate(translationLocale, 'vrpg.required');
       else if (lawOptions.length > 0 && !vrpgState.law) errors['vrpg.law'] = translate(translationLocale, 'vrpg.required');
@@ -779,6 +837,12 @@ function CalculatorSession({
       setResult({ kind: 'general', value: calculateDeadline(createCalculationInput(data, form), data) });
       return;
     }
+    if (socialSelection) {
+      const input = socialInputFromUi(socialSelection, form.authorityCode, form.inputDate,
+        form.specialIntegerValues.deadlineDays ?? '', socialContext);
+      setResult({ kind: 'social', value: calculateSocialDeadline(input, data) });
+      return;
+    }
     const input = createSpecialCalculationInput(data, form);
     if (!input) {
       setValidation({ specialDefinition: translate(locale, 'special.validation.definition') });
@@ -792,6 +856,7 @@ function CalculatorSession({
     if (typeof option?.key !== 'string') {
       return;
     }
+    setSocialContext(EMPTY_SOCIAL_CONTEXT);
     const profileId = reconcileProfileId(data, option.key, form.profileId);
     const nextProfile = data.profiles.get(profileId);
     const special = reconcileSpecialSelection(
@@ -800,7 +865,7 @@ function CalculatorSession({
       '',
       ''
     );
-    mutateForm({
+    mutateSelection({
       authorityCode: option.key,
       profileId,
       selectors: defaultSelectors(nextProfile),
@@ -827,6 +892,7 @@ function CalculatorSession({
     if (typeof option?.key !== 'string') {
       return;
     }
+    setSocialContext(EMPTY_SOCIAL_CONTEXT);
     const nextProfile = data.profiles.get(option.key);
     const special = reconcileSpecialSelection(
       data,
@@ -834,7 +900,7 @@ function CalculatorSession({
       '',
       ''
     );
-    mutateForm({
+    mutateSelection({
       profileId: option.key,
       selectors: defaultSelectors(nextProfile),
       calendarId: automaticCalendarId(data, nextProfile),
@@ -860,7 +926,7 @@ function CalculatorSession({
     if (typeof option?.key !== 'string') {
       return;
     }
-    mutateForm({
+    mutateSelection({
       selectors: { ...form.selectors, [selectorId]: option.key },
       deliveryFictionConfirmed: selectorId === 'deliveryMethod' ? false : form.deliveryFictionConfirmed,
       specialLawChecked: selectorId === 'specialLawStatus'
@@ -870,12 +936,13 @@ function CalculatorSession({
   };
 
   const onVrpgChange = (field: keyof VrpgSelectionState, value: string): void => {
+    setSocialContext(EMPTY_SOCIAL_CONTEXT);
     let nextSelection = changeVrpgSelection(data, vrpgState, field, value);
     if (field === 'area' && value === 'procurement') {
       nextSelection = changeVrpgSelection(data, nextSelection, 'law', 'ivob');
     }
     const resolved = resolveVrpgSelection(data, nextSelection);
-    mutateForm({
+    mutateSelection({
       vrpgSelection: nextSelection,
       vrpgContext: EMPTY_VRPG_CONTEXT,
       specialRegimeId: resolved.regimeId,
@@ -921,6 +988,7 @@ function CalculatorSession({
     const defaults = initialDefaults(data);
     setLocale(defaults.locale);
     setForm(stateFromDefaults(data, defaults));
+    setSocialContext(EMPTY_SOCIAL_CONTEXT);
     setCalendarOverrideEnabled(false);
     setResult(undefined);
     setCalendarReference('');
@@ -978,6 +1046,18 @@ function CalculatorSession({
   const renderModelScope = (field: 'matter' | 'triggerKind' | 'notificationChannel', value: VrpgChoice): React.ReactElement =>
     renderFixedValue(`vrpg.context.${field}`, value);
 
+  const renderSocialDomicile = (labelKey: string): React.ReactElement => (
+    <Dropdown required label={translate(locale, labelKey)}
+      selectedKey={socialContext.partyDomicileCanton}
+      options={[{ key: '', text: translate(locale, 'form.select') }, ...SOCIAL_CANTONS.map(canton => ({ key: canton, text: canton }))]}
+      errorMessage={validation['social.partyDomicile'] ?? ''}
+      onChange={(_event, option) => {
+        if (typeof option?.key !== 'string') return;
+        setSocialContext(current => ({ ...current, partyDomicileCanton: option.key as string, jurisdictionReferenceDate: '' }));
+        mutateForm({});
+      }} />
+  );
+
   const renderContextChoice = (field: keyof VrpgContextState, choices: readonly VrpgChoice[]): React.ReactElement => (
     <Dropdown
       required
@@ -988,7 +1068,7 @@ function CalculatorSession({
       errorMessage={validation[`context.${field}`] ?? ''}
       onChange={(_event, option) => {
         if (typeof option?.key !== 'string') return;
-        mutateForm({
+        mutateSelection({
           vrpgContext: { ...vrpgContext, [field]: option.key },
           ...(field === 'notificationChannel'
             && ((vrpgContext.notificationChannel === 'official-publication') !== (option.key === 'official-publication'))
@@ -1066,22 +1146,39 @@ function CalculatorSession({
           {translate(locale, 'app.candidate')}
         </MessageBar>
       )}
+      {hasSocialUi(data) && [...data.socialProcedureCatalogs!.values()].some(catalog =>
+        catalog.releaseEligibility.some(eligibility => eligibility.status === 'candidate')) && (
+        <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
+          {translate(locale, data.releaseId.includes('-ap19c3-') ? 'social.candidate.kvg'
+            : data.releaseId.includes('-ap19c2-') ? 'social.candidate.avig' : 'social.candidate')}
+        </MessageBar>
+      )}
 
       <form className="fr-form" onSubmit={onSubmit} noValidate>
         <section aria-labelledby="fr-form-heading">
           <h2 id="fr-form-heading">{translate(locale, 'form.heading')}</h2>
           <div className="fr-form__grid">
-            {primaryAnchor && !generalMode ? renderSpecialAnchor(primaryAnchor) : (
+            {socialPath ? (
+              <DateInput label={translate(locale, 'vrpg.legalServiceDate')} value={form.inputDate}
+                errorMessage={validation.inputDate ?? ''}
+                onChange={value => mutateForm({ inputDate: value })} />
+            ) : primaryAnchor && !generalMode ? renderSpecialAnchor(primaryAnchor) : (
               <DateInput
                 key="general-input-date"
-                label={dateInputLabel(locale, form)}
+                label={translate(locale, primaryDate.labelKey)}
                 value={form.inputDate}
-                {...(vrpgMode && !generalMode ? { disabled: true } : {})}
                 {...(validation.inputDate ? { errorMessage: validation.inputDate } : {})}
                 onChange={value => mutateForm({ inputDate: value })}
               />
             )}
-            {generalMode ? (
+            {socialPath ? socialPath.rule.calculation.duration ? (
+              <TextField readOnly label={translate(locale, 'vrpg.duration')}
+                value={`${socialPath.rule.calculation.duration.value} ${translate(locale, 'vrpg.unit.day')}`} />
+            ) : (
+              <TextField required label={translate(locale, 'vrpg.orderedDays')} type="number" min={1} max={365} step={1}
+                value={form.specialIntegerValues.deadlineDays ?? ''} errorMessage={validation.deadlineDays ?? ''}
+                onChange={(_event, value) => mutateForm({ specialIntegerValues: { deadlineDays: value ?? '' } })} />
+            ) : generalMode ? (
               <TextField
                 required
                 label={translate(locale, 'form.deadlineDays')}
@@ -1154,6 +1251,68 @@ function CalculatorSession({
                   </>
                 )}
                 {stageOptions.length > 0 && renderVrpgChoice('stage', 'vrpg.stage', stageOptions)}
+                {stageOptions.length > 0 && socialPath && <div className="fr-grid-spacer" aria-hidden="true" />}
+                {socialPath && (
+                  <>
+                    {renderFixedValue('vrpg.context.matter', { key: socialPath.rule.matter,
+                      labels: { de: translate('de', domicileScope ? 'social.kvg.productScope' : `social.matter.${socialPath.rule.law}`),
+                        fr: translate('fr', domicileScope ? 'social.kvg.productScope' : `social.matter.${socialPath.rule.law}`) } })}
+                    {renderFixedValue('vrpg.context.notificationChannel', { key: 'individual-service', labels: {
+                      de: translate('de', 'social.notification'), fr: translate('fr', 'social.notification') } })}
+                    {socialPath.rule.law === 'avig' && <>
+                      <Dropdown required label={translate(locale, avigCourt ? 'social.avig.origin.court' : 'social.avig.origin')}
+                        selectedKey={socialContext.decisionOrigin ?? ''}
+                        options={['', 'unemploymentFund', 'cantonalEmploymentOffice'].map(key => ({ key,
+                          text: translate(locale, key ? `social.avig.origin.${key}` : 'form.select') }))}
+                        errorMessage={validation['social.origin'] ?? ''}
+                        onChange={(_event, option) => {
+                          if (typeof option?.key !== 'string') return;
+                          setSocialContext(current => ({ ...current, decisionOrigin: option.key as string,
+                            jurisdictionCanton: '', avigJurisdictionCanton: '', jurisdictionReferenceDate: '' }));
+                          mutateForm({});
+                        }} />
+                      <div className="fr-grid-spacer" aria-hidden="true" />
+                    </>}
+                    {domicileScope ? renderSocialDomicile('social.kvg.partyDomicile') : <Dropdown required disabled={socialPath.rule.law === 'avig' && !socialSelection}
+                      label={translate(locale, socialJurisdictionLabel(socialPath, socialContext.decisionOrigin))}
+                      selectedKey={socialContext.jurisdictionCanton}
+                      options={[{ key: '', text: translate(locale, 'form.select') }, ...SOCIAL_CANTONS.map(canton => ({ key: canton, text: canton }))]}
+                      errorMessage={validation['social.jurisdiction'] ?? ''}
+                      onChange={(_event, option) => {
+                        if (typeof option?.key !== 'string') return;
+                        setSocialContext(current => ({ ...current, jurisdictionCanton: option.key as string, partyDomicileCanton: '', jurisdictionReferenceDate: '' }));
+                        mutateForm({});
+                      }} />}
+                    <Dropdown required label={translate(locale, 'vrpg.context.holidayConnections')}
+                      selectedKey={socialContext.holidayConnections}
+                      options={vrpgHolidayOptions().map(choice => ({ key: choice.key, text: choice.labels[locale] }))}
+                      errorMessage={validation['social.holidays'] ?? ''}
+                      onChange={(_event, option) => {
+                        if (typeof option?.key !== 'string') return;
+                        setSocialContext(current => ({ ...current, holidayConnections: option.key as string }));
+                        mutateForm({});
+                      }} />
+                    {avigCourt && socialSelection && <Dropdown required
+                      label={translate(locale, socialContext.decisionOrigin === 'unemploymentFund' ? 'social.avig.controlCanton' : 'social.avig.officeCanton')}
+                      selectedKey={socialContext.avigJurisdictionCanton ?? ''}
+                      options={[{ key: '', text: translate(locale, 'form.select') }, ...SOCIAL_CANTONS.map(canton => ({ key: canton, text: canton }))]}
+                      errorMessage={validation['social.avigCanton'] ?? ''}
+                      onChange={(_event, option) => {
+                        if (typeof option?.key !== 'string') return;
+                        setSocialContext(current => ({ ...current, avigJurisdictionCanton: option.key as string, jurisdictionReferenceDate: '' }));
+                        mutateForm({});
+                      }} />}
+                    {!domicileScope && socialSelection && socialNeedsPartyDomicile(socialSelection)
+                      && renderSocialDomicile('social.partyDomicile')}
+                    {socialSelection && socialNeedsJurisdictionDate(socialSelection) && <DateInput
+                      label={translate(locale, socialJurisdictionDateLabel(socialSelection))} value={socialContext.jurisdictionReferenceDate}
+                      errorMessage={validation['social.jurisdictionDate'] ?? ''}
+                      onChange={value => {
+                        setSocialContext(current => ({ ...current, jurisdictionReferenceDate: value }));
+                        mutateForm({});
+                      }} />}
+                  </>
+                )}
                 {qualifiedMode && (
                   <>
                     {modelScope && renderModelScope('matter', modelScope.matter)}
@@ -1255,7 +1414,7 @@ function CalculatorSession({
                   onCalendarReferenceChange={setCalendarReference}
                 />
               )
-              : result?.kind === 'special' && (
+              : (result?.kind === 'special' || result?.kind === 'social') && (
                 <SpecialResultPanel
                   result={result.value}
                   locale={locale}
@@ -1264,13 +1423,22 @@ function CalculatorSession({
                   {...(specialRegime ? { regime: specialRegime } : {})}
                   {...(specialDefinition ? { definition: specialDefinition } : {})}
                   {...(specialFilingProfile ? { filingProfile: specialFilingProfile } : {})}
+                  {...(socialSelection ? { socialSelection } : {})}
                 />
               )}
         </div>
 
         <section className="fr-automatic" aria-labelledby="fr-automatic-heading">
           <h2 id="fr-automatic-heading">{translate(locale, 'automatic.heading')}</h2>
-          {generalMode ? (
+          {socialPath ? (
+            <dl className="fr-automatic__grid">
+              <div><dt>{translate(locale, 'special.automatic.regime')}</dt><dd><strong>{socialPath.rule.labels[locale]}</strong></dd></div>
+              <div><dt>{translate(locale, 'automatic.suspension')}</dt><dd><strong>{socialPath.catalog.suspensionProfiles.find(item => item.suspensionProfileId === socialPath.rule.suspensionProfileId)?.labels[locale] ?? '–'}</strong></dd></div>
+              <div><dt>{translate(locale, 'automatic.calendar')}</dt><dd><strong>{socialContext.holidayConnections === 'partyBE' || socialContext.holidayConnections === 'partyAndRepresentativeBE'
+                ? translate(locale, 'calendar.be-public-holidays') : translate(locale, 'form.select')}</strong><small>{translate(locale, 'vrpg.anchorExplanation')}</small></dd></div>
+              <div><dt>{translate(locale, 'vrpg.caseCoverage')}</dt><dd><strong>{formatIsoDate(socialPath.rule.caseCoverage.from, locale)} – {socialPath.rule.caseCoverage.to ? formatIsoDate(socialPath.rule.caseCoverage.to, locale) : translate(locale, 'dataStatus.openEnded')}</strong></dd></div>
+            </dl>
+          ) : generalMode ? (
             <dl className="fr-automatic__grid">
               <div>
                 <dt>{translate(locale, 'automatic.calendar')}</dt>

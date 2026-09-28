@@ -1,0 +1,121 @@
+{
+  "kind": "mvp05LocalDataPromotion",
+  "preparedOn": "2026-09-28",
+  "releaseId": "2026-09-28-mvp-05-approved.1",
+  "dataStatus": "approved",
+  "implementationAccepted": true,
+  "sourceReviewAccepted": true,
+  "publicationApproved": false,
+  "deploymentApproved": false,
+  "productionActivation": false,
+  "candidatePath": "data/candidates/2026-09-28-ap19c3",
+  "candidateReleaseId": "2026-09-28-ap19c3-candidate.1",
+  "candidateManifestSha256": "8e0f7aa1901b1e26878ddead049a35c81cbf540fd6d68002597830f5c7e6b0da",
+  "manifestSha256": "3aa09c80c93ef56d472748c4a5496d439537272d96491497b2c678e3c7e20715",
+  "sourceReviewRef": {
+    "reviewId": "MVP05-SOURCE-APPROVAL-20260928",
+    "sha256": "2897874ed52c826bb43dc61270f8122cf996b4fa2070904eacc4d672f551f768"
+  },
+  "sourceReviewPath": "outputs/release-mvp05-2026-09-28/source-approval.json",
+  "decisionRef": "docs/fachrecht/abnahme-quellenpruefung-mvp05.md",
+  "decisionSha256": "ce1ece8fd0ba72d364b19df851d534528f09e7d645cd5e41872c7a9192d39c5c",
+  "consolidatedSourceReviewSha256": "67fdf2e5cb3ac19769655ed08f2ff80e9863b76a2526469917832bcba68e27ce",
+  "referenceSuites": {
+    "AP17B-ANWENDBARKEIT": {
+      "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+      "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+    },
+    "AP19B-SOCIAL-REFERENCES-1": {
+      "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+      "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+    }
+  },
+  "counts": {
+    "federalRules": 24,
+    "cantonalBindings": 28,
+    "approvedEligibility": 28,
+    "artifacts": 10,
+    "unchangedArtifacts": 9
+  },
+  "unchangedArtifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "byteLength": 8529
+    },
+    {
+      "path": "profiles/stpo.json",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "byteLength": 6652
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "byteLength": 8616
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "byteLength": 8002
+    },
+    {
+      "path": "profiles/zpo.json",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "byteLength": 10232
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "byteLength": 9073
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "byteLength": 7260
+    },
+    {
+      "path": "special-regimes/vrpg-be.json",
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a",
+      "byteLength": 114845
+    },
+    {
+      "path": "holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "byteLength": 837359
+    }
+  ],
+  "approvalOnlyChanges": {
+    "path": "social-procedures/ch-social-procedures.json",
+    "fields": [
+      "labels",
+      "review",
+      "federalRules[].status",
+      "cantonalBindings[].status",
+      "releaseEligibility[].releaseId",
+      "releaseEligibility[].status",
+      "releaseEligibility[].ruleRef.sha256",
+      "releaseEligibility[].bindingRef.sha256",
+      "releaseEligibility[].sourceReviewRef",
+      "releaseEligibility[].approval"
+    ],
+    "beforeSha256": "7b4be4d03158dccb5e2a1a1cc07c9533288b7eb7138c8ff56e558a94d86d940f",
+    "afterSha256": "1dd2792295b3b929efdcfa883b15509c0cd4fbef9dbf2a9f5228a8e6a6dacc26",
+    "legalContentUnchanged": true,
+    "sourceReviewDatesUnchanged": true
+  },
+  "validation": {
+    "core": "passed",
+    "python": "passed",
+    "result": {
+      "approvedBindings": 28,
+      "legalContentUnchanged": true,
+      "manifestSha256": "3aa09c80c93ef56d472748c4a5496d439537272d96491497b2c678e3c7e20715",
+      "releaseId": "2026-09-28-mvp-05-approved.1",
+      "reviewedFederalRules": 24,
+      "sourceReviewDatesUnchanged": true,
+      "status": "passed",
+      "unchangedArtifacts": 9,
+      "validatedArtifacts": 10
+    }
+  }
+}

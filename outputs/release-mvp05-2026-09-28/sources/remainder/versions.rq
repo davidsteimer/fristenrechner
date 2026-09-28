@@ -1,0 +1,13 @@
+PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
+SELECT DISTINCT ?work ?version ?from ?to WHERE {
+ VALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2010/267>
+<https://fedlex.data.admin.ch/eli/cc/2010/262>
+<https://fedlex.data.admin.ch/eli/cc/2006/218>
+<https://fedlex.data.admin.ch/eli/cc/1969/737_757_755>
+<https://fedlex.data.admin.ch/eli/cc/1978/688_688_688>
+<https://fedlex.data.admin.ch/eli/cc/1978/712_712_712>
+<https://fedlex.data.admin.ch/eli/cc/1994/1340_1340_1340> }
+ ?version jolux:isMemberOf ?work; jolux:dateApplicability ?from.
+ OPTIONAL { ?version jolux:dateEndApplicability ?to }
+ FILTER(str(?from) >= "2022-01-01")
+} ORDER BY ?work ?from

@@ -19,7 +19,8 @@ const jsonBytes = value => Buffer.from(`${JSON.stringify(value, null, 2)}\n`);
 const recordedApproval = JSON.parse(await readFile(resolve(root, approvalPath), 'utf8'));
 const paths = new Set([initialPath, ...recordedApproval.evidence.map(item => item.path),
   ...Object.values(recordedApproval.transition).flatMap(item => [item.beforePath, item.afterPath])]);
-const recordedFiles = new Map(await Promise.all([...paths].map(async path => [path, await readFile(resolve(root, path))])));
+const recordedFiles = new Map(await Promise.all([...paths].map(async path => [path, await readFile(resolve(root,
+  path === 'data/source-reviews/source-register.json' ? 'outputs/release-mvp05-2026-09-28/approval-inputs/' + path : path))])));
 const fixture = () => ({ approval: structuredClone(recordedApproval), files: new Map([...recordedFiles].map(([p, bytes]) => [p, Buffer.from(bytes)])) });
 const check = f => validateMvp04SourceApproval(f.approval, f.files);
 function mutateJson(f, path, change, rebind = false) {

@@ -45,6 +45,8 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | [DEC-2026-019](DEC-2026-019-gestufte-vrpg-bedienung.md) | A | beschlossen | Gestufte VRPG-Bedienung mit vier Bereichen und zweispaltigem Raster, getrennt von Fach- und Releasefreigaben | – |
 | [DEC-2026-020](DEC-2026-020-qualifizierter-spezialregimekatalog-v3.md) | B | beschlossen | Spezialregimekatalog 3.0.0 als technischer Produktvertrag bestätigt, Datenpromotion und Bereitstellung separat | – |
 | [DEC-2026-023](DEC-2026-023-schweizweiter-feiertagskatalog.md) | B | beschlossen | Eigener Feiertagskatalog 1.0.0 mit Manifest-/Consumerformat 4.0.0 und begrenzter CH-/BE-Projektion. Lokale Umsetzung beauftragt, keine Release- oder Betriebsfreigabe | David Steimer |
+| [DEC-2026-024](DEC-2026-024-nationales-sozialversicherungsmodell.md) | B | beschlossen | Weitere Sozialversicherungsregeln national modellieren. Kantonale Anbindung und zunächst bernische Produktfreigabe getrennt führen. Noch kein neuer Formatvertrag oder freigegebener Berechnungspfad | – |
+| [DEC-2026-025](DEC-2026-025-sozialverfahrenskatalog-und-manifest-v5.md) | B | beschlossen | Eigenständiger Sozialverfahrenskatalog 1.0.0 mit Manifest-/Consumerformat 5.0.0 und expliziter Migration. AP19B einschliesslich AVIV-Option B und statischer UI-Folge abgenommen, keine Laufzeitfreigabe | – |
 
 ## Quellen des Startbestands
 
@@ -84,4 +86,28 @@ David Steimer hat anschliessend am 22. September 2026 erklärt: «AP18C ist abge
 
 David Steimer hat am 22. September 2026 die vollständige Quellenprüfung für MVP 0.4 abgenommen und die bereits beschlossene Behandlung des AI-Quellenkonflikts ausdrücklich unverändert bestätigt. Die [Abnahmenotiz](../fachrecht/abnahme-quellenpruefung-mvp04.md) und der maschinenlesbare Nachweis binden den Entscheid an die vorgelegten 120 unterschiedlichen Quellen-IDs. Dies ist eine fachliche Freigabe, keine neue Architekturentscheidung. Es wird daher keine neue DEC-Nummer vergeben. Publikation, Installation und Betrieb bleiben gesondert freizugeben.
 
-Stand des Registers: 22. September 2026
+## AP19: nationale Modelle, begrenzte Erstfreigabe
+
+David Steimer hat die nationale Wiederverwendbarkeit der weiteren Sozialversicherungsmodelle bei zunächst bernischer Freigabe ausdrücklich bestätigt und am 25. September 2026 den Start beauftragt. [DEC-2026-024](DEC-2026-024-nationales-sozialversicherungsmodell.md) dokumentiert diesen begrenzten Architekturgrundsatz. [AP19A](../fachrecht/sozialversicherungsrecht-ap19.md) legt Fachinventar, Quellenpakete und eine nicht produktive Strukturprobe zur Prüfung vor. Die danach entstandenen Fachregeln, konkreten Formate und Implementierungen sind dadurch nicht vorweg abgenommen.
+
+Stand des Registers: 28. September 2026
+
+David Steimer hat anschliessend ausdrücklich erlaubt, sein «OK, passt» als Abnahme von AP19A-Umfang und Modellstruktur zu verstehen und AP19B zu beginnen. Die [gebundene Abnahmenotiz](../fachrecht/abnahme-ap19a.md) dokumentiert diesen Schritt. Die konkreten neuen Formate wurden daraufhin mit DEC-2026-025 vorgeschlagen und waren nicht durch die AP19A-Abnahme mitbeschlossen.
+
+Mit «OK. Inklusive Option B für AVIG abgenommen.» hat David Steimer anschliessend die vollständige AP19B-Vorlage bestätigt. [DEC-2026-025](DEC-2026-025-sozialverfahrenskatalog-und-manifest-v5.md) ist damit beschlossen. Die [AP19B-Abnahmenotiz](../fachrecht/abnahme-ap19b.md) bindet die unveränderten Vorlagen und hält die AVIV-Nachweismethode sowie die statische Feldbeschriftung fest. Zum Zeitpunkt dieser AP19B-Abnahme war AP19C noch nicht gestartet. Keine neue Laufzeit-, Release- oder Betriebsfreigabe.
+
+## Abnahme AP19C1 einschliesslich Bediennachträgen
+
+Nach dem ausdrücklichen Startauftrag für AP19C hat David Steimer am 28. September 2026 den tatsächlich vorgelegten C1-Stand einschliesslich Formularvereinfachung und Datumseingabe-Nachtrag [fachlich-technisch abgenommen](../fachrecht/abnahme-ap19c1.md). Technische Grundlage, zwölf migrierte Sozialpfade und vier ELG-Pfade sind damit als lokaler Kandidat abgenommen. Zum Zeitpunkt dieser C1-Abnahme waren C2 für AVIG und C3 für KVG noch nicht gestartet. Die Abnahme ändert weder den Produktvertrag noch die Kandidatenflags und erteilt keine Publikations-, Installations- oder Betriebsfreigabe. Keine neue DEC-Nummer.
+
+## Abnahme AP19C2 und Beibehaltung der Datumseingabe
+
+Nach gesondertem Start hat David Steimer am 28. September 2026 [AP19C2 fachlich-technisch abgenommen](../fachrecht/abnahme-ap19c2.md). Vier nationale AVIG-ALE-Regeln und acht Berner Kassen-/Amtsstellenanbindungen sind damit als lokaler Kandidat abgenommen. Das zusätzliche Zuständigkeitsdatum bleibt vorerst unverändert. Die diskutierte Vereinfachung wird erst nach allfälligem Benutzerfeedback erneut beurteilt, nicht bereits umgesetzt oder terminiert. Keine Änderung des Produktvertrags und keine neue DEC-Nummer. Kandidatenflags bleiben unverändert, keine operative Freigabe.
+
+## Start AP19C3
+
+David Steimer hat am 28. September 2026 mit «Danke, dann starten wir mit AP19C3.» die [begrenzte KVG-/OKP-Integration](../architektur/implementierung-ap19c3.md) beauftragt. Der abgenommene AP19B-Vertrag bleibt unverändert. Der Wohnsitz im Verwaltungsstadium wird für die Produktgrenze auf den fristauslösenden Zustelltag bezogen, nicht als gesetzliche Zuständigkeitsnorm ausgegeben. Kein zusätzlicher Beschluss zur Formatänderung, keine vorweggenommene Kandidatenabnahme oder operative Freigabe.
+
+## Abnahme AP19C3 und Abschluss der ersten Integrationstranche
+
+Mit «AP19C3 ist abgenommen.» hat David Steimer am 28. September 2026 den vorgelegten KVG-/OKP-Stand [fachlich-technisch abgenommen](../fachrecht/abnahme-ap19c3.md). Zusammen mit C1 und C2 ist damit die erste AP19-Integrationstranche für ELG, AVIG und KVG abgeschlossen. Der zusammengehörige Kandidat umfasst 24 nationale Bundesregeln und 28 Berner Anbindungen. Die abgenommenen Fach-, Bedien- und Formatgrenzen bleiben unverändert. Keine neue DEC-Nummer, keine Datenpromotion oder operative Freigabe. Die Releasevorbereitung wird durch diese Abnahme nicht automatisch gestartet. Historische Implementierungs-, Quellen-, Build- und Prüfunterlagen bleiben unverändert, der aktuelle Abnahmestatus steht in der gebundenen Abnahmenotiz.

@@ -8,6 +8,18 @@ Dieser Ordner trennt die fachliche Quellenprüfung von den unveränderlichen Dat
 | `events/*.json` | Append-only-Protokoll der einzelnen Prüfereignisse |
 | `index.json` | Reproduzierbarer Suchindex mit dem jüngsten Prüfstand und den betroffenen Datenkomponenten |
 
+## Erweiterung für MVP 0.5
+
+David Steimer hat am 28. September 2026 die [zusammengeführte Quellenprüfung und die kontrollierte lokale Übernahme](../../docs/fachrecht/abnahme-quellenpruefung-mvp05.md) ausdrücklich freigegeben. Das Register umfasst jetzt 57 Quellen, davon 41 produktiv verwendete, sieben unterstützende und neun Monitoringquellen. Die bisherigen 42 Registereinträge bleiben inhaltlich identisch. Neu sind die 15 AP19-Quellen.
+
+Das dritte Prüfereignis `2026-09-28-mvp-05-prerelease.1` bindet die 53 Quellen des lokalen Datenreleases `2026-09-28-mvp-05-approved.1`. Es unterscheidet frisch abgerufene Nachweise und am selben Tag wiederverwendete, konkret abgegrenzte Prüfungen. `unchanged` bezieht sich auf den modellierten Fristenumfang, nicht auf das gesamte jeweilige Rechtsgebiet. Die separate Quellenabnahme umfasst zusätzlich die ausdrückliche Wiederverwendung von 82 Katalogquellen aus der abgenommenen Prüfung vom 22. September 2026. Diese werden weder zu frischen Prüfungen noch zu operativen Kantonsfreigaben umetikettiert.
+
+Der [Übernahmenachweis](../../outputs/release-mvp05-2026-09-28/source-governance-adoption.json) bindet Quellenabnahme, Manifest, Register, Ereignis und Index. Die beiden bisherigen Ereignisse bleiben byteidentisch. Der Suchindex löst zusätzlich die Format-5-Verknüpfungen zu nationalen Sozialverfahrensregeln, Berner Anbindungen, Kontextwegen, Kalenderanbindungen und konkreten Datenfreigaben auf.
+
+Die frühere MVP-0.4-Abnahme wird gegen den exakt damaligen, durch ihren ursprünglichen Hash gebundenen Registerstand geprüft. Dieser liegt unverändert unter `outputs/release-mvp05-2026-09-28/approval-inputs/data/source-reviews/`. Die historische Verifikation ist keine Prüfung des heutigen Registers. Dieses wird separat durch den aktuellen AP13-Validator samt Indexableitung geprüft. Auch die historische MVP-0.5-Vorbereitung bleibt mit ihren archivierten damaligen Eingängen reproduzierbar.
+
+OF-001, der bekannte AI-Konflikt und die dokumentierte AVIV-Nachweismethode Option B bleiben bestehen. Der nächste ordentliche Jahrestermin ist unverändert der 15. November 2027. Die lokale Übernahme erlaubt keine Installation, Veröffentlichung oder öffentliche Betriebsaufnahme.
+
 ## Erweiterung für MVP 0.4
 
 Am 22. September 2026 wurde das Register lokal auf 42 Quellen erweitert. David Steimer hat den gesamten neuen Quellenprüfstand mit 120 unterschiedlichen Quellen-IDs [ausdrücklich abgenommen](../../docs/fachrecht/abnahme-quellenpruefung-mvp04.md). Das neue Ereignis `2026-09-22-mvp-04-prerelease.1` prüft alle 38 im MVP-0.4-Manifest deklarierten Quellen erneut. Es enthält unverändert 38 Befunde `unchanged` und ist jetzt `approved`. Das Register ist ebenfalls freigegeben, der Index daraus neu erzeugt. Grundlage ist der dokumentierte menschliche Entscheid, keine automatische Fachfreigabe.

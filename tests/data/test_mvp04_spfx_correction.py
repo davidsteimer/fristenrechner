@@ -18,6 +18,9 @@ correction = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(correction)
 audit = correction.audit
 HISTORICAL_CODE_COMMIT = "c3eaa629d13198d49013a66e8ef2029883139939"
+HISTORICAL_CORRECTION_COMMIT = "065781f17b6f83e1e51c9af96d89bb699cb4b933"
+HISTORICAL_CORRECTION_SHA256 = "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346"
+HISTORICAL_CORRECTION_REPORT_SHA256 = "d4776ac6a35ea8af72ab563300221e79815591e37cddbf86ff72c98bcf272a7f"
 
 
 class Mvp04SpfxCorrectionTests(unittest.TestCase):
@@ -27,6 +30,20 @@ class Mvp04SpfxCorrectionTests(unittest.TestCase):
         cls.old_config = json.loads(subprocess.run(
             ["git", "cat-file", "blob", f"{HISTORICAL_CODE_COMMIT}:spfx/config/package-solution.json"],
             cwd=ROOT, capture_output=True, check=True).stdout)
+        # The September 22 correction is historical evidence. A later release
+        # must not supply its mutable package metadata or current build here.
+        cls.historical_inputs = {
+            relative: subprocess.run(
+                ["git", "cat-file", "blob", f"{HISTORICAL_CORRECTION_COMMIT}:{relative}"],
+                cwd=ROOT, capture_output=True, check=True).stdout
+            for relative in ["package.json", "spfx/package.json", "spfx/config/package-solution.json"]
+        }
+        cls.actual_package = (ROOT / correction.ARTIFACT_DIRECTORY / correction.PACKAGE_NAME).read_bytes()
+        audit.require(audit.sha256(cls.actual_package) == HISTORICAL_CORRECTION_SHA256,
+                      "Historical correction package fixture differs")
+        cls.actual_report_bytes = (ROOT / correction.REPORT).read_bytes()
+        audit.require(audit.sha256(cls.actual_report_bytes) == HISTORICAL_CORRECTION_REPORT_SHA256,
+                      "Historical correction report fixture differs")
         # Structural tests use a clearly synthetic package fixture, not proof
         # that the defect is fixed. The real package is verified separately.
         files = audit.zip_files(cls.old_package)
@@ -43,10 +60,12 @@ class Mvp04SpfxCorrectionTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(prefix="mvp04-spfx-correction-test-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for relative in [*correction.FROZEN_EVIDENCE, audit.ROLLBACK, "package.json", "spfx/package.json"]:
+        for relative in [*correction.FROZEN_EVIDENCE, audit.ROLLBACK]:
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)
+        for relative in ["package.json", "spfx/package.json"]:
+            self.write_fixture(relative, self.historical_inputs[relative])
         shutil.copytree(ROOT / "data/releases" / audit.RELEASE_ID,
                         self.root / "data/releases" / audit.RELEASE_ID)
         self.write_fixture(audit.SPPKG, self.fixture_package)
@@ -206,11 +225,15 @@ class Mvp04SpfxCorrectionTests(unittest.TestCase):
                 correction.write(artifacts, report, self.root)
 
     def test_actual_prepared_candidate_matches_its_separate_report(self):
-        # Integration gate: run after the real SPFx build and correction script.
-        artifacts, report = correction.prepare(ROOT)
+        # Recheck the real archived package, not the synthetic mutation fixture
+        # and not whichever SPFx package happens to be the current release.
+        self.write_fixture(audit.SPPKG, self.actual_package)
+        self.write_fixture("spfx/config/package-solution.json",
+                           self.historical_inputs["spfx/config/package-solution.json"])
+        artifacts, report = self.prepare()
         self.assertEqual(set(artifacts), {correction.PACKAGE_NAME})
-        self.assertEqual((ROOT / correction.ARTIFACT_DIRECTORY / correction.PACKAGE_NAME).read_bytes(), artifacts[correction.PACKAGE_NAME])
-        self.assertEqual(json.loads((ROOT / correction.REPORT).read_bytes()), report)
+        self.assertEqual(self.actual_package, artifacts[correction.PACKAGE_NAME])
+        self.assertEqual(json.loads(self.actual_report_bytes), report)
 
 
 if __name__ == "__main__":

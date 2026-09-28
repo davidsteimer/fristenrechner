@@ -1,0 +1,63 @@
+{
+  "purpose": "MVP05 definitive local SPFx build, not installed or published",
+  "releaseId": "2026-09-28-mvp-05-approved.1",
+  "applicationVersion": "0.5.0",
+  "packageVersion": "0.5.0.0",
+  "pinCommit": "3109c39730f10d31cb6c57200b36dd5091d7bcd1",
+  "manifestSha256": "3aa09c80c93ef56d472748c4a5496d439537272d96491497b2c678e3c7e20715",
+  "stage": ".work/mvp05-spfx-build-jPfxpi",
+  "priorPackagePath": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+  "priorPackageSha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346",
+  "publicationVerified": false,
+  "installationAuthorized": false,
+  "productionActivation": false,
+  "steps": [
+    {
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp05-spfx-build-jPfxpi/step-1.log"
+    },
+    {
+      "command": "node_modules/.bin/heft",
+      "args": [
+        "test",
+        "--clean",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp05-spfx-build-jPfxpi/step-2.log"
+    },
+    {
+      "command": "../../toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "scripts/audit-product-css.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp05-spfx-build-jPfxpi/step-3.log"
+    },
+    {
+      "command": "node_modules/.bin/heft",
+      "args": [
+        "package-solution",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp05-spfx-build-jPfxpi/step-4.log"
+    },
+    {
+      "command": "npm",
+      "args": [
+        "run",
+        "test:built"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp05-spfx-build-jPfxpi/step-5.log"
+    }
+  ],
+  "passed": true,
+  "packagePath": ".work/mvp05-spfx-build-jPfxpi/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+  "packageSha256": "f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39"
+}

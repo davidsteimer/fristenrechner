@@ -1,0 +1,122 @@
+{
+  "kind": "mvp05DefinitiveLocalVerification",
+  "verifiedOn": "2026-09-28",
+  "status": "passed",
+  "applicationVersion": "0.5.0",
+  "spfxVersion": "0.5.0.0",
+  "releaseId": "2026-09-28-mvp-05-approved.1",
+  "dataPinCommit": "3109c39730f10d31cb6c57200b36dd5091d7bcd1",
+  "fullProductCommit": null,
+  "workingTreeBuild": true,
+  "artifactVerification": {
+    "path": "outputs/release-mvp05-2026-09-28/artifact-verification.json",
+    "sha256": "877dcf0b225e2cfe84ed386ba95f8b3584ba66fdfe4b6c9b5911c82ad5f7b393"
+  },
+  "browserVerification": {
+    "path": "outputs/release-mvp05-2026-09-28/browser-verification.md",
+    "sha256": "6df93d219bfec0bb612b0135a8a20d4193586239972276ae52c31bac1ec84436",
+    "scope": "local Chrome smoke test only"
+  },
+  "automatedChecks": {
+    "coreAndUi": 1213,
+    "publicBuild": 12,
+    "pythonDataIncludingArtifactTests": 142,
+    "pythonGovernance": 24,
+    "nodeGovernance": 109,
+    "governanceNegativeCases": 8,
+    "promotionMutationAndIdempotence": 8,
+    "spfxSource": 84,
+    "spfxCompiledAndPackage": 42,
+    "artifactTestsIncludedInData": 19
+  },
+  "logs": {
+    "product": {
+      "sourcePath": ".work/mvp05-release-check.log",
+      "sourceSha256": "91a59c41cfe60807a7ef89b4885cafb21fd5a6cd7ca10f599814f9693a0eecda",
+      "archivePath": "outputs/release-mvp05-2026-09-28/build-evidence/logs/local-product.txt",
+      "archivedSha256": "91a59c41cfe60807a7ef89b4885cafb21fd5a6cd7ca10f599814f9693a0eecda"
+    },
+    "governance": {
+      "sourcePath": ".work/mvp05-release-governance.log",
+      "sourceSha256": "2fd8e92498d4191c07b61b9001076f6addf77dc0aa97b37a6c2c36f4bdb0e3a9",
+      "archivePath": "outputs/release-mvp05-2026-09-28/build-evidence/logs/local-governance.txt",
+      "archivedSha256": "2fd8e92498d4191c07b61b9001076f6addf77dc0aa97b37a6c2c36f4bdb0e3a9"
+    },
+    "data": {
+      "sourcePath": ".work/mvp05-release-data-final.log",
+      "sourceSha256": "be97c30304f360a7fe0876e665d6f9ce8fbbd08cd81f2bd68803df0696b181cc",
+      "archivePath": "outputs/release-mvp05-2026-09-28/build-evidence/logs/local-data.txt",
+      "archivedSha256": "be97c30304f360a7fe0876e665d6f9ce8fbbd08cd81f2bd68803df0696b181cc"
+    },
+    "promotion": {
+      "sourcePath": ".work/mvp05-release-promotion-tests.log",
+      "sourceSha256": "fe1edad48a9054851e37881fa372a16bc1705e00b8c1b49aa83f15bbf3a9c837",
+      "archivePath": "outputs/release-mvp05-2026-09-28/build-evidence/logs/local-promotion.txt",
+      "archivedSha256": "fe1edad48a9054851e37881fa372a16bc1705e00b8c1b49aa83f15bbf3a9c837"
+    }
+  },
+  "preservation": {
+    "passed": true,
+    "historicalChecks": 68,
+    "explicitLiveTestEvolution": 1
+  },
+  "acceptedC3": [
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/manifest.json",
+      "sha256": "8e0f7aa1901b1e26878ddead049a35c81cbf540fd6d68002597830f5c7e6b0da"
+    },
+    {
+      "path": "docs/architektur/implementierung-ap19c3.md",
+      "sha256": "75e77b3e31dfbcf067ee0d546f05ff7020e1530d833c681b5949ed85b68d11eb"
+    },
+    {
+      "path": "docs/fachrecht/pruefbericht-ap19c3.md",
+      "sha256": "f5fa0162f847318e94e61b046ef2fd4252f2c64c3fb08c86d9fcb98db7f32f2a"
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-ap19c3.md",
+      "sha256": "f6a399d25aa025146eab2f39a8e6727281b7ee392ed0b9200b4b8b1c7f095a0f"
+    },
+    {
+      "path": "docs/fachrecht/zeitliche-bindung-ap19c3.md",
+      "sha256": "e0e59f77a63611bd7547cb1f3231cb95b52c429424462c7e528e926491f686fd"
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "sha256": "d35cabbb21e88be73b038c0231c5eb6a3258a3b9c53fbee2823dc57bbb951f3e"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "sha256": "a92bec5130f1094633884c1e412712bf881da2e8af79095e81e7acf94583aca3"
+    },
+    {
+      "path": "src/ui/socialMessages.ts",
+      "sha256": "96976881a112113e28164cf4e8fe2d78e3e3fff4e5c900c145bfdbb1eff1622a"
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "sha256": "7c48dd7ac49bbff1049f1e68479ca9942f961c9cb3025936123115989c357780"
+    },
+    {
+      "path": "src/ui/dateTransition.ts",
+      "sha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc"
+    }
+  ],
+  "retainedBuildWarnings": [
+    "Two SPFx ESLint no-new-null warnings for the explicit JSON wire contract. No build errors."
+  ],
+  "permissions": {
+    "localDataPromotion": true,
+    "localDefinitiveBuild": true,
+    "eqInstallation": false,
+    "publication": false,
+    "hostingChanges": false,
+    "productionActivation": false
+  },
+  "remainingGates": [
+    "Exact E/Q installation authorisation and live baseline/rollback check",
+    "New E/Q environment tests and manual Q acceptance",
+    "Publication preflight and separately authorised GitHub push",
+    "Green hosting GET-header clarification and separate P deployment/operation approval"
+  ]
+}

@@ -129,9 +129,10 @@ export interface CalendarData {
 
 export interface ValidatedReleaseArtifactLike {
   readonly descriptor: {
-    readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog';
+    readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog' | 'socialProcedureCatalog';
     readonly contentId: string;
     readonly schemaId?: string;
+    readonly sha256?: string;
   };
   readonly parsed: unknown;
 }
@@ -145,6 +146,7 @@ export interface ValidatedReleaseLike {
   readonly calendarIds: readonly string[];
   readonly specialRegimeCatalogIds?: readonly string[];
   readonly holidayCatalogIds?: readonly string[];
+  readonly socialProcedureCatalogIds?: readonly string[];
   readonly artifacts: readonly ValidatedReleaseArtifactLike[];
 }
 
@@ -160,6 +162,8 @@ export interface CalculationData {
   readonly calendarRuleSets: ReadonlyMap<string, import('./calendarRuleTypes').CalendarRuleSet>;
   readonly specialRegimeCatalogs: ReadonlyMap<string, import('./specialTypes').SpecialRegimeCatalog>;
   readonly holidayCatalogs: ReadonlyMap<string, import('./holidayCatalogTypes').HolidayCatalog>;
+  readonly socialProcedureCatalogs?: ReadonlyMap<string, import('./socialTypes').SocialProcedureCatalog>;
+  readonly releaseArtifactRefs?: readonly import('./socialTypes').ReleaseArtifactReference[];
 }
 
 export interface CalendarGenerationEvidence {

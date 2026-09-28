@@ -1,0 +1,44 @@
+{
+  "workPackage": "AP19C1",
+  "checkedOn": "2026-09-25",
+  "status": "local-candidate-awaiting-human-acceptance",
+  "releaseId": "2026-09-25-ap19c1-candidate.1",
+  "manifestSha256": "eae74fc823128e96a42980cd4eeac448e24dece60514b426d92eb698abb49524",
+  "runtimeApproval": false,
+  "testApprovals": "synthetic-in-memory-only",
+  "typecheckPassed": true,
+  "testSuites": {
+    "coreAndUi": {"passed": 816, "failed": 0},
+    "ap19cIntegrationSubset": {"passed": 91, "failed": 0, "includedIn": "coreAndUi"},
+    "pythonContracts": {"passed": 44, "failed": 0},
+    "ap19cPythonSubset": {"passed": 13, "failed": 0, "includedIn": "pythonContracts"},
+    "governance": {"passed": 83, "failed": 0},
+    "publicApp": {"passed": 7, "failed": 0},
+    "spfxTransport": {"passed": 67, "failed": 0},
+    "emittedAndPackagedConsumer": {"passed": 29, "failed": 0}
+  },
+  "isolatedBuild": {
+    "directory": ".work/ap19c-spfx-build-mU90zB",
+    "allFiveStepsPassed": true,
+    "testPackageSha256": "68d3741314f8d5dc40eee816d945600da562e604ebb1f17d2792d525bf10a09d",
+    "notForDeployment": true,
+    "existingJsonNullLintWarnings": 2,
+    "originalPackageUnchanged": true
+  },
+  "preservation": {"checkedArtifacts": 23, "allUnchanged": true, "evidence": "preservation-verification.json"},
+  "browser": {
+    "url": "http://127.0.0.1:8794/?candidate=ap19c1",
+    "localOnly": true,
+    "germanAndFrench": true,
+    "desktopTwoColumns": true,
+    "narrowViewportWidth": 560,
+    "narrowClientWidth": 545,
+    "narrowScrollWidth": 545,
+    "completeElgAppealCandidateCorrectlyBlocked": true,
+    "dateEmptyAfterFinalReload": true,
+    "testDefaultsSaved": false,
+    "observedConsoleErrors": 0,
+    "positiveCandidateCalculationBypass": false
+  },
+  "outOfScope": ["AP19C2-AVIG", "AP19C3-KVG", "new-cantonal-approval", "release-promotion", "GitHub-publication", "M365-installation", "hosting-changes"]
+}

@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { CalculationData, SpecialRegimeCatalog } from '../core';
+import { hasSocialUi, socialUiPath, socialUiSelection } from './socialUi';
 
 export type VrpgArea = '' | 'general' | 'social' | 'political' | 'procurement';
 export interface VrpgSelectionState {
@@ -16,7 +17,7 @@ export interface VrpgChoice {
 }
 
 export interface VrpgSelectionResolution {
-  readonly kind: 'incomplete' | 'unavailable' | 'general' | 'special';
+  readonly kind: 'incomplete' | 'unavailable' | 'general' | 'special' | 'social';
   readonly regimeId: string;
   readonly definitionId: string;
   readonly reason?: 'missingSelection' | 'invalidSelection' | 'notReleased';
@@ -140,12 +141,18 @@ export function vrpgAreaOptions(): VrpgChoice[] {
     choice('procurement', 'Beschaffungsrecht', 'Marchés publics')];
 }
 
-export function vrpgLawOptions(selection: VrpgSelectionState): VrpgChoice[] {
+export function vrpgLawOptions(selection: VrpgSelectionState, data?: CalculationData): VrpgChoice[] {
   switch (selection.area) {
     case 'social': return [PLACEHOLDER,
       choice('ivg', 'Invalidenversicherung (IVG)', 'Assurance-invalidité (LAI)'),
       choice('ahvg', 'Alters- und Hinterlassenenversicherung (AHVG)', 'Assurance-vieillesse et survivants (LAVS)'),
-      choice('uvg', 'Unfallversicherung (UVG)', 'Assurance-accidents (LAA)')];
+      choice('uvg', 'Unfallversicherung (UVG)', 'Assurance-accidents (LAA)'),
+      ...(data && hasSocialUi(data)
+        ? [choice('elg', 'Ergänzungsleistungen (ELG)', 'Prestations complémentaires (LPC)')] : []),
+      ...(data && socialUiPath(data, { area: 'social', law: 'avig', action: 'objection', stage: '' })
+        ? [choice('avig', 'Arbeitslosenversicherung (AVIG) · Arbeitslosenentschädigung', 'Assurance-chômage (LACI) · indemnité de chômage')] : []),
+      ...(data && socialUiPath(data, { area: 'social', law: 'kvg', action: 'objection', stage: '' })
+        ? [choice('kvg', 'Krankenversicherung (KVG) · individuelle OKP-Leistungen', 'Assurance-maladie (LAMal) · prestations individuelles AOS')] : [])];
     case 'political': return [PLACEHOLDER,
       choice('federal', 'Eidgenössische Angelegenheit', 'Affaire fédérale'),
       choice('cantonal', 'Kantonale Angelegenheit', 'Affaire cantonale'),
@@ -156,13 +163,17 @@ export function vrpgLawOptions(selection: VrpgSelectionState): VrpgChoice[] {
 }
 
 export function vrpgActionOptions(data: CalculationData, selection: VrpgSelectionState): VrpgChoice[] {
-  if (!selection.law || !vrpgLawOptions(selection).some(option => option.key === selection.law)) return [];
+  if (!selection.law || !vrpgLawOptions(selection, data).some(option => option.key === selection.law)) return [];
   switch (selection.area) {
     case 'social': return [PLACEHOLDER,
       selection.law === 'ivg'
         ? choice('preliminary-objection', 'Einwand gegen Vorbescheid', 'Observations sur un préavis')
         : choice('objection', 'Einsprache gegen Verfügung', 'Opposition à une décision'),
-      choice('appeal', 'Beschwerde ans Versicherungsgericht', 'Recours au tribunal des assurances'),
+      hasSocialUi(data)
+        ? selection.law === 'ivg'
+          ? choice('appeal', 'Beschwerde gegen Verfügung', 'Recours contre une décision')
+          : choice('appeal', 'Beschwerde gegen Einspracheentscheid', 'Recours contre une décision sur opposition')
+        : choice('appeal', 'Beschwerde ans Versicherungsgericht', 'Recours au tribunal des assurances'),
       choice('complaint-correction', 'Nachfrist zur Verbesserung der Beschwerde', 'Délai supplémentaire pour corriger le recours'),
       choice('ongoing', 'Eingabe im laufenden Verfahren', 'Écriture dans une procédure en cours')];
     case 'procurement': return [PLACEHOLDER,
@@ -189,10 +200,10 @@ export function vrpgFixedAction(data: CalculationData, selection: VrpgSelectionS
   return actions.length === 1 ? actions[0] : undefined;
 }
 
-export function vrpgStageOptions(selection: VrpgSelectionState): VrpgChoice[] {
+export function vrpgStageOptions(selection: VrpgSelectionState, data?: CalculationData): VrpgChoice[] {
   if (selection.action !== 'ongoing'
     || !selection.law
-    || !vrpgLawOptions(selection).some(option => option.key === selection.law)) return [];
+    || !vrpgLawOptions(selection, data).some(option => option.key === selection.law)) return [];
   if (selection.area === 'social') return [PLACEHOLDER,
     choice('administration', 'Verwaltungsverfahren', 'Procédure administrative'),
     choice('court', 'Versicherungsgerichtliches Verfahren', 'Procédure devant le tribunal des assurances')];
@@ -217,7 +228,7 @@ export function resolveVrpgSelection(data: CalculationData, selection: VrpgSelec
       : blocked('unavailable', 'notReleased');
   }
   if (!selection.law) return blocked('incomplete', 'missingSelection');
-  if (!vrpgLawOptions(selection).some(option => option.key === selection.law)) return blocked('unavailable', 'invalidSelection');
+  if (!vrpgLawOptions(selection, data).some(option => option.key === selection.law)) return blocked('unavailable', 'invalidSelection');
   if (!selection.action) return blocked('incomplete', 'missingSelection');
   if (selection.area === 'political') {
     const mapping = POLITICAL_MAPPINGS.find(item => item.law === selection.law && actionKey(item) === selection.action);
@@ -227,9 +238,15 @@ export function resolveVrpgSelection(data: CalculationData, selection: VrpgSelec
       : blocked('unavailable', 'notReleased');
   }
   if (!vrpgActionOptions(data, selection).some(option => option.key === selection.action)) return blocked('unavailable', 'invalidSelection');
-  const stages = vrpgStageOptions(selection);
+  const stages = vrpgStageOptions(selection, data);
   if (stages.length && !selection.stage) return blocked('incomplete', 'missingSelection');
   if (selection.stage && !stages.some(option => option.key === selection.stage)) return blocked('unavailable', 'invalidSelection');
+  if (selection.area === 'social' && data.formatVersion === '5.0.0') {
+    // Format 5 social selections never fall back to an AP17 or general entry.
+    return socialUiPath(data, selection)
+      ? { kind: 'social', regimeId: '', definitionId: '' }
+      : blocked('unavailable', 'notReleased');
+  }
   const mappingId = qualifiedMappingId(selection);
   const regimeId = mappingId ? `ap17c-${mappingId.toLowerCase()}` : '';
   const definitionId = mappingId ? `AP17C-${mappingId}-001` : '';
@@ -250,14 +267,14 @@ export function sanitizeVrpgSelection(data: CalculationData, candidate: unknown)
   const raw = candidate as Record<string, unknown>;
   const area = selectedValue(raw.area, vrpgAreaOptions()) as VrpgArea;
   const base = { ...EMPTY_VRPG_SELECTION, area };
-  const law = selectedValue(raw.law, vrpgLawOptions(base));
+  const law = selectedValue(raw.law, vrpgLawOptions(base, data));
   const withLaw = { ...base, law };
   const fixedAction = vrpgFixedAction(data, withLaw);
   const action = fixedAction && (raw.action === '' || raw.action === undefined)
     ? fixedAction.key
     : selectedValue(raw.action, vrpgActionOptions(data, withLaw));
   const withAction = { ...withLaw, action };
-  return { ...withAction, stage: selectedValue(raw.stage, vrpgStageOptions(withAction)) };
+  return { ...withAction, stage: selectedValue(raw.stage, vrpgStageOptions(withAction, data)) };
 }
 
 export function changeVrpgSelection(
@@ -277,6 +294,15 @@ export function changeVrpgSelection(
 
 export function selectionFromLegacy(data: CalculationData, regimeId: string, definitionId: string): VrpgSelectionState {
   if (!regimeId) return { ...EMPTY_VRPG_SELECTION };
+  if (data.formatVersion === '5.0.0') {
+    const socialMapping = QUALIFIED_MAPPINGS.find(mapping => mapping.selection.area === 'social'
+      && regimeId === `ap17c-${mapping.id.toLowerCase()}`
+      && definitionId === `AP17C-${mapping.id}-001`);
+    if (socialMapping && socialUiSelection(data, socialMapping.selection)) {
+      // Explicit twelve-row selection migration only, never fact or approval migration.
+      return { ...socialMapping.selection };
+    }
+  }
   if (regimeId === GENERAL.regimeId
     && (!definitionId || definitionId === GENERAL.definitionId)
     && approvedPair(data, GENERAL.regimeId, GENERAL.definitionId)) {

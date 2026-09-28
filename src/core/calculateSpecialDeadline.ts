@@ -362,6 +362,11 @@ export function calculateSpecialDeadline(
   input: SpecialDeadlineInput,
   data: CalculationData
 ): SpecialDeadlineResult {
+  // The old general ATSG definition is retained as historical inventory only.
+  // Format 5 social cases must pass the national resolver and exact eligibility.
+  if (data.formatVersion === '5.0.0' && input.ruleId === 'ATSG-SPEC-REL-060') {
+    return blocked(['socialResolverRequired'], { inputDates: allInputDates(input) });
+  }
   const primitiveReasons = validatePrimitiveInputs(input);
   if (primitiveReasons.length > 0) {
     return blocked(primitiveReasons, { inputDates: allInputDates(input), warnings: ['warning.input.invalid'] });

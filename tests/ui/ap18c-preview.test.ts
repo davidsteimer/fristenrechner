@@ -5,16 +5,16 @@ import { test } from 'node:test';
 import { ap18cCandidateCalculationData as candidate } from '../../src/release/ap18cCandidateData';
 import { ap17cCandidateCalculationData as ap17c } from '../../src/release/ap17cCandidateData';
 import { approvedMvp03CalculationData as approved } from '../../src/release/approvedMvp03Data';
-import { mvp04CalculationData as defaultPreview } from '../../src/release/mvp04ReleaseData';
+import { mvp04CalculationData as historicalMvp04 } from '../../src/release/mvp04ReleaseData';
 import corpus from '../golden/candidates/ap17b-anwendbarkeit.json';
 import { resolveVrpgSelection, type VrpgSelectionState } from '../../src/ui/vrpgSelection';
 import { authorityOptions, profilesForAuthority } from '../../src/ui/model';
 import { initialDefaults } from '../../src/ui/defaults';
 import { translate } from '../../src/ui/i18n';
 
-test('AP18C preview remains an explicit historical candidate beside the approved MVP 0.4 default', async () => {
-  assert.notEqual(defaultPreview, candidate);
-  assert.equal(defaultPreview.releaseId, '2026-09-22-mvp-04-approved.1');
+test('AP18C preview remains an explicit historical candidate separate from the approved MVP 0.4 fixture', async () => {
+  assert.notEqual(historicalMvp04, candidate);
+  assert.equal(historicalMvp04.releaseId, '2026-09-22-mvp-04-approved.1');
   assert.equal(approved.releaseId, '2026-08-31-mvp-03-approved.1');
   assert.equal(candidate.releaseId, '2026-09-22-ap18c-candidate.1');
   assert.equal(candidate.formatVersion, '4.0.0');

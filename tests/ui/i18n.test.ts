@@ -52,7 +52,7 @@ const coreReasons = [
 describe('AP9-Sprachkatalog', () => {
   for (const locale of ['de', 'fr'] as const satisfies readonly Locale[]) {
     it(`${locale} deckt alle datengetriebenen Selektoren und Warnungen ab`, () => {
-      const expectedAuthorityLabel = locale === 'de' ? 'Sitz der zuständigen Stelle' : 'Siège de l’organisme compétent';
+      const expectedAuthorityLabel = locale === 'de' ? 'Verfahrenskontext' : 'Contexte de la procédure';
       const expectedFederalAuthority = locale === 'de' ? 'Bundesbehörde' : 'Autorité fédérale';
       const expectedBernAuthority = locale === 'de' ? 'Behörde des Kantons Bern' : 'Autorité du canton de Berne';
       assert.equal(translate(locale, 'form.authority'), expectedAuthorityLabel);

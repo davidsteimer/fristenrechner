@@ -1,0 +1,14 @@
+PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
+SELECT DISTINCT ?work ?impact ?date ?target ?source WHERE {
+ VALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2010/267>
+<https://fedlex.data.admin.ch/eli/cc/2010/262>
+<https://fedlex.data.admin.ch/eli/cc/2006/218>
+<https://fedlex.data.admin.ch/eli/cc/1969/737_757_755>
+<https://fedlex.data.admin.ch/eli/cc/1978/688_688_688>
+<https://fedlex.data.admin.ch/eli/cc/1978/712_712_712>
+<https://fedlex.data.admin.ch/eli/cc/1994/1340_1340_1340> }
+ ?impact jolux:impactToLegalResource ?target; jolux:legalResourceImpactHasDateEntryInForce ?date.
+ ?target jolux:legalResourceSubdivisionIsPartOf ?work.
+ OPTIONAL { ?impact jolux:impactFromLegalResource/jolux:legalResourceSubdivisionIsPartOf ?source }
+ FILTER(str(?date) >= "2026-09-22" && str(?date) <= "2027-12-31")
+} ORDER BY ?work ?date ?target

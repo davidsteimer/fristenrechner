@@ -49,7 +49,8 @@ function sourceUsageForRelease(releaseId) {
     'deadlineDefinitionId',
     'filingProfileId',
     'regimeId',
-    'suspensionSetId'
+    'suspensionSetId',
+    'bindingId', 'contextRouteId', 'calendarBindingId', 'eligibilityId', 'excludedPathId'
   ];
 
   function addUsage(sourceId, context, locator) {
@@ -78,11 +79,12 @@ function sourceUsageForRelease(releaseId) {
     if (!node || typeof node !== 'object') return;
 
     const context = { ...inheritedContext };
+    if (typeof node.entryProfileId === 'string') context.profileId = node.entryProfileId;
     for (const key of ['profileId', 'calendarId', ...identifierKeys]) {
       if (typeof node[key] === 'string') context[key] = node[key];
     }
-    if (Array.isArray(node.sourceRefs)) {
-      for (const reference of node.sourceRefs) {
+    for (const referenceKey of ['sourceRefs', 'normBindings', 'supplementaryLawRefs']) {
+      for (const reference of node[referenceKey] ?? []) {
         addUsage(reference.sourceId, context, reference.locator);
       }
     }
@@ -92,6 +94,15 @@ function sourceUsageForRelease(releaseId) {
   for (const artifact of manifest.artifacts) {
     const document = readJson(path.join(directory, artifact.path));
     walk(document);
+    if (document.dataKind === 'socialProcedureCatalog') {
+      for (const eligibility of document.releaseEligibility) {
+        const rule = document.federalRules.find(item => item.ruleId === eligibility.ruleRef.ruleId);
+        const binding = document.cantonalBindings.find(item => item.bindingId === eligibility.bindingRef.bindingId);
+        if (!rule || !binding) throw new Error('Quellenindex: unaufgelöste Sozialverfahrensfreigabe');
+        walk({ eligibilityId: eligibility.eligibilityId, ruleId: rule.ruleId, bindingId: binding.bindingId,
+          entryProfileId: binding.entryProfileId, sourceRefs: [...rule.sourceRefs, ...binding.sourceRefs] });
+      }
+    }
   }
   return usage;
 }

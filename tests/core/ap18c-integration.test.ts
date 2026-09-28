@@ -121,7 +121,7 @@ test('unknown roles and unsupported format versions are rejected explicitly', ()
   const foreign = { descriptor: { role: 'other', contentId: 'other' },
     parsed: { dataKind: 'other', catalogId: 'other' } } as unknown as ValidatedReleaseArtifactLike;
   assert.throws(() => createCalculationData({ ...release, artifacts: [...release.artifacts, foreign] }), /Unbekannte Artefaktrolle/);
-  for (const formatVersion of ['0.0.0', '4.0.1', '4-invalid', '5.0.0']) {
+  for (const formatVersion of ['0.0.0', '4.0.1', '4-invalid', '6.0.0']) {
     assert.throws(() => createCalculationData({ ...release, formatVersion }), /format|Hauptversion/i);
   }
 });

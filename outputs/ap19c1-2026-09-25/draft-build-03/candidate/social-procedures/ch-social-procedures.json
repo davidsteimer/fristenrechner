@@ -1,0 +1,4812 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "socialProcedureCatalog",
+  "catalogId": "ch-social-procedures",
+  "labels": {
+    "de": "Nationale Sozialversicherungsverfahren · AP19C1-Kandidat",
+    "fr": "Procédures nationales des assurances sociales · candidat AP19C1"
+  },
+  "review": {
+    "reviewedOn": "2026-09-25",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP19B fachlich und vertraglich abgenommen. AP19C1: zwölf migrierte Pfade und vier ELG-Pfade. Quellenrefresh separat gebunden. Keine Integrations-, Release- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+      "sourceType": "caseLaw",
+      "title": "BGER-8C-767-2008, AP17C-Quellenkette",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://mcp.opencaselaw.ch/entscheid/bger_8C_767_2008#e-4-3-2",
+      "documentVersionDate": "2009-01-12",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+      "sourceType": "caseLaw",
+      "title": "VGER-BE-200-2017-814, AP17C-Quellenkette",
+      "authority": "Kanton Bern",
+      "url": "https://mcp.opencaselaw.ch/entscheid/be_verwaltungsgericht_200_2017_814#e-1-2",
+      "documentVersionDate": "2018-01-17",
+      "reviewedOn": "2026-09-11",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP17C-AHVG-20260101",
+      "sourceType": "statute",
+      "title": "AHVG, AP17C-Quellenkette",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/20260101/de",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP17C-ATSG-20240101",
+      "sourceType": "statute",
+      "title": "ATSG, AP17C-Quellenkette",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2002/510/20240101/de",
+      "documentVersionDate": "2024-01-01",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP17C-FRG-BE-20210401",
+      "sourceType": "statute",
+      "title": "FRG-BE, AP17C-Quellenkette",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/2234/pdf_file",
+      "documentVersionDate": "2021-04-01",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP17C-IVG-20260101",
+      "sourceType": "statute",
+      "title": "IVG, AP17C-Quellenkette",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/20260101/de",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP17C-IVV-20250601",
+      "sourceType": "ordinance",
+      "title": "IVV, AP17C-Quellenkette",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/20250601/de",
+      "documentVersionDate": "2025-06-01",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP17C-UVG-20260101",
+      "sourceType": "statute",
+      "title": "UVG, AP17C-Quellenkette",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/20260101/de",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-12",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+      "sourceType": "statute",
+      "title": "EG ELG Bern, Artikel 8 und 9",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/3072/pdf_file",
+      "documentVersionDate": "2025-01-01",
+      "reviewedOn": "2026-09-25",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP19C-ELG-20260101",
+      "sourceType": "statute",
+      "title": "ELG, Konsolidierung 1. Januar 2026",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2007/804/20260101/de",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-25",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP19C-ELG-20270101",
+      "sourceType": "statute",
+      "title": "ELG, Zukunftsvergleich der Konsolidierung 1. Januar 2027",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2007/804/20270101/de",
+      "documentVersionDate": "2027-01-01",
+      "reviewedOn": "2026-09-25",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-AP19C-GSOG-BE",
+      "sourceType": "statute",
+      "title": "GSOG Bern, Artikel 54, Fassungsvergleich Januar und Mai 2026",
+      "authority": "Kanton Bern",
+      "url": "https://www.belex.sites.be.ch/app/de/texts_of_law/161.1",
+      "documentVersionDate": null,
+      "reviewedOn": "2026-09-25",
+      "reviewStatus": "verified"
+    },
+    {
+      "sourceId": "SRC-ATSG-20240101",
+      "sourceType": "statute",
+      "title": "Allgemeiner Teil des Sozialversicherungsrechts, SR 830.1",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2002/510/de",
+      "documentVersionDate": "2024-01-01",
+      "reviewedOn": "2026-08-30",
+      "reviewStatus": "verified"
+    }
+  ],
+  "suspensionProfiles": [
+    {
+      "suspensionProfileId": "S_ATSG",
+      "mode": "useSet",
+      "suspensionSetId": "ch-court-holidays",
+      "labels": {
+        "de": "Fristenstillstand nach ATSG",
+        "fr": "Suspension des délais selon la LPGA"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ATSG-20240101",
+          "locator": "Art. 38 Abs. 4"
+        }
+      ]
+    }
+  ],
+  "filingProfiles": [
+    {
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "preservationMode": "dispatch",
+      "deadlineDimension": "dateOnly",
+      "labels": {
+        "de": "Fristwahrung separat prüfen, Aufgabe oder Übergabe nach anwendbarer Norm",
+        "fr": "Respect du délai à vérifier séparément, dépôt ou remise selon la norme applicable"
+      },
+      "acceptedChannels": [
+        "competentAuthority",
+        "swissPost",
+        "swissDiplomaticMission"
+      ],
+      "acceptedEvidence": [
+        "authorityReceipt",
+        "postalDispatch"
+      ],
+      "originalRequired": false,
+      "cutoffTime": null,
+      "timezone": null,
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 39"
+        }
+      ]
+    }
+  ],
+  "federalRules": [
+    {
+      "ruleId": "CH-SOC-IVG-PRE",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "IVG · Einwand gegen IV-Vorbescheid",
+        "fr": "LAI · Observations sur le préavis AI"
+      },
+      "law": "ivg",
+      "matter": "iv-individual-benefits",
+      "action": "preliminary-objection",
+      "stage": "administration",
+      "triggerKind": "iv-preliminary-notice",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2021-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 57a Abs. 3",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVV-20250601",
+          "locator": "Art. 73bis sowie Art. 73ter Abs. 2 und 3, Abs. 1 aufgehoben",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 57a Abs. 3"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVV-20250601",
+          "locator": "Art. 73bis sowie Art. 73ter Abs. 2 und 3, Abs. 1 aufgehoben"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-IVG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "IVG · Ordentliche Beschwerde",
+        "fr": "LAI · Recours ordinaire"
+      },
+      "law": "ivg",
+      "matter": "iv-individual-benefits",
+      "action": "appeal",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "iv-disposition",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 69 Abs. 1 Bst. a",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 69 Abs. 1 Bst. a"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-AHVG-OBJ",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "AHVG · Einsprache gegen Leistungsverfügung",
+        "fr": "LAVS · Opposition à une décision de prestations"
+      },
+      "law": "ahvg",
+      "matter": "ahv-individual-benefits",
+      "action": "objection",
+      "stage": "administration",
+      "triggerKind": "initial-benefit-disposition",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 52 Abs. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 52 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-AHVG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "AHVG · Ordentliche Beschwerde",
+        "fr": "LAVS · Recours ordinaire"
+      },
+      "law": "ahvg",
+      "matter": "ahv-individual-benefits",
+      "action": "appeal",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "objection-decision",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 84",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 84"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-UVG-OBJ",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "UVG · Einsprache gegen Leistungsverfügung",
+        "fr": "LAA · Opposition à une décision de prestations"
+      },
+      "law": "uvg",
+      "matter": "uvg-individual-benefits",
+      "action": "objection",
+      "stage": "administration",
+      "triggerKind": "initial-benefit-disposition",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2017-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 52 Abs. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 52 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-UVG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "UVG · Ordentliche Beschwerde",
+        "fr": "LAA · Recours ordinaire"
+      },
+      "law": "uvg",
+      "matter": "uvg-individual-benefits",
+      "action": "appeal",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "objection-decision",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2017-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-IVG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "IVG · Angeordnete Tagesfrist im laufenden Verfahren",
+        "fr": "LAI · Délai fixé en jours dans une procédure en cours"
+      },
+      "law": "ivg",
+      "matter": "iv-individual-benefits",
+      "action": "ordered-administrative-days",
+      "stage": "administration",
+      "triggerKind": "authority-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-IVG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "IVG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "LAI · Délai supplémentaire pour régulariser le recours"
+      },
+      "law": "ivg",
+      "matter": "iv-individual-benefits",
+      "action": "complaint-correction",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "court-correction-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-AHVG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "AHVG · Angeordnete Tagesfrist im laufenden Verfahren",
+        "fr": "LAVS · Délai fixé en jours dans une procédure en cours"
+      },
+      "law": "ahvg",
+      "matter": "ahv-individual-benefits",
+      "action": "ordered-administrative-days",
+      "stage": "administration",
+      "triggerKind": "authority-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-AHVG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "AHVG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "LAVS · Délai supplémentaire pour régulariser le recours"
+      },
+      "law": "ahvg",
+      "matter": "ahv-individual-benefits",
+      "action": "complaint-correction",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "court-correction-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2007-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-UVG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "UVG · Angeordnete Tagesfrist im laufenden Verfahren",
+        "fr": "LAA · Délai fixé en jours dans une procédure en cours"
+      },
+      "law": "uvg",
+      "matter": "uvg-individual-benefits",
+      "action": "ordered-administrative-days",
+      "stage": "administration",
+      "triggerKind": "authority-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2017-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-UVG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "UVG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "LAA · Délai supplémentaire pour régulariser le recours"
+      },
+      "law": "uvg",
+      "matter": "uvg-individual-benefits",
+      "action": "complaint-correction",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "court-correction-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2017-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-ELG-OBJ",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "ELG · Einsprache gegen Leistungsverfügung",
+        "fr": "LPC · Opposition à une décision de prestations"
+      },
+      "law": "elg",
+      "matter": "el-individual-benefits",
+      "action": "objection",
+      "stage": "administration",
+      "triggerKind": "initial-benefit-disposition",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2008-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 52 Abs. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 52 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-ELG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "ELG · Beschwerde gegen Einspracheentscheid",
+        "fr": "LPC · Recours contre une décision sur opposition"
+      },
+      "law": "elg",
+      "matter": "el-individual-benefits",
+      "action": "appeal",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "objection-decision",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "duration": {
+          "value": 30,
+          "unit": "day"
+        }
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2008-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 56, 58 und 60"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-ELG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "ELG · Angeordnete Tagesfrist im Verwaltungsverfahren",
+        "fr": "LPC · Délai fixé en jours dans la procédure administrative"
+      },
+      "law": "elg",
+      "matter": "el-individual-benefits",
+      "action": "ordered-administrative-days",
+      "stage": "administration",
+      "triggerKind": "authority-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2008-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 38 bis 40, konkret angeordnete Tagesfrist"
+        }
+      ]
+    },
+    {
+      "ruleId": "CH-SOC-ELG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "ELG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "LPC · Délai supplémentaire pour régulariser le recours"
+      },
+      "law": "elg",
+      "matter": "el-individual-benefits",
+      "action": "complaint-correction",
+      "stage": "cantonal-insurance-court",
+      "triggerKind": "court-correction-day-order",
+      "notificationChannels": [
+        "individual-service"
+      ],
+      "calculation": {
+        "type": "R1_RELATIVE",
+        "anchorInputId": "legalTriggerDate",
+        "direction": "after",
+        "anchorBoundary": "excluded",
+        "durationInputId": "deadlineDays"
+      },
+      "suspensionProfileId": "S_ATSG",
+      "filingProfileId": "F7_ATSG_DISPATCH",
+      "holidayPolicy": "partyOrRepresentative",
+      "endShiftPolicy": "nextWorkingDay",
+      "legalValidity": {
+        "from": "2008-01-01",
+        "to": null
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 2, Art. 38 Abs. 1 bis 4, Art. 39 und 40. Art. 41 nur Kontext, keine Wiederherstellungsprüfung"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 60 Abs. 2 und Art. 61 Bst. b"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "E. 4.3.2, nur qualifizierte Nachfrist zur Beschwerdeverbesserung"
+        }
+      ]
+    }
+  ],
+  "cantonalBindings": [
+    {
+      "bindingId": "BE-SOC-IVG-PRE",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · IVG · Einwand gegen IV-Vorbescheid",
+        "fr": "Berne · LAI · Observations sur le préavis AI"
+      },
+      "ruleId": "CH-SOC-IVG-PRE",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ivg-administration-qualified",
+          "kind": "product-scope",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "ivOffice"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-IVG-20260101",
+              "locator": "Art. 1"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-IVG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · IVG · Ordentliche Beschwerde",
+        "fr": "Berne · LAI · Recours ordinaire"
+      },
+      "ruleId": "CH-SOC-IVG-APP",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ivg-court-qualified",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "ivOffice"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-IVG-20260101",
+              "locator": "Art. 69 Abs. 1 Bst. a, Zuständigkeit fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 69 Abs. 1 Bst. a, Zuständigkeit fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 69 Abs. 1 Bst. a, Zuständigkeit fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-AHVG-OBJ",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · AHVG · Einsprache gegen Leistungsverfügung",
+        "fr": "Berne · LAVS · Opposition à une décision de prestations"
+      },
+      "ruleId": "CH-SOC-AHVG-OBJ",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ahvg-administration-qualified",
+          "kind": "product-scope",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "compensationOffice"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-AHVG-20260101",
+              "locator": "Art. 1"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-AHVG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · AHVG · Ordentliche Beschwerde",
+        "fr": "Berne · LAVS · Recours ordinaire"
+      },
+      "ruleId": "CH-SOC-AHVG-APP",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ahvg-court-qualified",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "compensationOffice"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-AHVG-20260101",
+              "locator": "Art. 84, Zuständigkeit fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 84, Zuständigkeit fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 84, Zuständigkeit fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-UVG-OBJ",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · UVG · Einsprache gegen Leistungsverfügung",
+        "fr": "Berne · LAA · Opposition à une décision de prestations"
+      },
+      "ruleId": "CH-SOC-UVG-OBJ",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-uvg-administration-qualified",
+          "kind": "product-scope",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "accidentInsurer"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-UVG-20260101",
+              "locator": "Art. 1 Abs. 1 und 2"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-UVG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · UVG · Ordentliche Beschwerde",
+        "fr": "Berne · LAA · Recours ordinaire"
+      },
+      "ruleId": "CH-SOC-UVG-APP",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-uvg-court-qualified",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "accidentInsurer"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-ATSG-20240101",
+              "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-IVG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · IVG · Angeordnete Tagesfrist im laufenden Verfahren",
+        "fr": "Berne · LAI · Délai fixé en jours dans une procédure en cours"
+      },
+      "ruleId": "CH-SOC-IVG-ADM",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ivg-administration-qualified",
+          "kind": "product-scope",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "ivOffice"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-IVG-20260101",
+              "locator": "Art. 1"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 1"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-IVG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · IVG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "Berne · LAI · Délai supplémentaire pour régulariser le recours"
+      },
+      "ruleId": "CH-SOC-IVG-CORRECTION",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ivg-court-qualified",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "insuranceCourt"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-IVG-20260101",
+              "locator": "Art. 69 Abs. 1 Bst. a, Zuständigkeit fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 69 Abs. 1 Bst. a, Zuständigkeit fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Art. 69 Abs. 1 Bst. a, Zuständigkeit fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-AHVG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · AHVG · Angeordnete Tagesfrist im laufenden Verfahren",
+        "fr": "Berne · LAVS · Délai fixé en jours dans une procédure en cours"
+      },
+      "ruleId": "CH-SOC-AHVG-ADM",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ahvg-administration-qualified",
+          "kind": "product-scope",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "compensationOffice"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-AHVG-20260101",
+              "locator": "Art. 1"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 1"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-AHVG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · AHVG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "Berne · LAVS · Délai supplémentaire pour régulariser le recours"
+      },
+      "ruleId": "CH-SOC-AHVG-CORRECTION",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-ahvg-court-qualified",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "insuranceCourt"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-AHVG-20260101",
+              "locator": "Art. 84, Zuständigkeit fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 84, Zuständigkeit fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Art. 84, Zuständigkeit fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-UVG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · UVG · Angeordnete Tagesfrist im laufenden Verfahren",
+        "fr": "Berne · LAA · Délai fixé en jours dans une procédure en cours"
+      },
+      "ruleId": "CH-SOC-UVG-ADM",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-uvg-administration-qualified",
+          "kind": "product-scope",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "accidentInsurer"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-UVG-20260101",
+              "locator": "Art. 1 Abs. 1 und 2"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Art. 1 Abs. 1 und 2"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-UVG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · UVG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "Berne · LAA · Délai supplémentaire pour régulariser le recours"
+      },
+      "ruleId": "CH-SOC-UVG-CORRECTION",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-uvg-court-qualified",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "insuranceCourt"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-ATSG-20240101",
+              "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-ELG-OBJ",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · ELG · Einsprache gegen Leistungsverfügung",
+        "fr": "Berne · LPC · Opposition à une décision de prestations"
+      },
+      "ruleId": "CH-SOC-ELG-OBJ",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-elg-akb-article8",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "compensationOffice"
+              ]
+            },
+            {
+              "factKey": "elgAdministrativeCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP19C-ELG-20260101",
+              "locator": "Art. 21, kantonale Verwaltungszuständigkeit fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+              "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+          "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+          "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 21, kantonale Verwaltungszuständigkeit fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+          "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle"
+        },
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 21, kantonale Verwaltungszuständigkeit fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-ELG-APP",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · ELG · Beschwerde gegen Einspracheentscheid",
+        "fr": "Berne · LPC · Recours contre une décision sur opposition"
+      },
+      "ruleId": "CH-SOC-ELG-APP",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-atsg58-court",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "compensationOffice"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "partyDomicileCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-ATSG-20240101",
+              "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt",
+          "temporalSelector": "jurisdictionReferenceDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-ELG-ADM",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · ELG · Angeordnete Tagesfrist im Verwaltungsverfahren",
+        "fr": "Berne · LPC · Délai fixé en jours dans la procédure administrative"
+      },
+      "ruleId": "CH-SOC-ELG-ADM",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-elg-akb-article8",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "compensationOffice"
+              ]
+            },
+            {
+              "factKey": "elgAdministrativeCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP19C-ELG-20260101",
+              "locator": "Art. 21, kantonale Verwaltungszuständigkeit fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+              "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+          "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+          "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 21, kantonale Verwaltungszuständigkeit fachlich geklärt",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-EGELG-BE-20250101",
+          "locator": "Art. 8, Ausgleichskasse des Kantons Bern als Durchführungsstelle"
+        },
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 21, kantonale Verwaltungszuständigkeit fachlich geklärt"
+        }
+      ]
+    },
+    {
+      "bindingId": "BE-SOC-ELG-CORRECTION",
+      "revision": 1,
+      "status": "candidate",
+      "labels": {
+        "de": "Bern · ELG · Nachfrist zur Verbesserung der Beschwerde",
+        "fr": "Berne · LPC · Délai supplémentaire pour régulariser le recours"
+      },
+      "ruleId": "CH-SOC-ELG-CORRECTION",
+      "ruleRevision": 1,
+      "procedureContextCanton": "BE",
+      "entryProfileId": "vrpg-be",
+      "contextRoutes": [
+        {
+          "contextRouteId": "be-atsg58-court",
+          "kind": "legal-jurisdiction",
+          "requiredFacts": [
+            {
+              "factKey": "competentBodyQualified",
+              "allowedValues": [
+                true
+              ]
+            },
+            {
+              "factKey": "decisionOrigin",
+              "allowedValues": [
+                "insuranceCourt"
+              ]
+            },
+            {
+              "factKey": "courtCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "partyDomicileCanton",
+              "allowedValues": [
+                "BE"
+              ]
+            },
+            {
+              "factKey": "jurisdictionSpecialCase",
+              "allowedValues": [
+                "ordinary"
+              ]
+            }
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-ATSG-20240101",
+              "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+            },
+            {
+              "sourceId": "SRC-AP19C-GSOG-BE",
+              "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+            }
+          ]
+        }
+      ],
+      "calendarBindings": [
+        {
+          "calendarBindingId": "be-party",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "party"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        },
+        {
+          "calendarBindingId": "be-representative",
+          "holidayCanton": "BE",
+          "spatialScopeId": "BE",
+          "calendarId": "be-public-holidays",
+          "requiredAnchorRoles": [
+            "representative"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP17C-FRG-BE-20210401",
+              "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+            }
+          ]
+        }
+      ],
+      "supplementaryLawRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        }
+      ],
+      "legalValidity": null,
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "sourceCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "normBindings": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts",
+          "temporalSelector": "legalTriggerDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt",
+          "temporalSelector": "jurisdictionReferenceDate",
+          "applicableFrom": "2026-01-01",
+          "applicableTo": "2027-12-31",
+          "verification": "verified"
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-FRG-BE-20210401",
+          "locator": "Art. 2, nur bei geklärten Anknüpfungen nach Art. 38 Abs. 3 ATSG"
+        },
+        {
+          "sourceId": "SRC-AP19C-GSOG-BE",
+          "locator": "Art. 54, Sozialversicherungsrechtliche Abteilung des Verwaltungsgerichts"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 58, Gerichtszuständigkeit im ordentlichen Inlandsfall fachlich geklärt"
+        }
+      ]
+    }
+  ],
+  "releaseEligibility": [
+    {
+      "eligibilityId": "AP19C1-CH-SOC-IVG-PRE",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-IVG-PRE",
+        "revision": 1,
+        "sha256": "b650083b9ef6cccb254c3623e354e3fc395a1032883972e1592073c261e3e22d"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-IVG-PRE",
+        "revision": 1,
+        "sha256": "6b434d0b63ea76163db5537d35882fc5ba3bba8b6dff4d11ad1c40cda9c34a42"
+      },
+      "contextRouteIds": [
+        "be-ivg-administration-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-IVG-APP",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-IVG-APP",
+        "revision": 1,
+        "sha256": "389a2b8244b74b3adca88c905cff3d06bbfd841f20eb25ca73ccf6b95c185a6a"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-IVG-APP",
+        "revision": 1,
+        "sha256": "87cf78edbfd22175264b5acd81b8f34a84e37080ca66f0c0ae5f5d8a23eaf0e3"
+      },
+      "contextRouteIds": [
+        "be-ivg-court-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-AHVG-OBJ",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-AHVG-OBJ",
+        "revision": 1,
+        "sha256": "dea5ca8cf14602be5dd6631f566d15b7a3cb0a426fff7bb0ac2a3f25d25e70a0"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-AHVG-OBJ",
+        "revision": 1,
+        "sha256": "95926b08e770ad9352e9795b9dda223d8ee44d2ff3ba88b85733fe795882bb1f"
+      },
+      "contextRouteIds": [
+        "be-ahvg-administration-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-AHVG-APP",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-AHVG-APP",
+        "revision": 1,
+        "sha256": "9ab2a7be0b592e8648c64a7c99afffc8ac513c6f949d4f6b30f591e633439b4f"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-AHVG-APP",
+        "revision": 1,
+        "sha256": "c70055a47fe2ee47423c43a8707a94dc1f507808bf530c3cb1369f6c938dc60c"
+      },
+      "contextRouteIds": [
+        "be-ahvg-court-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-UVG-OBJ",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-UVG-OBJ",
+        "revision": 1,
+        "sha256": "dce0f5c48c0601a6db6f6cbb70e094b983efbb5d804f6c127a3e629826eadea6"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-UVG-OBJ",
+        "revision": 1,
+        "sha256": "7661b954855d9e2b5ba78bdbd0b7ec400dae520ab86112c1ed3b02e8f7efdfe4"
+      },
+      "contextRouteIds": [
+        "be-uvg-administration-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-UVG-APP",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-UVG-APP",
+        "revision": 1,
+        "sha256": "756d831e7dcebd4f660e9d50e59cf010a4550434558d464e7815bc13ac87b188"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-UVG-APP",
+        "revision": 1,
+        "sha256": "a92445fa148c3199eed6c3788ac91f73a885d0c51540dbfca7be04b74861af5b"
+      },
+      "contextRouteIds": [
+        "be-uvg-court-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-IVG-ADM",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-IVG-ADM",
+        "revision": 1,
+        "sha256": "d59a7d45876725155114ca7ec26f44baf36cd96f35e00554d25d329e057bc578"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-IVG-ADM",
+        "revision": 1,
+        "sha256": "86a3bf9d9b5f4ed2ab6e2cd6b093d95197762248710638d6554cb39bb7241c81"
+      },
+      "contextRouteIds": [
+        "be-ivg-administration-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-IVG-CORRECTION",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-IVG-CORRECTION",
+        "revision": 1,
+        "sha256": "8f6f237f2ac65095a47dff233d0c41ef511f3fc4941cea1f5f45e2618998c177"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-IVG-CORRECTION",
+        "revision": 1,
+        "sha256": "9085881c8b231e8efec3d3a44a1f4fc9b6f2fc37e7a659472ec311f56b262879"
+      },
+      "contextRouteIds": [
+        "be-ivg-court-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-AHVG-ADM",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-AHVG-ADM",
+        "revision": 1,
+        "sha256": "bb20bb2e04097c8d6105cf3bf8bd1ecb481b20cac8aa40f26bec4c04d9a15d86"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-AHVG-ADM",
+        "revision": 1,
+        "sha256": "31bb28ce5b35a62af6cd9f716450538b83d576a8b0e791dabff1b68507854fd2"
+      },
+      "contextRouteIds": [
+        "be-ahvg-administration-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-AHVG-CORRECTION",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-AHVG-CORRECTION",
+        "revision": 1,
+        "sha256": "170abc2a3ff8baa064d61816a0040a75d67540569f0230c87cb6fd4d2685b2c0"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-AHVG-CORRECTION",
+        "revision": 1,
+        "sha256": "c12a6edd848e5f1bd93118440773b5e617e274b4e549b4b9f4e80a7744367fb2"
+      },
+      "contextRouteIds": [
+        "be-ahvg-court-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-UVG-ADM",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-UVG-ADM",
+        "revision": 1,
+        "sha256": "55085b3fa972ad3d3a92aaff45334fe7109dd7767ccfbc24ae659c17c64af9cf"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-UVG-ADM",
+        "revision": 1,
+        "sha256": "0934823533a5530f546a9bc70258150354a88c79b455b010f88f77fe297dbfbb"
+      },
+      "contextRouteIds": [
+        "be-uvg-administration-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-UVG-CORRECTION",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-UVG-CORRECTION",
+        "revision": 1,
+        "sha256": "d74e1898aa4640f265f744543852a5d2d2719b8163ec84f26bc3dcaba98d3ff6"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-UVG-CORRECTION",
+        "revision": 1,
+        "sha256": "7b424d37bf44e9e7e5f5e78bf2aa5b861a1ce4cd056e31652774f94dac60d6f9"
+      },
+      "contextRouteIds": [
+        "be-uvg-court-qualified"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-ELG-OBJ",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-ELG-OBJ",
+        "revision": 1,
+        "sha256": "7ad5a93433fee4a7b5f798ac130cd07ccd6e667c84519d17c54ac13225b20484"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-ELG-OBJ",
+        "revision": 1,
+        "sha256": "219b455803530dfbb6b0f5e80a10626c14f2a4fea59f81cdfc6938806ba9ccc0"
+      },
+      "contextRouteIds": [
+        "be-elg-akb-article8"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP19B-SOCIAL-REFERENCES-1",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-ELG-APP",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-ELG-APP",
+        "revision": 1,
+        "sha256": "2038cd1b1892e1a8d600d94d17b6495f7691d7000e8c46eee165d5f5061d1b2c"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-ELG-APP",
+        "revision": 1,
+        "sha256": "9584c9f5c80f992748b6fba599ebd52d87586d47c67ca65d132b4d52134fcd51"
+      },
+      "contextRouteIds": [
+        "be-atsg58-court"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP19B-SOCIAL-REFERENCES-1",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-ELG-ADM",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-ELG-ADM",
+        "revision": 1,
+        "sha256": "2cc2c84ebdaa05d6a672e198e690a1216b74147a1c6d5171177d73707ded67fe"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-ELG-ADM",
+        "revision": 1,
+        "sha256": "07a11df59dccff580ea144e8931d282f848eaa3b249cbdea2d6fed32c340b243"
+      },
+      "contextRouteIds": [
+        "be-elg-akb-article8"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP19B-SOCIAL-REFERENCES-1",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    },
+    {
+      "eligibilityId": "AP19C1-CH-SOC-ELG-CORRECTION",
+      "releaseId": "2026-09-25-ap19c1-candidate.1",
+      "status": "candidate",
+      "ruleRef": {
+        "ruleId": "CH-SOC-ELG-CORRECTION",
+        "revision": 1,
+        "sha256": "4b5b9003c72e97936dc4acd0fcbc797a372a27f6a43a0892339867302d350e80"
+      },
+      "bindingRef": {
+        "bindingId": "BE-SOC-ELG-CORRECTION",
+        "revision": 1,
+        "sha256": "0b3250d108e3d43888f9bb074310fbeed236afb7dd6dff756c9b33a3b888933d"
+      },
+      "contextRouteIds": [
+        "be-atsg58-court"
+      ],
+      "calendarBindingIds": [
+        "be-party",
+        "be-representative"
+      ],
+      "componentRefs": [
+        {
+          "role": "calendar",
+          "contentId": "be-public-holidays",
+          "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+        },
+        {
+          "role": "calendar",
+          "contentId": "ch-federal-calendar",
+          "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+        },
+        {
+          "role": "holidayCatalog",
+          "contentId": "ch-holiday-catalog",
+          "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+        }
+      ],
+      "sourceReviewRef": {
+        "reviewId": "AP19C1-SOURCE-REVIEW-20260925",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP19B-SOCIAL-REFERENCES-1",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+      },
+      "caseCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "calculationCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      },
+      "approval": null
+    }
+  ],
+  "excludedPaths": [
+    {
+      "exclusionId": "SOC-IV-COURT-OTHER",
+      "law": "ivg",
+      "matter": "iv-individual-benefits",
+      "action": "other-court-period",
+      "reasonKind": "unsupported-procedure",
+      "reasonKey": "unsupported-procedure",
+      "labels": {
+        "de": "Andere gerichtliche Frist nicht modelliert",
+        "fr": "Autre délai judiciaire non modélisé"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-IVG-20260101",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        }
+      ]
+    },
+    {
+      "exclusionId": "SOC-AHV-COURT-OTHER",
+      "law": "ahvg",
+      "matter": "ahv-individual-benefits",
+      "action": "other-court-period",
+      "reasonKind": "unsupported-procedure",
+      "reasonKey": "unsupported-procedure",
+      "labels": {
+        "de": "Andere gerichtliche Frist nicht modelliert",
+        "fr": "Autre délai judiciaire non modélisé"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-AHVG-20260101",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        }
+      ]
+    },
+    {
+      "exclusionId": "SOC-UV-COURT-OTHER",
+      "law": "uvg",
+      "matter": "uvg-individual-benefits",
+      "action": "other-court-period",
+      "reasonKind": "unsupported-procedure",
+      "reasonKey": "unsupported-procedure",
+      "labels": {
+        "de": "Andere gerichtliche Frist nicht modelliert",
+        "fr": "Autre délai judiciaire non modélisé"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP17C-UVG-20260101",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "JUD-AP17C-BGER-8C-767-2008-20090112",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        },
+        {
+          "sourceId": "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+          "locator": "Abgrenzung gemäss AP17B-Anwendbarkeitsmatrix"
+        }
+      ]
+    },
+    {
+      "exclusionId": "ELG-THIRD-CHAPTER",
+      "law": "elg",
+      "matter": "institution-subsidies",
+      "action": "other",
+      "reasonKind": "statutory-exclusion",
+      "reasonKey": "statutory-exclusion",
+      "labels": {
+        "de": "Drittes Kapitel ELG, kein pauschaler ATSG-Weg",
+        "fr": "Chapitre 3 LPC, pas de voie LPGA générale"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 61, keine pauschale Gleichstellung sämtlicher gerichtlicher Fristen"
+        }
+      ]
+    },
+    {
+      "exclusionId": "ELG-COURT-OTHER",
+      "law": "elg",
+      "matter": "el-individual-benefits",
+      "action": "other",
+      "reasonKind": "unsupported-procedure",
+      "reasonKey": "unsupported-procedure",
+      "labels": {
+        "de": "Andere gerichtliche Frist nicht modelliert",
+        "fr": "Autre délai judiciaire non modélisé"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP19C-ELG-20260101",
+          "locator": "Art. 1, individuelle Leistungen nach dem zweiten Kapitel"
+        },
+        {
+          "sourceId": "SRC-AP17C-ATSG-20240101",
+          "locator": "Art. 61, keine pauschale Gleichstellung sämtlicher gerichtlicher Fristen"
+        }
+      ]
+    }
+  ]
+}

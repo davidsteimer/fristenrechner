@@ -3,6 +3,7 @@
 export type Locale = 'de' | 'fr';
 
 import { qualifiedMessages } from './qualifiedMessages';
+import { socialMessages } from './socialMessages';
 
 type Dictionary = Readonly<Record<string, string>>;
 
@@ -20,9 +21,10 @@ const de: Dictionary = {
   'form.inputDate.failedAttempt': 'Datum des erfolglosen Zustellversuchs',
   'form.inputDate.observedMail': 'Beobachtetes Zustelldatum',
   'form.inputDate.required': 'Geben Sie ein gültiges Datum ein.',
+  'form.inputDate.changed': 'Die Datumsart hat sich geändert. Bitte neu eingeben:',
   'form.deadlineDays': 'Frist in Tagen',
   'form.deadlineDays.required': 'Geben Sie eine ganze Zahl zwischen 1 und 365 ein.',
-  'form.authority': 'Sitz der zuständigen Stelle',
+  'form.authority': 'Verfahrenskontext',
   'authority.CH': 'Bundesbehörde',
   'authority.BE': 'Behörde des Kantons Bern',
   'form.profile': 'Erlass / Verfahrensrecht',
@@ -348,9 +350,10 @@ const fr: Dictionary = {
   'form.inputDate.failedAttempt': 'Date de la tentative infructueuse de notification',
   'form.inputDate.observedMail': 'Date de notification observée',
   'form.inputDate.required': 'Saisissez une date valable.',
+  'form.inputDate.changed': 'Le type de date a changé. Veuillez saisir à nouveau :',
   'form.deadlineDays': 'Délai en jours',
   'form.deadlineDays.required': 'Saisissez un nombre entier compris entre 1 et 365.',
-  'form.authority': 'Siège de l’organisme compétent',
+  'form.authority': 'Contexte de la procédure',
   'authority.CH': 'Autorité fédérale',
   'authority.BE': 'Autorité du canton de Berne',
   'form.profile': 'Loi / droit de procédure',
@@ -665,10 +668,11 @@ const fr: Dictionary = {
 
 export function translate(locale: Locale, key: string): string {
   const dictionary = locale === 'fr' ? fr : de;
-  return dictionary[key] ?? qualifiedMessages[key]?.[locale] ?? dictionary[`reason.${key}`] ?? key;
+  return dictionary[key] ?? qualifiedMessages[key]?.[locale] ?? socialMessages[key]?.[locale] ?? dictionary[`reason.${key}`] ?? key;
 }
 
 export function translateReason(locale: Locale, key: string): string {
+  if (socialMessages[`block.${key}`]) return socialMessages[`block.${key}`]![locale];
   return translate(locale, `reason.${key}`) === `reason.${key}`
     ? translate(locale, key)
     : translate(locale, `reason.${key}`);

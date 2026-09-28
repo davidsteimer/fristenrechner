@@ -1,0 +1,228 @@
+{
+  "formatVersion": "1.0.0",
+  "dataKind": "releasePreparationInputs",
+  "preparedOn": "2026-09-28",
+  "preparationId": "mvp05-ap19-preparation.1",
+  "status": "preparation-only",
+  "requestedBy": "David Steimer",
+  "declaration": "Dann starten wir die Releasevorbereitung und hoffen auf den Support.",
+  "targetVersions": {
+    "application": "0.5.0",
+    "package": "0.5.0.0",
+    "status": "planned-not-built"
+  },
+  "candidate": {
+    "path": "data/candidates/2026-09-28-ap19c3",
+    "releaseId": "2026-09-28-ap19c3-candidate.1",
+    "sha256": "8e0f7aa1901b1e26878ddead049a35c81cbf540fd6d68002597830f5c7e6b0da",
+    "status": "candidate"
+  },
+  "scope": {
+    "federalRules": 24,
+    "cantonalBindings": 28,
+    "operativeCantonsPlanned": [
+      "BE"
+    ],
+    "socialCaseCoverage": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "holidayCatalogUnchanged": true
+  },
+  "permissions": {
+    "localPreparationAuthorized": true,
+    "sourceReviewApproved": false,
+    "dataPromotionApproved": false,
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "productionActivation": false
+  },
+  "gates": [
+    "combined-source-review-and-human-approval",
+    "controlled-data-promotion",
+    "versioned-package-and-mirror-build",
+    "explicit-eq-installation-approval",
+    "fresh-eq-tests-and-manual-acceptance",
+    "explicit-publication-approval",
+    "green-get-header-evidence-before-p",
+    "explicit-p-deployment-and-operation-approval"
+  ],
+  "integrationEvidence": {
+    "sourceReviews": [
+      {
+        "path": "outputs/ap19c1-2026-09-25/source-review.json",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      {
+        "path": "outputs/ap19c2-2026-09-28/sources/source-review.json",
+        "sha256": "33d2fe1c6f6e1d54a97f8a9a54c97ce4a58aea56d0158a029ffa2a5d0f43abc3"
+      },
+      {
+        "path": "outputs/ap19c3-2026-09-28/sources/source-review.json",
+        "sha256": "00f16cfb9653d32a73555c9ccd6c22a32af7810aae0068fe540d5497aac1b6e9"
+      }
+    ],
+    "referenceSuites": [
+      {
+        "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      {
+        "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/calendars/be-public-holidays.json",
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "byteLength": 9073
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/calendars/ch-federal-calendar.json",
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "byteLength": 7260
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "byteLength": 837359
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/manifest.json",
+      "sha256": "8e0f7aa1901b1e26878ddead049a35c81cbf540fd6d68002597830f5c7e6b0da",
+      "byteLength": 9707
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/profiles/bgg.json",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "byteLength": 8529
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/profiles/stpo.json",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "byteLength": 6652
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/profiles/vrpg-be.json",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "byteLength": 8616
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/profiles/vwvg.json",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "byteLength": 8002
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/profiles/zpo.json",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "byteLength": 10232
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/social-procedures/ch-social-procedures.json",
+      "sha256": "7b4be4d03158dccb5e2a1a1cc07c9533288b7eb7138c8ff56e558a94d86d940f",
+      "byteLength": 280955
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/special-regimes/vrpg-be.json",
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a",
+      "byteLength": 114845
+    },
+    {
+      "path": "data/releases/2026-09-22-mvp-04-approved.1/manifest.json",
+      "sha256": "a240b01feb671dbe4374c1e097bc9143d66fd4878cd235b3b490a9c08afec72e",
+      "byteLength": 9029
+    },
+    {
+      "path": "data/source-reviews/index.json",
+      "sha256": "b4c55c216df22ed8f9269fc57b28955132713cff176d66b4a4ae07083c15f7e6",
+      "byteLength": 60337
+    },
+    {
+      "path": "data/source-reviews/source-register.json",
+      "sha256": "0d88146ede01345266edb0c6a7d3827cc1f48a6c5ccc243463eb2d89b48f6a15",
+      "byteLength": 31096
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-025-sozialverfahrenskatalog-und-manifest-v5.md",
+      "sha256": "4339de7ae99ae12b413ae5abbaf2a2b464a2ba67b1e26e18514ea29dc4d7da96",
+      "byteLength": 7722
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c1.md",
+      "sha256": "14a2549464fda9c193906e1e78bedcd84b1bb95e54934b3d3c8e95a205f1987a",
+      "byteLength": 4911
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c2.md",
+      "sha256": "ee13addde7cfb93bcdc2681eb0286b6a50226bd371af108dd06829e93c65198a",
+      "byteLength": 5794
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c3.md",
+      "sha256": "1623de9661787266d8b6e8d1881c473c8f28d39605704db01f148fa9c8ca8c67",
+      "byteLength": 6170
+    },
+    {
+      "path": "outputs/ap19c1-2026-09-25/source-review.json",
+      "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773",
+      "byteLength": 11234
+    },
+    {
+      "path": "outputs/ap19c2-2026-09-28/sources/source-review.json",
+      "sha256": "33d2fe1c6f6e1d54a97f8a9a54c97ce4a58aea56d0158a029ffa2a5d0f43abc3",
+      "byteLength": 11751
+    },
+    {
+      "path": "outputs/ap19c3-2026-09-28/sources/source-review.json",
+      "sha256": "00f16cfb9653d32a73555c9ccd6c22a32af7810aae0068fe540d5497aac1b6e9",
+      "byteLength": 10734
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-approval.json",
+      "sha256": "e956172420aab77e45ea5462ed30e82efab59ea0a993a6682ceddbdea0efd884",
+      "byteLength": 4010
+    },
+    {
+      "path": "schemas/release-manifest-v5.schema.json",
+      "sha256": "650e40b34b1a897d87c0e0ea67907b4c8c103ca31c93da63a8619df5252a6dd8",
+      "byteLength": 13074
+    },
+    {
+      "path": "schemas/social-procedure-catalog.schema.json",
+      "sha256": "d5474577cde47ab4dd3a7e28b2ba2cfd428db2f9ecd80999e3bfd007c1eb4aa0",
+      "byteLength": 26655
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "sha256": "5c4c8861f0b68e312ea09ef5de13cf1b8a4cbb8bd4dde51e043f2521b1822516",
+      "byteLength": 1334
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "sha256": "a5ed5b108e9bf2d73c5aaae4b136e01a364f1a5968cf072e597bcb4068590b77",
+      "byteLength": 233
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "sha256": "4ba1060c9cecf37abf73c45e062aa732dd82c79a4b3708bd19db74c1168be3d4",
+      "byteLength": 714
+    },
+    {
+      "path": "src/release/mvp04ReleaseData.ts",
+      "sha256": "061c5c89ee42183c2419a4296b26eaf2e2e4c4d317880ae5c9bb79139e1671ba",
+      "byteLength": 2142
+    },
+    {
+      "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+      "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47",
+      "byteLength": 56152
+    },
+    {
+      "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+      "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8",
+      "byteLength": 48765
+    }
+  ]
+}

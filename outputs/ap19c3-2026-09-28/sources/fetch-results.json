@@ -1,0 +1,81 @@
+[
+  {
+    "file": "ATSG.xml",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml.xml",
+    "checkedAt": "2026-09-28T10:43:39.572Z",
+    "status": 200,
+    "contentType": "application/xml",
+    "bytes": 116444,
+    "sha256": "14d2ca1bb3ea367fb2c23dc05a1b6fc7d78c478f7b9bf2c2984fca02968a67ed",
+    "prefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<akomaNtoso xmlns=\"http://docs."
+  },
+  {
+    "file": "KVG-20260101.xml",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260101/de/xml/fedlex-data-admin-ch-eli-cc-1995-1328_1328_1328-20260101-de-xml.xml",
+    "checkedAt": "2026-09-28T10:43:39.841Z",
+    "status": 200,
+    "contentType": "application/xml",
+    "bytes": 454109,
+    "sha256": "7fbede8de313f1f6accd376fe29ba3ef76880de1f60aca8923bc25cf730740f1",
+    "prefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><akomaNtoso xmlns=\"http://docs.o"
+  },
+  {
+    "file": "KVG-20260701.xml",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260701/de/xml/fedlex-data-admin-ch-eli-cc-1995-1328_1328_1328-20260701-de-xml.xml",
+    "checkedAt": "2026-09-28T10:43:39.959Z",
+    "status": 200,
+    "contentType": "application/xml",
+    "bytes": 432753,
+    "sha256": "32b0745cd3827c26d6ad5a0789d45269509e980a671afc70fdcbade07f64f8b9",
+    "prefix": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><akomaNtoso xmlns=\"http://docs.o"
+  },
+  {
+    "file": "GSOG.json",
+    "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/161.1",
+    "checkedAt": "2026-09-28T10:43:40.023Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 2770817,
+    "sha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f",
+    "prefix": "{\"text_of_law\":{\"systematic_number\":\"161.1\",\"systematic_number_hl\":\"16"
+  },
+  {
+    "file": "FRG.json",
+    "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/555.1",
+    "checkedAt": "2026-09-28T10:43:40.576Z",
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "bytes": 219745,
+    "sha256": "1894ea812b87e55dd6bda23262a683bdf7ad8b9e1cbe6e59c91112df733cdee8",
+    "prefix": "{\"text_of_law\":{\"systematic_number\":\"555.1\",\"systematic_number_hl\":\"55"
+  },
+  {
+    "file": "future-index.json",
+    "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A%2F%2Fdata.legilux.public.lu%2Fresource%2Fontology%2Fjolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0A%20VALUES%20%3Fwork%20%7B%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2002%2F510%3E%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1995%2F1328_1328_1328%3E%0A%20%7D%0A%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%0A%20%20%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%0A%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource%2Fjolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20FILTER(str(%3Fdate)%20%3E%3D%20%222026-09-28%22%20%26%26%20str(%3Fdate)%20%3C%3D%20%222027-12-31%22)%0A%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+    "checkedAt": "2026-09-28T10:43:40.710Z",
+    "status": 200,
+    "contentType": "application/sparql-results+json",
+    "bytes": 153,
+    "sha256": "3be6cfd1d84058d8d944a72ebe49419d79fe4fb3b176277a4044ebb6c6fc2430",
+    "prefix": "\n{ \"head\": { \"link\": [], \"vars\": [\"work\", \"impact\", \"date\", \"target\", "
+  },
+  {
+    "file": "version-metadata.json",
+    "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=SELECT%20%3Fresource%20%3Fpredicate%20%3Fvalue%20WHERE%20%7B%0A%20VALUES%20%3Fresource%20%7B%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2002%2F510%3E%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1995%2F1328_1328_1328%3E%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1995%2F1328_1328_1328%2F20260701%3E%0A%20%7D%0A%20%3Fresource%20%3Fpredicate%20%3Fvalue%0A%7D%20ORDER%20BY%20%3Fresource%20%3Fpredicate%20%3Fvalue",
+    "checkedAt": "2026-09-28T10:43:40.931Z",
+    "status": 200,
+    "contentType": "application/sparql-results+json",
+    "bytes": 83418,
+    "sha256": "24e35940608994540dc27181e9045d336f75f2b50904fd1f3ec195d5789c1016",
+    "prefix": "\n{ \"head\": { \"link\": [], \"vars\": [\"resource\", \"predicate\", \"value\"] },"
+  },
+  {
+    "file": "versions.json",
+    "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A%2F%2Fdata.legilux.public.lu%2Fresource%2Fontology%2Fjolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Ffrom%20%3Fto%20WHERE%20%7B%0A%20VALUES%20%3Fwork%20%7B%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2002%2F510%3E%0A%20%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1995%2F1328_1328_1328%3E%0A%20%7D%0A%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Ffrom.%0A%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fto%20%7D%0A%20FILTER(str(%3Ffrom)%20%3E%3D%20%222024-01-01%22)%0A%7D%20ORDER%20BY%20%3Fwork%20%3Ffrom",
+    "checkedAt": "2026-09-28T10:44:28.609Z",
+    "status": 200,
+    "contentType": "application/sparql-results+json",
+    "bytes": 4993,
+    "sha256": "8afa8fac26cb490a544b9bad6a0bb772bf505c7aff3c7fb72a926fe6712275b1"
+  }
+]

@@ -1,0 +1,308 @@
+{
+  "reviewId": "AP19C3-SOURCE-REVIEW-20260928",
+  "kind": "technical-source-refresh-evidence",
+  "checkedOn": "2026-09-28",
+  "status": "completed-technical-review",
+  "humanApproval": false,
+  "productionApproval": false,
+  "runtimeActivation": false,
+  "report": "docs/fachrecht/quellenabgleich-ap19c3.md",
+  "scope": {
+    "newLaw": "kvg",
+    "matter": "kvg-okp-individual-benefits",
+    "newPaths": 4,
+    "contextCanton": "BE",
+    "sourceCoverage": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    }
+  },
+  "checks": [
+    {
+      "checkId": "SRC-AP17C-ATSG-20240101",
+      "sourceRef": "SRC-AP17C-ATSG-20240101",
+      "file": "ATSG.xml",
+      "mode": "fresh-official-xml",
+      "checkedAt": "2026-09-28T10:43:39.572Z",
+      "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml.xml",
+      "documentVersionDate": "2024-01-01",
+      "articles": [
+        "2",
+        "38",
+        "39",
+        "40",
+        "41",
+        "49",
+        "51",
+        "52",
+        "55",
+        "56",
+        "57",
+        "58",
+        "60",
+        "61"
+      ],
+      "responseSha256": "14d2ca1bb3ea367fb2c23dc05a1b6fc7d78c478f7b9bf2c2984fca02968a67ed",
+      "matchesAcceptedPriorHash": true,
+      "result": "no-relevant-change-detected"
+    },
+    {
+      "checkId": "SRC-AP19C3-KVG-20260101",
+      "sourceRef": "SRC-AP19C3-KVG-20260101",
+      "file": "KVG-20260101.xml",
+      "mode": "fresh-official-xml",
+      "checkedAt": "2026-09-28T10:43:39.841Z",
+      "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260101/de/xml/fedlex-data-admin-ch-eli-cc-1995-1328_1328_1328-20260101-de-xml.xml",
+      "documentVersionDate": "2026-01-01",
+      "articles": [
+        "1",
+        "1a",
+        "3",
+        "25",
+        "25a",
+        "53",
+        "54",
+        "61",
+        "64",
+        "64a",
+        "67",
+        "80",
+        "85",
+        "87",
+        "89"
+      ],
+      "responseSha256": "7fbede8de313f1f6accd376fe29ba3ef76880de1f60aca8923bc25cf730740f1",
+      "matchesAcceptedPriorHash": true,
+      "result": "no-relevant-change-detected"
+    },
+    {
+      "checkId": "SRC-AP19C3-KVG-20260701",
+      "sourceRef": "SRC-AP19C3-KVG-20260701",
+      "file": "KVG-20260701.xml",
+      "mode": "fresh-official-xml",
+      "checkedAt": "2026-09-28T10:43:39.959Z",
+      "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260701/de/xml/fedlex-data-admin-ch-eli-cc-1995-1328_1328_1328-20260701-de-xml.xml",
+      "documentVersionDate": "2026-07-01",
+      "articles": [
+        "1",
+        "1a",
+        "3",
+        "25",
+        "25a",
+        "53",
+        "54",
+        "61",
+        "64",
+        "64a",
+        "67",
+        "80",
+        "85",
+        "87",
+        "89"
+      ],
+      "responseSha256": "32b0745cd3827c26d6ad5a0789d45269509e980a671afc70fdcbade07f64f8b9",
+      "matchesAcceptedPriorHash": true,
+      "result": "no-relevant-change-detected"
+    },
+    {
+      "checkId": "SRC-AP19C-GSOG-BE",
+      "sourceRef": "SRC-AP19C-GSOG-BE",
+      "file": "GSOG.json",
+      "mode": "fresh-official-json-xhtml",
+      "checkedAt": "2026-09-28T10:43:40.023Z",
+      "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/161.1",
+      "documentVersionDate": "2026-05-01",
+      "articles": [
+        "54"
+      ],
+      "responseSha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f",
+      "matchesAcceptedPriorHash": true,
+      "result": "no-relevant-change-detected"
+    },
+    {
+      "checkId": "SRC-AP17C-FRG-BE-20210401",
+      "sourceRef": "SRC-AP17C-FRG-BE-20210401",
+      "file": "FRG.json",
+      "mode": "fresh-official-json-xhtml",
+      "checkedAt": "2026-09-28T10:43:40.576Z",
+      "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/555.1",
+      "documentVersionDate": "2021-04-01",
+      "articles": [
+        "2"
+      ],
+      "responseSha256": "1894ea812b87e55dd6bda23262a683bdf7ad8b9e1cbe6e59c91112df733cdee8",
+      "matchesAcceptedPriorHash": true,
+      "result": "no-relevant-change-detected"
+    },
+    {
+      "checkId": "SRC-AP19C3-KVG-FUTURE-INDEX-20260928",
+      "sourceRef": "SRC-AP19C3-KVG-FUTURE-INDEX-20260928",
+      "file": "future-index.json",
+      "mode": "fresh-official-complete-article-impact-index",
+      "checkedAt": "2026-09-28T10:43:40.710Z",
+      "url": "https://fedlex.data.admin.ch/sparqlendpoint",
+      "responseSha256": "3be6cfd1d84058d8d944a72ebe49419d79fe4fb3b176277a4044ebb6c6fc2430",
+      "query": "future-index.rq",
+      "from": "2026-09-28",
+      "to": "2027-12-31",
+      "noPublicationYearFilter": true,
+      "noPreselectedArticleFilter": true,
+      "entries": [],
+      "result": "no-indexed-future-impact-detected"
+    },
+    {
+      "checkId": "AP19C3-CONSOLIDATION-VERSIONS",
+      "sourceRef": "AP19C3-CONSOLIDATION-VERSIONS",
+      "file": "versions.json",
+      "mode": "fresh-official-consolidation-metadata",
+      "checkedAt": "2026-09-28T10:44:28.609Z",
+      "url": "https://fedlex.data.admin.ch/sparqlendpoint",
+      "responseSha256": "8afa8fac26cb490a544b9bad6a0bb772bf505c7aff3c7fb72a926fe6712275b1",
+      "query": "versions.rq",
+      "versions": [
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20240101",
+          "from": "2024-01-01",
+          "to": "2024-02-29"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20240301",
+          "from": "2024-03-01",
+          "to": "2024-06-30"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20240701",
+          "from": "2024-07-01",
+          "to": "2024-09-30"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20241001",
+          "from": "2024-10-01",
+          "to": "2024-12-31"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20250101",
+          "from": "2025-01-01",
+          "to": "2025-06-30"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20250701",
+          "from": "2025-07-01",
+          "to": "2025-12-31"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260101",
+          "from": "2026-01-01",
+          "to": "2026-06-30"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260701",
+          "from": "2026-07-01",
+          "to": "2027-12-31"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20280101",
+          "from": "2028-01-01",
+          "to": "2031-12-31"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20320101",
+          "from": "2032-01-01",
+          "to": "2032-06-30"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20320701",
+          "from": "2032-07-01"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2002/510",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101",
+          "from": "2024-01-01"
+        }
+      ],
+      "result": "two-kvg-editions-cover-2026-2027-next-edition-2028"
+    }
+  ],
+  "comparison": {
+    "relevantArticles": [
+      "1",
+      "1_a",
+      "25",
+      "64",
+      "67",
+      "80",
+      "85",
+      "87",
+      "89"
+    ],
+    "identicalNormText": true,
+    "identicalFullTextIncludingNotes": true,
+    "outsideScopeChangedArticlesRead": [
+      "53",
+      "54"
+    ],
+    "additionalProductExclusionArticlesRead": [
+      "3",
+      "25_a",
+      "61",
+      "64_a"
+    ],
+    "additionalExclusionArticlesIdentical": true,
+    "outsideScopeChangedArticles": [
+      "53",
+      "54"
+    ],
+    "legalEffectiveDateNotDerivedFromConsolidationDate": true
+  },
+  "productReferenceDate": {
+    "routeId": "be-kvg-okp-product-scope",
+    "field": "legalTriggerDate",
+    "meaning": "Wohnsitz der versicherten Person zum rechtlich massgebenden fristausloesenden Eroeffnungstag",
+    "status": "explicit-implementation-of-accepted-product-boundary-not-statutory-jurisdiction-rule",
+    "insurerSeatIndependent": true
+  },
+  "acceptedPriorEvidence": [
+    {
+      "sourceRef": "SRC-AP19C-GSOG-BE",
+      "mode": "accepted-prior-evidence-not-refetched",
+      "report": "docs/fachrecht/quellenabgleich-ap19b.md",
+      "url": "https://www.belex.sites.be.ch/api/de/versions/3144/pdf_file",
+      "article": "54",
+      "versionFrom": "2026-01-01",
+      "versionTo": "2026-04-30",
+      "responseSha256": "dc468710cc6e28ccffd796175e7205361a9ec3c6a0926ddc02caf51acf889cdd"
+    }
+  ],
+  "jurisprudence": {
+    "sourceRef": "JUD-AP17C-BGER-8C-767-2008-20090112",
+    "decision": "BGer 8C_767/2008 vom 12. Januar 2009, E. 4.3.2",
+    "mode": "fresh-full-consideration-read-via-swiss-caselaw-with-identity-check-via-entscheidsuche",
+    "checkedOn": "2026-09-28",
+    "url": "https://mcp.opencaselaw.ch/entscheid/bger_8C_767_2008#e-4-3-2",
+    "identity": "CH_BGer_008_8C-767-2008_2009-01-12",
+    "result": "narrow-formal-complaint-correction-only",
+    "caseIsKvgSpecific": false,
+    "applicationToKvg": "accepted-transfer-of-general-atsg-procedure-rule",
+    "exhaustiveNewerCaseLawSearch": false
+  },
+  "limits": [
+    "No re-review of all Swiss holiday sources",
+    "No substantive OKP benefit entitlement determination",
+    "Source coverage is not normative entry into force",
+    "No extension beyond four accepted individual OKP paths",
+    "No general court-order deadline calculation",
+    "Other C1 and C2 source evidence is not re-dated by this review",
+    "No human candidate approval or production activation"
+  ]
+}

@@ -31,6 +31,7 @@ SCHEMA_NAMES = (
 OFFICIAL_HOSTS = {
     "fedlex.admin.ch",
     "www.fedlex.admin.ch",
+    "fedlex.data.admin.ch",
     "bj.admin.ch",
     "www.bj.admin.ch",
     "belex.sites.be.ch",
@@ -47,6 +48,7 @@ IDENTIFIER_KEYS = (
     "filingProfileId",
     "regimeId",
     "suspensionSetId",
+    "bindingId", "contextRouteId", "calendarBindingId", "eligibilityId", "excludedPathId",
 )
 
 
@@ -138,11 +140,13 @@ def release_usage(release_id: str) -> tuple[set[str], dict[str, dict[str, set[st
             return
         if not isinstance(node, dict):
             return
+        if isinstance(node.get("entryProfileId"), str):
+            context["profileId"] = node["entryProfileId"]
         for key in ("profileId", "calendarId", *IDENTIFIER_KEYS):
             if isinstance(node.get(key), str):
                 context[key] = node[key]
-        if isinstance(node.get("sourceRefs"), list):
-            for reference in node["sourceRefs"]:
+        for reference_key in ("sourceRefs", "normBindings", "supplementaryLawRefs"):
+            for reference in node.get(reference_key, []):
                 add_reference(
                     reference["sourceId"],
                     context,
@@ -152,7 +156,15 @@ def release_usage(release_id: str) -> tuple[set[str], dict[str, dict[str, set[st
             walk(value, context)
 
     for artifact in manifest["artifacts"]:
-        walk(load_json(release_directory / artifact["path"]))
+        document = load_json(release_directory / artifact["path"])
+        walk(document)
+        if document.get("dataKind") == "socialProcedureCatalog":
+            for eligibility in document["releaseEligibility"]:
+                rule = next(item for item in document["federalRules"] if item["ruleId"] == eligibility["ruleRef"]["ruleId"])
+                binding = next(item for item in document["cantonalBindings"] if item["bindingId"] == eligibility["bindingRef"]["bindingId"])
+                walk({"eligibilityId": eligibility["eligibilityId"], "ruleId": rule["ruleId"],
+                      "bindingId": binding["bindingId"], "entryProfileId": binding["entryProfileId"],
+                      "sourceRefs": [*rule["sourceRefs"], *binding["sourceRefs"]]})
     return set(manifest["sourceSummary"]["sourceIds"]), usage
 
 

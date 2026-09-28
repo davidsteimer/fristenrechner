@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { mvp04CalculationData } from '../release/mvp04ReleaseData';
+import { mvp05CalculationData } from '../release/mvp05ReleaseData';
 import { FristenrechnerApp } from '../ui';
 import { initializeBrowserAppearance } from '../ui/browserAppearance';
 import '../ui/styles.css';
@@ -20,7 +20,7 @@ if (!root) {
 ReactDOM.render(
   <React.StrictMode>
     <PublicShell>
-      <FristenrechnerApp data={mvp04CalculationData} />
+      <FristenrechnerApp data={mvp05CalculationData} />
     </PublicShell>
   </React.StrictMode>,
   root
