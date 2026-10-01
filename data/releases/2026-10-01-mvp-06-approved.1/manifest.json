@@ -1,0 +1,336 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest-v6.schema.json",
+  "formatVersion": "6.0.0",
+  "dataKind": "releaseManifest",
+  "releaseId": "2026-10-01-mvp-06-approved.1",
+  "releaseStatus": "approved",
+  "createdOn": "2026-10-01",
+  "immutable": true,
+  "coverage": {
+    "from": "2026-01-01",
+    "to": null
+  },
+  "profileIds": [
+    "stpo",
+    "zpo",
+    "bgg",
+    "vwvg",
+    "vrpg-be"
+  ],
+  "calendarIds": [
+    "ch-federal-calendar",
+    "be-public-holidays"
+  ],
+  "specialRegimeCatalogIds": [
+    "vrpg-be-special-regimes-rest"
+  ],
+  "sourceSummary": {
+    "latestReviewedOn": "2026-10-01",
+    "legalBasisReviewStatus": "verified",
+    "technicalValidationStatus": "passed",
+    "sourceIds": [
+      "JUD-AP17C-BGER-8C-767-2008-20090112",
+      "JUD-AP17C-VGER-BE-100-2024-8-20240404",
+      "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+      "JUD-BE-VG-100-2016-347",
+      "JUD-BE-VG-100-2017-270",
+      "JUD-BE-VG-100-2021-189",
+      "JUD-BE-VG-200-2026-421",
+      "JUD-BGER-1C-275-2009",
+      "JUD-BGER-8C-620-2007",
+      "JUD-BGER-9C-757-2007",
+      "SRC-AP17C-AHVG-20260101",
+      "SRC-AP17C-AHVG-20270101",
+      "SRC-AP17C-ATSG-20240101",
+      "SRC-AP17C-FRG-BE-20210401",
+      "SRC-AP17C-IVG-20260101",
+      "SRC-AP17C-IVG-20270101",
+      "SRC-AP17C-IVOEB-20220201",
+      "SRC-AP17C-IVOEB-OLD-20100701",
+      "SRC-AP17C-IVOEBG-20220201",
+      "SRC-AP17C-IVOEBV-20240901",
+      "SRC-AP17C-IVV-20250601",
+      "SRC-AP17C-IVV-20270701",
+      "SRC-AP17C-UVG-20260101",
+      "SRC-AP17C-VRPG-BE-20260901",
+      "SRC-AP19C-EGELG-BE-20250101",
+      "SRC-AP19C-ELG-20260101",
+      "SRC-AP19C-ELG-20270101",
+      "SRC-AP19C-GSOG-BE",
+      "SRC-AP19C2-AMG-BE-ART35",
+      "SRC-AP19C2-AVIG-20260101",
+      "SRC-AP19C2-AVIV-20260101",
+      "SRC-AP19C2-AVIV-20260801",
+      "SRC-AP19C2-AVIV-20270101",
+      "SRC-AP19C2-AVIV-AS-2025-814",
+      "SRC-AP19C2-AVIV-AS-2026-258",
+      "SRC-AP19C2-AVIV-FUTURE-INDEX-20260928",
+      "SRC-AP19C3-KVG-20260101",
+      "SRC-AP19C3-KVG-20260701",
+      "SRC-AP19C3-KVG-FUTURE-INDEX-20260928",
+      "SRC-AP20C1-EOG-20250128",
+      "SRC-AP20C1-EOG-20260601",
+      "SRC-AP20C1-EOG-20270701",
+      "SRC-AP20C1-EOV-20250101",
+      "SRC-AP20C1-EOV-20260601",
+      "SRC-AP20C1-EOV-20270701",
+      "SRC-AP20C1-GSOG-BE-20260101",
+      "SRC-AP20C1-GSOG-BE-20260501",
+      "SRC-AP20C1-VRPG-BE-20230801",
+      "SRC-AP20C1-VRPG-BE-20260901",
+      "SRC-AP20C2-FAMZG-20260101",
+      "SRC-AP20C2-FLG-20240101",
+      "SRC-AP20C2-FLG-20270701",
+      "SRC-AP20C2-FLV-20140423",
+      "SRC-AP20C2-KFAMZG-BE-20201101",
+      "SRC-AP20C3-EGELG-BE-20250101",
+      "SRC-AP20C3-EGKUMV-BE-20220101",
+      "SRC-AP20C3-EGKUMV-BE-20260901",
+      "SRC-AP20C3-ELG-20260101",
+      "SRC-AP20C3-ELG-20270101",
+      "SRC-AP20C3-MVG-20240101",
+      "SRC-AP20C3-MVV-20260101",
+      "SRC-AP20C3-UELG-20250101",
+      "SRC-AP20C3-UELV-20250101",
+      "SRC-ATSG-20240101",
+      "SRC-BGG-20260401",
+      "SRC-BPR-20221023",
+      "SRC-BUNDESFEIERTAG-19940701",
+      "SRC-FRG-BE-20210401",
+      "SRC-PRG-BE-CURRENT",
+      "SRC-PRG-MATERIALS-2018",
+      "SRC-PRV-BE-CURRENT",
+      "SRC-RRB-498-2024",
+      "SRC-STPO-20250401",
+      "SRC-VPR-20220701",
+      "SRC-VRPG-BE-20230801",
+      "SRC-VWVG-20220701",
+      "SRC-ZPO-20260701"
+    ]
+  },
+  "providerContract": {
+    "pathMode": "manifestRelative",
+    "byteIdentityRequired": true,
+    "supportedProviders": [
+      "github",
+      "sharepointMirror",
+      "manualImport"
+    ],
+    "networkFallback": "lastVerifiedRelease"
+  },
+  "compatibility": {
+    "minimumConsumerFormatVersion": "6.0.0",
+    "unknownMajorVersionHandling": "reject",
+    "unknownCoreFieldHandling": "reject",
+    "extensionsHandling": "ignoreNamespaced"
+  },
+  "checksumAlgorithm": "sha256",
+  "extensions": {
+    "steimer.candidate": {
+      "workPackage": "AP20C3",
+      "baseReleaseId": "2026-10-01-ap20c2-candidate.1",
+      "baseManifestSha256": "e7d1921d7a67adc60e49142fe549f1f6113cf73084f94fd1f0f057d3360cc520",
+      "contractDecision": "DEC-2026-026",
+      "approvalRequired": true,
+      "productionActivation": false,
+      "sourceReviewRef": {
+        "reviewId": "AP20C3-SOURCE-CONTROL-20261001",
+        "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c"
+      },
+      "referenceSuiteRef": {
+        "suiteId": "AP20B-SOCIAL-DATES-1",
+        "sha256": "9740ce84883a54beec81f2f8a6cb1c450d690c9b6f440c5841d5821dfad16fa3"
+      },
+      "acceptanceEvidence": {
+        "path": "docs/fachrecht/abnahme-ap20c2.md",
+        "sha256": "864543a15afb57b205d9a183134a6eeb91bc19aeefd92bbcd9bdefaa2a1bc7b1"
+      },
+      "decisionEvidence": {
+        "path": "docs/entscheidungen/DEC-2026-026-beschluss.md",
+        "sha256": "16873c28621edcac92e490814c5196fbbfb34900d8e10d4c767cda8a5359ef7a"
+      },
+      "sourceEvidence": [
+        {
+          "path": "docs/fachrecht/quellenabgleich-ap20b-bund.md",
+          "sha256": "518ff9be263fdb74c50eb09489ef88c3177881a5315fc03e06e19c01bffbfcad"
+        },
+        {
+          "path": "docs/fachrecht/zeitliche-bindung-ap20b.md",
+          "sha256": "6fe83e678b7c14e23586ebb7e1903918f4806bb4533c99a21fac1e6f542059d1"
+        },
+        {
+          "path": "outputs/ap20b-2026-09-30/federal-source-indexes.json",
+          "sha256": "fa4be7828baf8319702c0d9c638e4d95e9eb086b08ee5528a261db9f49aa45b5"
+        },
+        {
+          "path": "outputs/ap20b-2026-09-30/federal-source-originals.json",
+          "sha256": "b1fe603ce0743bed770fe2713407e52ba7b91b8917841889381eb892e24f1cda"
+        },
+        {
+          "path": "outputs/ap20b-2026-09-30/federal-source-comparisons.json",
+          "sha256": "c3a9869e540a6fb24ce97932f3704b29311c7c1e999f1ce7b44889a91dd54342"
+        },
+        {
+          "path": "outputs/ap20b-2026-09-30/bern-sources/bern-source-review.json",
+          "sha256": "30bc675d65ca31d61b6c99f38d84f5775d13ba6e33bb5be8d42db2a854cb00f9"
+        },
+        {
+          "path": "outputs/ap20c1-2026-09-30/quellenkontrolle.json",
+          "sha256": "6209ff32d00910b36f97dfb5c35c147dc19ec908500b17c75736bd3960da990c"
+        },
+        {
+          "path": "outputs/ap20c2-2026-10-01/quellenkontrolle.json",
+          "sha256": "6ef1e65e4a2e5a7fa0a87c2042d5fc17a9f736c3f09fe9035620dbf0ce84d4c5"
+        },
+        {
+          "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+          "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c"
+        }
+      ],
+      "scope": "44 nationale Regeln und 50 Berner Anbindungen. Je vier MVG- und ÜLG-Regeln mit je vier BE-Anbindungen neu. Bestandsobjekte unverändert, sämtliche Freigabeverknüpfungen Kandidat. Alle fünf AP20-Erlasse im Kandidaten modelliert, keine operativen Freigaben oder weiteren Kantone aktiviert."
+    },
+    "steimer.approval": {
+      "approvedBy": "David Steimer",
+      "approvedOn": "2026-10-01",
+      "decisionRef": "docs/fachrecht/abnahme-quellen-mvp06.md",
+      "approvalScope": "mvp06LocalDataAndReleaseArtifacts",
+      "contractDecision": "DEC-2026-026",
+      "candidateReleaseId": "2026-10-01-ap20c3-candidate.1",
+      "candidateManifestSha256": "b4250a31d226b4f59e0857a857f49e1ea354722b9ff46b9324d70b330f135450",
+      "decisionSha256": "18adb59a4731838f88761513117041697e5ee6d61b9a40726b5a9945c97dbc15",
+      "sourceReviewRef": {
+        "reviewId": "MVP06-SOURCE-APPROVAL-20261001",
+        "sha256": "10f43005757c54a445f009d702b17a37f04e2dad530241201dbf6c4eebfc2cbb"
+      },
+      "sourceReviewPath": "outputs/release-mvp06-2026-10-01/source-approval.json",
+      "sourceReviewDatesUnchanged": true,
+      "referenceSuites": {
+        "AP17B-ANWENDBARKEIT": {
+          "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+          "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+        },
+        "AP19B-SOCIAL-REFERENCES-1": {
+          "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+          "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+        },
+        "AP20B-SOCIAL-DATES-1": {
+          "path": "tests/golden/candidates/ap20b-social-dates.json",
+          "sha256": "9740ce84883a54beec81f2f8a6cb1c450d690c9b6f440c5841d5821dfad16fa3"
+        }
+      },
+      "preparationSnapshot": {
+        "path": "outputs/release-mvp06-2026-10-01/preparation-inputs.json",
+        "sha256": "e38f06f47f258f3a7d54359d5ca5c0c12bc37fe846f197c4194d784c0a7c585a",
+        "evidenceFiles": 180,
+        "historicalArchives": 85
+      }
+    },
+    "steimer.release-preparation": {
+      "preparedOn": "2026-10-01",
+      "appVersion": "0.6.0",
+      "sourceRefresh": "acceptedWithDocumentedReuseAndReservations",
+      "publicationApproved": false,
+      "deploymentApproved": false,
+      "productionActivation": false,
+      "operatingApproval": "requiresSeparateDecision"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "role": "legalProfile",
+      "contentId": "bgg",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "profiles/stpo.json",
+      "role": "legalProfile",
+      "contentId": "stpo",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "role": "legalProfile",
+      "contentId": "vrpg-be",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "role": "legalProfile",
+      "contentId": "vwvg",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "profiles/zpo.json",
+      "role": "legalProfile",
+      "contentId": "zpo",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "role": "calendar",
+      "contentId": "be-public-holidays",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 9073,
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "role": "calendar",
+      "contentId": "ch-federal-calendar",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v2.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 7260,
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+    },
+    {
+      "path": "special-regimes/vrpg-be.json",
+      "role": "specialRegimeCatalog",
+      "contentId": "vrpg-be-special-regimes-rest",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 114845,
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+    },
+    {
+      "path": "holiday-catalogs/ch-holiday-catalog.json",
+      "role": "holidayCatalog",
+      "contentId": "ch-holiday-catalog",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v1.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 837359,
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+    },
+    {
+      "path": "social-procedures/ch-social-procedures.json",
+      "role": "socialProcedureCatalog",
+      "contentId": "ch-social-procedures",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog-v2.schema.json",
+      "mediaType": "application/json",
+      "byteLength": 553824,
+      "sha256": "537d761537a4ed6d366cb568df05d940d42f78a0f625eff85e06703f250faafb"
+    }
+  ],
+  "holidayCatalogIds": [
+    "ch-holiday-catalog"
+  ],
+  "socialProcedureCatalogIds": [
+    "ch-social-procedures"
+  ]
+}
