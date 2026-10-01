@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { root, approvalPath, completenessPath, validateMvp05SourceApproval, verifyMvp05SourceApproval } from '../../scripts/verify-mvp05-source-approval.mjs';
+import { root, approvalPath, completenessPath, hash, validateMvp05SourceApproval, verifyMvp05SourceApproval } from '../../scripts/verify-mvp05-source-approval.mjs';
 import { prepareMvp05Inputs, outputPath } from '../../scripts/prepare-mvp05-inputs.mjs';
 const original = JSON.parse(await readFile(resolve(root, approvalPath)));
 const originalFiles = new Map(await Promise.all(original.evidence.map(async item => [item.path, await readFile(resolve(root, item.path))])));
@@ -50,6 +50,8 @@ test('historical preparation remains byte-reproducible after live register and v
   const { snapshot } = await prepareMvp05Inputs();
   assert.deepEqual(snapshot, JSON.parse(await readFile(resolve(root, outputPath))));
   assert.equal(snapshot.permissions.sourceReviewApproved, false, 'Historical snapshot stays historical');
-  const current = JSON.parse(await readFile(resolve(root, 'data/source-reviews/source-register.json')));
-  assert.equal(current.sources.length, 57);
+  // This is an MVP05 assertion, not a cap on a later approved live register.
+  const historicalBytes = await readFile(resolve(root, 'outputs/release-mvp06-2026-10-01/historical-baseline/data/source-reviews/source-register.json'));
+  assert.equal(hash(historicalBytes), 'eb89b94c839fb01d92c4168dd99183d1c40818299b0a364247007b5bd933df7a');
+  assert.equal(JSON.parse(historicalBytes).sources.length, 57);
 });

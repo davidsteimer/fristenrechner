@@ -3,11 +3,14 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Freischaltungsentscheid, Installation und Betrieb durch eine Microsoft-365-IT |
-| Produktstand | MVP 0.5, SPFx-Paket `0.5.0.0` auf vier bestehenden E-/Q-Instanzen installiert und technisch geprüft, fachliche Q-Abnahme erteilt. Noch keine MVP-0.5-Veröffentlichung auf GitHub oder P |
-| Stand | 28. September 2026 |
+| Interner Produktstand | MVP 0.6, Paket `0.6.0.1` auf vier bestehenden E-/Q-Sites installiert und begrenzt nachgeprüft. Q fachlich abgenommen, Gastanmeldung bestätigt und Outlook-Wiederverwendung begründet. Veröffentlichung noch offen. Keine zusätzliche Dritt-Tenant-Installation freigegeben |
+| Letzter dokumentierter öffentlicher Betriebsstand | MVP 0.5 auf P, GitHub-Veröffentlichung gemäss Produktionsnachweis vom 28. September 2026 |
+| Stand | 1. Oktober 2026, einschliesslich E-/Q-Korrekturinstallation und begrenzter Live-Nachtests |
 | Zielplattform | SharePoint Online, optional Microsoft Teams |
 
-MVP 0.5 ergänzt die abgenommenen AP17-/AP18-Grundlagen um die erste AP19-Tranche des national modellierten Sozialversicherungsrechts mit ausschliesslich bernischer Freigabe. Die zusammengeführte Quellenprüfung ist abgenommen. Alle vier bestehenden E-/Q-Instanzen verwenden das Paket `0.5.0.0` und ihren vollständigen Format-5-Mirror. **123 technische Prüfpunkte sind bestanden. David hat Q fachlich abgenommen und die reale Anmeldung mit dem bestehenden B2B-Gast bestätigt.** GitHub bleibt nach dokumentiertem Stand auf MVP 0.4, P wegen des offenen Hostingbefunds auf MVP 0.3. Diese Anleitung autorisiert keine zusätzliche Installation, neue Gastrechte oder P-Bereitstellung. [E-/Q-Nachweis](eq-installation-mvp05.md), [Q-Abnahme](abnahme-q-mvp05.md) und [Releaseplan](deployment-mvp-05.md) dokumentieren die verbleibenden Grenzen.
+Diese Anleitung beschreibt die technische Installation von MVP 0.6. AP20C1 bis AP20C3 und die [zusammengeführte Quellenprüfung](../fachrecht/abnahme-quellen-mvp06.md) sind abgenommen. EOG, FamZG, FLG, MVG und ÜLG ergänzen den Bestand auf 44 national modellierte Regeln und 50 ausschliesslich bernische Anbindungen. Datenfreigabe, lokaler Bau und der gesondert freigegebene E-/Q-Vollzug sind erfolgt. Die begrenzte Lesbarkeitskorrektur und deren Live-Nachtests sind im [Paketnachweis 0.6.0.1](spfx-korrekturkandidat-mvp06-0601.md) gebunden. Der ursprüngliche [Artefaktnachweis](releaseartefakte-mvp-06.md) bleibt erhalten. Für P liegt inzwischen ein [separates korrigiertes Webarchiv](publikationspaket-mvp06.md#gebundener-umfang) vor. Das ursprüngliche Webarchiv ist nur noch historischer Nachweis. Veröffentlichung und weitere Zielinstallationen benötigen eigene Freigaben gemäss [Deploymentplan](deployment-mvp-06.md).
+
+Der [E-/Q-Nachweis für MVP 0.5](eq-installation-mvp05.md) dokumentiert 123 technische Prüfpunkte, die [Q-Abnahme](abnahme-q-mvp05.md) die fachliche Prüfung und bestehende Gastanmeldung. Der [Produktionsnachweis vom 28. September 2026](produktionsbereitstellung-mvp05-2026-09-28.md) bestätigt die anschliessende GitHub-Veröffentlichung und P-Bereitstellung von MVP 0.5 mit begrenzt akzeptierten Header-/Cacheabweichungen und offener direkter Browserstorage-Wertkontrolle. Diese Nachweise werden nicht als Tests von MVP 0.6 oder eines Dritt-Tenants übernommen. Die Anleitung selbst autorisiert weder Installation noch neue Gastrechte oder P-Bereitstellung.
 
 ## 1. Entscheid für die IT in Kürze
 
@@ -54,32 +57,31 @@ Für eine reine SharePoint-Installation auf einer einzelnen Site Collection kann
 
 | Merkmal | Wert |
 | --- | --- |
-| Paket | [`outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg`](../../outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg) |
-| Version | `0.5.0.0` |
-| Grösse | 222’393 Bytes |
-| SHA-256 | `f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39` |
+| Paket | [`fristenrechner-schweiz-0.6.0.1.sppkg`](../../outputs/release-mvp06-spfx-0.6.0.1-2026-10-01/artifacts/fristenrechner-schweiz-0.6.0.1.sppkg) |
+| Version | `0.6.0.1`, auf den vier bestehenden E-/Q-Sites installiert und begrenzt nachgeprüft. Keine pauschale Freigabe für weitere Zielinstallationen |
+| Grösse und SHA-256 | Verbindlich im [Korrektur- und Installationsnachweis](spfx-korrekturkandidat-mvp06-0601.md) |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 
 Prüfung unter macOS oder Linux:
 
 ```bash
-shasum -a 256 outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg
+shasum -a 256 outputs/release-mvp06-spfx-0.6.0.1-2026-10-01/artifacts/fristenrechner-schweiz-0.6.0.1.sppkg
 ```
 
 Prüfung unter Windows PowerShell:
 
 ```powershell
-Get-FileHash .\outputs\release-mvp05-2026-09-28\artifacts\fristenrechner-schweiz-0.5.0.0.sppkg -Algorithm SHA256
+Get-FileHash .\outputs\release-mvp06-spfx-0.6.0.1-2026-10-01\artifacts\fristenrechner-schweiz-0.6.0.1.sppkg -Algorithm SHA256
 ```
 
 Die Installation ist abzubrechen, wenn Version, Solution-ID oder Prüfsumme abweichen.
 
-Die Prüfsumme bezeichnet das auf E und Q installierte und geprüfte Releasepaket. Wegen dokumentierter SPFx-Buildvarianz kann ein funktional gleicher Neubau eine andere Prüfsumme haben. Er ist nicht automatisch als dieses Installationsartefakt freigegeben. Der [MVP-0.5-Artefaktnachweis](../../outputs/release-mvp05-2026-09-28/artifact-verification.json) bindet Paket, vollständigen Mirror, statisches Webarchiv und den neuen Datenpin. Diese Dateien sind lokal vorhanden, aber noch nicht als MVP 0.5 veröffentlicht. Der bisherige Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` enthält im erhaltenen lokalen Ausgangsstand weiterhin `0.4.0.1` und darf nicht mit dem neuen Artefakt verwechselt werden.
+Die Prüfsumme bezeichnet das konkret gebundene und auf den vier bestehenden E-/Q-Sites nachgeprüfte Korrekturpaket. Wegen dokumentierter SPFx-Buildvarianz kann ein funktional gleicher Neubau eine andere Prüfsumme haben. Er ist nicht automatisch als dieses Installationsartefakt freigegeben. Der [ursprüngliche Artefaktnachweis](releaseartefakte-mvp-06.md) bindet vollständigen Mirror, bisheriges Webarchiv und Datenpin. Die [Korrekturerweiterung](spfx-korrekturkandidat-mvp06-0601.md) bindet das neue SPFx-Paket bei unveränderten Daten. Der [lokale Publikationsnachweis](publikationspaket-mvp06.md) ergänzt den passenden korrigierten Webbau und den getrennten öffentlichen Prüfumfang. Diese Dateien sind noch nicht als MVP 0.6 veröffentlicht. Der allgemeine Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` darf ohne eigene Identitätsprüfung weder als Auslieferungsartefakt noch als Rückfallpaket verwendet werden.
 
 ## 4. Installation in SharePoint Online
 
-1. Erst nach Veröffentlichung des konkreten MVP-0.5-Dateiumfangs, öffentlicher Verifikation des Datenpins und Freigabe der konkreten Zielinstallation das bezeichnete Paket beziehen und SHA-256 prüfen. Eine vorgezogene Dritt-Tenant-Installation wird hier nicht freigegeben.
+1. Erst nach gesonderter Freigabe des konkreten Paketstands und der Zielinstallation das bezeichnete Paket beziehen und SHA-256 prüfen. Für eine externe Übergabe muss auch der hierfür freigegebene Dateiumfang verfügbar sein. Im GitHub-Datenmodus muss der vollständige neue Pin veröffentlicht und öffentlich byteweise geprüft sein. Eine konkret freigegebene E-/Q-Prüfung kann vorher mit vollständigen eigenen SharePoint-Mirrors erfolgen. Diese Anleitung erteilt keine vorgezogene Dritt-Tenant-Freigabe.
 2. SharePoint-App-Website beziehungsweise Tenant-App-Katalog öffnen.
 3. Das geprüfte Paket in die Bibliothek für SharePoint-Apps hochladen. Bei Ersatz des vorhandenen Katalogeintrags eine byteidentische Bereitstellungskopie namens `fristenrechner-schweiz.sppkg` verwenden und die Prüfsumme erneut kontrollieren.
 4. Paket als vertrauenswürdige clientseitige Lösung aktivieren.
@@ -115,19 +117,19 @@ Microsoft weist darauf hin, dass benutzerdefinierte Apps und deren Nutzung im Te
 
 ### 6.1 Variante A: öffentlicher GitHub-Release
 
-Die Standardkonfiguration verwendet den auf einen unveränderlichen Commit gepinnten Datenrelease:
+Die lokale MVP-0.6-Standardkonfiguration bezeichnet folgenden noch nicht veröffentlichten, auf einen unveränderlichen Commit gepinnten Datenrelease:
 
 ```text
-https://raw.githubusercontent.com/davidsteimer/fristenrechner/3109c39730f10d31cb6c57200b36dd5091d7bcd1/data/releases/2026-09-28-mvp-05-approved.1
+https://raw.githubusercontent.com/davidsteimer/fristenrechner/19b37336974f3ba7c72333763e1272425239b8cd/data/releases/2026-10-01-mvp-06-approved.1
 ```
 
-**Dieser MVP-0.5-Datencommit ist noch nicht veröffentlicht.** Vor der Aktivierung müssen der vollständige Datenstand publiziert, alle elf Laufzeitdateien öffentlich abgerufen und byteweise gegen den freigegebenen Bestand geprüft sein. E und Q verwenden vor der Publikation ausdrücklich ihre vollständigen SharePoint-Mirrors. Ein noch nicht erreichbarer Pin ist kein Anlass, auf `main` auszuweichen oder einen alten Cache als erfolgreichen Erstabruf auszugeben.
+**Dieser MVP-0.6-Datencommit ist noch nicht veröffentlicht.** Vor der Aktivierung im GitHub-Modus müssen der vollständige Datenstand publiziert, alle elf Laufzeitdateien öffentlich abgerufen und byteweise gegen den freigegebenen Bestand geprüft sein. Eine vorher gesondert freigegebene E-/Q-Installation verwendet ausdrücklich vollständige neue SharePoint-Mirrors. Ein noch nicht erreichbarer Pin ist kein Anlass, auf `main` auszuweichen oder einen alten Cache als erfolgreichen Erstabruf auszugeben. Der ältere MVP-0.5-Pin `3109c39730f10d31cb6c57200b36dd5091d7bcd1` ist gemäss Produktionsnachweis bereits veröffentlicht.
 
 Zusätzliche Voraussetzung ist ein ausgehender HTTPS-Zugriff auf `raw.githubusercontent.com`. Die Anwendung lädt nur die versionierten Regel- und Kalenderdateien. Eingegebene Fristdaten werden nicht an GitHub gesendet.
 
 ### 6.2 Variante B: tenantinterner SharePoint-Mirror
 
-Der Mirror eignet sich für Tenants, die keine externe Laufzeitverbindung zulassen oder freigegebene Datenstände selbst kontrollieren wollen. Der neue Datenrelease verwendet Manifest-/Consumerformat `5.0.0`, Sozialverfahrenskatalog `1.0.0`, Spezialregimekatalog `3.0.0`, Kalenderkomponente `2.0.0` und Feiertagskatalog `1.0.0`.
+Der Mirror eignet sich für Tenants, die keine externe Laufzeitverbindung zulassen oder freigegebene Datenstände selbst kontrollieren wollen. Der neue Datenrelease verwendet Manifest-/Mindestconsumerformat `6.0.0`, Sozialverfahrenskatalog `2.0.0`, Spezialregimekatalog `3.0.0`, Kalenderkomponente `2.0.0` und Feiertagskatalog `1.0.0`. Die Ordnerangaben sind Vorlagen für eine später konkret freizugebende Installation.
 
 Der Mirror muss auf derselben SharePoint-Website liegen, auf welcher die App-Instanz läuft. Für eine Teams-Registerkarte ist dies die SharePoint-Website des betreffenden Teams.
 
@@ -136,7 +138,7 @@ Empfohlene Ordnerstruktur:
 ```text
 /sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/
 └── releases/
-    └── 2026-09-28-mvp-05-approved.1/
+    └── 2026-10-01-mvp-06-approved.1/
         ├── manifest.json
         ├── calendars/
         │   ├── be-public-holidays.json
@@ -166,15 +168,15 @@ Einrichtung:
 7. Als `SharePoint-Mirrorpfad` den serverrelativen Ordner eintragen, beispielsweise:
 
 ```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-09-28-mvp-05-approved.1
+/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-10-01-mvp-06-approved.1
 ```
 
 Massgebend ist der tatsächliche URL-Pfad der Bibliothek, nicht ihr allenfalls übersetzter Anzeigename. Der Pfad kann aus der Ordneradresse der Zielwebsite übernommen werden.
 
 8. Konfiguration speichern und Seite oder Registerkarte neu laden.
-9. Kontrollieren, dass die sichtbare Datenquelle `SharePoint-Mirror` lautet und der Datenrelease `2026-09-28-mvp-05-approved.1` aktiv ist. Zusätzlich den Erstabruf ohne vorhandenen gültigen Produktdatencache und den tatsächlichen Abruf aller elf Dateien aus dem richtigen Mirror prüfen.
+9. Kontrollieren, dass die sichtbare Datenquelle `SharePoint-Mirror` lautet und der Datenrelease `2026-10-01-mvp-06-approved.1` aktiv ist. Zusätzlich den Erstabruf ohne vorhandenen gültigen Produktdatencache und den tatsächlichen Abruf aller elf Dateien aus dem richtigen Mirror prüfen.
 
-Der vollständige Manifest-SHA-256 lautet `3aa09c80c93ef56d472748c4a5496d439537272d96491497b2c678e3c7e20715`. Das lokal vorbereitete [Mirror-ZIP `fristenrechner-mvp05-sharepoint-mirror.zip`](../../outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-mvp05-sharepoint-mirror.zip) hat SHA-256 `17baf1b097335c318b366b75ca53d5b64ca1ad713805d7370116a1d6db4cf9fa`. Es enthält die elf Dateien direkt ab der Wurzel und muss in den neuen Releaseordner entpackt werden, nicht als ZIP-Laufzeitquelle eingetragen werden. Das Archiv ist noch nicht öffentlich bereitgestellt. Ein späterer Git-Push veröffentlicht nur ausdrücklich versionierte Dateien und erzeugt nicht automatisch einen GitHub-Release-Anhang.
+Manifest- und Archivprüfsummen stehen verbindlich im [MVP-0.6-Artefaktnachweis](releaseartefakte-mvp-06.md). Das lokal vorbereitete [Mirror-ZIP `fristenrechner-mvp06-sharepoint-mirror.zip`](../../outputs/release-mvp06-2026-10-01/artifacts/fristenrechner-mvp06-sharepoint-mirror.zip) enthält die elf Dateien direkt ab der Wurzel. Es muss in den neuen Releaseordner entpackt werden und darf nicht als ZIP-Laufzeitquelle eingetragen werden. Das Archiv ist noch nicht öffentlich bereitgestellt. Ein späterer Git-Push veröffentlicht nur ausdrücklich versionierte Dateien und erzeugt nicht automatisch einen GitHub-Release-Anhang.
 
 Zulässige Pfade:
 
@@ -194,16 +196,16 @@ Die Anwendung prüft Schemata, Referenzen und SHA-256-Prüfsummen selbst. Bei ei
 
 ### 6.3 Mirror-Update und Rückfall
 
-Neue Datenstände werden nicht in den aktiven Ordner hineinkopiert. Der MVP-0.4-Consumer kann Format 5 nicht lesen. Beim Wechsel auf MVP 0.5 gilt deshalb folgende Reihenfolge:
+Neue Datenstände werden nicht in den aktiven Ordner hineinkopiert. Der MVP-0.5-Consumer kann Format 6 nicht lesen. Beim gesondert freizugebenden Wechsel auf MVP 0.6 gilt deshalb folgende Reihenfolge:
 
 1. neuen Release in einen neuen versionsbezogenen Ordner hochladen
 2. sämtliche Artefakte und Berechtigungen prüfen
-3. erst nach konkreter Freigabe das hashgebundene Paket `0.5.0.0` installieren beziehungsweise aktualisieren, bevor eine Instanz den Format-5-Datenpfad erhält
+3. erst nach konkreter Freigabe das hashgebundene Paket `0.6.0.1` installieren beziehungsweise aktualisieren, bevor eine Instanz den Format-6-Datenpfad erhält
 4. Mirrorpfad jeder betroffenen WebPart- und Teams-Registerkarteninstanz auf den neuen Ordner umstellen
 5. sichtbare Release-ID, Datenquelle und Referenzberechnung prüfen, anschliessend vollständigen Zielumgebungs-Abnahmetest durchführen
 6. früheren Ordner und früheres Paket für einen definierten Rückfallzeitraum unverändert aufbewahren
 
-Ein Paketupdate allein beweist keine Datenumstellung, weil bestehende Instanzen ihre Konfiguration behalten können. Der Rückfall verwendet die unmittelbar vor dem Eingriff tatsächlich verifizierte und gesicherte Baseline. Im dokumentierten E-/Q-Update war dies Paket `0.4.0.1` mit SHA-256 `9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346` und Datenrelease `2026-09-22-mvp-04-approved.1`. Zuerst die zusammengehörigen früheren Datenpfade zurückstellen, nötigenfalls das gesicherte Paket wiederherstellen und alle betroffenen Instanzen prüfen. Einen alten Consumer niemals mit Format-5-Daten zurücklassen. Die historische AP5-Ansicht behält ihre eigene Datenquelle. Keine Mischung einzelner alter und neuer JSON-Dateien. Die automatische Replikation neuer Mirrorstände ist nicht implementiert. Die Übernahme bleibt ein kontrollierter manueller Betriebsschritt.
+Ein Paketupdate allein beweist keine Datenumstellung, weil bestehende Instanzen ihre Konfiguration behalten können. Der Rückfall verwendet die unmittelbar vor dem Eingriff tatsächlich verifizierte und gesicherte Baseline. Der aktuelle dokumentierte E-/Q-Stand ist Paket `0.6.0.1` mit Datenrelease `2026-10-01-mvp-06-approved.1`. Beim reinen Korrekturwechsel war das frisch gesicherte Rückfallpaket `0.6.0.0` bei identischem Datenstand. Bei einem späteren Eingriff muss die dann aktuelle Baseline neu bestätigt und gesichert werden. Bei einem Rückfall über die Formatgrenze zuerst die zusammengehörigen früheren Datenpfade zurückstellen, nötigenfalls das gesicherte Paket wiederherstellen und alle betroffenen Instanzen prüfen. Einen alten Consumer niemals mit Format-6-Daten zurücklassen. Die historische AP5-Ansicht behält ihre eigene Datenquelle. Keine Mischung einzelner alter und neuer JSON-Dateien. Die automatische Replikation neuer Mirrorstände ist nicht implementiert. Die Übernahme bleibt ein kontrollierter manueller Betriebsschritt.
 
 ### 6.4 Governance-Nachweis spiegeln
 
@@ -236,7 +238,9 @@ Der Fristenrechner benötigt keinen Serverprozess. Der Regelbetrieb umfasst:
 
 Der regelbasierte Kalender besitzt keine künstliche Jahresobergrenze. Das bedeutet nicht, dass das Recht unveränderlich wäre. Feiertags- und Fristenquellen werden nach dem [AP13-Prozess](periodische-quellenpruefung-ap13.md) kontrolliert. Nur eine fachlich relevante und freigegebene Änderung führt zu einem neuen Datenrelease. Die [Release-Checkliste](release-checkliste.md) verbindet Quellenprüfung, Datenfreigabe, Mirror und Tenanttests.
 
-Für MVP 0.5 ist die [zusammengeführte Quellenprüfung einschliesslich Wiederverwendung und Vorbehalten abgenommen](../fachrecht/abnahme-quellenpruefung-mvp05.md). Der bekannte AI-Quellenkonflikt bleibt dokumentiert und wird nach dem bestehenden Entscheid behandelt. Die 479 Katalogregeln bedeuten keine Freigabe sämtlicher kantonaler Fristenprofile. Operativ bleibt die Feiertagsprojektion auf die zwölf bestehenden CH-/BE-Regeln begrenzt. Der Sozialverfahrenskatalog umfasst 24 nationale Regeln und 28 bernische Anbindungen für IVG, AHVG, UVG, ELG, AVIG-ALE und KVG-OKP im jeweils bezeichneten Umfang. Die Sozialfreigaben bleiben auf Quellen- und Fallabdeckung 2026–2027 begrenzt. Unbekannte, nicht modellierte oder ausserhalb der freigegebenen Anbindung liegende Fälle bleiben gesperrt. Diese fachlichen Grenzen werden nicht durch die offene Kalenderlaufzeit erweitert.
+Für MVP 0.6 ist die [zusammengeführte Quellenprüfung einschliesslich Wiederverwendung und Vorbehalten abgenommen](../fachrecht/abnahme-quellen-mvp06.md). 77 Manifestreferenzen und 82 zusätzliche historische Katalogreferenzen ergeben 159 unterschiedliche Quellen-IDs. Die 82 behalten ihren tatsächlichen Prüfstand vom 22. September 2026 und werden nicht als frisch vollständig geprüft ausgegeben. Der bekannte AI-Quellenkonflikt bleibt unklar und wird nach dem bestehenden Entscheid behandelt. Die 479 Katalogregeln bedeuten keine Freigabe sämtlicher kantonaler Fristenprofile. Operativ bleibt die Feiertagsprojektion auf die zwölf bestehenden CH-/BE-Regeln begrenzt.
+
+Der lokal übernommene Sozialverfahrenskatalog umfasst 44 nationale Regeln und 50 bernische Anbindungen. Die bisherigen IVG-/AHVG-/UVG-Pfade, ELG, AVIG-ALE und KVG-OKP werden um die qualifizierten EOG-, FamZG-, FLG-, MVG- und ÜLG-Pfade ergänzt. Die Sozialfreigaben bleiben auf Quellen- und Fallabdeckung 2026–2027 begrenzt. Unbekannte, nicht modellierte oder ausserhalb der freigegebenen Anbindung liegende Fälle bleiben gesperrt. Nationale Modellierung aktiviert keine weiteren Kantone. Diese fachlichen Grenzen werden weder durch die offene Kalenderlaufzeit noch durch die lokale Baufreigabe erweitert.
 
 Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höherer Version ausgeliefert. Das Paket wird im App-Katalog ersetzt und auf den Zielwebsites aktualisiert. Enthält die Änderung auch das Teams-Manifest oder die Teams-Exposition, wird anschliessend die organisationsinterne Teams-App aktualisiert und erneut geprüft.
 
@@ -247,11 +251,12 @@ Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höher
 - [ ] keine Graph- oder API-Zustimmung wird verlangt
 - [ ] WebPart lädt nach einem vollständigen Neuladen der SharePoint-Seite
 - [ ] erwarteter Datenrelease und erwartete Datenquelle werden angezeigt
-- [ ] der vollständige Format-5-Mirror einschliesslich Feiertags- und Sozialverfahrenskatalog wird akzeptiert, fehlende oder manipulierte Komponenten werden atomar verworfen
+- [ ] der vollständige Format-6-Mirror einschliesslich Feiertags- und Sozialverfahrenskatalog 2 wird akzeptiert, fehlende oder manipulierte Komponenten werden atomar verworfen
 - [ ] StPO, Empfang 16.09.2026, zehn Tage ergibt Fristablauf 28.09.2026
 - [ ] IV-Einwand, Zustellung 16.09.2026, unterstützte Berner Anknüpfung ergibt 16.10.2026
 - [ ] IVöB-Zuschlagsbeschwerde, Publikation 06.09.2026, Neurecht ergibt 28.09.2026
 - [ ] ELG-, AVIG-ALE- und KVG-OKP-Referenzen sowie ihre Sperrfälle gemäss vollständigen qualifizierten Eingaben der [MVP-0.5-Prüfmatrix](deployment-mvp-05.md#5-prüfmatrix-für-den-folgerelease) stimmen
+- [ ] EOG, FamZG, FLG, MVG und ÜLG sowie ihre gezielten Sperrfälle stimmen gemäss [MVP-0.6-Fallliste](pruefmatrix-mvp06.md), reale Fallmerkmale werden nicht aus Defaults oder anderen Eingaben abgeleitet
 - [ ] Deutsch und Französisch funktionieren
 - [ ] ein fachlicher Sperrfall zeigt kein scheinbares Fristende
 - [ ] der Outlook-kompatible Kalendereintrag enthält Fristdatum, freien Status, Kategorie `Fristablauf` und Erinnerung 4 Tage 16 Stunden vorher
@@ -260,9 +265,9 @@ Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höher
 - [ ] Browserkonsole enthält keinen Fehler des Produktbundles
 - [ ] SharePoint-Mirror bleibt auch bei gesperrtem Zugriff auf `raw.githubusercontent.com` funktionsfähig, falls der Mirror der gewählte Betriebsmodus ist
 
-Diese Liste ist eine Vorlage für die jeweilige Zielinstallation und ersetzt nicht die vollständige [MVP-0.5-Matrix](deployment-mvp-05.md#5-prüfmatrix-für-den-folgerelease). Im bestehenden E-/Q-Tenant sind 123 technische Prüfpunkte einschliesslich AP5-Kompatibilität bestanden. Die fachliche Q-Abnahme ist erteilt. Die Ergebnisse gelten nicht automatisch für einen Dritt-Tenant. Tatsächliche ICS-Dateien aus allen vier aktuellen Instanzen sind geprüft. David hat Outlook Desktop als manuell geprüft bestätigt. Die tatsächliche Outlook-Webprüfung ist bestanden und der importierte Testtermin anschliessend entfernt. Der [Outlook-Nachweis](outlook-pruefung-mvp05.md) dokumentiert Import, Eigenschaften und Bereinigung separat vom ICS-Dateiexport.
+Diese Liste ist eine Vorlage für die jeweilige Zielinstallation und ersetzt nicht die vollständige [MVP-0.6-Matrix](deployment-mvp-06.md#5-geplante-prüfmatrix) und [konkrete Fallliste](pruefmatrix-mvp06.md). Für MVP 0.6 sind die ursprüngliche technische Eigentümerprüfung und die [begrenzten Korrektur-Nachtests](spfx-korrekturkandidat-mvp06-0601.md) dokumentiert. Die [manuelle Q-Abnahme und Gastanmeldung sind durch David bestätigt](abnahme-q-mvp06.md). Die für MVP 0.5 dokumentierten 123 technischen E-/Q-Prüfpunkte und seine fachliche Q-Abnahme gelten weder automatisch für MVP 0.6 noch für einen Dritt-Tenant. Der [Outlook-Nachweis MVP 0.5](outlook-pruefung-mvp05.md) dokumentiert den früheren Webimport mit Eigenschaften und Bereinigung sowie Davids manuelle Desktopbestätigung. Für MVP 0.6 ist die [Wiederverwendung dieser Vorbelege ausdrücklich beschlossen und technisch begründet](abnahme-q-mvp06.md). Die 28 tatsächlich geprüften MVP-0.6-ICS-Dateien ergänzen die bytegleiche Exportimplementierung und den früheren Importnachweis. Ein neuer Outlookimport wird nicht behauptet.
 
-E-SharePoint und Q-Teams wurden bei 390, 768 und 1440 Pixeln ohne horizontales Überlaufen geprüft. Auf allen vier aktuellen Instanzen sind cachefreier Erstabruf sowie kontrollierter Komponentenladefehler mit Fallback und anschliessender Wiederherstellung nachgewiesen. Einzelheiten und Nachweisgrenzen bleiben im [aktuellen Bericht](eq-installation-mvp05.md) ausgewiesen. Die jeweiligen Punkte dürfen nicht ohne Prüfung auf einen anderen Tenant übertragen werden.
+Für MVP 0.5 wurden E-SharePoint und Q-Teams bei 390, 768 und 1440 Pixeln ohne horizontales Überlaufen geprüft. Auf seinen vier bezeichneten Instanzen sind cachefreier Erstabruf sowie kontrollierter Komponentenladefehler mit Fallback und anschliessender Wiederherstellung nachgewiesen. Einzelheiten und Nachweisgrenzen bleiben im [MVP-0.5-Bericht](eq-installation-mvp05.md) ausgewiesen. Die jeweiligen Punkte dürfen nicht ohne Prüfung auf MVP 0.6 oder einen anderen Tenant übertragen werden.
 
 ## 9. Betrieblich offene Punkte vor Produktivsetzung
 
@@ -286,6 +291,10 @@ Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei 
 - [AP10-Deploymentnachweis](deployment-ap10.md)
 - [AP13: Periodische Quellenprüfung](periodische-quellenpruefung-ap13.md)
 - [Release-Checkliste](release-checkliste.md)
+- [MVP-0.6-Deploymentplan und konkrete Freigabegrenzen](deployment-mvp-06.md)
+- [MVP-0.6-Artefakte und verbindliche Prüfsummen](releaseartefakte-mvp-06.md)
+- [MVP-0.6-E-/Q-Fallliste](pruefmatrix-mvp06.md)
+- [Dokumentierter MVP-0.5-Produktionsstand](produktionsbereitstellung-mvp05-2026-09-28.md)
 - [MVP-0.5-Deployment und Zielumgebungsprüfung](deployment-mvp-05.md)
 - [Aktueller E-/Q-Nachweis](eq-installation-mvp05.md)
 - [Fachliche Q-Abnahme und bestätigte Gastanmeldung](abnahme-q-mvp05.md)

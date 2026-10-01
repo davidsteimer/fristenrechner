@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/source-review-event.schema.json",
+  "title": "Unveränderliches Quellenprüfereignis des Fristenrechners Schweiz",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "reviewEventId",
+    "recordStatus",
+    "recordedOn",
+    "trigger",
+    "reviewWindow",
+    "nextAnnualReviewDue",
+    "comparedReleaseIds",
+    "responsibility",
+    "entries"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/source-review-event.schema.json"
+    },
+    "formatVersion": {
+      "const": "1.0.0"
+    },
+    "dataKind": {
+      "const": "sourceReviewEvent"
+    },
+    "reviewEventId": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+    },
+    "recordStatus": {
+      "enum": ["candidate", "approved", "withdrawn"]
+    },
+    "recordedOn": {
+      "$ref": "common.schema.json#/$defs/isoDate"
+    },
+    "trigger": {
+      "enum": [
+        "annualReview",
+        "preRelease",
+        "announcedChange",
+        "newScope",
+        "incident",
+        "initialConsolidation"
+      ]
+    },
+    "reviewWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "to": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        }
+      }
+    },
+    "nextAnnualReviewDue": {
+      "$ref": "common.schema.json#/$defs/isoDate"
+    },
+    "comparedReleaseIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+      }
+    },
+    "responsibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewedBy",
+        "documentedWith",
+        "formalFourEyes",
+        "operatingModel"
+      ],
+      "properties": {
+        "reviewedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "documentedWith": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "formalFourEyes": {
+          "type": "boolean"
+        },
+        "operatingModel": {
+          "enum": ["personalUnion", "separatedRoles"]
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/reviewEntry"
+      }
+    }
+  },
+  "$defs": {
+    "identifierArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      }
+    },
+    "releaseIdArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+      }
+    },
+    "affected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resolutionMode",
+        "releaseIds",
+        "profileIds",
+        "calendarIds",
+        "componentIds"
+      ],
+      "properties": {
+        "resolutionMode": {
+          "enum": ["allReferencesInRelease", "explicit"]
+        },
+        "releaseIds": {
+          "$ref": "#/$defs/releaseIdArray"
+        },
+        "profileIds": {
+          "$ref": "#/$defs/identifierArray"
+        },
+        "calendarIds": {
+          "$ref": "#/$defs/identifierArray"
+        },
+        "componentIds": {
+          "$ref": "#/$defs/identifierArray"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "resolutionMode": {
+                "const": "allReferencesInRelease"
+              }
+            },
+            "required": ["resolutionMode"]
+          },
+          "then": {
+            "properties": {
+              "releaseIds": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "followUp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "references"],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "references": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "id", "url", "status"],
+            "properties": {
+              "kind": {
+                "enum": ["githubIssue", "decision", "dataRelease", "riskRecord"]
+              },
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^https://"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "status": {
+                "enum": ["open", "resolved", "implemented", "withdrawn"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "reviewEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "reviewedOn",
+        "outcome",
+        "comparisonBasis",
+        "evidence",
+        "affected",
+        "followUp"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "reviewedOn": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "outcome": {
+          "enum": ["unchanged", "changed", "unclear", "unavailable"]
+        },
+        "comparisonBasis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["method", "relevantProvisions", "finding"],
+          "properties": {
+            "method": {
+              "enum": [
+                "fullTextComparison",
+                "targetedSubstantiveComparison",
+                "consolidatedAcceptedReview"
+              ]
+            },
+            "relevantProvisions": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            },
+            "finding": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "stableDocumentSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "affected": {
+          "$ref": "#/$defs/affected"
+        },
+        "followUp": {
+          "$ref": "#/$defs/followUp"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "enum": ["changed", "unclear", "unavailable"]
+              }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "properties": {
+              "followUp": {
+                "properties": {
+                  "required": {
+                    "const": true
+                  },
+                  "references": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

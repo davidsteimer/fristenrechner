@@ -1,0 +1,115 @@
+{
+  "kind": "mvp06LocalCheckRun",
+  "checkedOn": "2026-10-01",
+  "phase": "data-governance",
+  "releaseId": "2026-10-01-mvp-06-approved.1",
+  "installation": false,
+  "publication": false,
+  "steps": [
+    {
+      "id": "data-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/data",
+        "-p",
+        "test_*.py"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-data-governance-checks-xLb2nR/data-python.log",
+      "sha256": "9f320ff3ec097f71a35c380170adcee8e0809750ab87cb9a0657db3d1139fbf7",
+      "byteLength": 282,
+      "pythonTests": 181
+    },
+    {
+      "id": "governance-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/governance",
+        "-p",
+        "test_*.py"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-data-governance-checks-xLb2nR/governance-python.log",
+      "sha256": "a4c8250331943aa13587e0d1a03dacae56e378df0ac45344425b81bb300c3f51",
+      "byteLength": 130,
+      "pythonTests": 30
+    },
+    {
+      "id": "governance-validator",
+      "command": ".venv/bin/python",
+      "args": [
+        "tests/governance/validate_source_reviews.py",
+        "--self-test"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-data-governance-checks-xLb2nR/governance-validator.log",
+      "sha256": "ba55601ce0f407b4f3eb96464ad98ec41953a48e19cc130edb502ee60650043c",
+      "byteLength": 115
+    },
+    {
+      "id": "governance-node",
+      "command": "node",
+      "args": [
+        "--test",
+        "--test-reporter=tap",
+        "tests/governance/ap19a-model.test.mjs",
+        "tests/governance/ap19b-migration.test.mjs",
+        "tests/governance/ap19b-references.test.mjs",
+        "tests/governance/ap20b-historical-input.test.mjs",
+        "tests/governance/ap20b-references.test.mjs",
+        "tests/governance/mvp04-source-approval.test.mjs",
+        "tests/governance/mvp04-source-coverage.test.mjs",
+        "tests/governance/mvp05-preparation.test.mjs",
+        "tests/governance/mvp05-source-approval.test.mjs",
+        "tests/governance/mvp05-source-coverage.test.mjs",
+        "tests/governance/mvp06-preparation.test.mjs",
+        "tests/governance/mvp06-source-adoption.test.mjs",
+        "tests/governance/mvp06-source-approval.test.mjs",
+        "tests/governance/mvp06-source-coverage.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-data-governance-checks-xLb2nR/governance-node.log",
+      "sha256": "457ee429478a5897900dfb5cb2729f3ac48e3b4b2dafe9cd92736c327ab008a7",
+      "byteLength": 45640,
+      "nodeCounts": {
+        "tests": 230,
+        "pass": 230,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "id": "approved-data",
+      "command": ".venv/bin/python",
+      "args": [
+        "tests/data/validate_mvp06_release.py",
+        "data/releases/2026-10-01-mvp-06-approved.1"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-data-governance-checks-xLb2nR/approved-data.log",
+      "sha256": "bb24cc90cb82b8e150480d3e835777f803d6af7a9348393b1032858664dc7ec6",
+      "byteLength": 440
+    },
+    {
+      "id": "source-approval",
+      "command": "node",
+      "args": [
+        "scripts/verify-mvp06-source-approval.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-data-governance-checks-xLb2nR/source-approval.log",
+      "sha256": "628ae6fcb02ee9355798ae41c119a8dd30c4433d1acc101e3198b66c5d70917a",
+      "byteLength": 494
+    }
+  ],
+  "passed": true
+}

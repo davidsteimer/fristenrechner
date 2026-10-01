@@ -1,0 +1,45 @@
+{
+  "recordId": "MVP06-AP20-CANDIDATE-REPRODUCTION-ADDENDUM-20261001",
+  "reason": "After the living AP20B test was extended for exact nonoperative release evidence, historical C1/C2/C3 reproduction must still verify the original accepted AP20B test bytes.",
+  "resolution": {
+    "path": "tests/governance/ap20b-references.test.mjs",
+    "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/governance/ap20b-references.test.mjs",
+    "sha256": "e67a13560a8b16d9432bed767861b55b561c3c834dd29eef7c1281c75e5e0b3b",
+    "byteLength": 13611,
+    "fixedSelectionBeforeRead": true,
+    "generalHashFallback": false,
+    "allOtherInputsStillExactOriginalPathAndHash": true
+  },
+  "resolver": {
+    "path": "scripts/read-frozen-ap20b-input.mjs",
+    "sha256": "8032e1b613d523fcce97a059f58e10cd1f8b9030266c695e8209fb3dc32d1d9a"
+  },
+  "builders": [
+    {
+      "path": "scripts/build-ap20c1-candidate.mjs",
+      "historicalPath": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c1-candidate.mjs",
+      "historicalSha256": "f7819cd35f1febb652f0305a9309e1dbe0d0699c83b010a30bacbe8d214ef9bb",
+      "updatedSha256": "7c0236858e7191e2482be73a1fa2065809d147a667ac8540eb6e349cc6844fde"
+    },
+    {
+      "path": "scripts/build-ap20c2-candidate.mjs",
+      "historicalPath": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c2-candidate.mjs",
+      "historicalSha256": "5ad4f2531a1a57121b0bdb08bb647900e8eaf485f03980804f53c11380af73ea",
+      "updatedSha256": "7c4de5c67bfec6507f6be56666b6f5984e5c9f24f412373074456d97c9c5e265"
+    },
+    {
+      "path": "scripts/build-ap20c3-candidate.mjs",
+      "historicalPath": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c3-candidate.mjs",
+      "historicalSha256": "1ca80573ab1c5327191d2a6eede73ce2c245502363ae1cdf89c8a6ab5acf9cc0",
+      "updatedSha256": "62b8f19713620baf01124a10bdd32ae8ebafe61d103a7f89dbfd3c1fd9bd3f34"
+    }
+  ],
+  "checks": {
+    "targetedCandidateBuilderAndPersistenceTests": { "passed": 5, "failed": 0 },
+    "exactHistoricalResolverTests": { "passed": 5, "failed": 0 },
+    "candidateAndVerificationBytesReproducedUnchanged": true,
+    "acceptedMvp06SourceEvidenceFilesVerified": 170,
+    "mvp06SourceApprovalSha256Unchanged": "10f43005757c54a445f009d702b17a37f04e2dad530241201dbf6c4eebfc2cbb",
+    "historicalCandidatesProofsAnd180By85SnapshotUnchanged": true
+  }
+}

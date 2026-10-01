@@ -1,0 +1,814 @@
+[
+  {
+    "name": "versions",
+    "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?work ?version ?start ?end ?expression ?xml WHERE {\nVALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2002/510> <https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050> <https://fedlex.data.admin.ch/eli/cc/2008/51> <https://fedlex.data.admin.ch/eli/cc/1952/823_843_839> <https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043> <https://fedlex.data.admin.ch/eli/cc/2021/373> <https://fedlex.data.admin.ch/eli/cc/2005/187> <https://fedlex.data.admin.ch/eli/cc/1952/896_916_912> <https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080> <https://fedlex.data.admin.ch/eli/cc/2021/376> }\n\n      ?version jolux:isMemberOf ?work; jolux:dateApplicability ?start.\n      OPTIONAL { ?version jolux:dateEndApplicability ?end }\n      OPTIONAL {\n        ?version jolux:isRealizedBy ?expression.\n        ?expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU>;\n          jolux:isEmbodiedBy ?manifestation.\n        ?manifestation jolux:format <http://publications.europa.eu/resource/authority/file-type/XML>;\n          jolux:isExemplifiedBy ?xml.\n      }\n      FILTER(str(?start) <= \"2027-12-31\" && (!BOUND(?end) || str(?end) >= \"2026-01-01\"))\n    } ORDER BY ?work ?start",
+    "response": {
+      "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Fstart%20%3Fend%20%3Fexpression%20%3Fxml%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2008/51%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/823_843_839%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/373%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2005/187%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/896_916_912%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/376%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Fstart.%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%20%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexpression.%0A%20%20%20%20%20%20%20%20%3Fexpression%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisEmbodiedBy%20%3Fmanifestation.%0A%20%20%20%20%20%20%20%20%3Fmanifestation%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisExemplifiedBy%20%3Fxml.%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fstart",
+      "retrievedAt": "2026-09-30T20:24:32.351836+00:00",
+      "httpStatus": 200,
+      "contentType": "application/sparql-results+json",
+      "bytes": 10143,
+      "sha256": "3fcc60bf59ec2db31f18dcaf6eaa701749082e936fa1ebc1d4dc15edb5bf4876"
+    },
+    "rows": [
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128",
+        "start": "2025-01-28",
+        "end": "2026-05-31",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20250128-de-xml-1.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601",
+        "start": "2026-06-01",
+        "end": "2027-06-30",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20260601-de-xml-1.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701",
+        "start": "2027-07-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20270701-de-xml-1.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839/20240101",
+        "start": "2024-01-01",
+        "end": "2027-06-30",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839/20240101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/823_843_839/20240101/de/xml/fedlex-data-admin-ch-eli-cc-1952-823_843_839-20240101-de-xml-2.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839/20270701",
+        "start": "2027-07-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839/20270701/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/823_843_839/20270701/de/xml/fedlex-data-admin-ch-eli-cc-1952-823_843_839-20270701-de-xml.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/896_916_912",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1952/896_916_912/20140423",
+        "start": "2014-04-23",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1952/896_916_912/20140423/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/896_916_912/20140423/de/xml/fedlex-data-admin-ch-eli-cc-1952-896_916_912-20140423-de-xml-6.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101",
+        "start": "2024-01-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3043_3043_3043-20240101-de-xml-3.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080",
+        "version": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101",
+        "start": "2026-01-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3080_3080_3080-20260101-de-xml.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2002/510",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101",
+        "start": "2024-01-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20250101",
+        "start": "2025-01-01",
+        "end": "2026-05-31",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2005/187/20250101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20250101-de-xml-7.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20260601",
+        "start": "2026-06-01",
+        "end": "2027-06-30",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2005/187/20260601/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20260601/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20260601-de-xml.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20270701",
+        "start": "2027-07-01",
+        "end": "2027-12-31",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2005/187/20270701/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20270701/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20270701-de-xml.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2008/51",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2008/51/20260101",
+        "start": "2026-01-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2008/51/20260101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/51/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2008-51-20260101-de-xml-1.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2021/373",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2021/373/20250101",
+        "start": "2025-01-01",
+        "end": "2028-12-31",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2021/373/20250101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/373/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-373-20250101-de-xml-3.xml"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2021/376",
+        "version": "https://fedlex.data.admin.ch/eli/cc/2021/376/20250101",
+        "start": "2025-01-01",
+        "expression": "https://fedlex.data.admin.ch/eli/cc/2021/376/20250101/de",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/376/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-376-20250101-de-xml-3.xml"
+      }
+    ]
+  },
+  {
+    "name": "impacts",
+    "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?work ?impact ?date ?target ?source WHERE {\nVALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2002/510> <https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050> <https://fedlex.data.admin.ch/eli/cc/2008/51> <https://fedlex.data.admin.ch/eli/cc/1952/823_843_839> <https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043> <https://fedlex.data.admin.ch/eli/cc/2021/373> <https://fedlex.data.admin.ch/eli/cc/2005/187> <https://fedlex.data.admin.ch/eli/cc/1952/896_916_912> <https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080> <https://fedlex.data.admin.ch/eli/cc/2021/376> }\n\n      ?impact jolux:impactToLegalResource ?target;\n        jolux:legalResourceImpactHasDateEntryInForce ?date.\n      { ?target jolux:legalResourceSubdivisionIsPartOf ?work. } UNION { FILTER(?target = ?work) }\n      OPTIONAL { ?impact jolux:impactFromLegalResource/jolux:legalResourceSubdivisionIsPartOf ?source }\n      FILTER(str(?date) >= \"2026-01-01\" && str(?date) <= \"2027-12-31\")\n    } ORDER BY ?work ?date ?target",
+    "response": {
+      "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2008/51%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/823_843_839%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/373%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2005/187%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/896_916_912%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/376%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%0A%20%20%20%20%20%20%20%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20%20%20%20%20%20%7B%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%20%7D%20UNION%20%7B%20FILTER%28%3Ftarget%20%3D%20%3Fwork%29%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-01-01%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+      "retrievedAt": "2026-09-30T20:24:32.450026+00:00",
+      "httpStatus": 200,
+      "contentType": "application/sparql-results+json",
+      "bytes": 49854,
+      "sha256": "7ec6b22a63666064f8713e3bcef8c5fbff8cb0d7e4d10f587940aafa8b95f717"
+    },
+    "rows": [
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/164/legal-analysis/LegalResourceImpact/93",
+        "date": "2026-06-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_1a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/164"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/46",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_1",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/20",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_10",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/23",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_10a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/36",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_13",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/33",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_15",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/14",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/37",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/16",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16c",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/28",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16d",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/21",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16f",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/48",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16fbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/49",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16fter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/4",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16g",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/24",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16j",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/15",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16k",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/50",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16kbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/8",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16l",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/51",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16lbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/52",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16lter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/1",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16m",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/53",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16mbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/29",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16n",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/11",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16p",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/9",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16q",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/7",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16r",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/54",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16rbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/55",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16rter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/25",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16s",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/56",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16sbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/31",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16t",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/12",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16w",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/57",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16wbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/59",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16wquater",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/58",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16wter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/18",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16x",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/47",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_2",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/6",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_4",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/38",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_6",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/34",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_7",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/13",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_8",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/2",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_9",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/60",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/chap_1a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/61",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/chap_1a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/39",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/dtrans_",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/35",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/sec_1a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/62",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/sec_1a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/44",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1952/823_843_839/art_10",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2025/763/legal-analysis/LegalResourceImpact/2",
+        "date": "2026-01-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/art_28a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2025/763"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2025/763/legal-analysis/LegalResourceImpact/1",
+        "date": "2026-01-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/art_28b",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2025/763"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/174/legal-analysis/LegalResourceImpact/69",
+        "date": "2026-06-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_16",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/174"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/32",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_10",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/17",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_12",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/22",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_13",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/31",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_14",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/26",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_14a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/33",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_19b",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/11",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_20",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/23",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_23",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/7",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_24",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/6",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_25",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/29",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_26",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/19",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_28",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/4",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_29",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/27",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_30",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/8",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_31",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/14",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_33a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/5",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_33b",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/15",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_34a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/36",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/25",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35b",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/12",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35c",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/30",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35d",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/34",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35e",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/13",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35ebis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/2",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35eter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/35",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35f",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/16",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35hbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/28",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35hter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/9",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35mbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/24",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35mter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/18",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35n",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/3",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35pbis",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/1",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35pter",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/20",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_4",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/21",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_7",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/10",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_9",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/37",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_1",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/38",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_1/sec_4",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/39",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2/sec_4a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/41",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2a/sec_1",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/42",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2a/sec_2",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/40",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2a/sec_2a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/43",
+        "date": "2027-07-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2b/sec_2a",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2008/51",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2025/770/legal-analysis/LegalResourceImpact/1",
+        "date": "2026-01-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2008/51/art_17",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2025/770"
+      },
+      {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2008/51",
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2025/770/legal-analysis/LegalResourceImpact/2",
+        "date": "2026-01-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2008/51/art_28c",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2025/770"
+      }
+    ]
+  }
+]

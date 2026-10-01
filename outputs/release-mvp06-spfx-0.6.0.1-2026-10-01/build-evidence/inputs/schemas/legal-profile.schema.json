@@ -1,0 +1,476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+  "title": "Rechtsprofil des Fristenrechners Schweiz",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "profileId",
+    "lawCode",
+    "jurisdiction",
+    "validity",
+    "review",
+    "calculationContract",
+    "calendarPolicy",
+    "selectors",
+    "sources",
+    "rules"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json"
+    },
+    "formatVersion": {
+      "const": "1.0.0"
+    },
+    "dataKind": {
+      "const": "legalProfile"
+    },
+    "profileId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "lawCode": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "jurisdiction": {
+      "$ref": "common.schema.json#/$defs/jurisdiction"
+    },
+    "validity": {
+      "$ref": "common.schema.json#/$defs/validity"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    },
+    "calculationContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acceptedDeadlineUnits",
+        "dateInputSemantics",
+        "timeModel",
+        "unknownSpecialLawHandling",
+        "unsupportedInputHandling"
+      ],
+      "properties": {
+        "acceptedDeadlineUnits": {
+          "const": ["day"]
+        },
+        "dateInputSemantics": {
+          "const": "legallyRelevantDeliveryOrEventDate"
+        },
+        "timeModel": {
+          "const": "dateOnlyNoTimezone"
+        },
+        "unknownSpecialLawHandling": {
+          "const": "block"
+        },
+        "unsupportedInputHandling": {
+          "const": "block"
+        }
+      }
+    },
+    "calendarPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "holidayAnchor",
+        "jurisdictionSelection",
+        "conflictHandling",
+        "manualOverride",
+        "overrideReasonRequired"
+      ],
+      "properties": {
+        "holidayAnchor": {
+          "type": "string",
+          "enum": [
+            "partyOrCounselCanton",
+            "courtLocation",
+            "partyOrRepresentativeCanton",
+            "berneseProceduralLaw"
+          ]
+        },
+        "jurisdictionSelection": {
+          "type": "string",
+          "enum": ["explicit", "fixedBern"]
+        },
+        "conflictHandling": {
+          "const": "requireConfirmation"
+        },
+        "manualOverride": {
+          "const": true
+        },
+        "overrideReasonRequired": {
+          "const": true
+        }
+      }
+    },
+    "selectors": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/selector"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/source"
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    },
+    "extensions": {
+      "$ref": "common.schema.json#/$defs/extensions"
+    }
+  },
+  "$defs": {
+    "selector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selectorId", "required", "selectionMode", "unknownHandling", "options"],
+      "properties": {
+        "selectorId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "selectionMode": {
+          "const": "explicit"
+        },
+        "unknownHandling": {
+          "type": "string",
+          "enum": ["block", "warn"]
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "labelKey"],
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^[a-z][a-zA-Z0-9]*$"
+              },
+              "labelKey": {
+                "type": "string",
+                "pattern": "^[a-z][a-zA-Z0-9]*(?:\\.[a-zA-Z0-9_-]+)+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleId",
+        "phase",
+        "priority",
+        "status",
+        "validity",
+        "conditions",
+        "effect",
+        "sourceRefs"
+      ],
+      "properties": {
+        "ruleId": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+-[0-9]{3}$"
+        },
+        "phase": {
+          "type": "string",
+          "enum": ["delivery", "start", "count", "end", "compliance", "guardrail"]
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "status": {
+          "const": "active"
+        },
+        "validity": {
+          "$ref": "common.schema.json#/$defs/validity"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/condition"
+          }
+        },
+        "effect": {
+          "oneOf": [
+            { "$ref": "#/$defs/deliveryDateEffect" },
+            { "$ref": "#/$defs/deadlineStartEffect" },
+            { "$ref": "#/$defs/countingEffect" },
+            { "$ref": "#/$defs/suspensionEffect" },
+            { "$ref": "#/$defs/deliveryDuringSuspensionEffect" },
+            { "$ref": "#/$defs/suspensionExceptionEffect" },
+            { "$ref": "#/$defs/suspensionRoutingEffect" },
+            { "$ref": "#/$defs/deadlineEndEffect" },
+            { "$ref": "#/$defs/holidayAnchorEffect" },
+            { "$ref": "#/$defs/submissionEffect" },
+            { "$ref": "#/$defs/extensionEffect" },
+            { "$ref": "#/$defs/specialLawEffect" },
+            { "$ref": "#/$defs/holidaySetEffect" }
+          ]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        },
+        "warningKey": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*(?:\\.[a-zA-Z0-9_-]+)+$"
+        }
+      }
+    },
+    "deliveryDateEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "mode", "requiresConfirmation"],
+      "properties": {
+        "type": { "const": "deliveryDate" },
+        "mode": {
+          "type": "string",
+          "enum": ["seventhDayAfterFailedAttempt", "nextWorkingDayAfterWeekendOrHoliday"]
+        },
+        "daysAfterFailedAttempt": {
+          "const": 7
+        },
+        "requiresConfirmation": {
+          "const": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "mode": { "const": "seventhDayAfterFailedAttempt" } }
+          },
+          "then": {
+            "required": ["daysAfterFailedAttempt"]
+          }
+        }
+      ]
+    },
+    "deadlineStartEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "offsetCalendarDays"],
+      "properties": {
+        "type": { "const": "deadlineStart" },
+        "offsetCalendarDays": { "const": 1 }
+      }
+    },
+    "countingEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "mode"],
+      "properties": {
+        "type": { "const": "counting" },
+        "mode": {
+          "type": "string",
+          "enum": ["calendarDays", "calendarDaysExcludingSuspensions"]
+        }
+      }
+    },
+    "suspensionEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "mode"],
+      "properties": {
+        "type": { "const": "suspension" },
+        "mode": {
+          "type": "string",
+          "enum": ["none", "useSet"]
+        },
+        "suspensionSetId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "mode": { "const": "useSet" } }
+          },
+          "then": {
+            "required": ["suspensionSetId"]
+          },
+          "else": {
+            "not": { "required": ["suspensionSetId"] }
+          }
+        }
+      ]
+    },
+    "deliveryDuringSuspensionEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "mode"],
+      "properties": {
+        "type": { "const": "deliveryDuringSuspension" },
+        "mode": { "const": "firstDayAfterSuspension" }
+      }
+    },
+    "suspensionExceptionEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "action"],
+      "properties": {
+        "type": { "const": "suspensionException" },
+        "action": { "const": "disableSuspension" }
+      }
+    },
+    "suspensionRoutingEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "selector", "cases"],
+      "properties": {
+        "type": { "const": "suspensionRouting" },
+        "selector": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "suspensionEnabled"],
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^[a-z][a-zA-Z0-9]*$"
+              },
+              "suspensionEnabled": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "deadlineEndEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "shift", "nonWorkingDays"],
+      "properties": {
+        "type": { "const": "deadlineEnd" },
+        "shift": { "const": "nextWorkingDay" },
+        "nonWorkingDays": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["saturday", "sunday", "publicHoliday"]
+          },
+          "contains": { "const": "saturday" },
+          "allOf": [
+            { "contains": { "const": "sunday" } },
+            { "contains": { "const": "publicHoliday" } }
+          ]
+        }
+      }
+    },
+    "holidayAnchorEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "anchor"],
+      "properties": {
+        "type": { "const": "holidayAnchor" },
+        "anchor": {
+          "type": "string",
+          "enum": [
+            "partyOrCounselCanton",
+            "courtLocation",
+            "partyOrRepresentativeCanton",
+            "berneseProceduralLaw"
+          ]
+        }
+      }
+    },
+    "submissionEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "timing", "channels"],
+      "properties": {
+        "type": { "const": "submission" },
+        "timing": { "const": "onOrBeforeLastDay" },
+        "channels": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "competentAuthority",
+              "swissPost",
+              "swissDiplomaticMission",
+              "detentionFacilityManagement",
+              "incompetentBernOrFederalAuthority"
+            ]
+          }
+        }
+      }
+    },
+    "extensionEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "statutoryDeadlineExtendable",
+        "authoritySetDeadlineExtendable",
+        "requiresTimelyReasonedRequest"
+      ],
+      "properties": {
+        "type": { "const": "extension" },
+        "statutoryDeadlineExtendable": { "const": false },
+        "authoritySetDeadlineExtendable": { "type": "boolean" },
+        "requiresTimelyReasonedRequest": { "type": "boolean" }
+      }
+    },
+    "specialLawEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "action"],
+      "properties": {
+        "type": { "const": "specialLaw" },
+        "action": { "const": "requireExplicitCheck" }
+      }
+    },
+    "holidaySetEffect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "calendarId", "action"],
+      "properties": {
+        "type": { "const": "holidaySet" },
+        "calendarId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "action": { "const": "includeInheritedCalendar" }
+      }
+    }
+  }
+}

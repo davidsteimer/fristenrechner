@@ -1,0 +1,87 @@
+{
+  "scope": "Additional cross-reference check ÜLG19 to ELG21 paragraph2 only. No full ELG legal re-review.",
+  "versionIndex": {
+    "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?version ?start ?end ?xml WHERE {\n?version jolux:isMemberOf <https://fedlex.data.admin.ch/eli/cc/2007/804>; jolux:dateApplicability ?start.\nOPTIONAL { ?version jolux:dateEndApplicability ?end }\nOPTIONAL { ?version jolux:isRealizedBy ?exp. ?exp jolux:language <http://publications.europa.eu/resource/authority/language/DEU>; jolux:isEmbodiedBy ?m. ?m jolux:format <http://publications.europa.eu/resource/authority/file-type/XML>; jolux:isExemplifiedBy ?xml. }\nFILTER(str(?start) <= \"2027-12-31\" && (!BOUND(?end) || str(?end) >= \"2026-01-01\"))\n} ORDER BY ?start",
+    "response": {
+      "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fversion%20%3Fstart%20%3Fend%20%3Fxml%20WHERE%20%7B%0A%3Fversion%20jolux%3AisMemberOf%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2007/804%3E%3B%20jolux%3AdateApplicability%20%3Fstart.%0AOPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0AOPTIONAL%20%7B%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexp.%20%3Fexp%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%20jolux%3AisEmbodiedBy%20%3Fm.%20%3Fm%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%20jolux%3AisExemplifiedBy%20%3Fxml.%20%7D%0AFILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%7D%20ORDER%20BY%20%3Fstart",
+      "retrievedAt": "2026-09-30T20:31:07.184585+00:00",
+      "httpStatus": 200,
+      "contentType": "application/sparql-results+json",
+      "bytes": 1156,
+      "sha256": "7241c64f8261de0c212c851e6e94867665f4ec17541ab629030ce4ffc4063642"
+    },
+    "rows": [
+      {
+        "version": "https://fedlex.data.admin.ch/eli/cc/2007/804/20260101",
+        "start": "2026-01-01",
+        "end": "2026-12-31",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml"
+      },
+      {
+        "version": "https://fedlex.data.admin.ch/eli/cc/2007/804/20270101",
+        "start": "2027-01-01",
+        "end": "2027-12-31",
+        "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20270101-de-xml.xml"
+      }
+    ]
+  },
+  "originals": [
+    {
+      "version": "https://fedlex.data.admin.ch/eli/cc/2007/804/20260101",
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+      "retrievedAt": "2026-09-30T20:31:07.396627+00:00",
+      "httpStatus": 200,
+      "contentType": "application/xml",
+      "bytes": 132007,
+      "sha256": "e39f79e9aca4d307abb28f01adfd2a6cff1f37f902fd7e8ad18533c2980604f0",
+      "article": "21",
+      "paragraph": "2",
+      "text": "2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen.",
+      "notes": []
+    },
+    {
+      "version": "https://fedlex.data.admin.ch/eli/cc/2007/804/20270101",
+      "start": "2027-01-01",
+      "end": "2027-12-31",
+      "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20270101-de-xml.xml",
+      "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20270101-de-xml.xml",
+      "retrievedAt": "2026-09-30T20:31:07.635310+00:00",
+      "httpStatus": 200,
+      "contentType": "application/xml",
+      "bytes": 135012,
+      "sha256": "943fe55f27d874f0977171ddebf8873847c76dcdb8fd19ca17a2b7dffea4d101",
+      "article": "21",
+      "paragraph": "2",
+      "text": "2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen.",
+      "notes": []
+    }
+  ],
+  "futureIndex": {
+    "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?impact ?date ?target ?source WHERE {\n?impact jolux:impactToLegalResource ?target; jolux:legalResourceImpactHasDateEntryInForce ?date.\n?target jolux:legalResourceSubdivisionIsPartOf <https://fedlex.data.admin.ch/eli/cc/2007/804>.\nOPTIONAL {?impact jolux:impactFromLegalResource/jolux:legalResourceSubdivisionIsPartOf ?source}\nFILTER(str(?date) >= \"2026-09-30\" && str(?date) <= \"2027-12-31\")\n} ORDER BY ?date ?target",
+    "response": {
+      "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0A%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2007/804%3E.%0AOPTIONAL%20%7B%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%7D%0AFILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-09-30%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%7D%20ORDER%20BY%20%3Fdate%20%3Ftarget",
+      "retrievedAt": "2026-09-30T20:31:07.822221+00:00",
+      "httpStatus": 200,
+      "contentType": "application/sparql-results+json",
+      "bytes": 982,
+      "sha256": "8cc74be9ba7415e0824b4edec7ead4f3409ef80ba88cdfbe0acdede5943812e6"
+    },
+    "rows": [
+      {
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/434/legal-analysis/LegalResourceImpact/2",
+        "date": "2027-01-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2007/804/art_10",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/434"
+      },
+      {
+        "impact": "https://fedlex.data.admin.ch/eli/oc/2026/434/legal-analysis/LegalResourceImpact/3",
+        "date": "2027-01-01",
+        "target": "https://fedlex.data.admin.ch/eli/cc/2007/804/art_11",
+        "source": "https://fedlex.data.admin.ch/eli/oc/2026/434"
+      }
+    ]
+  }
+}

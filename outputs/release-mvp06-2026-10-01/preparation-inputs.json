@@ -1,0 +1,1555 @@
+{
+  "formatVersion": "1.0.0",
+  "dataKind": "releasePreparationInputs",
+  "preparedOn": "2026-10-01",
+  "preparationId": "mvp06-ap20-preparation.1",
+  "status": "preparation-only",
+  "requestedBy": "David Steimer",
+  "declaration": "AP20C3 ist abgenommen. Bitte starte die Releasevorbereitung.",
+  "acceptance": {
+    "path": "docs/fachrecht/abnahme-ap20c3.md",
+    "sha256": "cd460ccfb4a9895f53812b54c648b8f834ed61e795914bc6fd7f2f8f3dde6f64"
+  },
+  "targetVersions": {
+    "application": "0.6.0",
+    "package": "0.6.0.0",
+    "status": "planned-not-built"
+  },
+  "candidate": {
+    "path": "data/candidates/2026-10-01-ap20c3",
+    "releaseId": "2026-10-01-ap20c3-candidate.1",
+    "sha256": "b4250a31d226b4f59e0857a857f49e1ea354722b9ff46b9324d70b330f135450",
+    "status": "candidate"
+  },
+  "formats": {
+    "socialProcedureCatalog": "2.0.0",
+    "manifest": "6.0.0",
+    "minimumConsumer": "6.0.0"
+  },
+  "scope": {
+    "federalRules": 44,
+    "cantonalBindings": 50,
+    "newAp20Rules": 20,
+    "newAp20Bindings": 22,
+    "candidateEligibility": 50,
+    "operativeCantonsPlanned": [
+      "BE"
+    ],
+    "socialCaseCoverage": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "unchangedNonSocialArtifacts": 9,
+    "holidayCatalogUnchanged": true
+  },
+  "priorProduction": {
+    "releaseId": "2026-09-28-mvp-05-approved.1",
+    "manifestFormat": "5.0.0",
+    "applicationVersion": "0.5.0",
+    "packageVersion": "0.5.0.0",
+    "manifestSha256": "3aa09c80c93ef56d472748c4a5496d439537272d96491497b2c678e3c7e20715",
+    "baselineIsHistoricalAfterFuturePromotion": true,
+    "liveTenantOrHostingStatusNotAsserted": true
+  },
+  "permissions": {
+    "localPreparationAuthorized": true,
+    "sourceReviewApproved": false,
+    "dataPromotionApproved": false,
+    "definitiveBuildAuthorized": false,
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "productionActivation": false,
+    "operatingApproval": false,
+    "permissionsChangeAuthorized": false
+  },
+  "gates": [
+    "combined-source-review-and-human-approval",
+    "explicit-controlled-data-promotion-and-definitive-local-build-approval",
+    "versioned-package-and-mirror-build",
+    "explicit-eq-installation-approval",
+    "fresh-eq-tests-and-manual-acceptance",
+    "explicit-publication-approval",
+    "get-header-evidence-and-risk-treatment-before-p",
+    "explicit-p-deployment-and-operation-approval"
+  ],
+  "integrationEvidence": {
+    "sourceReviews": [
+      {
+        "reviewId": "MVP05-SOURCE-APPROVAL-20260928",
+        "path": "outputs/release-mvp05-2026-09-28/source-approval.json",
+        "sha256": "2897874ed52c826bb43dc61270f8122cf996b4fa2070904eacc4d672f551f768",
+        "affectedBindings": 28
+      },
+      {
+        "reviewId": "AP20C1-SOURCE-CONTROL-20260930",
+        "path": "outputs/ap20c1-2026-09-30/quellenkontrolle.json",
+        "sha256": "6209ff32d00910b36f97dfb5c35c147dc19ec908500b17c75736bd3960da990c",
+        "affectedBindings": 6
+      },
+      {
+        "reviewId": "AP20C2-SOURCE-CONTROL-20261001",
+        "path": "outputs/ap20c2-2026-10-01/quellenkontrolle.json",
+        "sha256": "6ef1e65e4a2e5a7fa0a87c2042d5fc17a9f736c3f09fe9035620dbf0ce84d4c5",
+        "affectedBindings": 8
+      },
+      {
+        "reviewId": "AP20C3-SOURCE-CONTROL-20261001",
+        "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+        "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c",
+        "affectedBindings": 8
+      }
+    ],
+    "referenceSuites": [
+      {
+        "suiteId": "AP17B-ANWENDBARKEIT",
+        "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47"
+      },
+      {
+        "suiteId": "AP19B-SOCIAL-REFERENCES-1",
+        "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8"
+      },
+      {
+        "suiteId": "AP20B-SOCIAL-DATES-1",
+        "path": "tests/golden/candidates/ap20b-social-dates.json",
+        "sha256": "9740ce84883a54beec81f2f8a6cb1c450d690c9b6f440c5841d5821dfad16fa3"
+      }
+    ],
+    "earlierAp19SourceProofs": [
+      {
+        "path": "outputs/ap19c1-2026-09-25/source-review.json",
+        "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773"
+      },
+      {
+        "path": "outputs/ap19c2-2026-09-28/sources/source-review.json",
+        "sha256": "33d2fe1c6f6e1d54a97f8a9a54c97ce4a58aea56d0158a029ffa2a5d0f43abc3"
+      },
+      {
+        "path": "outputs/ap19c3-2026-09-28/sources/source-review.json",
+        "sha256": "00f16cfb9653d32a73555c9ccd6c22a32af7810aae0068fe540d5497aac1b6e9"
+      }
+    ],
+    "note": "Existing integration and MVP05 approvals are historical evidence, not a new MVP06 source approval."
+  },
+  "preservation": {
+    "appendOnly": true,
+    "regularFilesOnly": true,
+    "archiveFallbackAllowed": false,
+    "historicalArchives": [
+      {
+        "path": ".work/ap19c-spfx-build-ZXdOgc/final-built-tests.log",
+        "sha256": "d1dfe31a6b3bfd8b546eabd5a25c940e980f84aeae8805448cefce54daaba11f",
+        "byteLength": 15200,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-ZXdOgc/final-built-tests.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-ZXdOgc/step-1.log",
+        "sha256": "63552fbb19de008447ad4b1930bdacfb4a673820925651fb4c0002332ebeec09",
+        "byteLength": 21791,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-ZXdOgc/step-1.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-ZXdOgc/verification.json",
+        "sha256": "60c42e32076ea81eb3cfd739673c62f0b0dceb2dbfd67fbb5fc6f984687c43c2",
+        "byteLength": 2679,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-ZXdOgc/verification.json"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-1.log",
+        "sha256": "8a8ea93bfebb4e827ae3641e51276e54dbd489f6dab0894fbef043e61b36279f",
+        "byteLength": 28559,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-pKR6pW/step-1.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-2.log",
+        "sha256": "fba518de015b823ecb3b681a456585483a70437b84f96ade4ba098ca4ff7356c",
+        "byteLength": 1743,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-pKR6pW/step-2.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-3.log",
+        "sha256": "4ba7fbaf15af2a64963191a7046cd799b6293f2bdd547049b93b78e70e4ecf5e",
+        "byteLength": 69,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-pKR6pW/step-3.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-4.log",
+        "sha256": "e333efb4edd330e2090547fc600d68dc48ae2586dbe265297308a34b2f538a44",
+        "byteLength": 6164,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-pKR6pW/step-4.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-5.log",
+        "sha256": "e40906183259a783561242ee8af789b37fa739b84e76720a0e753591da597fc2",
+        "byteLength": 20596,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-pKR6pW/step-5.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/verification.json",
+        "sha256": "28c45481b5e40a71ca411b2655a8a3dd6869f964b3826d06ac2c9aada7645ae0",
+        "byteLength": 2679,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-pKR6pW/verification.json"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-vpd4UK/step-1.log",
+        "sha256": "df0eac04caee558a6cf85602f921dde1645a1ddb08c557281c8774e52f717157",
+        "byteLength": 25159,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-vpd4UK/step-1.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-vpd4UK/step-5.log",
+        "sha256": "84941997532917b175cf274c9f22c22a68c523d9c3fcb5f97fce9410d119c925",
+        "byteLength": 17819,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-vpd4UK/step-5.log"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-vpd4UK/verification.json",
+        "sha256": "2a13d09ae496b1ee1b530bcdb0faaef9ea0556eb83e1a7da0d4af74428170fd9",
+        "byteLength": 2679,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap19c-spfx-build-vpd4UK/verification.json"
+      },
+      {
+        "path": ".work/ap20c1-core-ui-tests-final.log",
+        "sha256": "dd737aefa2da8d09bec1a15e5e0b30d9046449561c7835e7266d216ddcf8337f",
+        "byteLength": 326297,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c1-core-ui-tests-final.log"
+      },
+      {
+        "path": ".work/ap20c1-governance-tests.log",
+        "sha256": "f1293accfc55f15659571d59d07620438ace800ff1fe27494dd99e4c914935f2",
+        "byteLength": 26913,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c1-governance-tests.log"
+      },
+      {
+        "path": ".work/ap20c1-public-tests.log",
+        "sha256": "8f5808fa447fdd55f14e39f456c9605706d1438c9a05ee5503e3b4f508b42af3",
+        "byteLength": 3579,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c1-public-tests.log"
+      },
+      {
+        "path": ".work/ap20c1-typecheck.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "byteLength": 0,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c1-typecheck.log"
+      },
+      {
+        "path": ".work/ap20c2-core-ui-final.log",
+        "sha256": "58fe060fd0b44ca9bbc192c7c0846e31626eb1ee90fefab259a94d34ccab2ffd",
+        "byteLength": 369220,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c2-core-ui-final.log"
+      },
+      {
+        "path": ".work/ap20c2-governance.log",
+        "sha256": "75b1850559162fd6b3dfba97a1056d3af0cd9150030da1adf199532f1cea1601",
+        "byteLength": 26974,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c2-governance.log"
+      },
+      {
+        "path": ".work/ap20c2-public.log",
+        "sha256": "9e81bbc2a791eb475c8ef5a641cb2eaea6bec4deda6ade93b58f1be8155a57be",
+        "byteLength": 3482,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c2-public.log"
+      },
+      {
+        "path": ".work/ap20c2-typecheck.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "byteLength": 0,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c2-typecheck.log"
+      },
+      {
+        "path": ".work/ap20c3-core-ui-final.log",
+        "sha256": "d026787399d065be9cd74f5668cf1350e15587ac016bdf78eebb700e885250e5",
+        "byteLength": 415530,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c3-core-ui-final.log"
+      },
+      {
+        "path": ".work/ap20c3-governance.log",
+        "sha256": "f226d8b7600662884d94b5af953bae846b00749883f80a521011f52ef9682f2a",
+        "byteLength": 26929,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c3-governance.log"
+      },
+      {
+        "path": ".work/ap20c3-public.log",
+        "sha256": "be7d1d31cf775eb7342806bcfa75d147277d40512505775125ff2e82e9f950fc",
+        "byteLength": 3475,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c3-public.log"
+      },
+      {
+        "path": ".work/ap20c3-typecheck.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "byteLength": 0,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/.work/ap20c3-typecheck.log"
+      },
+      {
+        "path": "data/source-reviews/events/2026-09-28-mvp-05-prerelease.1.json",
+        "sha256": "1d3dc59e02f5c67026cab22d7d20ddcca68840840ec54029c36f51482816f372",
+        "byteLength": 82436,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/data/source-reviews/events/2026-09-28-mvp-05-prerelease.1.json"
+      },
+      {
+        "path": "data/source-reviews/index.json",
+        "sha256": "017179338852bddac965a11718912bf2cf7ef793884a8ae1d5d8f2b639ee31fe",
+        "byteLength": 92001,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/data/source-reviews/index.json"
+      },
+      {
+        "path": "data/source-reviews/source-register.json",
+        "sha256": "eb89b94c839fb01d92c4168dd99183d1c40818299b0a364247007b5bd933df7a",
+        "byteLength": 44103,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/data/source-reviews/source-register.json"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "671267ac6032fbe723bac87e34e385f83b6665ed570c937553399d0ae22afd44",
+        "byteLength": 31119,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/package-lock.json"
+      },
+      {
+        "path": "package.json",
+        "sha256": "a57bb28366b32798efe9e6bb401497298d9508d1dfbdbda871700027706b595b",
+        "byteLength": 8491,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/package.json"
+      },
+      {
+        "path": "schemas/release-manifest-v6.schema.json",
+        "sha256": "c6ea5582d47db4fbc8fceec1819af2648c6aaaf1f9f169caf2e301d5f22b4825",
+        "byteLength": 13080,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/schemas/release-manifest-v6.schema.json"
+      },
+      {
+        "path": "schemas/social-procedure-catalog-v2.schema.json",
+        "sha256": "16bf46bfe0eeb88fe4015800e903c9b749eb8bb69b74a4e4474f9f5aa0186203",
+        "byteLength": 27806,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/schemas/social-procedure-catalog-v2.schema.json"
+      },
+      {
+        "path": "scripts/build-ap20c1-candidate.d.mts",
+        "sha256": "813d5c6b7f499c1afa98a2ed77ab16edbf20204a3c3d1c7c0944469f6f2b4b38",
+        "byteLength": 614,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c1-candidate.d.mts"
+      },
+      {
+        "path": "scripts/build-ap20c1-candidate.mjs",
+        "sha256": "f7819cd35f1febb652f0305a9309e1dbe0d0699c83b010a30bacbe8d214ef9bb",
+        "byteLength": 19954,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c1-candidate.mjs"
+      },
+      {
+        "path": "scripts/build-ap20c2-candidate.d.mts",
+        "sha256": "09c0ae82bc77aebc004f80e29d53a4ea17cf0d2487516f92253376e5838a3a1a",
+        "byteLength": 614,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c2-candidate.d.mts"
+      },
+      {
+        "path": "scripts/build-ap20c2-candidate.mjs",
+        "sha256": "5ad4f2531a1a57121b0bdb08bb647900e8eaf485f03980804f53c11380af73ea",
+        "byteLength": 20278,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c2-candidate.mjs"
+      },
+      {
+        "path": "scripts/build-ap20c3-candidate.d.mts",
+        "sha256": "5ec964ee37cdbb79106809b507d75900e8bfca10b63c2ae14b4942d2c6585595",
+        "byteLength": 614,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c3-candidate.d.mts"
+      },
+      {
+        "path": "scripts/build-ap20c3-candidate.mjs",
+        "sha256": "1ca80573ab1c5327191d2a6eede73ce2c245502363ae1cdf89c8a6ab5acf9cc0",
+        "byteLength": 21625,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/build-ap20c3-candidate.mjs"
+      },
+      {
+        "path": "scripts/check-ap19c-spfx-build.mjs",
+        "sha256": "cdcd1de3a51ef7bdeaea5b8cc9cdefb3f6c0bb7cac2205aa46490bb6635be5c2",
+        "byteLength": 3306,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/check-ap19c-spfx-build.mjs"
+      },
+      {
+        "path": "scripts/check-ap20b-references.mjs",
+        "sha256": "4d5baf43f9de5905b869b386179c681791686607c14b0571d00c0738a778eb8b",
+        "byteLength": 9853,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/check-ap20b-references.mjs"
+      },
+      {
+        "path": "scripts/record-ap20c1-checks.mjs",
+        "sha256": "d80cac8dca2a73a7447eafda8a22653ee2fd0d84efad968c83084def8ddac627",
+        "byteLength": 6811,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/record-ap20c1-checks.mjs"
+      },
+      {
+        "path": "scripts/record-ap20c2-checks.mjs",
+        "sha256": "f30a9c750130d7b7c9968073026d783d18290d87afa3cf0f73274ca1e2ec9b27",
+        "byteLength": 8005,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/record-ap20c2-checks.mjs"
+      },
+      {
+        "path": "scripts/record-ap20c3-checks.mjs",
+        "sha256": "51cbf341d83464c0398af6d1cf6049b71c87445604b411b9d9bb7088d28f946b",
+        "byteLength": 10183,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/scripts/record-ap20c3-checks.mjs"
+      },
+      {
+        "path": "spfx/config/package-solution.json",
+        "sha256": "4759ce8b8edc31cb1eea21b8056b324d84295a9bbfaabeafa7ab8dd171e47f88",
+        "byteLength": 1334,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/config/package-solution.json"
+      },
+      {
+        "path": "spfx/package-lock.json",
+        "sha256": "df40b4546b70cde3a782dcf22d0997f26c45209300af7a762c73f7db09d490b6",
+        "byteLength": 754829,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/package-lock.json"
+      },
+      {
+        "path": "spfx/package.json",
+        "sha256": "aa2e2bead634d78cb0396505aa1b99c19449d77aa8a59706833f75e42984bdaa",
+        "byteLength": 2217,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/package.json"
+      },
+      {
+        "path": "spfx/scripts/sync-schemas.mjs",
+        "sha256": "002a5df7aa9b39bf4c6f2f3558bc5311e6d03ebb25863ee6f5dc08d2676992a5",
+        "byteLength": 1574,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/scripts/sync-schemas.mjs"
+      },
+      {
+        "path": "spfx/src/core/ReleaseValidator.ts",
+        "sha256": "1c2550c9a4db76f1d23b2ebf02e432d1ab45b751e1865c2409786a32784680a2",
+        "byteLength": 19636,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/src/core/ReleaseValidator.ts"
+      },
+      {
+        "path": "spfx/src/core/config.ts",
+        "sha256": "68b6944a9e0de6afaadb2f6d4980948bd198071efbf8263d2cc51cf88f2e593c",
+        "byteLength": 233,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/src/core/config.ts"
+      },
+      {
+        "path": "spfx/src/webparts/fristenrechner/FristenrechnerWebPart.manifest.json",
+        "sha256": "9c4420db5703457771c78b120d0c341ca9ce65581aa55ddd8281f5d6c4a87f6f",
+        "byteLength": 1231,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/src/webparts/fristenrechner/FristenrechnerWebPart.manifest.json"
+      },
+      {
+        "path": "spfx/test-build/ap20c1.test.cjs",
+        "sha256": "db3290d5b74f37e970eac3f9017be2c79f73aa94ac72a9d0d45f218f628e9082",
+        "byteLength": 7807,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test-build/ap20c1.test.cjs"
+      },
+      {
+        "path": "spfx/test-build/ap20c2.test.cjs",
+        "sha256": "e23e89b35d297fb3f92d633b29b21147114b66e316ab08893504601ae3c9176e",
+        "byteLength": 11149,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test-build/ap20c2.test.cjs"
+      },
+      {
+        "path": "spfx/test-build/ap20c3.test.cjs",
+        "sha256": "2c2e21d13d2375499ea5efb1536c1a584a10a08f17e92b37e917f9c1c6dcbde2",
+        "byteLength": 14906,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test-build/ap20c3.test.cjs"
+      },
+      {
+        "path": "spfx/test/ap20c1-loader.test.ts",
+        "sha256": "3968d69797b314346cbcc967dfa4b682f293db9510118e74f0dc2641bc15af1c",
+        "byteLength": 8112,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test/ap20c1-loader.test.ts"
+      },
+      {
+        "path": "spfx/test/ap20c2-loader.test.ts",
+        "sha256": "a5d3f74db7280b4b7018ab85009c76345c995a5a9bcdbea37818772112775714",
+        "byteLength": 10458,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test/ap20c2-loader.test.ts"
+      },
+      {
+        "path": "spfx/test/ap20c3-loader.test.ts",
+        "sha256": "1ec0606f31a57715f497535eff876a6cc27c1611cddb37b9d909f9042b9a25aa",
+        "byteLength": 10460,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test/ap20c3-loader.test.ts"
+      },
+      {
+        "path": "spfx/test/release-service.test.ts",
+        "sha256": "1535857a834cede0a7f54b7caaddbd46ec4a45c78cc438b073a85906c7d28537",
+        "byteLength": 9066,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/spfx/test/release-service.test.ts"
+      },
+      {
+        "path": "src/core/calculateSpecialDeadline.ts",
+        "sha256": "3798d09f189a4d9ca2dbd4088d1bc536cccafe7aa06d91486eab205bf5740ce4",
+        "byteLength": 30613,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/core/calculateSpecialDeadline.ts"
+      },
+      {
+        "path": "src/core/data.ts",
+        "sha256": "2252ef9cd8eac089db6cf1f671fbe975c1683eb67e51e116b777c17d04f9793a",
+        "byteLength": 19881,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/core/data.ts"
+      },
+      {
+        "path": "src/core/socialCatalog.ts",
+        "sha256": "aa9d7171b0f619e9b9c19c388b7e3f3c4b063097e9a557a193ad2a3bea1d0dbd",
+        "byteLength": 26963,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/core/socialCatalog.ts"
+      },
+      {
+        "path": "src/core/socialDeadline.ts",
+        "sha256": "1e2c11e85f46da59a4877790812d49618a79b8a6f09ea8a60a254672661e83a6",
+        "byteLength": 15034,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/core/socialDeadline.ts"
+      },
+      {
+        "path": "src/core/socialTypes.ts",
+        "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370",
+        "byteLength": 7785,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/core/socialTypes.ts"
+      },
+      {
+        "path": "src/public-app/main.tsx",
+        "sha256": "b0a114b392d2efaa412251845f8a926759c63a22734df4deb0939291a5fb10b7",
+        "byteLength": 714,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/public-app/main.tsx"
+      },
+      {
+        "path": "src/release/ap20c1CandidateData.ts",
+        "sha256": "0cc971039ab7a2a6db5503500cf6d0c42b3b0e9d397535e6388d606f0ba886ca",
+        "byteLength": 2375,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/release/ap20c1CandidateData.ts"
+      },
+      {
+        "path": "src/release/ap20c2CandidateData.ts",
+        "sha256": "95317450ad9a0420fd7636374b955730a94c4949fc631bf4dc7bdcf85f6f52b3",
+        "byteLength": 2378,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/release/ap20c2CandidateData.ts"
+      },
+      {
+        "path": "src/release/ap20c3CandidateData.ts",
+        "sha256": "400dc0817eeae5f3cfe7ac5a9518fc0d73fb8e37d89edfa8552a24fa73a5da6c",
+        "byteLength": 2377,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/release/ap20c3CandidateData.ts"
+      },
+      {
+        "path": "src/release/mvp05ReleaseData.ts",
+        "sha256": "82e1975ff14e77a4398a0d59529ce62ca301c7308538fce14800910d82147afc",
+        "byteLength": 2392,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/release/mvp05ReleaseData.ts"
+      },
+      {
+        "path": "src/ui/FristenrechnerApp.tsx",
+        "sha256": "0ac9f1cdeacbecbe7f033627b48e2c127a39d252806afe0e4abea30f44af53e7",
+        "byteLength": 79092,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/ui/FristenrechnerApp.tsx"
+      },
+      {
+        "path": "src/ui/preview/main.tsx",
+        "sha256": "d1fdb855cb85ef1b3641df7fc9ac74423c5045fa059ab45dc561f47dd798eae3",
+        "byteLength": 2025,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/ui/preview/main.tsx"
+      },
+      {
+        "path": "src/ui/preview/qaPresets.ts",
+        "sha256": "ffad8021bc2780257d6e406487b41ea80da45a5b03c3f97193e69e30739d6759",
+        "byteLength": 3234,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/ui/preview/qaPresets.ts"
+      },
+      {
+        "path": "src/ui/socialMessages.ts",
+        "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f",
+        "byteLength": 33653,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/ui/socialMessages.ts"
+      },
+      {
+        "path": "src/ui/socialUi.ts",
+        "sha256": "6f6af452e89a811ec093c5a1c3a512ad752053ec3e37f58b5cd8765236fe20f2",
+        "byteLength": 11551,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/ui/socialUi.ts"
+      },
+      {
+        "path": "src/ui/vrpgSelection.ts",
+        "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d",
+        "byteLength": 20547,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/src/ui/vrpgSelection.ts"
+      },
+      {
+        "path": "tests/core/ap20b-compatibility.test.ts",
+        "sha256": "98ad06874e24ff3be174d9919f956214a9220137a0fe92abfeec2b48fd05f081",
+        "byteLength": 2084,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/core/ap20b-compatibility.test.ts"
+      },
+      {
+        "path": "tests/core/ap20c1-consumer.test.ts",
+        "sha256": "0b82e3d94ac0ee7fa8ad6901fe0ef77358e3192b7b01a1e07e599865f0259bae",
+        "byteLength": 7906,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/core/ap20c1-consumer.test.ts"
+      },
+      {
+        "path": "tests/core/ap20c1-eog.test.ts",
+        "sha256": "b29b6c68e6c34d5f10836ecea4b01bff81deb316c952843e061d68184e5aa7bf",
+        "byteLength": 17106,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/core/ap20c1-eog.test.ts"
+      },
+      {
+        "path": "tests/core/ap20c2-family.test.ts",
+        "sha256": "619ecbf907bf4813d47041e42a068fae7f86d7a9c0a2c113f5856d6e0b7bc79f",
+        "byteLength": 22773,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/core/ap20c2-family.test.ts"
+      },
+      {
+        "path": "tests/core/ap20c3-mvg-uelg.test.ts",
+        "sha256": "1f23d9214d4b4ccc587890257b17a156c57b5b7eb295363beecd36001d0d046f",
+        "byteLength": 27045,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/core/ap20c3-mvg-uelg.test.ts"
+      },
+      {
+        "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+        "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47",
+        "byteLength": 56152,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/golden/candidates/ap17b-anwendbarkeit.json"
+      },
+      {
+        "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+        "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8",
+        "byteLength": 48765,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/golden/candidates/ap19b-social-deadlines.json"
+      },
+      {
+        "path": "tests/golden/candidates/ap20b-social-contract.json",
+        "sha256": "12890e16cf50e6b1a2fcb50e79f6a7e5540053d398b2418248c1135227791e9c",
+        "byteLength": 4523,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/golden/candidates/ap20b-social-contract.json"
+      },
+      {
+        "path": "tests/golden/candidates/ap20b-social-dates.json",
+        "sha256": "9740ce84883a54beec81f2f8a6cb1c450d690c9b6f440c5841d5821dfad16fa3",
+        "byteLength": 2228,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/golden/candidates/ap20b-social-dates.json"
+      },
+      {
+        "path": "tests/governance/ap20b-references.test.mjs",
+        "sha256": "e67a13560a8b16d9432bed767861b55b561c3c834dd29eef7c1281c75e5e0b3b",
+        "byteLength": 13611,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/governance/ap20b-references.test.mjs"
+      },
+      {
+        "path": "tests/ui/ap20c1-eog.test.ts",
+        "sha256": "aa695632d4cd80222c7af03bae3d1210dba4c5ea56506d1ecd79c395d48d028f",
+        "byteLength": 12709,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/ui/ap20c1-eog.test.ts"
+      },
+      {
+        "path": "tests/ui/ap20c2-family.test.ts",
+        "sha256": "f749edb90867db57e04383c2583b37fbbceade3090ed55f135a72fedb25bdf54",
+        "byteLength": 11071,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/ui/ap20c2-family.test.ts"
+      },
+      {
+        "path": "tests/ui/ap20c3-mvg-uelg.test.ts",
+        "sha256": "cfcfe71a563e543c4ea8b37da2dbb5f20e1ff90355103f0145d8343b6ea7cbbd",
+        "byteLength": 12804,
+        "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/ui/ap20c3-mvg-uelg.test.ts"
+      }
+    ],
+    "note": "After snapshot persistence, evolving files and test logs are read only from their verified archived preimages. Immutable candidate, acceptance and proof records continue to be verified in place."
+  },
+  "evidence": [
+    {
+      "path": ".work/ap19c-spfx-build-ZXdOgc/final-built-tests.log",
+      "sha256": "d1dfe31a6b3bfd8b546eabd5a25c940e980f84aeae8805448cefce54daaba11f",
+      "byteLength": 15200
+    },
+    {
+      "path": ".work/ap19c-spfx-build-ZXdOgc/step-1.log",
+      "sha256": "63552fbb19de008447ad4b1930bdacfb4a673820925651fb4c0002332ebeec09",
+      "byteLength": 21791
+    },
+    {
+      "path": ".work/ap19c-spfx-build-ZXdOgc/verification.json",
+      "sha256": "60c42e32076ea81eb3cfd739673c62f0b0dceb2dbfd67fbb5fc6f984687c43c2",
+      "byteLength": 2679
+    },
+    {
+      "path": ".work/ap19c-spfx-build-pKR6pW/step-1.log",
+      "sha256": "8a8ea93bfebb4e827ae3641e51276e54dbd489f6dab0894fbef043e61b36279f",
+      "byteLength": 28559
+    },
+    {
+      "path": ".work/ap19c-spfx-build-pKR6pW/step-2.log",
+      "sha256": "fba518de015b823ecb3b681a456585483a70437b84f96ade4ba098ca4ff7356c",
+      "byteLength": 1743
+    },
+    {
+      "path": ".work/ap19c-spfx-build-pKR6pW/step-3.log",
+      "sha256": "4ba7fbaf15af2a64963191a7046cd799b6293f2bdd547049b93b78e70e4ecf5e",
+      "byteLength": 69
+    },
+    {
+      "path": ".work/ap19c-spfx-build-pKR6pW/step-4.log",
+      "sha256": "e333efb4edd330e2090547fc600d68dc48ae2586dbe265297308a34b2f538a44",
+      "byteLength": 6164
+    },
+    {
+      "path": ".work/ap19c-spfx-build-pKR6pW/step-5.log",
+      "sha256": "e40906183259a783561242ee8af789b37fa739b84e76720a0e753591da597fc2",
+      "byteLength": 20596
+    },
+    {
+      "path": ".work/ap19c-spfx-build-pKR6pW/verification.json",
+      "sha256": "28c45481b5e40a71ca411b2655a8a3dd6869f964b3826d06ac2c9aada7645ae0",
+      "byteLength": 2679
+    },
+    {
+      "path": ".work/ap19c-spfx-build-vpd4UK/step-1.log",
+      "sha256": "df0eac04caee558a6cf85602f921dde1645a1ddb08c557281c8774e52f717157",
+      "byteLength": 25159
+    },
+    {
+      "path": ".work/ap19c-spfx-build-vpd4UK/step-5.log",
+      "sha256": "84941997532917b175cf274c9f22c22a68c523d9c3fcb5f97fce9410d119c925",
+      "byteLength": 17819
+    },
+    {
+      "path": ".work/ap19c-spfx-build-vpd4UK/verification.json",
+      "sha256": "2a13d09ae496b1ee1b530bcdb0faaef9ea0556eb83e1a7da0d4af74428170fd9",
+      "byteLength": 2679
+    },
+    {
+      "path": ".work/ap20c1-core-ui-tests-final.log",
+      "sha256": "dd737aefa2da8d09bec1a15e5e0b30d9046449561c7835e7266d216ddcf8337f",
+      "byteLength": 326297
+    },
+    {
+      "path": ".work/ap20c1-governance-tests.log",
+      "sha256": "f1293accfc55f15659571d59d07620438ace800ff1fe27494dd99e4c914935f2",
+      "byteLength": 26913
+    },
+    {
+      "path": ".work/ap20c1-public-tests.log",
+      "sha256": "8f5808fa447fdd55f14e39f456c9605706d1438c9a05ee5503e3b4f508b42af3",
+      "byteLength": 3579
+    },
+    {
+      "path": ".work/ap20c1-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/ap20c2-core-ui-final.log",
+      "sha256": "58fe060fd0b44ca9bbc192c7c0846e31626eb1ee90fefab259a94d34ccab2ffd",
+      "byteLength": 369220
+    },
+    {
+      "path": ".work/ap20c2-governance.log",
+      "sha256": "75b1850559162fd6b3dfba97a1056d3af0cd9150030da1adf199532f1cea1601",
+      "byteLength": 26974
+    },
+    {
+      "path": ".work/ap20c2-public.log",
+      "sha256": "9e81bbc2a791eb475c8ef5a641cb2eaea6bec4deda6ade93b58f1be8155a57be",
+      "byteLength": 3482
+    },
+    {
+      "path": ".work/ap20c2-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/ap20c3-core-ui-final.log",
+      "sha256": "d026787399d065be9cd74f5668cf1350e15587ac016bdf78eebb700e885250e5",
+      "byteLength": 415530
+    },
+    {
+      "path": ".work/ap20c3-governance.log",
+      "sha256": "f226d8b7600662884d94b5af953bae846b00749883f80a521011f52ef9682f2a",
+      "byteLength": 26929
+    },
+    {
+      "path": ".work/ap20c3-public.log",
+      "sha256": "be7d1d31cf775eb7342806bcfa75d147277d40512505775125ff2e82e9f950fc",
+      "byteLength": 3475
+    },
+    {
+      "path": ".work/ap20c3-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "byteLength": 837359
+    },
+    {
+      "path": "data/candidates/2026-09-28-ap19c3/manifest.json",
+      "sha256": "8e0f7aa1901b1e26878ddead049a35c81cbf540fd6d68002597830f5c7e6b0da",
+      "byteLength": 9707
+    },
+    {
+      "path": "data/candidates/2026-09-30-ap20c1/manifest.json",
+      "sha256": "deb308e319a47eaf80f9056b88ee2bc9ff56c0500e70269fb0bc54e91a1900b5",
+      "byteLength": 9905
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c2/manifest.json",
+      "sha256": "e7d1921d7a67adc60e49142fe549f1f6113cf73084f94fd1f0f057d3360cc520",
+      "byteLength": 10452
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/calendars/be-public-holidays.json",
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "byteLength": 9073
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/calendars/ch-federal-calendar.json",
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "byteLength": 7260
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "byteLength": 837359
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/manifest.json",
+      "sha256": "b4250a31d226b4f59e0857a857f49e1ea354722b9ff46b9324d70b330f135450",
+      "byteLength": 10999
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/bgg.json",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "byteLength": 8529
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/stpo.json",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "byteLength": 6652
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/vrpg-be.json",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "byteLength": 8616
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/vwvg.json",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "byteLength": 8002
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/zpo.json",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "byteLength": 10232
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/social-procedures/ch-social-procedures.json",
+      "sha256": "e98e24052dc1d6658eb82fde6428a8201af3c32667e62a8653061558567e3152",
+      "byteLength": 546649
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/special-regimes/vrpg-be.json",
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a",
+      "byteLength": 114845
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/calendars/be-public-holidays.json",
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "byteLength": 9073
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/calendars/ch-federal-calendar.json",
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "byteLength": 7260
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "byteLength": 837359
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/manifest.json",
+      "sha256": "3aa09c80c93ef56d472748c4a5496d439537272d96491497b2c678e3c7e20715",
+      "byteLength": 11320
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/profiles/bgg.json",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "byteLength": 8529
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/profiles/stpo.json",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "byteLength": 6652
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/profiles/vrpg-be.json",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "byteLength": 8616
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/profiles/vwvg.json",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "byteLength": 8002
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/profiles/zpo.json",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "byteLength": 10232
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/social-procedures/ch-social-procedures.json",
+      "sha256": "1dd2792295b3b929efdcfa883b15509c0cd4fbef9dbf2a9f5228a8e6a6dacc26",
+      "byteLength": 285349
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/special-regimes/vrpg-be.json",
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a",
+      "byteLength": 114845
+    },
+    {
+      "path": "data/source-reviews/events/2026-09-28-mvp-05-prerelease.1.json",
+      "sha256": "1d3dc59e02f5c67026cab22d7d20ddcca68840840ec54029c36f51482816f372",
+      "byteLength": 82436
+    },
+    {
+      "path": "data/source-reviews/index.json",
+      "sha256": "017179338852bddac965a11718912bf2cf7ef793884a8ae1d5d8f2b639ee31fe",
+      "byteLength": 92001
+    },
+    {
+      "path": "data/source-reviews/source-register.json",
+      "sha256": "eb89b94c839fb01d92c4168dd99183d1c40818299b0a364247007b5bd933df7a",
+      "byteLength": 44103
+    },
+    {
+      "path": "docs/architektur/implementierung-ap20c1.md",
+      "sha256": "89c3e76dd049de50faab1981bcf747810365757edb24f6075eb49f5c6b4ab9ad",
+      "byteLength": 9522
+    },
+    {
+      "path": "docs/architektur/implementierung-ap20c2.md",
+      "sha256": "3877dca11c114d7cf679e3efae77187139f6a34ec5bbda0631305b7b7e07d978",
+      "byteLength": 9764
+    },
+    {
+      "path": "docs/architektur/implementierung-ap20c3.md",
+      "sha256": "5032afd7cfea71276f273601780addcab2a797228e091544a4c0a3b5801dfd9d",
+      "byteLength": 10336
+    },
+    {
+      "path": "docs/architektur/sozialversicherungsvertrag-ap20b.md",
+      "sha256": "f1b2c994c08e37e6f38a18e6b355a7f20588112d13d4bc0328a63c8f9896f2e1",
+      "byteLength": 18352
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-024-nationales-sozialversicherungsmodell.md",
+      "sha256": "91e46d98e1cdeff7852e8bcc9426dfb1d23287189fd2048b0ceb05e06fdb889d",
+      "byteLength": 5891
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-025-sozialverfahrenskatalog-und-manifest-v5.md",
+      "sha256": "4339de7ae99ae12b413ae5abbaf2a2b464a2ba67b1e26e18514ea29dc4d7da96",
+      "byteLength": 7722
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-026-beschluss.md",
+      "sha256": "16873c28621edcac92e490814c5196fbbfb34900d8e10d4c767cda8a5359ef7a",
+      "byteLength": 3772
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-026-sozialverfahrenskatalog-v2.md",
+      "sha256": "ef0251f40b4cec08233ff135cd3ded7b2a05a9ffb0675b36e4278788d7a2a779",
+      "byteLength": 4491
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c1.md",
+      "sha256": "14a2549464fda9c193906e1e78bedcd84b1bb95e54934b3d3c8e95a205f1987a",
+      "byteLength": 4911
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c2.md",
+      "sha256": "ee13addde7cfb93bcdc2681eb0286b6a50226bd371af108dd06829e93c65198a",
+      "byteLength": 5794
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap19c3.md",
+      "sha256": "1623de9661787266d8b6e8d1881c473c8f28d39605704db01f148fa9c8ca8c67",
+      "byteLength": 6170
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20a.md",
+      "sha256": "441169d29e8e106ac78caa2af21eb070607b33f5711a0148dd5d747ae458131f",
+      "byteLength": 5737
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20b.md",
+      "sha256": "59e9f98da842a60ab25822bab9e74e6e22faa788a89c859d795bceecd08933a6",
+      "byteLength": 5461
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20c1.md",
+      "sha256": "f94289c3069128a26bb4a270d178982dac342d0f3267b2059dbe0d8c6e657f11",
+      "byteLength": 5276
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20c2.md",
+      "sha256": "864543a15afb57b205d9a183134a6eeb91bc19aeefd92bbcd9bdefaa2a1bc7b1",
+      "byteLength": 4953
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20c3.md",
+      "sha256": "cd460ccfb4a9895f53812b54c648b8f834ed61e795914bc6fd7f2f8f3dde6f64",
+      "byteLength": 5441
+    },
+    {
+      "path": "docs/fachrecht/abnahme-quellenpruefung-mvp05.md",
+      "sha256": "ce1ece8fd0ba72d364b19df851d534528f09e7d645cd5e41872c7a9192d39c5c",
+      "byteLength": 3193
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-ap20b-bund.md",
+      "sha256": "518ff9be263fdb74c50eb09489ef88c3177881a5315fc03e06e19c01bffbfcad",
+      "byteLength": 19425
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp05-rest.md",
+      "sha256": "fe02d5ab6ef66d0a5a70488010ff99b5944f31445fb80a24acbe4f829b755f86",
+      "byteLength": 8997
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp05.md",
+      "sha256": "5b59836f9b7b6bf1eaa39cfa2ec4988c50842b956d23ad807f02990aa15000bb",
+      "byteLength": 5404
+    },
+    {
+      "path": "docs/fachrecht/quellenkontrolle-ap20c1.md",
+      "sha256": "dd1ddca851a83bed5a82731d06c11da39313f9dd287c4a208bd1ee2551571d77",
+      "byteLength": 7553
+    },
+    {
+      "path": "docs/fachrecht/quellenkontrolle-ap20c2.md",
+      "sha256": "ecd07f43bc15e16eb10ed58835d520629b0b645f92d8c985560279243576d363",
+      "byteLength": 8999
+    },
+    {
+      "path": "docs/fachrecht/quellenkontrolle-ap20c3.md",
+      "sha256": "61a60339dfba7779dd41f13a6730eaf9187854d3ea993054685d1fc145688d09",
+      "byteLength": 9091
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefplan-mvp05.md",
+      "sha256": "6e80e74b43831864ac741d4ef0f55020c6e41a83d898f2820a5cf51ed5915c97",
+      "byteLength": 19281
+    },
+    {
+      "path": "docs/fachrecht/referenzfaelle-ap20b.md",
+      "sha256": "6530abf205e0c6096b9c883dc3898d322c8990dd4393a3ac528b497681c8cb25",
+      "byteLength": 10671
+    },
+    {
+      "path": "docs/fachrecht/zeitliche-bindung-ap20b.md",
+      "sha256": "6fe83e678b7c14e23586ebb7e1903918f4806bb4533c99a21fac1e6f542059d1",
+      "byteLength": 15254
+    },
+    {
+      "path": "outputs/ap19c1-2026-09-25/source-review.json",
+      "sha256": "a3a423687f45a3706dc34095d41c5356cd97891b21e7989bde47b6f363acf773",
+      "byteLength": 11234
+    },
+    {
+      "path": "outputs/ap19c2-2026-09-28/sources/source-review.json",
+      "sha256": "33d2fe1c6f6e1d54a97f8a9a54c97ce4a58aea56d0158a029ffa2a5d0f43abc3",
+      "byteLength": 11751
+    },
+    {
+      "path": "outputs/ap19c3-2026-09-28/sources/source-review.json",
+      "sha256": "00f16cfb9653d32a73555c9ccd6c22a32af7810aae0068fe540d5497aac1b6e9",
+      "byteLength": 10734
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/bern-sources/bern-source-review.json",
+      "sha256": "30bc675d65ca31d61b6c99f38d84f5775d13ba6e33bb5be8d42db2a854cb00f9",
+      "byteLength": 13497
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-comparisons.json",
+      "sha256": "c3a9869e540a6fb24ce97932f3704b29311c7c1e999f1ce7b44889a91dd54342",
+      "byteLength": 108524
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-elg-cross-reference.json",
+      "sha256": "9e128aea28de23044fd28969a030eb0b5aa09ee8b1f41bf8a404b746d3cd1594",
+      "byteLength": 6981
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-indexes.json",
+      "sha256": "fa4be7828baf8319702c0d9c638e4d95e9eb086b08ee5528a261db9f49aa45b5",
+      "byteLength": 48716
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-originals.json",
+      "sha256": "b1fe603ce0743bed770fe2713407e52ba7b91b8917841889381eb892e24f1cda",
+      "byteLength": 76146
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/pruefprotokoll.json",
+      "sha256": "8d67ad7b6e0541104cfa7e8f124cf1e206cdbe6c82111b287dcc4ae54cf9c25d",
+      "byteLength": 4676
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/build-verification.json",
+      "sha256": "293f6a9f0320cb6b5f3e028767cc80cc36faf143b5d2803ccc3d671405089bc9",
+      "byteLength": 13260
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/pruefprotokoll.json",
+      "sha256": "691d831b5220676a89dd48acf9fcab199f52ba66edcfd90fdc2a86f0d3bd8918",
+      "byteLength": 9407
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/quellenkontrolle.json",
+      "sha256": "6209ff32d00910b36f97dfb5c35c147dc19ec908500b17c75736bd3960da990c",
+      "byteLength": 89004
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/source-refresh.py",
+      "sha256": "83ee72fcf2356db3604f1c0c0f1bae111bae548a06febea90947e001a8d75642",
+      "byteLength": 9549
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/package.json",
+      "sha256": "e360d4da7c114d25e5b480c31e464c4eb16065b4977bee2f38a47844f48ed59a",
+      "byteLength": 7955
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/scripts/check-ap19c-spfx-build.mjs",
+      "sha256": "56d7597b37693eeff77eca8c42807c1a14856634cb7b1c4fcde15138a75902e0",
+      "byteLength": 3212
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/FristenrechnerApp.tsx",
+      "sha256": "aadef2a8c60c52cfd574f0d1e08de22cdedb8f9f69d3c0eb0fdfa4058f42639b",
+      "byteLength": 75571
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/preview/main.tsx",
+      "sha256": "2535b689d27c92ad504955df99e36916e262e56c85f07606210fe71bf0d14994",
+      "byteLength": 1737
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/preview/qaPresets.ts",
+      "sha256": "6262ad3cab4d7510cb7a1ef25cd8ef474563cb015981128309bbb85c6d15c462",
+      "byteLength": 2468
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/socialMessages.ts",
+      "sha256": "642fac74d41b44a5912dbc1765aa13680a2cd407aee522d5934cbd8afe15e106",
+      "byteLength": 21813
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/socialUi.ts",
+      "sha256": "10be9057fae413c6745bafbd67516bfa9ef56cd09e0cabf2986ba3aaac9acbe6",
+      "byteLength": 10582
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/vrpgSelection.ts",
+      "sha256": "7234bb4600cf35d1722a82ac96463eb2501a4e6de7fa727b83b8ec59d888e933",
+      "byteLength": 19526
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/build-verification.json",
+      "sha256": "de2a8baef166b8f2d8f339eac4f3ced8cacdf616caa2e20e548e30806fd6e3e7",
+      "byteLength": 15519
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/pruefprotokoll.json",
+      "sha256": "311cb80a027c0de883a7c07c46ba59e150065bdad3657a2c4947dec0bbacb2e9",
+      "byteLength": 16367
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/quellenkontrolle.json",
+      "sha256": "6ef1e65e4a2e5a7fa0a87c2042d5fc17a9f736c3f09fe9035620dbf0ce84d4c5",
+      "byteLength": 112524
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/source-refresh.py",
+      "sha256": "2811d459617e4b85ad466704a3390260a4c6ec7caba1ce795f0495f18e59fa6c",
+      "byteLength": 13375
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/package.json",
+      "sha256": "bda2a163dd08fd883c453218bdb448c45975f32f9d13ed78854d70cacc98bb78",
+      "byteLength": 8223
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/scripts/check-ap19c-spfx-build.mjs",
+      "sha256": "15308760efa58b84aefaff86859da07178771bb5bb801a120763c9b2cc70f1e8",
+      "byteLength": 3259
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/FristenrechnerApp.tsx",
+      "sha256": "7472d98a26073a597abd2a3607d7a182747fab1408b5c35a0dc043539cce7a38",
+      "byteLength": 77398
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/preview/main.tsx",
+      "sha256": "f0559a41c10e1c65f8ccef7a8debfa1f3a3975999f6617830e22490e4dde1107",
+      "byteLength": 1881
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/preview/qaPresets.ts",
+      "sha256": "987111fabe6fd8aa59744e1029d0cd7565ba23e5a276c3737ee7c62192f3481f",
+      "byteLength": 2852
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/socialMessages.ts",
+      "sha256": "e0a5a57bc3a8b1aba1cdb8a7a2c81a2f495a223a1afc58e01170a0652e2611ed",
+      "byteLength": 27301
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/socialUi.ts",
+      "sha256": "648febdb931e6a4a829d15f6c57c8d5967c214e8e23302096a188fd603e47d7f",
+      "byteLength": 11150
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/vrpgSelection.ts",
+      "sha256": "9fca0fb5e487436bb24c1521b85d63c9e005de3f6f33be3743c8e76bf2f39fa1",
+      "byteLength": 20016
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/build-verification.json",
+      "sha256": "d58b3bf5a0a064670c2f1d0e77527c7362bfc86bddaf2209a9f26054fd155d85",
+      "byteLength": 18674
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/pruefprotokoll.json",
+      "sha256": "3dd855f4a023a2d5486a77753d6719bf5e494dda769521c9ce52042f62381866",
+      "byteLength": 24379
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+      "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c",
+      "byteLength": 58872
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/source-refresh.py",
+      "sha256": "b1e60d80bc2ff408314b43d9484655bcedc4c4b4e8fb4c1258597b3abb22c468",
+      "byteLength": 12804
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-approval.json",
+      "sha256": "e956172420aab77e45ea5462ed30e82efab59ea0a993a6682ceddbdea0efd884",
+      "byteLength": 4010
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/source-approval.json",
+      "sha256": "2897874ed52c826bb43dc61270f8122cf996b4fa2070904eacc4d672f551f768",
+      "byteLength": 5115
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/source-inventory.json",
+      "sha256": "b01d040cbc24e932f62e7b876616faface50dd33690463e4b1bdeafe479b804d",
+      "byteLength": 65861
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/source-review-completeness.json",
+      "sha256": "67fdf2e5cb3ac19769655ed08f2ff80e9863b76a2526469917832bcba68e27ce",
+      "byteLength": 39547
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/sources/ap19-source-review.json",
+      "sha256": "c5e37d8c44f9aa17d6b102f654551ea27960231a66dc14a284f91032117f87c7",
+      "byteLength": 29380
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/sources/remainder/source-review.json",
+      "sha256": "913b36d3b1bf66b8b613ec0b5b2947bb4825c0377a3460f55fafc15adbf1d044",
+      "byteLength": 43719
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "671267ac6032fbe723bac87e34e385f83b6665ed570c937553399d0ae22afd44",
+      "byteLength": 31119
+    },
+    {
+      "path": "package.json",
+      "sha256": "a57bb28366b32798efe9e6bb401497298d9508d1dfbdbda871700027706b595b",
+      "byteLength": 8491
+    },
+    {
+      "path": "schemas/release-manifest-v6.schema.json",
+      "sha256": "c6ea5582d47db4fbc8fceec1819af2648c6aaaf1f9f169caf2e301d5f22b4825",
+      "byteLength": 13080
+    },
+    {
+      "path": "schemas/social-procedure-catalog-v2.schema.json",
+      "sha256": "16bf46bfe0eeb88fe4015800e903c9b749eb8bb69b74a4e4474f9f5aa0186203",
+      "byteLength": 27806
+    },
+    {
+      "path": "scripts/build-ap20c1-candidate.d.mts",
+      "sha256": "813d5c6b7f499c1afa98a2ed77ab16edbf20204a3c3d1c7c0944469f6f2b4b38",
+      "byteLength": 614
+    },
+    {
+      "path": "scripts/build-ap20c1-candidate.mjs",
+      "sha256": "f7819cd35f1febb652f0305a9309e1dbe0d0699c83b010a30bacbe8d214ef9bb",
+      "byteLength": 19954
+    },
+    {
+      "path": "scripts/build-ap20c2-candidate.d.mts",
+      "sha256": "09c0ae82bc77aebc004f80e29d53a4ea17cf0d2487516f92253376e5838a3a1a",
+      "byteLength": 614
+    },
+    {
+      "path": "scripts/build-ap20c2-candidate.mjs",
+      "sha256": "5ad4f2531a1a57121b0bdb08bb647900e8eaf485f03980804f53c11380af73ea",
+      "byteLength": 20278
+    },
+    {
+      "path": "scripts/build-ap20c3-candidate.d.mts",
+      "sha256": "5ec964ee37cdbb79106809b507d75900e8bfca10b63c2ae14b4942d2c6585595",
+      "byteLength": 614
+    },
+    {
+      "path": "scripts/build-ap20c3-candidate.mjs",
+      "sha256": "1ca80573ab1c5327191d2a6eede73ce2c245502363ae1cdf89c8a6ab5acf9cc0",
+      "byteLength": 21625
+    },
+    {
+      "path": "scripts/check-ap19c-spfx-build.mjs",
+      "sha256": "cdcd1de3a51ef7bdeaea5b8cc9cdefb3f6c0bb7cac2205aa46490bb6635be5c2",
+      "byteLength": 3306
+    },
+    {
+      "path": "scripts/check-ap20b-references.mjs",
+      "sha256": "4d5baf43f9de5905b869b386179c681791686607c14b0571d00c0738a778eb8b",
+      "byteLength": 9853
+    },
+    {
+      "path": "scripts/record-ap20c1-checks.mjs",
+      "sha256": "d80cac8dca2a73a7447eafda8a22653ee2fd0d84efad968c83084def8ddac627",
+      "byteLength": 6811
+    },
+    {
+      "path": "scripts/record-ap20c2-checks.mjs",
+      "sha256": "f30a9c750130d7b7c9968073026d783d18290d87afa3cf0f73274ca1e2ec9b27",
+      "byteLength": 8005
+    },
+    {
+      "path": "scripts/record-ap20c3-checks.mjs",
+      "sha256": "51cbf341d83464c0398af6d1cf6049b71c87445604b411b9d9bb7088d28f946b",
+      "byteLength": 10183
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "sha256": "4759ce8b8edc31cb1eea21b8056b324d84295a9bbfaabeafa7ab8dd171e47f88",
+      "byteLength": 1334
+    },
+    {
+      "path": "spfx/package-lock.json",
+      "sha256": "df40b4546b70cde3a782dcf22d0997f26c45209300af7a762c73f7db09d490b6",
+      "byteLength": 754829
+    },
+    {
+      "path": "spfx/package.json",
+      "sha256": "aa2e2bead634d78cb0396505aa1b99c19449d77aa8a59706833f75e42984bdaa",
+      "byteLength": 2217
+    },
+    {
+      "path": "spfx/scripts/sync-schemas.mjs",
+      "sha256": "002a5df7aa9b39bf4c6f2f3558bc5311e6d03ebb25863ee6f5dc08d2676992a5",
+      "byteLength": 1574
+    },
+    {
+      "path": "spfx/src/core/ReleaseValidator.ts",
+      "sha256": "1c2550c9a4db76f1d23b2ebf02e432d1ab45b751e1865c2409786a32784680a2",
+      "byteLength": 19636
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "sha256": "68b6944a9e0de6afaadb2f6d4980948bd198071efbf8263d2cc51cf88f2e593c",
+      "byteLength": 233
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/FristenrechnerWebPart.manifest.json",
+      "sha256": "9c4420db5703457771c78b120d0c341ca9ce65581aa55ddd8281f5d6c4a87f6f",
+      "byteLength": 1231
+    },
+    {
+      "path": "spfx/test-build/ap20c1.test.cjs",
+      "sha256": "db3290d5b74f37e970eac3f9017be2c79f73aa94ac72a9d0d45f218f628e9082",
+      "byteLength": 7807
+    },
+    {
+      "path": "spfx/test-build/ap20c2.test.cjs",
+      "sha256": "e23e89b35d297fb3f92d633b29b21147114b66e316ab08893504601ae3c9176e",
+      "byteLength": 11149
+    },
+    {
+      "path": "spfx/test-build/ap20c3.test.cjs",
+      "sha256": "2c2e21d13d2375499ea5efb1536c1a584a10a08f17e92b37e917f9c1c6dcbde2",
+      "byteLength": 14906
+    },
+    {
+      "path": "spfx/test/ap20c1-loader.test.ts",
+      "sha256": "3968d69797b314346cbcc967dfa4b682f293db9510118e74f0dc2641bc15af1c",
+      "byteLength": 8112
+    },
+    {
+      "path": "spfx/test/ap20c2-loader.test.ts",
+      "sha256": "a5d3f74db7280b4b7018ab85009c76345c995a5a9bcdbea37818772112775714",
+      "byteLength": 10458
+    },
+    {
+      "path": "spfx/test/ap20c3-loader.test.ts",
+      "sha256": "1ec0606f31a57715f497535eff876a6cc27c1611cddb37b9d909f9042b9a25aa",
+      "byteLength": 10460
+    },
+    {
+      "path": "spfx/test/release-service.test.ts",
+      "sha256": "1535857a834cede0a7f54b7caaddbd46ec4a45c78cc438b073a85906c7d28537",
+      "byteLength": 9066
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "sha256": "3798d09f189a4d9ca2dbd4088d1bc536cccafe7aa06d91486eab205bf5740ce4",
+      "byteLength": 30613
+    },
+    {
+      "path": "src/core/data.ts",
+      "sha256": "2252ef9cd8eac089db6cf1f671fbe975c1683eb67e51e116b777c17d04f9793a",
+      "byteLength": 19881
+    },
+    {
+      "path": "src/core/socialCatalog.ts",
+      "sha256": "aa9d7171b0f619e9b9c19c388b7e3f3c4b063097e9a557a193ad2a3bea1d0dbd",
+      "byteLength": 26963
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "sha256": "1e2c11e85f46da59a4877790812d49618a79b8a6f09ea8a60a254672661e83a6",
+      "byteLength": 15034
+    },
+    {
+      "path": "src/core/socialTypes.ts",
+      "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370",
+      "byteLength": 7785
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "sha256": "b0a114b392d2efaa412251845f8a926759c63a22734df4deb0939291a5fb10b7",
+      "byteLength": 714
+    },
+    {
+      "path": "src/release/ap20c1CandidateData.ts",
+      "sha256": "0cc971039ab7a2a6db5503500cf6d0c42b3b0e9d397535e6388d606f0ba886ca",
+      "byteLength": 2375
+    },
+    {
+      "path": "src/release/ap20c2CandidateData.ts",
+      "sha256": "95317450ad9a0420fd7636374b955730a94c4949fc631bf4dc7bdcf85f6f52b3",
+      "byteLength": 2378
+    },
+    {
+      "path": "src/release/ap20c3CandidateData.ts",
+      "sha256": "400dc0817eeae5f3cfe7ac5a9518fc0d73fb8e37d89edfa8552a24fa73a5da6c",
+      "byteLength": 2377
+    },
+    {
+      "path": "src/release/mvp05ReleaseData.ts",
+      "sha256": "82e1975ff14e77a4398a0d59529ce62ca301c7308538fce14800910d82147afc",
+      "byteLength": 2392
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "sha256": "0ac9f1cdeacbecbe7f033627b48e2c127a39d252806afe0e4abea30f44af53e7",
+      "byteLength": 79092
+    },
+    {
+      "path": "src/ui/preview/main.tsx",
+      "sha256": "d1fdb855cb85ef1b3641df7fc9ac74423c5045fa059ab45dc561f47dd798eae3",
+      "byteLength": 2025
+    },
+    {
+      "path": "src/ui/preview/qaPresets.ts",
+      "sha256": "ffad8021bc2780257d6e406487b41ea80da45a5b03c3f97193e69e30739d6759",
+      "byteLength": 3234
+    },
+    {
+      "path": "src/ui/socialMessages.ts",
+      "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f",
+      "byteLength": 33653
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "sha256": "6f6af452e89a811ec093c5a1c3a512ad752053ec3e37f58b5cd8765236fe20f2",
+      "byteLength": 11551
+    },
+    {
+      "path": "src/ui/vrpgSelection.ts",
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d",
+      "byteLength": 20547
+    },
+    {
+      "path": "tests/core/ap20b-compatibility.test.ts",
+      "sha256": "98ad06874e24ff3be174d9919f956214a9220137a0fe92abfeec2b48fd05f081",
+      "byteLength": 2084
+    },
+    {
+      "path": "tests/core/ap20c1-consumer.test.ts",
+      "sha256": "0b82e3d94ac0ee7fa8ad6901fe0ef77358e3192b7b01a1e07e599865f0259bae",
+      "byteLength": 7906
+    },
+    {
+      "path": "tests/core/ap20c1-eog.test.ts",
+      "sha256": "b29b6c68e6c34d5f10836ecea4b01bff81deb316c952843e061d68184e5aa7bf",
+      "byteLength": 17106
+    },
+    {
+      "path": "tests/core/ap20c2-family.test.ts",
+      "sha256": "619ecbf907bf4813d47041e42a068fae7f86d7a9c0a2c113f5856d6e0b7bc79f",
+      "byteLength": 22773
+    },
+    {
+      "path": "tests/core/ap20c3-mvg-uelg.test.ts",
+      "sha256": "1f23d9214d4b4ccc587890257b17a156c57b5b7eb295363beecd36001d0d046f",
+      "byteLength": 27045
+    },
+    {
+      "path": "tests/golden/candidates/ap17b-anwendbarkeit.json",
+      "sha256": "d180d6c7dd67f30bf8abe9b101878b22b1e455ad42bbd2ca633b1ee4487b5f47",
+      "byteLength": 56152
+    },
+    {
+      "path": "tests/golden/candidates/ap19b-social-deadlines.json",
+      "sha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8",
+      "byteLength": 48765
+    },
+    {
+      "path": "tests/golden/candidates/ap20b-social-contract.json",
+      "sha256": "12890e16cf50e6b1a2fcb50e79f6a7e5540053d398b2418248c1135227791e9c",
+      "byteLength": 4523
+    },
+    {
+      "path": "tests/golden/candidates/ap20b-social-dates.json",
+      "sha256": "9740ce84883a54beec81f2f8a6cb1c450d690c9b6f440c5841d5821dfad16fa3",
+      "byteLength": 2228
+    },
+    {
+      "path": "tests/governance/ap20b-references.test.mjs",
+      "sha256": "e67a13560a8b16d9432bed767861b55b561c3c834dd29eef7c1281c75e5e0b3b",
+      "byteLength": 13611
+    },
+    {
+      "path": "tests/ui/ap20c1-eog.test.ts",
+      "sha256": "aa695632d4cd80222c7af03bae3d1210dba4c5ea56506d1ecd79c395d48d028f",
+      "byteLength": 12709
+    },
+    {
+      "path": "tests/ui/ap20c2-family.test.ts",
+      "sha256": "f749edb90867db57e04383c2583b37fbbceade3090ed55f135a72fedb25bdf54",
+      "byteLength": 11071
+    },
+    {
+      "path": "tests/ui/ap20c3-mvg-uelg.test.ts",
+      "sha256": "cfcfe71a563e543c4ea8b37da2dbb5f20e1ff90355103f0145d8343b6ea7cbbd",
+      "byteLength": 12804
+    }
+  ]
+}

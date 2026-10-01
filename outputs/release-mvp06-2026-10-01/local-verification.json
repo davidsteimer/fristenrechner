@@ -1,0 +1,190 @@
+{
+  "kind": "mvp06DefinitiveLocalVerification",
+  "verifiedOn": "2026-10-01",
+  "status": "passed",
+  "applicationVersion": "0.6.0",
+  "spfxVersion": "0.6.0.0",
+  "releaseId": "2026-10-01-mvp-06-approved.1",
+  "dataPinCommit": "19b37336974f3ba7c72333763e1272425239b8cd",
+  "fullProductCommit": null,
+  "workingTreeBuild": true,
+  "artifactVerification": {
+    "path": "outputs/release-mvp06-2026-10-01/artifact-verification.json",
+    "sha256": "b1605744fe22e21aa012a78cb941ea5573fe4962fb1e11ad09b6331116f752ad"
+  },
+  "browserVerification": {
+    "path": "outputs/release-mvp06-2026-10-01/browser-verification.md",
+    "sha256": "dbf2753f3dc5e5bb958b709d0b266e1ed9bd4a446faf5a9bb2d2970654ee9103",
+    "scope": "local Chrome smoke test of the extracted final web archive only"
+  },
+  "automatedChecks": {
+    "coreAndUi": 2046,
+    "publicBuild": 12,
+    "pythonDataIncludingArtifactTests": 181,
+    "pythonGovernance": 30,
+    "nodeGovernance": 230,
+    "governanceNegativeCases": 8,
+    "spfxSource": 145,
+    "spfxCompiledAndPackage": 68,
+    "artifactTestsIncludedInData": 27
+  },
+  "runs": {
+    "product": {
+      "sourcePath": ".work/mvp06-product-checks-35PVbG/verification.json",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/product.json",
+      "sha256": "467cdd834af2eea7a7b5544be724814d4586e7cb0ea38d65f610eefa07c21e1a"
+    },
+    "governance": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/verification.json",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/governance.json",
+      "sha256": "44ec4e79275a485ce7acf3ceebf20f715c15090a7b93ee4efd8aaa795c31235b"
+    }
+  },
+  "logs": {
+    "typecheck": {
+      "sourcePath": ".work/mvp06-product-checks-35PVbG/typecheck.log",
+      "sourceSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/typecheck.log",
+      "archivedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    "core-ui": {
+      "sourcePath": ".work/mvp06-product-checks-35PVbG/core-ui.log",
+      "sourceSha256": "e1eaa0c55d28047ea60f582a96aef813d8f531b88cd437bff151660fc65ca96d",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/core-ui.log",
+      "archivedSha256": "e1eaa0c55d28047ea60f582a96aef813d8f531b88cd437bff151660fc65ca96d",
+      "byteLength": 498172
+    },
+    "public": {
+      "sourcePath": ".work/mvp06-product-checks-35PVbG/public.log",
+      "sourceSha256": "a13da2d8c72d28b5314bcd752b8e70ae2634fbaca9f4295b7376a71c6638edbd",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/public.log",
+      "archivedSha256": "a13da2d8c72d28b5314bcd752b8e70ae2634fbaca9f4295b7376a71c6638edbd",
+      "byteLength": 3481
+    },
+    "preview-build": {
+      "sourcePath": ".work/mvp06-product-checks-35PVbG/preview-build.log",
+      "sourceSha256": "dee777d296d73671c11e3e33b7c706ee06ad8d7e6b38eaefe51c9e77fd201e30",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/preview-build.log",
+      "archivedSha256": "dee777d296d73671c11e3e33b7c706ee06ad8d7e6b38eaefe51c9e77fd201e30",
+      "byteLength": 183
+    },
+    "public-build": {
+      "sourcePath": ".work/mvp06-product-checks-35PVbG/public-build.log",
+      "sourceSha256": "78ff32bd2d2dc563f2d3fb5a4900e76544ce6cdff7d081153f63e6dca57dc397",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/public-build.log",
+      "archivedSha256": "78ff32bd2d2dc563f2d3fb5a4900e76544ce6cdff7d081153f63e6dca57dc397",
+      "byteLength": 128
+    },
+    "data-python": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/data-python.log",
+      "sourceSha256": "9f320ff3ec097f71a35c380170adcee8e0809750ab87cb9a0657db3d1139fbf7",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/data-python.log",
+      "archivedSha256": "9f320ff3ec097f71a35c380170adcee8e0809750ab87cb9a0657db3d1139fbf7",
+      "byteLength": 282
+    },
+    "governance-python": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/governance-python.log",
+      "sourceSha256": "a4c8250331943aa13587e0d1a03dacae56e378df0ac45344425b81bb300c3f51",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/governance-python.log",
+      "archivedSha256": "a4c8250331943aa13587e0d1a03dacae56e378df0ac45344425b81bb300c3f51",
+      "byteLength": 130
+    },
+    "governance-validator": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/governance-validator.log",
+      "sourceSha256": "ba55601ce0f407b4f3eb96464ad98ec41953a48e19cc130edb502ee60650043c",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/governance-validator.log",
+      "archivedSha256": "ba55601ce0f407b4f3eb96464ad98ec41953a48e19cc130edb502ee60650043c",
+      "byteLength": 115
+    },
+    "governance-node": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/governance-node.log",
+      "sourceSha256": "457ee429478a5897900dfb5cb2729f3ac48e3b4b2dafe9cd92736c327ab008a7",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/governance-node.log",
+      "archivedSha256": "457ee429478a5897900dfb5cb2729f3ac48e3b4b2dafe9cd92736c327ab008a7",
+      "byteLength": 45640
+    },
+    "approved-data": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/approved-data.log",
+      "sourceSha256": "bb24cc90cb82b8e150480d3e835777f803d6af7a9348393b1032858664dc7ec6",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/approved-data.log",
+      "archivedSha256": "bb24cc90cb82b8e150480d3e835777f803d6af7a9348393b1032858664dc7ec6",
+      "byteLength": 440
+    },
+    "source-approval": {
+      "sourcePath": ".work/mvp06-data-governance-checks-xLb2nR/source-approval.log",
+      "sourceSha256": "628ae6fcb02ee9355798ae41c119a8dd30c4433d1acc101e3198b66c5d70917a",
+      "archivePath": "outputs/release-mvp06-2026-10-01/local-check-evidence/source-approval.log",
+      "archivedSha256": "628ae6fcb02ee9355798ae41c119a8dd30c4433d1acc101e3198b66c5d70917a",
+      "byteLength": 494
+    }
+  },
+  "historicalBindings": [
+    {
+      "path": "outputs/release-mvp06-2026-10-01/preparation-inputs.json",
+      "sha256": "e38f06f47f258f3a7d54359d5ca5c0c12bc37fe846f197c4194d784c0a7c585a"
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/source-governance-adoption.json",
+      "sha256": "c272f515621e6955aa81ec61365262ff59eadf4e87ad9a6dbb2ec24c31a8be84"
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/historical-test-baseline/manifest.json",
+      "sha256": "363a7b880ccadf624b17703788e2c81a4c70edb413fe128bc495b44bcfcb71af"
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/historical-test-baseline/ap20b-reference-test-adaptation.json",
+      "sha256": "9eca776b653a843f3597d6678b149802667392a6a1b14cf0ed7a814843f81b33"
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/historical-test-baseline/ap20-candidate-reproduction-addendum.json",
+      "sha256": "c97789076a3b6763357af183fe08d539e40d6400c0de1b5c6f47ae2530da62df"
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/historical-it-baseline/manifest.json",
+      "sha256": "4cdc0f4bbe721c1d3bd784b5c4e2769ac6aab6996f07eb2ddc5e1dc17cf894f0"
+    },
+    {
+      "path": "docs/architektur/mvp06-testvertrag-fortschreibung.md",
+      "sha256": "55bff4b7491267f59dfe7a47c060ca0e8e0a919831fa537a08ed3f7dbd69f420"
+    }
+  ],
+  "sourceApprovalVerified": {
+    "reviewId": "MVP06-SOURCE-APPROVAL-20261001",
+    "releaseId": "2026-10-01-mvp-06-approved.1",
+    "sourceReviewApproved": true,
+    "localDataPromotionAuthorized": true,
+    "definitiveLocalBuildAuthorized": true,
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "hostingChangesAuthorized": false,
+    "operatingApproval": false,
+    "verifiedEvidenceFiles": 170,
+    "distinctSources": 159,
+    "approvalSha256": "10f43005757c54a445f009d702b17a37f04e2dad530241201dbf6c4eebfc2cbb"
+  },
+  "retainedBuildWarnings": [
+    "Two known no-new-null ESLint warnings for JSON contract fields",
+    "Heft/Jest has no separate suites. The source and compiled Node test runs are counted separately."
+  ],
+  "interimRunIssues": [
+    "Obsolete normal-entry expectations corrected with original tests archived",
+    "Historical AP20B test binding preserved through one exact immutable archive resolution",
+    "One SPFx run timed out during simultaneous heavy suites. Final separate run passed with unchanged timeouts."
+  ],
+  "permissions": {
+    "localDataPromotion": true,
+    "localDefinitiveBuild": true,
+    "eqInstallation": false,
+    "publication": false,
+    "hostingChanges": false,
+    "productionActivation": false
+  },
+  "remainingGates": [
+    "Explicit exact E/Q installation authorisation and fresh baseline/rollback checks",
+    "New E/Q matrix and manual Q acceptance",
+    "P06-01 public-checkout evidence separation and publication preflight",
+    "Separately authorised GitHub push",
+    "Fresh hosting check, separate P deployment and operating decision"
+  ]
+}

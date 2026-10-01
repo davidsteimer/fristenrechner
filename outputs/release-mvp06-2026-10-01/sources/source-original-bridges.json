@@ -1,0 +1,824 @@
+{
+  "reviewId": "MVP06-SOURCE-ORIGINAL-BRIDGES-20261001",
+  "checkedOn": "2026-10-01",
+  "completedAt": "2026-10-01T11:03:59.577946+00:00",
+  "kind": "bounded-original-pair-norm-text-comparison-addendum",
+  "recordStatus": "candidate",
+  "humanApproval": false,
+  "dataPromotionAuthorized": false,
+  "operatingApproval": false,
+  "scope": {
+    "laws": [
+      "ELG",
+      "ATSG"
+    ],
+    "originals": 4,
+    "articleComparisons": 21,
+    "additionalParagraphComparisons": 1,
+    "newPositiveRoutes": 0,
+    "newVersionOrImpactIndexReview": false
+  },
+  "correction": {
+    "target": "outputs/release-mvp06-2026-10-01/source-inventory.json",
+    "historicInventoryRetainedUnchanged": true,
+    "previousWholeOriginalIdentityAssumptionCorrect": false,
+    "explanation": "Die MVP05- und AP20C3-Gesamtoriginale fuer ELG 2026 und ATSG 2024 sind NICHT byteidentisch. C3 bestaetigte Identitaet jeweils nur zur AP20B-Datei. Dieser Zusatzbeleg ersetzt die zu weit gehende Whole-source-identity-Begruendung durch einen frischen, getrennten Vergleich aller in der MVP05-Pruefung verwendeten Artikel beider Fassungsdateien. ATSG Art. 57 wird ausdruecklich mitgeprueft. Historische Nachweise und das vorlaeufige Inventar werden nicht umgeschrieben."
+  },
+  "method": {
+    "freshRetrievals": "Both exact XML filenames for each law freshly retrieved from the official Fedlex file store. Prior public-www host URLs are recorded, retrieval uses official fedlex.data.admin.ch host without changing filename.",
+    "normalisation": "XML parse. Compare complete selected article including heading, numbers and all paragraphs. Remove only authorialNote editorial footnotes, preserve their following text. Collapse whitespace and remove soft hyphens. No punctuation, words, paragraph numbers or substantive conditions discarded. Editorial-note counts and hashes are separately recorded and never equated with operative norm identity.",
+    "granularity": "Full article norm text and paragraph content in original order, including printed paragraph numbers, plus explicit ELG Article 21 paragraph 2. Exact XML paragraph identifiers are independently compared and differences retained. A technical eId difference does not imply a norm change when the complete ordered paragraph texts are equal.",
+    "selfTestsPassed": 8
+  },
+  "baselineBindings": [
+    {
+      "path": "outputs/release-mvp05-2026-09-28/sources/ap19-source-review.json",
+      "sha256": "c5e37d8c44f9aa17d6b102f654551ea27960231a66dc14a284f91032117f87c7",
+      "byteLength": 29380
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+      "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c",
+      "byteLength": 58872
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/source-review-completeness.json",
+      "sha256": "67fdf2e5cb3ac19769655ed08f2ff80e9863b76a2526469917832bcba68e27ce",
+      "byteLength": 39547
+    },
+    {
+      "path": "docs/fachrecht/abnahme-quellenpruefung-mvp05.md",
+      "sha256": "ce1ece8fd0ba72d364b19df851d534528f09e7d645cd5e41872c7a9192d39c5c",
+      "byteLength": 3193
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/manifest.json",
+      "sha256": "b4250a31d226b4f59e0857a857f49e1ea354722b9ff46b9324d70b330f135450",
+      "byteLength": 10999
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/source-inventory.json",
+      "sha256": "f0082d7a1a6a48730cee56e03d42ad4e9490338106ae59e44a224f1eb10eef0b",
+      "byteLength": 119501,
+      "bindingRole": "unchanged-provisional-inventory-being-corrected-by-this-addendum"
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/sources/source-original-bridges.py",
+      "sha256": "a1853972c0e99764739a32be3a46a8f718483a679a15366448e149fd2b9c0971"
+    }
+  ],
+  "originals": [
+    {
+      "law": "ELG",
+      "versionOn": "2026-01-01",
+      "side": "MVP05",
+      "recordedUrl": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml.xml",
+      "expectedSha256": "3b0820bf23b551ca0581caa72c8c6cb8570e99a2e2781dfb9af8ac33e2023ddf",
+      "selectedArticles": [
+        "1",
+        "2",
+        "3",
+        "14",
+        "15",
+        "16",
+        "21"
+      ],
+      "receipt": {
+        "recordedUrl": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml.xml",
+        "requestedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml.xml",
+        "retrievedAt": "2026-10-01T11:03:59.540548+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "byteLength": 132007,
+        "sha256": "3b0820bf23b551ca0581caa72c8c6cb8570e99a2e2781dfb9af8ac33e2023ddf"
+      },
+      "boundOriginalHashMatches": true
+    },
+    {
+      "law": "ELG",
+      "versionOn": "2026-01-01",
+      "side": "AP20C3",
+      "recordedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+      "expectedSha256": "e39f79e9aca4d307abb28f01adfd2a6cff1f37f902fd7e8ad18533c2980604f0",
+      "selectedArticles": [
+        "1",
+        "2",
+        "3",
+        "14",
+        "15",
+        "16",
+        "21"
+      ],
+      "receipt": {
+        "recordedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+        "requestedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+        "retrievedAt": "2026-10-01T11:03:59.568423+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "byteLength": 132007,
+        "sha256": "e39f79e9aca4d307abb28f01adfd2a6cff1f37f902fd7e8ad18533c2980604f0"
+      },
+      "boundOriginalHashMatches": true
+    },
+    {
+      "law": "ATSG",
+      "versionOn": "2024-01-01",
+      "side": "MVP05",
+      "recordedUrl": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml.xml",
+      "expectedSha256": "14d2ca1bb3ea367fb2c23dc05a1b6fc7d78c478f7b9bf2c2984fca02968a67ed",
+      "selectedArticles": [
+        "2",
+        "38",
+        "39",
+        "40",
+        "41",
+        "49",
+        "51",
+        "52",
+        "55",
+        "56",
+        "57",
+        "58",
+        "60",
+        "61"
+      ],
+      "receipt": {
+        "recordedUrl": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml.xml",
+        "requestedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml.xml",
+        "retrievedAt": "2026-10-01T11:03:59.565404+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "byteLength": 116444,
+        "sha256": "14d2ca1bb3ea367fb2c23dc05a1b6fc7d78c478f7b9bf2c2984fca02968a67ed"
+      },
+      "boundOriginalHashMatches": true
+    },
+    {
+      "law": "ATSG",
+      "versionOn": "2024-01-01",
+      "side": "AP20C3",
+      "recordedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+      "expectedSha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c",
+      "selectedArticles": [
+        "2",
+        "38",
+        "39",
+        "40",
+        "41",
+        "49",
+        "51",
+        "52",
+        "55",
+        "56",
+        "57",
+        "58",
+        "60",
+        "61"
+      ],
+      "receipt": {
+        "recordedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "requestedUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "retrievedAt": "2026-10-01T11:03:59.575094+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "byteLength": 139093,
+        "sha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c"
+      },
+      "boundOriginalHashMatches": true
+    }
+  ],
+  "comparisons": [
+    {
+      "law": "ELG",
+      "versionOn": "2026-01-01",
+      "oldSourceId": "SRC-AP19C-ELG-20260101",
+      "sourceIds": [
+        "SRC-AP19C-ELG-20260101",
+        "SRC-AP20C3-ELG-20260101"
+      ],
+      "articles": [
+        "1",
+        "2",
+        "3",
+        "14",
+        "15",
+        "16",
+        "21"
+      ],
+      "comparisonCompleted": true,
+      "boundOriginalHashesMatch": true,
+      "wholeOriginalBytesEqual": false,
+      "articleComparisons": [
+        {
+          "article": "1",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 1 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Leistungen nach dem 2. Kapitel anwendbar, soweit das vorliegende Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht. 2 Die Artikel 32 und 33 ATSG sind auf die Leistungen der gemeinnützigen Institutionen nach dem 3. Kapitel anwendbar.",
+          "currentNormText": "Art. 1 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Leistungen nach dem 2. Kapitel anwendbar, soweit das vorliegende Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht. 2 Die Artikel 32 und 33 ATSG sind auf die Leistungen der gemeinnützigen Institutionen nach dem 3. Kapitel anwendbar.",
+          "oldNormTextSha256": "b8d13f9c295c438934c1d4e44702ab01db2f3b181a4bc7be9149ca8e4185ff4d",
+          "currentNormTextSha256": "b8d13f9c295c438934c1d4e44702ab01db2f3b181a4bc7be9149ca8e4185ff4d",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_1/para_1",
+            "art_1/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_1/para_1",
+            "art_1/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 1,
+          "currentEditorialNoteCount": 1,
+          "oldEditorialNotesSha256": "576306474e8787b2c0a473955207b5325863e8b10a772f1c60d1df48c76983a5",
+          "currentEditorialNotesSha256": "576306474e8787b2c0a473955207b5325863e8b10a772f1c60d1df48c76983a5"
+        },
+        {
+          "article": "2",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 2 Grundsatz 1 Der Bund und die Kantone gewähren Personen, welche die Voraussetzungen nach den Artikeln 4–6 erfüllen, Ergänzungsleistungen zur Deckung ihres Existenzbedarfs. 2 Die Kantone können über den Rahmen dieses Gesetzes hinausgehende Leistungen gewähren und dafür besondere Voraussetzungen festlegen. Die Erhebung von Arbeitgeberbeiträgen ist ausgeschlossen.",
+          "currentNormText": "Art. 2 Grundsatz 1 Der Bund und die Kantone gewähren Personen, welche die Voraussetzungen nach den Artikeln 4–6 erfüllen, Ergänzungsleistungen zur Deckung ihres Existenzbedarfs. 2 Die Kantone können über den Rahmen dieses Gesetzes hinausgehende Leistungen gewähren und dafür besondere Voraussetzungen festlegen. Die Erhebung von Arbeitgeberbeiträgen ist ausgeschlossen.",
+          "oldNormTextSha256": "ee9f050ef61ab7b66166befc94dc0a63e3704d63820ce9b325ab78ace0ce6eb5",
+          "currentNormTextSha256": "ee9f050ef61ab7b66166befc94dc0a63e3704d63820ce9b325ab78ace0ce6eb5",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_2/para_1",
+            "art_2/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_2/para_1",
+            "art_2/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "3",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 3 Bestandteile der Ergänzungsleistungen 1 Die Ergänzungsleistungen bestehen aus: a. der jährlichen Ergänzungsleistung; b. der Vergütung von Krankheits- und Behinderungskosten. 2 Die jährliche Ergänzungsleistung ist eine Geldleistung (Art. 15 ATSG ), die Vergütung von Krankheits- und Behinderungskosten eine Sachleistung (Art. 14 ATSG).",
+          "currentNormText": "Art. 3 Bestandteile der Ergänzungsleistungen 1 Die Ergänzungsleistungen bestehen aus: a. der jährlichen Ergänzungsleistung; b. der Vergütung von Krankheits- und Behinderungskosten. 2 Die jährliche Ergänzungsleistung ist eine Geldleistung (Art. 15 ATSG ), die Vergütung von Krankheits- und Behinderungskosten eine Sachleistung (Art. 14 ATSG).",
+          "oldNormTextSha256": "a8d34741c2f77ed3e781dc8fd7ea2af1af205ec5447ec87de5a387cec3326017",
+          "currentNormTextSha256": "a8d34741c2f77ed3e781dc8fd7ea2af1af205ec5447ec87de5a387cec3326017",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_3/para_1",
+            "art_3/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_3/para_1",
+            "art_3/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 1,
+          "currentEditorialNoteCount": 1,
+          "oldEditorialNotesSha256": "576306474e8787b2c0a473955207b5325863e8b10a772f1c60d1df48c76983a5",
+          "currentEditorialNotesSha256": "576306474e8787b2c0a473955207b5325863e8b10a772f1c60d1df48c76983a5"
+        },
+        {
+          "article": "14",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 14 Krankheits- und Behinderungskosten 1 Die Kantone vergüten den Bezügerinnen und Bezügern einer jährlichen Ergänzungsleistung die ausgewiesenen, im laufenden Jahr entstandenen Kosten für: a. zahnärztliche Behandlung; b. Hilfe, Pflege und Betreuung zu Hause sowie in Tagesstrukturen; b bis . vorübergehende Aufenthalte in einem Heim oder Spital, längstens jedoch für 3 Monate; dauert der Heim- oder Spitalaufenthalt länger als 3 Monate, wird die jährliche Ergänzungsleistung rückwirkend ab dem Heim- oder Spitaleintritt nach Artikel 10 Absatz 2 berechnet; c. ärztlich angeordnete Bade- und Erholungskuren; d. Diät; e. Transporte zur nächstgelegenen Behandlungsstelle; f. Hilfsmittel; und g. die Kostenbeteiligung nach Artikel 64 KVG . 2 Die Kantone bezeichnen die Kosten, die nach Absatz 1 vergütet werden können. Sie können die Vergütung auf im Rahmen einer wirtschaftlichen und zweckmässigen Leistungserbringung erforderliche Ausgaben beschränken. 3 Für die zusätzlich zur jährlichen Ergänzungsleistung vergüteten Krankheits- und Behinderungskosten können die Kantone Höchstbeträge festlegen. Diese dürfen jedoch folgende Beträge pro Jahr nicht unterschreiten: a. bei zu Hause lebenden Personen: 1. alleinstehende und verwitwete Personen, Ehegatten von in Heimen oder Spitälern lebenden Personen: 25 000 Franken 2. Ehepaare: 50 000 Franken 3. Vollwaisen: 10 000 Franken b. bei in Heimen oder Spitälern lebenden Personen: 6 000 Franken 4 Bei zu Hause lebenden Personen mit einem Anspruch auf eine Hilflosenentschädigung der IV oder der Unfallversicherung erhöht sich der Mindestbetrag nach Absatz 3 Buchstabe a Ziffer 1 bei schwerer Hilflosigkeit auf 90 000 Franken, soweit die Kosten für Pflege und Betreuung durch die Hilflosenentschädigung und den Assistenzbeitrag der AHV oder der IV nicht gedeckt sind. Der Bundesrat regelt die entsprechende Erhöhung bei mittelschwerer Hilflosigkeit und die Erhöhung des Betrages für Ehepaare. 5 Der Betrag wird auch bei Bezügerinnen und Bezügern einer Hilflosenentschädigung der AHV, die vorher eine Hilflosenentschädigung der IV bezogen haben, nach Absatz 4 erhöht. 6 Personen, die auf Grund eines Einnahmenüberschusses keinen Anspruch auf eine jährliche Ergänzungsleistung haben, haben Anspruch auf die Vergütung der Krankheits- und Behinderungskosten, die den Einnahmenüberschuss übersteigen. 7 Die Kantone können in Rechnung gestellte Kosten, welche noch nicht bezahlt sind, direkt dem Rechnungssteller oder der Rechnungsstellerin vergüten.",
+          "currentNormText": "Art. 14 Krankheits- und Behinderungskosten 1 Die Kantone vergüten den Bezügerinnen und Bezügern einer jährlichen Ergänzungsleistung die ausgewiesenen, im laufenden Jahr entstandenen Kosten für: a. zahnärztliche Behandlung; b. Hilfe, Pflege und Betreuung zu Hause sowie in Tagesstrukturen; b bis . vorübergehende Aufenthalte in einem Heim oder Spital, längstens jedoch für 3 Monate; dauert der Heim- oder Spitalaufenthalt länger als 3 Monate, wird die jährliche Ergänzungsleistung rückwirkend ab dem Heim- oder Spitaleintritt nach Artikel 10 Absatz 2 berechnet; c. ärztlich angeordnete Bade- und Erholungskuren; d. Diät; e. Transporte zur nächstgelegenen Behandlungsstelle; f. Hilfsmittel; und g. die Kostenbeteiligung nach Artikel 64 KVG . 2 Die Kantone bezeichnen die Kosten, die nach Absatz 1 vergütet werden können. Sie können die Vergütung auf im Rahmen einer wirtschaftlichen und zweckmässigen Leistungserbringung erforderliche Ausgaben beschränken. 3 Für die zusätzlich zur jährlichen Ergänzungsleistung vergüteten Krankheits- und Behinderungskosten können die Kantone Höchstbeträge festlegen. Diese dürfen jedoch folgende Beträge pro Jahr nicht unterschreiten: a. bei zu Hause lebenden Personen: 1. alleinstehende und verwitwete Personen, Ehegatten von in Heimen oder Spitälern lebenden Personen: 25 000 Franken 2. Ehepaare: 50 000 Franken 3. Vollwaisen: 10 000 Franken b. bei in Heimen oder Spitälern lebenden Personen: 6 000 Franken 4 Bei zu Hause lebenden Personen mit einem Anspruch auf eine Hilflosenentschädigung der IV oder der Unfallversicherung erhöht sich der Mindestbetrag nach Absatz 3 Buchstabe a Ziffer 1 bei schwerer Hilflosigkeit auf 90 000 Franken, soweit die Kosten für Pflege und Betreuung durch die Hilflosenentschädigung und den Assistenzbeitrag der AHV oder der IV nicht gedeckt sind. Der Bundesrat regelt die entsprechende Erhöhung bei mittelschwerer Hilflosigkeit und die Erhöhung des Betrages für Ehepaare. 5 Der Betrag wird auch bei Bezügerinnen und Bezügern einer Hilflosenentschädigung der AHV, die vorher eine Hilflosenentschädigung der IV bezogen haben, nach Absatz 4 erhöht. 6 Personen, die auf Grund eines Einnahmenüberschusses keinen Anspruch auf eine jährliche Ergänzungsleistung haben, haben Anspruch auf die Vergütung der Krankheits- und Behinderungskosten, die den Einnahmenüberschuss übersteigen. 7 Die Kantone können in Rechnung gestellte Kosten, welche noch nicht bezahlt sind, direkt dem Rechnungssteller oder der Rechnungsstellerin vergüten.",
+          "oldNormTextSha256": "46b5db965df2633604a26b5fb42610c9d88722a7e6ccaf825d36d4250b6544c7",
+          "currentNormTextSha256": "46b5db965df2633604a26b5fb42610c9d88722a7e6ccaf825d36d4250b6544c7",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_14/para_1",
+            "art_14/para_2",
+            "art_14/para_3",
+            "art_14/para_4",
+            "art_14/para_5",
+            "art_14/para_6",
+            "art_14/para_7"
+          ],
+          "currentParagraphIds": [
+            "art_14/para_1",
+            "art_14/para_2",
+            "art_14/para_3",
+            "art_14/para_4",
+            "art_14/para_5",
+            "art_14/para_6",
+            "art_14/para_7"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 4,
+          "currentEditorialNoteCount": 4,
+          "oldEditorialNotesSha256": "6137c3855a7bf3c994d471083ecfc9f7919d4d88991918db0fb60baa4923f6b2",
+          "currentEditorialNotesSha256": "6137c3855a7bf3c994d471083ecfc9f7919d4d88991918db0fb60baa4923f6b2"
+        },
+        {
+          "article": "15",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 15 Frist für die Geltendmachung von Krankheits- und Behinderungskosten Krankheits- und Behinderungskosten werden vergütet, wenn: a. die Vergütung innert 15 Monaten nach Rechnungsstellung geltend gemacht wird; und b. die Kosten in einem Zeitabschnitt entstanden sind, während dem die antragstellende Person die Voraussetzungen nach den Artikeln 4–6 erfüllte.",
+          "currentNormText": "Art. 15 Frist für die Geltendmachung von Krankheits- und Behinderungskosten Krankheits- und Behinderungskosten werden vergütet, wenn: a. die Vergütung innert 15 Monaten nach Rechnungsstellung geltend gemacht wird; und b. die Kosten in einem Zeitabschnitt entstanden sind, während dem die antragstellende Person die Voraussetzungen nach den Artikeln 4–6 erfüllte.",
+          "oldNormTextSha256": "c9372e7597846d9f2eb8e1fe08182e5d262a2e6c1a2967ef9b310eb9fcb32e41",
+          "currentNormTextSha256": "c9372e7597846d9f2eb8e1fe08182e5d262a2e6c1a2967ef9b310eb9fcb32e41",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_15/para"
+          ],
+          "currentParagraphIds": [
+            "art_15/para"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "16",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 16 Finanzierung Die Kantone finanzieren die Leistungen nach Artikel 14.",
+          "currentNormText": "Art. 16 Finanzierung Die Kantone finanzieren die Leistungen nach Artikel 14.",
+          "oldNormTextSha256": "5678f16191b268fbcb56661bd6e69062c6abfd9a2093034913350ae94556eee8",
+          "currentNormTextSha256": "5678f16191b268fbcb56661bd6e69062c6abfd9a2093034913350ae94556eee8",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_16/para"
+          ],
+          "currentParagraphIds": [
+            "art_16/para"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "21",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 21 Organisation und Verfahren 1 Zuständig für die Festsetzung und die Auszahlung der Ergänzungsleistung ist der Kanton, in dem die Bezügerin oder der Bezüger Wohnsitz hat. 1bis Dieser Kanton bleibt zuständig, wenn die Bezügerin oder der Bezüger in einem anderen Kanton in ein Heim, ein Spital oder eine andere Einrichtung eintritt oder eine volljährige Person behördlich in einem anderen Kanton in Familienpflege untergebracht wird. 1ter Er ist auch zuständig, wenn der Anspruch auf Ergänzungsleistungen erst nach dem Eintritt in ein Heim, ein Spital oder eine andere Einrichtung oder nach der Unterbringung in Familienpflege entstanden ist. 1quater Begründet eine Person am Standort des Heimes oder der Einrichtung neuen Wohnsitz, so ist der Kanton zuständig, in dem die Person vor Eintritt in das Heim oder die Einrichtung Wohnsitz hatte. 1quinquies Tritt eine Person direkt aus dem Ausland in ein Heim, ein Spital oder eine andere Einrichtung in der Schweiz ein, so ist der Kanton zuständig, in dem die Person Wohnsitz begründet. 2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen. 3 Die Kantone informieren die möglichen anspruchsberechtigten Personen in angemessener Weise. 4 Die Auszahlung der Ergänzungsleistung kann gemeinsam mit der Rente der AHV oder der IV erfolgen.",
+          "currentNormText": "Art. 21 Organisation und Verfahren 1 Zuständig für die Festsetzung und die Auszahlung der Ergänzungsleistung ist der Kanton, in dem die Bezügerin oder der Bezüger Wohnsitz hat. 1bis Dieser Kanton bleibt zuständig, wenn die Bezügerin oder der Bezüger in einem anderen Kanton in ein Heim, ein Spital oder eine andere Einrichtung eintritt oder eine volljährige Person behördlich in einem anderen Kanton in Familienpflege untergebracht wird. 1ter Er ist auch zuständig, wenn der Anspruch auf Ergänzungsleistungen erst nach dem Eintritt in ein Heim, ein Spital oder eine andere Einrichtung oder nach der Unterbringung in Familienpflege entstanden ist. 1quater Begründet eine Person am Standort des Heimes oder der Einrichtung neuen Wohnsitz, so ist der Kanton zuständig, in dem die Person vor Eintritt in das Heim oder die Einrichtung Wohnsitz hatte. 1quinquies Tritt eine Person direkt aus dem Ausland in ein Heim, ein Spital oder eine andere Einrichtung in der Schweiz ein, so ist der Kanton zuständig, in dem die Person Wohnsitz begründet. 2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen. 3 Die Kantone informieren die möglichen anspruchsberechtigten Personen in angemessener Weise. 4 Die Auszahlung der Ergänzungsleistung kann gemeinsam mit der Rente der AHV oder der IV erfolgen.",
+          "oldNormTextSha256": "c0c1a2435fa30eb03e95448cb40e9e5c05c6dd01989bff52bfe5e24596137293",
+          "currentNormTextSha256": "c0c1a2435fa30eb03e95448cb40e9e5c05c6dd01989bff52bfe5e24596137293",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_21/para_1",
+            "art_21/para_1_bis",
+            "art_21/para_1_ter",
+            "art_21/para_1_quater",
+            "art_21/para_1_quinquies",
+            "art_21/para_2",
+            "art_21/para_3",
+            "art_21/para_4"
+          ],
+          "currentParagraphIds": [
+            "art_21/para_1",
+            "art_21/para_1_bis",
+            "art_21/para_1_ter",
+            "art_21/para_1_quater",
+            "art_21/para_1_quinquies",
+            "art_21/para_2",
+            "art_21/para_3",
+            "art_21/para_4"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 5,
+          "currentEditorialNoteCount": 5,
+          "oldEditorialNotesSha256": "332c40cb28ac0dff1d885042a2b5b98be49d511bdf14a52fc0dee569b888d024",
+          "currentEditorialNotesSha256": "332c40cb28ac0dff1d885042a2b5b98be49d511bdf14a52fc0dee569b888d024"
+        }
+      ],
+      "explicitParagraphComparison": {
+        "article": "21",
+        "paragraph": "2",
+        "oldNormText": "2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen.",
+        "currentNormText": "2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen.",
+        "normalisedNormTextEqual": true
+      },
+      "allSelectedNormTextsEqual": true,
+      "allSelectedParagraphStructuresAndTextsEqual": true,
+      "allSelectedParagraphContentAndOrderEqual": true
+    },
+    {
+      "law": "ATSG",
+      "versionOn": "2024-01-01",
+      "oldSourceId": "SRC-AP17C-ATSG-20240101",
+      "sourceIds": [
+        "SRC-AP17C-ATSG-20240101",
+        "SRC-ATSG-20240101"
+      ],
+      "articles": [
+        "2",
+        "38",
+        "39",
+        "40",
+        "41",
+        "49",
+        "51",
+        "52",
+        "55",
+        "56",
+        "57",
+        "58",
+        "60",
+        "61"
+      ],
+      "comparisonCompleted": true,
+      "boundOriginalHashesMatch": true,
+      "wholeOriginalBytesEqual": false,
+      "articleComparisons": [
+        {
+          "article": "2",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 2 Geltungsbereich und Verhältnis zu den einzelnen Sozialversicherungsgesetzen Die Bestimmungen dieses Gesetzes sind auf die bundesgesetzlich geregelten Sozialversicherungen anwendbar, wenn und soweit die einzelnen Sozialversicherungsgesetze es vorsehen.",
+          "currentNormText": "Art. 2 Geltungsbereich und Verhältnis zu den einzelnen Sozialversicherungsgesetzen Die Bestimmungen dieses Gesetzes sind auf die bundesgesetzlich geregelten Sozialversicherungen anwendbar, wenn und soweit die einzelnen Sozialversicherungsgesetze es vorsehen.",
+          "oldNormTextSha256": "18faec8d24bb92f0ec2529df6a1b244ee31a57df00f8e1bc83282410d12a5726",
+          "currentNormTextSha256": "18faec8d24bb92f0ec2529df6a1b244ee31a57df00f8e1bc83282410d12a5726",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_2/para"
+          ],
+          "currentParagraphIds": [
+            "art_2/para"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "38",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 38 Berechnung und Stillstand der Fristen 1 Berechnet sich eine Frist nach Tagen oder Monaten und bedarf sie der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Mitteilung zu laufen. 2 Bedarf sie nicht der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Auslösung zu laufen. 2bis Eine Mitteilung, die nur gegen Unterschrift des Adressaten beziehungsweise der Adressatin oder einer anderen berechtigten Person überbracht wird, gilt spätestens am siebenten Tag nach dem ersten erfolglosen Zustellungsversuch als erfolgt. 3 Ist der letzte Tag der Frist ein Samstag, ein Sonntag oder ein vom Bundesrecht oder vom kantonalen Recht anerkannter Feiertag, so endet sie am nächstfolgenden Werktag. Massgebend ist das Recht des Kantons, in dem die Partei oder ihr Vertreter beziehungsweise ihre Vertreterin Wohnsitz oder Sitz hat. 4 Gesetzliche oder behördliche Fristen, die nach Tagen oder Monaten bestimmt sind, stehen still: a. vom siebten Tag vor Ostern bis und mit dem siebten Tag nach Ostern; b. vom 15. Juli bis und mit dem 15. August; c. vom 18. Dezember bis und mit dem 2. Januar.",
+          "currentNormText": "Art. 38 Berechnung und Stillstand der Fristen 1 Berechnet sich eine Frist nach Tagen oder Monaten und bedarf sie der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Mitteilung zu laufen. 2 Bedarf sie nicht der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Auslösung zu laufen. 2bis Eine Mitteilung, die nur gegen Unterschrift des Adressaten beziehungsweise der Adressatin oder einer anderen berechtigten Person überbracht wird, gilt spätestens am siebenten Tag nach dem ersten erfolglosen Zustellungsversuch als erfolgt. 3 Ist der letzte Tag der Frist ein Samstag, ein Sonntag oder ein vom Bundesrecht oder vom kantonalen Recht anerkannter Feiertag, so endet sie am nächstfolgenden Werktag. Massgebend ist das Recht des Kantons, in dem die Partei oder ihr Vertreter beziehungsweise ihre Vertreterin Wohnsitz oder Sitz hat. 4 Gesetzliche oder behördliche Fristen, die nach Tagen oder Monaten bestimmt sind, stehen still: a. vom siebten Tag vor Ostern bis und mit dem siebten Tag nach Ostern; b. vom 15. Juli bis und mit dem 15. August; c. vom 18. Dezember bis und mit dem 2. Januar.",
+          "oldNormTextSha256": "ee0be602475a602956ce0d2c6dbf3f6191841720b1b7eb74d9113923d5570866",
+          "currentNormTextSha256": "ee0be602475a602956ce0d2c6dbf3f6191841720b1b7eb74d9113923d5570866",
+          "paragraphStructureAndTextsEqual": false,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_38/para_1",
+            "art_38/para_2",
+            "art_38/para_2bis",
+            "art_38/para_3",
+            "art_38/para_4"
+          ],
+          "currentParagraphIds": [
+            "art_38/para_1",
+            "art_38/para_2",
+            "art_38/para_2_bis",
+            "art_38/para_3",
+            "art_38/para_4"
+          ],
+          "xmlIdentifierDifferences": [
+            {
+              "oldEId": "art_38/para_2bis",
+              "currentEId": "art_38/para_2_bis",
+              "paragraphNormText": "2bis Eine Mitteilung, die nur gegen Unterschrift des Adressaten beziehungsweise der Adressatin oder einer anderen berechtigten Person überbracht wird, gilt spätestens am siebenten Tag nach dem ersten erfolglosen Zustellungsversuch als erfolgt.",
+              "paragraphNormTextSha256": "63bc42437b028f06e28797e434d25fd99d9cc7e7a2efafbbf877ee589a52231f",
+              "normTextEqual": true
+            }
+          ],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 3,
+          "currentEditorialNoteCount": 3,
+          "oldEditorialNotesSha256": "5224c5efb4cb04ba29024c7cea3431841b81695e95f236e55b9aa3b6820e3bd6",
+          "currentEditorialNotesSha256": "5224c5efb4cb04ba29024c7cea3431841b81695e95f236e55b9aa3b6820e3bd6"
+        },
+        {
+          "article": "39",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 39 Einhaltung der Fristen 1 Schriftliche Eingaben müssen spätestens am letzten Tag der Frist dem Versicherungsträger eingereicht oder zu dessen Handen der Schweizerischen Post oder einer schweizerischen diplomatischen oder konsularischen Vertretung übergeben werden. 2 Gelangt die Partei rechtzeitig an einen unzuständigen Versicherungsträger, so gilt die Frist als gewahrt.",
+          "currentNormText": "Art. 39 Einhaltung der Fristen 1 Schriftliche Eingaben müssen spätestens am letzten Tag der Frist dem Versicherungsträger eingereicht oder zu dessen Handen der Schweizerischen Post oder einer schweizerischen diplomatischen oder konsularischen Vertretung übergeben werden. 2 Gelangt die Partei rechtzeitig an einen unzuständigen Versicherungsträger, so gilt die Frist als gewahrt.",
+          "oldNormTextSha256": "1821ef6db576c3d23719afdcb4ddee750813091201daea1fd5df33aa709fe3ee",
+          "currentNormTextSha256": "1821ef6db576c3d23719afdcb4ddee750813091201daea1fd5df33aa709fe3ee",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_39/para_1",
+            "art_39/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_39/para_1",
+            "art_39/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "40",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 40 Fristerstreckung und Säumnisfolgen 1 Eine gesetzliche Frist kann nicht erstreckt werden. 2 Setzt der Versicherungsträger eine Frist für eine bestimmte Handlung an, so droht er gleichzeitig die Folgen eines Versäumnisses an. Andere als die angedrohten Folgen treten nicht ein. 3 Eine vom Versicherungsträger angesetzte Frist kann aus zureichenden Gründen erstreckt werden, wenn die Partei vor Ablauf der Frist darum nachsucht.",
+          "currentNormText": "Art. 40 Fristerstreckung und Säumnisfolgen 1 Eine gesetzliche Frist kann nicht erstreckt werden. 2 Setzt der Versicherungsträger eine Frist für eine bestimmte Handlung an, so droht er gleichzeitig die Folgen eines Versäumnisses an. Andere als die angedrohten Folgen treten nicht ein. 3 Eine vom Versicherungsträger angesetzte Frist kann aus zureichenden Gründen erstreckt werden, wenn die Partei vor Ablauf der Frist darum nachsucht.",
+          "oldNormTextSha256": "96e91ca41c49cdf0e2f4cf04e198b5defffe81adcc1802716232cd51d09d820f",
+          "currentNormTextSha256": "96e91ca41c49cdf0e2f4cf04e198b5defffe81adcc1802716232cd51d09d820f",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_40/para_1",
+            "art_40/para_2",
+            "art_40/para_3"
+          ],
+          "currentParagraphIds": [
+            "art_40/para_1",
+            "art_40/para_2",
+            "art_40/para_3"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "41",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 41 Wiederherstellung der Frist Ist die gesuchstellende Person oder ihre Vertretung unverschuldeterweise abgehalten worden, binnen Frist zu handeln, so wird diese wieder hergestellt, sofern sie unter Angabe des Grundes innert 30 Tagen nach Wegfall des Hindernisses darum ersucht und die versäumte Rechtshandlung nachholt.",
+          "currentNormText": "Art. 41 Wiederherstellung der Frist Ist die gesuchstellende Person oder ihre Vertretung unverschuldeterweise abgehalten worden, binnen Frist zu handeln, so wird diese wieder hergestellt, sofern sie unter Angabe des Grundes innert 30 Tagen nach Wegfall des Hindernisses darum ersucht und die versäumte Rechtshandlung nachholt.",
+          "oldNormTextSha256": "d750d0d22998047b00a4b7fc42f6f36791324926de14228c3e461952992dc717",
+          "currentNormTextSha256": "d750d0d22998047b00a4b7fc42f6f36791324926de14228c3e461952992dc717",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_41/para"
+          ],
+          "currentParagraphIds": [
+            "art_41/para"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 1,
+          "currentEditorialNoteCount": 1,
+          "oldEditorialNotesSha256": "855d7f4d3504e05ed8fd82040ff95c344db937226b79c8faafb9bc65ed3fca32",
+          "currentEditorialNotesSha256": "855d7f4d3504e05ed8fd82040ff95c344db937226b79c8faafb9bc65ed3fca32"
+        },
+        {
+          "article": "49",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 49 Verfügung 1 Über Leistungen, Forderungen und Anordnungen, die erheblich sind oder mit denen die betroffene Person nicht einverstanden ist, hat der Versicherungsträger schriftlich Verfügungen zu erlassen. 2 Dem Begehren um Erlass einer Feststellungsverfügung ist zu entsprechen, wenn die gesuchstellende Person ein schützenswertes Interesse glaubhaft macht. 3 Die Verfügungen werden mit einer Rechtsmittelbelehrung versehen. Sie sind zu begründen, wenn sie den Begehren der Parteien nicht voll entsprechen. Aus einer mangelhaften Eröffnung einer Verfügung darf der betroffenen Person kein Nachteil erwachsen. 4 Erlässt ein Versicherungsträger eine Verfügung, welche die Leistungspflicht eines anderen Trägers berührt, so hat er auch ihm die Verfügung zu eröffnen. Dieser kann die gleichen Rechtsmittel ergreifen wie die versicherte Person. 5 Der Versicherungsträger kann in seiner Verfügung einer Einsprache oder Beschwerde die aufschiebende Wirkung entziehen, auch wenn die Verfügung eine Geldleistung zum Gegenstand hat. Ausgenommen sind Verfügungen über die Rückerstattung unrechtmässig bezogener Leistungen.",
+          "currentNormText": "Art. 49 Verfügung 1 Über Leistungen, Forderungen und Anordnungen, die erheblich sind oder mit denen die betroffene Person nicht einverstanden ist, hat der Versicherungsträger schriftlich Verfügungen zu erlassen. 2 Dem Begehren um Erlass einer Feststellungsverfügung ist zu entsprechen, wenn die gesuchstellende Person ein schützenswertes Interesse glaubhaft macht. 3 Die Verfügungen werden mit einer Rechtsmittelbelehrung versehen. Sie sind zu begründen, wenn sie den Begehren der Parteien nicht voll entsprechen. Aus einer mangelhaften Eröffnung einer Verfügung darf der betroffenen Person kein Nachteil erwachsen. 4 Erlässt ein Versicherungsträger eine Verfügung, welche die Leistungspflicht eines anderen Trägers berührt, so hat er auch ihm die Verfügung zu eröffnen. Dieser kann die gleichen Rechtsmittel ergreifen wie die versicherte Person. 5 Der Versicherungsträger kann in seiner Verfügung einer Einsprache oder Beschwerde die aufschiebende Wirkung entziehen, auch wenn die Verfügung eine Geldleistung zum Gegenstand hat. Ausgenommen sind Verfügungen über die Rückerstattung unrechtmässig bezogener Leistungen.",
+          "oldNormTextSha256": "20a8f86e0febd06ce0c99054dcc6f8a604f991f65c55754ac92398d63ccf4efc",
+          "currentNormTextSha256": "20a8f86e0febd06ce0c99054dcc6f8a604f991f65c55754ac92398d63ccf4efc",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_49/para_1",
+            "art_49/para_2",
+            "art_49/para_3",
+            "art_49/para_4",
+            "art_49/para_5"
+          ],
+          "currentParagraphIds": [
+            "art_49/para_1",
+            "art_49/para_2",
+            "art_49/para_3",
+            "art_49/para_4",
+            "art_49/para_5"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 1,
+          "currentEditorialNoteCount": 1,
+          "oldEditorialNotesSha256": "b02f2960263085200e863f78ef77e891b15bc263360afa902dd9743a163ad41f",
+          "currentEditorialNotesSha256": "b02f2960263085200e863f78ef77e891b15bc263360afa902dd9743a163ad41f"
+        },
+        {
+          "article": "51",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 51 Formloses Verfahren 1 Leistungen, Forderungen und Anordnungen, die nicht unter Artikel 49 Absatz 1 fallen, können in einem formlosen Verfahren behandelt werden. 2 Die betroffene Person kann den Erlass einer Verfügung verlangen.",
+          "currentNormText": "Art. 51 Formloses Verfahren 1 Leistungen, Forderungen und Anordnungen, die nicht unter Artikel 49 Absatz 1 fallen, können in einem formlosen Verfahren behandelt werden. 2 Die betroffene Person kann den Erlass einer Verfügung verlangen.",
+          "oldNormTextSha256": "cc52ac5efcefab5395862ed3ba4310f0d0a83b64b57fe229f1092dd40e92207a",
+          "currentNormTextSha256": "cc52ac5efcefab5395862ed3ba4310f0d0a83b64b57fe229f1092dd40e92207a",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_51/para_1",
+            "art_51/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_51/para_1",
+            "art_51/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "52",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 52 Einsprache 1 Gegen Verfügungen kann innerhalb von 30 Tagen bei der verfügenden Stelle Einsprache erhoben werden; davon ausgenommen sind prozess- und verfahrensleitende Verfügungen. 2 Die Einspracheentscheide sind innert angemessener Frist zu erlassen. Sie werden begründet und mit einer Rechtsmittelbelehrung versehen. 3 Das Einspracheverfahren ist kostenlos. Parteientschädigungen werden in der Regel nicht ausgerichtet. 4 Der Versicherungsträger kann in seinem Einspracheentscheid einer allfälligen Beschwerde die aufschiebende Wirkung entziehen, auch wenn der Einspracheentscheid eine Geldleistung zum Gegenstand hat. Ausgenommen sind Einspracheentscheide über die Rückerstattung unrechtmässig bezogener Leistungen.",
+          "currentNormText": "Art. 52 Einsprache 1 Gegen Verfügungen kann innerhalb von 30 Tagen bei der verfügenden Stelle Einsprache erhoben werden; davon ausgenommen sind prozess- und verfahrensleitende Verfügungen. 2 Die Einspracheentscheide sind innert angemessener Frist zu erlassen. Sie werden begründet und mit einer Rechtsmittelbelehrung versehen. 3 Das Einspracheverfahren ist kostenlos. Parteientschädigungen werden in der Regel nicht ausgerichtet. 4 Der Versicherungsträger kann in seinem Einspracheentscheid einer allfälligen Beschwerde die aufschiebende Wirkung entziehen, auch wenn der Einspracheentscheid eine Geldleistung zum Gegenstand hat. Ausgenommen sind Einspracheentscheide über die Rückerstattung unrechtmässig bezogener Leistungen.",
+          "oldNormTextSha256": "26857fbee950f07912e4745aeadb3e150533eed62321062aff8f24332868ff5d",
+          "currentNormTextSha256": "26857fbee950f07912e4745aeadb3e150533eed62321062aff8f24332868ff5d",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_52/para_1",
+            "art_52/para_2",
+            "art_52/para_3",
+            "art_52/para_4"
+          ],
+          "currentParagraphIds": [
+            "art_52/para_1",
+            "art_52/para_2",
+            "art_52/para_3",
+            "art_52/para_4"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 1,
+          "currentEditorialNoteCount": 1,
+          "oldEditorialNotesSha256": "b02f2960263085200e863f78ef77e891b15bc263360afa902dd9743a163ad41f",
+          "currentEditorialNotesSha256": "b02f2960263085200e863f78ef77e891b15bc263360afa902dd9743a163ad41f"
+        },
+        {
+          "article": "55",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 55 Besondere Verfahrensregeln 1 In den Artikeln 27–54 oder in den Einzelgesetzen nicht abschliessend geregelte Verfahrensbereiche bestimmen sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968 . 1bis Der Bundesrat kann vorsehen, dass die Bestimmungen des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 über den elektronischen Verkehr mit Behörden auch für Verfahren nach diesem Gesetz gelten. 2 Das Verfahren vor einer Bundesbehörde richtet sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968, ausser wenn sie über sozialversicherungsrechtliche Leistungen, Forderungen und Anordnungen entscheidet.",
+          "currentNormText": "Art. 55 Besondere Verfahrensregeln 1 In den Artikeln 27–54 oder in den Einzelgesetzen nicht abschliessend geregelte Verfahrensbereiche bestimmen sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968 . 1bis Der Bundesrat kann vorsehen, dass die Bestimmungen des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 über den elektronischen Verkehr mit Behörden auch für Verfahren nach diesem Gesetz gelten. 2 Das Verfahren vor einer Bundesbehörde richtet sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968, ausser wenn sie über sozialversicherungsrechtliche Leistungen, Forderungen und Anordnungen entscheidet.",
+          "oldNormTextSha256": "e6b76c5364892d338548d1cff629c48e28e5fe01260f3e34931a77c0b191cc3a",
+          "currentNormTextSha256": "e6b76c5364892d338548d1cff629c48e28e5fe01260f3e34931a77c0b191cc3a",
+          "paragraphStructureAndTextsEqual": false,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_55/para_1",
+            "art_55/para_1bis",
+            "art_55/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_55/para_1",
+            "art_55/para_1_bis",
+            "art_55/para_2"
+          ],
+          "xmlIdentifierDifferences": [
+            {
+              "oldEId": "art_55/para_1bis",
+              "currentEId": "art_55/para_1_bis",
+              "paragraphNormText": "1bis Der Bundesrat kann vorsehen, dass die Bestimmungen des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 über den elektronischen Verkehr mit Behörden auch für Verfahren nach diesem Gesetz gelten.",
+              "paragraphNormTextSha256": "0713672b92dcd0d5370b0976bfe9cdcec2439c0dd8629cf21026a22b2e0d3d3a",
+              "normTextEqual": true
+            }
+          ],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 2,
+          "currentEditorialNoteCount": 2,
+          "oldEditorialNotesSha256": "6e9e9a707233de8ecda0e594cbc18cbccf85b08e50467a7103a6e184fc9b2b6c",
+          "currentEditorialNotesSha256": "6e9e9a707233de8ecda0e594cbc18cbccf85b08e50467a7103a6e184fc9b2b6c"
+        },
+        {
+          "article": "56",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 56 Beschwerderecht 1 Gegen Einspracheentscheide oder Verfügungen, gegen welche eine Einsprache ausgeschlossen ist, kann Beschwerde erhoben werden. 2 Beschwerde kann auch erhoben werden, wenn der Versicherungsträger entgegen dem Begehren der betroffenen Person keine Verfügung oder keinen Einspracheentscheid erlässt.",
+          "currentNormText": "Art. 56 Beschwerderecht 1 Gegen Einspracheentscheide oder Verfügungen, gegen welche eine Einsprache ausgeschlossen ist, kann Beschwerde erhoben werden. 2 Beschwerde kann auch erhoben werden, wenn der Versicherungsträger entgegen dem Begehren der betroffenen Person keine Verfügung oder keinen Einspracheentscheid erlässt.",
+          "oldNormTextSha256": "bcce8c218bc7d7edf6a6497c3a98ca6b3f3dd1b344b97a013aef90e96260f276",
+          "currentNormTextSha256": "bcce8c218bc7d7edf6a6497c3a98ca6b3f3dd1b344b97a013aef90e96260f276",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_56/para_1",
+            "art_56/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_56/para_1",
+            "art_56/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "57",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 57 Kantonales Versicherungsgericht Jeder Kanton bestellt ein Versicherungsgericht als einzige Instanz zur Beurteilung von Beschwerden aus dem Bereich der Sozialversicherung.",
+          "currentNormText": "Art. 57 Kantonales Versicherungsgericht Jeder Kanton bestellt ein Versicherungsgericht als einzige Instanz zur Beurteilung von Beschwerden aus dem Bereich der Sozialversicherung.",
+          "oldNormTextSha256": "02a703e2b264f960b7ca70a9830480480bfd92c87d8f46bcdb72cb690bd75721",
+          "currentNormTextSha256": "02a703e2b264f960b7ca70a9830480480bfd92c87d8f46bcdb72cb690bd75721",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_57/para"
+          ],
+          "currentParagraphIds": [
+            "art_57/para"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "58",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 58 Zuständigkeit 1 Zuständig ist das Versicherungsgericht desjenigen Kantons, in dem die versicherte Person oder der Beschwerde führende Dritte zur Zeit der Beschwerdeerhebung Wohnsitz hat. 2 Befindet sich der Wohnsitz der versicherten Person oder des Beschwerde führenden Dritten im Ausland, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem sich ihr letzter schweizerischer Wohnsitz befand oder in dem ihr letzter schweizerischer Arbeitgeber Wohnsitz hat; lässt sich keiner dieser Orte ermitteln, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem das Durchführungsorgan seinen Sitz hat. 3 Die Behörde, die sich als unzuständig erachtet, überweist die Beschwerde ohne Verzug dem zuständigen Versicherungsgericht.",
+          "currentNormText": "Art. 58 Zuständigkeit 1 Zuständig ist das Versicherungsgericht desjenigen Kantons, in dem die versicherte Person oder der Beschwerde führende Dritte zur Zeit der Beschwerdeerhebung Wohnsitz hat. 2 Befindet sich der Wohnsitz der versicherten Person oder des Beschwerde führenden Dritten im Ausland, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem sich ihr letzter schweizerischer Wohnsitz befand oder in dem ihr letzter schweizerischer Arbeitgeber Wohnsitz hat; lässt sich keiner dieser Orte ermitteln, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem das Durchführungsorgan seinen Sitz hat. 3 Die Behörde, die sich als unzuständig erachtet, überweist die Beschwerde ohne Verzug dem zuständigen Versicherungsgericht.",
+          "oldNormTextSha256": "17cb7a293f9dd77d2ae9c766486d099ffc69ee0fc168d999f694e56ff9492817",
+          "currentNormTextSha256": "17cb7a293f9dd77d2ae9c766486d099ffc69ee0fc168d999f694e56ff9492817",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_58/para_1",
+            "art_58/para_2",
+            "art_58/para_3"
+          ],
+          "currentParagraphIds": [
+            "art_58/para_1",
+            "art_58/para_2",
+            "art_58/para_3"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "60",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 60 Beschwerdefrist 1 Die Beschwerde ist innerhalb von 30 Tagen nach der Eröffnung des Einspracheentscheides oder der Verfügung, gegen welche eine Einsprache ausgeschlossen ist, einzureichen. 2 Die Artikel 38–41 sind sinngemäss anwendbar.",
+          "currentNormText": "Art. 60 Beschwerdefrist 1 Die Beschwerde ist innerhalb von 30 Tagen nach der Eröffnung des Einspracheentscheides oder der Verfügung, gegen welche eine Einsprache ausgeschlossen ist, einzureichen. 2 Die Artikel 38–41 sind sinngemäss anwendbar.",
+          "oldNormTextSha256": "98f707bfc57b25ed235b6b3e103e067d5b4e51b57787f256770d3f32982b0131",
+          "currentNormTextSha256": "98f707bfc57b25ed235b6b3e103e067d5b4e51b57787f256770d3f32982b0131",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_60/para_1",
+            "art_60/para_2"
+          ],
+          "currentParagraphIds": [
+            "art_60/para_1",
+            "art_60/para_2"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 0,
+          "currentEditorialNoteCount": 0,
+          "oldEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "currentEditorialNotesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "article": "61",
+          "normalisedNormTextEqual": true,
+          "oldNormText": "Art. 61 Verfahrensregeln Das Verfahren vor dem kantonalen Versicherungsgericht bestimmt sich unter Vorbehalt von Artikel 1 Absatz 3 des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 nach kantonalem Recht. Es hat folgenden Anforderungen zu genügen: a. Das Verfahren muss einfach, rasch und in der Regel öffentlich sein. b. Die Beschwerde muss eine gedrängte Darstellung des Sachverhaltes, ein Rechtsbegehren und eine kurze Begründung enthalten. Genügt sie diesen Anforderungen nicht, so setzt das Versicherungsgericht der Beschwerde führenden Person eine angemessene Frist zur Verbesserung und verbindet damit die Androhung, dass sonst auf die Beschwerde nicht eingetreten wird. c. Das Versicherungsgericht stellt unter Mitwirkung der Parteien die für den Entscheid erheblichen Tatsachen fest; es erhebt die notwendigen Beweise und ist in der Beweiswürdigung frei. d. Das Versicherungsgericht ist an die Begehren der Parteien nicht gebunden. Es kann eine Verfügung oder einen Einspracheentscheid zu Ungunsten der Beschwerde führenden Person ändern oder dieser mehr zusprechen, als sie verlangt hat, wobei den Parteien vorher Gelegenheit zur Stellungnahme sowie zum Rückzug der Beschwerde zu geben ist. e. Rechtfertigen es die Umstände, so können die Parteien zur Verhandlung vorgeladen werden. f. Das Recht, sich verbeiständen zu lassen, muss gewährleistet sein. Wo die Verhältnisse es rechtfertigen, wird der Beschwerde führenden Person ein unentgeltlicher Rechtsbeistand bewilligt. f bis . Bei Streitigkeiten über Leistungen ist das Verfahren kostenpflichtig, wenn dies im jeweiligen Einzelgesetz vorgesehen ist; sieht das Einzelgesetz keine Kostenpflicht bei solchen Streitigkeiten vor, so kann das Gericht einer Partei, die sich mutwillig oder leichtsinnig verhält, Gerichtskosten auferlegen. g. Die obsiegende Beschwerde führende Person hat Anspruch auf Ersatz der Parteikosten. Diese werden vom Versicherungsgericht festgesetzt und ohne Rücksicht auf den Streitwert nach der Bedeutung der Streitsache und nach der Schwierigkeit des Prozesses bemessen. h. Die Entscheide werden, versehen mit einer Begründung und einer Rechtsmittelbelehrung sowie mit den Namen der Mitglieder des Versicherungsgerichts schriftlich eröffnet. i. Die Revision von Entscheiden wegen Entdeckung neuer Tatsachen oder Beweismittel oder wegen Einwirkung durch Verbrechen oder Vergehen muss gewährleistet sein.",
+          "currentNormText": "Art. 61 Verfahrensregeln Das Verfahren vor dem kantonalen Versicherungsgericht bestimmt sich unter Vorbehalt von Artikel 1 Absatz 3 des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 nach kantonalem Recht. Es hat folgenden Anforderungen zu genügen: a. Das Verfahren muss einfach, rasch und in der Regel öffentlich sein. b. Die Beschwerde muss eine gedrängte Darstellung des Sachverhaltes, ein Rechtsbegehren und eine kurze Begründung enthalten. Genügt sie diesen Anforderungen nicht, so setzt das Versicherungsgericht der Beschwerde führenden Person eine angemessene Frist zur Verbesserung und verbindet damit die Androhung, dass sonst auf die Beschwerde nicht eingetreten wird. c. Das Versicherungsgericht stellt unter Mitwirkung der Parteien die für den Entscheid erheblichen Tatsachen fest; es erhebt die notwendigen Beweise und ist in der Beweiswürdigung frei. d. Das Versicherungsgericht ist an die Begehren der Parteien nicht gebunden. Es kann eine Verfügung oder einen Einspracheentscheid zu Ungunsten der Beschwerde führenden Person ändern oder dieser mehr zusprechen, als sie verlangt hat, wobei den Parteien vorher Gelegenheit zur Stellungnahme sowie zum Rückzug der Beschwerde zu geben ist. e. Rechtfertigen es die Umstände, so können die Parteien zur Verhandlung vorgeladen werden. f. Das Recht, sich verbeiständen zu lassen, muss gewährleistet sein. Wo die Verhältnisse es rechtfertigen, wird der Beschwerde führenden Person ein unentgeltlicher Rechtsbeistand bewilligt. f bis . Bei Streitigkeiten über Leistungen ist das Verfahren kostenpflichtig, wenn dies im jeweiligen Einzelgesetz vorgesehen ist; sieht das Einzelgesetz keine Kostenpflicht bei solchen Streitigkeiten vor, so kann das Gericht einer Partei, die sich mutwillig oder leichtsinnig verhält, Gerichtskosten auferlegen. g. Die obsiegende Beschwerde führende Person hat Anspruch auf Ersatz der Parteikosten. Diese werden vom Versicherungsgericht festgesetzt und ohne Rücksicht auf den Streitwert nach der Bedeutung der Streitsache und nach der Schwierigkeit des Prozesses bemessen. h. Die Entscheide werden, versehen mit einer Begründung und einer Rechtsmittelbelehrung sowie mit den Namen der Mitglieder des Versicherungsgerichts schriftlich eröffnet. i. Die Revision von Entscheiden wegen Entdeckung neuer Tatsachen oder Beweismittel oder wegen Einwirkung durch Verbrechen oder Vergehen muss gewährleistet sein.",
+          "oldNormTextSha256": "9d8f4d868e119f5385974c7eb4bebf199bc1a18bddd9e06825074c0c93b66705",
+          "currentNormTextSha256": "9d8f4d868e119f5385974c7eb4bebf199bc1a18bddd9e06825074c0c93b66705",
+          "paragraphStructureAndTextsEqual": true,
+          "paragraphContentAndOrderEqual": true,
+          "oldParagraphIds": [
+            "art_61/para"
+          ],
+          "currentParagraphIds": [
+            "art_61/para"
+          ],
+          "xmlIdentifierDifferences": [],
+          "editorialNotesEqual": true,
+          "oldEditorialNoteCount": 3,
+          "currentEditorialNoteCount": 3,
+          "oldEditorialNotesSha256": "9f737b72a073b5a9863efc9bf1f5b94fa888bcd994bcd2f60a35b985c05a2287",
+          "currentEditorialNotesSha256": "9f737b72a073b5a9863efc9bf1f5b94fa888bcd994bcd2f60a35b985c05a2287"
+        }
+      ],
+      "explicitParagraphComparison": null,
+      "allSelectedNormTextsEqual": true,
+      "allSelectedParagraphStructuresAndTextsEqual": false,
+      "allSelectedParagraphContentAndOrderEqual": true
+    }
+  ],
+  "errors": [],
+  "verifiedNormTextBridgeInCheckedScope": true,
+  "limits": [
+    "Technischer Normtextvergleich des eng bezeichneten Artikelumfangs, keine neue umfassende Rechtspruefung oder menschliche Freigabe.",
+    "Keine Behauptung, ganze Dateien oder alle Artikel beider Erlasse seien identisch. Unterschiede ausserhalb des angegebenen Artikelumfangs werden nicht untersucht.",
+    "Keine automatische Umdeutung von Fussnotenunterschieden. Gegebenenfalls abweichende redaktionelle Hinweise bleiben separat sichtbar.",
+    "Aktuelle und kuenftige Fassungs-/Wirkungsindexpruefung bleibt durch die separat gebundenen AP20C3-Nachweise belegt und wird hier nicht erneut durchgefuehrt.",
+    "Keine Aenderung von Datenkandidaten, Quellenregister, historischen Berichten, Quellenabnahmen oder Produktaktivierung."
+  ]
+}

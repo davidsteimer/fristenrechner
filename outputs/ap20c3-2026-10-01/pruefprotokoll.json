@@ -1,0 +1,647 @@
+{
+  "formatVersion": "ap20c3-local-verification-1",
+  "checkedOn": "2026-10-01",
+  "status": "ready-for-review",
+  "humanApproval": false,
+  "contractDecision": "DEC-2026-026 approved",
+  "productIntegrationPerformed": true,
+  "operationallyReleased": false,
+  "scope": {
+    "newLaws": [
+      "MVG",
+      "UELG"
+    ],
+    "newNationalRules": 8,
+    "newBernBindings": 8,
+    "totalNationalRules": 44,
+    "totalBernBindings": 50,
+    "allAp20LawsModelled": [
+      "EOG",
+      "FAMZG",
+      "FLG",
+      "MVG",
+      "UELG"
+    ],
+    "sourceWindow": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "candidateEligibility": 50,
+    "approval": null
+  },
+  "candidateManifest": {
+    "path": "data/candidates/2026-10-01-ap20c3/manifest.json",
+    "sha256": "b4250a31d226b4f59e0857a857f49e1ea354722b9ff46b9324d70b330f135450"
+  },
+  "sourceControl": {
+    "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+    "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c"
+  },
+  "artifactChecks": [
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/bgg.json",
+      "role": "legalProfile",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a",
+      "byteLength": 8529
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/stpo.json",
+      "role": "legalProfile",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559",
+      "byteLength": 6652
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/vrpg-be.json",
+      "role": "legalProfile",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6",
+      "byteLength": 8616
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/vwvg.json",
+      "role": "legalProfile",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6",
+      "byteLength": 8002
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/profiles/zpo.json",
+      "role": "legalProfile",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5",
+      "byteLength": 10232
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/calendars/be-public-holidays.json",
+      "role": "calendar",
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121",
+      "byteLength": 9073
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/calendars/ch-federal-calendar.json",
+      "role": "calendar",
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7",
+      "byteLength": 7260
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/special-regimes/vrpg-be.json",
+      "role": "specialRegimeCatalog",
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a",
+      "byteLength": 114845
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/holiday-catalogs/ch-holiday-catalog.json",
+      "role": "holidayCatalog",
+      "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7",
+      "byteLength": 837359
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/social-procedures/ch-social-procedures.json",
+      "role": "socialProcedureCatalog",
+      "sha256": "e98e24052dc1d6658eb82fde6428a8201af3c32667e62a8653061558567e3152",
+      "byteLength": 546649
+    }
+  ],
+  "checks": [
+    {
+      "id": "core-ui",
+      "passed": 1694,
+      "failed": 0,
+      "evidence": {
+        "path": ".work/ap20c3-core-ui-final.log",
+        "sha256": "d026787399d065be9cd74f5668cf1350e15587ac016bdf78eebb700e885250e5"
+      }
+    },
+    {
+      "id": "governance",
+      "passed": 133,
+      "failed": 0,
+      "evidence": {
+        "path": ".work/ap20c3-governance.log",
+        "sha256": "f226d8b7600662884d94b5af953bae846b00749883f80a521011f52ef9682f2a"
+      }
+    },
+    {
+      "id": "public-app",
+      "passed": 12,
+      "failed": 0,
+      "evidence": {
+        "path": ".work/ap20c3-public.log",
+        "sha256": "be7d1d31cf775eb7342806bcfa75d147277d40512505775125ff2e82e9f950fc"
+      }
+    },
+    {
+      "id": "spfx-loader",
+      "passed": 140,
+      "failed": 0,
+      "evidence": {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-1.log",
+        "sha256": "8a8ea93bfebb4e827ae3641e51276e54dbd489f6dab0894fbef043e61b36279f"
+      }
+    },
+    {
+      "id": "spfx-built",
+      "passed": 65,
+      "failed": 0,
+      "evidence": {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-5.log",
+        "sha256": "e40906183259a783561242ee8af789b37fa739b84e76720a0e753591da597fc2"
+      }
+    },
+    {
+      "id": "typecheck",
+      "status": "passed",
+      "evidence": {
+        "path": ".work/ap20c3-typecheck.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "countsAreNotAdditive": true,
+  "newTests": {
+    "core": 161,
+    "ui": 16,
+    "dateVectors": 10,
+    "dateCases": 80,
+    "priorPathComparisons": 42,
+    "loaderGroups": 17,
+    "builtGroups": 9,
+    "builtDateCasesWithinOneGroup": 80
+  },
+  "preservation": {
+    "ap20c2Protocol": {
+      "path": "outputs/ap20c2-2026-10-01/pruefprotokoll.json",
+      "sha256": "311cb80a027c0de883a7c07c46ba59e150065bdad3657a2c4947dec0bbacb2e9"
+    },
+    "ap20c2Acceptance": {
+      "path": "docs/fachrecht/abnahme-ap20c2.md",
+      "sha256": "864543a15afb57b205d9a183134a6eeb91bc19aeefd92bbcd9bdefaa2a1bc7b1"
+    },
+    "historicalEvidenceFiles": 57,
+    "historicalPreimages": [
+      {
+        "originalPath": "src/ui/socialUi.ts",
+        "originalSha256": "648febdb931e6a4a829d15f6c57c8d5967c214e8e23302096a188fd603e47d7f",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/socialUi.ts",
+        "currentSha256": "6f6af452e89a811ec093c5a1c3a512ad752053ec3e37f58b5cd8765236fe20f2"
+      },
+      {
+        "originalPath": "src/ui/vrpgSelection.ts",
+        "originalSha256": "9fca0fb5e487436bb24c1521b85d63c9e005de3f6f33be3743c8e76bf2f39fa1",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/vrpgSelection.ts",
+        "currentSha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+      },
+      {
+        "originalPath": "src/ui/socialMessages.ts",
+        "originalSha256": "e0a5a57bc3a8b1aba1cdb8a7a2c81a2f495a223a1afc58e01170a0652e2611ed",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/socialMessages.ts",
+        "currentSha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f"
+      },
+      {
+        "originalPath": "src/ui/FristenrechnerApp.tsx",
+        "originalSha256": "7472d98a26073a597abd2a3607d7a182747fab1408b5c35a0dc043539cce7a38",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/FristenrechnerApp.tsx",
+        "currentSha256": "0ac9f1cdeacbecbe7f033627b48e2c127a39d252806afe0e4abea30f44af53e7"
+      },
+      {
+        "originalPath": "src/ui/preview/main.tsx",
+        "originalSha256": "f0559a41c10e1c65f8ccef7a8debfa1f3a3975999f6617830e22490e4dde1107",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/preview/main.tsx",
+        "currentSha256": "d1fdb855cb85ef1b3641df7fc9ac74423c5045fa059ab45dc561f47dd798eae3"
+      },
+      {
+        "originalPath": "src/ui/preview/qaPresets.ts",
+        "originalSha256": "987111fabe6fd8aa59744e1029d0cd7565ba23e5a276c3737ee7c62192f3481f",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/preview/qaPresets.ts",
+        "currentSha256": "ffad8021bc2780257d6e406487b41ea80da45a5b03c3f97193e69e30739d6759"
+      },
+      {
+        "originalPath": "scripts/check-ap19c-spfx-build.mjs",
+        "originalSha256": "15308760efa58b84aefaff86859da07178771bb5bb801a120763c9b2cc70f1e8",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/scripts/check-ap19c-spfx-build.mjs",
+        "currentSha256": "cdcd1de3a51ef7bdeaea5b8cc9cdefb3f6c0bb7cac2205aa46490bb6635be5c2"
+      },
+      {
+        "originalPath": "package.json",
+        "originalSha256": "bda2a163dd08fd883c453218bdb448c45975f32f9d13ed78854d70cacc98bb78",
+        "preservedAt": "outputs/ap20c3-2026-10-01/ap20c2-baseline/package.json",
+        "currentSha256": "a57bb28366b32798efe9e6bb401497298d9508d1dfbdbda871700027706b595b"
+      }
+    ],
+    "frozenAp20bFiles": 15,
+    "priorRules": 36,
+    "priorBindings": 42,
+    "priorAp20c1Protocol": {
+      "path": "outputs/ap20c1-2026-09-30/pruefprotokoll.json",
+      "sha256": "691d831b5220676a89dd48acf9fcab199f52ba66edcfd90fdc2a86f0d3bd8918"
+    },
+    "priorAp20c1PreimagesUnchanged": true,
+    "otherArtifacts": 9,
+    "originalPackageSha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346",
+    "originalPackageUnchanged": true,
+    "historicalPinsChanged": false
+  },
+  "isolatedBuild": {
+    "path": ".work/ap19c-spfx-build-pKR6pW",
+    "passed": true,
+    "stepExitCodes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "testPackageSha256": "60fabf74eeace79165df143f5ffe15a41037b304d6208023196e612aeea8a59e",
+    "deployableRelease": false,
+    "verification": {
+      "path": ".work/ap19c-spfx-build-pKR6pW/verification.json",
+      "sha256": "28c45481b5e40a71ca411b2655a8a3dd6869f964b3826d06ac2c9aada7645ae0"
+    },
+    "stepLogs": [
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-1.log",
+        "sha256": "8a8ea93bfebb4e827ae3641e51276e54dbd489f6dab0894fbef043e61b36279f"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-2.log",
+        "sha256": "fba518de015b823ecb3b681a456585483a70437b84f96ade4ba098ca4ff7356c"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-3.log",
+        "sha256": "4ba7fbaf15af2a64963191a7046cd799b6293f2bdd547049b93b78e70e4ecf5e"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-4.log",
+        "sha256": "e333efb4edd330e2090547fc600d68dc48ae2586dbe265297308a34b2f538a44"
+      },
+      {
+        "path": ".work/ap19c-spfx-build-pKR6pW/step-5.log",
+        "sha256": "e40906183259a783561242ee8af789b37fa739b84e76720a0e753591da597fc2"
+      }
+    ]
+  },
+  "browser": {
+    "host": "local-in-app-browser",
+    "url": "http://127.0.0.1:8797/?candidate=ap20c3&qa=ap20c3-mvg",
+    "observedBy": "main implementation agent",
+    "performed": [
+      "DE and FR render",
+      "two-column layout and four action buttons",
+      "MVG objection and appeal complete cases reach not-released only",
+      "UELG objection and appeal complete cases reach not-released only",
+      "early service date entry",
+      "law and action change clear case context and retain same-meaning service date",
+      "fresh QA default has empty dates and case facts",
+      "no console warnings or errors"
+    ],
+    "liveM365": false,
+    "guest": false,
+    "manualApproval": false,
+    "note": "Completed browser findings reported by the main implementation agent. Ordered-day and complaint-correction paths are covered by automated tests, not separate complete browser scenarios. Candidate paths intentionally remain not-released in the UI."
+  },
+  "publication": {
+    "githubIssues": [
+      35,
+      43
+    ],
+    "sourceCommit": false,
+    "sourcePush": false,
+    "deployment": false,
+    "permissionsChanged": false
+  },
+  "limitations": [
+    "No human AP20C3 acceptance yet",
+    "Synthetic positive calculation approval exists in test memory only",
+    "No operative source-release approval or data promotion",
+    "No SharePoint Teams guest or production tests",
+    "National models remain limited to the explicitly modelled Bern bindings and holiday connections",
+    "Source refresh remains required before release"
+  ],
+  "evidence": [
+    {
+      "path": "docs/architektur/implementierung-ap20c1.md",
+      "sha256": "89c3e76dd049de50faab1981bcf747810365757edb24f6075eb49f5c6b4ab9ad"
+    },
+    {
+      "path": "docs/fachrecht/quellenkontrolle-ap20c1.md",
+      "sha256": "dd1ddca851a83bed5a82731d06c11da39313f9dd287c4a208bd1ee2551571d77"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-026-beschluss.md",
+      "sha256": "16873c28621edcac92e490814c5196fbbfb34900d8e10d4c767cda8a5359ef7a"
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/quellenkontrolle.json",
+      "sha256": "6209ff32d00910b36f97dfb5c35c147dc19ec908500b17c75736bd3960da990c"
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/source-refresh.py",
+      "sha256": "83ee72fcf2356db3604f1c0c0f1bae111bae548a06febea90947e001a8d75642"
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/build-verification.json",
+      "sha256": "293f6a9f0320cb6b5f3e028767cc80cc36faf143b5d2803ccc3d671405089bc9"
+    },
+    {
+      "path": "data/candidates/2026-09-30-ap20c1/manifest.json",
+      "sha256": "deb308e319a47eaf80f9056b88ee2bc9ff56c0500e70269fb0bc54e91a1900b5"
+    },
+    {
+      "path": "schemas/social-procedure-catalog-v2.schema.json",
+      "sha256": "16bf46bfe0eeb88fe4015800e903c9b749eb8bb69b74a4e4474f9f5aa0186203"
+    },
+    {
+      "path": "schemas/release-manifest-v6.schema.json",
+      "sha256": "c6ea5582d47db4fbc8fceec1819af2648c6aaaf1f9f169caf2e301d5f22b4825"
+    },
+    {
+      "path": "src/core/socialTypes.ts",
+      "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370"
+    },
+    {
+      "path": "src/core/socialCatalog.ts",
+      "sha256": "aa9d7171b0f619e9b9c19c388b7e3f3c4b063097e9a557a193ad2a3bea1d0dbd"
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "sha256": "1e2c11e85f46da59a4877790812d49618a79b8a6f09ea8a60a254672661e83a6"
+    },
+    {
+      "path": "src/core/data.ts",
+      "sha256": "2252ef9cd8eac089db6cf1f671fbe975c1683eb67e51e116b777c17d04f9793a"
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "sha256": "3798d09f189a4d9ca2dbd4088d1bc536cccafe7aa06d91486eab205bf5740ce4"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "sha256": "6f6af452e89a811ec093c5a1c3a512ad752053ec3e37f58b5cd8765236fe20f2"
+    },
+    {
+      "path": "src/ui/vrpgSelection.ts",
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+    },
+    {
+      "path": "src/ui/socialMessages.ts",
+      "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f"
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "sha256": "0ac9f1cdeacbecbe7f033627b48e2c127a39d252806afe0e4abea30f44af53e7"
+    },
+    {
+      "path": "src/ui/preview/main.tsx",
+      "sha256": "d1fdb855cb85ef1b3641df7fc9ac74423c5045fa059ab45dc561f47dd798eae3"
+    },
+    {
+      "path": "src/ui/preview/qaPresets.ts",
+      "sha256": "ffad8021bc2780257d6e406487b41ea80da45a5b03c3f97193e69e30739d6759"
+    },
+    {
+      "path": "src/release/ap20c1CandidateData.ts",
+      "sha256": "0cc971039ab7a2a6db5503500cf6d0c42b3b0e9d397535e6388d606f0ba886ca"
+    },
+    {
+      "path": "spfx/src/core/ReleaseValidator.ts",
+      "sha256": "1c2550c9a4db76f1d23b2ebf02e432d1ab45b751e1865c2409786a32784680a2"
+    },
+    {
+      "path": "spfx/scripts/sync-schemas.mjs",
+      "sha256": "002a5df7aa9b39bf4c6f2f3558bc5311e6d03ebb25863ee6f5dc08d2676992a5"
+    },
+    {
+      "path": "scripts/build-ap20c1-candidate.mjs",
+      "sha256": "f7819cd35f1febb652f0305a9309e1dbe0d0699c83b010a30bacbe8d214ef9bb"
+    },
+    {
+      "path": "scripts/build-ap20c1-candidate.d.mts",
+      "sha256": "813d5c6b7f499c1afa98a2ed77ab16edbf20204a3c3d1c7c0944469f6f2b4b38"
+    },
+    {
+      "path": "scripts/check-ap19c-spfx-build.mjs",
+      "sha256": "cdcd1de3a51ef7bdeaea5b8cc9cdefb3f6c0bb7cac2205aa46490bb6635be5c2"
+    },
+    {
+      "path": "tests/core/ap20c1-consumer.test.ts",
+      "sha256": "0b82e3d94ac0ee7fa8ad6901fe0ef77358e3192b7b01a1e07e599865f0259bae"
+    },
+    {
+      "path": "tests/core/ap20c1-eog.test.ts",
+      "sha256": "b29b6c68e6c34d5f10836ecea4b01bff81deb316c952843e061d68184e5aa7bf"
+    },
+    {
+      "path": "tests/ui/ap20c1-eog.test.ts",
+      "sha256": "aa695632d4cd80222c7af03bae3d1210dba4c5ea56506d1ecd79c395d48d028f"
+    },
+    {
+      "path": "spfx/test/ap20c1-loader.test.ts",
+      "sha256": "3968d69797b314346cbcc967dfa4b682f293db9510118e74f0dc2641bc15af1c"
+    },
+    {
+      "path": "spfx/test/release-service.test.ts",
+      "sha256": "1535857a834cede0a7f54b7caaddbd46ec4a45c78cc438b073a85906c7d28537"
+    },
+    {
+      "path": "spfx/test-build/ap20c1.test.cjs",
+      "sha256": "db3290d5b74f37e970eac3f9017be2c79f73aa94ac72a9d0d45f218f628e9082"
+    },
+    {
+      "path": "package.json",
+      "sha256": "a57bb28366b32798efe9e6bb401497298d9508d1dfbdbda871700027706b595b"
+    },
+    {
+      "path": "scripts/record-ap20c1-checks.mjs",
+      "sha256": "d80cac8dca2a73a7447eafda8a22653ee2fd0d84efad968c83084def8ddac627"
+    },
+    {
+      "path": "docs/architektur/implementierung-ap20c2.md",
+      "sha256": "3877dca11c114d7cf679e3efae77187139f6a34ec5bbda0631305b7b7e07d978"
+    },
+    {
+      "path": "docs/fachrecht/quellenkontrolle-ap20c2.md",
+      "sha256": "ecd07f43bc15e16eb10ed58835d520629b0b645f92d8c985560279243576d363"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20c1.md",
+      "sha256": "f94289c3069128a26bb4a270d178982dac342d0f3267b2059dbe0d8c6e657f11"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/quellenkontrolle.json",
+      "sha256": "6ef1e65e4a2e5a7fa0a87c2042d5fc17a9f736c3f09fe9035620dbf0ce84d4c5"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/source-refresh.py",
+      "sha256": "2811d459617e4b85ad466704a3390260a4c6ec7caba1ce795f0495f18e59fa6c"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/build-verification.json",
+      "sha256": "de2a8baef166b8f2d8f339eac4f3ced8cacdf616caa2e20e548e30806fd6e3e7"
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c2/manifest.json",
+      "sha256": "e7d1921d7a67adc60e49142fe549f1f6113cf73084f94fd1f0f057d3360cc520"
+    },
+    {
+      "path": "scripts/build-ap20c2-candidate.mjs",
+      "sha256": "5ad4f2531a1a57121b0bdb08bb647900e8eaf485f03980804f53c11380af73ea"
+    },
+    {
+      "path": "scripts/build-ap20c2-candidate.d.mts",
+      "sha256": "09c0ae82bc77aebc004f80e29d53a4ea17cf0d2487516f92253376e5838a3a1a"
+    },
+    {
+      "path": "src/release/ap20c2CandidateData.ts",
+      "sha256": "95317450ad9a0420fd7636374b955730a94c4949fc631bf4dc7bdcf85f6f52b3"
+    },
+    {
+      "path": "tests/core/ap20c2-family.test.ts",
+      "sha256": "619ecbf907bf4813d47041e42a068fae7f86d7a9c0a2c113f5856d6e0b7bc79f"
+    },
+    {
+      "path": "tests/ui/ap20c2-family.test.ts",
+      "sha256": "f749edb90867db57e04383c2583b37fbbceade3090ed55f135a72fedb25bdf54"
+    },
+    {
+      "path": "spfx/test/ap20c2-loader.test.ts",
+      "sha256": "a5d3f74db7280b4b7018ab85009c76345c995a5a9bcdbea37818772112775714"
+    },
+    {
+      "path": "spfx/test-build/ap20c2.test.cjs",
+      "sha256": "e23e89b35d297fb3f92d633b29b21147114b66e316ab08893504601ae3c9176e"
+    },
+    {
+      "path": "scripts/record-ap20c2-checks.mjs",
+      "sha256": "f30a9c750130d7b7c9968073026d783d18290d87afa3cf0f73274ca1e2ec9b27"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/socialUi.ts",
+      "sha256": "10be9057fae413c6745bafbd67516bfa9ef56cd09e0cabf2986ba3aaac9acbe6"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/vrpgSelection.ts",
+      "sha256": "7234bb4600cf35d1722a82ac96463eb2501a4e6de7fa727b83b8ec59d888e933"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/socialMessages.ts",
+      "sha256": "642fac74d41b44a5912dbc1765aa13680a2cd407aee522d5934cbd8afe15e106"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/FristenrechnerApp.tsx",
+      "sha256": "aadef2a8c60c52cfd574f0d1e08de22cdedb8f9f69d3c0eb0fdfa4058f42639b"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/preview/main.tsx",
+      "sha256": "2535b689d27c92ad504955df99e36916e262e56c85f07606210fe71bf0d14994"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/src/ui/preview/qaPresets.ts",
+      "sha256": "6262ad3cab4d7510cb7a1ef25cd8ef474563cb015981128309bbb85c6d15c462"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/scripts/check-ap19c-spfx-build.mjs",
+      "sha256": "56d7597b37693eeff77eca8c42807c1a14856634cb7b1c4fcde15138a75902e0"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/ap20c1-baseline/package.json",
+      "sha256": "e360d4da7c114d25e5b480c31e464c4eb16065b4977bee2f38a47844f48ed59a"
+    },
+    {
+      "path": "docs/architektur/implementierung-ap20c3.md",
+      "sha256": "5032afd7cfea71276f273601780addcab2a797228e091544a4c0a3b5801dfd9d"
+    },
+    {
+      "path": "docs/fachrecht/quellenkontrolle-ap20c3.md",
+      "sha256": "61a60339dfba7779dd41f13a6730eaf9187854d3ea993054685d1fc145688d09"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20c2.md",
+      "sha256": "864543a15afb57b205d9a183134a6eeb91bc19aeefd92bbcd9bdefaa2a1bc7b1"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/pruefprotokoll.json",
+      "sha256": "311cb80a027c0de883a7c07c46ba59e150065bdad3657a2c4947dec0bbacb2e9"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/pruefprotokoll.json",
+      "sha256": "8d67ad7b6e0541104cfa7e8f124cf1e206cdbe6c82111b287dcc4ae54cf9c25d"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+      "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/source-refresh.py",
+      "sha256": "b1e60d80bc2ff408314b43d9484655bcedc4c4b4e8fb4c1258597b3abb22c468"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/build-verification.json",
+      "sha256": "d58b3bf5a0a064670c2f1d0e77527c7362bfc86bddaf2209a9f26054fd155d85"
+    },
+    {
+      "path": "data/candidates/2026-10-01-ap20c3/manifest.json",
+      "sha256": "b4250a31d226b4f59e0857a857f49e1ea354722b9ff46b9324d70b330f135450"
+    },
+    {
+      "path": "scripts/build-ap20c3-candidate.mjs",
+      "sha256": "1ca80573ab1c5327191d2a6eede73ce2c245502363ae1cdf89c8a6ab5acf9cc0"
+    },
+    {
+      "path": "scripts/build-ap20c3-candidate.d.mts",
+      "sha256": "5ec964ee37cdbb79106809b507d75900e8bfca10b63c2ae14b4942d2c6585595"
+    },
+    {
+      "path": "src/release/ap20c3CandidateData.ts",
+      "sha256": "400dc0817eeae5f3cfe7ac5a9518fc0d73fb8e37d89edfa8552a24fa73a5da6c"
+    },
+    {
+      "path": "tests/core/ap20c3-mvg-uelg.test.ts",
+      "sha256": "1f23d9214d4b4ccc587890257b17a156c57b5b7eb295363beecd36001d0d046f"
+    },
+    {
+      "path": "tests/ui/ap20c3-mvg-uelg.test.ts",
+      "sha256": "cfcfe71a563e543c4ea8b37da2dbb5f20e1ff90355103f0145d8343b6ea7cbbd"
+    },
+    {
+      "path": "spfx/test/ap20c3-loader.test.ts",
+      "sha256": "1ec0606f31a57715f497535eff876a6cc27c1611cddb37b9d909f9042b9a25aa"
+    },
+    {
+      "path": "spfx/test-build/ap20c3.test.cjs",
+      "sha256": "2c2e21d13d2375499ea5efb1536c1a584a10a08f17e92b37e917f9c1c6dcbde2"
+    },
+    {
+      "path": "scripts/record-ap20c3-checks.mjs",
+      "sha256": "51cbf341d83464c0398af6d1cf6049b71c87445604b411b9d9bb7088d28f946b"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/socialUi.ts",
+      "sha256": "648febdb931e6a4a829d15f6c57c8d5967c214e8e23302096a188fd603e47d7f"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/vrpgSelection.ts",
+      "sha256": "9fca0fb5e487436bb24c1521b85d63c9e005de3f6f33be3743c8e76bf2f39fa1"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/socialMessages.ts",
+      "sha256": "e0a5a57bc3a8b1aba1cdb8a7a2c81a2f495a223a1afc58e01170a0652e2611ed"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/FristenrechnerApp.tsx",
+      "sha256": "7472d98a26073a597abd2a3607d7a182747fab1408b5c35a0dc043539cce7a38"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/preview/main.tsx",
+      "sha256": "f0559a41c10e1c65f8ccef7a8debfa1f3a3975999f6617830e22490e4dde1107"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/src/ui/preview/qaPresets.ts",
+      "sha256": "987111fabe6fd8aa59744e1029d0cd7565ba23e5a276c3737ee7c62192f3481f"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/scripts/check-ap19c-spfx-build.mjs",
+      "sha256": "15308760efa58b84aefaff86859da07178771bb5bb801a120763c9b2cc70f1e8"
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/ap20c2-baseline/package.json",
+      "sha256": "bda2a163dd08fd883c453218bdb448c45975f32f9d13ed78854d70cacc98bb78"
+    }
+  ]
+}

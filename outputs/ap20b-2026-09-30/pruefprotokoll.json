@@ -1,0 +1,160 @@
+{
+  "formatVersion": "ap20b-local-verification-1",
+  "checkedOn": "2026-09-30",
+  "status": "ready-for-review",
+  "humanApproval": false,
+  "contractDecision": "DEC-2026-026 proposed",
+  "runtimeActive": false,
+  "productIntegrationPerformed": false,
+  "publication": {
+    "sourceCommit": false,
+    "sourcePush": false,
+    "deployment": false,
+    "githubIssues": [
+      35,
+      40
+    ]
+  },
+  "scope": {
+    "laws": [
+      "EOG",
+      "FAMZG",
+      "FLG",
+      "MVG",
+      "UELG"
+    ],
+    "newNationalRules": 20,
+    "newBernBindings": 22,
+    "referenceWindow": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "unchangedExistingNationalRules": 24,
+    "unchangedExistingBernBindings": 28
+  },
+  "checks": [
+    {
+      "id": "ap20b-dates",
+      "passed": 220,
+      "failed": 0,
+      "note": "10 literal date vectors applied to 22 bindings"
+    },
+    {
+      "id": "ap20b-governance",
+      "passed": 24,
+      "failed": 0
+    },
+    {
+      "id": "ap20b-old-reader-compatibility",
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "id": "all-core-ui",
+      "passed": 1217,
+      "failed": 0,
+      "includes": "4 AP20B old-reader tests"
+    },
+    {
+      "id": "all-governance",
+      "passed": 133,
+      "failed": 0,
+      "includes": "24 AP20B groups"
+    },
+    {
+      "id": "existing-public-app",
+      "passed": 12,
+      "failed": 0,
+      "note": "Regenerates only disposable .work builds"
+    },
+    {
+      "id": "typecheck",
+      "status": "passed"
+    },
+    {
+      "id": "mvp05-data-validator",
+      "status": "passed",
+      "validatedArtifacts": 10
+    },
+    {
+      "id": "ap20a-freeze",
+      "status": "passed",
+      "files": 2
+    },
+    {
+      "id": "calendar-freeze",
+      "status": "passed",
+      "files": 2
+    }
+  ],
+  "countsAreNotAdditive": true,
+  "limitations": [
+    "No consumer-6 implementation or positive migration test yet",
+    "No new UI, browser, E/Q/P or guest tests",
+    "Competent issuer is externally qualified, EOV35q is not inferred from a benefit type",
+    "No approval of source coverage or runtime eligibility by these tests",
+    "Future source changes require refresh before integration and release"
+  ],
+  "evidence": [
+    {
+      "path": "docs/architektur/sozialversicherungsvertrag-ap20b.md",
+      "sha256": "f1b2c994c08e37e6f38a18e6b355a7f20588112d13d4bc0328a63c8f9896f2e1"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-026-sozialverfahrenskatalog-v2.md",
+      "sha256": "ef0251f40b4cec08233ff135cd3ded7b2a05a9ffb0675b36e4278788d7a2a779"
+    },
+    {
+      "path": "docs/fachrecht/referenzfaelle-ap20b.md",
+      "sha256": "6530abf205e0c6096b9c883dc3898d322c8990dd4393a3ac528b497681c8cb25"
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-ap20b-bund.md",
+      "sha256": "518ff9be263fdb74c50eb09489ef88c3177881a5315fc03e06e19c01bffbfcad"
+    },
+    {
+      "path": "docs/fachrecht/zeitliche-bindung-ap20b.md",
+      "sha256": "6fe83e678b7c14e23586ebb7e1903918f4806bb4533c99a21fac1e6f542059d1"
+    },
+    {
+      "path": "tests/golden/candidates/ap20b-social-contract.json",
+      "sha256": "12890e16cf50e6b1a2fcb50e79f6a7e5540053d398b2418248c1135227791e9c"
+    },
+    {
+      "path": "tests/golden/candidates/ap20b-social-dates.json",
+      "sha256": "9740ce84883a54beec81f2f8a6cb1c450d690c9b6f440c5841d5821dfad16fa3"
+    },
+    {
+      "path": "scripts/check-ap20b-references.mjs",
+      "sha256": "4d5baf43f9de5905b869b386179c681791686607c14b0571d00c0738a778eb8b"
+    },
+    {
+      "path": "tests/governance/ap20b-references.test.mjs",
+      "sha256": "e67a13560a8b16d9432bed767861b55b561c3c834dd29eef7c1281c75e5e0b3b"
+    },
+    {
+      "path": "tests/core/ap20b-compatibility.test.ts",
+      "sha256": "98ad06874e24ff3be174d9919f956214a9220137a0fe92abfeec2b48fd05f081"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-indexes.json",
+      "sha256": "fa4be7828baf8319702c0d9c638e4d95e9eb086b08ee5528a261db9f49aa45b5"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-originals.json",
+      "sha256": "b1fe603ce0743bed770fe2713407e52ba7b91b8917841889381eb892e24f1cda"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-comparisons.json",
+      "sha256": "c3a9869e540a6fb24ce97932f3704b29311c7c1e999f1ce7b44889a91dd54342"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-elg-cross-reference.json",
+      "sha256": "9e128aea28de23044fd28969a030eb0b5aa09ee8b1f41bf8a404b746d3cd1594"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/bern-sources/bern-source-review.json",
+      "sha256": "30bc675d65ca31d61b6c99f38d84f5775d13ba6e33bb5be8d42db2a854cb00f9"
+    }
+  ]
+}

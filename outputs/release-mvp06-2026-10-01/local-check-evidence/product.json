@@ -1,0 +1,136 @@
+{
+  "kind": "mvp06LocalCheckRun",
+  "checkedOn": "2026-10-01",
+  "phase": "product",
+  "releaseId": "2026-10-01-mvp-06-approved.1",
+  "installation": false,
+  "publication": false,
+  "steps": [
+    {
+      "id": "typecheck",
+      "command": "node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-product-checks-35PVbG/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "id": "core-ui",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "--test-reporter=tap",
+        "tests/core/ap12c-release.test.ts",
+        "tests/core/ap17c-qualified.test.ts",
+        "tests/core/ap18c-integration.test.ts",
+        "tests/core/ap19c-builder.test.ts",
+        "tests/core/ap19c-integration.test.ts",
+        "tests/core/ap19c-social.test.ts",
+        "tests/core/ap19c2-builder.test.ts",
+        "tests/core/ap19c2-integration.test.ts",
+        "tests/core/ap19c3-builder.test.ts",
+        "tests/core/ap19c3-integration.test.ts",
+        "tests/core/ap20b-compatibility.test.ts",
+        "tests/core/ap20c1-consumer.test.ts",
+        "tests/core/ap20c1-eog.test.ts",
+        "tests/core/ap20c2-family.test.ts",
+        "tests/core/ap20c3-mvg-uelg.test.ts",
+        "tests/core/calendar-rules.test.ts",
+        "tests/core/date.test.ts",
+        "tests/core/golden-cases.test.ts",
+        "tests/core/holiday-catalog.test.ts",
+        "tests/core/mvp05-promotion.test.ts",
+        "tests/core/mvp06-release-promotion.test.ts",
+        "tests/core/mvp06-release.test.ts",
+        "tests/core/safety.test.ts",
+        "tests/core/special-golden-cases.test.ts",
+        "tests/core/special-rule-families.test.ts",
+        "tests/core/special-safety.test.ts",
+        "tests/ui/ap12c.test.ts",
+        "tests/ui/ap17c-qualified.test.ts",
+        "tests/ui/ap18c-preview.test.ts",
+        "tests/ui/ap19c-social.test.ts",
+        "tests/ui/ap19c2-social.test.ts",
+        "tests/ui/ap19c3-social.test.ts",
+        "tests/ui/ap20c1-eog.test.ts",
+        "tests/ui/ap20c2-family.test.ts",
+        "tests/ui/ap20c3-mvg-uelg.test.ts",
+        "tests/ui/calendar-export.test.ts",
+        "tests/ui/date-transition.test.ts",
+        "tests/ui/defaults.test.ts",
+        "tests/ui/i18n.test.ts",
+        "tests/ui/model.test.ts",
+        "tests/ui/mvp04-release.test.ts",
+        "tests/ui/mvp05-release.test.ts",
+        "tests/ui/preview.test.ts",
+        "tests/ui/special.test.ts",
+        "tests/ui/vrpg-integration.test.ts",
+        "tests/ui/vrpg-selection.test.ts"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-product-checks-35PVbG/core-ui.log",
+      "sha256": "e1eaa0c55d28047ea60f582a96aef813d8f531b88cd437bff151660fc65ca96d",
+      "byteLength": 498172,
+      "nodeCounts": {
+        "tests": 2046,
+        "pass": 2046,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "id": "public",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "--test-reporter=tap",
+        "--test-concurrency=1",
+        "tests/public-app/ap19c3-build.test.ts",
+        "tests/public-app/build.test.ts"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-product-checks-35PVbG/public.log",
+      "sha256": "a13da2d8c72d28b5314bcd752b8e70ae2634fbaca9f4295b7376a71c6638edbd",
+      "byteLength": 3481,
+      "nodeCounts": {
+        "tests": 12,
+        "pass": 12,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "id": "preview-build",
+      "command": "node",
+      "args": [
+        "scripts/build-ui-preview.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-product-checks-35PVbG/preview-build.log",
+      "sha256": "dee777d296d73671c11e3e33b7c706ee06ad8d7e6b38eaefe51c9e77fd201e30",
+      "byteLength": 183
+    },
+    {
+      "id": "public-build",
+      "command": "node",
+      "args": [
+        "scripts/build-public-app.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/mvp06-product-checks-35PVbG/public-build.log",
+      "sha256": "78ff32bd2d2dc563f2d3fb5a4900e76544ce6cdff7d081153f63e6dca57dc397",
+      "byteLength": 128
+    }
+  ],
+  "passed": true
+}

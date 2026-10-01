@@ -1,0 +1,31 @@
+{
+  "recordId": "MVP06-AP20B-REFERENCE-TEST-ADAPTATION-20261001",
+  "scope": "Living test only, no change to accepted AP20B contract, fixtures or historical evidence",
+  "original": {
+    "path": "tests/governance/ap20b-references.test.mjs",
+    "archivedAt": "outputs/release-mvp06-2026-10-01/historical-baseline/tests/governance/ap20b-references.test.mjs",
+    "sha256": "e67a13560a8b16d9432bed767861b55b561c3c834dd29eef7c1281c75e5e0b3b",
+    "alreadyIncludedInPreparationSnapshot": true
+  },
+  "updated": {
+    "path": "tests/governance/ap20b-references.test.mjs",
+    "sha256": "874b2037cd0e95ccba15f0853db1571d4b4400ff390412db6bde206c1f7f8883"
+  },
+  "before": "AP20B fixture paths and reference checker names were forbidden anywhere in runtime sources, schemas and released manifests, including legitimate nonoperative approval evidence.",
+  "after": "Only extensions.steimer.approval.referenceSuites.AP20B-SOCIAL-DATES-1 may contain the exact path and SHA-256 of the accepted date fixture. Its real file hash is checked. Everything else in the manifest, runtime source and schemas still rejects fixture paths and checker names. Every release artifact body is additionally inspected for these forbidden strings.",
+  "newNegativeChecks": [
+    "Wrong reference-suite hash rejected",
+    "Fixture as a productive artifact rejected",
+    "Fixture reference in steimer.candidate or another extension rejected",
+    "Reference checker in approval metadata rejected"
+  ],
+  "noGeneralExtensionException": true,
+  "originalSnapshotUnchanged": {
+    "evidenceFiles": 180,
+    "historicalArchives": 85
+  },
+  "targetedTests": {
+    "passed": 25,
+    "failed": 0
+  }
+}

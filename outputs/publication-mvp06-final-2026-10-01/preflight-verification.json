@@ -1,0 +1,235 @@
+{
+  "kind": "mvp06LocalPublicationPreflight",
+  "date": "2026-10-01",
+  "status": "passed-local-not-published",
+  "publicationPerformed": false,
+  "productionChanged": false,
+  "releaseId": "2026-10-01-mvp-06-approved.1",
+  "packageVersion": "0.6.0.1",
+  "exactCorrectedWeb": {
+    "path": "outputs/release-mvp06-web-corrected-2026-10-01/artifacts/fristenrechner-mvp06-steimer-web-corrected-0601.zip",
+    "sha256": "37e949e0442365a86b5b4e90e25a5a4ef9d8209a31644f3de119f2862b9d3810",
+    "byteLength": 499306
+  },
+  "cleanExport": {
+    "fileCount": 1697,
+    "sourceHead": "19b37336974f3ba7c72333763e1272425239b8cd",
+    "manifest": {
+      "path": ".work/publication-mvp06-preflight-2026-10-01/run-02/export-manifest.json",
+      "sha256": "8b87ba8b2c4fdb85e18c7a315138fbc9f7e1d950b932365d1bb1d2d2dc86a802",
+      "byteLength": 451023
+    },
+    "report": {
+      "path": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-check-results.json",
+      "sha256": "dd8fdc25ce5448d68571976b28c5e8a6e4799ee0e1d074698a5f0e5ed79f8810",
+      "byteLength": 2589
+    },
+    "privateRawEvidenceCopied": false,
+    "gitMetadataCopied": false,
+    "gitParentFallbackPrevented": true,
+    "dependencyEnvironmentReused": true,
+    "npmCiPerformed": false,
+    "gitClonePerformed": false,
+    "results": [
+      {
+        "label": "npm-check",
+        "args": [
+          "npm",
+          "run",
+          "check"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 42.422,
+        "log": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-npm-check.log",
+        "sha256": "4aa7e6536e40e4b3951c7430bc843e0663aa13f49cb695a4180930fd9fdb9a69",
+        "byteLength": 501207
+      },
+      {
+        "label": "source-reviews",
+        "args": [
+          "npm",
+          "run",
+          "test:source-reviews"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 51.249,
+        "log": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-source-reviews.log",
+        "sha256": "95300992ff6a51aba9cdaecd0ca0fa5697919543d032dc72f42207703a3216ff",
+        "byteLength": 30918
+      },
+      {
+        "label": "data-mvp06",
+        "args": [
+          "npm",
+          "run",
+          "test:data:mvp06"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.633,
+        "log": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-data-mvp06.log",
+        "sha256": "844f5dc0d2c64cfbe4e546e830bdbf228be4edae660607c65ad3c2e5c0fbf741",
+        "byteLength": 1521
+      },
+      {
+        "label": "artifacts-mvp06",
+        "args": [
+          "npm",
+          "run",
+          "test:artifacts:mvp06"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.674,
+        "log": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-artifacts-mvp06.log",
+        "sha256": "7a27ee2ad8cfaad9fc041bf72001a2f220ee8e812b4c87f6363da1ba0c89a601",
+        "byteLength": 261
+      },
+      {
+        "label": "web-correction",
+        "args": [
+          ".venv/bin/python",
+          "scripts/prepare_mvp06_web_correction.py",
+          "--check",
+          "--public-readback"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.222,
+        "log": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-web-correction.log",
+        "sha256": "a28d9ddd11f016898492081a7bd36d34b6a8b082a2ec5815d51e52f5c35e33da",
+        "byteLength": 546
+      },
+      {
+        "label": "web-correction-tests",
+        "args": [
+          ".venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests/data",
+          "-p",
+          "test_mvp06_web_correction.py"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.82,
+        "log": ".work/publication-mvp06-preflight-2026-10-01/run-02/clean-web-correction-tests.log",
+        "sha256": "a546b09619aa7f80a170cee1d7f2ee2af522008650864d280643fbda8bf6195a",
+        "byteLength": 110
+      }
+    ]
+  },
+  "originalAttempt": {
+    "report": {
+      "path": ".work/publication-mvp06-preflight-2026-10-01/clean-check-results.json",
+      "sha256": "c8eee985f5851e107d2449bb6231bd806745de54f8ff651955d84766bd7756f3",
+      "byteLength": 2522
+    },
+    "preserved": true,
+    "limitation": "First clean export exposed Git-only artifact checks and missing explicitly publishable build logs. Tests were split into explicit public-readback and local Git audit. No private evidence was copied to repair the public run."
+  },
+  "publicSourceIntegrity": {
+    "exactPublicDirectEvidence": 63,
+    "privateDirectEvidenceBoundButNotRead": 107,
+    "privateRawEvidenceRechecked": false,
+    "newSourceApprovalGranted": false
+  },
+  "localPrivateAudit": {
+    "conductedByParallelWorker": true,
+    "directEvidenceRechecked": 170,
+    "testsPassed": 101,
+    "strictPythonDataValidation": "passed",
+    "scope": "Existing private source evidence, no new legal-source research"
+  },
+  "localGitAudit": {
+    "command": "npm run test:artifacts:git:mvp06",
+    "testsPassed": 1,
+    "rootRecheck": true
+  },
+  "localFullWebReadback": {
+    "command": ".venv/bin/python scripts/prepare_mvp06_web_correction.py --check",
+    "passed": true,
+    "gitPinCheckedNow": true,
+    "fullHistoricalPreservationCheckedNow": true
+  },
+  "localBrowserSample": {
+    "surface": "Codex in-app browser",
+    "servedFrom": "outputs/release-mvp06-web-corrected-2026-10-01/web",
+    "exactJavascript": "app-KQZ77FSW.js",
+    "exactCss": "app-37QTI5LC.css",
+    "languages": [
+      "de",
+      "fr"
+    ],
+    "case": "ULG administrative opposition, BE responsible canton, party BE without representation",
+    "receiptDate": "2026-09-16",
+    "days": 30,
+    "observedDeadline": "2026-10-16",
+    "frenchDesktop": {
+      "width": 848,
+      "documentScrollWidth": 833,
+      "optionsAndSelectedTextVisuallyChecked": true
+    },
+    "frenchMobile": {
+      "width": 390,
+      "documentScrollWidth": 375,
+      "visuallyChecked": true
+    },
+    "capturedWarningsAndErrors": 0,
+    "initialAutomationFillDidNotCommit": true,
+    "nativeDateInputAndVisibleResultConfirmed": true,
+    "calendarDownloadPerformed": false,
+    "outlookImportPerformed": false,
+    "publicHostingHeadersTested": false,
+    "viewportRestored": true,
+    "temporaryTabAndServerClosed": true
+  },
+  "publicationPrivacy": {
+    "textDeltaFilesScanned": 698,
+    "archiveMemberNamesChecked": 77,
+    "archives": 5,
+    "concreteSecretOrPrivateAddressFindings": 0,
+    "scope": "Pattern scan, not comprehensive security audit. Final inventory rechecked including later documentation and test-split additions.",
+    "explicitPublicBuildLogs": {
+      "path": ".work/publication-mvp06-preflight-2026-10-01/run-02/nine-log-privacy-scan.json",
+      "sha256": "3bd8e93ad479f2925d84515893ddd8cac4417add4969bb7c49b883ecb02532a5",
+      "byteLength": 2370
+    },
+    "pdfReview": {
+      "path": ".work/publication-mvp06-preflight-2026-10-01/pdf-review/publication-review.json",
+      "sha256": "c09185c8ca3965f4f90ed4cd5cf82aaf504666bdded6659d3405c1ce7bfd5415",
+      "byteLength": 31158
+    },
+    "pdfCount": 8,
+    "pdfPages": 296,
+    "firstPagesVisuallyInspected": 8,
+    "pdfOriginalsUnchanged": true,
+    "binaryResidualRisk": true
+  },
+  "finalReadback": {
+    "evidence": {
+      "path": ".work/publication-mvp06-preflight-2026-10-01/final-readback.json",
+      "sha256": "7608dc0be7bf5b27f9a059de58638bca9b4f1ed5116d0328228099a47373446e",
+      "byteLength": 175
+    },
+    "differencesFromTestedProductCode": 0,
+    "brokenLivingDocumentFileLinks": 0,
+    "concretePrivacyPatternMatches": 0
+  },
+  "preservedOriginalHostEvidence": [
+    {
+      "path": "docs/betrieb/pruefmatrix-mvp06.md",
+      "sha256": "8e5db3b7fcc5e71e46767d1b37fc68d02d0c37946a238f9b2e99352af97f08ad",
+      "byteLength": 15537
+    },
+    {
+      "path": ".work/deployments/2026-10-01-eq-mvp06/host-test-ledger.json",
+      "sha256": "0b17eee84f99e42201be6b5101e3784e24f9d3504a59e0272d4c5b2b3ae50fc7",
+      "byteLength": 946259
+    }
+  ],
+  "scopeLimits": [
+    "Not a fresh dependency installation",
+    "Not a GitHub publication or P deployment",
+    "Not a new full E/Q matrix, guest test or Outlook import",
+    "No extension of product, source, geographical or operating approval"
+  ]
+}

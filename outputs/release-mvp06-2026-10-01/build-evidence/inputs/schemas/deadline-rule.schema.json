@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/deadline-rule.schema.json",
+  "title": "Komponentenregel für besondere Fristen",
+  "$ref": "#/$defs/deadlineRule",
+  "$defs": {
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputId", "role", "valueType", "labelKey"],
+      "properties": {
+        "inputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["trigger", "longstop", "comparison", "authoritativeDeadline"]
+        },
+        "valueType": {
+          "type": "string",
+          "enum": ["date", "localTime"]
+        },
+        "labelKey": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*(?:\\.[a-zA-Z0-9_-]+)+$"
+        }
+      }
+    },
+    "duration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365
+        },
+        "unit": {
+          "type": "string",
+          "enum": ["day", "month"]
+        }
+      }
+    },
+    "relativeCalculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "anchorInputId", "direction", "anchorBoundary"],
+      "properties": {
+        "type": { "const": "R1_RELATIVE" },
+        "anchorInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["after", "before"]
+        },
+        "anchorBoundary": {
+          "type": "string",
+          "enum": ["included", "excluded"]
+        },
+        "duration": {
+          "$ref": "#/$defs/duration"
+        },
+        "durationInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["duration"],
+          "not": { "required": ["durationInputId"] }
+        },
+        {
+          "required": ["durationInputId"],
+          "not": { "required": ["duration"] }
+        }
+      ]
+    },
+    "offsetCalculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "anchorInputId", "offsetDays"],
+      "properties": {
+        "type": { "const": "R2_OFFSET" },
+        "anchorInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "offsetDays": {
+          "type": "integer",
+          "minimum": -366,
+          "maximum": 366,
+          "not": { "const": 0 }
+        }
+      }
+    },
+    "weekdayCalculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "anchorInputId", "weekday", "direction", "ordinal", "strict"],
+      "properties": {
+        "type": { "const": "R3_WEEKDAY" },
+        "anchorInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "weekday": {
+          "type": "string",
+          "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["after", "before"]
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "strict": {
+          "type": "boolean"
+        }
+      }
+    },
+    "dualBranch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["branchId", "anchorInputId", "anchorBoundary", "duration"],
+      "properties": {
+        "branchId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "anchorInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "anchorBoundary": {
+          "type": "string",
+          "enum": ["included", "excluded"]
+        },
+        "duration": {
+          "$ref": "#/$defs/duration"
+        }
+      }
+    },
+    "dualCalculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "branches", "selection"],
+      "properties": {
+        "type": { "const": "R4_DUAL" },
+        "branches": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/dualBranch"
+          }
+        },
+        "selection": {
+          "type": "string",
+          "enum": ["earliest", "latest"]
+        }
+      }
+    },
+    "fixedCalculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "deadlineDateInputId", "authoritativeSourceRequired"],
+      "properties": {
+        "type": { "const": "R5_FIXED" },
+        "deadlineDateInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "deadlineTimeInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "authoritativeSourceRequired": {
+          "const": true
+        }
+      }
+    },
+    "calculation": {
+      "oneOf": [
+        { "$ref": "#/$defs/relativeCalculation" },
+        { "$ref": "#/$defs/offsetCalculation" },
+        { "$ref": "#/$defs/weekdayCalculation" },
+        { "$ref": "#/$defs/dualCalculation" },
+        { "$ref": "#/$defs/fixedCalculation" }
+      ]
+    },
+    "resultPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calendarProfileId", "suspensionProfileId", "endShiftPolicy", "strictFixedDate"],
+      "properties": {
+        "calendarProfileId": {
+          "type": "string",
+          "pattern": "^C_[A-Z0-9_]+$"
+        },
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^S[0-9]?_[A-Z0-9_]+$"
+        },
+        "endShiftPolicy": {
+          "type": "string",
+          "enum": ["nextWorkingDay", "noShift", "manualReview"]
+        },
+        "strictFixedDate": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "strictFixedDate": { "const": true } },
+            "required": ["strictFixedDate"]
+          },
+          "then": {
+            "properties": { "endShiftPolicy": { "const": "manualReview" } }
+          }
+        }
+      ]
+    },
+    "deadlineRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleId",
+        "status",
+        "validity",
+        "anchors",
+        "calculation",
+        "resultPolicy",
+        "filingProfileId",
+        "gateIds",
+        "legalOverrideIds",
+        "sourceRefs"
+      ],
+      "properties": {
+        "ruleId": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+-[0-9]{3}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["supported", "blocked", "open"]
+        },
+        "validity": {
+          "$ref": "common.schema.json#/$defs/validity"
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/anchor"
+          }
+        },
+        "calculation": {
+          "$ref": "#/$defs/calculation"
+        },
+        "resultPolicy": {
+          "$ref": "#/$defs/resultPolicy"
+        },
+        "filingProfileId": {
+          "type": "string",
+          "pattern": "^F[0-9]+_[A-Z0-9_]+$"
+        },
+        "gateIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^G[0-9]+_[A-Z0-9_]+$"
+          }
+        },
+        "legalOverrideIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^OVR-[A-Z0-9-]+$"
+          }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        }
+      }
+    }
+  }
+}

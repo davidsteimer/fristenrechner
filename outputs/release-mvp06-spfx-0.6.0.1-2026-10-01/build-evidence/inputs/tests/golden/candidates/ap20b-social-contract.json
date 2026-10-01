@@ -1,0 +1,47 @@
+{
+  "formatVersion": "ap20b-contract-probe-1",
+  "status": "draft",
+  "runtimeActive": false,
+  "approvedBy": null,
+  "proposedVersions": {"socialProcedureCatalog": "2.0.0", "releaseManifest": "6.0.0", "minimumConsumer": "6.0.0"},
+  "referenceWindow": {"from": "2026-01-01", "to": "2027-12-31"},
+  "legalTimeApproval": false,
+  "sourceDocuments": ["docs/fachrecht/quellenabgleich-ap20b-bund.md", "docs/fachrecht/zeitliche-bindung-ap20b.md"],
+  "calendarReference": "tests/golden/candidates/ap19b-social-deadlines.json",
+  "calendarReferenceSha256": "da5895b8d09ce46f61830d08613f93ee0a673bd1cefbd7cbbadeb4c054940ae8",
+  "laws": [
+    {"law": "EOG", "matter": "eog-federal-individual-benefits", "origin": "compensationOffice"},
+    {"law": "FAMZG", "matter": "famzg-statutory-individual-benefits", "origin": "familyCompensationOffice"},
+    {"law": "FLG", "matter": "flg-individual-benefits", "origin": "compensationOffice"},
+    {"law": "MVG", "matter": "mvg-individual-benefits", "origin": "militaryInsurer"},
+    {"law": "UELG", "matter": "uelg-federal-individual-benefits", "origin": "compensationOffice"}
+  ],
+  "routes": [
+    {"id": "EOG-ADMIN", "law": "EOG", "actions": ["OBJ", "ADM"], "kind": "product-scope", "facts": {"partyDomicileCanton": "BE"}, "dateSelector": "legalTriggerDate"},
+    {"id": "EOG-CANTONAL", "law": "EOG", "actions": ["APP", "CORRECTION"], "kind": "legal-jurisdiction", "facts": {"eogOfficeType": "cantonal", "compensationOfficeCanton": "BE", "courtCanton": "BE"}, "dateSelector": "jurisdictionReferenceDate"},
+    {"id": "EOG-ORDINARY", "law": "EOG", "actions": ["APP", "CORRECTION"], "kind": "legal-jurisdiction", "facts": {"eogOfficeType": "nonCantonal", "courtCanton": "BE", "partyDomicileCanton": "BE"}, "dateSelector": "jurisdictionReferenceDate"},
+    {"id": "FAMZG-ADMIN", "law": "FAMZG", "actions": ["OBJ", "ADM"], "kind": "legal-jurisdiction", "facts": {"familyAllowanceOrderCanton": "BE"}, "dateSelector": "legalTriggerDate"},
+    {"id": "FAMZG-COURT", "law": "FAMZG", "actions": ["APP", "CORRECTION"], "kind": "legal-jurisdiction", "facts": {"familyAllowanceOrderCanton": "BE", "courtCanton": "BE"}, "dateSelector": "jurisdictionReferenceDate"},
+    {"id": "FLG-ADMIN", "law": "FLG", "actions": ["OBJ", "ADM"], "kind": "legal-jurisdiction", "facts": {"compensationOfficeCanton": "BE"}, "dateSelector": "legalTriggerDate"},
+    {"id": "FLG-COURT", "law": "FLG", "actions": ["APP", "CORRECTION"], "kind": "legal-jurisdiction", "facts": {"compensationOfficeCanton": "BE", "courtCanton": "BE"}, "dateSelector": "jurisdictionReferenceDate"},
+    {"id": "MVG-ADMIN", "law": "MVG", "actions": ["OBJ", "ADM"], "kind": "product-scope", "facts": {"partyDomicileCanton": "BE"}, "dateSelector": "legalTriggerDate"},
+    {"id": "MVG-COURT", "law": "MVG", "actions": ["APP", "CORRECTION"], "kind": "legal-jurisdiction", "facts": {"courtCanton": "BE", "partyDomicileCanton": "BE"}, "dateSelector": "jurisdictionReferenceDate"},
+    {"id": "UELG-ADMIN", "law": "UELG", "actions": ["OBJ", "ADM"], "kind": "legal-jurisdiction", "facts": {"uelgAdministrativeCanton": "BE"}, "dateSelector": "legalTriggerDate"},
+    {"id": "UELG-COURT", "law": "UELG", "actions": ["APP", "CORRECTION"], "kind": "legal-jurisdiction", "facts": {"courtCanton": "BE", "partyDomicileCanton": "BE"}, "dateSelector": "jurisdictionReferenceDate"}
+  ],
+  "exclusions": [
+    {"law": "EOG", "matter": "eog-informal-statement", "reason": "formal-disposition-required"},
+    {"law": "EOG", "matter": "eog-cantonal-supplement", "reason": "product-scope"},
+    {"law": "FAMZG", "matter": "famzg-family-organisation-grants", "reason": "statutory-exclusion"},
+    {"law": "FAMZG", "matter": "famzg-voluntary-fund-benefits", "reason": "unresolved-qualification"},
+    {"law": "FLG", "matter": "flg-cantonal-extra-benefits", "reason": "product-scope"},
+    {"law": "MVG", "matter": "mvg-medical-tariffs", "reason": "statutory-exclusion"},
+    {"law": "MVG", "matter": "mvg-generic-preliminary-notice", "reason": "unsupported-procedure"},
+    {"law": "UELG", "matter": "uelg-material-claim-period", "reason": "unsupported-procedure"},
+    {"law": "UELG", "matter": "uelg-authority-processing-period", "reason": "unsupported-procedure"}
+  ],
+  "preserved": [
+    {"path": "docs/fachrecht/sozialversicherungsrecht-ap20.md", "sha256": "79453bd891bb59029e4c509342034f7c1e94c7c6ba6238f562772a9b0345d70c"},
+    {"path": "docs/fachrecht/quellenpaket-ap20a.md", "sha256": "24c7ffcbf6bdd9226559a64135aa0500a1f6e3da4c850f5106ab4dd7e4e7b745"}
+  ]
+}

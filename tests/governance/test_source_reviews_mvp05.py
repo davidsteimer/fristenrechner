@@ -11,13 +11,22 @@ spec = importlib.util.spec_from_file_location('validator', ROOT / 'tests/governa
 validator = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(validator)
 PREFIX = ROOT / 'outputs/release-mvp05-2026-09-28'
+HISTORICAL = ROOT / 'outputs/release-mvp06-2026-10-01/historical-baseline'
 
 class Mvp05GovernanceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.register = validator.load_json(validator.REGISTER_PATH)
-        cls.events = [validator.load_json(p) for p in sorted(validator.EVENT_DIRECTORY.glob('*.json'))]
-        cls.index = validator.load_json(validator.INDEX_PATH)
+        # Exact MVP05 fixture. Future live events are checked by their own suite.
+        def bound(relative_path, expected_hash):
+            data = (HISTORICAL / relative_path).read_bytes()
+            assert hashlib.sha256(data).hexdigest() == expected_hash
+            return json.loads(data)
+        cls.register = bound('data/source-reviews/source-register.json', 'eb89b94c839fb01d92c4168dd99183d1c40818299b0a364247007b5bd933df7a')
+        cls.index = bound('data/source-reviews/index.json', '017179338852bddac965a11718912bf2cf7ef793884a8ae1d5d8f2b639ee31fe')
+        event_ids = cls.index['generatedFrom']['eventIds']
+        assert event_ids == ['2026-08-31-initial-consolidation.1', '2026-09-22-mvp-04-prerelease.1', '2026-09-28-mvp-05-prerelease.1']
+        cls.events = [validator.load_json(validator.EVENT_DIRECTORY / f'{event_id}.json') for event_id in event_ids]
+        cls.events[-1] = bound('data/source-reviews/events/2026-09-28-mvp-05-prerelease.1.json', '1d3dc59e02f5c67026cab22d7d20ddcca68840840ec54029c36f51482816f372')
         cls.latest = cls.events[-1]
 
     def test_current_schema_and_index(self):

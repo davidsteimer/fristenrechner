@@ -1,0 +1,36 @@
+{
+  "recordId": "MVP06-HISTORICAL-GOVERNANCE-TEST-ADAPTATION-20261001",
+  "reason": "MVP05-specific assertions must validate the exact historical MVP05 state, not constrain future approved registers to 57 rows.",
+  "originalSnapshotUnchanged": {
+    "evidenceFiles": 180,
+    "historicalArchives": 85
+  },
+  "entries": [
+    {
+      "path": "tests/governance/mvp05-source-approval.test.mjs",
+      "archivedAt": "outputs/release-mvp06-2026-10-01/historical-test-baseline/tests/governance/mvp05-source-approval.test.mjs",
+      "sha256": "473d31d70dcc0a1dc8751d87b1cfb5e8d0603fff28cfc30fec51bd23c8f38bea",
+      "byteLength": 3741
+    },
+    {
+      "path": "tests/governance/test_source_reviews_mvp05.py",
+      "archivedAt": "outputs/release-mvp06-2026-10-01/historical-test-baseline/tests/governance/test_source_reviews_mvp05.py",
+      "sha256": "13932d82aed63befd7dabc63f668b1dd5142427807e564f91b64c763cc511892",
+      "byteLength": 3770
+    }
+  ],
+  "assertions": [
+    {
+      "path": "tests/governance/mvp05-source-approval.test.mjs",
+      "before": "Read living source-register.json and assert 57 rows.",
+      "after": "Read the exact SHA-256-bound MVP05 historical register and assert the same 57 rows. All source-approval and preparation reproduction checks stay unchanged."
+    },
+    {
+      "path": "tests/governance/test_source_reviews_mvp05.py",
+      "before": "Use living register, all current events and living index as the MVP05 fixture.",
+      "after": "Use the SHA-256-bound historical MVP05 register/index and their exact three event IDs. Same schema, counts, content-preservation, impact-index and negative mutation assertions. New MVP06 tests separately require current 81 rows and four events."
+    }
+  ],
+  "noHistoricalAcceptanceChanged": true,
+  "noAssertionRelaxation": true
+}

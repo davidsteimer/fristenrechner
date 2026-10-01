@@ -1,0 +1,388 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json",
+  "title": "Katalog besonderer Fristenregime, Format 2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "catalogId",
+    "profileId",
+    "jurisdiction",
+    "validity",
+    "review",
+    "scope",
+    "sources",
+    "calendarProfiles",
+    "suspensionProfiles",
+    "filingProfiles",
+    "gates",
+    "legalOverrides",
+    "deadlineDefinitions",
+    "regimes"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v2.schema.json"
+    },
+    "formatVersion": { "const": "2.0.0" },
+    "dataKind": { "const": "specialRegimeCatalog" },
+    "catalogId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "profileId": { "const": "vrpg-be" },
+    "jurisdiction": {
+      "$ref": "common.schema.json#/$defs/jurisdiction"
+    },
+    "validity": {
+      "$ref": "common.schema.json#/$defs/validity"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    },
+    "scope": {
+      "$ref": "#/$defs/labels"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "common.schema.json#/$defs/source"
+      }
+    },
+    "calendarProfiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/calendarProfile"
+      }
+    },
+    "suspensionProfiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/suspensionProfile"
+      }
+    },
+    "filingProfiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "filing-profile.schema.json#/$defs/filingProfile"
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gate"
+      }
+    },
+    "legalOverrides": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/legalOverride"
+      }
+    },
+    "deadlineDefinitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "deadline-definition.schema.json#/$defs/deadlineDefinition"
+      }
+    },
+    "regimes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/regime"
+      }
+    }
+  },
+  "$defs": {
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["de", "fr"],
+      "properties": {
+        "de": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "fr": { "type": "string", "minLength": 1, "maxLength": 1000 }
+      }
+    },
+    "calendarProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calendarProfileId", "calendarId", "holidayAnchor", "endShiftPolicy", "labels"],
+      "properties": {
+        "calendarProfileId": {
+          "type": "string",
+          "pattern": "^C_[A-Z0-9_]+$"
+        },
+        "calendarId": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+            { "type": "null" }
+          ]
+        },
+        "holidayAnchor": {
+          "type": "string",
+          "enum": ["berneseProceduralLaw", "partyOrRepresentativeCanton", "authorityConfiguration"]
+        },
+        "endShiftPolicy": {
+          "type": "string",
+          "enum": ["nextWorkingDay", "manualReview"]
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        }
+      }
+    },
+    "suspensionProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["suspensionProfileId", "mode", "suspensionSetId", "labels", "sourceRefs"],
+      "properties": {
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^S[0-9]?_[A-Z0-9_]+$"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["none", "useSet"]
+        },
+        "suspensionSetId": {
+          "oneOf": [
+            { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+            { "type": "null" }
+          ]
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "mode": { "const": "none" } },
+            "required": ["mode"]
+          },
+          "then": {
+            "properties": { "suspensionSetId": { "type": "null" } }
+          },
+          "else": {
+            "properties": { "suspensionSetId": { "type": "string" } }
+          }
+        }
+      ]
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gateId",
+        "type",
+        "status",
+        "leftOperand",
+        "operator",
+        "rightInputId",
+        "onTrue",
+        "labels",
+        "sourceRefs"
+      ],
+      "properties": {
+        "gateId": { "const": "G1_PREP_ACT" },
+        "type": { "const": "preparatoryActChallenge" },
+        "status": { "const": "supported" },
+        "leftOperand": { "const": "finalDeadline" },
+        "operator": {
+          "type": "string",
+          "enum": ["lt", "lte"]
+        },
+        "rightInputId": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        },
+        "onTrue": { "const": "requireImmediateChallenge" },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        }
+      }
+    },
+    "legalOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overrideId",
+        "kind",
+        "status",
+        "targetRegimeIds",
+        "warningRequired",
+        "confirmationRequired",
+        "validity",
+        "labels",
+        "sourceRefs"
+      ],
+      "properties": {
+        "overrideId": {
+          "type": "string",
+          "pattern": "^OVR-[A-Z0-9-]+$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["emptyReference", "staleCrossReference", "practiceRule", "dynamicAuthorityOrder"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["supported", "blocked", "open"]
+        },
+        "targetRegimeIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "warningRequired": { "type": "boolean" },
+        "confirmationRequired": { "type": "boolean" },
+        "validity": {
+          "$ref": "common.schema.json#/$defs/validity"
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        }
+      }
+    },
+    "regime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "regimeId",
+        "level",
+        "lawCode",
+        "provision",
+        "labels",
+        "status",
+        "statusReasonKey",
+        "deadlineDefinitionIds",
+        "filingProfileId",
+        "calendarProfileId",
+        "suspensionProfileId",
+        "gateIds",
+        "legalOverrideIds",
+        "implementationScope",
+        "uiExposure",
+        "sourceRefs"
+      ],
+      "properties": {
+        "regimeId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "regimeKind": {
+          "type": "string",
+          "enum": ["deadline", "filingOverlay"]
+        },
+        "level": {
+          "type": "string",
+          "enum": ["cantonal", "federal"]
+        },
+        "lawCode": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+        },
+        "provision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["supported", "blocked", "open"]
+        },
+        "statusReasonKey": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*(?:\\.[a-zA-Z0-9_-]+)+$"
+        },
+        "deadlineDefinitionIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+-[0-9]{3}$"
+          }
+        },
+        "filingProfileId": {
+          "oneOf": [
+            { "type": "string", "pattern": "^F[0-9]+_[A-Z0-9_]+$" },
+            { "type": "null" }
+          ]
+        },
+        "calendarProfileId": {
+          "oneOf": [
+            { "type": "string", "pattern": "^C_[A-Z0-9_]+$" },
+            { "type": "null" }
+          ]
+        },
+        "suspensionProfileId": {
+          "oneOf": [
+            { "type": "string", "pattern": "^S[0-9]?_[A-Z0-9_]+$" },
+            { "type": "null" }
+          ]
+        },
+        "gateIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^G[0-9]+_[A-Z0-9_]+$" }
+        },
+        "legalOverrideIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^OVR-[A-Z0-9-]+$" }
+        },
+        "implementationScope": {
+          "type": "string",
+          "enum": ["mvp02", "followup", "documentationOnly"]
+        },
+        "uiExposure": {
+          "type": "string",
+          "enum": ["visible", "hidden", "documentation"]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        }
+      }
+    }
+  }
+}

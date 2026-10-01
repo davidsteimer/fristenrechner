@@ -1,0 +1,96 @@
+TAP version 13
+# Subtest: Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung
+    # Subtest: baut getrennt vom Standardrelease und kennzeichnet den Build als nicht bereitstellbar
+    ok 1 - baut getrennt vom Standardrelease und kennzeichnet den Build als nicht bereitstellbar
+      ---
+      duration_ms: 3.857875
+      type: 'test'
+      ...
+    # Subtest: enthält nur lokale Laufzeitassets und keine QA-Vorgaben oder synthetischen Freigaben
+    ok 2 - enthält nur lokale Laufzeitassets und keine QA-Vorgaben oder synthetischen Freigaben
+      ---
+      duration_ms: 4.83425
+      type: 'test'
+      ...
+    # Subtest: belässt alle 28 eingebetteten Sozialpfade im Kandidatenstatus ohne berechnetes Enddatum
+    ok 3 - belässt alle 28 eingebetteten Sozialpfade im Kandidatenstatus ohne berechnetes Enddatum
+      ---
+      duration_ms: 278.316542
+      type: 'test'
+      ...
+    # Subtest: bleibt vom inzwischen freigegebenen normalen MVP-0.6-Einstieg und seinem Commit-Pin getrennt
+    ok 4 - bleibt vom inzwischen freigegebenen normalen MVP-0.6-Einstieg und seinem Commit-Pin getrennt
+      ---
+      duration_ms: 1.250959
+      type: 'test'
+      ...
+    # Subtest: weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück
+    ok 5 - weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück
+      ---
+      duration_ms: 52.354208
+      type: 'test'
+      ...
+    1..5
+ok 1 - Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung
+  ---
+  duration_ms: 442.455166
+  type: 'suite'
+  ...
+# Subtest: Statischer P-Build für MVP 0.6
+    # Subtest: erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest
+    ok 1 - erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest
+      ---
+      duration_ms: 95.554458
+      type: 'test'
+      ...
+    # Subtest: enthält keine Quellkarten, QA-Presets oder externen Laufzeitprovider
+    ok 2 - enthält keine Quellkarten, QA-Presets oder externen Laufzeitprovider
+      ---
+      duration_ms: 103.559792
+      type: 'test'
+      ...
+    # Subtest: führt kanonische Metadaten, private Anbieterabgrenzung und lokale Assets
+    ok 3 - führt kanonische Metadaten, private Anbieterabgrenzung und lokale Assets
+      ---
+      duration_ms: 163.287916
+      type: 'test'
+      ...
+    # Subtest: liefert die vorbereiteten Sicherheits- und Cacheregeln aus
+    ok 4 - liefert die vorbereiteten Sicherheits- und Cacheregeln aus
+      ---
+      duration_ms: 113.88825
+      type: 'test'
+      ...
+    # Subtest: hält den historischen ap17c-Prüfkandidaten vom normalen Releasebuild getrennt
+    ok 5 - hält den historischen ap17c-Prüfkandidaten vom normalen Releasebuild getrennt
+      ---
+      duration_ms: 89.05975
+      type: 'test'
+      ...
+    # Subtest: hält den historischen ap18c-Prüfkandidaten vom normalen Releasebuild getrennt
+    ok 6 - hält den historischen ap18c-Prüfkandidaten vom normalen Releasebuild getrennt
+      ---
+      duration_ms: 104.932917
+      type: 'test'
+      ...
+    # Subtest: weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen
+    ok 7 - weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen
+      ---
+      duration_ms: 61.472333
+      type: 'test'
+      ...
+    1..7
+ok 2 - Statischer P-Build für MVP 0.6
+  ---
+  duration_ms: 732.747667
+  type: 'suite'
+  ...
+1..2
+# tests 12
+# suites 2
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2042.81375

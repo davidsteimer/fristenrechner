@@ -1,0 +1,696 @@
+{
+  "reviewId": "AP20C3-SOURCE-CONTROL-20261001",
+  "checkedOn": "2026-10-01",
+  "completedAt": "2026-10-01T08:53:32.918757+00:00",
+  "purpose": "Begrenzte amtliche Quellenaktualisierung vor lokaler MVG-/ÜLG-Integration AP20C3",
+  "scope": {
+    "federalLaws": [
+      "ATSG",
+      "MVG",
+      "MVV",
+      "ÜLG",
+      "ÜLV"
+    ],
+    "bernLaws": [
+      "GSOG",
+      "VRPG",
+      "EGELG",
+      "EGKUMV"
+    ],
+    "crossReference": "ELG Art. 21 Abs. 2, keine vollständige ELG-Fachprüfung",
+    "sourceWindow": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "newFederalRules": 8,
+    "newBernerBindings": 8
+  },
+  "baselineBindings": [
+    {
+      "path": "docs/fachrecht/quellenabgleich-ap20b-bund.md",
+      "sha256": "518ff9be263fdb74c50eb09489ef88c3177881a5315fc03e06e19c01bffbfcad"
+    },
+    {
+      "path": "docs/fachrecht/zeitliche-bindung-ap20b.md",
+      "sha256": "6fe83e678b7c14e23586ebb7e1903918f4806bb4533c99a21fac1e6f542059d1"
+    },
+    {
+      "path": "docs/architektur/sozialversicherungsvertrag-ap20b.md",
+      "sha256": "f1b2c994c08e37e6f38a18e6b355a7f20588112d13d4bc0328a63c8f9896f2e1"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20b.md",
+      "sha256": "59e9f98da842a60ab25822bab9e74e6e22faa788a89c859d795bceecd08933a6"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-indexes.json",
+      "sha256": "fa4be7828baf8319702c0d9c638e4d95e9eb086b08ee5528a261db9f49aa45b5"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-originals.json",
+      "sha256": "b1fe603ce0743bed770fe2713407e52ba7b91b8917841889381eb892e24f1cda"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-comparisons.json",
+      "sha256": "c3a9869e540a6fb24ce97932f3704b29311c7c1e999f1ce7b44889a91dd54342"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/bern-sources/bern-source-review.json",
+      "sha256": "30bc675d65ca31d61b6c99f38d84f5775d13ba6e33bb5be8d42db2a854cb00f9"
+    },
+    {
+      "path": "data/source-reviews/events/2026-09-28-mvp-05-prerelease.1.json",
+      "sha256": "1d3dc59e02f5c67026cab22d7d20ddcca68840840ec54029c36f51482816f372"
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/social-procedures/ch-social-procedures.json",
+      "sha256": "1dd2792295b3b929efdcfa883b15509c0cd4fbef9dbf2a9f5228a8e6a6dacc26"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-elg-cross-reference.json",
+      "sha256": "9e128aea28de23044fd28969a030eb0b5aa09ee8b1f41bf8a404b746d3cd1594"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20c2.md",
+      "sha256": "864543a15afb57b205d9a183134a6eeb91bc19aeefd92bbcd9bdefaa2a1bc7b1"
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/quellenkontrolle.json",
+      "sha256": "6ef1e65e4a2e5a7fa0a87c2042d5fc17a9f736c3f09fe9035620dbf0ce84d4c5"
+    },
+    {
+      "path": "outputs/ap20c1-2026-09-30/quellenkontrolle.json",
+      "sha256": "6209ff32d00910b36f97dfb5c35c147dc19ec908500b17c75736bd3960da990c"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-026-beschluss.md",
+      "sha256": "16873c28621edcac92e490814c5196fbbfb34900d8e10d4c767cda8a5359ef7a"
+    }
+  ],
+  "federalIndexes": [
+    {
+      "name": "versions",
+      "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?work ?version ?start ?end ?expression ?xml WHERE {\nVALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2002/510> <https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043> <https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080> <https://fedlex.data.admin.ch/eli/cc/2021/373> <https://fedlex.data.admin.ch/eli/cc/2021/376> }\n\n      ?version jolux:isMemberOf ?work; jolux:dateApplicability ?start.\n      OPTIONAL { ?version jolux:dateEndApplicability ?end }\n      OPTIONAL {\n        ?version jolux:isRealizedBy ?expression.\n        ?expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU>;\n          jolux:isEmbodiedBy ?manifestation.\n        ?manifestation jolux:format <http://publications.europa.eu/resource/authority/file-type/XML>;\n          jolux:isExemplifiedBy ?xml.\n      }\n      FILTER(str(?start) <= \"2027-12-31\" && (!BOUND(?end) || str(?end) >= \"2026-01-01\"))\n    } ORDER BY ?work ?start",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Fstart%20%3Fend%20%3Fexpression%20%3Fxml%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/373%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/376%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Fstart.%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%20%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexpression.%0A%20%20%20%20%20%20%20%20%3Fexpression%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisEmbodiedBy%20%3Fmanifestation.%0A%20%20%20%20%20%20%20%20%3Fmanifestation%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisExemplifiedBy%20%3Fxml.%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fstart",
+        "finalUrl": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Fstart%20%3Fend%20%3Fexpression%20%3Fxml%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/373%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/376%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Fstart.%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%20%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexpression.%0A%20%20%20%20%20%20%20%20%3Fexpression%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisEmbodiedBy%20%3Fmanifestation.%0A%20%20%20%20%20%20%20%20%3Fmanifestation%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisExemplifiedBy%20%3Fxml.%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fstart",
+        "retrievedAt": "2026-10-01T08:53:30.113398+00:00",
+        "httpStatus": 200,
+        "contentType": "application/sparql-results+json",
+        "bytes": 3327,
+        "sha256": "86b1144b3c9b90141aa5d9d25883b39d2bafddde113af399c3b14bea3bf08c92"
+      },
+      "rows": [
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101",
+          "start": "2024-01-01",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3043_3043_3043-20240101-de-xml-3.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101",
+          "start": "2026-01-01",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3080_3080_3080-20260101-de-xml.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2002/510",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101",
+          "start": "2024-01-01",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2021/373",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2021/373/20250101",
+          "start": "2025-01-01",
+          "end": "2028-12-31",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2021/373/20250101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/373/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-373-20250101-de-xml-3.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2021/376",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2021/376/20250101",
+          "start": "2025-01-01",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2021/376/20250101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/376/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-376-20250101-de-xml-3.xml"
+        }
+      ],
+      "previousFilteredRowCount": 5,
+      "freshRowCount": 5,
+      "semanticRowsEqual": true,
+      "previousFilteredRowsSha256": "e13fead42b6d560850847799113467c0a106ebbb97bb19ceade5a529e686b08d",
+      "freshRowsSha256": "e13fead42b6d560850847799113467c0a106ebbb97bb19ceade5a529e686b08d"
+    },
+    {
+      "name": "impacts",
+      "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?work ?impact ?date ?target ?source WHERE {\nVALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2002/510> <https://fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043> <https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080> <https://fedlex.data.admin.ch/eli/cc/2021/373> <https://fedlex.data.admin.ch/eli/cc/2021/376> }\n\n      ?impact jolux:impactToLegalResource ?target;\n        jolux:legalResourceImpactHasDateEntryInForce ?date.\n      { ?target jolux:legalResourceSubdivisionIsPartOf ?work. } UNION { FILTER(?target = ?work) }\n      OPTIONAL { ?impact jolux:impactFromLegalResource/jolux:legalResourceSubdivisionIsPartOf ?source }\n      FILTER(str(?date) >= \"2026-01-01\" && str(?date) <= \"2027-12-31\")\n    } ORDER BY ?work ?date ?target",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/373%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/376%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%0A%20%20%20%20%20%20%20%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20%20%20%20%20%20%7B%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%20%7D%20UNION%20%7B%20FILTER%28%3Ftarget%20%3D%20%3Fwork%29%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-01-01%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+        "finalUrl": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/373%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2021/376%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%0A%20%20%20%20%20%20%20%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20%20%20%20%20%20%7B%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%20%7D%20UNION%20%7B%20FILTER%28%3Ftarget%20%3D%20%3Fwork%29%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-01-01%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+        "retrievedAt": "2026-10-01T08:53:30.148510+00:00",
+        "httpStatus": 200,
+        "contentType": "application/sparql-results+json",
+        "bytes": 1206,
+        "sha256": "8643694ef0f955926e462a26fe5dca6969e1ac13c4c42253931c99e614212956"
+      },
+      "rows": [
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2025/763/legal-analysis/LegalResourceImpact/2",
+          "date": "2026-01-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/art_28a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2025/763"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2025/763/legal-analysis/LegalResourceImpact/1",
+          "date": "2026-01-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/art_28b",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2025/763"
+        }
+      ],
+      "previousFilteredRowCount": 2,
+      "freshRowCount": 2,
+      "semanticRowsEqual": true,
+      "previousFilteredRowsSha256": "5bcc1482edf96abe6fdc5ab06119686437a0707cca800a5bfed7072c92716dd7",
+      "freshRowsSha256": "5bcc1482edf96abe6fdc5ab06119686437a0707cca800a5bfed7072c92716dd7"
+    }
+  ],
+  "federalOriginals": [
+    {
+      "law": "MVG",
+      "start": "2024-01-01",
+      "end": null,
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3043_3043_3043-20240101-de-xml-3.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3043_3043_3043-20240101-de-xml-3.xml",
+        "retrievedAt": "2026-10-01T08:53:30.152737+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 218378,
+        "sha256": "a0269ec2fe8606f6858da9462260678055e418cea6c2e348f1f8b91f8c448e32"
+      },
+      "baselineSha256": "a0269ec2fe8606f6858da9462260678055e418cea6c2e348f1f8b91f8c448e32",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "1",
+        "22",
+        "27",
+        "104",
+        "105"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Militärversicherung anwendbar, soweit das vorliegende Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht. 2 Sie finden im Bereich des Medizinalrechts und des Tarifwesens (Art. 22–27) keine Anwendung.",
+        "22": "Art. 22 Eignung 1 Als Ärzte, Zahnärzte, Chiropraktoren und Apotheker im Sinne dieses Gesetzes gelten Personen, die die Voraussetzungen für eine privatwirtschaftliche Berufsausübung in eigener fachlicher Verantwortung gemäss dem Medizinalberufegesetz vom 23. Juni 2006 erfüllen. Die von einem Kanton zur Abgabe von Medikamenten zugelassenen Ärzte sind im Umfang dieser Zulassung den Apothekern gleichgestellt. 2 Der Bundesrat legt durch Verordnung die Voraussetzungen fest, unter denen die Spitäler und Kuranstalten, die medizinischen Hilfspersonen, die Laboratorien, die Abklärungsstellen sowie die Transport- und Rettungsunternehmen zur Tätigkeit zulasten der Militärversicherung zugelassen werden.",
+        "27": "Art. 27 Streitigkeiten 1 Streitigkeiten zwischen der Militärversicherung und Medizinalpersonen, Anstalten, Abklärungsstellen und Laboratorien entscheidet ein für das ganze Kantonsgebiet zuständiges Schiedsgericht. 2 Zuständig ist das Schiedsgericht des Kantons, in dem die ständige Einrichtung einer dieser Personen oder Anstalten liegt. 3 Die Kantone bezeichnen das Schiedsgericht und regeln das Verfahren. Das Schiedsgericht setzt sich zusammen aus einem neutralen Vorsitzenden und je einer Vertretung der Parteien in gleicher Zahl. Der schiedsgerichtlichen Behandlung eines Streitfalles hat ein Vermittlungsverfahren vorauszugehen, sofern nicht schon eine vertraglich eingesetzte Vermittlungsinstanz geamtet hat. 4 Die Entscheide werden den Parteien mit Begründung und Rechtsmittelbelehrung schriftlich eröffnet. 5 Gegen Entscheide des Schiedsgerichts kann nach Massgabe des Bundesgerichtsgesetzes vom 17. Juni 2005 beim Bundesgericht Beschwerde geführt werden.",
+        "104": "Art. 104",
+        "105": "Art. 105"
+      },
+      "normTextsSha256": "463666f0ef6a7f42f03ddba5aae8febb3be8d34a527311279a2b3d4a79f9da3a"
+    },
+    {
+      "law": "MVV",
+      "start": "2026-01-01",
+      "end": null,
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3080_3080_3080-20260101-de-xml.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de/xml/fedlex-data-admin-ch-eli-cc-1993-3080_3080_3080-20260101-de-xml.xml",
+        "retrievedAt": "2026-10-01T08:53:30.133874+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 98879,
+        "sha256": "e480ae0b662e58f4540c87fe51b5faba6695e4f12c0fd855ef3d9db71326c83d"
+      },
+      "baselineSha256": "e480ae0b662e58f4540c87fe51b5faba6695e4f12c0fd855ef3d9db71326c83d",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "32a"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "32a": "Art. 32 a Vorbescheid Die Militärversicherung kann dem Gesuchsteller das Ergebnis der Abklärung vor Eröffnung des Entscheides schriftlich mitteilen und eine Frist ansetzen, innert derer er sich dazu äussern, Akteneinsicht verlangen oder ergänzende Abklärungen beantragen kann."
+      },
+      "normTextsSha256": "2248f67ac46aa430efd05f0ca43dfff6701c4da4946949e2eb16c576db2a7cba"
+    },
+    {
+      "law": "ATSG",
+      "start": "2024-01-01",
+      "end": null,
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "retrievedAt": "2026-10-01T08:53:30.284739+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 139093,
+        "sha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c"
+      },
+      "baselineSha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "2",
+        "38",
+        "39",
+        "40",
+        "41",
+        "49",
+        "51",
+        "52",
+        "55",
+        "56",
+        "58",
+        "60",
+        "61"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "2": "Art. 2 Geltungsbereich und Verhältnis zu den einzelnen Sozialversicherungsgesetzen Die Bestimmungen dieses Gesetzes sind auf die bundesgesetzlich geregelten Sozialversicherungen anwendbar, wenn und soweit die einzelnen Sozialversicherungsgesetze es vorsehen.",
+        "38": "Art. 38 Berechnung und Stillstand der Fristen 1 Berechnet sich eine Frist nach Tagen oder Monaten und bedarf sie der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Mitteilung zu laufen. 2 Bedarf sie nicht der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Auslösung zu laufen. 2bis Eine Mitteilung, die nur gegen Unterschrift des Adressaten beziehungsweise der Adressatin oder einer anderen berechtigten Person überbracht wird, gilt spätestens am siebenten Tag nach dem ersten erfolglosen Zustellungsversuch als erfolgt. 3 Ist der letzte Tag der Frist ein Samstag, ein Sonntag oder ein vom Bundesrecht oder vom kantonalen Recht anerkannter Feiertag, so endet sie am nächstfolgenden Werktag. Massgebend ist das Recht des Kantons, in dem die Partei oder ihr Vertreter beziehungsweise ihre Vertreterin Wohnsitz oder Sitz hat. 4 Gesetzliche oder behördliche Fristen, die nach Tagen oder Monaten bestimmt sind, stehen still: a. vom siebten Tag vor Ostern bis und mit dem siebten Tag nach Ostern; b. vom 15. Juli bis und mit dem 15. August; c. vom 18. Dezember bis und mit dem 2. Januar.",
+        "39": "Art. 39 Einhaltung der Fristen 1 Schriftliche Eingaben müssen spätestens am letzten Tag der Frist dem Versicherungsträger eingereicht oder zu dessen Handen der Schweizerischen Post oder einer schweizerischen diplomatischen oder konsularischen Vertretung übergeben werden. 2 Gelangt die Partei rechtzeitig an einen unzuständigen Versicherungsträger, so gilt die Frist als gewahrt.",
+        "40": "Art. 40 Fristerstreckung und Säumnisfolgen 1 Eine gesetzliche Frist kann nicht erstreckt werden. 2 Setzt der Versicherungsträger eine Frist für eine bestimmte Handlung an, so droht er gleichzeitig die Folgen eines Versäumnisses an. Andere als die angedrohten Folgen treten nicht ein. 3 Eine vom Versicherungsträger angesetzte Frist kann aus zureichenden Gründen erstreckt werden, wenn die Partei vor Ablauf der Frist darum nachsucht.",
+        "41": "Art. 41 Wiederherstellung der Frist Ist die gesuchstellende Person oder ihre Vertretung unverschuldeterweise abgehalten worden, binnen Frist zu handeln, so wird diese wieder hergestellt, sofern sie unter Angabe des Grundes innert 30 Tagen nach Wegfall des Hindernisses darum ersucht und die versäumte Rechtshandlung nachholt.",
+        "49": "Art. 49 Verfügung 1 Über Leistungen, Forderungen und Anordnungen, die erheblich sind oder mit denen die betroffene Person nicht einverstanden ist, hat der Versicherungsträger schriftlich Verfügungen zu erlassen. 2 Dem Begehren um Erlass einer Feststellungsverfügung ist zu entsprechen, wenn die gesuchstellende Person ein schützenswertes Interesse glaubhaft macht. 3 Die Verfügungen werden mit einer Rechtsmittelbelehrung versehen. Sie sind zu begründen, wenn sie den Begehren der Parteien nicht voll entsprechen. Aus einer mangelhaften Eröffnung einer Verfügung darf der betroffenen Person kein Nachteil erwachsen. 4 Erlässt ein Versicherungsträger eine Verfügung, welche die Leistungspflicht eines anderen Trägers berührt, so hat er auch ihm die Verfügung zu eröffnen. Dieser kann die gleichen Rechtsmittel ergreifen wie die versicherte Person. 5 Der Versicherungsträger kann in seiner Verfügung einer Einsprache oder Beschwerde die aufschiebende Wirkung entziehen, auch wenn die Verfügung eine Geldleistung zum Gegenstand hat. Ausgenommen sind Verfügungen über die Rückerstattung unrechtmässig bezogener Leistungen.",
+        "51": "Art. 51 Formloses Verfahren 1 Leistungen, Forderungen und Anordnungen, die nicht unter Artikel 49 Absatz 1 fallen, können in einem formlosen Verfahren behandelt werden. 2 Die betroffene Person kann den Erlass einer Verfügung verlangen.",
+        "52": "Art. 52 Einsprache 1 Gegen Verfügungen kann innerhalb von 30 Tagen bei der verfügenden Stelle Einsprache erhoben werden; davon ausgenommen sind prozess- und verfahrensleitende Verfügungen. 2 Die Einspracheentscheide sind innert angemessener Frist zu erlassen. Sie werden begründet und mit einer Rechtsmittelbelehrung versehen. 3 Das Einspracheverfahren ist kostenlos. Parteientschädigungen werden in der Regel nicht ausgerichtet. 4 Der Versicherungsträger kann in seinem Einspracheentscheid einer allfälligen Beschwerde die aufschiebende Wirkung entziehen, auch wenn der Einspracheentscheid eine Geldleistung zum Gegenstand hat. Ausgenommen sind Einspracheentscheide über die Rückerstattung unrechtmässig bezogener Leistungen.",
+        "55": "Art. 55 Besondere Verfahrensregeln 1 In den Artikeln 27–54 oder in den Einzelgesetzen nicht abschliessend geregelte Verfahrensbereiche bestimmen sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968 . 1bis Der Bundesrat kann vorsehen, dass die Bestimmungen des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 über den elektronischen Verkehr mit Behörden auch für Verfahren nach diesem Gesetz gelten. 2 Das Verfahren vor einer Bundesbehörde richtet sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968, ausser wenn sie über sozialversicherungsrechtliche Leistungen, Forderungen und Anordnungen entscheidet.",
+        "56": "Art. 56 Beschwerderecht 1 Gegen Einspracheentscheide oder Verfügungen, gegen welche eine Einsprache ausgeschlossen ist, kann Beschwerde erhoben werden. 2 Beschwerde kann auch erhoben werden, wenn der Versicherungsträger entgegen dem Begehren der betroffenen Person keine Verfügung oder keinen Einspracheentscheid erlässt.",
+        "58": "Art. 58 Zuständigkeit 1 Zuständig ist das Versicherungsgericht desjenigen Kantons, in dem die versicherte Person oder der Beschwerde führende Dritte zur Zeit der Beschwerdeerhebung Wohnsitz hat. 2 Befindet sich der Wohnsitz der versicherten Person oder des Beschwerde führenden Dritten im Ausland, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem sich ihr letzter schweizerischer Wohnsitz befand oder in dem ihr letzter schweizerischer Arbeitgeber Wohnsitz hat; lässt sich keiner dieser Orte ermitteln, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem das Durchführungsorgan seinen Sitz hat. 3 Die Behörde, die sich als unzuständig erachtet, überweist die Beschwerde ohne Verzug dem zuständigen Versicherungsgericht.",
+        "60": "Art. 60 Beschwerdefrist 1 Die Beschwerde ist innerhalb von 30 Tagen nach der Eröffnung des Einspracheentscheides oder der Verfügung, gegen welche eine Einsprache ausgeschlossen ist, einzureichen. 2 Die Artikel 38–41 sind sinngemäss anwendbar.",
+        "61": "Art. 61 Verfahrensregeln Das Verfahren vor dem kantonalen Versicherungsgericht bestimmt sich unter Vorbehalt von Artikel 1 Absatz 3 des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 nach kantonalem Recht. Es hat folgenden Anforderungen zu genügen: a. Das Verfahren muss einfach, rasch und in der Regel öffentlich sein. b. Die Beschwerde muss eine gedrängte Darstellung des Sachverhaltes, ein Rechtsbegehren und eine kurze Begründung enthalten. Genügt sie diesen Anforderungen nicht, so setzt das Versicherungsgericht der Beschwerde führenden Person eine angemessene Frist zur Verbesserung und verbindet damit die Androhung, dass sonst auf die Beschwerde nicht eingetreten wird. c. Das Versicherungsgericht stellt unter Mitwirkung der Parteien die für den Entscheid erheblichen Tatsachen fest; es erhebt die notwendigen Beweise und ist in der Beweiswürdigung frei. d. Das Versicherungsgericht ist an die Begehren der Parteien nicht gebunden. Es kann eine Verfügung oder einen Einspracheentscheid zu Ungunsten der Beschwerde führenden Person ändern oder dieser mehr zusprechen, als sie verlangt hat, wobei den Parteien vorher Gelegenheit zur Stellungnahme sowie zum Rückzug der Beschwerde zu geben ist. e. Rechtfertigen es die Umstände, so können die Parteien zur Verhandlung vorgeladen werden. f. Das Recht, sich verbeiständen zu lassen, muss gewährleistet sein. Wo die Verhältnisse es rechtfertigen, wird der Beschwerde führenden Person ein unentgeltlicher Rechtsbeistand bewilligt. f bis . Bei Streitigkeiten über Leistungen ist das Verfahren kostenpflichtig, wenn dies im jeweiligen Einzelgesetz vorgesehen ist; sieht das Einzelgesetz keine Kostenpflicht bei solchen Streitigkeiten vor, so kann das Gericht einer Partei, die sich mutwillig oder leichtsinnig verhält, Gerichtskosten auferlegen. g. Die obsiegende Beschwerde führende Person hat Anspruch auf Ersatz der Parteikosten. Diese werden vom Versicherungsgericht festgesetzt und ohne Rücksicht auf den Streitwert nach der Bedeutung der Streitsache und nach der Schwierigkeit des Prozesses bemessen. h. Die Entscheide werden, versehen mit einer Begründung und einer Rechtsmittelbelehrung sowie mit den Namen der Mitglieder des Versicherungsgerichts schriftlich eröffnet. i. Die Revision von Entscheiden wegen Entdeckung neuer Tatsachen oder Beweismittel oder wegen Einwirkung durch Verbrechen oder Vergehen muss gewährleistet sein."
+      },
+      "normTextsSha256": "0b2266776406686a641ccea1615aa241a8b0a52f3d3450a0e0f5b37f05cd0855"
+    },
+    {
+      "law": "ÜLG",
+      "start": "2025-01-01",
+      "end": "2028-12-31",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/373/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-373-20250101-de-xml-3.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/373/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-373-20250101-de-xml-3.xml",
+        "retrievedAt": "2026-10-01T08:53:30.272653+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 60972,
+        "sha256": "c680b7c5cafdbc03117e7d2f7677256233e993cfc32585c36dd625a640cfc45c"
+      },
+      "baselineSha256": "c680b7c5cafdbc03117e7d2f7677256233e993cfc32585c36dd625a640cfc45c",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "1",
+        "18",
+        "19",
+        "23"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Überbrückungsleistungen nach diesem Gesetz anwendbar, soweit dieses Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht.",
+        "18": "Art. 18 Frist für die Geltendmachung von Krankheits- und Behinderungskosten Krankheits- und Behinderungskosten werden vergütet, wenn: a. die Vergütung innert 15 Monaten nach Rechnungsstellung geltend gemacht wird; und b. die Kosten in einem Zeitabschnitt entstanden sind, während dem die antragsstellende Person die Voraussetzung nach den Artikeln 5 und 6 erfüllte.",
+        "19": "Art. 19 Zuständige Organe 1 Für die Entgegennahme und die Prüfung der Gesuche, die Festsetzung und die Auszahlung der Überbrückungsleistungen sind die Organe gemäss Artikel 21 Absatz 2 ELG des Kantons zuständig, in dem die Bezügerin oder der Bezüger den Wohnsitz hat. 2 Die Buchführung, die Revision und die Haftung für Schäden durch die Organe nach Artikel 21 Absatz 2 ELG richten sich nach den jeweiligen Bestimmungen des ELG.",
+        "23": "Art. 23 Aufschiebende Wirkung Die Organe nach Artikel 21 Absatz 2 ELG können in ihrer Verfügung einer allfälligen Beschwerde die aufschiebende Wirkung entziehen, auch wenn die Verfügung auf eine Geldleistung gerichtet ist; im Übrigen gilt Artikel 55 Absätze 2–4 des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 ."
+      },
+      "normTextsSha256": "c45ea4b0606d28bc35c42f4893fca0a893b762785558ce35654b442394d8dab4"
+    },
+    {
+      "law": "ÜLV",
+      "start": "2025-01-01",
+      "end": null,
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/376/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-376-20250101-de-xml-3.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/376/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2021-376-20250101-de-xml-3.xml",
+        "retrievedAt": "2026-10-01T08:53:30.295756+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 63018,
+        "sha256": "df350d07d379a8b614cc4bccf9b8f40157d98e5560229110dae5f471392e9d56"
+      },
+      "baselineSha256": "df350d07d379a8b614cc4bccf9b8f40157d98e5560229110dae5f471392e9d56",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "38"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "38": "Art . 38 Bearbeitungsdauer 1 Nach Eingang einer Anmeldung für Überbrückungsleistungen ist innerhalb von 90 Tagen über Anspruch und Höhe der Leistungen zu verfügen. 2 Kann diese Frist nicht eingehalten werden, so sind Vorschussleistungen im Sinne von Artikel 19 Absatz 4 ATSG auszurichten, wenn die antragstellende Person ihrer Mitwirkungspflicht nachgekommen ist und ein Anspruch nachgewiesen erscheint."
+      },
+      "normTextsSha256": "739566249abec26761c34497e8702b1c7f44cf586b01a5f56751a2681bd98261"
+    }
+  ],
+  "bernOriginals": [
+    {
+      "law": "GSOG",
+      "metadataReceipt": {
+        "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/161.1",
+        "finalUrl": "https://www.belex.sites.be.ch/api/de/texts_of_law/161.1",
+        "retrievedAt": "2026-10-01T08:53:31.066039+00:00",
+        "httpStatus": 200,
+        "contentType": "application/json; charset=utf-8",
+        "bytes": 2770817,
+        "sha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f"
+      },
+      "baselineMetadataSha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f",
+      "metadataBytesEqualToAP20B": true,
+      "currentVersion": {
+        "id": 3367,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.05.2026 (Beschlussdatum: 02.09.2025)",
+        "structured_document_id": 37196,
+        "title": "Gesetz über die Organisation der Gerichtsbehörden und der Staatsanwaltschaft",
+        "abbreviation": "GSOG"
+      },
+      "currentVersionEqualToAP20B": true,
+      "futureVersions": [],
+      "futureVersionsEqualToAP20B": true,
+      "normTexts": {
+        "54": "Art. 54 Abteilungen 1 Die Abteilungen sind wie folgt zuständig für die Beurteilung der Streitigkeiten, die dem Verwaltungsgericht übertragen sind: a Die sozialversicherungsrechtliche Abteilung beurteilt alle Streitigkeiten aus dem Bereich des Sozialversicherungsrechts und nimmt die Aufgaben des Schiedsgerichts in Sozialversicherungsstreitigkeiten wahr; Buchstabe c bleibt vorbehalten. b Alle übrigen vom Verwaltungsgericht in deutscher Sprache zu beurteilenden Streitigkeiten fallen in die Zuständigkeit der verwaltungsrechtlichen Abteilung. c Die Abteilung für französischsprachige Geschäfte entscheidet alle vor Verwaltungsgericht in französischer Sprache zu behandelnden Streitigkeiten und nimmt die Aufgaben des Schiedsgerichts in Sozialversicherungsstreitigkeiten in französischer Sprache wahr. 2 Das Verwaltungsgericht kann durch Reglement die Beurteilung von Streitigkeiten aus einzelnen Sachgebieten einer andern Abteilung zur Behandlung zuweisen. 3 Die Abteilungen sorgen für die Einheitlichkeit der Rechtsprechung unter sich und in den Abteilungen. 4 Sie wählen je eine Stellvertreterin oder einen Stellvertreter der Abteilungspräsidentin oder des Abteilungspräsidenten und beschliessen über ihre Organisation durch Reglement. 5 Die Richterinnen und Richter sind bei Bedarf zur Aushilfe in den anderen Abteilungen verpflichtet. Sie können auch für einzelne Geschäfte in einer anderen Abteilung eingesetzt werden."
+      },
+      "normTextsEqualToAP20B": true,
+      "pdfOriginals": [
+        {
+          "file": "GSOG-3367.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3367/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3367/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:31.526188+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1832662,
+            "sha256": "4a892dc8ed79d278ec42a5f43d30ecdb49ef4a0d08f2c7ac139c58903c38bb04"
+          },
+          "baselineSha256": "4a892dc8ed79d278ec42a5f43d30ecdb49ef4a0d08f2c7ac139c58903c38bb04",
+          "bytesEqualToAP20B": true
+        },
+        {
+          "file": "GSOG-3144.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3144/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3144/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:31.928833+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1459159,
+            "sha256": "dc468710cc6e28ccffd796175e7205361a9ec3c6a0926ddc02caf51acf889cdd"
+          },
+          "baselineSha256": "dc468710cc6e28ccffd796175e7205361a9ec3c6a0926ddc02caf51acf889cdd",
+          "bytesEqualToAP20B": true
+        }
+      ]
+    },
+    {
+      "law": "VRPG",
+      "metadataReceipt": {
+        "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/155.21",
+        "finalUrl": "https://www.belex.sites.be.ch/api/de/texts_of_law/155.21",
+        "retrievedAt": "2026-10-01T08:53:31.289303+00:00",
+        "httpStatus": 200,
+        "contentType": "application/json; charset=utf-8",
+        "bytes": 2755478,
+        "sha256": "ab3fbad2d98051823550e3a7f756494bb56bfc051957a972d80a58ce2b8cde62"
+      },
+      "baselineMetadataSha256": "ab3fbad2d98051823550e3a7f756494bb56bfc051957a972d80a58ce2b8cde62",
+      "metadataBytesEqualToAP20B": true,
+      "currentVersion": {
+        "id": 3424,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.09.2026 (Beschlussdatum: 03.12.2025)",
+        "structured_document_id": 37736,
+        "title": "Gesetz über die Verwaltungsrechtspflege",
+        "abbreviation": "VRPG"
+      },
+      "currentVersionEqualToAP20B": true,
+      "futureVersions": [],
+      "futureVersionsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 1 Dieses Gesetz regelt das Verfahren vor den Verwaltungsbehörden und vor den Verwaltungsjustizbehörden im Kanton und in den Gemeinden. * 2 Abweichendes Bundesrecht, insbesondere solches aus dem Gebiete der Sozialversicherung, und staatliche Abkommen bleiben vorbehalten. 1.2 Behörden 1.2.1 Begriff",
+        "32": "Art. 32 Form und Sprache von Parteieingaben 1 Parteieingaben sind in deutscher oder französischer Sprache bei der zuständigen Behörde einzureichen. Eingaben an Behörden im Sinne von Artikel 2 Absatz 1 Buchstabe b sowie an das Regierungsstatthalteramt sind in der Amtssprache des jeweiligen Verwaltungskreises einzureichen. * 2 Sie müssen einen Antrag, die Angabe von Tatsachen und Beweismitteln, eine Begründung sowie eine Unterschrift enthalten; greifbare Beweismittel sind beizulegen. 3 Im Verwaltungsjustizverfahren sind Parteieingaben mindestens im Doppel einzureichen. Fehlt die zweite Ausfertigung, oder benötigt die Behörde mehr als zwei Ausfertigungen, so kann sie die Partei auffordern, diese nachzureichen.",
+        "81": "Art. 81 Form und Frist 1 Die Verwaltungsgerichtsbeschwerde ist innert 30 Tagen seit Eröffnung des Entscheids oder der Verfügung schriftlich und unter Beachtung der Formvorschriften von Artikel 32 zu erheben. 2 Die Frist beträgt zehn Tage zur Anfechtung von * a Entscheiden in kommunalen Wahlsachen, b Entscheiden betreffend Vorbereitungshandlungen in kommunalen Abstimmungssachen.",
+        "83": "Art. 83 Instruktion 1 Die Instruktion des Beschwerdeverfahrens richtet sich sinngemäss nach Artikel 69 und 71."
+      },
+      "normTextsEqualToAP20B": true,
+      "pdfOriginals": [
+        {
+          "file": "VRPG-3424.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3424/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3424/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:31.825176+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1774311,
+            "sha256": "b3a762a64685025090ffe5476b5a0973228fae13a5b9367e54c42d684a45ad70"
+          },
+          "baselineSha256": "b3a762a64685025090ffe5476b5a0973228fae13a5b9367e54c42d684a45ad70",
+          "bytesEqualToAP20B": true
+        },
+        {
+          "file": "VRPG-2855.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/2855/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/2855/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:32.235283+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1764154,
+            "sha256": "68d5e02fc998016fb4d3d94c9458aaef8b6e0bff4c6d9fe1a14b3b8e54f7c0bc"
+          },
+          "baselineSha256": "68d5e02fc998016fb4d3d94c9458aaef8b6e0bff4c6d9fe1a14b3b8e54f7c0bc",
+          "bytesEqualToAP20B": true
+        }
+      ]
+    },
+    {
+      "law": "EGELG",
+      "metadataReceipt": {
+        "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/841.31",
+        "finalUrl": "https://www.belex.sites.be.ch/api/de/texts_of_law/841.31",
+        "retrievedAt": "2026-10-01T08:53:30.880635+00:00",
+        "httpStatus": 200,
+        "contentType": "application/json; charset=utf-8",
+        "bytes": 308688,
+        "sha256": "9c57f7eff41706e7e53d97dcf553163c7ef3618aabbfa5e5c0e3442288f8fed7"
+      },
+      "baselineMetadataSha256": "9c57f7eff41706e7e53d97dcf553163c7ef3618aabbfa5e5c0e3442288f8fed7",
+      "metadataBytesEqualToAP20B": true,
+      "currentVersion": {
+        "id": 3072,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.01.2025 (Beschlussdatum: 05.03.2024)",
+        "structured_document_id": 32396,
+        "title": "Einführungsgesetz zum Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+        "abbreviation": "EG ELG"
+      },
+      "currentVersionEqualToAP20B": true,
+      "futureVersions": [],
+      "futureVersionsEqualToAP20B": true,
+      "normTexts": {
+        "8": "Art. 8 Vollzug 1 Der Vollzug dieses Gesetzes wird der Ausgleichskasse des Kantons Bern (AKB) übertragen.",
+        "9": "Art. 9 Ergänzendes Recht 1 Die Bestimmungen der Einführungsgesetzgebung zum Bundesgesetz über die Alters- und Hinterlassenenversicherung betreffend Organisation, Geschäftsführung, Zweigstellen, Aufsicht, Verantwortlichkeit, Revision und Vollzug gelten sinngemäss, soweit dieses Gesetz nichts anderes bestimmt."
+      },
+      "normTextsEqualToAP20B": true,
+      "pdfOriginals": [
+        {
+          "file": "EGELG-3072.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3072/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3072/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:31.089088+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 220691,
+            "sha256": "b268565840fab2be4c4b3190c6dc07c5205fd53d478f1032e43427dc3a760261"
+          },
+          "baselineSha256": "b268565840fab2be4c4b3190c6dc07c5205fd53d478f1032e43427dc3a760261",
+          "bytesEqualToAP20B": true
+        }
+      ]
+    },
+    {
+      "law": "EGKUMV",
+      "metadataReceipt": {
+        "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/842.11",
+        "finalUrl": "https://www.belex.sites.be.ch/api/de/texts_of_law/842.11",
+        "retrievedAt": "2026-10-01T08:53:31.268234+00:00",
+        "httpStatus": 200,
+        "contentType": "application/json; charset=utf-8",
+        "bytes": 1404859,
+        "sha256": "876b659df7bf16c41583e898663c7fd3796a581253870722e80618e3b63321d9"
+      },
+      "baselineMetadataSha256": "876b659df7bf16c41583e898663c7fd3796a581253870722e80618e3b63321d9",
+      "metadataBytesEqualToAP20B": true,
+      "currentVersion": {
+        "id": 3445,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.09.2026 (Beschlussdatum: 03.12.2025)",
+        "structured_document_id": 37768,
+        "title": "Gesetz betreffend die Einführung der Bundesgesetze über die Kranken-, die Unfall- und die Militärversicherung",
+        "abbreviation": "EG KUMV"
+      },
+      "currentVersionEqualToAP20B": true,
+      "futureVersions": [],
+      "futureVersionsEqualToAP20B": true,
+      "normTexts": {
+        "39": "Art. 39 1 Das Schiedsgericht in Sozialversicherungsstreitigkeiten beurteilt Streitigkeiten zwischen der Militärversicherung und Medizinalpersonen, Anstalten, Abklärungsstellen und Laboratorien. 4 Schiedsgericht in Sozialversicherungsstreitigkeiten 4.1 Allgemeine Bestimmungen",
+        "40": "Art. 40 Schiedsgericht in Sozialversicherungsstreitigkeiten 1 Die Aufgaben des Schiedsgerichts in Sozialversicherungsstreitigkeiten werden dem Verwaltungsgericht übertragen."
+      },
+      "normTextsEqualToAP20B": true,
+      "pdfOriginals": [
+        {
+          "file": "EGKUMV-3445.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3445/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3445/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:31.654390+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1367157,
+            "sha256": "e916e5f576fc962af233a7bb39f3eebe5fb4a4fcb92bf015ca4122f11d8c9799"
+          },
+          "baselineSha256": "e916e5f576fc962af233a7bb39f3eebe5fb4a4fcb92bf015ca4122f11d8c9799",
+          "bytesEqualToAP20B": true
+        },
+        {
+          "file": "EGKUMV-2435.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/2435/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/2435/pdf_file",
+            "retrievedAt": "2026-10-01T08:53:32.056017+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1349951,
+            "sha256": "bd3e77b1c87f693f9f038026634c361ff0f48c1bdd40272dd81a9654f88254ba"
+          },
+          "baselineSha256": "bd3e77b1c87f693f9f038026634c361ff0f48c1bdd40272dd81a9654f88254ba",
+          "bytesEqualToAP20B": true
+        }
+      ]
+    }
+  ],
+  "elgCrossReference": {
+    "versionIndex": {
+      "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?version ?start ?end ?xml WHERE {\n?version jolux:isMemberOf <https://fedlex.data.admin.ch/eli/cc/2007/804>; jolux:dateApplicability ?start.\nOPTIONAL { ?version jolux:dateEndApplicability ?end }\nOPTIONAL { ?version jolux:isRealizedBy ?exp. ?exp jolux:language <http://publications.europa.eu/resource/authority/language/DEU>; jolux:isEmbodiedBy ?m. ?m jolux:format <http://publications.europa.eu/resource/authority/file-type/XML>; jolux:isExemplifiedBy ?xml. }\nFILTER(str(?start) <= \"2027-12-31\" && (!BOUND(?end) || str(?end) >= \"2026-01-01\"))\n} ORDER BY ?start",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fversion%20%3Fstart%20%3Fend%20%3Fxml%20WHERE%20%7B%0A%3Fversion%20jolux%3AisMemberOf%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2007/804%3E%3B%20jolux%3AdateApplicability%20%3Fstart.%0AOPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0AOPTIONAL%20%7B%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexp.%20%3Fexp%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%20jolux%3AisEmbodiedBy%20%3Fm.%20%3Fm%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%20jolux%3AisExemplifiedBy%20%3Fxml.%20%7D%0AFILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%7D%20ORDER%20BY%20%3Fstart",
+        "finalUrl": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fversion%20%3Fstart%20%3Fend%20%3Fxml%20WHERE%20%7B%0A%3Fversion%20jolux%3AisMemberOf%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2007/804%3E%3B%20jolux%3AdateApplicability%20%3Fstart.%0AOPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0AOPTIONAL%20%7B%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexp.%20%3Fexp%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%20jolux%3AisEmbodiedBy%20%3Fm.%20%3Fm%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%20jolux%3AisExemplifiedBy%20%3Fxml.%20%7D%0AFILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%7D%20ORDER%20BY%20%3Fstart",
+        "retrievedAt": "2026-10-01T08:53:32.390728+00:00",
+        "httpStatus": 200,
+        "contentType": "application/sparql-results+json",
+        "bytes": 1156,
+        "sha256": "7241c64f8261de0c212c851e6e94867665f4ec17541ab629030ce4ffc4063642"
+      },
+      "rows": [
+        {
+          "version": "https://fedlex.data.admin.ch/eli/cc/2007/804/20260101",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml"
+        },
+        {
+          "version": "https://fedlex.data.admin.ch/eli/cc/2007/804/20270101",
+          "start": "2027-01-01",
+          "end": "2027-12-31",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20270101-de-xml.xml"
+        }
+      ],
+      "semanticRowsEqualToAP20B": true,
+      "previousRowsSha256": "d6368ae0b7443e2a93711b54f5dc738936ab7c6a8be5f334436319ac73b35299",
+      "freshRowsSha256": "d6368ae0b7443e2a93711b54f5dc738936ab7c6a8be5f334436319ac73b35299"
+    },
+    "futureIndex": {
+      "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?impact ?date ?target ?source WHERE {\n?impact jolux:impactToLegalResource ?target; jolux:legalResourceImpactHasDateEntryInForce ?date.\n?target jolux:legalResourceSubdivisionIsPartOf <https://fedlex.data.admin.ch/eli/cc/2007/804>.\nOPTIONAL {?impact jolux:impactFromLegalResource/jolux:legalResourceSubdivisionIsPartOf ?source}\nFILTER(str(?date) >= \"2026-09-30\" && str(?date) <= \"2027-12-31\")\n} ORDER BY ?date ?target",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0A%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2007/804%3E.%0AOPTIONAL%20%7B%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%7D%0AFILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-09-30%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%7D%20ORDER%20BY%20%3Fdate%20%3Ftarget",
+        "finalUrl": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0A%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2007/804%3E.%0AOPTIONAL%20%7B%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%7D%0AFILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-09-30%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%7D%20ORDER%20BY%20%3Fdate%20%3Ftarget",
+        "retrievedAt": "2026-10-01T08:53:32.565083+00:00",
+        "httpStatus": 200,
+        "contentType": "application/sparql-results+json",
+        "bytes": 982,
+        "sha256": "8cc74be9ba7415e0824b4edec7ead4f3409ef80ba88cdfbe0acdede5943812e6"
+      },
+      "rows": [
+        {
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/434/legal-analysis/LegalResourceImpact/2",
+          "date": "2027-01-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2007/804/art_10",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/434"
+        },
+        {
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/434/legal-analysis/LegalResourceImpact/3",
+          "date": "2027-01-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2007/804/art_11",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/434"
+        }
+      ],
+      "semanticRowsEqualToAP20B": true,
+      "previousRowsSha256": "bcc3a1a86969b7f90f8465acd324589784062ce35c1d06db5b524e996d16131f",
+      "freshRowsSha256": "bcc3a1a86969b7f90f8465acd324589784062ce35c1d06db5b524e996d16131f"
+    },
+    "originals": [
+      {
+        "start": "2026-01-01",
+        "end": "2026-12-31",
+        "receipt": {
+          "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+          "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-xml-3.xml",
+          "retrievedAt": "2026-10-01T08:53:32.760837+00:00",
+          "httpStatus": 200,
+          "contentType": "application/xml",
+          "bytes": 132007,
+          "sha256": "e39f79e9aca4d307abb28f01adfd2a6cff1f37f902fd7e8ad18533c2980604f0"
+        },
+        "baselineSha256": "e39f79e9aca4d307abb28f01adfd2a6cff1f37f902fd7e8ad18533c2980604f0",
+        "bytesEqualToAP20B": true,
+        "article": "21",
+        "paragraph": "2",
+        "text": "2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen.",
+        "normTextEqualToAP20B": true,
+        "normTextSha256": "7052942e1bac6aa2c22df37fdd99287c9d5c8521e2e9cbc4133ada17ef87c5fd"
+      },
+      {
+        "start": "2027-01-01",
+        "end": "2027-12-31",
+        "receipt": {
+          "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20270101-de-xml.xml",
+          "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2007-804-20270101-de-xml.xml",
+          "retrievedAt": "2026-10-01T08:53:32.913177+00:00",
+          "httpStatus": 200,
+          "contentType": "application/xml",
+          "bytes": 135012,
+          "sha256": "943fe55f27d874f0977171ddebf8873847c76dcdb8fd19ca17a2b7dffea4d101"
+        },
+        "baselineSha256": "943fe55f27d874f0977171ddebf8873847c76dcdb8fd19ca17a2b7dffea4d101",
+        "bytesEqualToAP20B": true,
+        "article": "21",
+        "paragraph": "2",
+        "text": "2 Die Kantone bezeichnen die Organe, die für die Entgegennahme der Gesuche und für die Festsetzung und die Auszahlung der Ergänzungsleistungen zuständig sind. Sie können die kantonalen Ausgleichskassen, nicht aber die Sozialhilfebehörden mit diesen Aufgaben betrauen.",
+        "normTextEqualToAP20B": true,
+        "normTextSha256": "7052942e1bac6aa2c22df37fdd99287c9d5c8521e2e9cbc4133ada17ef87c5fd"
+      }
+    ],
+    "normTextIdenticalAcross20270101": true,
+    "noDeltaComparedWithAP20B": true
+  },
+  "errors": [],
+  "noDeltaInCheckedScope": true,
+  "reusedNotFreshlyFetched": [
+    {
+      "source": "BGer 8C_767/2008 E. 4.3.2",
+      "basis": "In AP20B dokumentierter enger Vorbefund für formelle Beschwerdeverbesserung. Keine neue Rechtsprechungssuche oder ganze Entscheidungslektüre."
+    },
+    {
+      "source": "FRG BE und übrige unveränderte CH-/BE-Kalenderquellen",
+      "basis": "MVP-0.5-Quellenprüfung vom 28. September 2026 und unveränderte Kalender. Keine neue Feiertagsquelle oder Ortsfreigabe."
+    },
+    {
+      "source": "Bestehende EOG-, FamZG-, FLG- und übrige Sozialverfahren",
+      "basis": "AP20C1-/AP20C2-Quellenkontrollen sowie unveränderte frühere abgenommene Befunde. Keine neue vollständige Originalprüfung dieser Rechtsgebiete in AP20C3."
+    }
+  ],
+  "limits": [
+    "Begrenzter Originalabgleich für die acht AP20C3-Pfade und ihre Ausschlüsse, kein vollständiger Quellenrefresh aller alten Sozialverfahren.",
+    "Keine neue Fachabnahme, Datenpromotion, operative Quellenfreigabe oder Betriebsfreigabe.",
+    "Die abgenommene 2026–2027-Spanne wird weder zeitlich noch sachlich erweitert.",
+    "Bundesoriginale werden frisch byteweise verglichen und die ausgewählten Normtexte neu ausgelesen. ELG wird zusätzlich nur hinsichtlich Art. 21 Abs. 2 geprüft.",
+    "Historische Berner PDFs werden frisch byteweise mit AP20B verglichen, nicht erneut visuell oder per PDF-Textextraktion gelesen. Aktuelle XHTML-Artikel werden frisch ausgelesen.",
+    "Amtliche Weboberflächen waren über das Web-Lesewerkzeug nicht erreichbar. Direkte amtliche HTTPS-Abrufe sind zeit- und hashgebunden."
+  ]
+}
+

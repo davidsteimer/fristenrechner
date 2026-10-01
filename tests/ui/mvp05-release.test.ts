@@ -27,14 +27,14 @@ test('MVP 0.5 embeds all ten manifest artifacts including their exact release ha
   }
 });
 
-test('normal public and preview entry points select approved MVP 0.5 and explicit candidates remain separate', async () => {
+test('normal public and preview entry points now select approved MVP 0.6 and explicit candidates remain separate', async () => {
   const preview = await readFile('src/ui/preview/main.tsx', 'utf8');
   const publicEntry = await readFile('src/public-app/main.tsx', 'utf8');
-  assert.match(preview, /import \{ mvp05CalculationData \} from '\.\.\/\.\.\/release\/mvp05ReleaseData'/);
+  assert.match(preview, /import \{ mvp06CalculationData \} from '\.\.\/\.\.\/release\/mvp06ReleaseData'/);
   assert.match(preview, /candidate === 'ap19c3' \? ap19c3CandidateCalculationData/);
-  assert.match(preview, /candidate === 'ap17c' \? ap17cCandidateCalculationData : mvp05CalculationData/);
+  assert.match(preview, /candidate === 'ap17c' \? ap17cCandidateCalculationData : mvp06CalculationData/);
   assert.doesNotMatch(preview, /from '\.\/data'/);
-  assert.match(publicEntry, /<FristenrechnerApp data=\{mvp05CalculationData\}/);
+  assert.match(publicEntry, /<FristenrechnerApp data=\{mvp06CalculationData\}/);
   assert.doesNotMatch(publicEntry, /ap19c|ap18c|ap17c|qaPreset|initialState|mvp04/i);
 });
 

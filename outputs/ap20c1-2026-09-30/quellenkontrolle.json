@@ -1,0 +1,1172 @@
+{
+  "reviewId": "AP20C1-SOURCE-CONTROL-20260930",
+  "checkedOn": "2026-09-30",
+  "completedAt": "2026-09-30T20:52:04.030470+00:00",
+  "purpose": "Begrenzte amtliche Quellenaktualisierung vor lokaler EOG-Integration AP20C1",
+  "scope": {
+    "federalLaws": [
+      "ATSG",
+      "EOG",
+      "EOV"
+    ],
+    "bernLaws": [
+      "GSOG",
+      "VRPG"
+    ],
+    "sourceWindow": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "newFederalRules": 4,
+    "newBernerBindings": 6
+  },
+  "baselineBindings": [
+    {
+      "path": "docs/fachrecht/quellenabgleich-ap20b-bund.md",
+      "sha256": "518ff9be263fdb74c50eb09489ef88c3177881a5315fc03e06e19c01bffbfcad"
+    },
+    {
+      "path": "docs/fachrecht/zeitliche-bindung-ap20b.md",
+      "sha256": "6fe83e678b7c14e23586ebb7e1903918f4806bb4533c99a21fac1e6f542059d1"
+    },
+    {
+      "path": "docs/architektur/sozialversicherungsvertrag-ap20b.md",
+      "sha256": "f1b2c994c08e37e6f38a18e6b355a7f20588112d13d4bc0328a63c8f9896f2e1"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap20b.md",
+      "sha256": "59e9f98da842a60ab25822bab9e74e6e22faa788a89c859d795bceecd08933a6"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-indexes.json",
+      "sha256": "fa4be7828baf8319702c0d9c638e4d95e9eb086b08ee5528a261db9f49aa45b5"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-originals.json",
+      "sha256": "b1fe603ce0743bed770fe2713407e52ba7b91b8917841889381eb892e24f1cda"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/federal-source-comparisons.json",
+      "sha256": "c3a9869e540a6fb24ce97932f3704b29311c7c1e999f1ce7b44889a91dd54342"
+    },
+    {
+      "path": "outputs/ap20b-2026-09-30/bern-sources/bern-source-review.json",
+      "sha256": "30bc675d65ca31d61b6c99f38d84f5775d13ba6e33bb5be8d42db2a854cb00f9"
+    },
+    {
+      "path": "data/source-reviews/events/2026-09-28-mvp-05-prerelease.1.json",
+      "sha256": "1d3dc59e02f5c67026cab22d7d20ddcca68840840ec54029c36f51482816f372"
+    },
+    {
+      "path": "data/releases/2026-09-28-mvp-05-approved.1/social-procedures/ch-social-procedures.json",
+      "sha256": "1dd2792295b3b929efdcfa883b15509c0cd4fbef9dbf2a9f5228a8e6a6dacc26"
+    }
+  ],
+  "federalIndexes": [
+    {
+      "name": "versions",
+      "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?work ?version ?start ?end ?expression ?xml WHERE {\nVALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2002/510> <https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050> <https://fedlex.data.admin.ch/eli/cc/2005/187> }\n\n      ?version jolux:isMemberOf ?work; jolux:dateApplicability ?start.\n      OPTIONAL { ?version jolux:dateEndApplicability ?end }\n      OPTIONAL {\n        ?version jolux:isRealizedBy ?expression.\n        ?expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU>;\n          jolux:isEmbodiedBy ?manifestation.\n        ?manifestation jolux:format <http://publications.europa.eu/resource/authority/file-type/XML>;\n          jolux:isExemplifiedBy ?xml.\n      }\n      FILTER(str(?start) <= \"2027-12-31\" && (!BOUND(?end) || str(?end) >= \"2026-01-01\"))\n    } ORDER BY ?work ?start",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Fstart%20%3Fend%20%3Fexpression%20%3Fxml%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2005/187%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Fstart.%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%20%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexpression.%0A%20%20%20%20%20%20%20%20%3Fexpression%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisEmbodiedBy%20%3Fmanifestation.%0A%20%20%20%20%20%20%20%20%3Fmanifestation%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisExemplifiedBy%20%3Fxml.%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fstart",
+        "finalUrl": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Fstart%20%3Fend%20%3Fexpression%20%3Fxml%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2005/187%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Fstart.%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fend%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%20%20%3Fversion%20jolux%3AisRealizedBy%20%3Fexpression.%0A%20%20%20%20%20%20%20%20%3Fexpression%20jolux%3Alanguage%20%3Chttp%3A//publications.europa.eu/resource/authority/language/DEU%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisEmbodiedBy%20%3Fmanifestation.%0A%20%20%20%20%20%20%20%20%3Fmanifestation%20jolux%3Aformat%20%3Chttp%3A//publications.europa.eu/resource/authority/file-type/XML%3E%3B%0A%20%20%20%20%20%20%20%20%20%20jolux%3AisExemplifiedBy%20%3Fxml.%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fstart%29%20%3C%3D%20%222027-12-31%22%20%26%26%20%28%21BOUND%28%3Fend%29%20%7C%7C%20str%28%3Fend%29%20%3E%3D%20%222026-01-01%22%29%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fstart",
+        "retrievedAt": "2026-09-30T20:52:02.051546+00:00",
+        "httpStatus": 200,
+        "contentType": "application/sparql-results+json",
+        "bytes": 4988,
+        "sha256": "62ffae2e627932ed56f1a2f3bf7801e6d39caa97b626a079c63b05c051259601"
+      },
+      "rows": [
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128",
+          "start": "2025-01-28",
+          "end": "2026-05-31",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20250128-de-xml-1.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601",
+          "start": "2026-06-01",
+          "end": "2027-06-30",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20260601-de-xml-1.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701",
+          "start": "2027-07-01",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20270701-de-xml-1.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2002/510",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101",
+          "start": "2024-01-01",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2002/510/20240101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20250101",
+          "start": "2025-01-01",
+          "end": "2026-05-31",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2005/187/20250101/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20250101-de-xml-7.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20260601",
+          "start": "2026-06-01",
+          "end": "2027-06-30",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2005/187/20260601/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20260601/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20260601-de-xml.xml"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20270701",
+          "start": "2027-07-01",
+          "end": "2027-12-31",
+          "expression": "https://fedlex.data.admin.ch/eli/cc/2005/187/20270701/de",
+          "xml": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20270701/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20270701-de-xml.xml"
+        }
+      ],
+      "previousFilteredRowCount": 7,
+      "freshRowCount": 7,
+      "semanticRowsEqual": true,
+      "previousFilteredRowsSha256": "60aa26dce3b4d189a35de487dc5fce8fd5d7a8f67190a3ba84a08e0725bf4279",
+      "freshRowsSha256": "60aa26dce3b4d189a35de487dc5fce8fd5d7a8f67190a3ba84a08e0725bf4279"
+    },
+    {
+      "name": "impacts",
+      "query": "PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nSELECT DISTINCT ?work ?impact ?date ?target ?source WHERE {\nVALUES ?work { <https://fedlex.data.admin.ch/eli/cc/2002/510> <https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050> <https://fedlex.data.admin.ch/eli/cc/2005/187> }\n\n      ?impact jolux:impactToLegalResource ?target;\n        jolux:legalResourceImpactHasDateEntryInForce ?date.\n      { ?target jolux:legalResourceSubdivisionIsPartOf ?work. } UNION { FILTER(?target = ?work) }\n      OPTIONAL { ?impact jolux:impactFromLegalResource/jolux:legalResourceSubdivisionIsPartOf ?source }\n      FILTER(str(?date) >= \"2026-01-01\" && str(?date) <= \"2027-12-31\")\n    } ORDER BY ?work ?date ?target",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2005/187%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%0A%20%20%20%20%20%20%20%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20%20%20%20%20%20%7B%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%20%7D%20UNION%20%7B%20FILTER%28%3Ftarget%20%3D%20%3Fwork%29%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-01-01%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+        "finalUrl": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A//data.legilux.public.lu/resource/ontology/jolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0AVALUES%20%3Fwork%20%7B%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2002/510%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050%3E%20%3Chttps%3A//fedlex.data.admin.ch/eli/cc/2005/187%3E%20%7D%0A%0A%20%20%20%20%20%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget%3B%0A%20%20%20%20%20%20%20%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20%20%20%20%20%20%7B%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%20%7D%20UNION%20%7B%20FILTER%28%3Ftarget%20%3D%20%3Fwork%29%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource/jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20%20%20%20%20%20FILTER%28str%28%3Fdate%29%20%3E%3D%20%222026-01-01%22%20%26%26%20str%28%3Fdate%29%20%3C%3D%20%222027-12-31%22%29%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+        "retrievedAt": "2026-09-30T20:52:02.116623+00:00",
+        "httpStatus": 200,
+        "contentType": "application/sparql-results+json",
+        "bytes": 47274,
+        "sha256": "8ca66c1f170555cdc7e4f1d23acccfd8f49476a9723ea7ef68bf7513e917635f"
+      },
+      "rows": [
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/164/legal-analysis/LegalResourceImpact/93",
+          "date": "2026-06-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_1a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/164"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/46",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_1",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/20",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_10",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/23",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_10a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/36",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_13",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/33",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_15",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/14",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/37",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/16",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16c",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/28",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16d",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/21",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16f",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/48",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16fbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/49",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16fter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/4",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16g",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/24",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16j",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/15",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16k",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/50",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16kbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/8",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16l",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/51",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16lbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/52",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16lter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/1",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16m",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/53",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16mbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/29",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16n",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/11",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16p",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/9",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16q",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/7",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16r",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/54",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16rbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/55",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16rter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/25",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16s",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/56",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16sbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/31",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16t",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/12",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16w",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/57",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16wbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/59",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16wquater",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/58",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16wter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/18",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_16x",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/47",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_2",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/6",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_4",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/38",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_6",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/34",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_7",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/13",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_8",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/2",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/art_9",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/60",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/chap_1a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/61",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/chap_1a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/39",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/dtrans_",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/35",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/sec_1a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/433/legal-analysis/LegalResourceImpact/62",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/sec_1a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/174/legal-analysis/LegalResourceImpact/69",
+          "date": "2026-06-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_16",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/174"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/32",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_10",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/17",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_12",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/22",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_13",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/31",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_14",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/26",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_14a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/33",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_19b",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/11",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_20",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/23",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_23",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/7",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_24",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/6",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_25",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/29",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_26",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/19",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_28",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/4",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_29",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/27",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_30",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/8",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_31",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/14",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_33a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/5",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_33b",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/15",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_34a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/36",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/25",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35b",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/12",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35c",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/30",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35d",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/34",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35e",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/13",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35ebis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/2",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35eter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/35",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35f",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/16",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35hbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/28",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35hter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/9",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35mbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/24",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35mter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/18",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35n",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/3",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35pbis",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/1",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_35pter",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/20",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_4",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/21",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_7",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/10",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/art_9",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/37",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_1",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/38",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_1/sec_4",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/39",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2/sec_4a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/41",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2a/sec_1",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/42",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2a/sec_2",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/40",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2a/sec_2a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        },
+        {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "impact": "https://fedlex.data.admin.ch/eli/oc/2026/457/legal-analysis/LegalResourceImpact/43",
+          "date": "2027-07-01",
+          "target": "https://fedlex.data.admin.ch/eli/cc/2005/187/chap_2b/sec_2a",
+          "source": "https://fedlex.data.admin.ch/eli/oc/2026/457"
+        }
+      ],
+      "previousFilteredRowCount": 91,
+      "freshRowCount": 91,
+      "semanticRowsEqual": true,
+      "previousFilteredRowsSha256": "29619af1c7214a5250b30691e53ca087bf6d4378ae0f798a86b039a74f1b6710",
+      "freshRowsSha256": "29619af1c7214a5250b30691e53ca087bf6d4378ae0f798a86b039a74f1b6710"
+    }
+  ],
+  "federalOriginals": [
+    {
+      "law": "EOG",
+      "start": "2025-01-28",
+      "end": "2026-05-31",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20250128-de-xml-1.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20250128/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20250128-de-xml-1.xml",
+        "retrievedAt": "2026-09-30T20:52:02.108407+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 168501,
+        "sha256": "4582a8e16ae3da9ee5bbe513b71492ea97438571fdb511d598383488ff32326c"
+      },
+      "baselineSha256": "4582a8e16ae3da9ee5bbe513b71492ea97438571fdb511d598383488ff32326c",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "1",
+        "17",
+        "18",
+        "24"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Erwerbsersatzordnung anwendbar, soweit das vorliegende Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht.",
+        "17": "Art. 17 Geltendmachung des Anspruches 1 Leistungsberechtigte machen ihren Anspruch bei der zuständigen Ausgleichskasse geltend. Unterlassen sie dies, so sind dazu befugt: a. ihre Angehörigen, falls die Leistungsberechtigten ihren Unterhalts- oder Unterstützungspflichten ihnen gegenüber nicht nachkommen; b. der Arbeitgeber, soweit er der leistungsberechtigten Person während der Dauer des Anspruchs einen Lohn ausrichtet. 2 Der Bundesrat bestimmt, welche Ausgleichskasse zuständig ist, und regelt das Verfahren. Er kann Vorschriften über die Erledigung von Streitigkeiten bezüglich der örtlichen Zuständigkeit erlassen und dabei von Artikel 35 ATSG abweichen. 3 Dienstleistende können ihren Anspruch über das Informationssystem nach Artikel 21 a geltend machen.",
+        "18": "Art. 18 Festsetzung der Entschädigungen 1 Die Entschädigung wird von der Ausgleichskasse festgesetzt, bei welcher der Anspruch geltend zu machen ist. Die Ausgleichskasse kann jedoch die ihr angeschlossenen Arbeitgeber, welche Gewähr für die richtige Erfüllung dieser Aufgabe bieten, mit der Festsetzung der Entschädigung für ihre Arbeitnehmer betrauen. 2 Die Entschädigung wird im formlosen Verfahren nach Artikel 51 ATSG festgesetzt. Dies gilt in Abweichung von Artikel 49 Absatz 1 ATSG auch für erhebliche Entschädigungen.",
+        "24": "Art. 24 Besonderheiten der Rechtspflege 1 Über Beschwerden gegen Verfügungen und Einspracheentscheide kantonaler Ausgleichskassen entscheidet in Abweichung von Artikel 58 Absatz 1 ATSG das Versicherungsgericht am Ort der Ausgleichskasse. 2 Über Beschwerden von Personen im Ausland entscheidet in Abweichung von Artikel 58 Absatz 2 ATSG das Bundesverwaltungsgericht. Der Bundesrat kann vorsehen, dass diese Zuständigkeit dem Versicherungsgericht des Kantons zugewiesen wird, in welchem der Arbeitgeber des Versicherten seinen Wohnsitz oder Sitz hat. Artikel 85 bis Absätze 2 und 3 AHVG gilt sinngemäss."
+      },
+      "normTextsSha256": "e937a7eb40102bf4c9397523970287b7d055d405b195141d1765b1105b9bd0c9"
+    },
+    {
+      "law": "EOG",
+      "start": "2026-06-01",
+      "end": "2027-06-30",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20260601-de-xml-1.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20260601-de-xml-1.xml",
+        "retrievedAt": "2026-09-30T20:52:02.052099+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 164215,
+        "sha256": "061e1327d1117bb82640efba2a4b91f05b626160596416e9ee0f72a4a522aa18"
+      },
+      "baselineSha256": "061e1327d1117bb82640efba2a4b91f05b626160596416e9ee0f72a4a522aa18",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "1",
+        "17",
+        "18",
+        "24"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Erwerbsersatzordnung anwendbar, soweit das vorliegende Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht.",
+        "17": "Art. 17 Geltendmachung des Anspruches 1 Leistungsberechtigte machen ihren Anspruch bei der zuständigen Ausgleichskasse geltend. Unterlassen sie dies, so sind dazu befugt: a. ihre Angehörigen, falls die Leistungsberechtigten ihren Unterhalts- oder Unterstützungspflichten ihnen gegenüber nicht nachkommen; b. der Arbeitgeber, soweit er der leistungsberechtigten Person während der Dauer des Anspruchs einen Lohn ausrichtet. 2 Der Bundesrat bestimmt, welche Ausgleichskasse zuständig ist, und regelt das Verfahren. Er kann Vorschriften über die Erledigung von Streitigkeiten bezüglich der örtlichen Zuständigkeit erlassen und dabei von Artikel 35 ATSG abweichen. 3 Dienstleistende können ihren Anspruch über das Informationssystem nach Artikel 21 a geltend machen.",
+        "18": "Art. 18 Festsetzung der Entschädigungen 1 Die Entschädigung wird von der Ausgleichskasse festgesetzt, bei welcher der Anspruch geltend zu machen ist. Die Ausgleichskasse kann jedoch die ihr angeschlossenen Arbeitgeber, welche Gewähr für die richtige Erfüllung dieser Aufgabe bieten, mit der Festsetzung der Entschädigung für ihre Arbeitnehmer betrauen. 2 Die Entschädigung wird im formlosen Verfahren nach Artikel 51 ATSG festgesetzt. Dies gilt in Abweichung von Artikel 49 Absatz 1 ATSG auch für erhebliche Entschädigungen.",
+        "24": "Art. 24 Besonderheiten der Rechtspflege 1 Über Beschwerden gegen Verfügungen und Einspracheentscheide kantonaler Ausgleichskassen entscheidet in Abweichung von Artikel 58 Absatz 1 ATSG das Versicherungsgericht am Ort der Ausgleichskasse. 2 Über Beschwerden von Personen im Ausland entscheidet in Abweichung von Artikel 58 Absatz 2 ATSG das Bundesverwaltungsgericht. Der Bundesrat kann vorsehen, dass diese Zuständigkeit dem Versicherungsgericht des Kantons zugewiesen wird, in welchem der Arbeitgeber des Versicherten seinen Wohnsitz oder Sitz hat. Artikel 85 bis Absätze 2 und 3 AHVG gilt sinngemäss."
+      },
+      "normTextsSha256": "e937a7eb40102bf4c9397523970287b7d055d405b195141d1765b1105b9bd0c9"
+    },
+    {
+      "law": "EOG",
+      "start": "2027-07-01",
+      "end": null,
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20270701-de-xml-1.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270701/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20270701-de-xml-1.xml",
+        "retrievedAt": "2026-09-30T20:52:02.295022+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 201533,
+        "sha256": "e746588252680752134c1d6b9bb5a978d5c93a882518f3e7b670aceff00185f9"
+      },
+      "baselineSha256": "e746588252680752134c1d6b9bb5a978d5c93a882518f3e7b670aceff00185f9",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "1",
+        "17",
+        "18",
+        "24"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 Die Bestimmungen des Bundesgesetzes vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) sind auf die Erwerbsersatzordnung anwendbar, soweit das vorliegende Gesetz nicht ausdrücklich eine Abweichung vom ATSG vorsieht.",
+        "17": "Art. 17 Geltendmachung des Anspruches 1 Leistungsberechtigte machen ihren Anspruch bei der zuständigen Ausgleichskasse geltend. Unterlassen sie dies, so sind dazu befugt: a. ihre Angehörigen, falls die Leistungsberechtigten ihren Unterhalts- oder Unterstützungspflichten ihnen gegenüber nicht nachkommen; b. der Arbeitgeber, soweit er der leistungsberechtigten Person während der Dauer des Anspruchs einen Lohn ausrichtet. 2 Der Bundesrat bestimmt, welche Ausgleichskasse zuständig ist, und regelt das Verfahren. Er kann Vorschriften über die Erledigung von Streitigkeiten bezüglich der örtlichen Zuständigkeit erlassen und dabei von Artikel 35 ATSG abweichen. 3 Dienstleistende können ihren Anspruch über das Informationssystem nach Artikel 21 a geltend machen.",
+        "18": "Art. 18 Festsetzung der Entschädigungen 1 Die Entschädigung wird von der Ausgleichskasse festgesetzt, bei welcher der Anspruch geltend zu machen ist. Die Ausgleichskasse kann jedoch die ihr angeschlossenen Arbeitgeber, welche Gewähr für die richtige Erfüllung dieser Aufgabe bieten, mit der Festsetzung der Entschädigung für ihre Arbeitnehmer betrauen. 2 Die Entschädigung wird im formlosen Verfahren nach Artikel 51 ATSG festgesetzt. Dies gilt in Abweichung von Artikel 49 Absatz 1 ATSG auch für erhebliche Entschädigungen.",
+        "24": "Art. 24 Besonderheiten der Rechtspflege 1 Über Beschwerden gegen Verfügungen und Einspracheentscheide kantonaler Ausgleichskassen entscheidet in Abweichung von Artikel 58 Absatz 1 ATSG das Versicherungsgericht am Ort der Ausgleichskasse. 2 Über Beschwerden von Personen im Ausland entscheidet in Abweichung von Artikel 58 Absatz 2 ATSG das Bundesverwaltungsgericht. Der Bundesrat kann vorsehen, dass diese Zuständigkeit dem Versicherungsgericht des Kantons zugewiesen wird, in welchem der Arbeitgeber des Versicherten seinen Wohnsitz oder Sitz hat. Artikel 85 bis Absätze 2 und 3 AHVG gilt sinngemäss."
+      },
+      "normTextsSha256": "e937a7eb40102bf4c9397523970287b7d055d405b195141d1765b1105b9bd0c9"
+    },
+    {
+      "law": "ATSG",
+      "start": "2024-01-01",
+      "end": null,
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/xml/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-xml-4.xml",
+        "retrievedAt": "2026-09-30T20:52:02.287694+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 139093,
+        "sha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c"
+      },
+      "baselineSha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "2",
+        "38",
+        "39",
+        "40",
+        "41",
+        "49",
+        "51",
+        "52",
+        "55",
+        "56",
+        "58",
+        "60",
+        "61"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "2": "Art. 2 Geltungsbereich und Verhältnis zu den einzelnen Sozialversicherungsgesetzen Die Bestimmungen dieses Gesetzes sind auf die bundesgesetzlich geregelten Sozialversicherungen anwendbar, wenn und soweit die einzelnen Sozialversicherungsgesetze es vorsehen.",
+        "38": "Art. 38 Berechnung und Stillstand der Fristen 1 Berechnet sich eine Frist nach Tagen oder Monaten und bedarf sie der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Mitteilung zu laufen. 2 Bedarf sie nicht der Mitteilung an die Parteien, so beginnt sie am Tag nach ihrer Auslösung zu laufen. 2bis Eine Mitteilung, die nur gegen Unterschrift des Adressaten beziehungsweise der Adressatin oder einer anderen berechtigten Person überbracht wird, gilt spätestens am siebenten Tag nach dem ersten erfolglosen Zustellungsversuch als erfolgt. 3 Ist der letzte Tag der Frist ein Samstag, ein Sonntag oder ein vom Bundesrecht oder vom kantonalen Recht anerkannter Feiertag, so endet sie am nächstfolgenden Werktag. Massgebend ist das Recht des Kantons, in dem die Partei oder ihr Vertreter beziehungsweise ihre Vertreterin Wohnsitz oder Sitz hat. 4 Gesetzliche oder behördliche Fristen, die nach Tagen oder Monaten bestimmt sind, stehen still: a. vom siebten Tag vor Ostern bis und mit dem siebten Tag nach Ostern; b. vom 15. Juli bis und mit dem 15. August; c. vom 18. Dezember bis und mit dem 2. Januar.",
+        "39": "Art. 39 Einhaltung der Fristen 1 Schriftliche Eingaben müssen spätestens am letzten Tag der Frist dem Versicherungsträger eingereicht oder zu dessen Handen der Schweizerischen Post oder einer schweizerischen diplomatischen oder konsularischen Vertretung übergeben werden. 2 Gelangt die Partei rechtzeitig an einen unzuständigen Versicherungsträger, so gilt die Frist als gewahrt.",
+        "40": "Art. 40 Fristerstreckung und Säumnisfolgen 1 Eine gesetzliche Frist kann nicht erstreckt werden. 2 Setzt der Versicherungsträger eine Frist für eine bestimmte Handlung an, so droht er gleichzeitig die Folgen eines Versäumnisses an. Andere als die angedrohten Folgen treten nicht ein. 3 Eine vom Versicherungsträger angesetzte Frist kann aus zureichenden Gründen erstreckt werden, wenn die Partei vor Ablauf der Frist darum nachsucht.",
+        "41": "Art. 41 Wiederherstellung der Frist Ist die gesuchstellende Person oder ihre Vertretung unverschuldeterweise abgehalten worden, binnen Frist zu handeln, so wird diese wieder hergestellt, sofern sie unter Angabe des Grundes innert 30 Tagen nach Wegfall des Hindernisses darum ersucht und die versäumte Rechtshandlung nachholt.",
+        "49": "Art. 49 Verfügung 1 Über Leistungen, Forderungen und Anordnungen, die erheblich sind oder mit denen die betroffene Person nicht einverstanden ist, hat der Versicherungsträger schriftlich Verfügungen zu erlassen. 2 Dem Begehren um Erlass einer Feststellungsverfügung ist zu entsprechen, wenn die gesuchstellende Person ein schützenswertes Interesse glaubhaft macht. 3 Die Verfügungen werden mit einer Rechtsmittelbelehrung versehen. Sie sind zu begründen, wenn sie den Begehren der Parteien nicht voll entsprechen. Aus einer mangelhaften Eröffnung einer Verfügung darf der betroffenen Person kein Nachteil erwachsen. 4 Erlässt ein Versicherungsträger eine Verfügung, welche die Leistungspflicht eines anderen Trägers berührt, so hat er auch ihm die Verfügung zu eröffnen. Dieser kann die gleichen Rechtsmittel ergreifen wie die versicherte Person. 5 Der Versicherungsträger kann in seiner Verfügung einer Einsprache oder Beschwerde die aufschiebende Wirkung entziehen, auch wenn die Verfügung eine Geldleistung zum Gegenstand hat. Ausgenommen sind Verfügungen über die Rückerstattung unrechtmässig bezogener Leistungen.",
+        "51": "Art. 51 Formloses Verfahren 1 Leistungen, Forderungen und Anordnungen, die nicht unter Artikel 49 Absatz 1 fallen, können in einem formlosen Verfahren behandelt werden. 2 Die betroffene Person kann den Erlass einer Verfügung verlangen.",
+        "52": "Art. 52 Einsprache 1 Gegen Verfügungen kann innerhalb von 30 Tagen bei der verfügenden Stelle Einsprache erhoben werden; davon ausgenommen sind prozess- und verfahrensleitende Verfügungen. 2 Die Einspracheentscheide sind innert angemessener Frist zu erlassen. Sie werden begründet und mit einer Rechtsmittelbelehrung versehen. 3 Das Einspracheverfahren ist kostenlos. Parteientschädigungen werden in der Regel nicht ausgerichtet. 4 Der Versicherungsträger kann in seinem Einspracheentscheid einer allfälligen Beschwerde die aufschiebende Wirkung entziehen, auch wenn der Einspracheentscheid eine Geldleistung zum Gegenstand hat. Ausgenommen sind Einspracheentscheide über die Rückerstattung unrechtmässig bezogener Leistungen.",
+        "55": "Art. 55 Besondere Verfahrensregeln 1 In den Artikeln 27–54 oder in den Einzelgesetzen nicht abschliessend geregelte Verfahrensbereiche bestimmen sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968 . 1bis Der Bundesrat kann vorsehen, dass die Bestimmungen des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 über den elektronischen Verkehr mit Behörden auch für Verfahren nach diesem Gesetz gelten. 2 Das Verfahren vor einer Bundesbehörde richtet sich nach dem Verwaltungsverfahrensgesetz vom 20. Dezember 1968, ausser wenn sie über sozialversicherungsrechtliche Leistungen, Forderungen und Anordnungen entscheidet.",
+        "56": "Art. 56 Beschwerderecht 1 Gegen Einspracheentscheide oder Verfügungen, gegen welche eine Einsprache ausgeschlossen ist, kann Beschwerde erhoben werden. 2 Beschwerde kann auch erhoben werden, wenn der Versicherungsträger entgegen dem Begehren der betroffenen Person keine Verfügung oder keinen Einspracheentscheid erlässt.",
+        "58": "Art. 58 Zuständigkeit 1 Zuständig ist das Versicherungsgericht desjenigen Kantons, in dem die versicherte Person oder der Beschwerde führende Dritte zur Zeit der Beschwerdeerhebung Wohnsitz hat. 2 Befindet sich der Wohnsitz der versicherten Person oder des Beschwerde führenden Dritten im Ausland, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem sich ihr letzter schweizerischer Wohnsitz befand oder in dem ihr letzter schweizerischer Arbeitgeber Wohnsitz hat; lässt sich keiner dieser Orte ermitteln, so ist das Versicherungsgericht desjenigen Kantons zuständig, in dem das Durchführungsorgan seinen Sitz hat. 3 Die Behörde, die sich als unzuständig erachtet, überweist die Beschwerde ohne Verzug dem zuständigen Versicherungsgericht.",
+        "60": "Art. 60 Beschwerdefrist 1 Die Beschwerde ist innerhalb von 30 Tagen nach der Eröffnung des Einspracheentscheides oder der Verfügung, gegen welche eine Einsprache ausgeschlossen ist, einzureichen. 2 Die Artikel 38–41 sind sinngemäss anwendbar.",
+        "61": "Art. 61 Verfahrensregeln Das Verfahren vor dem kantonalen Versicherungsgericht bestimmt sich unter Vorbehalt von Artikel 1 Absatz 3 des Verwaltungsverfahrensgesetzes vom 20. Dezember 1968 nach kantonalem Recht. Es hat folgenden Anforderungen zu genügen: a. Das Verfahren muss einfach, rasch und in der Regel öffentlich sein. b. Die Beschwerde muss eine gedrängte Darstellung des Sachverhaltes, ein Rechtsbegehren und eine kurze Begründung enthalten. Genügt sie diesen Anforderungen nicht, so setzt das Versicherungsgericht der Beschwerde führenden Person eine angemessene Frist zur Verbesserung und verbindet damit die Androhung, dass sonst auf die Beschwerde nicht eingetreten wird. c. Das Versicherungsgericht stellt unter Mitwirkung der Parteien die für den Entscheid erheblichen Tatsachen fest; es erhebt die notwendigen Beweise und ist in der Beweiswürdigung frei. d. Das Versicherungsgericht ist an die Begehren der Parteien nicht gebunden. Es kann eine Verfügung oder einen Einspracheentscheid zu Ungunsten der Beschwerde führenden Person ändern oder dieser mehr zusprechen, als sie verlangt hat, wobei den Parteien vorher Gelegenheit zur Stellungnahme sowie zum Rückzug der Beschwerde zu geben ist. e. Rechtfertigen es die Umstände, so können die Parteien zur Verhandlung vorgeladen werden. f. Das Recht, sich verbeiständen zu lassen, muss gewährleistet sein. Wo die Verhältnisse es rechtfertigen, wird der Beschwerde führenden Person ein unentgeltlicher Rechtsbeistand bewilligt. f bis . Bei Streitigkeiten über Leistungen ist das Verfahren kostenpflichtig, wenn dies im jeweiligen Einzelgesetz vorgesehen ist; sieht das Einzelgesetz keine Kostenpflicht bei solchen Streitigkeiten vor, so kann das Gericht einer Partei, die sich mutwillig oder leichtsinnig verhält, Gerichtskosten auferlegen. g. Die obsiegende Beschwerde führende Person hat Anspruch auf Ersatz der Parteikosten. Diese werden vom Versicherungsgericht festgesetzt und ohne Rücksicht auf den Streitwert nach der Bedeutung der Streitsache und nach der Schwierigkeit des Prozesses bemessen. h. Die Entscheide werden, versehen mit einer Begründung und einer Rechtsmittelbelehrung sowie mit den Namen der Mitglieder des Versicherungsgerichts schriftlich eröffnet. i. Die Revision von Entscheiden wegen Entdeckung neuer Tatsachen oder Beweismittel oder wegen Einwirkung durch Verbrechen oder Vergehen muss gewährleistet sein."
+      },
+      "normTextsSha256": "0b2266776406686a641ccea1615aa241a8b0a52f3d3450a0e0f5b37f05cd0855"
+    },
+    {
+      "law": "EOV",
+      "start": "2025-01-01",
+      "end": "2026-05-31",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20250101-de-xml-7.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20250101/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20250101-de-xml-7.xml",
+        "retrievedAt": "2026-09-30T20:52:02.329021+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 117706,
+        "sha256": "e90af55638fd1b0e4c349a646229ee9f2214805e046fc44d562df9c9d23746df"
+      },
+      "baselineSha256": "e90af55638fd1b0e4c349a646229ee9f2214805e046fc44d562df9c9d23746df",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "19",
+        "34",
+        "35i",
+        "35q"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "19": "Art. 19 Zuständige Ausgleichskasse (Art. 17 Abs. 2 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie für die Festsetzung und die Ausrichtung der Entschädigung ist: a. für AHV-beitragspflichtige Personen: die Ausgleichskasse, die vor dem Einrücken für den Beitragsbezug zuständig war; b. für Personen mit Wohnsitz in der Schweiz, die der Beitragspflicht nicht unterstellt sind: die kantonale Ausgleichskasse ihres Wohnsitzkantons; c. für Personen mit Wohnsitz im Ausland, die nicht in der AHV obligatorisch versichert sind: die Schweizerische Ausgleichskasse. 2 Sind mehrere Ausgleichskassen zuständig, so wählt die entschädigungsberechtigte Person die Ausgleichskasse. 3 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen.",
+        "34": "Art. 34 Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und die Ausrichtung der Entschädigung ist: a. für die AHV-beitragspflichtige Mutter: die Ausgleichkasse, die am Zeitpunkt der Geburt für den Beitragsbezug zuständig war; b. für den AHV-beitragspflichtigen andern Elternteil: die Ausgleichskasse, die am letzten Tag des Urlaubs, den der andere Elternteil bezogen hat, für den Beitragsbezug zuständig war; c. für die Mutter und den andern Elternteil mit Wohnsitz im Ausland, die nicht mehr in der AHV obligatorisch versichert sind: die Schweizerische Ausgleichskasse. 2 Artikel 19 Absätze 2 und 3 ist anwendbar.",
+        "35i": "Art. 35 i Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und Ausrichtung der Entschädigung ist die Ausgleichskasse, die bei Beginn des Entschädigungsanspruchs für den Beitragsbezug zuständig ist. 2 Wird der Betreuungsurlaub unter den Eltern aufgeteilt, so bleibt die bei Beginn des Entschädigungsanspruchs zuständige Ausgleichskasse während der gesamten Rahmenfrist für beide Elternteile zuständig. 3 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen.",
+        "35q": "Art. 35 q Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und die Auszahlung der Entschädigung ist die Eidgenössische Ausgleichskasse (EAK). 2 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen."
+      },
+      "normTextsSha256": "888adf9447dcb5a58dd35c698a50b5662825b51513eeba631232effede9030da"
+    },
+    {
+      "law": "EOV",
+      "start": "2026-06-01",
+      "end": "2027-06-30",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20260601/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20260601-de-xml.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20260601/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20260601-de-xml.xml",
+        "retrievedAt": "2026-09-30T20:52:02.349480+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 132687,
+        "sha256": "23a5298bdc465483b4b11494d0f737b57eea67a56baff27e08dc7ac24acc8a15"
+      },
+      "baselineSha256": "23a5298bdc465483b4b11494d0f737b57eea67a56baff27e08dc7ac24acc8a15",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "19",
+        "34",
+        "35i",
+        "35q"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "19": "Art. 19 Zuständige Ausgleichskasse (Art. 17 Abs. 2 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie für die Festsetzung und die Ausrichtung der Entschädigung ist: a. für AHV-beitragspflichtige Personen: die Ausgleichskasse, die vor dem Einrücken für den Beitragsbezug zuständig war; b. für Personen mit Wohnsitz in der Schweiz, die der Beitragspflicht nicht unterstellt sind: die kantonale Ausgleichskasse ihres Wohnsitzkantons; c. für Personen mit Wohnsitz im Ausland, die nicht in der AHV obligatorisch versichert sind: die Schweizerische Ausgleichskasse. 2 Sind mehrere Ausgleichskassen zuständig, so wählt die entschädigungsberechtigte Person die Ausgleichskasse. 3 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen.",
+        "34": "Art. 34 Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und die Ausrichtung der Entschädigung ist: a. für die AHV-beitragspflichtige Mutter: die Ausgleichkasse, die am Zeitpunkt der Geburt für den Beitragsbezug zuständig war; b. für den AHV-beitragspflichtigen andern Elternteil: die Ausgleichskasse, die am letzten Tag des Urlaubs, den der andere Elternteil bezogen hat, für den Beitragsbezug zuständig war; c. für die Mutter und den andern Elternteil mit Wohnsitz im Ausland, die nicht mehr in der AHV obligatorisch versichert sind: die Schweizerische Ausgleichskasse. 2 Artikel 19 Absätze 2 und 3 ist anwendbar.",
+        "35i": "Art. 35 i Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und Ausrichtung der Entschädigung ist die Ausgleichskasse, die bei Beginn des Entschädigungsanspruchs für den Beitragsbezug zuständig ist. 2 Wird der Betreuungsurlaub unter den Eltern aufgeteilt, so bleibt die bei Beginn des Entschädigungsanspruchs zuständige Ausgleichskasse während der gesamten Rahmenfrist für beide Elternteile zuständig. 3 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen.",
+        "35q": "Art. 35 q Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und die Auszahlung der Entschädigung ist die Eidgenössische Ausgleichskasse (EAK). 2 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen."
+      },
+      "normTextsSha256": "888adf9447dcb5a58dd35c698a50b5662825b51513eeba631232effede9030da"
+    },
+    {
+      "law": "EOV",
+      "start": "2027-07-01",
+      "end": "2027-12-31",
+      "receipt": {
+        "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20270701/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20270701-de-xml.xml",
+        "finalUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20270701/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20270701-de-xml.xml",
+        "retrievedAt": "2026-09-30T20:52:02.565495+00:00",
+        "httpStatus": 200,
+        "contentType": "application/xml",
+        "bytes": 162914,
+        "sha256": "e21a9a63b6db32b18b4e90dddac94311ed820a34ab44ced01ac482d9ff46423f"
+      },
+      "baselineSha256": "e21a9a63b6db32b18b4e90dddac94311ed820a34ab44ced01ac482d9ff46423f",
+      "bytesEqualToAP20B": true,
+      "tragendeArtikel": [
+        "19",
+        "34",
+        "35i",
+        "35q"
+      ],
+      "normTextsEqualToAP20B": true,
+      "normTexts": {
+        "19": "Art. 19 Zuständige Ausgleichskasse (Art. 17 Abs. 2 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie für die Festsetzung und die Ausrichtung der Entschädigung ist: a. für AHV-beitragspflichtige Personen: die Ausgleichskasse, die vor dem Einrücken für den Beitragsbezug zuständig war; b. für Personen mit Wohnsitz in der Schweiz, die der Beitragspflicht nicht unterstellt sind: die kantonale Ausgleichskasse ihres Wohnsitzkantons; c. für Personen mit Wohnsitz im Ausland, die nicht in der AHV obligatorisch versichert sind: die Schweizerische Ausgleichskasse. 2 Sind mehrere Ausgleichskassen zuständig, so wählt die entschädigungsberechtigte Person die Ausgleichskasse. 3 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen.",
+        "34": "Art. 34 Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und die Ausrichtung der Entschädigung ist: a. für die AHV-beitragspflichtige Mutter: die Ausgleichkasse, die am Zeitpunkt der Geburt für den Beitragsbezug zuständig war; b. für den AHV-beitragspflichtigen andern Elternteil: die Ausgleichskasse, die am letzten Tag des Urlaubs, den der andere Elternteil bezogen hat, für den Beitragsbezug zuständig war; c. für die Mutter und den andern Elternteil mit Wohnsitz im Ausland, die nicht mehr in der AHV obligatorisch versichert sind: die Schweizerische Ausgleichskasse. 2 Artikel 19 Absätze 2 und 3 ist anwendbar.",
+        "35i": "Art. 35 i Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und Ausrichtung der Entschädigung ist die Ausgleichskasse, die bei Beginn des Entschädigungsanspruchs für den Beitragsbezug zuständig ist. 2 Wird der Betreuungsurlaub unter den Eltern aufgeteilt, so bleibt die bei Beginn des Entschädigungsanspruchs zuständige Ausgleichskasse während der gesamten Rahmenfrist für beide Elternteile zuständig. 3 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen.",
+        "35q": "Art. 35 q Zuständige Ausgleichskasse (Art. 17–19 EOG) 1 Zuständig für die Entgegennahme der Anmeldung sowie die Festsetzung und die Auszahlung der Entschädigung ist die Eidgenössische Ausgleichskasse (EAK). 2 Die Anmeldung von Arbeitnehmerinnen und Arbeitnehmern ist über deren Arbeitgeber einzureichen."
+      },
+      "normTextsSha256": "888adf9447dcb5a58dd35c698a50b5662825b51513eeba631232effede9030da"
+    }
+  ],
+  "bernOriginals": [
+    {
+      "law": "GSOG",
+      "metadataReceipt": {
+        "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/161.1",
+        "finalUrl": "https://www.belex.sites.be.ch/api/de/texts_of_law/161.1",
+        "retrievedAt": "2026-09-30T20:52:02.891231+00:00",
+        "httpStatus": 200,
+        "contentType": "application/json; charset=utf-8",
+        "bytes": 2770817,
+        "sha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f"
+      },
+      "baselineMetadataSha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f",
+      "metadataBytesEqualToAP20B": true,
+      "currentVersion": {
+        "id": 3367,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.05.2026 (Beschlussdatum: 02.09.2025)",
+        "structured_document_id": 37196,
+        "title": "Gesetz über die Organisation der Gerichtsbehörden und der Staatsanwaltschaft",
+        "abbreviation": "GSOG"
+      },
+      "currentVersionEqualToAP20B": true,
+      "futureVersions": [],
+      "futureVersionsEqualToAP20B": true,
+      "normTexts": {
+        "54": "Art. 54 Abteilungen 1 Die Abteilungen sind wie folgt zuständig für die Beurteilung der Streitigkeiten, die dem Verwaltungsgericht übertragen sind: a Die sozialversicherungsrechtliche Abteilung beurteilt alle Streitigkeiten aus dem Bereich des Sozialversicherungsrechts und nimmt die Aufgaben des Schiedsgerichts in Sozialversicherungsstreitigkeiten wahr; Buchstabe c bleibt vorbehalten. b Alle übrigen vom Verwaltungsgericht in deutscher Sprache zu beurteilenden Streitigkeiten fallen in die Zuständigkeit der verwaltungsrechtlichen Abteilung. c Die Abteilung für französischsprachige Geschäfte entscheidet alle vor Verwaltungsgericht in französischer Sprache zu behandelnden Streitigkeiten und nimmt die Aufgaben des Schiedsgerichts in Sozialversicherungsstreitigkeiten in französischer Sprache wahr. 2 Das Verwaltungsgericht kann durch Reglement die Beurteilung von Streitigkeiten aus einzelnen Sachgebieten einer andern Abteilung zur Behandlung zuweisen. 3 Die Abteilungen sorgen für die Einheitlichkeit der Rechtsprechung unter sich und in den Abteilungen. 4 Sie wählen je eine Stellvertreterin oder einen Stellvertreter der Abteilungspräsidentin oder des Abteilungspräsidenten und beschliessen über ihre Organisation durch Reglement. 5 Die Richterinnen und Richter sind bei Bedarf zur Aushilfe in den anderen Abteilungen verpflichtet. Sie können auch für einzelne Geschäfte in einer anderen Abteilung eingesetzt werden."
+      },
+      "normTextsEqualToAP20B": true,
+      "pdfOriginals": [
+        {
+          "file": "GSOG-3367.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3367/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3367/pdf_file",
+            "retrievedAt": "2026-09-30T20:52:03.414490+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1832662,
+            "sha256": "4a892dc8ed79d278ec42a5f43d30ecdb49ef4a0d08f2c7ac139c58903c38bb04"
+          },
+          "baselineSha256": "4a892dc8ed79d278ec42a5f43d30ecdb49ef4a0d08f2c7ac139c58903c38bb04",
+          "bytesEqualToAP20B": true
+        },
+        {
+          "file": "GSOG-3144.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3144/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3144/pdf_file",
+            "retrievedAt": "2026-09-30T20:52:03.755468+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1459159,
+            "sha256": "dc468710cc6e28ccffd796175e7205361a9ec3c6a0926ddc02caf51acf889cdd"
+          },
+          "baselineSha256": "dc468710cc6e28ccffd796175e7205361a9ec3c6a0926ddc02caf51acf889cdd",
+          "bytesEqualToAP20B": true
+        }
+      ]
+    },
+    {
+      "law": "VRPG",
+      "metadataReceipt": {
+        "url": "https://www.belex.sites.be.ch/api/de/texts_of_law/155.21",
+        "finalUrl": "https://www.belex.sites.be.ch/api/de/texts_of_law/155.21",
+        "retrievedAt": "2026-09-30T20:52:03.135568+00:00",
+        "httpStatus": 200,
+        "contentType": "application/json; charset=utf-8",
+        "bytes": 2755478,
+        "sha256": "ab3fbad2d98051823550e3a7f756494bb56bfc051957a972d80a58ce2b8cde62"
+      },
+      "baselineMetadataSha256": "ab3fbad2d98051823550e3a7f756494bb56bfc051957a972d80a58ce2b8cde62",
+      "metadataBytesEqualToAP20B": true,
+      "currentVersion": {
+        "id": 3424,
+        "version_dates_str": "Aktuelle Version in Kraft seit: 01.09.2026 (Beschlussdatum: 03.12.2025)",
+        "structured_document_id": 37736,
+        "title": "Gesetz über die Verwaltungsrechtspflege",
+        "abbreviation": "VRPG"
+      },
+      "currentVersionEqualToAP20B": true,
+      "futureVersions": [],
+      "futureVersionsEqualToAP20B": true,
+      "normTexts": {
+        "1": "Art. 1 1 Dieses Gesetz regelt das Verfahren vor den Verwaltungsbehörden und vor den Verwaltungsjustizbehörden im Kanton und in den Gemeinden. * 2 Abweichendes Bundesrecht, insbesondere solches aus dem Gebiete der Sozialversicherung, und staatliche Abkommen bleiben vorbehalten. 1.2 Behörden 1.2.1 Begriff",
+        "32": "Art. 32 Form und Sprache von Parteieingaben 1 Parteieingaben sind in deutscher oder französischer Sprache bei der zuständigen Behörde einzureichen. Eingaben an Behörden im Sinne von Artikel 2 Absatz 1 Buchstabe b sowie an das Regierungsstatthalteramt sind in der Amtssprache des jeweiligen Verwaltungskreises einzureichen. * 2 Sie müssen einen Antrag, die Angabe von Tatsachen und Beweismitteln, eine Begründung sowie eine Unterschrift enthalten; greifbare Beweismittel sind beizulegen. 3 Im Verwaltungsjustizverfahren sind Parteieingaben mindestens im Doppel einzureichen. Fehlt die zweite Ausfertigung, oder benötigt die Behörde mehr als zwei Ausfertigungen, so kann sie die Partei auffordern, diese nachzureichen.",
+        "81": "Art. 81 Form und Frist 1 Die Verwaltungsgerichtsbeschwerde ist innert 30 Tagen seit Eröffnung des Entscheids oder der Verfügung schriftlich und unter Beachtung der Formvorschriften von Artikel 32 zu erheben. 2 Die Frist beträgt zehn Tage zur Anfechtung von * a Entscheiden in kommunalen Wahlsachen, b Entscheiden betreffend Vorbereitungshandlungen in kommunalen Abstimmungssachen.",
+        "83": "Art. 83 Instruktion 1 Die Instruktion des Beschwerdeverfahrens richtet sich sinngemäss nach Artikel 69 und 71."
+      },
+      "normTextsEqualToAP20B": true,
+      "pdfOriginals": [
+        {
+          "file": "VRPG-3424.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/3424/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/3424/pdf_file",
+            "retrievedAt": "2026-09-30T20:52:03.699175+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1774311,
+            "sha256": "b3a762a64685025090ffe5476b5a0973228fae13a5b9367e54c42d684a45ad70"
+          },
+          "baselineSha256": "b3a762a64685025090ffe5476b5a0973228fae13a5b9367e54c42d684a45ad70",
+          "bytesEqualToAP20B": true
+        },
+        {
+          "file": "VRPG-2855.pdf",
+          "receipt": {
+            "url": "https://www.belex.sites.be.ch/api/de/versions/2855/pdf_file",
+            "finalUrl": "https://www.belex.sites.be.ch/api/de/versions/2855/pdf_file",
+            "retrievedAt": "2026-09-30T20:52:04.025110+00:00",
+            "httpStatus": 200,
+            "contentType": "application/pdf",
+            "bytes": 1764154,
+            "sha256": "68d5e02fc998016fb4d3d94c9458aaef8b6e0bff4c6d9fe1a14b3b8e54f7c0bc"
+          },
+          "baselineSha256": "68d5e02fc998016fb4d3d94c9458aaef8b6e0bff4c6d9fe1a14b3b8e54f7c0bc",
+          "bytesEqualToAP20B": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "noDeltaInCheckedScope": true,
+  "reusedNotFreshlyFetched": [
+    {
+      "source": "BGer 8C_767/2008 E. 4.3.2",
+      "basis": "In AP20B ausdrücklich dokumentierter enger Vorbefund für Beschwerdeverbesserung. Keine neue Rechtsprechungsrecherche oder ganze Entscheidungslektüre."
+    },
+    {
+      "source": "FRG BE und übrige unveränderte CH-/BE-Kalenderquellen",
+      "basis": "MVP-0.5-Quellenprüfung vom 28. September 2026 und unveränderte bereits freigegebene Kalender. Keine neue Feiertagsquelle oder Ortsfreigabe."
+    },
+    {
+      "source": "AS 2026 433 und AS 2026 457",
+      "basis": "AP20B-Originalprüfung und Übergangsbeurteilung werden wiederverwendet. Für AP20C1 frisch erneut gelesen sind sämtliche zugehörigen EOG-/EOV-Konsolidierungen und die gefilterten amtlichen Änderungsmetadaten, nicht die AS-Volltexte selbst."
+    }
+  ],
+  "limits": [
+    "Kein vollständiger AP20C2-/AP20C3- oder MVP-0.5-Quellenrefresh.",
+    "Quellenkontrolle ist keine neue Fachabnahme, Datenpromotion, operative Quellenfreigabe oder Betriebsfreigabe.",
+    "Die abgenommene 2026–2027-Spanne wird weder zeitlich noch sachlich erweitert.",
+    "Originalexportrückvergleich erfolgt byteweise. Normextrakte werden zusätzlich artikelgenau gegen AP20B geprüft. Bei bernischen Metadaten ist eine reine Metadatenbyteänderung getrennt von Norm- und Versionsänderungen erkennbar.",
+    "Amtliche Weboberflächen waren im Web-Lesewerkzeug nicht erreichbar. Erfolgreiche direkte HTTPS-Abrufe der amtlichen XML-, API- und PDF-Endpunkte sind separat zeit- und hashgebunden."
+  ]
+}
