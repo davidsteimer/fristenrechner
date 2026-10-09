@@ -1,0 +1,502 @@
+TAP version 13
+# Subtest: AP22C1 generates procedural equivalent days with source trace and Format 3 identity
+ok 1 - AP22C1 generates procedural equivalent days with source trace and Format 3 identity
+  ---
+  duration_ms: 2.451084
+  type: 'test'
+  ...
+# Subtest: AP22C1 AR/AI exclusion and both NE substitutes match independent civil weekdays for 400 years
+ok 2 - AP22C1 AR/AI exclusion and both NE substitutes match independent civil weekdays for 400 years
+  ---
+  duration_ms: 12.196833
+  type: 'test'
+  ...
+# Subtest: AP22C1 isolated GL arithmetic (not product coverage) shifts Holy Thursday and checks actual-date validity
+ok 3 - AP22C1 isolated GL arithmetic (not product coverage) shifts Holy Thursday and checks actual-date validity
+  ---
+  duration_ms: 0.913333
+  type: 'test'
+  ...
+# Subtest: AP22C1 weekday offset handles the GE and VD patterns
+ok 4 - AP22C1 weekday offset handles the GE and VD patterns
+  ---
+  duration_ms: 0.333166
+  type: 'test'
+  ...
+# Subtest: AP22C1 offset anchors are drawn from adjacent years and results retain actual-date validity
+ok 5 - AP22C1 offset anchors are drawn from adjacent years and results retain actual-date validity
+  ---
+  duration_ms: 0.258208
+  type: 'test'
+  ...
+# Subtest: AP22C1 same-day source contributions remain distinct in the rule trace
+ok 6 - AP22C1 same-day source contributions remain distinct in the rule trace
+  ---
+  duration_ms: 0.461
+  type: 'test'
+  ...
+# Subtest: AP22C1 fifth weekdays are tested in the actual anchor year, not an arbitrary preflight year
+ok 7 - AP22C1 fifth weekdays are tested in the actual anchor year, not an arbitrary preflight year
+  ---
+  duration_ms: 0.248916
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects unknown conditions, omitted conditions and incompatible anchors
+ok 8 - AP22C1 rejects unknown conditions, omitted conditions and incompatible anchors
+  ---
+  duration_ms: 0.332833
+  type: 'test'
+  ...
+# Subtest: AP22C1 validates weekday offset shape and rejects ISO overflow
+ok 9 - AP22C1 validates weekday offset shape and rejects ISO overflow
+  ---
+  duration_ms: 0.472833
+  type: 'test'
+  ...
+# Subtest: AP22C1 requires valid projection metadata, while explicit null is valid for unprojected rules
+ok 10 - AP22C1 requires valid projection metadata, while explicit null is valid for unprojected rules
+  ---
+  duration_ms: 0.491875
+  type: 'test'
+  ...
+# Subtest: AP22C1 v3 does not smuggle its additions into historical v2
+ok 11 - AP22C1 v3 does not smuggle its additions into historical v2
+  ---
+  duration_ms: 0.259583
+  type: 'test'
+  ...
+# Subtest: AP22C1 CH/BE rules and federal suspensions produce the same historical results after v3 translation
+ok 12 - AP22C1 CH/BE rules and federal suspensions produce the same historical results after v3 translation
+  ---
+  duration_ms: 2.528333
+  type: 'test'
+  ...
+# Subtest: C1 parses approved contract and preserves complete archive without granting runtime permission
+ok 13 - C1 parses approved contract and preserves complete archive without granting runtime permission
+  ---
+  duration_ms: 1048.753208
+  type: 'test'
+  ...
+# Subtest: C1 projections are deterministic, full-hash bound and have unique rule identities
+ok 14 - C1 projections are deterministic, full-hash bound and have unique rule identities
+  ---
+  duration_ms: 1094.651916
+  type: 'test'
+  ...
+# Subtest: inherited effective holiday IDs exactly equal each terminal catalog recipe
+ok 15 - inherited effective holiday IDs exactly equal each terminal catalog recipe
+  ---
+  duration_ms: 0.578958
+  type: 'test'
+  ...
+# Subtest: CH/BE holiday IDs, rule metadata and all federal suspensions are preserved
+ok 16 - CH/BE holiday IDs, rule metadata and all federal suspensions are preserved
+  ---
+  duration_ms: 7.711916
+  type: 'test'
+  ...
+# Subtest: C1 rejects unknown root field
+ok 17 - C1 rejects unknown root field
+  ---
+  duration_ms: 106.06325
+  type: 'test'
+  ...
+# Subtest: C1 rejects unknown activation field
+ok 18 - C1 rejects unknown activation field
+  ---
+  duration_ms: 103.942958
+  type: 'test'
+  ...
+# Subtest: C1 rejects fabricated release permission
+ok 19 - C1 rejects fabricated release permission
+  ---
+  duration_ms: 102.554833
+  type: 'test'
+  ...
+# Subtest: C1 rejects approval date missing
+ok 20 - C1 rejects approval date missing
+  ---
+  duration_ms: 91.586292
+  type: 'test'
+  ...
+# Subtest: C1 rejects missing evidence decision
+ok 21 - C1 rejects missing evidence decision
+  ---
+  duration_ms: 85.32825
+  type: 'test'
+  ...
+# Subtest: C1 rejects duplicate binding
+ok 22 - C1 rejects duplicate binding
+  ---
+  duration_ms: 280.052417
+  type: 'test'
+  ...
+# Subtest: C1 rejects missing source mapping
+ok 23 - C1 rejects missing source mapping
+  ---
+  duration_ms: 310.833084
+  type: 'test'
+  ...
+# Subtest: C1 rejects source-ID alias collision
+ok 24 - C1 rejects source-ID alias collision
+  ---
+  duration_ms: 309.88775
+  type: 'test'
+  ...
+# Subtest: C1 rejects archive evidence changed
+ok 25 - C1 rejects archive evidence changed
+  ---
+  duration_ms: 289.204084
+  type: 'test'
+  ...
+# Subtest: C1 rejects partial terminal rule list
+ok 26 - C1 rejects partial terminal rule list
+  ---
+  duration_ms: 311.906458
+  type: 'test'
+  ...
+# Subtest: C1 rejects free list union
+ok 27 - C1 rejects free list union
+  ---
+  duration_ms: 351.769666
+  type: 'test'
+  ...
+# Subtest: C1 rejects wrong projection identity
+ok 28 - C1 rejects wrong projection identity
+  ---
+  duration_ms: 289.801917
+  type: 'test'
+  ...
+# Subtest: C1 rejects missing provenance decision
+ok 29 - C1 rejects missing provenance decision
+  ---
+  duration_ms: 276.122292
+  type: 'test'
+  ...
+# Subtest: C1 rejects authority fallback
+ok 30 - C1 rejects authority fallback
+  ---
+  duration_ms: 270.743958
+  type: 'test'
+  ...
+# Subtest: C1 rejects coverage silently broadened
+ok 31 - C1 rejects coverage silently broadened
+  ---
+  duration_ms: 270.399459
+  type: 'test'
+  ...
+# Subtest: C1 rejects unqualified representative
+ok 32 - C1 rejects unqualified representative
+  ---
+  duration_ms: 284.763042
+  type: 'test'
+  ...
+# Subtest: C1 rejects regional unknown equated false
+ok 33 - C1 rejects regional unknown equated false
+  ---
+  duration_ms: 314.854542
+  type: 'test'
+  ...
+# Subtest: C1 rejects NE boundary erased
+ok 34 - C1 rejects NE boundary erased
+  ---
+  duration_ms: 279.27025
+  type: 'test'
+  ...
+# Subtest: C1 rejects January alternative erased
+ok 35 - C1 rejects January alternative erased
+  ---
+  duration_ms: 272.564917
+  type: 'test'
+  ...
+# Subtest: C1 rejects SO day calculation changed
+ok 36 - C1 rejects SO day calculation changed
+  ---
+  duration_ms: 286.4035
+  type: 'test'
+  ...
+# Subtest: C1 rejects SO half-day promoted
+ok 37 - C1 rejects SO half-day promoted
+  ---
+  duration_ms: 95.163542
+  type: 'test'
+  ...
+# Subtest: C1 rejects SO norm validity changed
+ok 38 - C1 rejects SO norm validity changed
+  ---
+  duration_ms: 266.832333
+  type: 'test'
+  ...
+# Subtest: C1 rejects SO source changed
+ok 39 - C1 rejects SO source changed
+  ---
+  duration_ms: 303.397125
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects missing calendar
+ok 40 - C1 projection rejects missing calendar
+  ---
+  duration_ms: 554.766583
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects extra calendar
+ok 41 - C1 projection rejects extra calendar
+  ---
+  duration_ms: 436.830834
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects catalog hash mismatch
+ok 42 - C1 projection rejects catalog hash mismatch
+  ---
+  duration_ms: 509.472125
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects foreign parent
+ok 43 - C1 projection rejects foreign parent
+  ---
+  duration_ms: 495.8705
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects inheritance cycle
+ok 44 - C1 projection rejects inheritance cycle
+  ---
+  duration_ms: 452.126083
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects own inherited duplicate
+ok 45 - C1 projection rejects own inherited duplicate
+  ---
+  duration_ms: 441.647417
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects changed arithmetic
+ok 46 - C1 projection rejects changed arithmetic
+  ---
+  duration_ms: 467.735708
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects changed condition
+ok 47 - C1 projection rejects changed condition
+  ---
+  duration_ms: 437.197208
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects changed norm validity
+ok 48 - C1 projection rejects changed norm validity
+  ---
+  duration_ms: 438.687417
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects changed source locator
+ok 49 - C1 projection rejects changed source locator
+  ---
+  duration_ms: 432.421167
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects changed source URL
+ok 50 - C1 projection rejects changed source URL
+  ---
+  duration_ms: 437.043708
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects changed legal effect
+ok 51 - C1 projection rejects changed legal effect
+  ---
+  duration_ms: 441.478834
+  type: 'test'
+  ...
+# Subtest: C1 projection rejects missing suspension
+ok 52 - C1 projection rejects missing suspension
+  ---
+  duration_ms: 446.064042
+  type: 'test'
+  ...
+# Subtest: legacy provenance cannot be replaced by a plausible-looking altered CH suspension
+ok 53 - legacy provenance cannot be replaced by a plausible-looking altered CH suspension
+  ---
+  duration_ms: 455.556917
+  type: 'test'
+  ...
+# Subtest: AP22C1 parses 40 byte-bound artifacts with all32 Format3 calendars but never activates calculations
+ok 54 - AP22C1 parses 40 byte-bound artifacts with all32 Format3 calendars but never activates calculations
+  ---
+  duration_ms: 1518.761208
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects missing file
+ok 55 - AP22C1 rejects missing file
+  ---
+  duration_ms: 12.6585
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects extra file
+ok 56 - AP22C1 rejects extra file
+  ---
+  duration_ms: 16.18025
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects duplicate descriptor
+ok 57 - AP22C1 rejects duplicate descriptor
+  ---
+  duration_ms: 2.89225
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects duplicate calendar ID
+ok 58 - AP22C1 rejects duplicate calendar ID
+  ---
+  duration_ms: 8.125625
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects wrong minimum consumer
+ok 59 - AP22C1 rejects wrong minimum consumer
+  ---
+  duration_ms: 8.313833
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects unknown manifest field
+ok 60 - AP22C1 rejects unknown manifest field
+  ---
+  duration_ms: 10.249041
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects changed actual bytes
+ok 61 - AP22C1 rejects changed actual bytes
+  ---
+  duration_ms: 427.416958
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects unapproved release claimed
+ok 62 - AP22C1 rejects unapproved release claimed
+  ---
+  duration_ms: 1787.613458
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects wrong content ID
+ok 63 - AP22C1 rejects wrong content ID
+  ---
+  duration_ms: 6.221666
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects resealed mixed old calendar
+ok 64 - AP22C1 rejects resealed mixed old calendar
+  ---
+  duration_ms: 403.323875
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects resealed wrong catalog hash
+ok 65 - AP22C1 rejects resealed wrong catalog hash
+  ---
+  duration_ms: 1605.535084
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects resealed inherited cycle
+ok 66 - AP22C1 rejects resealed inherited cycle
+  ---
+  duration_ms: 1750.092083
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects resealed source locator mutation
+ok 67 - AP22C1 rejects resealed source locator mutation
+  ---
+  duration_ms: 1695.768291
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects resealed changed calculation
+ok 68 - AP22C1 rejects resealed changed calculation
+  ---
+  duration_ms: 1605.909
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects resealed extra rule field
+ok 69 - AP22C1 rejects resealed extra rule field
+  ---
+  duration_ms: 385.850958
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects empty social eligibility
+ok 70 - AP22C1 rejects empty social eligibility
+  ---
+  duration_ms: 1553.616
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects duplicate binding eligibility
+ok 71 - AP22C1 rejects duplicate binding eligibility
+  ---
+  duration_ms: 1540.1645
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects stale release ID
+ok 72 - AP22C1 rejects stale release ID
+  ---
+  duration_ms: 1283.567041
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects stale component hash
+ok 73 - AP22C1 rejects stale component hash
+  ---
+  duration_ms: 1116.745125
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects missing component
+ok 74 - AP22C1 rejects missing component
+  ---
+  duration_ms: 1084.115625
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects old approval retained
+ok 75 - AP22C1 rejects old approval retained
+  ---
+  duration_ms: 374.035708
+  type: 'test'
+  ...
+# Subtest: AP22C1 rejects extended social coverage
+ok 76 - AP22C1 rejects extended social coverage
+  ---
+  duration_ms: 1087.838292
+  type: 'test'
+  ...
+# Subtest: AP22C1 standalone calendar parser rejects missing source and unknown condition
+ok 77 - AP22C1 standalone calendar parser rejects missing source and unknown condition
+  ---
+  duration_ms: 9.502625
+  type: 'test'
+  ...
+# Subtest: AP22C1 complete bound schema evaluates the frozen catalog including conditional release approval
+ok 78 - AP22C1 complete bound schema evaluates the frozen catalog including conditional release approval
+  ---
+  duration_ms: 446.235541
+  type: 'test'
+  ...
+# Subtest: AP22C1 schema validator rejects ignored keywords even inside unused branches
+ok 79 - AP22C1 schema validator rejects ignored keywords even inside unused branches
+  ---
+  duration_ms: 0.681875
+  type: 'test'
+  ...
+# Subtest: AP22C1 calendar schema enforces conditions, supplemental effects and inheritance metadata
+ok 80 - AP22C1 calendar schema enforces conditions, supplemental effects and inheritance metadata
+  ---
+  duration_ms: 27.112458
+  type: 'test'
+  ...
+# Subtest: AP22C1 raw SHA hashes actual UTF8 bytes and canonical social hashing is preserved
+ok 81 - AP22C1 raw SHA hashes actual UTF8 bytes and canonical social hashing is preserved
+  ---
+  duration_ms: 55.421917
+  type: 'test'
+  ...
+# Subtest: AP22C1 social migration preserves all 44/50 contents and 2026–2027 limits, drops every old approval
+ok 82 - AP22C1 social migration preserves all 44/50 contents and 2026–2027 limits, drops every old approval
+  ---
+  duration_ms: 145.789708
+  type: 'test'
+  ...
+1..82
+# tests 82
+# suites 0
+# pass 82
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 20819.864667

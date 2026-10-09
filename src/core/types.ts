@@ -87,7 +87,7 @@ export interface LegalProfile {
 export interface Holiday {
   readonly holidayId: string;
   readonly date: IsoDate;
-  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday';
+  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday' | 'proceduralEquivalentDay';
   readonly labelKey: string;
   readonly legalEffect: 'nonWorkingDayEquivalentToSunday';
   readonly sourceRefs: readonly {
@@ -161,9 +161,11 @@ export interface CalculationData {
   readonly calendars: ReadonlyMap<string, CalendarData>;
   readonly calendarRuleSets: ReadonlyMap<string, import('./calendarRuleTypes').CalendarRuleSet>;
   readonly specialRegimeCatalogs: ReadonlyMap<string, import('./specialTypes').SpecialRegimeCatalog>;
-  readonly holidayCatalogs: ReadonlyMap<string, import('./holidayCatalogTypes').HolidayCatalog>;
+  readonly holidayCatalogs: ReadonlyMap<string, import('./holidayCatalogTypes').HolidayCatalog | import('./holidayActivationTypes').HolidayCatalogV2>;
   readonly socialProcedureCatalogs?: ReadonlyMap<string, import('./socialTypes').SocialProcedureCatalog>;
   readonly releaseArtifactRefs?: readonly import('./socialTypes').ReleaseArtifactReference[];
+  /** Issued only by the byte-validating Format-7 factory, never from defaults. */
+  readonly format7Runtime?: import('./calendarResolution').BoundCalendarRuntime;
 }
 
 export interface CalendarGenerationEvidence {

@@ -1,0 +1,399 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-zh-5aa2974cffee",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "ZH"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-ZH-GOG-2111-N131",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess, GOG",
+      "authority": "CH-ZH",
+      "url": "https://www.notes.zh.ch/appl/zhlex_r.nsf/WebView/43B3BDA36DB02CBDC1258D4C004EC591/%24File/211.1_10.5.10_131.pdf",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-ASCENSION-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-BERCHTOLD-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-CHRISTMAS-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-EASTER-MONDAY-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-GOOD-FRIDAY-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-MAY1-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-MAY1",
+      "labels": {
+        "de": "Tag der Arbeit (1. Mai)",
+        "fr": "Fête du travail (1er mai)"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 5,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-MAY1"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-NATIONAL-DAY-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-NEW-YEAR-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-ST-STEPHEN-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "ZH-CAL-ZH-GOG-ALL-DAY-WHIT-MONDAY-5AA2974CFFEE5FA1",
+      "calendarId": "ap22-zh-5aa2974cffee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZH"
+      },
+      "labelKey": "holiday.zh.ZH-GOG-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZH-GOG-2111-N131",
+          "locator": "§ 122"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZH-GOG-ALL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-5aa2974cffee5fa1",
+    "sourceHash": "f2e4d7d740775083564aca841da6c46b9c148d3852f1f1a8bbae0bf1f3634d77"
+  }
+}

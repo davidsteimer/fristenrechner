@@ -1,0 +1,220 @@
+TAP version 13
+# Subtest: AP22C3 constructs genuine Format7 data with32 Format3 calendars without the Format6 reference adapter
+ok 1 - AP22C3 constructs genuine Format7 data with32 Format3 calendars without the Format6 reference adapter
+  ---
+  duration_ms: 8.987083
+  type: 'test'
+  ...
+# Subtest: AP22C3 all104 terminal bindings calculate on genuine Format7 data
+ok 2 - AP22C3 all104 terminal bindings calculate on genuine Format7 data
+  ---
+  duration_ms: 82.419125
+  type: 'test'
+  ...
+# Subtest: AP22C3 candidate and approved schemas are mutually exclusive and mode is explicit
+ok 3 - AP22C3 candidate and approved schemas are mutually exclusive and mode is explicit
+  ---
+  duration_ms: 14.409875
+  type: 'test'
+  ...
+# Subtest: AP22C3 preserves exactly the two archived Bundesfeiertag review objects, not arbitrary same-ID conflicts
+ok 4 - AP22C3 preserves exactly the two archived Bundesfeiertag review objects, not arbitrary same-ID conflicts
+  ---
+  duration_ms: 0.729375
+  type: 'test'
+  ...
+# Subtest: AP22C3 default core call cannot bypass role, region orJanuary qualification with a raw calendarId
+ok 5 - AP22C3 default core call cannot bypass role, region orJanuary qualification with a raw calendarId
+  ---
+  duration_ms: 2.179584
+  type: 'test'
+  ...
+# Subtest: AP22C3 rejects resealed manifest alone
+ok 6 - AP22C3 rejects resealed manifest alone
+  ---
+  duration_ms: 1189.064666
+  type: 'test'
+  ...
+# Subtest: AP22C3 rejects resealed one social permission
+ok 7 - AP22C3 rejects resealed one social permission
+  ---
+  duration_ms: 1089.733709
+  type: 'test'
+  ...
+# Subtest: AP22C3 rejects resealed stale social component
+ok 8 - AP22C3 rejects resealed stale social component
+  ---
+  duration_ms: 1220.943416
+  type: 'test'
+  ...
+# Subtest: AP22C3 rejects resealed changed calendar semantics
+ok 9 - AP22C3 rejects resealed changed calendar semantics
+  ---
+  duration_ms: 324.592375
+  type: 'test'
+  ...
+# Subtest: AP22C3 rejects resealed missing source summary
+ok 10 - AP22C3 rejects resealed missing source summary
+  ---
+  duration_ms: 1160.260084
+  type: 'test'
+  ...
+# Subtest: AP22C3 rejects resealed extended social window
+ok 11 - AP22C3 rejects resealed extended social window
+  ---
+  duration_ms: 1109.346833
+  type: 'test'
+  ...
+# Subtest: AP22C3 all50 unchanged Bern socialbindings remain calculable only inapproved or explicit localreference mode
+ok 12 - AP22C3 all50 unchanged Bern socialbindings remain calculable only inapproved or explicit localreference mode
+  ---
+  duration_ms: 4131.106666
+  type: 'test'
+  ...
+# Subtest: AP22C3 remaining VRPG arithmetic also requires the issued Format7 runtime
+ok 13 - AP22C3 remaining VRPG arithmetic also requires the issued Format7 runtime
+  ---
+  duration_ms: 0.702125
+  type: 'test'
+  ...
+# Subtest: AP22C3 hostadapterrevalidates actualbytes and doesnottrust parsedcachemetadata
+ok 14 - AP22C3 hostadapterrevalidates actualbytes and doesnottrust parsedcachemetadata
+  ---
+  duration_ms: 1474.701
+  type: 'test'
+  ...
+# Subtest: C3 host forwards a validated Format-7 runtime automatically, never candidate approval options
+ok 15 - C3 host forwards a validated Format-7 runtime automatically, never candidate approval options
+  ---
+  duration_ms: 2.586417
+  type: 'test'
+  ...
+# Subtest: historical AP5 runtime retains its identity without a calendar context prop
+ok 16 - historical AP5 runtime retains its identity without a calendar context prop
+  ---
+  duration_ms: 0.66725
+  type: 'test'
+  ...
+# Subtest: same provider label on a different site hides the old result synchronously and reloads
+ok 17 - same provider label on a different site hides the old result synchronously and reloads
+  ---
+  duration_ms: 1.170584
+  type: 'test'
+  ...
+# Subtest: mirror-path change changes the React key even when release ID and provider label are identical
+ok 18 - mirror-path change changes the React key even when release ID and provider label are identical
+  ---
+  duration_ms: 0.447125
+  type: 'test'
+  ...
+# Subtest: new manifest bytes remount the session even if a release name was reused
+ok 19 - new manifest bytes remount the session even if a release name was reused
+  ---
+  duration_ms: 0.492416
+  type: 'test'
+  ...
+# Subtest: configuration errors immediately hide calculator, do not access cache, and show an error
+ok 20 - configuration errors immediately hide calculator, do not access cache, and show an error
+  ---
+  duration_ms: 0.396625
+  type: 'test'
+  ...
+# Subtest: an incorrectly bound configuration key cannot resurrect cached data
+ok 21 - an incorrectly bound configuration key cannot resurrect cached data
+  ---
+  duration_ms: 0.329
+  type: 'test'
+  ...
+# Subtest: late response from old configuration and unmounted host never overwrites current state
+ok 22 - late response from old configuration and unmounted host never overwrites current state
+  ---
+  duration_ms: 0.676542
+  type: 'test'
+  ...
+# Subtest: invalid adapted data clears a valid local display rather than leaving it stale
+ok 23 - invalid adapted data clears a valid local display rather than leaving it stale
+  ---
+  duration_ms: 0.91125
+  type: 'test'
+  ...
+# Subtest: WebPart remounts by the real cache identity and does not expose a candidate control
+ok 24 - WebPart remounts by the real cache identity and does not expose a candidate control
+  ---
+  duration_ms: 1.530208
+  type: 'test'
+  ...
+# Subtest: C3 host policy clearly marks the entire candidate in de
+ok 25 - C3 host policy clearly marks the entire candidate in de
+  ---
+  duration_ms: 84.4705
+  type: 'test'
+  ...
+# Subtest: C3 host policy clearly marks the entire candidate in fr
+ok 26 - C3 host policy clearly marks the entire candidate in fr
+  ---
+  duration_ms: 6.906417
+  type: 'test'
+  ...
+# Subtest: the actual Format7 data keeps all eleven approved-scope social laws selectable
+ok 27 - the actual Format7 data keeps all eleven approved-scope social laws selectable
+  ---
+  duration_ms: 28.211541
+  type: 'test'
+  ...
+# Subtest: C3 suppresses export through the actual general result branch
+ok 28 - C3 suppresses export through the actual general result branch
+  ---
+  duration_ms: 15.091584
+  type: 'test'
+  ...
+# Subtest: C3 suppresses export through the actual special result branch
+ok 29 - C3 suppresses export through the actual special result branch
+  ---
+  duration_ms: 8.93325
+  type: 'test'
+  ...
+# Subtest: C3 suppresses export through the actual social result branch
+ok 30 - C3 suppresses export through the actual social result branch
+  ---
+  duration_ms: 6.188541
+  type: 'test'
+  ...
+# Subtest: C3 suppresses export through the actual boundCalendar result branch
+ok 31 - C3 suppresses export through the actual boundCalendar result branch
+  ---
+  duration_ms: 5.945542
+  type: 'test'
+  ...
+# Subtest: legacy host without candidate policy retains its existing export
+ok 32 - legacy host without candidate policy retains its existing export
+  ---
+  duration_ms: 12.742792
+  type: 'test'
+  ...
+# Subtest: actual AP5 bytes keep their historical data status, finite coverage and old UI after the host adapter
+ok 33 - actual AP5 bytes keep their historical data status, finite coverage and old UI after the host adapter
+  ---
+  duration_ms: 6.589542
+  type: 'test'
+  ...
+# Subtest: changing the trusted global export policy resets the calculator session
+ok 34 - changing the trusted global export policy resets the calculator session
+  ---
+  duration_ms: 1.06625
+  type: 'test'
+  ...
+# Subtest: only the local preview has a query candidate selector, public entries remain explicit build choices
+ok 35 - only the local preview has a query candidate selector, public entries remain explicit build choices
+  ---
+  duration_ms: 0.395417
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17028.864541

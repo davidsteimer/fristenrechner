@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "1.0.0",
+  "workPackage": "AP21",
+  "status": "passed",
+  "checkedAt": "2026-10-08T15:21:55.467Z",
+  "purpose": "Lokaler isolierter SPFx-Integrationsnachweis. Kein Release, kein Installationsauftrag und keine E-/Q- oder Geräteabnahme.",
+  "releaseApproval": false,
+  "deployable": false,
+  "stage": ".work/ap21-spfx-build-7QlptW",
+  "toolchain": {
+    "node": "v22.23.2"
+  },
+  "checks": {
+    "sourceTests": {
+      "tests": 186,
+      "suites": 0,
+      "pass": 186,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "evidencePath": "outputs/ap21-2026-10-08/spfx-logs/step-1.log"
+    },
+    "productionCompilation": {
+      "passed": true,
+      "nonBlockingLintWarnings": 15,
+      "evidencePath": "outputs/ap21-2026-10-08/spfx-logs/step-2.log"
+    },
+    "bundledCssAudit": {
+      "passed": true,
+      "evidencePath": "outputs/ap21-2026-10-08/spfx-logs/step-3.log"
+    },
+    "packaging": {
+      "passed": true,
+      "evidencePath": "outputs/ap21-2026-10-08/spfx-logs/step-4.log"
+    },
+    "actualPackageTests": {
+      "tests": 80,
+      "suites": 2,
+      "pass": 80,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "ap21Tests": 8,
+      "previousRegressionTests": 72,
+      "concurrency": 2,
+      "timeoutMilliseconds": 60000,
+      "evidencePath": "outputs/ap21-2026-10-08/spfx-logs/step-5.log"
+    }
+  },
+  "originalPackage": {
+    "path": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+    "byteLength": 202616,
+    "sha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346",
+    "expectedSha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346",
+    "unchanged": true
+  },
+  "isolatedTestPackage": {
+    "path": ".work/ap21-spfx-build-7QlptW/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+    "byteLength": 291925,
+    "sha256": "88e123cb80d94cc53bed5c55392bab2282d8a2969bb2e67d97aab7233bd80922",
+    "solutionVersion": "0.6.0.1",
+    "installationApproved": false
+  },
+  "sourceComparison": {
+    "comparedFiles": 63,
+    "allIdentical": true,
+    "exclusions": [
+      "src/ui/preview ist gemäss sync-product-source.mjs kein produktiver SPFx-Einstieg.",
+      "README-Dateien sind Dokumentation und werden separat gebunden."
+    ],
+    "files": [
+      {
+        "path": "src/core/calculateCalendarBoundDeadline.ts",
+        "byteLength": 12787,
+        "sha256": "82128fd903a93971078cc2cc396fe47b12307e25eb1ade9c6e2ac54877210f3d",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calculateCalendarBoundDeadline.ts",
+        "stageSha256": "82128fd903a93971078cc2cc396fe47b12307e25eb1ade9c6e2ac54877210f3d",
+        "identical": true
+      },
+      {
+        "path": "src/core/calculateDeadline.ts",
+        "byteLength": 26722,
+        "sha256": "30c8bfd13ea943cf5f1fde87d2af628dcfe37d56408cf38b5c2dc9e5c0305aef",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calculateDeadline.ts",
+        "stageSha256": "30c8bfd13ea943cf5f1fde87d2af628dcfe37d56408cf38b5c2dc9e5c0305aef",
+        "identical": true
+      },
+      {
+        "path": "src/core/calculateQualifiedSpecialDeadline.ts",
+        "byteLength": 963,
+        "sha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calculateQualifiedSpecialDeadline.ts",
+        "stageSha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530",
+        "identical": true
+      },
+      {
+        "path": "src/core/calculateSpecialDeadline.ts",
+        "byteLength": 30849,
+        "sha256": "b50b98fe4662bbb0902573cc00dd85c51cde79b509504d9cf863c7446a5f222d",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calculateSpecialDeadline.ts",
+        "stageSha256": "b50b98fe4662bbb0902573cc00dd85c51cde79b509504d9cf863c7446a5f222d",
+        "identical": true
+      },
+      {
+        "path": "src/core/calculatorRuntime.ts",
+        "byteLength": 11728,
+        "sha256": "19bcafd9ab1f0ff25d53818866b2f47cc0be424c1d469c3f8b58f06fd451385c",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calculatorRuntime.ts",
+        "stageSha256": "19bcafd9ab1f0ff25d53818866b2f47cc0be424c1d469c3f8b58f06fd451385c",
+        "identical": true
+      },
+      {
+        "path": "src/core/calendarMigration.ts",
+        "byteLength": 1867,
+        "sha256": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calendarMigration.ts",
+        "stageSha256": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3",
+        "identical": true
+      },
+      {
+        "path": "src/core/calendarResolution.ts",
+        "byteLength": 6485,
+        "sha256": "b69a4e8dde0fd20cfe23cbb6ae6082840e2523de015109c050dde6fafad9d68e",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calendarResolution.ts",
+        "stageSha256": "b69a4e8dde0fd20cfe23cbb6ae6082840e2523de015109c050dde6fafad9d68e",
+        "identical": true
+      },
+      {
+        "path": "src/core/calendarRuleTypes.ts",
+        "byteLength": 5750,
+        "sha256": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/calendarRuleTypes.ts",
+        "stageSha256": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952",
+        "identical": true
+      },
+      {
+        "path": "src/core/data.ts",
+        "byteLength": 19881,
+        "sha256": "2252ef9cd8eac089db6cf1f671fbe975c1683eb67e51e116b777c17d04f9793a",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/data.ts",
+        "stageSha256": "2252ef9cd8eac089db6cf1f671fbe975c1683eb67e51e116b777c17d04f9793a",
+        "identical": true
+      },
+      {
+        "path": "src/core/date.ts",
+        "byteLength": 4847,
+        "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/date.ts",
+        "stageSha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc",
+        "identical": true
+      },
+      {
+        "path": "src/core/format7Baseline.ts",
+        "byteLength": 496,
+        "sha256": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/format7Baseline.ts",
+        "stageSha256": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb",
+        "identical": true
+      },
+      {
+        "path": "src/core/format7Runtime.ts",
+        "byteLength": 1435,
+        "sha256": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/format7Runtime.ts",
+        "stageSha256": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2",
+        "identical": true
+      },
+      {
+        "path": "src/core/generateCalendar.ts",
+        "byteLength": 37002,
+        "sha256": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/generateCalendar.ts",
+        "stageSha256": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218",
+        "identical": true
+      },
+      {
+        "path": "src/core/holidayActivation.ts",
+        "byteLength": 18481,
+        "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/holidayActivation.ts",
+        "stageSha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4",
+        "identical": true
+      },
+      {
+        "path": "src/core/holidayActivationTypes.ts",
+        "byteLength": 4801,
+        "sha256": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/holidayActivationTypes.ts",
+        "stageSha256": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5",
+        "identical": true
+      },
+      {
+        "path": "src/core/holidayCatalog.ts",
+        "byteLength": 40025,
+        "sha256": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/holidayCatalog.ts",
+        "stageSha256": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9",
+        "identical": true
+      },
+      {
+        "path": "src/core/holidayCatalogTypes.ts",
+        "byteLength": 7059,
+        "sha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/holidayCatalogTypes.ts",
+        "stageSha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338",
+        "identical": true
+      },
+      {
+        "path": "src/core/index.ts",
+        "byteLength": 2764,
+        "sha256": "495badb7fe3c99a219f2baaea9307ed18bf35fce9454a8f040ab32410a1bf4ca",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/index.ts",
+        "stageSha256": "495badb7fe3c99a219f2baaea9307ed18bf35fce9454a8f040ab32410a1bf4ca",
+        "identical": true
+      },
+      {
+        "path": "src/core/qualifiedApplicability.ts",
+        "byteLength": 8794,
+        "sha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/qualifiedApplicability.ts",
+        "stageSha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5",
+        "identical": true
+      },
+      {
+        "path": "src/core/qualifiedTypes.ts",
+        "byteLength": 2537,
+        "sha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/qualifiedTypes.ts",
+        "stageSha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48",
+        "identical": true
+      },
+      {
+        "path": "src/core/releaseFormat7.ts",
+        "byteLength": 9915,
+        "sha256": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/releaseFormat7.ts",
+        "stageSha256": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268",
+        "identical": true
+      },
+      {
+        "path": "src/core/schemaContract.ts",
+        "byteLength": 9320,
+        "sha256": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/schemaContract.ts",
+        "stageSha256": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643",
+        "identical": true
+      },
+      {
+        "path": "src/core/socialCatalog.ts",
+        "byteLength": 27145,
+        "sha256": "b9c4d2e34a4b5f95a83b3aa15c3df8d6dd3a8a8e89448687dddfc310775720cf",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/socialCatalog.ts",
+        "stageSha256": "b9c4d2e34a4b5f95a83b3aa15c3df8d6dd3a8a8e89448687dddfc310775720cf",
+        "identical": true
+      },
+      {
+        "path": "src/core/socialDeadline.ts",
+        "byteLength": 15321,
+        "sha256": "728f5393dcec444ee082bf9dd2fe8368c83587e9c400d4f85d6c9626dfeaa38d",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/socialDeadline.ts",
+        "stageSha256": "728f5393dcec444ee082bf9dd2fe8368c83587e9c400d4f85d6c9626dfeaa38d",
+        "identical": true
+      },
+      {
+        "path": "src/core/socialTypes.ts",
+        "byteLength": 7785,
+        "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/socialTypes.ts",
+        "stageSha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370",
+        "identical": true
+      },
+      {
+        "path": "src/core/specialTypes.ts",
+        "byteLength": 10491,
+        "sha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/specialTypes.ts",
+        "stageSha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89",
+        "identical": true
+      },
+      {
+        "path": "src/core/types.ts",
+        "byteLength": 8226,
+        "sha256": "427723f5bda16d1c4546828d387258be91ec5c6f68ef353ed06b3a89f4bf7344",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/core/types.ts",
+        "stageSha256": "427723f5bda16d1c4546828d387258be91ec5c6f68ef353ed06b3a89f4bf7344",
+        "identical": true
+      },
+      {
+        "path": "src/ui/DateInput.tsx",
+        "byteLength": 13122,
+        "sha256": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/DateInput.tsx",
+        "stageSha256": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4",
+        "identical": true
+      },
+      {
+        "path": "src/ui/FristenrechnerApp.tsx",
+        "byteLength": 87879,
+        "sha256": "0168812ce1c86c7f7163d3d9b7efee1d8b3c4dbb2f3910eba2b17ad36ee6b606",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/FristenrechnerApp.tsx",
+        "stageSha256": "0168812ce1c86c7f7163d3d9b7efee1d8b3c4dbb2f3910eba2b17ad36ee6b606",
+        "identical": true
+      },
+      {
+        "path": "src/ui/browserAppearance.tsx",
+        "byteLength": 2833,
+        "sha256": "49235286d98a379d1f81e401b109206f72d1ab2874f39b0da08084a2c976a397",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/browserAppearance.tsx",
+        "stageSha256": "49235286d98a379d1f81e401b109206f72d1ab2874f39b0da08084a2c976a397",
+        "identical": true
+      },
+      {
+        "path": "src/ui/calendarContextUi.tsx",
+        "byteLength": 7815,
+        "sha256": "b950cbee5c02394b9e3c51524efabd28d2946751c6509fb9316e294f25a1b0e8",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/calendarContextUi.tsx",
+        "stageSha256": "b950cbee5c02394b9e3c51524efabd28d2946751c6509fb9316e294f25a1b0e8",
+        "identical": true
+      },
+      {
+        "path": "src/ui/calendarExport.ts",
+        "byteLength": 4934,
+        "sha256": "aaec9be40831ef89b194477c1295ecb1019f6eb06e255d030404872a2ba59984",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/calendarExport.ts",
+        "stageSha256": "aaec9be40831ef89b194477c1295ecb1019f6eb06e255d030404872a2ba59984",
+        "identical": true
+      },
+      {
+        "path": "src/ui/calendarMessages.ts",
+        "byteLength": 10145,
+        "sha256": "95cc88a32862d274a442cc1c62b09fc49d41766b6a6cd9aeafef5bc2cbc3a6fe",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/calendarMessages.ts",
+        "stageSha256": "95cc88a32862d274a442cc1c62b09fc49d41766b6a6cd9aeafef5bc2cbc3a6fe",
+        "identical": true
+      },
+      {
+        "path": "src/ui/dateEntry.ts",
+        "byteLength": 2889,
+        "sha256": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/dateEntry.ts",
+        "stageSha256": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683",
+        "identical": true
+      },
+      {
+        "path": "src/ui/dateFormCommit.ts",
+        "byteLength": 1722,
+        "sha256": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/dateFormCommit.ts",
+        "stageSha256": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983",
+        "identical": true
+      },
+      {
+        "path": "src/ui/dateInputSession.ts",
+        "byteLength": 1310,
+        "sha256": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/dateInputSession.ts",
+        "stageSha256": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79",
+        "identical": true
+      },
+      {
+        "path": "src/ui/dateTransition.ts",
+        "byteLength": 3384,
+        "sha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/dateTransition.ts",
+        "stageSha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc",
+        "identical": true
+      },
+      {
+        "path": "src/ui/defaults.ts",
+        "byteLength": 8095,
+        "sha256": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/defaults.ts",
+        "stageSha256": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9",
+        "identical": true
+      },
+      {
+        "path": "src/ui/holidayConnectionDropdown.ts",
+        "byteLength": 734,
+        "sha256": "f86a1c9a33b76c50a9070e47e50d5a3f01c6ba23d0a4e57b8c64b3510ff932d2",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/holidayConnectionDropdown.ts",
+        "stageSha256": "f86a1c9a33b76c50a9070e47e50d5a3f01c6ba23d0a4e57b8c64b3510ff932d2",
+        "identical": true
+      },
+      {
+        "path": "src/ui/i18n.ts",
+        "byteLength": 51828,
+        "sha256": "fd12ba369fa5ccf68581443c5433e6a87fe723f11492114db7dc021f98b79cd9",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/i18n.ts",
+        "stageSha256": "fd12ba369fa5ccf68581443c5433e6a87fe723f11492114db7dc021f98b79cd9",
+        "identical": true
+      },
+      {
+        "path": "src/ui/index.ts",
+        "byteLength": 1126,
+        "sha256": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/index.ts",
+        "stageSha256": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757",
+        "identical": true
+      },
+      {
+        "path": "src/ui/model.ts",
+        "byteLength": 14853,
+        "sha256": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/model.ts",
+        "stageSha256": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e",
+        "identical": true
+      },
+      {
+        "path": "src/ui/qualifiedMessages.ts",
+        "byteLength": 9525,
+        "sha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/qualifiedMessages.ts",
+        "stageSha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645",
+        "identical": true
+      },
+      {
+        "path": "src/ui/socialMessages.ts",
+        "byteLength": 33653,
+        "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/socialMessages.ts",
+        "stageSha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f",
+        "identical": true
+      },
+      {
+        "path": "src/ui/socialUi.ts",
+        "byteLength": 11560,
+        "sha256": "98dd05eaa4abd3f7bf160d39b9a590a19f8ef6133ccc22df8d63a34205583fce",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/socialUi.ts",
+        "stageSha256": "98dd05eaa4abd3f7bf160d39b9a590a19f8ef6133ccc22df8d63a34205583fce",
+        "identical": true
+      },
+      {
+        "path": "src/ui/styles.css",
+        "byteLength": 11895,
+        "sha256": "f04e02a900bdb85363dee5687b1dfae8e24d1b257efad9d75dd02319e0568bc6",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/styles.css",
+        "stageSha256": "f04e02a900bdb85363dee5687b1dfae8e24d1b257efad9d75dd02319e0568bc6",
+        "identical": true
+      },
+      {
+        "path": "src/ui/vrpgQualification.ts",
+        "byteLength": 8554,
+        "sha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/vrpgQualification.ts",
+        "stageSha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef",
+        "identical": true
+      },
+      {
+        "path": "src/ui/vrpgSelection.ts",
+        "byteLength": 20547,
+        "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/product/ui/vrpgSelection.ts",
+        "stageSha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/ReleaseService.ts",
+        "byteLength": 3470,
+        "sha256": "395567382aaa848631504d8ce80e463624af249fa10a59fb1e97914c6de0d3b8",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/ReleaseService.ts",
+        "stageSha256": "395567382aaa848631504d8ce80e463624af249fa10a59fb1e97914c6de0d3b8",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/ReleaseValidator.ts",
+        "byteLength": 22048,
+        "sha256": "ae4e7f772dbdc06fd9921383e6d32a3ed25bff79d0ba89d71a9a592c37999ba9",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/ReleaseValidator.ts",
+        "stageSha256": "ae4e7f772dbdc06fd9921383e6d32a3ed25bff79d0ba89d71a9a592c37999ba9",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/ValidatedReleaseStore.ts",
+        "byteLength": 5864,
+        "sha256": "9f866b06263be118ee3d6dccd1392318cfbe32e42e12b9eacf48cc48caf3bb9e",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/ValidatedReleaseStore.ts",
+        "stageSha256": "9f866b06263be118ee3d6dccd1392318cfbe32e42e12b9eacf48cc48caf3bb9e",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/cacheIdentity.ts",
+        "byteLength": 1960,
+        "sha256": "67637d7e250ed45559558eca712d06800b281cc891b66554d660953817814878",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/cacheIdentity.ts",
+        "stageSha256": "67637d7e250ed45559558eca712d06800b281cc891b66554d660953817814878",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/config.ts",
+        "byteLength": 233,
+        "sha256": "5893d1a2a8f4c2004b4f5799351ce8ba72c767caa1849b61b6da2b6c2c621694",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/config.ts",
+        "stageSha256": "5893d1a2a8f4c2004b4f5799351ce8ba72c767caa1849b61b6da2b6c2c621694",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/path.ts",
+        "byteLength": 823,
+        "sha256": "faf7d1c368e35c73ba9eb619dbd14da80d786564ad821561a056fc3aac6a0598",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/path.ts",
+        "stageSha256": "faf7d1c368e35c73ba9eb619dbd14da80d786564ad821561a056fc3aac6a0598",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/providers/GitHubReleaseProvider.ts",
+        "byteLength": 1206,
+        "sha256": "b2caab684eda82b43466775ce891cbb63f5358cc94bb775deac60c95e0d4990d",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/providers/GitHubReleaseProvider.ts",
+        "stageSha256": "b2caab684eda82b43466775ce891cbb63f5358cc94bb775deac60c95e0d4990d",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/providers/SharePointReleaseProvider.ts",
+        "byteLength": 1978,
+        "sha256": "23b9842514042c8b645fefe1427a762c6048b8c0324f12157ae9b7c813737ee6",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/providers/SharePointReleaseProvider.ts",
+        "stageSha256": "23b9842514042c8b645fefe1427a762c6048b8c0324f12157ae9b7c813737ee6",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/providers/sharePointPath.ts",
+        "byteLength": 2334,
+        "sha256": "467787abac490f3e16ab8770a4a36b000a47ed905f2000b2c0fae12534d71030",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/providers/sharePointPath.ts",
+        "stageSha256": "467787abac490f3e16ab8770a4a36b000a47ed905f2000b2c0fae12534d71030",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/core/types.ts",
+        "byteLength": 2743,
+        "sha256": "a68de068ac22cbb1a86c735365cdced5262d66221e4c7189bee49a512450d892",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/core/types.ts",
+        "stageSha256": "a68de068ac22cbb1a86c735365cdced5262d66221e4c7189bee49a512450d892",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/webparts/fristenrechner/FristenrechnerWebPart.ts",
+        "byteLength": 4867,
+        "sha256": "61ecacfdc307b80f7f0e9c96d39163a18d90d44dbcbb5a0784eff238b8a67330",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/webparts/fristenrechner/FristenrechnerWebPart.ts",
+        "stageSha256": "61ecacfdc307b80f7f0e9c96d39163a18d90d44dbcbb5a0784eff238b8a67330",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.module.scss",
+        "byteLength": 1098,
+        "sha256": "826008edea3b6c2a76fd02e721be23edb87d7aa7ecb990a6fb6418f38f778d59",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/webparts/fristenrechner/components/Fristenrechner.module.scss",
+        "stageSha256": "826008edea3b6c2a76fd02e721be23edb87d7aa7ecb990a6fb6418f38f778d59",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.tsx",
+        "byteLength": 7846,
+        "sha256": "84e916d9b7d727362fac7b5c8a8e103668678530d47a3105618d7cb8a79f7c57",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/webparts/fristenrechner/components/Fristenrechner.tsx",
+        "stageSha256": "84e916d9b7d727362fac7b5c8a8e103668678530d47a3105618d7cb8a79f7c57",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/webparts/fristenrechner/components/IFristenrechnerProps.ts",
+        "byteLength": 426,
+        "sha256": "7d932830f292462503fd12ff3ef3ee85e2bd70120aa616f78f3868ac1e553487",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/webparts/fristenrechner/components/IFristenrechnerProps.ts",
+        "stageSha256": "7d932830f292462503fd12ff3ef3ee85e2bd70120aa616f78f3868ac1e553487",
+        "identical": true
+      },
+      {
+        "path": "spfx/src/webparts/fristenrechner/loc/mystrings.d.ts",
+        "byteLength": 475,
+        "sha256": "c3089803ee3670d3142775f800e82ff71fb4209e3edfe4ac02111732fa204d01",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/src/webparts/fristenrechner/loc/mystrings.d.ts",
+        "stageSha256": "c3089803ee3670d3142775f800e82ff71fb4209e3edfe4ac02111732fa204d01",
+        "identical": true
+      }
+    ]
+  },
+  "packageTestComparison": {
+    "comparedFiles": 12,
+    "allIdentical": true,
+    "files": [
+      {
+        "path": "spfx/test-build/ap20c1.test.cjs",
+        "byteLength": 8004,
+        "sha256": "aced32a41840a18f4945658f33a4c594ac5df13cb1ffce68785d94ebb377a441",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/ap20c1.test.cjs",
+        "stageSha256": "aced32a41840a18f4945658f33a4c594ac5df13cb1ffce68785d94ebb377a441",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/ap20c2.test.cjs",
+        "byteLength": 11345,
+        "sha256": "1d74e19717461d4fe5e2218db56a7b8c3f44ec2de1dbfec846dfcd9966f51a80",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/ap20c2.test.cjs",
+        "stageSha256": "1d74e19717461d4fe5e2218db56a7b8c3f44ec2de1dbfec846dfcd9966f51a80",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/ap20c3.test.cjs",
+        "byteLength": 15102,
+        "sha256": "d6041f8da49ff2bfa832c9cd5e0d8275641e53040f5e2b8dcc98b6ba17b528af",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/ap20c3.test.cjs",
+        "stageSha256": "d6041f8da49ff2bfa832c9cd5e0d8275641e53040f5e2b8dcc98b6ba17b528af",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/ap21.test.cjs",
+        "byteLength": 9342,
+        "sha256": "9e511f41cb86b4386c74cf8f8404ca7ec189e676178c288b5dd422cf5e3c0238",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/ap21.test.cjs",
+        "stageSha256": "9e511f41cb86b4386c74cf8f8404ca7ec189e676178c288b5dd422cf5e3c0238",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/ap22c3.test.cjs",
+        "byteLength": 7697,
+        "sha256": "783aa9437db0c357858513dfda9cd7ce70a10f44a12dc1bdb5c67693b72b0038",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/ap22c3.test.cjs",
+        "stageSha256": "783aa9437db0c357858513dfda9cd7ce70a10f44a12dc1bdb5c67693b72b0038",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/avig-consumer.test.cjs",
+        "byteLength": 7593,
+        "sha256": "99cc4b43576b0c10078823f8cf58af9207a889701f394cc6257d07ebffd6d9cf",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/avig-consumer.test.cjs",
+        "stageSha256": "99cc4b43576b0c10078823f8cf58af9207a889701f394cc6257d07ebffd6d9cf",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/consumer-regression.test.cjs",
+        "byteLength": 12439,
+        "sha256": "7af349765a2fd6da1be23fbae2611a1138196b1989650a7c3bf9c80e2f8233d0",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/consumer-regression.test.cjs",
+        "stageSha256": "7af349765a2fd6da1be23fbae2611a1138196b1989650a7c3bf9c80e2f8233d0",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/kvg-consumer.test.cjs",
+        "byteLength": 7740,
+        "sha256": "5e0f4a5d19aa698b19120c52427fe0fd2fec48b2c6ca96f94ffaad41ce0dfd6a",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/kvg-consumer.test.cjs",
+        "stageSha256": "5e0f4a5d19aa698b19120c52427fe0fd2fec48b2c6ca96f94ffaad41ce0dfd6a",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/mvp05-consumer.test.cjs",
+        "byteLength": 5025,
+        "sha256": "e07ec9ce938a21b2b7447dd7addc69f2bc960458bbe2ee76791094187aeed695",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/mvp05-consumer.test.cjs",
+        "stageSha256": "e07ec9ce938a21b2b7447dd7addc69f2bc960458bbe2ee76791094187aeed695",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/mvp06-consumer.test.cjs",
+        "byteLength": 5025,
+        "sha256": "42e6dc755b8a38fa97c9954b41281b406159cad78392308b15f0641dfa575f91",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/mvp06-consumer.test.cjs",
+        "stageSha256": "42e6dc755b8a38fa97c9954b41281b406159cad78392308b15f0641dfa575f91",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/package-harness.cjs",
+        "byteLength": 13199,
+        "sha256": "2b64616aca108bc8d77d444d79ffa37249d73b0fceb7c83787bb6990314ffa30",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/package-harness.cjs",
+        "stageSha256": "2b64616aca108bc8d77d444d79ffa37249d73b0fceb7c83787bb6990314ffa30",
+        "identical": true
+      },
+      {
+        "path": "spfx/test-build/social-consumer.test.cjs",
+        "byteLength": 4713,
+        "sha256": "565197ee7da7fe7ef8c96724ec0e6333a25610707bcfbf7587880ab7ae9f7aad",
+        "stagePath": ".work/ap21-spfx-build-7QlptW/spfx/test-build/social-consumer.test.cjs",
+        "stageSha256": "565197ee7da7fe7ef8c96724ec0e6333a25610707bcfbf7587880ab7ae9f7aad",
+        "identical": true
+      }
+    ]
+  },
+  "readmeSeparate": {
+    "current": {
+      "path": "spfx/test-build/README.md",
+      "byteLength": 6903,
+      "sha256": "cfbe93e4217eeecc237e901838012cae51661d61cdbaa73d653d575808f8512a"
+    },
+    "stageCopy": {
+      "path": ".work/ap21-spfx-build-7QlptW/spfx/test-build/README.md",
+      "byteLength": 6062,
+      "sha256": "165d95cda4a1105e47c123c28aff63c7dbfd05be933f490a7b3abc56462b5459"
+    },
+    "reason": "Die Testdokumentation wurde nach dem Kopieren des Buildverzeichnisses aktualisiert. Sie ist kein kompilierter Paketinput. Die aktuelle README wird separat im Abschlussregister gebunden. Für diese Datei wird keine Gleichheit mit der Stagekopie behauptet."
+  },
+  "finalLogs": [
+    {
+      "path": "outputs/ap21-2026-10-08/spfx-logs/step-1.log",
+      "byteLength": 40104,
+      "sha256": "c8ae35480a4755022727da3fca1ac7da06d795c22cf56d1a126e76f88a0bad3c",
+      "sourcePath": ".work/ap21-spfx-build-7QlptW/step-1.log",
+      "byteIdentical": true
+    },
+    {
+      "path": "outputs/ap21-2026-10-08/spfx-logs/step-2.log",
+      "byteLength": 6363,
+      "sha256": "483b7195f6bedc33d8fadf4830c2bec9d63c13827f76a2dfa46033a07abfe938",
+      "sourcePath": ".work/ap21-spfx-build-7QlptW/step-2.log",
+      "byteIdentical": true
+    },
+    {
+      "path": "outputs/ap21-2026-10-08/spfx-logs/step-3.log",
+      "byteLength": 69,
+      "sha256": "aa2a1fa19a8ec03ce1427568afc95526ff276d62b03131f4bb63717cc2c6d47d",
+      "sourcePath": ".work/ap21-spfx-build-7QlptW/step-3.log",
+      "byteIdentical": true
+    },
+    {
+      "path": "outputs/ap21-2026-10-08/spfx-logs/step-4.log",
+      "byteLength": 6143,
+      "sha256": "a0042e8aa097120a372e47b6c7b4462c87ce4bad600706bcbca3bac8d21cbe63",
+      "sourcePath": ".work/ap21-spfx-build-7QlptW/step-4.log",
+      "byteIdentical": true
+    },
+    {
+      "path": "outputs/ap21-2026-10-08/spfx-logs/step-5.log",
+      "byteLength": 25924,
+      "sha256": "d499de4652ba2cec0cf9c791b16f735805e85721d53e7fb39c69e0acc8fcd41c",
+      "sourcePath": ".work/ap21-spfx-build-7QlptW/step-5.log",
+      "byteIdentical": true
+    },
+    {
+      "path": "outputs/ap21-2026-10-08/spfx-logs/verification.json",
+      "byteLength": 3341,
+      "sha256": "72c4c511104e342df58e5df5793f8dd988fb95d78c7d24c2ff206e9005929dde",
+      "sourcePath": ".work/ap21-spfx-build-7QlptW/verification.json",
+      "byteIdentical": true
+    }
+  ],
+  "unsuccessfulIntermediateAttempts": [
+    {
+      "stage": ".work/ap21-spfx-build-mPjw0x",
+      "status": "failed",
+      "countedAsSuccessful": false,
+      "reason": "ES5-Kompilierung erkannte die durch lokale Variablennamen verdeckten Standardparameter von validate. Im Endstand durch explizite Argumente korrigiert.",
+      "verification": {
+        "path": ".work/ap21-spfx-build-mPjw0x/verification.json",
+        "byteLength": 1381,
+        "sha256": "4d050f0441329864af9eea1966b6ae8fa41508054ee60b168b7c7d5eaeb36592"
+      },
+      "failingLog": {
+        "path": ".work/ap21-spfx-build-mPjw0x/step-2.log",
+        "byteLength": 2395,
+        "sha256": "b8542673eb32852423aea315c72c6d1e215fe6bee9c74c9d7bc2c65d68154039"
+      }
+    },
+    {
+      "stage": ".work/ap21-spfx-build-vz1COA",
+      "status": "failed",
+      "countedAsSuccessful": false,
+      "reason": "Zwischenlauf mit einer während der Quelltests geänderten DateInput-Datei. Die Synchronisationsprüfung wies den gemischten Stand korrekt zurück. Der endgültige vollständige Lauf verwendet identische Quellen.",
+      "verification": {
+        "path": ".work/ap21-spfx-build-vz1COA/verification.json",
+        "byteLength": 910,
+        "sha256": "8e9aa758a09fe29de7b0e89cb688cbab6d7f263ebc6e9061ed34cdd5ae8dd277"
+      },
+      "failingLog": {
+        "path": ".work/ap21-spfx-build-vz1COA/step-1.log",
+        "byteLength": 400329,
+        "sha256": "b32bfed116b1503d2d2719e0a012504542970fbabfbf514f4b0e124a1010e662"
+      }
+    }
+  ],
+  "limits": [
+    "Die tatsächlichen unveränderten AMD-Bundlebytes und ES5-Dateien werden verwendet.",
+    "Die Datumshandler werden mit synchron modellierter React-Hook-, Context- und Effektregistrierung aufgerufen. Das ist kein Nachweis für echte React-Scheduling- oder DOM-Ereignisabläufe.",
+    "Reale DOM-Fokussierung, Kalenderdialogdarstellung, iOS-Tastaturen und Gerätebedienung benötigen die getrennte Browser- beziehungsweise Geräteprüfung.",
+    "Keine Bereitstellung auf E, Q oder P. Keine M365-Berechtigungsänderung. Das historische Rootpaket bleibt byteidentisch."
+  ]
+}

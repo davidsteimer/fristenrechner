@@ -4,8 +4,10 @@ import * as React from 'react';
 import { MessageBar, MessageBarType, Spinner } from '@fluentui/react';
 
 import { ReleaseService } from '../../../core/ReleaseService';
+import { getProviderCacheIdentity } from '../../../core/cacheIdentity';
 import type { IReleaseActivationResult, IValidatedRelease } from '../../../core/types';
-import { createCalculationData, type CalculationData } from '../../../product/core';
+import { createCalculatorRuntime, type CalculationData } from '../../../product/core';
+import type { BoundCalendarRuntime } from '../../../product/core/calendarResolution';
 import { FristenrechnerApp } from '../../../product/ui';
 import '../../../product/ui/styles.module.scss';
 import styles from './Fristenrechner.module.scss';
@@ -15,6 +17,9 @@ type RuntimeStatus = 'loading' | 'local' | 'ready' | 'fallback' | 'error';
 
 interface IFristenrechnerState {
   readonly calculationData?: CalculationData;
+  readonly calendarRuntime?: BoundCalendarRuntime;
+  readonly loadedConfigurationKey?: string;
+  readonly manifestSha256?: string;
   readonly message?: string;
   readonly status: RuntimeStatus;
 }
@@ -23,33 +28,28 @@ function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
 }
 
-function calculationDataFromRelease(release: IValidatedRelease): CalculationData {
-  return createCalculationData(release);
-}
-
 export default class Fristenrechner extends React.Component<
   IFristenrechnerProps,
   IFristenrechnerState
 > {
-  private readonly releaseService: ReleaseService;
   private loadSequence = 0;
 
   public constructor(props: IFristenrechnerProps) {
     super(props);
-    this.releaseService = new ReleaseService(props.store);
     this.state = { status: 'loading' };
   }
 
   public componentDidMount(): void {
-    this.restoreAndRefresh().catch(error => this.showError(error));
+    void this.restoreAndRefresh();
   }
 
   public componentDidUpdate(previousProps: IFristenrechnerProps): void {
     if (
-      previousProps.provider?.id !== this.props.provider?.id
+      previousProps.configurationKey !== this.props.configurationKey
       || previousProps.configurationError !== this.props.configurationError
+      || previousProps.store !== this.props.store
     ) {
-      this.restoreAndRefresh().catch(error => this.showError(error));
+      void this.restoreAndRefresh();
     }
   }
 
@@ -58,7 +58,11 @@ export default class Fristenrechner extends React.Component<
   }
 
   public render(): React.ReactElement<IFristenrechnerProps> {
-    const data = this.state.calculationData;
+    // Props change before componentDidUpdate can clear state. Never render the
+    // previous calculator for even that intermediate render.
+    const current = this.isCurrentConfiguration();
+    const data = current && this.state.loadedConfigurationKey === this.props.configurationKey
+      ? this.state.calculationData : undefined;
     return (
       <section
         className={styles.host}
@@ -66,7 +70,7 @@ export default class Fristenrechner extends React.Component<
         data-host={this.props.hostLabel}
         data-provider={this.props.provider?.kind ?? 'unavailable'}
       >
-        {data ? this.renderCalculator(data) : this.renderStartup()}
+        {data ? this.renderCalculator(data) : this.renderStartup(current)}
       </section>
     );
   }
@@ -85,7 +89,11 @@ export default class Fristenrechner extends React.Component<
             Der lokale Aktivstand wird geprüft. Validation de la version locale active.
           </MessageBar>
         )}
-        <FristenrechnerApp data={data} />
+        <FristenrechnerApp
+          key={`${this.props.configurationKey}:${this.state.manifestSha256 ?? ''}`}
+          data={data}
+          {...(this.state.calendarRuntime ? { calendarRuntime: this.state.calendarRuntime } : {})}
+        />
         <div className={styles.runtimeStatus}>
           <span>Datenquelle / Source des données:</span>
           <code>{this.props.providerLabel}</code>
@@ -94,8 +102,12 @@ export default class Fristenrechner extends React.Component<
     );
   }
 
-  private renderStartup(): React.ReactNode {
-    const isError = this.state.status === 'error';
+  private renderStartup(currentConfiguration: boolean): React.ReactNode {
+    const stateIsCurrent = this.state.loadedConfigurationKey === this.props.configurationKey;
+    const isError = !currentConfiguration || (stateIsCurrent && this.state.status === 'error');
+    const message = this.props.configurationError
+      ?? (!currentConfiguration ? 'Ungültige Datenquellenbindung / Liaison de la source de données non valide.'
+        : stateIsCurrent ? this.state.message : undefined);
     return (
       <div className={styles.startup} aria-live="polite" aria-busy={!isError}>
         <div className={styles.badge}>STEIMER · MVP</div>
@@ -104,7 +116,7 @@ export default class Fristenrechner extends React.Component<
         {isError ? (
           <MessageBar messageBarType={MessageBarType.error}>
             Der Datenstand konnte nicht sicher geladen werden. La version des données n’a pas pu être chargée de manière sûre.
-            {this.state.message ? ` ${this.state.message}` : ''}
+            {message ? ` ${message}` : ''}
           </MessageBar>
         ) : (
           <Spinner label="Datenstand wird geprüft / Validation de la version des données" />
@@ -116,9 +128,12 @@ export default class Fristenrechner extends React.Component<
   private async restoreAndRefresh(): Promise<void> {
     const sequence = ++this.loadSequence;
     const provider = this.props.provider;
-    this.setState({ status: 'loading', calculationData: undefined, message: undefined });
+    const configurationKey = this.props.configurationKey;
+    const releaseService = new ReleaseService(this.props.store);
+    this.setState({ status: 'loading', calculationData: undefined, calendarRuntime: undefined,
+      loadedConfigurationKey: configurationKey, manifestSha256: undefined, message: undefined });
 
-    if (!provider) {
+    if (!provider || !this.isCurrentConfiguration()) {
       this.setState({
         status: 'error',
         message: this.props.configurationError ?? 'Keine gültige Datenquelle konfiguriert.'
@@ -127,11 +142,12 @@ export default class Fristenrechner extends React.Component<
     }
 
     try {
-      const active = await this.releaseService.getActive();
-      if (active && sequence === this.loadSequence) {
+      const active = await releaseService.getActive(provider);
+      if (active && this.isCurrentLoad(sequence, configurationKey)) {
         this.setState({
           status: 'local',
-          calculationData: calculationDataFromRelease(active)
+          ...this.runtimeState(active),
+          loadedConfigurationKey: configurationKey
         });
       }
     } catch {
@@ -139,22 +155,23 @@ export default class Fristenrechner extends React.Component<
     }
 
     try {
-      const result = await this.releaseService.refresh(provider);
-      if (sequence !== this.loadSequence) {
+      const result = await releaseService.refresh(provider);
+      if (!this.isCurrentLoad(sequence, configurationKey)) {
         return;
       }
-      this.applyActivationResult(result);
+      this.applyActivationResult(result, configurationKey);
     } catch (error) {
-      if (sequence === this.loadSequence) {
+      if (this.isCurrentLoad(sequence, configurationKey)) {
         this.showError(error);
       }
     }
   }
 
-  private applyActivationResult(result: IReleaseActivationResult): void {
+  private applyActivationResult(result: IReleaseActivationResult, configurationKey: string): void {
     this.setState({
       status: result.mode === 'network' ? 'ready' : 'fallback',
-      calculationData: calculationDataFromRelease(result.release),
+      ...this.runtimeState(result.release),
+      loadedConfigurationKey: configurationKey,
       message: result.warning
     });
   }
@@ -163,7 +180,28 @@ export default class Fristenrechner extends React.Component<
     this.setState({
       status: 'error',
       calculationData: undefined,
+      calendarRuntime: undefined,
+      manifestSha256: undefined,
       message: errorMessage(error)
     });
+  }
+
+  private runtimeState(release: IValidatedRelease): Pick<IFristenrechnerState, 'calculationData' | 'calendarRuntime' | 'manifestSha256'> {
+    const runtime = createCalculatorRuntime(release);
+    return { calculationData: runtime.data, calendarRuntime: runtime.calendarRuntime, manifestSha256: release.manifestSha256 };
+  }
+
+  private isCurrentConfiguration(): boolean {
+    if (this.props.configurationError || !this.props.provider) return false;
+    try {
+      return getProviderCacheIdentity(this.props.provider) === this.props.configurationKey;
+    } catch {
+      return false;
+    }
+  }
+
+  private isCurrentLoad(sequence: number, configurationKey: string): boolean {
+    return sequence === this.loadSequence && configurationKey === this.props.configurationKey
+      && this.isCurrentConfiguration();
   }
 }

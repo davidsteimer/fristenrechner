@@ -51,7 +51,12 @@ const SHA_CONSTANTS = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x
 function rotate(value: number, bits: number): number { return (value >>> bits) | (value << (32 - bits)); }
 /** Synchronous SHA-256 on canonical UTF-8, host-neutral for browsers and SPFx. */
 export function socialObjectSha256(value: unknown): string {
-  const input = canonicalSocialJson(value);
+  return rawSha256Text(canonicalSocialJson(value));
+}
+
+/** Exact UTF-8 text hash, without JSON canonicalisation or newline changes. */
+export function rawSha256Text(input: string): string {
+  unicode(input);
   const bytes: number[] = [];
   for (let i = 0; i < input.length; i += 1) {
     let c = input.charCodeAt(i);
@@ -248,7 +253,7 @@ export function assertSocialProcedureCatalog(value: unknown): asserts value is S
 export function validateSocialCatalogReferences(catalog: SocialProcedureCatalog, data: CalculationData, artifactRefs: readonly ReleaseArtifactReference[] = data.releaseArtifactRefs ?? []): void {
   assertSocialProcedureCatalog(catalog);
   if ((catalog.formatVersion === '1.0.0' && data.formatVersion !== '5.0.0')
-    || (catalog.formatVersion === '2.0.0' && data.formatVersion !== '6.0.0')) fail('Social component and manifest version mismatch');
+    || (catalog.formatVersion === '2.0.0' && !['6.0.0', '7.0.0'].includes(data.formatVersion))) fail('Social component and manifest version mismatch');
   distinct(artifactRefs.map(r => `${r.role}:${r.contentId}`));
   for (const binding of catalog.cantonalBindings) {
     if (!data.profiles.has(binding.entryProfileId)) fail('Entry profile missing');

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "1.0.0",
+  "workPackage": "AP21",
+  "recordedAt": "2026-10-08T17:08:01Z",
+  "status": "E04-sharepoint-installed-technically-verified-real-device-and-E05-pending",
+  "authorization": {
+    "userMessage": "OK, versuche die E04 Installation.",
+    "e04": true,
+    "e05": false
+  },
+  "candidate": "ap21-e-device-2026-10-08.2",
+  "package": {
+    "version": "0.0.21.2",
+    "path": "outputs/ap21-e-testkandidat-r2-2026-10-08/fristenrechner-ap21-e-0.0.21.2.sppkg",
+    "byteLength": 289708,
+    "sha256": "689310164fd56c5339b93ebf4458621c9772d0d35e281fa2a39469ec1c40f0df",
+    "catalogReadbackMatch": true,
+    "valid": true,
+    "deployed": true,
+    "deployedTenantWide": false
+  },
+  "bundle": {
+    "name": "ap21e-fristenrechner-web-part_caea654250ddfa916644.js",
+    "byteLength": 1141251,
+    "sha256": "1f81f9bb3477b50d74849aee0e4fe5bc4045eda419387d68e0268eeeb339569c",
+    "readbackMatch": true,
+    "observedLoadedDomScript": true
+  },
+  "installations": {
+    "siteApps": 2,
+    "newSharePointPages": 1,
+    "newTeamsApps": 0,
+    "newTeamsTabs": 0
+  },
+  "release": {
+    "id": "2026-10-01-mvp-06-approved.1",
+    "manifestSha256": "637cfc03c777f350031ba6c28676c685c16f25733391e1f25b0a3580016f5724",
+    "mirrorReadbacks": 22,
+    "mirrorReadbacksMatched": 22,
+    "sharePointEmptyAppCacheObserved": true,
+    "sharePointNetworkFiles": 11,
+    "sharePointAllHttp200": true,
+    "sharePointAllNetworkTransferred": true,
+    "sharePointNoFallback": true,
+    "teamsHostTested": false
+  },
+  "tests": {
+    "environment": "Edge desktop on macOS 27.0.1 (26A434)",
+    "installedEdgeVersion": "154.0.4258.62",
+    "runningBrowserVersionSeparatelyVerified": false,
+    "swissReferenceDate": "2026-10-08",
+    "checks": [
+      "text-input-placeholder-left-16px",
+      "day-tab-next-field",
+      "day-month-enter-no-calculation",
+      "de-h-blur-today",
+      "fr-a-enter-today",
+      "invalid-nonexistent-dates-rejected",
+      "invalid-format-rejected",
+      "stpo-reference-2026-09-28",
+      "typing-invalidates-result",
+      "invalid-draft-never-reuses-result",
+      "calendar-cancel-preserves-draft",
+      "calendar-selection",
+      "calendar-clearing",
+      "export-block-after-result",
+      "reload-empty-date"
+    ],
+    "realDeviceTestsComplete": false,
+    "defaultsStored": false,
+    "icsGenerated": false
+  },
+  "preservation": {
+    "productionPackageVersion": "0.6.0.1",
+    "productionPackageSha256": "60f84213507f99ec58463c84c514037d9c00bd63fdc8f02d85e52097bcf3c587",
+    "productionPackageByteIdentical": true,
+    "permissionReadbacksUnchanged": 4,
+    "r2PreparationArtifactBindingsUnchanged": 26,
+    "r1CatalogEntryRetained": true,
+    "existingEViewsUnchangedByComparedSignals": true,
+    "fullQPAuditPerformed": false
+  },
+  "remainingGates": [
+    "real-iOS-Safari-Edge-Chrome-device-tests",
+    "macOS-Chrome-Safari-and-accessibility-device-tests",
+    "E05-specific-Teams-registration-approval",
+    "direct-iOS-Teams-device-tests",
+    "AP21-human-acceptance"
+  ],
+  "privateEvidencePath": ".work/deployments/2026-10-08-ap21-e04-r2",
+  "screenshotPublicationApproved": false,
+  "githubPublicationPerformed": false,
+  "rollbackRequired": false,
+  "artifacts": [
+    {
+      "path": "docs/betrieb/ap21-e04-r2-vollzug.md",
+      "byteLength": 8751,
+      "sha256": "dd02bd81dc71add5ba4c3fa3f525f1912aea44c93abc4e640c30734261bec4a6"
+    },
+    {
+      "path": "outputs/ap21-e04-r2-2026-10-08/ap21-cache-leer.png",
+      "byteLength": 567228,
+      "sha256": "96a70b0704901feaece8e7b37c536faf5114c77f24c6020b5f58975f08d9eecf"
+    },
+    {
+      "path": "outputs/ap21-e04-r2-2026-10-08/katalog-bereitgestellt.jpg",
+      "byteLength": 139741,
+      "sha256": "62784721b75048f4d846b86e0b62c8e00b3b730ca6de51a54077b7a6e81cabce"
+    },
+    {
+      "path": "outputs/ap21-e04-r2-2026-10-08/mirror-netzabruf.png",
+      "byteLength": 699805,
+      "sha256": "0c6037ac037821e418f31663bca19026babeddfe6092975b3c5f9a72d66dad71"
+    },
+    {
+      "path": "outputs/ap21-e04-r2-2026-10-08/pruefseite-bereit.jpg",
+      "byteLength": 96941,
+      "sha256": "f649e23de2d5374276a14a4e1a8bb41a986e8821a415e2a61d98e1c17e84834b"
+    },
+    {
+      "path": "outputs/ap21-e04-r2-2026-10-08/pruefseite-eingabe.jpg",
+      "byteLength": 105646,
+      "sha256": "940589daad07b45e372d4cd1b040ed3bd11fbe196fc6358a04c9f3c5aac53d5a"
+    },
+    {
+      "path": "outputs/ap21-e04-r2-2026-10-08/sharepoint-referenzfall.jpg",
+      "byteLength": 112763,
+      "sha256": "42b85a1fe93b5a824e41d66fc8bd51454409bc2ada92845ce54858114322789a"
+    }
+  ]
+}

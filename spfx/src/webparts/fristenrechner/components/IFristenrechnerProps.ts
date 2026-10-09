@@ -4,6 +4,7 @@ import type { IReleaseProvider, IValidatedReleaseStore } from '../../../core/typ
 
 export interface IFristenrechnerProps {
   readonly componentId: string;
+  readonly configurationKey: string;
   readonly configurationError?: string;
   readonly hostLabel: string;
   readonly provider?: IReleaseProvider;

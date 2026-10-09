@@ -1,0 +1,87 @@
+{
+  "kind": "mvp07LocalChecks",
+  "scope": "governance",
+  "releaseId": "2026-10-08-mvp-07-approved.1",
+  "startedAt": "2026-10-08T20:33:39.190Z",
+  "installation": false,
+  "publication": false,
+  "steps": [
+    {
+      "id": "data-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/data",
+        "-p",
+        "test_*.py"
+      ],
+      "startedAt": "2026-10-08T20:33:39.191Z",
+      "finishedAt": "2026-10-08T20:34:13.759Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-2Ot60U/data-python.log",
+      "sha256": "a4f5f18ee92b029caaac0686bb7b16083c5c9b714f4f4894cc9a6850e9699bd0",
+      "byteLength": 404,
+      "pythonTests": 303
+    },
+    {
+      "id": "governance-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/governance",
+        "-p",
+        "test_*.py"
+      ],
+      "startedAt": "2026-10-08T20:34:13.760Z",
+      "finishedAt": "2026-10-08T20:34:24.351Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-2Ot60U/governance-python.log",
+      "sha256": "377b85032c80cd6066b91017a90219df7855ae261c8af36a3a6977e55a435258",
+      "byteLength": 130,
+      "pythonTests": 30
+    },
+    {
+      "id": "governance-validator",
+      "command": ".venv/bin/python",
+      "args": [
+        "tests/governance/validate_source_reviews.py",
+        "--self-test"
+      ],
+      "startedAt": "2026-10-08T20:34:24.351Z",
+      "finishedAt": "2026-10-08T20:34:43.505Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-2Ot60U/governance-validator.log",
+      "sha256": "954e920538e7ef2e9f9641d1c8c821e5c48378f2413187bb7e91138dcc27c354",
+      "byteLength": 117
+    },
+    {
+      "id": "governance-node",
+      "command": "node",
+      "args": [
+        "scripts/run-standard-tests.mjs",
+        "governance"
+      ],
+      "startedAt": "2026-10-08T20:34:43.505Z",
+      "finishedAt": "2026-10-08T20:34:52.999Z",
+      "exitCode": 1,
+      "log": ".work/mvp07-governance-checks-2Ot60U/governance-node.log",
+      "sha256": "e996295cbc62b22040a79d5248acac5ac2d23e4959c2a3febb8ce79e6eb87c7d",
+      "byteLength": 2669703,
+      "nodeCounts": {
+        "tests": 261,
+        "pass": 259,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "passed": false,
+  "finishedAt": "2026-10-08T20:34:53.004Z"
+}

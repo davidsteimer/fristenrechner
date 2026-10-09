@@ -3,12 +3,16 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { test } from 'node:test';
+import ts from 'typescript';
 import { candidatePath, inspectModelCase, runModelCases, validateModel } from '../../scripts/check-ap19a-model.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const source = JSON.parse(await readFile(resolve(root, candidatePath), 'utf8'));
 const fixture = () => structuredClone(source);
+const historicalTest = await readFile(resolve(root, 'outputs/release-mvp07-2026-10-08/inputs/files/tests/governance/ap19a-model.test.mjs'));
+assert.equal(createHash('sha256').update(historicalTest).digest('hex'), '2d6ed57b924e758bdda44d28147bf7c5abd615a1dfc4d38eed99d411f2142a7c');
 function rejectMutation(change) {
   const model = fixture(); change(model);
   assert.throws(() => validateModel(model));
@@ -108,10 +112,45 @@ async function filesUnder(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   return (await Promise.all(entries.map(entry => entry.isDirectory() ? filesUnder(resolve(directory, entry.name)) : [resolve(directory, entry.name)]))).flat();
 }
-test('AP19A is absent from runtime source and released manifests', async () => {
-  const runtimeFiles = (await filesUnder(resolve(root, 'src'))).filter(path => /\.(ts|tsx|js|mjs|json)$/.test(path));
-  const releaseManifests = (await filesUnder(resolve(root, 'data/releases'))).filter(path => path.endsWith('/manifest.json'));
-  for (const path of [...runtimeFiles, ...releaseManifests, resolve(root, 'package.json')]) {
-    assert.doesNotMatch(await readFile(path, 'utf8'), /ap19a-national-model|check-ap19a-model|CH-SOC-ELG-(?:OBJ|APP)|AP19A-(?:BE|ZH|AG)-ELG/, path);
+function moduleReferences(text, filename) {
+  const file = ts.createSourceFile(filename, text, ts.ScriptTarget.Latest, true,
+    filename.endsWith('.tsx') ? ts.ScriptKind.TSX : ts.ScriptKind.TS);
+  const imports = [];
+  function visit(node) {
+    let specifier;
+    if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) specifier = node.moduleSpecifier;
+    else if (ts.isImportEqualsDeclaration(node) && ts.isExternalModuleReference(node.moduleReference)) specifier = node.moduleReference.expression;
+    else if (ts.isCallExpression(node) && (node.expression.kind === ts.SyntaxKind.ImportKeyword
+      || (ts.isIdentifier(node.expression) && node.expression.text === 'require'))) specifier = node.arguments[0];
+    if (specifier && ts.isStringLiteralLike(specifier)) imports.push(specifier.text);
+    ts.forEachChild(node, visit);
   }
+  visit(file);
+  return imports;
+}
+test('AP19A model remains absent from runtime imports and released artifact paths', async () => {
+  const runtimeFiles = (await filesUnder(resolve(root, 'src'))).filter(path => /\.(ts|tsx|js|mjs)$/.test(path));
+  const releaseManifests = (await filesUnder(resolve(root, 'data/releases'))).filter(path => path.endsWith('/manifest.json'));
+  for (const path of runtimeFiles) {
+    const text = await readFile(path, 'utf8');
+    for (const dependency of moduleReferences(text, path)) assert.doesNotMatch(dependency, /ap19a-national-model|check-ap19a-model/, path);
+    // The CH-SOC-ELG identifiers were later separately implemented and approved.
+    // They are not evidence of importing AP19A's synthetic model or permissions.
+    assert.doesNotMatch(text, /AP19A-(?:BE|ZH|AG)-ELG/, path);
+  }
+  for (const path of releaseManifests) {
+    const manifest = JSON.parse(await readFile(path, 'utf8'));
+    for (const artifact of manifest.artifacts) assert.doesNotMatch(artifact.path, /ap19a-national-model|check-ap19a-model|AP19A-(?:BE|ZH|AG)-ELG/, path);
+  }
+  assert.doesNotMatch(await readFile(resolve(root, 'package.json'), 'utf8'), /ap19a-national-model|check-ap19a-model/);
+});
+test('AP19A import guard distinguishes import/export/require from legitimate shared IDs', () => {
+  const text = `const releasedRule = "CH-SOC-ELG-OBJ";
+    import data from './ap19a-national-model.json';
+    export { check } from '../scripts/check-ap19a-model.mjs';
+    const dynamic = import('./ap19a-national-model.json');
+    const legacy = require('./check-ap19a-model.mjs');`;
+  assert.deepEqual(moduleReferences(text, 'synthetic.ts'), ['./ap19a-national-model.json',
+    '../scripts/check-ap19a-model.mjs', './ap19a-national-model.json', './check-ap19a-model.mjs']);
+  assert.deepEqual(moduleReferences('const releasedRule = "CH-SOC-ELG-OBJ";', 'synthetic.ts'), []);
 });

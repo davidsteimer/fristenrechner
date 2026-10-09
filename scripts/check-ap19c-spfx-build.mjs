@@ -11,7 +11,8 @@ const originalPackage = resolve(root, 'spfx/sharepoint/solution/fristenrechner-s
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const originalHash = sha(await readFile(originalPackage));
 await mkdir(resolve(root, '.work'), {recursive: true});
-const stage = await mkdtemp(resolve(root, '.work/ap19c-spfx-build-'));
+const stage = await mkdtemp(resolve(root, process.argv.includes('--ap21') ? '.work/ap21-spfx-build-'
+  : process.argv.includes('--ap22c3') ? '.work/ap22c3-spfx-build-' : '.work/ap19c-spfx-build-'));
 const target = resolve(stage, 'spfx');
 await mkdir(target);
 const excluded = new Set(['node_modules', 'lib', 'lib-commonjs', 'dist', 'temp', 'release', 'sharepoint', '.heft']);
@@ -19,16 +20,18 @@ for (const item of await readdir(resolve(root, 'spfx'), {withFileTypes: true})) 
   if (!excluded.has(item.name)) await cp(resolve(root, 'spfx', item.name), resolve(target, item.name), {recursive: true});
 }
 await symlink(resolve(root, 'spfx/node_modules'), resolve(target, 'node_modules'), 'dir');
-for (const name of ['src', 'schemas', 'data', 'tests']) await symlink(resolve(root, name), resolve(stage, name), 'dir');
+for (const name of ['src', 'schemas', 'data', 'tests', 'outputs']) await symlink(resolve(root, name), resolve(stage, name), 'dir');
 const env = {...process.env, PATH: `${dirname(process.execPath)}:${process.env.PATH ?? ''}`};
 const commands = [
   ['npm', ['test']],
   [resolve(target, 'node_modules/.bin/heft'), ['test', '--clean', '--production']],
   [process.execPath, ['scripts/audit-product-css.mjs']],
   [resolve(target, 'node_modules/.bin/heft'), ['package-solution', '--production']],
-  ['npm', ['run', 'test:built']]
+  [process.execPath, ['--test', '--test-concurrency=2', '--test-timeout=60000', ...
+    (await readdir(resolve(target, 'test-build'))).filter(name => name.endsWith('.test.cjs'))
+      .sort().map(name => `test-build/${name}`)]]
 ];
-const report = {purpose: `${process.argv.includes('--ap20c3') ? 'AP20C3' : process.argv.includes('--ap20c2') ? 'AP20C2' : process.argv.includes('--ap20c1') ? 'AP20C1' : process.argv.includes('--ap19c3') ? 'AP19C3' : process.argv.includes('--ap19c2') ? 'AP19C2' : 'AP19C1'} isolated integration build, NOT a release or installation package`, stage, originalPackage, originalHash, steps: []};
+const report = {purpose: `${process.argv.includes('--ap21') ? 'AP21' : process.argv.includes('--ap22c3') ? 'AP22C3' : process.argv.includes('--ap20c3') ? 'AP20C3' : process.argv.includes('--ap20c2') ? 'AP20C2' : process.argv.includes('--ap20c1') ? 'AP20C1' : process.argv.includes('--ap19c3') ? 'AP19C3' : process.argv.includes('--ap19c2') ? 'AP19C2' : 'AP19C1'} isolated integration build, NOT a release or installation package`, stage, originalPackage, originalHash, steps: []};
 let failed = false;
 for (const [command, args] of commands) {
   const result = spawnSync(command, args, {cwd: target, env, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024});

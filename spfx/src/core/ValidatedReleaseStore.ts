@@ -5,6 +5,18 @@ import type { IValidatedRelease, IValidatedReleaseStore } from './types';
 const RELEASE_STORE = 'releases';
 const STATE_STORE = 'state';
 const ACTIVE_KEY = 'active';
+const BOUND_RELEASE_STORE = 'configuredReleases';
+
+interface IBoundRelease {
+  readonly cacheIdentity: string;
+  readonly release: IValidatedRelease;
+}
+
+function assertCacheIdentity(cacheIdentity: string): void {
+  if (!/^provider-v1:[a-f0-9]{64}$/.test(cacheIdentity)) {
+    throw new Error('Ungültige konfigurierte Cacheidentität.');
+  }
+}
 
 interface IActiveState {
   readonly key: typeof ACTIVE_KEY;
@@ -34,7 +46,17 @@ export class IndexedDbValidatedReleaseStore implements IValidatedReleaseStore {
     private readonly indexedDb: IDBFactory = globalThis.indexedDB
   ) {}
 
-  public async activate(release: IValidatedRelease): Promise<void> {
+  public async activate(release: IValidatedRelease, cacheIdentity?: string): Promise<void> {
+    if (cacheIdentity !== undefined) {
+      assertCacheIdentity(cacheIdentity);
+      const database = await this.openDatabase();
+      const transaction = database.transaction(BOUND_RELEASE_STORE, 'readwrite');
+      transaction.objectStore(BOUND_RELEASE_STORE).put({ cacheIdentity, release } as IBoundRelease);
+      await transactionComplete(transaction);
+      return;
+    }
+    // Legacy entries stay readable for explicit archival inspection, but are
+    // never used by ReleaseService, which always supplies a configuration key.
     const database = await this.openDatabase();
     const transaction = database.transaction([RELEASE_STORE, STATE_STORE], 'readwrite');
 
@@ -44,7 +66,20 @@ export class IndexedDbValidatedReleaseStore implements IValidatedReleaseStore {
     await transactionComplete(transaction);
   }
 
-  public async getActive(): Promise<IValidatedRelease | undefined> {
+  public async getActive(cacheIdentity?: string): Promise<IValidatedRelease | undefined> {
+    if (cacheIdentity !== undefined) {
+      assertCacheIdentity(cacheIdentity);
+      const database = await this.openDatabase();
+      const transaction = database.transaction(BOUND_RELEASE_STORE, 'readonly');
+      const entry = await requestResult<IBoundRelease | undefined>(
+        transaction.objectStore(BOUND_RELEASE_STORE).get(cacheIdentity)
+      );
+      await transactionComplete(transaction);
+      if (entry && entry.cacheIdentity !== cacheIdentity) {
+        throw new Error('Cacheeintrag gehört nicht zur aktuellen Datenkonfiguration.');
+      }
+      return entry?.release;
+    }
     const database = await this.openDatabase();
     const transaction = database.transaction([RELEASE_STORE, STATE_STORE], 'readonly');
     const state = await requestResult<IActiveState | undefined>(
@@ -70,7 +105,7 @@ export class IndexedDbValidatedReleaseStore implements IValidatedReleaseStore {
 
     if (!this.databasePromise) {
       this.databasePromise = new Promise<IDBDatabase>((resolve, reject) => {
-        const request = this.indexedDb.open(this.databaseName, 1);
+        const request = this.indexedDb.open(this.databaseName, 2);
         request.onupgradeneeded = () => {
           const database = request.result;
           if (!database.objectStoreNames.contains(RELEASE_STORE)) {
@@ -78,6 +113,9 @@ export class IndexedDbValidatedReleaseStore implements IValidatedReleaseStore {
           }
           if (!database.objectStoreNames.contains(STATE_STORE)) {
             database.createObjectStore(STATE_STORE, { keyPath: 'key' });
+          }
+          if (!database.objectStoreNames.contains(BOUND_RELEASE_STORE)) {
+            database.createObjectStore(BOUND_RELEASE_STORE, { keyPath: 'cacheIdentity' });
           }
         };
         request.onsuccess = () => resolve(request.result);
@@ -92,12 +130,22 @@ export class IndexedDbValidatedReleaseStore implements IValidatedReleaseStore {
 
 export class MemoryValidatedReleaseStore implements IValidatedReleaseStore {
   private active?: IValidatedRelease;
+  private readonly configured = new Map<string, IValidatedRelease>();
 
-  public async activate(release: IValidatedRelease): Promise<void> {
+  public async activate(release: IValidatedRelease, cacheIdentity?: string): Promise<void> {
+    if (cacheIdentity !== undefined) {
+      assertCacheIdentity(cacheIdentity);
+      this.configured.set(cacheIdentity, release);
+      return;
+    }
     this.active = release;
   }
 
-  public async getActive(): Promise<IValidatedRelease | undefined> {
+  public async getActive(cacheIdentity?: string): Promise<IValidatedRelease | undefined> {
+    if (cacheIdentity !== undefined) {
+      assertCacheIdentity(cacheIdentity);
+      return this.configured.get(cacheIdentity);
+    }
     return this.active;
   }
 }

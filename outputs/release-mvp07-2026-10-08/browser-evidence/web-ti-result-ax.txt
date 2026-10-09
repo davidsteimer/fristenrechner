@@ -1,0 +1,110 @@
+Browser tab: 6, Title: "Fristenrechner Schweiz · STEIMER", URL: "http://127.0.0.1:8807/fristenrechner/".
+1 AXWebArea Fristenrechner Schweiz · STEIMER, URL: 127.0.0.1:8807/fristenrechner/
+	2 container root
+		3 link Description: Zum Fristenrechner · Accéder au calculateur, Value: 127.0.0.1:8807/fristenrechner/#fristenrechner-app
+		4 container STEIMER Kopfbereich
+			5 link Description: STEIMER Startseite, Value: steimer.ch/
+			6 text FRISTENRECHNER SCHWEIZ CALCULATEUR DE DÉLAIS SUISSE
+		7 container
+			8 text STEIMER · MVP
+			9 heading Fristenrechner Schweiz, Value: 1
+				10 text Fristenrechner Schweiz
+			11 text Bundesverfahren mit schweizweiten Feiertagskalendern, VRPG und Spezialrecht für Bern im freigegebenen Umfang.
+			12 text Sprache
+			13 combo box (collapsed) Description: Sprache, Value: Deutsch, ID: Dropdown0, Secondary Actions: Expand
+				14 text Deutsch
+			15 text Hilfsmittel ohne Gewähr. Prüfen Sie das Ergebnis und die Rechenspur vor fristgebundenen Handlungen.
+			16 container Angaben zur Frist
+				17 heading Angaben zur Frist, Value: 2, ID: fr-form-heading
+					18 text Angaben zur Frist
+				19 text Empfangsdatum der Zustellung
+				20 text field (settable) Empfangsdatum der Zustellung, Value: 07.12.2026, ID: fr-native-date-1
+				21 pop up button (collapsed) Description: Datum im Kalender wählen: Empfangsdatum der Zustellung, Help: Datum im Kalender wählen (Alt+↓), Secondary Actions: Expand
+				22 pop up button (collapsed) Description: Hilfe zur Datumseingabe: Empfangsdatum der Zustellung, Help: Hilfe zur Datumseingabe (F1), Secondary Actions: Expand
+				23 container
+					24 container TextFieldLabel4
+						25 text Frist in Tagen  *
+					26 stepper (settable, integer) Frist in Tagen *, Value: 1, ID: TextField2
+				27 container Dropdown7-label
+					28 text Sitz der zuständigen Stelle  *
+				29 combo box (collapsed) Sitz der zuständigen Stelle * Bern (BE), Value: Bern (BE), ID: Dropdown7, Secondary Actions: Expand
+					30 text Bern (BE)
+				31 container Dropdown8-label
+					32 text Erlass / Verfahrensrecht  *
+				33 combo box (collapsed) Erlass / Verfahrensrecht * Strafprozessordnung (StPO), Value: Strafprozessordnung (StPO), ID: Dropdown8, Secondary Actions: Expand
+					34 text Strafprozessordnung (StPO)
+				35 text Art der Zustellung
+				36 combo box (collapsed) Art der Zustellung Direkte Zustellung oder anderes massgebendes Datum, Value: Direkte Zustellung oder anderes massgebendes Datum, ID: Dropdown9, Secondary Actions: Expand
+					37 text Direkte Zustellung oder anderes massgebendes Datum
+				76 container Dropdown10-label
+					77 text Massgebende Zustellkonstellation  *
+				78 combo box (collapsed) Massgebende Zustellkonstellation * Partei ohne Vertretung, Value: Partei ohne Vertretung, ID: Dropdown10, Secondary Actions: Expand
+					79 text Partei ohne Vertretung
+				80 container Dropdown11-label
+					81 text Massgebender Feiertagskanton  *
+				82 combo box (collapsed) Massgebender Feiertagskanton * Tessin (TI), Value: Tessin (TI), ID: Dropdown11, Secondary Actions: Expand
+					83 text Tessin (TI)
+			46 button Frist berechnen
+				47 text Frist berechnen
+			48 button Resultat zurücksetzen
+				49 text Resultat zurücksetzen
+			50 button Als Standard speichern
+				51 text Als Standard speichern
+			52 button Standards zurücksetzen
+				53 text Standards zurücksetzen
+			84 container Berechnung
+				85 heading Berechnung, Value: 2, ID: fr-result-heading
+					86 text Berechnung
+				87 text Die Frist wurde berechnet.
+				88 definition list
+					89 container FRISTABLAUF
+						90 text FRISTABLAUF
+					91 text 09.12.2026
+					92 container RECHTLICH MASSGEBENDES DATUM
+						93 text RECHTLICH MASSGEBENDES DATUM
+					94 text 07.12.2026
+					95 container FRISTBEGINN
+						96 text FRISTBEGINN
+					97 text 08.12.2026
+					98 container RECHNERISCHES FRISTENDE
+						99 text RECHNERISCHES FRISTENDE
+					100 text 08.12.2026
+					101 container ÜBERSPRUNGENE TAGE IM FRISTENSTILLSTAND
+						102 text ÜBERSPRUNGENE TAGE IM FRISTENSTILLSTAND
+					103 text 0
+					104 container ENDE VERSCHOBEN
+						105 text ENDE VERSCHOBEN
+					106 text Ja
+					107 container Kalenderdatei erstellen
+						108 button Kalenderdatei erstellen
+							109 text Kalenderdatei erstellen
+					110 container
+						111 text Referenz (optional)
+						112 text field (settable) Referenz (optional), ID: TextField123
+						113 text Die Referenz wird nur in die Kalenderdatei übernommen und nicht gespeichert.
+				114 button (collapsed) Rechenspur, Secondary Actions: Expand
+					115 text Rechenspur
+			54 container Automatisch bestimmte Parameter
+				55 heading Automatisch bestimmte Parameter, Value: 2, ID: fr-automatic-heading
+					56 text Automatisch bestimmte Parameter
+				57 definition list
+					58 container FEIERTAGSKALENDER
+						59 text FEIERTAGSKALENDER
+					60 container
+						61 text Tessin (TI) Automatisch aus Verfahrensrecht, Rolle und Ort bestimmt
+					62 container FRISTENSTILLSTAND / GERICHTSFERIEN
+						63 text FRISTENSTILLSTAND / GERICHTSFERIEN
+					64 text Wird nicht berücksichtigt
+			65 text Regel- und Kalenderstand : 
+			66 text 2026-10-08-mvp-07-approved.1
+			67 text Gebundener Kalenderstand : 
+			68 text 2026-10-08-mvp-07-approved.1
+			69 text Abdeckung :  29.08.2026  –  offen, unter Vorbehalt der Quellenprüfung
+		70 container
+			71 text STEIMER Strategie Governance Technologie
+			72 link Description: Impressum, Value: steimer.ch/#impressum
+			73 link Description: Quellcode · Code source, Value: github.com/davidsteimer/fristenrechner
+			74 link Description: AGPL-3.0, Value: github.com/davidsteimer/fristenrechner/blob/main/LICENSE
+			75 text Privates Open-Source-Angebot ohne Verbindung zu einer Behörde. Offre open source privée sans lien avec une autorité.
+
+The focused UI element is 46 button Frist berechnen

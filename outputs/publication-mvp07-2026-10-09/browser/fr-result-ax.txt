@@ -1,0 +1,110 @@
+Browser tab: 8, Title: "Fristenrechner Schweiz · STEIMER", URL: "http://127.0.0.1:8765/".
+0 AXWebArea Fristenrechner Schweiz · STEIMER, URL: 127.0.0.1:8765/
+	1 container root
+		2 link Description: Zum Fristenrechner · Accéder au calculateur, Value: 127.0.0.1:8765/#fristenrechner-app
+		3 container STEIMER Kopfbereich
+			4 link Description: STEIMER Startseite, Value: steimer.ch/
+			5 text FRISTENRECHNER SCHWEIZ CALCULATEUR DE DÉLAIS SUISSE
+		6 container
+			7 text STEIMER · MVP
+			8 heading Calculateur de délais suisse, Value: 1
+				9 text Calculateur de délais suisse
+			10 text Procédures fédérales avec les calendriers des jours fériés de toute la Suisse, LPJA et droit spécial bernois dans le périmètre validé.
+			11 text Langue
+			12 combo box (collapsed) Description: Langue, Value: Français, ID: Dropdown0, Secondary Actions: Expand
+				13 text Français
+			14 text Outil fourni sans garantie. Vérifiez le résultat et la trace de calcul avant tout acte soumis à un délai.
+			15 container Données relatives au délai
+				16 heading Données relatives au délai, Value: 2, ID: fr-form-heading
+					17 text Données relatives au délai
+				18 text Date de réception de la notification
+				19 text field (settable) Date de réception de la notification, Value: 06.12.2026, ID: fr-native-date-1
+				20 pop up button (collapsed) Description: Choisir la date dans le calendrier: Date de réception de la notification, Help: Choisir la date dans le calendrier (Alt+↓), Secondary Actions: Expand
+				21 pop up button (collapsed) Description: Aide à la saisie de la date: Date de réception de la notification, Help: Aide à la saisie de la date (F1), Secondary Actions: Expand
+				22 container
+					23 container TextFieldLabel4
+						24 text Délai en jours  *
+					25 stepper (settable, integer) Délai en jours *, Value: 2, ID: TextField2
+				26 container Dropdown7-label
+					27 text Siège de l’instance compétente  *
+				28 combo box (collapsed) Siège de l’instance compétente * Berne (BE), Value: Berne (BE), ID: Dropdown7, Secondary Actions: Expand
+					29 text Berne (BE)
+				30 container Dropdown8-label
+					31 text Loi / droit de procédure  *
+				32 combo box (collapsed) Loi / droit de procédure * Code de procédure pénale (CPP), Value: Code de procédure pénale (CPP), ID: Dropdown8, Secondary Actions: Expand
+					33 text Code de procédure pénale (CPP)
+				107 text Mode de notification
+				108 combo box (collapsed) Mode de notification Notification directe ou autre date déterminante, Value: Notification directe ou autre date déterminante, ID: Dropdown9, Secondary Actions: Expand
+					109 text Notification directe ou autre date déterminante
+				37 container Dropdown10-label
+					38 text Situation déterminante de notification  *
+				39 combo box (collapsed) Situation déterminante de notification * Partie sans représentation, Value: Partie sans représentation, ID: Dropdown10, Secondary Actions: Expand
+					40 text Partie sans représentation
+				110 container Dropdown11-label
+					111 text Canton déterminant pour les jours fériés  *
+				112 combo box (collapsed) Canton déterminant pour les jours fériés * Tessin (TI), Value: Tessin (TI), ID: Dropdown11, Secondary Actions: Expand
+					113 text Tessin (TI)
+			45 button Calculer le délai
+				46 text Calculer le délai
+			47 button Réinitialiser le résultat
+				48 text Réinitialiser le résultat
+			49 button Enregistrer comme valeurs par défaut
+				50 text Enregistrer comme valeurs par défaut
+			51 button Réinitialiser les valeurs par défaut
+				52 text Réinitialiser les valeurs par défaut
+			114 container Calcul
+				115 heading Calcul, Value: 2, ID: fr-result-heading
+					116 text Calcul
+				117 text Le délai a été calculé.
+				118 definition list
+					119 container ÉCHÉANCE DU DÉLAI
+						120 text ÉCHÉANCE DU DÉLAI
+					121 text 09.12.2026
+					122 container DATE JURIDIQUEMENT DÉTERMINANTE
+						123 text DATE JURIDIQUEMENT DÉTERMINANTE
+					124 text 06.12.2026
+					125 container DÉBUT DU DÉLAI
+						126 text DÉBUT DU DÉLAI
+					127 text 07.12.2026
+					128 container ÉCHÉANCE ARITHMÉTIQUE
+						129 text ÉCHÉANCE ARITHMÉTIQUE
+					130 text 08.12.2026
+					131 container JOURS OMIS PENDANT LA SUSPENSION
+						132 text JOURS OMIS PENDANT LA SUSPENSION
+					133 text 0
+					134 container ÉCHÉANCE REPORTÉE
+						135 text ÉCHÉANCE REPORTÉE
+					136 text Oui
+					137 container Créer le fichier calendrier
+						138 button Créer le fichier calendrier
+							139 text Créer le fichier calendrier
+					140 container
+						141 text Référence (facultative)
+						142 text field (settable) Référence (facultative), ID: TextField264
+						143 text La référence est uniquement reprise dans le fichier calendrier et n’est pas enregistrée.
+				144 button (collapsed) Trace de calcul, Secondary Actions: Expand
+					145 text Trace de calcul
+			85 container Paramètres déterminés automatiquement
+				86 heading Paramètres déterminés automatiquement, Value: 2, ID: fr-automatic-heading
+					87 text Paramètres déterminés automatiquement
+				88 definition list
+					89 container CALENDRIER DES JOURS FÉRIÉS
+						90 text CALENDRIER DES JOURS FÉRIÉS
+					91 container
+						92 text Tessin (TI) Déterminé automatiquement selon la procédure, le rôle et le lieu
+					93 container SUSPENSION DES DÉLAIS / FÉRIES JUDICIAIRES
+						94 text SUSPENSION DES DÉLAIS / FÉRIES JUDICIAIRES
+					95 text Non prise en compte
+			96 text État des règles et des calendriers : 
+			97 text 2026-10-08-mvp-07-approved.1
+			98 text Version des calendriers liés : 
+			99 text 2026-10-08-mvp-07-approved.1
+			100 text Couverture :  29.08.2026  –  ouverte, sous réserve du contrôle des sources
+		101 container
+			102 text STEIMER Strategie Governance Technologie
+			103 link Description: Impressum, Value: steimer.ch/#impressum
+			104 link Description: Quellcode · Code source, Value: github.com/davidsteimer/fristenrechner
+			105 link Description: AGPL-3.0, Value: github.com/davidsteimer/fristenrechner/blob/main/LICENSE
+			106 text Privates Open-Source-Angebot ohne Verbindung zu einer Behörde. Offre open source privée sans lien avec une autorité.
+
+The focused UI element is 45 button Calculer le délai

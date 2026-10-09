@@ -25,6 +25,15 @@ await cp(resolve(sourceRoot, 'ui'), resolve(targetRoot, 'ui'), {
   filter: source => !source.includes('/preview') && isProductSource(source)
 });
 
+// Immutable normative CH/BE projection inputs, not an alternate release or
+// fallback. The shared format-7 factory verifies these bytes on use.
+const baseline = 'data/releases/2026-10-01-mvp-06-approved.1/calendars';
+for (const name of ['ch-federal-calendar.json', 'be-public-holidays.json']) {
+  const target = resolve(projectRoot, 'src', baseline, name);
+  await mkdir(dirname(target), { recursive: true });
+  await cp(resolve(repositoryRoot, baseline, name), target);
+}
+
 const productStyles = await readFile(resolve(targetRoot, 'ui', 'styles.css'), 'utf8');
 await writeFile(
   resolve(targetRoot, 'ui', 'styles.module.scss'),

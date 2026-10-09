@@ -1,0 +1,105 @@
+{
+  "checkedOn": "2026-10-08",
+  "startedAt": "2026-10-08T19:54:50.342Z",
+  "finishedAt": "2026-10-08T19:54:54.394Z",
+  "recordStatus": "candidate",
+  "humanApproval": false,
+  "sourceReleaseApproved": false,
+  "dataPromotionApproved": false,
+  "tests": {
+    "files": [
+      "tests/governance/mvp07-preparation.test.mjs",
+      "tests/governance/mvp07-source-inventory.test.mjs",
+      "tests/governance/mvp07-source-coverage.test.mjs"
+    ],
+    "total": 63,
+    "passed": 63,
+    "failed": 0,
+    "log": {
+      "path": ".work/mvp07-source-review-2026-10-08/root/final-tests.log",
+      "sha256": "97518d8493ef038096866c7ede8d19509046874c92e38ca23b3dffdaf693bab2"
+    }
+  },
+  "consolidatedCounts": {
+    "sourceIds": 232,
+    "groups": {
+      "baseline": 77,
+      "activation": 73,
+      "catalog": 82
+    },
+    "outcomes": {
+      "unchanged": 227,
+      "unclear": 2,
+      "changed": 3
+    },
+    "withFreshEvidence": 204,
+    "reusedWithoutFreshEvidence": 28,
+    "withExplicitReuse": 231,
+    "uniqueBoundEvidenceFiles": 569,
+    "protectedFilesUnchanged": 185
+  },
+  "reproductionByteIdentical": true,
+  "localLinksVerified": 13,
+  "gitDiffCheck": "passed",
+  "independentAiReview": {
+    "reportSha256": "258a5d2b93492d92215671955056aaeab1f7fb583eaafb682df713f4a4707b93",
+    "result": "No remaining material findings after two validator gaps were corrected and negatively tested.",
+    "humanFourEyesApproval": false
+  },
+  "evidence": [
+    {
+      "path": "outputs/release-mvp07-2026-10-08/source-review-completeness.json",
+      "sha256": "ce9122d5e6a5c3bf8c0fb8061e51e6e1613fbb04f34d65825eeea7a59796f587",
+      "byteLength": 1542219
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp07.md",
+      "sha256": "258a5d2b93492d92215671955056aaeab1f7fb583eaafb682df713f4a4707b93",
+      "byteLength": 13857
+    },
+    {
+      "path": "docs/betrieb/deployment-mvp-07.md",
+      "sha256": "9c5d1c191e7070e209c1bfed19d79bf0e410767fa49a5fca95a3c75ff4041722",
+      "byteLength": 14819
+    },
+    {
+      "path": "scripts/consolidate-mvp07-sources.mjs",
+      "sha256": "f5d6863695203997d516a0a4dc2e58cbee89bd37c33dd0bce7a3768ebc876327",
+      "byteLength": 16949
+    },
+    {
+      "path": "tests/governance/mvp07-preparation.test.mjs",
+      "sha256": "bd6f6e343cf05abb1b3c181755f910a7bdb6f43d04e62f6f5fafab538f439e4c",
+      "byteLength": 8927
+    },
+    {
+      "path": "tests/governance/mvp07-source-inventory.test.mjs",
+      "sha256": "660f5a3ddf8eb094d3b00aa19a61c8d8789df53507bbcedfcdf5fddde9c7a7a2",
+      "byteLength": 6687
+    },
+    {
+      "path": "tests/governance/mvp07-source-coverage.test.mjs",
+      "sha256": "8beec9fa2e05b452b157308c48e45d38c4a38851d595f5d7e378335cecf90496",
+      "byteLength": 11322
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/baseline-review.json",
+      "sha256": "e637f288686cf355a1d6457cd90145678c5360af34f1ee8e82963cb93047b45f",
+      "byteLength": 746452
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/activation-review.json",
+      "sha256": "89bf9731347e67d9cb13c0aaa00e5cff806f342a3f242f011dd1b679134f329d",
+      "byteLength": 337527
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/catalog-review.json",
+      "sha256": "22b92fe09b28ec2508ac8f159854069aede9219fffccb6ccb9f927b5213426fd",
+      "byteLength": 446429
+    }
+  ],
+  "limits": [
+    "No new product regression run counted here. The earlier R07-A1 results remain separately dated.",
+    "No legal approval, promotion, definitive build, installation or publication performed."
+  ]
+}

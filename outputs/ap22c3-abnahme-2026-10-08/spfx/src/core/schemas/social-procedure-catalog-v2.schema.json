@@ -1,0 +1,1201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog-v2.schema.json",
+  "title": "Nationaler Sozialverfahrenskatalog 2 des Fristenrechners Schweiz",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "catalogId",
+    "labels",
+    "review",
+    "sources",
+    "suspensionProfiles",
+    "filingProfiles",
+    "federalRules",
+    "cantonalBindings",
+    "releaseEligibility",
+    "excludedPaths"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog-v2.schema.json"
+    },
+    "formatVersion": {
+      "const": "2.0.0"
+    },
+    "dataKind": {
+      "const": "socialProcedureCatalog"
+    },
+    "catalogId": {
+      "const": "ch-social-procedures"
+    },
+    "labels": {
+      "$ref": "#/$defs/labels"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/review"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/source"
+      }
+    },
+    "suspensionProfiles": {
+      "type": "array",
+      "$ref": "special-regime-catalog-v2.schema.json#/properties/suspensionProfiles",
+      "minItems": 1
+    },
+    "filingProfiles": {
+      "type": "array",
+      "$ref": "special-regime-catalog-v2.schema.json#/properties/filingProfiles",
+      "minItems": 1
+    },
+    "federalRules": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/federalRule"
+      }
+    },
+    "cantonalBindings": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/cantonalBinding"
+      }
+    },
+    "releaseEligibility": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/eligibility"
+      }
+    },
+    "excludedPaths": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/exclusion"
+      }
+    }
+  },
+  "$defs": {
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "de",
+        "fr"
+      ],
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fr": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "format": "date"
+        },
+        "to": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceReference"
+      }
+    },
+    "normBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "locator",
+        "temporalSelector",
+        "applicableFrom",
+        "applicableTo",
+        "verification"
+      ],
+      "properties": {
+        "sourceId": {
+          "$ref": "common.schema.json#/$defs/sourceReference/properties/sourceId"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "temporalSelector": {
+          "enum": [
+            "legalTriggerDate",
+            "procedureStartDate",
+            "jurisdictionReferenceDate"
+          ]
+        },
+        "applicableFrom": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "applicableTo": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verification": {
+          "enum": [
+            "verified",
+            "open"
+          ]
+        }
+      }
+    },
+    "calculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "anchorInputId",
+        "direction",
+        "anchorBoundary"
+      ],
+      "properties": {
+        "type": {
+          "const": "R1_RELATIVE"
+        },
+        "anchorInputId": {
+          "const": "legalTriggerDate"
+        },
+        "direction": {
+          "const": "after"
+        },
+        "anchorBoundary": {
+          "const": "excluded"
+        },
+        "duration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "const": 30
+            },
+            "unit": {
+              "const": "day"
+            }
+          }
+        },
+        "durationInputId": {
+          "const": "deadlineDays"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "duration"
+          ],
+          "not": {
+            "required": [
+              "durationInputId"
+            ]
+          }
+        },
+        {
+          "required": [
+            "durationInputId"
+          ],
+          "not": {
+            "required": [
+              "duration"
+            ]
+          }
+        }
+      ]
+    },
+    "federalRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleId",
+        "revision",
+        "status",
+        "labels",
+        "law",
+        "matter",
+        "action",
+        "stage",
+        "triggerKind",
+        "notificationChannels",
+        "calculation",
+        "suspensionProfileId",
+        "filingProfileId",
+        "holidayPolicy",
+        "endShiftPolicy",
+        "legalValidity",
+        "caseCoverage",
+        "sourceCoverage",
+        "normBindings",
+        "sourceRefs"
+      ],
+      "properties": {
+        "ruleId": {
+          "type": "string",
+          "pattern": "^CH-SOC-[A-Z0-9-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "reviewed",
+            "withdrawn"
+          ]
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "law": {
+          "enum": [
+            "ivg",
+            "ahvg",
+            "uvg",
+            "elg",
+            "avig",
+            "kvg",
+            "eog",
+            "famzg",
+            "flg",
+            "mvg",
+            "uelg"
+          ]
+        },
+        "matter": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "action": {
+          "enum": [
+            "preliminary-objection",
+            "objection",
+            "appeal",
+            "ordered-administrative-days",
+            "complaint-correction"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "administration",
+            "cantonal-insurance-court"
+          ]
+        },
+        "triggerKind": {
+          "enum": [
+            "iv-preliminary-notice",
+            "iv-disposition",
+            "initial-benefit-disposition",
+            "objection-decision",
+            "authority-day-order",
+            "court-correction-day-order"
+          ]
+        },
+        "notificationChannels": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "const": "individual-service"
+          }
+        },
+        "calculation": {
+          "$ref": "#/$defs/calculation"
+        },
+        "suspensionProfileId": {
+          "const": "S_ATSG"
+        },
+        "filingProfileId": {
+          "const": "F7_ATSG_DISPATCH"
+        },
+        "holidayPolicy": {
+          "const": "partyOrRepresentative"
+        },
+        "endShiftPolicy": {
+          "const": "nextWorkingDay"
+        },
+        "legalValidity": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/interval"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "caseCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "sourceCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "normBindings": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/normBinding"
+          }
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "reviewed",
+                  "withdrawn"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "legalValidity": {
+                "$ref": "#/$defs/interval"
+              },
+              "normBindings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "applicableFrom": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "requiredFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factKey",
+        "allowedValues"
+      ],
+      "properties": {
+        "factKey": {
+          "enum": [
+            "competentBodyQualified",
+            "decisionOrigin",
+            "elgAdministrativeCanton",
+            "avigControlCanton",
+            "avigOfficeCanton",
+            "courtCanton",
+            "partyDomicileCanton",
+            "jurisdictionSpecialCase",
+            "eogOfficeType",
+            "compensationOfficeCanton",
+            "familyAllowanceOrderCanton",
+            "uelgAdministrativeCanton"
+          ]
+        },
+        "allowedValues": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "factKey": {
+                "const": "competentBodyQualified"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allowedValues": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "factKey": {
+                "const": "decisionOrigin"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allowedValues": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "ivOffice",
+                    "compensationOffice",
+                    "accidentInsurer",
+                    "unemploymentFund",
+                    "cantonalEmploymentOffice",
+                    "healthInsurer",
+                    "insuranceCourt",
+                    "familyCompensationOffice",
+                    "militaryInsurer"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "factKey": {
+                "const": "jurisdictionSpecialCase"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allowedValues": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "ordinary",
+                    "abroad",
+                    "thirdParty",
+                    "unclear"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "factKey": {
+                "enum": [
+                  "elgAdministrativeCanton",
+                  "avigControlCanton",
+                  "avigOfficeCanton",
+                  "courtCanton",
+                  "partyDomicileCanton",
+                  "compensationOfficeCanton",
+                  "familyAllowanceOrderCanton",
+                  "uelgAdministrativeCanton"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allowedValues": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "ZH",
+                    "BE",
+                    "LU",
+                    "UR",
+                    "SZ",
+                    "OW",
+                    "NW",
+                    "GL",
+                    "ZG",
+                    "FR",
+                    "SO",
+                    "BS",
+                    "BL",
+                    "SH",
+                    "AR",
+                    "AI",
+                    "SG",
+                    "GR",
+                    "AG",
+                    "TG",
+                    "TI",
+                    "VD",
+                    "VS",
+                    "NE",
+                    "GE",
+                    "JU"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "factKey": {
+                "const": "eogOfficeType"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allowedValues": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "cantonal",
+                    "nonCantonal"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "contextRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contextRouteId",
+        "kind",
+        "requiredFacts",
+        "sourceRefs"
+      ],
+      "properties": {
+        "contextRouteId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "kind": {
+          "enum": [
+            "legal-jurisdiction",
+            "product-scope"
+          ]
+        },
+        "requiredFacts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/requiredFact"
+          }
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      }
+    },
+    "calendarBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calendarBindingId",
+        "holidayCanton",
+        "spatialScopeId",
+        "calendarId",
+        "requiredAnchorRoles",
+        "sourceRefs"
+      ],
+      "properties": {
+        "calendarBindingId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "holidayCanton": {
+          "enum": [
+            "ZH",
+            "BE",
+            "LU",
+            "UR",
+            "SZ",
+            "OW",
+            "NW",
+            "GL",
+            "ZG",
+            "FR",
+            "SO",
+            "BS",
+            "BL",
+            "SH",
+            "AR",
+            "AI",
+            "SG",
+            "GR",
+            "AG",
+            "TG",
+            "TI",
+            "VD",
+            "VS",
+            "NE",
+            "GE",
+            "JU"
+          ]
+        },
+        "spatialScopeId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "calendarId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "requiredAnchorRoles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "party",
+              "representative"
+            ]
+          }
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      }
+    },
+    "cantonalBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bindingId",
+        "revision",
+        "status",
+        "labels",
+        "ruleId",
+        "ruleRevision",
+        "procedureContextCanton",
+        "entryProfileId",
+        "contextRoutes",
+        "calendarBindings",
+        "supplementaryLawRefs",
+        "legalValidity",
+        "caseCoverage",
+        "sourceCoverage",
+        "normBindings",
+        "sourceRefs"
+      ],
+      "properties": {
+        "bindingId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "reviewed",
+            "withdrawn"
+          ]
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "ruleId": {
+          "type": "string",
+          "pattern": "^CH-SOC-[A-Z0-9-]+$"
+        },
+        "ruleRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "procedureContextCanton": {
+          "enum": [
+            "ZH",
+            "BE",
+            "LU",
+            "UR",
+            "SZ",
+            "OW",
+            "NW",
+            "GL",
+            "ZG",
+            "FR",
+            "SO",
+            "BS",
+            "BL",
+            "SH",
+            "AR",
+            "AI",
+            "SG",
+            "GR",
+            "AG",
+            "TG",
+            "TI",
+            "VD",
+            "VS",
+            "NE",
+            "GE",
+            "JU"
+          ]
+        },
+        "entryProfileId": {
+          "const": "vrpg-be"
+        },
+        "contextRoutes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/contextRoute"
+          }
+        },
+        "calendarBindings": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/calendarBinding"
+          }
+        },
+        "supplementaryLawRefs": {
+          "type": "array",
+          "minItems": 0,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "common.schema.json#/$defs/sourceReference"
+          }
+        },
+        "legalValidity": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/interval"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "caseCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "sourceCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "normBindings": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/normBinding"
+          }
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "reviewed",
+                  "withdrawn"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "legalValidity": {
+                "$ref": "#/$defs/interval"
+              },
+              "normBindings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "applicableFrom": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligibilityId",
+        "releaseId",
+        "status",
+        "ruleRef",
+        "bindingRef",
+        "contextRouteIds",
+        "calendarBindingIds",
+        "componentRefs",
+        "sourceReviewRef",
+        "referenceSuiteRef",
+        "caseCoverage",
+        "calculationCoverage",
+        "approval"
+      ],
+      "properties": {
+        "eligibilityId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "releaseId": {
+          "$ref": "release-manifest.schema.json#/properties/releaseId"
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "approved",
+            "withdrawn"
+          ]
+        },
+        "ruleRef": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ruleId",
+            "revision",
+            "sha256"
+          ],
+          "properties": {
+            "ruleId": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha"
+            }
+          }
+        },
+        "bindingRef": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bindingId",
+            "revision",
+            "sha256"
+          ],
+          "properties": {
+            "bindingId": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha"
+            }
+          }
+        },
+        "contextRouteIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+          }
+        },
+        "calendarBindingIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+          }
+        },
+        "componentRefs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "contentId",
+              "sha256"
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "calendar",
+                  "holidayCatalog",
+                  "legalProfile",
+                  "specialRegimeCatalog"
+                ]
+              },
+              "contentId": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+              },
+              "sha256": {
+                "$ref": "#/$defs/sha"
+              }
+            }
+          }
+        },
+        "sourceReviewRef": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reviewId",
+            "sha256"
+          ],
+          "properties": {
+            "reviewId": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha"
+            }
+          }
+        },
+        "referenceSuiteRef": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "suiteId",
+            "sha256"
+          ],
+          "properties": {
+            "suiteId": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha"
+            }
+          }
+        },
+        "caseCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "calculationCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "approval": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "approvedBy",
+                "approvedOn",
+                "decisionRef"
+              ],
+              "properties": {
+                "approvedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "approvedOn": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "decisionRef": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "approval": {
+                "type": "object"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "approval": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "exclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exclusionId",
+        "law",
+        "matter",
+        "action",
+        "reasonKind",
+        "reasonKey",
+        "labels",
+        "sourceRefs"
+      ],
+      "properties": {
+        "exclusionId": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "law": {
+          "enum": [
+            "ivg",
+            "ahvg",
+            "uvg",
+            "elg",
+            "avig",
+            "kvg",
+            "eog",
+            "famzg",
+            "flg",
+            "mvg",
+            "uelg"
+          ]
+        },
+        "matter": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reasonKind": {
+          "enum": [
+            "statutory-exclusion",
+            "product-scope",
+            "unsupported-procedure",
+            "unresolved-qualification"
+          ]
+        },
+        "reasonKey": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9-]+$"
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      }
+    }
+  }
+}

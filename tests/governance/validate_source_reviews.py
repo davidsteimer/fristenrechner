@@ -41,6 +41,19 @@ OFFICIAL_HOSTS = {
     "search.bger.ch",
     "bger.ch",
     "www.bger.ch",
+    # R07-B: the separately reviewed CH-wide official repositories. Mirrors
+    # (Entscheidsuche, OpenCaseLaw and LexFind) deliberately remain excluded.
+    "ai.ch", "ai.clex.ch", "ar.clex.ch", "bdlf.fr.ch", "bgs.so.ch", "bgs.zg.ch",
+    "bl-api.webcloud7.ch", "bl.clex.ch", "gdb.ow.ch", "gesetze.gl.ch", "gesetze.nw.ch",
+    "gesetzessammlungen.ag.ch", "lex.vs.ch", "m3.ti.ch", "prestations.vd.ch",
+    "publikationen.sg.ch", "rechtsbuch.sh.ch", "rechtsbuch.ur.ch", "rsju.jura.ch",
+    "rsn.ne.ch", "sh.ch", "silgeneve.ch", "so.ch", "srl.lu.ch", "www.ag.ch",
+    "www.bk.admin.ch", "www.bs.ch", "www.estv.admin.ch", "www.fr.ch", "www.ge.ch",
+    "www.gesetzessammlung.bs.ch", "www.gesetzessammlung.sg.ch", "www.gl.ch",
+    "www.gr-lex.gr.ch", "www.gr.ch", "www.jura.ch", "www.ne.ch", "www.notes.zh.ch",
+    "www.parlament.ch", "www.rechtsbuch.tg.ch", "www.swisstopo.admin.ch", "www.sz.ch",
+    "www.ur.ch", "www.vd.ch", "www.zh.ch", "www3.ti.ch", "www4.ti.ch", "zg.ch",
+    "bstger.weblaw.ch", "www.bstger.ch", "bvger.weblaw.ch", "www.bvger.ch",
 }
 IDENTIFIER_KEYS = (
     "ruleId",
@@ -147,6 +160,10 @@ def release_usage(release_id: str) -> tuple[set[str], dict[str, dict[str, set[st
                 context[key] = node[key]
         for reference_key in ("sourceRefs", "normBindings", "supplementaryLawRefs"):
             for reference in node.get(reference_key, []):
+                if "sourceId" not in reference and "evidenceId" in reference:
+                    # Format-2 activation references are resolved against their
+                    # explicit sourceIdMap below, never guessed from a label.
+                    continue
                 add_reference(
                     reference["sourceId"],
                     context,
@@ -155,9 +172,41 @@ def release_usage(release_id: str) -> tuple[set[str], dict[str, dict[str, set[st
         for value in node.values():
             walk(value, context)
 
+    declared_ids = set(manifest["sourceSummary"]["sourceIds"])
     for artifact in manifest["artifacts"]:
         document = load_json(release_directory / artifact["path"])
         walk(document)
+        if document.get("dataKind") == "holidayCatalog" and document.get("formatVersion") == "2.0.0":
+            activation = document["activation"]
+            source_map = {item["evidenceId"]: item["sourceId"] for item in activation["sourceIdMap"]}
+            declared_ids.update(source_map.values())
+
+            def walk_activation(node: Any, inherited: dict[str, str] | None = None) -> None:
+                if isinstance(node, list):
+                    for child in node:
+                        walk_activation(child, inherited)
+                    return
+                if not isinstance(node, dict):
+                    return
+                context = dict(inherited or {})
+                if isinstance(node.get("profileId"), str):
+                    context["profileId"] = node["profileId"]
+                if isinstance(node.get("id"), str):
+                    context["bindingId"] = node["id"]
+                for source_id in node.get("sourceIds", []):
+                    add_reference(source_map.get(source_id, source_id), context, "")
+                if isinstance(node.get("evidenceId"), str):
+                    evidence_id = node["evidenceId"]
+                    if evidence_id not in source_map:
+                        raise ValueError(f"Nicht aufgelöste Aktivierungsquelle {evidence_id}")
+                    add_reference(source_map[evidence_id], context, node.get("locator", ""))
+                for value in node.values():
+                    walk_activation(value, context)
+
+            # Do not mistake the identity map or a mere evidence catalogue for
+            # a positive reference. Only actual activation structures are walked.
+            for key in ["supplementalRules", "anchorPolicies", "procedureBindings", "projections", "releaseEligibility"]:
+                walk_activation(activation[key])
         if document.get("dataKind") == "socialProcedureCatalog":
             for eligibility in document["releaseEligibility"]:
                 rule = next(item for item in document["federalRules"] if item["ruleId"] == eligibility["ruleRef"]["ruleId"])
@@ -165,7 +214,7 @@ def release_usage(release_id: str) -> tuple[set[str], dict[str, dict[str, set[st
                 walk({"eligibilityId": eligibility["eligibilityId"], "ruleId": rule["ruleId"],
                       "bindingId": binding["bindingId"], "entryProfileId": binding["entryProfileId"],
                       "sourceRefs": [*rule["sourceRefs"], *binding["sourceRefs"]]})
-    return set(manifest["sourceSummary"]["sourceIds"]), usage
+    return declared_ids, usage
 
 
 def resolve_affected(entry: dict[str, Any]) -> dict[str, list[str]]:
@@ -263,9 +312,15 @@ def semantic_errors(
                 errors.append(
                     f"{source['sourceId']}: officialUrl verweist nicht auf eine zugelassene amtliche Domain"
                 )
-        elif not (source["sourceType"] == "caseLaw" and source["jurisdiction"] == "BE"):
+        elif not (source["sourceType"] == "caseLaw" and source["jurisdiction"] == "BE") and not (
+            source["sourceId"] == "SRC-AP22-FR-PRAXIS"
+            and source["sourceType"] == "caseLaw"
+            and source["jurisdiction"] == "FR"
+            and source["usageStatus"] == "supporting"
+            and source["retrievalUrl"] == "https://entscheidsuche.ch/docs/FR_Gerichte/FR_TC_001_101-2012-89_2012-04-25.pdf"
+        ):
             errors.append(
-                f"{source['sourceId']}: fehlende amtliche URL ist nur bei bernischer Rechtsprechung zulässig"
+                f"{source['sourceId']}: fehlende amtliche URL ist nur bei bernischer Rechtsprechung oder dem ausdrücklich begrenzten FR-Spiegel zulässig"
             )
 
     event_duplicates = duplicate_values(events, "reviewEventId")

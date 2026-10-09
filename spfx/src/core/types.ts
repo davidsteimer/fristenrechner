@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
+import type { ProviderCacheConfiguration } from './cacheIdentity';
+
 export type ProviderKind = 'github' | 'sharepointMirror';
 
 export interface IReleaseProvider {
   readonly id: string;
   readonly kind: ProviderKind;
+  readonly cacheConfiguration?: ProviderCacheConfiguration;
   fetchBytes(relativePath: string): Promise<Uint8Array>;
 }
 
@@ -70,8 +73,8 @@ export interface IReleaseActivationResult {
 }
 
 export interface IValidatedReleaseStore {
-  activate(release: IValidatedRelease): Promise<void>;
-  getActive(): Promise<IValidatedRelease | undefined>;
+  activate(release: IValidatedRelease, cacheIdentity?: string): Promise<void>;
+  getActive(cacheIdentity?: string): Promise<IValidatedRelease | undefined>;
 }
 
 export interface IProviderOption {

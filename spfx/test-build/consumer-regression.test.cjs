@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { test, describe } = require('node:test');
 const { IDBFactory } = require('fake-indexeddb');
-const { REPO_ROOT, SPFX_ROOT, loadPackagedHost, sha256 } = require('./package-harness.cjs');
+const { REPO_ROOT, SPFX_ROOT, loadPackagedHost, sha256, localMirrorConfiguration } = require('./package-harness.cjs');
 
 const APPROVED = '2026-09-22-mvp-04-approved.1';
 const PREVIOUS = '2026-08-31-mvp-03-approved.1';
@@ -38,6 +38,7 @@ function provider(releaseId = APPROVED, mutate, brokenPath) {
   const fetched = [];
   return {
     id: `local-build-regression:${releaseId}`, kind: 'sharepointMirror', fetched,
+    cacheConfiguration: localMirrorConfiguration(releaseId),
     async fetchBytes(relativePath) {
       fetched.push(relativePath);
       assert.ok(bytes.has(relativePath), `Unexpected local release path: ${relativePath}`);
@@ -63,7 +64,7 @@ function packagedHost() {
     ...runtime,
     consume(result) {
       // This calls the actual packaged host method and its own product boundary.
-      runtime.host.applyActivationResult(result);
+      runtime.host.applyActivationResult(result, runtime.host.props.configurationKey);
       assert.equal(runtime.host.state.status, 'ready');
       return runtime.host.state.calculationData;
     }
@@ -123,7 +124,7 @@ for (const [label, makeHost] of [
     test('accepts all real approved format-4 bytes, including nullable oneOf branches, from an empty store', async () => {
       const runtime = makeHost();
       const local = provider();
-      assert.equal(await runtime.store.getActive(), undefined);
+      assert.equal(await runtime.service.getActive(provider()), undefined);
       const result = await runtime.service.refresh(local);
       assert.equal(result.mode, 'network');
       assert.equal(result.release.releaseId, APPROVED);
@@ -138,7 +139,7 @@ for (const [label, makeHost] of [
       assert.equal(data.releaseId, APPROVED);
       assert.equal(data.profiles.size, 5);
       assert.equal(data.holidayCatalogs.size, 1);
-      assert.equal((await runtime.store.getActive()).manifestSha256, result.release.manifestSha256);
+      assert.equal((await runtime.service.getActive(local)).manifestSha256, result.release.manifestSha256);
     });
 
     test('retains AP5 format-1 compatibility without a pre-existing active release', async () => {
@@ -157,7 +158,7 @@ for (const [label, makeHost] of [
       const next = await runtime.service.refresh(provider());
       assert.equal(next.mode, 'network');
       assert.equal(next.release.releaseId, APPROVED);
-      assert.equal((await runtime.store.getActive()).releaseId, APPROVED);
+      assert.equal((await runtime.service.getActive(provider())).releaseId, APPROVED);
     });
 
     for (const [name, mutate] of [
@@ -169,14 +170,14 @@ for (const [label, makeHost] of [
       test(`rejects ${name} and does not activate any partial release`, async () => {
         const runtime = makeHost();
         await assert.rejects(runtime.service.refresh(provider(APPROVED, mutate)));
-        assert.equal(await runtime.store.getActive(), undefined);
+        assert.equal(await runtime.service.getActive(provider()), undefined);
       });
     }
 
     test('rejects a missing catalog on first use without inventing an active release', async () => {
       const runtime = makeHost();
       await assert.rejects(runtime.service.refresh(provider(APPROVED, undefined, CATALOG_PATH)), /missing artifact/);
-      assert.equal(await runtime.store.getActive(), undefined);
+      assert.equal(await runtime.service.getActive(provider()), undefined);
     });
 
     test('oneOf propagates an unexpected error unchanged instead of swallowing it as a branch mismatch', async () => {
@@ -198,7 +199,7 @@ for (const [label, makeHost] of [
       try {
         await assert.rejects(runtime.service.refresh(provider()), error => error === unexpected);
         assert.equal(reached, 1, 'The unexpected error must escape on the first branch');
-        assert.equal(await runtime.store.getActive(), undefined);
+        assert.equal(await runtime.service.getActive(provider()), undefined);
       } finally {
         runtime.realmObject.hasOwn = original;
       }
@@ -216,14 +217,14 @@ for (const [label, makeHost] of [
         assert.equal(typeof failed.warning, 'string');
         assert.ok(failed.warning.length > 0);
         assert.equal(failed.release.manifestSha256, approved.release.manifestSha256);
-        const active = await runtime.store.getActive();
+        const active = await runtime.service.getActive(provider());
         assert.equal(active.manifestSha256, approved.release.manifestSha256);
         assert.equal(active.artifacts.length, 9);
         assert.equal(active.artifacts.find(item => item.descriptor.role === 'holidayCatalog').parsed.data.rules.length, 479);
       }
     });
 
-    test('a catalog checksum mismatch preserves the previous valid release', async () => {
+    test('a changed data pin cannot fall back to the previous pin after a catalog checksum mismatch', async () => {
       const runtime = makeHost();
       const initial = await runtime.service.refresh(provider(PREVIOUS));
       const original = provider();
@@ -232,11 +233,9 @@ for (const [label, makeHost] of [
         if (relativePath === CATALOG_PATH) bytes[bytes.length - 2] ^= 1;
         return bytes;
       } };
-      const failed = await runtime.service.refresh(corrupt);
-      assert.equal(failed.mode, 'fallback');
-      assert.match(failed.warning, /SHA-256-Prüfsumme/);
-      assert.equal(failed.release.manifestSha256, initial.release.manifestSha256);
-      assert.equal((await runtime.store.getActive()).releaseId, PREVIOUS);
+      await assert.rejects(runtime.service.refresh(corrupt), /SHA-256-Prüfsumme/);
+      assert.equal(await runtime.service.getActive(original), undefined);
+      assert.equal((await runtime.service.getActive(provider(PREVIOUS))).manifestSha256, initial.release.manifestSha256);
     });
   });
 }

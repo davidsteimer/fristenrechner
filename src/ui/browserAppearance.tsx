@@ -45,6 +45,9 @@ export function initializeBrowserAppearance(): void {
   const blocked = icon(<><circle cx="10" cy="10" r="7.5" /><path d="m4.8 15.2 10.4-10.4" /></>);
   const icons: Record<string, React.ReactElement> = {
     ChevronDown: icon(<path d="m4 7 6 6 6-6" />),
+    // Fluent Calendar's default month/year navigation uses Up and Down.
+    Up: icon(<path d="m4 13 6-6 6 6" />),
+    Down: icon(<path d="m4 7 6 6 6-6" />),
     DoubleChevronDown: icon(<path d="m4 4 6 5 6-5M4 11l6 5 6-5" />),
     DoubleChevronUp: icon(<path d="m4 9 6-5 6 5M4 16l6-5 6 5" />),
     CheckMark: icon(<path d="m3.5 10 4.3 4.5 8.7-9" />),

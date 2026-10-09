@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "fristenrechner-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/fristenrechner/FristenrechnerWebPart.js",
+          "manifest": "./src/webparts/fristenrechner/FristenrechnerWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FristenrechnerWebPartStrings": "lib/webparts/fristenrechner/loc/{locale}.js"
+  }
+}

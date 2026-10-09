@@ -1,0 +1,1149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v1.schema.json",
+  "title": "DEC-2026-023 Feiertagskatalog 1.0.0",
+  "description": "Geschlossener Fachkatalog. Die historische Arbeitsmappenabnahme ist keine operative Freigabe weiterer Verfahren. Semantische Referenz-, Gebiets-, Gültigkeits- und Projektionsprüfungen sind zusätzlich erforderlich.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "catalogId",
+    "provenance",
+    "acceptance",
+    "data",
+    "areaSourceLinks",
+    "interpretation",
+    "calendarProjections"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v1.schema.json"
+    },
+    "formatVersion": {
+      "const": "1.0.0"
+    },
+    "dataKind": {
+      "const": "holidayCatalog"
+    },
+    "catalogId": {
+      "const": "ch-holiday-catalog"
+    },
+    "provenance": {
+      "const": {
+        "workbook": {
+          "fileName": "2026-09-22_Feiertagsmatrix_Schweiz_AP18B-05_V0.12.xlsx",
+          "sha256": "d4fe89932b5d33f7f63516073668accf1a92b141a07388b559c3a6965c1aeb65",
+          "byteLength": 391640
+        },
+        "importSha256": "9553f483678bc5f209099703588402a7dd65cf4d9aac8a00aadb6f9dbe966099",
+        "decision": "DEC-2026-023"
+      }
+    },
+    "acceptance": {
+      "const": {
+        "kind": "workbookAcceptance",
+        "workbookVersion": "0.12",
+        "workbookContractVersion": "0.6.0",
+        "workbookFile": "2026-09-22_Feiertagsmatrix_Schweiz_AP18B-05_V0.12.xlsx",
+        "sha256": "d4fe89932b5d33f7f63516073668accf1a92b141a07388b559c3a6965c1aeb65",
+        "acceptedOn": "2026-09-22",
+        "acceptedBy": "David Steimer",
+        "decision": "DEC-2026-022",
+        "evidence": "docs/fachrecht/abnahme-ap18b-05.md",
+        "runtimeEnabled": false,
+        "boundaries": [
+          {
+            "id": "SO-MAY1-NO-DEADLINE-EFFECT",
+            "appliesToScopes": [
+              "SO-RTG-EXCEPT-BUCHEGGBERG",
+              "SO-RTG-BUCHEGGBERG"
+            ],
+            "statement": "Der Solothurner Halbtag am 1. Mai hat keinen Einfluss auf den Fristenlauf. Die ältere offene Frage in der Arbeitsmappe bleibt als historischer Text erhalten.",
+            "evidence": "docs/fachrecht/abnahme-ap18b-03.md"
+          },
+          {
+            "id": "GR-CANTONAL-AUTHORITIES",
+            "appliesToJurisdiction": "CH-GR",
+            "statement": "Erfasst sind Verfahren vor kantonalen Behörden unter der bestätigten Annahme, dass lokale Ruhetage dabei irrelevant sind. Keine allgemeine Freigabe kommunaler Verfahren.",
+            "evidence": "docs/fachrecht/quellenpaket-ap18b-02-ti-gr-abgrenzung.md"
+          },
+          {
+            "id": "NE-INDIVIDUAL-DAYS-RESERVED",
+            "appliesToJurisdiction": "CH-NE",
+            "statement": "Zusätzliche regionale Einzelfestlegungen und gesonderte Verwaltungsschliesstage werden nicht automatisch erzeugt. Ihre mögliche Fristwirkung bleibt vorbehalten. Wiederkehrende feste LPA-Ergänzungen und Le Landeron bleiben erfasst.",
+            "evidence": "docs/architektur/erfassung-ap18b-05.md"
+          },
+          {
+            "id": "NO-INDEPENDENT-MUNICIPAL-LAW",
+            "statement": "Nur Bundesrecht und kantonales Recht. Örtliche Unterschiede aus diesen Grundlagen bleiben erfasst. Eigenständige kommunale Feiertagsregelungen sind ausgeschlossen.",
+            "evidence": "docs/architektur/feiertagsmatrix-ap18a.md"
+          },
+          {
+            "id": "NO-AUTOMATIC-PROCEDURAL-PROFILES",
+            "statement": "Die Abnahme der Erfassungsgrundlage genehmigt weder neue kantonale Fristenprofile noch eine Gleichsetzung arbeitsrechtlicher Feiertage mit prozessualen Feiertagen. Übersetzungen werden nicht zu amtlichen Sprachfassungen.",
+            "evidence": "docs/fachrecht/abnahme-ap18b-05.md"
+          }
+        ]
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "jurisdictions",
+        "scopes",
+        "sources",
+        "rules",
+        "assignments",
+        "mappings",
+        "reviews"
+      ],
+      "properties": {
+        "jurisdictions": {
+          "type": "array",
+          "minItems": 27,
+          "maxItems": 27,
+          "items": {
+            "$ref": "#/$defs/jurisdiction"
+          }
+        },
+        "scopes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/scope"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "assignments": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/assignment"
+          }
+        },
+        "mappings": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/mapping"
+          }
+        },
+        "reviews": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/review"
+          }
+        }
+      }
+    },
+    "areaSourceLinks": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 10000,
+      "items": {
+        "$ref": "#/$defs/areaSourceLink"
+      }
+    },
+    "interpretation": {
+      "const": {
+        "computedColumnsAreEvidenceOnly": true,
+        "inputValuesAndHistoricalStatusesPreserved": true,
+        "proceduralMappingsAreTextNotExecutablePermissions": true,
+        "sourceLinksAreNotIndependentApprovalRecords": true,
+        "translationsAreNotOfficialLanguageApproval": true,
+        "excludesWorkbookPresentationRoundTrip": true
+      }
+    },
+    "calendarProjections": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "$ref": "#/$defs/projection"
+      }
+    }
+  },
+  "$defs": {
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sheet",
+        "table",
+        "row"
+      ],
+      "properties": {
+        "sheet": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "table": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "row": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1048576
+        }
+      }
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "de",
+        "fr",
+        "it",
+        "rm"
+      ],
+      "properties": {
+        "de": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "fr": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "it": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "rm": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "labels",
+        "parentId",
+        "coverage",
+        "status",
+        "sourceUrl"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "parentId": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "open",
+            "blocked"
+          ]
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "jurisdiction",
+        "labels",
+        "type",
+        "boundary",
+        "source",
+        "locator",
+        "status",
+        "from",
+        "to"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "labels": {
+          "$ref": "#/$defs/labels"
+        },
+        "type": {
+          "enum": [
+            "National",
+            "Kanton",
+            "Bezirk",
+            "Bezirksausnahme",
+            "Gemeinde",
+            "Ortsteil",
+            "Gebietsgruppe"
+          ]
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "open",
+            "blocked"
+          ]
+        },
+        "from": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "to": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "jurisdiction",
+        "title",
+        "locator",
+        "url",
+        "versionOn",
+        "retrievedOn",
+        "note",
+        "status",
+        "approvalBasis"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "versionOn": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retrievedOn": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "open",
+            "blocked"
+          ]
+        },
+        "approvalBasis": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "calculation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "month",
+            "day"
+          ],
+          "properties": {
+            "type": {
+              "const": "fixedMonthDay"
+            },
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "day": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 31
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "offsetDays"
+          ],
+          "properties": {
+            "type": {
+              "const": "easterOffsetDays"
+            },
+            "offsetDays": {
+              "type": "integer",
+              "minimum": -366,
+              "maximum": 366
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "month",
+            "isoWeekday",
+            "occurrence"
+          ],
+          "properties": {
+            "type": {
+              "const": "nthWeekdayOfMonth"
+            },
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "isoWeekday": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 7
+            },
+            "occurrence": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "month",
+            "isoWeekday",
+            "occurrence",
+            "offsetDays"
+          ],
+          "properties": {
+            "type": {
+              "const": "nthWeekdayOffsetDays"
+            },
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "isoWeekday": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 7
+            },
+            "occurrence": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "offsetDays": {
+              "type": "integer",
+              "minimum": -366,
+              "maximum": 366
+            }
+          }
+        }
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "jurisdiction",
+        "scope",
+        "de",
+        "fr",
+        "it",
+        "rm",
+        "category",
+        "calculation",
+        "from",
+        "to",
+        "priority",
+        "status",
+        "approvalBasis",
+        "action",
+        "target",
+        "exportClass",
+        "source",
+        "locator",
+        "dayPortion",
+        "condition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "de": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "fr": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "it": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "rm": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "category": {
+          "enum": [
+            "publicHoliday",
+            "labourLawHoliday",
+            "proceduralEquivalentDay"
+          ]
+        },
+        "calculation": {
+          "$ref": "#/$defs/calculation"
+        },
+        "from": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "to": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "open",
+            "blocked"
+          ]
+        },
+        "approvalBasis": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "action": {
+          "const": "add"
+        },
+        "target": {
+          "type": "null"
+        },
+        "exportClass": {
+          "enum": [
+            "referenceOnly",
+            "blockedScope",
+            "blockedEffect"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "dayPortion": {
+          "enum": [
+            "fullDay",
+            "afternoonFromNoon"
+          ]
+        },
+        "condition": {
+          "enum": [
+            "always",
+            "unlessTuesdayOrSaturday",
+            "onlyMonday",
+            "shiftHolyThursdayBy7Days"
+          ]
+        }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "scopeId",
+        "areaId",
+        "de",
+        "fr",
+        "it",
+        "rm",
+        "areaType",
+        "parentAreaId",
+        "effect",
+        "officialIdSystem",
+        "officialId",
+        "from",
+        "to",
+        "sourceId",
+        "locator",
+        "status",
+        "note"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "scopeId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "areaId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "de": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "fr": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "it": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "rm": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "areaType": {
+          "enum": [
+            "Bund",
+            "Kanton",
+            "Bezirk",
+            "Gemeinde",
+            "Ortsteil",
+            "Gebietsgruppe"
+          ]
+        },
+        "parentAreaId": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effect": {
+          "enum": [
+            "include",
+            "exclude"
+          ]
+        },
+        "officialIdSystem": {
+          "const": ""
+        },
+        "officialId": {
+          "const": ""
+        },
+        "from": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "to": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "blocked"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "scope",
+        "category",
+        "context",
+        "boundary",
+        "legalReference",
+        "status",
+        "approvalBasis"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "category": {
+          "enum": [
+            "publicHoliday",
+            "labourLawHoliday",
+            "proceduralEquivalentDay"
+          ]
+        },
+        "context": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "legalReference": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "open",
+            "blocked"
+          ]
+        },
+        "approvalBasis": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "provenance",
+        "source",
+        "trigger",
+        "on",
+        "result",
+        "comparison",
+        "finding",
+        "status",
+        "responsible",
+        "instrument",
+        "next"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "trigger": {
+          "enum": [
+            "newScope",
+            "expertClarification"
+          ]
+        },
+        "on": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "result": {
+          "enum": [
+            "unchanged",
+            "changed",
+            "unclear",
+            "unavailable"
+          ]
+        },
+        "comparison": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "finding": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "withdrawn"
+          ]
+        },
+        "responsible": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "instrument": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "next": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "areaSourceLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assignmentId",
+        "scopeId",
+        "normSourceId",
+        "areaSourceId",
+        "locator",
+        "note",
+        "provenance",
+        "status"
+      ],
+      "properties": {
+        "assignmentId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "scopeId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "normSourceId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "areaSourceId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "provenance": {
+          "$ref": "#/$defs/row"
+        },
+        "status": {
+          "const": "preservedWorkbookEvidenceNotRuntimePermission"
+        }
+      }
+    },
+    "projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalogRuleId",
+        "calendarId",
+        "ruleId",
+        "labelKey",
+        "kind",
+        "resultIdSuffix",
+        "legalEffect",
+        "approvalBasis"
+      ],
+      "properties": {
+        "catalogRuleId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "calendarId": {
+          "enum": [
+            "ch-federal-calendar",
+            "be-public-holidays"
+          ]
+        },
+        "ruleId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "labelKey": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "kind": {
+          "enum": [
+            "federalHoliday",
+            "cantonalPublicHoliday"
+          ]
+        },
+        "resultIdSuffix": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "legalEffect": {
+          "const": "nonWorkingDayEquivalentToSunday"
+        },
+        "approvalBasis": {
+          "const": "2026-08-31-mvp-03-approved.1"
+        }
+      }
+    }
+  }
+}

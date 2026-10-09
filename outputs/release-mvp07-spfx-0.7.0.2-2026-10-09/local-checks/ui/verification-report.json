@@ -1,0 +1,191 @@
+{
+  "id": "R07C-B01-local-ui-verification",
+  "started": "2026-10-09T06:16:33.608Z",
+  "finished": "2026-10-09T06:16:47.500Z",
+  "timezone": "Europe/Zurich",
+  "scope": "Local UI source tests and typecheck only. No tenant or browser mutation. DOM tests do not establish pixel geometry or real host zoom approval.",
+  "node": "v22.23.2",
+  "script": {
+    "path": ".work/r07c-b01-ui-verification/verify.mjs",
+    "sha256": "a904afe79d74747d0056178f3b95538f93503193927a6300b6a3f91eb3aacd8e"
+  },
+  "inputs": [
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "sha256": "0e326f9e37f56899c768664dbc00ecf31f59387eb594990fd308f43ea0854694",
+      "unchangedDuringVerification": true
+    },
+    {
+      "path": "src/ui/calendarContextUi.tsx",
+      "sha256": "564231f9f4851964b4f3775c22894226b2620a3563799b46cdb511eb4b1c923d",
+      "unchangedDuringVerification": true
+    },
+    {
+      "path": "src/ui/styles.css",
+      "sha256": "48f25e9aaf1f1c9c04f91917ace34b0c6fb540fedbb7a26954a1b1f95b11454a",
+      "unchangedDuringVerification": true
+    },
+    {
+      "path": "src/ui/holidayConnectionDropdown.ts",
+      "sha256": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368",
+      "unchangedDuringVerification": true
+    },
+    {
+      "path": "src/ui/dropdownStyles.ts",
+      "sha256": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808",
+      "unchangedDuringVerification": true
+    },
+    {
+      "path": "tests/ui/holiday-connection-dropdown.test.ts",
+      "sha256": "9075272e339f7aebae9ede60e8eaf1b4bf97cdea50e27d64c3e02accdaf9b0a1",
+      "unchangedDuringVerification": true
+    },
+    {
+      "path": "tests/ui/dropdown-wrapping.test.tsx",
+      "sha256": "dc4ecb5b676317477c9fce735b2c15406b5242563eb996db4d5c9ffa63467637",
+      "unchangedDuringVerification": true
+    }
+  ],
+  "tests": {
+    "command": [
+      "<repository>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/ui/ap12c.test.ts",
+      "tests/ui/ap17c-qualified.test.ts",
+      "tests/ui/ap18c-preview.test.ts",
+      "tests/ui/ap19c-social.test.ts",
+      "tests/ui/ap19c2-social.test.ts",
+      "tests/ui/ap19c3-social.test.ts",
+      "tests/ui/ap20c1-eog.test.ts",
+      "tests/ui/ap20c2-family.test.ts",
+      "tests/ui/ap20c3-mvg-uelg.test.ts",
+      "tests/ui/ap21-app.test.tsx",
+      "tests/ui/ap21-date-entry.test.ts",
+      "tests/ui/ap21-date-input.test.tsx",
+      "tests/ui/ap21-form-commit.test.ts",
+      "tests/ui/ap22c2-candidate.test.ts",
+      "tests/ui/ap22c2-defaults.test.ts",
+      "tests/ui/ap22c2-ui.test.tsx",
+      "tests/ui/ap22c3-host-policy.test.tsx",
+      "tests/ui/calendar-export.test.ts",
+      "tests/ui/date-transition.test.ts",
+      "tests/ui/defaults.test.ts",
+      "tests/ui/dropdown-wrapping.test.tsx",
+      "tests/ui/holiday-connection-dropdown.test.ts",
+      "tests/ui/i18n.test.ts",
+      "tests/ui/model.test.ts",
+      "tests/ui/mvp04-release.test.ts",
+      "tests/ui/mvp05-release.test.ts",
+      "tests/ui/preview.test.ts",
+      "tests/ui/special.test.ts",
+      "tests/ui/vrpg-integration.test.ts",
+      "tests/ui/vrpg-selection.test.ts"
+    ],
+    "started": "2026-10-09T06:16:33.611Z",
+    "finished": "2026-10-09T06:16:41.859Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/ui-tests.stdout.log",
+      "bytes": 134172,
+      "sha256": "269cd4346c81f62057c0f130bf0f7d1a5fcf9fece3125368749ab2b6ed1557f3"
+    },
+    "stderr": {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/ui-tests.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "summary": [
+      "# tests 528",
+      "# suites 16",
+      "# pass 528",
+      "# fail 0",
+      "# cancelled 0",
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 8208.704542"
+    ]
+  },
+  "typecheck": {
+    "command": [
+      "<repository>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "started": "2026-10-09T06:16:41.860Z",
+    "finished": "2026-10-09T06:16:47.379Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null,
+    "stdout": {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/typecheck.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/typecheck.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "summary": []
+  },
+  "ast": [
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "baselinePath": "outputs/release-mvp07-2026-10-08/inputs/files/src/ui/FristenrechnerApp.tsx",
+      "currentSha256": "0e326f9e37f56899c768664dbc00ecf31f59387eb594990fd308f43ea0854694",
+      "baselineSha256": "0168812ce1c86c7f7163d3d9b7efee1d8b3c4dbb2f3910eba2b17ad36ee6b606",
+      "currentNormalizedSha256": "25df36273b6b0a11098dd21837202bc15bc21c262dc575f1e8f09d3a53250a60",
+      "baselineNormalizedSha256": "25df36273b6b0a11098dd21837202bc15bc21c262dc575f1e8f09d3a53250a60",
+      "identicalExceptStylesAndImports": true,
+      "removedCurrentStyles": 16,
+      "removedBaselineStyles": 2,
+      "removedCurrentStyleImports": 1,
+      "removedBaselineStyleImports": 1
+    },
+    {
+      "path": "src/ui/calendarContextUi.tsx",
+      "baselinePath": "outputs/release-mvp07-2026-10-08/inputs/files/src/ui/calendarContextUi.tsx",
+      "currentSha256": "564231f9f4851964b4f3775c22894226b2620a3563799b46cdb511eb4b1c923d",
+      "baselineSha256": "b950cbee5c02394b9e3c51524efabd28d2946751c6509fb9316e294f25a1b0e8",
+      "currentNormalizedSha256": "b72534204d69ee7b201685635ec5dd8c8a30ac9c37b09af8c28a104452d2938b",
+      "baselineNormalizedSha256": "b72534204d69ee7b201685635ec5dd8c8a30ac9c37b09af8c28a104452d2938b",
+      "identicalExceptStylesAndImports": true,
+      "removedCurrentStyles": 3,
+      "removedBaselineStyles": 2,
+      "removedCurrentStyleImports": 1,
+      "removedBaselineStyleImports": 1
+    }
+  ],
+  "passed": true,
+  "artifacts": [
+    {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/ui-tests.stdout.log",
+      "bytes": 134172,
+      "sha256": "269cd4346c81f62057c0f130bf0f7d1a5fcf9fece3125368749ab2b6ed1557f3"
+    },
+    {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/ui-tests.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/typecheck.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/typecheck.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".work/r07c-b01-ui-verification/2026-10-09T06-16-33.608Z/ast-comparison.json",
+      "bytes": 1426,
+      "sha256": "2f7f6fb50c7c6cc8f0f4dffdd411eae2e5ffd25dc2edbe068b6b0d6d6f5928a8"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: saved draft has the independently stated AP22B inventory and no runtime approval
+ok 1 - saved draft has the independently stated AP22B inventory and no runtime approval
+  ---
+  duration_ms: 21.075417
+  type: 'test'
+  ...
+# Subtest: building and inspecting the specimen preserve all archival fields and all 479 original rules
+ok 2 - building and inspecting the specimen preserve all archival fields and all 479 original rules
+  ---
+  duration_ms: 71.081
+  type: 'test'
+  ...
+# Subtest: all 198 decisions retain their exact source row hashes and selection identities
+ok 3 - all 198 decisions retain their exact source row hashes and selection identities
+  ---
+  duration_ms: 2.442083
+  type: 'test'
+  ...
+# Subtest: 104 bindings are exactly 26 cantons times four federal profiles, never a CH-only authority fallback
+ok 4 - 104 bindings are exactly 26 cantons times four federal profiles, never a CH-only authority fallback
+  ---
+  duration_ms: 0.488959
+  type: 'test'
+  ...
+# Subtest: literal AG, FR, SO, ZH and ZG selections replace competing lists for all four profiles
+ok 5 - literal AG, FR, SO, ZH and ZG selections replace competing lists for all four profiles
+  ---
+  duration_ms: 0.273334
+  type: 'test'
+  ...
+# Subtest: LU explicitly distinguishes the JusG list from the RLG plus VRG composition
+ok 6 - LU explicitly distinguishes the JusG list from the RLG plus VRG composition
+  ---
+  duration_ms: 0.104666
+  type: 'test'
+  ...
+# Subtest: NE and AI require an explicit regional fact instead of equating unknown with false
+ok 7 - NE and AI require an explicit regional fact instead of equating unknown with false
+  ---
+  duration_ms: 0.213875
+  type: 'test'
+  ...
+# Subtest: GR and NE carry their approved coverage boundaries on the actual calendar binding
+ok 8 - GR and NE carry their approved coverage boundaries on the actual calendar binding
+  ---
+  duration_ms: 0.080125
+  type: 'test'
+  ...
+# Subtest: exactly SH/StPO and SG/StPO/BGG/VwVG have alternatives differing by their single Jan 2 contribution
+ok 9 - exactly SH/StPO and SG/StPO/BGG/VwVG have alternatives differing by their single Jan 2 contribution
+  ---
+  duration_ms: 0.363041
+  type: 'test'
+  ...
+# Subtest: all 20 negative decisions survive without deleting their original catalogue rules
+ok 10 - all 20 negative decisions survive without deleting their original catalogue rules
+  ---
+  duration_ms: 0.863167
+  type: 'test'
+  ...
+# Subtest: the twelve separate SO rules are full-day additions and retain the archived RTG half-day
+ok 11 - the twelve separate SO rules are full-day additions and retain the archived RTG half-day
+  ---
+  duration_ms: 0.257959
+  type: 'test'
+  ...
+# Subtest: court and party/representation policies stay distinct without computing an anchor
+ok 12 - court and party/representation policies stay distinct without computing an anchor
+  ---
+  duration_ms: 0.069958
+  type: 'test'
+  ...
+# Subtest: missing, duplicate or reinterpreted decisions and deleted exclusions fail closed
+ok 13 - missing, duplicate or reinterpreted decisions and deleted exclusions fail closed
+  ---
+  duration_ms: 320.02325
+  type: 'test'
+  ...
+# Subtest: coverage boundaries, regional uncertainty and the Jan 2 alternative cannot disappear
+ok 14 - coverage boundaries, regional uncertainty and the Jan 2 alternative cannot disappear
+  ---
+  duration_ms: 265.628375
+  type: 'test'
+  ...
+# Subtest: candidate approval, invalid sources/dates and new profiles are rejected in this bound draft
+ok 15 - candidate approval, invalid sources/dates and new profiles are rejected in this bound draft
+  ---
+  duration_ms: 380.136875
+  type: 'test'
+  ...
+# Subtest: the alternative cannot add or remove any contribution other than the bound Jan 2 rule
+ok 16 - the alternative cannot add or remove any contribution other than the bound Jan 2 rule
+  ---
+  duration_ms: 152.926875
+  type: 'test'
+  ...
+# Subtest: AP22B preserves all 25 AP22A groups and eight central boundaries as unexecuted specifications
+ok 17 - AP22B preserves all 25 AP22A groups and eight central boundaries as unexecuted specifications
+  ---
+  duration_ms: 1.350667
+  type: 'test'
+  ...
+# Subtest: every reference has an existing repository source containing its reference identifier
+ok 18 - every reference has an existing repository source containing its reference identifier
+  ---
+  duration_ms: 10.717125
+  type: 'test'
+  ...
+# Subtest: the reference index is bound to the unchanged AP22A V1.0 matrix
+ok 19 - the reference index is bound to the unchanged AP22A V1.0 matrix
+  ---
+  duration_ms: 2.923875
+  type: 'test'
+  ...
+# Subtest: missing, duplicated and unfamiliar reference groups fail index integrity
+ok 20 - missing, duplicated and unfamiliar reference groups fail index integrity
+  ---
+  duration_ms: 2.345917
+  type: 'test'
+  ...
+# Subtest: draft metadata cannot be changed into product execution or approval
+ok 21 - draft metadata cannot be changed into product execution or approval
+  ---
+  duration_ms: 1.702541
+  type: 'test'
+  ...
+# Subtest: January counterfactuals cover direct, reached, weekend and irrelevant cases without arithmetic
+ok 22 - January counterfactuals cover direct, reached, weekend and irrelevant cases without arithmetic
+  ---
+  duration_ms: 0.098334
+  type: 'test'
+  ...
+# Subtest: a January date difference cannot produce a definitive result or lose a binding
+ok 23 - a January date difference cannot produce a definitive result or lose a binding
+  ---
+  duration_ms: 1.296375
+  type: 'test'
+  ...
+# Subtest: GR, NE, historical and negative evidence remain distinct reference categories
+ok 24 - GR, NE, historical and negative evidence remain distinct reference categories
+  ---
+  duration_ms: 0.101333
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1288.304042

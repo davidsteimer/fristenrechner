@@ -1,5 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
+export function normalizeSharePointSiteUrl(siteAbsoluteUrl: string): string {
+  const siteUrl = new URL(siteAbsoluteUrl.trim());
+  if (siteUrl.protocol !== 'https:' || siteUrl.username || siteUrl.password || siteUrl.search || siteUrl.hash) {
+    throw new Error('Die SharePoint-Site muss eine HTTPS-Adresse ohne Zugangsdaten, Abfrage oder Fragment sein.');
+  }
+  return siteUrl.toString().replace(/\/+$/, '');
+}
+
 export function normalizeSharePointMirrorPath(
   siteAbsoluteUrl: string,
   configuredPath: string
@@ -10,7 +18,7 @@ export function normalizeSharePointMirrorPath(
     throw new Error('Der SharePoint-Mirrorpfad ist nicht konfiguriert.');
   }
 
-  const siteUrl = new URL(siteAbsoluteUrl);
+  const siteUrl = new URL(normalizeSharePointSiteUrl(siteAbsoluteUrl));
   const sitePath = decodeURIComponent(siteUrl.pathname).replace(/\/+$/, '');
   let serverRelativePath: string;
 
@@ -30,10 +38,12 @@ export function normalizeSharePointMirrorPath(
     if (!trimmed.startsWith('/')) {
       throw new Error('Der SharePoint-Mirrorpfad muss serverrelativ oder eine HTTPS-Adresse sein.');
     }
-    serverRelativePath = trimmed;
+    serverRelativePath = decodeURIComponent(trimmed);
   }
 
-  if (serverRelativePath.split('/').some(part => part === '.' || part === '..')) {
+  if (serverRelativePath.split('/').some(part => part === '.' || part === '..')
+    || /[\\?#]/.test(serverRelativePath)
+    || Array.from(serverRelativePath).some(character => character.charCodeAt(0) < 32)) {
     throw new Error('Der SharePoint-Mirrorpfad darf keine relativen Pfadsegmente enthalten.');
   }
 
@@ -46,5 +56,5 @@ export function normalizeSharePointMirrorPath(
   ) {
     throw new Error('Der SharePoint-Mirror muss für AP10 auf der aktuellen SharePoint-Website liegen.');
   }
-  return serverRelativePath;
+  return serverRelativePath.replace(/\/+$/, '');
 }

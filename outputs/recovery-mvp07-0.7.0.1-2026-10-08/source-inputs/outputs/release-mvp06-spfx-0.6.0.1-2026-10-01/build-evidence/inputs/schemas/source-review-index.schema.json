@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/source-review-index.schema.json",
+  "title": "Generierter Quellenprüfindex des Fristenrechners Schweiz",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "generatedOn",
+    "generatedFrom",
+    "nextAnnualReviewDue",
+    "sources"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/source-review-index.schema.json"
+    },
+    "formatVersion": {
+      "const": "1.0.0"
+    },
+    "dataKind": {
+      "const": "sourceReviewIndex"
+    },
+    "generatedOn": {
+      "$ref": "common.schema.json#/$defs/isoDate"
+    },
+    "generatedFrom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceRegister", "eventDirectory", "eventIds"],
+      "properties": {
+        "sourceRegister": {
+          "const": "source-register.json"
+        },
+        "eventDirectory": {
+          "const": "events"
+        },
+        "eventIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+          }
+        }
+      }
+    },
+    "nextAnnualReviewDue": {
+      "$ref": "common.schema.json#/$defs/isoDate"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/indexEntry"
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500
+      }
+    },
+    "indexEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "usageStatus",
+        "jurisdiction",
+        "subjectAreas",
+        "latestReview",
+        "affected"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "usageStatus": {
+          "enum": ["productive", "supporting", "monitoring"]
+        },
+        "jurisdiction": {
+          "type": "string",
+          "pattern": "^(CH|[A-Z]{2})$"
+        },
+        "subjectAreas": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "latestReview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reviewEventId",
+            "recordStatus",
+            "reviewedOn",
+            "outcome",
+            "finding",
+            "followUp"
+          ],
+          "properties": {
+            "reviewEventId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "recordStatus": {
+              "enum": ["candidate", "approved", "withdrawn"]
+            },
+            "reviewedOn": {
+              "$ref": "common.schema.json#/$defs/isoDate"
+            },
+            "outcome": {
+              "enum": ["unchanged", "changed", "unclear", "unavailable"]
+            },
+            "finding": {
+              "type": "string",
+              "minLength": 1
+            },
+            "followUp": {
+              "type": "boolean"
+            }
+          }
+        },
+        "affected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "releaseIds",
+            "profileIds",
+            "calendarIds",
+            "componentIds",
+            "locators"
+          ],
+          "properties": {
+            "releaseIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "profileIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "calendarIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "componentIds": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "locators": {
+              "$ref": "#/$defs/stringArray"
+            }
+          }
+        }
+      }
+    }
+  }
+}

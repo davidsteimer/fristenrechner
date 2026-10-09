@@ -1,0 +1,43 @@
+ ---- build started ---- 
+[build:set-browserslist-ignore-old-data-env-var] Setting environment variable BROWSERSLIST_IGNORE_OLD_DATA=1
+[build:sass] Starting...
+[build:static-asset-typings] Processing static assets...
+[build:static-asset-typings] Finished processing static assets.
+[build:copy-javascript] Copied 6 files and linked 0 files
+[build:sass] Compiling 3 files...
+[build:sass] Finished compiling.
+[build:typescript] Using TypeScript version 5.8.3
+[build:typescript] Copied 38 files and linked 0 files
+[build:lint] Using ESLint version 9.37.0
+[build:webpack] Using Webpack version 5.105.4
+[build:webpack] Running Webpack compilation
+ ---- build finished (15.078s) ---- 
+ ---- test started ---- 
+[test:jest] Using Jest version 30.2.0
+No tests found, exiting with code 0
+[test:jest] 
+[test:jest] Run start. 0 test suites
+[test:jest] 
+[test:jest] Tests finished:
+[test:jest]   Successes: 0
+[test:jest]   Failures: 0
+[test:jest]   Total: 0
+ ---- test finished (0.560s) ---- 
+-------------------- Finished (15.642s) --------------------
+[build:lint] Warning: src/core/RecoveryStorage.ts:5:34 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/core/RecoveryStorage.ts:21:39 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/core/RecoveryStorage.ts:21:55 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/core/types.ts:32:27 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/core/types.ts:56:33 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/core/ValidatedReleaseStore.ts:156:7 - (no-void) Expected 'undefined' and instead saw 'void'.
+[build:lint] Warning: src/webparts/fristenrechner/components/Fristenrechner.tsx:36:38 - (no-void) Expected 'undefined' and instead saw 'void'.
+[build:lint] Warning: src/webparts/fristenrechner/components/Fristenrechner.tsx:40:52 - (no-void) Expected 'undefined' and instead saw 'void'.
+Encountered 8 warnings
+  [build:lint] src/core/RecoveryStorage.ts:5:34 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/core/RecoveryStorage.ts:21:39 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/core/RecoveryStorage.ts:21:55 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/core/types.ts:32:27 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/core/types.ts:56:33 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/core/ValidatedReleaseStore.ts:156:7 - (no-void) Expected 'undefined' and instead saw 'void'.
+  [build:lint] src/webparts/fristenrechner/components/Fristenrechner.tsx:36:38 - (no-void) Expected 'undefined' and instead saw 'void'.
+  [build:lint] src/webparts/fristenrechner/components/Fristenrechner.tsx:40:52 - (no-void) Expected 'undefined' and instead saw 'void'.

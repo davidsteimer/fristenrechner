@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: C3 host forwards a validated Format-7 runtime automatically, never candidate approval options
+ok 1 - C3 host forwards a validated Format-7 runtime automatically, never candidate approval options
+  ---
+  duration_ms: 3.052125
+  type: 'test'
+  ...
+# Subtest: historical AP5 runtime retains its identity without a calendar context prop
+ok 2 - historical AP5 runtime retains its identity without a calendar context prop
+  ---
+  duration_ms: 1.010292
+  type: 'test'
+  ...
+# Subtest: same provider label on a different site hides the old result synchronously and reloads
+ok 3 - same provider label on a different site hides the old result synchronously and reloads
+  ---
+  duration_ms: 1.726917
+  type: 'test'
+  ...
+# Subtest: mirror-path change changes the React key even when release ID and provider label are identical
+ok 4 - mirror-path change changes the React key even when release ID and provider label are identical
+  ---
+  duration_ms: 0.751083
+  type: 'test'
+  ...
+# Subtest: new manifest bytes remount the session even if a release name was reused
+ok 5 - new manifest bytes remount the session even if a release name was reused
+  ---
+  duration_ms: 0.70525
+  type: 'test'
+  ...
+# Subtest: configuration errors immediately hide calculator, do not access cache, and show an error
+ok 6 - configuration errors immediately hide calculator, do not access cache, and show an error
+  ---
+  duration_ms: 0.527292
+  type: 'test'
+  ...
+# Subtest: an incorrectly bound configuration key cannot resurrect cached data
+ok 7 - an incorrectly bound configuration key cannot resurrect cached data
+  ---
+  duration_ms: 0.419125
+  type: 'test'
+  ...
+# Subtest: late response from old configuration and unmounted host never overwrites current state
+ok 8 - late response from old configuration and unmounted host never overwrites current state
+  ---
+  duration_ms: 0.608209
+  type: 'test'
+  ...
+# Subtest: invalid adapted data clears a valid local display rather than leaving it stale
+ok 9 - invalid adapted data clears a valid local display rather than leaving it stale
+  ---
+  duration_ms: 0.756583
+  type: 'test'
+  ...
+# Subtest: WebPart remounts by the real cache identity and does not expose a candidate control
+ok 10 - WebPart remounts by the real cache identity and does not expose a candidate control
+  ---
+  duration_ms: 1.570833
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 167.4295

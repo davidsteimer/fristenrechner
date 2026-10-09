@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { CalculationData } from '../core';
+import type { CalendarContext } from '../core/calendarResolution';
 import type { Locale } from './i18n';
 import {
   EMPTY_VRPG_SELECTION,
@@ -21,7 +22,7 @@ import {
 export const DEFAULTS_STORAGE_KEY = 'fristenrechner.defaults.v1';
 
 export interface StoredDefaults {
-  readonly version: 3;
+  readonly version: 3 | 4;
   readonly locale: Locale;
   readonly authorityCode: string;
   readonly profileId: string;
@@ -31,6 +32,7 @@ export interface StoredDefaults {
   readonly specialRegimeId: string;
   readonly specialDefinitionId: string;
   readonly vrpgSelection: VrpgSelectionState;
+  readonly calendarContext?: CalendarContext;
 }
 
 export interface StorageLike {
@@ -43,7 +45,26 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
-export function initialDefaults(data: CalculationData): StoredDefaults {
+/** Explicit role/place defaults are not legal qualification or case evidence.
+ * Area membership, uncertain mandates and dates are deliberately never stored.
+ */
+function calendarContextDefault(value: unknown, profileId: string): CalendarContext {
+  const empty: CalendarContext = { role: '', canton: '', areaFacts: {} };
+  if (!isRecord(value) || !['stpo', 'zpo', 'bgg', 'vwvg'].includes(profileId)) return empty;
+  const allowedRoles = profileId === 'zpo'
+    ? ['court']
+    : ['partyWithoutRepresentative', 'qualifiedServiceRepresentative'];
+  const role = typeof value.role === 'string' && allowedRoles.includes(value.role)
+    ? value.role as CalendarContext['role']
+    : '';
+  const canton = typeof value.canton === 'string'
+    && 'ZH BE LU UR SZ OW NW GL ZG FR SO BS BL SH AR AI SG GR AG TG TI VD VS NE GE JU'.split(' ').includes(value.canton)
+    ? value.canton
+    : '';
+  return { role, canton, areaFacts: {} };
+}
+
+export function initialDefaults(data: CalculationData, calendarActivation = false): StoredDefaults {
   const authorityCode = authorityOptions(data).some(option => option.code === 'BE') ? 'BE' : 'CH';
   const profileId = reconcileProfileId(data, authorityCode, 'stpo');
   const profile = data.profiles.get(profileId);
@@ -54,7 +75,7 @@ export function initialDefaults(data: CalculationData): StoredDefaults {
     ''
   );
   return {
-    version: 3,
+    version: calendarActivation ? 4 : 3,
     locale: 'de',
     authorityCode,
     profileId,
@@ -63,17 +84,18 @@ export function initialDefaults(data: CalculationData): StoredDefaults {
     calendarId: automaticCalendarId(data, profile),
     specialRegimeId: special.regimeId,
     specialDefinitionId: special.definitionId,
-    vrpgSelection: EMPTY_VRPG_SELECTION
+    vrpgSelection: EMPTY_VRPG_SELECTION,
+    ...(calendarActivation ? { calendarContext: calendarContextDefault(undefined, profileId) } : {})
   };
 }
 
-export function sanitizeDefaults(data: CalculationData, value: unknown): StoredDefaults {
-  const fallback = initialDefaults(data);
-  if (!isRecord(value) || (value.version !== 1 && value.version !== 2 && value.version !== 3)) {
+export function sanitizeDefaults(data: CalculationData, value: unknown, calendarActivation = false): StoredDefaults {
+  const fallback = initialDefaults(data, calendarActivation);
+  if (!isRecord(value) || (value.version !== 1 && value.version !== 2 && value.version !== 3 && value.version !== 4)) {
     return fallback;
   }
   const authorityCode = typeof value.authorityCode === 'string'
-    && authorityOptions(data).some(option => option.code === value.authorityCode)
+    && authorityOptions(data, calendarActivation).some(option => option.code === value.authorityCode)
     ? value.authorityCode
     : fallback.authorityCode;
   const candidateProfileId = typeof value.profileId === 'string' ? value.profileId : '';
@@ -91,7 +113,7 @@ export function sanitizeDefaults(data: CalculationData, value: unknown): StoredD
     ? value.deadlineDays
     : fallback.deadlineDays;
   const automaticCalendar = automaticCalendarId(data, profile);
-  const candidateCalendarId = typeof value.calendarId === 'string' && data.calendars.has(value.calendarId)
+  const candidateCalendarId = !calendarActivation && typeof value.calendarId === 'string' && data.calendars.has(value.calendarId)
     ? value.calendarId
     : automaticCalendar;
   const calendarId = profile?.calendarPolicy.jurisdictionSelection === 'fixedBern'
@@ -107,14 +129,14 @@ export function sanitizeDefaults(data: CalculationData, value: unknown): StoredD
   );
   const vrpgSelection = profileId !== 'vrpg-be'
     ? EMPTY_VRPG_SELECTION
-    : value.version === 3
+    : value.version === 3 || value.version === 4
       ? sanitizeVrpgSelection(data, value.vrpgSelection)
       : selectionFromLegacy(data,
         typeof value.specialRegimeId === 'string' ? value.specialRegimeId : '',
         typeof value.specialDefinitionId === 'string' ? value.specialDefinitionId : '');
   const resolved = resolveVrpgSelection(data, vrpgSelection);
   return {
-    version: 3,
+    version: calendarActivation ? 4 : 3,
     locale: value.locale === 'fr' ? 'fr' : 'de',
     authorityCode,
     profileId,
@@ -123,19 +145,22 @@ export function sanitizeDefaults(data: CalculationData, value: unknown): StoredD
     calendarId,
     specialRegimeId: profileId === 'vrpg-be' ? resolved.regimeId : special.regimeId,
     specialDefinitionId: profileId === 'vrpg-be' ? resolved.definitionId : special.definitionId,
-    vrpgSelection
+    vrpgSelection,
+    ...(calendarActivation ? {
+      calendarContext: calendarContextDefault(value.version === 4 ? value.calendarContext : undefined, profileId)
+    } : {})
   };
 }
 
-export function loadDefaults(data: CalculationData, storage?: StorageLike): StoredDefaults {
+export function loadDefaults(data: CalculationData, storage?: StorageLike, calendarActivation = false): StoredDefaults {
   if (!storage) {
-    return initialDefaults(data);
+    return initialDefaults(data, calendarActivation);
   }
   try {
     const raw = storage.getItem(DEFAULTS_STORAGE_KEY);
-    return raw ? sanitizeDefaults(data, JSON.parse(raw) as unknown) : initialDefaults(data);
+    return raw ? sanitizeDefaults(data, JSON.parse(raw) as unknown, calendarActivation) : initialDefaults(data, calendarActivation);
   } catch {
-    return initialDefaults(data);
+    return initialDefaults(data, calendarActivation);
   }
 }
 
@@ -145,12 +170,17 @@ export function saveDefaults(storage: StorageLike | undefined, defaults: StoredD
   }
   try {
     storage.setItem(DEFAULTS_STORAGE_KEY, JSON.stringify({
-      version: 3,
+      version: defaults.version === 4 ? 4 : 3,
       locale: defaults.locale,
       authorityCode: defaults.authorityCode,
       profileId: defaults.profileId,
       deadlineDays: defaults.deadlineDays,
-      calendarId: defaults.calendarId,
+      ...(defaults.version === 4
+        ? { calendarContext: (() => {
+          const context = calendarContextDefault(defaults.calendarContext, defaults.profileId);
+          return { role: context.role, canton: context.canton };
+        })() }
+        : { calendarId: defaults.calendarId }),
       specialRegimeId: defaults.specialRegimeId,
       specialDefinitionId: defaults.specialDefinitionId,
       vrpgSelection: {

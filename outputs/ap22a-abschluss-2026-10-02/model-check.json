@@ -1,0 +1,92 @@
+{
+  "kind": "ap22a-existing-model-check",
+  "performedOn": "2026-10-02",
+  "input": {
+    "path": "data/releases/2026-10-01-mvp-06-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+    "sha256": "b53f9ed3dec29c8bb479b3840a801f3056531374cbb84611b377d7a01e93d1b7"
+  },
+  "results": [
+    {
+      "id": "M01",
+      "description": "Unveränderter 479-Regeln-Katalog erfüllt seinen alten Vertrag",
+      "status": "passed"
+    },
+    {
+      "id": "M02",
+      "description": "Alte Projektion liefert exakt zwölf CH-/BE-Feiertagsregeln",
+      "status": "passed"
+    },
+    {
+      "id": "M03",
+      "description": "Genfer Bettag braucht Wochentag plus Offset",
+      "status": "passed"
+    },
+    {
+      "id": "M04",
+      "description": "Bettagsmontag VD und NE datierbar, noch keine neue Verfahrensfreigabe",
+      "status": "passed"
+    },
+    {
+      "id": "M05",
+      "description": "AR und AI 2026/2027/2028 mit gesetzlicher Bedingung",
+      "status": "passed"
+    },
+    {
+      "id": "M06",
+      "description": "GL verschiebt den ersten April-Donnerstag aus der Karwoche",
+      "status": "passed"
+    },
+    {
+      "id": "M07",
+      "description": "NE Ersatzfeiertage bleiben bedingte Regeln",
+      "status": "passed"
+    },
+    {
+      "id": "M08",
+      "description": "Rheinfelder Teilgebiete bleiben voneinander getrennt",
+      "status": "passed"
+    },
+    {
+      "id": "M09",
+      "description": "Le Landeron ist eine örtliche Ergänzung, nicht der ganze Kanton",
+      "status": "passed"
+    },
+    {
+      "id": "M10",
+      "description": "Unbekanntes Gebiet liefert keinen stillen Standard",
+      "status": "passed"
+    },
+    {
+      "id": "M11",
+      "description": "Operative Freigabe ist im alten Katalog nicht durch Umetikettierung einschleusbar",
+      "status": "passed"
+    },
+    {
+      "id": "M12",
+      "description": "Alter Kern weist vorgeschlagenes Manifest-Hauptformat 7 zurück",
+      "status": "passed"
+    },
+    {
+      "id": "M13",
+      "description": "Regelgültigkeit wird nicht durch reine Jahresdatierung erweitert",
+      "status": "passed"
+    },
+    {
+      "id": "M14",
+      "description": "Alle Katalogregeln sind für 2026 bis 2028 datierbar",
+      "status": "passed"
+    }
+  ],
+  "regression": {
+    "files": [
+      "tests/core/holiday-catalog.test.ts",
+      "tests/core/calendar-rules.test.ts",
+      "tests/core/ap18c-integration.test.ts"
+    ],
+    "passed": 220,
+    "failed": 0,
+    "log": "existing-regression.txt"
+  },
+  "scope": "Existing catalog evaluator, geographic membership and legacy rejection only. No new product resolver or future contract implemented.",
+  "productActivation": false
+}

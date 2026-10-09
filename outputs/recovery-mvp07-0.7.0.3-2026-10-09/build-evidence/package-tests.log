@@ -1,0 +1,78 @@
+TAP version 13
+# Subtest: actual recovery 0.7.0.3 SPPKG has unchanged identities, higher version than 0.7.0.2 and no API permission request
+ok 1 - actual recovery 0.7.0.3 SPPKG has unchanged identities, higher version than 0.7.0.2 and no API permission request
+  ---
+  duration_ms: 341.960792
+  type: 'test'
+  ...
+# {"recovery":{"packagePath":"<repository>/.work/mvp07-recovery-0703-ViDInx/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg","packageSha256":"9490890245e8aad54a5ec5eae731a0ee895f9fc9439dec19b371315085794702","bundlePath":"ClientSideAssets/fristenrechner-web-part_412b2c98772f41242d1d.js","bundleSha256":"7df7c22e3a205dd7410bd01e720f4c0223f51229192e4ef54e0736074e53df4a"},"mvp06":{"packagePath":"<repository>/outputs/release-mvp06-spfx-0.6.0.1-2026-10-01/artifacts/fristenrechner-schweiz-0.6.0.1.sppkg","packageSha256":"60f84213507f99ec58463c84c514037d9c00bd63fdc8f02d85e52097bcf3c587","bundlePath":"ClientSideAssets/fristenrechner-web-part_3e2badf5b19c911b0ff4.js","bundleSha256":"d9411005c17188d344a0f5028bea0bb503d8944ae8070b13747ceef67459ffdc"},"mvp07":{"packagePath":"<repository>/outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/artifacts/fristenrechner-schweiz-0.7.0.2.sppkg","packageSha256":"8bae0c1ea64b4482abea8fcdbd7aa5c576f6d552735b5a3e5f01a9ea68ab71db","bundlePath":"ClientSideAssets/fristenrechner-web-part_0ccdb03876bfbfadc970.js","bundleSha256":"b3643ea6732377da0d429ed36e63eebf0047fa84e09fc85d99df2ec3573de4cf"}}
+# Subtest: actual 0.7.0.2 DB survives recovery F6 online and offline with retained F7 storage compatibility
+ok 2 - actual 0.7.0.2 DB survives recovery F6 online and offline with retained F7 storage compatibility
+  ---
+  duration_ms: 22889.483209
+  type: 'test'
+  ...
+# Subtest: missing source, different source, F7 and corrupt configured cache cannot revive historical AP5
+ok 3 - missing source, different source, F7 and corrupt configured cache cannot revive historical AP5
+  ---
+  duration_ms: 7452.524667
+  type: 'test'
+  ...
+# Subtest: own AP5 and F6 configuration caches remain separate without relabelling data
+ok 4 - own AP5 and F6 configuration caches remain separate without relabelling data
+  ---
+  duration_ms: 3140.214625
+  type: 'test'
+  ...
+# Subtest: same actual recovery store retries after an old MVP06 connection blocks the DB version 2 upgrade
+ok 5 - same actual recovery store retries after an old MVP06 connection blocks the DB version 2 upgrade
+  ---
+  duration_ms: 3311.34825
+  type: 'test'
+  ...
+# Subtest: configuration change hides old calculator immediately and late success or failure cannot replace new state
+ok 6 - configuration change hides old calculator immediately and late success or failure cannot replace new state
+  ---
+  duration_ms: 7524.259959
+  type: 'test'
+  ...
+# Subtest: packaged recovery StPO submit uses native date input and reproduces actual MVP06 calculation
+ok 7 - packaged recovery StPO submit uses native date input and reproduces actual MVP06 calculation
+  ---
+  duration_ms: 5435.620333
+  type: 'test'
+  ...
+# Subtest: actual packaged social UI handlers calculate all 50 F6 bindings for both supported holiday roles
+ok 8 - actual packaged social UI handlers calculate all 50 F6 bindings for both supported holiday roles
+  ---
+  duration_ms: 7018.814917
+  type: 'test'
+  ...
+# 100 actual packaged UI submissions, with simulated React hook storage and explicit handler events.
+# Subtest: actual UI save and reset preserve shared v4 bytes and retain separate recovery preferences across consumers
+ok 9 - actual UI save and reset preserve shared v4 bytes and retain separate recovery preferences across consumers
+  ---
+  duration_ms: 29122.359833
+  type: 'test'
+  ...
+# Subtest: recovery UI legacy import and reset do not revive original v3 preferences after reload
+ok 10 - recovery UI legacy import and reset do not revive original v3 preferences after reload
+  ---
+  duration_ms: 9032.949917
+  type: 'test'
+  ...
+# Subtest: unavailable browser storage still uses non-null adapter and actual UI reports failed save and reset
+ok 11 - unavailable browser storage still uses non-null adapter and actual UI reports failed save and reset
+  ---
+  duration_ms: 2475.726875
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 97866.376833

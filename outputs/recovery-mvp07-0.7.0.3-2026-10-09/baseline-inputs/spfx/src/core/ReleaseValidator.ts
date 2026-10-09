@@ -1,0 +1,462 @@
+// SPDX-License-Identifier: AGPL-3.0-only
+
+import Ajv2020, { type ErrorObject, type ValidateFunction } from 'ajv/dist/2020';
+import addFormats from 'ajv-formats';
+
+import calendarSchema from './schemas/calendar.schema.json';
+import calendarRulesSchema from './schemas/calendar-rules-v2.schema.json';
+import commonSchema from './schemas/common.schema.json';
+import deadlineDefinitionSchema from './schemas/deadline-definition.schema.json';
+import filingProfileSchema from './schemas/filing-profile.schema.json';
+import legalProfileSchema from './schemas/legal-profile.schema.json';
+import releaseManifestSchema from './schemas/release-manifest.schema.json';
+import releaseManifestV5Schema from './schemas/release-manifest-v5.schema.json';
+import releaseManifestV6Schema from './schemas/release-manifest-v6.schema.json';
+import socialProcedureCatalogSchema from './schemas/social-procedure-catalog.schema.json';
+import socialProcedureCatalogV2Schema from './schemas/social-procedure-catalog-v2.schema.json';
+import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
+import qualifiedSpecialRegimeCatalogSchema from './schemas/special-regime-catalog-v3.schema.json';
+import holidayCatalogSchema from './schemas/holiday-catalog-v1.schema.json';
+import {
+  assertHolidayCatalog,
+  assertSocialProcedureCatalog,
+  canonicalSocialJson,
+  assertHolidayCatalogProjection,
+  createCalculationData,
+  generateCalendarFromRules,
+  type CalendarRuleSet
+} from '../product/core';
+import { assertSafeReleasePath } from './path';
+import type {
+  IReleaseArtifactDescriptor,
+  IReleaseManifest,
+  IReleaseProvider,
+  IValidatedArtifact,
+  IValidatedRelease
+} from './types';
+
+type JsonObject = Record<string, unknown>;
+
+function isObject(value: unknown): value is JsonObject {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function decodeJson(bytes: Uint8Array, label: string): unknown {
+  try {
+    return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    throw new Error(`${label} ist kein gültiges UTF-8-JSON: ${message}`);
+  }
+}
+
+function formatErrors(errors: readonly ErrorObject[] | undefined): string {
+  return (errors ?? [])
+    .map(error => `${error.instancePath || '/'} ${error.message ?? 'ist ungültig'}`)
+    .join(', ');
+}
+
+function assertSchema(
+  validate: ValidateFunction,
+  value: unknown,
+  label: string
+): asserts value is JsonObject {
+  if (!validate(value)) {
+    throw new Error(`${label} verletzt das JSON-Schema: ${formatErrors(validate.errors ?? undefined)}`);
+  }
+}
+
+function collectStringValues(value: unknown, key: string, result: Set<string>): void {
+  if (Array.isArray(value)) {
+    value.forEach(item => collectStringValues(item, key, result));
+    return;
+  }
+
+  if (!isObject(value)) {
+    return;
+  }
+
+  Object.keys(value).forEach(property => {
+    const child = value[property];
+    if (property === key && typeof child === 'string') {
+      result.add(child);
+    }
+    collectStringValues(child, key, result);
+  });
+}
+
+function collectStringArrayValues(value: unknown, key: string, result: Set<string>): void {
+  if (Array.isArray(value)) {
+    value.forEach(item => collectStringArrayValues(item, key, result));
+    return;
+  }
+
+  if (!isObject(value)) {
+    return;
+  }
+
+  Object.keys(value).forEach(property => {
+    const child = value[property];
+    if (property === key && Array.isArray(child)) {
+      child.forEach(item => {
+        if (typeof item === 'string') {
+          result.add(item);
+        }
+      });
+    }
+    collectStringArrayValues(child, key, result);
+  });
+}
+
+function assertSameIds(label: string, expected: readonly string[], actual: readonly string[]): void {
+  const expectedSorted = [...expected].sort();
+  const actualSorted = [...actual].sort();
+
+  if (JSON.stringify(expectedSorted) !== JSON.stringify(actualSorted)) {
+    throw new Error(`${label} stimmen nicht mit dem Manifest überein.`);
+  }
+}
+
+export async function sha256(bytes: Uint8Array): Promise<string> {
+  if (!globalThis.crypto?.subtle) {
+    throw new Error('Web Crypto mit SHA-256 ist in diesem Host nicht verfügbar.');
+  }
+
+  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes.slice().buffer);
+  return Array.from(new Uint8Array(digest))
+    .map(byte => `0${byte.toString(16)}`.slice(-2))
+    .join('');
+}
+
+export class ReleaseValidator {
+  private readonly manifestValidator: ValidateFunction;
+  private readonly manifestV5Validator: ValidateFunction;
+  private readonly manifestV6Validator: ValidateFunction;
+  private readonly socialProcedureCatalogValidator: ValidateFunction;
+  private readonly socialProcedureCatalogV2Validator: ValidateFunction;
+  private readonly legalProfileValidator: ValidateFunction;
+  private readonly calendarValidator: ValidateFunction;
+  private readonly calendarRulesValidator: ValidateFunction;
+  private readonly specialRegimeCatalogValidator: ValidateFunction;
+  private readonly qualifiedSpecialRegimeCatalogValidator: ValidateFunction;
+  private readonly holidayCatalogValidator: ValidateFunction;
+
+  public constructor() {
+    const ajv = new Ajv2020({
+      allErrors: true,
+      strict: true,
+      strictRequired: false
+    });
+    addFormats(ajv, ['date', 'uri']);
+    ajv.addSchema(commonSchema);
+    ajv.addSchema(filingProfileSchema);
+    ajv.addSchema(deadlineDefinitionSchema);
+    this.manifestValidator = ajv.compile(releaseManifestSchema);
+    this.manifestV5Validator = ajv.compile(releaseManifestV5Schema);
+    this.manifestV6Validator = ajv.compile(releaseManifestV6Schema);
+    this.legalProfileValidator = ajv.compile(legalProfileSchema);
+    this.calendarValidator = ajv.compile(calendarSchema);
+    this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
+    this.specialRegimeCatalogValidator = ajv.compile(specialRegimeCatalogSchema);
+    this.qualifiedSpecialRegimeCatalogValidator = ajv.compile(qualifiedSpecialRegimeCatalogSchema);
+    this.holidayCatalogValidator = ajv.compile(holidayCatalogSchema);
+    this.socialProcedureCatalogValidator = ajv.compile(socialProcedureCatalogSchema);
+    this.socialProcedureCatalogV2Validator = ajv.compile(socialProcedureCatalogV2Schema);
+  }
+
+  public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
+    const manifestBytes = await provider.fetchBytes('manifest.json');
+    const manifestValue = decodeJson(manifestBytes, 'Manifest');
+
+    if (isObject(manifestValue) && typeof manifestValue.formatVersion === 'string') {
+      const major = Number.parseInt(manifestValue.formatVersion.split('.')[0], 10);
+      if (![1, 2, 3, 4, 5, 6].includes(major)) {
+        throw new Error(`Unbekannte Hauptversion des Datenformats: ${manifestValue.formatVersion}`);
+      }
+    }
+
+    const manifestValidator = isObject(manifestValue) && manifestValue.formatVersion === '6.0.0'
+      ? this.manifestV6Validator
+      : isObject(manifestValue) && manifestValue.formatVersion === '5.0.0'
+        ? this.manifestV5Validator : this.manifestValidator;
+    assertSchema(manifestValidator, manifestValue, 'Manifest');
+    const manifest = manifestValue as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+
+    const artifacts = await Promise.all(
+      manifest.artifacts.map(descriptor => this.loadArtifact(provider, descriptor))
+    );
+
+    this.assertSemanticReferences(manifest, artifacts);
+
+    const validated: IValidatedRelease = {
+      releaseId: manifest.releaseId,
+      formatVersion: manifest.formatVersion,
+      coverageFrom: manifest.coverage.from,
+      coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds],
+      calendarIds: [...manifest.calendarIds],
+      ...(manifest.specialRegimeCatalogIds
+        ? { specialRegimeCatalogIds: [...manifest.specialRegimeCatalogIds] }
+        : {}),
+      ...(manifest.holidayCatalogIds
+        ? { holidayCatalogIds: [...manifest.holidayCatalogIds] }
+        : {}),
+      ...(manifest.socialProcedureCatalogIds
+        ? { socialProcedureCatalogIds: [...manifest.socialProcedureCatalogIds] }
+        : {}),
+      manifestSha256: await sha256(manifestBytes),
+      manifestBytes,
+      artifacts,
+      validatedAt: new Date().toISOString()
+    };
+    // The shared product boundary must pass before ReleaseService stores a new
+    // active release. A schema-valid catalog alone is not procedural permission.
+    if (['4.0.0','5.0.0','6.0.0'].includes(manifest.formatVersion)) createCalculationData(validated);
+    return validated;
+  }
+
+  private assertManifestContract(manifest: IReleaseManifest): void {
+    if (manifest.releaseStatus !== 'approved') {
+      throw new Error(`Nur freigegebene Datenreleases sind zulässig: ${manifest.releaseStatus}`);
+    }
+
+    if (!manifest.immutable || manifest.checksumAlgorithm !== 'sha256') {
+      throw new Error('Der Datenrelease ist weder unveränderlich noch SHA-256-gesichert.');
+    }
+
+    const paths = new Set<string>();
+    const contentKeys = new Set<string>();
+
+    manifest.artifacts.forEach(artifact => {
+      assertSafeReleasePath(artifact.path);
+      const contentKey = `${artifact.role}:${artifact.contentId}`;
+
+      if (paths.has(artifact.path) || contentKeys.has(contentKey)) {
+        throw new Error(`Doppeltes Manifestartefakt: ${artifact.path}`);
+      }
+
+      paths.add(artifact.path);
+      contentKeys.add(contentKey);
+    });
+  }
+
+  private async loadArtifact(
+    provider: IReleaseProvider,
+    descriptor: IReleaseArtifactDescriptor
+  ): Promise<IValidatedArtifact> {
+    const bytes = await provider.fetchBytes(descriptor.path);
+
+    if (bytes.byteLength !== descriptor.byteLength) {
+      throw new Error(`Falsche Dateigrösse für ${descriptor.path}.`);
+    }
+
+    const actualHash = await sha256(bytes);
+    if (actualHash !== descriptor.sha256) {
+      throw new Error(`Falsche SHA-256-Prüfsumme für ${descriptor.path}.`);
+    }
+
+    const parsed = decodeJson(bytes, descriptor.path);
+    const validators: Record<string, Record<string, ValidateFunction>> = {
+      legalProfile: { [legalProfileSchema.$id]: this.legalProfileValidator },
+      calendar: {
+        [calendarRulesSchema.$id]: this.calendarRulesValidator,
+        [calendarSchema.$id]: this.calendarValidator
+      },
+      specialRegimeCatalog: {
+        [qualifiedSpecialRegimeCatalogSchema.$id]: this.qualifiedSpecialRegimeCatalogValidator,
+        [specialRegimeCatalogSchema.$id]: this.specialRegimeCatalogValidator
+      },
+      holidayCatalog: { [holidayCatalogSchema.$id]: this.holidayCatalogValidator },
+      socialProcedureCatalog: {
+        [socialProcedureCatalogSchema.$id]: this.socialProcedureCatalogValidator,
+        [socialProcedureCatalogV2Schema.$id]: this.socialProcedureCatalogV2Validator
+      }
+    };
+    const validator = validators[descriptor.role]?.[descriptor.schemaId];
+    if (!validator) {
+      throw new Error(`Unbekanntes Artefakt-/Schema-Paar für ${descriptor.path}: ${descriptor.role}, ${descriptor.schemaId}`);
+    }
+    assertSchema(validator, parsed, descriptor.path);
+    if (parsed.$schema !== descriptor.schemaId || parsed.dataKind !== descriptor.role) {
+      throw new Error(`Schema-ID oder Datenart widerspricht dem Manifest: ${descriptor.path}`);
+    }
+    if (descriptor.role === 'holidayCatalog') {
+      assertHolidayCatalog(parsed);
+    }
+    if (descriptor.role === 'socialProcedureCatalog') assertSocialProcedureCatalog(parsed);
+
+    const idProperty = descriptor.role === 'legalProfile'
+      ? 'profileId'
+      : descriptor.role === 'calendar'
+        ? 'calendarId'
+        : 'catalogId';
+    if (parsed[idProperty] !== descriptor.contentId) {
+      throw new Error(`Content-ID und Inhalt stimmen für ${descriptor.path} nicht überein.`);
+    }
+
+    return {
+      descriptor,
+      bytes,
+      parsed
+    };
+  }
+
+  private assertSemanticReferences(
+    manifest: IReleaseManifest,
+    artifacts: readonly IValidatedArtifact[]
+  ): void {
+    const profiles = artifacts.filter(artifact => artifact.descriptor.role === 'legalProfile');
+    const calendars = artifacts.filter(artifact => artifact.descriptor.role === 'calendar');
+    const specialRegimeCatalogs = artifacts.filter(
+      artifact => artifact.descriptor.role === 'specialRegimeCatalog'
+    );
+    const holidayCatalogs = artifacts.filter(artifact => artifact.descriptor.role === 'holidayCatalog');
+    const socialCatalogs = artifacts.filter(artifact => artifact.descriptor.role === 'socialProcedureCatalog');
+    const profileIds = profiles.map(artifact => artifact.descriptor.contentId);
+    const calendarIds = calendars.map(artifact => artifact.descriptor.contentId);
+    const specialRegimeCatalogIds = specialRegimeCatalogs.map(
+      artifact => artifact.descriptor.contentId
+    );
+
+    assertSameIds('Profil-IDs', manifest.profileIds, profileIds);
+    assertSameIds('Kalender-IDs', manifest.calendarIds, calendarIds);
+    assertSameIds(
+      'Spezialregimekatalog-IDs',
+      manifest.specialRegimeCatalogIds ?? [],
+      specialRegimeCatalogIds
+    );
+    assertSameIds(
+      'Feiertagskatalog-IDs',
+      manifest.holidayCatalogIds ?? [],
+      holidayCatalogs.map(artifact => artifact.descriptor.contentId)
+    );
+    assertSameIds('Sozialverfahrenskatalog-IDs', manifest.socialProcedureCatalogIds ?? [],
+      socialCatalogs.map(artifact => artifact.descriptor.contentId));
+    if (['5.0.0','6.0.0'].includes(manifest.formatVersion)) {
+      // sourceSummary remains the operative source register. The wider Swiss
+      // holiday catalogue has its own source/review contract and is not promoted
+      // to a globally approved procedural source set by this union check.
+      const sourceIdentities = new Map<string, string>();
+      const referencedSources = new Set<string>();
+      artifacts.filter(artifact => artifact.descriptor.role !== 'holidayCatalog').forEach(artifact => {
+        if (!isObject(artifact.parsed) || !Array.isArray(artifact.parsed.sources)) {
+          throw new Error(`Fehlendes operatives Quellenregister: ${artifact.descriptor.contentId}`);
+        }
+        const localIds = new Set<string>();
+        artifact.parsed.sources.forEach(source => {
+          if (!isObject(source) || typeof source.sourceId !== 'string') {
+            throw new Error('Ungültige operative Quellenidentität.');
+          }
+          if (localIds.has(source.sourceId)) throw new Error(`Doppelte lokale Quellen-ID: ${source.sourceId}`);
+          localIds.add(source.sourceId);
+          const identity = canonicalSocialJson(source);
+          const previous = sourceIdentities.get(source.sourceId);
+          if (previous !== undefined && previous !== identity) {
+            throw new Error(`Widersprüchliche komponentenübergreifende Quellenidentität: ${source.sourceId}`);
+          }
+          sourceIdentities.set(source.sourceId, identity);
+        });
+        collectStringValues(artifact.parsed, 'sourceId', referencedSources);
+      });
+      assertSameIds('Operative Quellen-IDs', manifest.sourceSummary.sourceIds, [...sourceIdentities.keys()]);
+      referencedSources.forEach(sourceId => {
+        if (!sourceIdentities.has(sourceId)) throw new Error(`Nicht registrierte operative Quellenreferenz: ${sourceId}`);
+      });
+    }
+    if (['4.0.0','5.0.0','6.0.0'].includes(manifest.formatVersion)) {
+      if (holidayCatalogs.length !== 1) {
+        throw new Error('Format 4 verlangt genau einen Feiertagskatalog.');
+      }
+      const catalog = holidayCatalogs[0].parsed;
+      assertHolidayCatalog(catalog);
+      assertHolidayCatalogProjection(catalog, calendars.map(calendar => calendar.parsed as CalendarRuleSet));
+    }
+
+    const knownProfiles = new Set(manifest.profileIds);
+    const knownCalendars = new Set(manifest.calendarIds);
+    const referencedCalendars = new Set<string>();
+    const inheritedCalendars = new Set<string>();
+    const referencedProfiles = new Set<string>();
+    const referencedSuspensionSets = new Set<string>();
+    const availableSuspensionSets = new Set<string>();
+
+    profiles.forEach(profile => {
+      collectStringValues(profile.parsed, 'calendarId', referencedCalendars);
+      collectStringValues(profile.parsed, 'suspensionSetId', referencedSuspensionSets);
+    });
+    calendars.forEach(calendar => {
+      collectStringArrayValues(calendar.parsed, 'inherits', inheritedCalendars);
+      collectStringArrayValues(calendar.parsed, 'applicableProfileIds', referencedProfiles);
+      collectStringValues(calendar.parsed, 'suspensionSetId', availableSuspensionSets);
+
+      if (['3.0.0', '4.0.0', '5.0.0', '6.0.0'].includes(manifest.formatVersion)
+        && isObject(calendar.parsed)
+        && isObject(calendar.parsed.validity)) {
+        const from = calendar.parsed.validity.from;
+        const to = calendar.parsed.validity.to;
+        if (
+          typeof from !== 'string'
+          || from > manifest.coverage.from
+          || (to !== null && typeof to !== 'string')
+        ) {
+          throw new Error(`Kalendergültigkeit ungenügend: ${calendar.descriptor.contentId}`);
+        }
+      } else if (isObject(calendar.parsed) && isObject(calendar.parsed.coverage)) {
+        const from = calendar.parsed.coverage.from;
+        const to = calendar.parsed.coverage.to;
+        if (
+          typeof from !== 'string' ||
+          typeof to !== 'string' ||
+          from > manifest.coverage.from ||
+          (manifest.coverage.to !== null && to < manifest.coverage.to)
+        ) {
+          throw new Error(`Kalenderabdeckung ungenügend: ${calendar.descriptor.contentId}`);
+        }
+      }
+    });
+    specialRegimeCatalogs.forEach(catalog => {
+      collectStringValues(catalog.parsed, 'calendarId', referencedCalendars);
+      collectStringValues(catalog.parsed, 'profileId', referencedProfiles);
+      collectStringValues(catalog.parsed, 'suspensionSetId', referencedSuspensionSets);
+    });
+    socialCatalogs.forEach(catalog => {
+      collectStringValues(catalog.parsed, 'calendarId', referencedCalendars);
+      collectStringValues(catalog.parsed, 'entryProfileId', referencedProfiles);
+      collectStringValues(catalog.parsed, 'suspensionSetId', referencedSuspensionSets);
+    });
+
+    Array.from(referencedCalendars).concat(Array.from(inheritedCalendars)).forEach(calendarId => {
+      if (!knownCalendars.has(calendarId)) {
+        throw new Error(`Unbekannte Kalenderreferenz: ${calendarId}`);
+      }
+    });
+
+    referencedProfiles.forEach(profileId => {
+      if (!knownProfiles.has(profileId)) {
+        throw new Error(`Unbekannte Profilreferenz: ${profileId}`);
+      }
+    });
+    referencedSuspensionSets.forEach(suspensionSetId => {
+      if (!availableSuspensionSets.has(suspensionSetId)) {
+        throw new Error(`Unbekannte Stillstandssatzreferenz: ${suspensionSetId}`);
+      }
+    });
+    if (['3.0.0', '4.0.0', '5.0.0', '6.0.0'].includes(manifest.formatVersion)
+      && availableSuspensionSets.has('ch-court-holidays-2026-2028')) {
+      throw new Error('Regelkalender enthält noch die abgelaufene Stillstandssatz-ID ch-court-holidays-2026-2028.');
+    }
+
+    if (['3.0.0', '4.0.0', '5.0.0', '6.0.0'].includes(manifest.formatVersion)) {
+      const ruleSets = calendars.map(calendar => calendar.parsed as CalendarRuleSet);
+      const firstYear = Number.parseInt(manifest.coverage.from.slice(0, 4), 10);
+      const validationRange = {
+        from: manifest.coverage.from,
+        to: `${firstYear + 2}-12-31`
+      };
+      manifest.calendarIds.forEach(calendarId => {
+        generateCalendarFromRules(ruleSets, calendarId, validationRange);
+      });
+    }
+  }
+}

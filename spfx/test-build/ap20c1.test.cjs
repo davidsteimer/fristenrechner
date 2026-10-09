@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {test} = require('node:test');
-const {REPO_ROOT, loadPackagedHost, sha256} = require('./package-harness.cjs');
+const {REPO_ROOT, loadPackagedHost, sha256, localMirrorConfiguration} = require('./package-harness.cjs');
 
 function provider(transportApproved = false, mutate) {
   const directory = path.join(REPO_ROOT, 'data/candidates/2026-09-30-ap20c1');
@@ -24,7 +24,7 @@ function provider(transportApproved = false, mutate) {
   }
   bytes.set('manifest.json', Buffer.from(JSON.stringify(manifest)));
   const fetched = [];
-  return {id:'isolated-ap20c1-built-fixture', kind:'sharepointMirror', fetched, async fetchBytes(name) {
+  return {id:'isolated-ap20c1-built-fixture', kind: 'sharepointMirror', cacheConfiguration: localMirrorConfiguration(path.basename(directory)), fetched, async fetchBytes(name) {
     fetched.push(name); assert.ok(bytes.has(name)); return new Uint8Array(bytes.get(name));
   }};
 }
@@ -63,12 +63,12 @@ test('AP20C1 actual packaged consumer rejects candidate before artifact fetch', 
   t.diagnostic(JSON.stringify(runtime.provenance));
   await assert.rejects(runtime.service.refresh(fixture), /candidate/);
   assert.deepEqual(fixture.fetched, ['manifest.json']);
-  assert.equal(await runtime.store.getActive(), undefined);
+  assert.equal(await runtime.service.getActive(provider()), undefined);
 });
 
 test('AP20C1 actual bundle reads format 6 and component 2 but retains every candidate gate', async () => {
   const runtime = loadPackagedHost(), activation = await runtime.service.refresh(provider(true));
-  runtime.host.applyActivationResult(activation);
+  runtime.host.applyActivationResult(activation, runtime.host.props.configurationKey);
   assert.equal(runtime.host.state.status, 'ready');
   assert.equal(runtime.host.state.calculationData.formatVersion, '6.0.0');
   const data = compiledData(activation.release), catalog = data.socialProcedureCatalogs.get('ch-social-procedures');
@@ -82,7 +82,7 @@ test('AP20C1 actual bundle reads format 6 and component 2 but retains every cand
 
 test('AP20C1 emitted ES5 calculates all six EOG routes only under explicit synthetic test approvals', async () => {
   const runtime = loadPackagedHost(), activation = await runtime.service.refresh(provider(true, syntheticEogApproval));
-  runtime.host.applyActivationResult(activation);
+  runtime.host.applyActivationResult(activation, runtime.host.props.configurationKey);
   assert.equal(runtime.host.state.status, 'ready');
   const data = compiledData(activation.release), catalog = data.socialProcedureCatalogs.get('ch-social-procedures');
   const {calculateSocialDeadline} = require('../lib-commonjs/product/core/socialDeadline.js');
@@ -107,7 +107,7 @@ for (const [name, mutate] of [
 ]) test(`AP20C1 actual package rejects ${name} without activating anything`, async () => {
   const runtime = loadPackagedHost();
   await assert.rejects(runtime.service.refresh(provider(true, mutate)), /JSON-Schema/);
-  assert.equal(await runtime.store.getActive(), undefined);
+  assert.equal(await runtime.service.getActive(provider()), undefined);
 });
 
 test('AP20C1 actual package preserves its validated cache after EOG object tampering', async () => {

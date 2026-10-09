@@ -14,6 +14,7 @@ import { GitHubReleaseProvider } from '../../core/providers/GitHubReleaseProvide
 import { SharePointReleaseProvider } from '../../core/providers/SharePointReleaseProvider';
 import { PINNED_GITHUB_RELEASE_URL } from '../../core/config';
 import { IndexedDbValidatedReleaseStore } from '../../core/ValidatedReleaseStore';
+import { getProviderCacheIdentity } from '../../core/cacheIdentity';
 import type { IReleaseProvider, ProviderKind } from '../../core/types';
 import * as strings from 'FristenrechnerWebPartStrings';
 import Fristenrechner from './components/Fristenrechner';
@@ -26,6 +27,7 @@ export interface IFristenrechnerWebPartProps {
 }
 
 interface IProviderConfiguration {
+  readonly key: string;
   readonly label: string;
   readonly provider?: IReleaseProvider;
   readonly error?: string;
@@ -38,6 +40,7 @@ export default class FristenrechnerWebPart extends BaseClientSideWebPart<IFriste
     const providerConfiguration = this.buildProvider();
     const props: IFristenrechnerProps = {
       componentId: this.manifest.id,
+      configurationKey: providerConfiguration.key,
       hostLabel: this.context.sdks.microsoftTeams ? 'Microsoft Teams' : 'SharePoint Online',
       providerLabel: providerConfiguration.label,
       store: this.releaseStore,
@@ -45,7 +48,7 @@ export default class FristenrechnerWebPart extends BaseClientSideWebPart<IFriste
       ...(providerConfiguration.error ? { configurationError: providerConfiguration.error } : {})
     };
 
-    ReactDom.render(React.createElement(Fristenrechner, props), this.domElement);
+    ReactDom.render(React.createElement(Fristenrechner, { ...props, key: props.configurationKey }), this.domElement);
   }
 
   protected onInit(): Promise<void> {
@@ -102,22 +105,27 @@ export default class FristenrechnerWebPart extends BaseClientSideWebPart<IFriste
   private buildProvider(): IProviderConfiguration {
     try {
       if (this.properties.providerKind === 'sharepointMirror') {
+        const provider = new SharePointReleaseProvider(
+          this.context.spHttpClient,
+          this.context.pageContext.web.absoluteUrl,
+          this.properties.sharePointMirrorPath
+        );
         return {
+          key: getProviderCacheIdentity(provider),
           label: strings.ProviderSharePointMirror,
-          provider: new SharePointReleaseProvider(
-            this.context.spHttpClient,
-            this.context.pageContext.web.absoluteUrl,
-            this.properties.sharePointMirrorPath
-          )
+          provider
         };
       }
 
+      const provider = new GitHubReleaseProvider(this.properties.githubBaseUrl);
       return {
+        key: getProviderCacheIdentity(provider),
         label: strings.ProviderGitHub,
-        provider: new GitHubReleaseProvider(this.properties.githubBaseUrl)
+        provider
       };
     } catch (error) {
       return {
+        key: 'invalid-configuration',
         label: this.properties.providerKind === 'sharepointMirror'
           ? strings.ProviderSharePointMirror
           : strings.ProviderGitHub,

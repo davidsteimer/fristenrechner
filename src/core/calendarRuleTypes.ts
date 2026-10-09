@@ -40,6 +40,20 @@ export interface NthWeekdayOfMonthCalculation {
   readonly occurrence: number;
 }
 
+export interface NthWeekdayOffsetDaysCalculation {
+  readonly type: 'nthWeekdayOffsetDays';
+  readonly month: number;
+  readonly isoWeekday: number;
+  readonly occurrence: number;
+  readonly offsetDays: number;
+}
+
+export type CalendarHolidayCondition =
+  | 'always'
+  | 'unlessTuesdayOrSaturday'
+  | 'onlyMonday'
+  | 'shiftHolyThursdayBy7Days';
+
 export type PeriodBoundary =
   | {
     readonly anchor: 'fixedMonthDay';
@@ -69,7 +83,7 @@ export interface ExplicitDateOverrideCalculation {
 
 export interface HolidayRuleEffect {
   readonly type: 'holiday';
-  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday';
+  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday' | 'proceduralEquivalentDay';
   readonly legalEffect: 'nonWorkingDayEquivalentToSunday';
   readonly resultIdSuffix: string;
 }
@@ -83,7 +97,7 @@ export interface SuspensionPeriodRuleEffect {
 }
 
 export interface ReplacementHoliday {
-  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday';
+  readonly kind: 'federalHoliday' | 'cantonalPublicHoliday' | 'proceduralEquivalentDay';
   readonly labelKey: string;
   readonly labels: CalendarRuleLabels;
   readonly legalEffect: 'nonWorkingDayEquivalentToSunday';
@@ -112,7 +126,10 @@ export type HolidayCalendarRule = CalendarRuleBase & {
   readonly calculation:
     | FixedMonthDayCalculation
     | EasterOffsetDaysCalculation
-    | NthWeekdayOfMonthCalculation;
+    | NthWeekdayOfMonthCalculation
+    | NthWeekdayOffsetDaysCalculation;
+  // Format 2 omits this field. Format 3 requires an explicit closed condition.
+  readonly condition?: CalendarHolidayCondition;
   readonly effect: HolidayRuleEffect;
 };
 
@@ -128,8 +145,7 @@ export type OverrideCalendarRule = CalendarRuleBase & {
 
 export type CalendarRule = HolidayCalendarRule | SuspensionCalendarRule | OverrideCalendarRule;
 
-export interface CalendarRuleSet {
-  readonly formatVersion: '2.0.0';
+interface CalendarRuleSetBase {
   readonly dataKind: 'calendar';
   readonly calendarId: string;
   readonly jurisdiction: CalendarRuleJurisdiction;
@@ -138,6 +154,18 @@ export interface CalendarRuleSet {
   readonly sources: readonly { readonly sourceId: string }[];
   readonly rules: readonly CalendarRule[];
 }
+
+export interface CalendarProjection {
+  readonly catalogId: 'ch-holiday-catalog';
+  readonly catalogFormatVersion: '2.0.0';
+  readonly projectionId: string;
+  readonly sourceHash: string;
+}
+
+export type CalendarRuleSet = CalendarRuleSetBase & (
+  | { readonly formatVersion: '2.0.0'; readonly projection?: never }
+  | { readonly formatVersion: '3.0.0'; readonly projection: CalendarProjection | null }
+);
 
 export interface CalendarGenerationRange {
   readonly from: IsoDate;

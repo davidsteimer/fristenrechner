@@ -1,0 +1,136 @@
+{
+  "kind": "mvp07Recovery0703UnsuccessfulLocalAttempts",
+  "archivedAt": "2026-10-09T07:39:16.995Z",
+  "localOnly": true,
+  "installationAuthorized": false,
+  "deploymentPerformed": false,
+  "publicationAuthorized": false,
+  "scope": "Separate preserved evidence. Neither attempt is represented as a passed final candidate. The later final package is archived separately.",
+  "attempts": [
+    {
+      "stage": ".work/mvp07-recovery-0703-cLpTiJ",
+      "id": "attempt-01-timeout",
+      "reportSha256": "eb980e984aa4c8672c9b3a6f6d6a4f51c867771d261ff5f9f4cd64003b1deece",
+      "packageLogSha256": "4867695723327ea78d0953cb746732393a9e339667137e3266d1ae5d363a5080",
+      "packageTestCounts": {
+        "tests": 9,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 1,
+        "skipped": 0,
+        "todo": 0
+      },
+      "cause": "Die auf die gesamte Pakettestdatei angewendete 60-Sekunden-Grenze brach den Lauf nach acht bestandenen Einzeltests ab.",
+      "correction": "Ausschliesslich das Zeitlimit dieser Datei wurde auf 180 Sekunden erhöht. Es gab keine Änderung an Produktquellen oder Testfällen.",
+      "passed": false,
+      "isFinalCandidate": false,
+      "sourceTestsPassed": 32,
+      "packageSha256": "eb1958fcb198b69256d3059ffaa3ee0b574d6d74927c55c43ac0170f317bbe81",
+      "packageByteLength": 230580,
+      "protectionCheckPassed": true,
+      "contributesToFinalPassedTestCount": false
+    },
+    {
+      "stage": ".work/mvp07-recovery-0703-fUo4nF",
+      "id": "attempt-02-verifier",
+      "reportSha256": "627f4c414b86f558c94f41b78e909f4614341a0c3bf72e1c70881985cd326ec5",
+      "packageLogSha256": "6658e34d54fd9fd0afdf73f86a1546dcdcfc1b6ba489da731d210a93daf01dc5",
+      "packageTestCounts": {
+        "tests": 11,
+        "pass": 11,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "cause": "Nach 32 bestandenen Quelltests und elf bestandenen Pakettests hielt der Bytevergleich wegen einer falschen Annahme des Verifikators zur minifizierten SCSS-Referenzform an.",
+      "correction": "Die Prüfung wurde anhand beider tatsächlicher Bundles auf vier konkrete className-Referenzen und eine konkrete const-Referenz berichtigt. Klassen und Vorkommenszahlen bleiben exakt gebunden. Der vollständige Paketvergleich bestand danach für beide Vorläufe. Ein neuer vollständiger Build erfolgte mit eingefrorenem korrigiertem Verifikator.",
+      "passed": false,
+      "isFinalCandidate": false,
+      "sourceTestsPassed": 32,
+      "packageSha256": "69f7963afdc44164412b13b1afc823dcd2c755aece10a65fb43badee19e0e0f1",
+      "packageByteLength": 230584,
+      "protectionCheckPassed": true,
+      "contributesToFinalPassedTestCount": false
+    }
+  ],
+  "archivedFiles": [
+    {
+      "path": "attempt-01-timeout/verification.sanitized.json",
+      "byteLength": 563777,
+      "sha256": "ef1bfd40720021339a1b04922df8cdb9df6b8cbe13484c31300081aef1fe0b1b",
+      "originalSha256": "eb980e984aa4c8672c9b3a6f6d6a4f51c867771d261ff5f9f4cd64003b1deece"
+    },
+    {
+      "path": "attempt-01-timeout/step-1.log",
+      "byteLength": 7515,
+      "sha256": "ab859e7f45205c89417a163a6b0868b1bb2921e84ffaf61b47b03fdfd6a0aea2",
+      "originalSha256": "ab859e7f45205c89417a163a6b0868b1bb2921e84ffaf61b47b03fdfd6a0aea2"
+    },
+    {
+      "path": "attempt-01-timeout/step-2.log",
+      "byteLength": 3505,
+      "sha256": "96365fb9edc24be6a6d5ef1d9740563d01d81a7586a0eab403b7c900a0e72c9f",
+      "originalSha256": "96365fb9edc24be6a6d5ef1d9740563d01d81a7586a0eab403b7c900a0e72c9f"
+    },
+    {
+      "path": "attempt-01-timeout/step-3.log",
+      "byteLength": 69,
+      "sha256": "dc46b877eb9552631f9e4f03ff989b22dae4aaef69aa2643366749f3cfdd07c5",
+      "originalSha256": "dc46b877eb9552631f9e4f03ff989b22dae4aaef69aa2643366749f3cfdd07c5"
+    },
+    {
+      "path": "attempt-01-timeout/step-4.log",
+      "byteLength": 4169,
+      "sha256": "65e0f2315de7c86be1350a90ee13b8735c78c4bc71dac2f2b4d20ce77237846f",
+      "originalSha256": "038e8ce11adf6937b134db7ebb4fb1a894a89c517cfdc15528c4beb0855e6bc3"
+    },
+    {
+      "path": "attempt-01-timeout/step-5.log",
+      "byteLength": 3838,
+      "sha256": "c0cabfc686d832affa583c1a4ba579b00e9a7bc292fc771da695ffe858e5b23b",
+      "originalSha256": "4867695723327ea78d0953cb746732393a9e339667137e3266d1ae5d363a5080"
+    },
+    {
+      "path": "attempt-02-verifier/verification.sanitized.json",
+      "byteLength": 563931,
+      "sha256": "e48d71ab89372c868943f300d4c55f0e5342b87be523bcc85d42420062de9ad7",
+      "originalSha256": "627f4c414b86f558c94f41b78e909f4614341a0c3bf72e1c70881985cd326ec5"
+    },
+    {
+      "path": "attempt-02-verifier/step-1.log",
+      "byteLength": 7513,
+      "sha256": "aa206194861ecf0d3a5c4ccc58c57e43912329395ac94122726388be6fcd7039",
+      "originalSha256": "aa206194861ecf0d3a5c4ccc58c57e43912329395ac94122726388be6fcd7039"
+    },
+    {
+      "path": "attempt-02-verifier/step-2.log",
+      "byteLength": 3505,
+      "sha256": "27bc611db15951533afa83c8608a7ba0a8e373fa501c0d09858239f159dbc351",
+      "originalSha256": "27bc611db15951533afa83c8608a7ba0a8e373fa501c0d09858239f159dbc351"
+    },
+    {
+      "path": "attempt-02-verifier/step-3.log",
+      "byteLength": 69,
+      "sha256": "57d8041abfa29b84c095136c5d9d7ebc48ddcdfeacf0bf445711a8b2e0433a78",
+      "originalSha256": "57d8041abfa29b84c095136c5d9d7ebc48ddcdfeacf0bf445711a8b2e0433a78"
+    },
+    {
+      "path": "attempt-02-verifier/step-4.log",
+      "byteLength": 4169,
+      "sha256": "d13a055c1096dc203d7d0994db6f0ec1988af2cafe448e8e515ead6c756f3172",
+      "originalSha256": "44dc4740095911d1efc6648e6dc1dbfa805a283cf09e37dc31cf0338421445dd"
+    },
+    {
+      "path": "attempt-02-verifier/step-5.log",
+      "byteLength": 4291,
+      "sha256": "b8921dd4cd1405507d8e5578a59aaec3edd45297e0995e57880bac45c5a19e51",
+      "originalSha256": "6658e34d54fd9fd0afdf73f86a1546dcdcfc1b6ba489da731d210a93daf01dc5"
+    },
+    {
+      "path": "implementation/scripts/archive-mvp07-recovery-0703-attempts.mjs",
+      "byteLength": 5626,
+      "sha256": "a9c18c00518a022ca71c3235b3d62271a8113fa170b6048b89c6cae496d98ccb"
+    }
+  ]
+}

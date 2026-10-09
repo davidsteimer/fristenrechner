@@ -3,8 +3,9 @@
 import { SPHttpClient } from '@microsoft/sp-http';
 
 import { assertSafeReleasePath } from '../path';
+import type { ProviderCacheConfiguration } from '../cacheIdentity';
 import type { IReleaseProvider } from '../types';
-import { normalizeSharePointMirrorPath } from './sharePointPath';
+import { normalizeSharePointMirrorPath, normalizeSharePointSiteUrl } from './sharePointPath';
 
 function escapeODataString(value: string): string {
   return value.replace(/'/g, "''");
@@ -13,15 +14,19 @@ function escapeODataString(value: string): string {
 export class SharePointReleaseProvider implements IReleaseProvider {
   public readonly id: string;
   public readonly kind = 'sharepointMirror' as const;
+  public readonly cacheConfiguration: ProviderCacheConfiguration;
   private readonly serverRelativeBasePath: string;
+  private readonly siteAbsoluteUrl: string;
 
   public constructor(
     private readonly spHttpClient: SPHttpClient,
-    private readonly siteAbsoluteUrl: string,
+    siteAbsoluteUrl: string,
     configuredPath: string
   ) {
-    this.serverRelativeBasePath = normalizeSharePointMirrorPath(siteAbsoluteUrl, configuredPath);
-    this.id = `sharepointMirror:${this.serverRelativeBasePath}`;
+    this.siteAbsoluteUrl = normalizeSharePointSiteUrl(siteAbsoluteUrl);
+    this.serverRelativeBasePath = normalizeSharePointMirrorPath(this.siteAbsoluteUrl, configuredPath);
+    this.cacheConfiguration = { kind: this.kind, siteAbsoluteUrl: this.siteAbsoluteUrl, mirrorPath: this.serverRelativeBasePath };
+    this.id = `sharepointMirror:${this.siteAbsoluteUrl}:${this.serverRelativeBasePath}`;
   }
 
   public async fetchBytes(relativePath: string): Promise<Uint8Array> {

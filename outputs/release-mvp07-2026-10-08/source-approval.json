@@ -1,0 +1,3031 @@
+{
+  "formatVersion": "1.0.0",
+  "dataKind": "sourceReviewApproval",
+  "approvalId": "2026-10-08-mvp-07-source-approval.1",
+  "approvedOn": "2026-10-08",
+  "approvedBy": "David Steimer",
+  "recordStatus": "approved",
+  "declaration": "Ich nehme die zusammengeführte Quellenprüfung für MVP 0.7 einschliesslich der dokumentierten Wiederverwendung, der beiden Fassungsänderungen ohne Änderung der verwendeten Rechenregeln und der fortbestehenden Vorbehalte ab. Die beschlossene AI-Behandlung bleibt unverändert. Der historische Freiburger Praxisbeleg bleibt ein gekennzeichneter ergänzender Spiegel, ohne eigenständige positive Fallfreigabe. Die aktuelle Freiburger Normgrundlage ist davon getrennt bestätigt.",
+  "decisionRef": "docs/fachrecht/abnahme-quellen-mvp07.md",
+  "candidateReleaseId": "2026-10-08-ap22c3-reference.1",
+  "permissions": {
+    "sourceReviewApproved": true,
+    "localDataPromotionAuthorized": false,
+    "definitiveLocalBuildAuthorized": false,
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "hostingChangesAuthorized": false,
+    "operatingApproval": false,
+    "m365PermissionChangesAuthorized": false,
+    "testAppCleanupAuthorized": false
+  },
+  "scope": {
+    "sources": 232,
+    "withFreshEvidence": 204,
+    "reusedWithoutFreshEvidence": 28,
+    "uniqueVersionChanges": 2,
+    "newCalculationRules": 0,
+    "allOriginalsFreshlyRead": false,
+    "socialRules": 44,
+    "socialBindings": 50,
+    "socialOperativeCantons": [
+      "BE"
+    ],
+    "socialCoverage": {
+      "from": "2026-01-01",
+      "to": "2027-12-31"
+    },
+    "additionalCasesApproved": false
+  },
+  "knownConflict": {
+    "sourceId": "SRC-AI-RUHETAGE-LISTE-2026",
+    "retainedOutcome": "unclear",
+    "treatmentUnchanged": true,
+    "officialCorrectionClaimed": false
+  },
+  "historicalFrPractice": {
+    "sourceId": "SRC-AP22-FR-PRAXIS",
+    "retainedOutcome": "unclear",
+    "supportingMirrorOnly": true,
+    "officialOriginalConfirmed": false,
+    "positiveCaseApproval": false,
+    "currentNormSeparatelyConfirmed": true
+  },
+  "responsibility": {
+    "humanDecisionBy": "David Steimer",
+    "operatingModel": "personalUnion",
+    "documentedWith": "Codex",
+    "formalFourEyes": false
+  },
+  "acceptedVersionEvents": [
+    {
+      "eventId": "STPO-AS-2026-509",
+      "sourceIds": [
+        "SRC-STPO-20250401",
+        "SRC-AP22-STPO",
+        "SRC-AP22CLOSE-BUND-STPO"
+      ],
+      "sourceVersionDelta": true,
+      "effectiveFrom": "2027-01-01",
+      "modelImpact": "unchanged",
+      "ruleChangeRequired": false,
+      "assessment": "New Art. 269 surveillance-catalog entry. The used deadline provisions remain equal.",
+      "evidence": {
+        "path": ".work/mvp07-source-review-2026-10-08/baseline/index-and-content-assessment.json",
+        "sha256": "69ed969e374780de8a6b7d57615866646375541f7b40f709522d93dd4b0eebca"
+      }
+    },
+    {
+      "eventId": "LU-855-V4916",
+      "sourceIds": [
+        "SRC-LU-RLG-855-20200501"
+      ],
+      "sourceVersionDelta": true,
+      "effectiveFrom": "2026-09-27",
+      "modelImpact": "unchanged",
+      "ruleChangeRequired": false,
+      "assessment": "New title and shop-opening provisions. Used §§ 1a and 2 remain equal.",
+      "evidence": {
+        "path": ".work/mvp07-source-review-2026-10-08/catalog/lu-version-bridge.json",
+        "sha256": "ab37325e8f55abfee5eed039c6bda34d1d6da213550f7437992442317a0e7793"
+      }
+    }
+  ],
+  "retainedLimits": [
+    "Technical source coverage, original identity, substantive reading and human approval are separate.",
+    "Historical evidence retains its actual date and exact scope. A current inventory or matrix acceptance is not a fresh legal retrieval.",
+    "AI source conflict and the already decided statutory treatment remain visible. SG/SH January boundaries, GR/NE limits, AVIV Option B and OF-001 are not silently removed.",
+    "No exhaustive new-case-law search or unlimited future legal stability is asserted.",
+    "Positive structural references do not expand permitted cases. Social scope remains BE, 2026–2027, with 44 rules and 50 bindings.",
+    "Human review of the substantive findings and bounded reuse remains required before promotion or definitive builds.",
+    "Private raw source material is not automatically cleared for public publication."
+  ],
+  "nextGate": "Separate authorization for controlled local data promotion and definitive local builds.",
+  "evidence": [
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/api-current-summary.json",
+      "sha256": "b69ef6bcc6fd5f8dafcc7d14e10f328e401b4b6742924bd708af00051a143326",
+      "byteLength": 11654
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/build_review.py",
+      "sha256": "d8b2ae4793eaeac9cb74ae6cdc7a79f9270b175719ee6a9413fb46bfcfc795bd",
+      "byteLength": 38399
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-2e8-0.json",
+      "sha256": "2816fef1bbd392f91789dbdb590e3f8c365de76ce4e44cac323be4b4d3e4f44f",
+      "byteLength": 74428
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-2e8-1.json",
+      "sha256": "9ec12e1adf7ad17fbfd1be49dcedf8d065b9006dd356f56738193b880b48e9f5",
+      "byteLength": 4103
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-BB2020164.json",
+      "sha256": "b4b722b6938a4d724d5d70378292a79451b4dc4dfa14a1ff7c7870c1738de436",
+      "byteLength": 56738
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-D6953.json",
+      "sha256": "fddc9b6a21004c8b9b83e7cc8c378b58074e03c0276aa77c1f019ca03b2d3fec",
+      "byteLength": 43973
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-D7710.json",
+      "sha256": "7d246373d2618c47f07043d4fb54ba3430f151a77a67bc18261c31389ba8e60d",
+      "byteLength": 47300
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-F10031.json",
+      "sha256": "1f91d957babb169393f349becda234fd2c3073ddc2d9302a253f53cf40593aac",
+      "byteLength": 78850
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-FRPRAXIS.json",
+      "sha256": "20a3808cf9f6cbc1279519aa96fe420bc55a328c1d6baf15ea548450787008fb",
+      "byteLength": 14726
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/connector-provenance.json",
+      "sha256": "52fb694ff60f6f3c6ce89fb1975d416a8fa0c808d85aa04928834f3d84d094ab",
+      "byteLength": 1473
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/current-urls.json",
+      "sha256": "8ff00af11c2abb0ef462d838bbe59957a95df25bb71113d40ec7ad6611cc21a9",
+      "byteLength": 726
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/decision-urls.json",
+      "sha256": "6094fe105c28b360a3c86851f2c2e575c2ff06db53571574878a9c5e5c736b4e",
+      "byteLength": 624
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/discovery-BB2020164.json",
+      "sha256": "61cc1a67ac250dca80a5067df71717e528d35a4e63dca3d91d6a62e8c7f42b80",
+      "byteLength": 5181
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/discovery-D6953.json",
+      "sha256": "d04400f87c4744a1d48a3eddedd5f8c8193cdfd2d3d2ddc6a3e5c69753517abe",
+      "byteLength": 3664
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/discovery-D7710.json",
+      "sha256": "9a85c864531f2ea1410855e1eeafefa234e1f9bb8f240139b22b0803b1e02aaf",
+      "byteLength": 4731
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/discovery-F10031.json",
+      "sha256": "02921a87933ce8b278fbc64d9cb353a4525238f1b488dc59c6ce36550a7f7fa3",
+      "byteLength": 4731
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/discovery-VD.json",
+      "sha256": "938490276e2cbd81d9a47be3036ea241c3e554961b197552375b2bad4d311a28",
+      "byteLength": 41597
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/extra-urls.json",
+      "sha256": "025fc9ddef4618096caeb176f4b054e08033033d5b1fd9d22ecc6c55656fe3ab",
+      "byteLength": 2208
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/extract_api.py",
+      "sha256": "dfd181f87ed27ed32a8ccc62e4a575a2f9f6b128683b59595d6dda6ce3040b16",
+      "byteLength": 810
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/extract_pdfs.py",
+      "sha256": "186756f62d57d058732f9be9c33f164054dfd98d24c48be5435d699c9986e55d",
+      "byteLength": 611
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch_sources.py",
+      "sha256": "1a674fd24b85b1078dedf45dff311917272f386f7e8c10a0924972ffd6863eda",
+      "byteLength": 3008
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-213610.json",
+      "sha256": "01eb4a77ec5dd2a7223e4ff9bcb54f6132f54506a42b01820574192b3e384137",
+      "byteLength": 42290
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-213705.json",
+      "sha256": "29dee46c356bc553f087cf1350135c9fdb8a9196254951967974140524f3de25",
+      "byteLength": 41431
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-213725.json",
+      "sha256": "2abf32f506d8e1c2d8bdd01090bbb0d8b3c45297bf9375e3c4b7aeec3682ae5d",
+      "byteLength": 12651
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-213848.json",
+      "sha256": "b7da2f0c0ab7c3cc2323240538f33221474424d1f34cf1c6451845d917f80696",
+      "byteLength": 6682
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-213935.json",
+      "sha256": "f6447d520c1965b734b1c59efc699c525444b26e2fa1a1d396d05a3d4ca9919a",
+      "byteLength": 4402
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-214456.json",
+      "sha256": "567f2cfe0055ecb86af6116550d82b935c6deec3ac55158d8ee0f64d8e0e1695",
+      "byteLength": 3400
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/fetch-log-214532.json",
+      "sha256": "a1a532b38f9e867e32a7764807aa8b655f113c427d5f4419581a8798a6bf5f38",
+      "byteLength": 1565
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/final-urls.json",
+      "sha256": "956bd03da1959e15de044f8e5bc2498d348f673d1e3d7aad88e25a46adc5a4ef",
+      "byteLength": 932
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/BVGER-PORTAL-PROVENANCE.bin",
+      "sha256": "75f61fdb0cf55f37578c12f41148f9fd1ea044617558cc76e587ad9dc350f474",
+      "byteLength": 229895
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/BVGER-PORTAL-PROVENANCE.meta.json",
+      "sha256": "c14cc507d52d0782c56fa26d6f9fd4ba1aa1698685aee39559471173a1091aa9",
+      "byteLength": 679
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/BVGER-PORTAL-PROVENANCE.txt",
+      "sha256": "04f1a4b810550d1bfd5098e3cc5b57a251655abfda0014c948f4de1ef449d966",
+      "byteLength": 71174
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ARR.bin",
+      "sha256": "b1682d2dbfc57519dcf8e1c4cafcb408afbc26a2556ee1cdce19cecb857eee79",
+      "byteLength": 218072
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ARR.law.txt",
+      "sha256": "89ccd3429a883adfc6d6393241be546bf4985df611943fca04094dc6c0d36228",
+      "byteLength": 18494
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ARR.meta.json",
+      "sha256": "01d0b1c65ba7f1d1ed2a517de5655b80ff30fef4cf5cd92bdc984bb8f1fe64aa",
+      "byteLength": 665
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ARR.txt",
+      "sha256": "b1682d2dbfc57519dcf8e1c4cafcb408afbc26a2556ee1cdce19cecb857eee79",
+      "byteLength": 218072
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-STPO.bin",
+      "sha256": "dbb9e52a00b02f469e0dfd2d152415e97b29e04b484d8d4385dfb93e8b841c11",
+      "byteLength": 779694
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-STPO.law.txt",
+      "sha256": "5a0b8b7d06466884a21288c27566ac8fd5c521b2af9eb6cd7f4fbe146b5b51d9",
+      "byteLength": 74734
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-STPO.meta.json",
+      "sha256": "0d7c9a22be533a3a3a50b4eba3066b1661e8b82b952054e115bd68b532fc4cf6",
+      "byteLength": 668
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-STPO.txt",
+      "sha256": "dbb9e52a00b02f469e0dfd2d152415e97b29e04b484d8d4385dfb93e8b841c11",
+      "byteLength": 779694
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-VRPG.bin",
+      "sha256": "a9cbad4db8f4b6454d66f5be9a7840f2f3caca408e4c0fe5cd4f0ced007b72ec",
+      "byteLength": 766435
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-VRPG.law.txt",
+      "sha256": "fcdcfa6475535540f5e92527d56f3ec73cd6337d60a939aa2745c5df733e2e35",
+      "byteLength": 69688
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-VRPG.meta.json",
+      "sha256": "13849c84b7135425e873e8f2edb308e946ee9411dcedb6e6dc09a909fb890566",
+      "byteLength": 668
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-VRPG.txt",
+      "sha256": "a9cbad4db8f4b6454d66f5be9a7840f2f3caca408e4c0fe5cd4f0ced007b72ec",
+      "byteLength": 766435
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ZPO.bin",
+      "sha256": "f21c9383fea361bff7a1759d8dcb086b40c6e30dda7a869f88057fb3de47fb1e",
+      "byteLength": 436834
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ZPO.law.txt",
+      "sha256": "43b960d27c881e338b43d796306491d1bcd4116063fb6f81783f91d7115c3779",
+      "byteLength": 41042
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ZPO.meta.json",
+      "sha256": "0df2f73faa296717dd03f2fa93a477e30231ad99a815608b0fb0957353e779d3",
+      "byteLength": 665
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AG-ZPO.txt",
+      "sha256": "f21c9383fea361bff7a1759d8dcb086b40c6e30dda7a869f88057fb3de47fb1e",
+      "byteLength": 436834
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AR.bin",
+      "sha256": "8671e25bfd366bf3a2e576040d19942302e2d58bb403d2719d466d51097ec1af",
+      "byteLength": 133050
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AR.law.txt",
+      "sha256": "43e7372b2052ba17d4909207073bfa6708e19038ec1a362dd531633d904b056c",
+      "byteLength": 11093
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AR.meta.json",
+      "sha256": "afcd3179cf9a36e50b0dac391ad931075a13a06b810ed872f51a05ebab117173",
+      "byteLength": 623
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-AR.txt",
+      "sha256": "8671e25bfd366bf3a2e576040d19942302e2d58bb403d2719d466d51097ec1af",
+      "byteLength": 133050
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-EUFR-INDEX.bin",
+      "sha256": "225d3a64c95d3658950dd5b2f5977413a5662ba97a12891728dce2f38e39395a",
+      "byteLength": 451
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-EUFR-INDEX.meta.json",
+      "sha256": "c344fc4abe3488251949788304e813d870ef5c6fec14ead69aa8aa658dfefd98",
+      "byteLength": 1860
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-EUFR-INDEX.txt",
+      "sha256": "225d3a64c95d3658950dd5b2f5977413a5662ba97a12891728dce2f38e39395a",
+      "byteLength": 451
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-FR-JG.bin",
+      "sha256": "d86b5eb7d1538744616540ddbfc416a20306fac835d2d5581efaf95e542ee88e",
+      "byteLength": 2799756
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-FR-JG.law.txt",
+      "sha256": "a42a92128d8531fd17c8ae6ae02ce7440a58e84eec47c81d2474331cff8eec75",
+      "byteLength": 164255
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-FR-JG.meta.json",
+      "sha256": "f21b81860039ffd043d46160b4983f1fe9fc918c922fd54f836955736395b532",
+      "byteLength": 631
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-FR-JG.txt",
+      "sha256": "d86b5eb7d1538744616540ddbfc416a20306fac835d2d5581efaf95e542ee88e",
+      "byteLength": 2799756
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-GR.bin",
+      "sha256": "6257a43802eaa9c90c23c2725541a4567e08626d8bc4a37e29bda457f65d43ac",
+      "byteLength": 273620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-GR.law.txt",
+      "sha256": "9d5acf3e1e60d0e0e1ab5e555f01ec0cbcf44d5a2e231861c509d799e06d6082",
+      "byteLength": 15040
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-GR.meta.json",
+      "sha256": "a9706a6e81fd6064ffda56de7509e29e346c5ce645b1d0a6b3212778f935f9d8",
+      "byteLength": 637
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-GR.txt",
+      "sha256": "6257a43802eaa9c90c23c2725541a4567e08626d8bc4a37e29bda457f65d43ac",
+      "byteLength": 273620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-JUSG.bin",
+      "sha256": "9d3104a65d5a7281e3f32398a58a561fb5abe650d41cce62e6e518b22b13e01b",
+      "byteLength": 1311504
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-JUSG.law.txt",
+      "sha256": "02015f61bae73d7022a336165d14c5d2dcc015152e3389216245625006afb9d9",
+      "byteLength": 116297
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-JUSG.meta.json",
+      "sha256": "727c978e4269a923940cf7552ac9077dacb8cc8bb67bdbce9587c8d4e61034c7",
+      "byteLength": 631
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-JUSG.txt",
+      "sha256": "9d3104a65d5a7281e3f32398a58a561fb5abe650d41cce62e6e518b22b13e01b",
+      "byteLength": 1311504
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-VRG.bin",
+      "sha256": "28d32f26aee44403a250a7da1668bdc5c30c08871295aad8585953da816aff5e",
+      "byteLength": 1921092
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-VRG.law.txt",
+      "sha256": "31dbb13b0d8f9d490f472f43b92556883692628b4bac2d1e3fad632f9a974256",
+      "byteLength": 174734
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-VRG.meta.json",
+      "sha256": "7a28a80d419fcfb44b101842701646012ccd9d54da0da99293980cfa4af52ce7",
+      "byteLength": 626
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-LU-VRG.txt",
+      "sha256": "28d32f26aee44403a250a7da1668bdc5c30c08871295aad8585953da816aff5e",
+      "byteLength": 1921092
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-STPO.bin",
+      "sha256": "15964611de31903ef6251c9c03b8cef150b06f00b1f08e5a0f5927ade90f47a3",
+      "byteLength": 477092
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-STPO.law.txt",
+      "sha256": "e32422a3aea653146b7f3b38f00f467af24cf548c6a3925e1f7788b877d7b19f",
+      "byteLength": 44130
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-STPO.meta.json",
+      "sha256": "afe5b2e048143d77188e39bdea2d90fb0d751ac0f5a96e17b24e855f31207818",
+      "byteLength": 634
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-STPO.txt",
+      "sha256": "15964611de31903ef6251c9c03b8cef150b06f00b1f08e5a0f5927ade90f47a3",
+      "byteLength": 477092
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-VRG.bin",
+      "sha256": "bae497de3a2d05deef09b95ad1e5f4a4840475c4b429a28c6ba33e9a99a2e491",
+      "byteLength": 1013404
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-VRG.law.txt",
+      "sha256": "68b8aa63c819645fbd8f26ef9489fb4d2717d3f351526e410a88ab2d20fc8fa0",
+      "byteLength": 98510
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-VRG.meta.json",
+      "sha256": "449c72d44e294d05e7574e87cd3973f1131afd05296a92b3479299c88a0085c2",
+      "byteLength": 634
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-VRG.txt",
+      "sha256": "bae497de3a2d05deef09b95ad1e5f4a4840475c4b429a28c6ba33e9a99a2e491",
+      "byteLength": 1013404
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-ZPO.bin",
+      "sha256": "0e638b0098cdfa9272418a78cdc66ca2884d9bbc47dcf19ea90690ccda13508d",
+      "byteLength": 308683
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-ZPO.law.txt",
+      "sha256": "84c23edd16dbdd9d32d42ba65580710db0116ad1641e63b841c046b58e3ca0cf",
+      "byteLength": 26626
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-ZPO.meta.json",
+      "sha256": "69296bbbfbf29d24eebd07082f67fcf44a4517f7b3a0467e2017c9f3740f1efb",
+      "byteLength": 631
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-SO-ZPO.txt",
+      "sha256": "0e638b0098cdfa9272418a78cdc66ca2884d9bbc47dcf19ea90690ccda13508d",
+      "byteLength": 308683
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-VS.bin",
+      "sha256": "789d9768217f0476e239559603a5ae82a6f3e646bf4ab3482db28eeb1f306e8e",
+      "byteLength": 1275262
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-VS.law.txt",
+      "sha256": "655706fc26a06f43b8ecd880a7d664878b4af2d71eec8748925797b09f11e15f",
+      "byteLength": 93512
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-VS.meta.json",
+      "sha256": "7dc5e3d0456f40ad7d8dbb1a6df346c42293c83d9357ca4b7cc00172ff65a943",
+      "byteLength": 620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-VS.txt",
+      "sha256": "789d9768217f0476e239559603a5ae82a6f3e646bf4ab3482db28eeb1f306e8e",
+      "byteLength": 1275262
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-GOG.bin",
+      "sha256": "341ee68f086de37a7895f91e253f1867897987666eb9ce296451205a4444b6f3",
+      "byteLength": 1882117
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-GOG.law.txt",
+      "sha256": "36f51dd9772b9b295e9be32397613811fd06c95d013cea959a7c5c1328e0be24",
+      "byteLength": 175113
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-GOG.meta.json",
+      "sha256": "9304a17db50750c2aea94979e60c5ac2dd4ce999295624c93efe5723d248c0c8",
+      "byteLength": 632
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-GOG.txt",
+      "sha256": "341ee68f086de37a7895f91e253f1867897987666eb9ce296451205a4444b6f3",
+      "byteLength": 1882117
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-VRG.bin",
+      "sha256": "384643055b9f047abe91685a8dee2f7531b529a00928dbea6b25103b034b3a96",
+      "byteLength": 1254655
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-VRG.law.txt",
+      "sha256": "d4ce684440f5a1efa872f2ba7b0b2c488fd42b46c5380e38349f9d92179ac589",
+      "byteLength": 122893
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-VRG.meta.json",
+      "sha256": "fcc7a447f2981abccbff0c7fe489b6ba119ae2226af0004bfee1cd4e45b3b99f",
+      "byteLength": 632
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/CURRENT-ZG-VRG.txt",
+      "sha256": "384643055b9f047abe91685a8dee2f7531b529a00928dbea6b25103b034b3a96",
+      "byteLength": 1254655
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-1B209.bin",
+      "sha256": "395008a37a00c8eef308d1b95eab1bdd972570ad90fd976573fcf83b8378471e",
+      "byteLength": 34690
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-1B209.meta.json",
+      "sha256": "ad818ba32fb92a9819b31b580696d6dda62df2f358af21512b97bd340dee9973",
+      "byteLength": 815
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-1B209.txt",
+      "sha256": "514fe29861d4393665ddd0b4ea38bcb0414a7bcbaa39f1893178beaafa05c46a",
+      "byteLength": 18204
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-6B730.bin",
+      "sha256": "36df3118e424ed9608afafd4d8711c92e14807f4d2f1b9b93d5af46f05162f1d",
+      "byteLength": 29948
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-6B730.meta.json",
+      "sha256": "d6e961d74e0c4fd6266197fade1703dab728ec12e0429f4818d4a214c40e1a40",
+      "byteLength": 815
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-6B730.txt",
+      "sha256": "1fb755bd57b5796d20b0f1cb3e34e9266a5908094dbe340e63ac7d22e2bb8072",
+      "byteLength": 14355
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-7B32.bin",
+      "sha256": "f3a027d5999494a3819a112839b717d8eb797ad4f98718f4243896a6c2350db3",
+      "byteLength": 37638
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-7B32.meta.json",
+      "sha256": "b4620fdcc8a0836381aa67c37c8524a885c47e7c95962697651223afb7c9fd18",
+      "byteLength": 810
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-7B32.txt",
+      "sha256": "e4d837f6db22b394e5a00cc651501db9445e1815ec7adeca242fdec09141fbef",
+      "byteLength": 19603
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BB2020164.bin",
+      "sha256": "338cb2d2a442d2f43f8714b726ee3b01fb3ef4cec807fd218fce56fc9ba04258",
+      "byteLength": 578726
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BB2020164.meta.json",
+      "sha256": "b1c175433defed47964552c293e0b30a11409fe7400d106a72c00eecd8c6fde0",
+      "byteLength": 724
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BB2020164.txt",
+      "sha256": "1d76508246cf9797356dce615bff79c6f733921d8e7c6775f9ebc2ea757772a8",
+      "byteLength": 25295
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BBL2008.bin",
+      "sha256": "0b9bb520aff41e0ec634666b5c1f57751f1e7a971a4a9b99695f71fdf06cafb1",
+      "byteLength": 710167
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BBL2008.meta.json",
+      "sha256": "6fc2816ab09afbf015ddc536c20fce8d2669238d8397c550cedd02cbdb5be5ca",
+      "byteLength": 824
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BBL2008.txt",
+      "sha256": "fa224d0a5cd4da87ac0daf388085afe31fc2841cedbdf915a11576b6b27f526b",
+      "byteLength": 191181
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BBL2025.bin",
+      "sha256": "cedb926da364387d5ef8783803e4cb3dcc4777f94e5d32492f9790262e876551",
+      "byteLength": 115887
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BBL2025.meta.json",
+      "sha256": "c1be610f670f294f0515e502753777d1f8d1461e7ac2c8b9cb7230df09a824a0",
+      "byteLength": 797
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BBL2025.txt",
+      "sha256": "1e6e449646b14e43847b8e77ce03713fda54f9626a9cfdd3fc5ca47753456728",
+      "byteLength": 82073
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BGE124.bin",
+      "sha256": "5fff1a79b9998e824e8560d8f7e05e4d8a936b347a652aaf90eea3c619f23614",
+      "byteLength": 25338
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BGE124.meta.json",
+      "sha256": "1dc050088d9709cede97383e1d7d25ef07c39a6dc1ce956bf9f0446578f9e3bb",
+      "byteLength": 808
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BGE124.txt",
+      "sha256": "9c456e9e379185dcc2bd278179f59e96eb0b5b51f7c3079921338ea85680c9a0",
+      "byteLength": 8709
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BGG.bin",
+      "sha256": "73a86a718c85a5c0f4725fab0da0c4747619487b8a4e6479590f87a40b55d2f6",
+      "byteLength": 229214
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BGG.meta.json",
+      "sha256": "6ac86d149bafacac81a8b5a4434f4513b3ce46356c7b7168ed5981a933d2b3c6",
+      "byteLength": 817
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BGG.txt",
+      "sha256": "5e264bbff62e3e1bc5edf825de093583437a77527901f6b730c73f50ccda7fe2",
+      "byteLength": 100295
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BSTGER-PROVENANCE2.bin",
+      "sha256": "d94125512f78aad6782dcde0a3abbf960ee30d7d65d5ef04e7df783f0ed62dad",
+      "byteLength": 9404
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BSTGER-PROVENANCE2.meta.json",
+      "sha256": "459252b8488160c620fd580d6fe2baba10a9c36d088c99832deb5f21d1b77ae4",
+      "byteLength": 657
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-BSTGER-PROVENANCE2.txt",
+      "sha256": "4cc79c21d1081f9ef664942ce1a6dbfca8f435a04910b75f7b1554ffac652117",
+      "byteLength": 18
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-D6953.bin",
+      "sha256": "ad2abb1c1f758a501c21a246cf41b33c3bce754491a1da5daefff93cb92f8678",
+      "byteLength": 221576
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-D6953.meta.json",
+      "sha256": "aca68f35ca70e5c2412b159a7ec814bd3ce1a18be30d17d1f85d3f4e9310f643",
+      "byteLength": 726
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-D6953.txt",
+      "sha256": "cacd48465bb397a1cf289f30e48e90174b49cc5cc01abeb55d33e2c593f8072c",
+      "byteLength": 20307
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-D7710.bin",
+      "sha256": "efb28e8b32feb2dac0485eedceba31aeb0c718a39c3ca586db8c9240322bacb4",
+      "byteLength": 41720
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-D7710.meta.json",
+      "sha256": "f9cf575e61a26c7da8ae12b3108ff09469596c7e3f020381fcc42a01464612cc",
+      "byteLength": 725
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-D7710.txt",
+      "sha256": "ccadf6008ab7fefdc77d8eb3d116151d54580283ed0eecd9fdd7226776afdaf8",
+      "byteLength": 22214
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-EUFR.bin",
+      "sha256": "a047e6bd87b0eafbce204283624387684d5b4b52a3cc03f1b105a1efcc615541",
+      "byteLength": 16203
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-EUFR.meta.json",
+      "sha256": "ad94aeaf149b3ab3594822c37cde67ee6eba64bff66bd6226685be3dcae1650c",
+      "byteLength": 851
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-EUFR.txt",
+      "sha256": "766c381442f46d9e6fe21eb48f4539c9c57cb22a1ed99cecc9dbb54bf557cf87",
+      "byteLength": 9919
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-F10031.bin",
+      "sha256": "71eb64b27caa806369f446e70180421824aea0f5f928c11b95cf42a127cddb35",
+      "byteLength": 379610
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-F10031.meta.json",
+      "sha256": "a49cf1d7c1a4b1ee90e3c6ef6ff371cb47ecc7966c646e182f4700974a974be1",
+      "byteLength": 731
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-F10031.txt",
+      "sha256": "17a319c300679d23fbb07bcda85e89a9dac9bff34d7a841965e2cf67b29a33c3",
+      "byteLength": 36245
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-STPO.bin",
+      "sha256": "b664dd64ecfee1796860d0bb10ea1779b4a21e36c2add9684979cb9c49a5c123",
+      "byteLength": 632833
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-STPO.meta.json",
+      "sha256": "3b1f5321e0ffd63b5b23b893750da5570f4bad1f5071c8853e3cf33245854b8f",
+      "byteLength": 820
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-STPO.txt",
+      "sha256": "a709b291f5fffc5fc3120febb5f876e9852c59a65f75787dc23d4189f80eac26",
+      "byteLength": 334350
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-VD-PORTAL.bin",
+      "sha256": "3b10d2307aa2bcbed2afe76dffc43c32908fb8bea7811ef8d70765cd9e82cfe1",
+      "byteLength": 6448
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-VD-PORTAL.meta.json",
+      "sha256": "5f3050dd9a38fa7baf3f2f814444a2ec09c7ec26370ddc341a32524d90ecb3f9",
+      "byteLength": 799
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-VD-PORTAL.txt",
+      "sha256": "db5a2763246c08713d9160d81842735e9c8e07a124f75bfd6327d515544744de",
+      "byteLength": 72
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-VWVG.bin",
+      "sha256": "1c63740e9b8dfece649b68e9b64a11e9c09c609bdcd5c5739ece595e9a0d430d",
+      "byteLength": 167425
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-VWVG.meta.json",
+      "sha256": "2cca828b9e6db92a1d246a8a0bbb69a281a270ca8bf196030daeee0e374f93b3",
+      "byteLength": 852
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-VWVG.txt",
+      "sha256": "da3a2c2c2ff125b98887ecce88d463d3a8605e02d6913d5df11f347065866a85",
+      "byteLength": 70092
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-ZH-ERLASS.bin",
+      "sha256": "3a0e1f621ab15070ec35912760501f626009eacb5e5731c5975f763a4138a416",
+      "byteLength": 84501
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-ZH-ERLASS.meta.json",
+      "sha256": "4cd0c8a295ff488a9c9c813c9a370f222f90faed30584fcc30cfcacb385cbb72",
+      "byteLength": 796
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-ZH-ERLASS.txt",
+      "sha256": "a6c0f54201b3aa70b67936aaa4b6f54fef1dcbb7dd998cecf8cfaf99a7a4dcaa",
+      "byteLength": 30670
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-ZPO.bin",
+      "sha256": "ca6f4841479b0a1df979f00072d54c99c6d1fa0072838bec55b24b9941650ba5",
+      "byteLength": 582104
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-ZPO.meta.json",
+      "sha256": "efc614079a424df640e71129b96d92d76189aa398f060f47736da13b87d01fa4",
+      "byteLength": 817
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/OFFICIAL-ZPO.txt",
+      "sha256": "3ad6c6fa0ceea3d72e4d7baea35796dbea666a077b5df3b4b1d845fa2e46ea56",
+      "byteLength": 236933
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-4A434.bin",
+      "sha256": "72f1069790ccc16b5b2c00277899e1734b783c07645af31a6b276a641a7841e7",
+      "byteLength": 66454
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-4A434.meta.json",
+      "sha256": "8c154c4f3b9726aea7f4dfaa385db4b5454f2e8921741a1ff6a74b7987af97dc",
+      "byteLength": 839
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-4A434.txt",
+      "sha256": "806ecfc6d7aea61dd59ba23448133bfd4de0d99a133442b57952b04199d126f5",
+      "byteLength": 44792
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-4A538.bin",
+      "sha256": "47574ce35806e899a934bb57ff6b49a570ca5505a818d6b2ed6fd190f03a63d1",
+      "byteLength": 26356
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-4A538.meta.json",
+      "sha256": "b173974d3ba20fea6bf188d5392db9f315189c8f454c5237e0eeb475b6dba4f2",
+      "byteLength": 833
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-4A538.txt",
+      "sha256": "415eb1e1413b6003c11d3ff8b28d8b110d1747b3115599d1da7183fb14c610b9",
+      "byteLength": 10409
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-7B561.bin",
+      "sha256": "158036dbac238608a8684f73f1a12e5803ff5c5f1453ba723ce6dc0f4a4c88c2",
+      "byteLength": 26388
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-7B561.meta.json",
+      "sha256": "ad770bceed8f446c76e26c077d8094d87946e15269bf66a10357991fcdc9b25e",
+      "byteLength": 849
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-7B561.txt",
+      "sha256": "a4eb2bcf6d79560ebd7728b762aa0dabea1d4edfef4ac77d0acb977b04e73729",
+      "byteLength": 10261
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-9C396.meta.json",
+      "sha256": "c74f5a8bd9fc2478693b467f387ea16aa4c0d843e729908714619b02c44f8d8b",
+      "byteLength": 867
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-AG-ARR.meta.json",
+      "sha256": "2042cc670a50dfcae29e492e7097100487b8d7eecc6e3e1f5e1834113dcebd71",
+      "byteLength": 614
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-AG-ZPO.meta.json",
+      "sha256": "e76c92338f5cd394b67e148bf64d077ada5a1732848b0842aac7a746d923c0f6",
+      "byteLength": 671
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-BGE115IV266.bin",
+      "sha256": "55743741d649a67fd50bca7b287760b25f838adc792e1dc4798bc025c3421f44",
+      "byteLength": 24768
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-BGE115IV266.meta.json",
+      "sha256": "8d1a10d4be5e6efa00d82853e37dd325f43f5c65b8dc40df09b8f71d2bf56583",
+      "byteLength": 863
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-BGE115IV266.txt",
+      "sha256": "3a97902ebdad316751158b1f3f7869e54c9aa28c0c2d8bea3b744fc2f2ee9a81",
+      "byteLength": 8955
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-BGE124II527.meta.json",
+      "sha256": "ceb40ff4e2b138d038d3246f4d3c9e2d4193cbcc425099d63d7768df7727009b",
+      "byteLength": 765
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-BGG.meta.json",
+      "sha256": "1b2e17bfd356c0bc7055232df621715cf252b335cb943faf8628b17b82554e1c",
+      "byteLength": 622
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-EUFRUEB.meta.json",
+      "sha256": "6d62329755aef1bd6035b24b62d3f7d85bc6a6a37fffc9a7559e3c5b50559391",
+      "byteLength": 650
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-FR-JG.meta.json",
+      "sha256": "d85a5adffcf25dbf1d8d9239992a78dae4c5e4979d8b048a7ab4ce7e162531e2",
+      "byteLength": 641
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-FR-PRAXIS.meta.json",
+      "sha256": "b247425af85c25a0aae9dceeea789c17038c6ab794fec1ce8f6b3d39ba661f89",
+      "byteLength": 759
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-GR.meta.json",
+      "sha256": "a2807565cc9eac58894bc32f16a1e40935003009cbbc698e5145b98e0fa67252",
+      "byteLength": 642
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LANDERON.bin",
+      "sha256": "c9fb47aa75e6e67842443e4b63d8f692c403634c1d5e8ddda735b2895e2487af",
+      "byteLength": 154335
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LANDERON.meta.json",
+      "sha256": "0ccb0576b49ee56d1e1e9528240cd5584faf5cdd5890510ef63f78ff4ece84a5",
+      "byteLength": 675
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LANDERON.txt",
+      "sha256": "f3a3aa7b1563fd929e58412ddcfa26bd9b73841c4e2228426dfdacdad6ead87e",
+      "byteLength": 1860
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LDJF.bin",
+      "sha256": "7efee9699342f6ae5ee96ef858a00106a4be1d3e48d13355dc1c246c5d5ade73",
+      "byteLength": 118498
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LDJF.meta.json",
+      "sha256": "b6ace5e579bd8fc81bc5a04ac74c57c89a5c6723962cfcf66381bee559b65a45",
+      "byteLength": 661
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LDJF.txt",
+      "sha256": "1c96fa737130757793e24e2bbb1eabc91239380a3504fe1261b77e0223f12b43",
+      "byteLength": 3887
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LPA.bin",
+      "sha256": "b67771445345e9a31e646b3678f5312c5b9c66f25d056fa753d74b5f4c8d4417",
+      "byteLength": 310084
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LPA.meta.json",
+      "sha256": "e0bbabf848596bdabce8b3b76630d722693327cd97bbc8246dff160ffe2c57b1",
+      "byteLength": 661
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-LPA.txt",
+      "sha256": "3551a91c4388de5d5bf756acc9482ee8a40a4fadde2814e776a3247ef0f48e94",
+      "byteLength": 63612
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-RDF.bin",
+      "sha256": "17446d7cce4c67e7a2f29827e4ff9e69740b30771da8bde76c0589982c9a8ffb",
+      "byteLength": 151676
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-RDF.meta.json",
+      "sha256": "d5359240b1e7e42ab992121779332f0d8b64a8bf9984a1e501fba2d73fe58c30",
+      "byteLength": 660
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-NE-RDF.txt",
+      "sha256": "2d57784c1169bfc18ca352df6c2f0795bf32e3fedc8c5aa0505306e0535bd418",
+      "byteLength": 17745
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-GS201463.bin",
+      "sha256": "36fc73547238295638bee30ae2ef385013643b1208057115e44b403764b06989",
+      "byteLength": 140375
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-GS201463.meta.json",
+      "sha256": "730d40d5fdba969b72f349268afa7d988ee288292665e5b6ddbde4fe22269c79",
+      "byteLength": 707
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-GS201463.txt",
+      "sha256": "75a3ab759337b6cfb4c8f28867ee476a5750f7c0bded92b536680bbcd8af1a08",
+      "byteLength": 10926
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-STPO.meta.json",
+      "sha256": "73c842b2010bb340010ed1a0854fe6469dfaad7f850c0b8cb7302f6a20cacfa1",
+      "byteLength": 628
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-ZPO.meta.json",
+      "sha256": "95bdbe989373155b7c40855ac159077817a948f8767cafaf99af465a40226e0d",
+      "byteLength": 641
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-ZPO2015.bin",
+      "sha256": "047a11f225e426d1d7069e173b7d6c49347051124360c0e6ff244689b0d443a0",
+      "byteLength": 263469
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-ZPO2015.meta.json",
+      "sha256": "956e9c0dfbaffb8455ed2bd2e46dd8410d219ab05b427669ebb5dec8e9ed9e90",
+      "byteLength": 652
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-SO-ZPO2015.txt",
+      "sha256": "080941bba3e99c86a281798ad2379fde10096cc056a4bbbe37854ba31e1df9e6",
+      "byteLength": 17073
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-STPO.meta.json",
+      "sha256": "4a31d180410fceaa1fadbba0ed84a8f1882d973b4e9c57fa4fb0d19bc950ffd5",
+      "byteLength": 625
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-VWVG.meta.json",
+      "sha256": "ecb03f2cea146edb183ebcc4d8b22052ed9a919787c2ca10ce64111e3d3b10d6",
+      "byteLength": 641
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22-ZPO.meta.json",
+      "sha256": "e855c86490a2ae444e526585cedae6be29086fc9cde1771eaa283ef5afd1545b",
+      "byteLength": 622
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-AG-STPO.meta.json",
+      "sha256": "b31d8c6b07f74812eee6f012900846b8db57c76635d76cf9de74b2070411adcf",
+      "byteLength": 689
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-AG-VRPG.meta.json",
+      "sha256": "73ae408defbf2f6c1550696a0896f6eac39b706339642e761574526134ea6c33",
+      "byteLength": 689
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BGER-2E8.bin",
+      "sha256": "3ad6f445c732f65aea8e46066751f76971041d75d40184158843cfb2e2b6db90",
+      "byteLength": 54604
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BGER-2E8.meta.json",
+      "sha256": "94f79eef19f4bbaa1f0ead4118043069c3757aad5bc4d060140b59d75fc05fff",
+      "byteLength": 859
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BGER-2E8.txt",
+      "sha256": "79ac4825019e1cf7cc567e4facf513d3fc75e0ad44ba83178efe018259707514",
+      "byteLength": 35129
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BGER-9C396.bin",
+      "sha256": "2fc7d211b30c5ff833dcbcc2179d4be5fefe8be353da85f0cbd28d76d31302ba",
+      "byteLength": 40582
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BGER-9C396.meta.json",
+      "sha256": "2ee101024150867162e37f769c655d1d154fa154adf528de10ef5a01da436acc",
+      "byteLength": 873
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BGER-9C396.txt",
+      "sha256": "c9ed2fc275659a043f1b10327104871f8c66883fafa2f333c110b4326c687d69",
+      "byteLength": 23631
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-7B32.meta.json",
+      "sha256": "b08ab7d93e7d3469aaf9e45ebc995a8db8bf56703d9c6d00ee9eabb47edc4719",
+      "byteLength": 770
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-9C396.meta.json",
+      "sha256": "9dc0911157a4e1e8167034b321a372062487644363689ce78b7fcbf9b6ad483f",
+      "byteLength": 857
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-BB2020164.meta.json",
+      "sha256": "d9e8f6938a1cde102c2bc9177b32992cffad6997f2dfebddf0622ec8571546f7",
+      "byteLength": 785
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-BBL2008.meta.json",
+      "sha256": "981d5b74d7e7e82f27cb1c9e83d28006b141cc3c008dab7520cedb4557a51d08",
+      "byteLength": 668
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-BBL2025.meta.json",
+      "sha256": "8384a810cdeca1a213bee7ec1adb518b30ea11eb5d4dfd23ee31b19ccec55de7",
+      "byteLength": 666
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-BGE115IV266.meta.json",
+      "sha256": "9e48457ea19152b5b3afab9982cbf16b81edf575e3b5155d9237b3fd276afb73",
+      "byteLength": 867
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-D6953.meta.json",
+      "sha256": "cf9fb0030fad947c6258ccc389d28339643e376f116a79eb98164d6569dc02df",
+      "byteLength": 775
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-D7710.meta.json",
+      "sha256": "4d31b989bb193794b7b8a23845cc65e26527b15e4cb54fbcc20fd3521e7f9d0e",
+      "byteLength": 775
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-F10031.meta.json",
+      "sha256": "b27da217cca1fad1e0dc5fc51ca126fd1145207b594db7fc14bbfe7c9f2e96ff",
+      "byteLength": 780
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-VWVG2027.bin",
+      "sha256": "2480e0e188e705eef8c9d6c8f2341d78d9e0afddd498e05fbddeeeae627c3bdf",
+      "byteLength": 207225
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-VWVG2027.meta.json",
+      "sha256": "6e6a016399b4e18ba50ce73cc297824f952b2a2c200a039d1dfd1e81bb01324e",
+      "byteLength": 894
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-BUND-VWVG2027.txt",
+      "sha256": "7097e501efa476563f134896aed64e8219c0932537737b6a623a8c2961da57c6",
+      "byteLength": 70427
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-CPC.bin",
+      "sha256": "59429029a035cabe7490b690b09409c6bce713758edee2c93dee3ccd04af8033",
+      "byteLength": 137576
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-CPC.meta.json",
+      "sha256": "3954aaa7400fce0cac8af827eeeb866c4a4e3704d0168003115bbcf28043d505",
+      "byteLength": 671
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-CPC.txt",
+      "sha256": "bd17f4923677dfbe987a60da637c911e47d5abebc45a0e362d697a73282296f7",
+      "byteLength": 11728
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-CPP.bin",
+      "sha256": "1d34e203b06431a8f63e73c14741f23a67f748d8ac821c670ed186609b81da5d",
+      "byteLength": 312081
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-CPP.meta.json",
+      "sha256": "6ed542da2fb10014267ab65aaaa176e57f7eea907890193a0d7c13ac4908e583",
+      "byteLength": 671
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-CPP.txt",
+      "sha256": "06aa13484085842530c0cb3d9f33f568343f8e1ad3120e7cc32d20e59a5e338e",
+      "byteLength": 19026
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-NE-RDF.meta.json",
+      "sha256": "8de4dfea1ba7bb8e7a2c58da78df7aa10511daf75864e19361c599a8150e5f50",
+      "byteLength": 654
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-AR.meta.json",
+      "sha256": "03d672c82e40747b295bed0636c2cb64e1552a71800b8a0ed0b0e3f09e51e1ed",
+      "byteLength": 660
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-BGG-TRANSFER.meta.json",
+      "sha256": "f3f455faf64771c289257d599a84f338f292a6094bd40f591e38b55044521145",
+      "byteLength": 862
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-LU-JUSG.meta.json",
+      "sha256": "7ff7462b837f789cbe9ecf989b571c573f7021455d8eae20f71a304b0aaf69cf",
+      "byteLength": 642
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-LU-VRG.meta.json",
+      "sha256": "b4019b55655adda28713c148833de33fba6905df37c0044e6aab2def2023fbe6",
+      "byteLength": 637
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SG-NEG.bin",
+      "sha256": "db8086d9ba5d1ba2508ad54523dd519fd73f7f566fd69ce506d4e8cf57cd8564",
+      "byteLength": 64269
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SG-NEG.meta.json",
+      "sha256": "c58a7c84ba35cfc259379a91bd146eaba62a8c78fa76f1a06a3fbdcc95da4787",
+      "byteLength": 700
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SG-NEG.txt",
+      "sha256": "35ef94b6aa25aacb714847d71684d3cf5c41ddef8ca90b8be277f1f9e4e1fa1c",
+      "byteLength": 41225
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SG-POS.bin",
+      "sha256": "8bf96ae549c066a83617a90408c7d395ba6abcbffac9bbb9fcf087acb2508e4d",
+      "byteLength": 30620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SG-POS.meta.json",
+      "sha256": "8dd121105d480200755b2b360d7910d7f327cb6d3dc0268bbd2f32e9c3bbb68a",
+      "byteLength": 698
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SG-POS.txt",
+      "sha256": "e05262438b0899841fcdbadb482f1186c161808abe222ab6c7fda8e768b26d9d",
+      "byteLength": 11827
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SH.bin",
+      "sha256": "64014b071f5bf266c7b22b2b57a6978047f54e8c999888eb3c54698c50845cc0",
+      "byteLength": 4267387
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SH.meta.json",
+      "sha256": "68cb75598a789b71ace09cb1e618d18edf4049911f4bfac0b2b0a9640b413ab4",
+      "byteLength": 693
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-SH.txt",
+      "sha256": "02e909733476cd820986745d02cffc8d13480ba4b0b353850c94adad16b0f512",
+      "byteLength": 714638
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-STPO-LIMIT.meta.json",
+      "sha256": "a212fa6ac68b5404ef6c4fa9a2c53ea51893cc55d6957e4f9215b23ba2cd4ff0",
+      "byteLength": 778
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-VD-BGG.meta.json",
+      "sha256": "35406e554c6cddb4504e8aea50881aaa7870a51c1a9f6db290723ca241fb94c9",
+      "byteLength": 766
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-VD.bin",
+      "sha256": "2594514aa55120b3d207816183c6547df2ed4ace4177097423edf86b6c410aca",
+      "byteLength": 138026
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-VD.meta.json",
+      "sha256": "bbaa00166c8eb5146a974858c9b6cae337660157a448e134ca41978c9fd7037c",
+      "byteLength": 639
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-VD.txt",
+      "sha256": "66d40d826d48fbc87ac1860509f17878883f267702278c615c798d25b709f84c",
+      "byteLength": 71320
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-VS.meta.json",
+      "sha256": "7a6d0f6cd280900406d1b25f8bcfae12776e9c7ccb172c484e24974898d7eb75",
+      "byteLength": 659
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-ZG-GOG.meta.json",
+      "sha256": "5a15eeccf160b7fc484c2f68d8f2c4d4420fd5ae0bf9863c07a0d92ca223616a",
+      "byteLength": 643
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-ZG-VRG.meta.json",
+      "sha256": "a7078d26f361c9cca9d43f79dc95a848625e437cfa7b22415e9df1d22d2578a8",
+      "byteLength": 672
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-ZH.bin",
+      "sha256": "5eacdab0463786c7119d6ccd6c23c9cc0e3eaa3221099e37cda5b85aaa29a493",
+      "byteLength": 633869
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-ZH.meta.json",
+      "sha256": "a4d2480cdf6c32ae4a53726590d9be45db7ed02d2dc2a8e799dc12ebc56efb22",
+      "byteLength": 787
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-PROC-ZH.txt",
+      "sha256": "11cc8f4e94cf87fd6830a6d5356f3780e2e93e94a52e1643f787c13fddc5bfcd",
+      "byteLength": 92899
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/raw/SRC-AP22CLOSE-SO-VRG.meta.json",
+      "sha256": "5e9dad0aab9ff3c958bd97d4f1afc3c7a4b13a2f832bafdacf6ec0de6c66f7a9",
+      "byteLength": 656
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/activation/zh-urls.json",
+      "sha256": "4c7200e85e473d6c959e0c6461d3f70b3b8e0875fe36e685e1c99f6accb67e34",
+      "byteLength": 263
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/assess.py",
+      "sha256": "187d40e78babdfb2cece2c2e97024ec5d01f801b744ec87c7a3c7f3f262b6bca",
+      "byteLength": 4910
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/build-review.py",
+      "sha256": "ee16869f9342c82df64e195b73348a47454dbb0ab02626af53fe0159597e16b8",
+      "byteLength": 16927
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/compare-judgments.py",
+      "sha256": "de5842f1fa41854a0366ea7bae348c99060a12a749647f695531e762e1ce4971",
+      "byteLength": 1725
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/entscheidsuche-8C767-search.json",
+      "sha256": "bdbefb993a289f4ce8db5be991af5a2215720ae1be2fc08ac85f3d10ad856391",
+      "byteLength": 12123
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/entscheidsuche-8C767.json",
+      "sha256": "e424f3dd11d57dbb1efcc0892d84863815d40389689afe057ad2c3f08d5a9397",
+      "byteLength": 55957
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/index-and-content-assessment.json",
+      "sha256": "69ed969e374780de8a6b7d57615866646375541f7b40f709522d93dd4b0eebca",
+      "byteLength": 16289
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/JUD-AP17C-VGER-BE-100-2024-8-20240404-mcp.json",
+      "sha256": "41cfd045307d7b33e6dbdbc5508a6316cd4cf61cb0b04b86a887f3ff947d8fa1",
+      "byteLength": 61396
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/JUD-AP17C-VGER-BE-200-2017-814-20180117-mcp.json",
+      "sha256": "39a2ffefb35b1ffd584309e91742b26503042eb079823b0c62844ca2cf283f69",
+      "byteLength": 38566
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/JUD-BE-VG-100-2016-347-mcp.json",
+      "sha256": "59f0dbf64e8a4ce588548970cbbc24693a5793b506b7fb4f1e244a659f761691",
+      "byteLength": 85326
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/JUD-BE-VG-100-2017-270-mcp.json",
+      "sha256": "d26bc9980879a37ea210cf394131faec1d8718be1844adfa6f80dc5f0274ba66",
+      "byteLength": 31791
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/JUD-BE-VG-100-2021-189-mcp.json",
+      "sha256": "0319e8317b25a08a683efbcd7b2d709c2f6d93564f73bb8044ad01494f725ee6",
+      "byteLength": 64350
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/judgment-text-comparison.json",
+      "sha256": "ff97d777695f0ed5fc0e1db196b8a2915bd7550486d84911c419c8ef1f6b1034",
+      "byteLength": 3920
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/refresh.py",
+      "sha256": "c7b045773ca073cea8004133dbca2340307860eba0d0cf68ee307f7ee2ea2509",
+      "byteLength": 3722
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-01.json",
+      "sha256": "ff51bec746a3744d4450fedae9a378454da6971cfdf474c579b312c068285140",
+      "byteLength": 68455
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02.json",
+      "sha256": "bbd7eb6aba4fece389dff5e67175f8eda7f1eb7848354293920c76430c17d916",
+      "byteLength": 102093
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/_LG-2025-01-01.response",
+      "sha256": "c680b7c5cafdbc03117e7d2f7677256233e993cfc32585c36dd625a640cfc45c",
+      "byteLength": 60972
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/_LV-2025-01-01.response",
+      "sha256": "df350d07d379a8b614cc4bccf9b8f40157d98e5560229110dae5f471392e9d56",
+      "byteLength": 63018
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/AP20-impacts.response",
+      "sha256": "c0518da82453738b4e4244e1ca0601232dffafb463147c4f8656180f818c56e4",
+      "byteLength": 51869
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/AP20-versions.response",
+      "sha256": "e282a6f00c20cff6d56e8a20a5bbbaeefcf861dbf7a046d476a2fec1e2417b2a",
+      "byteLength": 12810
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/AS-2025-314.response",
+      "sha256": "596ebca30dc9dc237230bccb2bbb83dfb0adc6d2924052339677ac9fd952b210",
+      "byteLength": 6207
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/AS-2026-232.response",
+      "sha256": "fec5c73a32d76c5bbe5070d5d6287c9b72697ffd934dbcc08e8246b51d3c814b",
+      "byteLength": 117103
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/ATSG-2024-01-01.response",
+      "sha256": "9c3f463d0403101f7c567b37b2fdf53c9f8889bb8a26a9629ef077592829288c",
+      "byteLength": 139093
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/AVIV-20270201-availability.response",
+      "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+      "byteLength": 77151
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/BBl-2025-2891.response",
+      "sha256": "2211d468f2b9823774b53d3bda26afadf1d6019f507449a55471a9aade207137",
+      "byteLength": 41413
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/BE-EGELG-API.response",
+      "sha256": "9c57f7eff41706e7e53d97dcf553163c7ef3618aabbfa5e5c0e3442288f8fed7",
+      "byteLength": 308688
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/BE-EGKUMV-API.response",
+      "sha256": "876b659df7bf16c41583e898663c7fd3796a581253870722e80618e3b63321d9",
+      "byteLength": 1404859
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/BE-GSOG-API.response",
+      "sha256": "78095ce15851896ec4bc7067abf3a7327772021d960841b904594dc9d8ae259f",
+      "byteLength": 2770817
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/BE-KFAMZG-API.response",
+      "sha256": "c61e57670f8f74217d433b12c271dc613548465b04a46e68e8d32792ed4d08d3",
+      "byteLength": 612842
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/BE-VRPG-API.response",
+      "sha256": "ab3fbad2d98051823550e3a7f756494bb56bfc051957a972d80a58ce2b8cde62",
+      "byteLength": 2755478
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EGELG-3072.pdf.response",
+      "sha256": "b268565840fab2be4c4b3190c6dc07c5205fd53d478f1032e43427dc3a760261",
+      "byteLength": 220691
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EGKUMV-2435.pdf.response",
+      "sha256": "bd3e77b1c87f693f9f038026634c361ff0f48c1bdd40272dd81a9654f88254ba",
+      "byteLength": 1349951
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EGKUMV-3445.pdf.response",
+      "sha256": "e916e5f576fc962af233a7bb39f3eebe5fb4a4fcb92bf015ca4122f11d8c9799",
+      "byteLength": 1367157
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/ELG-2026-01-01.response",
+      "sha256": "e39f79e9aca4d307abb28f01adfd2a6cff1f37f902fd7e8ad18533c2980604f0",
+      "byteLength": 132007
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/ELG-2027-01-01.response",
+      "sha256": "943fe55f27d874f0977171ddebf8873847c76dcdb8fd19ca17a2b7dffea4d101",
+      "byteLength": 135012
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EOG-2025-01-28.response",
+      "sha256": "4582a8e16ae3da9ee5bbe513b71492ea97438571fdb511d598383488ff32326c",
+      "byteLength": 168501
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EOG-2026-06-01.response",
+      "sha256": "061e1327d1117bb82640efba2a4b91f05b626160596416e9ee0f72a4a522aa18",
+      "byteLength": 164215
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EOG-2027-07-01.response",
+      "sha256": "e746588252680752134c1d6b9bb5a978d5c93a882518f3e7b670aceff00185f9",
+      "byteLength": 201533
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EOV-2025-01-01.response",
+      "sha256": "e90af55638fd1b0e4c349a646229ee9f2214805e046fc44d562df9c9d23746df",
+      "byteLength": 117706
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EOV-2026-06-01.response",
+      "sha256": "23a5298bdc465483b4b11494d0f737b57eea67a56baff27e08dc7ac24acc8a15",
+      "byteLength": 132687
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/EOV-2027-07-01.response",
+      "sha256": "e21a9a63b6db32b18b4e90dddac94311ed820a34ab44ced01ac482d9ff46423f",
+      "byteLength": 162914
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/FamZG-2026-01-01.response",
+      "sha256": "cc46809b6110357c899f54ace16be0e27753e949bbf3f860c2052b14967bafbd",
+      "byteLength": 83306
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/FLG-2024-01-01.response",
+      "sha256": "03c4f01fcbeb88f32583e239c9c8564c3e7d02dad64554bb3d8e45524549abee",
+      "byteLength": 70704
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/FLG-2027-07-01.response",
+      "sha256": "3f22c1d881d250c3bca737ea964bcea1b0c0a6936497bb92af87f2b3c9e79e8b",
+      "byteLength": 61837
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/FLV-2014-04-23.response",
+      "sha256": "05a35158e2c3f1c1db06d758e258bc29c652b03d326274b60eeb29f54f89dddb",
+      "byteLength": 22181
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/future-index.response",
+      "sha256": "0b727bab6cd359af5454752353c9b09009fe3f970d61d5383b0562331cb18a91",
+      "byteLength": 48317
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/GSOG-3144.pdf.response",
+      "sha256": "dc468710cc6e28ccffd796175e7205361a9ec3c6a0926ddc02caf51acf889cdd",
+      "byteLength": 1459159
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/GSOG-3367.pdf.response",
+      "sha256": "4a892dc8ed79d278ec42a5f43d30ecdb49ef4a0d08f2c7ac139c58903c38bb04",
+      "byteLength": 1832662
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/JUD-BE-VG-200-2026-421.response",
+      "sha256": "2567f085f16ca0297e2a1bcf2c0c6b3b0d7acd334bd35a7ab267b11f59b42ff0",
+      "byteLength": 71743
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/JUD-BGER-1C-275-2009.response",
+      "sha256": "23ea815edf308ae7a8da3eba57e945f3e2c14923fe877b53485b821e1f390b46",
+      "byteLength": 40666
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/JUD-BGER-8C-620-2007.response",
+      "sha256": "b1688af8bffee369f389b12b8f1f6d1d582f3a4f6008a5ab41acbf14e7933be4",
+      "byteLength": 11697
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/JUD-BGER-9C-757-2007.response",
+      "sha256": "215f39ab6c35a472d323682c7ce069a34375b9a651204e6c20eef89e79c39fe5",
+      "byteLength": 12659
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/KFAMZG-1993.pdf.response",
+      "sha256": "59b68beabd9bdca43a468209e7bd8c04ab32837ab291d3783fc77b5722f6174e",
+      "byteLength": 333168
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/MVG-2024-01-01.response",
+      "sha256": "a0269ec2fe8606f6858da9462260678055e418cea6c2e348f1f8b91f8c448e32",
+      "byteLength": 218378
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/MVV-2026-01-01.response",
+      "sha256": "e480ae0b662e58f4540c87fe51b5faba6695e4f12c0fd855ef3d9db71326c83d",
+      "byteLength": 98879
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-AHVG-20260101.response",
+      "sha256": "38934fa0eb377886dffb1ed8ddf3bc4bb56543e9ccf9b4aefb4e8fb816110dad",
+      "byteLength": 449308
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-AHVG-20270101.response",
+      "sha256": "49f9aca40f5dd10f9ff787d024211eb6873d07df30f92d410853ae590a6031eb",
+      "byteLength": 449896
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-FRG-BE-20210401.response",
+      "sha256": "1894ea812b87e55dd6bda23262a683bdf7ad8b9e1cbe6e59c91112df733cdee8",
+      "byteLength": 219745
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVG-20260101.response",
+      "sha256": "e4666b2faea750ee0e124f82e22ca4a0b19caf2c514441279ff8f5346a546402",
+      "byteLength": 444773
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVG-20270101.response",
+      "sha256": "ef0f5e59c056aa73f13036ffcdc62cfe18f027a773198c389fa196fe4419d99c",
+      "byteLength": 459415
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVOEB-20220201.response",
+      "sha256": "364dc94aac78624cf98d999744ce0cf1fe3fc4d2ab64e315c0ecf5bd3595dca8",
+      "byteLength": 1681961
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVOEB-OLD-20100701.response",
+      "sha256": "3dfe3b2ce3a1ef6ad9b9bde9f1448a765914cb0e226fff4bd927ed2a314c24b1",
+      "byteLength": 422500
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVOEBG-20220201.response",
+      "sha256": "fd083b588cd93109554e3243fef5817817cebc8ce42fa706f646b7cfd1196be9",
+      "byteLength": 224139
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVOEBV-20240901.response",
+      "sha256": "93b3119bf558a0e23a32d775802928c4f3c49846345982d6519bf9dea6863060",
+      "byteLength": 611405
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVV-20250601.response",
+      "sha256": "8703bb62541a6908faa5aee5b8ea184d64adb0bde583114b9fec749110efdb3f",
+      "byteLength": 457962
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-IVV-20270701.response",
+      "sha256": "f5a087bb190f030571d434d07c7fc531df649e1c0bd6a3b8430bc44c09862587",
+      "byteLength": 411037
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP17C-UVG-20260101.response",
+      "sha256": "b7a794b65ff58d82d6e2113439048e0b4acc9ee27ca782e3aa5412c45090b167",
+      "byteLength": 296475
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AMG-BE-ART35.response",
+      "sha256": "d810db9160f0ca647c3ff1051a4a52c768a6f6c69bfdffdc7c784690994888e5",
+      "byteLength": 759497
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AVIG-20260101.response",
+      "sha256": "0e6df9120acc98d859ece90883a4d768ab98032efc93db41d1da718007bd0411",
+      "byteLength": 426684
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AVIV-20260101.response",
+      "sha256": "e9903774d2e0f629fa55be79f522609111bfdc955e7a26db7f0b3e8ff45c2c8b",
+      "byteLength": 352545
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AVIV-20260801.response",
+      "sha256": "5357eb9666f0294d5adcf738e449e1516e965296346b4f0128f1434194f8937b",
+      "byteLength": 352547
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AVIV-20270101.response",
+      "sha256": "54f9f68c1691e6e7f89d5877b4b3e82083d5d449ed08d845957305de3d871349",
+      "byteLength": 352798
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AVIV-AS-2025-814.response",
+      "sha256": "efebc389bfa708f2965248204713f6798e83a0276a5745088518de426eb7ac39",
+      "byteLength": 136305
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C2-AVIV-AS-2026-258.response",
+      "sha256": "e05054e3d463535c987b30b86b3bd3289236404c331a6ccc881ce3570eb04fac",
+      "byteLength": 5623
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C3-KVG-20260101.response",
+      "sha256": "7fbede8de313f1f6accd376fe29ba3ef76880de1f60aca8923bc25cf730740f1",
+      "byteLength": 454109
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-AP19C3-KVG-20260701.response",
+      "sha256": "32b0745cd3827c26d6ad5a0789d45269509e980a671afc70fdcbade07f64f8b9",
+      "byteLength": 432753
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-BGG-20260401.response",
+      "sha256": "564be83eab54542e5952955bd939d8118f2e6b1cd84339d91fb333a9fce7b0fa",
+      "byteLength": 230410
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-BPR-20221023.response",
+      "sha256": "2d6bf6ab96aeeda585ce034607c03b640b43e757758451d0a0238f0a3c7d71d8",
+      "byteLength": 156164
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-BUNDESFEIERTAG-19940701.response",
+      "sha256": "f27e0ad0708dd3a4a0a58d43fad3204a11a726d28e0714ade11254eee7311a40",
+      "byteLength": 5690
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-PRG-BE-CURRENT.response",
+      "sha256": "79e9095cecec1a1062b892d5575d05d12764955b9b8d3f274aefb0fd8a9b30c2",
+      "byteLength": 2842760
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-PRG-MATERIALS-2018.response",
+      "sha256": "d9d9a14790adcd7eeab513751891bd78aa8f896dd6291ca23e996629d1f53e18",
+      "byteLength": 562535
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-PRV-BE-CURRENT.response",
+      "sha256": "8fce2fec3eb4b4e9fdb55eda8a84f191693f36c4ed35ce473819994b66638a14",
+      "byteLength": 1174653
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-RRB-498-2024.response",
+      "sha256": "acded0a5ea46a7fdd967d4e0fadbed1ef5e9f80e20891917f3a71186fe0b1d19",
+      "byteLength": 196189
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-STPO-20250401.response",
+      "sha256": "1604c24075aa94ea99baa7e27ebddfc4854278d82ff6e695f687924dcc091b8f",
+      "byteLength": 644529
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-VPR-20220701.response",
+      "sha256": "9d910fd01098df1311f9737534fb04a8876571e124bc14ef7edc5967c480bdf7",
+      "byteLength": 234945
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-VWVG-20220701.response",
+      "sha256": "f104f6e0316b50b86c7fafab4ebcff409e75bf515fe707990519c029d2e25bb0",
+      "byteLength": 133965
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-ZPO-20260701.response",
+      "sha256": "e306d06a12260096787195c15d1d6ae8910fc4f567e3a90fa38d5892b3cacc12",
+      "byteLength": 572482
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/versions.response",
+      "sha256": "aecfe0d70ec4325a431c4bacd5a420b4ce9d0ecf859a950764bef7457ac9ef8a",
+      "byteLength": 9673
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/VPR-20270701.response",
+      "sha256": "1f4befeb63de701804a09fd4d7d6a89f5de0d644ded7501d6df2982f125e958e",
+      "byteLength": 490688
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/VRPG-2855.pdf.response",
+      "sha256": "68d5e02fc998016fb4d3d94c9458aaef8b6e0bff4c6d9fe1a14b3b8e54f7c0bc",
+      "byteLength": 1764154
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/VRPG-3424.pdf.response",
+      "sha256": "b3a762a64685025090ffe5476b5a0973228fae13a5b9367e54c42d684a45ad70",
+      "byteLength": 1774311
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/VwVG-20270101.response",
+      "sha256": "0247b628464a8ccdb70f7c33830134b748b01bdccbeb92a0add3a1ec20fae8e5",
+      "byteLength": 176889
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03.json",
+      "sha256": "9ee8e0e21fc24d054f324f88a6d56afd132b18e11a706258144acb13da859d91",
+      "byteLength": 7207
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/AS-2026-509.headers",
+      "sha256": "01381cf60d3490741cce011d88d1e1425f780c8ceb6bedabd5c113a7c45b8f1a",
+      "byteLength": 1194
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/AS-2026-509.response",
+      "sha256": "2eb0c16b1fb1f552b476957844902f0364ccec365c81a9895e6873c1d1ea72dd",
+      "byteLength": 116639
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/JUD-AP17C-BGER-8C-767-2008-20090112.headers",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/JUD-AP17C-VGER-BE-100-2024-8-20240404.headers",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/JUD-AP17C-VGER-BE-200-2017-814-20180117.headers",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/JUD-BE-VG-100-2016-347.headers",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/JUD-BE-VG-100-2017-270.headers",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/JUD-BE-VG-100-2021-189.headers",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/OF001-BJ.headers",
+      "sha256": "d4251e12f64feab114dd5d14e5c6de763a4ff39dc20315c71c46eef6fdab2519",
+      "byteLength": 5982
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/OF001-BJ.response",
+      "sha256": "1855b0b44fc418eb915f29116a65bacebe9f23456cdd56524b3cec72382fb8c1",
+      "byteLength": 325877
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/StPO-20270101.headers",
+      "sha256": "d299b183b8e492aef8687532b2df439d8921a991acce5e5f3a9380c015e1194c",
+      "byteLength": 1194
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/StPO-20270101.response",
+      "sha256": "dd88cbda54cfb9247a45c8cb14cb4579f0b248cf3d7be684bd13d5d8e2a8f9a4",
+      "byteLength": 743574
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/StPO-version-details.headers",
+      "sha256": "780d0b7c3f4a65d14c18c2896593abcebdeaf4c4fce085960613f23c04d92791",
+      "byteLength": 888
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-03/StPO-version-details.response",
+      "sha256": "242450d07ba82aee498f814c3a50339fbb41b82d6c0a9b24a83d096ee8d3e1cf",
+      "byteLength": 1447
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/supplement.py",
+      "sha256": "cf6a900c650d1a2576706b48a0feaefb63d880ea05bbe2437b158f6c144afc3a",
+      "byteLength": 2732
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/extracted.json",
+      "sha256": "09be22156335b4ef39a9ef68cd75c58c345507d12bce5c6e3a23555bd62443ff",
+      "byteLength": 485953
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/historical-mapping.json",
+      "sha256": "47760d7e7deee803e8b355b8dd490c5596630750a70e37c731c9e88f58bb8c61",
+      "byteLength": 123390
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/lu-version-bridge.json",
+      "sha256": "ab37325e8f55abfee5eed039c6bda34d1d6da213550f7437992442317a0e7793",
+      "byteLength": 4023
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AG-EGARR-20250901-original.json",
+      "sha256": "b1682d2dbfc57519dcf8e1c4cafcb408afbc26a2556ee1cdce19cecb857eee79",
+      "byteLength": 218072
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AG-EGARR-20250901-original.txt",
+      "sha256": "9a92913ffd388199577b8badea81b51cc4c41a170323d5f7d7b92429fde407b0",
+      "byteLength": 12828
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AG-EGZPO-original.json",
+      "sha256": "f21c9383fea361bff7a1759d8dcb086b40c6e30dda7a869f88057fb3de47fb1e",
+      "byteLength": 436834
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AG-EGZPO-original.txt",
+      "sha256": "289560800f0d2a7969073508f5346b77da9454d10469803e44aec45ee2026f88",
+      "byteLength": 22542
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RTG-822200-V1327-original.pdf",
+      "sha256": "b3ec9ad03ad7c0389fac9f6625220a4636d36728030ee11f97d0e1cc43a5016c",
+      "byteLength": 459415
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RTG-822200-V1327-original.txt",
+      "sha256": "b21c274685121531bcd412df6f4a93fd0f565cb2413cbbb65439472e644e51dd",
+      "byteLength": 5670
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RTG-822200-V1327-version-and-text.json",
+      "sha256": "96615c2d8891fc2043cddcf468690bdd97ee8d964e7dc8be0b789c98fb5664ff",
+      "byteLength": 110701
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RTG-822200-V1327-version-and-text.txt",
+      "sha256": "2c9c3a4c86d838837fc7fad3af5cdbc61dd40eded3e97dfaa41e27ee2bd097f4",
+      "byteLength": 5299
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RUHETAGE-INFO-2026-original.html",
+      "sha256": "8d1bad3e623d36d81c4f60c10b5ad706f6b5354d0ed17d345d7974328e11d7fc",
+      "byteLength": 31077
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RUHETAGE-INFO-2026-original.txt",
+      "sha256": "d9239b3b819247dbe7064256475c69861981a37657b0008d96e5ba8ae81d8ed5",
+      "byteLength": 3043
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RUHETAGE-LISTE-2026-original.html",
+      "sha256": "45f946ef08d74cbbf89c2986361ae051636044de25ad00848a36ed3f9f796c1e",
+      "byteLength": 29873
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AI-RUHETAGE-LISTE-2026-original.txt",
+      "sha256": "2fba98888801c0b0e7df6baa2b5359a20146828b9ab60643653f4920b742d2db",
+      "byteLength": 1256
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AR-ARGV-82211-V1058-original.pdf",
+      "sha256": "b9a924e35287b63fe2b000f2f6d43d83a845a5e286fedabc7a851bcd9bcfc610",
+      "byteLength": 156699
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AR-ARGV-82211-V1058-original.txt",
+      "sha256": "5fe8db89162240360d0ff29eb38427c8702b9a0873ed12b8522938a84e9eb020",
+      "byteLength": 7499
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AR-ARGV-82211-V1058-version-and-text.json",
+      "sha256": "8671e25bfd366bf3a2e576040d19942302e2d58bb403d2719d466d51097ec1af",
+      "byteLength": 133050
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-AR-ARGV-82211-V1058-version-and-text.txt",
+      "sha256": "908a8e633658dc14ab5ad1ebb6ccfd1d35d39411c89cf535998b16efca99b5ae",
+      "byteLength": 7135
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BL-PERSONAL-FEIERTAGE-2026-original.pdf",
+      "sha256": "5cf71c6f185b467330f2bc85ef9349bb77171fa63944ebd6f3156f7617ade1f3",
+      "byteLength": 166558
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BL-PERSONAL-FEIERTAGE-2026-original.txt",
+      "sha256": "f8f7b8cf3bf98e548515d638ca4b8b09d210551b49a21aa2308836e7a58a1ff9",
+      "byteLength": 2927
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BL-RTG-547-20191201-original.json",
+      "sha256": "9fd426061ddf3822c2972d4c96fa06925b82461d6651bd5927c309435e880c72",
+      "byteLength": 174454
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BL-RTG-547-20191201-original.txt",
+      "sha256": "1f276a0b74982218a0b815498a64fe1fa12ad4bc88837cc03c638d523eea9303",
+      "byteLength": 8192
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BS-FEIERTAGE-2026-2028-original.html",
+      "sha256": "d7739199509b9e90da90d55f36911a1d45c6bc1473be598634f791379a75a87a",
+      "byteLength": 113915
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BS-FEIERTAGE-2026-2028-original.txt",
+      "sha256": "01c9365d35cde74f68abaa0b55d1be36b90b869dfa3f11e6997bf1d505aa3190",
+      "byteLength": 3054
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BS-RLG-811100-20200701-original.json",
+      "sha256": "20aa54f401d70b7ab698d05ea5594d9201a0b7b4c8a98b78607e7cc31b940830",
+      "byteLength": 130381
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-BS-RLG-811100-20200701-original.txt",
+      "sha256": "c8f7560711dcc265aafd5e9497addba460cf3b0c679f28029f26e206e1f16088",
+      "byteLength": 6575
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-AMA-FEIERTAGE-2026-original.html",
+      "sha256": "f84158ab690fdaedc94c0081bca72dc319ea9669b845557f32530dedff4fd44e",
+      "byteLength": 90142
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-AMA-FEIERTAGE-2026-original.txt",
+      "sha256": "25fc519feb006306c9c3dbf50b9dfb6b264b822bf5348c98dfb7499e38dcee2d",
+      "byteLength": 4430
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-AMA-FEIERTAGE-2026-year-2027-final.pdf",
+      "sha256": "4c0fff89d707c1a29bc8d56d1fa1447b2c37f78a8a4a3365b99c0d521505be21",
+      "byteLength": 108724
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-AMA-FEIERTAGE-2026-year-2027-final.txt",
+      "sha256": "7ff44473cbaba64bb0af72a87274a22d44a3cfe9565e4db599e74737cea71e67",
+      "byteLength": 1620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-BAMG-866111-V8126-original.pdf",
+      "sha256": "6970279a87a8459b1936c3b28d793181125898803dda340e978afb1e80ecfe2d",
+      "byteLength": 1133384
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-BAMG-866111-V8126-original.txt",
+      "sha256": "5bc0b5a272fd8749263f1db14a7a09646c8d2088f669a9b992a413b2c7f60560",
+      "byteLength": 95587
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-BAMG-866111-V8126-version-and-text.json",
+      "sha256": "2bc53608e17e496f9536980598235514553c682479bc756827808072e9500892",
+      "byteLength": 2243644
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-BAMG-866111-V8126-version-and-text.txt",
+      "sha256": "5f7a09280c18d633015b27477273e91ed412a4685ad4341df3f8094bc7d155e7",
+      "byteLength": 90418
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-JG-1301-V7926-original.pdf",
+      "sha256": "991970ddfaa5662a4ad6d0af029b4d6ecc23f73a8bb1bf9f5c3ae6d66e20f900",
+      "byteLength": 1137805
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-JG-1301-V7926-original.txt",
+      "sha256": "504109fbae7d45b0c4e513ae059e423d6b63b3742307a045837a0decd9ff3d00",
+      "byteLength": 112482
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-JG-1301-V7926-version-and-text.json",
+      "sha256": "d86b5eb7d1538744616540ddbfc416a20306fac835d2d5581efaf95e542ee88e",
+      "byteLength": 2799756
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-FR-JG-1301-V7926-version-and-text.txt",
+      "sha256": "7198e13333b5ce52e04fefe7ea9e69eac437a864066f1a8fb212474d9c0b0658",
+      "byteLength": 107575
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GE-FEIERTAGE-INFO-20260429-original.html",
+      "sha256": "5d5e4be6a2d9729aa476ee2135d17b545e4435511b890a2e707e8ace64acde4c",
+      "byteLength": 112816
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GE-FEIERTAGE-INFO-20260429-original.txt",
+      "sha256": "3c46de2fbb60768901b3ddacbb0bd7df7558703752b906d73515d6de5a4948d8",
+      "byteLength": 3528
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GE-LJF-J145-19910101-original.html",
+      "sha256": "b7740946b031d5d7e504f017a43749282aeacd9b657bb6411af22ad5aaeb23ac",
+      "byteLength": 25215
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GE-LJF-J145-19910101-original.txt",
+      "sha256": "6c077676ff610186e1dc373ed014d6f73d532aee1e992a7edc8e5ea96436a95a",
+      "byteLength": 2052
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-FAHRT-RR-20260106-original.html",
+      "sha256": "5ba1b0b3c8593e0c3255268097a7c2cfb4b4b67fb1a7af69e239ef29a5a95232",
+      "byteLength": 33599
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-FAHRT-RR-20260106-original.txt",
+      "sha256": "07a44916d75321e4702a55e9a4f836ba91d8d946bf2191f9a59b4e1074e8fbac",
+      "byteLength": 1515
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-FAHRT-RR-20260106-year-2027-corroboration.pdf",
+      "sha256": "a5a41d534b7417699b0bb726962e9b10d0f44668b32b28aa00de5492e7e73b3d",
+      "byteLength": 144864
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-FAHRT-RR-20260106-year-2027-corroboration.txt",
+      "sha256": "1a4aa784a8e7a3f1a1d8642c2274e840ca10f00cbb0d3bfe56109057b20d603d",
+      "byteLength": 2145
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-RTG-IXB211-20190701-original.pdf",
+      "sha256": "a7178e46e9fc052d3878195db6a4f7bcece709dd6283a53aed900cee4ee3b8c0",
+      "byteLength": 175259
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-RTG-IXB211-20190701-original.txt",
+      "sha256": "e4ec287b6be141fc9b0282e2057d3eace8ee33a8ee022639d855e0f1b9a23d6f",
+      "byteLength": 8453
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-RTG-IXB211-20190701-version-final.json",
+      "sha256": "b1a6b6c8f0cce9158b305bbd81d06722965af8a019d25b6b295bc9aa867587d1",
+      "byteLength": 156101
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GL-RTG-IXB211-20190701-version-final.txt",
+      "sha256": "08aaa13b4ae785662832f42d4de9782936a60bfe7aa9beef3e5aca3262a299ea",
+      "byteLength": 8254
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GR-RUHETAGE-520100-20160101-original.pdf",
+      "sha256": "369ec822aade9fa6897f3ec7ec35a171a44151b532d56dfc25c550a5b316f7d2",
+      "byteLength": 317433
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GR-RUHETAGE-520100-20160101-original.txt",
+      "sha256": "2b0cde31f3d9b2469081fd24a6711977f5971b114549ce04b795585ec9cff0c2",
+      "byteLength": 6478
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GR-RUHETAGE-520100-20160101-version-and-text.json",
+      "sha256": "6257a43802eaa9c90c23c2725541a4567e08626d8bc4a37e29bda457f65d43ac",
+      "byteLength": 273620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-GR-RUHETAGE-520100-20160101-version-and-text.txt",
+      "sha256": "87a98a08a4813a90b44e26117e8c5b3cc12d8ded69220f641ddbc9221808ac69",
+      "byteLength": 6258
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-JU-FEIERTAGE-2026-2027-original.pdf",
+      "sha256": "bd2a085d13d848caa12470dd64624c0371ab030b68941b7a830554e0edcc1c40",
+      "byteLength": 32241
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-JU-FEIERTAGE-2026-2027-original.txt",
+      "sha256": "7cd508d79feb842f17dc34e3ed63bf9aaf4ad855d388ca18326e0ed69d1c137d",
+      "byteLength": 1155
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-JU-LJF-5551-20230101-original.pdf",
+      "sha256": "f0d740f820819935e385f800d9a4fd7f55cee9c88665a4b56196af5b41072728",
+      "byteLength": 125545
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-JU-LJF-5551-20230101-original.txt",
+      "sha256": "4413daea10032c24ae49bf2f4d63da15695fded985773ef24b1c39cea4e4be63",
+      "byteLength": 4609
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-JUSG-260-20260101-original.pdf",
+      "sha256": "947b5780428997bbaeb03c695ce12a6e4edffaa039e4b939bdc4ca21ad09182e",
+      "byteLength": 932224
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-JUSG-260-20260101-original.txt",
+      "sha256": "861eed33645891ddd80e07cdaf7c6c41b419fd11a10ba22a4c2768013f0f83f1",
+      "byteLength": 75533
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-JUSG-260-20260101-version-and-text.json",
+      "sha256": "9d3104a65d5a7281e3f32398a58a561fb5abe650d41cce62e6e518b22b13e01b",
+      "byteLength": 1311504
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-JUSG-260-20260101-version-and-text.txt",
+      "sha256": "4a95a9e661812c0c97f77c16cae53372805a6eb60bcdced03de2d0bcd357c580",
+      "byteLength": 74212
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-current-pdf.pdf",
+      "sha256": "d8e45130954e75fd11da218f1bf2d58c9e6cb6b9bb64a8828eef41944d752036",
+      "byteLength": 380321
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-current-pdf.txt",
+      "sha256": "aa1612bc596a37f2b4a2d04cb8d665871c6c5da65c241bcdc19cd122eae164dd",
+      "byteLength": 16536
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-old-version.json",
+      "sha256": "638056113e2ce9014791d6e831989281d114c2e3ed57c75c42b5791515ed5c37",
+      "byteLength": 287917
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-old-version.txt",
+      "sha256": "b2ff7d13f6d0160910a4e6d8a4a1bdb146caf074a6b36d51bd67a1d15810fb4b",
+      "byteLength": 14024
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-original.pdf",
+      "sha256": "d6eb452fef32cd9ddb1956c433135116a207945a3f50360907eb04717f195774",
+      "byteLength": 314494
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-original.txt",
+      "sha256": "8173c70835c822cfd65cbf6e5ce14ee1c32307b847584aaa5e6ca3475916e125",
+      "byteLength": 14331
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-version-and-text.json",
+      "sha256": "c146470031bb8f3e85cb1cdc6c40692d5580dc2df98eb41311efdb9b51ed1cf1",
+      "byteLength": 331134
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-RLG-855-20200501-version-and-text.txt",
+      "sha256": "f81e5f1399d6f9d6fd1b7e36a82481c3e9b207ae77d1e0bda48bf1847870bfb0",
+      "byteLength": 16211
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-VRG-40-20210901-original.pdf",
+      "sha256": "159184e325114c4f7d07c7536c6260a632f4b3abe1abeac5b04da3708d90f27d",
+      "byteLength": 1406908
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-VRG-40-20210901-original.txt",
+      "sha256": "4e6f22b5c9e6af08777fe39662e6daa106afd501b0f7f23b6077f5cb6fc7c38b",
+      "byteLength": 109501
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-VRG-40-20210901-version-and-text.json",
+      "sha256": "28d32f26aee44403a250a7da1668bdc5c30c08871295aad8585953da816aff5e",
+      "byteLength": 1921092
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-LU-VRG-40-20210901-version-and-text.txt",
+      "sha256": "7a7fe119d09051cc2f8b97b6443053e230f9b5f9c5d690a264e8f51b75d72c0e",
+      "byteLength": 107177
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-ADJF-941020-20250527-original.pdf",
+      "sha256": "c9fb47aa75e6e67842443e4b63d8f692c403634c1d5e8ddda735b2895e2487af",
+      "byteLength": 154335
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-ADJF-941020-20250527-original.txt",
+      "sha256": "1198d7ac45e3627d45ce49647e83d9bec9ca83fe4436307e25e1a360507fbc61",
+      "byteLength": 1861
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-FEIERTAGE-2026-2027-original.html",
+      "sha256": "cd35980a07a49eb018ea0d86e6d95a0a2a6f970c0159b982ffd7274ecb474117",
+      "byteLength": 495913
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-FEIERTAGE-2026-2027-original.txt",
+      "sha256": "767a5663de1d2245716859170cb9afb5ac8a15f4cab501cc9f837828384e5da7",
+      "byteLength": 3367
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-LDJF-94102-20100101-original.pdf",
+      "sha256": "7efee9699342f6ae5ee96ef858a00106a4be1d3e48d13355dc1c246c5d5ade73",
+      "byteLength": 118498
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-LDJF-94102-20100101-original.txt",
+      "sha256": "e81bdad05f59ed73a6150a117145e7e261eb914231a19439e2d838b2eb5de59c",
+      "byteLength": 3889
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-LPA-152130-20260101-original.pdf",
+      "sha256": "b67771445345e9a31e646b3678f5312c5b9c66f25d056fa753d74b5f4c8d4417",
+      "byteLength": 310084
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-LPA-152130-20260101-original.txt",
+      "sha256": "0223bc9f4280a96333879b568de49d30f96af66c9dfeb61b0a103b5c66941740",
+      "byteLength": 63638
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-RDF-152512-20230101-original.html",
+      "sha256": "78695c3adadcff542129352f5c7f2c2dd5681746a2c43621e78a39403714e03b",
+      "byteLength": 56741
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NE-RDF-152512-20230101-original.txt",
+      "sha256": "127270e48265c6610b30f7f84419ef06f0dfbaad3ce38dda22f53c7fb4ccc95b",
+      "byteLength": 17014
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NW-RTG-9211-20160101-original.json",
+      "sha256": "b053c92b7a58d0775561926c04bbb5ca33ea3c9796d52a6e6906af39a8b9f12c",
+      "byteLength": 119963
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-NW-RTG-9211-20160101-original.txt",
+      "sha256": "72e1ccd0ee8258024c054f4f5fb8772dbd9b1c9bac0be01dc096be3cdc12ca46",
+      "byteLength": 6141
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-OW-RTG-9752-20090801-original.json",
+      "sha256": "7aebb5bfaeed2fe6a4b1b7946e87ae4d29bbe4b25c1a4af933a69e6325d59b81",
+      "byteLength": 136446
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-OW-RTG-9752-20090801-original.txt",
+      "sha256": "daad9986a4d74de6223b3e7dfdc95547c9e251f451b93450a4d85aa2970e2c8f",
+      "byteLength": 6691
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SG-KGER-FS20121-20120329-original.html",
+      "sha256": "094f0c2b5fcaca60d4aca276b96dfd872686c0fcbb5e7ca88329e9fe88c22d7d",
+      "byteLength": 30620
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SG-KGER-FS20121-20120329-original.txt",
+      "sha256": "9af0bcdd90481b4509830161319fb0cc573fcb1404b0003228f8a998f1acc87f",
+      "byteLength": 6690
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SG-RLG-5521-V228-original.pdf",
+      "sha256": "f6c2c51463a9fc306de374383580d4442cc89aa2fdd9ac4c44b458d5f9a0d0ff",
+      "byteLength": 268146
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SG-RLG-5521-V228-original.txt",
+      "sha256": "e3a4b17b37a116ae00a4b73597bc528a1c67a6125fa71646beb7a0898d5dae34",
+      "byteLength": 9572
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SG-RLG-5521-V228-version-and-text.json",
+      "sha256": "5b453295a8de570b7f94fffde63ec78432868c4cba0f8d20f9464dcf23d6691c",
+      "byteLength": 198265
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SG-RLG-5521-V228-version-and-text.txt",
+      "sha256": "f7404a57421dae5ebd6317e03fa2fd75ed15486b0d7895dbdcf19df75680b070",
+      "byteLength": 9280
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SH-OGE-4020181K-20180824-original.pdf",
+      "sha256": "64014b071f5bf266c7b22b2b57a6978047f54e8c999888eb3c54698c50845cc0",
+      "byteLength": 4267387
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SH-OGE-4020181K-20180824-original.txt",
+      "sha256": "89a67b5290ba840d50d292598acc3b9f83b776e5b6f3601a73057aea8ece23b3",
+      "byteLength": 714819
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SH-RTG-900200-V1886-original.pdf",
+      "sha256": "7b080fb664d4a2559ac84dfde9707747e703a84323dbc5e0153aa9886c6fa2c9",
+      "byteLength": 161788
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SH-RTG-900200-V1886-original.txt",
+      "sha256": "3716f89af74022e29a59767e6a8103b66c4f8eb1e8f8b89878f1ea351ee23a8b",
+      "byteLength": 6642
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SH-RTG-900200-V1886-version-and-text.json",
+      "sha256": "3b32454d6b1af897ec27960d8263d7942a24e94c48e83f53797f594c81079fec",
+      "byteLength": 128256
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SH-RTG-900200-V1886-version-and-text.txt",
+      "sha256": "22d55e7e08d4d1b5a3b0d2310233cc4edc9bb82d2d649a088c83bd2cd787a9a6",
+      "byteLength": 6303
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SO-FRISTENKALENDER-2026-seasonal.html",
+      "sha256": "609b83bd1b47d3e476274cb419591f9ff2b005521ee7aa4ebb48f21efc27f342",
+      "byteLength": 40544
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SO-FRISTENKALENDER-2026-seasonal.txt",
+      "sha256": "4624eeb12118524dab8c6f8932203f42c417a1c6b9630559031fecd048003a56",
+      "byteLength": 1931
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SO-RTG-51241-V4319-original.json",
+      "sha256": "2e2b682bfa3ba4aa52606f2cd0339a6f911b4787070d634824cfafb7a3115b1d",
+      "byteLength": 82578
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SO-RTG-51241-V4319-original.txt",
+      "sha256": "bca5fde53bac3f43fa7d3a6044b6b909afbfc8e8a5517c135d786b8b84495852",
+      "byteLength": 3884
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SZ-RTG-545110-20180701-original.pdf",
+      "sha256": "65c1d6aa553d588e8ae00927a5af5c1e626a8a3cf89dcba622c986134cfad8ae",
+      "byteLength": 86745
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-SZ-RTG-545110-20180701-original.txt",
+      "sha256": "e7fd1077c07fe87b760bb45c95fb88644c8d603055478620eb8ffec3e1ac4190",
+      "byteLength": 4824
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TG-RTG-8229-V2949-original.pdf",
+      "sha256": "af62ac69fe38c4eda579d177c58cb0ddf5e279eb8c2f9487a23ee839b6a8c67c",
+      "byteLength": 83105
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TG-RTG-8229-V2949-original.txt",
+      "sha256": "9e02e406361210cb0f4a00401fc194faf93b8bef77a30a1576ec50bada2af797",
+      "byteLength": 2471
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TG-RTG-8229-V2949-version-and-text.json",
+      "sha256": "627673a674cb5b2f2c6ec3140721f2777cfa799e90078c9e8770ae20d3f71437",
+      "byteLength": 51560
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TG-RTG-8229-V2949-version-and-text.txt",
+      "sha256": "ea3d8016132aad241b7cffce3a43b309bb3d690fb7766590dd12cfe0dd2f9439",
+      "byteLength": 2321
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TI-FEIERTAGE-843200-original.html",
+      "sha256": "65dee84d26d5040e6a957b07c451d34fdbaab0ed0abb3335404b922774c2a956",
+      "byteLength": 18367
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TI-FEIERTAGE-843200-original.txt",
+      "sha256": "465d51f6dd90106cf2dffc088e51bdf2cb49d74da12bb99eef2c4b59f2751ba0",
+      "byteLength": 1710
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TI-UIL-FEIERTAGE-2026-2027-original.html",
+      "sha256": "94ffc3ccf999c0e5b2fea29fec524f1601f231b2caaa80eee3ed79f382823fd6",
+      "byteLength": 29195
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-TI-UIL-FEIERTAGE-2026-2027-original.txt",
+      "sha256": "2e927afb0928f5f852a193158ff02a37060dbef15af614fe871e3592c8c41077",
+      "byteLength": 2501
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-UR-LSG-701421-20030101-original.json",
+      "sha256": "5d298139cb26a70b591aabfe21eb1f691607e6f3811141a5d97498d4c9444e6c",
+      "byteLength": 140125
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-UR-LSG-701421-20030101-original.txt",
+      "sha256": "89c3d0b5ef1edfb3fd988155283a30cf024218726e532dd6e91f99ec5d033ba3",
+      "byteLength": 7155
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-FEIERTAGE-2026-original.html",
+      "sha256": "aba0b5b4e652a25866cd49a161e840f00d4febefb3adc1736ad8ac928ef236d0",
+      "byteLength": 28723
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-FEIERTAGE-2026-original.txt",
+      "sha256": "aed1321cbac3236febfc584f04e3cf60f58ebaa7e64d27e3af7e13b442fdce3b",
+      "byteLength": 3154
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-FEIERTAGE-2027-original.html",
+      "sha256": "accd4bedd0cb510df1e88574d377b1c9936aa62aa72bafde5ce6a2c5efb3f705",
+      "byteLength": 28713
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-FEIERTAGE-2027-original.txt",
+      "sha256": "b32717aaa207f9da77ffc2c09d62c4ae950c74f5c013aea9daf85cfa408edb14",
+      "byteLength": 3152
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-FEIERTAGE-2028-original.html",
+      "sha256": "f6a8f19a87838df7efea19bed573d920bb38c42ee01221f56896af1f3ac30582",
+      "byteLength": 28733
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-FEIERTAGE-2028-original.txt",
+      "sha256": "b97f9e06914de861b9c4c2e5b0d1592c9b87f8c08112241db62d74cd5d26b1b8",
+      "byteLength": 3162
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-LEMP-82211-20120401-official-guidance.pdf",
+      "sha256": "0f6855354638971dd32ee7d979fbb348b80f08de6027d9ffbaced73867e2176c",
+      "byteLength": 451340
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-LEMP-82211-20120401-official-guidance.txt",
+      "sha256": "49219b8fd1707e11c024200accee6db7a5a67018386411b0520e38bc7e7e56be",
+      "byteLength": 78513
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-LEMP-82211-20120401-official-portal.html",
+      "sha256": "3b10d2307aa2bcbed2afe76dffc43c32908fb8bea7811ef8d70765cd9e82cfe1",
+      "byteLength": 6448
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-LEMP-82211-20120401-official-portal.txt",
+      "sha256": "a8403d400ce68a09d5156c11e8dc2b545faa16377762a448aa45f3c9dcf84681",
+      "byteLength": 26
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-LEMP-82211-20120401-original.pdf",
+      "sha256": "2594514aa55120b3d207816183c6547df2ed4ace4177097423edf86b6c410aca",
+      "byteLength": 138026
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VD-LEMP-82211-20120401-original.txt",
+      "sha256": "c1107a8a36b697b5081e3737118f80d8b9b282a6a8456612f7b7dcd5a80e192f",
+      "byteLength": 71353
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RPFLG-1731-20240101-original.pdf",
+      "sha256": "c6515653a3f88710bf1544149f24b99832e5a129049e5b80d2a6754b8f63cacc",
+      "byteLength": 975488
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RPFLG-1731-20240101-original.txt",
+      "sha256": "ac8478495304e5fe493cf2e91ababbd6f3e15c56c4629422366df69b88de41e7",
+      "byteLength": 53154
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RPFLG-1731-20240101-version-and-text.json",
+      "sha256": "789d9768217f0476e239559603a5ae82a6f3e646bf4ab3482db28eeb1f306e8e",
+      "byteLength": 1275262
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RPFLG-1731-20240101-version-and-text.txt",
+      "sha256": "5dbb1e91c7e451412316f7d368865bd66776720a027deb1e705011c3844384c6",
+      "byteLength": 51573
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RUHEREG-822200-19661202-original.pdf",
+      "sha256": "72ce02606b7dcaa635cfdc70552ce82eeb36a9c1d00864f7066941e1e33dcc74",
+      "byteLength": 156486
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RUHEREG-822200-19661202-original.txt",
+      "sha256": "61eb270a38ad798e9bab190a17c446d7817140efa37d759aef256bf5f3904d0c",
+      "byteLength": 4057
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RUHEREG-822200-19661202-version-and-text.json",
+      "sha256": "de042ac3b12025dc7d8637f54af71460d87b6d0d3564eb2a5a6049545130df10",
+      "byteLength": 92145
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-VS-RUHEREG-822200-19661202-version-and-text.txt",
+      "sha256": "dc11f27ab2e4c44c203cf05355e4e133a11c4942a0eeb0f4b3e5a3cce00e3991",
+      "byteLength": 3890
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-FEIERTAGE-2026-2027-original.pdf",
+      "sha256": "e367c71d15a35ff65a365352fc66f45a8cfe72f39543edf68bd9e8284b6cb5c0",
+      "byteLength": 93736
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-FEIERTAGE-2026-2027-original.txt",
+      "sha256": "a23a9b2d2cb7c3cdd1d62428f4136775c79356155bbc47856a6c8f0fda71e611",
+      "byteLength": 1455
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-RLG-94231-20250822-original.pdf",
+      "sha256": "3663afed9c7eed8be4f34ebd228072ac85162b3c5a348c95859d79c815b26d93",
+      "byteLength": 197423
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-RLG-94231-20250822-original.txt",
+      "sha256": "a7ceea9e6a43a7bfa1362da55a075d380106bcbcd96603c2a4cbfc9f72c12b4d",
+      "byteLength": 5661
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-RLG-94231-20250822-version-and-text.json",
+      "sha256": "c2584103ac57d6554a3094fb82e6682e5e9b58f79b2109b0f6449de8f143b642",
+      "byteLength": 126088
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-RLG-94231-20250822-version-and-text.txt",
+      "sha256": "0fa9aac29c2978f59e2b64d8b32a70b93f9e566283d66ca032c9770042237809",
+      "byteLength": 5482
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-VRG-1621-20251017-original.pdf",
+      "sha256": "5d63cdc65d0573d986cd5f96a1a96238c9036be059864476a64717c9e2ad18cf",
+      "byteLength": 1210428
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-VRG-1621-20251017-original.txt",
+      "sha256": "11d171931ee67b5598522eae6f968841dd6e43ab1b1294fcd4dbbefb6643c9c9",
+      "byteLength": 70774
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-VRG-1621-20251017-version-and-text.json",
+      "sha256": "384643055b9f047abe91685a8dee2f7531b529a00928dbea6b25103b034b3a96",
+      "byteLength": 1254655
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZG-VRG-1621-20251017-version-and-text.txt",
+      "sha256": "998e8adfedf4a2df4285d4f739af5609edef34e20060e477a940790ac87cd7bd",
+      "byteLength": 68127
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZH-AWA-FEIERTAGE-2026-original.html",
+      "sha256": "3b71857f8a31faa85da6e1d95f22491c2f9f45f3af1fa52f9c5be766eb690461",
+      "byteLength": 68531
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZH-AWA-FEIERTAGE-2026-original.txt",
+      "sha256": "4a1a3ed70fa5a63ce00730977b6b499f8ffb7355413fc2c8a40b39716c24ac24",
+      "byteLength": 4093
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZH-GOG-2111-N131-original.pdf",
+      "sha256": "5eacdab0463786c7119d6ccd6c23c9cc0e3eaa3221099e37cda5b85aaa29a493",
+      "byteLength": 633869
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZH-GOG-2111-N131-original.txt",
+      "sha256": "b6dcec523c01e28d83f0034eea85150d9b8d6d40279c28384b402b4ab657ba38",
+      "byteLength": 92946
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZH-RLG-8224-N045-original.pdf",
+      "sha256": "842a9044b79829da1b77a7debd6d905fc08bc8d25522e261ac29bc9d0277b936",
+      "byteLength": 37684
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/raw/SRC-ZH-RLG-8224-N045-original.txt",
+      "sha256": "5f737adf6ca5180d2ecc56d2270282cbc0a5053e0d191ebe3f9c5c3cd94ba129",
+      "byteLength": 3649
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/retrievals.json",
+      "sha256": "44b93df1ccca2039af8dbdd6c813ad053d08441aa5d345e7b2ffb1ab0ebcdcbb",
+      "byteLength": 44616
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/catalog/scope-comparison.json",
+      "sha256": "bb573f8d719426ce9cb22eb35e7f13b1c198c070a02c3b8096c7385c2c99abe3",
+      "byteLength": 1657901
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/root/final-tests.log",
+      "sha256": "97518d8493ef038096866c7ede8d19509046874c92e38ca23b3dffdaf693bab2",
+      "byteLength": 12324
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/root/vd-lemp-browser-evidence.json",
+      "sha256": "b452b1a32593cd1fde69ebdf69acf282d320be6f9965a8b22f6b63813fdbf2a0",
+      "byteLength": 2288
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/BK-RM-current-download.pdf",
+      "sha256": "088e459a6392fbf750a5a625d29acbcc733c713cecdc9389262743e6b000465b",
+      "byteLength": 8987792
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-AG-EGARR.json",
+      "sha256": "b1682d2dbfc57519dcf8e1c4cafcb408afbc26a2556ee1cdce19cecb857eee79",
+      "byteLength": 218072
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-AG-EGZPO.json",
+      "sha256": "f21c9383fea361bff7a1759d8dcb086b40c6e30dda7a869f88057fb3de47fb1e",
+      "byteLength": 436834
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-BL-RTG.json",
+      "sha256": "9fd426061ddf3822c2972d4c96fa06925b82461d6651bd5927c309435e880c72",
+      "byteLength": 174454
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-BS-RLG.json",
+      "sha256": "20aa54f401d70b7ab698d05ea5594d9201a0b7b4c8a98b78607e7cc31b940830",
+      "byteLength": 130381
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-NW-RTG.json",
+      "sha256": "b053c92b7a58d0775561926c04bbb5ca33ea3c9796d52a6e6906af39a8b9f12c",
+      "byteLength": 119963
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-OW-RTG.json",
+      "sha256": "7aebb5bfaeed2fe6a4b1b7946e87ae4d29bbe4b25c1a4af933a69e6325d59b81",
+      "byteLength": 136446
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-SO-RTG.json",
+      "sha256": "2e2b682bfa3ba4aa52606f2cd0339a6f911b4787070d634824cfafb7a3115b1d",
+      "byteLength": 82578
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-UR-KAV.json",
+      "sha256": "3f6c0768296913c6407bb401591aca1ecb540208a71b280e365af5ba95b1fe22",
+      "byteLength": 94474
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/META-UR-LSG.json",
+      "sha256": "5d298139cb26a70b591aabfe21eb1f691607e6f3811141a5d97498d4c9444e6c",
+      "byteLength": 140125
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-AG-AWA-FEIERTAGE.pdf",
+      "sha256": "fb00f0431d9952275674a960b291cc62d606285eedb2c7fa425cf1d6db5ace24",
+      "byteLength": 32775
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-AP18B03-VSGE-KANTONSNAMEN-IT.html",
+      "sha256": "67f2f017d42f9fb5ca16cf343726fe88f17e62dbd2fcdbc2ce11e8012d2d770f",
+      "byteLength": 341433
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-BGER-7B32-2023-20230906.html",
+      "sha256": "2e493d18bcbebcd14ffe15d85904eece1b38b09bdc0041626f4d5dc6c59d301e",
+      "byteLength": 48036
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-BJ-FRISTENHINWEISE-20121217.pdf",
+      "sha256": "ab51b8b940d054e18f0a519f6a1f65f7b6c98afaa226a86189bb6169a94c6ae7",
+      "byteLength": 33289
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-BL-PERSONAL-FEIERTAGE-2026.pdf",
+      "sha256": "5cf71c6f185b467330f2bc85ef9349bb77171fa63944ebd6f3156f7617ade1f3",
+      "byteLength": 166558
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-BS-FEIERTAGE-2026-2028.html",
+      "sha256": "f07c50ce21d6b372dea4e88b649c5939e150fe92e4aea00046aa816ae1cac084",
+      "byteLength": 113909
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-CH-ESTV-KANTONSNAMEN-IT-AP18B03.html",
+      "sha256": "877e35461bc00c960d86f5e0005b49e67d43ef5930260a51a845e234cb59d64c",
+      "byteLength": 332259
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-CH-PARL-BUNDESFEIER-RM-2026.html",
+      "sha256": "121badf4fd7d4cf46f174ad7e2d0374b6dfbaceaabba01f83c3c63c48a35669d",
+      "byteLength": 106268
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-SO-BJ-FEIERTAGSVERZEICHNIS-20110101.pdf",
+      "sha256": "4a50744a1afb739c94dde71d738ac0c5a1778631a28d02ecfc3678ea9797d9c4",
+      "byteLength": 91861
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-SO-FRISTENKALENDER-2026.html",
+      "sha256": "572781b1bdbd8985a678d6459bb098c6d8cb7c8281c26f6601fe360cebb5ccf4",
+      "byteLength": 40544
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-TI-FEIERTAGE-843200.html",
+      "sha256": "96625f12156f624aad977e1ce93ad8e7f52158026fc1b8fbe227d825a831f831",
+      "byteLength": 26163
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-TI-KANTONSNAME-RM.html",
+      "sha256": "98615ebed1970f9ebe7d50dad72fdaa3a9f646aa30c2628360143d340e0f792c",
+      "byteLength": 22470
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-TI-LALL-843100.html",
+      "sha256": "121782ec09c59ba4a45376af22b2da18a7058c05bbbad986f77cd797e47e1462",
+      "byteLength": 47143
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-TI-LPAMM-165100-20250601.html",
+      "sha256": "01b1d01834f63e0240be1733b343987df4dfbf26696d525bdd8e6d52433899d5",
+      "byteLength": 210419
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-TI-UIL-FEIERTAGE-2026-2027.html",
+      "sha256": "548cb3f2a235ea7003da95d41afb2b8ca967308206ae3abf968cb92359cd02af",
+      "byteLength": 29214
+    },
+    {
+      "path": ".work/release-mvp04-sources/catalog-central/SRC-UR-FEIERTAGE-20230406.pdf",
+      "sha256": "5046d7558a61ea345a1ad1f2c3d3a2b9abec4887e83bcbd0aad2de239c8e49a7",
+      "byteLength": 560485
+    },
+    {
+      "path": ".work/release-mvp06-2026-10-01/remainder/run-03/JUD-AP17C-VGER-BE-100-2024-8-20240404.pdf",
+      "sha256": "186dd8ca539f7a258314e1d82c55ad1e849b6fa5af332e273a5d83e6f0a76150",
+      "byteLength": 157118
+    },
+    {
+      "path": ".work/release-mvp06-2026-10-01/remainder/run-03/JUD-AP17C-VGER-BE-200-2017-814-20180117.pdf",
+      "sha256": "1665cdfd7364cf5c3611c7d9a499a76bc29608659a23893ff99459f19f379f66",
+      "byteLength": 125425
+    },
+    {
+      "path": ".work/release-mvp06-2026-10-01/remainder/run-03/JUD-BE-VG-100-2016-347.pdf",
+      "sha256": "98c2a542bb42ab06cfc4e8c968a0c5d77253736b4743a94746fbe075e0cc4b31",
+      "byteLength": 178058
+    },
+    {
+      "path": ".work/release-mvp06-2026-10-01/remainder/run-03/JUD-BE-VG-100-2017-270.pdf",
+      "sha256": "18e961927cea27da6d3c8d33d42877d8194cd0b31985608dda04eb3d890ab6de",
+      "byteLength": 113177
+    },
+    {
+      "path": ".work/release-mvp06-2026-10-01/remainder/run-03/JUD-BE-VG-100-2021-189.pdf",
+      "sha256": "b7b2b6f7c89eebe8c77135d8d0fd35ee371443dd24048b64746f51c80cfcda17",
+      "byteLength": 151601
+    },
+    {
+      "path": "docs/betrieb/deployment-mvp-07.md",
+      "sha256": "9c5d1c191e7070e209c1bfed19d79bf0e410767fa49a5fca95a3c75ff4041722",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/docs/betrieb/deployment-mvp-07.md",
+      "byteLength": 14819
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-029-begrenzte-behandlung-zweiter-januar.md",
+      "sha256": "fa80106b1d0c26bd81d44b057d08738dfd1367eca0758ef876c0c7f404fe22a7",
+      "byteLength": 5815
+    },
+    {
+      "path": "docs/fachrecht/abnahme-quellen-mvp06.md",
+      "sha256": "18adb59a4731838f88761513117041697e5ee6d61b9a40726b5a9945c97dbc15",
+      "byteLength": 4521
+    },
+    {
+      "path": "docs/fachrecht/abnahme-quellen-mvp07.md",
+      "sha256": "c4c86402584685e9321a5974a1c9b37b3cf87901b2bac48a24e1319aa42ab18d",
+      "byteLength": 5172
+    },
+    {
+      "path": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "sha256": "9c85506707531a7b286376432694e604d03f1b59988887e7a433609571c45abf",
+      "byteLength": 23274
+    },
+    {
+      "path": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "sha256": "26b87d7970d7c04d8dce43b55709e853cbc4387e7ef567199315371e28dcc8dc",
+      "byteLength": 23680
+    },
+    {
+      "path": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "sha256": "b21e4aed1f9876f9ec6bb74fb3e185b4122114deca48778564036ebadd987588",
+      "byteLength": 20578
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp04.md",
+      "sha256": "2f4772bc6170e8b02cf906f588f9d490cbc0f170ac234bb54e344b09cf763a80",
+      "byteLength": 21332
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp06.md",
+      "sha256": "fe4f3ab29495488c78eeb76729fb0b724d03b6762c08f669f2464e9ddb76819c",
+      "byteLength": 11399
+    },
+    {
+      "path": "docs/fachrecht/quellenabgleich-mvp07.md",
+      "sha256": "258a5d2b93492d92215671955056aaeab1f7fb583eaafb682df713f4a4707b93",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/docs/fachrecht/quellenabgleich-mvp07.md",
+      "byteLength": 13857
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefplan-mvp07.md",
+      "sha256": "ff4e37450aac00c6119fbdf42dbd5d87e3bbe4bcafb32a747d7104c5dca0cdae",
+      "byteLength": 9376
+    },
+    {
+      "path": "outputs/ap19c2-2026-09-28/sources/source-review.json",
+      "sha256": "33d2fe1c6f6e1d54a97f8a9a54c97ce4a58aea56d0158a029ffa2a5d0f43abc3",
+      "byteLength": 11751
+    },
+    {
+      "path": "outputs/ap19c3-2026-09-28/sources/source-review.json",
+      "sha256": "00f16cfb9653d32a73555c9ccd6c22a32af7810aae0068fe540d5497aac1b6e9",
+      "byteLength": 10734
+    },
+    {
+      "path": "outputs/ap20c2-2026-10-01/quellenkontrolle.json",
+      "sha256": "6ef1e65e4a2e5a7fa0a87c2042d5fc17a9f736c3f09fe9035620dbf0ce84d4c5",
+      "byteLength": 112524
+    },
+    {
+      "path": "outputs/ap20c3-2026-10-01/quellenkontrolle.json",
+      "sha256": "b7cfc44bb809f66ff8bbb55e30580710e4716a63253d4125ed6874c55c2b518c",
+      "byteLength": 58872
+    },
+    {
+      "path": "outputs/ap22a-abschluss-2026-10-02/matrix-data-v02.json",
+      "sha256": "5c7d8a6684a2ce018a3636e41bb2664d67d675e109ab25dd6e9f99bcc562cf2d",
+      "byteLength": 619472
+    },
+    {
+      "path": "outputs/ap22a-matrix-2026-10-02/matrix-data.json",
+      "sha256": "e39e56bfb892aff8bc57e0b8229454401e2d21bb610b2e637005ff4af7f47319",
+      "byteLength": 476330
+    },
+    {
+      "path": "outputs/ap22c3-2026-10-08/bundle/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81",
+      "byteLength": 1183566
+    },
+    {
+      "path": "outputs/ap22c3-2026-10-08/bundle/manifest.json",
+      "sha256": "b290ece2d105c606b3de8154edade57fcbaf2ff978e42b05b08561fb1c40a0f6",
+      "byteLength": 22616
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-central.json",
+      "sha256": "50a9faf1e3947bd162fb064a153c96338b6cdd1f2e7bef1e16e512f3e4a721b7",
+      "byteLength": 64265
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-east.json",
+      "sha256": "c4647458182e320021e364014e909eddb2d5dfcc76c7fa4813f2aca0e0ba6051",
+      "byteLength": 32584
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/catalog-refresh-west.json",
+      "sha256": "fcd4cd39b76ebfe72b1bc0a018848fa5e94017ff219c322d5c28ef79ecb62f1a",
+      "byteLength": 31602
+    },
+    {
+      "path": "outputs/release-mvp04-2026-09-22/source-approval.json",
+      "sha256": "e956172420aab77e45ea5462ed30e82efab59ea0a993a6682ceddbdea0efd884",
+      "byteLength": 4010
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/source-review-completeness.json",
+      "sha256": "67fdf2e5cb3ac19769655ed08f2ff80e9863b76a2526469917832bcba68e27ce",
+      "byteLength": 39547
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/sources/ap19-source-review.json",
+      "sha256": "c5e37d8c44f9aa17d6b102f654551ea27960231a66dc14a284f91032117f87c7",
+      "byteLength": 29380
+    },
+    {
+      "path": "outputs/release-mvp05-2026-09-28/sources/remainder/source-review.json",
+      "sha256": "913b36d3b1bf66b8b613ec0b5b2947bb4825c0377a3460f55fafc15adbf1d044",
+      "byteLength": 43719
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/source-review-completeness.json",
+      "sha256": "a389456a87f57e595818c76852360162daab58cc772fda82ae8de8100225c7bb",
+      "byteLength": 130330
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/sources/ap20-index-assessment.json",
+      "sha256": "540c89aef2d1d4da528e610c3e25e534e82bf052206da6bdead68fa6ac5cfbbe",
+      "byteLength": 4394
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/sources/ap20c1-refresh.json",
+      "sha256": "cd641a4f2f000fd6dafa0dd3e66cfa67ee08a8087290d755bc87d52ab740f542",
+      "byteLength": 104811
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/sources/remainder/source-review.json",
+      "sha256": "f0ad71ac9d6caa11f06b29ca0cb9959c0e9eed108767211e5d68b51014628109",
+      "byteLength": 98426
+    },
+    {
+      "path": "outputs/release-mvp06-2026-10-01/sources/source-original-bridges.json",
+      "sha256": "27e6174c8d9805b1286287689d366c59a74dc439e1641dbc7e3e4b6b2d6424bd",
+      "byteLength": 65741
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/inputs/snapshot.json",
+      "sha256": "cbb9744cb2cc4f5b1812ad7850b9746fb4b504bab1c488eec824dd783b34f3bb",
+      "byteLength": 281701
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/source-review-completeness.json",
+      "sha256": "ce9122d5e6a5c3bf8c0fb8061e51e6e1613fbb04f34d65825eeea7a59796f587",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/outputs/release-mvp07-2026-10-08/source-review-completeness.json",
+      "byteLength": 1542219
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/source-review-qa.json",
+      "sha256": "b2ddd4574658bef7463546578c27ee2aadee1261e71bde533abe4cc85392e894",
+      "byteLength": 3582
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/activation-review.json",
+      "sha256": "89bf9731347e67d9cb13c0aaa00e5cff806f342a3f242f011dd1b679134f329d",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/outputs/release-mvp07-2026-10-08/sources/activation-review.json",
+      "byteLength": 337527
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/baseline-review.json",
+      "sha256": "e637f288686cf355a1d6457cd90145678c5360af34f1ee8e82963cb93047b45f",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/outputs/release-mvp07-2026-10-08/sources/baseline-review.json",
+      "byteLength": 746452
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/catalog-review.json",
+      "sha256": "22b92fe09b28ec2508ac8f159854069aede9219fffccb6ccb9f927b5213426fd",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/outputs/release-mvp07-2026-10-08/sources/catalog-review.json",
+      "byteLength": 446429
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/source-inventory.json",
+      "sha256": "4bb394c9b1cccdc50ccae896925a5b64b3a6274fba0fb0b81a35b0ddca7e9c82",
+      "byteLength": 1682728
+    },
+    {
+      "path": "scripts/consolidate-mvp07-sources.mjs",
+      "sha256": "f5d6863695203997d516a0a4dc2e58cbee89bd37c33dd0bce7a3768ebc876327",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/scripts/consolidate-mvp07-sources.mjs",
+      "byteLength": 16949
+    },
+    {
+      "path": "tests/governance/mvp07-preparation.test.mjs",
+      "sha256": "bd6f6e343cf05abb1b3c181755f910a7bdb6f43d04e62f6f5fafab538f439e4c",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/tests/governance/mvp07-preparation.test.mjs",
+      "byteLength": 8927
+    },
+    {
+      "path": "tests/governance/mvp07-source-coverage.test.mjs",
+      "sha256": "8beec9fa2e05b452b157308c48e45d38c4a38851d595f5d7e378335cecf90496",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/tests/governance/mvp07-source-coverage.test.mjs",
+      "byteLength": 11322
+    },
+    {
+      "path": "tests/governance/mvp07-source-inventory.test.mjs",
+      "sha256": "660f5a3ddf8eb094d3b00aa19a61c8d8789df53507bbcedfcdf5fddde9c7a7a2",
+      "archivedAt": "outputs/release-mvp07-2026-10-08/source-approval-inputs/tests/governance/mvp07-source-inventory.test.mjs",
+      "byteLength": 6687
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-gr-bf0366c8eda2",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "GR"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über die öffentlichen Ruhetage, Ruhetagsgesetz",
+      "authority": "CH-GR",
+      "url": "https://www.gr-lex.gr.ch/api/de/versions/2604/pdf_file",
+      "documentVersionDate": "2016-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-ASCENSION-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-CHRISTMAS-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachtstag",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-EASTER-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-EASTER",
+      "labels": {
+        "de": "Ostersonntag",
+        "fr": "Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 0
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-EASTER"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-EASTER-MONDAY-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-FEDERAL-FAST-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-FEDERAL-FAST",
+      "labels": {
+        "de": "Eidgenössischer Bettag",
+        "fr": "Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-FEDERAL-FAST"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-GOOD-FRIDAY-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-NATIONAL-DAY-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-NEW-YEAR-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-PENTECOST-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-PENTECOST",
+      "labels": {
+        "de": "Pfingstsonntag",
+        "fr": "Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 49
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-PENTECOST"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-ST-STEPHEN-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stefanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "GR-CAL-GR-CAL-DAY-WHIT-MONDAY-BF0366C8EDA26257",
+      "calendarId": "ap22-gr-bf0366c8eda2",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GR"
+      },
+      "labelKey": "holiday.gr.GR-CAL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GR-RUHETAGE-520100-20160101",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GR-CAL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-bf0366c8eda26257",
+    "sourceHash": "f2e4d7d740775083564aca841da6c46b9c148d3852f1f1a8bbae0bf1f3634d77"
+  }
+}

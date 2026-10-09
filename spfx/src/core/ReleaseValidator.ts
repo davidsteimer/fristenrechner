@@ -12,6 +12,7 @@ import legalProfileSchema from './schemas/legal-profile.schema.json';
 import releaseManifestSchema from './schemas/release-manifest.schema.json';
 import releaseManifestV5Schema from './schemas/release-manifest-v5.schema.json';
 import releaseManifestV6Schema from './schemas/release-manifest-v6.schema.json';
+import releaseManifestV7Schema from './schemas/release-manifest-v7.schema.json';
 import socialProcedureCatalogSchema from './schemas/social-procedure-catalog.schema.json';
 import socialProcedureCatalogV2Schema from './schemas/social-procedure-catalog-v2.schema.json';
 import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
@@ -23,6 +24,7 @@ import {
   canonicalSocialJson,
   assertHolidayCatalogProjection,
   createCalculationData,
+  createFormat7CalculationData,
   generateCalendarFromRules,
   type CalendarRuleSet
 } from '../product/core';
@@ -132,6 +134,7 @@ export class ReleaseValidator {
   private readonly manifestValidator: ValidateFunction;
   private readonly manifestV5Validator: ValidateFunction;
   private readonly manifestV6Validator: ValidateFunction;
+  private readonly manifestV7Validator: ValidateFunction;
   private readonly socialProcedureCatalogValidator: ValidateFunction;
   private readonly socialProcedureCatalogV2Validator: ValidateFunction;
   private readonly legalProfileValidator: ValidateFunction;
@@ -154,6 +157,7 @@ export class ReleaseValidator {
     this.manifestValidator = ajv.compile(releaseManifestSchema);
     this.manifestV5Validator = ajv.compile(releaseManifestV5Schema);
     this.manifestV6Validator = ajv.compile(releaseManifestV6Schema);
+    this.manifestV7Validator = ajv.compile(releaseManifestV7Schema);
     this.legalProfileValidator = ajv.compile(legalProfileSchema);
     this.calendarValidator = ajv.compile(calendarSchema);
     this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
@@ -167,6 +171,10 @@ export class ReleaseValidator {
   public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
     const manifestBytes = await provider.fetchBytes('manifest.json');
     const manifestValue = decodeJson(manifestBytes, 'Manifest');
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '7.0.0') {
+      return this.validateFormat7Provider(provider, manifestBytes, manifestValue);
+    }
 
     if (isObject(manifestValue) && typeof manifestValue.formatVersion === 'string') {
       const major = Number.parseInt(manifestValue.formatVersion.split('.')[0], 10);
@@ -214,6 +222,45 @@ export class ReleaseValidator {
     // active release. A schema-valid catalog alone is not procedural permission.
     if (['4.0.0','5.0.0','6.0.0'].includes(manifest.formatVersion)) createCalculationData(validated);
     return validated;
+  }
+
+  private async validateFormat7Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // No provider property or URL flag can enable a local reference candidate.
+    // Validate the manifest before following any untrusted artifact path.
+    assertSchema(this.manifestV7Validator, value, 'Format-7-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 40) {
+      throw new Error('Format 7 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      const parsed = decodeJson(bytes, descriptor.path);
+      return { descriptor, bytes, parsed };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    // The shared boundary verifies closed schemas, original UTF-8 bytes, all
+    // inventories, source identities, projections and every release binding.
+    const runtime = createFormat7CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId,
+      formatVersion: '7.0.0',
+      coverageFrom: manifest.coverage.from,
+      coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
   }
 
   private assertManifestContract(manifest: IReleaseManifest): void {

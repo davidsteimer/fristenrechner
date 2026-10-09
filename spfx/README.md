@@ -1,46 +1,51 @@
 # Fristenrechner Schweiz für SharePoint und Teams
 
-Dieser Ordner enthält die produktive SPFx-Lösung des Fristenrechners Schweiz. Dasselbe WebPart und dasselbe `.sppkg` laufen auf modernen SharePoint-Seiten und als Microsoft-Teams-Kanalregisterkarte.
+Dieser Ordner enthält die produktive SPFx-Lösung. Dasselbe WebPart und dasselbe `.sppkg` laufen auf modernen SharePoint-Seiten und als direkte Microsoft-Teams-Kanalregisterkarte.
 
-**Stand 28. September 2026:** MVP 0.5 ergänzt AP17/AP18 um die erste abgenommene AP19-Tranche mit Manifest-/Consumerformat `5.0.0` und Sozialverfahrenskatalog `1.0.0`. 24 nationale Regeln sind mit 28 ausschliesslich bernischen Anbindungen freigegeben. Die zusammengeführte Quellenprüfung und der Datenrelease sind abgenommen. Paket `0.5.0.0` ist auf vier bestehenden E-/Q-Instanzen mit ihren vollständigen SharePoint-Mirrors installiert. Der [E-/Q-Nachweis](../docs/betrieb/eq-installation-mvp05.md) umfasst 123 bestandene technische Punkte einschliesslich AP5-Kompatibilität. David hat Q fachlich abgenommen und die reale Anmeldung mit dem bestehenden B2B-Gast bestätigt. Die [Abnahmenotiz](../docs/betrieb/abnahme-q-mvp05.md) trennt diese Benutzernachweise von den technischen Tests. Noch keine MVP-0.5-Veröffentlichung auf GitHub oder P. GitHub bleibt nach dokumentiertem Stand auf MVP 0.4, P wegen des Hostingbefunds auf MVP 0.3. Historische [Korrektur- und Paketnachweise](../docs/betrieb/spfx-korrekturkandidat-mvp04-0401.md) sowie der abgeschlossene Machbarkeitsspike unter [`../spike/spfx/`](../spike/spfx/README.md) bleiben unverändert.
+**Stand 9. Oktober 2026:** Anwendung `0.7.0`, Paket `0.7.0.2` und Datenrelease `2026-10-08-mvp-07-approved.1` sind auf den vier bestehenden E-/Q-Instanzen installiert. Die [Q-Abnahme](../docs/betrieb/abnahme-q-mvp07.md) schliesst R07-C einschliesslich menschlicher Geräte-/Gastbestätigung. F08-Nachweisort und T09-Wiederverwendung bleiben qualifiziert. Der [Vollzugsnachweis](../docs/betrieb/eq-vollzugsnachweis-mvp07-0702.md) trennt tatsächliche Hostprüfungen und frühere Belege. GitHub-Publikation und P-Bereitstellung von MVP 0.7 benötigen weiterhin eigene ausdrückliche Freigaben. Öffentlich dokumentiert ist [MVP 0.6](../docs/betrieb/produktionsbereitstellung-mvp06-2026-10-01.md).
 
 ## Toolchain
 
-| Baustein | Version |
+| Baustein | Gebundener Stand |
 | --- | --- |
-| Node.js | 22.23.2 |
-| SharePoint Framework | 1.23.2 |
-| React und React DOM | 17.0.1 |
-| Fluent UI React | 8.106.4 |
-| TypeScript | 5.8.x |
-| Heft | 1.2.17 |
+| Node.js / npm | `22.23.2` / `10.9.8` |
+| SharePoint Framework | `1.23.2` |
+| React und React DOM | `17.0.1` |
+| Fluent UI React | `8.106.4` |
+| TypeScript | `5.8.3` |
+| Heft | `1.2.17` |
 
-Dies ist die unveränderte, im definitiven MVP-0.5-Build verwendete Toolchain. Lockdateien binden die konkret installierten Versionen. Die Microsoft-Kompatibilitätsmatrix bleibt vor künftigen Toolchainänderungen gesondert zu prüfen.
+Lockdateien binden die konkret installierten Versionen. Dies ist der nachgewiesene Bau, keine Empfehlung zum jeweils neuesten Toolstand. Vor einem Upgrade ist die offizielle SPFx-Kompatibilitätsmatrix separat zu prüfen.
 
 ## Quellstruktur
 
-- `../src/core/` ist die führende Quelle des deterministischen Rechenkerns.
-- `../src/ui/` ist die führende Quelle der hostneutralen Rechneroberfläche.
-- `src/core/` enthält den providerneutralen Release-Service, die Releasevalidierung für Formate 1 bis 5 sowie den lokalen Aktivstand.
-- `src/webparts/fristenrechner/` enthält ausschliesslich den dünnen SPFx-Hostadapter.
-- `src/product/` und `src/core/schemas/` werden vor Test, Build und lokalem Start mechanisch aus den führenden Repository-Quellen erzeugt und nicht separat gepflegt. Zu den synchronisierten Schemata gehören Fristdefinition, Fristwahrung, Spezialregimekatalog `3.0.0`, Kalenderkomponente `2.0.0`, Feiertagskatalog `1.0.0` und Sozialverfahrenskatalog `1.0.0`.
+- `../src/core/` und `../src/ui/` sind die führenden Quellen des Rechenkerns und der hostneutralen Oberfläche.
+- `src/core/` enthält Provider, Release-Service, Format-1-bis-7-Validierung und konfigurationsgebundenen Browsercache.
+- `src/webparts/fristenrechner/` enthält den dünnen SPFx-Hostadapter, keine eigene Fristenlogik.
+- `src/product/` und `src/core/schemas/` werden vor Test und Build mechanisch synchronisiert, nicht separat gepflegt. MVP07 verwendet Manifest/Mindestconsumer `7.0.0`, Regelkalender `3.0.0`, Feiertagskatalog `2.0.0`, Rechtsprofile `1.0.0`, Spezialregimekatalog `3.0.0` und Sozialverfahrenskatalog `2.0.0`.
 
-Damit existieren weder ein zweiter Rechenkern noch eine zweite Oberfläche für Microsoft 365.
+Damit gibt es keine zweite fachliche Quelle für Microsoft 365. Die Darstellungskorrektur `0.7.0.2` lässt lange Dropdowntexte mehrzeilig erscheinen. Die [begrenzte Delta-Prüfung](../docs/betrieb/darstellungskorrektur-mvp07-0702.md) weist unveränderte Auswahlhandler, Rechenlogik, Rechtsdaten, Pins und Produktidentitäten nach.
 
-## Datenquellen
+## Datenquellen und Cache
 
 Die WebPart-Konfiguration bietet zwei Provider:
 
-- `GitHub`, im Paket auf den vollständigen Datencommit `3109c39730f10d31cb6c57200b36dd5091d7bcd1` des unveränderlichen Datenrelease `2026-09-28-mvp-05-approved.1` gepinnt. Dieser Commit ist noch nicht veröffentlicht, der Standardpfad deshalb noch nicht öffentlich abrufbar
-- `SharePoint-Mirror`, konfigurierbar als serverrelativer Ordner auf derselben SharePoint-Website
+- `GitHub`, gepinnt auf Datencommit `331ef3e19d43a6b51d91a502acd6b5443071599f` und `data/releases/2026-10-08-mvp-07-approved.1`. Dieser neue MVP07-Pin ist noch nicht veröffentlicht. Der Modus setzt dessen gesondert freigegebene Veröffentlichung und öffentlichen Rohbytevergleich voraus.
+- `SharePoint-Mirror`, als serverrelativer Releaseordner auf derselben SharePoint-Website. E/Q verwenden ihre vollständigen eigenen Mirrors.
 
-Ein Release wird nur nach vollständiger Schema-, Grössen-, Prüfsummen-, Referenz- und Abdeckungsprüfung aktiviert. Format 2 verlangt zusätzlich mindestens einen vollständig validierten Spezialregimekatalog. Format 3 verlangt die Kalenderkomponente 2.0.0, offene Abdeckung sowie vollständig auflösbare Regeln, Overrides und Stillstandssatz-Referenzen. Format 4 ergänzt den vollständigen Feiertagskatalog und die Prüfung seiner begrenzten operativen Projektion. Format 5 ergänzt den Sozialverfahrenskatalog mit getrennten Bundesregeln und kantonalen Anbindungen, rechtlichen Zeitbindungen und hashgebundenen Freigaben. Eine nationale Modellierung gibt keine zusätzliche kantonale Anwendung frei. Nur `approved` wird aktiviert. Ein Datenstand mit `candidate` wird auch bei korrekten Prüfsummen abgewiesen. Bei einem Netzfehler bleibt der letzte vollständig validierte Aktivstand in IndexedDB mit sichtbarem Hinweis verfügbar. Das Paket beantragt keine Microsoft-Graph- oder sonstigen API-Berechtigungen und benötigt keine Entra-App-Registrierung.
+Der Mirrorpfad ist standardmässig leer. Für Teams ist der Mirror auf der zugehörigen Teamsite bereitzustellen und in der jeweiligen Registerkarte zu konfigurieren. Cross-Site-Pfade werden abgewiesen. Der vollständige MVP07-Mirror umfasst **41 Dateien**: Manifest, 32 Kalender, fünf Profile sowie Feiertags-, Spezialregime- und Sozialverfahrenskatalog. Die [Dritt-Tenant-Anleitung](../docs/betrieb/installation-und-betrieb-dritttenants.md#62-variante-b-tenantinterner-sharepoint-mirror) enthält alle tatsächlichen Pfade und Archivprüfsumme. Manifest SHA-256: `fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597`.
 
-Der Mirrorpfad ist standardmässig leer. Für Teams muss der Mirror deshalb auf der zum Team gehörenden SharePoint-Website bereitgestellt und in der betreffenden Registerkarteninstanz konfiguriert werden. E und Q verwenden vor der Veröffentlichung ausdrücklich diesen Modus, nicht den unveröffentlichten GitHub-Pin. Der vollständige MVP-0.5-Mirror enthält elf Laufzeitdateien: Manifest, fünf Profile, zwei Regelkalender, `special-regimes/vrpg-be.json`, `holiday-catalogs/ch-holiday-catalog.json` und `social-procedures/ch-social-procedures.json`. Ein Katalogauszug oder das Weglassen nicht operativ verwendeter Regeln ist unzulässig. Cross-Site-Pfade werden durch den SharePoint-Provider abgewiesen.
+Ein Release wird nur als `approved` nach vollständiger Schema-, Grössen-, Hash-, Referenz- und Abdeckungsprüfung aktiviert. Alle Kalender eines Format-7-Releases verwenden Format 3. Der Consumer unterstützt historische Formate, der alte MVP06-Consumer jedoch kein Format 7. Ein Paketupdate ersetzt nicht automatisch die gespeicherte Datenkonfiguration.
 
-Der führende UI-Quellstand enthält zudem die abgenommene Funktion aus Issue #18. Sie erzeugt eine Outlook-kompatible Kalenderdatei vollständig im Browser und benötigt deshalb weiterhin keine Microsoft-Graph-Berechtigung.
+Provider und Cacheidentität binden die tatsächliche Datenkonfiguration. Nur ein vollständig validierter Stand derselben Konfiguration kann bei einem späteren Fehler helfen. Der Erstabruf einer neuen Quelle kann nicht durch einen anderen Mirror, einen historischen AP5-Cache oder einen alten originweiten Aktivzeiger ersetzt werden. Ohne gültigen eigenen Aktivstand wird gesperrt. Kein Browserdatenreset ist erforderlich oder pauschal freigegeben.
 
-## Lokaler Build
+104 terminale Verfahrensbindungen werden von 198 Herkunftsentscheiden getrennt. Keine freie Kalendervereinigung, kein erster Treffer und kein stiller BE-/CH-Ersatz. Rollen und regionale Fakten sind ausdrücklich zu qualifizieren. Die 44 Sozialregeln und 50 BE-Anbindungen bleiben fachlich unverändert und auf Bern sowie 2026–2027 beschränkt. Nationale Kalenderabdeckung ist keine ausserbernische Sozialfreigabe und kein zusätzliches kantonales Verwaltungsverfahren.
+
+Persönliche Standards verwenden Version 4. v3 wird ohne erfundene Rollen-/Ortsfakten gelesen und erst nach ausdrücklichem Speichern als v4 persistiert. Datum, Referenz, Resultat und fallbezogene Regionalantworten bleiben ausgeschlossen. Die lokale ICS-Erzeugung benötigt ebenso wie der Rechner keine Graph-Berechtigung oder Entra-App-Registrierung.
+
+## Lokale Prüfung und Build
+
+Im Ordner `spfx/`:
 
 ```bash
 nvm use
@@ -50,24 +55,25 @@ npm test
 npm run build
 ```
 
-Die Befehle werden im Ordner `spfx/` ausgeführt. Der definitive MVP-0.5-Bau bestand 84 Provider-/Quellintegrationstests. Der Build erzeugt `sharepoint/solution/fristenrechner-schweiz.sppkg` mit eingebetteten Client-Assets. Anschliessend führt `npm run test:built` die [Prüfungen des emittierten und tatsächlich paketierten Codes](test-build/README.md) aus, im gebundenen MVP-0.5-Bau 42 bestandene Tests. Vor der Paketierung prüft `npm run audit:bundle` das finale Bundle auf eine direkt anwendbare globale Produkt-CSS. Lokalisierte `fr-*`-Klassennamen und wörtlich ausgelieferte `:global`-Marker führen zum Abbruch. Die lokale SharePoint-Debugumgebung wird mit `npm start` auf Port 4321 gestartet.
+Der reguläre Build synchronisiert die Quellen, prüft und kompiliert sie, auditiert die Produkt-CSS und paketiert anschliessend. `npm run test:built` prüft emittierten und tatsächlich paketierten Code. Lokalisiertes `fr-*`-CSS und wörtliche `:global`-Marker werden durch den CSS-Audit abgewiesen. Die SharePoint-Debugumgebung wird mit `npm start` auf Port 4321 gestartet.
 
-Für einen isolierten Neubau ist im Repositoryhauptordner `npm run build:spfx:mvp05` vorgesehen. Das tatsächlich auf E und Q installierte, unverändert aufzubewahrende [Auslieferungsartefakt](../outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg) liegt unter `outputs/release-mvp05-2026-09-28/artifacts/fristenrechner-schweiz-0.5.0.0.sppkg`, trägt Version `0.5.0.0`, umfasst 222’393 Bytes und hat SHA-256 `f46beaadbfd9e2a893b55853bb2d622cb6850e5d72b08b9443d367e0d6f6cf39`. Der erhaltene lokale Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` enthält weiterhin das historische Paket `0.4.0.1`. Das ist kein Versionsfehler im getrennt gebauten MVP-0.5-Artefakt.
+Diese Befehle erzeugen einen **neuen lokalen Build**, nicht rückwirkend die freigegebenen Paketbytes. Der generische Ausgabepfad `sharepoint/solution/fristenrechner-schweiz.sppkg` darf weder als aktuelles Auslieferungsartefakt noch als Recovery angenommen werden.
 
-Beim ursprünglichen Kandidaten `0.4.0.0` wurde ein unabhängiger Neubau funktional geprüft, der wegen dokumentierter Buildvarianz nicht bitidentisch war. Dies ist kein Nachweis eines unabhängigen byteidentischen Zweitbaus von `0.5.0.0`. Die obige Prüfsumme bezeichnet ausschliesslich das konkret auf E und Q geprüfte Paket, nicht jeden späteren Neubau. Der [definitive MVP-0.5-Nachweis](../docs/betrieb/releaseartefakte-mvp-05.md) bindet tatsächliche Artefakte und archivierte Baubelege. Historische Buildvarianz bleibt in der [MVP-0.4-Vorprüfung](../docs/betrieb/publikationsvorpruefung-mvp04.md#p03-erklärte-buildvarianz-des-spfx-neubaus) dokumentiert.
+Der isolierte Korrekturbau ist in `../scripts/build-mvp07-spfx-0702.mjs` gebunden. Sein unverändert aufzubewahrendes [Paket `0.7.0.2`](../outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/artifacts/fristenrechner-schweiz-0.7.0.2.sppkg) umfasst **291’895 Bytes**, SHA-256 **`8bae0c1ea64b4482abea8fcdbd7aa5c576f6d552735b5a3e5f01a9ea68ab71db`**. Im gebundenen Bau sind 186 Quell-/Provider- und 83 Tests des kompilierten beziehungsweise paketierten Codes bestanden. Sie ersetzen keine Hostprüfung und werden nicht mit überlappenden Gruppen summiert. Der [Korrekturbaunachweis](../docs/betrieb/darstellungskorrektur-mvp07-0702.md) und dessen [maschinenlesbarer Bericht](../outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/artifact-verification.json) sind massgebend. Ein unabhängiger byteidentischer SPFx-Zweitbau wird nicht behauptet.
 
-## Bereitstellung
+Öffentliche Produkt-/Datenprüfungen aus dem Repositoryhauptordner umfassen `npm run check`, `npm run check:integrity:mvp07`, `npm run test:data:mvp07` und `npm run test:portability:mvp07`. Pythonprüfungen benötigen die eingerichtete `.venv`. Der separate strenge Befehl `npm run test:source-reviews:private:mvp07` benötigt private Originalbelege. Ein öffentlicher Integritätsnachweis macht daraus keinen erneuten Quellen-Vollaudit. Die tatsächlichen öffentlichen Integritäts- und bereinigten Exportprüfungen bleiben im [Publikationspaket](../docs/betrieb/publikationspaket-mvp07.md) getrennt dokumentiert.
 
-1. Erst nach konkreter Freigabe das oben hashgebundene `.sppkg` in den Tenant-App-Katalog hochladen und aktivieren. Den Codeeinfluss auf alle bereits verbundenen Instanzen berücksichtigen.
-2. App auf der SharePoint-Zielsite installieren.
-3. WebPart auf einer modernen Seite hinzufügen.
-4. Für Teams die App zusätzlich auf der zum Team gehörenden SharePoint-Website installieren.
-5. WebPart als Kanalregisterkarte hinzufügen.
-6. Falls verwendet, den Mirrorpfad für jede WebPart-Instanz separat konfigurieren.
+## Bereitstellung und Rückfall
 
-Die Bereitstellung ist adminarm, aber nicht adminfrei. Diese Anleitung autorisiert weder einen Upload noch eine zusätzliche Installation. Vor dem GitHub-Betrieb und einer neuen Dritt-Tenant-Auslieferung müssen der Datenpin veröffentlicht und die elf Laufzeitdateien öffentlich byteweise verifiziert sein. Bei einem Update von MVP 0.4 sind Consumer und Datenpfad gemeinsam umzustellen, weil der alte Consumer Format 5 nicht lesen kann. Bestehende Instanzkonfigurationen werden nicht zwingend durch ein Paketupdate ersetzt. Der Mirrorpfad bleibt pro Instanz ausdrücklich zu konfigurieren.
+1. Zielumfang, aktuellen Katalogbestand, sämtliche verbundenen Instanzen, Sicherungen und konkreten Rückfallweg frisch prüfen und freigeben.
+2. Nur das explizit hashgebundene Paket im bestehenden Katalog bereitstellen. Der gemeinsame Codewechsel kann alle verbundenen Instanzen erreichen. Keine automatische zusätzliche Siteinstallation.
+3. Freigegebene Site-Apps aktualisieren und die vollständigen eigenen Mirrorbytes prüfen. Erst mit Format-7-fähigem Consumer den Format-7-Pfad setzen, je Instanz speichern beziehungsweise publizieren.
+4. Tatsächliche SharePoint- und direkte Teams-Hosts anhand der [MVP07-Matrix](../docs/betrieb/pruefmatrix-mvp07.md) prüfen. Historische AP5-Pins und Daten bleiben erhalten.
+5. Manuelle Geräte-/Gastprüfung und fachliche Abnahme getrennt dokumentieren. Für einen anderen Tenant sind eigene Ziele und Rechte zu binden.
 
-Die [MVP-0.5-Deploymentanleitung](../docs/betrieb/deployment-mvp-05.md) enthält Zielumfang, Prüfmatrix und Rückfall auf die unmittelbar zuvor verifizierte Baseline. Die [Dritt-Tenant-Anleitung](../docs/betrieb/installation-und-betrieb-dritttenants.md) enthält die vollständige elfteilige Mirrorstruktur. Der aktuelle E-/Q-Nachweis belegt Installation, cachefreie Mirrorabrufe, kontrollierte Komponentenladefehler und tatsächliche Kalenderdateiexporte auf allen vier Instanzen. Q-Abnahme und reale Anmeldung des bestehenden B2B-Gasts sind separat durch David bestätigt. Outlook Desktop hat er als manuell geprüft gemeldet. Outlook Web wurde mit einem tatsächlichen Import geprüft und der Testtermin anschliessend entfernt. Der [Outlook-Nachweis](../docs/betrieb/outlook-pruefung-mvp05.md) hält das Ergebnis separat fest, nicht aus dem ICS-Export abgeleitet. Diese Nachweise sind keine Dritt-Tenant-, GitHub- oder P-Freigabe. Der [Q-Betrieb](../docs/betrieb/q-demobetrieb-ap15-betriebsanweisung.md) bleibt auf das beschlossene Gruppenprinzip begrenzt, ohne neue Berechtigungen durch dieses Paket.
+Der gebilligte Rückfall für den bestehenden E-/Q-Stand verwendet [Recovery `0.7.0.3`](../docs/betrieb/wiederherstellungskandidat-mvp07-0703.md), SHA-256 `9490890245e8aad54a5ec5eae731a0ee895f9fc9439dec19b371315085794702`. Nach der [konkreten Vorlage](../docs/betrieb/eq-installationsvorlage-mvp07-0702.md) werden zuerst die gesicherten Format-6-Mirrorpfade wiederhergestellt, dann das höher versionierte Recoverypaket angewendet und anschliessend alle vier Hosts sowie AP5 geprüft. Standards bleiben geschützt, kein Browserdatenreset. Recovery wurde nicht eingesetzt. Eine spätere reguläre MVP07-Wiederaufnahme benötigt erneut eine höhere Paketversion. Ein alter Consumer darf nicht unkontrolliert an Format-7-Daten verbleiben.
+
+Die acht E-/Q-ICS-Dateien sind tatsächlich gespeichert und geprüft. Ein neuer Outlook-Import fand nicht statt. Die [Wiederverwendungsbewertung](../docs/betrieb/outlook-wiederverwendung-mvp07.md) ist ein begründeter Vorschlag, noch keine Abnahme. E-/Q-Abnahme, ursprüngliche Quellenfreigabe und lokale Publikationsvorbereitung autorisieren weder GitHub-Push noch P-Bereitstellung oder neue M365-Rechte.
 
 ## Lizenz
 

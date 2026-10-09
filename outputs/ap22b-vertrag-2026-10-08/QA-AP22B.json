@@ -1,0 +1,120 @@
+{
+  "kind": "ap22b-contract-qa",
+  "date": "2026-10-08",
+  "status": "proposal-ready-for-review",
+  "contractApproved": false,
+  "runtimeActive": false,
+  "releaseBuilt": false,
+  "published": false,
+  "structure": {
+    "status": "contractProposal",
+    "contractApproved": false,
+    "runtimeActive": false,
+    "matrixDecisions": 198,
+    "procedureBindings": 104,
+    "projectionRecipes": 32,
+    "plannedManifestArtifacts": 40,
+    "preservedRules": 479,
+    "supplementalRules": 12,
+    "excludedDecisions": 20,
+    "resultDependentBindings": 4,
+    "regionalBindings": 8,
+    "sourceEvidence": 157
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.14",
+    "scope": "Isolated schema and proposal tests only. Not a Node-22 production build qualification."
+  },
+  "tests": {
+    "total": 44,
+    "passed": 44,
+    "failed": 0,
+    "node": {
+      "count": 24,
+      "command": "node --test --test-reporter=tap tests/governance/ap22b-contract.test.mjs tests/governance/ap22b-reference-index.test.mjs",
+      "outputSha256": "beff2e308bcd3f58b3387ec02ff1272b4c757236076cb96e60e04bbe9303c82a"
+    },
+    "python": {
+      "count": 20,
+      "command": ".venv/bin/python -m unittest discover -s tests/data -p test_ap22b_*.py -v",
+      "outputSha256": "8b5091050bd2ba2c917d41f893ef2a8374d393612a94d836aca7ebe2283b4e9e"
+    }
+  },
+  "references": {
+    "ap22aGroups": 25,
+    "centralBoundaries": 8,
+    "januaryCounterfactuals": 4,
+    "productCasesExecuted": false
+  },
+  "productRegressionReexecuted": false,
+  "legalSourcesRechecked": false,
+  "sourceEvidenceDate": "2026-10-02",
+  "artifacts": [
+    {
+      "path": "docs/architektur/kalendervertrag-ap22b.md",
+      "byteLength": 20419,
+      "sha256": "bf682c5dbdc57593b7355749405d9a6f9a4a08d6c12502d6f315df5c4e336b73"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-030-kalenderaktivierung-formatvertrag.md",
+      "byteLength": 5367,
+      "sha256": "519726f943f6ab60999c5da9a433c40d6dd2d7d4b3e4022e68d3a5dda4d21ad4"
+    },
+    {
+      "path": "schemas/candidates/ap22b/holiday-catalog-v2.schema.json",
+      "byteLength": 53957,
+      "sha256": "b1ef62006968380731209bdf31a952222ea2779811264cc492727bcca3122069"
+    },
+    {
+      "path": "schemas/candidates/ap22b/calendar-rules-v3.schema.json",
+      "byteLength": 21707,
+      "sha256": "86ec46d639e703cc30dfb1b51fc9cbdb573c911e11920acf503babebec85ca57"
+    },
+    {
+      "path": "schemas/candidates/ap22b/release-manifest-v7.schema.json",
+      "byteLength": 12255,
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "tests/golden/candidates/ap22b-holiday-contract.json",
+      "byteLength": 1183558,
+      "sha256": "572b735fdb5cdbd7a397b41f6f1cb7eb99a15db43e506d9bc8e312293ba00c0a"
+    },
+    {
+      "path": "tests/golden/candidates/ap22b-calendar-references.json",
+      "byteLength": 36049,
+      "sha256": "7341cf47846885e9fa4416a5849816e1af78bd1787d077d160c17005c8caca42"
+    },
+    {
+      "path": "scripts/build-ap22b-contract.mjs",
+      "byteLength": 14777,
+      "sha256": "7a2f203cce98bc960ac65eb11d1c08d90a84887ba6ad1f038e1c4dd77fe73d34"
+    },
+    {
+      "path": "scripts/check-ap22b-contract.mjs",
+      "byteLength": 3543,
+      "sha256": "19b2c190ca4fd909f2262f2ca145825ff06de7e78470a22b0221a178310c6745"
+    },
+    {
+      "path": "tests/governance/ap22b-contract.test.mjs",
+      "byteLength": 16223,
+      "sha256": "68f5045ce0fc30f2a9dd6cc7d74a63addb8552fc83868e79f3b0861186dc882c"
+    },
+    {
+      "path": "tests/governance/ap22b-reference-index.test.mjs",
+      "byteLength": 9534,
+      "sha256": "67ccf160f3f7c86910b810fe99676598e45134af4e3e1ee19973b046cae7aa76"
+    },
+    {
+      "path": "tests/data/test_ap22b_catalog.py",
+      "byteLength": 3256,
+      "sha256": "526f53d41b78ed97177817326fb11c59e594fab7f5515236feb6abcd838c1065"
+    },
+    {
+      "path": "tests/data/test_ap22b_formats.py",
+      "byteLength": 11202,
+      "sha256": "9c8fae865d06e94fab5dd03f8494f7e73495dedc342c2cbdbd3528d724aacdb9"
+    }
+  ]
+}

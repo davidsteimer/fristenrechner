@@ -1,0 +1,1302 @@
+{
+  "kind": "ap22b-calendar-reference-index",
+  "version": "0.1.0",
+  "status": "draft",
+  "preparedOn": "2026-10-08",
+  "implementation": false,
+  "productActivation": false,
+  "calculationPerformed": false,
+  "contractApproved": false,
+  "sourceMatrix": {
+    "path": "outputs/ap22a-abnahme-2026-10-08/matrix-data-v10.json",
+    "sha256": "7c0512b66fcd7206c47f2d36b4774824325fe779b7045cb12925bf2fb0146f89"
+  },
+  "scope": "Strukturierter Referenzindex und Sollwerte für AP22B/C. Keine neue Rechtsprüfung, kein Produktresolver und keine zweite Fristenarithmetik.",
+  "evidenceBoundary": "25 AP22A-Referenzgruppen, acht zentrale Gegenproben und vier ergänzende Januar-Sollproben. Keine Aussage über neu bestandene Produktfälle. Historische Normstände und isolierte Endtagsproben aktivieren keine historischen oder zukünftigen Produktzeiträume.",
+  "counts": {
+    "ap22aGroups": 25,
+    "centralBoundaries": 8,
+    "januaryCounterfactuals": 4
+  },
+  "referenceGroups": [
+    {
+      "id": "BUND01",
+      "sourcePath": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "ref": "BUND01",
+      "kind": "historicalFullCase",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical",
+          "input": {
+            "profile": "BGG",
+            "serviceDate": "2023-07-07",
+            "days": 30,
+            "summerSuspension": true,
+            "partyCanton": "SH",
+            "representativeCanton": "GE"
+          },
+          "expected": {
+            "outcome": "date",
+            "nominalDate": "2023-09-07",
+            "finalDate": "2023-09-08"
+          }
+        }
+      ],
+      "note": "GE-Zustellvertretung massgebend. SH nicht zusätzlich verwenden."
+    },
+    {
+      "id": "BUND02",
+      "sourcePath": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "ref": "BUND02",
+      "kind": "historicalFullCase",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical",
+          "input": {
+            "profile": "BGG",
+            "serviceDate": "2025-05-20",
+            "days": 30,
+            "representativeCanton": "VD",
+            "partyPlace": "Anonymisierter Ort mit Fronleichnam, Kanton nicht bestimmt"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2025-06-19",
+            "filingDate": "2025-06-20",
+            "filingTimely": false
+          }
+        }
+      ],
+      "note": "Keinen bestimmten Parteiort erfinden."
+    },
+    {
+      "id": "BUND03",
+      "sourcePath": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "ref": "BUND03",
+      "kind": "historicalFullCase",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical",
+          "input": {
+            "profile": "StPO",
+            "serviceDate": "2020-05-20",
+            "days": 10,
+            "representativeCanton": "SG"
+          },
+          "expected": {
+            "outcome": "date",
+            "nominalDate": "2020-05-30",
+            "finalDate": "2020-06-02"
+          }
+        }
+      ],
+      "note": "Advokaturbüro statt Behördenort."
+    },
+    {
+      "id": "BUND04",
+      "sourcePath": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "ref": "BUND04",
+      "kind": "historicalFullCase",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical",
+          "input": {
+            "profile": "StPO",
+            "serviceDate": "2022-12-23",
+            "days": 10,
+            "partyCanton": "GE",
+            "representation": "none"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2023-01-02",
+            "filingDate": "2023-01-03",
+            "filingTimely": false
+          }
+        }
+      ],
+      "note": "Kein Weihnachtsstillstand, kein Ersatzurlaub als Feiertag."
+    },
+    {
+      "id": "BUND05",
+      "sourcePath": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "ref": "BUND05",
+      "kind": "historicalFullCase",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical",
+          "input": {
+            "profile": "VwVG",
+            "serviceDate": "2010-10-29",
+            "days": 3,
+            "representation": "nonProfessional",
+            "representativeCanton": "BE",
+            "partyPlace": "Damals katholisches FR-Feiertagsgebiet"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2010-11-02"
+          },
+          "note": "Historischer Sollwert, keine heutige automatische Kumulationsregel."
+        },
+        {
+          "id": "current-product-boundary",
+          "input": {
+            "profile": "VwVG",
+            "representation": "unresolvedNonProfessionalMultiPlace"
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false,
+            "reason": "unresolved-anchor"
+          }
+        }
+      ],
+      "note": "Historischen Normstand explizit binden."
+    },
+    {
+      "id": "BUND06",
+      "sourcePath": "docs/fachrecht/ap22a-bundesanknuepfungen.md",
+      "ref": "BUND06",
+      "kind": "historicalFullCase",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical",
+          "input": {
+            "profile": "BGG",
+            "serviceDate": "2023-10-02",
+            "days": 30,
+            "partyPlace": "Lenzburg AG",
+            "representation": "none"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2023-11-02",
+            "rejectedFinalDate": "2023-11-01"
+          }
+        }
+      ],
+      "note": "2E_8/2024 korrigiert den früheren Sollwert."
+    },
+    {
+      "id": "REG-01",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-01",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "BGG"
+            ],
+            "place": "Lenzburg AG",
+            "nominalDate": "2027-11-01"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2027-11-02"
+          }
+        }
+      ],
+      "note": "Keine Beschränkung auf die ArG-Region."
+    },
+    {
+      "id": "REG-02",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-02",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO"
+            ],
+            "place": "Bergdietikon AG",
+            "nominalDate": "2026-06-04"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-06-05"
+          }
+        }
+      ],
+      "note": "Eigene EG-StPO-Norm."
+    },
+    {
+      "id": "REG-03",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-03",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "VwVG"
+            ],
+            "place": "Aarau AG",
+            "nominalDate": "2026-01-02"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-01-05"
+          }
+        }
+      ],
+      "note": "Normativ zugeordnete Prozessliste."
+    },
+    {
+      "id": "REG-04",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-04",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "BGG",
+              "VwVG"
+            ],
+            "place": "Murten FR",
+            "nominalDate": "2026-12-08"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-12-09"
+          }
+        }
+      ],
+      "note": "JG-Liste statt reformierter Arbeitsrechtsliste."
+    },
+    {
+      "id": "REG-05",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-05",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO"
+            ],
+            "place": "Solothurn SO",
+            "nominalDate": "2026-05-01"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-05-04"
+          }
+        }
+      ],
+      "note": "Ganztägige Prozessregel, nicht der RTG-Halbtag."
+    },
+    {
+      "id": "REG-06",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-06",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "BGG",
+              "VwVG"
+            ],
+            "place": "Bucheggberg SO",
+            "nominalDate": "2026-06-04"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-06-05"
+          }
+        }
+      ],
+      "note": "Keine RTG-Ausnahme im Prozesskalender."
+    },
+    {
+      "id": "REG-07",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-07",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO"
+            ],
+            "place": "Neuchâtel NE",
+            "nominalDate": "2026-05-15"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-05-18"
+          }
+        }
+      ],
+      "note": "Eigene LI-CPP-/LI-CPC-Gleichstellung."
+    },
+    {
+      "id": "REG-08",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-08",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "VwVG"
+            ],
+            "place": "La Chaux-de-Fonds NE",
+            "nominalDate": "2026-09-21"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-09-22"
+          }
+        }
+      ]
+    },
+    {
+      "id": "REG-09",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-09",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "negative",
+          "input": {
+            "profile": "BGG",
+            "place": "Neuchâtel NE",
+            "nominalDate": "2026-12-08"
+          },
+          "expected": {
+            "outcome": "unchangedFromKnownRules",
+            "finalDate": "2026-12-08",
+            "coverageCaveats": [
+              "NE-additional-annual-or-local-orders"
+            ]
+          }
+        }
+      ],
+      "note": "Keine Aussage, dass vorbehaltene Jahresregeln nicht existieren."
+    },
+    {
+      "id": "REG-10",
+      "sourcePath": "docs/fachrecht/ap22a-regionale-zuordnungen.md",
+      "ref": "REG-10",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "local-positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "Le Landeron NE",
+            "nominalDate": "2026-06-04"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-06-05"
+          }
+        },
+        {
+          "id": "outside-local-scope",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "Neuchâtel NE",
+            "nominalDate": "2026-06-04"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-06-04"
+          }
+        }
+      ],
+      "note": "Beide Szenarien behalten den NE-Jahresvorbehalt."
+    },
+    {
+      "id": "PROC-SH-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-SH-2026",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "BGG",
+              "VwVG"
+            ],
+            "place": "SH",
+            "nominalDate": "2026-01-02"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-01-05"
+          }
+        },
+        {
+          "id": "stpo-boundary",
+          "input": {
+            "profile": "StPO",
+            "place": "SH",
+            "nominalDate": "2026-01-02"
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false
+          }
+        }
+      ],
+      "note": "SH/ZPO wird durch diesen Grenznachtrag nicht verändert."
+    },
+    {
+      "id": "PROC-SG-2023",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-SG-2023",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "historical-zpo",
+          "input": {
+            "profiles": [
+              "ZPO"
+            ],
+            "place": "SG",
+            "nominalDate": "2012-01-02"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2012-01-03"
+          }
+        },
+        {
+          "id": "historical-vrp-dbg",
+          "input": {
+            "profiles": [
+              "VRP-SG",
+              "DBG"
+            ],
+            "place": "SG",
+            "nominalDate": "2023-01-02"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2023-01-02"
+          }
+        }
+      ],
+      "note": "Historischer Gegenvergleich, keine Aktivierung von VRP-SG/DBG und kein unmittelbarer Negativentscheid für BGG/VwVG/StPO."
+    },
+    {
+      "id": "PROC-SG-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-SG-2026",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "january-boundary",
+          "input": {
+            "profiles": [
+              "StPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "SG",
+            "nominalDate": "2026-01-02"
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-AR-2028/29",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-AR-2028/29",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "AR",
+            "nominalDate": "2029-12-26"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2029-12-27"
+          }
+        },
+        {
+          "id": "condition-negative",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "AR",
+            "nominalDate": "2028-12-26"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2028-12-26"
+          }
+        }
+      ],
+      "note": "Regelproben ausserhalb einer daraus ableitbaren Produktfreigabe."
+    },
+    {
+      "id": "PROC-VD-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-VD-2026",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "VD",
+            "nominalDate": "2026-09-21"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-09-22"
+          }
+        },
+        {
+          "id": "negative",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "VD",
+            "nominalDate": "2028-12-26"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2028-12-26"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-ZH-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-ZH-2026",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "ZH",
+            "nominalDate": "2026-05-01"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-05-04"
+          }
+        },
+        {
+          "id": "negative",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "ZH",
+            "nominalDate": "2026-06-04"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-06-04"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-LU-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-LU-2026",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive-december",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "LU",
+            "nominalDate": "2026-12-08"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-12-09"
+          }
+        },
+        {
+          "id": "positive-january",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "LU",
+            "nominalDate": "2026-01-02"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-01-05"
+          }
+        },
+        {
+          "id": "negative",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "LU",
+            "nominalDate": "2026-03-19"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-03-19"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-ZG-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-ZG-2026",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "ZG",
+            "nominalDate": "2026-06-04"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-06-05"
+          }
+        },
+        {
+          "id": "negative",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "ZG",
+            "nominalDate": "2026-03-19"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-03-19"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PROC-VS-2026",
+      "sourcePath": "docs/fachrecht/ap22a-weitere-prozesslisten.md",
+      "ref": "PROC-VS-2026",
+      "kind": "endpoint",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "positive",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "VS",
+            "nominalDate": "2026-05-25"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-05-26"
+          }
+        },
+        {
+          "id": "negative",
+          "input": {
+            "profiles": [
+              "StPO",
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ],
+            "place": "VS",
+            "nominalDate": "2026-05-01"
+          },
+          "expected": {
+            "outcome": "date",
+            "finalDate": "2026-05-01"
+          }
+        }
+      ]
+    }
+  ],
+  "centralBoundaries": [
+    {
+      "id": "ZENT01",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT01",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "missing-place",
+          "input": {
+            "profiles": [
+              "StPO",
+              "BGG",
+              "VwVG"
+            ],
+            "authorityCanton": "CH",
+            "anchorPlace": null
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false,
+            "reason": "missing-anchor-place"
+          }
+        },
+        {
+          "id": "missing-court",
+          "input": {
+            "profile": "ZPO",
+            "courtPlace": null
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false,
+            "reason": "missing-court-place"
+          }
+        }
+      ],
+      "note": "Kein CH-/BE-Ersatzkalender."
+    },
+    {
+      "id": "ZENT02",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT02",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "professional",
+          "input": {
+            "profiles": [
+              "StPO",
+              "BGG",
+              "VwVG"
+            ],
+            "representation": "uniqueProfessionalServiceRepresentation"
+          },
+          "expected": {
+            "outcome": "anchor",
+            "role": "representative"
+          }
+        },
+        {
+          "id": "unresolved",
+          "input": {
+            "profiles": [
+              "StPO",
+              "BGG",
+              "VwVG"
+            ],
+            "representation": "unresolvedOrChangedMandate"
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false,
+            "reason": "unresolved-anchor"
+          }
+        }
+      ],
+      "note": "Keine freie Vereinigung und kein stiller Rollenwechsel."
+    },
+    {
+      "id": "ZENT03",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT03",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "gr-calendar",
+          "input": {
+            "authorityCanton": "BE",
+            "effectiveHolidayCanton": "GR"
+          },
+          "expected": {
+            "outcome": "boundedCalculation",
+            "scopes": [
+              "GR-PUBLIC-ALL",
+              "CH-ALL"
+            ],
+            "visibleCaveats": [
+              "GR-local-holidays-not-covered"
+            ]
+          }
+        },
+        {
+          "id": "gr-authority-only",
+          "input": {
+            "authorityCanton": "GR",
+            "effectiveHolidayCanton": "BE"
+          },
+          "expected": {
+            "outcome": "calculation",
+            "absentCaveats": [
+              "GR-local-holidays-not-covered"
+            ]
+          }
+        }
+      ],
+      "note": "Hinweis hängt am tatsächlich verwendeten Kalender."
+    },
+    {
+      "id": "ZENT04",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT04",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "unreleased-social-binding",
+          "input": {
+            "calendarAvailable": true,
+            "socialBindingReleased": false
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false,
+            "reason": "social-binding-not-released"
+          }
+        }
+      ],
+      "note": "Kalenderverfügbarkeit aktiviert keine Sozialanbindung aus Issue #35."
+    },
+    {
+      "id": "ZENT05",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT05",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "separate-effects",
+          "input": {
+            "profile": "StPO",
+            "calendarAvailable": true
+          },
+          "expected": {
+            "outcome": "calculation",
+            "courtRecessApplied": false
+          }
+        },
+        {
+          "id": "other-profiles",
+          "input": {
+            "profiles": [
+              "ZPO",
+              "BGG",
+              "VwVG"
+            ]
+          },
+          "expected": {
+            "outcome": "preserve-existing-recess-rules"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ZENT06",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT06",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "unknown",
+          "input": {
+            "missingOrUnresolvedSource": true
+          },
+          "expected": {
+            "outcome": "disclose-gap",
+            "mustNotBecome": "proven-not-holiday"
+          }
+        },
+        {
+          "id": "negative-binding",
+          "input": {
+            "bindingMode": "exclude"
+          },
+          "expected": {
+            "outcome": "preserve-negative-binding"
+          }
+        },
+        {
+          "id": "accepted-caveat",
+          "input": {
+            "acceptedCoverageCaveat": "GR-or-NE"
+          },
+          "expected": {
+            "outcome": "boundedCalculation"
+          }
+        }
+      ],
+      "note": "Unbekannt, negativ entschieden und bewusst begrenzt sind verschiedene Zustände."
+    },
+    {
+      "id": "ZENT07",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT07",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "same-date",
+          "input": {
+            "duplicateDateFromAllowedSources": true
+          },
+          "expected": {
+            "outcome": "single-date-effect",
+            "retainAllSourceRefs": true
+          }
+        },
+        {
+          "id": "replacement",
+          "input": {
+            "bindingMode": "replace"
+          },
+          "expected": {
+            "outcome": "only-selected-list",
+            "unionWithReplacedList": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "ZENT08",
+      "sourcePath": "docs/fachrecht/ap22a-referenzfaelle.md",
+      "ref": "ZENT08",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "scenarios": [
+        {
+          "id": "outside-release",
+          "input": {
+            "dateCanBeGenerated": true,
+            "releaseCoversCase": false
+          },
+          "expected": {
+            "outcome": "clarification",
+            "definitiveResult": false,
+            "calendarExportAllowed": false,
+            "reason": "outside-approved-coverage"
+          }
+        }
+      ],
+      "note": "Datierung ersetzt weder zeitliche Gültigkeit noch Format- oder Freigabevertrag."
+    }
+  ],
+  "januaryCounterfactuals": [
+    {
+      "id": "JAN02-DIFFERENT-2026",
+      "sourcePath": "docs/entscheidungen/DEC-2026-029-begrenzte-behandlung-zweiter-januar.md",
+      "ref": "DEC-2026-029",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "affectedBindingIds": [
+        "AP22-SH-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-BGG",
+        "AP22-SG-ZPO-ADDITIONAL-VWVG"
+      ],
+      "scenarios": [
+        {
+          "id": "endpoint-counterfactual",
+          "input": {
+            "nominalDate": "2026-01-02",
+            "phase": "endpointAdjustment",
+            "toggle": "only-the-bound-jan2-rule",
+            "otherRulesIdentical": true
+          },
+          "expected": {
+            "withoutJanuary2": {
+              "finalDate": "2026-01-02"
+            },
+            "withJanuary2": {
+              "finalDate": "2026-01-05"
+            },
+            "requiresClarification": true,
+            "definitiveResult": false,
+            "calendarExportAllowed": false
+          }
+        }
+      ],
+      "note": "Nomineller Endtag ist der Freitag 2. Januar. Unterschied verlangt Einzelfallklärung."
+    },
+    {
+      "id": "JAN02-REACHED-2026",
+      "sourcePath": "docs/entscheidungen/DEC-2026-029-begrenzte-behandlung-zweiter-januar.md",
+      "ref": "DEC-2026-029",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "affectedBindingIds": [
+        "AP22-SH-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-BGG",
+        "AP22-SG-ZPO-ADDITIONAL-VWVG"
+      ],
+      "scenarios": [
+        {
+          "id": "endpoint-counterfactual",
+          "input": {
+            "nominalDate": "2026-01-01",
+            "phase": "endpointAdjustment",
+            "toggle": "only-the-bound-jan2-rule",
+            "otherRulesIdentical": true
+          },
+          "expected": {
+            "withoutJanuary2": {
+              "finalDate": "2026-01-02"
+            },
+            "withJanuary2": {
+              "finalDate": "2026-01-05"
+            },
+            "requiresClarification": true,
+            "definitiveResult": false,
+            "calendarExportAllowed": false
+          }
+        }
+      ],
+      "note": "Neujahr wird in beiden Pfaden berücksichtigt. Der 2. Januar wird erst durch Endtagsverschiebung erreicht."
+    },
+    {
+      "id": "JAN02-SAME-WEEKEND-2027",
+      "sourcePath": "docs/entscheidungen/DEC-2026-029-begrenzte-behandlung-zweiter-januar.md",
+      "ref": "DEC-2026-029",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "affectedBindingIds": [
+        "AP22-SH-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-BGG",
+        "AP22-SG-ZPO-ADDITIONAL-VWVG"
+      ],
+      "scenarios": [
+        {
+          "id": "endpoint-counterfactual",
+          "input": {
+            "nominalDate": "2027-01-02",
+            "phase": "endpointAdjustment",
+            "toggle": "only-the-bound-jan2-rule",
+            "otherRulesIdentical": true
+          },
+          "expected": {
+            "withoutJanuary2": {
+              "finalDate": "2027-01-04"
+            },
+            "withJanuary2": {
+              "finalDate": "2027-01-04"
+            },
+            "requiresClarification": false,
+            "definitiveResult": true,
+            "calendarExportAllowed": true
+          }
+        }
+      ],
+      "note": "Samstag und Sonntag beseitigen den Ergebnisunterschied. Abweichende Rechenspur allein sperrt nicht."
+    },
+    {
+      "id": "JAN02-IRRELEVANT-2026",
+      "sourcePath": "docs/entscheidungen/DEC-2026-029-begrenzte-behandlung-zweiter-januar.md",
+      "ref": "DEC-2026-029",
+      "kind": "productBoundary",
+      "implementation": false,
+      "verificationStatus": "specified-not-executed",
+      "affectedBindingIds": [
+        "AP22-SH-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-STPO",
+        "AP22-SG-ZPO-ADDITIONAL-BGG",
+        "AP22-SG-ZPO-ADDITIONAL-VWVG"
+      ],
+      "scenarios": [
+        {
+          "id": "endpoint-counterfactual",
+          "input": {
+            "nominalDate": "2026-02-03",
+            "phase": "endpointAdjustment",
+            "toggle": "only-the-bound-jan2-rule",
+            "otherRulesIdentical": true
+          },
+          "expected": {
+            "withoutJanuary2": {
+              "finalDate": "2026-02-03"
+            },
+            "withJanuary2": {
+              "finalDate": "2026-02-03"
+            },
+            "requiresClarification": false,
+            "definitiveResult": true,
+            "calendarExportAllowed": true
+          }
+        }
+      ],
+      "note": "Gewöhnlicher Dienstag ohne Januarwirkung. Keine pauschale Kantons- oder Verfahrenssperre."
+    }
+  ],
+  "counterfactualContract": {
+    "comparison": "legal-result-not-trace-or-metadata",
+    "startAt": "same-pre-adjustment-result",
+    "toggle": "named-rule-contribution-not-all-events-on-jan2",
+    "includeEntireEndpointShift": true,
+    "noEarlyStopAtFirstDifference": true,
+    "noDefinitiveDateOrExportWhenDifferent": true,
+    "noProductRuntimeImplemented": true,
+    "unchangedBindings": [
+      "AP22-SH-ZPO-ADDITIONAL-ZPO",
+      "AP22-SG-ZPO-ADDITIONAL-ZPO",
+      "AP22-SH-ZPO-ADDITIONAL-BGG",
+      "AP22-SH-ZPO-ADDITIONAL-VWVG"
+    ],
+    "notes": "Die vier Proben gelten je für die vier betroffenen Bindungen. Andere fachliche oder technische Sperren bleiben unabhängig bestehen. Kein Vergleich blosser Kalenderlisten, Zwischenwerte oder Rechenspuren."
+  }
+}

@@ -33,6 +33,12 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 
 ## Laufende Ergänzungen
 
+**AP22B und AP22C1, 8. Oktober 2026:** David Steimer hat den Daten- und Migrationsplan einschliesslich sämtlicher acht Eckpunkte ausdrücklich bestätigt. [AP22B ist abgenommen](../fachrecht/abnahme-ap22b.md) und [DEC-2026-030 beschlossen](DEC-2026-030-beschluss.md). Katalog 2.0.0, Kalender 3.0.0, Manifest/Mindestconsumer 7.0.0, konkrete Zeitabdeckung und Migration sind bestätigt. Der prüfsummengebundene Entwurf bleibt unverändert. Der anschliessende ausdrückliche Startauftrag führt zur [lokalen AP22C1-Umsetzung](../architektur/kalenderintegration-ap22c1.md), die technisch geprüft und zur Teilpaketabnahme bereit ist. Kein neuer Vertragsentscheid, keine Produktaktivierung. AP22C2 ist noch nicht gestartet.
+
+**8. Oktober 2026:** [DEC-2026-029](DEC-2026-029-begrenzte-behandlung-zweiter-januar.md), Klasse A, bestätigt die ergebnisabhängig begrenzte Behandlung des 2. Januar für SH/StPO und SG/StPO, SG/BGG, SG/VwVG. [AP22A ist damit abgeschlossen](../fachrecht/abschluss-ap22a.md). Die übrige Fachfreigabe nach DEC-2026-028 bleibt unverändert. AP22B folgt als gesonderter Vertragsauftrag. Keine Produktaktivierung oder Veröffentlichung. Der nachstehende Eintrag vom 2. Oktober dokumentiert den damaligen Zwischenstand.
+
+**2. Oktober 2026:** [DEC-2026-027](DEC-2026-027-schrittweiser-schweizausbau.md), Klasse A, bestätigt den schrittweisen Releaseumfang. Der anschliessende [DEC-2026-028](DEC-2026-028-operative-freigabe-kalenderzuordnungen.md), ebenfalls Klasse A, dokumentiert die ausdrückliche fachliche Freigabe der offenen Kalenderzuordnungen zur operativen Verwendung, einschliesslich GR-Abgrenzung und SO-Ergänzung. Für 73 bisherige Prüfaufträge bleiben konkrete Wirkungsdefinitionen auszuarbeiten. [AP22A](../architektur/kalenderaktivierung-ap22a.md) ist noch nicht insgesamt abgeschlossen. Keine neue Format-, Installations- oder Publikationsfreigabe. Zusätzliche Sozialanbindungen und IT/Rumantsch Grischun bleiben gesonderten Prüfungen vorbehalten.
+
 | ID | Klasse | Status | Kurzentscheid | Ersetzt durch |
 | --- | --- | --- | --- | --- |
 | [DEC-2026-012](DEC-2026-012-providerneutrales-datenrelease-format.md) | B | beschlossen | Strikte JSON-Schemata und manifestbasierte, providerneutrale Datenreleases | – |
@@ -48,6 +54,10 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | [DEC-2026-024](DEC-2026-024-nationales-sozialversicherungsmodell.md) | B | beschlossen | Weitere Sozialversicherungsregeln national modellieren. Kantonale Anbindung und zunächst bernische Produktfreigabe getrennt führen. Noch kein neuer Formatvertrag oder freigegebener Berechnungspfad | – |
 | [DEC-2026-025](DEC-2026-025-sozialverfahrenskatalog-und-manifest-v5.md) | B | beschlossen | Eigenständiger Sozialverfahrenskatalog 1.0.0 mit Manifest-/Consumerformat 5.0.0 und expliziter Migration. AP19B einschliesslich AVIV-Option B und statischer UI-Folge abgenommen, keine Laufzeitfreigabe | – |
 | [DEC-2026-026](DEC-2026-026-beschluss.md) | B | beschlossen | AP20-Nachtrag mit Sozialverfahrenskatalog 2.0.0 und Manifest-/Mindestconsumer 6.0.0. 20 neue Bundesregeln, 22 Berner Anbindungen. Gebundener Entwurf bleibt erhalten, keine Produktaktivierung | – |
+| [DEC-2026-027](DEC-2026-027-schrittweiser-schweizausbau.md) | A | beschlossen | Schrittweiser Schweiz-Ausbau. Zuerst Kalenderaktivierung für geprüfte Bundesprofile und AP21, kantonale Verwaltungsverfahren als Folgetranchen | – |
+| [DEC-2026-028](DEC-2026-028-operative-freigabe-kalenderzuordnungen.md) | A | beschlossen | Offene Kalenderzuordnungen fachlich zur operativen Verwendung freigegeben. GR bewusst begrenzt, SO-Prozessliste eingeschlossen, konkrete Wirkungsdefinitionen und technische Aktivierung getrennt | – |
+| [DEC-2026-029](DEC-2026-029-begrenzte-behandlung-zweiter-januar.md) | A | beschlossen | Vier Jan.-2-Verbindungen bleiben verwendbar, bei Ergebnisunterschied Einzelfallklärung statt definitivem automatischem Fristresultat. AP22A abgeschlossen, Umsetzung separat | – |
+| [DEC-2026-030](DEC-2026-030-beschluss.md) | B | beschlossen | Katalog 2, Kalender 3 und Manifest/Consumer 7 mit expliziten Verfahrensbindungen, Januarvergleich, Zeitabdeckung und kontrollierter Migration. Gebundener Entwurf bleibt erhalten | – |
 
 ## Abnahme AP20B und Beschluss DEC-2026-026
 

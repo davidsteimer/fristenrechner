@@ -3,301 +3,251 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Freischaltungsentscheid, Installation und Betrieb durch eine Microsoft-365-IT |
-| Interner Produktstand | MVP 0.6, Paket `0.6.0.1` auf vier bestehenden E-/Q-Sites installiert und begrenzt nachgeprüft. Q fachlich abgenommen, Gastanmeldung bestätigt und Outlook-Wiederverwendung begründet. Veröffentlichung noch offen. Keine zusätzliche Dritt-Tenant-Installation freigegeben |
-| Letzter dokumentierter öffentlicher Betriebsstand | MVP 0.5 auf P, GitHub-Veröffentlichung gemäss Produktionsnachweis vom 28. September 2026 |
-| Stand | 1. Oktober 2026, einschliesslich E-/Q-Korrekturinstallation und begrenzter Live-Nachtests |
+| Interner Produktstand | MVP 0.7, Paket `0.7.0.2`, vier bestehende E-/Q-Instanzen geprüft. Reale Geräteprüfung und Gastzugriff durch David bestätigt, Q am 9. Oktober 2026 abgenommen |
+| Letzter dokumentierter öffentlicher Betriebsstand | MVP 0.6 gemäss Produktionsnachweis vom 1. Oktober 2026 |
+| Publikationsstatus MVP 0.7 | Lokale Vorbereitung. GitHub und P brauchen eigene ausdrückliche Freigaben. Keine zusätzliche Dritt-Tenant-Installation freigegeben |
+| Stand | 9. Oktober 2026 |
 | Zielplattform | SharePoint Online, optional Microsoft Teams |
 
-Diese Anleitung beschreibt die technische Installation von MVP 0.6. AP20C1 bis AP20C3 und die [zusammengeführte Quellenprüfung](../fachrecht/abnahme-quellen-mvp06.md) sind abgenommen. EOG, FamZG, FLG, MVG und ÜLG ergänzen den Bestand auf 44 national modellierte Regeln und 50 ausschliesslich bernische Anbindungen. Datenfreigabe, lokaler Bau und der gesondert freigegebene E-/Q-Vollzug sind erfolgt. Die begrenzte Lesbarkeitskorrektur und deren Live-Nachtests sind im [Paketnachweis 0.6.0.1](spfx-korrekturkandidat-mvp06-0601.md) gebunden. Der ursprüngliche [Artefaktnachweis](releaseartefakte-mvp-06.md) bleibt erhalten. Für P liegt inzwischen ein [separates korrigiertes Webarchiv](publikationspaket-mvp06.md#gebundener-umfang) vor. Das ursprüngliche Webarchiv ist nur noch historischer Nachweis. Veröffentlichung und weitere Zielinstallationen benötigen eigene Freigaben gemäss [Deploymentplan](deployment-mvp-06.md).
-
-Der [E-/Q-Nachweis für MVP 0.5](eq-installation-mvp05.md) dokumentiert 123 technische Prüfpunkte, die [Q-Abnahme](abnahme-q-mvp05.md) die fachliche Prüfung und bestehende Gastanmeldung. Der [Produktionsnachweis vom 28. September 2026](produktionsbereitstellung-mvp05-2026-09-28.md) bestätigt die anschliessende GitHub-Veröffentlichung und P-Bereitstellung von MVP 0.5 mit begrenzt akzeptierten Header-/Cacheabweichungen und offener direkter Browserstorage-Wertkontrolle. Diese Nachweise werden nicht als Tests von MVP 0.6 oder eines Dritt-Tenants übernommen. Die Anleitung selbst autorisiert weder Installation noch neue Gastrechte oder P-Bereitstellung.
+Diese Anleitung beschreibt die Installation des abgenommenen E-/Q-Paketstands und seines vollständigen Format-7-Mirrors. Sie ist kein Nachweis eines bereits geprüften Dritt-Tenants und erteilt selbst keine Installations-, Berechtigungs- oder Publikationsfreigabe. Der [aktuelle E-/Q-Vollzug](eq-vollzugsnachweis-mvp07-0702.md) und die [Q-Abnahme](abnahme-q-mvp07.md) behalten F08 als Anzeigeortabweichung und T09 als qualifizierte Wiederverwendung bei. Der [öffentliche Produktionsnachweis](produktionsbereitstellung-mvp06-2026-10-01.md) betrifft weiterhin MVP 0.6.
 
 ## 1. Entscheid für die IT in Kürze
 
-Eine Installation in einem anderen Microsoft-365-Tenant ist technisch vorgesehen. Das Paket ist keine zentral gehostete SaaS-Anwendung. Es wird als organisationsinterne SPFx-Lösung in den App-Katalog des Zieltenants aufgenommen und auf den vorgesehenen SharePoint-Websites installiert.
+Die Installation in einem anderen Microsoft-365-Tenant ist technisch vorgesehen. Die App wird als organisationsinterne SPFx-Lösung in den App-Katalog aufgenommen und auf den vorgesehenen SharePoint-Websites installiert.
 
-Für den Freischaltungsentscheid sind folgende Punkte wesentlich:
+- Keine Microsoft-Graph- oder sonstige Web-API-Zustimmung, keine Entra-ID-App-Registrierung und kein Clientgeheimnis.
+- Keine eigene Server- oder Datenbankinfrastruktur. Client-Assets liegen im von SharePoint Online verwalteten `ClientSideAssets`-Speicher.
+- Installation pro Zielwebsite, keine automatische Aktivierung auf allen Websites. Ein gemeinsames Paketupdate kann dennoch alle bereits verbundenen Instanzen erreichen.
+- Wahlweise unveränderlich gepinnter öffentlicher GitHub-Datenrelease oder vollständiger tenantinterner SharePoint-Mirror.
+- Lokale Berechnung und Kalenderdatei ohne Übermittlung der eingegebenen Fristdaten an einen Fachdienst.
+- Quellcode unter AGPL-3.0-only. Weitere Inhalte behalten ihre ausgewiesenen Lizenzen.
 
-- keine Microsoft-Graph- oder sonstige Web-API-Zustimmung
-- keine Entra-ID-App-Registrierung und kein Clientgeheimnis
-- keine eigene Server- oder Datenbankinfrastruktur
-- Client-Assets im von SharePoint Online verwalteten `ClientSideAssets`-Speicher
-- Installation pro Zielwebsite, keine automatische Aktivierung auf allen Websites
-- wahlweise öffentlicher, unveränderlich gepinnter GitHub-Datenrelease oder tenantinterner SharePoint-Mirror
-- lokale Berechnung ohne Übermittlung der eingegebenen Fristdaten an einen Fachdienst
-- Open-Source-Quellcode unter AGPL-3.0-only
-
-## 2. Benötigte Rollen und Voraussetzungen
+## 2. Rollen und Voraussetzungen
 
 | Aufgabe | Erforderliche Rolle oder Berechtigung |
 | --- | --- |
 | App-Katalog bereitstellen oder freigeben | SharePoint-Administrator |
 | `.sppkg` hochladen und aktivieren | SharePoint-Administrator oder delegierte App-Katalog-Administration |
-| App auf einer Zielwebsite installieren | Websitebesitzerin oder Websitebesitzer mit App-Installationsrecht |
-| WebPart auf einer Seite einfügen und konfigurieren | Bearbeitungsrecht auf der Zielseite |
+| App auf einer Zielwebsite installieren oder aktualisieren | Websitebesitzerin oder Websitebesitzer mit entsprechendem App-Recht |
+| WebPart konfigurieren und Seite publizieren | Bearbeitungsrecht auf der Zielseite |
 | Organisationsinterne Teams-App publizieren und zulassen | Teams-Administrator |
-| Teams-Registerkarte hinzufügen | Berechtigung zur Registerkartenverwaltung im Zielteam |
-| Mirrorordner pflegen | Bearbeitungsrecht in der betreffenden SharePoint-Dokumentbibliothek |
-| Mirror verwenden | Leserecht auf sämtlichen Releaseartefakten |
+| Registerkarte hinzufügen oder konfigurieren | Berechtigung zur Registerkartenverwaltung im Zielteam |
+| Mirror pflegen | Bearbeitungsrecht im vorgesehenen Bibliotheksordner |
+| Rechner und Mirror verwenden | Leserecht auf Seite, Paketressourcen und sämtlichen Releaseartefakten |
 
-Technische Mindestvoraussetzungen:
+Benötigt werden Microsoft 365 mit SharePoint Online, eine moderne Website und Seite sowie ein unterstützter Browser mit IndexedDB und lokalem Speicher. Benutzerdefinierte Skripts müssen nicht aktiviert werden, das WebPart hat `requiresCustomScript: false`. Für Teams sind eine zugehörige SharePoint-Website und die gezielte Zulassung der organisationsinternen App erforderlich. Der Netzwerkzugriff umfasst entweder den eigenen Mirror oder HTTPS zu `raw.githubusercontent.com`.
 
-- Microsoft 365 mit SharePoint Online
-- moderne SharePoint-Website und moderne Seite
-- keine Aktivierung benutzerdefinierter Skripts erforderlich, das WebPart hat `requiresCustomScript: false`
-- für Teams ein Team mit zugehöriger SharePoint-Website
-- Tenant-App-Katalog, wenn SharePoint und Teams gemeinsam bedient werden sollen
-- zugelassene benutzerdefinierte Teams-Apps, wenn der direkte Teams-Host verwendet wird
-- moderner, von Microsoft 365 unterstützter Browser mit aktiviertem IndexedDB und lokalem Speicher
-- HTTPS-Zugriff auf `raw.githubusercontent.com` oder ein konfigurierter SharePoint-Mirror
+Für SharePoint und Teams gemeinsam wird ein Tenant-App-Katalog empfohlen. Bei reinem SharePoint-Betrieb auf einer einzelnen Site Collection kann ein Site-Collection-App-Katalog separat geprüft werden. SharePoint Server vor Ort ist nicht Gegenstand dieser Anleitung. Gastbetrieb erfordert eine eigene Prüfung im Zieltenant und ist nicht mit anonymem öffentlichen Zugriff gleichzusetzen.
 
-Für eine reine SharePoint-Installation auf einer einzelnen Site Collection kann auch ein Site-Collection-App-Katalog geprüft werden. Für den gemeinsamen SharePoint- und Teams-Betrieb wird der Tenant-App-Katalog empfohlen, weil SharePoint daraus das Teams-App-Paket erzeugen und in den organisationsinternen Teams-Katalog übertragen kann.
-
-## 3. Zu prüfendes Installationsartefakt
+## 3. Gebundenes Installationsartefakt
 
 | Merkmal | Wert |
 | --- | --- |
-| Paket | [`fristenrechner-schweiz-0.6.0.1.sppkg`](../../outputs/release-mvp06-spfx-0.6.0.1-2026-10-01/artifacts/fristenrechner-schweiz-0.6.0.1.sppkg) |
-| Version | `0.6.0.1`, auf den vier bestehenden E-/Q-Sites installiert und begrenzt nachgeprüft. Keine pauschale Freigabe für weitere Zielinstallationen |
-| Grösse und SHA-256 | Verbindlich im [Korrektur- und Installationsnachweis](spfx-korrekturkandidat-mvp06-0601.md) |
+| Paket | [`fristenrechner-schweiz-0.7.0.2.sppkg`](../../outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/artifacts/fristenrechner-schweiz-0.7.0.2.sppkg) |
+| Anwendung / Paketversion | `0.7.0` / `0.7.0.2` |
+| Grösse | 291’895 Bytes |
+| SHA-256 | `8bae0c1ea64b4482abea8fcdbd7aa5c576f6d552735b5a3e5f01a9ea68ab71db` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 
 Prüfung unter macOS oder Linux:
 
 ```bash
-shasum -a 256 outputs/release-mvp06-spfx-0.6.0.1-2026-10-01/artifacts/fristenrechner-schweiz-0.6.0.1.sppkg
+shasum -a 256 outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/artifacts/fristenrechner-schweiz-0.7.0.2.sppkg
 ```
 
 Prüfung unter Windows PowerShell:
 
 ```powershell
-Get-FileHash .\outputs\release-mvp06-spfx-0.6.0.1-2026-10-01\artifacts\fristenrechner-schweiz-0.6.0.1.sppkg -Algorithm SHA256
+Get-FileHash .\outputs\release-mvp07-spfx-0.7.0.2-2026-10-09\artifacts\fristenrechner-schweiz-0.7.0.2.sppkg -Algorithm SHA256
 ```
 
-Die Installation ist abzubrechen, wenn Version, Solution-ID oder Prüfsumme abweichen.
-
-Die Prüfsumme bezeichnet das konkret gebundene und auf den vier bestehenden E-/Q-Sites nachgeprüfte Korrekturpaket. Wegen dokumentierter SPFx-Buildvarianz kann ein funktional gleicher Neubau eine andere Prüfsumme haben. Er ist nicht automatisch als dieses Installationsartefakt freigegeben. Der [ursprüngliche Artefaktnachweis](releaseartefakte-mvp-06.md) bindet vollständigen Mirror, bisheriges Webarchiv und Datenpin. Die [Korrekturerweiterung](spfx-korrekturkandidat-mvp06-0601.md) bindet das neue SPFx-Paket bei unveränderten Daten. Der [lokale Publikationsnachweis](publikationspaket-mvp06.md) ergänzt den passenden korrigierten Webbau und den getrennten öffentlichen Prüfumfang. Diese Dateien sind noch nicht als MVP 0.6 veröffentlicht. Der allgemeine Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` darf ohne eigene Identitätsprüfung weder als Auslieferungsartefakt noch als Rückfallpaket verwendet werden.
+Bei abweichender Version, Identität, Grösse oder Prüfsumme anhalten. Ein späterer Neubau ist wegen möglicher SPFx-Buildvarianz nicht automatisch dieses Artefakt. Der [Korrekturbaunachweis](darstellungskorrektur-mvp07-0702.md) bindet die tatsächlichen Paketbytes. Der allgemeine Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` ist kein Ersatz für diesen Nachweis und kein Rückfallpaket.
 
 ## 4. Installation in SharePoint Online
 
-1. Erst nach gesonderter Freigabe des konkreten Paketstands und der Zielinstallation das bezeichnete Paket beziehen und SHA-256 prüfen. Für eine externe Übergabe muss auch der hierfür freigegebene Dateiumfang verfügbar sein. Im GitHub-Datenmodus muss der vollständige neue Pin veröffentlicht und öffentlich byteweise geprüft sein. Eine konkret freigegebene E-/Q-Prüfung kann vorher mit vollständigen eigenen SharePoint-Mirrors erfolgen. Diese Anleitung erteilt keine vorgezogene Dritt-Tenant-Freigabe.
-2. SharePoint-App-Website beziehungsweise Tenant-App-Katalog öffnen.
-3. Das geprüfte Paket in die Bibliothek für SharePoint-Apps hochladen. Bei Ersatz des vorhandenen Katalogeintrags eine byteidentische Bereitstellungskopie namens `fristenrechner-schweiz.sppkg` verwenden und die Prüfsumme erneut kontrollieren.
-4. Paket als vertrauenswürdige clientseitige Lösung aktivieren.
-5. Kontrollieren, dass das Paket gültig, bereitgestellt und fehlerfrei ist.
-6. Kontrollieren, dass keine API-Berechtigungsanforderung vorliegt.
-7. App auf jeder vorgesehenen SharePoint-Zielwebsite über die Websiteinhalte installieren.
-8. Moderne Seite erstellen oder öffnen.
-9. WebPart `Fristenrechner Schweiz` einfügen.
-10. Datenquelle gemäss Abschnitt 6 konfigurieren.
-11. Seite veröffentlichen und den Abnahmetest gemäss Abschnitt 8 durchführen.
+1. Konkretes Paket, Zielsites, Betriebsverantwortung und Rückfallweg separat freigeben. Vor einem Update den tatsächlichen App-Katalogbestand, alle bereits verbundenen Instanzen, ihre Datenkonfigurationen und den wiederherstellbaren Ausgangsstand erfassen.
+2. Paket beziehen und Identität sowie SHA-256 prüfen. Eine externe Übergabe setzt die Freigabe und Verfügbarkeit ihres konkreten Dateiumfangs voraus. Für den GitHub-Modus muss der neue Pin bereits vollständig veröffentlicht und byteweise geprüft sein. Ein eigener Mirror ermöglicht eine gesondert freigegebene Installation vor der GitHub-Publikation.
+3. Paket in den App-Katalog hochladen. Beim Ersatz des bestehenden Katalogeintrags eine byteidentische Bereitstellungskopie namens `fristenrechner-schweiz.sppkg` verwenden und deren Prüfsumme erneut prüfen.
+4. Paket aktivieren. Gültigkeit, Bereitstellung und Fehlerfreiheit kontrollieren. Es darf keine neue API-Berechtigungsanforderung vorliegen.
+5. App ausschliesslich auf den freigegebenen Zielwebsites installieren beziehungsweise aktualisieren. Keine automatische zusätzliche Siteinstallation auslösen.
+6. Moderne Seite erstellen oder bestehende Zielseite öffnen, `Fristenrechner Schweiz` einfügen beziehungsweise vorhandenes WebPart bearbeiten.
+7. Vollständige Datenquelle nach Abschnitt 6 konfigurieren. Seite publizieren und den tatsächlichen Host gemäss Abschnitt 8 prüfen.
 
-Das aktuelle Paket ist nicht für eine automatische tenantweite Aktivierung konfiguriert. Die App wird bewusst auf den vorgesehenen Websites installiert. Der Austausch im gemeinsamen Tenant-App-Katalog kann dennoch den Code sämtlicher bereits mit dieser Paketidentität verbundener Instanzen beeinflussen. Vor einem Update deshalb bestehende Verwendungen und den wiederherstellbaren Ausgangsstand erfassen, nicht nur die zuerst geprüfte Zielseite.
+Ein Paketupdate allein beweist weder eine Appaktualisierung jeder Site noch eine Datenumstellung. Bereits gespeicherte WebPart-Konfigurationen können unverändert bestehen bleiben. Wegen der gemeinsamen Codewirkung ist die Prüfung der übrigen verbundenen Instanzen vorzuplanen, einschliesslich bewusst historischer Datenansichten.
 
 ## 5. Zusätzliche Installation für Microsoft Teams
 
-1. SharePoint-App auf der SharePoint-Website des Zielteams installieren.
-2. Im Tenant-App-Katalog die Teams-Bereitstellung für das SPFx-Paket auslösen. SharePoint kann Manifest und Teams-Paket automatisch erzeugen.
-3. Alternativ das generierte Teams-Paket über den dokumentierten App-Katalog-Endpunkt herunterladen und im Teams Admin Center als organisationsinterne App publizieren.
-4. Bei einer Aktualisierung einen älteren Produktkatalogeintrag mit derselben externen Component-ID kontrolliert aktualisieren oder, falls die Synchronisation ihn nicht überschreiben kann, zuerst entfernen. Andere Apps und der Spike bleiben unangetastet.
-5. Im Teams Admin Center prüfen, dass die App entsperrt und für die Zielpersonen oder Zielgruppen verfügbar ist.
-6. App dem Zielteam zuordnen oder die Installation durch berechtigte Teamverantwortliche zulassen.
-7. Microsoft-Propagation abwarten, bis `Fristenrechner Schweiz` im Teams-Client auffindbar ist.
-8. Im vorgesehenen Kanal eine Registerkarte hinzufügen und die direkte App auswählen.
-9. Datenquelle konfigurieren.
-10. Automatischen Kanalbeitrag deaktivieren, wenn kein Systembeitrag gewünscht ist.
-11. Registerkarte speichern und prüfen, dass der Fristenrechner den Host `Microsoft Teams` meldet.
+1. SharePoint-App auf der SharePoint-Website des Zielteams installieren beziehungsweise aktualisieren.
+2. Teams-Bereitstellung des SPFx-Pakets im Tenant-App-Katalog auslösen. Alternativ das generierte Teams-Paket über den dokumentierten App-Katalog-Endpunkt beziehen und im Teams Admin Center als organisationsinterne App publizieren.
+3. Vorhandene Produktregistrierung anhand der Component-ID gezielt aktualisieren. Falls dies nicht eindeutig möglich ist, anhalten und den Konflikt klären. Eine Entfernung von Katalogeinträgen ist kein automatischer Bestandteil dieser Anleitung.
+4. Gezielt prüfen, dass die App für die freigegebenen Personen oder Gruppen zulässig ist. Keine pauschale Erweiterung von Richtlinien oder Berechtigungen.
+5. Propagation abwarten, bis die App auffindbar ist. Im vorgesehenen Kanal die direkte App als Registerkarte hinzufügen beziehungsweise die bestehende konfigurieren.
+6. Eigenen Mirror der Teamsite konfigurieren. Einen unerwünschten automatischen Kanalbeitrag vor dem Speichern deaktivieren.
+7. Speichern und den tatsächlichen Host `Microsoft Teams` prüfen.
 
-Eine moderne SharePoint-Seite kann über die Teams-App `SharePoint` ebenfalls als Registerkarte eingebunden werden. Das ist nur ein Fallback. Diese Variante meldet `SharePoint Online` und ersetzt den Test der direkten `TeamsTab`-Integration nicht.
-
-Microsoft weist darauf hin, dass benutzerdefinierte Apps und deren Nutzung im Teams Admin Center durch App-Richtlinien gesteuert werden. Die organisationsinterne Teams-App ist nicht im öffentlichen Teams Store verfügbar.
+Eine SharePoint-Seite in der Teams-App `SharePoint` ist nur eine alternative Einbettung. Sie meldet `SharePoint Online` und ersetzt keinen Test der direkten `TeamsTab`-Integration. Die organisationsinterne App ist nicht im öffentlichen Teams Store verfügbar.
 
 ## 6. Datenquelle und SharePoint-Mirror
 
 ### 6.1 Variante A: öffentlicher GitHub-Release
 
-Die lokale MVP-0.6-Standardkonfiguration bezeichnet folgenden noch nicht veröffentlichten, auf einen unveränderlichen Commit gepinnten Datenrelease:
+Die MVP-0.7-Standardkonfiguration bindet folgenden vollständigen Commit:
 
 ```text
-https://raw.githubusercontent.com/davidsteimer/fristenrechner/19b37336974f3ba7c72333763e1272425239b8cd/data/releases/2026-10-01-mvp-06-approved.1
+https://raw.githubusercontent.com/davidsteimer/fristenrechner/331ef3e19d43a6b51d91a502acd6b5443071599f/data/releases/2026-10-08-mvp-07-approved.1
 ```
 
-**Dieser MVP-0.6-Datencommit ist noch nicht veröffentlicht.** Vor der Aktivierung im GitHub-Modus müssen der vollständige Datenstand publiziert, alle elf Laufzeitdateien öffentlich abgerufen und byteweise gegen den freigegebenen Bestand geprüft sein. Eine vorher gesondert freigegebene E-/Q-Installation verwendet ausdrücklich vollständige neue SharePoint-Mirrors. Ein noch nicht erreichbarer Pin ist kein Anlass, auf `main` auszuweichen oder einen alten Cache als erfolgreichen Erstabruf auszugeben. Der ältere MVP-0.5-Pin `3109c39730f10d31cb6c57200b36dd5091d7bcd1` ist gemäss Produktionsnachweis bereits veröffentlicht.
+**Dieser neue Datenpin ist noch nicht als MVP 0.7 veröffentlicht.** Vor seiner Aktivierung müssen die gesonderte GitHub-Freigabe, die Veröffentlichung und der Rohbytevergleich aller 41 Laufzeitdateien erfolgt sein. E/Q verwenden vorher ihre vollständigen eigenen Mirrors. Ein unerreichbarer Pin rechtfertigt weder `main` als Ersatz noch die Verwendung eines fremden oder alten Caches als erfolgreichen Erstabruf.
 
-Zusätzliche Voraussetzung ist ein ausgehender HTTPS-Zugriff auf `raw.githubusercontent.com`. Die Anwendung lädt nur die versionierten Regel- und Kalenderdateien. Eingegebene Fristdaten werden nicht an GitHub gesendet.
+Im GitHub-Modus muss das Zielnetz HTTPS zu `raw.githubusercontent.com` erlauben. Eingegebene Fristdaten werden nicht an GitHub übermittelt.
 
 ### 6.2 Variante B: tenantinterner SharePoint-Mirror
 
-Der Mirror eignet sich für Tenants, die keine externe Laufzeitverbindung zulassen oder freigegebene Datenstände selbst kontrollieren wollen. Der neue Datenrelease verwendet Manifest-/Mindestconsumerformat `6.0.0`, Sozialverfahrenskatalog `2.0.0`, Spezialregimekatalog `3.0.0`, Kalenderkomponente `2.0.0` und Feiertagskatalog `1.0.0`. Die Ordnerangaben sind Vorlagen für eine später konkret freizugebende Installation.
+Der Mirror muss auf derselben SharePoint-Website liegen wie die jeweilige App-Instanz. Für eine direkte Teams-Registerkarte ist dies die SharePoint-Website des Teams. Ein Ordner auf einer anderen Site Collection ist nicht zulässig.
 
-Der Mirror muss auf derselben SharePoint-Website liegen, auf welcher die App-Instanz läuft. Für eine Teams-Registerkarte ist dies die SharePoint-Website des betreffenden Teams.
+Der Release `2026-10-08-mvp-07-approved.1` verwendet Manifest/Mindestconsumer `7.0.0`, alle Regelkalender `3.0.0`, Feiertagskatalog `2.0.0`, Rechtsprofile `1.0.0`, Spezialregimekatalog `3.0.0` und Sozialverfahrenskatalog `2.0.0`. Der vollständige Mirror besteht aus **41 Dateien**, nicht mehr elf. Manifest SHA-256: `fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597`.
 
-Empfohlene Ordnerstruktur:
+Beispiel eines später zielbezogen freizugebenden Releaseordners:
 
 ```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/
-└── releases/
-    └── 2026-10-01-mvp-06-approved.1/
-        ├── manifest.json
-        ├── calendars/
-        │   ├── be-public-holidays.json
-        │   └── ch-federal-calendar.json
-        ├── holiday-catalogs/
-        │   └── ch-holiday-catalog.json
-        ├── profiles/
-        │   ├── bgg.json
-        │   ├── stpo.json
-        │   ├── vrpg-be.json
-        │   ├── vwvg.json
-        │   └── zpo.json
-        ├── social-procedures/
-        │   └── ch-social-procedures.json
-        └── special-regimes/
-            └── vrpg-be.json
+/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-10-08-mvp-07-approved.1
 ```
+
+Folgende Pfade liegen relativ zu diesem Ordner vor. Die Liste wurde gegen das tatsächliche Manifest und das Mirrorarchiv geprüft. Sie enthält Manifest, 32 Kalender, fünf Profile und drei Kataloge:
+
+```text
+manifest.json
+calendars/ap22-ag-21d6f2634ce0.json
+calendars/ap22-ai-5d4e5a68e106.json
+calendars/ap22-ai-f507435d8aa8.json
+calendars/ap22-ar-88bb22c08a22.json
+calendars/ap22-bl-72f1a7e0fcf8.json
+calendars/ap22-bs-39a64bdfc0fe.json
+calendars/ap22-fr-7d8c38f7c610.json
+calendars/ap22-ge-a36ff7926d08.json
+calendars/ap22-gl-87c11e156541.json
+calendars/ap22-gr-bf0366c8eda2.json
+calendars/ap22-ju-b096c09f506c.json
+calendars/ap22-lu-55514cd91f06.json
+calendars/ap22-lu-b879eb8eb04f.json
+calendars/ap22-ne-027ceadbf103.json
+calendars/ap22-ne-21f519039621.json
+calendars/ap22-nw-5dfca484e4af.json
+calendars/ap22-ow-76c151dccf1f.json
+calendars/ap22-sg-79009d6d6021.json
+calendars/ap22-sg-f95068e3b162.json
+calendars/ap22-sh-1ccc70f9897a.json
+calendars/ap22-sh-ec7d0988145a.json
+calendars/ap22-so-3f5f7b7f54f5.json
+calendars/ap22-sz-ec9f2c557fe4.json
+calendars/ap22-tg-3d6514fbabb1.json
+calendars/ap22-ti-944ed0286e9a.json
+calendars/ap22-ur-67275ff3e872.json
+calendars/ap22-vd-26f452ff34ee.json
+calendars/ap22-vs-6c002f32b1b0.json
+calendars/ap22-zg-860e0f8e0e1a.json
+calendars/ap22-zh-5aa2974cffee.json
+calendars/be-public-holidays.json
+calendars/ch-federal-calendar.json
+holiday-catalogs/ch-holiday-catalog.json
+profiles/bgg.json
+profiles/stpo.json
+profiles/vrpg-be.json
+profiles/vwvg.json
+profiles/zpo.json
+social-procedures/ch-social-procedures.json
+special-regimes/vrpg-be.json
+```
+
+Das [Mirror-ZIP](../../outputs/release-mvp07-2026-10-08/artifacts/fristenrechner-mvp07-sharepoint-mirror.zip) umfasst 218’372 Bytes, SHA-256 `ed603938f86849aec55dd5cdc83c300a8ae6437e4bb8eb62f3d7b5fa7e6753ca`. Es enthält die 41 Dateien direkt ab Archivwurzel. Die unverpackten Dateien umfassen zusammen 2’362’261 Bytes. Das ZIP ist in den neuen Releaseordner zu entpacken und darf nicht als Laufzeitquelle eingetragen werden. `README.md`, Quellenrohbelege und Governance-Dateien gehören nicht in den Laufzeitmirror. Ein Git-Push erzeugt zudem nicht automatisch einen GitHub-Release-Anhang.
 
 Einrichtung:
 
-1. Neuen, versionsbezogenen Ordner in einer Dokumentbibliothek der Zielwebsite erstellen.
-2. `manifest.json` sowie sämtliche darin referenzierten Kalender-, Profil-, Spezialregime-, Feiertags- und Sozialverfahrenskatalogdateien mit unveränderten Dateinamen und Verzeichnissen hochladen. Das sind insgesamt elf Laufzeitdateien, nicht nur die operativ verwendeten CH-/BE-Regeln. `README.md` gehört nicht zum Laufzeitmirror.
-3. Sicherstellen, dass die Dateien byteidentisch mit dem freigegebenen Datenrelease sind.
-4. Leserecht für alle vorgesehenen Nutzerinnen und Nutzer der App erteilen.
-5. WebPart beziehungsweise Teams-Registerkarte bearbeiten und den Eigenschaftenbereich öffnen.
-6. `Aktiver Provider` auf `SharePoint-Mirror` setzen.
-7. Als `SharePoint-Mirrorpfad` den serverrelativen Ordner eintragen, beispielsweise:
+1. Neuen versionsbezogenen Ordner in einer Dokumentbibliothek der Zielwebsite anlegen. Bestehende Releaseordner unverändert erhalten.
+2. Alle 41 Dateien mit genau diesen Namen und relativen Pfaden hochladen. Keine Katalogauszüge, keine Mischung alter und neuer Komponenten.
+3. Die tatsächlich hochgeladenen Rohbytes vollständig zurücklesen und gegen Manifest sowie freigegebenes Inventar vergleichen. Leserecht auf sämtlichen Dateien und erforderlichen Ordnern prüfen.
+4. WebPart beziehungsweise Teams-Registerkarte bearbeiten. `Aktiver Provider` auf `SharePoint-Mirror` setzen und `SharePoint-Mirrorpfad` auf den neuen serverrelativen Releaseordner einstellen. Massgebend ist der echte Bibliotheks-URL-Pfad, nicht ein übersetzter Anzeigename.
+5. Konfiguration speichern, nötigenfalls die Seite publizieren, dann neu laden. Den sichtbaren Provider und Release sowie den tatsächlichen Erstabruf sämtlicher 41 Dateien aus genau diesem Mirror prüfen.
 
-```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-10-01-mvp-06-approved.1
-```
+Zulässig sind ein serverrelativer Pfad ab `/` oder eine vollständige HTTPS-Adresse desselben Ursprungs, jeweils innerhalb der aktuellen SharePoint-Website. Zugangsdaten, Abfrageparameter, Fragmente, `.`-/`..`-Segmente, andere Ursprünge oder andere Sites sind unzulässig. Die Anwendung aktiviert erst den vollständig schema-, referenz-, grössen- und hashgeprüften Release.
 
-Massgebend ist der tatsächliche URL-Pfad der Bibliothek, nicht ihr allenfalls übersetzter Anzeigename. Der Pfad kann aus der Ordneradresse der Zielwebsite übernommen werden.
+Der Cache ist an die tatsächliche Provider-/Datenkonfiguration gebunden. Beim Quellenwechsel muss die neue Quelle erstmals erfolgreich geladen werden. Ein anderer Mirror, AP5 oder ein alter originweiter Aktivzeiger ist kein Fallback. Ein Fehler ohne gültigen Aktivstand derselben Konfiguration sperrt die Berechnung. Dies ist kein Anlass für einen pauschalen Browserdatenreset.
 
-8. Konfiguration speichern und Seite oder Registerkarte neu laden.
-9. Kontrollieren, dass die sichtbare Datenquelle `SharePoint-Mirror` lautet und der Datenrelease `2026-10-01-mvp-06-approved.1` aktiv ist. Zusätzlich den Erstabruf ohne vorhandenen gültigen Produktdatencache und den tatsächlichen Abruf aller elf Dateien aus dem richtigen Mirror prüfen.
+### 6.3 Mirror-Update und kontrollierter Rückfall
 
-Manifest- und Archivprüfsummen stehen verbindlich im [MVP-0.6-Artefaktnachweis](releaseartefakte-mvp-06.md). Das lokal vorbereitete [Mirror-ZIP `fristenrechner-mvp06-sharepoint-mirror.zip`](../../outputs/release-mvp06-2026-10-01/artifacts/fristenrechner-mvp06-sharepoint-mirror.zip) enthält die elf Dateien direkt ab der Wurzel. Es muss in den neuen Releaseordner entpackt werden und darf nicht als ZIP-Laufzeitquelle eingetragen werden. Das Archiv ist noch nicht öffentlich bereitgestellt. Ein späterer Git-Push veröffentlicht nur ausdrücklich versionierte Dateien und erzeugt nicht automatisch einen GitHub-Release-Anhang.
+Der MVP-0.6-Consumer kann Format 7 nicht lesen. Beim Wechsel gilt:
 
-Zulässige Pfade:
+1. Ausgangslage frisch erfassen und sichern, Rückfallpaket und Reihenfolge konkret freigeben.
+2. Neuen vollständigen Release in neue Ordner hochladen und Rohbytes sowie Rechte aller betroffenen Instanzen prüfen.
+3. Erst danach das freigegebene Format-7-fähige Paket aktualisieren. Die gemeinsame Codewirkung auf andere verbundene Instanzen berücksichtigen.
+4. Je Instanz nur die konkret freigegebene Datenkonfiguration umstellen, speichern beziehungsweise publizieren und anhand sichtbarer Datenquelle, Rohabruf und Referenzfällen prüfen.
+5. Vollständige Hostmatrix und manuelle Abnahme durchführen. Frühere Releaseordner, Konfigurationen und Sicherungen unverändert aufbewahren.
 
-- serverrelativer Pfad, der mit `/` beginnt
-- vollständige HTTPS-Adresse mit demselben Ursprung wie die aktuelle SharePoint-Website
-- Ordner innerhalb der aktuellen SharePoint-Website
+Für den bestehenden steimer.ch-E-/Q-Stand ist der Rückfall auf MVP-0.6-Funktionalität in der [gebilligten Vorlage für 0.7.0.2](eq-installationsvorlage-mvp07-0702.md) konkret gebunden. Er verwendet **`fristenrechner-schweiz-recovery-0.7.0.3.sppkg`**, SHA-256 `9490890245e8aad54a5ec5eae731a0ee895f9fc9439dec19b371315085794702`, und die gesicherten Format-6-Mirrors `2026-10-01-mvp-06-approved.1`. Deren Manifest SHA-256 lautet `637cfc03c777f350031ba6c28676c685c16f25733391e1f25b0a3580016f5724`.
 
-Nicht zulässige Pfade:
+Die Reihenfolge ist verbindlich: zuerst die vier aktuellen Instanzen auf ihre gesicherten Format-6-Pfade zurückstellen, AP5-Pins unangetastet lassen. Danach das höher versionierte Recoverypaket kontrolliert im gemeinsamen Katalog und auf den vier bestehenden Apps anwenden. Paket-/Bundlebytes, vier aktuelle Hosts und AP5 anschliessend prüfen. Gemeinsame Standards bleiben geschützt, eigene Recovery-Testwerte werden getrennt behandelt und gezielt zurückgenommen. **Kein Browserdatenreset, keine Deinstallation und kein unkontrollierter alter Consumer an Format-7-Daten.**
 
-- anderer Tenant oder anderer SharePoint-Ursprung
-- andere Site Collection
-- Pfade mit `.` oder `..`
-- URL mit Zugangsdaten, Abfrageparametern oder Fragment
-- unvollständig hochgeladener oder nachträglich veränderter Release
+Das [Recoverypaket](wiederherstellungskandidat-mvp07-0703.md) ist lokal anhand seiner tatsächlichen Bytes geprüft, aber nicht eingesetzt. Es setzt den Funktionsumfang auf MVP 0.6 zurück. Eine spätere reguläre MVP07-Wiederaufnahme benötigt erneut eine höhere Paketversion, nicht den Downgrade auf `0.7.0.2`. Die steimer.ch-Freigabe ist keine Vollzugserlaubnis in einem anderen Tenant. Dort sind eigener Bestand, Berechtigungen, Sicherungen und Rückfallweg neu zu binden.
 
-Die Anwendung prüft Schemata, Referenzen und SHA-256-Prüfsummen selbst. Bei einer Abweichung aktiviert sie den Mirrorstand nicht.
+### 6.4 Governance-Nachweis separat spiegeln
 
-### 6.3 Mirror-Update und Rückfall
+Quellenregister, Prüfindex und unveränderliche Prüfereignisse können in einem parallelen Ordner `source-reviews/` gespiegelt werden. Der WebPart-Pfad bleibt auf `releases/<releaseId>` eingestellt. Governance-Dateien sind keine Laufzeitdatenquelle und dürfen die freigegebenen Releasebytes nicht verändern.
 
-Neue Datenstände werden nicht in den aktiven Ordner hineinkopiert. Der MVP-0.5-Consumer kann Format 6 nicht lesen. Beim gesondert freizugebenden Wechsel auf MVP 0.6 gilt deshalb folgende Reihenfolge:
+## 7. Betrieb und fachlicher Umfang
 
-1. neuen Release in einen neuen versionsbezogenen Ordner hochladen
-2. sämtliche Artefakte und Berechtigungen prüfen
-3. erst nach konkreter Freigabe das hashgebundene Paket `0.6.0.1` installieren beziehungsweise aktualisieren, bevor eine Instanz den Format-6-Datenpfad erhält
-4. Mirrorpfad jeder betroffenen WebPart- und Teams-Registerkarteninstanz auf den neuen Ordner umstellen
-5. sichtbare Release-ID, Datenquelle und Referenzberechnung prüfen, anschliessend vollständigen Zielumgebungs-Abnahmetest durchführen
-6. früheren Ordner und früheres Paket für einen definierten Rückfallzeitraum unverändert aufbewahren
+Der Regelbetrieb umfasst Quellenverfügbarkeit, kontrollierte Releaseübernahme, jährliche fachliche Quellenprüfung spätestens am 15. November und anlassbezogene Prüfungen, dokumentierte Zuständigkeiten sowie Referenz- und Zielumgebungstests nach Updates. Keine automatische jährliche Publikation oder Mirror-Synchronisation wird zugesichert. Eine Quellenprüfung ohne regelrelevante Änderung erzeugt bewusst keinen neuen Datenrelease. Der [AP13-Prozess](periodische-quellenpruefung-ap13.md) und die [Release-Checkliste](release-checkliste.md) bleiben massgebend.
 
-Ein Paketupdate allein beweist keine Datenumstellung, weil bestehende Instanzen ihre Konfiguration behalten können. Der Rückfall verwendet die unmittelbar vor dem Eingriff tatsächlich verifizierte und gesicherte Baseline. Der aktuelle dokumentierte E-/Q-Stand ist Paket `0.6.0.1` mit Datenrelease `2026-10-01-mvp-06-approved.1`. Beim reinen Korrekturwechsel war das frisch gesicherte Rückfallpaket `0.6.0.0` bei identischem Datenstand. Bei einem späteren Eingriff muss die dann aktuelle Baseline neu bestätigt und gesichert werden. Bei einem Rückfall über die Formatgrenze zuerst die zusammengehörigen früheren Datenpfade zurückstellen, nötigenfalls das gesicherte Paket wiederherstellen und alle betroffenen Instanzen prüfen. Einen alten Consumer niemals mit Format-6-Daten zurücklassen. Die historische AP5-Ansicht behält ihre eigene Datenquelle. Keine Mischung einzelner alter und neuer JSON-Dateien. Die automatische Replikation neuer Mirrorstände ist nicht implementiert. Die Übernahme bleibt ein kontrollierter manueller Betriebsschritt.
+MVP 0.7 führt 198 Herkunftsentscheide, 104 konkrete Verfahrensbindungen und 32 Kalender. Der Feiertagskatalog enthält 491 Regeln, einschliesslich zwölf zusätzlicher SO-Prozessregeln. Die nationale Kalenderaktivierung betrifft die unterstützten Bundesverfahren StPO, ZPO, BGG und VwVG. Sie schaltet weder weitere kantonale Verwaltungsverfahren noch ausserbernische Sozialverfahren frei. Die 44 Sozialregeln und 50 BE-Anbindungen bleiben unverändert, mit Freigabe für Bern und 2026–2027.
 
-### 6.4 Governance-Nachweis spiegeln
+Die Kalenderabdeckung beginnt am 29. August 2026 ohne pauschale Jahresobergrenze. Normen, Gebietsstände, Profil- und Releasegrenzen bleiben massgebend. Vier unsichere Januarzuordnungen werden mit zwei vollständigen Berechnungen geprüft. Unterschiedliche rechtliche Ergebnisse sperren definitiven Fristablauf und Export. GR-/NE-Vorbehalte bleiben getrennte berechenbare Grenzen. Die beschlossene AI-Behandlung und der gekennzeichnete ergänzende Freiburger Praxisbeleg bleiben erhalten. Eigenständiges kommunales Recht ist ausgeschlossen. Örtliche Differenzierungen aus Bundes- und kantonalem Recht sind nur im freigegebenen Umfang enthalten.
 
-Das AP13-Quellenregister, der generierte Index und die append-only-Prüfereignisse können in einem parallelen Governance-Ordner gespiegelt werden:
+Codeupdates werden mit unveränderter Produktidentität und höherer Paketversion ausgeliefert. Vor einem Toolchain-Upgrade ist die Microsoft-Kompatibilitätsmatrix zu prüfen. Veränderungen von Teams-Manifest oder Exposition verlangen eine gesonderte Teams-Katalogprüfung. Die bestehenden MVP07-Quellen- und E-/Q-Abnahmen ersetzen keine spätere neue Rechts- oder Zielumgebungsprüfung.
 
-```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/
-├── releases/
-│   └── <releaseId>/
-└── source-reviews/
-    ├── source-register.json
-    ├── index.json
-    └── events/
-        └── <reviewEventId>.json
-```
+## 8. Zielbezogener Abnahmetest
 
-Der WebPart-Pfad bleibt auf `releases/<releaseId>` eingestellt. `source-reviews` ist keine Laufzeitdatenquelle und muss für die Berechnung nicht erreichbar sein. Die Spiegelung dient der tenantinternen Nachvollziehbarkeit und darf die öffentlichen Dateien nicht inhaltlich verändern.
+Die folgende Kurzliste ist eine Installationshilfe, nicht eine bereits erteilte Abnahme des Zieltenants. Die vollständigen qualifizierten Eingaben und Sollwerte stehen in der [MVP07-Hauptmatrix](pruefmatrix-mvp07.md). Historische Statuszeilen werden durch den [0.7.0.2-Vollzugsnachweis](eq-vollzugsnachweis-mvp07-0702.md) und die [Q-Abnahme](abnahme-q-mvp07.md) ergänzt.
 
-## 7. Betrieb und Aktualisierung
+- [ ] Paketidentität und tatsächliche Bytes stimmen, Katalog und Site-App fehlerfrei, keine API-Zustimmung.
+- [ ] Jede Instanz lädt den richtigen Provider und Release. Alle 41 Dateien werden aus der konkreten neuen Quelle geprüft, nicht aus einem fremden Cache übernommen.
+- [ ] F01 mit ausdrücklich gesetzter Rolle «Partei ohne Vertretung» und Feiertagskanton BE: StPO, Empfang 16.09.2026, zehn Tage → 28.09.2026.
+- [ ] F02 mit derselben Rolle und Feiertagskanton TI: StPO, Empfang 07.12.2026, ein Tag → 09.12.2026.
+- [ ] Vier Januargrenzen, regionale NE-/AI-Qualifikation, GR-Vorbehalt, ZPO-Gerichtssitz und fehlende Fallfakten verhalten sich gemäss F03 bis F07. Kein stiller Ersatzkalender.
+- [ ] Berner Spezialrecht und Sozialgrenzen gemäss F08/F09 stimmen. EOG-Zuständigkeitsdatum, AVIG-Datum der ursprünglichen Kassenverfügung und beschaffungsrechtlicher Verfahrensbeginn bleiben unabhängige Datumsrollen.
+- [ ] DE/FR, frühe Datumseingabe, vollständige und kurze Datumsformate, ungültige Daten, optionaler Kalender sowie sofortige Invalidierung von Resultat und Export funktionieren.
+- [ ] v3-Standards migrieren ohne erfundene Fakten. Erst ausdrückliches Speichern erzeugt v4. Datum, Referenz, Resultat und fallbezogene Regionalantwort werden nicht gespeichert. Eigene Testwerte gezielt zurücknehmen, fremde Standards schützen.
+- [ ] Schmale und breite Hostansicht, lange offene und geschlossene Dropdowntexte, nativer 200-Prozent-Zoom und Tastaturfokus sind geprüft. Reale Geräteprüfung bleibt ein eigener Nachweis.
+- [ ] Direkte Teams-Registerkarte meldet `Microsoft Teams`. Notwendige Gastprüfung erfolgt mit dem tatsächlich freigegebenen Gastkonto.
+- [ ] DE-/FR-Kalenderdateien je aktuellem Host tatsächlich speichern und prüfen. Ganztägiger Beginn, exklusiver Folgetag, `TRANSP:TRANSPARENT`, Kategorie `Fristablauf`, Erinnerung `-PT112H`, UTF-8 und Zeilenfaltung stimmen. Ein Exportklick allein genügt nicht.
+- [ ] Fehler der neuen Quelle erlauben keinen fremden Cache. Nach Entfernen nur der eigenen lokalen Testbedingung funktioniert der Wiederanlauf. Keine freigegebenen Mirrordateien manipulieren und keine Browserdaten pauschal löschen.
+- [ ] Historische Datenansichten behalten ihre eigenen Pins und Daten. Neue Codeversion und historische Datenfreigabe werden getrennt geprüft.
 
-Der Fristenrechner benötigt keinen Serverprozess. Der Regelbetrieb umfasst:
+Auf den bestehenden steimer.ch-E-/Q-Hosts sind acht tatsächliche ICS-Dateien geprüft. Es wurde kein neuer Outlook-Import durchgeführt. Der [Wiederverwendungsvorschlag](outlook-wiederverwendung-mvp07.md) bindet frühere Importnachweise und den unveränderten Terminvertrag, ist aber noch kein Wiederverwendungsentscheid für MVP 0.7. Kategorie und ICS-Erinnerung allein beweisen weder dunkelgrüne Darstellung im Zielkonto noch tatsächliche Erinnerungszustellung. Neue Outlook-Importe brauchen einen gesonderten Auftrag.
 
-- Verfügbarkeit der SharePoint-Website und der konfigurierten Datenquelle
-- rechtzeitige Bereitstellung eines fachlich freigegebenen Datenrelease
-- jährliche fachliche Quellenprüfung spätestens am 15. November sowie anlassbezogene Prüfungen vor Releases und bei Rechtsänderungen
-- unveränderte Dokumentation auch dann, wenn die Prüfung keinen neuen Datenrelease auslöst
-- Prüfung von App-Katalog- und Teams-Richtlinien nach Microsoft-365-Änderungen
-- stichprobenweise Referenzberechnung nach Paket- oder Datenupdate
-- Überwachung der offiziellen SPFx-Kompatibilitätsmatrix vor einem Toolchain-Upgrade
+Die menschliche Geräte-/Gastbestätigung und Q-Abnahme sind von den technischen Eigentümerprüfungen getrennt. F08 bleibt als abweichender Anzeigeort der Release-ID im Seitenfuss dokumentiert. T09 verwendet frühere E-/AP5-Belege und N04, ohne einen neuen vollständigen AP5-Netzabruf zu behaupten. Diese Grenzen werden weder für einen Dritt-Tenant noch für eine künftige P-Prüfung stillschweigend aufgehoben.
 
-Der regelbasierte Kalender besitzt keine künstliche Jahresobergrenze. Das bedeutet nicht, dass das Recht unveränderlich wäre. Feiertags- und Fristenquellen werden nach dem [AP13-Prozess](periodische-quellenpruefung-ap13.md) kontrolliert. Nur eine fachlich relevante und freigegebene Änderung führt zu einem neuen Datenrelease. Die [Release-Checkliste](release-checkliste.md) verbindet Quellenprüfung, Datenfreigabe, Mirror und Tenanttests.
+## 9. Vor Produktivsetzung festzulegen
 
-Für MVP 0.6 ist die [zusammengeführte Quellenprüfung einschliesslich Wiederverwendung und Vorbehalten abgenommen](../fachrecht/abnahme-quellen-mvp06.md). 77 Manifestreferenzen und 82 zusätzliche historische Katalogreferenzen ergeben 159 unterschiedliche Quellen-IDs. Die 82 behalten ihren tatsächlichen Prüfstand vom 22. September 2026 und werden nicht als frisch vollständig geprüft ausgegeben. Der bekannte AI-Quellenkonflikt bleibt unklar und wird nach dem bestehenden Entscheid behandelt. Die 479 Katalogregeln bedeuten keine Freigabe sämtlicher kantonaler Fristenprofile. Operativ bleibt die Feiertagsprojektion auf die zwölf bestehenden CH-/BE-Regeln begrenzt.
+- Verantwortliche Stelle für Paket-/Mirrorübernahme, Quellenprüfung, Störungen und Freigaben.
+- Zielsites, Teams und Personenkreis sowie ausdrücklich erlaubter Gastzugriff.
+- Aufbewahrung und geprüfter Rückfallweg, einschliesslich gemeinsamer Paketwirkung und Schutz persönlicher Standards.
+- Zielbezogene technische und manuelle Abnahme, ohne automatische Übernahme fremder Tenantnachweise.
 
-Der lokal übernommene Sozialverfahrenskatalog umfasst 44 nationale Regeln und 50 bernische Anbindungen. Die bisherigen IVG-/AHVG-/UVG-Pfade, ELG, AVIG-ALE und KVG-OKP werden um die qualifizierten EOG-, FamZG-, FLG-, MVG- und ÜLG-Pfade ergänzt. Die Sozialfreigaben bleiben auf Quellen- und Fallabdeckung 2026–2027 begrenzt. Unbekannte, nicht modellierte oder ausserhalb der freigegebenen Anbindung liegende Fälle bleiben gesperrt. Nationale Modellierung aktiviert keine weiteren Kantone. Diese fachlichen Grenzen werden weder durch die offene Kalenderlaufzeit noch durch die lokale Baufreigabe erweitert.
-
-Ein Codeupdate wird als neues `.sppkg` mit unveränderter Solution-ID und höherer Version ausgeliefert. Das Paket wird im App-Katalog ersetzt und auf den Zielwebsites aktualisiert. Enthält die Änderung auch das Teams-Manifest oder die Teams-Exposition, wird anschliessend die organisationsinterne Teams-App aktualisiert und erneut geprüft.
-
-## 8. Minimaler Abnahmetest
-
-- [ ] Paketversion und SHA-256 stimmen
-- [ ] App-Katalog meldet ein gültiges, aktiviertes und fehlerfreies Paket
-- [ ] keine Graph- oder API-Zustimmung wird verlangt
-- [ ] WebPart lädt nach einem vollständigen Neuladen der SharePoint-Seite
-- [ ] erwarteter Datenrelease und erwartete Datenquelle werden angezeigt
-- [ ] der vollständige Format-6-Mirror einschliesslich Feiertags- und Sozialverfahrenskatalog 2 wird akzeptiert, fehlende oder manipulierte Komponenten werden atomar verworfen
-- [ ] StPO, Empfang 16.09.2026, zehn Tage ergibt Fristablauf 28.09.2026
-- [ ] IV-Einwand, Zustellung 16.09.2026, unterstützte Berner Anknüpfung ergibt 16.10.2026
-- [ ] IVöB-Zuschlagsbeschwerde, Publikation 06.09.2026, Neurecht ergibt 28.09.2026
-- [ ] ELG-, AVIG-ALE- und KVG-OKP-Referenzen sowie ihre Sperrfälle gemäss vollständigen qualifizierten Eingaben der [MVP-0.5-Prüfmatrix](deployment-mvp-05.md#5-prüfmatrix-für-den-folgerelease) stimmen
-- [ ] EOG, FamZG, FLG, MVG und ÜLG sowie ihre gezielten Sperrfälle stimmen gemäss [MVP-0.6-Fallliste](pruefmatrix-mvp06.md), reale Fallmerkmale werden nicht aus Defaults oder anderen Eingaben abgeleitet
-- [ ] Deutsch und Französisch funktionieren
-- [ ] ein fachlicher Sperrfall zeigt kein scheinbares Fristende
-- [ ] der Outlook-kompatible Kalendereintrag enthält Fristdatum, freien Status, Kategorie `Fristablauf` und Erinnerung 4 Tage 16 Stunden vorher
-- [ ] Desktop- und Mobilansicht sind bedienbar
-- [ ] direkte Teams-Registerkarte meldet `Microsoft Teams`
-- [ ] Browserkonsole enthält keinen Fehler des Produktbundles
-- [ ] SharePoint-Mirror bleibt auch bei gesperrtem Zugriff auf `raw.githubusercontent.com` funktionsfähig, falls der Mirror der gewählte Betriebsmodus ist
-
-Diese Liste ist eine Vorlage für die jeweilige Zielinstallation und ersetzt nicht die vollständige [MVP-0.6-Matrix](deployment-mvp-06.md#5-geplante-prüfmatrix) und [konkrete Fallliste](pruefmatrix-mvp06.md). Für MVP 0.6 sind die ursprüngliche technische Eigentümerprüfung und die [begrenzten Korrektur-Nachtests](spfx-korrekturkandidat-mvp06-0601.md) dokumentiert. Die [manuelle Q-Abnahme und Gastanmeldung sind durch David bestätigt](abnahme-q-mvp06.md). Die für MVP 0.5 dokumentierten 123 technischen E-/Q-Prüfpunkte und seine fachliche Q-Abnahme gelten weder automatisch für MVP 0.6 noch für einen Dritt-Tenant. Der [Outlook-Nachweis MVP 0.5](outlook-pruefung-mvp05.md) dokumentiert den früheren Webimport mit Eigenschaften und Bereinigung sowie Davids manuelle Desktopbestätigung. Für MVP 0.6 ist die [Wiederverwendung dieser Vorbelege ausdrücklich beschlossen und technisch begründet](abnahme-q-mvp06.md). Die 28 tatsächlich geprüften MVP-0.6-ICS-Dateien ergänzen die bytegleiche Exportimplementierung und den früheren Importnachweis. Ein neuer Outlookimport wird nicht behauptet.
-
-Für MVP 0.5 wurden E-SharePoint und Q-Teams bei 390, 768 und 1440 Pixeln ohne horizontales Überlaufen geprüft. Auf seinen vier bezeichneten Instanzen sind cachefreier Erstabruf sowie kontrollierter Komponentenladefehler mit Fallback und anschliessender Wiederherstellung nachgewiesen. Einzelheiten und Nachweisgrenzen bleiben im [MVP-0.5-Bericht](eq-installation-mvp05.md) ausgewiesen. Die jeweiligen Punkte dürfen nicht ohne Prüfung auf MVP 0.6 oder einen anderen Tenant übertragen werden.
-
-## 9. Betrieblich offene Punkte vor Produktivsetzung
-
-- technischer Prozess für die Übernahme eines freigegebenen Releases in den Mirror
-- Aufbewahrungsdauer früherer Releases und Rückfallentscheid
-- Zielgruppen und Richtlinien für die Teams-App
-- Supportweg und Zuständigkeit bei fachlichen oder technischen Störungen
-- gesonderte Prüfung, falls Gastzugriffe zugelassen werden sollen
-
-Für den steimer.ch-Q-Demobetrieb besteht bereits ein freigegebenes [gruppenbasiertes Zugriffsmodell](q-demobetrieb-ap15-betriebsanweisung.md). David hat für MVP 0.5 die reale Anmeldung mit dem bestehenden B2B-Gast als durchgeführt bestätigt. Die kurze Bestätigung enthält keine vollständige Wiederholung der technischen Matrix unter dem Gastkonto und schafft keine neuen Rechte oder Gäste. Sie ist keine pauschale Gastfreigabe eines Dritt-Tenants. Site, Team, Mirror und Paketassets müssen im jeweiligen Zieltenant gezielt freigegeben und Widerruf sowie Zugriff geprüft werden. Das Paket selbst fordert dafür keine neuen API-Berechtigungen an.
-
-Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei David Steimer. Das Rollenmodell bleibt für einen später getrennten Betrieb dokumentiert.
+Der bestehende steimer.ch-Q-Betrieb folgt dem [gruppenbasierten Zugriffsmodell](q-demobetrieb-ap15-betriebsanweisung.md). Die Q-Abnahme erweitert weder Gastkreis noch M365-Rechte. Im Zieltenant müssen Site, Team, Mirror und Paketressourcen einschliesslich Widerruf eigenständig geprüft werden. Die Fachverantwortung und Freigabe liegen in der aktuellen Einpersonenphase bei David Steimer. Codex ist dokumentiertes KI-Arbeitsinstrument ohne formelle Freigabe- oder Haftungsverantwortung.
 
 ## 10. Referenzen
 
-- [Microsoft: Apps über die SharePoint-App-Website verwalten](https://learn.microsoft.com/en-us/sharepoint/use-app-catalog)
-- [Microsoft: Site-Collection-App-Katalog verwenden](https://learn.microsoft.com/en-us/sharepoint/dev/general-development/site-collection-app-catalog)
-- [Microsoft: SPFx-Lösungen für Microsoft Teams bereitstellen](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/deployment-spfx-teams-solutions)
-- [Microsoft: Benutzerdefinierte Apps in Teams verwalten](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
+- [Microsoft: SharePoint-App-Katalog](https://learn.microsoft.com/en-us/sharepoint/use-app-catalog)
+- [Microsoft: Site-Collection-App-Katalog](https://learn.microsoft.com/en-us/sharepoint/dev/general-development/site-collection-app-catalog)
+- [Microsoft: SPFx in Teams](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/deployment-spfx-teams-solutions)
+- [Microsoft: Benutzerdefinierte Teams-Apps](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 - [Technische Kurzdokumentation](../architektur/technische-kurzdokumentation.md)
-- [AP10-Deploymentnachweis](deployment-ap10.md)
-- [AP13: Periodische Quellenprüfung](periodische-quellenpruefung-ap13.md)
-- [Release-Checkliste](release-checkliste.md)
-- [MVP-0.6-Deploymentplan und konkrete Freigabegrenzen](deployment-mvp-06.md)
-- [MVP-0.6-Artefakte und verbindliche Prüfsummen](releaseartefakte-mvp-06.md)
-- [MVP-0.6-E-/Q-Fallliste](pruefmatrix-mvp06.md)
-- [Dokumentierter MVP-0.5-Produktionsstand](produktionsbereitstellung-mvp05-2026-09-28.md)
-- [MVP-0.5-Deployment und Zielumgebungsprüfung](deployment-mvp-05.md)
-- [Aktueller E-/Q-Nachweis](eq-installation-mvp05.md)
-- [Fachliche Q-Abnahme und bestätigte Gastanmeldung](abnahme-q-mvp05.md)
-- [Definitive lokale MVP-0.5-Artefakte](releaseartefakte-mvp-05.md)
-- [MVP-0.3-Deployment und historische Testmatrix](deployment-release-2-mvp-03.md)
+- [MVP-0.7-Deploymentplan](deployment-mvp-07.md)
+- [Ursprünglicher MVP-0.7-Artefaktnachweis](releaseartefakte-mvp-07.md)
+- [Korrekturpaket 0.7.0.2](darstellungskorrektur-mvp07-0702.md)
+- [Gebundene Installations- und Rückfallvorlage](eq-installationsvorlage-mvp07-0702.md)
+- [Aktueller E-/Q-Vollzugsnachweis](eq-vollzugsnachweis-mvp07-0702.md)
+- [Q-Abnahme und Grenzen](abnahme-q-mvp07.md)
+- [Quellenabnahme MVP 0.7](../fachrecht/abnahme-quellen-mvp07.md)
+- [Öffentlicher MVP-0.6-Produktionsstand](produktionsbereitstellung-mvp06-2026-10-01.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)

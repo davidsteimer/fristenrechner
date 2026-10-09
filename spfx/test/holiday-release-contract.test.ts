@@ -70,6 +70,7 @@ async function fixtureProvider(mutate: (fixture: Fixture) => void | Promise<void
   bytes.set('manifest.json', new TextEncoder().encode(JSON.stringify(manifest)));
   return {
     id: 'fixture:memory-only-holiday-catalog-contract', kind: 'github',
+    cacheConfiguration: { kind: 'github', baseUrl: 'https://raw.githubusercontent.com/example/project/0123456789abcdef0123456789abcdef01234567/holiday-contract' },
     async fetchBytes(path) {
       const content = bytes.get(path);
       assert.ok(content, `Fehlende lokale Vertragsfixture: ${path}`);
@@ -214,7 +215,7 @@ test('Projektionsfehler erhalten atomar den alten verifizierten Aktivstand', asy
   assert.equal(initial.mode, 'network');
   assert.equal(failed.mode, 'fallback');
   assert.equal(failed.release.manifestSha256, initial.release.manifestSha256);
-  assert.equal((await store.getActive())?.manifestSha256, initial.release.manifestSha256);
+  assert.equal((await service.getActive(await fixtureProvider()))?.manifestSha256, initial.release.manifestSha256);
 });
 
 async function legacySpecialCatalog(fixture: Fixture): Promise<void> {
@@ -251,7 +252,7 @@ test('Format-4-Scopefehler überschreiben den vorherigen verifizierten Aktivstan
   const failed = await service.refresh(await fixtureProvider(legacySpecialCatalog));
   assert.equal(failed.mode, 'fallback');
   assert.match(failed.warning ?? '', /Format-4-Spezialkatalog/);
-  assert.equal((await store.getActive())?.manifestSha256, initial.release.manifestSha256);
+  assert.equal((await service.getActive(await fixtureProvider()))?.manifestSha256, initial.release.manifestSha256);
 });
 
 test('Katalog-Komponentenmajor und Deskriptor müssen übereinstimmen', async () => {

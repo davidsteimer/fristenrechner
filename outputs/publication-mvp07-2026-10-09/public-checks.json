@@ -1,0 +1,257 @@
+{
+  "kind": "mvp07CleanPublicExportChecks",
+  "date": "2026-10-09",
+  "passed": true,
+  "dataCommit": "331ef3e19d43a6b51d91a502acd6b5443071599f",
+  "gitHeadArchiveSha256": "26a741db04a70302a7a14509dfc7831779473b7bdcd31075d9f94b5af769a260",
+  "testedOverlayFiles": 2827,
+  "testedOverlayInventorySha256": "dfe5a18ff72f536dc2b624349dbbfcb65b67f4890c6fb8ca119a9e3523e2f021",
+  "exportDescription": "Git HEAD archive with the explicit selected overlay, no private evidence and no Git directory",
+  "gitDiscoveryBlocked": true,
+  "privateEvidenceCopied": false,
+  "existingDependenciesReused": true,
+  "freshGitHubClone": false,
+  "npmCiPerformed": false,
+  "networkInstallationPerformed": false,
+  "nodeVersion": "22.23.2",
+  "npmVersion": "10.9.8",
+  "pythonVersion": "3.12",
+  "checks": [
+    {
+      "name": "npm-check",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "exitCode": 0,
+      "seconds": 168.629,
+      "logSha256": "e1d2a77a25adb6ff9332cf51cd2bdf7498784715da006dd101ae7ffec22c9166",
+      "logBytes": 552550,
+      "publicLog": "checks/npm-check.log",
+      "publicLogSha256": "e1d2a77a25adb6ff9332cf51cd2bdf7498784715da006dd101ae7ffec22c9166",
+      "publicLogBytes": 552550,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [
+          2270,
+          16
+        ],
+        "pass": [
+          2270,
+          16
+        ],
+        "fail": [
+          0,
+          0
+        ],
+        "skipped": [
+          0,
+          0
+        ]
+      },
+      "pythonTestCounts": []
+    },
+    {
+      "name": "source-reviews",
+      "command": [
+        "npm",
+        "run",
+        "test:source-reviews"
+      ],
+      "exitCode": 0,
+      "seconds": 46.953,
+      "logSha256": "3dcbc78f889d9af1317509d1b5abe5efb929100624cef218b4b5589ab657f3b4",
+      "logBytes": 47790,
+      "publicLog": "checks/source-reviews.log",
+      "publicLogSha256": "3dcbc78f889d9af1317509d1b5abe5efb929100624cef218b4b5589ab657f3b4",
+      "publicLogBytes": 47790,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [
+          218
+        ],
+        "pass": [
+          218
+        ],
+        "fail": [
+          0
+        ],
+        "skipped": [
+          0
+        ]
+      },
+      "pythonTestCounts": [
+        30
+      ]
+    },
+    {
+      "name": "mvp07-data",
+      "command": [
+        "npm",
+        "run",
+        "test:data:mvp07"
+      ],
+      "exitCode": 0,
+      "seconds": 1.764,
+      "logSha256": "dfe7255d97f73928882a1751169aa17bf0186ccc4d858ef99d43279641ffb410",
+      "logBytes": 1797,
+      "publicLog": "checks/mvp07-data.log",
+      "publicLogSha256": "dfe7255d97f73928882a1751169aa17bf0186ccc4d858ef99d43279641ffb410",
+      "publicLogBytes": 1797,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [],
+        "pass": [],
+        "fail": [],
+        "skipped": []
+      },
+      "pythonTestCounts": []
+    },
+    {
+      "name": "mvp07-portability",
+      "command": [
+        "npm",
+        "run",
+        "test:portability:mvp07"
+      ],
+      "exitCode": 0,
+      "seconds": 45.877,
+      "logSha256": "db0c5badf736240b6bcf07a3f86aca47f7939eb5960adabec8dd402ff1b971a9",
+      "logBytes": 3144,
+      "publicLog": "checks/mvp07-portability.log",
+      "publicLogSha256": "db0c5badf736240b6bcf07a3f86aca47f7939eb5960adabec8dd402ff1b971a9",
+      "publicLogBytes": 3144,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [
+          11
+        ],
+        "pass": [
+          11
+        ],
+        "fail": [
+          0
+        ],
+        "skipped": [
+          0
+        ]
+      },
+      "pythonTestCounts": [
+        5
+      ]
+    },
+    {
+      "name": "ap22b-data",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/data",
+        "-p",
+        "test_ap22*.py"
+      ],
+      "exitCode": 0,
+      "seconds": 15.595,
+      "logSha256": "061995ceafcfb4e9be59c2f9359fe4cdfe2f5cfee55c61eebe217a43266f09a8",
+      "logBytes": 169,
+      "publicLog": "checks/ap22b-data.log",
+      "publicLogSha256": "061995ceafcfb4e9be59c2f9359fe4cdfe2f5cfee55c61eebe217a43266f09a8",
+      "publicLogBytes": 169,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [],
+        "pass": [],
+        "fail": [],
+        "skipped": []
+      },
+      "pythonTestCounts": [
+        69
+      ]
+    },
+    {
+      "name": "mvp07-web",
+      "command": [
+        ".venv/bin/python",
+        "scripts/prepare_mvp07_web_correction.py",
+        "--check",
+        "--public-readback"
+      ],
+      "exitCode": 0,
+      "seconds": 1.068,
+      "logSha256": "8497b3801356343505f57e9dd957f9246401f35dd5e7ff9110cf7b59e7ab9c6b",
+      "logBytes": 574,
+      "publicLog": "checks/mvp07-web.log",
+      "publicLogSha256": "8497b3801356343505f57e9dd957f9246401f35dd5e7ff9110cf7b59e7ab9c6b",
+      "publicLogBytes": 574,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [],
+        "pass": [],
+        "fail": [],
+        "skipped": []
+      },
+      "pythonTestCounts": []
+    },
+    {
+      "name": "mvp07-web-tests",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/data",
+        "-p",
+        "test_mvp07_web_correction.py"
+      ],
+      "exitCode": 0,
+      "seconds": 0.085,
+      "logSha256": "c6352adff70a6982c739a1cd77bbb43d2425eefd2dc2112b92b0ceebf2a6ca31",
+      "logBytes": 106,
+      "publicLog": "checks/mvp07-web-tests.log",
+      "publicLogSha256": "c6352adff70a6982c739a1cd77bbb43d2425eefd2dc2112b92b0ceebf2a6ca31",
+      "publicLogBytes": 106,
+      "derivedCopy": true,
+      "redaction": "Absolute project root and macOS temporary paths only",
+      "tapCounts": {
+        "tests": [],
+        "pass": [],
+        "fail": [],
+        "skipped": []
+      },
+      "pythonTestCounts": [
+        8
+      ]
+    }
+  ],
+  "separatePrivateReadback": {
+    "command": "npm run test:source-reviews:private:mvp07",
+    "exitCode": 0,
+    "sourceEvidenceFilesChecked": 583,
+    "testsPassed": 79,
+    "testsFailed": 0,
+    "testsSkipped": 0,
+    "releaseFilesChecked": 41,
+    "originalLogSha256": "5192c80401b6aafa92f6d697e1bca52407d123ea1dc7c256ae94f3f942a2c71f",
+    "logPublished": false,
+    "performedInPublicExport": false,
+    "newSourceApprovalGranted": false
+  },
+  "finalizationBoundary": "Subsequent changes are limited to the named living documentation, derived audit evidence and byte-preserving JPEG filename corrections. Test, runtime, release and build inputs are required to match this tested snapshot before sealing.",
+  "manualAndHostingClaims": {
+    "newDeviceOrGuestTests": false,
+    "newOutlookImports": false,
+    "hostingChecks": false,
+    "deploymentPerformed": false,
+    "publicationPerformed": false
+  }
+}

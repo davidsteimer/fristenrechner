@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {test} = require('node:test');
-const {REPO_ROOT, loadPackagedHost, sha256} = require('./package-harness.cjs');
+const {REPO_ROOT, loadPackagedHost, sha256, localMirrorConfiguration} = require('./package-harness.cjs');
 
 function provider(transportApproved = false, mutate) {
   const directory = path.join(REPO_ROOT, 'data/candidates/2026-09-28-ap19c3');
@@ -22,7 +22,7 @@ function provider(transportApproved = false, mutate) {
   }
   bytes.set('manifest.json', Buffer.from(JSON.stringify(manifest)));
   const fetched = [];
-  return {id: 'isolated-ap19c3-build-fixture', kind: 'sharepointMirror', fetched, async fetchBytes(name) {
+  return {id: 'isolated-ap19c3-build-fixture', kind: 'sharepointMirror', cacheConfiguration: localMirrorConfiguration(path.basename(directory)), fetched, async fetchBytes(name) {
     fetched.push(name); assert.ok(bytes.has(name)); return new Uint8Array(bytes.get(name));
   }};
 }
@@ -59,14 +59,14 @@ test('AP19C3 real packaged consumer rejects actual candidate before fetching any
   const runtime = loadPackagedHost(), fixture = provider();
   await assert.rejects(runtime.service.refresh(fixture), /candidate/);
   assert.deepEqual(fixture.fetched, ['manifest.json']);
-  assert.equal(await runtime.store.getActive(), undefined);
+  assert.equal(await runtime.service.getActive(provider()), undefined);
 });
 
 test('AP19C3 compiled consumer transports twenty-four rules, twenty-eight bindings and blocks all actual KVG paths', async t => {
   const runtime = loadPackagedHost();
   t.diagnostic(JSON.stringify(runtime.provenance));
   const activation = await runtime.service.refresh(provider(true));
-  runtime.host.applyActivationResult(activation);
+  runtime.host.applyActivationResult(activation, runtime.host.props.configurationKey);
   assert.equal(runtime.host.state.status, 'ready');
   const data = ownData(activation.release), catalog = data.socialProcedureCatalogs.get('ch-social-procedures');
   assert.equal(catalog.federalRules.length, 24);
@@ -116,4 +116,3 @@ test('AP19C3 packaged transport rejects tampered KVG binding without replacing a
   assert.equal(failed.release.manifestSha256, valid.release.manifestSha256);
   assert.match(failed.warning, /hash mismatch/);
 });
-

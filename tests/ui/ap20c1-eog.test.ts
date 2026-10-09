@@ -156,7 +156,7 @@ test('EOG labels exist in DE/FR and UI keeps two-column scope, actual choices an
   assert.doesNotMatch(app, /status: 'approved'|SYNTHETIC UI TEST/);
   const preview = readFileSync('src/ui/preview/main.tsx', 'utf8');
   assert.match(preview, /candidate === 'ap20c1' \? ap20c1CandidateCalculationData/);
-  assert.match(preview, /: mvp06CalculationData;/);
+  assert.match(preview, /: mvp07Runtime.data;/);
   for (const path of ['src/public-app/main.tsx', 'spfx/src/webparts/fristenrechner/FristenrechnerWebPart.ts']) {
     assert.doesNotMatch(readFileSync(path, 'utf8'), /ap20c1Candidate/);
   }

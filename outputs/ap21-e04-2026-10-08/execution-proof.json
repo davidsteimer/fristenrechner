@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "workPackage": "AP21",
+  "step": "E04",
+  "recordedAt": "2026-10-08T16:33:49.244Z",
+  "status": "stopped-catalog-manifest-validation-failed",
+  "authorization": {
+    "statement": "Ja, E04 ausführen.",
+    "e04Approved": true,
+    "e05Approved": false,
+    "newPackageBytesApproved": false,
+    "catalogItemRemovalApproved": false
+  },
+  "candidate": {
+    "path": "outputs/ap21-e-testkandidat-2026-10-08/fristenrechner-ap21-e-0.0.21.1.sppkg",
+    "version": "0.0.21.1",
+    "sha256": "a83a47fc930970f5086f37d2ccf3ad5ed91718fa30288077419853edcf7d56cf",
+    "byteLength": 289704,
+    "catalogUploaded": true,
+    "readbackMatches": true,
+    "valid": false,
+    "deployed": false
+  },
+  "catalogError": {
+    "attribute": "App/@Name",
+    "schemaType": "NameDefinition",
+    "rejectedValue": "Fristenrechner AP21 E-Gerätetest",
+    "constraint": "pattern",
+    "line": 1,
+    "position": 110
+  },
+  "mirrors": {
+    "releaseId": "2026-10-01-mvp-06-approved.1",
+    "manifestSha256": "637cfc03c777f350031ba6c28676c685c16f25733391e1f25b0a3580016f5724",
+    "targets": 2,
+    "filesPerTarget": 11,
+    "all22ReadbacksMatch": true,
+    "writes": 0
+  },
+  "existingProductionPackage": {
+    "version": "0.6.0.1",
+    "sha256": "60f84213507f99ec58463c84c514037d9c00bd63fdc8f02d85e52097bcf3c587",
+    "byteLength": 228122,
+    "beforeAfterReadbackMatches": true,
+    "catalogValid": true,
+    "catalogDeployed": true
+  },
+  "created": {
+    "catalogItems": 1,
+    "siteApps": 0,
+    "pages": 0,
+    "teamsApps": 0,
+    "tabs": 0
+  },
+  "preflight": {
+    "boundPreparationArtifacts": 24,
+    "allBoundPreparationArtifactsMatch": true,
+    "e02Complete": false,
+    "e02Outstanding": [
+      "complete-relevant-permission-baseline",
+      "complete-existing-teams-tab-configuration-baseline"
+    ],
+    "localTestsRerunInExecution": false
+  },
+  "unchangedByActions": [
+    "existing-apps",
+    "existing-pages",
+    "existing-tabs",
+    "mirrors",
+    "permissions",
+    "policies",
+    "Q",
+    "historical-AP5",
+    "P",
+    "GitHub"
+  ],
+  "retainedInvalidCatalogItem": true,
+  "evidence": [
+    {
+      "path": "docs/betrieb/ap21-e04-vollzug.md",
+      "sha256": "e76ca2a6a13f2c679c5ccab7359946e0a6bb3fd8967934342e4954fe0abb41f0"
+    },
+    {
+      "path": "outputs/ap21-e04-2026-10-08/katalog-zurueckweisung.jpg",
+      "sha256": "579dfc8e1148b2601923322ca2eca225b484050321b8ecbf2ff210a017b9bdb8",
+      "classification": "internal-local-proof-not-approved-for-publication"
+    }
+  ],
+  "nextGate": "prepare-corrected-candidate-then-obtain-new-exact-package-installation-approval",
+  "deviceTestsStarted": false,
+  "releaseApproved": false
+}

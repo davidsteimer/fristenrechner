@@ -1,0 +1,1329 @@
+
+> fristenrechner-schweiz@0.7.0 test:source-reviews
+> .venv/bin/python tests/governance/validate_source_reviews.py --self-test && .venv/bin/python -m unittest discover -s tests/governance -p 'test_*.py' && node scripts/run-standard-tests.mjs governance
+
+AP13-Quellenprüfung gültig: 236 Quellen, davon 138 produktiv, 5 Ereignis(sen), 4 Ergebnisarten und 8 Negativtests.
+Test scope: governance. 18 suites. Private MVP06/MVP07 audits are explicit separate commands.
+TAP version 13
+# Subtest: all 22 structural reference cases pass without calculation or release
+ok 1 - all 22 structural reference cases pass without calculation or release
+  ---
+  duration_ms: 8.209375
+  type: 'test'
+  ...
+# Subtest: the identical federal object serves BE and synthetic foreign bindings
+ok 2 - the identical federal object serves BE and synthetic foreign bindings
+  ---
+  duration_ms: 0.305667
+  type: 'test'
+  ...
+# Subtest: all true approval flags and implicit nationwide releases are rejected
+ok 3 - all true approval flags and implicit nationwide releases are rejected
+  ---
+  duration_ms: 17.572458
+  type: 'test'
+  ...
+# Subtest: unknown fields fail closed in each contract layer
+ok 4 - unknown fields fail closed in each contract layer
+  ---
+  duration_ms: 7.89325
+  type: 'test'
+  ...
+# Subtest: missing fields fail closed instead of defaulting to Bern or general VRPG
+ok 5 - missing fields fail closed instead of defaulting to Bern or general VRPG
+  ---
+  duration_ms: 10.679291
+  type: 'test'
+  ...
+# Subtest: empty, unresolved, changed and duplicated norm trails are rejected
+ok 6 - empty, unresolved, changed and duplicated norm trails are rejected
+  ---
+  duration_ms: 2.051833
+  type: 'test'
+  ...
+# Subtest: duplicate identifiers and broken binding references are rejected
+ok 7 - duplicate identifiers and broken binding references are rejected
+  ---
+  duration_ms: 2.245125
+  type: 'test'
+  ...
+# Subtest: source labels cannot contradict their statutory identifiers
+ok 8 - source labels cannot contradict their statutory identifiers
+  ---
+  duration_ms: 0.905791
+  type: 'test'
+  ...
+# Subtest: Bern constants cannot be added to a federal rule
+ok 9 - Bern constants cannot be added to a federal rule
+  ---
+  duration_ms: 1.135166
+  type: 'test'
+  ...
+# Subtest: invalid, reversed and falsely approved coverage metadata are rejected
+ok 10 - invalid, reversed and falsely approved coverage metadata are rejected
+  ---
+  duration_ms: 4.04125
+  type: 'test'
+  ...
+# Subtest: window boundaries are included and no legal-effective-date claim is inferred
+ok 11 - window boundaries are included and no legal-effective-date claim is inferred
+  ---
+  duration_ms: 2.246042
+  type: 'test'
+  ...
+# Subtest: procedural canton and holiday canton remain independently bound
+ok 12 - procedural canton and holiday canton remain independently bound
+  ---
+  duration_ms: 0.581959
+  type: 'test'
+  ...
+# Subtest: conflicting, unknown and authority-based holiday anchors never fall back
+ok 13 - conflicting, unknown and authority-based holiday anchors never fall back
+  ---
+  duration_ms: 3.457917
+  type: 'test'
+  ...
+# Subtest: an unknown rule is blocked, never mapped by a similar label
+ok 14 - an unknown rule is blocked, never mapped by a similar label
+  ---
+  duration_ms: 0.301333
+  type: 'test'
+  ...
+# Subtest: AP19A model remains absent from runtime imports and released artifact paths
+ok 15 - AP19A model remains absent from runtime imports and released artifact paths
+  ---
+  duration_ms: 439.304708
+  type: 'test'
+  ...
+# Subtest: AP19A import guard distinguishes import/export/require from legitimate shared IDs
+ok 16 - AP19A import guard distinguishes import/export/require from legitimate shared IDs
+  ---
+  duration_ms: 0.592208
+  type: 'test'
+  ...
+# Subtest: all old social paths have one route and all other definitions/regimes survive
+ok 17 - all old social paths have one route and all other definitions/regimes survive
+  ---
+  duration_ms: 4.096916
+  type: 'test'
+  ...
+# Subtest: the inspection changes neither candidate nor source bytes
+ok 18 - the inspection changes neither candidate nor source bytes
+  ---
+  duration_ms: 2.240083
+  type: 'test'
+  ...
+# Subtest: missing and duplicate migration routes fail closed
+ok 19 - missing and duplicate migration routes fail closed
+  ---
+  duration_ms: 38.646708
+  type: 'test'
+  ...
+# Subtest: law, binding, mapping and regime identities cannot silently change
+ok 20 - law, binding, mapping and regime identities cannot silently change
+  ---
+  duration_ms: 8.789916
+  type: 'test'
+  ...
+# Subtest: none of the political, procurement or general definitions may disappear
+ok 21 - none of the political, procurement or general definitions may disappear
+  ---
+  duration_ms: 4.04425
+  type: 'test'
+  ...
+# Subtest: all previous block identities remain explicit
+ok 22 - all previous block identities remain explicit
+  ---
+  duration_ms: 6.592292
+  type: 'test'
+  ...
+# Subtest: the twelve new paths are exact, unique and not copies of the old routes
+ok 23 - the twelve new paths are exact, unique and not copies of the old routes
+  ---
+  duration_ms: 11.407542
+  type: 'test'
+  ...
+# Subtest: current consumers cannot be declared compatible with the proposed new manifest
+ok 24 - current consumers cannot be declared compatible with the proposed new manifest
+  ---
+  duration_ms: 3.397208
+  type: 'test'
+  ...
+# Subtest: proposal flags cannot be converted into legal or operational approval
+ok 25 - proposal flags cannot be converted into legal or operational approval
+  ---
+  duration_ms: 2.001041
+  type: 'test'
+  ...
+# Subtest: unknown fields and missing mandatory fields are rejected
+ok 26 - unknown fields and missing mandatory fields are rejected
+  ---
+  duration_ms: 4.270958
+  type: 'test'
+  ...
+# Subtest: a modified original catalog fails the immutable source binding
+ok 27 - a modified original catalog fails the immutable source binding
+  ---
+  duration_ms: 0.558792
+  type: 'test'
+  ...
+# Subtest: the current manifest schema does not already allow version 5
+ok 28 - the current manifest schema does not already allow version 5
+  ---
+  duration_ms: 19.907333
+  type: 'test'
+  ...
+# Subtest: all 77 literal references pass across twelve candidate paths
+ok 29 - all 77 literal references pass across twelve candidate paths
+  ---
+  duration_ms: 84.740875
+  type: 'test'
+  ...
+# Subtest: candidate completeness never grants runtime or legal time approval
+ok 30 - candidate completeness never grants runtime or legal time approval
+  ---
+  duration_ms: 26.670291
+  type: 'test'
+  ...
+# Subtest: all twelve paths require qualified individual inputs, not only an input date
+ok 31 - all twelve paths require qualified individual inputs, not only an input date
+  ---
+  duration_ms: 21.001666
+  type: 'test'
+  ...
+# Subtest: statutory exceptions remain distinct from narrower product scope
+ok 32 - statutory exceptions remain distinct from narrower product scope
+  ---
+  duration_ms: 2.504084
+  type: 'test'
+  ...
+# Subtest: fixed thirty-day periods cannot be altered or confused with ordered periods
+ok 33 - fixed thirty-day periods cannot be altered or confused with ordered periods
+  ---
+  duration_ms: 20.1525
+  type: 'test'
+  ...
+# Subtest: the three ATSG pauses and inclusive endpoints are literal audited references
+ok 34 - the three ATSG pauses and inclusive endpoints are literal audited references
+  ---
+  duration_ms: 6.439791
+  type: 'test'
+  ...
+# Subtest: weekends and holidays inside a running period count, only the end shifts
+ok 35 - weekends and holidays inside a running period count, only the end shifts
+  ---
+  duration_ms: 1.630666
+  type: 'test'
+  ...
+# Subtest: civil-date validation respects leap years without widening legal coverage
+ok 36 - civil-date validation respects leap years without widening legal coverage
+  ---
+  duration_ms: 0.495875
+  type: 'test'
+  ...
+# Subtest: holiday anchor and insurer seat are separate and unresolved places never default to BE
+ok 37 - holiday anchor and insurer seat are separate and unresolved places never default to BE
+  ---
+  duration_ms: 9.259583
+  type: 'test'
+  ...
+# Subtest: Bern-only fixture binding does not assert national product activation
+ok 38 - Bern-only fixture binding does not assert national product activation
+  ---
+  duration_ms: 8.619334
+  type: 'test'
+  ...
+# Subtest: reference source calendar bytes remain identical to the frozen release
+ok 39 - reference source calendar bytes remain identical to the frozen release
+  ---
+  duration_ms: 9.696709
+  type: 'test'
+  ...
+# Subtest: AVIG proposed original-amendment evidence is explicit across January/February 2027
+ok 40 - AVIG proposed original-amendment evidence is explicit across January/February 2027
+  ---
+  duration_ms: 8.472834
+  type: 'test'
+  ...
+# Subtest: source identifiers, citations and versioned original URLs cannot be interchanged
+ok 41 - source identifiers, citations and versioned original URLs cannot be interchanged
+  ---
+  duration_ms: 5.812708
+  type: 'test'
+  ...
+# Subtest: literal fixture holidays match an independent projection of read-only CH/BE rules
+ok 42 - literal fixture holidays match an independent projection of read-only CH/BE rules
+  ---
+  duration_ms: 2.492625
+  type: 'test'
+  ...
+# Subtest: unknown keys and missing fields fail closed in fixtures and inputs
+ok 43 - unknown keys and missing fields fail closed in fixtures and inputs
+  ---
+  duration_ms: 20.4915
+  type: 'test'
+  ...
+# Subtest: changes to literal expected results are detected, never recomputed into the fixture
+ok 44 - changes to literal expected results are detected, never recomputed into the fixture
+  ---
+  duration_ms: 29.750542
+  type: 'test'
+  ...
+# Subtest: duplicate IDs, altered durations and missing calendar dates are rejected
+ok 45 - duplicate IDs, altered durations and missing calendar dates are rejected
+  ---
+  duration_ms: 2.853209
+  type: 'test'
+  ...
+# Subtest: calendar arithmetic does not depend on host time zone or daylight-saving transition
+ok 46 - calendar arithmetic does not depend on host time zone or daylight-saving transition
+  ---
+  duration_ms: 584.641834
+  type: 'test'
+  ...
+# Subtest: AP19B reference data is never product payload, while exact release evidence references are allowed
+ok 47 - AP19B reference data is never product payload, while exact release evidence references are allowed
+  ---
+  duration_ms: 184.108125
+  type: 'test'
+  ...
+# Subtest: AP20B historical test is the exact 85-archive input, not the evolved living test
+ok 48 - AP20B historical test is the exact 85-archive input, not the evolved living test
+  ---
+  duration_ms: 3.542375
+  type: 'test'
+  ...
+# Subtest: no accepted hash or path may be changed to select a different historical input
+ok 49 - no accepted hash or path may be changed to select a different historical input
+  ---
+  duration_ms: 1.947625
+  type: 'test'
+  ...
+# Subtest: missing, changed or replaced historical test fails without falling back to the living file
+ok 50 - missing, changed or replaced historical test fails without falling back to the living file
+  ---
+  duration_ms: 0.596042
+  type: 'test'
+  ...
+# Subtest: all other AP20B evidence is still read from its exact original path
+ok 51 - all other AP20B evidence is still read from its exact original path
+  ---
+  duration_ms: 4.660709
+  type: 'test'
+  ...
+# Subtest: an unrelated hash mismatch cannot trigger any archive lookup
+ok 52 - an unrelated hash mismatch cannot trigger any archive lookup
+  ---
+  duration_ms: 0.360417
+  type: 'test'
+  ...
+# Subtest: 20 national rules, 22 distinct Bern bindings and 220 literal date references
+ok 53 - 20 national rules, 22 distinct Bern bindings and 220 literal date references
+  ---
+  duration_ms: 158.3585
+  type: 'test'
+  ...
+# Subtest: all bindings independently reject missing and unexpected facts
+ok 54 - all bindings independently reject missing and unexpected facts
+  ---
+  duration_ms: 13.612708
+  type: 'test'
+  ...
+# Subtest: qualified issuer, source origin and ordinary domestic case are mandatory
+ok 55 - qualified issuer, source origin and ordinary domestic case are mandatory
+  ---
+  duration_ms: 11.044334
+  type: 'test'
+  ...
+# Subtest: every substantive route fact blocks a wrong canton or unqualified office class
+ok 56 - every substantive route fact blocks a wrong canton or unqualified office class
+  ---
+  duration_ms: 16.860166
+  type: 'test'
+  ...
+# Subtest: EOG cantonal and noncantonal court origins cannot substitute for each other
+ok 57 - EOG cantonal and noncantonal court origins cannot substitute for each other
+  ---
+  duration_ms: 2.447042
+  type: 'test'
+  ...
+# Subtest: EO adoption rejects an externally identified wrong issuer, not an inferred benefits classification
+ok 58 - EO adoption rejects an externally identified wrong issuer, not an inferred benefits classification
+  ---
+  duration_ms: 0.728625
+  type: 'test'
+  ...
+# Subtest: EOG and MVG administrative domicile is a product boundary, never an insurer-seat filter
+ok 59 - EOG and MVG administrative domicile is a product boundary, never an insurer-seat filter
+  ---
+  duration_ms: 41.175583
+  type: 'test'
+  ...
+# Subtest: FamZG uses the applicable order, FLG the issuing competent cantonal fund, not domicile
+ok 60 - FamZG uses the applicable order, FLG the issuing competent cantonal fund, not domicile
+  ---
+  duration_ms: 4.94675
+  type: 'test'
+  ...
+# Subtest: UELG administration and court require different independently qualified facts
+ok 61 - UELG administration and court require different independently qualified facts
+  ---
+  duration_ms: 0.675084
+  type: 'test'
+  ...
+# Subtest: court dates are explicit, covered, and separate from notification
+ok 62 - court dates are explicit, covered, and separate from notification
+  ---
+  duration_ms: 27.009916
+  type: 'test'
+  ...
+# Subtest: administration never silently consumes an irrelevant court date
+ok 63 - administration never silently consumes an irrelevant court date
+  ---
+  duration_ms: 0.582916
+  type: 'test'
+  ...
+# Subtest: all named statutory exclusions and product limits have explicit reasons
+ok 64 - all named statutory exclusions and product limits have explicit reasons
+  ---
+  duration_ms: 2.483625
+  type: 'test'
+  ...
+# Subtest: formless EO statements and generic judicial orders do not start modeled objection/correction periods
+ok 65 - formless EO statements and generic judicial orders do not start modeled objection/correction periods
+  ---
+  duration_ms: 0.765167
+  type: 'test'
+  ...
+# Subtest: MVV notice is an ordered response only when concretely qualified, no IVG-style fixed period
+ok 66 - MVV notice is an ordered response only when concretely qualified, no IVG-style fixed period
+  ---
+  duration_ms: 1.431166
+  type: 'test'
+  ...
+# Subtest: fixed days versus ordered days, units and bounds remain closed
+ok 67 - fixed days versus ordered days, units and bounds remain closed
+  ---
+  duration_ms: 9.167958
+  type: 'test'
+  ...
+# Subtest: BE jurisdiction does not determine holiday anchor and no other canton is activated
+ok 68 - BE jurisdiction does not determine holiday anchor and no other canton is activated
+  ---
+  duration_ms: 59.814375
+  type: 'test'
+  ...
+# Subtest: the whole computation must remain inside the covered window
+ok 69 - the whole computation must remain inside the covered window
+  ---
+  duration_ms: 3.048916
+  type: 'test'
+  ...
+# Subtest: invalid trigger, wrong stage and missing notification are not replaced by defaults
+ok 70 - invalid trigger, wrong stage and missing notification are not replaced by defaults
+  ---
+  duration_ms: 5.664209
+  type: 'test'
+  ...
+# Subtest: proposal, approval, versions and route mutations fail closed
+ok 71 - proposal, approval, versions and route mutations fail closed
+  ---
+  duration_ms: 20.697208
+  type: 'test'
+  ...
+# Subtest: literal expected results are not regenerated to match the implementation
+ok 72 - literal expected results are not regenerated to match the implementation
+  ---
+  duration_ms: 1.472625
+  type: 'test'
+  ...
+# Subtest: civil-date results are independent of host timezone and DST
+ok 73 - civil-date results are independent of host timezone and DST
+  ---
+  duration_ms: 726.866458
+  type: 'test'
+  ...
+# Subtest: AP20A and the existing calendar reference remain byteidentical
+ok 74 - AP20A and the existing calendar reference remain byteidentical
+  ---
+  duration_ms: 13.068833
+  type: 'test'
+  ...
+# Subtest: MVP05 manifest, social payload and every release artifact remain unchanged
+ok 75 - MVP05 manifest, social payload and every release artifact remain unchanged
+  ---
+  duration_ms: 7.705125
+  type: 'test'
+  ...
+# Subtest: AP20B fixture is not runtime or payload, only its exact nonoperative approval evidence is allowed
+ok 76 - AP20B fixture is not runtime or payload, only its exact nonoperative approval evidence is allowed
+  ---
+  duration_ms: 245.780166
+  type: 'test'
+  ...
+# Subtest: AP20B approval exception rejects altered hashes, payload leaks and other metadata locations
+ok 77 - AP20B approval exception rejects altered hashes, payload leaks and other metadata locations
+  ---
+  duration_ms: 0.897542
+  type: 'test'
+  ...
+# Subtest: saved draft has the independently stated AP22B inventory and no runtime approval
+ok 78 - saved draft has the independently stated AP22B inventory and no runtime approval
+  ---
+  duration_ms: 60.413333
+  type: 'test'
+  ...
+# Subtest: building and inspecting the specimen preserve all archival fields and all 479 original rules
+ok 79 - building and inspecting the specimen preserve all archival fields and all 479 original rules
+  ---
+  duration_ms: 193.557833
+  type: 'test'
+  ...
+# Subtest: all 198 decisions retain their exact source row hashes and selection identities
+ok 80 - all 198 decisions retain their exact source row hashes and selection identities
+  ---
+  duration_ms: 4.165416
+  type: 'test'
+  ...
+# Subtest: 104 bindings are exactly 26 cantons times four federal profiles, never a CH-only authority fallback
+ok 81 - 104 bindings are exactly 26 cantons times four federal profiles, never a CH-only authority fallback
+  ---
+  duration_ms: 0.857291
+  type: 'test'
+  ...
+# Subtest: literal AG, FR, SO, ZH and ZG selections replace competing lists for all four profiles
+ok 82 - literal AG, FR, SO, ZH and ZG selections replace competing lists for all four profiles
+  ---
+  duration_ms: 0.491292
+  type: 'test'
+  ...
+# Subtest: LU explicitly distinguishes the JusG list from the RLG plus VRG composition
+ok 83 - LU explicitly distinguishes the JusG list from the RLG plus VRG composition
+  ---
+  duration_ms: 0.190208
+  type: 'test'
+  ...
+# Subtest: NE and AI require an explicit regional fact instead of equating unknown with false
+ok 84 - NE and AI require an explicit regional fact instead of equating unknown with false
+  ---
+  duration_ms: 0.36875
+  type: 'test'
+  ...
+# Subtest: GR and NE carry their approved coverage boundaries on the actual calendar binding
+ok 85 - GR and NE carry their approved coverage boundaries on the actual calendar binding
+  ---
+  duration_ms: 0.129209
+  type: 'test'
+  ...
+# Subtest: exactly SH/StPO and SG/StPO/BGG/VwVG have alternatives differing by their single Jan 2 contribution
+ok 86 - exactly SH/StPO and SG/StPO/BGG/VwVG have alternatives differing by their single Jan 2 contribution
+  ---
+  duration_ms: 14.205
+  type: 'test'
+  ...
+# Subtest: all 20 negative decisions survive without deleting their original catalogue rules
+ok 87 - all 20 negative decisions survive without deleting their original catalogue rules
+  ---
+  duration_ms: 29.65325
+  type: 'test'
+  ...
+# Subtest: the twelve separate SO rules are full-day additions and retain the archived RTG half-day
+ok 88 - the twelve separate SO rules are full-day additions and retain the archived RTG half-day
+  ---
+  duration_ms: 0.518125
+  type: 'test'
+  ...
+# Subtest: court and party/representation policies stay distinct without computing an anchor
+ok 89 - court and party/representation policies stay distinct without computing an anchor
+  ---
+  duration_ms: 0.155458
+  type: 'test'
+  ...
+# Subtest: missing, duplicate or reinterpreted decisions and deleted exclusions fail closed
+ok 90 - missing, duplicate or reinterpreted decisions and deleted exclusions fail closed
+  ---
+  duration_ms: 885.014208
+  type: 'test'
+  ...
+# Subtest: coverage boundaries, regional uncertainty and the Jan 2 alternative cannot disappear
+ok 91 - coverage boundaries, regional uncertainty and the Jan 2 alternative cannot disappear
+  ---
+  duration_ms: 532.579083
+  type: 'test'
+  ...
+# Subtest: candidate approval, invalid sources/dates and new profiles are rejected in this bound draft
+ok 92 - candidate approval, invalid sources/dates and new profiles are rejected in this bound draft
+  ---
+  duration_ms: 565.500459
+  type: 'test'
+  ...
+# Subtest: the alternative cannot add or remove any contribution other than the bound Jan 2 rule
+ok 93 - the alternative cannot add or remove any contribution other than the bound Jan 2 rule
+  ---
+  duration_ms: 220.989667
+  type: 'test'
+  ...
+# Subtest: AP22B preserves all 25 AP22A groups and eight central boundaries as unexecuted specifications
+ok 94 - AP22B preserves all 25 AP22A groups and eight central boundaries as unexecuted specifications
+  ---
+  duration_ms: 2.283209
+  type: 'test'
+  ...
+# Subtest: every reference has an existing repository source containing its reference identifier
+ok 95 - every reference has an existing repository source containing its reference identifier
+  ---
+  duration_ms: 168.426375
+  type: 'test'
+  ...
+# Subtest: the reference index is bound to the unchanged AP22A V1.0 matrix
+ok 96 - the reference index is bound to the unchanged AP22A V1.0 matrix
+  ---
+  duration_ms: 4.917292
+  type: 'test'
+  ...
+# Subtest: missing, duplicated and unfamiliar reference groups fail index integrity
+ok 97 - missing, duplicated and unfamiliar reference groups fail index integrity
+  ---
+  duration_ms: 5.392875
+  type: 'test'
+  ...
+# Subtest: draft metadata cannot be changed into product execution or approval
+ok 98 - draft metadata cannot be changed into product execution or approval
+  ---
+  duration_ms: 2.458292
+  type: 'test'
+  ...
+# Subtest: January counterfactuals cover direct, reached, weekend and irrelevant cases without arithmetic
+ok 99 - January counterfactuals cover direct, reached, weekend and irrelevant cases without arithmetic
+  ---
+  duration_ms: 0.158416
+  type: 'test'
+  ...
+# Subtest: a January date difference cannot produce a definitive result or lose a binding
+ok 100 - a January date difference cannot produce a definitive result or lose a binding
+  ---
+  duration_ms: 2.266167
+  type: 'test'
+  ...
+# Subtest: GR, NE, historical and negative evidence remain distinct reference categories
+ok 101 - GR, NE, historical and negative evidence remain distinct reference categories
+  ---
+  duration_ms: 0.1855
+  type: 'test'
+  ...
+# Subtest: actual recorded approval binds 120 source IDs while withholding external authority
+ok 102 - actual recorded approval binds 120 source IDs while withholding external authority
+  ---
+  duration_ms: 47.146833
+  type: 'test'
+  ...
+# Subtest: exact human declaration, identity, date, status and release are mandatory
+ok 103 - exact human declaration, identity, date, status and release are mandatory
+  ---
+  duration_ms: 13.74225
+  type: 'test'
+  ...
+# Subtest: source scope and outcome totals cannot be widened or greenwashed
+ok 104 - source scope and outcome totals cannot be widened or greenwashed
+  ---
+  duration_ms: 7.9255
+  type: 'test'
+  ...
+# Subtest: publication, deployment and operating approval remain explicitly false
+ok 105 - publication, deployment and operating approval remain explicitly false
+  ---
+  duration_ms: 13.192708
+  type: 'test'
+  ...
+# Subtest: missing, duplicate or unhashed reports are rejected
+ok 106 - missing, duplicate or unhashed reports are rejected
+  ---
+  duration_ms: 3.216791
+  type: 'test'
+  ...
+# Subtest: modified evidence is rejected before substantive assertions
+ok 107 - modified evidence is rejected before substantive assertions
+  ---
+  duration_ms: 0.624667
+  type: 'test'
+  ...
+# Subtest: evidence paths cannot leave the repository or be reinterpreted
+ok 108 - evidence paths cannot leave the repository or be reinterpreted
+  ---
+  duration_ms: 8.477167
+  type: 'test'
+  ...
+# Subtest: historical AP13 event remains protected by its independent pinned hash
+ok 109 - historical AP13 event remains protected by its independent pinned hash
+  ---
+  duration_ms: 1.89025
+  type: 'test'
+  ...
+# Subtest: approved event allows only the exact two metadata changes
+ok 110 - approved event allows only the exact two metadata changes
+  ---
+  duration_ms: 30.804583
+  type: 'test'
+  ...
+# Subtest: register role, scope and source content cannot change through approval
+ok 111 - register role, scope and source content cannot change through approval
+  ---
+  duration_ms: 26.339459
+  type: 'test'
+  ...
+# Subtest: candidate snapshots and canonical target paths are mandatory
+ok 112 - candidate snapshots and canonical target paths are mandatory
+  ---
+  duration_ms: 17.69725
+  type: 'test'
+  ...
+# Subtest: rehashing incomplete catalog evidence does not manufacture a complete review
+ok 113 - rehashing incomplete catalog evidence does not manufacture a complete review
+  ---
+  duration_ms: 16.761709
+  type: 'test'
+  ...
+# Subtest: AI remains unclear even if a changed report is rehashed
+ok 114 - AI remains unclear even if a changed report is rehashed
+  ---
+  duration_ms: 12.784
+  type: 'test'
+  ...
+# Subtest: historical technical false flags cannot be rewritten as human approval
+ok 115 - historical technical false flags cannot be rewritten as human approval
+  ---
+  duration_ms: 17.279917
+  type: 'test'
+  ...
+# Subtest: AI follow-up cannot claim correction or erase the open source conflict
+ok 116 - AI follow-up cannot claim correction or erase the open source conflict
+  ---
+  duration_ms: 37.965667
+  type: 'test'
+  ...
+# Subtest: nested historical evidence must bind the candidate event, not the approved replacement
+ok 117 - nested historical evidence must bind the candidate event, not the approved replacement
+  ---
+  duration_ms: 56.464833
+  type: 'test'
+  ...
+# Subtest: both generators verify approved temporary copies without writing or downgrading
+ok 118 - both generators verify approved temporary copies without writing or downgrading
+  ---
+  duration_ms: 291.870208
+  type: 'test'
+  ...
+# Subtest: malformed approval stops both generators before touching evidence
+ok 119 - malformed approval stops both generators before touching evidence
+  ---
+  duration_ms: 272.37875
+  type: 'test'
+  ...
+# Subtest: missing approval cannot make either generator overwrite approved evidence
+ok 120 - missing approval cannot make either generator overwrite approved evidence
+  ---
+  duration_ms: 284.038667
+  type: 'test'
+  ...
+# Subtest: a tampered candidate status cannot bypass a recorded approval
+ok 121 - a tampered candidate status cannot bypass a recorded approval
+  ---
+  duration_ms: 239.173458
+  type: 'test'
+  ...
+# Subtest: covers 120 unique sources without granting formal approval
+ok 122 - covers 120 unique sources without granting formal approval
+  ---
+  duration_ms: 22.917625
+  type: 'test'
+  ...
+# Subtest: missing batch rejected
+ok 123 - missing batch rejected
+  ---
+  duration_ms: 9.755625
+  type: 'test'
+  ...
+# Subtest: missing source rejected
+ok 124 - missing source rejected
+  ---
+  duration_ms: 6.4645
+  type: 'test'
+  ...
+# Subtest: duplicated source rejected
+ok 125 - duplicated source rejected
+  ---
+  duration_ms: 5.884458
+  type: 'test'
+  ...
+# Subtest: missing operative review rejected
+ok 126 - missing operative review rejected
+  ---
+  duration_ms: 9.473333
+  type: 'test'
+  ...
+# Subtest: changed catalog hash rejected
+ok 127 - changed catalog hash rejected
+  ---
+  duration_ms: 4.997583
+  type: 'test'
+  ...
+# Subtest: stale review date rejected
+ok 128 - stale review date rejected
+  ---
+  duration_ms: 4.273292
+  type: 'test'
+  ...
+# Subtest: missing finding or locator rejected
+ok 129 - missing finding or locator rejected
+  ---
+  duration_ms: 27.083041
+  type: 'test'
+  ...
+# Subtest: unavailable and unclear remain unresolved, never silently passed
+ok 130 - unavailable and unclear remain unresolved, never silently passed
+  ---
+  duration_ms: 4.118375
+  type: 'test'
+  ...
+# Subtest: operative self-declaration without individual checks rejected
+ok 131 - operative self-declaration without individual checks rejected
+  ---
+  duration_ms: 5.282458
+  type: 'test'
+  ...
+# Subtest: contradicting unreviewed-source list rejected
+ok 132 - contradicting unreviewed-source list rejected
+  ---
+  duration_ms: 5.3785
+  type: 'test'
+  ...
+# Subtest: canonical review event is mandatory and checked
+ok 133 - canonical review event is mandatory and checked
+  ---
+  duration_ms: 3.846083
+  type: 'test'
+  ...
+# Subtest: report bound to a different catalog rejected
+ok 134 - report bound to a different catalog rejected
+  ---
+  duration_ms: 7.357417
+  type: 'test'
+  ...
+# Subtest: HTTP-only checks cannot become substantive confirmation
+ok 135 - HTTP-only checks cannot become substantive confirmation
+  ---
+  duration_ms: 8.908917
+  type: 'test'
+  ...
+# Subtest: duplicate manifest source ID rejected
+ok 136 - duplicate manifest source ID rejected
+  ---
+  duration_ms: 4.093
+  type: 'test'
+  ...
+# Subtest: unresolved operative event cannot be passed by confirmed catalog sources
+ok 137 - unresolved operative event cannot be passed by confirmed catalog sources
+  ---
+  duration_ms: 5.152792
+  type: 'test'
+  ...
+# Subtest: known AI conflict requires hash-bound follow-up and existing decision
+ok 138 - known AI conflict requires hash-bound follow-up and existing decision
+  ---
+  duration_ms: 0.841458
+  type: 'test'
+  ...
+# Subtest: MVP05 preparation binds the accepted candidate without granting release permissions
+ok 139 - MVP05 preparation binds the accepted candidate without granting release permissions
+  ---
+  duration_ms: 55.548375
+  type: 'test'
+  ...
+# Subtest: MVP05 preparation rejects altered manifest bytes
+ok 140 - MVP05 preparation rejects altered manifest bytes
+  ---
+  duration_ms: 17.053167
+  type: 'test'
+  ...
+# Subtest: MVP05 preparation rejects altered social data bytes
+ok 141 - MVP05 preparation rejects altered social data bytes
+  ---
+  duration_ms: 33.779125
+  type: 'test'
+  ...
+# Subtest: MVP05 preparation rejects altered source proof bytes
+ok 142 - MVP05 preparation rejects altered source proof bytes
+  ---
+  duration_ms: 29.4555
+  type: 'test'
+  ...
+# Subtest: MVP05 preparation rejects altered reference suite bytes
+ok 143 - MVP05 preparation rejects altered reference suite bytes
+  ---
+  duration_ms: 22.809084
+  type: 'test'
+  ...
+# Subtest: MVP05 preparation requires all three actual acceptance documents
+ok 144 - MVP05 preparation requires all three actual acceptance documents
+  ---
+  duration_ms: 26.703042
+  type: 'test'
+  ...
+# Subtest: MVP05 snapshot is deterministic and never replaces a differing existing output
+ok 145 - MVP05 snapshot is deterministic and never replaces a differing existing output
+  ---
+  duration_ms: 37.455166
+  type: 'test'
+  ...
+# Subtest: MVP05 verifies the exact human source and local-build decision without external authority
+ok 146 - MVP05 verifies the exact human source and local-build decision without external authority
+  ---
+  duration_ms: 229.555125
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field declaration
+ok 147 - MVP05 rejects changed human decision field declaration
+  ---
+  duration_ms: 1.665083
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field approvedBy
+ok 148 - MVP05 rejects changed human decision field approvedBy
+  ---
+  duration_ms: 0.423583
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field approvedOn
+ok 149 - MVP05 rejects changed human decision field approvedOn
+  ---
+  duration_ms: 0.332833
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field reviewId
+ok 150 - MVP05 rejects changed human decision field reviewId
+  ---
+  duration_ms: 0.175167
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field releaseId
+ok 151 - MVP05 rejects changed human decision field releaseId
+  ---
+  duration_ms: 0.283541
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field recordStatus
+ok 152 - MVP05 rejects changed human decision field recordStatus
+  ---
+  duration_ms: 0.248125
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects changed human decision field decisionRef
+ok 153 - MVP05 rejects changed human decision field decisionRef
+  ---
+  duration_ms: 0.263875
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects installation, publication, hosting and operating authority expansion
+ok 154 - MVP05 rejects installation, publication, hosting and operating authority expansion
+  ---
+  duration_ms: 2.59475
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects broader canton scope and falsely independent four-eyes responsibility
+ok 155 - MVP05 rejects broader canton scope and falsely independent four-eyes responsibility
+  ---
+  duration_ms: 0.963125
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects missing, duplicate and modified evidence
+ok 156 - MVP05 rejects missing, duplicate and modified evidence
+  ---
+  duration_ms: 3.916125
+  type: 'test'
+  ...
+# Subtest: MVP05 cannot erase retained limitations or manufacture resolution of AI
+ok 157 - MVP05 cannot erase retained limitations or manufacture resolution of AI
+  ---
+  duration_ms: 4.734042
+  type: 'test'
+  ...
+# Subtest: historical preparation remains byte-reproducible after live register and version evolution
+ok 158 - historical preparation remains byte-reproducible after live register and version evolution
+  ---
+  duration_ms: 45.648958
+  type: 'test'
+  ...
+# Subtest: MVP05 resolves 53 manifest sources and exactly 82 explicitly reused catalog sources without approval
+ok 159 - MVP05 resolves 53 manifest sources and exactly 82 explicitly reused catalog sources without approval
+  ---
+  duration_ms: 182.911958
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects missing source
+ok 160 - MVP05 rejects missing source
+  ---
+  duration_ms: 7.710125
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects cross-group duplicate
+ok 161 - MVP05 rejects cross-group duplicate
+  ---
+  duration_ms: 5.030958
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects unexpected changed outcome
+ok 162 - MVP05 rejects unexpected changed outcome
+  ---
+  duration_ms: 4.857209
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects pretended human approval
+ok 163 - MVP05 rejects pretended human approval
+  ---
+  duration_ms: 5.838292
+  type: 'test'
+  ...
+# Subtest: MVP05 rejects lost AI conflict
+ok 164 - MVP05 rejects lost AI conflict
+  ---
+  duration_ms: 11.119625
+  type: 'test'
+  ...
+# Subtest: MVP06 public integrity verifies 63 exact files and explicitly does not repeat 107 private originals
+ok 165 - MVP06 public integrity verifies 63 exact files and explicitly does not repeat 107 private originals
+  ---
+  duration_ms: 144.983708
+  type: 'test'
+  ...
+# Subtest: the public check succeeds without private scratch, Git or installed dependencies in the evidence repository
+ok 166 - the public check succeeds without private scratch, Git or installed dependencies in the evidence repository
+  ---
+  duration_ms: 429.015292
+  type: 'test'
+  ...
+# Subtest: strict approval validation still rejects a public-only evidence set
+ok 167 - strict approval validation still rejects a public-only evidence set
+  ---
+  duration_ms: 1.078
+  type: 'test'
+  ...
+# Subtest: changed, reformatted or permission-expanded approval and manifest bytes are rejected before loading paths
+ok 168 - changed, reformatted or permission-expanded approval and manifest bytes are rejected before loading paths
+  ---
+  duration_ms: 1.462833
+  type: 'test'
+  ...
+# Subtest: all 63 public files are mandatory, exact and cannot be replaced by unrequested evidence
+ok 169 - all 63 public files are mandatory, exact and cannot be replaced by unrequested evidence
+  ---
+  duration_ms: 358.966167
+  type: 'test'
+  ...
+# Subtest: the portable loader does not fall back to another copy if a public file is missing
+ok 170 - the portable loader does not fall back to another copy if a public file is missing
+  ---
+  duration_ms: 91.408625
+  type: 'test'
+  ...
+# Subtest: the portable loader rejects symlinks even when the redirected bytes match
+ok 171 - the portable loader rejects symlinks even when the redirected bytes match
+  ---
+  duration_ms: 70.511125
+  type: 'test'
+  ...
+# Subtest: explicit suite separation excludes exactly the named private audit, never unknown or missing tests
+ok 172 - explicit suite separation excludes exactly the named private audit, never unknown or missing tests
+  ---
+  duration_ms: 0.315583
+  type: 'test'
+  ...
+# Subtest: MVP07 verifies the exact 42 public source files, 41 runtime files and bounded governance without inventing full audit
+ok 173 - MVP07 verifies the exact 42 public source files, 41 runtime files and bounded governance without inventing full audit
+  ---
+  duration_ms: 344.598333
+  type: 'test'
+  ...
+# Subtest: real public-only copy succeeds without private scratch, Git, dependencies or acceptance TAR
+ok 174 - real public-only copy succeeds without private scratch, Git, dependencies or acceptance TAR
+  ---
+  duration_ms: 318.70125
+  type: 'test'
+  ...
+# Subtest: the strict source audit still fails on the public-only repository, never downgrading to a public pass
+ok 175 - the strict source audit still fails on the public-only repository, never downgrading to a public pass
+  ---
+  duration_ms: 185.499416
+  type: 'test'
+  ...
+# Subtest: changed approval or manifest is rejected before classification or descriptor traversal
+ok 176 - changed approval or manifest is rejected before classification or descriptor traversal
+  ---
+  duration_ms: 3.626833
+  type: 'test'
+  ...
+# Subtest: every actual public input is mandatory, and an unrelated replacement cannot expand the closure
+ok 177 - every actual public input is mandatory, and an unrelated replacement cannot expand the closure
+  ---
+  duration_ms: 876.83725
+  type: 'test'
+  ...
+# Subtest: changed source, runtime, local decision and adopted governance bytes fail
+ok 178 - changed source, runtime, local decision and adopted governance bytes fail
+  ---
+  duration_ms: 55.753125
+  type: 'test'
+  ...
+# Subtest: missing archived source is not replaced with an available current alias
+ok 179 - missing archived source is not replaced with an available current alias
+  ---
+  duration_ms: 57.127833
+  type: 'test'
+  ...
+# Subtest: symlinked public evidence is rejected even with matching bytes
+ok 180 - symlinked public evidence is rejected even with matching bytes
+  ---
+  duration_ms: 48.362834
+  type: 'test'
+  ...
+# Subtest: extra runtime files and symlink directories cannot hide outside the manifest
+ok 181 - extra runtime files and symlink directories cannot hide outside the manifest
+  ---
+  duration_ms: 150.474542
+  type: 'test'
+  ...
+# Subtest: path protection includes nested scratch/private archives, traversal and symlinks are not followed
+ok 182 - path protection includes nested scratch/private archives, traversal and symlinks are not followed
+  ---
+  duration_ms: 0.940625
+  type: 'test'
+  ...
+# Subtest: only five named MVP07 private suites are excluded, future or ordinary tests remain public
+ok 183 - only five named MVP07 private suites are excluded, future or ordinary tests remain public
+  ---
+  duration_ms: 0.222458
+  type: 'test'
+  ...
+# Subtest: binds four real anchors and all 41 data files without any publication or Git-history claim
+ok 184 - binds four real anchors and all 41 data files without any publication or Git-history claim
+  ---
+  duration_ms: 13.140375
+  type: 'test'
+  ...
+# Subtest: actual public-only readback requires no .work, Git or final publication manifest in the real repository
+ok 185 - actual public-only readback requires no .work, Git or final publication manifest in the real repository
+  ---
+  duration_ms: 216.130542
+  type: 'test'
+  ...
+# Subtest: inventory digest uses sorted paths and exact double-space/newline representation
+ok 186 - inventory digest uses sorted paths and exact double-space/newline representation
+  ---
+  duration_ms: 2.721542
+  type: 'test'
+  ...
+# Subtest: wrong identity, authority, unexpected fields and inconsistent inventory counts fail closed
+ok 187 - wrong identity, authority, unexpected fields and inconsistent inventory counts fail closed
+  ---
+  duration_ms: 77.901709
+  type: 'test'
+  ...
+# Subtest: every pinned anchor rejects a removed or even consistently rehashed replacement
+ok 188 - every pinned anchor rejects a removed or even consistently rehashed replacement
+  ---
+  duration_ms: 21.326583
+  type: 'test'
+  ...
+# Subtest: exact inventory bytes are mandatory, including unchanged non-anchor runtime bindings
+ok 189 - exact inventory bytes are mandatory, including unchanged non-anchor runtime bindings
+  ---
+  duration_ms: 16.217
+  type: 'test'
+  ...
+# Subtest: private paths, traversal, self-binding, duplicate records and exclusions cannot enter the inventory
+ok 190 - private paths, traversal, self-binding, duplicate records and exclusions cannot enter the inventory
+  ---
+  duration_ms: 60.136666
+  type: 'test'
+  ...
+# Subtest: data commit selection is the exact pinned manifest, not any 41 files under the release prefix
+ok 191 - data commit selection is the exact pinned manifest, not any 41 files under the release prefix
+  ---
+  duration_ms: 14.390584
+  type: 'test'
+  ...
+# Subtest: missing actual file has no fallback to the original repository
+ok 192 - missing actual file has no fallback to the original repository
+  ---
+  duration_ms: 54.105
+  type: 'test'
+  ...
+# Subtest: symlinked files, parents and publication manifest are rejected even when their bytes match
+ok 193 - symlinked files, parents and publication manifest are rejected even when their bytes match
+  ---
+  duration_ms: 73.088125
+  type: 'test'
+  ...
+# Subtest: symlinked root and unmanifested actual release entries cannot be hidden
+ok 194 - symlinked root and unmanifested actual release entries cannot be hidden
+  ---
+  duration_ms: 203.770917
+  type: 'test'
+  ...
+# Subtest: only solution and feature versions change, component version and other inputs remain exact
+ok 195 - only solution and feature versions change, component version and other inputs remain exact
+  ---
+  duration_ms: 1.7875
+  type: 'test'
+  ...
+# Subtest: visible recovery marker changes exactly once and does not change runtime logic
+ok 196 - visible recovery marker changes exactly once and does not change runtime logic
+  ---
+  duration_ms: 1.567042
+  type: 'test'
+  ...
+# Subtest: version derivation refuses changed identity, version, added API permission and extra feature
+ok 197 - version derivation refuses changed identity, version, added API permission and extra feature
+  ---
+  duration_ms: 1.057042
+  type: 'test'
+  ...
+# Subtest: single-literal normalisation rejects absent or repeated input
+ok 198 - single-literal normalisation rejects absent or repeated input
+  ---
+  duration_ms: 0.493125
+  type: 'test'
+  ...
+# Subtest: only the two exact generated AppPartConfig UUID v4 files normalise
+ok 199 - only the two exact generated AppPartConfig UUID v4 files normalise
+  ---
+  duration_ms: 0.965291
+  type: 'test'
+  ...
+# Subtest: asset GUID normalisation requires the exact generated asset feature, not a permission or other feature
+ok 200 - asset GUID normalisation requires the exact generated asset feature, not a permission or other feature
+  ---
+  duration_ms: 0.668084
+  type: 'test'
+  ...
+# Subtest: test evidence requires exact pass count with no skipped, cancelled or todo tests
+ok 201 - test evidence requires exact pass count with no skipped, cancelled or todo tests
+  ---
+  duration_ms: 1.05475
+  type: 'test'
+  ...
+# Subtest: scoped class normalisation requires all five exact inline class references and bound counts
+ok 202 - scoped class normalisation requires all five exact inline class references and bound counts
+  ---
+  duration_ms: 2.908542
+  type: 'test'
+  ...
+# Subtest: full inventory includes nested Format-7 evidence and partitions without double counting
+ok 203 - full inventory includes nested Format-7 evidence and partitions without double counting
+  ---
+  duration_ms: 0.984709
+  type: 'test'
+  ...
+# Subtest: governance register gap and retained historical extras are explicit
+ok 204 - governance register gap and retained historical extras are explicit
+  ---
+  duration_ms: 0.195125
+  type: 'test'
+  ...
+# Subtest: activation evidenceId and sourceIds resolve to canonical IDs and contextual use
+ok 205 - activation evidenceId and sourceIds resolve to canonical IDs and contextual use
+  ---
+  duration_ms: 0.317375
+  type: 'test'
+  ...
+# Subtest: supporting prose evidence is retained without claiming direct runtime use
+ok 206 - supporting prose evidence is retained without claiming direct runtime use
+  ---
+  duration_ms: 0.099584
+  type: 'test'
+  ...
+# Subtest: projection metadata variants are retained without replacing the prior reviewed record
+ok 207 - projection metadata variants are retained without replacing the prior reviewed record
+  ---
+  duration_ms: 0.197792
+  type: 'test'
+  ...
+# Subtest: exclusion references and unknown outcomes retain their limited meaning
+ok 208 - exclusion references and unknown outcomes retain their limited meaning
+  ---
+  duration_ms: 0.086958
+  type: 'test'
+  ...
+# Subtest: missing evidence mapping fails closed
+ok 209 - missing evidence mapping fails closed
+  ---
+  duration_ms: 37.968458
+  type: 'test'
+  ...
+# Subtest: duplicate canonical IDs and unresolved binding evidence fail closed
+ok 210 - duplicate canonical IDs and unresolved binding evidence fail closed
+  ---
+  duration_ms: 66.654709
+  type: 'test'
+  ...
+# Subtest: manifest-only counting and prior source metadata drift are rejected
+ok 211 - manifest-only counting and prior source metadata drift are rejected
+  ---
+  duration_ms: 66.021208
+  type: 'test'
+  ...
+# Subtest: matrix evidence drift and fabricated release approval are rejected
+ok 212 - matrix evidence drift and fabricated release approval are rejected
+  ---
+  duration_ms: 67.601083
+  type: 'test'
+  ...
+# Subtest: inventory is deterministic and writer never overwrites existing evidence
+ok 213 - inventory is deterministic and writer never overwrites existing evidence
+  ---
+  duration_ms: 58.8405
+  type: 'test'
+  ...
+# Subtest: normalises only the two exact SPFx-generated part-configuration GUIDs
+ok 214 - normalises only the two exact SPFx-generated part-configuration GUIDs
+  ---
+  duration_ms: 1.892166
+  type: 'test'
+  ...
+# Subtest: correction permits only the bound package and feature version delta
+ok 215 - correction permits only the bound package and feature version delta
+  ---
+  duration_ms: 5.029542
+  type: 'test'
+  ...
+# Subtest: source allowlist accepts precisely the declared UI files and helper
+ok 216 - source allowlist accepts precisely the declared UI files and helper
+  ---
+  duration_ms: 12.533334
+  type: 'test'
+  ...
+# Subtest: source allowlist rejects changed core, strings, unknown additions and removed runtime inputs
+ok 217 - source allowlist rejects changed core, strings, unknown additions and removed runtime inputs
+  ---
+  duration_ms: 1.190667
+  type: 'test'
+  ...
+# Subtest: actual bundle audit requires closed title, layered option wrapping and all four option states
+ok 218 - actual bundle audit requires closed title, layered option wrapping and all four option states
+  ---
+  duration_ms: 3.219708
+  type: 'test'
+  ...
+1..218
+# tests 218
+# suites 0
+# pass 218
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3024.479791
+..............................
+----------------------------------------------------------------------
+Ran 30 tests in 15.109s
+
+OK

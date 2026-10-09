@@ -1,0 +1,85 @@
+
+> fristenrechner-schweiz@0.7.0 test:portability:mvp07
+> node --test tests/governance/mvp07-public-integrity.test.mjs && .venv/bin/python -m unittest discover -s tests/data -p test_mvp07_public_portability.py
+
+TAP version 13
+# Subtest: MVP07 verifies the exact 42 public source files, 41 runtime files and bounded governance without inventing full audit
+ok 1 - MVP07 verifies the exact 42 public source files, 41 runtime files and bounded governance without inventing full audit
+  ---
+  duration_ms: 69.261334
+  type: 'test'
+  ...
+# Subtest: real public-only copy succeeds without private scratch, Git, dependencies or acceptance TAR
+ok 2 - real public-only copy succeeds without private scratch, Git, dependencies or acceptance TAR
+  ---
+  duration_ms: 111.757875
+  type: 'test'
+  ...
+# Subtest: the strict source audit still fails on the public-only repository, never downgrading to a public pass
+ok 3 - the strict source audit still fails on the public-only repository, never downgrading to a public pass
+  ---
+  duration_ms: 51.160917
+  type: 'test'
+  ...
+# Subtest: changed approval or manifest is rejected before classification or descriptor traversal
+ok 4 - changed approval or manifest is rejected before classification or descriptor traversal
+  ---
+  duration_ms: 2.348958
+  type: 'test'
+  ...
+# Subtest: every actual public input is mandatory, and an unrelated replacement cannot expand the closure
+ok 5 - every actual public input is mandatory, and an unrelated replacement cannot expand the closure
+  ---
+  duration_ms: 608.881791
+  type: 'test'
+  ...
+# Subtest: changed source, runtime, local decision and adopted governance bytes fail
+ok 6 - changed source, runtime, local decision and adopted governance bytes fail
+  ---
+  duration_ms: 37.444042
+  type: 'test'
+  ...
+# Subtest: missing archived source is not replaced with an available current alias
+ok 7 - missing archived source is not replaced with an available current alias
+  ---
+  duration_ms: 34.041458
+  type: 'test'
+  ...
+# Subtest: symlinked public evidence is rejected even with matching bytes
+ok 8 - symlinked public evidence is rejected even with matching bytes
+  ---
+  duration_ms: 40.816625
+  type: 'test'
+  ...
+# Subtest: extra runtime files and symlink directories cannot hide outside the manifest
+ok 9 - extra runtime files and symlink directories cannot hide outside the manifest
+  ---
+  duration_ms: 99.408834
+  type: 'test'
+  ...
+# Subtest: path protection includes nested scratch/private archives, traversal and symlinks are not followed
+ok 10 - path protection includes nested scratch/private archives, traversal and symlinks are not followed
+  ---
+  duration_ms: 0.756334
+  type: 'test'
+  ...
+# Subtest: only five named MVP07 private suites are excluded, future or ordinary tests remain public
+ok 11 - only five named MVP07 private suites are excluded, future or ordinary tests remain public
+  ---
+  duration_ms: 0.182375
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1166.227125
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 44.493s
+
+OK

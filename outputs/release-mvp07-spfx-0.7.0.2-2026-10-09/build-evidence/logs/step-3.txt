@@ -1,0 +1,58 @@
+ ---- build started ---- 
+[build:set-browserslist-ignore-old-data-env-var] Setting environment variable BROWSERSLIST_IGNORE_OLD_DATA=1
+[build:sass] Starting...
+[build:static-asset-typings] Processing static assets...
+[build:static-asset-typings] Finished processing static assets.
+[build:copy-javascript] Copied 6 files and linked 0 files
+[build:sass] Compiling 3 files...
+[build:sass] Finished compiling.
+[build:typescript] Using TypeScript version 5.8.3
+[build:typescript] Copied 78 files and linked 0 files
+[build:lint] Using ESLint version 9.37.0
+[build:webpack] Using Webpack version 5.105.4
+[build:webpack] Running Webpack compilation
+ ---- build finished (12.393s) ---- 
+ ---- test started ---- 
+[test:clean] Deleted 11 files and 2 folders
+[test:jest] Using Jest version 30.2.0
+No tests found, exiting with code 0
+[test:jest] 
+[test:jest] Run start. 0 test suites
+[test:jest] 
+[test:jest] Tests finished:
+[test:jest]   Successes: 0
+[test:jest]   Failures: 0
+[test:jest]   Total: 0
+ ---- test finished (0.434s) ---- 
+-------------------- Finished (12.831s) --------------------
+[build:lint] Warning: src/product/core/schemaContract.ts:6:38 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+[build:lint] Warning: src/product/core/schemaContract.ts:16:50 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+[build:lint] Warning: src/product/core/schemaContract.ts:89:19 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+[build:lint] Warning: src/product/core/schemaContract.ts:119:25 - (@rushstack/security/no-unsafe-regexp) Regular expressions should be constructed from string constants. Dynamically building strings at runtime may introduce security vulnerabilities, performance concerns, and bugs involving incorrect escaping of special characters.
+[build:lint] Warning: src/product/core/schemaContract.ts:144:87 - (@rushstack/security/no-unsafe-regexp) Regular expressions should be constructed from string constants. Dynamically building strings at runtime may introduce security vulnerabilities, performance concerns, and bugs involving incorrect escaping of special characters.
+[build:lint] Warning: src/product/core/holidayActivation.ts:30:23 - (@typescript-eslint/no-unused-vars) '_activation' is assigned a value but never used.
+[build:lint] Warning: src/product/core/releaseFormat7.ts:113:37 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+[build:lint] Warning: src/core/types.ts:32:27 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/core/types.ts:56:33 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+[build:lint] Warning: src/product/core/calculateCalendarBoundDeadline.ts:105:21 - (@typescript-eslint/no-unused-vars) '_firstId' is assigned a value but never used.
+[build:lint] Warning: src/product/core/calculateCalendarBoundDeadline.ts:105:43 - (@typescript-eslint/no-unused-vars) '_firstCalendar' is assigned a value but never used.
+[build:lint] Warning: src/product/core/calculateCalendarBoundDeadline.ts:106:21 - (@typescript-eslint/no-unused-vars) '_secondId' is assigned a value but never used.
+[build:lint] Warning: src/product/core/calculateCalendarBoundDeadline.ts:106:44 - (@typescript-eslint/no-unused-vars) '_secondCalendar' is assigned a value but never used.
+[build:lint] Warning: src/webparts/fristenrechner/components/Fristenrechner.tsx:43:5 - (no-void) Expected 'undefined' and instead saw 'void'.
+[build:lint] Warning: src/webparts/fristenrechner/components/Fristenrechner.tsx:52:7 - (no-void) Expected 'undefined' and instead saw 'void'.
+Encountered 15 warnings
+  [build:lint] src/product/core/schemaContract.ts:6:38 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+  [build:lint] src/product/core/schemaContract.ts:16:50 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+  [build:lint] src/product/core/schemaContract.ts:89:19 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+  [build:lint] src/product/core/schemaContract.ts:119:25 - (@rushstack/security/no-unsafe-regexp) Regular expressions should be constructed from string constants. Dynamically building strings at runtime may introduce security vulnerabilities, performance concerns, and bugs involving incorrect escaping of special characters.
+  [build:lint] src/product/core/schemaContract.ts:144:87 - (@rushstack/security/no-unsafe-regexp) Regular expressions should be constructed from string constants. Dynamically building strings at runtime may introduce security vulnerabilities, performance concerns, and bugs involving incorrect escaping of special characters.
+  [build:lint] src/product/core/holidayActivation.ts:30:23 - (@typescript-eslint/no-unused-vars) '_activation' is assigned a value but never used.
+  [build:lint] src/product/core/releaseFormat7.ts:113:37 - (@typescript-eslint/no-explicit-any) Unexpected any. Specify a different type.
+  [build:lint] src/core/types.ts:32:27 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/core/types.ts:56:33 - (@rushstack/no-new-null) Usage of "null" is deprecated except when describing legacy APIs; use "undefined" instead
+  [build:lint] src/product/core/calculateCalendarBoundDeadline.ts:105:21 - (@typescript-eslint/no-unused-vars) '_firstId' is assigned a value but never used.
+  [build:lint] src/product/core/calculateCalendarBoundDeadline.ts:105:43 - (@typescript-eslint/no-unused-vars) '_firstCalendar' is assigned a value but never used.
+  [build:lint] src/product/core/calculateCalendarBoundDeadline.ts:106:21 - (@typescript-eslint/no-unused-vars) '_secondId' is assigned a value but never used.
+  [build:lint] src/product/core/calculateCalendarBoundDeadline.ts:106:44 - (@typescript-eslint/no-unused-vars) '_secondCalendar' is assigned a value but never used.
+  [build:lint] src/webparts/fristenrechner/components/Fristenrechner.tsx:43:5 - (no-void) Expected 'undefined' and instead saw 'void'.
+  [build:lint] src/webparts/fristenrechner/components/Fristenrechner.tsx:52:7 - (no-void) Expected 'undefined' and instead saw 'void'.

@@ -91,7 +91,7 @@ describe('AP9-Browservorschau', () => {
   it('lokalisiert bestehende Validierungsfehler beim Sprachwechsel neu', async () => {
     const source = await readFile(componentPath, 'utf8');
 
-    assert.match(source, /const validate = \(translationLocale: Locale = locale\): UiValidation/);
-    assert.match(source, /setValidation\(current => Object\.keys\(current\)\.length > 0\s*\? validate\(nextLocale\)/);
+    assert.match(source, /const validate = \(translationLocale: Locale,\s*committedForm: CalculatorFormState,\s*committedSocialContext: SocialUiContext\): UiValidation/);
+    assert.match(source, /setValidation\(current => Object\.keys\(current\)\.length > 0\s*\? validate\(nextLocale, form, socialContext\)/);
   });
 });

@@ -32,8 +32,23 @@ await mkdir(productSchemaDirectory, { recursive: true });
 for (const schemaName of schemaNames) {
   const source = await readFile(resolve(repositoryRoot, 'schemas', schemaName));
   await writeFile(resolve(targetDirectory, schemaName), source);
-  if (schemaName === 'holiday-catalog-v1.schema.json') {
-    await writeFile(resolve(productSchemaDirectory, schemaName), source);
+  await writeFile(resolve(productSchemaDirectory, schemaName), source);
+}
+
+// Format 7 core imports keep their repository-relative schema paths. These
+// copies are build inputs only, not changes to the frozen C1 contracts.
+const implementationSchemas = [
+  'ap22c1/release-manifest-v7.schema.json',
+  'ap22c1/calendar-rules-v3.schema.json',
+  'ap22c1/holiday-catalog-v2.schema.json',
+  'ap22c3/local-reference-manifest-v7.schema.json'
+];
+for (const name of implementationSchemas) {
+  const target = resolve(productSchemaDirectory, 'implementation', name);
+  await mkdir(dirname(target), { recursive: true });
+  await writeFile(target, await readFile(resolve(repositoryRoot, 'schemas/implementation', name)));
+  if (name === 'ap22c1/release-manifest-v7.schema.json') {
+    await writeFile(resolve(targetDirectory, 'release-manifest-v7.schema.json'), await readFile(target));
   }
 }
 

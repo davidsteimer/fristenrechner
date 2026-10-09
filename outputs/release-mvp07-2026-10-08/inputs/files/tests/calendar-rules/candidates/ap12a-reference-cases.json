@@ -1,0 +1,371 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rule-reference-suite.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "calendarRuleReferenceSuite",
+  "suiteId": "ap12a-eternal-calendar-reference-cases",
+  "status": "approved",
+  "sourceReleaseId": "2026-08-31-mvp-02-approved.1",
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "AP12A mit Datenmodell und Referenzvertrag am 2026-08-31 abgenommen und DEC-2026-015 beschlossen."
+  },
+  "legacyParityCases": [
+    {
+      "caseId": "CAL-PARITY-CH-2026-2028",
+      "calendarId": "ch-federal-calendar",
+      "candidateArtifact": "data/candidates/2026-08-31-ap12a-eternal-calendar/ch-federal-calendar.json",
+      "referenceArtifact": "data/releases/2026-08-31-mvp-02-approved.1/calendars/ch-federal-calendar.json",
+      "window": {
+        "from": "2025-12-18",
+        "to": "2029-01-02"
+      },
+      "compareFields": [
+        "holidayId",
+        "date",
+        "kind",
+        "labelKey",
+        "legalEffect",
+        "sourceRefs",
+        "periodId",
+        "startsOn",
+        "endsOn",
+        "inclusive",
+        "applicableProfileIds"
+      ],
+      "expectedCounts": {
+        "holidays": 3,
+        "suspensionPeriods": 10
+      }
+    },
+    {
+      "caseId": "CAL-PARITY-BE-2026-2028",
+      "calendarId": "be-public-holidays",
+      "candidateArtifact": "data/candidates/2026-08-31-ap12a-eternal-calendar/be-public-holidays.json",
+      "referenceArtifact": "data/releases/2026-08-31-mvp-02-approved.1/calendars/be-public-holidays.json",
+      "window": {
+        "from": "2026-01-01",
+        "to": "2028-12-31"
+      },
+      "compareFields": [
+        "holidayId",
+        "date",
+        "kind",
+        "labelKey",
+        "legalEffect",
+        "sourceRefs"
+      ],
+      "expectedCounts": {
+        "holidays": 33,
+        "suspensionPeriods": 0
+      }
+    }
+  ],
+  "algorithmCases": [
+    {
+      "caseId": "CAL-FIXED-1900",
+      "year": 1900,
+      "calculation": { "type": "fixedMonthDay", "month": 8, "day": 1 },
+      "expected": { "date": "1900-08-01" }
+    },
+    {
+      "caseId": "CAL-FIXED-2000",
+      "year": 2000,
+      "calculation": { "type": "fixedMonthDay", "month": 8, "day": 1 },
+      "expected": { "date": "2000-08-01" }
+    },
+    {
+      "caseId": "CAL-FIXED-2100",
+      "year": 2100,
+      "calculation": { "type": "fixedMonthDay", "month": 8, "day": 1 },
+      "expected": { "date": "2100-08-01" }
+    },
+    {
+      "caseId": "CAL-FIXED-2400",
+      "year": 2400,
+      "calculation": { "type": "fixedMonthDay", "month": 8, "day": 1 },
+      "expected": { "date": "2400-08-01" }
+    },
+    {
+      "caseId": "CAL-EASTER-1900",
+      "year": 1900,
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 0 },
+      "expected": { "date": "1900-04-15" }
+    },
+    {
+      "caseId": "CAL-EASTER-2000",
+      "year": 2000,
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 0 },
+      "expected": { "date": "2000-04-23" }
+    },
+    {
+      "caseId": "CAL-EASTER-2100",
+      "year": 2100,
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 0 },
+      "expected": { "date": "2100-03-28" }
+    },
+    {
+      "caseId": "CAL-EASTER-2400",
+      "year": 2400,
+      "calculation": { "type": "easterOffsetDays", "offsetDays": 0 },
+      "expected": { "date": "2400-04-16" }
+    },
+    {
+      "caseId": "CAL-NTH-WEEKDAY-1900",
+      "year": 1900,
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "expected": { "date": "1900-09-16" }
+    },
+    {
+      "caseId": "CAL-NTH-WEEKDAY-2000",
+      "year": 2000,
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "expected": { "date": "2000-09-17" }
+    },
+    {
+      "caseId": "CAL-NTH-WEEKDAY-2100",
+      "year": 2100,
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "expected": { "date": "2100-09-19" }
+    },
+    {
+      "caseId": "CAL-NTH-WEEKDAY-2400",
+      "year": 2400,
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "expected": { "date": "2400-09-17" }
+    },
+    {
+      "caseId": "CAL-EASTER-PERIOD-1900",
+      "year": 1900,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": -7 },
+        "endsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": 7 }
+      },
+      "expected": { "startsOn": "1900-04-08", "endsOn": "1900-04-22" }
+    },
+    {
+      "caseId": "CAL-EASTER-PERIOD-2000",
+      "year": 2000,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": -7 },
+        "endsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": 7 }
+      },
+      "expected": { "startsOn": "2000-04-16", "endsOn": "2000-04-30" }
+    },
+    {
+      "caseId": "CAL-EASTER-PERIOD-2100",
+      "year": 2100,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": -7 },
+        "endsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": 7 }
+      },
+      "expected": { "startsOn": "2100-03-21", "endsOn": "2100-04-04" }
+    },
+    {
+      "caseId": "CAL-EASTER-PERIOD-2400",
+      "year": 2400,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": -7 },
+        "endsOn": { "anchor": "easterSunday", "yearOffset": 0, "offsetDays": 7 }
+      },
+      "expected": { "startsOn": "2400-04-09", "endsOn": "2400-04-23" }
+    },
+    {
+      "caseId": "CAL-YEAR-END-PERIOD-1900",
+      "year": 1900,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 12,
+          "day": 18,
+          "yearOffset": 0,
+          "offsetDays": 0
+        },
+        "endsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 1,
+          "day": 2,
+          "yearOffset": 1,
+          "offsetDays": 0
+        }
+      },
+      "expected": { "startsOn": "1900-12-18", "endsOn": "1901-01-02" }
+    },
+    {
+      "caseId": "CAL-YEAR-END-PERIOD-2000",
+      "year": 2000,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 12,
+          "day": 18,
+          "yearOffset": 0,
+          "offsetDays": 0
+        },
+        "endsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 1,
+          "day": 2,
+          "yearOffset": 1,
+          "offsetDays": 0
+        }
+      },
+      "expected": { "startsOn": "2000-12-18", "endsOn": "2001-01-02" }
+    },
+    {
+      "caseId": "CAL-YEAR-END-PERIOD-2100",
+      "year": 2100,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 12,
+          "day": 18,
+          "yearOffset": 0,
+          "offsetDays": 0
+        },
+        "endsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 1,
+          "day": 2,
+          "yearOffset": 1,
+          "offsetDays": 0
+        }
+      },
+      "expected": { "startsOn": "2100-12-18", "endsOn": "2101-01-02" }
+    },
+    {
+      "caseId": "CAL-YEAR-END-PERIOD-2400",
+      "year": 2400,
+      "calculation": {
+        "type": "relativePeriod",
+        "startsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 12,
+          "day": 18,
+          "yearOffset": 0,
+          "offsetDays": 0
+        },
+        "endsOn": {
+          "anchor": "fixedMonthDay",
+          "month": 1,
+          "day": 2,
+          "yearOffset": 1,
+          "offsetDays": 0
+        }
+      },
+      "expected": { "startsOn": "2400-12-18", "endsOn": "2401-01-02" }
+    }
+  ],
+  "leapYearCases": [
+    { "caseId": "CAL-LEAP-1900", "year": 1900, "expectedLeapYear": false },
+    { "caseId": "CAL-LEAP-2000", "year": 2000, "expectedLeapYear": true },
+    { "caseId": "CAL-LEAP-2100", "year": 2100, "expectedLeapYear": false },
+    { "caseId": "CAL-LEAP-2400", "year": 2400, "expectedLeapYear": true }
+  ],
+  "overrideCases": [
+    {
+      "caseId": "CAL-OVERRIDE-ADD",
+      "operation": "add",
+      "baseRuleId": "CH-CAL-HOL-NATIONAL-DAY",
+      "baseDate": "2028-08-01",
+      "overrideRuleId": "CH-CAL-OVERRIDE-ADD-2028",
+      "overrideDate": "2028-08-02",
+      "expectedDates": ["2028-08-01", "2028-08-02"],
+      "expectedAppliedRuleIds": [
+        "CH-CAL-HOL-NATIONAL-DAY",
+        "CH-CAL-OVERRIDE-ADD-2028"
+      ]
+    },
+    {
+      "caseId": "CAL-OVERRIDE-SUPPRESS",
+      "operation": "suppress",
+      "baseRuleId": "CH-CAL-HOL-NATIONAL-DAY",
+      "baseDate": "2028-08-01",
+      "overrideRuleId": "CH-CAL-OVERRIDE-SUPPRESS-2028",
+      "overrideDate": "2028-08-01",
+      "expectedDates": [],
+      "expectedAppliedRuleIds": [
+        "CH-CAL-HOL-NATIONAL-DAY",
+        "CH-CAL-OVERRIDE-SUPPRESS-2028"
+      ]
+    },
+    {
+      "caseId": "CAL-OVERRIDE-REPLACE",
+      "operation": "replace",
+      "baseRuleId": "CH-CAL-HOL-NATIONAL-DAY",
+      "baseDate": "2028-08-01",
+      "overrideRuleId": "CH-CAL-OVERRIDE-REPLACE-2028",
+      "overrideDate": "2028-08-02",
+      "expectedDates": ["2028-08-02"],
+      "expectedAppliedRuleIds": [
+        "CH-CAL-HOL-NATIONAL-DAY",
+        "CH-CAL-OVERRIDE-REPLACE-2028"
+      ]
+    }
+  ],
+  "failureCases": [
+    {
+      "caseId": "CAL-FAIL-UNKNOWN-RULE",
+      "failureType": "unknownRuleType",
+      "expectedReasonKey": "calendar.unknownRuleType"
+    },
+    {
+      "caseId": "CAL-FAIL-INVALID-FIXED-DATE",
+      "failureType": "invalidFixedDate",
+      "expectedReasonKey": "calendar.invalidFixedDate"
+    },
+    {
+      "caseId": "CAL-FAIL-DUPLICATE-RULE",
+      "failureType": "duplicateRuleId",
+      "expectedReasonKey": "calendar.duplicateRuleId"
+    },
+    {
+      "caseId": "CAL-FAIL-INHERITANCE-CYCLE",
+      "failureType": "inheritanceCycle",
+      "expectedReasonKey": "calendar.inheritanceCycle"
+    },
+    {
+      "caseId": "CAL-FAIL-UNMATCHED-OVERRIDE",
+      "failureType": "unmatchedOverride",
+      "expectedReasonKey": "calendar.unmatchedOverride"
+    },
+    {
+      "caseId": "CAL-FAIL-PRIORITY-CONFLICT",
+      "failureType": "priorityConflict",
+      "expectedReasonKey": "calendar.priorityConflict"
+    },
+    {
+      "caseId": "CAL-FAIL-OUTSIDE-VALIDITY",
+      "failureType": "outsideValidity",
+      "expectedReasonKey": "calendar.outsideValidity"
+    }
+  ]
+}

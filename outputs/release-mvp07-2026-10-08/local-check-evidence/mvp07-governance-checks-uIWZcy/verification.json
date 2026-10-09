@@ -1,0 +1,32 @@
+{
+  "kind": "mvp07LocalChecks",
+  "scope": "governance",
+  "releaseId": "2026-10-08-mvp-07-approved.1",
+  "startedAt": "2026-10-08T20:28:38.270Z",
+  "installation": false,
+  "publication": false,
+  "steps": [
+    {
+      "id": "data-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/data",
+        "-p",
+        "test_*.py"
+      ],
+      "startedAt": "2026-10-08T20:28:38.271Z",
+      "finishedAt": "2026-10-08T20:29:26.746Z",
+      "exitCode": 1,
+      "log": ".work/mvp07-governance-checks-uIWZcy/data-python.log",
+      "sha256": "ec07e194a5ad8773719a36b57de01fdfb635696dc582ca547de1f5aba6c08164",
+      "byteLength": 3809,
+      "pythonTests": 290
+    }
+  ],
+  "passed": false,
+  "finishedAt": "2026-10-08T20:29:26.747Z"
+}

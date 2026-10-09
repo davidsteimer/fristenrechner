@@ -210,6 +210,15 @@ export function calculateCalendarRuleOccurrence(
           ruleId
         )
       };
+    case 'nthWeekdayOffsetDays': {
+      if (!isIntegerWithin(calculation.offsetDays, -366, 366)) {
+        fail('calendar.invalidRuleConfiguration', `${ruleId ?? 'Kalenderregel'} enthält einen ungültigen Wochentagsversatz.`);
+      }
+      const anchor = nthWeekdayOfMonth(
+        year, calculation.month, calculation.isoWeekday, calculation.occurrence, ruleId
+      );
+      return { date: assertIsoDate(addCalendarDays(anchor, calculation.offsetDays), ruleId ?? 'Kalenderregel') };
+    }
     case 'relativePeriod': {
       const startsOn = calculateBoundary(calculation.startsOn, year, ruleId);
       const endsOn = calculateBoundary(calculation.endsOn, year, ruleId);
@@ -223,7 +232,7 @@ export function calculateCalendarRuleOccurrence(
   }
 }
 
-function validateCalculation(rule: CalendarRule): void {
+function validateCalculation(rule: CalendarRule, formatVersion: CalendarRuleSet['formatVersion']): void {
   const calculationType = rule.calculation.type;
   if (calculationType === 'fixedMonthDay') {
     fixedMonthDay(2000, rule.calculation.month, rule.calculation.day, rule.ruleId);
@@ -232,13 +241,22 @@ function validateCalculation(rule: CalendarRule): void {
       fail('calendar.invalidRuleConfiguration', `${rule.ruleId} enthält einen ungültigen Osterversatz.`);
     }
   } else if (calculationType === 'nthWeekdayOfMonth') {
-    nthWeekdayOfMonth(
-      2000,
-      rule.calculation.month,
-      rule.calculation.isoWeekday,
-      rule.calculation.occurrence,
-      rule.ruleId
-    );
+    if (formatVersion === '2.0.0') {
+      nthWeekdayOfMonth(
+        2000, rule.calculation.month, rule.calculation.isoWeekday, rule.calculation.occurrence, rule.ruleId
+      );
+    } else if (!isIntegerWithin(rule.calculation.month, 1, 12)
+      || !isIntegerWithin(rule.calculation.isoWeekday, 1, 7)
+      || !isIntegerWithin(rule.calculation.occurrence, 1, 5)) {
+      fail('calendar.invalidNthWeekday', `${rule.ruleId} enthält ungültige Wochentagsparameter.`);
+    }
+  } else if (calculationType === 'nthWeekdayOffsetDays') {
+    if (!isIntegerWithin(rule.calculation.month, 1, 12)
+      || !isIntegerWithin(rule.calculation.isoWeekday, 1, 7)
+      || !isIntegerWithin(rule.calculation.occurrence, 1, 5)
+      || !isIntegerWithin(rule.calculation.offsetDays, -366, 366)) {
+      fail('calendar.invalidRuleConfiguration', `${rule.ruleId} enthält ungültige Wochentagsversatzparameter.`);
+    }
   } else if (calculationType === 'relativePeriod') {
     calculateCalendarRuleOccurrence(rule.calculation, 2000, rule.ruleId);
   } else if (calculationType === 'explicitDateOverride') {
@@ -247,7 +265,7 @@ function validateCalculation(rule: CalendarRule): void {
     fail('calendar.unknownRuleType', `${rule.ruleId} enthält den unbekannten Kalenderregeltyp ${String(calculationType)}.`);
   }
 
-  if (['fixedMonthDay', 'easterOffsetDays', 'nthWeekdayOfMonth'].includes(calculationType)) {
+  if (['fixedMonthDay', 'easterOffsetDays', 'nthWeekdayOfMonth', 'nthWeekdayOffsetDays'].includes(calculationType)) {
     if (rule.effect.type !== 'holiday') {
       fail('calendar.invalidRuleConfiguration', `${rule.ruleId} verbindet eine Feiertagsberechnung mit der falschen Wirkung.`);
     }
@@ -258,6 +276,59 @@ function validateCalculation(rule: CalendarRule): void {
   } else if (calculationType === 'explicitDateOverride' && rule.effect.type !== 'explicitDateOverride') {
     fail('calendar.invalidRuleConfiguration', `${rule.ruleId} verbindet einen Override mit der falschen Wirkung.`);
   }
+}
+
+function validateVersionedRule(rule: CalendarRule, formatVersion: CalendarRuleSet['formatVersion']): void {
+  const condition = (rule as HolidayCalendarRule).condition;
+  if (formatVersion === '2.0.0') {
+    if (condition !== undefined || rule.calculation.type === 'nthWeekdayOffsetDays'
+      || (rule.effect.type === 'holiday' && rule.effect.kind === 'proceduralEquivalentDay')
+      || (rule.effect.type === 'explicitDateOverride'
+        && rule.effect.replacementHoliday?.kind === 'proceduralEquivalentDay')) {
+      fail('calendar.invalidRuleConfiguration', `${rule.ruleId} verwendet Format-3-Felder in einem Format-2-Kalender.`);
+    }
+    return;
+  }
+  if (rule.effect.type !== 'holiday') {
+    if (condition !== undefined) {
+      fail('calendar.invalidRuleConfiguration', `${rule.ruleId} darf keine Feiertagsbedingung tragen.`);
+    }
+    return;
+  }
+  const calculation = rule.calculation;
+  switch (condition) {
+    case 'always':
+      return;
+    case 'unlessTuesdayOrSaturday':
+      if (calculation.type === 'fixedMonthDay' && calculation.month === 12 && calculation.day === 26) return;
+      break;
+    case 'onlyMonday':
+      if (calculation.type === 'fixedMonthDay'
+        && ((calculation.month === 1 && calculation.day === 2)
+          || (calculation.month === 12 && calculation.day === 26))) return;
+      break;
+    case 'shiftHolyThursdayBy7Days':
+      if (calculation.type === 'nthWeekdayOfMonth' && calculation.month === 4
+        && calculation.isoWeekday === 4 && calculation.occurrence === 1) return;
+      break;
+  }
+  fail('calendar.invalidRuleConfiguration', `${rule.ruleId} enthält keine gültige, zum Datumsausdruck passende Format-3-Bedingung.`);
+}
+
+function conditionalHolidayDate(rule: HolidayCalendarRule, year: number): IsoDate | null {
+  const occurrence = calculateCalendarRuleOccurrence(rule.calculation, year, rule.ruleId);
+  if (!('date' in occurrence)) {
+    fail('calendar.invalidRuleConfiguration', `${rule.ruleId} erzeugt kein Feiertagsdatum.`);
+  }
+  const date = occurrence.date;
+  if (rule.condition !== undefined) assertIsoDate(date, rule.ruleId);
+  if (rule.condition === 'unlessTuesdayOrSaturday' && [1, 5].includes(weekdayIndex(date))) return null;
+  if (rule.condition === 'onlyMonday' && weekdayIndex(date) !== 0) return null;
+  if (rule.condition === 'shiftHolyThursdayBy7Days'
+    && date === addCalendarDays(calculateGregorianEaster(year), -3)) {
+    return assertIsoDate(addCalendarDays(date, 7), rule.ruleId);
+  }
+  return date;
 }
 
 function definedOverrideFields(calculation: ExplicitDateOverrideCalculation): string[] {
@@ -309,8 +380,19 @@ function validateRuleSets(ruleSets: readonly CalendarRuleSet[]): ReadonlyMap<str
   const ruleIds = new Set<string>();
   const overrideRules: OverrideCalendarRule[] = [];
   for (const ruleSet of ruleSets) {
-    if (ruleSet.dataKind !== 'calendar' || ruleSet.formatVersion !== '2.0.0') {
-      fail('calendar.invalidRuleConfiguration', `${ruleSet.calendarId} ist kein Kalenderformat 2.0.0.`);
+    if (ruleSet.dataKind !== 'calendar' || !['2.0.0', '3.0.0'].includes(ruleSet.formatVersion)) {
+      fail('calendar.invalidRuleConfiguration', `${ruleSet.calendarId} ist kein unterstütztes Regelkalenderformat.`);
+    }
+    if (ruleSet.formatVersion === '3.0.0') {
+      const projection = ruleSet.projection;
+      if (projection !== null && (typeof projection !== 'object' || projection === undefined
+        || projection.catalogId !== 'ch-holiday-catalog' || projection.catalogFormatVersion !== '2.0.0'
+        || typeof projection.projectionId !== 'string' || !/^[a-z][a-z0-9-]*$/.test(projection.projectionId)
+        || typeof projection.sourceHash !== 'string' || !/^[a-f0-9]{64}$/.test(projection.sourceHash))) {
+        fail('calendar.invalidRuleConfiguration', `${ruleSet.calendarId} besitzt keine gültige Format-3-Projektionsherkunft.`);
+      }
+    } else if ('projection' in ruleSet) {
+      fail('calendar.invalidRuleConfiguration', 'Eine Projektionsherkunft ist in einem Format-2-Kalender nicht zulässig.');
     }
     if (byId.has(ruleSet.calendarId)) {
       fail('calendar.duplicateRuleId', `Doppelte Kalender-ID ${ruleSet.calendarId}.`);
@@ -338,7 +420,8 @@ function validateRuleSets(ruleSets: readonly CalendarRuleSet[]): ReadonlyMap<str
           fail('calendar.invalidRuleConfiguration', `${rule.ruleId} verweist auf die unbekannte Quelle ${sourceRef.sourceId}.`);
         }
       }
-      validateCalculation(rule);
+      validateCalculation(rule, ruleSet.formatVersion);
+      validateVersionedRule(rule, ruleSet.formatVersion);
       if (rule.calculation.type === 'explicitDateOverride') {
         overrideRules.push(rule as OverrideCalendarRule);
       }
@@ -467,6 +550,24 @@ function yearsForRange(range: CalendarGenerationRange): number[] {
   const start = Math.max(MIN_GREGORIAN_YEAR, fromYear - 2);
   const end = Math.min(MAX_ISO_YEAR - 1, toYear + 2);
   return Array.from({ length: end - start + 1 }, (_value, index) => start + index);
+}
+
+function yearsForHolidayRule(
+  rule: HolidayCalendarRule,
+  range: CalendarGenerationRange,
+  legacyYears: readonly number[]
+): readonly number[] {
+  if (rule.condition === undefined) return legacyYears;
+  const offset = rule.calculation.type === 'easterOffsetDays' || rule.calculation.type === 'nthWeekdayOffsetDays'
+    ? rule.calculation.offsetDays : 0;
+  // Der Anker kann wegen des Offsets im Vor- oder Folgejahr liegen. Nur diese
+  // relevanten Ankerjahre prüfen, nicht pauschal fremde Jahre (etwa einen
+  // nicht vorhandenen fünften Wochentag in einem unangefragten Jahr).
+  const earliestAnchor = addCalendarDays(range.from, -offset - (rule.condition === 'shiftHolyThursdayBy7Days' ? 7 : 0));
+  const latestAnchor = addCalendarDays(range.to, -offset);
+  const firstYear = Math.max(MIN_GREGORIAN_YEAR, Number.parseInt(earliestAnchor.split('-')[0] ?? '', 10));
+  const lastYear = Math.min(MAX_ISO_YEAR, Number.parseInt(latestAnchor.split('-')[0] ?? '', 10));
+  return Array.from({ length: Math.max(0, lastYear - firstYear + 1) }, (_value, index) => firstYear + index);
 }
 
 function periodId(prefix: string, startsOn: IsoDate, endsOn: IsoDate): string {
@@ -604,18 +705,12 @@ function generateBaseRules(
       continue;
     }
     const holidayRule = rule as HolidayCalendarRule;
-    for (const year of holidayYears) {
-      const occurrence = calculateCalendarRuleOccurrence(
-        holidayRule.calculation,
-        year,
-        holidayRule.ruleId
-      );
-      if (!('date' in occurrence)
-        || !withinRange(occurrence.date, holidayRange)
-        || !validityContains(rule.validity, occurrence.date)) {
+    for (const year of yearsForHolidayRule(holidayRule, holidayRange, holidayYears)) {
+      const date = conditionalHolidayDate(holidayRule, year);
+      if (date === null || !withinRange(date, holidayRange) || !validityContains(rule.validity, date)) {
         continue;
       }
-      const entry = addHoliday(holidays, holidayIds, rule, occurrence.date, {
+      const entry = addHoliday(holidays, holidayIds, rule, date, {
         kind: holidayRule.effect.kind,
         labelKey: rule.labelKey,
         legalEffect: holidayRule.effect.legalEffect,
@@ -761,6 +856,9 @@ export function generateCalendarFromRules(
   if (!target) {
     fail('calendar.unknownInheritedCalendar', `Unbekannter Zielkalender ${calendarId}.`);
   }
+  if (orderedSets.some(ruleSet => ruleSet.formatVersion !== target.formatVersion)) {
+    fail('calendar.invalidRuleConfiguration', 'Kalenderformate 2 und 3 dürfen nicht über Vererbung gemischt werden.');
+  }
   const calendarValidity = effectiveValidity(orderedSets);
   assertRange(requestedRange, calendarValidity);
   const allRules = orderedSets.flatMap(ruleSet => [...ruleSet.rules]);
@@ -796,7 +894,7 @@ export function generateCalendarFromRules(
   return {
     calendar: {
       dataKind: 'calendar',
-      formatVersion: '2.0.0',
+      formatVersion: target.formatVersion,
       calendarId,
       jurisdiction: target.jurisdiction,
       coverage: requestedRange,

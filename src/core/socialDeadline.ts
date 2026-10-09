@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 import { calculateSpecialDeadline } from './calculateSpecialDeadline';
 import { addCalendarDays, parseIsoDate } from './date';
+import { isFormat7ReferenceData, trustedFormat7Runtime } from './format7Runtime';
 import { canonicalSocialJson, SOCIAL_CANTONS, SOCIAL_FACT_KEYS, SOCIAL_V2_ADDITIONAL_LAWS, socialFactValid, socialIntervalContains, validateSocialCatalogReferences } from './socialCatalog';
 import type { SocialCatalogFormat, SocialDeadlineInput, SocialDeadlineResult, SocialInterval, SocialNormBinding, SocialResolution } from './socialTypes';
 import type { CalculationData } from './types';
@@ -47,12 +48,13 @@ function timeReason(input: SocialDeadlineInput, norms: readonly SocialNormBindin
   return undefined;
 }
 
-/** A complete, fail-closed resolver shared by all hosts. Candidate data never calculate. */
+/** Candidates calculate only in the non-serializable local reference runtime. */
 export function resolveSocialDeadline(input: SocialDeadlineInput, data: CalculationData): SocialResolution {
   try {
-    if (!validInput(input, data.formatVersion === '6.0.0' ? '2.0.0' : '1.0.0')) return blocked('input-contract-invalid');
+    if (!validInput(input, ['6.0.0','7.0.0'].includes(data.formatVersion) ? '2.0.0' : '1.0.0')) return blocked('input-contract-invalid');
     const catalogs = [...(data.socialProcedureCatalogs?.values() ?? [])];
-    if (catalogs.length !== 1 || !['5.0.0','6.0.0'].includes(data.formatVersion)) return blocked('unknown-rule');
+    if (catalogs.length !== 1 || !['5.0.0','6.0.0','7.0.0'].includes(data.formatVersion)) return blocked('unknown-rule');
+    if (data.formatVersion === '7.0.0' && !trustedFormat7Runtime(data)) return blocked('not-released');
     const catalog = catalogs[0]!;
     validateSocialCatalogReferences(catalog, data);
     const candidates = catalog.federalRules.filter(r => r.ruleId === input.ruleId && socialIntervalContains(r.caseCoverage, input.legalTriggerDate));
@@ -91,7 +93,8 @@ export function resolveSocialDeadline(input: SocialDeadlineInput, data: Calculat
     if (!calendarBinding.requiredAnchorRoles.every(role => holiday.anchors.some(a => a.role === role))
       || holiday.anchors.some(a => a.canton !== calendarBinding.holidayCanton || a.spatialScopeId !== calendarBinding.spatialScopeId)) return blocked('holiday-unresolved');
     if (rule.calculation.duration ? own(input, 'days') : (!Number.isInteger(input.days) || typeof input.days !== 'number' || input.days < 1 || input.days > 365)) return blocked('unsupported-procedure');
-    const approvals = catalog.releaseEligibility.filter(e => e.status === 'approved' && e.ruleRef.ruleId === rule.ruleId && e.ruleRef.revision === rule.revision && e.bindingRef.bindingId === binding.bindingId && e.bindingRef.revision === binding.revision && e.contextRouteIds.includes(route.contextRouteId) && e.calendarBindingIds.includes(calendarBinding.calendarBindingId) && socialIntervalContains(e.caseCoverage, input.legalTriggerDate));
+    const requiredStatus = isFormat7ReferenceData(data) ? 'candidate' : 'approved';
+    const approvals = catalog.releaseEligibility.filter(e => e.status === requiredStatus && e.ruleRef.ruleId === rule.ruleId && e.ruleRef.revision === rule.revision && e.bindingRef.bindingId === binding.bindingId && e.bindingRef.revision === binding.revision && e.contextRouteIds.includes(route.contextRouteId) && e.calendarBindingIds.includes(calendarBinding.calendarBindingId) && socialIntervalContains(e.caseCoverage, input.legalTriggerDate));
     if (rule.status !== 'reviewed' || binding.status !== 'reviewed' || approvals.length !== 1) return blocked('not-released');
     const eligibility = approvals[0]!;
     if ([rule,binding].some(r => !r.legalValidity || !socialIntervalContains(r.legalValidity, input.legalTriggerDate))) return blocked('source-gap');

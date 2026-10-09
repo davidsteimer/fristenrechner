@@ -8,6 +8,7 @@ import { indexedDB } from 'fake-indexeddb';
 
 import { ReleaseService } from '../src/core/ReleaseService';
 import { ReleaseValidator } from '../src/core/ReleaseValidator';
+import { getProviderCacheIdentity } from '../src/core/cacheIdentity';
 import { GitHubReleaseProvider } from '../src/core/providers/GitHubReleaseProvider';
 import { normalizeSharePointMirrorPath } from '../src/core/providers/sharePointPath';
 import { calculateDeadline, createCalculationData } from '../src/product/core';
@@ -50,6 +51,8 @@ type ByteTransform = (path: string, bytes: Uint8Array) => Uint8Array;
 
 class DirectoryProvider implements IReleaseProvider {
   public readonly kind = 'github' as const;
+  public readonly cacheConfiguration = { kind: 'github' as const,
+    baseUrl: 'https://raw.githubusercontent.com/example/project/0123456789abcdef0123456789abcdef01234567/release' };
 
   public constructor(
     public readonly id: string,
@@ -157,7 +160,7 @@ test('lehnt ein manipuliertes Artefakt ab und behält den letzten Aktivstand', a
   assert.equal(fallback.mode, 'fallback');
   assert.equal(fallback.release.releaseId, initial.release.releaseId);
   assert.match(fallback.warning ?? '', /SHA-256-Prüfsumme/);
-  assert.equal((await store.getActive())?.manifestSha256, initial.release.manifestSha256);
+  assert.equal((await store.getActive(getProviderCacheIdentity(corrupted)))?.manifestSha256, initial.release.manifestSha256);
 });
 
 test('aktiviert bei einem fehlenden Artefakt ohne Altstand nichts', async () => {
@@ -185,7 +188,7 @@ test('weist eine unbekannte Format-Hauptversion ab', async () => {
       return bytes;
     }
     const manifest = JSON.parse(new TextDecoder().decode(bytes));
-    manifest.formatVersion = '7.0.0';
+    manifest.formatVersion = '8.0.0';
     return new TextEncoder().encode(JSON.stringify(manifest));
   });
 

@@ -11,7 +11,7 @@ import { browserGlobalsPlugin } from './browser-globals-plugin.mjs';
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const publicSourceDirectory = resolve(repositoryRoot, 'public-app');
 const candidateName = process.env.FRISTENRECHNER_DATA_CANDIDATE;
-if (candidateName && !['ap17c', 'ap18c', 'ap19c3'].includes(candidateName)) throw new Error('Unbekannter lokaler Datenkandidat.');
+if (candidateName && !['ap17c', 'ap18c', 'ap19c3', 'ap22c3', 'ap21'].includes(candidateName)) throw new Error('Unbekannter lokaler Datenkandidat.');
 const isCandidate = Boolean(candidateName);
 const entryName = isCandidate ? `${candidateName}-main.tsx` : 'main.tsx';
 export const publicOutputDirectory = resolve(repositoryRoot, isCandidate ? `.work/public-${candidateName}` : '.work/public-app');
@@ -110,10 +110,11 @@ export async function buildPublicApp() {
       resolve(publicOutputDirectory, 'build-manifest.json'),
       `${JSON.stringify({
         application: 'fristenrechner-public',
-        version: isCandidate ? `${candidateName}-local-candidate` : '0.6.0',
-        dataReleaseId: candidateName === 'ap19c3' ? '2026-09-28-ap19c3-candidate.1'
+        version: isCandidate ? `${candidateName}-local-candidate` : '0.7.0',
+        dataReleaseId: ['ap22c3', 'ap21'].includes(candidateName) ? '2026-10-08-ap22c3-reference.1'
+          : candidateName === 'ap19c3' ? '2026-09-28-ap19c3-candidate.1'
           : candidateName === 'ap18c' ? '2026-09-22-ap18c-candidate.1'
-          : candidateName === 'ap17c' ? '2026-09-12-ap17c-candidate.1' : '2026-10-01-mvp-06-approved.1',
+          : candidateName === 'ap17c' ? '2026-09-12-ap17c-candidate.1' : '2026-10-08-mvp-07-approved.1',
         ...(isCandidate ? { status: 'candidate', deployable: false } : {}),
         canonicalUrl: 'https://www.steimer.ch/fristenrechner/',
         basePath: '/fristenrechner/',

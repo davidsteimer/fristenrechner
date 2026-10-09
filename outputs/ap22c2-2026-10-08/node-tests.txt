@@ -1,0 +1,329 @@
+TAP version 13
+# Subtest: AP22C2 resolves all 104 bindings uniquely without inventing regional facts
+ok 1 - AP22C2 resolves all 104 bindings uniquely without inventing regional facts
+  ---
+  duration_ms: 22995.887334
+  type: 'test'
+  ...
+# Subtest: AP22C2 missing canton, Bund, role uncertainty and cross-profile roles never fall back
+ok 2 - AP22C2 missing canton, Bund, role uncertainty and cross-profile roles never fall back
+  ---
+  duration_ms: 1891.512625
+  type: 'test'
+  ...
+# Subtest: AP22C2 AI/NE distinguish missing, explicit no and explicit yes
+ok 3 - AP22C2 AI/NE distinguish missing, explicit no and explicit yes
+  ---
+  duration_ms: 2039.281583
+  type: 'test'
+  ...
+# Subtest: AP22C2 candidate mode is explicit and never enables a calendar export
+ok 4 - AP22C2 candidate mode is explicit and never enables a calendar export
+  ---
+  duration_ms: 1092.0635
+  type: 'test'
+  ...
+# Subtest: AP22C2 terminal lists replace competing lists and keep GR/NE as calculable boundaries
+ok 5 - AP22C2 terminal lists replace competing lists and keep GR/NE as calculable boundaries
+  ---
+  duration_ms: 2501.600083
+  type: 'test'
+  ...
+# Subtest: AP22C2 region facts affect the selected legal calendar, not merely its label
+ok 6 - AP22C2 region facts affect the selected legal calendar, not merely its label
+  ---
+  duration_ms: 4520.659709
+  type: 'test'
+  ...
+# Subtest: AP22C2 SH/stpo compares both complete January paths, including an indirectly reached Jan 2
+ok 7 - AP22C2 SH/stpo compares both complete January paths, including an indirectly reached Jan 2
+  ---
+  duration_ms: 2321.110875
+  type: 'test'
+  ...
+# Subtest: AP22C2 SG/stpo compares both complete January paths, including an indirectly reached Jan 2
+ok 8 - AP22C2 SG/stpo compares both complete January paths, including an indirectly reached Jan 2
+  ---
+  duration_ms: 2172.531
+  type: 'test'
+  ...
+# Subtest: AP22C2 SG/bgg compares both complete January paths, including an indirectly reached Jan 2
+ok 9 - AP22C2 SG/bgg compares both complete January paths, including an indirectly reached Jan 2
+  ---
+  duration_ms: 2126.658084
+  type: 'test'
+  ...
+# Subtest: AP22C2 SG/vwvg compares both complete January paths, including an indirectly reached Jan 2
+ok 10 - AP22C2 SG/vwvg compares both complete January paths, including an indirectly reached Jan 2
+  ---
+  duration_ms: 2342.485041
+  type: 'test'
+  ...
+# Subtest: AP22C2 ZPO January remains determined and existing recess exceptions are unchanged
+ok 11 - AP22C2 ZPO January remains determined and existing recess exceptions are unchanged
+  ---
+  duration_ms: 1792.103125
+  type: 'test'
+  ...
+# Subtest: AP22C2 ZPO ordinary-mail delivery uses the same selected calendar
+ok 12 - AP22C2 ZPO ordinary-mail delivery uses the same selected calendar
+  ---
+  duration_ms: 542.0005
+  type: 'test'
+  ...
+# Subtest: AP22C2 old override fields cannot bypass role, region or January qualification
+ok 13 - AP22C2 old override fields cannot bypass role, region or January qualification
+  ---
+  duration_ms: 1042.4095
+  type: 'test'
+  ...
+# Subtest: AP22C2 release, profile and used rule boundaries constrain the whole calculation path
+ok 14 - AP22C2 release, profile and used rule boundaries constrain the whole calculation path
+  ---
+  duration_ms: 2318.216833
+  type: 'test'
+  ...
+# Subtest: AP22C2 expiry in only the January alternative never promotes the surviving path
+ok 15 - AP22C2 expiry in only the January alternative never promotes the surviving path
+  ---
+  duration_ms: 1030.978625
+  type: 'test'
+  ...
+# Subtest: AP22C2 expired regional definition invalidates both positive and negative membership
+ok 16 - AP22C2 expired regional definition invalidates both positive and negative membership
+  ---
+  duration_ms: 2006.180417
+  type: 'test'
+  ...
+# Subtest: AP22C2 historical reference cases never extend the new product window
+ok 17 - AP22C2 historical reference cases never extend the new product window
+  ---
+  duration_ms: 5718.233583
+  type: 'test'
+  ...
+# Subtest: AP22C2 all 25 reference groups stay classified as current cases or explicitly blocked historical scope
+ok 18 - AP22C2 all 25 reference groups stay classified as current cases or explicitly blocked historical scope
+  ---
+  duration_ms: 46943.758792
+  type: 'test'
+  ...
+# Subtest: AP22C2 leaves original calculation data and all BE/VRPG/social routes untouched
+ok 19 - AP22C2 leaves original calculation data and all BE/VRPG/social routes untouched
+  ---
+  duration_ms: 612.682875
+  type: 'test'
+  ...
+# Subtest: C2 preview consumes all 32 byte-bound C1 projections and the unchanged catalog
+ok 20 - C2 preview consumes all 32 byte-bound C1 projections and the unchanged catalog
+  ---
+  duration_ms: 599.339625
+  type: 'test'
+  ...
+# Subtest: C2 runtime remains an explicit local reference candidate without a release promotion
+ok 21 - C2 runtime remains an explicit local reference candidate without a release promotion
+  ---
+  duration_ms: 0.53275
+  type: 'test'
+  ...
+# Subtest: AP22C2: explizite Defaults v4 ohne erfundene Fallfakten
+    # Subtest: behält den v3-Pfad ohne aktivierten Kalendervertrag unverändert
+    ok 1 - behält den v3-Pfad ohne aktivierten Kalendervertrag unverändert
+      ---
+      duration_ms: 16.078333
+      type: 'test'
+      ...
+    # Subtest: startet v4 ohne Rolle, Feiertagskanton oder regionale Tatsachen
+    ok 2 - startet v4 ohne Rolle, Feiertagskanton oder regionale Tatsachen
+      ---
+      duration_ms: 0.799417
+      type: 'test'
+      ...
+    # Subtest: migriert v1 mit BE-Kalender ohne Rollen-/Ortsinferenz
+    ok 3 - migriert v1 mit BE-Kalender ohne Rollen-/Ortsinferenz
+      ---
+      duration_ms: 0.495958
+      type: 'test'
+      ...
+    # Subtest: migriert v2 mit BE-Kalender ohne Rollen-/Ortsinferenz
+    ok 4 - migriert v2 mit BE-Kalender ohne Rollen-/Ortsinferenz
+      ---
+      duration_ms: 0.120083
+      type: 'test'
+      ...
+    # Subtest: migriert v3 mit BE-Kalender ohne Rollen-/Ortsinferenz
+    ok 5 - migriert v3 mit BE-Kalender ohne Rollen-/Ortsinferenz
+      ---
+      duration_ms: 0.196917
+      type: 'test'
+      ...
+    # Subtest: interpretiert Bund weder als Feiertagskanton CH noch als Ersatz für Bern
+    ok 6 - interpretiert Bund weder als Feiertagskanton CH noch als Ersatz für Bern
+      ---
+      duration_ms: 0.172208
+      type: 'test'
+      ...
+    # Subtest: erhält eine gültige ausdrücklich gespeicherte Rolle und ihren Kantonsort
+    ok 7 - erhält eine gültige ausdrücklich gespeicherte Rolle und ihren Kantonsort
+      ---
+      duration_ms: 0.331
+      type: 'test'
+      ...
+    # Subtest: übernimmt regionale Mitgliedschaft auch bei v4 niemals als Fallfaktum
+    ok 8 - übernimmt regionale Mitgliedschaft auch bei v4 niemals als Fallfaktum
+      ---
+      duration_ms: 0.306917
+      type: 'test'
+      ...
+    # Subtest: speichert weder Datum noch Referenz, Mandatsnachweise, Overridestext oder Bestätigungen
+    ok 9 - speichert weder Datum noch Referenz, Mandatsnachweise, Overridestext oder Bestätigungen
+      ---
+      duration_ms: 0.401
+      type: 'test'
+      ...
+    # Subtest: verwirft offene Mandats-/Mehrortprobleme als persönliche Rollenvorgabe
+    ok 10 - verwirft offene Mandats-/Mehrortprobleme als persönliche Rollenvorgabe
+      ---
+      duration_ms: 0.769167
+      type: 'test'
+      ...
+    # Subtest: validiert Rollen profilbezogen, ohne eine andere Rolle zu erfinden
+    ok 11 - validiert Rollen profilbezogen, ohne eine andere Rolle zu erfinden
+      ---
+      duration_ms: 0.61375
+      type: 'test'
+      ...
+    # Subtest: verwirft Bund, Pseudokantone und falsch typisierte Kontextfelder
+    ok 12 - verwirft Bund, Pseudokantone und falsch typisierte Kontextfelder
+      ---
+      duration_ms: 0.269125
+      type: 'test'
+      ...
+    # Subtest: erhält die 26 Behördenkantone nur im neuen Kontext und erweitert keine kantonalen Profile
+    ok 13 - erhält die 26 Behördenkantone nur im neuen Kontext und erweitert keine kantonalen Profile
+      ---
+      duration_ms: 1.386625
+      type: 'test'
+      ...
+    # Subtest: lässt eine historische Oberfläche gemeinsame v4-Angaben ohne Kontext wiederverwenden
+    ok 14 - lässt eine historische Oberfläche gemeinsame v4-Angaben ohne Kontext wiederverwenden
+      ---
+      duration_ms: 0.232792
+      type: 'test'
+      ...
+    # Subtest: liest Migration ohne stillen Speicher-Schreibvorgang
+    ok 15 - liest Migration ohne stillen Speicher-Schreibvorgang
+      ---
+      duration_ms: 0.138625
+      type: 'test'
+      ...
+    # Subtest: liefert bei fehlendem, beschädigtem oder blockiertem Speicher ungelöste v4-Ausgangswerte
+    ok 16 - liefert bei fehlendem, beschädigtem oder blockiertem Speicher ungelöste v4-Ausgangswerte
+      ---
+      duration_ms: 0.259
+      type: 'test'
+      ...
+    1..16
+ok 22 - AP22C2: explizite Defaults v4 ohne erfundene Fallfakten
+  ---
+  duration_ms: 23.574666
+  type: 'suite'
+  ...
+# Subtest: C2 offers Bund plus 26 authority cantons without opening cantonal procedures outside Bern
+ok 23 - C2 offers Bund plus 26 authority cantons without opening cantonal procedures outside Bern
+  ---
+  duration_ms: 1.640333
+  type: 'test'
+  ...
+# Subtest: C2 uses static authority label and separate qualified role/place fields
+ok 24 - C2 uses static authority label and separate qualified role/place fields
+  ---
+  duration_ms: 48.034416
+  type: 'test'
+  ...
+# Subtest: C2 leaves the initial receipt date usable while calendar context is unresolved
+ok 25 - C2 leaves the initial receipt date usable while calendar context is unresolved
+  ---
+  duration_ms: 3.924042
+  type: 'test'
+  ...
+# Subtest: ZPO fixes the court role without presenting a pointless role dropdown
+ok 26 - ZPO fixes the court role without presenting a pointless role dropdown
+  ---
+  duration_ms: 6.197792
+  type: 'test'
+  ...
+# Subtest: AI has an explicit regional yes/no field, never an implicit no
+ok 27 - AI has an explicit regional yes/no field, never an implicit no
+  ---
+  duration_ms: 359.470084
+  type: 'test'
+  ...
+# Subtest: NE has an explicit regional yes/no field, never an implicit no
+ok 28 - NE has an explicit regional yes/no field, never an implicit no
+  ---
+  duration_ms: 289.146208
+  type: 'test'
+  ...
+# Subtest: changing a role discards the old place and regional case assumptions
+ok 29 - changing a role discards the old place and regional case assumptions
+  ---
+  duration_ms: 0.148875
+  type: 'test'
+  ...
+# Subtest: GR boundary follows the used holiday canton, not the authority seat
+ok 30 - GR boundary follows the used holiday canton, not the authority seat
+  ---
+  duration_ms: 504.171375
+  type: 'test'
+  ...
+# Subtest: bound local reference calculations cannot export a calendar entry
+ok 31 - bound local reference calculations cannot export a calendar entry
+  ---
+  duration_ms: 805.49525
+  type: 'test'
+  ...
+# Subtest: legacy UI without runtime keeps its prior label and no new context fields
+ok 32 - legacy UI without runtime keeps its prior label and no new context fields
+  ---
+  duration_ms: 5.169625
+  type: 'test'
+  ...
+# Subtest: Bern VRPG is not routed through the new federal calendar fields
+ok 33 - Bern VRPG is not routed through the new federal calendar fields
+  ---
+  duration_ms: 5.199458
+  type: 'test'
+  ...
+# Subtest: the federal calendar preview states its qualified product window, not the legacy base start
+ok 34 - the federal calendar preview states its qualified product window, not the legacy base start
+  ---
+  duration_ms: 2.390125
+  type: 'test'
+  ...
+# Subtest: French UI and complete DE/FR calendar text keys remain aligned
+ok 35 - French UI and complete DE/FR calendar text keys remain aligned
+  ---
+  duration_ms: 2.817959
+  type: 'test'
+  ...
+# Subtest: context, profile and override edits share the invalidation path, export is gated by bound result
+ok 36 - context, profile and override edits share the invalidation path, export is gated by bound result
+  ---
+  duration_ms: 0.523459
+  type: 'test'
+  ...
+# Subtest: January comparison exposes both complete paths only as trace variants, never as a definitive result or export
+ok 37 - January comparison exposes both complete paths only as trace variants, never as a definitive result or export
+  ---
+  duration_ms: 3.018375
+  type: 'test'
+  ...
+1..37
+# tests 52
+# suites 1
+# pass 52
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 107281.478

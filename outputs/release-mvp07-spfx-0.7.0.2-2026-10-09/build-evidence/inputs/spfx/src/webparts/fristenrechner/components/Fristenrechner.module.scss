@@ -1,0 +1,68 @@
+.host {
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #172126;
+  background: #eef2f2;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+.startup {
+  width: min(720px, calc(100% - 32px));
+  margin: 32px auto;
+  padding: 28px;
+  border-top: 6px solid #a6532d;
+  background: #f6f7f5;
+  box-shadow: 0 14px 40px rgb(18 44 64 / 12%);
+
+  h2 {
+    margin: 0 0 10px;
+    color: #122c40;
+    font-size: 28px;
+  }
+
+  p {
+    margin: 0 0 20px;
+    color: #566168;
+  }
+}
+
+.badge {
+  margin-bottom: 10px;
+  color: #a6532d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.runtimeMessage {
+  width: min(1120px, calc(100% - 32px));
+  margin: 20px auto -12px;
+}
+
+.runtimeStatus {
+  display: flex;
+  width: min(1120px, calc(100% - 32px));
+  margin: -18px auto 24px;
+  gap: 8px;
+  justify-content: flex-end;
+  color: #566168;
+  font-size: 12px;
+}
+
+.runtimeStatus code {
+  color: #172126;
+}
+
+@media (max-width: 640px) {
+  .startup,
+  .runtimeMessage,
+  .runtimeStatus {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .runtimeStatus {
+    padding: 0 14px;
+  }
+}

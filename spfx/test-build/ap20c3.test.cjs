@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {test} = require('node:test');
-const {REPO_ROOT, loadPackagedHost, sha256} = require('./package-harness.cjs');
+const {REPO_ROOT, loadPackagedHost, sha256, localMirrorConfiguration} = require('./package-harness.cjs');
 const newRule = id => /^CH-SOC-(MVG|UELG)-/.test(id);
 
 function provider(transportApproved = false, mutate) {
@@ -25,7 +25,7 @@ function provider(transportApproved = false, mutate) {
   }
   bytes.set('manifest.json', Buffer.from(JSON.stringify(manifest)));
   const fetched = [];
-  return {id: 'isolated-ap20c3-built-fixture', kind: 'sharepointMirror', fetched, async fetchBytes(name) {
+  return {id: 'isolated-ap20c3-built-fixture', kind: 'sharepointMirror', cacheConfiguration: localMirrorConfiguration(path.basename(directory)), fetched, async fetchBytes(name) {
     fetched.push(name); assert.ok(bytes.has(name)); return new Uint8Array(bytes.get(name));
   }};
 }
@@ -64,12 +64,12 @@ test('AP20C3 actual packaged consumer rejects candidate before artifact fetch or
   t.diagnostic(JSON.stringify(runtime.provenance));
   await assert.rejects(runtime.service.refresh(fixture), /candidate/);
   assert.deepEqual(fixture.fetched, ['manifest.json']);
-  assert.equal(await runtime.store.getActive(), undefined);
+  assert.equal(await runtime.service.getActive(provider()), undefined);
 });
 
 test('AP20C3 actual bundle retains consumer 6/component 2 and all 50 candidate gates', async () => {
   const runtime = loadPackagedHost(), activation = await runtime.service.refresh(provider(true));
-  runtime.host.applyActivationResult(activation);
+  runtime.host.applyActivationResult(activation, runtime.host.props.configurationKey);
   assert.equal(runtime.host.state.status, 'ready');
   assert.equal(runtime.host.state.calculationData.formatVersion, '6.0.0');
   const data = compiledData(activation.release), catalog = data.socialProcedureCatalogs.get('ch-social-procedures');
@@ -92,7 +92,7 @@ test('AP20C3 actual bundle transports C2 rule and binding objects without reinte
 
 test('AP20C3 emitted ES5 reproduces all 80 literal AP20B MVG/UELG dates with synthetic test approvals only', async () => {
   const runtime = loadPackagedHost(), activation = await runtime.service.refresh(provider(true, syntheticMvgUelgApproval));
-  runtime.host.applyActivationResult(activation);
+  runtime.host.applyActivationResult(activation, runtime.host.props.configurationKey);
   assert.equal(runtime.host.state.status, 'ready');
   const data = compiledData(activation.release), catalog = data.socialProcedureCatalogs.get('ch-social-procedures');
   const {calculateSocialDeadline} = require('../lib-commonjs/product/core/socialDeadline.js');
@@ -201,7 +201,7 @@ for (const [name, mutate] of [
 ]) test(`AP20C3 actual package rejects ${name} without activating anything`, async () => {
   const runtime = loadPackagedHost();
   await assert.rejects(runtime.service.refresh(provider(true, mutate)), /JSON-Schema/);
-  assert.equal(await runtime.store.getActive(), undefined);
+  assert.equal(await runtime.service.getActive(provider()), undefined);
 });
 
 test('AP20C3 actual package preserves its validated cache after a MVG object is changed', async () => {

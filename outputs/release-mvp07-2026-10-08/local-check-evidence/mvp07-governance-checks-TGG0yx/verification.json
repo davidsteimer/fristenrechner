@@ -1,0 +1,127 @@
+{
+  "kind": "mvp07LocalChecks",
+  "scope": "governance",
+  "releaseId": "2026-10-08-mvp-07-approved.1",
+  "startedAt": "2026-10-08T20:37:16.032Z",
+  "installation": false,
+  "publication": false,
+  "steps": [
+    {
+      "id": "data-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/data",
+        "-p",
+        "test_*.py"
+      ],
+      "startedAt": "2026-10-08T20:37:16.033Z",
+      "finishedAt": "2026-10-08T20:37:52.804Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/data-python.log",
+      "sha256": "6a38211fc18d1a07154dcf9e622b2ce60d9215f5dc9ae89819bda0a670335461",
+      "byteLength": 404,
+      "pythonTests": 303
+    },
+    {
+      "id": "governance-python",
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/governance",
+        "-p",
+        "test_*.py"
+      ],
+      "startedAt": "2026-10-08T20:37:52.805Z",
+      "finishedAt": "2026-10-08T20:38:03.720Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/governance-python.log",
+      "sha256": "eb647b1f456074546e492bc455dc8fc7e8f8560d165ae1f4c58a5ec1fd311405",
+      "byteLength": 130,
+      "pythonTests": 30
+    },
+    {
+      "id": "governance-validator",
+      "command": ".venv/bin/python",
+      "args": [
+        "tests/governance/validate_source_reviews.py",
+        "--self-test"
+      ],
+      "startedAt": "2026-10-08T20:38:03.720Z",
+      "finishedAt": "2026-10-08T20:38:23.198Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/governance-validator.log",
+      "sha256": "954e920538e7ef2e9f9641d1c8c821e5c48378f2413187bb7e91138dcc27c354",
+      "byteLength": 117
+    },
+    {
+      "id": "governance-node",
+      "command": "node",
+      "args": [
+        "scripts/run-standard-tests.mjs",
+        "governance"
+      ],
+      "startedAt": "2026-10-08T20:38:23.198Z",
+      "finishedAt": "2026-10-08T20:38:32.984Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/governance-node.log",
+      "sha256": "0099222f476301c4d2400d3a257c69308b791921c9b6aa4afdc5cc458ccdcbab",
+      "byteLength": 54473,
+      "nodeCounts": {
+        "tests": 262,
+        "pass": 262,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "id": "approved-data",
+      "command": ".venv/bin/python",
+      "args": [
+        "tests/data/validate_mvp07_release.py",
+        "data/releases/2026-10-08-mvp-07-approved.1"
+      ],
+      "startedAt": "2026-10-08T20:38:32.984Z",
+      "finishedAt": "2026-10-08T20:38:34.220Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/approved-data.log",
+      "sha256": "867f1d20398edead7438a0c52b2305187c4434e64d4659d03e17c09c4d6cfccd",
+      "byteLength": 688
+    },
+    {
+      "id": "source-approval",
+      "command": "node",
+      "args": [
+        "scripts/record-mvp07-source-approval.mjs"
+      ],
+      "startedAt": "2026-10-08T20:38:34.220Z",
+      "finishedAt": "2026-10-08T20:38:34.583Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/source-approval.log",
+      "sha256": "808eefc86ad639329663178d9bca0536991d5b6009f9d80f9b5e4e5384246f3f",
+      "byteLength": 537
+    },
+    {
+      "id": "local-authority",
+      "command": "node",
+      "args": [
+        "scripts/record-mvp07-local-build-approval.mjs"
+      ],
+      "startedAt": "2026-10-08T20:38:34.583Z",
+      "finishedAt": "2026-10-08T20:38:34.958Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-governance-checks-TGG0yx/local-authority.log",
+      "sha256": "6295121e2251467d025c445899a62427052b589062b5ff0061932915c9db0afc",
+      "byteLength": 1008
+    }
+  ],
+  "passed": true,
+  "finishedAt": "2026-10-08T20:38:34.958Z"
+}

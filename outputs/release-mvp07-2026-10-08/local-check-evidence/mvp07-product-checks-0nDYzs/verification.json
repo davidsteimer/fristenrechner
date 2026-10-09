@@ -1,0 +1,99 @@
+{
+  "kind": "mvp07LocalChecks",
+  "scope": "product",
+  "releaseId": "2026-10-08-mvp-07-approved.1",
+  "startedAt": "2026-10-08T20:25:33.769Z",
+  "installation": false,
+  "publication": false,
+  "steps": [
+    {
+      "id": "typecheck",
+      "command": "node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-08T20:25:33.770Z",
+      "finishedAt": "2026-10-08T20:25:39.332Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-product-checks-0nDYzs/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "id": "core-ui",
+      "command": "node",
+      "args": [
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "startedAt": "2026-10-08T20:25:39.332Z",
+      "finishedAt": "2026-10-08T20:27:44.080Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-product-checks-0nDYzs/core-ui.log",
+      "sha256": "9502a395e7e50e2c3c95f4f89cad8d398aa1e565cfa177ec9fb3b28b7153c918",
+      "byteLength": 545601,
+      "nodeCounts": {
+        "tests": 2264,
+        "pass": 2264,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "id": "public-tests",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "tests/public-app/ap19c3-build.test.ts",
+        "tests/public-app/ap21-build.test.ts",
+        "tests/public-app/ap22c3-build.test.ts",
+        "tests/public-app/build.test.ts"
+      ],
+      "startedAt": "2026-10-08T20:27:44.081Z",
+      "finishedAt": "2026-10-08T20:27:45.248Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-product-checks-0nDYzs/public-tests.log",
+      "sha256": "3de6e4d38a4de0b99e32d65bc40435e458cd968055a079f12264c3405890f00d",
+      "byteLength": 4547,
+      "nodeCounts": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "id": "preview-build",
+      "command": "node",
+      "args": [
+        "scripts/build-ui-preview.mjs"
+      ],
+      "startedAt": "2026-10-08T20:27:45.248Z",
+      "finishedAt": "2026-10-08T20:27:45.516Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-product-checks-0nDYzs/preview-build.log",
+      "sha256": "c61b987a6a1fe254cf73d05851538380dcf5db3ccf6e0a81642a9c615c56fcfe",
+      "byteLength": 183
+    },
+    {
+      "id": "public-build",
+      "command": "node",
+      "args": [
+        "scripts/build-public-app.mjs"
+      ],
+      "startedAt": "2026-10-08T20:27:45.516Z",
+      "finishedAt": "2026-10-08T20:27:45.654Z",
+      "exitCode": 0,
+      "log": ".work/mvp07-product-checks-0nDYzs/public-build.log",
+      "sha256": "6f5dabec0d827debba38920dfb30883c74247ddecb60f411de6934b9729bf1af",
+      "byteLength": 128
+    }
+  ],
+  "passed": true,
+  "finishedAt": "2026-10-08T20:27:45.654Z"
+}

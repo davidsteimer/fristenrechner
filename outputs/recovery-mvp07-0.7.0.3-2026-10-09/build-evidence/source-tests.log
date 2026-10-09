@@ -1,0 +1,223 @@
+TAP version 13
+# Subtest: Recovery request lifecycle
+    # Subtest: keeps the ordinary optional-callback contract
+    ok 1 - keeps the ordinary optional-callback contract
+      ---
+      duration_ms: 1.010417
+      type: 'test'
+      ...
+    # Subtest: rejects an already stale operation before validation or cache access
+    ok 2 - rejects an already stale operation before validation or cache access
+      ---
+      duration_ms: 0.325125
+      type: 'test'
+      ...
+    # Subtest: never lets an older validation overwrite the newer cache or initiate fallback
+    ok 3 - never lets an older validation overwrite the newer cache or initiate fallback
+      ---
+      duration_ms: 0.43125
+      type: 'test'
+      ...
+    # Subtest: does not start fallback when a stale network operation fails
+    ok 4 - does not start fallback when a stale network operation fails
+      ---
+      duration_ms: 0.28225
+      type: 'test'
+      ...
+    # Subtest: does not return a fallback that becomes stale during byte revalidation
+    ok 5 - does not return a fallback that becomes stale during byte revalidation
+      ---
+      duration_ms: 5.838834
+      type: 'test'
+      ...
+    # Subtest: still returns a current fully revalidated fallback without adopting legacy cache
+    ok 6 - still returns a current fully revalidated fallback without adopting legacy cache
+      ---
+      duration_ms: 3.104625
+      type: 'test'
+      ...
+    # Subtest: guards MemoryStore configured writes
+    ok 7 - guards MemoryStore configured writes
+      ---
+      duration_ms: 0.298041
+      type: 'test'
+      ...
+    # Subtest: guards MemoryStore legacy writes
+    ok 8 - guards MemoryStore legacy writes
+      ---
+      duration_ms: 0.378209
+      type: 'test'
+      ...
+    1..8
+ok 1 - Recovery request lifecycle
+  ---
+  duration_ms: 12.629291
+  type: 'suite'
+  ...
+# Subtest: Recovery IndexedDB lifecycle
+    # Subtest: checks current state after a suspended open before configured writes
+    ok 1 - checks current state after a suspended open before configured writes
+      ---
+      duration_ms: 7.870916
+      type: 'test'
+      ...
+    # Subtest: checks current state after a suspended open before legacy writes
+    ok 2 - checks current state after a suspended open before legacy writes
+      ---
+      duration_ms: 1.393
+      type: 'test'
+      ...
+    # Subtest: threads the service guard through an awaited IndexedDB open and skips fallback
+    ok 3 - threads the service guard through an awaited IndexedDB open and skips fallback
+      ---
+      duration_ms: 1.275041
+      type: 'test'
+      ...
+    # Subtest: recovers on the same store after a blocked upgrade and closes late success handles
+    ok 4 - recovers on the same store after a blocked upgrade and closes late success handles
+      ---
+      duration_ms: 1.359708
+      type: 'test'
+      ...
+    # Subtest: does not cache a failed open and retries without deleting data
+    ok 5 - does not cache a failed open and retries without deleting data
+      ---
+      duration_ms: 0.732292
+      type: 'test'
+      ...
+    # Subtest: closes on versionchange and invalidates its resolved connection promise
+    ok 6 - closes on versionchange and invalidates its resolved connection promise
+      ---
+      duration_ms: 1.130125
+      type: 'test'
+      ...
+    1..6
+ok 2 - Recovery IndexedDB lifecycle
+  ---
+  duration_ms: 14.071125
+  type: 'suite'
+  ...
+# Subtest: MVP06 recovery defaults isolation
+    # Subtest: matches the unchanged UI key and uses one stable recovery key
+    ok 1 - matches the unchanged UI key and uses one stable recovery key
+      ---
+      duration_ms: 0.635166
+      type: 'test'
+      ...
+    # Subtest: reads shared version 1 byte for byte without writes
+    ok 2 - reads shared version 1 byte for byte without writes
+      ---
+      duration_ms: 0.180917
+      type: 'test'
+      ...
+    # Subtest: reads shared version 2 byte for byte without writes
+    ok 3 - reads shared version 2 byte for byte without writes
+      ---
+      duration_ms: 0.060917
+      type: 'test'
+      ...
+    # Subtest: reads shared version 3 byte for byte without writes
+    ok 4 - reads shared version 3 byte for byte without writes
+      ---
+      duration_ms: 0.118417
+      type: 'test'
+      ...
+    # Subtest: leaves existing v4 bytes unchanged through save, reset, reload and resave
+    ok 5 - leaves existing v4 bytes unchanged through save, reset, reload and resave
+      ---
+      duration_ms: 0.223667
+      type: 'test'
+      ...
+    # Subtest: does not create a shared key when originals do not exist
+    ok 6 - does not create a shared key when originals do not exist
+      ---
+      duration_ms: 0.142417
+      type: 'test'
+      ...
+    # Subtest: prefers recovery values and preserves originals written later
+    ok 7 - prefers recovery values and preserves originals written later
+      ---
+      duration_ms: 0.066083
+      type: 'test'
+      ...
+    # Subtest: does not cache original defaults before recovery values exist
+    ok 8 - does not cache original defaults before recovery values exist
+      ---
+      duration_ms: 0.112584
+      type: 'test'
+      ...
+    # Subtest: keeps legacy originals suppressed after reset and a fresh adapter
+    ok 9 - keeps legacy originals suppressed after reset and a fresh adapter
+      ---
+      duration_ms: 0.227792
+      type: 'test'
+      ...
+    # Subtest: does not fall back from invalid, unknown or reset recovery values
+    ok 10 - does not fall back from invalid, unknown or reset recovery values
+      ---
+      duration_ms: 0.552375
+      type: 'test'
+      ...
+    # Subtest: does not expose or rewrite unsupported original contents
+    ok 11 - does not expose or rewrite unsupported original contents
+      ---
+      duration_ms: 0.106417
+      type: 'test'
+      ...
+    # Subtest: rejects foreign logical keys before any backend access
+    ok 12 - rejects foreign logical keys before any backend access
+      ---
+      duration_ms: 0.317333
+      type: 'test'
+      ...
+    # Subtest: rejects nonlegacy saves without changing either saved value
+    ok 13 - rejects nonlegacy saves without changing either saved value
+      ---
+      duration_ms: 0.11325
+      type: 'test'
+      ...
+    # Subtest: returns a non-null unavailable adapter and lets the old UI report failure
+    ok 14 - returns a non-null unavailable adapter and lets the old UI report failure
+      ---
+      duration_ms: 0.101958
+      type: 'test'
+      ...
+    # Subtest: propagates backend quota/access failures to the unchanged UI
+    ok 15 - propagates backend quota/access failures to the unchanged UI
+      ---
+      duration_ms: 0.20975
+      type: 'test'
+      ...
+    # Subtest: can be constructed without a DOM and never exposes an undefined adapter
+    ok 16 - can be constructed without a DOM and never exposes an undefined adapter
+      ---
+      duration_ms: 0.367708
+      type: 'test'
+      ...
+    # Subtest: defers and catches a blocked localStorage getter
+    ok 17 - defers and catches a blocked localStorage getter
+      ---
+      duration_ms: 0.165
+      type: 'test'
+      ...
+    # Subtest: uses the guarded browser backend once it becomes available
+    ok 18 - uses the guarded browser backend once it becomes available
+      ---
+      duration_ms: 0.147125
+      type: 'test'
+      ...
+    1..18
+ok 3 - MVP06 recovery defaults isolation
+  ---
+  duration_ms: 4.776125
+  type: 'suite'
+  ...
+1..3
+# tests 32
+# suites 3
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 480.636708

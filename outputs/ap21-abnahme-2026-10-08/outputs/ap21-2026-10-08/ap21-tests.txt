@@ -1,0 +1,324 @@
+TAP version 13
+# Subtest: AP21 actual C3 app submits the current text draft without blur, not the previous committed ISO value
+ok 1 - AP21 actual C3 app submits the current text draft without blur, not the previous committed ISO value
+  ---
+  duration_ms: 58.70625
+  type: 'test'
+  ...
+# Subtest: AP21 editing immediately removes a genuine previous result and its export, then invalid submit preserves the draft
+ok 2 - AP21 editing immediately removes a genuine previous result and its export, then invalid submit preserves the draft
+  ---
+  duration_ms: 38.432459
+  type: 'test'
+  ...
+# Subtest: AP21 Enter resolves the date without calculating or submitting the form
+ok 3 - AP21 Enter resolves the date without calculating or submitting the form
+  ---
+  duration_ms: 18.913833
+  type: 'test'
+  ...
+# Subtest: AP21 same-role profile change retains the current draft, different delivery role clears it permanently
+ok 4 - AP21 same-role profile change retains the current draft, different delivery role clears it permanently
+  ---
+  duration_ms: 109.3275
+  type: 'test'
+  ...
+# Subtest: AP21 saving defaults excludes committed and pending dates, reset cannot resurrect a pending draft
+ok 5 - AP21 saving defaults excludes committed and pending dates, reset cannot resurrect a pending draft
+  ---
+  duration_ms: 19.717916
+  type: 'test'
+  ...
+# Subtest: AP21 procurement submission commits trigger and procedure start together before legal validation
+ok 6 - AP21 procurement submission commits trigger and procedure start together before legal validation
+  ---
+  duration_ms: 24.37475
+  type: 'test'
+  ...
+# Subtest: AP21 a secondary political date draft participates in the same actual submit as the primary date
+ok 7 - AP21 a secondary political date draft participates in the same actual submit as the primary date
+  ---
+  duration_ms: 29.025833
+  type: 'test'
+  ...
+# Subtest: AP21 social jurisdiction reference and receipt are committed together with explicit case facts
+ok 8 - AP21 social jurisdiction reference and receipt are committed together with explicit case facts
+  ---
+  duration_ms: 129.695167
+  type: 'test'
+  ...
+# Subtest: AP21 – eindeutige Schweizer Datumseingabe
+    # Subtest: lässt ein leeres Feld leer, ohne das Tagesdatum einzusetzen
+    ok 1 - lässt ein leeres Feld leer, ohne das Tagesdatum einzusetzen
+      ---
+      duration_ms: 0.983709
+      type: 'test'
+      ...
+    # Subtest: ergänzt ein- und zweistellige Tage um den aktuellen Schweizer Monat und das Jahr
+    ok 2 - ergänzt ein- und zweistellige Tage um den aktuellen Schweizer Monat und das Jahr
+      ---
+      duration_ms: 0.548
+      type: 'test'
+      ...
+    # Subtest: ergänzt Tag und Monat um das aktuelle Schweizer Jahr
+    ok 3 - ergänzt Tag und Monat um das aktuelle Schweizer Jahr
+      ---
+      duration_ms: 0.36075
+      type: 'test'
+      ...
+    # Subtest: akzeptiert ein vollständiges Datum ausschliesslich mit vierstelligem Jahr
+    ok 4 - akzeptiert ein vollständiges Datum ausschliesslich mit vierstelligem Jahr
+      ---
+      duration_ms: 0.079792
+      type: 'test'
+      ...
+    # Subtest: entfernt nur äussere Leerzeichen, nicht Trennzeichen oder innere Leerzeichen
+    ok 5 - entfernt nur äussere Leerzeichen, nicht Trennzeichen oder innere Leerzeichen
+      ---
+      duration_ms: 0.144709
+      type: 'test'
+      ...
+    # Subtest: unterstützt h und H in beiden Sprachen, a und A nur auf Französisch
+    ok 6 - unterstützt h und H in beiden Sprachen, a und A nur auf Französisch
+      ---
+      duration_ms: 0.138166
+      type: 'test'
+      ...
+    # Subtest: lehnt mehrdeutige, relative und nicht vereinbarte Formate ab
+    ok 7 - lehnt mehrdeutige, relative und nicht vereinbarte Formate ab
+      ---
+      duration_ms: 0.235834
+      type: 'test'
+      ...
+    # Subtest: lehnt Null, überlange Monate und Tagesüberläufe ab statt sie zu normalisieren
+    ok 8 - lehnt Null, überlange Monate und Tagesüberläufe ab statt sie zu normalisieren
+      ---
+      duration_ms: 0.337417
+      type: 'test'
+      ...
+    # Subtest: beachtet gregorianische Schaltjahrregeln einschliesslich Jahrhundertgrenzen
+    ok 9 - beachtet gregorianische Schaltjahrregeln einschliesslich Jahrhundertgrenzen
+      ---
+      duration_ms: 0.262959
+      type: 'test'
+      ...
+    # Subtest: erhält den bestehenden Datumsbereich 0001 bis 9999 ohne künstliche Releasegrenze
+    ok 10 - erhält den bestehenden Datumsbereich 0001 bis 9999 ohne künstliche Releasegrenze
+      ---
+      duration_ms: 0.346167
+      type: 'test'
+      ...
+    # Subtest: verwendet für vollständige Daten keine Systemuhr
+    ok 11 - verwendet für vollständige Daten keine Systemuhr
+      ---
+      duration_ms: 0.069583
+      type: 'test'
+      ...
+    # Subtest: meldet eine ungültige Uhr ausschliesslich bei uhrabhängigen Eingaben
+    ok 12 - meldet eine ungültige Uhr ausschliesslich bei uhrabhängigen Eingaben
+      ---
+      duration_ms: 0.262791
+      type: 'test'
+      ...
+    # Subtest: friert alle Ergebnisse ein und wertet bereits aufgelöste Kürzel nicht erneut aus
+    ok 13 - friert alle Ergebnisse ein und wertet bereits aufgelöste Kürzel nicht erneut aus
+      ---
+      duration_ms: 0.093541
+      type: 'test'
+      ...
+    # Subtest: formatiert ausschliesslich gültige ISO-Kalenderdaten als DD.MM.JJJJ
+    ok 14 - formatiert ausschliesslich gültige ISO-Kalenderdaten als DD.MM.JJJJ
+      ---
+      duration_ms: 0.04875
+      type: 'test'
+      ...
+    1..14
+ok 9 - AP21 – eindeutige Schweizer Datumseingabe
+  ---
+  duration_ms: 5.405333
+  type: 'suite'
+  ...
+# Subtest: AP21 – Europe/Zurich am Bestätigungszeitpunkt
+    # Subtest: wechselt heute exakt an der Schweizer Mitternacht im Sommer und Winter
+    ok 1 - wechselt heute exakt an der Schweizer Mitternacht im Sommer und Winter
+      ---
+      duration_ms: 0.10925
+      type: 'test'
+      ...
+    # Subtest: wechselt die Ergänzung am Schweizer Monatswechsel, nicht am UTC-Monatswechsel
+    ok 2 - wechselt die Ergänzung am Schweizer Monatswechsel, nicht am UTC-Monatswechsel
+      ---
+      duration_ms: 0.062958
+      type: 'test'
+      ...
+    # Subtest: wechselt das ergänzte Jahr exakt am Schweizer Jahreswechsel
+    ok 3 - wechselt das ergänzte Jahr exakt am Schweizer Jahreswechsel
+      ---
+      duration_ms: 0.052708
+      type: 'test'
+      ...
+    # Subtest: behält während beider Sommerzeitwechsel denselben bürgerlichen Tag
+    ok 4 - behält während beider Sommerzeitwechsel denselben bürgerlichen Tag
+      ---
+      duration_ms: 0.094584
+      type: 'test'
+      ...
+    # Subtest: weist Schweizer Daten ausserhalb des bestehenden gregorianischen Bereichs zurück
+    ok 5 - weist Schweizer Daten ausserhalb des bestehenden gregorianischen Bereichs zurück
+      ---
+      duration_ms: 0.110041
+      type: 'test'
+      ...
+    # Subtest: ist unabhängig von der Prozesszeitzone UTC
+    ok 6 - ist unabhängig von der Prozesszeitzone UTC
+      ---
+      duration_ms: 106.836208
+      type: 'test'
+      ...
+    # Subtest: ist unabhängig von der Prozesszeitzone America/Los_Angeles
+    ok 7 - ist unabhängig von der Prozesszeitzone America/Los_Angeles
+      ---
+      duration_ms: 108.410875
+      type: 'test'
+      ...
+    # Subtest: ist unabhängig von der Prozesszeitzone America/New_York
+    ok 8 - ist unabhängig von der Prozesszeitzone America/New_York
+      ---
+      duration_ms: 97.009083
+      type: 'test'
+      ...
+    # Subtest: ist unabhängig von der Prozesszeitzone Asia/Tokyo
+    ok 9 - ist unabhängig von der Prozesszeitzone Asia/Tokyo
+      ---
+      duration_ms: 94.912458
+      type: 'test'
+      ...
+    # Subtest: ist unabhängig von der Prozesszeitzone Pacific/Kiritimati
+    ok 10 - ist unabhängig von der Prozesszeitzone Pacific/Kiritimati
+      ---
+      duration_ms: 100.843708
+      type: 'test'
+      ...
+    1..10
+ok 10 - AP21 – Europe/Zurich am Bestätigungszeitpunkt
+  ---
+  duration_ms: 508.690375
+  type: 'suite'
+  ...
+# Subtest: stable native text input has Swiss placeholder, label, text keyboard and linked accessible error
+ok 11 - stable native text input has Swiss placeholder, label, text keyboard and linked accessible error
+  ---
+  duration_ms: 19.606458
+  type: 'test'
+  ...
+# Subtest: Enter fixes the value without submitting and Tab commits without preventing normal navigation
+ok 12 - Enter fixes the value without submitting and Tab commits without preventing normal navigation
+  ---
+  duration_ms: 8.538458
+  type: 'test'
+  ...
+# Subtest: calendar keyboard shortcut preserves draft and cancellation restores input focus
+ok 13 - calendar keyboard shortcut preserves draft and cancellation restores input focus
+  ---
+  duration_ms: 88.988667
+  type: 'test'
+  ...
+# Subtest: help keyboard shortcut preserves draft and cancellation restores input focus
+ok 14 - help keyboard shortcut preserves draft and cancellation restores input focus
+  ---
+  duration_ms: 12.822875
+  type: 'test'
+  ...
+# Subtest: invalid replacement clears committed ISO while preserving the exact visible draft and error
+ok 15 - invalid replacement clears committed ISO while preserving the exact visible draft and error
+  ---
+  duration_ms: 3.06725
+  type: 'test'
+  ...
+# Subtest: form session commits the latest still-focused draft, never the previous committed value
+ok 16 - form session commits the latest still-focused draft, never the previous committed value
+  ---
+  duration_ms: 2.455583
+  type: 'test'
+  ...
+# Subtest: reset key clears an uncommitted draft even when the committed value stays empty
+ok 17 - reset key clears an uncommitted draft even when the committed value stays empty
+  ---
+  duration_ms: 13.79425
+  type: 'test'
+  ...
+# Subtest: calendar opening and cancellation preserve uncommitted and invalid drafts
+ok 18 - calendar opening and cancellation preserve uncommitted and invalid drafts
+  ---
+  duration_ms: 24.422458
+  type: 'test'
+  ...
+# Subtest: help opening and cancellation preserve uncommitted and invalid drafts
+ok 19 - help opening and cancellation preserve uncommitted and invalid drafts
+  ---
+  duration_ms: 11.7475
+  type: 'test'
+  ...
+# Subtest: calendar clear uses the same strict commit path and invalidates existing results
+ok 20 - calendar clear uses the same strict commit path and invalidates existing results
+  ---
+  duration_ms: 21.402625
+  type: 'test'
+  ...
+# Subtest: disabled and unmounted fields do not participate in submit
+ok 21 - disabled and unmounted fields do not participate in submit
+  ---
+  duration_ms: 1.519167
+  type: 'test'
+  ...
+# Subtest: registry uses one instant for all fields and old cleanup cannot unregister a replacement
+ok 22 - registry uses one instant for all fields and old cleanup cannot unregister a replacement
+  ---
+  duration_ms: 0.110583
+  type: 'test'
+  ...
+# Subtest: iOS styling is left-aligned 16px with a 44px touch target and no native date picker dependency
+ok 23 - iOS styling is left-aligned 16px with a 44px touch target and no native date picker dependency
+  ---
+  duration_ms: 0.38575
+  type: 'test'
+  ...
+# Subtest: AP21 submit snapshot applies all mounted dates atomically without mutating the previous state
+ok 24 - AP21 submit snapshot applies all mounted dates atomically without mutating the previous state
+  ---
+  duration_ms: 0.867375
+  type: 'test'
+  ...
+# Subtest: AP21 invalid or cleared drafts replace old ISO dates with empty values in every field family
+ok 25 - AP21 invalid or cleared drafts replace old ISO dates with empty values in every field family
+  ---
+  duration_ms: 0.167084
+  type: 'test'
+  ...
+# Subtest: AP21 a commit can initialise procurement context without inventing other case facts
+ok 26 - AP21 a commit can initialise procurement context without inventing other case facts
+  ---
+  duration_ms: 0.092833
+  type: 'test'
+  ...
+# Subtest: AP21 no mounted commits leave existing states untouched
+ok 27 - AP21 no mounted commits leave existing states untouched
+  ---
+  duration_ms: 0.117834
+  type: 'test'
+  ...
+# Subtest: AP21 unknown, empty and prototype-related field names cannot enter a submit snapshot
+ok 28 - AP21 unknown, empty and prototype-related field names cannot enter a submit snapshot
+  ---
+  duration_ms: 0.181125
+  type: 'test'
+  ...
+1..28
+# tests 50
+# suites 2
+# pass 50
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3091.389375

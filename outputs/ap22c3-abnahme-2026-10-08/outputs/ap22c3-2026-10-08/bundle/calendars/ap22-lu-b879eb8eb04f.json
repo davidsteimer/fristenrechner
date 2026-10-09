@@ -1,0 +1,633 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-lu-b879eb8eb04f",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "LU"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-LU-RLG-855-20200501",
+      "sourceType": "officialDossier",
+      "title": "Ruhetags- und Ladenschlussgesetz, RLG",
+      "authority": "CH-LU",
+      "url": "https://srl.lu.ch/data/855/de",
+      "documentVersionDate": "2020-05-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-LU-VRG-40-20210901",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über die Verwaltungsrechtspflege, VRG",
+      "authority": "CH-LU",
+      "url": "https://srl.lu.ch/data/40/de",
+      "documentVersionDate": "2021-09-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-ALL-SAINTS-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-ASCENSION-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-ASSUMPTION-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-CHRISTMAS-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 2 / § 1a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-CORPUS-CHRISTI-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-EASTER-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-EASTER",
+      "labels": {
+        "de": "Ostern",
+        "fr": "Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 2 / § 1a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 0
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-EASTER"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-FEDERAL-FAST-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-FEDERAL-FAST",
+      "labels": {
+        "de": "Eidgenössischer Dank-, Buss- und Bettag",
+        "fr": "Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 2 / § 1a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-FEDERAL-FAST"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-GOOD-FRIDAY-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 2 / § 1a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-IMMACULATE-CONCEPTION-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-NATIONAL-DAY-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "SR 116 Art. 1, neue offene Anwendung auf dieses Geltungsprofil"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-NEW-YEAR-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-PENTECOST-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-PENTECOST",
+      "labels": {
+        "de": "Pfingsten",
+        "fr": "Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 2 / § 1a Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 49
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-PENTECOST"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-RLG-ALL-DAY-ST-STEPHEN-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-RLG-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-RLG-855-20200501",
+          "locator": "§ 1a Abs. 1 Bst. b und Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-RLG-ALL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-VRG-ADDITIONAL-DAY-BERCHTOLD-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-VRG-ADDITIONAL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-VRG-40-20210901",
+          "locator": "§ 34 Abs. 1 Satz 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-VRG-ADDITIONAL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-VRG-ADDITIONAL-DAY-EASTER-MONDAY-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-VRG-ADDITIONAL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-VRG-40-20210901",
+          "locator": "§ 34 Abs. 1 Satz 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-VRG-ADDITIONAL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-VRG-ADDITIONAL-DAY-WHIT-MONDAY-B879EB8EB04F9540",
+      "calendarId": "ap22-lu-b879eb8eb04f",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-VRG-ADDITIONAL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-VRG-40-20210901",
+          "locator": "§ 34 Abs. 1 Satz 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-VRG-ADDITIONAL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-b879eb8eb04f9540",
+    "sourceHash": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81"
+  }
+}

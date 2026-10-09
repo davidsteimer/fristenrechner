@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const {test} = require('node:test');
-const {REPO_ROOT, loadPackagedHost, sha256} = require('./package-harness.cjs');
+const {REPO_ROOT, loadPackagedHost, sha256, localMirrorConfiguration} = require('./package-harness.cjs');
 
 const releaseId = '2026-10-01-mvp-06-approved.1';
 function provider(mutate) {
@@ -22,7 +22,7 @@ function provider(mutate) {
     bytes.set(descriptor.path, content);
     bytes.set('manifest.json', Buffer.from(JSON.stringify(manifest)));
   }
-  return {id: 'isolated-mvp06-approved-local-bytes', kind: 'sharepointMirror', async fetchBytes(name) {
+  return {id: 'isolated-mvp06-approved-local-bytes', kind: 'sharepointMirror', cacheConfiguration: localMirrorConfiguration(path.basename(directory)), async fetchBytes(name) {
     assert.ok(bytes.has(name)); return new Uint8Array(bytes.get(name));
   }};
 }
@@ -31,7 +31,7 @@ test('MVP 0.6 actual package activates the approved format-6 release without syn
   const runtime = loadPackagedHost();
   t.diagnostic(JSON.stringify(runtime.provenance));
   const activation = await runtime.service.refresh(provider());
-  runtime.host.applyActivationResult(activation);
+  runtime.host.applyActivationResult(activation, runtime.host.props.configurationKey);
   assert.equal(runtime.host.state.status, 'ready');
   const data = runtime.host.state.calculationData;
   assert.equal(data.releaseId, releaseId);

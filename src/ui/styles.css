@@ -107,39 +107,15 @@
   max-width: 100%;
 }
 
-.fr-form__grid .ms-Dropdown-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .fr-form__grid--selectors {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--fr-line);
 }
 
-.fr-procedure-choice .ms-Dropdown-title {
-  height: auto;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+/* Title and layered option wrapping share the slots in dropdownStyles.ts. */
+.fr-procedure-choice:not(.fr-holiday-connections) .ms-Dropdown-title {
   line-height: 21px;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-/* Keep the full legally relevant choice visible, including in narrow columns. */
-.fr-form__grid .fr-holiday-connections .ms-Dropdown-title {
-  height: auto;
-  min-height: 32px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  line-height: 20px;
-  white-space: normal;
-  overflow: visible;
-  text-overflow: clip;
-  overflow-wrap: anywhere;
 }
 
 .fr-selection-notice {
@@ -159,17 +135,64 @@
   color: #a4262c;
 }
 
+.fr-date-input__controls {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  min-width: 0;
+}
+
 .fr-date-input input {
   display: block;
   width: 100%;
   min-width: 0;
-  height: 32px;
+  height: 36px;
   padding: 0 8px;
   border: 1px solid #605e5c;
   border-radius: 2px;
   background: #fff;
   color: #323130;
-  font: 14px "Segoe UI", Arial, sans-serif;
+  font: 16px "Segoe UI", Arial, sans-serif;
+  text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.fr-date-input input::placeholder {
+  color: #605e5c;
+  opacity: 1;
+}
+
+.fr-date-input__aux {
+  flex: 0 0 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #605e5c;
+  border-radius: 2px;
+  background: #fff;
+  color: #2f6f73;
+  cursor: pointer;
+  font: 600 16px "Segoe UI", Arial, sans-serif;
+}
+
+.fr-date-input__aux:hover:not(:disabled) { background: #e7eeee; }
+.fr-date-input__aux:focus-visible {
+  outline: 2px solid var(--fr-teal, #2f6f73);
+  outline-offset: 1px;
+}
+.fr-date-input__aux:disabled {
+  border-color: #f3f2f1;
+  color: #a19f9d;
+  background: #f3f2f1;
+  cursor: default;
+}
+.fr-date-input__help { flex-basis: 30px; border-color: transparent; }
+.fr-date-dialog p { line-height: 1.5; }
+@media (pointer: coarse) {
+  .fr-date-input input { height: 44px; }
+  .fr-date-input__aux, .fr-date-input__help { flex-basis: 44px; }
 }
 
 .fr-date-input input:focus-visible {
@@ -643,4 +666,8 @@
   .fr-automatic__grid > div {
     border: 1px solid CanvasText;
   }
+}
+.fr-trace__calendar code {
+  white-space: normal;
+  overflow-wrap: anywhere;
 }

@@ -1,0 +1,88 @@
+{
+  "kind": "mvp07ArtifactVerifierCorrection",
+  "recordedAt": "2026-10-08T20:33:34Z",
+  "releaseId": "2026-10-08-mvp-07-approved.1",
+  "status": "passed",
+  "originalArtifactReport": {
+    "path": "outputs/release-mvp07-2026-10-08/artifact-verification.json",
+    "sha256": "17076eb9d4d5ceb4de8e4aeff5f23d514c0c3db19708d7e9487c42a7cfdcc4cb",
+    "unchanged": true,
+    "mustBeReadWithThisAddendum": true
+  },
+  "originalBuildReceipt": {
+    "path": "outputs/release-mvp07-2026-10-08/build-evidence/spfx-verification.json",
+    "sha256": "6975a49602884538728215d3977c424b6519e47e623fea2fe45443530ed8f65c",
+    "unchanged": true,
+    "passed": true,
+    "sourceTestsPassed": 186,
+    "actualPackageTestsPassed": 83
+  },
+  "initialPortableVerification": {
+    "passed": false,
+    "exitCode": 1,
+    "error": "prepare_mvp04_artifacts.ArtifactError: Wrong normal product entry",
+    "evidenceBasis": "Completed packaging command and traceback in the working conversation. The write-once outputs were already saved before the final portable check failed.",
+    "cause": "The verification helper expected the identifier mvp07CalculationData. The actual correct product entry imports mvp07Runtime and supplies both mvp07Runtime.data and mvp07Runtime.calendarRuntime."
+  },
+  "correction": {
+    "scope": "Verification helper only, no product, data, manifest, SPPKG, mirror or web byte changes.",
+    "oldAssertion": "Presence of mvp07CalculationData in the archived normal public entry.",
+    "newAssertion": "Exact import of mvp07Runtime from ../release/mvp07ReleaseData and explicit data={mvp07Runtime.data} plus calendarRuntime={mvp07Runtime.calendarRuntime} in the archived normal public entry.",
+    "originalHelper": {
+      "path": "outputs/release-mvp07-2026-10-08/build-evidence/inputs/scripts/prepare_mvp07_artifacts.py",
+      "sha256": "cfe65083b5a264c2dc28d912dfa97afc15c21fb341fe1a2bb21a0fc0d516f0d1",
+      "unchanged": true
+    },
+    "correctedHelper": {
+      "path": "outputs/release-mvp07-2026-10-08/verification-correction/prepare_mvp07_artifacts.py",
+      "sha256": "37be14ef31fb894ec304dcd549012f16f9746e3d758162b49d7e7f82cc14106e"
+    },
+    "unchangedHelperDependency": {
+      "path": "outputs/release-mvp07-2026-10-08/verification-correction/prepare_mvp04_artifacts.py",
+      "sha256": "12d604262e8e749fb678645aec59f20b8ac03f1f009a595a22f9500a33969f35"
+    },
+    "productRebuildRequired": false,
+    "reasonNoRebuild": "The correction changes only the interpretation of the already archived source entry. All actual compiler and packaged-consumer tests passed before packaging. No production source, schema, configuration or artifact changed."
+  },
+  "repeatedPortableVerification": {
+    "passed": true,
+    "exitCode": 0,
+    "artifacts": 3,
+    "mirrorFiles": 41,
+    "webFiles": 12,
+    "archivedEvidenceFiles": 191,
+    "scratchRequired": false,
+    "gitHistoryRequired": false,
+    "commandFromRepositoryRoot": "PYTHONPATH=outputs/release-mvp07-2026-10-08/verification-correction .venv/bin/python -c 'import json; from pathlib import Path; import prepare_mvp07_artifacts as audit; print(json.dumps(audit.verify_archived(Path.cwd()), indent=2))'",
+    "runtimeRequirements": "Python 3 with jsonschema and referencing. Verification uses only the delivered archives and the two copied audit helpers. It does not use .work, Git history, current product files or the network."
+  },
+  "artifactTests": {
+    "command": ".venv/bin/python tests/data/test_mvp07_artifacts.py",
+    "exitCode": 0,
+    "tests": 19,
+    "passed": 19,
+    "failed": 0,
+    "includesIsolatedArchiveWithoutScratchGitOrCurrentSource": true
+  },
+  "artifacts": [
+    {
+      "path": "outputs/release-mvp07-2026-10-08/artifacts/fristenrechner-mvp07-sharepoint-mirror.zip",
+      "byteLength": 218372,
+      "sha256": "ed603938f86849aec55dd5cdc83c300a8ae6437e4bb8eb62f3d7b5fa7e6753ca"
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/artifacts/fristenrechner-mvp07-steimer-web.zip",
+      "byteLength": 606797,
+      "sha256": "c7c20676154506694267e517791fe2fca73b7e403523e4968eea5ddb3fa0afcf"
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/artifacts/fristenrechner-schweiz-0.7.0.0.sppkg",
+      "byteLength": 291920,
+      "sha256": "bc8abe70c791f58d2cea9fb66ea568f604bcacae35fec9ae29aadeca5e0c6e09"
+    }
+  ],
+  "installationAuthorized": false,
+  "publicationAuthorized": false,
+  "hostingChangesAuthorized": false,
+  "operatingApproval": false
+}

@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.0.0",
+  "dataKind": "sourceVersionBridges",
+  "recordedOn": "2026-10-08",
+  "releaseId": "2026-10-08-mvp-07-approved.1",
+  "approvalRef": {
+    "path": "outputs/release-mvp07-2026-10-08/source-approval.json",
+    "sha256": "478ca3d20ea1d643bb05379f8acc042560fa9547575d62e5d7afd4c8c1213810"
+  },
+  "authorityRef": {
+    "path": "outputs/release-mvp07-2026-10-08/local-build-approval.json",
+    "sha256": "c218888c865e3abbc85d4ea2f0c98664dbbe80e15d64520b78f1a1193b5f3d39"
+  },
+  "historicalSourceRecordsUnchanged": true,
+  "operationalRulesChanged": false,
+  "bridges": [
+    {
+      "eventId": "STPO-AS-2026-509",
+      "sourceIds": [
+        "SRC-STPO-20250401",
+        "SRC-AP22-STPO",
+        "SRC-AP22CLOSE-BUND-STPO"
+      ],
+      "sourceVersionDelta": true,
+      "effectiveFrom": "2027-01-01",
+      "modelImpact": "unchanged",
+      "ruleChangeRequired": false,
+      "assessment": "New Art. 269 surveillance-catalog entry. The used deadline provisions remain equal.",
+      "evidence": {
+        "path": ".work/mvp07-source-review-2026-10-08/baseline/index-and-content-assessment.json",
+        "sha256": "69ed969e374780de8a6b7d57615866646375541f7b40f709522d93dd4b0eebca"
+      },
+      "previousVersion": {
+        "from": "2025-04-01",
+        "to": "2026-12-31"
+      },
+      "followingVersion": {
+        "from": "2027-01-01",
+        "statusAtReview": "publishedFuture",
+        "changePublication": "AS 2026 509"
+      },
+      "equalUsedProvisions": [
+        "Art. 85",
+        "Art. 89",
+        "Art. 90",
+        "Art. 91",
+        "Art. 92"
+      ],
+      "noUnlimitedStabilityProof": true
+    },
+    {
+      "eventId": "LU-855-V4916",
+      "sourceIds": [
+        "SRC-LU-RLG-855-20200501"
+      ],
+      "sourceVersionDelta": true,
+      "effectiveFrom": "2026-09-27",
+      "modelImpact": "unchanged",
+      "ruleChangeRequired": false,
+      "assessment": "New title and shop-opening provisions. Used §§ 1a and 2 remain equal.",
+      "evidence": {
+        "path": ".work/mvp07-source-review-2026-10-08/catalog/lu-version-bridge.json",
+        "sha256": "ab37325e8f55abfee5eed039c6bda34d1d6da213550f7437992442317a0e7793"
+      },
+      "previousVersion": {
+        "versionId": "3569",
+        "from": "2020-05-01",
+        "to": "2026-09-26"
+      },
+      "followingVersion": {
+        "versionId": "4916",
+        "from": "2026-09-27",
+        "statusAtReview": "current",
+        "title": "Gesetz über die Ruhetage und die Öffnungs- und Schliessungszeiten der Verkaufsgeschäfte"
+      },
+      "equalUsedProvisions": [
+        "§ 1a Abs. 1–3",
+        "§ 2"
+      ],
+      "noUnlimitedStabilityProof": true
+    }
+  ]
+}

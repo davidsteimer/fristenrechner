@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AP21 – Minimaler Tab-Test</title>
+  <style>
+    body { max-width: 36rem; margin: 2rem auto; padding: 0 1rem; font: 16px/1.5 system-ui, sans-serif; color: #182f2a; background: #fff; }
+    .brand { letter-spacing: .16em; font-weight: 700; color: #245b47; }
+    h1 { font-size: 1.5rem; }
+    label { display: block; margin: 1.5rem 0 .35rem; font-weight: 600; }
+    input { box-sizing: border-box; width: 100%; min-height: 44px; padding: .6rem; font: inherit; text-align: left; }
+    .note { margin-top: 2rem; color: #4c5c56; }
+  </style>
+</head>
+<body>
+  <p class="brand">STEIMER</p>
+  <h1>AP21 – Minimaler Tab-Test</h1>
+  <p>Zwei gewöhnliche Browserfelder, ohne SharePoint, JavaScript oder Datumslogik.</p>
+  <ol>
+    <li>Mit der bisherigen iPad-Einstellung testen, ohne eigens die Tastatursteuerung einzuschalten.</li>
+    <li>Im ersten Feld <strong>5</strong> eingeben und auf dem Magic Keyboard <strong>Tab</strong> drücken.</li>
+    <li>Erwartet wird der Eingabecursor im zweiten Feld. Mit <strong>Umschalt + Tab</strong> geht es zurück.</li>
+  </ol>
+  <p><strong>Wichtig:</strong> Die 5 bleibt hier unverändert. Diese Seite ergänzt absichtlich kein Datum.</p>
+  <label for="date-probe">Erstes Feld – Texteingabe</label>
+  <input id="date-probe" type="text" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Hier 5 eingeben">
+  <label for="duration-probe">Zweites Feld – Frist in Tagen</label>
+  <input id="duration-probe" type="number" autocomplete="off" placeholder="Hier sollte der Cursor erscheinen">
+  <p class="note">Nur synthetische Testwerte verwenden. Die Seite übermittelt und speichert keine Eingaben. Kein Produktstand, keine Fristberechnung.</p>
+</body>
+</html>

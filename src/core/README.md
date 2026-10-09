@@ -1,5 +1,7 @@
 # Deterministischer Rechenkern
 
+**AP22C3, 8. Oktober 2026:** C1, C2 und [C3 sind abgenommen](../../docs/fachrecht/abnahme-ap22c3.md). Die lokale [C3-Integration](../../docs/architektur/kalenderintegration-ap22c3.md) ergänzt `createFormat7CalculationData` und den gemeinsamen Hostadapter `createCalculatorRuntime`. Qualifizierte Auflösung und vollständiger Januarvergleich verwenden das echte Format-7-Modell. Die Berechnungsgrenzen verlangen eine frisch aus den Bytes validierte Laufzeitbindung. `createCalculationData` bleibt für Formate 1–6 erhalten, der C1-Datenreader bleibt ohne Aktivierungsrecht. Der C3-Prüfkandidat ist kein freigegebener Datenrelease. Die folgenden AP8-/AP12-Abschnitte dokumentieren die ursprünglichen Schnittstellen.
+
 > **Status:** Version 0.1 wurde am 29. August 2026 durch David Steimer fachlich und technisch abgenommen. Die AP11B-Erweiterung für Spezialregime wurde am 30. August 2026 abgenommen. Der AP12B-Generator und die AP12C-Format-3-Integration für regelbasierte Kalender wurden am 31. August 2026 fachlich-technisch abgenommen.
 
 Der Rechenkern aus AP8 berechnet Tagesfristen ausschliesslich aus vollständig validierten, providerneutralen Datenobjekten. AP11B ergänzt dieselbe hostneutrale Schicht um typisierte Spezialregime. Der Kern kennt weder React noch SPFx, SharePoint, Teams, GitHub, Netzwerkzugriffe oder Browserpersistenz.

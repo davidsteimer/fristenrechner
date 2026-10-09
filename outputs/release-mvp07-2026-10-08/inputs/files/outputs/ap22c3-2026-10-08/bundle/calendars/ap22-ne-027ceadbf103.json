@@ -1,0 +1,672 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-ne-027ceadbf103",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "NE"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-NE-LDJF-94102-20100101",
+      "sourceType": "officialDossier",
+      "title": "Loi sur le dimanche et les jours fériés, LDJF",
+      "authority": "CH-NE",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/941.02.pdf",
+      "documentVersionDate": "2010-01-01",
+      "reviewedOn": "2026-09-22",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-NE-LPA-152130-20260101",
+      "sourceType": "officialDossier",
+      "title": "Loi sur la procédure administrative, LPA",
+      "authority": "CH-NE",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/152.130.pdf",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-ASCENSION-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-CHRISTMAS-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-CHRISTMAS-SUBSTITUTE-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-CHRISTMAS-SUBSTITUTE",
+      "labels": {
+        "de": "Ersatzfeiertag nach Weihnachten",
+        "fr": "Jour férié de remplacement après Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1, lendemain de Noël lorsque ce jour est un dimanche"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "onlyMonday",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-CHRISTMAS-SUBSTITUTE"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-GOOD-FRIDAY-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-MAY1-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-MAY1",
+      "labels": {
+        "de": "Tag der Arbeit (1. Mai)",
+        "fr": "Fête du travail (1er mai)"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 5,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-MAY1"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-NATIONAL-DAY-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "SR 116 Art. 1, neue Anwendung auf NE-LDJF-BASE. Kantonaler Bezug Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-NE-REPUBLIC-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-NE-REPUBLIC",
+      "labels": {
+        "de": "Gründung der Republik Neuenburg",
+        "fr": "Instauration de la République de Neuchâtel"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 3,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-NE-REPUBLIC"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-NEW-YEAR-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LDJF-BASE-DAY-NEW-YEAR-SUBSTITUTE-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LDJF-BASE-DAY-NEW-YEAR-SUBSTITUTE",
+      "labels": {
+        "de": "Ersatzfeiertag nach Neujahr",
+        "fr": "Jour férié de remplacement après Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LDJF-94102-20100101",
+          "locator": "Art. 3 Abs. 1, lendemain du Nouvel An lorsque ce jour est un dimanche"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "onlyMonday",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LDJF-BASE-DAY-NEW-YEAR-SUBSTITUTE"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-ASCENSION-FRIDAY-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-ASCENSION-FRIDAY",
+      "labels": {
+        "de": "Freitag nach Auffahrt",
+        "fr": "Vendredi de l’Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 40
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-ASCENSION-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-BERCHTOLD-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "2. Januar",
+        "fr": "2 janvier"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-CHRISTMAS-EVE-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-CHRISTMAS-EVE",
+      "labels": {
+        "de": "Heiligabend",
+        "fr": "Veille de Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 24
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-CHRISTMAS-EVE"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-EASTER-MONDAY-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-FEDERAL-FAST-MONDAY-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-FEDERAL-FAST-MONDAY",
+      "labels": {
+        "de": "Bettagsmontag",
+        "fr": "Lundi du Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOffsetDays",
+        "month": 9,
+        "offsetDays": 1,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-FEDERAL-FAST-MONDAY"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-NEW-YEAR-EVE-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-NEW-YEAR-EVE",
+      "labels": {
+        "de": "Silvester",
+        "fr": "Saint-Sylvestre"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 31
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-NEW-YEAR-EVE"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-ST-STEPHEN-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "NE-CAL-NE-LPA-ADDITIONAL-DAY-WHIT-MONDAY-027CEADBF10392AA",
+      "calendarId": "ap22-ne-027ceadbf103",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NE"
+      },
+      "labelKey": "holiday.ne.NE-LPA-ADDITIONAL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-NE-LPA-152130-20260101",
+          "locator": "LPA Art. 33 Abs. 3 in Verbindung mit RDF Art. 11 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NE-LPA-ADDITIONAL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-027ceadbf10392aa",
+    "sourceHash": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81"
+  }
+}

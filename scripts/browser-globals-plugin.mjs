@@ -27,6 +27,12 @@ export const browserGlobalsPlugin = {
             export const StrictMode = runtime.StrictMode;
             export const useMemo = runtime.useMemo;
             export const useState = runtime.useState;
+            export const useRef = runtime.useRef;
+            export const useContext = runtime.useContext;
+            export const useEffect = runtime.useEffect;
+            export const useLayoutEffect = runtime.useLayoutEffect;
+            export const useCallback = runtime.useCallback;
+            export const createContext = runtime.createContext;
             export default runtime;
           `
         };
@@ -52,6 +58,11 @@ export const browserGlobalsPlugin = {
           export const MessageBarType = runtime.MessageBarType;
           export const PrimaryButton = runtime.PrimaryButton;
           export const TextField = runtime.TextField;
+          export const Calendar = runtime.Calendar;
+          export const DayOfWeek = runtime.DayOfWeek;
+          export const Dialog = runtime.Dialog;
+          export const DialogType = runtime.DialogType;
+          export const DialogFooter = runtime.DialogFooter;
           export const loadTheme = runtime.loadTheme;
           export const registerIcons = runtime.registerIcons;
           export const unregisterIcons = runtime.unregisterIcons;

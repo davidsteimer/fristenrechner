@@ -15,6 +15,7 @@ import {
   resolveCalendar
 } from './data';
 import { CalendarGenerationError } from './generateCalendar';
+import { hasQualifiedCalendarPath, trustedFormat7Runtime } from './format7Runtime';
 import type {
   BlockedDeadlineResult,
   CalculatedDeadlineResult,
@@ -380,6 +381,11 @@ function isCalculationResult(value: DateResolution | SuspensionConfiguration | C
 }
 
 export function calculateDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
+  if (data.formatVersion === '7.0.0' && (!trustedFormat7Runtime(data)
+    || (['stpo', 'zpo', 'bgg', 'vwvg'].includes(input.profileId) && !hasQualifiedCalendarPath(data))
+    || (input.profileId === 'vrpg-be' && input.calendarId !== 'be-public-holidays'))) {
+    return blocked({ reasons: ['calendarBinding.qualifiedContextRequired'] });
+  }
   const basicReasons = validateBasicInput(input);
   if (basicReasons.length > 0) {
     return blocked({

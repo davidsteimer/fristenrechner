@@ -1,0 +1,107 @@
+{
+  "kind": "ap19a-architecture-probe",
+  "status": "draft",
+  "productFormatVersion": null,
+  "runtimeActive": false,
+  "legalApproval": false,
+  "scope": "Strukturprobe ohne Fristberechnung oder Rechtsfreigabe. ZH und AG sind synthetische Anbindungen, keine geprüften kantonalen Rechtsmodelle.",
+  "modelTestWindow": { "from": "2026-01-01", "to": "2027-12-31" },
+  "sources": [
+    { "id": "ELG-1", "citation": "Art. 1 ELG", "reviewStatus": "not-approved" },
+    { "id": "ATSG-2", "citation": "Art. 2 ATSG", "reviewStatus": "not-approved" },
+    { "id": "ATSG-38", "citation": "Art. 38 ATSG", "reviewStatus": "not-approved" },
+    { "id": "ATSG-52", "citation": "Art. 52 ATSG", "reviewStatus": "not-approved" },
+    { "id": "ATSG-56", "citation": "Art. 56 ATSG", "reviewStatus": "not-approved" },
+    { "id": "ATSG-60", "citation": "Art. 60 ATSG", "reviewStatus": "not-approved" }
+  ],
+  "federalRules": [
+    {
+      "id": "CH-SOC-ELG-OBJ",
+      "law": "ELG",
+      "matter": "individual-benefits",
+      "action": "objection",
+      "stage": "administration",
+      "deadlineForm": "days",
+      "triggerKind": "individual-decision",
+      "notificationChannels": ["individual-service"],
+      "holidayAnchor": "party-or-representative",
+      "calculationParameters": null,
+      "sourceRefs": ["ELG-1", "ATSG-2", "ATSG-38", "ATSG-52"],
+      "reviewStatus": "not-approved"
+    },
+    {
+      "id": "CH-SOC-ELG-APP",
+      "law": "ELG",
+      "matter": "individual-benefits",
+      "action": "appeal",
+      "stage": "cantonal-insurance-court",
+      "deadlineForm": "days",
+      "triggerKind": "objection-decision",
+      "notificationChannels": ["individual-service"],
+      "holidayAnchor": "party-or-representative",
+      "calculationParameters": null,
+      "sourceRefs": ["ELG-1", "ATSG-2", "ATSG-38", "ATSG-56", "ATSG-60"],
+      "reviewStatus": "not-approved"
+    }
+  ],
+  "cantonalBindings": [
+    {
+      "id": "AP19A-BE-ELG-OBJ", "ruleId": "CH-SOC-ELG-OBJ", "proceduralCanton": "BE",
+      "bindingKind": "first-release-draft", "localProcedureReview": "pending", "calendarProjectionReview": "pending",
+      "holidayScopes": [{ "canton": "BE", "scopeId": "MODEL-BE", "regionalAreaRequired": false, "regionalAreaIds": [] }]
+    },
+    {
+      "id": "AP19A-BE-ELG-APP", "ruleId": "CH-SOC-ELG-APP", "proceduralCanton": "BE",
+      "bindingKind": "first-release-draft", "localProcedureReview": "pending", "calendarProjectionReview": "pending",
+      "holidayScopes": [{ "canton": "BE", "scopeId": "MODEL-BE", "regionalAreaRequired": false, "regionalAreaIds": [] }]
+    },
+    {
+      "id": "AP19A-ZH-ELG-OBJ-MODEL", "ruleId": "CH-SOC-ELG-OBJ", "proceduralCanton": "ZH",
+      "bindingKind": "synthetic-portability-fixture", "localProcedureReview": "pending", "calendarProjectionReview": "pending",
+      "holidayScopes": [{ "canton": "ZH", "scopeId": "MODEL-ZH", "regionalAreaRequired": false, "regionalAreaIds": [] }]
+    },
+    {
+      "id": "AP19A-AG-ELG-OBJ-MODEL", "ruleId": "CH-SOC-ELG-OBJ", "proceduralCanton": "AG",
+      "bindingKind": "synthetic-portability-fixture", "localProcedureReview": "pending", "calendarProjectionReview": "pending",
+      "holidayScopes": [{ "canton": "AG", "scopeId": "MODEL-AG-REGIONAL", "regionalAreaRequired": true, "regionalAreaIds": ["SYNTHETIC-REGION-A", "SYNTHETIC-REGION-B"] }]
+    }
+  ],
+  "releaseEligibility": {
+    "plannedInitialCantons": ["BE"],
+    "approvedBindings": [],
+    "runtimeActive": false,
+    "calendarProjectionActivation": false,
+    "requiredApprovals": ["federal-legal-review", "cantonal-binding-review", "calendar-projection-review", "product-contract", "reference-cases", "release-approval"]
+  },
+  "referenceInput": {
+    "ruleId": "CH-SOC-ELG-OBJ", "bindingId": "AP19A-BE-ELG-OBJ", "law": "ELG",
+    "proceduralCanton": "BE", "matter": "individual-benefits", "action": "objection", "stage": "administration",
+    "deadlineForm": "days", "legalTriggerDate": "2026-09-25", "triggerKind": "individual-decision",
+    "notificationChannel": "individual-service", "holidayAnchorRole": "party", "holidayAnchorStatus": "qualified",
+    "holidayCanton": "BE", "holidayScopeId": "MODEL-BE", "regionalAreaId": null
+  },
+  "referenceCases": [
+    { "id": "BE-STRUCTURE", "overrides": {}, "structure": "complete", "reason": null, "eligibility": "candidate-not-approved" },
+    { "id": "BE-REPRESENTATIVE", "overrides": { "holidayAnchorRole": "representative" }, "structure": "complete", "reason": null, "eligibility": "candidate-not-approved" },
+    { "id": "BE-APPEAL", "overrides": { "ruleId": "CH-SOC-ELG-APP", "bindingId": "AP19A-BE-ELG-APP", "action": "appeal", "stage": "cantonal-insurance-court", "triggerKind": "objection-decision" }, "structure": "complete", "reason": null, "eligibility": "candidate-not-approved" },
+    { "id": "ZH-SAME-FEDERAL-RULE", "overrides": { "bindingId": "AP19A-ZH-ELG-OBJ-MODEL", "proceduralCanton": "ZH", "holidayCanton": "ZH", "holidayScopeId": "MODEL-ZH" }, "structure": "complete", "reason": null, "eligibility": "outside-initial-release" },
+    { "id": "AG-EXPLICIT-REGION", "overrides": { "bindingId": "AP19A-AG-ELG-OBJ-MODEL", "proceduralCanton": "AG", "holidayCanton": "AG", "holidayScopeId": "MODEL-AG-REGIONAL", "regionalAreaId": "SYNTHETIC-REGION-A" }, "structure": "complete", "reason": null, "eligibility": "outside-initial-release" },
+    { "id": "NO-LAW", "overrides": { "law": null }, "structure": "blocked", "reason": "law-missing-or-mismatch", "eligibility": "blocked-input" },
+    { "id": "WRONG-LAW", "overrides": { "law": "KVG" }, "structure": "blocked", "reason": "law-missing-or-mismatch", "eligibility": "blocked-input" },
+    { "id": "NO-DATE", "overrides": { "legalTriggerDate": null }, "structure": "blocked", "reason": "trigger-date-invalid", "eligibility": "blocked-input" },
+    { "id": "IMPOSSIBLE-DATE", "overrides": { "legalTriggerDate": "2026-02-30" }, "structure": "blocked", "reason": "trigger-date-invalid", "eligibility": "blocked-input" },
+    { "id": "DATE-OUTSIDE-MODEL-WINDOW", "overrides": { "legalTriggerDate": "2028-01-01" }, "structure": "blocked", "reason": "outside-model-test-window", "eligibility": "blocked-input" },
+    { "id": "NO-NOTIFICATION", "overrides": { "notificationChannel": null }, "structure": "blocked", "reason": "notification-unqualified", "eligibility": "blocked-input" },
+    { "id": "WRONG-TRIGGER", "overrides": { "triggerKind": "unknown" }, "structure": "blocked", "reason": "trigger-mismatch", "eligibility": "blocked-input" },
+    { "id": "WRONG-MATTER", "overrides": { "matter": "other" }, "structure": "blocked", "reason": "selection-mismatch", "eligibility": "blocked-input" },
+    { "id": "WRONG-STAGE", "overrides": { "stage": "cantonal-insurance-court" }, "structure": "blocked", "reason": "selection-mismatch", "eligibility": "blocked-input" },
+    { "id": "NO-BINDING", "overrides": { "bindingId": null }, "structure": "blocked", "reason": "binding-unavailable", "eligibility": "blocked-input" },
+    { "id": "CANTON-NOT-BINDING", "overrides": { "proceduralCanton": "ZH" }, "structure": "blocked", "reason": "binding-mismatch", "eligibility": "blocked-input" },
+    { "id": "NO-HOLIDAY-SPACE", "overrides": { "holidayScopeId": null }, "structure": "blocked", "reason": "holiday-scope-unbound", "eligibility": "blocked-input" },
+    { "id": "BE-WITH-ZH-HOLIDAYS-NOT-YET-BOUND", "overrides": { "holidayCanton": "ZH", "holidayScopeId": "MODEL-ZH" }, "structure": "blocked", "reason": "holiday-scope-unbound", "eligibility": "blocked-input" },
+    { "id": "HOLIDAY-ANCHOR-CONFLICT", "overrides": { "holidayAnchorStatus": "conflict" }, "structure": "blocked", "reason": "holiday-anchor-unqualified", "eligibility": "blocked-input" },
+    { "id": "HOLIDAY-AUTHORITY-NO-FALLBACK", "overrides": { "holidayAnchorRole": "authority" }, "structure": "blocked", "reason": "holiday-anchor-unqualified", "eligibility": "blocked-input" },
+    { "id": "AG-REGION-MISSING", "overrides": { "bindingId": "AP19A-AG-ELG-OBJ-MODEL", "proceduralCanton": "AG", "holidayCanton": "AG", "holidayScopeId": "MODEL-AG-REGIONAL" }, "structure": "blocked", "reason": "regional-area-required-or-unknown", "eligibility": "blocked-input" },
+    { "id": "AG-REGION-UNKNOWN", "overrides": { "bindingId": "AP19A-AG-ELG-OBJ-MODEL", "proceduralCanton": "AG", "holidayCanton": "AG", "holidayScopeId": "MODEL-AG-REGIONAL", "regionalAreaId": "UNKNOWN" }, "structure": "blocked", "reason": "regional-area-required-or-unknown", "eligibility": "blocked-input" }
+  ]
+}

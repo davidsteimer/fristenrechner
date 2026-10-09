@@ -99,9 +99,11 @@ describe('AP17C-statische Stellenbeschriftung', () => {
     });
   }
 
-  it('verwendet das einheitliche Feldlabel und unveränderte Gemeinwesenoptionen unabhängig vom Bereich', () => {
+  it('verwendet ein bereichsunabhängiges Feldlabel, auch im expliziten AP22-Kalenderprüfmodus', () => {
     const appSource = readFileSync(new URL('../../src/ui/FristenrechnerApp.tsx', import.meta.url), 'utf8');
-    assert.ok(/label=\{translate\(locale, 'form\.authority'\)\}/.test(appSource), 'Gemeinsames statisches Feldlabel fehlt');
+    // C2 adds an explicit host-configured preview mode, not a VRPG/social branch.
+    // Actual DE/FR rendering in both modes is covered by ap22c2-ui.test.tsx.
+    assert.ok(/label=\{calendarRuntime \? calendarText\(locale,'authoritySeat'\) : translate\(locale, 'form\.authority'\)\}/.test(appSource), 'Gemeinsames bereichsunabhängiges Feldlabel fehlt');
     assert.equal(/vrpg\.(?:socialAuthority|bernSocialContext)/.test(appSource), false, 'Kontextabhängiger Sonderkey wird noch verwendet');
   });
 });

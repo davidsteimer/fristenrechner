@@ -15,6 +15,7 @@ import {
   resolveCalendar
 } from './data';
 import { CalendarGenerationError } from './generateCalendar';
+import { trustedFormat7Runtime } from './format7Runtime';
 import { validateQualifiedSpecialInput } from './qualifiedApplicability';
 import type {
   CalculationData,
@@ -362,9 +363,12 @@ export function calculateSpecialDeadline(
   input: SpecialDeadlineInput,
   data: CalculationData
 ): SpecialDeadlineResult {
+  if (data.formatVersion === '7.0.0' && !trustedFormat7Runtime(data)) {
+    return blocked(['calendarBinding.invalidRuntime'], { inputDates: allInputDates(input) });
+  }
   // The old general ATSG definition is retained as historical inventory only.
   // Format 5 social cases must pass the national resolver and exact eligibility.
-  if (['5.0.0','6.0.0'].includes(data.formatVersion) && input.ruleId === 'ATSG-SPEC-REL-060') {
+  if (['5.0.0','6.0.0','7.0.0'].includes(data.formatVersion) && input.ruleId === 'ATSG-SPEC-REL-060') {
     return blocked(['socialResolverRequired'], { inputDates: allInputDates(input) });
   }
   const primitiveReasons = validatePrimitiveInputs(input);

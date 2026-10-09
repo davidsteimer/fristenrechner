@@ -1,0 +1,59 @@
+{
+  "formatVersion": "1.0.0",
+  "evidenceId": "MVP07-PREPARATION-CHECKS-20261008",
+  "checkedOn": "2026-10-08",
+  "status": "preparation-verified-source-review-pending",
+  "snapshot": {
+    "path": "outputs/release-mvp07-2026-10-08/inputs/snapshot.json",
+    "sha256": "cbb9744cb2cc4f5b1812ad7850b9746fb4b504bab1c488eec824dd783b34f3bb",
+    "inputFiles": 576,
+    "existingAcceptanceArchiveFilesVerified": 396
+  },
+  "sourceInventory": {
+    "path": "outputs/release-mvp07-2026-10-08/sources/source-inventory.json",
+    "sha256": "4bb394c9b1cccdc50ccae896925a5b64b3a6274fba0fb0b81a35b0ddca7e9c82",
+    "canonicalSourceIds": 232,
+    "referenceEdges": 2020,
+    "freshOfficialContentChecks": 0
+  },
+  "nodeVersion": "22.23.2",
+  "checks": [
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0,
+      "evidence": ".work/mvp07-preflight-2026-10-08/summary.json",
+      "evidenceSha256": "2efff98c989ffce7fa8c964cd2a3754fc169576631a0a4b4d8bebf398c1d1ad3"
+    },
+    {
+      "command": "node scripts/run-standard-tests.mjs product",
+      "exitCode": 0,
+      "passed": 2248,
+      "failed": 0,
+      "skipped": 0,
+      "evidence": ".work/mvp07-preflight-2026-10-08/product-tests.log",
+      "evidenceSha256": "a85ecd29682f94c350e1912022e9ce3d47c9a779c3c2ebdb462dcb3ad2feff42"
+    },
+    {
+      "command": "node --test tests/governance/mvp07-preparation.test.mjs tests/governance/mvp07-source-inventory.test.mjs",
+      "exitCode": 0,
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 3031.164042,
+      "evidenceType": "observed-local-command-output",
+      "preparationTests": 16,
+      "inventoryTests": 11
+    }
+  ],
+  "countsAreNotAReleaseAcceptance": true,
+  "scope": {
+    "localPreparationAuthorized": true,
+    "sourceReleaseApproved": false,
+    "dataPromotionApproved": false,
+    "definitiveBuildAuthorized": false,
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "productionActivation": false,
+    "testAppCleanupAuthorized": false
+  }
+}

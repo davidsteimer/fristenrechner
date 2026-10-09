@@ -14,6 +14,7 @@ import type {
 } from '../core';
 import { resolveVrpgSelection, isQualifiedRegimeSelectable, type VrpgSelectionState } from './vrpgSelection';
 import { EMPTY_VRPG_CONTEXT, qualifiedInputFromForm, type VrpgContextState } from './vrpgQualification';
+import type { CalendarContext } from '../core/calendarResolution';
 
 export interface AuthorityOption {
   readonly key: string;
@@ -22,6 +23,7 @@ export interface AuthorityOption {
 }
 
 export interface CalculatorFormState {
+  readonly calendarContext?: CalendarContext;
   readonly vrpgSelection?: VrpgSelectionState;
   readonly vrpgContext?: VrpgContextState;
   readonly authorityCode: string;
@@ -64,8 +66,11 @@ function conditionsMatch(rule: LegalRule, selectors: Readonly<Record<string, str
   return rule.conditions.every(condition => condition.values.includes(selectors[condition.selector] ?? ''));
 }
 
-export function authorityOptions(data: CalculationData): AuthorityOption[] {
+export const CALENDAR_CANTONS = 'AG AI AR BE BL BS FR GE GL GR JU LU NE NW OW SG SH SO SZ TG TI UR VD VS ZG ZH'.split(' ');
+
+export function authorityOptions(data: CalculationData, includeFederalCalendarCantons = false): AuthorityOption[] {
   const cantons = new Set<string>();
+  if (includeFederalCalendarCantons) CALENDAR_CANTONS.forEach(code => cantons.add(code));
   data.profiles.forEach(profile => {
     if (profile.jurisdiction.level === 'cantonal') {
       cantons.add(profile.jurisdiction.code);
