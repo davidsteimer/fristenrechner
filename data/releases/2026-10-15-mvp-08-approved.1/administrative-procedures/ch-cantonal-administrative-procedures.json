@@ -1,0 +1,1881 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "administrativeProcedureCatalog",
+  "catalogId": "ch-cantonal-administrative-procedures",
+  "contractStatus": "approved",
+  "runtimeActive": false,
+  "contractDecision": {
+    "id": "DEC-2026-032",
+    "status": "approved",
+    "on": "2026-10-14"
+  },
+  "projectDecisions": [
+    {
+      "decisionId": "DEC-2026-031",
+      "kind": "projectLegalDecisionNotStatute",
+      "status": "approved",
+      "on": "2026-10-14",
+      "by": "David Steimer"
+    }
+  ],
+  "review": {
+    "basis": "AP23B mit Ergänzung, DEC-2026-031/032 und AP23D3 fachlich-technisch abgenommen. R08-B erlaubt nur die lokale Datenübernahme.",
+    "sourceReview": "R08-A2 Quellenabnahme outputs/release-mvp08-2026-10-15/source-approval.json SHA-256 53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026, begründete Wiederverwendung und Vorbehalte unverändert.",
+    "checkedOn": "2026-10-15"
+  },
+  "holidayResolutionPolicy": {
+    "precedence": [
+      "applicableFederalSpecialLaw",
+      "verifiedExplicitProceduralException",
+      "authoritySeat"
+    ],
+    "unknownHandling": "block",
+    "federalSpecialHandling": "routeOnlyToSeparatelyQualifiedReleasedSpecialPath",
+    "exceptionHandling": "requiresExplicitReviewedBinding",
+    "fallbackMeaning": "onlyReviewedAndReleasedCantonalProcedurePaths"
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-AP23B-TI-LPAMM",
+      "kind": "statute",
+      "url": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/pdfatto/atto/11221",
+      "versionDescription": "2025-06-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1, 6, 10, 13–17, 47, 68, 73, 75, 80, 84, 113, 115"
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-HOL",
+      "kind": "statute",
+      "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+      "versionDescription": "Inkrafttreten 2010-02-09",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1 und Schlussfussnote"
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-MATERIAL",
+      "kind": "officialMaterials",
+      "url": "https://www4.ti.ch/fileadmin/POTERI/GC/allegati/odg-mes/pdf/M6645.pdf",
+      "versionDescription": "2012-05-23",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "S. 11 Ziff. 3.1"
+    },
+    {
+      "sourceId": "JUD-AP23B-TI-ADVANCE-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/CH_BGer/CH_BGer_002_2C-422-2019_2019-05-28.html",
+      "versionDescription": "2019-05-28",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "E. 2.3–2.5"
+    },
+    {
+      "sourceId": "JUD-AP23B-TI-PROVISIONAL-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TCA_001_52-2025-281_2025-08-13.html",
+      "versionDescription": "2025-08-13",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Erwägungen zur 15-Tage-Frist und Art. 16 Abs. 3"
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-VRG",
+      "kind": "statute",
+      "url": "https://www.gr-lex.gr.ch/api/de/versions/3521/pdf_file",
+      "versionDescription": "2025-01-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1–2, 7–9, 28–29, 32, 39, 42, 49, 52"
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-RTG",
+      "kind": "statute",
+      "url": "https://www.gr-lex.gr.ch/api/de/versions/2604/pdf_file",
+      "versionDescription": "2016-01-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1–3"
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-MATERIAL",
+      "kind": "officialMaterials",
+      "url": "https://www.gr.ch/Botschaften/2006/6-2006.pdf#page=92",
+      "versionDescription": "2006-05-30",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+    },
+    {
+      "sourceId": "JUD-AP23B-GR-START-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/GR_Gerichte/GR_VG_001_U-2016-15_2016-02-18.pdf",
+      "versionDescription": "2016-02-18",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "E. 3a, S. 4–5"
+    },
+    {
+      "sourceId": "JUD-AP23B-GR-STAGE-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/GR_Gerichte/GR_KG_005_SK2-2010-7_2010-03-03.pdf",
+      "versionDescription": "2010-03-03",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "E. 2c/bb, S. 5. Nur systematische VRG-Aussage des historischen Strafverweises."
+    },
+    {
+      "sourceId": "SRC-AP23B-CH-HOL",
+      "kind": "statute",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de#art_1",
+      "versionDescription": "1994-07-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1"
+    }
+  ],
+  "laws": [
+    {
+      "lawId": "lpamm-ti",
+      "canton": "TI",
+      "title": "Legge sulla procedura amministrativa, RL 165.100",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-TI-LPAMM",
+            "locator": "Art. 13 Abs. 3"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 1, 13–16"
+        }
+      ]
+    },
+    {
+      "lawId": "vrg-gr",
+      "canton": "GR",
+      "title": "Gesetz über die Verwaltungsrechtspflege, BR 370.100",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-GR-VRG",
+            "locator": "Art. 7 Abs. 2"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 1, 7–9, 28–52"
+        }
+      ]
+    }
+  ],
+  "suspensionProfiles": [
+    {
+      "suspensionProfileId": "ti-none",
+      "lawId": "lpamm-ti",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 16 Abs. 3, 47 Abs. 3/4"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "ti-three",
+      "lawId": "lpamm-ti",
+      "periods": [
+        {
+          "periodId": "ti-easter",
+          "start": {
+            "type": "easterOffset",
+            "days": -7,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "easterOffset",
+            "days": 7,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "ti-summer",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 7,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 8,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "ti-winter",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 12,
+            "day": 18,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 1,
+            "day": 2,
+            "yearOffset": 1
+          },
+          "inclusive": true
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 16 Abs. 1"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "gr-none",
+      "lawId": "vrg-gr",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Kapitel 2/3, Art. 39 Abs. 2"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "gr-three",
+      "lawId": "vrg-gr",
+      "periods": [
+        {
+          "periodId": "gr-easter",
+          "start": {
+            "type": "easterOffset",
+            "days": -7,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "easterOffset",
+            "days": 7,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "gr-summer",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 7,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 8,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "gr-winter",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 12,
+            "day": 18,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 1,
+            "day": 2,
+            "yearOffset": 1
+          },
+          "inclusive": true
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 39 Abs. 1"
+        }
+      ]
+    }
+  ],
+  "holidayBindings": [
+    {
+      "holidayBindingId": "ti-authority-seat",
+      "lawId": "lpamm-ti",
+      "authoritySeatCanton": "TI",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-08-mvp-07-approved.1",
+        "calendarId": "ap22-ti-944ed0286e9a",
+        "projectionId": "projection-944ed0286e9a6d9f",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "path": "calendars/ap22-ti-944ed0286e9a.json",
+            "sha256": "dec40c2b5cc5c67a35c1ae492caeb022ee75a9b77f370890c1e867b3dc77a8ce"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "path": "calendars/ch-federal-calendar.json",
+            "sha256": "62c2dd8388d13566a63ccb074f6ff658ae4d17504b77048dd275665f8194fa3e"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "path": "holiday-catalogs/ch-holiday-catalog.json",
+            "sha256": "f2e4d7d740775083564aca841da6c46b9c148d3852f1f1a8bbae0bf1f3634d77"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-TI-LPAMM",
+            "locator": "Art. 13 Abs. 3"
+          },
+          {
+            "sourceId": "SRC-AP23B-TI-HOL",
+            "locator": "Art. 1"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    },
+    {
+      "holidayBindingId": "gr-authority-seat",
+      "lawId": "vrg-gr",
+      "authoritySeatCanton": "GR",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-08-mvp-07-approved.1",
+        "calendarId": "ap22-gr-bf0366c8eda2",
+        "projectionId": "projection-bf0366c8eda26257",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "path": "calendars/ap22-gr-bf0366c8eda2.json",
+            "sha256": "f3d73d31e9315a081e5aa16162d121b848d879adc19beeb40757cd86510b4f56"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "path": "calendars/ch-federal-calendar.json",
+            "sha256": "62c2dd8388d13566a63ccb074f6ff658ae4d17504b77048dd275665f8194fa3e"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "path": "holiday-catalogs/ch-holiday-catalog.json",
+            "sha256": "f2e4d7d740775083564aca841da6c46b9c148d3852f1f1a8bbae0bf1f3634d77"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-GR-VRG",
+            "locator": "Art. 7 Abs. 2"
+          },
+          {
+            "sourceId": "SRC-AP23B-GR-RTG",
+            "locator": "Art. 2"
+          },
+          {
+            "sourceId": "SRC-AP23B-GR-MATERIAL",
+            "locator": "Gedruckte S. 540, Art. 7"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    }
+  ],
+  "paths": [
+    {
+      "pathId": "ti-80-30",
+      "researchRef": "TI-80-30",
+      "lawId": "lpamm-ti",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "ti-three",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16, 68 Abs. 1, 80"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-MATERIAL",
+          "locator": "S. 11 Ziff. 3.1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-84-30",
+      "researchRef": "TI-84-30",
+      "lawId": "lpamm-ti",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "ti-three",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16, 68 Abs. 1, 84"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-MATERIAL",
+          "locator": "S. 11 Ziff. 3.1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-reply",
+      "researchRef": "TI-REPLY",
+      "lawId": "lpamm-ti",
+      "action": "ordered-reply",
+      "stages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "ti-three",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16, 73, 75"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-provisional-15",
+      "researchRef": "TI-PROVISIONAL-15",
+      "lawId": "lpamm-ti",
+      "action": "provisional-measure-appeal",
+      "stages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 15,
+        "overridable": false
+      },
+      "suspensionProfileId": "ti-none",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16 Abs. 3, 68 Abs. 2"
+        },
+        {
+          "sourceId": "JUD-AP23B-TI-PROVISIONAL-JUD",
+          "locator": "Erwägungen zur 15-Tage-Frist und Art. 16 Abs. 3"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-advance",
+      "researchRef": "TI-ADVANCE",
+      "lawId": "lpamm-ti",
+      "action": "process-cost-advance",
+      "stages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "ti-none",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13 Abs. 5, 47 Abs. 3/4"
+        },
+        {
+          "sourceId": "JUD-AP23B-TI-ADVANCE-JUD",
+          "locator": "E. 2.3–2.5"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-32-30",
+      "researchRef": "GR-32-30",
+      "lawId": "vrg-gr",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-none",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 28, 32 Abs. 1"
+        },
+        {
+          "sourceId": "JUD-AP23B-GR-STAGE-JUD",
+          "locator": "E. 2c/bb, S. 5. Nur systematische VRG-Aussage des historischen Strafverweises."
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-32-10",
+      "researchRef": "GR-32-10",
+      "lawId": "vrg-gr",
+      "action": "administrative-procedural-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 10,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-none",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 29, 32 Abs. 2"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-admin-ordered",
+      "researchRef": "GR-ADMIN-ORDERED",
+      "lawId": "vrg-gr",
+      "action": "ordered-administrative-days",
+      "stages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "gr-none",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7–9, Kapitel 2/3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-52-30",
+      "researchRef": "GR-52-30",
+      "lawId": "vrg-gr",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 39, 49, 52 Abs. 1"
+        },
+        {
+          "sourceId": "JUD-AP23B-GR-START-JUD",
+          "locator": "E. 3a, S. 4–5"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-52-10",
+      "researchRef": "GR-52-10",
+      "lawId": "vrg-gr",
+      "action": "court-procedural-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 10,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 39, 49 Abs. 4, 52 Abs. 2"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-42-10",
+      "researchRef": "GR-42-10",
+      "lawId": "vrg-gr",
+      "action": "court-process-complaint",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 10,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 39, 42"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-court-ordered",
+      "researchRef": "GR-COURT-ORDERED",
+      "lawId": "vrg-gr",
+      "action": "ordered-court-days",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 9, 39"
+        },
+        {
+          "sourceId": "JUD-AP23B-GR-START-JUD",
+          "locator": "E. 3a, S. 4–5"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    }
+  ],
+  "releaseBinding": {
+    "status": "approved",
+    "releaseId": "2026-10-15-mvp-08-approved.1",
+    "approval": {
+      "approvedBy": "David Steimer",
+      "approvedOn": "2026-10-15",
+      "decisionRef": "docs/betrieb/freigabe-r08-b.md"
+    },
+    "targetComponentRefs": [
+      {
+        "role": "calendar",
+        "contentId": "ap22-ti-944ed0286e9a",
+        "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+      },
+      {
+        "role": "calendar",
+        "contentId": "ch-federal-calendar",
+        "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+      },
+      {
+        "role": "holidayCatalog",
+        "contentId": "ch-holiday-catalog",
+        "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+      },
+      {
+        "role": "calendar",
+        "contentId": "ap22-gr-bf0366c8eda2",
+        "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+      }
+    ],
+    "sourceReviewRef": {
+      "id": "mvp08-source-approval-20261015",
+      "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+    },
+    "referenceSuiteRef": {
+      "id": "mvp08-administrative-reference-suite",
+      "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+    },
+    "promotionRequirement": "rebindExactTargetReleaseBytesAndApproveBeforeActivation",
+    "pathEligibility": [
+      {
+        "status": "approved",
+        "pathId": "ti-80-30",
+        "pathSha256": "4df727a155db2ea935f36693fd7529dbfa3835eea726a2c5f6c958239cc2d87f",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "fcf61ff794383ddfd7bdb1921ea1fd11e1d386d65ab80e3edbbfa49312d39919",
+        "suspensionProfileId": "ti-three",
+        "suspensionProfileSha256": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "ti-84-30",
+        "pathSha256": "8727e179dbafed4668efa540bd27745f99822677165d3901ce37d34dad07161d",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "fcf61ff794383ddfd7bdb1921ea1fd11e1d386d65ab80e3edbbfa49312d39919",
+        "suspensionProfileId": "ti-three",
+        "suspensionProfileSha256": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "ti-reply",
+        "pathSha256": "5c3164e2244ac2abdacaa71c8bef21861ac52b31c2af22b40676e6d36b2ba202",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "fcf61ff794383ddfd7bdb1921ea1fd11e1d386d65ab80e3edbbfa49312d39919",
+        "suspensionProfileId": "ti-three",
+        "suspensionProfileSha256": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "ti-provisional-15",
+        "pathSha256": "ca8f6e76ac3d33dcdc03d6c238ea183a94df1536d3bb2bcc1b9a619edb8fc67d",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "fcf61ff794383ddfd7bdb1921ea1fd11e1d386d65ab80e3edbbfa49312d39919",
+        "suspensionProfileId": "ti-none",
+        "suspensionProfileSha256": "6823c9142dc2f5f375cad6f8526a10afb19e2a2850d0bff1a06c56219c59c59c",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "ti-advance",
+        "pathSha256": "f5ae0692d028622bd21256b189d757fd12b5acd5de14782d60b0c8c922aa879b",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "fcf61ff794383ddfd7bdb1921ea1fd11e1d386d65ab80e3edbbfa49312d39919",
+        "suspensionProfileId": "ti-none",
+        "suspensionProfileSha256": "6823c9142dc2f5f375cad6f8526a10afb19e2a2850d0bff1a06c56219c59c59c",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-32-30",
+        "pathSha256": "5c4305ab100d8a9a3bde63a9e24f2c829feb12a5b59860619d7342e0c1d17d46",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-none",
+        "suspensionProfileSha256": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-32-10",
+        "pathSha256": "87e074107b5a4128453c3c6c70f45e11c4211f845065cae4313931f56ef6d756",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-none",
+        "suspensionProfileSha256": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-admin-ordered",
+        "pathSha256": "d6f0add375ee92b762c902b906ee6aee24e8431a726ed75c0640ecc6f1bb0697",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-none",
+        "suspensionProfileSha256": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-52-30",
+        "pathSha256": "da8cce834fc705b952266ee35921c29af59589bc4b612234f6e4384a20838128",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-52-10",
+        "pathSha256": "4d6ac3eeb84434c94a8b817188103113f771b42de8d9c0120a1506117415a91b",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-42-10",
+        "pathSha256": "638e5ff1d74e7ef7eb35d18e9a9765e159f470f12ab583492a767c3b9cc6f56a",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      },
+      {
+        "status": "approved",
+        "pathId": "gr-court-ordered",
+        "pathSha256": "4d9c015f741dcae7d19fa3c54d0a98d5d27e444ed499d101486053e9ba6b8f2f",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "5ba841ad4d292211e3dae85302589b53b074f9acf58aec6bca95cb622c0a8c3a",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+          }
+        ],
+        "sourceReviewRef": {
+          "id": "mvp08-source-approval-20261015",
+          "sha256": "53a7f9e8b304c2552e89dc6fa4787b178170bde31aaf55100f5aed55cd995026"
+        },
+        "referenceSuiteRef": {
+          "id": "mvp08-administrative-reference-suite",
+          "sha256": "610f4925ac103b76589cb57e3438d9fc93babf5e939c775e2db359515ef87da9"
+        },
+        "pathRevision": 1
+      }
+    ]
+  },
+  "excludedPaths": [
+    {
+      "exclusionId": "nw-contrast-only",
+      "scope": "Nidwalden",
+      "reason": "Nur AP23B-Kontrastprobe, keine positive Kandidatenbindung oder operative Freigabe."
+    },
+    {
+      "exclusionId": "federal-and-cantonal-special-law",
+      "scope": "Sozial-, Steuer-, Beschaffungs- und politische Spezialverfahren",
+      "reason": "Allgemeiner Pfad ausgeschlossen. Bundesrechtliches Spezialrecht nur über eigenständig qualifizierten und freigegebenen Pfad."
+    },
+    {
+      "exclusionId": "unsupported-delivery-and-time-units",
+      "scope": "Publikation, Kenntnis, Zustellfiktion, Monats-/Jahresfrist, Fixtermin, Wiederherstellung und Erstreckung",
+      "reason": "Nicht vom Pilot modelliert."
+    },
+    {
+      "exclusionId": "municipal-regional-and-evidence-advance",
+      "scope": "Kommunale/regionale Verfahren und TI Art. 47 Abs. 5",
+      "reason": "Nicht vom Pilot freigegeben."
+    }
+  ],
+  "preserved": [
+    {
+      "path": "docs/fachrecht/verwaltungsverfahren-ap23a.md",
+      "sha256": "c31b36622774216c45448fbc3951b1518afeea23bf0d7047fbd1f17ff7ccaded"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap23a.md",
+      "sha256": "bfce47a0065183c62a4c2b1111cd674a6ff7fbb470b5ffc4c12b8246bf742bed"
+    },
+    {
+      "path": "outputs/ap23a-2026-10-12/referenz/2026-10-12_Verwaltungsverfahren_Schweiz_AP23A_V0.1.xlsx",
+      "sha256": "4d161b5ce441910461cc4092aa0ef3bb898d3390034901faa3acdab97fc3857e"
+    },
+    {
+      "path": "schemas/legal-profile.schema.json",
+      "sha256": "e1b87a82247f3f09c52aae1629e5a0d4db4de2dd6a493524746427073e2e6145"
+    },
+    {
+      "path": "schemas/release-manifest-v7.schema.json",
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "sha256": "30c8bfd13ea943cf5f1fde87d2af628dcfe37d56408cf38b5c2dc9e5c0305aef"
+    },
+    {
+      "path": "src/core/calendarResolution.ts",
+      "sha256": "b69a4e8dde0fd20cfe23cbb6ae6082840e2523de015109c050dde6fafad9d68e"
+    },
+    {
+      "path": "src/core/holidayActivation.ts",
+      "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/manifest.json",
+      "sha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-ti-944ed0286e9a.json",
+      "sha256": "dec40c2b5cc5c67a35c1ae492caeb022ee75a9b77f370890c1e867b3dc77a8ce"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-gr-bf0366c8eda2.json",
+      "sha256": "f3d73d31e9315a081e5aa16162d121b848d879adc19beeb40757cd86510b4f56"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-nw-5dfca484e4af.json",
+      "sha256": "44c4f6fcff97f9fbcf6208bdaaa44b152c83f4cb464c52f59afd5ca9c303229a"
+    },
+    {
+      "path": "docs/fachrecht/verwaltungsverfahren-ap23b.md",
+      "sha256": "d27db556347dc5fe441e4cb155c00303d4af7ec1977944db8567356a5f0b6568"
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+      "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af"
+    },
+    {
+      "path": "docs/fachrecht/referenzfaelle-ap23b.md",
+      "sha256": "4ab3f0e1725001a1eff084ae73c10ebcea0e34cd99c52378fa67e20fa0975a60"
+    },
+    {
+      "path": "tests/golden/candidates/ap23b-administrative.json",
+      "sha256": "a795a22a07945e02369f917dcea4d047a7bb3bb897e198a1fe1ffbea4a65a5d1"
+    },
+    {
+      "path": "scripts/check-ap23b-references.mjs",
+      "sha256": "69ab68b9ff8ef68aabd78a1faa60a0ad98a38aadd7ee6ae4366f70504553523e"
+    },
+    {
+      "path": "outputs/ap23b-2026-10-12/QA-AP23B.json",
+      "sha256": "6ce8d3d089d17da7db280a40d2047957c57643f56ccdf2fdd79e6d6e84922ea4"
+    }
+  ]
+}

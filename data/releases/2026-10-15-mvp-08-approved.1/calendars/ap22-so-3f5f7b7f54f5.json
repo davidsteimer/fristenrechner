@@ -1,0 +1,470 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-so-3f5f7b7f54f5",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "SO"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-AP22-SO-GS201463",
+      "sourceType": "officialDossier",
+      "title": "Solothurn GS 2014, 63",
+      "authority": "CH-SO",
+      "url": "https://bgs.so.ch/api/de/change_documents/file_dictionaries/1025/pdf_file",
+      "documentVersionDate": "2015-03-01",
+      "reviewedOn": "2026-10-02",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-ALL-SAINTS-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-ASCENSION-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-ASSUMPTION-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-BERCHTOLD-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-CHRISTMAS-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-CORPUS-CHRISTI-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-EASTER-MONDAY-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-GOOD-FRIDAY-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-MAY1-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-MAY1",
+      "labels": {
+        "de": "Tag der Arbeit (1. Mai)",
+        "fr": "Fête du travail (1er mai)"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 5,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-MAY1"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-NEW-YEAR-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-ST-STEPHEN-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "SO-CAL-SO-PROCEDURAL-ALL-DAY-WHIT-MONDAY-3F5F7B7F54F58063",
+      "calendarId": "ap22-so-3f5f7b7f54f5",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "SO"
+      },
+      "labelKey": "holiday.so.SO-PROCEDURAL-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2015-03-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP22-SO-GS201463",
+          "locator": "Änderungen § 22 EG ZPO, § 10bis EG StPO und § 9 VRG, in Kraft 01.03.2015"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "SO-PROCEDURAL-ALL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-3f5f7b7f54f58063",
+    "sourceHash": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+  }
+}

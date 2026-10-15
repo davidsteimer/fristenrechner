@@ -1,0 +1,527 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-vs-6c002f32b1b0",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "VS"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-VS-RPFLG-1731-20240101",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über die Rechtspflege, RPflG / Loi sur l’organisation de la Justice, LOJ",
+      "authority": "CH-VS",
+      "url": "https://lex.vs.ch/api/fr/versions/3260/pdf_file",
+      "documentVersionDate": "2024-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+      "sourceType": "officialDossier",
+      "title": "Ausführungsreglement zur Sonn- und Feiertagsruhe / Règlement d’exécution",
+      "authority": "CH-VS",
+      "url": "https://lex.vs.ch/api/fr/versions/2108/pdf_file",
+      "documentVersionDate": "1966-12-02",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-ALL-SAINTS-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-ASCENSION-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-ASSUMPTION-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-CHRISTMAS-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-CORPUS-CHRISTI-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-IMMACULATE-CONCEPTION-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-NATIONAL-DAY-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-NEW-YEAR-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-CAL-DAY-ST-JOSEPH-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-CAL-DAY-ST-JOSEPH",
+      "labels": {
+        "de": "Josefstag",
+        "fr": "Saint-Joseph"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RUHEREG-822200-19661202",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 3,
+        "day": 19
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-CAL-DAY-ST-JOSEPH"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-PROC-DAY-BERCHTOLD-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-PROC-DAY-BERCHTOLD",
+      "labels": {
+        "de": "2. Januar",
+        "fr": "2 janvier"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RPFLG-1731-20240101",
+          "locator": "Art. 37 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-PROC-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-PROC-DAY-EASTER-MONDAY-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-PROC-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RPFLG-1731-20240101",
+          "locator": "Art. 37 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-PROC-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-PROC-DAY-ST-STEPHEN-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-PROC-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "26. Dezember (Stephanstag)",
+        "fr": "26 décembre (Saint-Étienne)"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RPFLG-1731-20240101",
+          "locator": "Art. 37 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-PROC-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "VS-CAL-VS-PROC-DAY-WHIT-MONDAY-6C002F32B1B0461B",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VS"
+      },
+      "labelKey": "holiday.vs.VS-PROC-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VS-RPFLG-1731-20240101",
+          "locator": "Art. 37 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VS-PROC-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-6c002f32b1b0461b",
+    "sourceHash": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+  }
+}
