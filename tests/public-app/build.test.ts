@@ -19,7 +19,7 @@ async function buildCandidate(candidate = '') {
   });
 }
 
-describe('Lokaler statischer Releasebuild für MVP 0.7, ohne P-Bereitstellung', () => {
+describe('Lokaler statischer Releasebuild für MVP 0.8, ohne P-Bereitstellung', () => {
   it('erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest', async () => {
     await buildCandidate();
 
@@ -27,8 +27,8 @@ describe('Lokaler statischer Releasebuild für MVP 0.7, ohne P-Bereitstellung', 
     const manifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
 
     assert.equal(manifest.application, 'fristenrechner-public');
-    assert.equal(manifest.version, '0.7.0');
-    assert.equal(manifest.dataReleaseId, '2026-10-08-mvp-07-approved.1');
+    assert.equal(manifest.version, '0.8.0');
+    assert.equal(manifest.dataReleaseId, '2026-10-15-mvp-08-approved.1');
     assert.notEqual(manifest.status, 'candidate');
     assert.equal(manifest.basePath, '/fristenrechner/');
     assert.match(manifest.assets.javascript, /^\.\/assets\/app-[A-Z0-9]+\.js$/);
@@ -61,7 +61,7 @@ describe('Lokaler statischer Releasebuild für MVP 0.7, ohne P-Bereitstellung', 
     assert.doesNotMatch(completeOutput, /\.map$/m);
     assert.doesNotMatch(javascript, /stpo-weekend|vrpg-special-gate|qaPresets/);
     assert.doesNotMatch(javascript, /\bfetch\s*\(|new XMLHttpRequest\b|new WebSocket\b|new EventSource\b/);
-    assert.match(javascript, /2026-10-08-mvp-07-approved\.1/);
+    assert.match(javascript, /2026-10-15-mvp-08-approved\.1/);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-dom-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/fluent-ui-MIT.txt'))).size > 0);
@@ -116,10 +116,10 @@ describe('Lokaler statischer Releasebuild für MVP 0.7, ohne P-Bereitstellung', 
       assert.equal(manifest.status, 'candidate');
       assert.equal(manifest.deployable, false);
       assert.ok(javascript.includes(manifest.dataReleaseId));
-      assert.doesNotMatch(javascript, /2026-10-08-mvp-07-approved\.1/);
+      assert.doesNotMatch(javascript, /2026-10-15-mvp-08-approved\.1/);
       const approvedManifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
-      assert.equal(approvedManifest.version, '0.7.0');
-      assert.equal(approvedManifest.dataReleaseId, '2026-10-08-mvp-07-approved.1');
+      assert.equal(approvedManifest.version, '0.8.0');
+      assert.equal(approvedManifest.dataReleaseId, '2026-10-15-mvp-08-approved.1');
     });
   }
 

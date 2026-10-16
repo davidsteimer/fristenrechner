@@ -129,7 +129,7 @@ export interface CalendarData {
 
 export interface ValidatedReleaseArtifactLike {
   readonly descriptor: {
-    readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog' | 'socialProcedureCatalog';
+    readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog' | 'socialProcedureCatalog' | 'administrativeProcedureCatalog';
     readonly contentId: string;
     readonly schemaId?: string;
     readonly sha256?: string;
@@ -147,6 +147,7 @@ export interface ValidatedReleaseLike {
   readonly specialRegimeCatalogIds?: readonly string[];
   readonly holidayCatalogIds?: readonly string[];
   readonly socialProcedureCatalogIds?: readonly string[];
+  readonly administrativeProcedureCatalogIds?: readonly string[];
   readonly artifacts: readonly ValidatedReleaseArtifactLike[];
 }
 

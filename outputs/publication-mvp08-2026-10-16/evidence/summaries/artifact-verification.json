@@ -1,0 +1,200 @@
+{
+  "kind": "mvp08-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp08-2026-10-15/artifact-verification.json",
+  "selectedFields": [
+    "kind",
+    "status",
+    "releaseId",
+    "applicationVersion",
+    "packageVersion",
+    "localDataCommit",
+    "manifestSha256",
+    "authority",
+    "buildProof",
+    "buildAudit",
+    "packageAudit",
+    "artifacts",
+    "installationAuthorized",
+    "publicationAuthorized",
+    "operatingApproval",
+    "remotePinVerified",
+    "realM365TestsPerformed"
+  ],
+  "omittedTopLevelFields": [
+    "mirrorFiles",
+    "webFiles"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp08-local-artifact-sealing",
+    "status": "passed",
+    "releaseId": "2026-10-15-mvp-08-approved.1",
+    "applicationVersion": "0.8.0",
+    "packageVersion": "0.8.0.0",
+    "localDataCommit": "10a99419eaabb3e96d2acccf0c7a93e2fe6472cb",
+    "manifestSha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4",
+    "authority": {
+      "path": "outputs/release-mvp08-2026-10-15/r08b-execution-approval.json",
+      "byteLength": 182469,
+      "sha256": "5efaec306598ee0c9f9ed5ff47c6c3ee3ce21697fc0f089c8abbb4ad4d0e3c66"
+    },
+    "buildProof": {
+      "path": "outputs/release-mvp08-2026-10-15/product-build.json",
+      "byteLength": 444197,
+      "sha256": "1638becba091b1fccc3924ad477476d6bfb8fb0fd5245d115923c6e4ebe98bd6"
+    },
+    "buildAudit": {
+      "status": "passed",
+      "steps": 7,
+      "productInputs": 210,
+      "fixtures": 599,
+      "runtimeFiles": 42,
+      "testCounts": {
+        "source-tests": {
+          "tests": 204,
+          "pass": 204,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "built-tests": {
+          "tests": 107,
+          "pass": 107,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        }
+      }
+    },
+    "packageAudit": {
+      "solutionVersion": "0.8.0.0",
+      "featureVersion": "0.8.0.0",
+      "webpartVersion": "0.8.0",
+      "solutionId": "13090feb-a6bf-40fa-9d3c-ec8d90516a60",
+      "featureId": "3edf1509-41e9-4a2f-8005-df510eec43b6",
+      "webpartId": "596c7f1c-4d3e-4da8-a7be-27a96024f37c",
+      "additionalApiPermissions": [],
+      "defaultGithubBaseUrl": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/10a99419eaabb3e96d2acccf0c7a93e2fe6472cb/data/releases/2026-10-15-mvp-08-approved.1",
+      "bundlePath": "ClientSideAssets/fristenrechner-web-part_fd4b17d5240d07537196.js",
+      "bundleSha256": "e60d4419f23621e41c32b9fe0eecc4021057fa6792fe646fdea701cfc262bd4a",
+      "entries": [
+        {
+          "path": "3edf1509-41e9-4a2f-8005-df510eec43b6/WebPart_596c7f1c-4d3e-4da8-a7be-27a96024f37c.xml",
+          "byteLength": 3546,
+          "sha256": "47e84c1d2e35acd3208857fe179efaea99588a81f69a2e4226c1d0b6f060bb30"
+        },
+        {
+          "path": "AppManifest.xml",
+          "byteLength": 1125,
+          "sha256": "004ba8e2e628db4613d5564a93dc3da3c909ed4d7fe397881cacaf33d0259e20"
+        },
+        {
+          "path": "ClientSideAssets.xml",
+          "byteLength": 312,
+          "sha256": "14fd7c591fe7bef55021a47bd83d44ed78262f3a88d11f979ec1455a15f92240"
+        },
+        {
+          "path": "ClientSideAssets.xml.config.xml",
+          "byteLength": 189,
+          "sha256": "6876940b43646ca7b15f745856f12572b43467d06b9779d1506c2826d2495036"
+        },
+        {
+          "path": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_color.png",
+          "byteLength": 955,
+          "sha256": "a039384a25d219a3b9ec8834cd4f471c2d61a27401a3374c774177282c101e61"
+        },
+        {
+          "path": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_outline.png",
+          "byteLength": 197,
+          "sha256": "c9148d51492dee870752161b17dd272ce10b26766276ea07d82176bad00af649"
+        },
+        {
+          "path": "ClientSideAssets/FristenrechnerWebPartStrings_de-de_2ee9bac8a3d4e2c2ea9299b6969ccbbb.js",
+          "byteLength": 654,
+          "sha256": "260a77a81c5344c36fdf822f66506eb18f0dcae828c87593e58b8567611a740e"
+        },
+        {
+          "path": "ClientSideAssets/FristenrechnerWebPartStrings_en-us_9e448a9afa5ea1af267b7ee268f85d63.js",
+          "byteLength": 640,
+          "sha256": "7fc735b3fbf276a1fe957d7fe920dc11fcd1b0650e11aba55b4b993d9ac43d85"
+        },
+        {
+          "path": "ClientSideAssets/FristenrechnerWebPartStrings_fr-fr_70c468d87117e6f7a8bd265fbc669e1c.js",
+          "byteLength": 691,
+          "sha256": "3ca55e20aadf5126c29ad9a4609f2637b9a950a25b4eee3c3c81cb78ced3157c"
+        },
+        {
+          "path": "ClientSideAssets/fristenrechner-web-part_fd4b17d5240d07537196.js",
+          "byteLength": 1231955,
+          "sha256": "e60d4419f23621e41c32b9fe0eecc4021057fa6792fe646fdea701cfc262bd4a"
+        },
+        {
+          "path": "ClientSideAssets/fristenrechner-web-part_fd4b17d5240d07537196.js.LICENSE.txt",
+          "byteLength": 821,
+          "sha256": "d267720e13a0e64f3c112753bc87a157ef071165ed1bc268803316ed0d231d31"
+        },
+        {
+          "path": "[Content_Types].xml",
+          "byteLength": 1035,
+          "sha256": "ca75c17e110c16fd9f5641eb4feeaedaaaf16baedb8a3bf06517663f7b7cb497"
+        },
+        {
+          "path": "_rels/.rels",
+          "byteLength": 288,
+          "sha256": "6bd2b17457aadb66d210e6bddb93c88d49a6f526d48308f1a84bc6e0e6bddb0a"
+        },
+        {
+          "path": "_rels/AppManifest.xml.rels",
+          "byteLength": 486,
+          "sha256": "4c75854b56909d30185553ae4a52cf419d2a31538c7330a3a65a9ff57496b04c"
+        },
+        {
+          "path": "_rels/ClientSideAssets.xml.rels",
+          "byteLength": 1773,
+          "sha256": "091850f28a71fb69dccad6b6027b9685f6c22e83fa7b27f5af60b65e44ab5d06"
+        },
+        {
+          "path": "_rels/feature_3edf1509-41e9-4a2f-8005-df510eec43b6.xml.rels",
+          "byteLength": 560,
+          "sha256": "0384ee8e1cfd74db5c0c3f66b1366d7d07b7857771884d3e5dca86ddde06cc84"
+        },
+        {
+          "path": "feature_3edf1509-41e9-4a2f-8005-df510eec43b6.xml",
+          "byteLength": 304,
+          "sha256": "d59cd5cca061ade2ec19ac0d35010bd6d7a4f9c68e7dbb8bfe32804074181c75"
+        },
+        {
+          "path": "feature_3edf1509-41e9-4a2f-8005-df510eec43b6.xml.config.xml",
+          "byteLength": 189,
+          "sha256": "b81cc09d3e8547bd1f14aa8abe911f2b0a0cdaad816346d33a46a8d3d3e20154"
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-0.8.0.0.sppkg",
+        "byteLength": 311611,
+        "sha256": "d3d06adcd78176db66f8227d884fd66ca2fbcee0bffab66755789dd0cc29dc1a"
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-sharepoint-mirror.zip",
+        "byteLength": 225952,
+        "sha256": "81359611b5399b1b79c0f9dedb0d5ac540c9192a1382feb67095dadb8e89f8dd"
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-steimer-web.zip",
+        "byteLength": 635927,
+        "sha256": "0abbc23d691835e5b04b64975140afb36c4bfa89482ff872c0c76188673f4176"
+      }
+    ],
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "operatingApproval": false,
+    "remotePinVerified": false,
+    "realM365TestsPerformed": false
+  }
+}

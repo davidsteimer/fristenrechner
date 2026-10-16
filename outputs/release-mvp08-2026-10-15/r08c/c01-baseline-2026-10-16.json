@@ -1,0 +1,163 @@
+{
+  "kind": "r08c-c01-baseline-verification",
+  "schemaVersion": "1.0.0",
+  "checkedAt": "2026-10-16T06:56:38.772Z",
+  "status": "passed",
+  "tool": {
+    "path": "scripts/verify-r08c-baseline.mjs",
+    "byteLength": 18418,
+    "sha256": "e564d542008a37f6af014c7cfb0d2eac02cf76f067b25a7047e7a5f080a61fba"
+  },
+  "proposal": {
+    "path": "outputs/release-mvp08-2026-10-15/r08c/proposal.json",
+    "byteLength": 4431,
+    "sha256": "179bfb3b6319a25f816241f69b78eff801cc98de1717523c890a2fc486ab35bf"
+  },
+  "privateTargetBindingSha256": "b402ad864da468baef7e533db4225df3f553adaf7ddca416f253accb04b7e256",
+  "checks": [
+    {
+      "id": "historical-comparison-evidence",
+      "status": "passed"
+    },
+    {
+      "id": "bound-proposal-documents-artifacts",
+      "status": "passed"
+    },
+    {
+      "id": "git-local-data-commit-and-empty-index",
+      "status": "passed"
+    },
+    {
+      "id": "rendered-configuration-transfer",
+      "status": "passed"
+    },
+    {
+      "id": "configuration-E-SP",
+      "status": "passed"
+    },
+    {
+      "id": "configuration-E-T",
+      "status": "passed"
+    },
+    {
+      "id": "configuration-Q-SP",
+      "status": "passed"
+    },
+    {
+      "id": "configuration-Q-T",
+      "status": "passed"
+    },
+    {
+      "id": "configuration-AP5",
+      "status": "passed"
+    },
+    {
+      "id": "site-app-folders-E-SP",
+      "status": "passed"
+    },
+    {
+      "id": "acl-E-SP-parent",
+      "status": "passed"
+    },
+    {
+      "id": "acl-E-SP-recovery",
+      "status": "passed"
+    },
+    {
+      "id": "site-app-folders-E-T",
+      "status": "passed"
+    },
+    {
+      "id": "acl-E-T-parent",
+      "status": "passed"
+    },
+    {
+      "id": "acl-E-T-recovery",
+      "status": "passed"
+    },
+    {
+      "id": "site-app-folders-Q-SP",
+      "status": "passed"
+    },
+    {
+      "id": "acl-Q-SP-parent",
+      "status": "passed"
+    },
+    {
+      "id": "acl-Q-SP-recovery",
+      "status": "passed"
+    },
+    {
+      "id": "site-app-folders-Q-T",
+      "status": "passed"
+    },
+    {
+      "id": "acl-Q-T-parent",
+      "status": "passed"
+    },
+    {
+      "id": "acl-Q-T-recovery",
+      "status": "passed"
+    },
+    {
+      "id": "acl-catalog-file-permissions.private.json",
+      "status": "passed"
+    },
+    {
+      "id": "acl-assets-permissions.private.json",
+      "status": "passed"
+    },
+    {
+      "id": "catalog-package-and-bundle-raw-bytes",
+      "status": "passed"
+    },
+    {
+      "id": "teams-dom-attributes-and-channel-associations",
+      "status": "passed"
+    },
+    {
+      "id": "item-inheritance-current-projection",
+      "status": "passed"
+    }
+  ],
+  "counts": {
+    "checks": 26,
+    "passed": 26,
+    "failed": 0,
+    "currentTargets": 4,
+    "protectedHistoricalViews": 1,
+    "rawByteFiles": 2,
+    "renderedConfigurationResponses": 5,
+    "comparedPermissionSets": 10,
+    "backupFiles": 44
+  },
+  "privateEvidenceInventorySha256": "2bd84b89e4715c781b49e2113aa1c5329967d1485e4da6fdcbaa3867378897cd",
+  "limits": {
+    "scope": "C01 existing targets and local baseline verification only",
+    "evidenceTypes": {
+      "packageAndMainBundle": "Raw downloaded bytes, SHA-256 compared",
+      "configurations": "Fully decoded property sets from browser-rendered read-only REST XML",
+      "teams": "Rendered DOM attributes and exact channel connector results",
+      "permissionsAndFolders": "Structured connector read responses",
+      "itemInheritanceAndAssetListing": "Rendered REST XML projections"
+    },
+    "aspxRawBackupClaimed": false,
+    "additionalAssetRawBytesClaimed": false,
+    "hostRegressionPassed": false,
+    "c02ManualUpload": "pending",
+    "c03RemoteRawByteComparison": {
+      "status": "pending",
+      "newFiles": 168,
+      "recoveryFiles": 164
+    },
+    "installationPerformed": false,
+    "uploadsPerformedByVerifier": 0,
+    "remoteActionsByVerifier": 0,
+    "commitsCreatedByVerifier": 0,
+    "operatingApproval": false,
+    "aclNormalisation": "Only object and permission-ID ordering and inherited_from null versus empty object. All remaining permission fields retained.",
+    "inheritedAclLimit": "Item inheritance projection is not a full effective site-permission audit.",
+    "futureActionCondition": "C02/C03 and all execution conditions remain required before catalogue change."
+  },
+  "privateReportSha256": "f9e2633a9cb03cb02452a11aeb2a16d0ca77b7b688f1b0a6358d509273f52051"
+}

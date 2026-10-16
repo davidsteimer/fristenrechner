@@ -1,0 +1,301 @@
+{
+  "kind": "ap23d2-ux-addendum-qa",
+  "date": "2026-10-15",
+  "status": "ready-for-ui-acceptance",
+  "accepted": false,
+  "scope": "Local UX addendum. No AP23D3, new legal rules, legal release, SPFx package, deployment or publication.",
+  "coreRulesUnchanged": true,
+  "legalDataUnchanged": true,
+  "twoColumnFormPreserved": true,
+  "protectedRoots": [
+    {
+      "root": "src/core",
+      "count": 33,
+      "sha256": "790ea0395631f9eb09c2eba6a4d7d610e03d2477361b69e3b7318286f2250d93"
+    },
+    {
+      "root": "data/releases",
+      "count": 175,
+      "sha256": "b60c7f3a4a79668c2e2967f6689bf2213758666abc8e042b3477cca2741b6611"
+    },
+    {
+      "root": "schemas",
+      "count": 38,
+      "sha256": "3288c66163b37751191e8f5f1aebc70c44867a78a48d6e870a6860fb6e86a805"
+    },
+    {
+      "root": "outputs/ap23d2-candidate-2026-10-15",
+      "count": 43,
+      "sha256": "2588a09afea3f87a3e4bd64e270d475b0522e6a476a615a223497ff3b8ca07d2"
+    },
+    {
+      "root": "outputs/ap23d2-2026-10-15",
+      "count": 12,
+      "sha256": "d063bdf50948da4e82cf251c982da0f7061455766c475b53a15af7eb9fb49c70"
+    }
+  ],
+  "sourceReleaseApproved": false,
+  "ap23d3Started": false,
+  "releaseBuilt": false,
+  "deployment": false,
+  "published": false,
+  "runs": {
+    "types": {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "passed": true,
+      "outputPath": "outputs/ap23d2-ux-2026-10-15/typecheck.txt",
+      "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate": {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/build-ap23d2-candidate.ts",
+        "--check"
+      ],
+      "passed": true,
+      "outputPath": "outputs/ap23d2-ux-2026-10-15/candidate-reproduction.txt",
+      "outputSha256": "684061163904c04a10eab2626e40000abf5a23ae966d47d4d9139c056586e1b6"
+    },
+    "d2": {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/core/ap23d2-data.test.ts",
+        "tests/ui/ap23d2-administrative.test.tsx",
+        "tests/ui/ap23d2-app.test.tsx",
+        "tests/ui/ap23d2-defaults.test.ts",
+        "tests/ui/ap23d2-reference-policy.test.tsx",
+        "tests/ui/ap23d2-ux-admin.test.tsx",
+        "tests/ui/ap23d2-ux-app.test.tsx",
+        "tests/ui/ap23d2-ux-context.test.tsx",
+        "tests/ui/ap23d2-ux-trace.test.tsx"
+      ],
+      "passed": true,
+      "counts": {
+        "tests": 133,
+        "pass": 133,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "outputPath": "outputs/ap23d2-ux-2026-10-15/d2-tests.txt",
+      "outputSha256": "2a64c570ab959c763b16f4340ac7a37a955916f1cbc24ddcadf9dda14e193c4b"
+    },
+    "legacy": {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/check-ap23d1-legacy-equivalence.mjs"
+      ],
+      "passed": true,
+      "outputPath": "outputs/ap23d2-ux-2026-10-15/legacy-equivalence.txt",
+      "outputSha256": "52edaf9c5e1bd67dda3c3c8bade70f164319120922997da8329c4a58022fe065"
+    },
+    "product": {
+      "command": [
+        "node",
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "passed": true,
+      "counts": {
+        "tests": 2507,
+        "pass": 2507,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "outputPath": "outputs/ap23d2-ux-2026-10-15/product-regression.txt",
+      "outputSha256": "30ec22d1eadf952c7ed683611f1f25871c0d3e835a504823817c46a075bc0f10"
+    }
+  },
+  "tests": [
+    "tests/core/ap23d2-data.test.ts",
+    "tests/ui/ap23d2-administrative.test.tsx",
+    "tests/ui/ap23d2-app.test.tsx",
+    "tests/ui/ap23d2-defaults.test.ts",
+    "tests/ui/ap23d2-reference-policy.test.tsx",
+    "tests/ui/ap23d2-ux-admin.test.tsx",
+    "tests/ui/ap23d2-ux-app.test.tsx",
+    "tests/ui/ap23d2-ux-context.test.tsx",
+    "tests/ui/ap23d2-ux-trace.test.tsx"
+  ],
+  "browser": {
+    "path": "outputs/ap23d2-ux-2026-10-15/browser-evidence.json",
+    "checks": 8,
+    "limitations": [
+      "Lokale Browserprüfung, keine neue SharePoint-/Teams-Installation.",
+      "Keine reale iOS-/Magic-Keyboard-Prüfung.",
+      "UI-Abnahme bleibt bei David Steimer. Kein AP23D3-Start.",
+      "Automatisierte Tests ergänzen die Browserstichproben um die übrigen TI-/GR-Pfade, ZPO-Bundesbehörde, Gebietsfragen, Defaults und AHVG."
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "byteLength": 24553,
+      "sha256": "963310af05488e750b52c37550cda83cc35d6c76dad978a7878494dfd7b864c2"
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "byteLength": 19286,
+      "sha256": "adeef9c9eb8143f71ca9d79a94fcf1fba2d850bb879c57ae093869d53aafe18b"
+    },
+    {
+      "path": "docs/architektur/verwaltungsintegration-ap23d2-ux.md",
+      "byteLength": 5157,
+      "sha256": "3c1df58a81b18d148740219b1d07e7a720254fba6b7b902111a7302916d41984"
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "byteLength": 21463,
+      "sha256": "bdd5409c1e1133175c314d209d491bebc9c1b1eb27f32b4558fe93806ad36620"
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "byteLength": 21993,
+      "sha256": "444d7178a5a5c9e595cfc1f73fc8d9144cd14eef48c01fa0b42391c5ad8538d7"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/browser-evidence.json",
+      "byteLength": 3722,
+      "sha256": "362e972b9c89325a3e3e56e47049cfdc3908ff1efaa02f2aa92476bbfe4e2358"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/gr-de.png",
+      "byteLength": 228085,
+      "sha256": "9c28950b19f188d78575c14e9aaeb0d6e028ae9bbf14d99863ce53d319e3e940"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/gr-fr-390.png",
+      "byteLength": 197395,
+      "sha256": "fb4822115ff7238420888d2dd52f8791a78a33afb4aed5c2ea2d9a2f33863baa"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/stpo-vertretung-de.png",
+      "byteLength": 127587,
+      "sha256": "5a70803f7a4a08c68418049eec277a3a8420797bd896c04d3b6780d5219f071f"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/zpo-de.png",
+      "byteLength": 220768,
+      "sha256": "7bdb958470ed918ee1ffe3e41fe60cdb152f4789f612d134d9c210dadd257264"
+    },
+    {
+      "path": "package.json",
+      "byteLength": 11645,
+      "sha256": "00c339087f6ef753c1cb25ec05b2f98a9c0e677f393dcbd2c313019ab0697d90"
+    },
+    {
+      "path": "scripts/check-ap23d2-ux.mjs",
+      "byteLength": 6337,
+      "sha256": "baf8191cb48203e6fa398beaadb520a9e1b624816c06d405c6b0d34ace6cc86e"
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "byteLength": 104397,
+      "sha256": "d4d0f6512cbb6feed2da861f62cb2f90fada7a2771f0bf8161723a324c92929e"
+    },
+    {
+      "path": "src/ui/administrativeMessages.ts",
+      "byteLength": 14054,
+      "sha256": "192e4d7b29038ddbeba7a6d366cc8945cfcbd3b378be55535b66485c899a26c9"
+    },
+    {
+      "path": "src/ui/administrativeUi.tsx",
+      "byteLength": 25255,
+      "sha256": "d98557f2c7166087afe3a48f800e814c4d213914a70485e99062a6ca005643be"
+    },
+    {
+      "path": "src/ui/calendarContextUi.tsx",
+      "byteLength": 10905,
+      "sha256": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6"
+    },
+    {
+      "path": "src/ui/calendarMessages.ts",
+      "byteLength": 12322,
+      "sha256": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb"
+    },
+    {
+      "path": "src/ui/i18n.ts",
+      "byteLength": 51804,
+      "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "byteLength": 11526,
+      "sha256": "46748955360675c2479b8605c9ca29cf4389b1c2b136f03717dd683bde961342"
+    },
+    {
+      "path": "src/ui/tracePresentation.tsx",
+      "byteLength": 12130,
+      "sha256": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace"
+    },
+    {
+      "path": "tests/core/ap23d2-data.test.ts",
+      "byteLength": 12614,
+      "sha256": "11e700ea79b0e8b130ced9ba4db9748c32feacbd858f0ab56088e383d637705f"
+    },
+    {
+      "path": "tests/ui/ap19c-social.test.ts",
+      "byteLength": 18253,
+      "sha256": "2bd33e971ac27ea5a2ddcc406d30abd5acf2e6217afe719136a54f3bfaf80ca3"
+    },
+    {
+      "path": "tests/ui/ap22c2-ui.test.tsx",
+      "byteLength": 11559,
+      "sha256": "c0ee14b422333f830abc6c0e01ab111a24f1abc9eff4e2783802980c7bd59833"
+    },
+    {
+      "path": "tests/ui/ap23d2-administrative.test.tsx",
+      "byteLength": 13556,
+      "sha256": "b9f98ba107a3cf25f20893c44b8650c0ecb969c9feae313b0a952efd102ea31a"
+    },
+    {
+      "path": "tests/ui/ap23d2-app.test.tsx",
+      "byteLength": 10829,
+      "sha256": "789b9f6094aacea35307517118a197b53356a8ff6d2e3052ee94ef9cc50be6f2"
+    },
+    {
+      "path": "tests/ui/ap23d2-defaults.test.ts",
+      "byteLength": 21356,
+      "sha256": "defdb1aa073b734c3f3da980be56a3905310417a44c8bfe9f925f4c59368ae50"
+    },
+    {
+      "path": "tests/ui/ap23d2-reference-policy.test.tsx",
+      "byteLength": 5310,
+      "sha256": "c4a84f77bfa5a9b62d269f7595bb75f0be3091b644d16c0c63b6fbcb6e1b13ed"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-admin.test.tsx",
+      "byteLength": 12191,
+      "sha256": "59d3b38fba0b2ec37a1da165e4a1172b5d93a87ed73cd1178bcdb99263f2e97d"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-app.test.tsx",
+      "byteLength": 11344,
+      "sha256": "988da748a45c3ed0cda66516491c5ab3f51f21bdc84f7385827b268843b0fa47"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-context.test.tsx",
+      "byteLength": 9421,
+      "sha256": "c1bff426500aa4330dc720746eafcc6b715f484cd7bbc0aca9eef202600bc3fd"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-trace.test.tsx",
+      "byteLength": 12278,
+      "sha256": "447017b255cf41c8f67199c80e6e3ebde55c1b5b55019fb647f6854783b9b4dd"
+    }
+  ]
+}

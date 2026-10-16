@@ -156,6 +156,9 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
   if (majorVersion < 4 && release.holidayCatalogIds !== undefined) {
     throw new CoreDataError('Ein Feiertagskatalog benötigt Manifestformat 4.');
   }
+  if (release.administrativeProcedureCatalogIds !== undefined) {
+    throw new CoreDataError('Ein Kantonalverfahrenskatalog benötigt den qualifizierten Format-8-Einstieg.');
+  }
 
   const profiles = new Map<string, LegalProfile>();
   const calendars = new Map<string, CalendarData>();
@@ -164,7 +167,8 @@ export function createCalculationData(release: ValidatedReleaseLike): Calculatio
   const holidayCatalogs = new Map<string, HolidayCatalog>();
   const socialProcedureCatalogs = new Map<string, SocialProcedureCatalog>();
   release.artifacts.forEach(artifact => {
-    if (!['legalProfile', 'calendar', 'specialRegimeCatalog', 'holidayCatalog', 'socialProcedureCatalog'].includes(artifact.descriptor.role)) {
+    if (artifact.descriptor.role === 'administrativeProcedureCatalog'
+      || !['legalProfile', 'calendar', 'specialRegimeCatalog', 'holidayCatalog', 'socialProcedureCatalog'].includes(artifact.descriptor.role)) {
       throw new CoreDataError(`Unbekannte Artefaktrolle: ${String(artifact.descriptor.role)}`);
     }
     const document = assertDocument(artifact.parsed, artifact.descriptor.role, artifact.descriptor.contentId);

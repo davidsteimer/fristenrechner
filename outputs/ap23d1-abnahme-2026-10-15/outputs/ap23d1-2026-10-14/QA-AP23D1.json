@@ -1,0 +1,208 @@
+{
+  "kind": "ap23d1-implementation-qa",
+  "date": "2026-10-14",
+  "status": "ready-for-technical-acceptance",
+  "accepted": false,
+  "contractDecision": "DEC-2026-032",
+  "contractApproved": true,
+  "productCoreImplemented": true,
+  "hostIntegrated": false,
+  "sourceReleaseApproved": false,
+  "releaseBuilt": false,
+  "published": false,
+  "environment": {
+    "node": "v22.23.2",
+    "scope": "Reader and genuine core tests, no SPFx/Web build or browser tests"
+  },
+  "frozenAP23C": {
+    "reportSha256": "3db2767c9c58a0adbf86828a1e0211ccd18d321b1d44b3e87d515cb4755b1328",
+    "artifacts": 11
+  },
+  "legacyEquivalenceCases": 1584,
+  "runs": {
+    "types": {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "tests": 0,
+      "passed": true,
+      "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "d1": {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/core/ap23d1-arithmetic.test.ts",
+        "tests/core/ap23d1-catalog.test.ts",
+        "tests/core/ap23d1-deadline.test.ts",
+        "tests/core/ap23d1-reader.test.ts"
+      ],
+      "tests": 103,
+      "passed": true,
+      "outputSha256": "d4b67d48512455d054658dcbd67d43cb81f5d7a9000fa4e33e6423395933af5e"
+    },
+    "legacyEquivalence": {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/check-ap23d1-legacy-equivalence.mjs"
+      ],
+      "tests": 0,
+      "passed": true,
+      "outputSha256": "52edaf9c5e1bd67dda3c3c8bade70f164319120922997da8329c4a58022fe065"
+    },
+    "product": {
+      "command": [
+        "node",
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "tests": 2373,
+      "passed": true,
+      "outputSha256": "4868d8491206253bc5d91861ef70f48e120f394604713c34b3e0602e5ff085fe"
+    }
+  },
+  "checks": {
+    "protectedPathsUnchanged": [
+      "data/releases",
+      "src/ui",
+      "src/providers",
+      "src/release",
+      "spfx",
+      "schemas/legal-profile.schema.json",
+      "schemas/release-manifest-v7.schema.json",
+      "schemas/calendar-rules-v3.schema.json",
+      "schemas/holiday-catalog-v2.schema.json"
+    ],
+    "localDocumentLinks": 8,
+    "gitDiffCheckPassed": true,
+    "artifactsStableDuringTests": true
+  },
+  "artifacts": [
+    {
+      "path": "docs/fachrecht/abnahme-ap23c.md",
+      "byteLength": 3364,
+      "sha256": "a23299de66de2de8f56b83aeb8d8eec7487441b4decd9382250bfa3697631cb1"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-032-beschluss.md",
+      "byteLength": 2328,
+      "sha256": "cadb56731bee2f7a988c68f347799e48a2d41911d1a325bdf71639835509e534"
+    },
+    {
+      "path": "docs/architektur/verwaltungsintegration-ap23d1.md",
+      "byteLength": 8015,
+      "sha256": "38ffcb77d114fb826d6a8eeb8c15e3a66d7b4e7dfc86d9c79f8a6103a83565f3"
+    },
+    {
+      "path": "README.md",
+      "byteLength": 23829,
+      "sha256": "7b540916cdf5b8e14c7e59e0397b7b3438ed984f2a277858e262dd5ec9b17ca5"
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "byteLength": 18494,
+      "sha256": "5a7a851261ece232d6c366e3adbdc033c21912028a915eeb55479e31e6d179a9"
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "byteLength": 21521,
+      "sha256": "5df6ed5d5660346e760a9536f6a01d8e483142ce1b6e352c2bd307d6d433c11d"
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "byteLength": 20686,
+      "sha256": "c736bcdd2c48fb2f04d4f8cb0d626d14e2bf13983fe6f4c617a2de23a59b9542"
+    },
+    {
+      "path": "package.json",
+      "byteLength": 11429,
+      "sha256": "44db8472d774dedee755427baa32ba8856431f94e8b26cb2e1d2af7d0697b649"
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "byteLength": 24484,
+      "sha256": "18da5d81c99c819731cd58b13cd4561e3c7076d27bd66652498f256a99766feb"
+    },
+    {
+      "path": "src/core/dayDeadlineArithmetic.ts",
+      "byteLength": 6233,
+      "sha256": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895"
+    },
+    {
+      "path": "src/core/administrativeTypes.ts",
+      "byteLength": 7838,
+      "sha256": "a2e139a81c80adf596721ff782c3d9e3eb4dd8ddbfb7a53e2e12ec994602d32e"
+    },
+    {
+      "path": "src/core/administrativeCatalog.ts",
+      "byteLength": 12739,
+      "sha256": "2c541eb938fd6eab6c977cabfc643759afc800fa1ec97aa72c89b4b610b10a2d"
+    },
+    {
+      "path": "src/core/administrativeDeadline.ts",
+      "byteLength": 13104,
+      "sha256": "7efe14d05b090fbe87f5b2136ea778afc51158047b7204fcd8930e8606e872e9"
+    },
+    {
+      "path": "src/core/releaseFormat8.ts",
+      "byteLength": 19922,
+      "sha256": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6"
+    },
+    {
+      "path": "scripts/check-ap23d1.mjs",
+      "byteLength": 6047,
+      "sha256": "0f78de8b8a8afc146b8f053cff43cb92af255686aaee64734e3372db82451dd8"
+    },
+    {
+      "path": "scripts/check-ap23d1-legacy-equivalence.mjs",
+      "byteLength": 2620,
+      "sha256": "c3819f6db4b6043352a41fe0825ba98b5f6a6dd95a39bef0deef0fe9458c8471"
+    },
+    {
+      "path": "tests/core/ap23d1Fixtures.ts",
+      "byteLength": 8615,
+      "sha256": "6a38a3e6934ec1d0d422c17972e8ebd92b4b4dd0abd12494440b78939b31801b"
+    },
+    {
+      "path": "tests/core/ap23d1-arithmetic.test.ts",
+      "byteLength": 5399,
+      "sha256": "4675dea7b6df6e49dfd0c44697b2ad3ed7256dc7a1823792f91fb4acd619e88e"
+    },
+    {
+      "path": "tests/core/ap23d1-catalog.test.ts",
+      "byteLength": 17251,
+      "sha256": "d1c168badd72ecae71c2a7d20291b6b4cc5bec5a4ce82d1602c5ffff2b0e6058"
+    },
+    {
+      "path": "tests/core/ap23d1-deadline.test.ts",
+      "byteLength": 14712,
+      "sha256": "a9d89ac2600057d05c20e6367497322feb754aadafb9d8cd574d11d6829a60d0"
+    },
+    {
+      "path": "tests/core/ap23d1-reader.test.ts",
+      "byteLength": 13224,
+      "sha256": "4306c0f30d1da5d1714035219e0cbf8971eb2ebe867654f22ee9d6120e8a7005"
+    },
+    {
+      "path": "schemas/implementation/ap23d1/administrative-procedure-catalog.schema.json",
+      "byteLength": 40051,
+      "sha256": "c89cf5739b1ec4ca238f15b2d1b0a696e7b3b6c81824b0b4075fdeb43a2f7010"
+    },
+    {
+      "path": "schemas/implementation/ap23d1/local-reference-manifest-v8.schema.json",
+      "byteLength": 13722,
+      "sha256": "174f7731e14f435e57a3138d30c4ce0e68f18d7f341c6f59fef779557fc61d59"
+    },
+    {
+      "path": "schemas/implementation/ap23d1/release-manifest-v8.schema.json",
+      "byteLength": 13703,
+      "sha256": "65a8f8e63a013209b57d8802a4c1dc34760c861b8a5cd78b8fb0264aca13fd8a"
+    }
+  ]
+}

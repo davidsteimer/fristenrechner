@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-15",
+  "status": "passed",
+  "scope": "local-built-web",
+  "url": "http://127.0.0.1:8803/fristenrechner/",
+  "build": ".work/public-ap23d3",
+  "mainAsset": "assets/app-BSRXPI37.js",
+  "dataReleaseId": "2026-10-15-ap23d2-reference.1",
+  "method": "Actual minified browser build, visible DOM and screenshots through Codex in-app browser. Reloaded after final UI build.",
+  "checks": [
+    {"id": "B01", "passed": true, "observation": "Initial date is empty and editable before selecting canton or law. No restored factual date."},
+    {"id": "B02", "passed": true, "observation": "TI ordinary administrative complaint, receipt 02.10.2026, yields reference result 02.11.2026. Known seat-derived holiday binding, no redundant holiday-canton question."},
+    {"id": "B03", "passed": true, "observation": "Visible trace has readable steps and links to LPAmm TI Art. 13, 16, 68, 80 and holiday law Art. 1. Technical detail remains collapsed."},
+    {"id": "B04", "passed": true, "observation": "TI receipt 17.02.2027 remains blocked as TI-O2, diagnostic 19.03.2027 only, no definitive result or export."},
+    {"id": "B05", "passed": true, "observation": "Changing TI administrative law to ZPO immediately removes the previous result."},
+    {"id": "B06", "passed": true, "observation": "ZPO TI ordinary procedure, receipt 07.12.2026, 1 day, yields 09.12.2026. Footer retains the same actual Format-8 candidate. No MVP07 fallback or export button."},
+    {"id": "B07", "passed": true, "observation": "French ZPO result remains 09.12.2026 with translated inputs, trace heading and explicit local-reference boundary."},
+    {"id": "B08", "passed": true, "observation": "Desktop preserves two-column inputs and four actions on two rows. At 390px the existing single-column responsive layout has document width and scroll width 390px, zero calendar-export buttons. Viewport override reset."},
+    {"id": "B09", "passed": true, "observation": "No captured browser warnings/errors. Delivered tab restored to German TI reference example without saving defaults."}
+  ],
+  "limitations": [
+    "Local in-app browser only. No actual SharePoint or Teams installation.",
+    "Narrow viewport is not a real iOS/Magic Keyboard, guest or device acceptance test.",
+    "No calendar file download or Outlook import. All local-reference exports are intentionally blocked.",
+    "No source release approval, production deployment or GitHub publication."
+  ],
+  "artifacts": [
+    {"path":"outputs/ap23d3-2026-10-15/web-ti-desktop.png","byteLength":175893,"sha256":"91d58025dd74515cf564eeb17e5cf0b679657ca5d7870d73e57211c713f60dd9"},
+    {"path":"outputs/ap23d3-2026-10-15/web-ti-blocked.png","byteLength":224181,"sha256":"22a1dd6a9bffbaa40925acc20b966ecd1b5c8dca6e5a5228934da01fac07a9b0"},
+    {"path":"outputs/ap23d3-2026-10-15/web-zpo-shared-release.png","byteLength":182194,"sha256":"aa2e581524a4c1fa87524695f4b460e28e8f375bc92c6cd437328becdd034df0"},
+    {"path":"outputs/ap23d3-2026-10-15/web-fr-narrow.png","byteLength":149266,"sha256":"937f2361c82eb6b8b3d2d870415f54c3a763e0a979c39b4b884daa30481f81c5"}
+  ]
+}

@@ -1,0 +1,144 @@
+TAP version 13
+# Subtest: Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung
+    # Subtest: baut getrennt vom Standardrelease und kennzeichnet den Build als nicht bereitstellbar
+    ok 1 - baut getrennt vom Standardrelease und kennzeichnet den Build als nicht bereitstellbar
+      ---
+      duration_ms: 8.804458
+      type: 'test'
+      ...
+    # Subtest: enthält nur lokale Laufzeitassets und keine QA-Vorgaben oder synthetischen Freigaben
+    ok 2 - enthält nur lokale Laufzeitassets und keine QA-Vorgaben oder synthetischen Freigaben
+      ---
+      duration_ms: 19.217625
+      type: 'test'
+      ...
+    # Subtest: belässt alle 28 eingebetteten Sozialpfade im Kandidatenstatus ohne berechnetes Enddatum
+    ok 3 - belässt alle 28 eingebetteten Sozialpfade im Kandidatenstatus ohne berechnetes Enddatum
+      ---
+      duration_ms: 417.827208
+      type: 'test'
+      ...
+    # Subtest: bleibt vom inzwischen freigegebenen lokalen MVP-0.7-Einstieg und seinem Commit-Pin getrennt
+    ok 4 - bleibt vom inzwischen freigegebenen lokalen MVP-0.7-Einstieg und seinem Commit-Pin getrennt
+      ---
+      duration_ms: 2.172042
+      type: 'test'
+      ...
+    # Subtest: weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück
+    ok 5 - weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück
+      ---
+      duration_ms: 71.349583
+      type: 'test'
+      ...
+    1..5
+ok 1 - Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung
+  ---
+  duration_ms: 697.501791
+  type: 'suite'
+  ...
+# Subtest: AP21 is a separate non-deployable UI build on the unchanged accepted C3 reference bundle
+ok 2 - AP21 is a separate non-deployable UI build on the unchanged accepted C3 reference bundle
+  ---
+  duration_ms: 248.019292
+  type: 'test'
+  ...
+# Subtest: historical AP21 candidate remains separate from the approved local MVP07 entry and package
+ok 3 - historical AP21 candidate remains separate from the approved local MVP07 entry and package
+  ---
+  duration_ms: 2.405083
+  type: 'test'
+  ...
+# Subtest: C3 builds as a separate non-deployable static reference bundle with 32-calendar runtime
+ok 4 - C3 builds as a separate non-deployable static reference bundle with 32-calendar runtime
+  ---
+  duration_ms: 242.086584
+  type: 'test'
+  ...
+# Subtest: historical C3 candidate stays separate from the approved local MVP07 entry, pin and package
+ok 5 - historical C3 candidate stays separate from the approved local MVP07 entry, pin and package
+  ---
+  duration_ms: 3.420834
+  type: 'test'
+  ...
+# Subtest: AP23D3 builds separately with the unchanged accepted Format-8 source and no deployment claim
+ok 6 - AP23D3 builds separately with the unchanged accepted Format-8 source and no deployment claim
+  ---
+  duration_ms: 218.418042
+  type: 'test'
+  ...
+# Subtest: AP23D3 actual minified browser bundle calculates the legacy StPO branch from the same Format-8 release without export
+ok 7 - AP23D3 actual minified browser bundle calculates the legacy StPO branch from the same Format-8 release without export
+  ---
+  duration_ms: 6231.735875
+  type: 'test'
+  ...
+# Subtest: AP23D3 actual minified browser bundle calculates TI and preserves the TI12 block without export
+ok 8 - AP23D3 actual minified browser bundle calculates TI and preserves the TI12 block without export
+  ---
+  duration_ms: 5356.039791
+  type: 'test'
+  ...
+# Subtest: AP23D3 keeps approved entries, default pin and existing package version untouched
+ok 9 - AP23D3 keeps approved entries, default pin and existing package version untouched
+  ---
+  duration_ms: 1.161166
+  type: 'test'
+  ...
+# Subtest: Lokaler statischer Releasebuild für MVP 0.7, ohne P-Bereitstellung
+    # Subtest: erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest
+    ok 1 - erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest
+      ---
+      duration_ms: 205.34325
+      type: 'test'
+      ...
+    # Subtest: enthält keine Quellkarten, QA-Presets oder externen Laufzeitprovider
+    ok 2 - enthält keine Quellkarten, QA-Presets oder externen Laufzeitprovider
+      ---
+      duration_ms: 203.353209
+      type: 'test'
+      ...
+    # Subtest: führt kanonische Metadaten, private Anbieterabgrenzung und lokale Assets
+    ok 3 - führt kanonische Metadaten, private Anbieterabgrenzung und lokale Assets
+      ---
+      duration_ms: 190.533458
+      type: 'test'
+      ...
+    # Subtest: liefert die vorbereiteten Sicherheits- und Cacheregeln aus
+    ok 4 - liefert die vorbereiteten Sicherheits- und Cacheregeln aus
+      ---
+      duration_ms: 163.742917
+      type: 'test'
+      ...
+    # Subtest: hält den historischen ap17c-Prüfkandidaten vom normalen Releasebuild getrennt
+    ok 5 - hält den historischen ap17c-Prüfkandidaten vom normalen Releasebuild getrennt
+      ---
+      duration_ms: 130.617375
+      type: 'test'
+      ...
+    # Subtest: hält den historischen ap18c-Prüfkandidaten vom normalen Releasebuild getrennt
+    ok 6 - hält den historischen ap18c-Prüfkandidaten vom normalen Releasebuild getrennt
+      ---
+      duration_ms: 158.875875
+      type: 'test'
+      ...
+    # Subtest: weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen
+    ok 7 - weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen
+      ---
+      duration_ms: 79.125459
+      type: 'test'
+      ...
+    1..7
+ok 10 - Lokaler statischer Releasebuild für MVP 0.7, ohne P-Bereitstellung
+  ---
+  duration_ms: 1132.747833
+  type: 'suite'
+  ...
+1..10
+# tests 20
+# suites 2
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12538.750709

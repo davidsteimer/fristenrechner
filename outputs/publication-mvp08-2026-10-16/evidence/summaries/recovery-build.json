@@ -1,0 +1,255 @@
+{
+  "kind": "mvp08-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/artifact-verification.json",
+  "selectedFields": [
+    "kind",
+    "startedAt",
+    "finishedAt",
+    "packageVersion",
+    "applicationVersion",
+    "functionalBaseline",
+    "authority",
+    "installationAuthorized",
+    "deploymentPerformed",
+    "publicationAuthorized",
+    "liveHostVerified",
+    "browserResetAuthorized",
+    "roundTripMvp08Pending",
+    "steps",
+    "limitations",
+    "priorFailedAttempt",
+    "packageAudit",
+    "packageSha256",
+    "packageByteLength",
+    "passed"
+  ],
+  "omittedTopLevelFields": [
+    "stage",
+    "basis",
+    "inputDerivation",
+    "implementation",
+    "protectedFiles",
+    "archivedFiles"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp08LocalRecoveryBuild",
+    "startedAt": "2026-10-15T18:53:45.381Z",
+    "finishedAt": "2026-10-15T18:57:47.002Z",
+    "packageVersion": "0.8.0.1",
+    "applicationVersion": "0.7.0",
+    "functionalBaseline": "MVP 0.7",
+    "authority": {
+      "path": "outputs/release-mvp08-2026-10-15/r08b-execution-approval.json",
+      "sha256": "5efaec306598ee0c9f9ed5ff47c6c3ee3ce21697fc0f089c8abbb4ad4d0e3c66"
+    },
+    "installationAuthorized": false,
+    "deploymentPerformed": false,
+    "publicationAuthorized": false,
+    "liveHostVerified": false,
+    "browserResetAuthorized": false,
+    "roundTripMvp08Pending": true,
+    "steps": [
+      {
+        "id": "sync",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/lib/node_modules/npm/bin/npm-cli.js",
+          "run",
+          "sync"
+        ],
+        "cwd": ".work/mvp08-recovery-fUnEpG/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/sync.log",
+        "sha256": "5daaaf376e44ca608965ae073818f8319a75b3fb00fd502a2fe5c55a54553c25",
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/sync.log"
+      },
+      {
+        "id": "source-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--import",
+          "tsx",
+          "--test",
+          "--test-concurrency=2",
+          "--test-timeout=60000",
+          "test/ap20c1-loader.test.ts",
+          "test/ap20c2-loader.test.ts",
+          "test/ap20c3-loader.test.ts",
+          "test/ap22c3-cache.test.ts",
+          "test/ap22c3-format7.test.ts",
+          "test/avig-release-contract.test.ts",
+          "test/holiday-release-contract.test.ts",
+          "test/kvg-release-contract.test.ts",
+          "test/mvp05-release-contract.test.ts",
+          "test/mvp06-release-contract.test.ts",
+          "test/product-integration.test.ts",
+          "test/qualified-release-contract.test.ts",
+          "test/release-service.test.ts",
+          "test/social-release-contract.test.ts"
+        ],
+        "cwd": ".work/mvp08-recovery-fUnEpG/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/source-tests.log",
+        "sha256": "daf8daa94c88fb110995d8f1442c7ce0addd4b5b427e5403e490033b1ea04d00",
+        "tests": 186,
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/source-tests.log"
+      },
+      {
+        "id": "compile",
+        "command": "<REPO_ROOT>/.work/mvp08-recovery-fUnEpG/spfx/node_modules/.bin/heft",
+        "args": [
+          "test",
+          "--clean",
+          "--production"
+        ],
+        "cwd": ".work/mvp08-recovery-fUnEpG/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/compile.log",
+        "sha256": "8b7b30b1eb6240f38f71424492e161a0ada3f1a757af87369880df896aec9030",
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/compile.log"
+      },
+      {
+        "id": "css-audit",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "scripts/audit-product-css.mjs"
+        ],
+        "cwd": ".work/mvp08-recovery-fUnEpG/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/css-audit.log",
+        "sha256": "4bab332ce799b00cc75620b404fe5e2116c36bc296c66d6eeed325f23727112f",
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/css-audit.log"
+      },
+      {
+        "id": "package",
+        "command": "<REPO_ROOT>/.work/mvp08-recovery-fUnEpG/spfx/node_modules/.bin/heft",
+        "args": [
+          "package-solution",
+          "--production"
+        ],
+        "cwd": ".work/mvp08-recovery-fUnEpG/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/package.log",
+        "sha256": "b585f00c552776c0ef8493f955a057546479e19f6e62cb0d39ea378eb4f61e41",
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/package.log"
+      },
+      {
+        "id": "built-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=2",
+          "--test-timeout=60000",
+          "test-build/ap20c1.test.cjs",
+          "test-build/ap20c2.test.cjs",
+          "test-build/ap20c3.test.cjs",
+          "test-build/ap21.test.cjs",
+          "test-build/ap22c3.test.cjs",
+          "test-build/avig-consumer.test.cjs",
+          "test-build/consumer-regression.test.cjs",
+          "test-build/kvg-consumer.test.cjs",
+          "test-build/mvp05-consumer.test.cjs",
+          "test-build/mvp06-consumer.test.cjs",
+          "test-build/mvp07-consumer.test.cjs",
+          "test-build/social-consumer.test.cjs"
+        ],
+        "cwd": ".work/mvp08-recovery-fUnEpG/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/built-tests.log",
+        "sha256": "c168be64f0d61853d2bbc2982e2d1be03e57f566ba54edaa716419d7021d3a23",
+        "tests": 83,
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/built-tests.log"
+      },
+      {
+        "id": "recovery-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=1",
+          "--test-timeout=60000",
+          "recovery-mvp08/recovery-package.test.cjs",
+          "recovery-mvp08/recovery-defaults.test.cjs",
+          "recovery-mvp08/recovery-cache.test.cjs",
+          "recovery-mvp08/recovery-equivalence.test.cjs"
+        ],
+        "cwd": "spfx",
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-fUnEpG/recovery-tests.log",
+        "sha256": "37a8864092d01247b81444cc357b948d41e7e5e7bd8f0654282ec291916a6718",
+        "tests": 9,
+        "archivedLog": "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1/logs/recovery-tests.log"
+      }
+    ],
+    "limitations": [
+      "Actual AMD package tests use synthetic browser and transport, not real SharePoint, Teams, device or guest checks.",
+      "The completed MVP08 to Recovery to MVP08 test must additionally bind the definitive MVP08 package. This report does not assert that future package test."
+    ],
+    "priorFailedAttempt": {
+      "path": ".work/mvp08-recovery-XniRNu/verification.json",
+      "sha256": "c5c0914d6654a11b608c8fb70d845b7886a4634079e6a5b41706335de98273b5",
+      "reason": "Nine recovery checks exceeded the per-file 60-second bound. The same checks are now grouped into four independently bounded test files. No timeout increase and no product change.",
+      "sourceTestsPassed": 186,
+      "builtTestsPassed": 83,
+      "recoveryChecksPassedBeforeTimeout": 8,
+      "changedProductRules": false
+    },
+    "packageAudit": {
+      "packageVersion": "0.8.0.1",
+      "componentVersion": "0.7.0",
+      "functionalBaseline": "MVP 0.7",
+      "solutionId": "13090feb-a6bf-40fa-9d3c-ec8d90516a60",
+      "featureId": "3edf1509-41e9-4a2f-8005-df510eec43b6",
+      "webPartId": "596c7f1c-4d3e-4da8-a7be-27a96024f37c",
+      "additionalApiPermissions": [],
+      "defaultGithubBaseUrl": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/331ef3e19d43a6b51d91a502acd6b5443071599f/data/releases/2026-10-08-mvp-07-approved.1",
+      "normalizedBundleByteIdentical": true,
+      "scopedCssMappings": [
+        {
+          "field": "host",
+          "before": "host_e0b1757c",
+          "after": "host_26e55941",
+          "count": 2
+        },
+        {
+          "field": "startup",
+          "before": "startup_e0b1757c",
+          "after": "startup_26e55941",
+          "count": 5
+        },
+        {
+          "field": "badge",
+          "before": "badge_e0b1757c",
+          "after": "badge_26e55941",
+          "count": 2
+        },
+        {
+          "field": "runtimeMessage",
+          "before": "runtimeMessage_e0b1757c",
+          "after": "runtimeMessage_26e55941",
+          "count": 3
+        },
+        {
+          "field": "runtimeStatus",
+          "before": "runtimeStatus_e0b1757c",
+          "after": "runtimeStatus_26e55941",
+          "count": 5
+        }
+      ],
+      "normalization": [
+        "solution and feature versions only",
+        "bundle/own-license filenames",
+        "five host SCSS class suffixes with equal occurrence counts",
+        "two generated AppPartConfig UUIDs",
+        "generated ClientSideAssets feature UUID"
+      ],
+      "bundlePath": "ClientSideAssets/fristenrechner-web-part_718adb6034de97f22e08.js",
+      "bundleSha256": "920e7215704142b7d0822c91b1f0ddc6b2a0b2c7a114f3804fea4d79044b0f16"
+    },
+    "packageSha256": "8e387297d43df28e2fe4d3c7c9ae239bb2cdc6a9e3216e4c59c928c50d950e7b",
+    "packageByteLength": 291892,
+    "passed": true
+  }
+}

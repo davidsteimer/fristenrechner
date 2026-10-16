@@ -35,13 +35,16 @@ for (const schemaName of schemaNames) {
   await writeFile(resolve(productSchemaDirectory, schemaName), source);
 }
 
-// Format 7 core imports keep their repository-relative schema paths. These
+// Format 7/8 core imports keep their repository-relative schema paths. These
 // copies are build inputs only, not changes to the frozen C1 contracts.
 const implementationSchemas = [
   'ap22c1/release-manifest-v7.schema.json',
   'ap22c1/calendar-rules-v3.schema.json',
   'ap22c1/holiday-catalog-v2.schema.json',
-  'ap22c3/local-reference-manifest-v7.schema.json'
+  'ap22c3/local-reference-manifest-v7.schema.json',
+  'ap23d1/release-manifest-v8.schema.json',
+  'ap23d1/local-reference-manifest-v8.schema.json',
+  'ap23d1/administrative-procedure-catalog.schema.json'
 ];
 for (const name of implementationSchemas) {
   const target = resolve(productSchemaDirectory, 'implementation', name);
@@ -49,6 +52,9 @@ for (const name of implementationSchemas) {
   await writeFile(target, await readFile(resolve(repositoryRoot, 'schemas/implementation', name)));
   if (name === 'ap22c1/release-manifest-v7.schema.json') {
     await writeFile(resolve(targetDirectory, 'release-manifest-v7.schema.json'), await readFile(target));
+  }
+  if (name === 'ap23d1/release-manifest-v8.schema.json') {
+    await writeFile(resolve(targetDirectory, 'release-manifest-v8.schema.json'), await readFile(target));
   }
 }
 

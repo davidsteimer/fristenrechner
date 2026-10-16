@@ -1,0 +1,569 @@
+{
+  "workPackage": "AP23D3",
+  "status": "passed",
+  "localOnly": true,
+  "deployable": false,
+  "purpose": "Isolated SPFx integration build and actual SPPKG tests. No release or installation authority.",
+  "compiler": {
+    "configuration": {
+      "path": "spfx/tsconfig.json",
+      "byteLength": 289,
+      "sha256": "8e244b71409da3c87f0d6e84ff075712b583fa31604ec4b7e3300c94e3a5408f"
+    },
+    "target": "es2015",
+    "reason": "TypeScript lowers native private fields to private WeakMaps without removing the accepted runtime capability boundary. Existing Map/WeakMap/Promise runtime requirements remain."
+  },
+  "stage": ".work/ap23d3-spfx-build-4ImiJ9",
+  "operatingPackagePreserved": true,
+  "protectedBefore": [
+    {
+      "path": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 202616,
+      "sha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346"
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "byteLength": 1334,
+      "sha256": "b7fd869e319578692714610006345b51420301136fe1d253463799cb410e3fa4"
+    },
+    {
+      "path": "spfx/package.json",
+      "byteLength": 2238,
+      "sha256": "a97c8ab10fa63e0a33370862c747f8dc361a551108989f777ac66545378077e7"
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "byteLength": 233,
+      "sha256": "f2d180e88fb216c4172f841d13fd82f7ad4934bed355893e298000fc281b4ab8"
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "byteLength": 750,
+      "sha256": "bc3979c4c946aa33444ca8cae63df47e29acbba3c2551913c47340325fc13fbf"
+    },
+    {
+      "path": "src/release/mvp07ReleaseData.ts",
+      "byteLength": 2622882,
+      "sha256": "61b66959bde680186612bcf35ea1d455044ceae6001abfdd56971d0a6e47c88b"
+    },
+    {
+      "path": "outputs/ap23d2-candidate-2026-10-15/bundle/manifest.json",
+      "byteLength": 23881,
+      "sha256": "ccb67c22e55737af064f8c9ef7b122db8c5dfe1f4a1f142eb77cd05fd5ac646d"
+    }
+  ],
+  "protectedAfter": [
+    {
+      "path": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 202616,
+      "sha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346"
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "byteLength": 1334,
+      "sha256": "b7fd869e319578692714610006345b51420301136fe1d253463799cb410e3fa4"
+    },
+    {
+      "path": "spfx/package.json",
+      "byteLength": 2238,
+      "sha256": "a97c8ab10fa63e0a33370862c747f8dc361a551108989f777ac66545378077e7"
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "byteLength": 233,
+      "sha256": "f2d180e88fb216c4172f841d13fd82f7ad4934bed355893e298000fc281b4ab8"
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "byteLength": 750,
+      "sha256": "bc3979c4c946aa33444ca8cae63df47e29acbba3c2551913c47340325fc13fbf"
+    },
+    {
+      "path": "src/release/mvp07ReleaseData.ts",
+      "byteLength": 2622882,
+      "sha256": "61b66959bde680186612bcf35ea1d455044ceae6001abfdd56971d0a6e47c88b"
+    },
+    {
+      "path": "outputs/ap23d2-candidate-2026-10-15/bundle/manifest.json",
+      "byteLength": 23881,
+      "sha256": "ccb67c22e55737af064f8c9ef7b122db8c5dfe1f4a1f142eb77cd05fd5ac646d"
+    }
+  ],
+  "steps": [
+    {
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-1.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+      "args": [
+        "test",
+        "--clean",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-2.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "scripts/audit-product-css.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-3.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+      "args": [
+        "package-solution",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-4.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test-build/ap20c1.test.cjs",
+        "test-build/ap20c2.test.cjs",
+        "test-build/ap20c3.test.cjs",
+        "test-build/ap21.test.cjs",
+        "test-build/ap22c3.test.cjs",
+        "test-build/ap23d3.test.cjs",
+        "test-build/avig-consumer.test.cjs",
+        "test-build/consumer-regression.test.cjs",
+        "test-build/kvg-consumer.test.cjs",
+        "test-build/mvp05-consumer.test.cjs",
+        "test-build/mvp06-consumer.test.cjs",
+        "test-build/mvp07-consumer.test.cjs",
+        "test-build/social-consumer.test.cjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-5-retry-unmodified.log",
+      "counts": {
+        "tests": 89,
+        "pass": 89,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "testPackage": {
+    "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+    "byteLength": 311614,
+    "sha256": "323402547a31caa06257a1fda2864d566932f99a29345ea9b2784195f91d02d8"
+  },
+  "initialAttempt": {
+    "path": ".work/ap23d3-spfx-build-4ImiJ9/verification.json",
+    "sha256": "647d60478d033cc27b9b30ec948cf7903b76e685eae8b1fde6287fd78d0cea93",
+    "status": "failed",
+    "reason": "The complete suite exceeded one file timeout while the independent root regression ran in parallel. No failed assertion was reported.",
+    "steps": [
+      {
+        "command": "npm",
+        "args": [
+          "test"
+        ],
+        "exitCode": 0,
+        "log": ".work/ap23d3-spfx-build-4ImiJ9/step-1.log"
+      },
+      {
+        "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+        "args": [
+          "test",
+          "--clean",
+          "--production"
+        ],
+        "exitCode": 0,
+        "log": ".work/ap23d3-spfx-build-4ImiJ9/step-2.log"
+      },
+      {
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "scripts/audit-product-css.mjs"
+        ],
+        "exitCode": 0,
+        "log": ".work/ap23d3-spfx-build-4ImiJ9/step-3.log"
+      },
+      {
+        "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+        "args": [
+          "package-solution",
+          "--production"
+        ],
+        "exitCode": 0,
+        "log": ".work/ap23d3-spfx-build-4ImiJ9/step-4.log"
+      },
+      {
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=2",
+          "--test-timeout=60000",
+          "test-build/ap20c1.test.cjs",
+          "test-build/ap20c2.test.cjs",
+          "test-build/ap20c3.test.cjs",
+          "test-build/ap21.test.cjs",
+          "test-build/ap22c3.test.cjs",
+          "test-build/ap23d3.test.cjs",
+          "test-build/avig-consumer.test.cjs",
+          "test-build/consumer-regression.test.cjs",
+          "test-build/kvg-consumer.test.cjs",
+          "test-build/mvp05-consumer.test.cjs",
+          "test-build/mvp06-consumer.test.cjs",
+          "test-build/mvp07-consumer.test.cjs",
+          "test-build/social-consumer.test.cjs"
+        ],
+        "exitCode": 1,
+        "log": ".work/ap23d3-spfx-build-4ImiJ9/step-5.log"
+      }
+    ],
+    "logArtifact": {
+      "path": ".work/ap23d3-spfx-build-4ImiJ9/step-5.log",
+      "byteLength": 29164,
+      "sha256": "d4eb23d19cb996402a9ce19e01c174947f4bf4d322d012af918202a515785687"
+    },
+    "originalLog": {
+      "path": ".work/ap23d3-spfx-build-4ImiJ9/step-5.log",
+      "byteLength": 29164,
+      "sha256": "d4eb23d19cb996402a9ce19e01c174947f4bf4d322d012af918202a515785687"
+    }
+  },
+  "retry": {
+    "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+    "args": [
+      "--test",
+      "--test-concurrency=2",
+      "--test-timeout=60000",
+      "test-build/ap20c1.test.cjs",
+      "test-build/ap20c2.test.cjs",
+      "test-build/ap20c3.test.cjs",
+      "test-build/ap21.test.cjs",
+      "test-build/ap22c3.test.cjs",
+      "test-build/ap23d3.test.cjs",
+      "test-build/avig-consumer.test.cjs",
+      "test-build/consumer-regression.test.cjs",
+      "test-build/kvg-consumer.test.cjs",
+      "test-build/mvp05-consumer.test.cjs",
+      "test-build/mvp06-consumer.test.cjs",
+      "test-build/mvp07-consumer.test.cjs",
+      "test-build/social-consumer.test.cjs"
+    ],
+    "exitCode": 0,
+    "log": ".work/ap23d3-spfx-build-4ImiJ9/step-5-retry-unmodified.log",
+    "counts": {
+      "tests": 89,
+      "pass": 89,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "mode": "identicalBuiltSuiteWithoutParallelRootRegression",
+    "packageBefore": {
+      "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 311614,
+      "sha256": "323402547a31caa06257a1fda2864d566932f99a29345ea9b2784195f91d02d8"
+    },
+    "packageAfter": {
+      "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 311614,
+      "sha256": "323402547a31caa06257a1fda2864d566932f99a29345ea9b2784195f91d02d8"
+    },
+    "testsBefore": [
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap20c1.test.cjs",
+        "byteLength": 8004,
+        "sha256": "aced32a41840a18f4945658f33a4c594ac5df13cb1ffce68785d94ebb377a441"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap20c2.test.cjs",
+        "byteLength": 11345,
+        "sha256": "1d74e19717461d4fe5e2218db56a7b8c3f44ec2de1dbfec846dfcd9966f51a80"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap20c3.test.cjs",
+        "byteLength": 15102,
+        "sha256": "d6041f8da49ff2bfa832c9cd5e0d8275641e53040f5e2b8dcc98b6ba17b528af"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap21.test.cjs",
+        "byteLength": 9342,
+        "sha256": "9e511f41cb86b4386c74cf8f8404ca7ec189e676178c288b5dd422cf5e3c0238"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap22c3.test.cjs",
+        "byteLength": 7697,
+        "sha256": "783aa9437db0c357858513dfda9cd7ce70a10f44a12dc1bdb5c67693b72b0038"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap23d3.test.cjs",
+        "byteLength": 12658,
+        "sha256": "5eddf157a83a07e657fc88b3a967479a2eb384f7d7a92407835eac8c43ea2b52"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/avig-consumer.test.cjs",
+        "byteLength": 7593,
+        "sha256": "99cc4b43576b0c10078823f8cf58af9207a889701f394cc6257d07ebffd6d9cf"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/consumer-regression.test.cjs",
+        "byteLength": 12439,
+        "sha256": "7af349765a2fd6da1be23fbae2611a1138196b1989650a7c3bf9c80e2f8233d0"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/kvg-consumer.test.cjs",
+        "byteLength": 7740,
+        "sha256": "5e0f4a5d19aa698b19120c52427fe0fd2fec48b2c6ca96f94ffaad41ce0dfd6a"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/mvp05-consumer.test.cjs",
+        "byteLength": 5025,
+        "sha256": "e07ec9ce938a21b2b7447dd7addc69f2bc960458bbe2ee76791094187aeed695"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/mvp06-consumer.test.cjs",
+        "byteLength": 5025,
+        "sha256": "42e6dc755b8a38fa97c9954b41281b406159cad78392308b15f0641dfa575f91"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/mvp07-consumer.test.cjs",
+        "byteLength": 4992,
+        "sha256": "fe7797d16d770446f91c56f4c61a17d7dd80dc95cfbc98191124cd9fe4511242"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/social-consumer.test.cjs",
+        "byteLength": 4713,
+        "sha256": "565197ee7da7fe7ef8c96724ec0e6333a25610707bcfbf7587880ab7ae9f7aad"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/package-harness.cjs",
+        "byteLength": 13735,
+        "sha256": "826444399ea2e8a72a6ad06924b6c05a44ea71413ca34b2dc63c4f51c0b5547d"
+      }
+    ],
+    "testsAfter": [
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap20c1.test.cjs",
+        "byteLength": 8004,
+        "sha256": "aced32a41840a18f4945658f33a4c594ac5df13cb1ffce68785d94ebb377a441"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap20c2.test.cjs",
+        "byteLength": 11345,
+        "sha256": "1d74e19717461d4fe5e2218db56a7b8c3f44ec2de1dbfec846dfcd9966f51a80"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap20c3.test.cjs",
+        "byteLength": 15102,
+        "sha256": "d6041f8da49ff2bfa832c9cd5e0d8275641e53040f5e2b8dcc98b6ba17b528af"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap21.test.cjs",
+        "byteLength": 9342,
+        "sha256": "9e511f41cb86b4386c74cf8f8404ca7ec189e676178c288b5dd422cf5e3c0238"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap22c3.test.cjs",
+        "byteLength": 7697,
+        "sha256": "783aa9437db0c357858513dfda9cd7ce70a10f44a12dc1bdb5c67693b72b0038"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/ap23d3.test.cjs",
+        "byteLength": 12658,
+        "sha256": "5eddf157a83a07e657fc88b3a967479a2eb384f7d7a92407835eac8c43ea2b52"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/avig-consumer.test.cjs",
+        "byteLength": 7593,
+        "sha256": "99cc4b43576b0c10078823f8cf58af9207a889701f394cc6257d07ebffd6d9cf"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/consumer-regression.test.cjs",
+        "byteLength": 12439,
+        "sha256": "7af349765a2fd6da1be23fbae2611a1138196b1989650a7c3bf9c80e2f8233d0"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/kvg-consumer.test.cjs",
+        "byteLength": 7740,
+        "sha256": "5e0f4a5d19aa698b19120c52427fe0fd2fec48b2c6ca96f94ffaad41ce0dfd6a"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/mvp05-consumer.test.cjs",
+        "byteLength": 5025,
+        "sha256": "e07ec9ce938a21b2b7447dd7addc69f2bc960458bbe2ee76791094187aeed695"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/mvp06-consumer.test.cjs",
+        "byteLength": 5025,
+        "sha256": "42e6dc755b8a38fa97c9954b41281b406159cad78392308b15f0641dfa575f91"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/mvp07-consumer.test.cjs",
+        "byteLength": 4992,
+        "sha256": "fe7797d16d770446f91c56f4c61a17d7dd80dc95cfbc98191124cd9fe4511242"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/social-consumer.test.cjs",
+        "byteLength": 4713,
+        "sha256": "565197ee7da7fe7ef8c96724ec0e6333a25610707bcfbf7587880ab7ae9f7aad"
+      },
+      {
+        "path": ".work/ap23d3-spfx-build-4ImiJ9/spfx/test-build/package-harness.cjs",
+        "byteLength": 13735,
+        "sha256": "826444399ea2e8a72a6ad06924b6c05a44ea71413ca34b2dc63c4f51c0b5547d"
+      }
+    ],
+    "logArtifact": {
+      "path": ".work/ap23d3-spfx-build-4ImiJ9/step-5-retry-unmodified.log",
+      "byteLength": 29248,
+      "sha256": "d5fa18bf82767ce57313b978e179ba5858523af273603015a96f88040db0fa4d"
+    }
+  },
+  "finalPassedSteps": [
+    {
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-1.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+      "args": [
+        "test",
+        "--clean",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-2.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "scripts/audit-product-css.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-3.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+      "args": [
+        "package-solution",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-4.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test-build/ap20c1.test.cjs",
+        "test-build/ap20c2.test.cjs",
+        "test-build/ap20c3.test.cjs",
+        "test-build/ap21.test.cjs",
+        "test-build/ap22c3.test.cjs",
+        "test-build/ap23d3.test.cjs",
+        "test-build/avig-consumer.test.cjs",
+        "test-build/consumer-regression.test.cjs",
+        "test-build/kvg-consumer.test.cjs",
+        "test-build/mvp05-consumer.test.cjs",
+        "test-build/mvp06-consumer.test.cjs",
+        "test-build/mvp07-consumer.test.cjs",
+        "test-build/social-consumer.test.cjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-5-retry-unmodified.log",
+      "counts": {
+        "tests": 89,
+        "pass": 89,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "finalSteps": [
+    {
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-1.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+      "args": [
+        "test",
+        "--clean",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-2.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "scripts/audit-product-css.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-3.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23d3-spfx-build-4ImiJ9/spfx/node_modules/.bin/heft",
+      "args": [
+        "package-solution",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-4.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test-build/ap20c1.test.cjs",
+        "test-build/ap20c2.test.cjs",
+        "test-build/ap20c3.test.cjs",
+        "test-build/ap21.test.cjs",
+        "test-build/ap22c3.test.cjs",
+        "test-build/ap23d3.test.cjs",
+        "test-build/avig-consumer.test.cjs",
+        "test-build/consumer-regression.test.cjs",
+        "test-build/kvg-consumer.test.cjs",
+        "test-build/mvp05-consumer.test.cjs",
+        "test-build/mvp06-consumer.test.cjs",
+        "test-build/mvp07-consumer.test.cjs",
+        "test-build/social-consumer.test.cjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23d3-spfx-build-4ImiJ9/step-5-retry-unmodified.log",
+      "counts": {
+        "tests": 89,
+        "pass": 89,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "retryHelper": {
+    "path": "scripts/build-ap23d3-spfx-retry.mjs",
+    "byteLength": 6538,
+    "sha256": "fe9e50f43e8b3ac57be493b4f45db7784e245b583c224e44770f69c09f092cf8"
+  }
+}

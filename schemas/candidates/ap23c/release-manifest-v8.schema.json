@@ -1,0 +1,562 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest-v8.schema.json",
+  "title": "AP23C Entwurf Manifest 8",
+  "$comment": "DEC-2026-032 ist vorgeschlagen. Nur Vertragsprobe. Kein tatsächlicher Format-8-Release ist mit diesem Schema freigegeben.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "releaseId",
+    "releaseStatus",
+    "createdOn",
+    "immutable",
+    "coverage",
+    "profileIds",
+    "calendarIds",
+    "specialRegimeCatalogIds",
+    "holidayCatalogIds",
+    "socialProcedureCatalogIds",
+    "administrativeProcedureCatalogIds",
+    "sourceSummary",
+    "providerContract",
+    "compatibility",
+    "checksumAlgorithm",
+    "artifacts"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest-v8.schema.json"
+    },
+    "formatVersion": {
+      "const": "8.0.0"
+    },
+    "dataKind": {
+      "const": "releaseManifest"
+    },
+    "releaseId": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+    },
+    "releaseStatus": {
+      "enum": [
+        "draft",
+        "candidate",
+        "approved",
+        "withdrawn"
+      ]
+    },
+    "createdOn": {
+      "type": "string",
+      "format": "date"
+    },
+    "immutable": {
+      "const": true
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "format": "date"
+        },
+        "to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "profileIds": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "stpo",
+          "zpo",
+          "bgg",
+          "vwvg",
+          "vrpg-be"
+        ]
+      },
+      "maxItems": 5
+    },
+    "calendarIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "specialRegimeCatalogIds": {
+      "const": [
+        "vrpg-be-special-regimes-rest"
+      ]
+    },
+    "holidayCatalogIds": {
+      "const": [
+        "ch-holiday-catalog"
+      ]
+    },
+    "socialProcedureCatalogIds": {
+      "const": [
+        "ch-social-procedures"
+      ]
+    },
+    "administrativeProcedureCatalogIds": {
+      "const": [
+        "ch-cantonal-administrative-procedures"
+      ]
+    },
+    "sourceSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "latestReviewedOn",
+        "legalBasisReviewStatus",
+        "technicalValidationStatus",
+        "sourceIds"
+      ],
+      "properties": {
+        "latestReviewedOn": {
+          "type": "string",
+          "format": "date"
+        },
+        "legalBasisReviewStatus": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        },
+        "technicalValidationStatus": {
+          "enum": [
+            "pending",
+            "passed"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+          }
+        }
+      }
+    },
+    "providerContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pathMode",
+        "byteIdentityRequired",
+        "supportedProviders",
+        "networkFallback"
+      ],
+      "properties": {
+        "pathMode": {
+          "const": "manifestRelative"
+        },
+        "byteIdentityRequired": {
+          "const": true
+        },
+        "supportedProviders": {
+          "const": [
+            "github",
+            "sharepointMirror",
+            "manualImport"
+          ]
+        },
+        "networkFallback": {
+          "const": "lastVerifiedRelease"
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimumConsumerFormatVersion",
+        "unknownMajorVersionHandling",
+        "unknownCoreFieldHandling",
+        "extensionsHandling"
+      ],
+      "properties": {
+        "minimumConsumerFormatVersion": {
+          "const": "8.0.0"
+        },
+        "unknownMajorVersionHandling": {
+          "const": "reject"
+        },
+        "unknownCoreFieldHandling": {
+          "const": "reject"
+        },
+        "extensionsHandling": {
+          "const": "ignoreNamespaced"
+        }
+      }
+    },
+    "checksumAlgorithm": {
+      "const": "sha256"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "role",
+          "contentId",
+          "mediaType",
+          "schemaId",
+          "byteLength",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._/-]*\\.json$"
+          },
+          "role": {
+            "enum": [
+              "legalProfile",
+              "calendar",
+              "holidayCatalog",
+              "specialRegimeCatalog",
+              "socialProcedureCatalog",
+              "administrativeProcedureCatalog"
+            ]
+          },
+          "contentId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "mediaType": {
+            "const": "application/json"
+          },
+          "schemaId": {
+            "enum": [
+              "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+              "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+              "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v2.schema.json",
+              "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json",
+              "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog-v2.schema.json",
+              "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog.schema.json"
+            ]
+          },
+          "byteLength": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "legalProfile"
+                }
+              },
+              "required": [
+                "role"
+              ]
+            },
+            "then": {
+              "properties": {
+                "schemaId": {
+                  "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json"
+                },
+                "contentId": {
+                  "enum": [
+                    "stpo",
+                    "zpo",
+                    "bgg",
+                    "vwvg",
+                    "vrpg-be"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "calendar"
+                }
+              },
+              "required": [
+                "role"
+              ]
+            },
+            "then": {
+              "properties": {
+                "schemaId": {
+                  "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "holidayCatalog"
+                }
+              },
+              "required": [
+                "role"
+              ]
+            },
+            "then": {
+              "properties": {
+                "schemaId": {
+                  "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v2.schema.json"
+                },
+                "contentId": {
+                  "enum": [
+                    "ch-holiday-catalog"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "specialRegimeCatalog"
+                }
+              },
+              "required": [
+                "role"
+              ]
+            },
+            "then": {
+              "properties": {
+                "schemaId": {
+                  "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json"
+                },
+                "contentId": {
+                  "enum": [
+                    "vrpg-be-special-regimes-rest"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "socialProcedureCatalog"
+                }
+              },
+              "required": [
+                "role"
+              ]
+            },
+            "then": {
+              "properties": {
+                "schemaId": {
+                  "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog-v2.schema.json"
+                },
+                "contentId": {
+                  "enum": [
+                    "ch-social-procedures"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "administrativeProcedureCatalog"
+                }
+              },
+              "required": [
+                "role"
+              ]
+            },
+            "then": {
+              "properties": {
+                "schemaId": {
+                  "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog.schema.json"
+                },
+                "contentId": {
+                  "enum": [
+                    "ch-cantonal-administrative-procedures"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$": true
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "releaseStatus": {
+            "const": "approved"
+          }
+        },
+        "required": [
+          "releaseStatus"
+        ]
+      },
+      "then": {
+        "properties": {
+          "sourceSummary": {
+            "properties": {
+              "legalBasisReviewStatus": {
+                "const": "verified"
+              },
+              "technicalValidationStatus": {
+                "const": "passed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "artifacts": {
+          "contains": {
+            "properties": {
+              "role": {
+                "const": "legalProfile"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          },
+          "minContains": 5,
+          "maxContains": 5
+        }
+      }
+    },
+    {
+      "properties": {
+        "artifacts": {
+          "contains": {
+            "properties": {
+              "role": {
+                "const": "calendar"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          },
+          "minContains": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "artifacts": {
+          "contains": {
+            "properties": {
+              "role": {
+                "const": "holidayCatalog"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "artifacts": {
+          "contains": {
+            "properties": {
+              "role": {
+                "const": "specialRegimeCatalog"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "artifacts": {
+          "contains": {
+            "properties": {
+              "role": {
+                "const": "socialProcedureCatalog"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "artifacts": {
+          "contains": {
+            "properties": {
+              "role": {
+                "const": "administrativeProcedureCatalog"
+              }
+            },
+            "required": [
+              "role"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      }
+    }
+  ]
+}

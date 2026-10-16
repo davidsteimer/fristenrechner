@@ -1,0 +1,1596 @@
+{
+  "reviewId": "R08-A2-administrative-2026-10-15",
+  "checkedOn": "2026-10-15",
+  "recordStatus": "candidate",
+  "candidateReleaseId": "2026-10-15-ap23d2-reference.1",
+  "candidateManifest": {
+    "path": "outputs/ap23d2-candidate-2026-10-15/bundle/manifest.json",
+    "sha256": "ccb67c22e55737af064f8c9ef7b122db8c5dfe1f4a1f142eb77cd05fd5ac646d",
+    "byteLength": 23881
+  },
+  "inputInventory": {
+    "path": "outputs/release-mvp08-2026-10-15/sources/source-inventory.json",
+    "sha256": "6d40975ddf0fc334a43ae7444033037ab9809a90763be2461dc21b139d589526",
+    "byteLength": 2262923
+  },
+  "humanApproval": false,
+  "sourceReleaseApproved": false,
+  "dataPromotionApproved": false,
+  "publicationApproved": false,
+  "completeAnnualReview": false,
+  "nextOrdinaryReviewDate": "2026-11-15",
+  "sourceIds": [
+    "JUD-AP23B-GR-STAGE-JUD",
+    "JUD-AP23B-GR-START-JUD",
+    "JUD-AP23B-TI-ADVANCE-JUD",
+    "JUD-AP23B-TI-PROVISIONAL-JUD",
+    "SRC-AP23B-CH-HOL",
+    "SRC-AP23B-GR-MATERIAL",
+    "SRC-AP23B-GR-RTG",
+    "SRC-AP23B-GR-VRG",
+    "SRC-AP23B-TI-HOL",
+    "SRC-AP23B-TI-LPAMM",
+    "SRC-AP23B-TI-MATERIAL"
+  ],
+  "rows": [
+    {
+      "sourceId": "JUD-AP23B-GR-STAGE-JUD",
+      "kind": "judgment",
+      "outcome": "unchanged",
+      "method": "fresh-official-PDF-whole-byte-identity-to-current-mirror-and-targeted-historical-systematic-reading",
+      "rationale": "Amtliches GR-PDF frisch abgerufen und byteidentisch mit dem frisch abgerufenen Entscheidsuche-PDF. E. 2c/bb, S. 5 bestätigt die Trennung der Verwaltungsbeschwerde ohne Gerichtsferien vom verwaltungsgerichtlichen Verfahren mit Art. 39. Nur diese systematische Aussage wird mit dem aktuellen VRG abgeglichen und wiederverwendet.",
+      "outcomeScope": "Systematischer Stufenbeleg für gr-32-30. Keine Übernahme des historischen Strafprozessrechts oder der damaligen Rechtsmittelfrist.",
+      "versionFinding": {
+        "decisionDate": "2010-03-03",
+        "docket": "SK2 10 7",
+        "expandedDocket": "SK2 2010 7",
+        "currentOfficialBytesEqualToCurrentMirror": true,
+        "usedHoldingChanged": false
+      },
+      "findings": [
+        "Der historische Entscheid grenzt den Verweis auf Verwaltungsbeschwerde ausdrücklich von Verwaltungsgerichtsbeschwerde ab. Der heutige GR-VRG-Aufbau bewahrt diese Trennung.",
+        "Die im alten Entscheid genannte Sammlungsnummer BR 370.500 wird nicht als heutige Rechtsquellen-ID übernommen. Aktuell amtlich bestätigt ist BR 370.100."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-OFFICIAL.raw",
+          "sha256": "3be4892f2a6524887d0d7e57bb73925e3ba7087589874ba8867f08b1806fa98e",
+          "byteLength": 80518,
+          "url": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SK2_2010_7_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976a77ce1a11def387fe07029dfc18d38a14b72cb16004083c8f9d56c2f9c611a18edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976a77ce1a11def387fe07029dfc18d38a14b72cb16004083c8f9d56c2f9c611a18edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SK2_2010_7",
+          "retrievedAt": "2026-10-15T17:42:22.901Z",
+          "method": "fresh-official-GR-PDF-read-and-full-byte-identity-to-current-mirror",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-STAGE-JUD.raw",
+          "sha256": "3be4892f2a6524887d0d7e57bb73925e3ba7087589874ba8867f08b1806fa98e",
+          "byteLength": 80518,
+          "url": "https://entscheidsuche.ch/docs/GR_Gerichte/GR_KG_005_SK2-2010-7_2010-03-03.pdf",
+          "retrievedAt": "2026-10-15T17:36:57.564Z",
+          "method": "fresh-Entscheidsuche-PDF-consideration-2c-bb-page-5-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-SWISSCASELAW-EXPANDED.json",
+          "sha256": "9d9c003c6779e97526b10c6fa2eba819f6c648722ece42aee354653d215f2aa4",
+          "byteLength": 30266,
+          "url": "https://mcp.opencaselaw.ch/entscheid/gr_gerichte_SK2_2010_7",
+          "retrievedAt": "2026-10-15T17:42:12.840Z",
+          "method": "Swiss Caselaw get expanded docket"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-CITATION-EXPANDED.json",
+          "sha256": "ff9218590375fb79d1d6d6b1077268bdd063432835843a862fbe8e41dfdca144",
+          "byteLength": 3159,
+          "url": "https://mcp.opencaselaw.ch/entscheid/gr_gerichte_SK2_2010_7",
+          "retrievedAt": "2026-10-15T17:42:05.605Z",
+          "method": "Swiss Caselaw cite expanded docket lookup"
+        }
+      ],
+      "limitations": [
+        "Keine Behauptung einer Byteidentität zum historischen AP23B-Abruf. Verglichen wurden zwei heute abgerufene Fundstellen.",
+        "Erste Swiss-Caselaw-Abfrage mit verkürzter Jahreszahl traf nicht. Der aufgelöste Langbezeichner SK2 2010 7 ist bestätigt. Ein fehlender erster Suchtreffer wurde nicht als fehlender Entscheid gewertet."
+      ],
+      "relevantProvisions": [
+        "E. 2c/bb, S. 5. Nur systematische VRG-Aussage des historischen Strafverweises."
+      ],
+      "referencedVersionDescription": "2010-03-03",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu JUD-AP23B-GR-STAGE-JUD. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/5/sourceRefs/1"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "JUD-AP23B-GR-START-JUD",
+      "kind": "judgment",
+      "outcome": "unchanged",
+      "method": "fresh-official-PDF-whole-byte-identity-to-current-mirror-and-targeted-historical-first-counted-day-reading",
+      "rationale": "Amtliches GR-PDF frisch abgerufen und byteidentisch mit dem aktuellen Entscheidsuche-PDF. E. 3a, S. 4–5 bestätigt, dass bei Eröffnung im Weihnachtsstillstand der 03.01.2016 als erster Tag zählt. Die verwendete Aussage bleibt auf den ersten zählenden Tag begrenzt.",
+      "outcomeScope": "Beginn nach gerichtlichem Stillstand in gr-52-30 und gr-court-ordered. Kein neuer Publikationsauslöser oder jagdrechtlicher Spezialpfad.",
+      "versionFinding": {
+        "decisionDate": "2016-02-18",
+        "docket": "U 16 15",
+        "expandedDocket": "U 2016 15",
+        "currentOfficialBytesEqualToCurrentMirror": true,
+        "usedHoldingChanged": false
+      },
+      "findings": [
+        "Die Verfügung wurde am 28.12.2015 publiziert. Das Gericht zählt die 30 Tage vom 03.01.2016 bis 01.02.2016. Dies stützt den ersten zählenden Tag nach Ferien auch dann, wenn dieser ein Sonntag ist.",
+        "Aussagen zur Beschwerdeergänzung, Legitimation und jagdrechtlichen Hauptsache werden nicht als zusätzliche Produktfunktion übertragen."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-OFFICIAL.raw",
+          "sha256": "d9605a72f7eba45badfdfc5979c6287e9e24e8ed2e150c1602cae995e7e775ac",
+          "byteLength": 78831,
+          "url": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/U_2016_15_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976b4168739099c540a0b3288062bf24cefb1beb85c136f66002691e8ed215b79e5edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976b4168739099c540a0b3288062bf24cefb1beb85c136f66002691e8ed215b79e5edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=U_2016_15",
+          "retrievedAt": "2026-10-15T17:42:23.102Z",
+          "method": "fresh-official-GR-PDF-read-and-full-byte-identity-to-current-mirror",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-START-JUD.raw",
+          "sha256": "d9605a72f7eba45badfdfc5979c6287e9e24e8ed2e150c1602cae995e7e775ac",
+          "byteLength": 78831,
+          "url": "https://entscheidsuche.ch/docs/GR_Gerichte/GR_VG_001_U-2016-15_2016-02-18.pdf",
+          "retrievedAt": "2026-10-15T17:36:58.070Z",
+          "method": "fresh-Entscheidsuche-PDF-consideration-3a-pages-4-5-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-SWISSCASELAW-EXPANDED.json",
+          "sha256": "88da042c001d2854729e6acb4aa5064c533362ffb31f00999bf2634812c2764f",
+          "byteLength": 22951,
+          "url": "https://mcp.opencaselaw.ch/entscheid/gr_gerichte_U%202016%2015",
+          "retrievedAt": "2026-10-15T17:42:12.882Z",
+          "method": "Swiss Caselaw get expanded docket"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-CITATION-EXPANDED.json",
+          "sha256": "2b43807541209c61a947ae72389ae5f44eb6eb04d9aee9c6e6c9cf54835640bd",
+          "byteLength": 3150,
+          "url": "https://mcp.opencaselaw.ch/entscheid/gr_gerichte_U%202016%2015",
+          "retrievedAt": "2026-10-15T17:42:05.325Z",
+          "method": "Swiss Caselaw cite expanded docket lookup"
+        }
+      ],
+      "limitations": [
+        "Keine Behauptung einer Byteidentität zum historischen AP23B-Abruf. Verglichen wurden zwei heute abgerufene Fundstellen.",
+        "Erste Swiss-Caselaw-Abfrage mit verkürzter Jahreszahl traf nicht. Der aufgelöste Langbezeichner U 2016 15 ist bestätigt."
+      ],
+      "relevantProvisions": [
+        "E. 3a, S. 4–5"
+      ],
+      "referencedVersionDescription": "2016-02-18",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu JUD-AP23B-GR-START-JUD. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/11/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/8/sourceRefs/1"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "JUD-AP23B-TI-ADVANCE-JUD",
+      "kind": "judgment",
+      "outcome": "unchanged",
+      "method": "fresh-official-judgment-full-text-identity-and-targeted-considerations-reading-with-mirror-countercheck-and-bounded-AP23B-reuse",
+      "rationale": "Amtlicher BGer-Volltext und Entscheidsuche-Spiegel frisch gelesen. E. 2.3–2.5 tragen weiterhin die Übernahme der Modalitäten aus Art. 47 Abs. 3 LPAmm auf Abs. 4, einschliesslich fehlendem Stillstand und ohne automatische Nachfrist. Keine Übertragung auf Beweiskostenvorschüsse nach Abs. 5.",
+      "outcomeScope": "Ausschliesslich der im Kandidaten gebundene Kostenvorschussweg ti-advance.",
+      "versionFinding": {
+        "decisionDate": "2019-05-28",
+        "docket": "2C_422/2019",
+        "usedHoldingChanged": false,
+        "sourceClassification": "official BGer full text, independently retrieved mirror"
+      },
+      "findings": [
+        "E. 2.3 bezieht die gleiche Zahlungsfristmodalität ausdrücklich auf Abs. 3 und Abs. 4. E. 2.4 bestätigt gesetzlichen Nichtstillstand und behandelt die fehlende Nachfrist. E. 2.5 betrifft die Säumnisandrohung und die Möglichkeit eines rechtzeitigen Erstreckungs-/Rechtspflegegesuchs."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-OFFICIAL.raw",
+          "sha256": "11ba3923eb38bb20764e8759a4ed15ad753775e6fb69f9475626ab2206faa0ac",
+          "byteLength": 35816,
+          "url": "https://search.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F28-05-2019-2C_422-2019&lang=de&type=show_document&zoom=",
+          "retrievedAt": "2026-10-15T17:40:01.950Z",
+          "method": "fresh-official-BGer-full-text-with-targeted-considerations-2.3-to-2.5",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-ADVANCE-JUD.raw",
+          "sha256": "d8afda143ebfb3a62067e1fe38321360b1ca044ab1f68342f624b9f3da587358",
+          "byteLength": 19162,
+          "url": "https://entscheidsuche.ch/docs/CH_BGer/CH_BGer_002_2C-422-2019_2019-05-28.html",
+          "retrievedAt": "2026-10-15T17:36:58.441Z",
+          "method": "fresh-Entscheidsuche-full-text-mirror-countercheck",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-ENTSCHEIDSUCHE.json",
+          "sha256": "d8830adf0072685927c3dd4465a41a1d9d53a31fc98cc0db4f396034bcc608ec",
+          "byteLength": 28550,
+          "url": "https://entscheidsuche.ch/docs/CH_BGer/CH_BGer_002_2C-422-2019_2019-05-28.html",
+          "retrievedAt": "2026-10-15T17:39:09.079Z",
+          "method": "TI-ADVANCE-ENTSCHEIDSUCHE"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-CITATION.json",
+          "sha256": "b6a54b303e48fd14ef44024629650df8afb8dc4f5824007839020f8f16aa7ad7",
+          "byteLength": 3763,
+          "url": "https://mcp.opencaselaw.ch/entscheid/bger_2C_422_2019#e-2-3",
+          "retrievedAt": "2026-10-15T17:41:43.828Z",
+          "method": "Swiss Caselaw cite lookup"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-ERWAEGUNG.json",
+          "sha256": "f7faa100c5b6ad9339ebc5fec4c288fdc90e375882fe43c962581195276228c1",
+          "byteLength": 6333,
+          "url": "https://mcp.opencaselaw.ch/entscheid/bger_2C_422_2019#e-2-3",
+          "retrievedAt": "2026-10-15T17:49:14.009Z",
+          "method": "mcp-swiss-caselaw-get-erwaegung"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-CLAIM-SUPPORT.json",
+          "sha256": "343a20e71763bded140348d3b93091d21b898698e66105b383ee38ec489ed65f",
+          "byteLength": 1741,
+          "url": "https://mcp.opencaselaw.ch/entscheid/bger_2C_422_2019#e-2-3",
+          "retrievedAt": "2026-10-15T17:49:14.044Z",
+          "method": "mcp-swiss-caselaw-check-claim-support"
+        }
+      ],
+      "limitations": [
+        "Historisches Urteil, kein eigenständiger Nachweis unbefristeter Fortgeltung. Der aktuelle Gesetzestext wurde deshalb getrennt geprüft.",
+        "Keine neue Freigabe von Beweiskostenvorschuss, fixer Zahlungsterminlogik oder automatischer Nachfrist."
+      ],
+      "relevantProvisions": [
+        "E. 2.3–2.5"
+      ],
+      "referencedVersionDescription": "2019-05-28",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu JUD-AP23B-TI-ADVANCE-JUD. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/4/sourceRefs/1"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "JUD-AP23B-TI-PROVISIONAL-JUD",
+      "kind": "judgment",
+      "outcome": "unchanged",
+      "method": "fresh-official-cantonal-judgment-and-full-mirror-targeted-reading-with-explicit-secondary-metadata-conflict",
+      "rationale": "Amtliche Tessiner Entscheidseite und vollständiger Entscheidsuche-Text bestätigen den Entscheid vom 13.08.2025 und den vorsorglichen Rechtsmittelweg mit 15 Tagen ohne Ferien. Das bereits bekannte falsche Swiss-Caselaw-Datum 09.07.2025 ist das Datum des angefochtenen Entscheids und wird nicht übernommen.",
+      "outcomeScope": "Allgemeiner vorsorglicher LPAmm-Rechtsmittelweg ti-provisional-15, nicht materielle personalrechtliche Produktfreigabe.",
+      "versionFinding": {
+        "decisionDate": "2025-08-13",
+        "docket": "52.2025.281",
+        "usedHoldingChanged": false,
+        "secondaryMetadataConflict": {
+          "status": "known-and-preserved",
+          "source": "Swiss Caselaw",
+          "reportedDecisionDate": "2025-07-09",
+          "correctDecisionDate": "2025-08-13",
+          "correctDateEvidence": "Amtlicher Kopf und Data decisione, Autorità: 13.08.2025, TRAM sowie vollständiger Entscheidsuche-Text",
+          "incompleteSecondaryFullText": true
+        }
+      },
+      "findings": [
+        "Die rechtlichen Erwägungen verknüpfen vorsorgliche Massnahme mit Art. 68 Abs. 2 und Art. 16 Abs. 3 LPAmm. Zustellung am 17.07.2025 führt im Entscheid zu Ablauf 04.08.2025.",
+        "Falsche 30-Tage-Belehrung wird nicht automatisch als Schutz anerkannt. Aus der personalrechtlichen Ausgangslage wird keine pauschale zusätzliche Fachrechtsfreigabe abgeleitet."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-OFFICIAL.raw",
+          "sha256": "a7b2dd659e60f2461584165a754a3ea8977877910eebc09aa7ae4c9849dd4bcf",
+          "byteLength": 24401,
+          "url": "http://www.sentenze.ti.ch/cgi-bin/nph-omniscgi?OmnisPlatform=WINDOWS&WebServerUrl=www.sentenze.ti.ch&WebServerScript=/cgi-bin/nph-omniscgi&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB,193.246.182.54:6000&Parametername=WWWTI&Schema=TI_WEB&Source=&Aufruf=getMarkupDocument&cSprache=ITA&nF30_KEY=140491&Template=results/document_ita.fiw",
+          "retrievedAt": "2026-10-15T17:40:02.310Z",
+          "method": "fresh-official-cantonal-decision-date-and-reasons-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-PROVISIONAL-JUD.raw",
+          "sha256": "810ac5fd439a711e4907f6c93e8dfa3c3ef23ea09945bd45aca8f906896f2d36",
+          "byteLength": 16995,
+          "url": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TCA_001_52-2025-281_2025-08-13.html",
+          "retrievedAt": "2026-10-15T17:36:58.647Z",
+          "method": "fresh-full-Entscheidsuche-mirror-targeted-reasons-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-ENTSCHEIDSUCHE.json",
+          "sha256": "02f84ea39c97b791c25b1ec05723ce5d91ef192a8a8bd34c99a04dc073a3457a",
+          "byteLength": 12470,
+          "url": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TCA_001_52-2025-281_2025-08-13.html",
+          "retrievedAt": "2026-10-15T17:39:11.786Z",
+          "method": "TI-PROVISIONAL-ENTSCHEIDSUCHE"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-SWISSCASELAW.json",
+          "sha256": "6b9e79a31626f9d4b2e2634ecfa27f9e89c08c61f5ed021cc7ec6b24c6c8b0ad",
+          "byteLength": 5053,
+          "url": "https://mcp.opencaselaw.ch/entscheid/ti_gerichte_52.2025.281",
+          "retrievedAt": "2026-10-15T17:38:53.905Z",
+          "method": "TI-PROVISIONAL-SWISSCASELAW"
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-CITATION.json",
+          "sha256": "139b64785f601b179dd8ab0ecd79d9c2852d15a51e5be1f203150ba440802a80",
+          "byteLength": 3094,
+          "url": "https://mcp.opencaselaw.ch/entscheid/ti_gerichte_52.2025.281",
+          "retrievedAt": "2026-10-15T17:41:43.986Z",
+          "method": "Swiss Caselaw cite lookup"
+        }
+      ],
+      "limitations": [
+        "Automatische Zitiermetadaten werden wegen des bestätigten Datumsfehlers nicht als Quellenpass verwendet. Der Swiss-Caselaw-Text enthält nicht die tragenden Erwägungen.",
+        "Die amtliche Tessiner Originalseite wird über den vom Quellenservice angegebenen HTTP-Endpunkt ausgeliefert. Inhalt und Datum wurden zusätzlich mit dem vollständigen HTTPS-Spiegel abgeglichen."
+      ],
+      "followUp": "Beim späteren Quellenmonitoring den sekundären Metadatenfehler erneut prüfen. Er blockiert die eng begrenzte Wiederverwendung nicht, weil amtlicher Kopf und vollständiger Text direkt bestätigt sind.",
+      "relevantProvisions": [
+        "Erwägungen zur 15-Tage-Frist und Art. 16 Abs. 3"
+      ],
+      "referencedVersionDescription": "2025-08-13",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu JUD-AP23B-TI-PROVISIONAL-JUD. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/3/sourceRefs/1"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-CH-HOL",
+      "kind": "statute",
+      "outcome": "unchanged",
+      "method": "fresh-official-XML-article-reading-and-full-byte-comparison-with-MVP07-plus-version-and-impact-index",
+      "rationale": "Amtliches XML von SR 116 frisch gelesen und vollständig byteidentisch zum gebundenen MVP07-Nachweis. Art. 1 bestätigt die Sonntagsgleichstellung des Bundesfeiertags. Frischer Fedlex-Fassungsindex nennt weiterhin nur die Fassung 01.07.1994, der Änderungsindex im geprüften Fenster 2026–2027 keinen Treffer.",
+      "outcomeScope": "Ergänzung der kantonalen GR-Feiertagsliste um den Bundesfeiertag für die sieben neuen Verwaltungswege. Keine zweite oder verschobene Feiertagsregel.",
+      "versionFinding": {
+        "currentVersionDate": "1994-07-01",
+        "reviewWindow": {
+          "from": "2026-01-01",
+          "to": "2027-12-31"
+        },
+        "freshVersionRows": [
+          {
+            "work": "https://fedlex.data.admin.ch/eli/cc/1994/1340_1340_1340",
+            "version": "https://fedlex.data.admin.ch/eli/cc/1994/1340_1340_1340/19940701",
+            "from": "1994-07-01"
+          }
+        ],
+        "freshImpactRows": [],
+        "wholeXmlBytesEqualToMVP07": true,
+        "usedProvisionsChanged": false
+      },
+      "findings": [
+        "Art. 1 Abs. 1 erklärt den Bundesfeiertag zum den Sonntagen gleichgestellten arbeitsfreien Tag. Die bestehende Projektion bleibt auf 1. August begrenzt. Die öffentliche Fedlex-Einstiegsseite allein enthält lediglich einen JavaScript-Hinweis und wird nicht als Inhaltsbeweis verwendet."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/CH-HOL-XML.raw",
+          "sha256": "f27e0ad0708dd3a4a0a58d43fad3204a11a726d28e0714ade11254eee7311a40",
+          "byteLength": 5690,
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1994/1340_1340_1340/19940701/de/xml/fedlex-data-admin-ch-eli-cc-1994-1340_1340_1340-19940701-de-xml.xml",
+          "retrievedAt": "2026-10-15T17:38:20.793Z",
+          "method": "fresh-official-XML-targeted-article-reading-and-whole-byte-identity",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/CH-VERSION-INDEX.raw",
+          "sha256": "7117bc8f6798ec2fb2a4199a87127558c3e6dd79af1b3d7947dbcbf033c9f8b9",
+          "byteLength": 11256,
+          "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A%2F%2Fdata.legilux.public.lu%2Fresource%2Fontology%2Fjolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fversion%20%3Ffrom%20%3Fto%20WHERE%20%7B%0A%20VALUES%20%3Fwork%20%7B%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2010%2F267%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2010%2F262%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2006%2F218%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1969%2F737_757_755%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1978%2F688_688_688%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1978%2F712_712_712%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1994%2F1340_1340_1340%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F63%2F837_843_843%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1959%2F827_857_845%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1961%2F29_29_29%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1982%2F1676_1676_1676%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1982%2F2184_2184_2184%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1983%2F1205_1205_1205%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1995%2F1328_1328_1328%3E%20%7D%0A%20%3Fversion%20jolux%3AisMemberOf%20%3Fwork%3B%20jolux%3AdateApplicability%20%3Ffrom.%0A%20OPTIONAL%20%7B%20%3Fversion%20jolux%3AdateEndApplicability%20%3Fto%20%7D%0A%20FILTER(str(%3Ffrom)%20%3C%3D%20%222027-12-31%22%20%26%26%20(!BOUND(%3Fto)%20%7C%7C%20str(%3Fto)%20%3E%3D%20%222026-01-01%22))%0A%7D%20ORDER%20BY%20%3Fwork%20%3Ffrom",
+          "retrievedAt": "2026-10-15T17:38:20.923Z",
+          "method": "fresh-official-Fedlex-version-index-2026-2027-filtered-to-SR116",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/CH-IMPACT-INDEX.raw",
+          "sha256": "5443f835b0047f3a1c6713ca1b15c490705b0da6306943e4a6245488ba486772",
+          "byteLength": 58571,
+          "url": "https://fedlex.data.admin.ch/sparqlendpoint?query=PREFIX%20jolux%3A%20%3Chttp%3A%2F%2Fdata.legilux.public.lu%2Fresource%2Fontology%2Fjolux%23%3E%0ASELECT%20DISTINCT%20%3Fwork%20%3Fimpact%20%3Fdate%20%3Ftarget%20%3Fsource%20WHERE%20%7B%0A%20VALUES%20%3Fwork%20%7B%20%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2010%2F267%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2010%2F262%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F2006%2F218%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1969%2F737_757_755%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1978%2F688_688_688%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1978%2F712_712_712%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1994%2F1340_1340_1340%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F63%2F837_843_843%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1959%2F827_857_845%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1961%2F29_29_29%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1982%2F1676_1676_1676%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1982%2F2184_2184_2184%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1983%2F1205_1205_1205%3E%0A%3Chttps%3A%2F%2Ffedlex.data.admin.ch%2Feli%2Fcc%2F1995%2F1328_1328_1328%3E%20%7D%0A%20%7B%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Fwork.%20BIND(%3Fwork%20AS%20%3Ftarget)%20%7D%0A%20UNION%0A%20%7B%20%3Fimpact%20jolux%3AimpactToLegalResource%20%3Ftarget.%20%3Ftarget%20jolux%3AlegalResourceSubdivisionIsPartOf%20%3Fwork.%20%7D%0A%20%3Fimpact%20jolux%3AlegalResourceImpactHasDateEntryInForce%20%3Fdate.%0A%20OPTIONAL%20%7B%20%3Fimpact%20jolux%3AimpactFromLegalResource%2Fjolux%3AlegalResourceSubdivisionIsPartOf%20%3Fsource%20%7D%0A%20FILTER(str(%3Fdate)%20%3E%3D%20%222026-01-01%22%20%26%26%20str(%3Fdate)%20%3C%3D%20%222027-12-31%22)%0A%7D%20ORDER%20BY%20%3Fwork%20%3Fdate%20%3Ftarget",
+          "retrievedAt": "2026-10-15T17:38:21.123Z",
+          "method": "fresh-official-Fedlex-impact-index-2026-2027-filtered-to-SR116",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Die API-Abfrage ist auf publizierte konsolidierte Fassungen und Änderungswirkungen im Fenster 2026–2027 begrenzt. Keine Garantie künftiger Rechtsbeständigkeit."
+      ],
+      "relevantProvisions": [
+        "Art. 1"
+      ],
+      "referencedVersionDescription": "1994-07-01",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-CH-HOL. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        },
+        {
+          "path": "outputs/release-mvp07-2026-10-08/sources/baseline-review.json",
+          "sha256": "e637f288686cf355a1d6457cd90145678c5360af34f1ee8e82963cb93047b45f",
+          "byteLength": 746452,
+          "originalCheckedOn": "2026-10-08",
+          "scope": "SRC-BUNDESFEIERTAG-19940701: begrenzter Art.-1-Befund und dessen gebundener amtlicher XML-Nachweis. Neue administrative Verwendung zusätzlich mit AP23B abgeglichen."
+        },
+        {
+          "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-BUNDESFEIERTAG-19940701.response",
+          "sha256": "f27e0ad0708dd3a4a0a58d43fad3204a11a726d28e0714ade11254eee7311a40",
+          "byteLength": 5690,
+          "originalCheckedOn": "2026-10-08",
+          "scope": "Amtliche XML-Vollbytes des bestehenden Bundesfeiertagsnachweises. Mit frisch abgerufenem Original vollständig identisch."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/10/sourceRefs/3",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/11/sourceRefs/4",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/5/sourceRefs/4",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/6/sourceRefs/3",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/7/sourceRefs/3",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/8/sourceRefs/4",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/9/sourceRefs/3"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-MATERIAL",
+      "kind": "officialMaterials",
+      "outcome": "unchanged",
+      "method": "fresh-official-historical-PDF-targeted-material-and-draft-comparison-with-current-article-and-AP23B-reuse",
+      "rationale": "Amtliche Botschaft vom 30.05.2006 erneut gelesen. Gedruckte S. 540 grenzt kommunale Feiertage auf Verfahren vor den betreffenden Gemeindebehörden ein. Entwurf S. 618 und aktueller Art. 7 Abs. 2 stimmen in dieser Fristendregel überein. S. 548–549 bestätigt zusätzlich die Stellung von Art. 39 im gerichtlichen Kapitel.",
+      "outcomeScope": "Begrenzter Behördenanknüpfungsbeleg für kantonale GR-Verwaltungswege und systematische Auslegung des gerichtlichen Stillstands. Keine allgemeine Feiertagsregel für Bundesverfahren.",
+      "versionFinding": {
+        "documentDate": "2006-05-30",
+        "publicationKind": "historicalMaterial",
+        "freshLocatorsConfirmed": [
+          "Gedruckte S. 540 / PDF-Seite 92 zu Art. 7",
+          "Gedruckte S. 548–549 / PDF-Seiten 100–101 zu Art. 39",
+          "Gedruckte S. 618 / PDF-Seite 170, Entwurf Art. 7"
+        ],
+        "usedProvisionsChanged": false
+      },
+      "findings": [
+        "Der Materialtext nennt kommunale Feiertage ausdrücklich, begrenzt sie aber auf die entsprechenden Gemeindebehörden. Die verwendeten sieben Wege bleiben kantonal.",
+        "Entwurf und heutiger Art. 7 Abs. 2 nennen Samstag, Sonntag und staatlich anerkannte Feiertage mit Ablauf am nächsten Werktag. Die Änderungstabelle weist keine Änderung dieses Absatzes aus.",
+        "Die historische Aussage zum damals noch nicht zulässigen elektronischen Verkehr wird nicht wiederverwendet. Massgeblich dafür bleibt der aktuelle Gesetzestext."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-MATERIAL.raw",
+          "sha256": "fd99aa944036fe8fdcc2abdd7c41c59ef9da975f2c03da13abc281ad19363a73",
+          "byteLength": 1882577,
+          "url": "https://www.gr.ch/Botschaften/2006/6-2006.pdf#page=92",
+          "retrievedAt": "2026-10-15T17:36:59.171Z",
+          "method": "fresh-official-historical-PDF-pages-92-100-101-170-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-VRG.raw",
+          "sha256": "220f67efe766a3cf994eabf500503dd00f4d9769c2810d2affa834f18df57bad",
+          "byteLength": 957913,
+          "url": "https://www.gr-lex.gr.ch/api/de/versions/3521/pdf_file",
+          "retrievedAt": "2026-10-15T17:37:01.970Z",
+          "method": "fresh-current-article-7-paragraph-2-and-change-table-countercheck",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Die Botschaft wird nur für die bezeichneten Abschnitte verwendet. Kein Vollgutachten zu ihren über 500 PDF-Seiten.",
+        "Kein historischer AP23B-PDF-Bytevergleich behauptet. Keine neue kommunale Rechtsabdeckung."
+      ],
+      "relevantProvisions": [
+        "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+      ],
+      "referencedVersionDescription": "2006-05-30",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-GR-MATERIAL. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/holidayBindings/1/legalBinding/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/10/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/11/sourceRefs/3",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/5/sourceRefs/3",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/6/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/7/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/8/sourceRefs/3",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/9/sourceRefs/2"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-RTG",
+      "kind": "statute",
+      "outcome": "unchanged",
+      "method": "fresh-official-PDF-targeted-articles-plus-current-future-version-index-with-bounded-AP23B-reuse",
+      "rationale": "Art. 1–3 erneut gelesen. Kantonale Feiertage nach Art. 2 und die Möglichkeit kommunaler konfessioneller Ergänzungen nach Art. 3 sind unverändert getrennt. Amtliche Metadaten bestätigen Version 2604 seit 01.01.2016 ohne angekündigte Folgefassung.",
+      "outcomeScope": "Kantonale Ruhetagsliste für die sieben GR-Verfahrenswege. Keine Gleichsetzung des Ruhetagsgesetzes mit einer allumfassenden kommunalen Feiertagsfreigabe.",
+      "versionFinding": {
+        "currentVersionDate": "2016-01-01",
+        "currentVersionId": 2604,
+        "futureVersions": [],
+        "abrogated": false,
+        "abrogatedScheduled": false,
+        "usedProvisionsChanged": false
+      },
+      "findings": [
+        "Art. 2 Abs. 1 nennt neben Sonntagen Neujahr, Karfreitag, Ostermontag, Auffahrt, Pfingstmontag, Weihnachten und Stephanstag. Bundesfeiertag folgt separat aus Bundesrecht. Art. 3 lässt Gemeinden lokale konfessionelle Feiertage bezeichnen. Deren Nichtberücksichtigung im kantonalen Verfahrensweg wird durch VRG/Materialien begrenzt begründet, nicht aus dem Ruhetagsgesetz allein."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-RTG.raw",
+          "sha256": "369ec822aade9fa6897f3ec7ec35a171a44151b532d56dfc25c550a5b316f7d2",
+          "byteLength": 317433,
+          "url": "https://www.gr-lex.gr.ch/api/de/versions/2604/pdf_file",
+          "retrievedAt": "2026-10-15T17:37:01.607Z",
+          "method": "fresh-official-PDF-articles-1-to-3-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-RTG-META.raw",
+          "sha256": "6257a43802eaa9c90c23c2725541a4567e08626d8bc4a37e29bda457f65d43ac",
+          "byteLength": 273620,
+          "url": "https://www.gr-lex.gr.ch/api/de/texts_of_law/520.100",
+          "retrievedAt": "2026-10-15T17:37:05.245Z",
+          "method": "fresh-official-current-future-version-index",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Kein historischer AP23B-PDF-Bytevergleich. Aktuelle GR-Material-/VRG-Bindung ist zusätzlich erforderlich.",
+        "Keine Aussage über Vollständigkeit lokaler Ruhetage für andere Verfahren."
+      ],
+      "relevantProvisions": [
+        "Art. 1–3"
+      ],
+      "referencedVersionDescription": "2016-01-01",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-GR-RTG. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/holidayBindings/1/legalBinding/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/10/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/11/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/5/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/6/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/7/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/8/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/9/sourceRefs/1"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-VRG",
+      "kind": "statute",
+      "outcome": "unchanged",
+      "method": "fresh-official-PDF-and-XHTML-targeted-article-review-plus-current-and-future-version-index-with-accepted-AP23B-reuse",
+      "rationale": "Amtliches PDF und strukturierter Volltext erneut für die verwendeten Bestimmungen gelesen. Aktuelle Version 3521 seit 01.01.2025 und leerer amtlicher Folgefassungsabschnitt frisch bestätigt. Die systematische Trennung zwischen Verwaltungsverfahren und Obergericht sowie die 30-/10-Tage-Fristen und gerichtliche Dringlichkeitsausnahme bleiben unverändert.",
+      "outcomeScope": "Sieben allgemeine GR-Verfahrenswege vor kantonalen Behörden bzw. Obergericht einschliesslich gerichtlicher Dringlichkeitsausnahme. Kein GR-Sozial- oder weiterer Spezialrechtsrelease.",
+      "versionFinding": {
+        "currentVersionDate": "2025-01-01",
+        "currentVersionId": 3521,
+        "futureVersions": [],
+        "abrogated": false,
+        "abrogatedScheduled": false,
+        "usedProvisionsChanged": false,
+        "announcedChangeFinding": "Amtliche Metadaten enthalten keine angekündigte Folgefassung und keine angekündigte Aufhebung. Aussage auf Publikationsstand des Abrufs begrenzt."
+      },
+      "findings": [
+        "Art. 1/2 und Kapitelüberschriften gelesen. Art. 7 Abs. 1/2 bestätigt Beginn am Folgetag sowie Verschiebung des letzten Tages. Art. 7 Abs. 1bis betrifft die elektronische Eröffnung und bleibt aus dem allgemeinen Direktzustellungsweg ausgeschlossen.",
+        "Art. 8/9 bestätigen Einhaltung und Erstreckung. Art. 28/29 und 32 bestätigen administrative Beschwerdewege mit 30 Tagen, für verfahrensleitende Anordnungen/vorsorgliche Massnahmen zehn Tagen. Kapitel 3 enthält keinen Stillstand entsprechend Art. 39.",
+        "Art. 39 gehört zu Kapitel 4, Verfahren vor dem Obergericht. Die drei Stillstandsperioden gelten für gesetzliche und gerichtlich bestimmte Fristen dieses gerichtlichen Stadiums. Dringlicherklärung durch besondere Verfügung und abweichende gesetzliche Regelungen bleiben Ausnahmen.",
+        "Art. 42 bestätigt zehn Tage für Prozessbeschwerden. Art. 49 einschliesslich Abs. 4 und Art. 52 bestätigen gerichtliche Wege und 30-/10-Tage-Fristen. Die Aktualisierung zum Obergericht ist bereits Bestandteil der Fassung 2025, kein neuer R08-Befund.",
+        "Änderungstabelle gegengelesen. Für Art. 7 Abs. 2 ist keine Änderung ausgewiesen. Art. 7 Abs. 1bis seit 01.04.2024 ändert den ausdrücklich nicht freigegebenen elektronischen Vollzugspfad."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-VRG.raw",
+          "sha256": "220f67efe766a3cf994eabf500503dd00f4d9769c2810d2affa834f18df57bad",
+          "byteLength": 957913,
+          "url": "https://www.gr-lex.gr.ch/api/de/versions/3521/pdf_file",
+          "retrievedAt": "2026-10-15T17:37:01.970Z",
+          "method": "fresh-official-PDF-targeted-article-and-systematic-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/GR-VRG-META.raw",
+          "sha256": "5e5a883ec90437884144d257da5eef9357c8f7fb1554fc48fdd4635e2aaac8f8",
+          "byteLength": 2339591,
+          "url": "https://www.gr-lex.gr.ch/api/de/texts_of_law/370.100",
+          "retrievedAt": "2026-10-15T17:37:03.985Z",
+          "method": "fresh-official-full-XHTML-and-current-future-version-index",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Kein historischer AP23B-PDF-Bytevergleich. Die gesetzessystematische AP23B-Auslegung wird unverändert begründet wiederverwendet.",
+        "Gerichtsferien gelten nicht allein deshalb vor jeder Verwaltungsbehörde, weil eine Frist gesetzlich bestimmt ist.",
+        "Lokale Feiertage bleiben für diese kantonalen GR-Wege ausser Betracht gemäss gesondert erneut gelesenem Materialbeleg. Diese Aussage wird nicht auf Bundesprofile übertragen.",
+        "Das Ausbleiben einer veröffentlichten Folgefassung ist kein Nachweis künftiger Rechtsbeständigkeit über den freigegebenen Zeitraum hinaus."
+      ],
+      "relevantProvisions": [
+        "Art. 1–2, 7–9, 28–29, 32, 39, 42, 49, 52"
+      ],
+      "referencedVersionDescription": "2025-01-01",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-GR-VRG. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/holidayBindings/1/legalBinding/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/laws/1/holidayPolicyReview/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/laws/1/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/10/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/11/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/5/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/6/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/7/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/8/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/9/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/suspensionProfiles/2/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/suspensionProfiles/3/sourceRefs/0"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-HOL",
+      "kind": "statute",
+      "outcome": "unchanged",
+      "method": "fresh-official-HTML-targeted-list-and-commencement-reading-with-bounded-AP23B-reuse",
+      "rationale": "Art. 1 enthält weiterhin genau die 15 amtlichen Feiertage der verwendeten TI-Projektion. Schlussfussnote bestätigt Inkrafttreten 09.02.2010. Der allgemeine Sammlungskopf 09.10.2026 ist nicht als neue Fassung des Feiertagsgesetzes missverstanden.",
+      "outcomeScope": "Amtliche TI-Feiertagsliste als räumliche Grundlage der fünf allgemeinen LPAmm-Wege. Keine Übernahme einer abweichenden arbeitsrechtlichen Teilmenge.",
+      "versionFinding": {
+        "currentVersionDescription": "Gesetz vom 15.12.2009, in Kraft seit 09.02.2010",
+        "officialCollectionHeader": "09.10.2026",
+        "usedProvisionsChanged": false,
+        "announcedChangeFinding": "Im aktuellen Normeintrag und dessen Fussnoten keine neue Änderung der Feiertagsliste ausgewiesen."
+      },
+      "findings": [
+        "Neujahr, Dreikönig, Josefstag, Ostermontag, 1. Mai, Auffahrt, Pfingstmontag, Fronleichnam, Peter und Paul, 1. August, Mariä Himmelfahrt, Allerheiligen, Mariä Empfängnis, Weihnachten und Stephanstag direkt bestätigt."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-HOL.raw",
+          "sha256": "d2450df828a9ff14d9a6f19cd94dc8336bd8e387f9bad8cb3e3d33a967abb22b",
+          "byteLength": 18369,
+          "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+          "retrievedAt": "2026-10-15T17:37:02.307Z",
+          "method": "fresh-official-HTML-article-1-and-commencement-reading",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Keine neue Freigabe kommunaler Feiertagsquellen. Ein allgemeiner Sammlungskopf ist kein lückenloser zukünftiger Gesetzgebungsnachweis.",
+        "Kein behaupteter historischer PDF- oder HTML-Bytevergleich zum AP23B-Prüfdatum."
+      ],
+      "relevantProvisions": [
+        "Art. 1 und Schlussfussnote"
+      ],
+      "referencedVersionDescription": "Inkrafttreten 2010-02-09",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-TI-HOL. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/holidayBindings/0/legalBinding/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/0/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/1/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/2/sourceRefs/1",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/3/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/4/sourceRefs/2"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-LPAMM",
+      "kind": "statute",
+      "outcome": "unchanged",
+      "method": "fresh-official-PDF-and-HTML-targeted-article-and-version-review-with-accepted-AP23B-interpretation-reuse",
+      "rationale": "Aktuelle amtliche HTML-Seite verknüpft den PDF-Endpunkt atto/11221 und nennt wie das frisch gelesene PDF den Stand 01.06.2025. Die für alle fünf TI-Wege tragenden Artikel wurden erneut gelesen. Tagesbeginn, Endverschiebung, drei Stillstandsperioden, 30-/15-Tage-Fristen und Vorschussausnahme stimmen mit der abgenommenen AP23B-Auslegung überein.",
+      "outcomeScope": "Die fünf modellierten allgemeinen Tessiner Verwaltungswege, ihre Feiertagsanknüpfung und ausdrücklich gebundenen Ausschlüsse. Keine positive Aussage zu nicht modellierten Spezialverfahren.",
+      "versionFinding": {
+        "currentVersionDate": "2025-06-01",
+        "officialCurrentPdfEndpoint": "atto/11221",
+        "officialCollectionHeader": "09.10.2026",
+        "collectionHeaderIsNotStatuteVersion": true,
+        "usedProvisionsChanged": false,
+        "announcedChangeFinding": "Im gelesenen aktuellen Erlass und dessen Änderungshinweisen keine neue Änderung der verwendeten Vorschriften. Der Sammlungskopf entspricht weiterhin dem bereits am 12.10.2026 dokumentierten Stand.",
+        "latestListedAmendment": "Art. 89, Gesetz vom 24.02.2025, in Kraft seit 01.06.2025. Keine Änderung der hier verwendeten Rechenregeln."
+      },
+      "findings": [
+        "Art. 1 und 6 bestätigen Spezialrechtsvorbehalt und Überweisung. Art. 13 Abs. 1 lässt den Lauf am Folgetag beginnen und Abs. 3 verschiebt Samstag, Sonntag und amtliche Feiertage auf den nächsten Werktag.",
+        "Art. 16 Abs. 1 nennt Ostern minus/plus sieben Tage, 15.07.–15.08. und 18.12.–02.01. jeweils einschliesslich. Abs. 3 nimmt vorsorgliche Verfahren aus und Abs. 4 wahrt besondere Gesetze.",
+        "Art. 68 Abs. 1/2 bestätigt 30 bzw. 15 Tage, Abs. 3 wahrt besondere Fristen. Art. 73/75 trägt behördlich gesetzte Antwort-/Replikfristen. Art. 80/84 bestätigt die beiden modellierten Instanzenwege.",
+        "Art. 47 Abs. 3 bestimmt den Nichtstillstand des Kostenvorschusses. Der Anschluss von Abs. 4 wird getrennt durch den frisch gegengeprüften Entscheid getragen. Abs. 5 bleibt ausgeschlossen.",
+        "Die Fussnoten bestätigen das Inkrafttreten elektronischer Bestimmungen 2022 und 2024. Ihr Produktausschluss beruht weiter auf fehlender Modellierung, nicht auf angeblich fehlendem Inkrafttreten. Art. 113/115 und allgemeines Inkrafttreten 01.03.2014 gelesen."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-LPAMM.raw",
+          "sha256": "b519dd0d886ae02a2f20a81554a114de830f1a9dba092161cabcd551502c528a",
+          "byteLength": 146198,
+          "url": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/pdfatto/atto/11221",
+          "retrievedAt": "2026-10-15T17:37:02.794Z",
+          "method": "fresh-official-PDF-targeted-article-reading",
+          "status": 200
+        },
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/TI-LPAMM-HTML.raw",
+          "sha256": "a55daf6b1fb330c6f95294a67c7daf2f0028ffaa219bf1c1e4a01e110f679a0e",
+          "byteLength": 202625,
+          "url": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/151",
+          "retrievedAt": "2026-10-15T17:37:06.156Z",
+          "method": "fresh-official-current-HTML-PDF-link-and-footnote-check",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Kein historischer AP23B-PDF-Bytevergleich. Historische Auslegung vom 12.10.2026 mit Abnahmeergänzung vom 14.10.2026 wird wiederverwendet.",
+        "Die TI-Sammlung bietet im gelesenen Eintrag keinen separaten zukünftigen Versionsindex. Daraus wird kein unbegrenzter Nachweis fehlender künftiger Änderungen abgeleitet.",
+        "TI-O2 bleibt gesperrt. Keine Berechnung eines definitiven Enddatums, wenn die Endverschiebung in einen neu beginnenden Stillstand führt.",
+        "Behördensitzanker gemäss DEC-2026-031. Die frühere TI-O1-Sperre bei ausserkantonalen Partei-/Vertreterorten bleibt aufgehoben."
+      ],
+      "relevantProvisions": [
+        "Art. 1, 6, 10, 13–17, 47, 68, 73, 75, 80, 84, 113, 115"
+      ],
+      "referencedVersionDescription": "2025-06-01",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-TI-LPAMM. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/holidayBindings/0/legalBinding/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/laws/0/holidayPolicyReview/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/laws/0/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/0/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/1/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/2/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/3/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/4/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/suspensionProfiles/0/sourceRefs/0",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/suspensionProfiles/1/sourceRefs/0"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-MATERIAL",
+      "kind": "officialMaterials",
+      "outcome": "unchanged",
+      "method": "fresh-official-historical-PDF-identity-and-targeted-passage-reading-with-AP23B-interpretation-reuse",
+      "rationale": "Botschaft 6645 vom 23.05.2012 erneut am amtlichen Original identifiziert. S. 11 Ziff. 3.1 bestätigt den ersten zählenden Tag nach dem Stillstand und die Ausdehnung auf die allgemeine Verwaltungstätigkeit. Verwendete Auslegung entspricht AP23B und wird nicht zu einer Lösung von TI-O2 erweitert.",
+      "outcomeScope": "Historische Auslegungshilfe für den Beginn nach Stillstand und den allgemeinen Geltungsbereich der TI-Ferienregel in den beiden 30-Tage-Rechtsmittelwegen.",
+      "versionFinding": {
+        "documentDate": "2012-05-23",
+        "documentNumber": "6645",
+        "publicationKind": "historicalMaterial",
+        "freshLocatorConfirmed": "PDF-Seite 11, Ziff. 3.1",
+        "usedProvisionsChanged": false
+      },
+      "findings": [
+        "Die Passage erklärt ausdrücklich, dass der erste Tag nach dem Ende der Ferien zählt. Sie erläutert zudem die Ausdehnung von Rechtsmittelverfahren auf die gesamte Verwaltungstätigkeit. Daraus folgt kein geprüfter Umgang mit einer Endverschiebung in einen neu beginnenden Stillstand."
+      ],
+      "freshEvidence": [
+        {
+          "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-MATERIAL.raw",
+          "sha256": "48302ace287445ac6b49685aae167c982d4bc3f87d6d4967b23dff4d403a8ce0",
+          "byteLength": 678155,
+          "url": "https://www4.ti.ch/fileadmin/POTERI/GC/allegati/odg-mes/pdf/M6645.pdf",
+          "retrievedAt": "2026-10-15T17:37:03.217Z",
+          "method": "fresh-official-historical-PDF-identity-and-page-11-section-3.1-reading",
+          "status": 200
+        }
+      ],
+      "limitations": [
+        "Historische Materialien sind kein geltender Normtext. Keine vollständige neue Kommentierung der gesamten Botschaft.",
+        "Kein byteidentischer Vergleich zum AP23B-Abruf behauptet. Der ergänzende Kommissionsbericht 6645R ist nicht Teil dieser elf gebundenen IDs und ersetzt keinen hier geprüften Beleg.",
+        "TI-O2 bleibt gesperrt."
+      ],
+      "relevantProvisions": [
+        "S. 11 Ziff. 3.1"
+      ],
+      "referencedVersionDescription": "2012-05-23",
+      "reusedEvidence": [
+        {
+          "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+          "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+          "byteLength": 9412,
+          "originalCheckedOn": "2026-10-12",
+          "scope": "AP23B-Auslegung und konkret bezeichnete Fundstelle zu SRC-AP23B-TI-MATERIAL. Das heutige Datum ersetzt das ursprüngliche Prüfdatum nicht."
+        },
+        {
+          "path": "docs/fachrecht/abnahme-ap23b.md",
+          "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+          "byteLength": 4511,
+          "originalCheckedOn": "2026-10-14",
+          "scope": "Menschliche AP23B-Fachabnahme einschliesslich TI-O1-Ergänzung und TI-O2-Sperrbehandlung. Keine automatische Quellenreleasefreigabe für MVP 0.8."
+        }
+      ],
+      "referenceUse": "positive-or-shared-reference",
+      "referenceLocations": [
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/0/sourceRefs/2",
+        "administrative-procedures/ch-cantonal-administrative-procedures.json#/paths/1/sourceRefs/2"
+      ],
+      "historicalRawOriginalArchiveBound": false,
+      "historicalHumanApprovalAppliedOnlyToPriorScope": true,
+      "humanApproval": false,
+      "sourceReleaseApproved": false,
+      "dataPromotionApproved": false,
+      "publicationApproved": false
+    }
+  ],
+  "counts": {
+    "total": 11,
+    "statutes": 5,
+    "officialMaterials": 2,
+    "judgments": 4,
+    "unchanged": 11,
+    "changed": 0,
+    "unclear": 0,
+    "unavailable": 0,
+    "freshOfficialContentReviewed": 11,
+    "boundedHistoricalInterpretationReuse": 11,
+    "knownSecondaryMetadataConflicts": 1
+  },
+  "assessment": "Alle elf neuen Verwaltungsquellen im gebundenen Aussageumfang inhaltlich bestätigt. Fünf Normbezüge, zwei historische Materialien und vier Entscheide wurden jeweils anhand frisch abgerufener amtlicher Inhalte geprüft. Aktuelle Fassungen und publizierte Folgefassungen wurden nach den verfügbaren amtlichen Indexstrukturen kontrolliert. Keine neue materielle Änderung der verwendeten Rechenregeln festgestellt. Die AP23B-Auslegung und Abnahmegrenzen bleiben begründet wiederverwendet.",
+  "methodology": {
+    "contentReview": "Gezielte Lektüre aller im Kandidaten referenzierten Abschnitte in frisch abgerufenen amtlichen Volltextdateien. Keine Behauptung einer vollständigen Neukommentierung sämtlicher Erlasse, Materialien oder Entscheide.",
+    "versionReview": "GR amtliche aktuelle und zukünftige Versionsmetadaten, TI aktueller HTML-/PDF-Kopf und Änderungshinweise, CH Fedlex-Versionen und Änderungswirkungen im Fenster 2026–2027.",
+    "historicalReuse": "AP23B-Prüfung 12.10.2026 und Abnahme 14.10.2026 einzeln hashgebunden. Historische Originalbytes von AP23B sind nicht archiviert und werden weder rekonstruiert noch als identisch bezeichnet.",
+    "byteComparisons": "CH-XML frisch gleich gebundenem MVP07-Original. Beide GR-Entscheid-PDFs frisch vom amtlichen Ursprung gleich dem jeweils frisch abgerufenen Entscheidsuche-Spiegel. Diese zwei Vergleichsarten bleiben getrennt.",
+    "legalServices": "Entscheidsuche für Volltextgegenprüfung, Swiss Caselaw für Entscheididentität, Ursprungs-URLs und Zitiermetadaten. TI-Metadatenfehler anhand amtlichem Original aufgelöst. Suchfehlschläge mit Kurzjahreszahlen bei GR durch Langbezeichner aufgelöst."
+  },
+  "evidenceBindings": [
+    {
+      "path": "outputs/release-mvp08-2026-10-15/sources/source-inventory.json",
+      "sha256": "6d40975ddf0fc334a43ae7444033037ab9809a90763be2461dc21b139d589526",
+      "byteLength": 2262923
+    },
+    {
+      "path": "outputs/ap23d2-candidate-2026-10-15/bundle/manifest.json",
+      "sha256": "ccb67c22e55737af064f8c9ef7b122db8c5dfe1f4a1f142eb77cd05fd5ac646d",
+      "byteLength": 23881
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+      "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af",
+      "byteLength": 9412
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap23b.md",
+      "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0",
+      "byteLength": 4511
+    },
+    {
+      "path": "outputs/release-mvp07-2026-10-08/sources/baseline-review.json",
+      "sha256": "e637f288686cf355a1d6457cd90145678c5360af34f1ee8e82963cb93047b45f",
+      "byteLength": 746452
+    },
+    {
+      "path": ".work/mvp07-source-review-2026-10-08/baseline/run-02/SRC-BUNDESFEIERTAG-19940701.response",
+      "sha256": "f27e0ad0708dd3a4a0a58d43fad3204a11a726d28e0714ade11254eee7311a40",
+      "byteLength": 5690
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-HOL-XML.headers",
+      "sha256": "0ad659f3e8f5bb3cdda6e021d45ebe333f5ff801d1772de49a8917ac69d87de4",
+      "byteLength": 1192
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-HOL-XML.http.json",
+      "sha256": "235532c2a67f2f0e50ed987c44c89bc09629853003f162211bb62bcf1693d8ae",
+      "byteLength": 715
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-HOL-XML.raw",
+      "sha256": "f27e0ad0708dd3a4a0a58d43fad3204a11a726d28e0714ade11254eee7311a40",
+      "byteLength": 5690
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-HOL-XML.txt",
+      "sha256": "b1ea60f12df0de65026c87304a81f6863ce167d323f5070c0f4f4c55b9767e5c",
+      "byteLength": 1640
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-HOL-version-review.json",
+      "sha256": "792256d1880106a1bd65586079ec0e4a85cd7025697f805ee22b8283fdcce350",
+      "byteLength": 254
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-IMPACT-INDEX.headers",
+      "sha256": "10954fc5c54bc473e1bb3c6eda972ba1b393d530fc05254d89b133fa07b1ce10",
+      "byteLength": 902
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-IMPACT-INDEX.http.json",
+      "sha256": "d409742aec97408ac3d99067065c5439fdbea2a9b801f9da10123dce9cd64a05",
+      "byteLength": 4218
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-IMPACT-INDEX.raw",
+      "sha256": "5443f835b0047f3a1c6713ca1b15c490705b0da6306943e4a6245488ba486772",
+      "byteLength": 58571
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-IMPACT-INDEX.txt",
+      "sha256": "2c8cbce506926b96f070b9fe240e6a968603a330a3653ca6293133ce2e65b517",
+      "byteLength": 26135
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-VERSION-INDEX.headers",
+      "sha256": "50b597cf6385a89a7ef4dbaa43615ea81fe88e9c9e7d5d98d9bde8999b88c5c1",
+      "byteLength": 902
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-VERSION-INDEX.http.json",
+      "sha256": "6f82305ab558cd391c199eabd24b99ce8eb6cfb137c4d8f0f9e806a41da0cb8d",
+      "byteLength": 3642
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-VERSION-INDEX.raw",
+      "sha256": "7117bc8f6798ec2fb2a4199a87127558c3e6dd79af1b3d7947dbcbf033c9f8b9",
+      "byteLength": 11256
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/CH-VERSION-INDEX.txt",
+      "sha256": "6a375113a796f1343c1dda1db68e4c0dc7f51cf159afabcab0cd92fdec923399",
+      "byteLength": 3498
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-RTG-META.headers",
+      "sha256": "322ee2a65c4632929b6781b8f380a183a8f054b7a0d58b99a641d9db40d1056e",
+      "byteLength": 533
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-RTG-META.http.json",
+      "sha256": "0aff27986d6012963263df6c9b42fe4685113f56dbb0009dd333b6172292b1d9",
+      "byteLength": 485
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-RTG-META.raw",
+      "sha256": "6257a43802eaa9c90c23c2725541a4567e08626d8bc4a37e29bda457f65d43ac",
+      "byteLength": 273620
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-RTG-META.txt",
+      "sha256": "379e393da215cbc697968b1bb13afc484a3be315d1f914c6be902adc982bd92b",
+      "byteLength": 6260
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-RTG-META.version.json",
+      "sha256": "2edc0383ee46223e1c5b8504ba6cffaa442c5c160a95bb2f9b03c601b3a2db74",
+      "byteLength": 429
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-CITATION-EXPANDED.json",
+      "sha256": "ff9218590375fb79d1d6d6b1077268bdd063432835843a862fbe8e41dfdca144",
+      "byteLength": 3159
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-CITATION.json",
+      "sha256": "ae4a55476e76c02303797d77245d789f4caf44e6bbc49a74e08c96579c8d8528",
+      "byteLength": 6078
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-OFFICIAL.headers",
+      "sha256": "d0bb6bee143daaf9aee88f91f32027fa5f7cf96302314fb2a5e86dddfda9b116",
+      "byteLength": 335
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-OFFICIAL.http.json",
+      "sha256": "9a0b7f4eb188888d1eb97bf2bd56fb363ae0a1fea45ddcf8d867edd5eb8df20f",
+      "byteLength": 1270
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-OFFICIAL.raw",
+      "sha256": "3be4892f2a6524887d0d7e57bb73925e3ba7087589874ba8867f08b1806fa98e",
+      "byteLength": 80518
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-SWISSCASELAW-EXPANDED.json",
+      "sha256": "9d9c003c6779e97526b10c6fa2eba819f6c648722ece42aee354653d215f2aa4",
+      "byteLength": 30266
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-STAGE-SWISSCASELAW.json",
+      "sha256": "24c0bb1c61afc4a8de776aa1720252ab543046287f8b7e3155902771003810fc",
+      "byteLength": 355
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-CITATION-EXPANDED.json",
+      "sha256": "2b43807541209c61a947ae72389ae5f44eb6eb04d9aee9c6e6c9cf54835640bd",
+      "byteLength": 3150
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-CITATION.json",
+      "sha256": "82575d438d3f6dbb714b5354762c9495476c641775e46521eae3e0ad1220e92a",
+      "byteLength": 5731
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-OFFICIAL.headers",
+      "sha256": "9b2f0f570c4a4ddd03436de7590b4c8c4d8ceee84c7f143274ec0dd4e37a1430",
+      "byteLength": 334
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-OFFICIAL.http.json",
+      "sha256": "ea53b327672f82f4167be6e5014b6a3582dd46cad1db08aadda203fe7d881313",
+      "byteLength": 1266
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-OFFICIAL.raw",
+      "sha256": "d9605a72f7eba45badfdfc5979c6287e9e24e8ed2e150c1602cae995e7e775ac",
+      "byteLength": 78831
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-SWISSCASELAW-EXPANDED.json",
+      "sha256": "88da042c001d2854729e6acb4aa5064c533362ffb31f00999bf2634812c2764f",
+      "byteLength": 22951
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-START-SWISSCASELAW.json",
+      "sha256": "7ae10e05231df3305417b501359b92d1af09ac7cd05b087a4f4b006d3e76fea9",
+      "byteLength": 353
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-VRG-META.headers",
+      "sha256": "d561325970177b00126156de1abd763538d92720ea19df014b5088ce9d66976e",
+      "byteLength": 533
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-VRG-META.http.json",
+      "sha256": "a9baf116e361de7cc939f2d9daafcfa6dd53d18032347ead03b7ba6380d70586",
+      "byteLength": 486
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-VRG-META.raw",
+      "sha256": "5e5a883ec90437884144d257da5eef9357c8f7fb1554fc48fdd4635e2aaac8f8",
+      "byteLength": 2339591
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-VRG-META.txt",
+      "sha256": "00e7cc2f512d377daf6e37d024938b6c5b86f34e5b246ee756c92fbe20489c13",
+      "byteLength": 63706
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/GR-VRG-META.version.json",
+      "sha256": "5267c1cb60907303c4752261a41eb25feda3091507a43bf23860f29a43c59b03",
+      "byteLength": 420
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-STAGE-JUD.headers",
+      "sha256": "7e11c01d043ca969f0ef8a4e5848ad65f73e3a5c5a62fb319c3f93effef6ffde",
+      "byteLength": 333
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-STAGE-JUD.http.json",
+      "sha256": "b4ca9fb5b6a0a246ba80cf0e7860a517466f25c5f65a4a755a27db59ffa286f1",
+      "byteLength": 558
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-STAGE-JUD.raw",
+      "sha256": "3be4892f2a6524887d0d7e57bb73925e3ba7087589874ba8867f08b1806fa98e",
+      "byteLength": 80518
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-STAGE-JUD.txt",
+      "sha256": "8d21238420cb03caf77966bc15703fa112399069ed2fa041acaf469115178e2c",
+      "byteLength": 12127
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-START-JUD.headers",
+      "sha256": "dc574479c431ece8b013633fbbfb61787fc6441993ff75011ace83ec726f825d",
+      "byteLength": 333
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-START-JUD.http.json",
+      "sha256": "727d077bbc5919dc438b5a03609d3bc9e3d7a4ca5bbd0e8fed691f401ea31210",
+      "byteLength": 556
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-START-JUD.raw",
+      "sha256": "d9605a72f7eba45badfdfc5979c6287e9e24e8ed2e150c1602cae995e7e775ac",
+      "byteLength": 78831
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-GR-START-JUD.txt",
+      "sha256": "77c7f05575f5eb62d4d9606a035c8b829b9d3241d12cb75676e83b9733676e89",
+      "byteLength": 9339
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-ADVANCE-JUD.headers",
+      "sha256": "53b51239e44f502062f45686da6ad84b48f91e8784ba297d54a3be1484c69952",
+      "byteLength": 349
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-ADVANCE-JUD.http.json",
+      "sha256": "47c0a1a40a8d6ebc519185b9928888fcf7f1a4a52756a1976a5c0db9417207d1",
+      "byteLength": 562
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-ADVANCE-JUD.raw",
+      "sha256": "d8afda143ebfb3a62067e1fe38321360b1ca044ab1f68342f624b9f3da587358",
+      "byteLength": 19162
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-ADVANCE-JUD.txt",
+      "sha256": "46dc6b379f242085dc88caf09f531a2f970aa82b6d58f1c54248116614e0dc9b",
+      "byteLength": 12380
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-PROVISIONAL-JUD.headers",
+      "sha256": "4514fcbcdf1b09aea23f7bf8e5816f52834406e97dea40e47742dba04c3d8f68",
+      "byteLength": 349
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-PROVISIONAL-JUD.http.json",
+      "sha256": "24dd46f73ba59d5ff1a7f87b81eecb6cdffc9ae1ec59c460ca18d7e6b1418bef",
+      "byteLength": 576
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-PROVISIONAL-JUD.raw",
+      "sha256": "810ac5fd439a711e4907f6c93e8dfa3c3ef23ea09945bd45aca8f906896f2d36",
+      "byteLength": 16995
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/JUD-AP23B-TI-PROVISIONAL-JUD.txt",
+      "sha256": "cfc172097d031b5ac8535bb9208f32e4832c619cb50cac27bf435d9943f7d94d",
+      "byteLength": 4273
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-CH-HOL.headers",
+      "sha256": "ffd5a28b8f66858cce95330cc496414bbc293e70dc73c4c973e5b4cc2f8a0895",
+      "byteLength": 1134
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-CH-HOL.http.json",
+      "sha256": "b0834cca77b4045898f03498e3f447586f3efe43ed519f6d3c0ff223b0bd8147",
+      "byteLength": 516
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-CH-HOL.raw",
+      "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+      "byteLength": 77151
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-CH-HOL.txt",
+      "sha256": "e0549bb87c68aef010d0eeba2c2c8186cefa929fe8061829ee7c9b34fb362807",
+      "byteLength": 2492
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-MATERIAL.headers",
+      "sha256": "6213ab5298c39a13e4530c5a33cd437e3b8dfbdd7af78a1b5506a901c5b3eed6",
+      "byteLength": 1337
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-MATERIAL.http.json",
+      "sha256": "af30e21063b18629f4a6a7202c960e8a094859b1ceecbd6033eda5faab1808e6",
+      "byteLength": 508
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-MATERIAL.raw",
+      "sha256": "fd99aa944036fe8fdcc2abdd7c41c59ef9da975f2c03da13abc281ad19363a73",
+      "byteLength": 1882577
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-MATERIAL.txt",
+      "sha256": "819b149edb6596c88ab7bec134a31631d7f35bc4c59e74dfd52fbd622fad3084",
+      "byteLength": 947479
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-RTG.headers",
+      "sha256": "7112491ae044c8a9fab39e027fa95e74a7a4502df15b88eb1175365f9898a5a7",
+      "byteLength": 723
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-RTG.http.json",
+      "sha256": "60d3130ad4bf97da62dd14f294b7f9fadb67679504c3b66001b4da107f953a8b",
+      "byteLength": 499
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-RTG.raw",
+      "sha256": "369ec822aade9fa6897f3ec7ec35a171a44151b532d56dfc25c550a5b316f7d2",
+      "byteLength": 317433
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-RTG.txt",
+      "sha256": "bf5374e19b885fc6703510063c0247613f62f47ddfb887aeb14012ef7147d9d4",
+      "byteLength": 6537
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-VRG.headers",
+      "sha256": "b69cbf6c58f47fc4ce4ad4962a345921aa881466bcfddcf6653743de255fd5e8",
+      "byteLength": 723
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-VRG.http.json",
+      "sha256": "8d9505305805c61b4027fe9c544689c8065069900551aa1c9fb99387186b1f80",
+      "byteLength": 499
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-VRG.raw",
+      "sha256": "220f67efe766a3cf994eabf500503dd00f4d9769c2810d2affa834f18df57bad",
+      "byteLength": 957913
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-GR-VRG.txt",
+      "sha256": "29e7e3997bae01f23b16baf582084182ae9a6cb4eb14312cdceefda48d67b9e4",
+      "byteLength": 66157
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-HOL.headers",
+      "sha256": "29fd915ea91a1b1921eb66472fc84f8aeee685fe049320f7ad712a745198adc3",
+      "byteLength": 671
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-HOL.http.json",
+      "sha256": "0ea85a3c2119ec99f4f47c2777888663c992b0e731e8f127f75b95942d9e26c9",
+      "byteLength": 540
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-HOL.raw",
+      "sha256": "d2450df828a9ff14d9a6f19cd94dc8336bd8e387f9bad8cb3e3d33a967abb22b",
+      "byteLength": 18369
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-HOL.txt",
+      "sha256": "0f17f4eab7c138da6f68375ccd8beb8909a14246afa2aade1a2b0f0edf72df29",
+      "byteLength": 1710
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-LPAMM.headers",
+      "sha256": "a546fa80939dc13cbbebb48fefbb189402503fb4b27199e4f4f5fbd91963e466",
+      "byteLength": 662
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-LPAMM.http.json",
+      "sha256": "330bacc3fcf324889968a5aa05ad59ddfe481ca18fe1ded8d7802ac43fc3f620",
+      "byteLength": 551
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-LPAMM.raw",
+      "sha256": "b519dd0d886ae02a2f20a81554a114de830f1a9dba092161cabcd551502c528a",
+      "byteLength": 146198
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-LPAMM.txt",
+      "sha256": "a8608c68d40d739b41fc4c39ef7b41fea71ea17a9ece7a926e9278d5937ac06b",
+      "byteLength": 54547
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-MATERIAL.headers",
+      "sha256": "87fbc14ef4b51fb69fb2b0442d36ecc3bfb243ad1dab33fe17d15847a80e2a85",
+      "byteLength": 561
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-MATERIAL.http.json",
+      "sha256": "7826632c41b9ae51482898f822cdc0cc30674d97c92faa6ebe4d89853d59197e",
+      "byteLength": 539
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-MATERIAL.raw",
+      "sha256": "48302ace287445ac6b49685aae167c982d4bc3f87d6d4967b23dff4d403a8ce0",
+      "byteLength": 678155
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/SRC-AP23B-TI-MATERIAL.txt",
+      "sha256": "57a8f00b0d7092bfc18dde90468bb5db24dc407b39c71c5395442f6408b57834",
+      "byteLength": 351166
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-CITATION.json",
+      "sha256": "b6a54b303e48fd14ef44024629650df8afb8dc4f5824007839020f8f16aa7ad7",
+      "byteLength": 3763
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-CLAIM-SUPPORT.json",
+      "sha256": "343a20e71763bded140348d3b93091d21b898698e66105b383ee38ec489ed65f",
+      "byteLength": 1741
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-ENTSCHEIDSUCHE.json",
+      "sha256": "d8830adf0072685927c3dd4465a41a1d9d53a31fc98cc0db4f396034bcc608ec",
+      "byteLength": 28550
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-ERWAEGUNG.json",
+      "sha256": "f7faa100c5b6ad9339ebc5fec4c288fdc90e375882fe43c962581195276228c1",
+      "byteLength": 6333
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-OFFICIAL.headers",
+      "sha256": "f78b72fb01185bb5f14a771da23be4c4c84b9fc7348e7220105c412f6feafcc6",
+      "byteLength": 709
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-OFFICIAL.http.json",
+      "sha256": "2276bf0b6f826422a58dd542417b574e39b9e25f6f14647bb8f230bbf56f7049",
+      "byteLength": 700
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-OFFICIAL.raw",
+      "sha256": "11ba3923eb38bb20764e8759a4ed15ad753775e6fb69f9475626ab2206faa0ac",
+      "byteLength": 35816
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-ADVANCE-OFFICIAL.txt",
+      "sha256": "3abcc91beab3fbec875e6e160b9c7541fa3da8a91ac100b9dd9e28c94af15550",
+      "byteLength": 13292
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-LPAMM-HTML.headers",
+      "sha256": "4ff62be407a49508da38f2840d2e7cff4255eabc4753a80ce2cbfbaef8edace7",
+      "byteLength": 671
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-LPAMM-HTML.http.json",
+      "sha256": "b170607682659f2fa2d9a3e907002242ddb800ba11c1648267c4a88effc16370",
+      "byteLength": 531
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-LPAMM-HTML.raw",
+      "sha256": "a55daf6b1fb330c6f95294a67c7daf2f0028ffaa219bf1c1e4a01e110f679a0e",
+      "byteLength": 202625
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-LPAMM-HTML.txt",
+      "sha256": "3e9a19989ebd5c3fe75c53ca51ade2031a0582aebf113de155a3ef3142957338",
+      "byteLength": 54496
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-CITATION.json",
+      "sha256": "139b64785f601b179dd8ab0ecd79d9c2852d15a51e5be1f203150ba440802a80",
+      "byteLength": 3094
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-ENTSCHEIDSUCHE.json",
+      "sha256": "02f84ea39c97b791c25b1ec05723ce5d91ef192a8a8bd34c99a04dc073a3457a",
+      "byteLength": 12470
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-OFFICIAL.headers",
+      "sha256": "5e34703464d5487e78c335414044359e5d7525a6562bc1fcf1358045068a0562",
+      "byteLength": 388
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-OFFICIAL.http.json",
+      "sha256": "9c497854f40da6072e97d7c609a94a93c82bb11ec3367ff3be6a0fd2ba3f1609",
+      "byteLength": 1138
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-OFFICIAL.raw",
+      "sha256": "a7b2dd659e60f2461584165a754a3ea8977877910eebc09aa7ae4c9849dd4bcf",
+      "byteLength": 24401
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-OFFICIAL.txt",
+      "sha256": "f0e8b690977a88bcc420808e271e247ac0630d9d38101f4ad66391357bbf72fd",
+      "byteLength": 4687
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/TI-PROVISIONAL-SWISSCASELAW.json",
+      "sha256": "6b9e79a31626f9d4b2e2634ecfa27f9e89c08c61f5ed021cc7ec6b24c6c8b0ad",
+      "byteLength": 5053
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/build-review.mjs",
+      "sha256": "af9acc9c0f12332d1c4c5d7928120fa1146d187e8c0f0f462b91b9d16139224b",
+      "byteLength": 30723
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/download-index.json",
+      "sha256": "6770a616fda26867dd20678d13d447a89a2e7f95f23762c8d1a1d7a0f4f87477",
+      "byteLength": 20925
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/extract.py",
+      "sha256": "d1c486c94c6a0625f30623c0923c14169fde41995d90c915c5fe08636bd09aa1",
+      "byteLength": 1677
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/fetch-sources.mjs",
+      "sha256": "c6597c6c373bebe6b0ed43622d33d0af6e6afb36fc0d2b41610fe670499ae140",
+      "byteLength": 2981
+    },
+    {
+      "path": ".work/mvp08-source-review-2026-10-15/admin/inspect-fedlex.py",
+      "sha256": "7ce5fa06c975f9405812f9ef21be7add0ba21ed9e658def8518e52c9b843d057",
+      "byteLength": 701
+    }
+  ],
+  "limits": [
+    "Keine neue menschliche Fach-, Quellen-, Release-, Übernahme-, Publikations- oder Betriebsfreigabe.",
+    "Keine Erweiterung der zwölf TI-/GR-Pfadfreigaben über 31.12.2027 und keine ausserbernische Sozialfreigabe.",
+    "TI-O2, elektronische Vollzugspfade, Beweiskostenvorschüsse nach Art. 47 Abs. 5 LPAmm und weitere Spezialwege bleiben abgegrenzt. TI-O1 bleibt durch DEC-2026-031 geschlossen.",
+    "Nidwaldner Kontrastquellen gehören nicht zu diesen elf positiven Kandidatenreferenzen und werden nicht operativ aktiviert.",
+    "Keine universelle Vollständigkeitsbehauptung über neue Rechtsprechung seit AP23B. Gegenstand ist der Inhalts-, Identitäts- und Fassungsabgleich der konkret gebundenen Quellen.",
+    "Private Rohdownloads und MCP-Antworten bleiben in .work. Sie sind nicht zur öffentlichen Übernahme freigegeben.",
+    "Produkt, Datenkandidat, Quellenregister und historische Berichte bleiben unverändert."
+  ]
+}

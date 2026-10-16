@@ -7,10 +7,15 @@ import { canonicalSocialJson, rawSha256Text, socialObjectSha256, validateSocialC
 import type { BoundCalendarRuntime } from './calendarResolution';
 import type { CalculationData, CalendarData, LegalProfile, ValidatedReleaseLike } from './types';
 import type { SpecialRegimeCatalog } from './specialTypes';
+import { createFormat8CalculationData } from './format8CalculationData';
+import type { ParsedFormat8Data } from './releaseFormat8';
+export { createFormat8CalculationData } from './format8CalculationData';
+export type { Format8CalculatorRuntime, Format8RuntimeOptions } from './format8CalculationData';
 
 export interface CalculatorRuntime {
   readonly data: CalculationData;
   readonly calendarRuntime?: BoundCalendarRuntime;
+  readonly administrativeContext?: ParsedFormat8Data;
 }
 export interface Format7RuntimeOptions { readonly mode: 'approved' | 'localReference' }
 export interface ByteBoundReleaseLike extends ValidatedReleaseLike {
@@ -134,24 +139,27 @@ export function createFormat7CalculationData(
 
 /** Provider caches are transport, not a validation capability. Recheck bytes. */
 export function createCalculatorRuntime(release: ByteBoundReleaseLike, options?: Format7RuntimeOptions): CalculatorRuntime {
-  if (release.formatVersion !== '7.0.0') return { data: createCalculationData(release) };
-  if (!release.manifestBytes) fail('Format 7 benötigt die vollständigen Manifestbytes.');
+  if (!['7.0.0', '8.0.0'].includes(release.formatVersion)) return { data: createCalculationData(release) };
+  const format = release.formatVersion === '8.0.0' ? 'Format 8' : 'Format 7';
+  if (!release.manifestBytes) fail(`${format} benötigt die vollständigen Manifestbytes.`);
   const decoder = new TextDecoder('utf-8', { fatal: true });
   const manifestText = decoder.decode(release.manifestBytes);
-  if (!release.manifestSha256 || rawSha256Text(manifestText) !== release.manifestSha256) fail('Format-7-Manifestprüfsumme stimmt nicht.');
+  if (!release.manifestSha256 || rawSha256Text(manifestText) !== release.manifestSha256) fail(`${format}-Manifestprüfsumme stimmt nicht.`);
   const files = new Map<string, string>();
   for (const artifact of release.artifacts) {
-    if (!artifact.bytes || !artifact.descriptor.path || files.has(artifact.descriptor.path)) fail('Format 7 benötigt eindeutige vollständige Artefaktbytes.');
+    if (!artifact.bytes || !artifact.descriptor.path || files.has(artifact.descriptor.path)) fail(`${format} benötigt eindeutige vollständige Artefaktbytes.`);
     files.set(artifact.descriptor.path!, decoder.decode(artifact.bytes));
   }
-  const runtime = createFormat7CalculationData(manifestText, files, options);
+  const runtime: CalculatorRuntime = release.formatVersion === '8.0.0'
+    ? createFormat8CalculationData(manifestText, files, options) : createFormat7CalculationData(manifestText, files, options);
   if (runtime.data.releaseId !== release.releaseId || runtime.data.coverage.from !== release.coverageFrom
-    || runtime.data.coverage.to !== release.coverageTo) fail('Format-7-Transportmetadaten stimmen nicht mit dem Manifest überein.');
+    || runtime.data.coverage.to !== release.coverageTo || runtime.data.formatVersion !== release.formatVersion) fail(`${format}-Transportmetadaten stimmen nicht mit dem Manifest überein.`);
   for (const [claimed, actual] of [
     [release.profileIds, [...runtime.data.profiles.keys()]], [release.calendarIds, [...runtime.data.calendars.keys()]],
     [release.specialRegimeCatalogIds ?? [], [...runtime.data.specialRegimeCatalogs.keys()]],
     [release.holidayCatalogIds ?? [], [...runtime.data.holidayCatalogs.keys()]],
-    [release.socialProcedureCatalogIds ?? [], [...(runtime.data.socialProcedureCatalogs?.keys() ?? [])]]
-  ] as const) if (canonicalSocialJson([...claimed].sort()) !== canonicalSocialJson([...actual].sort())) fail('Format-7-Transportinventar stimmt nicht mit dem Manifest überein.');
+    [release.socialProcedureCatalogIds ?? [], [...(runtime.data.socialProcedureCatalogs?.keys() ?? [])]],
+    [release.administrativeProcedureCatalogIds ?? [], runtime.administrativeContext?.manifest.administrativeProcedureCatalogIds ?? []]
+  ] as const) if (canonicalSocialJson([...claimed].sort()) !== canonicalSocialJson([...actual].sort())) fail(`${format}-Transportinventar stimmt nicht mit dem Manifest überein.`);
   return runtime;
 }

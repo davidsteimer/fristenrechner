@@ -1,0 +1,1234 @@
+TAP version 13
+# Subtest: real AP20C1 candidate remains blocked before any artifact fetch
+ok 1 - real AP20C1 candidate remains blocked before any artifact fetch
+  ---
+  duration_ms: 327.801292
+  type: 'test'
+  ...
+# Subtest: format 6 transport retains component 2 and all exact candidate gates
+ok 2 - format 6 transport retains component 2 and all exact candidate gates
+  ---
+  duration_ms: 1681.679291
+  type: 'test'
+  ...
+# Subtest: format 6 mirror and GitHub transport preserve exact bytes and IndexedDB envelope
+ok 3 - format 6 mirror and GitHub transport preserve exact bytes and IndexedDB envelope
+  ---
+  duration_ms: 2649.441917
+  type: 'test'
+  ...
+# Subtest: format 6 rejects old minimum
+ok 4 - format 6 rejects old minimum
+  ---
+  duration_ms: 210.065459
+  type: 'test'
+  ...
+# Subtest: format 6 rejects unknown minimum
+ok 5 - format 6 rejects unknown minimum
+  ---
+  duration_ms: 177.749
+  type: 'test'
+  ...
+# Subtest: format 6 rejects unknown manifest minor
+ok 6 - format 6 rejects unknown manifest minor
+  ---
+  duration_ms: 189.285166
+  type: 'test'
+  ...
+# Subtest: format 6 rejects unknown manifest major
+ok 7 - format 6 rejects unknown manifest major
+  ---
+  duration_ms: 188.846875
+  type: 'test'
+  ...
+# Subtest: format 6 rejects old manifest schema
+ok 8 - format 6 rejects old manifest schema
+  ---
+  duration_ms: 179.591625
+  type: 'test'
+  ...
+# Subtest: format 6 rejects component 2 in manifest 5
+ok 9 - format 6 rejects component 2 in manifest 5
+  ---
+  duration_ms: 169.351791
+  type: 'test'
+  ...
+# Subtest: format 6 rejects component 1 in manifest 6
+ok 10 - format 6 rejects component 1 in manifest 6
+  ---
+  duration_ms: 177.593583
+  type: 'test'
+  ...
+# Subtest: format 6 rejects social format-only relabel
+ok 11 - format 6 rejects social format-only relabel
+  ---
+  duration_ms: 239.643375
+  type: 'test'
+  ...
+# Subtest: format 6 rejects unknown social property
+ok 12 - format 6 rejects unknown social property
+  ---
+  duration_ms: 371.794292
+  type: 'test'
+  ...
+# Subtest: format 6 rejects invalid EOG office domain
+ok 13 - format 6 rejects invalid EOG office domain
+  ---
+  duration_ms: 357.052583
+  type: 'test'
+  ...
+# Subtest: format 6 rejects missing operative source
+ok 14 - format 6 rejects missing operative source
+  ---
+  duration_ms: 750.494792
+  type: 'test'
+  ...
+# Subtest: format 6 rejects unknown operative source
+ok 15 - format 6 rejects unknown operative source
+  ---
+  duration_ms: 446.400708
+  type: 'test'
+  ...
+# Subtest: format 6 rejects conflicting shared source identity
+ok 16 - format 6 rejects conflicting shared source identity
+  ---
+  duration_ms: 431.434791
+  type: 'test'
+  ...
+# Subtest: format 6 rejects changed social bytes without matching file hash
+ok 17 - format 6 rejects changed social bytes without matching file hash
+  ---
+  duration_ms: 191.994125
+  type: 'test'
+  ...
+# Subtest: consumer 6 validates unchanged transport of 1.0.0 including its data pin
+ok 18 - consumer 6 validates unchanged transport of 1.0.0 including its data pin
+  ---
+  duration_ms: 395.131708
+  type: 'test'
+  ...
+# Subtest: consumer 6 validates unchanged transport of 2.0.0 including its data pin
+ok 19 - consumer 6 validates unchanged transport of 2.0.0 including its data pin
+  ---
+  duration_ms: 198.848167
+  type: 'test'
+  ...
+# Subtest: consumer 6 validates unchanged transport of 3.0.0 including its data pin
+ok 20 - consumer 6 validates unchanged transport of 3.0.0 including its data pin
+  ---
+  duration_ms: 175.435416
+  type: 'test'
+  ...
+# Subtest: consumer 6 validates unchanged transport of 4.0.0 including its data pin
+ok 21 - consumer 6 validates unchanged transport of 4.0.0 including its data pin
+  ---
+  duration_ms: 1479.485125
+  type: 'test'
+  ...
+# Subtest: consumer 6 validates unchanged transport of 5.0.0 including its data pin
+ok 22 - consumer 6 validates unchanged transport of 5.0.0 including its data pin
+  ---
+  duration_ms: 1549.749333
+  type: 'test'
+  ...
+# Subtest: AP20C2 real candidate transport stops at manifest without fetching any artifact
+ok 23 - AP20C2 real candidate transport stops at manifest without fetching any artifact
+  ---
+  duration_ms: 346.043208
+  type: 'test'
+  ...
+# Subtest: AP20C2 unchanged format 6/component 2 transports eight new paths without activating them
+ok 24 - AP20C2 unchanged format 6/component 2 transports eight new paths without activating them
+  ---
+  duration_ms: 1862.584083
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport preserves all accepted C1 rules, bindings and nine unchanged artifact bytes
+ok 25 - AP20C2 transport preserves all accepted C1 rules, bindings and nine unchanged artifact bytes
+  ---
+  duration_ms: 1452.508208
+  type: 'test'
+  ...
+# Subtest: AP20C2 mirror and GitHub transports share byte identity and survive IndexedDB restoration
+ok 26 - AP20C2 mirror and GitHub transports share byte identity and survive IndexedDB restoration
+  ---
+  duration_ms: 2889.0405
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects minimum consumer 5
+ok 27 - AP20C2 transport rejects minimum consumer 5
+  ---
+  duration_ms: 176.085417
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects unknown manifest major
+ok 28 - AP20C2 transport rejects unknown manifest major
+  ---
+  duration_ms: 166.415083
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects unknown manifest minor
+ok 29 - AP20C2 transport rejects unknown manifest minor
+  ---
+  duration_ms: 210.472584
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects old manifest schema
+ok 30 - AP20C2 transport rejects old manifest schema
+  ---
+  duration_ms: 218.645709
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects social component 1 in manifest 6
+ok 31 - AP20C2 transport rejects social component 1 in manifest 6
+  ---
+  duration_ms: 297.552625
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects unknown social property
+ok 32 - AP20C2 transport rejects unknown social property
+  ---
+  duration_ms: 200.535417
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects FamZG canton outside the closed domain
+ok 33 - AP20C2 transport rejects FamZG canton outside the closed domain
+  ---
+  duration_ms: 413.114083
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects FLG canton outside the closed domain
+ok 34 - AP20C2 transport rejects FLG canton outside the closed domain
+  ---
+  duration_ms: 441.183042
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects unknown family office origin
+ok 35 - AP20C2 transport rejects unknown family office origin
+  ---
+  duration_ms: 449.440708
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects FamZG binding changed without object hash
+ok 36 - AP20C2 transport rejects FamZG binding changed without object hash
+  ---
+  duration_ms: 492.504375
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects missing operative source
+ok 37 - AP20C2 transport rejects missing operative source
+  ---
+  duration_ms: 674.300875
+  type: 'test'
+  ...
+# Subtest: AP20C2 transport rejects conflicting shared source identity
+ok 38 - AP20C2 transport rejects conflicting shared source identity
+  ---
+  duration_ms: 431.778208
+  type: 'test'
+  ...
+# Subtest: AP20C2 changed social bytes cannot pass the manifest checksum
+ok 39 - AP20C2 changed social bytes cannot pass the manifest checksum
+  ---
+  duration_ms: 165.374708
+  type: 'test'
+  ...
+# Subtest: AP20C3 real candidate transport stops at manifest without fetching any artifact
+ok 40 - AP20C3 real candidate transport stops at manifest without fetching any artifact
+  ---
+  duration_ms: 306.59125
+  type: 'test'
+  ...
+# Subtest: AP20C3 unchanged format 6/component 2 transports eight new paths without activating them
+ok 41 - AP20C3 unchanged format 6/component 2 transports eight new paths without activating them
+  ---
+  duration_ms: 1898.883959
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport preserves all accepted C2 rules, bindings and nine unchanged artifact bytes
+ok 42 - AP20C3 transport preserves all accepted C2 rules, bindings and nine unchanged artifact bytes
+  ---
+  duration_ms: 1608.956417
+  type: 'test'
+  ...
+# Subtest: AP20C3 mirror and GitHub transports share byte identity and survive IndexedDB restoration
+ok 43 - AP20C3 mirror and GitHub transports share byte identity and survive IndexedDB restoration
+  ---
+  duration_ms: 3068.624834
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects minimum consumer 5
+ok 44 - AP20C3 transport rejects minimum consumer 5
+  ---
+  duration_ms: 175.059833
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects unknown manifest major
+ok 45 - AP20C3 transport rejects unknown manifest major
+  ---
+  duration_ms: 186.20475
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects unknown manifest minor
+ok 46 - AP20C3 transport rejects unknown manifest minor
+  ---
+  duration_ms: 191.445292
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects old manifest schema
+ok 47 - AP20C3 transport rejects old manifest schema
+  ---
+  duration_ms: 182.998125
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects social component 1 in manifest 6
+ok 48 - AP20C3 transport rejects social component 1 in manifest 6
+  ---
+  duration_ms: 168.474083
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects unknown social property
+ok 49 - AP20C3 transport rejects unknown social property
+  ---
+  duration_ms: 181.716625
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects MVG canton outside the closed domain
+ok 50 - AP20C3 transport rejects MVG canton outside the closed domain
+  ---
+  duration_ms: 351.021458
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects UELG administrative canton outside the closed domain
+ok 51 - AP20C3 transport rejects UELG administrative canton outside the closed domain
+  ---
+  duration_ms: 367.376
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects unknown military insurer origin
+ok 52 - AP20C3 transport rejects unknown military insurer origin
+  ---
+  duration_ms: 426.294042
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects MVG binding changed without object hash
+ok 53 - AP20C3 transport rejects MVG binding changed without object hash
+  ---
+  duration_ms: 429.792667
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects missing operative source
+ok 54 - AP20C3 transport rejects missing operative source
+  ---
+  duration_ms: 554.88325
+  type: 'test'
+  ...
+# Subtest: AP20C3 transport rejects conflicting shared source identity
+ok 55 - AP20C3 transport rejects conflicting shared source identity
+  ---
+  duration_ms: 370.374958
+  type: 'test'
+  ...
+# Subtest: AP20C3 changed social bytes cannot pass the manifest checksum
+ok 56 - AP20C3 changed social bytes cannot pass the manifest checksum
+  ---
+  duration_ms: 228.187166
+  type: 'test'
+  ...
+# Subtest: Cacheidentität normalisiert gleichwertige Konfiguration, nicht Provideranzeige oder Release-ID
+ok 57 - Cacheidentität normalisiert gleichwertige Konfiguration, nicht Provideranzeige oder Release-ID
+  ---
+  duration_ms: 4.579375
+  type: 'test'
+  ...
+# Subtest: anderer GitHub-Commit: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+ok 58 - anderer GitHub-Commit: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+  ---
+  duration_ms: 332.254542
+  type: 'test'
+  ...
+# Subtest: anderer GitHub-Ordner: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+ok 59 - anderer GitHub-Ordner: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+  ---
+  duration_ms: 203.644791
+  type: 'test'
+  ...
+# Subtest: anderes GitHub-Repository: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+ok 60 - anderes GitHub-Repository: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+  ---
+  duration_ms: 168.60975
+  type: 'test'
+  ...
+# Subtest: anderer Providertyp: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+ok 61 - anderer Providertyp: gleicher Release-ID-Stand darf nicht als fremder Fallback dienen
+  ---
+  duration_ms: 162.846042
+  type: 'test'
+  ...
+# Subtest: anderer Tenant: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+ok 62 - anderer Tenant: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+  ---
+  duration_ms: 181.082792
+  type: 'test'
+  ...
+# Subtest: andere Site E/Q: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+ok 63 - andere Site E/Q: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+  ---
+  duration_ms: 193.173667
+  type: 'test'
+  ...
+# Subtest: anderer Mirrorordner: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+ok 64 - anderer Mirrorordner: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+  ---
+  duration_ms: 161.66825
+  type: 'test'
+  ...
+# Subtest: historischer AP5-Datenpin: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+ok 65 - historischer AP5-Datenpin: SharePoint-Fallback bleibt an Site und Datenordner gebunden
+  ---
+  duration_ms: 164.25675
+  type: 'test'
+  ...
+# Subtest: gleichzeitige Kontexte mit gleicher Release-ID behalten je ihre Originalbytes
+ok 66 - gleichzeitige Kontexte mit gleicher Release-ID behalten je ihre Originalbytes
+  ---
+  duration_ms: 169.668208
+  type: 'test'
+  ...
+# Subtest: gleiche Konfiguration darf nach vollständiger Neuvalidierung aus IndexedDB laden
+ok 67 - gleiche Konfiguration darf nach vollständiger Neuvalidierung aus IndexedDB laden
+  ---
+  duration_ms: 330.054541
+  type: 'test'
+  ...
+# Subtest: originweiter ungebundener Altstand wird nicht einem neuen Provider zugeordnet
+ok 68 - originweiter ungebundener Altstand wird nicht einem neuen Provider zugeordnet
+  ---
+  duration_ms: 328.647125
+  type: 'test'
+  ...
+# Subtest: IndexedDB-Upgrade übernimmt originweites Version-1-active ausdrücklich nicht
+ok 69 - IndexedDB-Upgrade übernimmt originweites Version-1-active ausdrücklich nicht
+  ---
+  duration_ms: 401.596083
+  type: 'test'
+  ...
+# Subtest: fehlende Konfiguration: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+ok 70 - fehlende Konfiguration: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+  ---
+  duration_ms: 209.707583
+  type: 'test'
+  ...
+# Subtest: mutabler GitHub-Pin: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+ok 71 - mutabler GitHub-Pin: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+  ---
+  duration_ms: 188.703917
+  type: 'test'
+  ...
+# Subtest: fremde SharePoint-Site: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+ok 72 - fremde SharePoint-Site: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+  ---
+  duration_ms: 172.607167
+  type: 'test'
+  ...
+# Subtest: HTTP-Site: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+ok 73 - HTTP-Site: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+  ---
+  duration_ms: 185.54525
+  type: 'test'
+  ...
+# Subtest: Providertyp stimmt nicht: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+ok 74 - Providertyp stimmt nicht: Sperre vor Netzabruf und ohne Zugriff auf alten Aktivstand
+  ---
+  duration_ms: 149.910667
+  type: 'test'
+  ...
+# Subtest: Artefaktbytes manipuliert: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+ok 75 - Artefaktbytes manipuliert: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+  ---
+  duration_ms: 153.498208
+  type: 'test'
+  ...
+# Subtest: Manifestbytes manipuliert: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+ok 76 - Manifestbytes manipuliert: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+  ---
+  duration_ms: 151.226666
+  type: 'test'
+  ...
+# Subtest: Manifesthash manipuliert: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+ok 77 - Manifesthash manipuliert: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+  ---
+  duration_ms: 149.1115
+  type: 'test'
+  ...
+# Subtest: Artefakt fehlt: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+ok 78 - Artefakt fehlt: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+  ---
+  duration_ms: 155.510708
+  type: 'test'
+  ...
+# Subtest: Doppeltes Artefakt: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+ok 79 - Doppeltes Artefakt: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+  ---
+  duration_ms: 169.702458
+  type: 'test'
+  ...
+# Subtest: Zusätzliches Artefakt: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+ok 80 - Zusätzliches Artefakt: gespeicherte Validierungsbehauptung genügt nicht für Fallback
+  ---
+  duration_ms: 169.163625
+  type: 'test'
+  ...
+# Subtest: manipulierte parsed-Objekte und Metadaten werden nicht verwendet, sondern aus Originalbytes neu erzeugt
+ok 81 - manipulierte parsed-Objekte und Metadaten werden nicht verwendet, sondern aus Originalbytes neu erzeugt
+  ---
+  duration_ms: 171.04475
+  type: 'test'
+  ...
+# Subtest: Format 1.0.0, 2026-08-29-ap5-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+ok 82 - Format 1.0.0, 2026-08-29-ap5-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+  ---
+  duration_ms: 172.702042
+  type: 'test'
+  ...
+# Subtest: Format 2.0.0, 2026-08-31-mvp-02-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+ok 83 - Format 2.0.0, 2026-08-31-mvp-02-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+  ---
+  duration_ms: 158.735958
+  type: 'test'
+  ...
+# Subtest: Format 3.0.0, 2026-08-31-mvp-03-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+ok 84 - Format 3.0.0, 2026-08-31-mvp-03-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+  ---
+  duration_ms: 169.552958
+  type: 'test'
+  ...
+# Subtest: Format 4.0.0, 2026-09-22-mvp-04-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+ok 85 - Format 4.0.0, 2026-09-22-mvp-04-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+  ---
+  duration_ms: 2077.658916
+  type: 'test'
+  ...
+# Subtest: Format 5.0.0, 2026-09-28-mvp-05-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+ok 86 - Format 5.0.0, 2026-09-28-mvp-05-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+  ---
+  duration_ms: 2263.521542
+  type: 'test'
+  ...
+# Subtest: Format 6.0.0, 2026-10-01-mvp-06-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+ok 87 - Format 6.0.0, 2026-10-01-mvp-06-approved.1: historischer Reader und konfigurierte Offline-Neuprüfung erhalten
+  ---
+  duration_ms: 2218.732209
+  type: 'test'
+  ...
+# Subtest: echtes AP22C3-Bundle bleibt pending und wird vor jeglichem Artefaktabruf gesperrt
+ok 88 - echtes AP22C3-Bundle bleibt pending und wird vor jeglichem Artefaktabruf gesperrt
+  ---
+  duration_ms: 5.940042
+  type: 'test'
+  ...
+# Subtest: vollständige synthetische gemeinsame Freigabe lädt Format7 mit40 originalbytegebundenen Artefakten
+ok 89 - vollständige synthetische gemeinsame Freigabe lädt Format7 mit40 originalbytegebundenen Artefakten
+  ---
+  duration_ms: 3742.326291
+  type: 'test'
+  ...
+# Subtest: synthetischer GitHub- und SharePoint-Transport liefern byteidentisches Format7
+ok 90 - synthetischer GitHub- und SharePoint-Transport liefern byteidentisches Format7
+  ---
+  duration_ms: 3899.933208
+  type: 'test'
+  ...
+# Subtest: Format7-Fallback ignoriert manipulierte parsed-Objekte und validiert bei gleichem Pin Originalbytes erneut
+ok 91 - Format7-Fallback ignoriert manipulierte parsed-Objekte und validiert bei gleichem Pin Originalbytes erneut
+  ---
+  duration_ms: 3996.372791
+  type: 'test'
+  ...
+# Subtest: Format7 weist veränderte Originalbytes trotz formal gültigem JSON zurück
+ok 92 - Format7 weist veränderte Originalbytes trotz formal gültigem JSON zurück
+  ---
+  duration_ms: 335.466541
+  type: 'test'
+  ...
+# Subtest: Format7 weist ein fehlendes manifestgebundenes Kalenderartefakt zurück
+ok 93 - Format7 weist ein fehlendes manifestgebundenes Kalenderartefakt zurück
+  ---
+  duration_ms: 11.778334
+  type: 'test'
+  ...
+# Subtest: Manifestfreigabe ersetzt keine Kalenderfreigabe, auch bei neu aufgebauten Projektionen und Sozialreferenzen
+ok 94 - Manifestfreigabe ersetzt keine Kalenderfreigabe, auch bei neu aufgebauten Projektionen und Sozialreferenzen
+  ---
+  duration_ms: 1941.686917
+  type: 'test'
+  ...
+# Subtest: Kalenderfreigabe ersetzt keine gemeinsame Sozialfreigabe für den neuen Release
+ok 95 - Kalenderfreigabe ersetzt keine gemeinsame Sozialfreigabe für den neuen Release
+  ---
+  duration_ms: 1663.3605
+  type: 'test'
+  ...
+# Subtest: eine einzige neu versiegelte abweichende Sozialbindung blockiert den gesamten Format7-Release
+ok 96 - eine einzige neu versiegelte abweichende Sozialbindung blockiert den gesamten Format7-Release
+  ---
+  duration_ms: 1258.357209
+  type: 'test'
+  ...
+# Subtest: neu versiegelter veralteter Sozialkomponentenhash blockiert Format7
+ok 97 - neu versiegelter veralteter Sozialkomponentenhash blockiert Format7
+  ---
+  duration_ms: 1258.340334
+  type: 'test'
+  ...
+# Subtest: AP23D3 IndexedDB fallback rebuilds Format8 only from the same configuration original bytes
+ok 98 - AP23D3 IndexedDB fallback rebuilds Format8 only from the same configuration original bytes
+  ---
+  duration_ms: 6053.17825
+  type: 'test'
+  ...
+# Subtest: AP23D3 cached changed administrative bytes never revives a TI or GR calculation
+ok 99 - AP23D3 cached changed administrative bytes never revives a TI or GR calculation
+  ---
+  duration_ms: 2372.4585
+  type: 'test'
+  ...
+# Subtest: AP23D3 cached missing administrative bytes never revives a TI or GR calculation
+ok 100 - AP23D3 cached missing administrative bytes never revives a TI or GR calculation
+  ---
+  duration_ms: 1624.313125
+  type: 'test'
+  ...
+# Subtest: AP23D3 cached changed manifest bytes never revives a TI or GR calculation
+ok 101 - AP23D3 cached changed manifest bytes never revives a TI or GR calculation
+  ---
+  duration_ms: 1620.450125
+  type: 'test'
+  ...
+# Subtest: AP23D3 missing new mirror cannot fall back to another Format8 mirror or an unbound AP5 cache
+ok 102 - AP23D3 missing new mirror cannot fall back to another Format8 mirror or an unbound AP5 cache
+  ---
+  duration_ms: 1490.582875
+  type: 'test'
+  ...
+# Subtest: AP23D3 same release name at a different immutable GitHub pin has no Format8 fallback
+ok 103 - AP23D3 same release name at a different immutable GitHub pin has no Format8 fallback
+  ---
+  duration_ms: 1438.985292
+  type: 'test'
+  ...
+# Subtest: AP23D3 transport metadata cannot invent an administrative catalog after full byte validation
+ok 104 - AP23D3 transport metadata cannot invent an administrative catalog after full byte validation
+  ---
+  duration_ms: 2964.846375
+  type: 'test'
+  ...
+# Subtest: AP23D3 actual D2 candidate is rejected before artifact fetching and cannot activate a cache
+ok 105 - AP23D3 actual D2 candidate is rejected before artifact fetching and cannot activate a cache
+  ---
+  duration_ms: 6.4515
+  type: 'test'
+  ...
+# Subtest: AP23D3 full synthetic Format8 passes original bytes through the SPFx factory without Format7 substitution
+ok 106 - AP23D3 full synthetic Format8 passes original bytes through the SPFx factory without Format7 substitution
+  ---
+  duration_ms: 3383.587375
+  type: 'test'
+  ...
+# Subtest: AP23D3 synthetic GitHub and SharePoint providers yield identical Format8 bytes under different identities
+ok 107 - AP23D3 synthetic GitHub and SharePoint providers yield identical Format8 bytes under different identities
+  ---
+  duration_ms: 2776.384459
+  type: 'test'
+  ...
+# Subtest: AP23D3 malformed or escaping manifest paths fail before any artifact request
+ok 108 - AP23D3 malformed or escaping manifest paths fail before any artifact request
+  ---
+  duration_ms: 0.80575
+  type: 'test'
+  ...
+# Subtest: AP23D3 missing administrative file blocks the complete release
+ok 109 - AP23D3 missing administrative file blocks the complete release
+  ---
+  duration_ms: 9.986166
+  type: 'test'
+  ...
+# Subtest: AP23D3 changed UTF-8 bytes fail despite semantically identical JSON
+ok 110 - AP23D3 changed UTF-8 bytes fail despite semantically identical JSON
+  ---
+  duration_ms: 450.674959
+  type: 'test'
+  ...
+# Subtest: AP23D3 manifest approval cannot replace candidate administrative release
+ok 111 - AP23D3 manifest approval cannot replace candidate administrative release
+  ---
+  duration_ms: 485.415875
+  type: 'test'
+  ...
+# Subtest: AP23D3 manifest approval cannot replace one unapproved administrative path
+ok 112 - AP23D3 manifest approval cannot replace one unapproved administrative path
+  ---
+  duration_ms: 460.048417
+  type: 'test'
+  ...
+# Subtest: AP23D3 manifest approval cannot replace wrong administrative component binding
+ok 113 - AP23D3 manifest approval cannot replace wrong administrative component binding
+  ---
+  duration_ms: 1460.06275
+  type: 'test'
+  ...
+# Subtest: AP23D3 manifest approval cannot replace forged serialized runtime capability
+ok 114 - AP23D3 manifest approval cannot replace forged serialized runtime capability
+  ---
+  duration_ms: 459.374791
+  type: 'test'
+  ...
+# Subtest: AP23D3 manifest approval cannot replace unapproved social binding
+ok 115 - AP23D3 manifest approval cannot replace unapproved social binding
+  ---
+  duration_ms: 1412.484625
+  type: 'test'
+  ...
+# Subtest: AP19C2 transport rejects actual candidate without fetching artifacts
+ok 116 - AP19C2 transport rejects actual candidate without fetching artifacts
+  ---
+  duration_ms: 308.0705
+  type: 'test'
+  ...
+# Subtest: AP19C2 source consumer transports twenty rules and twenty-four bindings with all eight AVIG paths blocked
+ok 117 - AP19C2 source consumer transports twenty rules and twenty-four bindings with all eight AVIG paths blocked
+  ---
+  duration_ms: 1454.31675
+  type: 'test'
+  ...
+# Subtest: AP19C2 mirror and GitHub transport preserve identical candidate bytes
+ok 118 - AP19C2 mirror and GitHub transport preserve identical candidate bytes
+  ---
+  duration_ms: 1587.701
+  type: 'test'
+  ...
+# Subtest: AP19C2 IndexedDB round-trip retains both AVIG jurisdictions and candidate statuses
+ok 119 - AP19C2 IndexedDB round-trip retains both AVIG jurisdictions and candidate statuses
+  ---
+  duration_ms: 1213.525167
+  type: 'test'
+  ...
+# Subtest: AP19C2 rejects new AVIG binding tampering even with recomputed artifact hashes
+ok 120 - AP19C2 rejects new AVIG binding tampering even with recomputed artifact hashes
+  ---
+  duration_ms: 148.33775
+  type: 'test'
+  ...
+# Subtest: AP19C2 rejects missing AVIV evidence source in a hash-valid envelope
+ok 121 - AP19C2 rejects missing AVIV evidence source in a hash-valid envelope
+  ---
+  duration_ms: 466.695666
+  type: 'test'
+  ...
+# Subtest: Format 4 lädt den vollen Fachkatalog und behält die bestehende Berner Berechnung
+ok 122 - Format 4 lädt den vollen Fachkatalog und behält die bestehende Berner Berechnung
+  ---
+  duration_ms: 1338.082084
+  type: 'test'
+  ...
+# Subtest: der echte AP18C-Kandidat bleibt vor dem ersten Artefaktzugriff gesperrt
+ok 123 - der echte AP18C-Kandidat bleibt vor dem ersten Artefaktzugriff gesperrt
+  ---
+  duration_ms: 173.226584
+  type: 'test'
+  ...
+# Subtest: Format-4-GitHub- und Mirrorpfad validieren byteidentische Katalogartefakte
+ok 124 - Format-4-GitHub- und Mirrorpfad validieren byteidentische Katalogartefakte
+  ---
+  duration_ms: 1778.593416
+  type: 'test'
+  ...
+# Subtest: IndexedDB erhält den vollständigen Format-4-Katalog beim Wiederöffnen
+ok 125 - IndexedDB erhält den vollständigen Format-4-Katalog beim Wiederöffnen
+  ---
+  duration_ms: 1227.815292
+  type: 'test'
+  ...
+# Subtest: Format 4 weist fehlende Katalog-ID vor Aktivierung ab
+ok 126 - Format 4 weist fehlende Katalog-ID vor Aktivierung ab
+  ---
+  duration_ms: 163.427791
+  type: 'test'
+  ...
+# Subtest: Format 4 weist fehlendes Katalogartefakt vor Aktivierung ab
+ok 127 - Format 4 weist fehlendes Katalogartefakt vor Aktivierung ab
+  ---
+  duration_ms: 141.216958
+  type: 'test'
+  ...
+# Subtest: Format 4 weist doppeltes Katalogartefakt vor Aktivierung ab
+ok 128 - Format 4 weist doppeltes Katalogartefakt vor Aktivierung ab
+  ---
+  duration_ms: 142.23525
+  type: 'test'
+  ...
+# Subtest: Format 4 weist abweichende Katalog-ID vor Aktivierung ab
+ok 129 - Format 4 weist abweichende Katalog-ID vor Aktivierung ab
+  ---
+  duration_ms: 138.958916
+  type: 'test'
+  ...
+# Subtest: Format 4 weist Format-3-Smuggling mit Katalogrolle vor Aktivierung ab
+ok 130 - Format 4 weist Format-3-Smuggling mit Katalogrolle vor Aktivierung ab
+  ---
+  duration_ms: 136.187041
+  type: 'test'
+  ...
+# Subtest: Format 4 weist Format-3-Smuggling mit neuem ID-Feld vor Aktivierung ab
+ok 131 - Format 4 weist Format-3-Smuggling mit neuem ID-Feld vor Aktivierung ab
+  ---
+  duration_ms: 133.533583
+  type: 'test'
+  ...
+# Subtest: Format 4 weist zu niedrige Consumer-Hauptversion vor Aktivierung ab
+ok 132 - Format 4 weist zu niedrige Consumer-Hauptversion vor Aktivierung ab
+  ---
+  duration_ms: 131.92525
+  type: 'test'
+  ...
+# Subtest: Format 4 weist Feiertagskatalog als Kalenderrolle vor Aktivierung ab
+ok 133 - Format 4 weist Feiertagskatalog als Kalenderrolle vor Aktivierung ab
+  ---
+  duration_ms: 134.453167
+  type: 'test'
+  ...
+# Subtest: Format 4 weist unbekannte Rolle vor Aktivierung ab
+ok 134 - Format 4 weist unbekannte Rolle vor Aktivierung ab
+  ---
+  duration_ms: 136.449208
+  type: 'test'
+  ...
+# Subtest: Format 4 weist unbekannte Manifest-Hauptversion vor Aktivierung ab
+ok 135 - Format 4 weist unbekannte Manifest-Hauptversion vor Aktivierung ab
+  ---
+  duration_ms: 136.846125
+  type: 'test'
+  ...
+# Subtest: unbekannte fachliche Katalogfelder werden nicht ignoriert
+ok 136 - unbekannte fachliche Katalogfelder werden nicht ignoriert
+  ---
+  duration_ms: 142.225416
+  type: 'test'
+  ...
+# Subtest: eine nicht auflösbare Fachkatalogquelle blockiert den gesamten Release
+ok 137 - eine nicht auflösbare Fachkatalogquelle blockiert den gesamten Release
+  ---
+  duration_ms: 215.246125
+  type: 'test'
+  ...
+# Subtest: eine neu als Halbtag bezeichnete Berner Regel wird nicht operativ angewendet
+ok 138 - eine neu als Halbtag bezeichnete Berner Regel wird nicht operativ angewendet
+  ---
+  duration_ms: 184.108084
+  type: 'test'
+  ...
+# Subtest: eine korrekt gehashte, aber inkonsistente Kalenderprojektion wird abgewiesen
+ok 139 - eine korrekt gehashte, aber inkonsistente Kalenderprojektion wird abgewiesen
+  ---
+  duration_ms: 616.544583
+  type: 'test'
+  ...
+# Subtest: Projektionsfehler erhalten atomar den alten verifizierten Aktivstand
+ok 140 - Projektionsfehler erhalten atomar den alten verifizierten Aktivstand
+  ---
+  duration_ms: 2923.05975
+  type: 'test'
+  ...
+# Subtest: Format 4 weist einen Legacy-Spezialkatalog vor Aktivierung ab
+ok 141 - Format 4 weist einen Legacy-Spezialkatalog vor Aktivierung ab
+  ---
+  duration_ms: 789.224084
+  type: 'test'
+  ...
+# Subtest: Format 4 weist ein zusätzliches formal gültiges Rechtsprofil vor Aktivierung ab
+ok 142 - Format 4 weist ein zusätzliches formal gültiges Rechtsprofil vor Aktivierung ab
+  ---
+  duration_ms: 759.390917
+  type: 'test'
+  ...
+# Subtest: Format-4-Scopefehler überschreiben den vorherigen verifizierten Aktivstand nicht
+ok 143 - Format-4-Scopefehler überschreiben den vorherigen verifizierten Aktivstand nicht
+  ---
+  duration_ms: 3124.94325
+  type: 'test'
+  ...
+# Subtest: Katalog-Komponentenmajor und Deskriptor müssen übereinstimmen
+ok 144 - Katalog-Komponentenmajor und Deskriptor müssen übereinstimmen
+  ---
+  duration_ms: 151.810125
+  type: 'test'
+  ...
+# Subtest: AP19C3 transport rejects actual candidate without fetching artifacts
+ok 145 - AP19C3 transport rejects actual candidate without fetching artifacts
+  ---
+  duration_ms: 238.243708
+  type: 'test'
+  ...
+# Subtest: AP19C3 source consumer transports twenty-four rules and twenty-eight bindings with all four KVG paths blocked
+ok 146 - AP19C3 source consumer transports twenty-four rules and twenty-eight bindings with all four KVG paths blocked
+  ---
+  duration_ms: 1366.351542
+  type: 'test'
+  ...
+# Subtest: AP19C3 mirror and GitHub transport preserve identical candidate bytes
+ok 147 - AP19C3 mirror and GitHub transport preserve identical candidate bytes
+  ---
+  duration_ms: 1650.658333
+  type: 'test'
+  ...
+# Subtest: AP19C3 IndexedDB round-trip retains KVG product and court routes and candidate statuses
+ok 148 - AP19C3 IndexedDB round-trip retains KVG product and court routes and candidate statuses
+  ---
+  duration_ms: 1213.476417
+  type: 'test'
+  ...
+# Subtest: AP19C3 rejects new KVG binding tampering even with recomputed artifact hashes
+ok 149 - AP19C3 rejects new KVG binding tampering even with recomputed artifact hashes
+  ---
+  duration_ms: 148.282875
+  type: 'test'
+  ...
+# Subtest: AP19C3 rejects missing KVG evidence source in a hash-valid envelope
+ok 150 - AP19C3 rejects missing KVG evidence source in a hash-valid envelope
+  ---
+  duration_ms: 499.380167
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 transports the real approved manifest and all ten artifacts without synthetic approval
+ok 151 - MVP 0.5 transports the real approved manifest and all ten artifacts without synthetic approval
+  ---
+  duration_ms: 1477.997416
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 source consumer calculates every approved binding with both Bern holiday anchors
+ok 152 - MVP 0.5 source consumer calculates every approved binding with both Bern holiday anchors
+  ---
+  duration_ms: 1778.843875
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 IndexedDB retains the exact approved source and eligibility bindings
+ok 153 - MVP 0.5 IndexedDB retains the exact approved source and eligibility bindings
+  ---
+  duration_ms: 1527.610584
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 offline fixtures validate equivalent GitHub and Mirror byte transport without claiming publication
+ok 154 - MVP 0.5 offline fixtures validate equivalent GitHub and Mirror byte transport without claiming publication
+  ---
+  duration_ms: 1661.059458
+  type: 'test'
+  ...
+# Subtest: MVP 0.5 rejects a changed binding even with recomputed outer artifact hashes
+ok 155 - MVP 0.5 rejects a changed binding even with recomputed outer artifact hashes
+  ---
+  duration_ms: 173.160666
+  type: 'test'
+  ...
+# Subtest: MVP 0.6 transports the real approved manifest and all ten artifacts without synthetic approval
+ok 156 - MVP 0.6 transports the real approved manifest and all ten artifacts without synthetic approval
+  ---
+  duration_ms: 1614.716042
+  type: 'test'
+  ...
+# Subtest: MVP 0.6 source consumer calculates every approved binding with both Bern holiday anchors
+ok 157 - MVP 0.6 source consumer calculates every approved binding with both Bern holiday anchors
+  ---
+  duration_ms: 3583.826792
+  type: 'test'
+  ...
+# Subtest: MVP 0.6 IndexedDB retains the exact approved source and eligibility bindings
+ok 158 - MVP 0.6 IndexedDB retains the exact approved source and eligibility bindings
+  ---
+  duration_ms: 1737.586083
+  type: 'test'
+  ...
+# Subtest: MVP 0.6 offline fixtures validate equivalent GitHub and Mirror byte transport without claiming publication
+ok 159 - MVP 0.6 offline fixtures validate equivalent GitHub and Mirror byte transport without claiming publication
+  ---
+  duration_ms: 1770.4355
+  type: 'test'
+  ...
+# Subtest: MVP 0.6 rejects a changed binding even with recomputed outer artifact hashes
+ok 160 - MVP 0.6 rejects a changed binding even with recomputed outer artifact hashes
+  ---
+  duration_ms: 159.125791
+  type: 'test'
+  ...
+# Subtest: pinnt den MVP-0.8-Datenrelease auf den tatsächlichen lokalen Datencommit ohne Publikationsbehauptung
+ok 161 - pinnt den MVP-0.8-Datenrelease auf den tatsächlichen lokalen Datencommit ohne Publikationsbehauptung
+  ---
+  duration_ms: 0.620625
+  type: 'test'
+  ...
+# Subtest: verbindet den validierten Release mit dem produktiven Rechenkern
+ok 162 - verbindet den validierten Release mit dem produktiven Rechenkern
+  ---
+  duration_ms: 1502.769917
+  type: 'test'
+  ...
+# Subtest: verbindet den Format-4-Release mit der Spezialregimeberechnung
+ok 163 - verbindet den Format-4-Release mit der Spezialregimeberechnung
+  ---
+  duration_ms: 1315.083958
+  type: 'test'
+  ...
+# Subtest: exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-Freigabe
+ok 164 - exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-Freigabe
+  ---
+  duration_ms: 1.618541
+  type: 'test'
+  ...
+# Subtest: synchronisiert nur die produktiven Kern- und UI-Quellen
+ok 165 - synchronisiert nur die produktiven Kern- und UI-Quellen
+  ---
+  duration_ms: 9.080125
+  type: 'test'
+  ...
+# Subtest: bindet die Produkt-CSS im SPFx-Host ohne lokalisierte fr-Klassennamen ein
+ok 166 - bindet die Produkt-CSS im SPFx-Host ohne lokalisierte fr-Klassennamen ein
+  ---
+  duration_ms: 1.092833
+  type: 'test'
+  ...
+# Subtest: lädt den synthetischen Spezialkatalog-3-Vertrag mit Manifest 3 und Kalender 2
+ok 167 - lädt den synthetischen Spezialkatalog-3-Vertrag mit Manifest 3 und Kalender 2
+  ---
+  duration_ms: 282.3655
+  type: 'test'
+  ...
+# Subtest: weist einen v3-Inhalt mit v2-Deskriptor ab
+ok 168 - weist einen v3-Inhalt mit v2-Deskriptor ab
+  ---
+  duration_ms: 186.000375
+  type: 'test'
+  ...
+# Subtest: weist einen v2-Inhalt mit v3-Deskriptor ab
+ok 169 - weist einen v2-Inhalt mit v3-Deskriptor ab
+  ---
+  duration_ms: 151.581875
+  type: 'test'
+  ...
+# Subtest: weist einen unbekannten Spezialkatalog-Deskriptor ab
+ok 170 - weist einen unbekannten Spezialkatalog-Deskriptor ab
+  ---
+  duration_ms: 131.118208
+  type: 'test'
+  ...
+# Subtest: verlangt im v3-Altbestand eine ausdrückliche leere Anwendbarkeit
+ok 171 - verlangt im v3-Altbestand eine ausdrückliche leere Anwendbarkeit
+  ---
+  duration_ms: 134.301125
+  type: 'test'
+  ...
+# Subtest: blockiert unbekannte fachliche Felder statt sie stillschweigend zu ignorieren
+ok 172 - blockiert unbekannte fachliche Felder statt sie stillschweigend zu ignorieren
+  ---
+  duration_ms: 153.493333
+  type: 'test'
+  ...
+# Subtest: prüft den echten Kandidatenkatalog separat gegen v3 ohne Releaseaktivierung
+ok 173 - prüft den echten Kandidatenkatalog separat gegen v3 ohne Releaseaktivierung
+  ---
+  duration_ms: 54.7105
+  type: 'test'
+  ...
+# Subtest: weist den echten AP17C-Kandidaten weiterhin vor dem Laden seiner Artefakte ab
+ok 174 - weist den echten AP17C-Kandidaten weiterhin vor dem Laden seiner Artefakte ab
+  ---
+  duration_ms: 129.779416
+  type: 'test'
+  ...
+# Subtest: validiert den freigegebenen MVP-0.2-Format-2-Release vollständig
+ok 175 - validiert den freigegebenen MVP-0.2-Format-2-Release vollständig
+  ---
+  duration_ms: 265.963875
+  type: 'test'
+  ...
+# Subtest: weist den noch nicht freigegebenen AP11C-Datenkandidaten ab
+ok 176 - weist den noch nicht freigegebenen AP11C-Datenkandidaten ab
+  ---
+  duration_ms: 157.715
+  type: 'test'
+  ...
+# Subtest: weist den noch nicht freigegebenen AP12C-Format-3-Kandidaten ab
+ok 177 - weist den noch nicht freigegebenen AP12C-Format-3-Kandidaten ab
+  ---
+  duration_ms: 135.634042
+  type: 'test'
+  ...
+# Subtest: validiert den freigegebenen MVP-0.3-Format-3-Release und erzeugt den Kalender lokal
+ok 178 - validiert den freigegebenen MVP-0.3-Format-3-Release und erzeugt den Kalender lokal
+  ---
+  duration_ms: 163.584834
+  type: 'test'
+  ...
+# Subtest: weist für zwei Provider byteidentische Aktivstände nach
+ok 179 - weist für zwei Provider byteidentische Aktivstände nach
+  ---
+  duration_ms: 145.299334
+  type: 'test'
+  ...
+# Subtest: lehnt ein manipuliertes Artefakt ab und behält den letzten Aktivstand
+ok 180 - lehnt ein manipuliertes Artefakt ab und behält den letzten Aktivstand
+  ---
+  duration_ms: 160.83325
+  type: 'test'
+  ...
+# Subtest: aktiviert bei einem fehlenden Artefakt ohne Altstand nichts
+ok 181 - aktiviert bei einem fehlenden Artefakt ohne Altstand nichts
+  ---
+  duration_ms: 132.21275
+  type: 'test'
+  ...
+# Subtest: weist eine unbekannte Format-Hauptversion ab
+ok 182 - weist eine unbekannte Format-Hauptversion ab
+  ---
+  duration_ms: 128.828375
+  type: 'test'
+  ...
+# Subtest: speichert Release und Aktivzeiger in IndexedDB und stellt sie wieder her
+ok 183 - speichert Release und Aktivzeiger in IndexedDB und stellt sie wieder her
+  ---
+  duration_ms: 135.381625
+  type: 'test'
+  ...
+# Subtest: akzeptiert für den öffentlichen Provider nur eine saubere HTTPS-Basisadresse
+ok 184 - akzeptiert für den öffentlichen Provider nur eine saubere HTTPS-Basisadresse
+  ---
+  duration_ms: 0.502
+  type: 'test'
+  ...
+# Subtest: begrenzt den Mirrorpfad auf die aktuelle SharePoint-Website
+ok 185 - begrenzt den Mirrorpfad auf die aktuelle SharePoint-Website
+  ---
+  duration_ms: 0.312292
+  type: 'test'
+  ...
+# Subtest: actual Format-5 candidate is rejected before fetching any artifacts
+ok 186 - actual Format-5 candidate is rejected before fetching any artifacts
+  ---
+  duration_ms: 237.975916
+  type: 'test'
+  ...
+# Subtest: Format 5 carries all catalogs without granting candidate rules operational approval
+ok 187 - Format 5 carries all catalogs without granting candidate rules operational approval
+  ---
+  duration_ms: 1249.947167
+  type: 'test'
+  ...
+# Subtest: Format-5 Github and mirror transport have identical bytes and metadata
+ok 188 - Format-5 Github and mirror transport have identical bytes and metadata
+  ---
+  duration_ms: 1322.674167
+  type: 'test'
+  ...
+# Subtest: IndexedDB persists the complete Format-5 envelope
+ok 189 - IndexedDB persists the complete Format-5 envelope
+  ---
+  duration_ms: 982.924375
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects missing social IDs
+ok 190 - Format 5 rejects missing social IDs
+  ---
+  duration_ms: 119.938709
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects unknown social ID
+ok 191 - Format 5 rejects unknown social ID
+  ---
+  duration_ms: 116.384041
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects missing social artifact
+ok 192 - Format 5 rejects missing social artifact
+  ---
+  duration_ms: 113.981042
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects duplicate social artifact
+ok 193 - Format 5 rejects duplicate social artifact
+  ---
+  duration_ms: 119.267542
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects old consumer minimum
+ok 194 - Format 5 rejects old consumer minimum
+  ---
+  duration_ms: 116.294667
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects format 4 smuggling
+ok 195 - Format 5 rejects format 4 smuggling
+  ---
+  duration_ms: 115.850833
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects unknown minor
+ok 196 - Format 5 rejects unknown minor
+  ---
+  duration_ms: 114.142042
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects unknown core field
+ok 197 - Format 5 rejects unknown core field
+  ---
+  duration_ms: 114.125541
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects wrong schema-role pair
+ok 198 - Format 5 rejects wrong schema-role pair
+  ---
+  duration_ms: 114.541375
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects unknown social field
+ok 199 - Format 5 rejects unknown social field
+  ---
+  duration_ms: 121.074958
+  type: 'test'
+  ...
+# Subtest: Format-5 artifact tampering is rejected before loading the core
+ok 200 - Format-5 artifact tampering is rejected before loading the core
+  ---
+  duration_ms: 252.378375
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects an omitted operative source even when artifact hashes are valid
+ok 201 - Format 5 rejects an omitted operative source even when artifact hashes are valid
+  ---
+  duration_ms: 381.745875
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects an unexpected source in the manifest register
+ok 202 - Format 5 rejects an unexpected source in the manifest register
+  ---
+  duration_ms: 276.8965
+  type: 'test'
+  ...
+# Subtest: Format 5 rejects conflicting metadata for a source ID shared by two artifacts
+ok 203 - Format 5 rejects conflicting metadata for a source ID shared by two artifacts
+  ---
+  duration_ms: 249.764958
+  type: 'test'
+  ...
+# Subtest: Format 5 permits different JSON property order for an identical shared source
+ok 204 - Format 5 permits different JSON property order for an identical shared source
+  ---
+  duration_ms: 717.992416
+  type: 'test'
+  ...
+1..204
+# tests 204
+# suites 0
+# pass 204
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 79698.538291

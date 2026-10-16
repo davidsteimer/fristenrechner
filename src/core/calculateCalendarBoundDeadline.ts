@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-import { calculateDeadline } from './calculateDeadline';
+import { calculateRuntimeDeadline } from './calculateDeadline';
 import { assertActivatedCalendarProjection, activatedRuleId } from './holidayActivation';
 import { parseIsoDate } from './date';
 import { canonicalSocialJson } from './socialCatalog';
 import { resolveBoundCalendar, unresolvedCalendar } from './calendarResolution';
 import { FORMAT7_LEGACY_CALENDAR_BASELINE } from './format7Baseline';
 import { trustedFormat7Runtime, withQualifiedCalendarPath } from './format7Runtime';
+import { trustedFormat8Runtime, withFormat8CalculationScope } from './format8Runtime';
 import type { BoundCalendarRuntime, CalendarContext, CalendarResolution } from './calendarResolution';
 import type { CalendarProjectionRecipe } from './holidayActivationTypes';
 import type { CalendarRuleSet, CalendarRuleValidity } from './calendarRuleTypes';
@@ -127,8 +128,9 @@ function completePath(input: CalculationInput, data: CalculationData, runtime: B
     ...data, releaseId: runtime.releaseId, coverage, calendars,
     calendarRuleSets: new Map(runtime.calendars.map(calendar => [calendar.calendarId, calendar]))
   };
-  const result = withQualifiedCalendarPath(boundData, () => calculateDeadline({ ...input, calendarId: recipe.calendarId,
-    holidayAnchorCandidates: [resolution.context.canton] }, boundData));
+  const result = withFormat8CalculationScope(data, boundData, () => withQualifiedCalendarPath(boundData,
+    () => calculateRuntimeDeadline({ ...input, calendarId: recipe.calendarId,
+      holidayAnchorCandidates: [resolution.context.canton] }, boundData)));
   if (result.outcome !== 'calculated') return result;
   const from = input.inputDate < result.legallyRelevantDate ? input.inputDate : result.legallyRelevantDate;
   const until = result.finalEnd;
@@ -152,16 +154,19 @@ export function calculateCalendarBoundDeadline(input: CalculationInput, context:
   if (data.formatVersion === '7.0.0' && trustedFormat7Runtime(data) !== runtime) {
     return block(input, unresolvedCalendar(context, 'calendarBinding.invalidRuntime'), false, 'calendarBinding.invalidRuntime');
   }
+  if (data.formatVersion === '8.0.0' && trustedFormat8Runtime(data) !== runtime) {
+    return block(input, unresolvedCalendar(context, 'calendarBinding.invalidRuntime'), false, 'calendarBinding.invalidRuntime');
+  }
   const resolution = resolveBoundCalendar(input.profileId, context, runtime);
   if (resolution.status === 'clarificationRequired' || !resolution.binding || !resolution.projection) {
     return block(input, resolution, runtime.referenceOnly === true, resolution.reasonKeys[0] ?? 'calendarBinding.bindingUnresolved');
   }
   if (!runtime.referenceOnly && runtime.releaseId !== data.releaseId) return block(input, resolution, false, 'calendarBinding.releaseMismatch');
   try {
-    const legacy = data.formatVersion === '7.0.0' ? FORMAT7_LEGACY_CALENDAR_BASELINE
+    const legacy = ['7.0.0', '8.0.0'].includes(data.formatVersion) ? FORMAT7_LEGACY_CALENDAR_BASELINE
       : ['ch-federal-calendar', 'be-public-holidays'].map(id => data.calendarRuleSets.get(id));
     if (legacy.some(calendar => !calendar || calendar.formatVersion !== '2.0.0')) return block(input, resolution, runtime.referenceOnly, 'calendarBinding.baselineMissing');
-    if (data.formatVersion !== '7.0.0') assertActivatedCalendarProjection(runtime.catalog, runtime.catalogSha256, runtime.calendars, legacy as CalendarRuleSet[]);
+    if (!['7.0.0', '8.0.0'].includes(data.formatVersion)) assertActivatedCalendarProjection(runtime.catalog, runtime.catalogSha256, runtime.calendars, legacy as CalendarRuleSet[]);
     const first = completePath(input, data, runtime, resolution, resolution.projection);
     let comparison: JanuaryComparison | undefined;
     if (resolution.alternativeProjection) {

@@ -1,0 +1,218 @@
+{
+  "dataKind": "mvp08OutlookReuseProposal",
+  "status": "draft-awaiting-definitive-artifact-bindings-and-human-decision",
+  "evaluatedOn": "2026-10-15",
+  "correctsEvidenceAttributionOf": {
+    "path": "outputs/release-mvp08-2026-10-15/outlook-reuse-assessment.json",
+    "sha256": "715ab681ada512d616f64a1216a1b399b4444fbf33e3a9afb00e92c5fdb4998c",
+    "explanation": "The earlier localWebDownload label overstated the host boundary. The same ICS bytes were generated from actual minified code in JSDOM and locally saved across a simulated download boundary, not downloaded by a browser."
+  },
+  "sourceComparisons": [
+    {
+      "component": "calendarExport.ts",
+      "old": {
+        "path": "outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/build-evidence/inputs/src/ui/calendarExport.ts",
+        "byteLength": 4934,
+        "sha256": "aaec9be40831ef89b194477c1295ecb1019f6eb06e255d030404872a2ba59984"
+      },
+      "current": {
+        "path": "src/ui/calendarExport.ts",
+        "byteLength": 5153,
+        "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89"
+      },
+      "byteIdentical": false,
+      "change": "Optional descriptionAppendix type member and escaped DESCRIPTION extension only",
+      "onlyDeclaredDeltaVerified": true
+    },
+    {
+      "component": "src/core/date.ts",
+      "old": {
+        "path": "outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/build-evidence/inputs/src/core/date.ts",
+        "byteLength": 4847,
+        "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc"
+      },
+      "current": {
+        "path": "src/core/date.ts",
+        "byteLength": 4847,
+        "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc"
+      },
+      "byteIdentical": true
+    }
+  ],
+  "unchangedSourceBlocks": [
+    {
+      "component": "CalendarExportTile",
+      "sourcePath": "src/ui/FristenrechnerApp.tsx",
+      "baselinePath": "outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/build-evidence/inputs/src/ui/FristenrechnerApp.tsx",
+      "byteIdenticalBlock": true,
+      "blockSha256": "17560baee30d827fbd1c4f3f6e4bee549dbd917ad7eb0951fdab2dc84bd8f07b",
+      "blockByteLength": 1700
+    },
+    {
+      "component": "CalendarTextRowsDEFR",
+      "sourcePath": "src/ui/i18n.ts",
+      "baselinePath": "outputs/release-mvp07-spfx-0.7.0.2-2026-10-09/build-evidence/inputs/src/ui/i18n.ts",
+      "byteIdenticalBlock": true,
+      "blockSha256": "94b2479cda7dba9133c3118450a50eac8f158bcc5df8ad33d9840dc94c3b7a58",
+      "blockByteLength": 1426
+    }
+  ],
+  "newAdministrativeAdapter": {
+    "path": "src/ui/administrativeExport.ts",
+    "byteLength": 4342,
+    "sha256": "b4b8e6769a782829f9a25da19c7a2b1a3cd9eecb60dae19c49dac6d3f59df836",
+    "existedInMvp07": false,
+    "responsibilities": [
+      "exact input/context/result binding",
+      "fresh recomputation before export",
+      "law/data provenance appendix"
+    ],
+    "notCoveredByHistoricalOutlookImports": true
+  },
+  "tests": {
+    "command": [
+      "node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/ui/calendar-export.test.ts",
+      "tests/ui/ap23d2-administrative.test.tsx"
+    ],
+    "counts": {
+      "tests": 21,
+      "pass": 21,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": {
+      "path": "outputs/release-mvp08-2026-10-15/outlook-evidence/current-export-tests-v2.txt",
+      "byteLength": 5396,
+      "sha256": "e67d7e85010020cb35eb3a1fd88f532c7ce6bfa59de4bf7ea2d20e838d3e6767"
+    },
+    "sourceInputs": [
+      {
+        "path": "tests/ui/calendar-export.test.ts",
+        "byteLength": 7419,
+        "sha256": "c4a075dd61bcce6488474329c7dd53eca7c26ad86d82daddb2995ff3110ad662"
+      },
+      {
+        "path": "tests/ui/ap23d2-administrative.test.tsx",
+        "byteLength": 13556,
+        "sha256": "b9f98ba107a3cf25f20893c44b8650c0ecb969c9feae313b0a952efd102ea31a"
+      }
+    ],
+    "scope": "8 serializer/download tests and 13 administrative UI and export-gate tests, including approved-shaped fixtures"
+  },
+  "exports": [
+    {
+      "source": {
+        "path": ".work/mvp08-web-exports/WEB-DE-STPO.ics",
+        "byteLength": 682,
+        "sha256": "aac4ca612bf18665d7fa5adb550628627e766042ec697293a7b6e3c98c3777fd"
+      },
+      "archivedAt": "outputs/release-mvp08-2026-10-15/outlook-evidence/local-web/WEB-DE-STPO.ics",
+      "filename": "WEB-DE-STPO.ics",
+      "date": "2026-09-28",
+      "exclusiveEndDate": "2026-09-29",
+      "summary": "Fristablauf (QA-MVP08-WEB-DE-STPO)",
+      "administrativeProvenance": false,
+      "category": "Fristablauf",
+      "trigger": "-PT112H",
+      "transparent": true,
+      "allDay": true,
+      "utf8CrlfFoldingPassed": true,
+      "outlookImported": false,
+      "evidenceScope": "actualMinifiedCodeExecutedInJsdomWithSimulatedDownloadBoundary",
+      "browserDownloadPerformed": false,
+      "finalArtifactBound": false,
+      "m365HostExport": false
+    },
+    {
+      "source": {
+        "path": ".work/mvp08-web-exports/WEB-DE-TI.ics",
+        "byteLength": 2156,
+        "sha256": "c0653336d721de819bb59a5548dfce36cd53d0be4c19324f5e2048d9bb4c4c10"
+      },
+      "archivedAt": "outputs/release-mvp08-2026-10-15/outlook-evidence/local-web/WEB-DE-TI.ics",
+      "filename": "WEB-DE-TI.ics",
+      "date": "2026-11-02",
+      "exclusiveEndDate": "2026-11-03",
+      "summary": "Fristablauf (QA-MVP08-WEB-DE-TI)",
+      "administrativeProvenance": true,
+      "category": "Fristablauf",
+      "trigger": "-PT112H",
+      "transparent": true,
+      "allDay": true,
+      "utf8CrlfFoldingPassed": true,
+      "outlookImported": false,
+      "evidenceScope": "actualMinifiedCodeExecutedInJsdomWithSimulatedDownloadBoundary",
+      "browserDownloadPerformed": false,
+      "finalArtifactBound": false,
+      "m365HostExport": false
+    },
+    {
+      "source": {
+        "path": ".work/mvp08-web-exports/WEB-FR-TI.ics",
+        "byteLength": 2200,
+        "sha256": "a78d3a3948fc1fa68141714577fc006bc9dd86cbc17abfeb54a9efe96faa87b0"
+      },
+      "archivedAt": "outputs/release-mvp08-2026-10-15/outlook-evidence/local-web/WEB-FR-TI.ics",
+      "filename": "WEB-FR-TI.ics",
+      "date": "2026-11-02",
+      "exclusiveEndDate": "2026-11-03",
+      "summary": "Échéance du délai (QA-MVP08-WEB-FR-TI)",
+      "administrativeProvenance": true,
+      "category": "Fristablauf",
+      "trigger": "-PT112H",
+      "transparent": true,
+      "allDay": true,
+      "utf8CrlfFoldingPassed": true,
+      "outlookImported": false,
+      "evidenceScope": "actualMinifiedCodeExecutedInJsdomWithSimulatedDownloadBoundary",
+      "browserDownloadPerformed": false,
+      "finalArtifactBound": false,
+      "m365HostExport": false
+    }
+  ],
+  "priorReports": [
+    {
+      "path": "docs/betrieb/outlook-pruefung-mvp05.md",
+      "byteLength": 3889,
+      "sha256": "45208e2672e19a272cef28231c6cae7ab89639fe5926becc07a901250695144a"
+    },
+    {
+      "path": "docs/betrieb/outlook-wiederverwendung-mvp07.md",
+      "byteLength": 8394,
+      "sha256": "2539e442730b7be17025d91fe69648c1216ae5f50592762a459a5bf4c9953f76"
+    }
+  ],
+  "unchangedAppointmentContract": {
+    "allDay": true,
+    "exclusiveFollowingEndDate": true,
+    "freeAvailability": true,
+    "category": "Fristablauf",
+    "reminder": "-PT112H",
+    "noAttendees": true,
+    "localIcsDownload": true
+  },
+  "proposedReuseScope": "Historical Outlook import interpretation of unchanged appointment properties only, not new calculation, provenance, host or download behaviour",
+  "definitiveArtifactBindings": null,
+  "definitiveArtifactExportsVerified": false,
+  "realBrowserDownloadPerformed": false,
+  "outlookImportPerformed": false,
+  "mailboxOrCalendarChanged": false,
+  "humanReuseAccepted": false,
+  "m365HostExportsVerified": false,
+  "newDeviceOrGuestProof": false,
+  "retainedLimits": [
+    "No new reminder delivery or daylight-saving-time observation",
+    "Category name does not enforce account-specific colour",
+    "Historical Desktop confirmation keeps its original detail level",
+    "Description/provenance may render differently and is not covered by old import proof"
+  ],
+  "installationAuthorized": false,
+  "publicationAuthorized": false,
+  "operatingApproval": false
+}

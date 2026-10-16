@@ -2,8 +2,9 @@
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { readFileSync } from 'node:fs';
+import { dirname } from 'node:path';
 import { test } from 'node:test';
-import { buildSync } from 'esbuild';
+import { build } from 'esbuild';
 import { calculateDeadline, calculateSpecialDeadline, createCalculatorRuntime } from '../../src/core';
 import type { ValidatedReleaseLike } from '../../src/core';
 import { mvp06CalculationData } from '../../src/release/mvp06ReleaseData';
@@ -13,26 +14,44 @@ import type { FristenrechnerAppProps } from '../../src/ui/FristenrechnerApp';
 import { hasSocialUi, socialUiPath, SOCIAL_UI_LAWS } from '../../src/ui/socialUi';
 import { EMPTY_VRPG_SELECTION } from '../../src/ui/vrpgSelection';
 
-const bundle = buildSync({ stdin: { contents: `
+// Isolated render-branch policy tests, not an end-to-end calculation test.
+// The former global "fifth useState" injection silently targeted a different
+// state after AP23D2 added administrative selection hooks. Bind to the unique
+// named result declaration in this test-only bundle instead. No production
+// source, React hook or result-branch policy is changed. Actual user flows are
+// covered separately by the AP21/AP23D2 DOM interaction suites.
+const resultInitializer = 'const [result, setResult] = React.useState<UiResult>();';
+let injectedResultDeclarations = 0;
+const bundle = await build({ stdin: { contents: `
   import React from 'react';
   import {renderToStaticMarkup} from 'react-dom/server';
   import {setIconOptions} from '@fluentui/react/lib/Styling';
   import {FristenrechnerApp} from './src/ui/FristenrechnerApp';
+  import {testResultState} from 'ap22c3-test-result-state';
   setIconOptions({disableWarnings:true});
   export const render = props => renderToStaticMarkup(React.createElement(FristenrechnerApp, props));
-  // Inject an already computed result into the actual session state. There is
-  // no production initial-result or test-only export policy in the component.
+  // Supply the existing computed fixture to the isolated rendering branch.
   export function renderWithResult(props, result) {
-    const original = React.useState;
-    let count = 0;
-    React.useState = value => {
-      const actual = original(value);
-      return ++count === 5 ? [result, actual[1]] : actual;
-    };
-    try { return render(props); } finally { React.useState = original; }
+    testResultState.current = result;
+    try { return render(props); } finally { testResultState.current = undefined; }
   }
 `, loader: 'tsx', resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'cjs', write: false,
-external: ['react', 'react-dom/server'], logLevel: 'silent' });
+external: ['react', 'react-dom/server'], logLevel: 'silent', plugins: [{ name: 'isolated-result-rendering', setup(builder) {
+  builder.onResolve({ filter: /^ap22c3-test-result-state$/ }, () => ({ path: 'state', namespace: 'ap22c3-test-only' }));
+  builder.onLoad({ filter: /^state$/, namespace: 'ap22c3-test-only' }, () => ({
+    contents: 'export const testResultState = {current: undefined};', loader: 'js'
+  }));
+  builder.onLoad({ filter: /\/src\/ui\/FristenrechnerApp\.tsx$/ }, args => {
+    const source = readFileSync(args.path, 'utf8');
+    const count = source.split(resultInitializer).length - 1;
+    assert.equal(count, 1, 'The isolated branch test requires exactly one named UiResult initializer');
+    injectedResultDeclarations += count;
+    return { contents: `import {testResultState} from 'ap22c3-test-result-state';\n${source.replace(resultInitializer,
+      'const [result, setResult] = React.useState<UiResult>(() => testResultState.current);')}`,
+    loader: 'tsx', resolveDir: dirname(args.path) };
+  });
+} }] });
+assert.equal(injectedResultDeclarations, 1, 'The result injection must only affect the intended app module');
 const module = { exports: {} };
 new Function('require', 'module', 'exports', bundle.outputFiles[0]!.text)(createRequire(import.meta.url), module, module.exports);
 const ui = module.exports as { render: (props: FristenrechnerAppProps) => string; renderWithResult: (props: FristenrechnerAppProps, result: unknown) => string };
@@ -114,5 +133,5 @@ test('only the local preview has a query candidate selector, public entries rema
   const normal = readFileSync('src/public-app/main.tsx', 'utf8');
   assert.match(entry, /ap22c3CandidateRuntime/); assert.match(entry, /referenceOnlyAllCalculations/);
   assert.doesNotMatch(entry, /URLSearchParams|location\.search|initialState|qaPreset/);
-  assert.match(normal, /mvp07Runtime/); assert.doesNotMatch(normal, /ap22c3|referenceOnlyAllCalculations/);
+  assert.match(normal, /mvp08Runtime/); assert.doesNotMatch(normal, /ap22c3|referenceOnlyAllCalculations/);
 });

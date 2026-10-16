@@ -61,7 +61,9 @@ test('C2 offers Bund plus 26 authority cantons without opening cantonal procedur
 
 test('C2 uses static authority label and separate qualified role/place fields',()=>{
   const html=render({profileId:'stpo'});
-  for(const label of ['Sitz der zuständigen Stelle','Massgebende Zustellkonstellation','Massgebender Feiertagskanton'])assert.ok(html.includes(label),label);
+  // AP23D2 UX: factual role/place questions replace the legal-conclusion label.
+  for(const label of ['Sitz der zuständigen Stelle','Zustellung an','Wohnsitz / Sitz – Kanton'])assert.ok(html.includes(label),label);
+  assert.doesNotMatch(html,/Massgebender Feiertagskanton/);
   assert.ok(html.includes('lokale Prüfrechnung'));
   assert.doesNotMatch(html,/Kalender übersteuern|Weiterer Feiertagsort/);
   assert.match(html,/fr-form__grid/);
@@ -78,10 +80,9 @@ test('C2 leaves the initial receipt date usable while calendar context is unreso
   assert.match(html,/Feiertagsanknüpfung bitte vervollständigen/);
 });
 
-test('ZPO fixes the court role without presenting a pointless role dropdown',()=>{
-  const html=render({profileId:'zpo',selectors:{deliveryMethod:'otherLegallyRelevantDate',procedureVariant:'ordinary'}});
-  assert.match(html,/value="Sitz des Gerichts"/);
-  assert.match(html,/read[oO]nly/);
+test('ZPO uses the known court canton without presenting redundant role or place fields',()=>{
+  const html=render({authorityCode:'BE',profileId:'zpo',selectors:{deliveryMethod:'otherLegallyRelevantDate',procedureVariant:'ordinary'}});
+  assert.doesNotMatch(html,/value="Sitz des Gerichts"|Sitz des Gerichts – Kanton|Zustellung an/);
   assert.doesNotMatch(html,/Partei ohne Vertretung|Eindeutig bestimmte qualifizierte/);
   assert.deepEqual(ui.contextForProfile('zpo'),{role:'court',canton:'',areaFacts:{}});
 });
@@ -139,7 +140,8 @@ test('French UI and complete DE/FR calendar text keys remain aligned',()=>{
   assert.deepEqual(Object.keys(calendarMessages.de).sort(),Object.keys(calendarMessages.fr).sort());
   const html=decoded(render({profileId:'stpo'},'fr'));
   assert.match(html,/Siège de l’instance compétente/);
-  assert.match(html,/Canton déterminant pour les jours fériés/);
+  assert.match(html,/Notification à/);
+  assert.match(html,/Domicile \/ siège – canton/);
   assert.match(html,/calcul de contrôle local/);
   assert.equal(calendarCantonLabel('GR','fr'),'Grisons (GR)');
   assert.match(calendarReason('fr','calendarBinding.januaryClarificationRequired')!,/2 janvier/);

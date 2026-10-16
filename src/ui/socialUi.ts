@@ -36,7 +36,7 @@ export const EMPTY_SOCIAL_CONTEXT: SocialUiContext = Object.freeze({
 /** Explicit integration list. Loading another law does not make it selectable. */
 export const SOCIAL_UI_LAWS = ['ivg', 'ahvg', 'uvg', 'elg', 'avig', 'kvg', 'eog', 'famzg', 'flg', 'mvg', 'uelg'] as const;
 export function hasSocialUi(data: CalculationData): boolean {
-  return ['5.0.0', '6.0.0', '7.0.0'].includes(data.formatVersion) && data.socialProcedureCatalogs?.size === 1;
+  return ['5.0.0', '6.0.0', '7.0.0', '8.0.0'].includes(data.formatVersion) && data.socialProcedureCatalogs?.size === 1;
 }
 export function socialUiPath(data: CalculationData, selection: VrpgSelectionState): SocialUiPath | undefined {
   if (!hasSocialUi(data) || selection.area !== 'social' || !SOCIAL_UI_LAWS.some(law => law === selection.law)) return undefined;

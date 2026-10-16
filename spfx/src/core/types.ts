@@ -13,7 +13,7 @@ export interface IReleaseProvider {
 
 export interface IReleaseArtifactDescriptor {
   readonly path: string;
-  readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog' | 'socialProcedureCatalog';
+  readonly role: 'legalProfile' | 'calendar' | 'specialRegimeCatalog' | 'holidayCatalog' | 'socialProcedureCatalog' | 'administrativeProcedureCatalog';
   readonly contentId: string;
   readonly mediaType: 'application/json';
   readonly schemaId: string;
@@ -36,6 +36,7 @@ export interface IReleaseManifest {
   readonly specialRegimeCatalogIds?: readonly string[];
   readonly holidayCatalogIds?: readonly string[];
   readonly socialProcedureCatalogIds?: readonly string[];
+  readonly administrativeProcedureCatalogIds?: readonly string[];
   readonly sourceSummary: {
     readonly sourceIds: readonly string[];
   };
@@ -59,6 +60,7 @@ export interface IValidatedRelease {
   readonly specialRegimeCatalogIds?: readonly string[];
   readonly holidayCatalogIds?: readonly string[];
   readonly socialProcedureCatalogIds?: readonly string[];
+  readonly administrativeProcedureCatalogIds?: readonly string[];
   readonly manifestSha256: string;
   readonly manifestBytes: Uint8Array;
   readonly artifacts: readonly IValidatedArtifact[];

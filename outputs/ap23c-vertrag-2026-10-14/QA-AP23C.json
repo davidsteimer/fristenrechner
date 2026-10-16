@@ -1,0 +1,190 @@
+{
+  "kind": "ap23c-proposal-qa",
+  "checkedOn": "2026-10-14",
+  "status": "ready-for-technical-decision",
+  "ap23bAccepted": true,
+  "legalDecision": "DEC-2026-031",
+  "technicalDecision": "DEC-2026-032",
+  "technicalDecisionApproved": false,
+  "runtimeActive": false,
+  "productIntegrationTest": false,
+  "releaseBuilt": false,
+  "published": false,
+  "environment": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.14"
+  },
+  "contract": {
+    "status": "passed",
+    "checkedOn": "2026-10-14",
+    "runtimeActive": false,
+    "productIntegrationTest": false,
+    "scope": "schema-and-cross-reference-contract-probe-not-release-or-legal-source-review",
+    "laws": 2,
+    "paths": 12,
+    "suspensionProfiles": 4,
+    "holidayBindings": 2,
+    "sources": 11,
+    "schemaProbes": 20,
+    "negativeContractMutations": 11,
+    "negativeInputMutations": 18,
+    "negativePromotionBindingMutations": 6,
+    "negativeManifestInventoryMutations": 5,
+    "positivePlans": 4,
+    "additionalDurationBoundaryChecks": 2,
+    "evaluatedDayGuards": 4,
+    "preservedFiles": 18,
+    "fixtureSha256": "9600d1474f3622eb258284bed03d00e99cc7bcd089d5d1452552472b12f2af18",
+    "schemaSha256": "a9bb3aa220c6f6612f092d97c9dc199563aaa2e6b87b6687939c3cfdc4ecabea",
+    "manifestSchemaSha256": "535d8f9754758900f9952a2b7a676824190efb58ecee6a437510853fc3316fb2",
+    "nodeVersion": "v24.19.0",
+    "preserved": [
+      "docs/fachrecht/verwaltungsverfahren-ap23a.md",
+      "docs/fachrecht/abnahme-ap23a.md",
+      "outputs/ap23a-2026-10-12/referenz/2026-10-12_Verwaltungsverfahren_Schweiz_AP23A_V0.1.xlsx",
+      "schemas/legal-profile.schema.json",
+      "schemas/release-manifest-v7.schema.json",
+      "src/core/calculateDeadline.ts",
+      "src/core/calendarResolution.ts",
+      "src/core/holidayActivation.ts",
+      "data/releases/2026-10-08-mvp-07-approved.1/manifest.json",
+      "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-ti-944ed0286e9a.json",
+      "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-gr-bf0366c8eda2.json",
+      "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-nw-5dfca484e4af.json",
+      "docs/fachrecht/verwaltungsverfahren-ap23b.md",
+      "docs/fachrecht/quellenpruefung-ap23b.md",
+      "docs/fachrecht/referenzfaelle-ap23b.md",
+      "tests/golden/candidates/ap23b-administrative.json",
+      "scripts/check-ap23b-references.mjs",
+      "outputs/ap23b-2026-10-12/QA-AP23B.json"
+    ]
+  },
+  "defaults": {
+    "status": "passed",
+    "modelProbe": true,
+    "productMigration": false,
+    "runtimeActive": false,
+    "browserStorageUsed": false,
+    "tests": 15,
+    "passed": [
+      "D01-absent-initializes-once",
+      "D02-v1-to-v4-stable-legacy-values",
+      "D03-no-cantonal-path-inference",
+      "D04-no-first-profile-or-path-fallback",
+      "D05-no-case-facts-from-old-or-new-input",
+      "D06-old-key-unchanged-through-write-and-reset",
+      "D07-explicit-admin-choice-is-not-case-approval",
+      "D08-unknown-revision-stage-and-canton-rejected",
+      "D09-reset-marker-prevents-old-values-resurrection",
+      "D10-future-v5-slot-is-protected",
+      "D11-corrupt-new-slot-is-protected-no-legacy-fallback",
+      "D12-unavailable-read-is-memory-only",
+      "D13-denied-write-cannot-promise-durable-migration-or-reset",
+      "D14-historical-host-write-cannot-change-new-preferences",
+      "D15-malformed-old-values-stay-unqualified"
+    ],
+    "modeledKeys": {
+      "legacy": "fristenrechner.defaults.v1",
+      "proposed": "fristenrechner.defaults.v5"
+    },
+    "limitations": [
+      "Representative closed legacy selector and TI/GR path fixtures, not a complete product registry.",
+      "No real browser, SPFx, calendar runtime or legal applicability test.",
+      "Denied storage writes permit session-only preferences and cannot guarantee a durable reset."
+    ]
+  },
+  "historicalResearch": {
+    "referenceCases": 33,
+    "negativeMutations": 14,
+    "preservedFiles": 12,
+    "interpretation": "Historical AP23B oracle unchanged. TI-O1 superseded only through DEC-2026-031 and the new separate contract probe."
+  },
+  "historicalAp23bHashes": [
+    {
+      "path": "docs/fachrecht/verwaltungsverfahren-ap23b.md",
+      "sha256": "d27db556347dc5fe441e4cb155c00303d4af7ec1977944db8567356a5f0b6568"
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+      "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af"
+    },
+    {
+      "path": "docs/fachrecht/referenzfaelle-ap23b.md",
+      "sha256": "4ab3f0e1725001a1eff084ae73c10ebcea0e34cd99c52378fa67e20fa0975a60"
+    },
+    {
+      "path": "tests/golden/candidates/ap23b-administrative.json",
+      "sha256": "a795a22a07945e02369f917dcea4d047a7bb3bb897e198a1fe1ffbea4a65a5d1"
+    },
+    {
+      "path": "scripts/check-ap23b-references.mjs",
+      "sha256": "69ab68b9ff8ef68aabd78a1faa60a0ad98a38aadd7ee6ae4366f70504553523e"
+    },
+    {
+      "path": "outputs/ap23b-2026-10-12/QA-AP23B.json",
+      "sha256": "6ce8d3d089d17da7db280a40d2047957c57643f56ccdf2fdd79e6d6e84922ea4"
+    }
+  ],
+  "checks": {
+    "trackedProductDiffEmpty": true,
+    "gitDiffCheckPassed": true,
+    "checkedLocalLinks": 25
+  },
+  "artifacts": [
+    {
+      "path": "docs/fachrecht/abnahme-ap23b.md",
+      "byteLength": 4511,
+      "sha256": "c52680a7ff64aecc46a2889a94edce497364ba03625892fe8f42d033300ca6b0"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-031-behoerdensitz-kantonale-verwaltungsverfahren.md",
+      "byteLength": 4681,
+      "sha256": "8019627a77f4a5569bcf35fa31fba200afa1e6a86d6e16bb0f263ac3ae36471b"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-032-kantonale-verwaltungsverfahren-datenvertrag.md",
+      "byteLength": 5183,
+      "sha256": "745eabba072dbe5a9063fa48150fe22daf5fc25601d76937cb72df47171afe6e"
+    },
+    {
+      "path": "docs/architektur/verwaltungsverfahrensvertrag-ap23c.md",
+      "byteLength": 23028,
+      "sha256": "56124df3e28b5c5a7007abefd3d9d8861f135c85d91d880c048f49e30fceb563"
+    },
+    {
+      "path": "docs/architektur/verwaltungsverfahrensvertrag-ap23c-pruefung.md",
+      "byteLength": 8625,
+      "sha256": "42b861308209aada7b04037fff505a3a09b579310c0a6638f9a323b75e253930"
+    },
+    {
+      "path": "scripts/check-ap23c-contract.mjs",
+      "byteLength": 29140,
+      "sha256": "609ed7690b32d70784daa3cc94a1296bd535f853484392c8451eba58eff595f0"
+    },
+    {
+      "path": "scripts/check-ap23c-defaults.mjs",
+      "byteLength": 15835,
+      "sha256": "4deec216f68318a1aed199f72236def69d0d5b7dada83b9f0f8bd2fe899dc44d"
+    },
+    {
+      "path": "scripts/check-ap23c-readiness.mjs",
+      "byteLength": 4720,
+      "sha256": "820fc269ef9d8636bc1fdbccbf2fa95eb45d9eb121750ad95f3a300b2935479a"
+    },
+    {
+      "path": "tests/golden/candidates/ap23c-administrative-contract.json",
+      "byteLength": 49618,
+      "sha256": "9600d1474f3622eb258284bed03d00e99cc7bcd089d5d1452552472b12f2af18"
+    },
+    {
+      "path": "schemas/candidates/ap23c/administrative-procedure-catalog.schema.json",
+      "byteLength": 40058,
+      "sha256": "a9bb3aa220c6f6612f092d97c9dc199563aaa2e6b87b6687939c3cfdc4ecabea"
+    },
+    {
+      "path": "schemas/candidates/ap23c/release-manifest-v8.schema.json",
+      "byteLength": 13844,
+      "sha256": "535d8f9754758900f9952a2b7a676824190efb58ecee6a437510853fc3316fb2"
+    }
+  ]
+}

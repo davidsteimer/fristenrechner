@@ -1,0 +1,68 @@
+TAP version 13
+# Subtest: actual recovery package has version0.8.0.1 but unchanged MVP07 component, pin and identities
+ok 1 - actual recovery package has version0.8.0.1 but unchanged MVP07 component, pin and identities
+  ---
+  duration_ms: 6.621583
+  type: 'test'
+  ...
+# Subtest: actual recovery loads every Format7 byte and calculates the unchanged BE September reference
+ok 2 - actual recovery loads every Format7 byte and calculates the unchanged BE September reference
+  ---
+  duration_ms: 17980.736875
+  type: 'test'
+  ...
+# Subtest: actual MVP07 recovery preserves preferences V5 bytes through real old defaults load/save/reset
+ok 3 - actual MVP07 recovery preserves preferences V5 bytes through real old defaults load/save/reset
+  ---
+  duration_ms: 6922.854375
+  type: 'test'
+  ...
+# Subtest: actual MVP07 recovery preserves reset V5 bytes through real old defaults load/save/reset
+ok 4 - actual MVP07 recovery preserves reset V5 bytes through real old defaults load/save/reset
+  ---
+  duration_ms: 7173.872
+  type: 'test'
+  ...
+# Subtest: actual MVP07 recovery preserves corrupt V5 bytes through real old defaults load/save/reset
+ok 5 - actual MVP07 recovery preserves corrupt V5 bytes through real old defaults load/save/reset
+  ---
+  duration_ms: 7682.754667
+  type: 'test'
+  ...
+# Subtest: actual MVP07 recovery preserves future V5 bytes through real old defaults load/save/reset
+ok 6 - actual MVP07 recovery preserves future V5 bytes through real old defaults load/save/reset
+  ---
+  duration_ms: 7061.486708
+  type: 'test'
+  ...
+# Subtest: actual recovery keeps AP5 and Format7 caches separate and does not infer a different provider
+ok 7 - actual recovery keeps AP5 and Format7 caches separate and does not infer a different provider
+  ---
+  duration_ms: 6667.24675
+  type: 'test'
+  ...
+# Subtest: actual recovery fails closed for Format8 bytes rather than reusing unrelated Format7 cache
+ok 8 - actual recovery fails closed for Format8 bytes rather than reusing unrelated Format7 cache
+  ---
+  duration_ms: 5522.491792
+  type: 'test'
+  ...
+# Subtest: recovery-mvp08/recovery-package.test.cjs
+not ok 1 - recovery-mvp08/recovery-package.test.cjs
+  ---
+  duration_ms: 60001.8855
+  type: 'test'
+  location: '<REPO_ROOT>/spfx/recovery-mvp08/recovery-package.test.cjs:1:1'
+  failureType: 'testTimeoutFailure'
+  error: 'test timed out after 60000ms'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 8
+# fail 0
+# cancelled 1
+# skipped 0
+# todo 0
+# duration_ms 60006.142542

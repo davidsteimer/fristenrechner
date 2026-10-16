@@ -13,6 +13,7 @@ import releaseManifestSchema from './schemas/release-manifest.schema.json';
 import releaseManifestV5Schema from './schemas/release-manifest-v5.schema.json';
 import releaseManifestV6Schema from './schemas/release-manifest-v6.schema.json';
 import releaseManifestV7Schema from './schemas/release-manifest-v7.schema.json';
+import releaseManifestV8Schema from './schemas/release-manifest-v8.schema.json';
 import socialProcedureCatalogSchema from './schemas/social-procedure-catalog.schema.json';
 import socialProcedureCatalogV2Schema from './schemas/social-procedure-catalog-v2.schema.json';
 import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
@@ -25,6 +26,7 @@ import {
   assertHolidayCatalogProjection,
   createCalculationData,
   createFormat7CalculationData,
+  createFormat8CalculationData,
   generateCalendarFromRules,
   type CalendarRuleSet
 } from '../product/core';
@@ -135,6 +137,7 @@ export class ReleaseValidator {
   private readonly manifestV5Validator: ValidateFunction;
   private readonly manifestV6Validator: ValidateFunction;
   private readonly manifestV7Validator: ValidateFunction;
+  private readonly manifestV8Validator: ValidateFunction;
   private readonly socialProcedureCatalogValidator: ValidateFunction;
   private readonly socialProcedureCatalogV2Validator: ValidateFunction;
   private readonly legalProfileValidator: ValidateFunction;
@@ -158,6 +161,13 @@ export class ReleaseValidator {
     this.manifestV5Validator = ajv.compile(releaseManifestV5Schema);
     this.manifestV6Validator = ajv.compile(releaseManifestV6Schema);
     this.manifestV7Validator = ajv.compile(releaseManifestV7Schema);
+    // The confirmed Format-8 schema narrows sourceSummary in an allOf/then
+    // branch. Its object type is declared in the outer schema, not repeated in
+    // that branch. Relax only AJV's redundant-type lint for this exact schema,
+    // not JSON Schema validation or the existing legacy validator settings.
+    const format8Ajv = new Ajv2020({ allErrors: true, strict: true, strictRequired: false, strictTypes: false });
+    addFormats(format8Ajv, ['date', 'uri']);
+    this.manifestV8Validator = format8Ajv.compile(releaseManifestV8Schema);
     this.legalProfileValidator = ajv.compile(legalProfileSchema);
     this.calendarValidator = ajv.compile(calendarSchema);
     this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
@@ -171,6 +181,10 @@ export class ReleaseValidator {
   public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
     const manifestBytes = await provider.fetchBytes('manifest.json');
     const manifestValue = decodeJson(manifestBytes, 'Manifest');
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '8.0.0') {
+      return this.validateFormat8Provider(provider, manifestBytes, manifestValue);
+    }
 
     if (isObject(manifestValue) && manifestValue.formatVersion === '7.0.0') {
       return this.validateFormat7Provider(provider, manifestBytes, manifestValue);
@@ -258,6 +272,46 @@ export class ReleaseValidator {
       specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
       holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
       socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat8Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // A local preview flag, serialized runtimeActive value or a previously
+    // stored parsed object cannot grant operative approval in this host.
+    // Reject candidate manifests before following their artifact paths.
+    assertSchema(this.manifestV8Validator, value, 'Format-8-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 41) {
+      throw new Error('Format 8 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    // The shared Format-8 factory checks every original byte, closed schema,
+    // administrative path, component binding and joint source inventory.
+    const runtime = createFormat8CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId,
+      formatVersion: '8.0.0',
+      coverageFrom: manifest.coverage.from,
+      coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
       manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
       validatedAt: new Date().toISOString()
     };

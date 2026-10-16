@@ -16,6 +16,8 @@ import {
 } from './data';
 import { CalendarGenerationError } from './generateCalendar';
 import { hasQualifiedCalendarPath, trustedFormat7Runtime } from './format7Runtime';
+import { trustedFormat8Runtime } from './format8Runtime';
+import { countDayDeadline } from './dayDeadlineArithmetic';
 import type {
   BlockedDeadlineResult,
   CalculatedDeadlineResult,
@@ -303,10 +305,6 @@ function resolveInputDate(
   };
 }
 
-function periodsForDate(periods: readonly SuspensionPeriod[], date: IsoDate): SuspensionPeriod[] {
-  return periods.filter(period => isDateWithin(date, period.startsOn, period.endsOn));
-}
-
 interface SuspensionConfiguration {
   readonly enabled: boolean;
   readonly setId?: string;
@@ -381,6 +379,26 @@ function isCalculationResult(value: DateResolution | SuspensionConfiguration | C
 }
 
 export function calculateDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
+  // Format 8 has a separate, byte-issued qualification boundary. A caller may
+  // not smuggle an invented old profile through this historical entry point.
+  if (data.formatVersion === '8.0.0') {
+    return blocked({ reasons: ['administrativeProcedure.qualifiedContextRequired'] });
+  }
+  return calculateLegacyProfile(input, data);
+}
+
+/** Shared host entry. Format 8 is qualified without masquerading as Format 7. */
+export function calculateRuntimeDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
+  if (data.formatVersion !== '8.0.0') return calculateDeadline(input, data);
+  if (!trustedFormat8Runtime(data)
+    || (['stpo', 'zpo', 'bgg', 'vwvg'].includes(input.profileId) && !hasQualifiedCalendarPath(data))
+    || (input.profileId === 'vrpg-be' && input.calendarId !== 'be-public-holidays')) {
+    return blocked({ reasons: ['calendarBinding.qualifiedContextRequired'] });
+  }
+  return calculateLegacyProfile(input, data);
+}
+
+function calculateLegacyProfile(input: CalculationInput, data: CalculationData): CalculationResult {
   if (data.formatVersion === '7.0.0' && (!trustedFormat7Runtime(data)
     || (['stpo', 'zpo', 'bgg', 'vwvg'].includes(input.profileId) && !hasQualifiedCalendarPath(data))
     || (input.profileId === 'vrpg-be' && input.calendarId !== 'be-public-holidays'))) {
@@ -555,113 +573,28 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
       includeResolution: true
     });
   }
-  const ordinaryStart = addCalendarDays(legallyRelevantDate, offset);
-  let deadlineStart = ordinaryStart;
-  let skippedCalendarDays = 0;
-  const encounteredPeriodIds: string[] = [];
-  const countedDates: IsoDate[] = [];
-
-  if (suspension.enabled) {
-    const deliveryDuringSuspensionRules = matchingRules(profile, 'deliveryDuringSuspension', input);
-    const startingPeriods = periodsForDate(suspension.periods, deadlineStart);
-    if (deliveryDuringSuspensionRules.length === 1 && startingPeriods.length > 0) {
-      const latestEnd = startingPeriods
-        .map(period => period.endsOn)
-        .sort(compareIsoDates)
-        .at(-1);
-      if (latestEnd) {
-        let skippedDate = deadlineStart;
-        while (compareIsoDates(skippedDate, latestEnd) <= 0) {
-          skippedCalendarDays += 1;
-          periodsForDate(suspension.periods, skippedDate).forEach(period => {
-            if (!encounteredPeriodIds.includes(period.periodId)) {
-              encounteredPeriodIds.push(period.periodId);
-            }
-          });
-          skippedDate = addCalendarDays(skippedDate, 1);
-        }
-        deadlineStart = addCalendarDays(latestEnd, 1);
-        appliedRules.push(deliveryDuringSuspensionRules[0] as LegalRule);
-      }
-    }
+  const deliveryDuringSuspensionRules = suspension.enabled
+    ? matchingRules(profile, 'deliveryDuringSuspension', input) : [];
+  const ordinaryStartForRule = addCalendarDays(legallyRelevantDate, 1);
+  // Preserve the historical rule evidence even if counting later hits a
+  // coverage boundary. The shared counter remains the only counting loop.
+  if (deliveryDuringSuspensionRules.length === 1 && parseIsoDate(ordinaryStartForRule)
+    && suspension.periods.some(period => isDateWithin(ordinaryStartForRule, period.startsOn, period.endsOn))) {
+    appliedRules.push(deliveryDuringSuspensionRules[0] as LegalRule);
   }
-  if (!ensureCovered(deadlineStart, data, calendar)) {
-    return blocked({
-      inputDate: input.inputDate,
-      legallyRelevantDate,
-      rules: appliedRules,
-      reasons: ['dataCoverageExceeded'],
-      warnings: ['warning.data.coverageExceeded'],
-      includeResolution: true
-    });
+  const arithmetic = countDayDeadline({
+    legallyRelevantDate, deadlineDays: input.deadlineDays,
+    periods: suspension.enabled ? suspension.periods : [],
+    shiftStartDuringSuspension: deliveryDuringSuspensionRules.length === 1,
+    holidaysByDate: calendar.holidaysByDate,
+    isCovered: date => ensureCovered(date, data, calendar)
+  });
+  if (arithmetic.outcome === 'blocked') {
+    return blocked({ inputDate: input.inputDate, legallyRelevantDate, rules: appliedRules,
+      reasons: [arithmetic.reason], warnings: ['warning.data.coverageExceeded'], includeResolution: true });
   }
-
-  let current = addCalendarDays(deadlineStart, -1);
-  let countedDays = 0;
-  while (countedDays < input.deadlineDays) {
-    current = addCalendarDays(current, 1);
-    if (!ensureCovered(current, data, calendar)) {
-      return blocked({
-        inputDate: input.inputDate,
-        legallyRelevantDate,
-        rules: appliedRules,
-        reasons: ['dataCoverageExceeded'],
-        warnings: ['warning.data.coverageExceeded'],
-        includeResolution: true
-      });
-    }
-    const activePeriods = suspension.enabled ? periodsForDate(suspension.periods, current) : [];
-    if (activePeriods.length > 0) {
-      skippedCalendarDays += 1;
-      activePeriods.forEach(period => {
-        if (!encounteredPeriodIds.includes(period.periodId)) {
-          encounteredPeriodIds.push(period.periodId);
-        }
-      });
-      continue;
-    }
-    countedDays += 1;
-    countedDates.push(current);
-  }
-  const provisionalEnd = current;
-
-  const shiftReasonKeys: string[] = [];
-  const shiftedHolidayIds: string[] = [];
-  let finalEnd = provisionalEnd;
-  while (true) {
-    const weekend = weekdayReason(finalEnd);
-    const holidays = calendar.holidaysByDate.get(finalEnd) ?? [];
-    if (!weekend && holidays.length === 0) {
-      break;
-    }
-    if (weekend && !shiftReasonKeys.includes(weekend)) {
-      shiftReasonKeys.push(weekend);
-    }
-    if (holidays.length > 0) {
-      if (!shiftReasonKeys.includes('publicHoliday')) {
-        shiftReasonKeys.push('publicHoliday');
-      }
-      holidays.forEach(holiday => {
-        if (!shiftedHolidayIds.includes(holiday.holidayId)) {
-          shiftedHolidayIds.push(holiday.holidayId);
-        }
-      });
-    }
-    finalEnd = addCalendarDays(finalEnd, 1);
-    if (!ensureCovered(finalEnd, data, calendar)) {
-      return blocked({
-        inputDate: input.inputDate,
-        legallyRelevantDate,
-        rules: appliedRules,
-        reasons: ['dataCoverageExceeded'],
-        warnings: ['warning.data.coverageExceeded'],
-        includeResolution: true
-      });
-    }
-  }
-  const reasonOrder = new Map([['saturday', 0], ['sunday', 1], ['publicHoliday', 2]]);
-  shiftReasonKeys.sort((left, right) => (reasonOrder.get(left) ?? 99) - (reasonOrder.get(right) ?? 99));
-  shiftedHolidayIds.sort();
+  const { ordinaryStart, deadlineStart, provisionalEnd, finalEnd, skippedCalendarDays,
+    encounteredPeriodIds, countedDates, shiftReasonKeys, shiftedHolidayIds } = arithmetic;
   const suspensionCalendarEvidence = calendarEvidenceForIds(calendar, encounteredPeriodIds);
   const endShiftCalendarEvidence = calendarEvidenceForIds(calendar, shiftedHolidayIds);
 

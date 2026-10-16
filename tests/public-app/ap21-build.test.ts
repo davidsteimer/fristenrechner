@@ -42,9 +42,9 @@ test('AP21 is a separate non-deployable UI build on the unchanged accepted C3 re
   assert.equal(await readFile(resolve(output, '.htaccess'), 'utf8'), await readFile('public-app/.htaccess', 'utf8'));
 });
 
-test('historical AP21 candidate remains separate from the approved local MVP07 entry and package', async () => {
-  assert.match(await readFile('src/public-app/main.tsx', 'utf8'), /mvp07Runtime/);
-  assert.match(await readFile('spfx/src/core/config.ts', 'utf8'), /[a-f0-9]{40}\/data\/releases\/2026-10-08-mvp-07-approved\.1/);
+test('historical AP21 candidate remains separate from the approved local MVP08 entry and package', async () => {
+  assert.match(await readFile('src/public-app/main.tsx', 'utf8'), /mvp08Runtime/);
+  assert.match(await readFile('spfx/src/core/config.ts', 'utf8'), /[a-f0-9]{40}\/data\/releases\/2026-10-15-mvp-08-approved\.1/);
   const packageSolution = JSON.parse(await readFile('spfx/config/package-solution.json', 'utf8'));
-  assert.equal(packageSolution.solution.version, '0.7.0.2');
+  assert.equal(packageSolution.solution.version, '0.8.0.0');
 });

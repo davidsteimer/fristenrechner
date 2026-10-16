@@ -1,0 +1,107 @@
+{
+  "kind": "mvp08-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp08-2026-10-15/source-review-verification.json",
+  "selectedFields": [
+    "verificationId",
+    "checkedOn",
+    "startedAt",
+    "completedAt",
+    "technicalValidationPassed",
+    "humanApproval",
+    "sourceReleaseApproved",
+    "dataPromotionApproved",
+    "publicationApproved",
+    "productDataChanged",
+    "deploymentPerformed",
+    "counts",
+    "normChangeCounts",
+    "tests",
+    "humanReadableReport",
+    "limitations"
+  ],
+  "omittedTopLevelFields": [
+    "acceptedArchive",
+    "localReportLinksChecked",
+    "bindings"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "verificationId": "MVP08-R08A2-LOCAL-VERIFICATION-20261015",
+    "checkedOn": "2026-10-15",
+    "startedAt": "2026-10-15T17:52:09.073Z",
+    "completedAt": "2026-10-15T17:52:10.339Z",
+    "technicalValidationPassed": true,
+    "humanApproval": false,
+    "sourceReleaseApproved": false,
+    "dataPromotionApproved": false,
+    "publicationApproved": false,
+    "productDataChanged": false,
+    "deploymentPerformed": false,
+    "counts": {
+      "sourceIds": 243,
+      "withFreshEvidence": 171,
+      "reusedWithoutFreshEvidence": 72,
+      "withExplicitReuse": 243,
+      "outcomes": {
+        "unchanged": 241,
+        "unclear": 2
+      },
+      "groups": {
+        "baseline": {
+          "sourceIds": 77,
+          "withFreshEvidence": 67,
+          "reusedWithoutFreshEvidence": 10,
+          "withExplicitReuse": 77,
+          "outcomes": {
+            "unchanged": 77
+          }
+        },
+        "calendar": {
+          "sourceIds": 155,
+          "withFreshEvidence": 93,
+          "reusedWithoutFreshEvidence": 62,
+          "withExplicitReuse": 155,
+          "outcomes": {
+            "unchanged": 153,
+            "unclear": 2
+          }
+        },
+        "administrative": {
+          "sourceIds": 11,
+          "withFreshEvidence": 11,
+          "reusedWithoutFreshEvidence": 0,
+          "withExplicitReuse": 11,
+          "outcomes": {
+            "unchanged": 11
+          }
+        }
+      },
+      "uniqueBoundEvidenceFiles": 541,
+      "protectedFilesUnchanged": 559
+    },
+    "normChangeCounts": {
+      "newlyPublishedActs": 5,
+      "affectedLawFamilies": 8,
+      "newIntermediateVersions": 5,
+      "sourceRowsWithNormDeltas": 18,
+      "changedUsedRules": 0
+    },
+    "tests": {
+      "command": "node --test tests/governance/ap23d3-acceptance.test.mjs tests/governance/mvp08-source-inventory.test.mjs tests/governance/mvp08-source-coverage.test.mjs",
+      "node": "v22.23.2",
+      "passed": 44,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "logPath": "outputs/release-mvp08-2026-10-15/source-review-tests.txt"
+    },
+    "humanReadableReport": "docs/fachrecht/quellenabgleich-mvp08.md",
+    "limitations": [
+      "Technical validation checks evidence identity and coverage, not legal truth or human release approval.",
+      "No product tests were relabelled as fresh. Earlier R08-A1 regression and AP23D3 evidence retain their actual execution dates.",
+      "The later local data/build decision is separate. No commits, public writes, installations or operational changes."
+    ]
+  }
+}

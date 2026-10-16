@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
-export { calculateDeadline } from './calculateDeadline';
-export { createCalculatorRuntime, createFormat7CalculationData } from './calculatorRuntime';
+export { calculateDeadline, calculateRuntimeDeadline } from './calculateDeadline';
+export { createCalculatorRuntime, createFormat7CalculationData, createFormat8CalculationData } from './calculatorRuntime';
+export { hasMatchingFormat8Runtime, isFormat8ReferenceData } from './format8Runtime';
+export type { Format8CalculatorRuntime, Format8RuntimeOptions } from './calculatorRuntime';
 export type { CalculatorRuntime, Format7RuntimeOptions, ByteBoundReleaseLike } from './calculatorRuntime';
 export { assertSocialProcedureCatalog, validateSocialCatalogReferences, canonicalSocialJson, socialObjectSha256 } from './socialCatalog';
 export { resolveSocialDeadline, calculateSocialDeadline } from './socialDeadline';

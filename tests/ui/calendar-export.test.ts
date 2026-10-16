@@ -93,6 +93,19 @@ describe('Issue #18 – Outlook-kompatibler Kalendereintrag', () => {
     assert.equal(normalizeCalendarReference('É'.repeat(205)).length, 200);
   });
 
+  it('lässt bestehende Exporte unverändert und schützt einen optionalen Herkunftsanhang', () => {
+    const options = { deadlineDate: '2026-09-16', locale: 'de' as const, ...fixedMetadata };
+    const baseline = createDeadlineCalendarEntry(options);
+    assert.equal(createDeadlineCalendarEntry({ ...options, descriptionAppendix: '' }).content, baseline.content);
+    const appendix = 'Herkunft, geprüft; É\\\r\nATTENDEE:bad@example.invalid';
+    const enriched = createDeadlineCalendarEntry({ ...options, descriptionAppendix: appendix });
+    const plain = unfold(enriched.content);
+    assert.doesNotMatch(plain, /\r\nATTENDEE:/);
+    assert.match(plain, /Herkunft\\, geprüft\\;/);
+    assert.equal(plain.match(/\r\nDESCRIPTION:/g)?.length, 2);
+    for (const line of enriched.content.split('\r\n')) assert.ok(Buffer.byteLength(line) <= 75);
+  });
+
   it('behält den 112-Stunden-Trigger über beide Schweizer Zeitumstellungen unverändert', () => {
     ['2027-03-29', '2027-10-25'].forEach(deadlineDate => {
       const content = createDeadlineCalendarEntry({

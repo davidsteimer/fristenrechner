@@ -27,7 +27,7 @@ test('MVP 0.5 embeds all ten manifest artifacts including their exact release ha
   }
 });
 
-test('normal public and preview entry points now select approved local MVP 0.7 and explicit historical candidates remain separate', async () => {
+test('public entry uses approved MVP08 while the legacy preview and explicit historical candidates remain separate', async () => {
   const preview = await readFile('src/ui/preview/main.tsx', 'utf8');
   const publicEntry = await readFile('src/public-app/main.tsx', 'utf8');
   assert.match(preview, /import \{ mvp07Runtime \} from '\.\.\/\.\.\/release\/mvp07ReleaseData'/);
@@ -35,8 +35,8 @@ test('normal public and preview entry points now select approved local MVP 0.7 a
   assert.match(preview, /candidate === 'ap17c' \? ap17cCandidateCalculationData/);
   assert.match(preview, /candidate === 'ap22c2' \? mvp06CalculationData : mvp07Runtime.data/);
   assert.doesNotMatch(preview, /from '\.\/data'/);
-  assert.match(publicEntry, /<FristenrechnerApp data=\{mvp07Runtime.data\}/);
-  assert.match(publicEntry, /calendarRuntime=\{mvp07Runtime.calendarRuntime\}/);
+  assert.match(publicEntry, /import \{ mvp08Runtime \} from '\.\.\/release\/mvp08ReleaseData'/);
+  assert.match(publicEntry, /<FristenrechnerApp \{\.\.\.mvp08Runtime\} \/>/);
   assert.doesNotMatch(publicEntry, /ap19c|ap18c|ap17c|qaPreset|initialState|mvp04/i);
 });
 

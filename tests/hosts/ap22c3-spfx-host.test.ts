@@ -25,7 +25,7 @@ const bundle = await build({ stdin: { contents: `
         : args.path.endsWith('/cacheIdentity') ? `export function getProviderCacheIdentity(provider) {
           if (!provider.cacheConfiguration) throw Error('no identity'); return JSON.stringify(provider.cacheConfiguration);
         }`
-        : args.path.endsWith('/product/core') ? `import {control} from 'host-test-control'; export function createCalculatorRuntime(release, options) {
+        : args.path.endsWith('/product/core') ? `import {control} from 'host-test-control'; export const hasMatchingFormat8Runtime = () => false; export function createCalculatorRuntime(release, options) {
           control.factories.push([release, options]); if (release.invalid) throw Error('invalid release'); return release.runtime;
         }`
         : args.path.endsWith('/product/ui') ? `import * as React from 'react'; export function FristenrechnerApp(props) { return React.createElement('output', { 'data-release': props.data.releaseId }); }`

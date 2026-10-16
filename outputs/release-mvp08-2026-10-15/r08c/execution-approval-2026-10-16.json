@@ -1,0 +1,41 @@
+{
+  "kind": "r08c-human-execution-approval",
+  "schemaVersion": "1.0.0",
+  "decisionDate": "2026-10-16",
+  "timezone": "Europe/Zurich",
+  "recordedAt": "2026-10-16T06:42:02.480Z",
+  "decisionMaker": "David Steimer",
+  "instrument": "Codex, no formal approval responsibility",
+  "source": "Direct user message in the current task",
+  "exactUserStatement": "Ich gebe R08C-U01, R08C-H01 und R08C-I01 gemäss der gebundenen Vorlage frei. Starte mit der frischen Ausgangssicherung. Den Mirrorupload übernehme ich anschliessend manuell.",
+  "proposal": {
+    "path": "outputs/release-mvp08-2026-10-15/r08c/proposal.json",
+    "byteLength": 4431,
+    "sha256": "179bfb3b6319a25f816241f69b78eff801cc98de1717523c890a2fc486ab35bf"
+  },
+  "privateTargetSha256": "b402ad864da468baef7e533db4225df3f553adaf7ddca416f253accb04b7e256",
+  "approvedGates": [
+    "R08C-U01",
+    "R08C-H01",
+    "R08C-I01"
+  ],
+  "currentStep": "C01 fresh read-only baseline and local backup",
+  "mirrorUploadActor": "David Steimer manually after C01",
+  "installationCondition": "C01-C03 passed, unchanged exact identities and baseline, E gate before Q transition",
+  "recoveryCondition": "Only the bound conditional recovery procedure, Format-7 configurations before package 0.8.0.1",
+  "notAuthorized": [
+    "Codex mirror upload",
+    "additional site or tab installation",
+    "new guests",
+    "permission or policy changes",
+    "AP5 configuration or data change",
+    "AP21 or E05 change",
+    "additional builds or commits",
+    "GitHub push",
+    "P deployment",
+    "Outlook import",
+    "operating approval"
+  ],
+  "historicalProposalUnchanged": true,
+  "noUploadOrInstallationInThisRecord": true
+}

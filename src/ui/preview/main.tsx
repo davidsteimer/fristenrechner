@@ -19,6 +19,7 @@ import { ap20c2CandidateCalculationData } from '../../release/ap20c2CandidateDat
 import { ap20c3CandidateCalculationData } from '../../release/ap20c3CandidateData';
 import { ap22c2CalendarRuntime } from '../../release/ap22c2CandidateData';
 import { ap22c3CandidateRuntime } from '../../release/ap22c3CandidateData';
+import { ap23d2AdministrativeContext } from '../../release/ap23d2CandidateData';
 import { qaPreset } from './qaPresets';
 
 initializeBrowserAppearance();
@@ -47,6 +48,8 @@ ReactDOM.render(
       {...(previewData === mvp07Runtime.data ? { calendarRuntime: mvp07Runtime.calendarRuntime } : {})}
       {...(candidate === 'ap22c2' ? { calendarRuntime: ap22c2CalendarRuntime } : {})}
       {...(candidate === 'ap22c3' ? { calendarRuntime: ap22c3CandidateRuntime.calendarRuntime, referenceOnlyAllCalculations: true } : {})}
+      {...(candidate === 'ap23d2' ? { administrativeContext: ap23d2AdministrativeContext,
+        referenceOnlyAllCalculations: true, localReviewLabel: 'AP23D2 · TI / GR · DE / FR' } : {})}
       {...(initialState ? { initialState } : {})} />
   </React.StrictMode>,
   root

@@ -1,0 +1,89 @@
+{
+  "kind": "mvp08-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp08-2026-10-15/recovery-roundtrip/verification.json",
+  "selectedFields": [
+    "kind",
+    "startedAt",
+    "finishedAt",
+    "status",
+    "authority",
+    "normalPackage",
+    "recoveryPackage",
+    "functionalSequence",
+    "cases",
+    "limitation",
+    "subsequentRealMvp08PackageMustExceed",
+    "installationAuthorized",
+    "actualDeploymentPerformed",
+    "publicationAuthorized",
+    "browserDataResetPerformed",
+    "steps"
+  ],
+  "omittedTopLevelFields": [
+    "stage",
+    "inputs",
+    "archivedFiles"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp08-actual-package-recovery-roundtrip",
+    "startedAt": "2026-10-15T19:05:58.604Z",
+    "finishedAt": "2026-10-15T19:07:47.854Z",
+    "status": "passed",
+    "authority": {
+      "path": "outputs/release-mvp08-2026-10-15/r08b-execution-approval.json",
+      "sha256": "5efaec306598ee0c9f9ed5ff47c6c3ee3ce21697fc0f089c8abbb4ad4d0e3c66"
+    },
+    "normalPackage": {
+      "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-0.8.0.0.sppkg",
+      "byteLength": 311611,
+      "sha256": "d3d06adcd78176db66f8227d884fd66ca2fbcee0bffab66755789dd0cc29dc1a"
+    },
+    "recoveryPackage": {
+      "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-recovery-0.8.0.1.sppkg",
+      "byteLength": 291892,
+      "sha256": "8e387297d43df28e2fe4d3c7c9ae239bb2cdc6a9e3216e4c59c928c50d950e7b"
+    },
+    "functionalSequence": [
+      "MVP08 0.8.0.0 / Format8",
+      "MVP07 recovery 0.8.0.1 / Format7",
+      "MVP08 0.8.0.0 / own cached Format8"
+    ],
+    "cases": [
+      "valid V5 legacy-profile preferences",
+      "valid V5 administrative preferences",
+      "V5 reset marker",
+      "corrupt V5 slot",
+      "future V5 slot"
+    ],
+    "limitation": "Local real AMD code with simulated React hooks, IndexedDB, browser storage and byte transport. Not an actual M365 installation, browser DOM or live host proof. The last package reload proves code/data compatibility, not an installable lower-version reinstallation after recovery.",
+    "subsequentRealMvp08PackageMustExceed": "0.8.0.1",
+    "installationAuthorized": false,
+    "actualDeploymentPerformed": false,
+    "publicationAuthorized": false,
+    "browserDataResetPerformed": false,
+    "steps": [
+      {
+        "id": "actual-package-roundtrip",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=1",
+          "--test-timeout=60000",
+          "recovery-mvp08/roundtrip/preferences.test.cjs",
+          "recovery-mvp08/roundtrip/administrative.test.cjs",
+          "recovery-mvp08/roundtrip/reset.test.cjs",
+          "recovery-mvp08/roundtrip/corrupt.test.cjs",
+          "recovery-mvp08/roundtrip/future.test.cjs",
+          "recovery-mvp08/roundtrip/positive-equivalence.test.cjs"
+        ],
+        "exitCode": 0,
+        "log": ".work/mvp08-recovery-roundtrip-aJvD7c/roundtrip.log",
+        "sha256": "12905f2d14f25b745117e22f7aef4a946ea37a29494e0879b98237b8593845f9",
+        "tests": 6
+      }
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "kind": "r08c-c03-complete-mirror-verification",
+  "schemaVersion": "1.0.0",
+  "checkedAt": "2026-10-16T07:52:18.674Z",
+  "status": "passed",
+  "proposal": {
+    "path": "outputs/release-mvp08-2026-10-15/r08c/proposal.json",
+    "byteLength": 4431,
+    "sha256": "179bfb3b6319a25f816241f69b78eff801cc98de1717523c890a2fc486ab35bf"
+  },
+  "approval": {
+    "path": "outputs/release-mvp08-2026-10-15/r08c/execution-approval-2026-10-16.json",
+    "byteLength": 1676,
+    "sha256": "743e126d7e1674ef1fad597449e75e7bcefb2b27f2fdc2b05cae4c0a0a35e047"
+  },
+  "inventory": {
+    "path": "outputs/release-mvp08-2026-10-15/r08c/mirror-inventories.json",
+    "byteLength": 17098,
+    "sha256": "ef885e006112baa831f9e797ff9b937d684d71b23531d16911552578fb65d5a1"
+  },
+  "privateTargetBindingSha256": "b402ad864da468baef7e533db4225df3f553adaf7ddca416f253accb04b7e256",
+  "counts": {
+    "targets": 4,
+    "newFiles": 168,
+    "recoveryFiles": 164,
+    "totalFreshRawFiles": 332,
+    "totalBytes": 19149268
+  },
+  "targets": [
+    {
+      "target": "E-SP",
+      "status": "passed",
+      "files": 83,
+      "releases": [
+        {
+          "releaseId": "2026-10-15-mvp-08-approved.1",
+          "status": "passed",
+          "fileCount": 42,
+          "totalBytes": 2425056,
+          "manifestSha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4"
+        },
+        {
+          "releaseId": "2026-10-08-mvp-07-approved.1",
+          "status": "passed",
+          "fileCount": 41,
+          "totalBytes": 2362261,
+          "manifestSha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+        }
+      ],
+      "privateReportSha256": "d40e37de29dba430ca950cbf77d8571b7c5de241b6af663f634360557e68ab75",
+      "privateReportBytes": 64365
+    },
+    {
+      "target": "E-T",
+      "status": "passed",
+      "files": 83,
+      "releases": [
+        {
+          "releaseId": "2026-10-15-mvp-08-approved.1",
+          "status": "passed",
+          "fileCount": 42,
+          "totalBytes": 2425056,
+          "manifestSha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4"
+        },
+        {
+          "releaseId": "2026-10-08-mvp-07-approved.1",
+          "status": "passed",
+          "fileCount": 41,
+          "totalBytes": 2362261,
+          "manifestSha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+        }
+      ],
+      "privateReportSha256": "c9580db0d3bdcce54c3fed0940a8c4d8b1e26a59ee050a58ce9bf97e6a1b5039",
+      "privateReportBytes": 63075
+    },
+    {
+      "target": "Q-SP",
+      "status": "passed",
+      "files": 83,
+      "releases": [
+        {
+          "releaseId": "2026-10-15-mvp-08-approved.1",
+          "status": "passed",
+          "fileCount": 42,
+          "totalBytes": 2425056,
+          "manifestSha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4"
+        },
+        {
+          "releaseId": "2026-10-08-mvp-07-approved.1",
+          "status": "passed",
+          "fileCount": 41,
+          "totalBytes": 2362261,
+          "manifestSha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+        }
+      ],
+      "privateReportSha256": "b76cad54f8a88b4c7839f3a00ab6e64e5cee4c5c3989cf234818be71a6fe25a1",
+      "privateReportBytes": 56214
+    },
+    {
+      "target": "Q-T",
+      "status": "passed",
+      "files": 83,
+      "releases": [
+        {
+          "releaseId": "2026-10-15-mvp-08-approved.1",
+          "status": "passed",
+          "fileCount": 42,
+          "totalBytes": 2425056,
+          "manifestSha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4"
+        },
+        {
+          "releaseId": "2026-10-08-mvp-07-approved.1",
+          "status": "passed",
+          "fileCount": 41,
+          "totalBytes": 2362261,
+          "manifestSha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+        }
+      ],
+      "privateReportSha256": "3fe879e76e77d945cde2f160e0bd57e4f79a33a9858c5e267c73f9c540a044a3",
+      "privateReportBytes": 78056
+    }
+  ],
+  "checks": {
+    "exactRemoteFileAndDirectorySets": true,
+    "allFileLengthsAndSha256": true,
+    "completeManifestArtifactReferences": true,
+    "fullReturnedParentAndRecoveryPermissionFieldsUnchangedFromC01": true,
+    "fullReturnedNewFolderPermissionFieldsEqualParent": true,
+    "independentRootRawRehash": true
+  },
+  "evidence": {
+    "rawFiles": "Fresh SharePoint fetch download_raw_file:true with raw signed-file transfer, one target-specific download per file",
+    "listingsAndPermissions": "Structured connector responses, exact target-bound inventories and complete returned permission entry comparison",
+    "permissionNormalization": "Property and permission-entry ordering plus inherited_from null/empty-object equivalence only",
+    "privateRawRecheckSha256": "4a565cb239fd76b0cd1b094433564739657853c4ec0d00f5690f8796dcdee993",
+    "privateFinalizerSha256": "dacd3bf9329f442f55eb181a0f3570e310364c83ec69f41a5906cb9485eb6ce5"
+  },
+  "releases": [
+    {
+      "releaseId": "2026-10-15-mvp-08-approved.1",
+      "filesPerTarget": 42,
+      "manifestSha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4"
+    },
+    {
+      "releaseId": "2026-10-08-mvp-07-approved.1",
+      "filesPerTarget": 41,
+      "manifestSha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+    }
+  ],
+  "transientReadErrors": {
+    "initialSharePoint429": "Retry-After respected, subsequent connector reads serialised. Failed attempts kept separately and not counted as downloaded files.",
+    "initialLocalDnsFailure": "No successful bytes claimed for failed attempt. Successful raw transfers verified independently."
+  },
+  "limits": {
+    "noReserialisedSourceBytes": true,
+    "noHistoricalCopiesSubstituted": true,
+    "rawAspxBackupClaimed": false,
+    "allEffectiveSiteRightsOrGroupMembershipClaimed": false,
+    "hostFirstLoadOrCacheTestPassed": false,
+    "hostFunctionalTestsPassed": false,
+    "installationPerformed": false,
+    "configurationChangePerformed": false,
+    "remoteWritesByCodex": false,
+    "githubPublication": false,
+    "productionChange": false,
+    "nextGate": "Fresh unchanged baseline confirmation and controlled C04, followed by actual E host tests"
+  }
+}

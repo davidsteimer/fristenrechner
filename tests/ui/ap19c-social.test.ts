@@ -2,7 +2,9 @@
 
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { test } from 'node:test';
+import { buildSync } from 'esbuild';
 import type { CalculationData } from '../../src/core';
 import type { SocialProcedureCatalog } from '../../src/core/socialTypes';
 import { calculateSocialDeadline } from '../../src/core/socialDeadline';
@@ -223,7 +225,7 @@ test('C1 explanatory fields and source evidence live only inside the initially c
   assert.match(form, /socialNeedsJurisdictionDate\(socialSelection\)/);
   assert.match(form, /renderFixedValue\('vrpg.context.matter'/);
   assert.match(form, /renderFixedValue\('vrpg.context.notificationChannel'/);
-  const panel = app.slice(app.indexOf('function SpecialResultPanel'), app.indexOf('function ValidationResultPanel'));
+  const panel = app.slice(app.indexOf('function SpecialResultPanel'), app.indexOf('function ValidationPanel'));
   const traceStart = panel.indexOf('<details className="fr-trace"');
   const trace = panel.slice(traceStart, panel.indexOf('</details>', traceStart));
   assert.match(trace, /open=\{!socialSelection && result.outcome === 'blocked'\}/);
@@ -231,5 +233,42 @@ test('C1 explanatory fields and source evidence live only inside the initially c
     assert.ok(trace.includes(key), key);
     assert.ok(!panel.slice(0, traceStart).includes(key), key);
   }
-  assert.match(trace, /href=\{source.url\}/);
+  // AP23D2 moved link rendering into a shared component, not outside the trace.
+  // Preserve the exact selected rule/binding source relationship and prove the
+  // component really renders safe links instead of testing an old inline JSX.
+  assert.match(trace, /<LegalTraceSources evidence=\{catalogTraceSources\(socialSelection.catalog,\s*\[\.\.\.socialSelection.rule.sourceRefs, \.\.\.socialSelection.binding.sourceRefs\]\)\} locale=\{locale\}/);
+  assert.doesNotMatch(panel.slice(0, traceStart), /<LegalTraceSources/);
+  const bundle = buildSync({ stdin: { contents: `
+    import * as React from 'react';
+    import {renderToStaticMarkup} from 'react-dom/server';
+    import {LegalTraceSources,catalogTraceSources} from './src/ui/tracePresentation';
+    export const render=(catalog,refs)=>renderToStaticMarkup(React.createElement(LegalTraceSources,{
+      evidence:catalogTraceSources(catalog,refs),locale:'de'}));
+  `, resolveDir: process.cwd(), loader: 'tsx' }, bundle: true, platform: 'node', format: 'cjs', write: false,
+    external: ['react', 'react-dom/server'], logLevel: 'silent' });
+  const require = createRequire(import.meta.url);
+  const module = { exports: {} };
+  new Function('require', 'module', 'exports', bundle.outputFiles[0]!.text)(require, module, module.exports);
+  const rendered = module.exports as { render(catalog: unknown, refs: readonly {sourceId: string; locator: string}[]): string };
+  const { JSDOM } = require('jsdom');
+  const selection = socialUiSelection(data, state('ahvg', 'objection'))!;
+  const selectedRefs = [...selection.rule.sourceRefs, ...selection.binding.sourceRefs]
+    .filter((ref, index, refs) => refs.findIndex(other => other.sourceId === ref.sourceId && other.locator === ref.locator) === index);
+  const document: Document = new JSDOM(rendered.render(selection.catalog, selectedRefs)).window.document;
+  const links = Array.from(document.querySelectorAll('a'));
+  assert.equal(links.length, selectedRefs.length);
+  for (const [index, ref] of selectedRefs.entries()) {
+    const source = selection.catalog.sources.find(value => value.sourceId === ref.sourceId)!;
+    const link = links[index]!;
+    assert.equal(link.href, new URL(source.url).href);
+    assert.equal(link.target, '_blank');
+    assert.equal(link.rel, 'noopener noreferrer');
+    assert.ok(link.textContent!.includes(source.title));
+    assert.ok(link.textContent!.includes(ref.locator));
+  }
+  const unsafe: Document = new JSDOM(rendered.render({ sources: [
+    { sourceId: 'test-only-unsafe', title: 'Untrusted <script>', url: 'javascript:alert(1)' }
+  ] }, [{ sourceId: 'test-only-unsafe', locator: 'Art. <1>' }])).window.document;
+  assert.equal(unsafe.querySelector('a'), null);
+  assert.equal(unsafe.querySelector('script'), null);
 });

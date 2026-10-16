@@ -6,8 +6,9 @@ import { MessageBar, MessageBarType, Spinner } from '@fluentui/react';
 import { ReleaseService } from '../../../core/ReleaseService';
 import { getProviderCacheIdentity } from '../../../core/cacheIdentity';
 import type { IReleaseActivationResult, IValidatedRelease } from '../../../core/types';
-import { createCalculatorRuntime, type CalculationData } from '../../../product/core';
+import { createCalculatorRuntime, hasMatchingFormat8Runtime, type CalculationData } from '../../../product/core';
 import type { BoundCalendarRuntime } from '../../../product/core/calendarResolution';
+import type { ParsedFormat8Data } from '../../../product/core/releaseFormat8';
 import { FristenrechnerApp } from '../../../product/ui';
 import '../../../product/ui/styles.module.scss';
 import styles from './Fristenrechner.module.scss';
@@ -18,6 +19,7 @@ type RuntimeStatus = 'loading' | 'local' | 'ready' | 'fallback' | 'error';
 interface IFristenrechnerState {
   readonly calculationData?: CalculationData;
   readonly calendarRuntime?: BoundCalendarRuntime;
+  readonly administrativeContext?: ParsedFormat8Data;
   readonly loadedConfigurationKey?: string;
   readonly manifestSha256?: string;
   readonly message?: string;
@@ -93,6 +95,7 @@ export default class Fristenrechner extends React.Component<
           key={`${this.props.configurationKey}:${this.state.manifestSha256 ?? ''}`}
           data={data}
           {...(this.state.calendarRuntime ? { calendarRuntime: this.state.calendarRuntime } : {})}
+          {...(this.state.administrativeContext ? { administrativeContext: this.state.administrativeContext } : {})}
         />
         <div className={styles.runtimeStatus}>
           <span>Datenquelle / Source des données:</span>
@@ -130,7 +133,7 @@ export default class Fristenrechner extends React.Component<
     const provider = this.props.provider;
     const configurationKey = this.props.configurationKey;
     const releaseService = new ReleaseService(this.props.store);
-    this.setState({ status: 'loading', calculationData: undefined, calendarRuntime: undefined,
+    this.setState({ status: 'loading', calculationData: undefined, calendarRuntime: undefined, administrativeContext: undefined,
       loadedConfigurationKey: configurationKey, manifestSha256: undefined, message: undefined });
 
     if (!provider || !this.isCurrentConfiguration()) {
@@ -181,14 +184,27 @@ export default class Fristenrechner extends React.Component<
       status: 'error',
       calculationData: undefined,
       calendarRuntime: undefined,
+      administrativeContext: undefined,
       manifestSha256: undefined,
       message: errorMessage(error)
     });
   }
 
-  private runtimeState(release: IValidatedRelease): Pick<IFristenrechnerState, 'calculationData' | 'calendarRuntime' | 'manifestSha256'> {
+  private runtimeState(release: IValidatedRelease): Pick<IFristenrechnerState, 'calculationData' | 'calendarRuntime' | 'administrativeContext' | 'manifestSha256'> {
     const runtime = createCalculatorRuntime(release);
-    return { calculationData: runtime.data, calendarRuntime: runtime.calendarRuntime, manifestSha256: release.manifestSha256 };
+    // Revalidate network bytes first. An unchanged, fully qualified cache-to-
+    // network transition must not replace the administrative identity and
+    // reset input entered while the network request was still pending.
+    if (runtime.data.formatVersion === '8.0.0' && this.isCurrentConfiguration()
+      && this.state.loadedConfigurationKey === this.props.configurationKey
+      && this.state.manifestSha256 === release.manifestSha256
+      && this.state.calculationData
+      && hasMatchingFormat8Runtime(this.state.calculationData, this.state.calendarRuntime, this.state.administrativeContext)) {
+      return { calculationData: this.state.calculationData, calendarRuntime: this.state.calendarRuntime,
+        administrativeContext: this.state.administrativeContext, manifestSha256: release.manifestSha256 };
+    }
+    return { calculationData: runtime.data, calendarRuntime: runtime.calendarRuntime,
+      administrativeContext: runtime.administrativeContext, manifestSha256: release.manifestSha256 };
   }
 
   private isCurrentConfiguration(): boolean {

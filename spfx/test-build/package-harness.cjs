@@ -223,15 +223,26 @@ function loadPackagedHost(packagePath) {
       // The real bundled functions and event handlers are unchanged. Only hook
       // storage and explicit layout-effect registration are simulated. This is
       // not a DOM, focus, popup, React scheduling or native-picker proof.
-      let tree = {...app, props: {...app.props, initialState,
+      const initialElement = {...app, props: {...app.props, initialState,
         storage: {getItem() {return null;}, setItem() {}, removeItem() {}}}};
-      for (let depth = 0; depth < 10; depth++) {
-        if (typeof tree.type === 'function') tree = component(tree).render();
-        else if (tree.type?.$$typeof === Symbol.for('react.provider')) {
-          contexts.set(tree.type._context, tree.props.value); tree = tree.props.children;
-        } else break;
+      const renderers = new Map();
+      function renderSession() {
+        let tree = initialElement;
+        for (let depth = 0; depth < 10; depth++) {
+          if (typeof tree.type === 'function') {
+            const previous = renderers.get(depth);
+            assert.ok(!previous || previous.type === tree.type, 'Inspection cannot silently replace a mounted component type');
+            const renderer = previous?.renderer ?? component(tree);
+            renderers.set(depth, {type: tree.type, renderer});
+            tree = renderer.render(tree.props);
+          } else if (tree.type?.$$typeof === Symbol.for('react.provider')) {
+            contexts.set(tree.type._context, tree.props.value); tree = tree.props.children;
+          } else break;
+        }
+        return tree;
       }
-      return inspect({tree, findElement, component, stateValues: () => states.map(state => state.value)});
+      const tree = renderSession();
+      return inspect({tree, renderSession, findElement, component, stateValues: () => states.map(state => state.value)});
     } finally {
       for (const frame of frames) for (const entry of frame.slots) {
         if (typeof entry.cleanup === 'function') entry.cleanup();

@@ -54,6 +54,8 @@ OFFICIAL_HOSTS = {
     "www.parlament.ch", "www.rechtsbuch.tg.ch", "www.swisstopo.admin.ch", "www.sz.ch",
     "www.ur.ch", "www.vd.ch", "www.zh.ch", "www3.ti.ch", "www4.ti.ch", "zg.ch",
     "bstger.weblaw.ch", "www.bstger.ch", "bvger.weblaw.ch", "www.bvger.ch",
+    # R08-B: official GR judgment originals checked in R08-A2, not the mirror.
+    "entscheidsuche.gr.ch",
 }
 IDENTIFIER_KEYS = (
     "ruleId",
@@ -63,6 +65,26 @@ IDENTIFIER_KEYS = (
     "suspensionSetId",
     "bindingId", "contextRouteId", "calendarBindingId", "eligibilityId", "excludedPathId",
 )
+
+
+def bound_ti_http_original(source: dict[str, Any], register: dict[str, Any], events: list[dict[str, Any]]) -> bool:
+    """Only the accepted HTTP-original/HTTPS-mirror relation, never all TI cases."""
+    expected = {
+        "sourceId": "JUD-AP23B-TI-PROVISIONAL-JUD",
+        "sourceType": "caseLaw", "jurisdiction": "TI", "usageStatus": "productive",
+        "documentVersionDate": "2025-08-13", "officialUrl": None,
+        "retrievalUrl": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TCA_001_52-2025-281_2025-08-13.html",
+        "officialLocator": "Erwägungen zur 15-Tage-Frist und Art. 16 Abs. 3 Amtlicher Volltext über HTTP www.sentenze.ti.ch, Dokument 140491. HTTPS-Amtstransport nicht nachgewiesen.",
+    }
+    if register.get("registerStatus") != "approved" or any(source.get(key) != value for key, value in expected.items()):
+        return False
+    accepted = next((event for event in events if event.get("reviewEventId") == "2026-10-15-mvp-08-prerelease.1"), None)
+    if not accepted or accepted.get("recordStatus") != "approved":
+        return False
+    entry = next((entry for entry in accepted.get("entries", []) if entry.get("sourceId") == source["sourceId"]), None)
+    return bool(entry and entry.get("outcome") == "unchanged" and entry.get("followUp", {}).get("required") is True
+                and {"kind": "riskRecord", "id": "TI-OFFICIAL-HTTP-SOURCE-TRANSPORT", "url": None, "status": "open"}
+                in entry.get("followUp", {}).get("references", []))
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -318,9 +340,9 @@ def semantic_errors(
             and source["jurisdiction"] == "FR"
             and source["usageStatus"] == "supporting"
             and source["retrievalUrl"] == "https://entscheidsuche.ch/docs/FR_Gerichte/FR_TC_001_101-2012-89_2012-04-25.pdf"
-        ):
+        ) and not bound_ti_http_original(source, register, events):
             errors.append(
-                f"{source['sourceId']}: fehlende amtliche URL ist nur bei bernischer Rechtsprechung oder dem ausdrücklich begrenzten FR-Spiegel zulässig"
+                f"{source['sourceId']}: fehlende amtliche URL ist nur bei bernischer Rechtsprechung, dem ausdrücklich begrenzten FR-Spiegel oder dem exakt gebundenen TI-HTTP-Original zulässig"
             )
 
     event_duplicates = duplicate_values(events, "reviewEventId")

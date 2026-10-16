@@ -1,0 +1,33 @@
+{
+  "kind": "ap23d2-browser-evidence",
+  "date": "2026-10-15",
+  "scope": "local-preview",
+  "status": "passed",
+  "url": "http://127.0.0.1:8802/?candidate=ap23d2",
+  "browser": "Codex In-app Browser",
+  "checks": [
+    {"id": "B01", "passed": true, "evidence": "Datum 02.10.2026 vor Kantons- und Erlasswahl eingegeben und mit Tab übernommen. Keine vorgängige Fallqualifikation für die Datumseingabe erforderlich."},
+    {"id": "B02", "passed": true, "evidence": "Tessin bietet neben den bisherigen Bundesprofilen LPAmm (TI), Graubünden entsprechend VRG (GR). Beim Kantonswechsel wurden alter Pfad, Fallqualifikation und Resultat verworfen."},
+    {"id": "B03", "passed": true, "evidence": "TI, Verwaltungsbeschwerde, ordentlich, tatsächlicher Empfang ohne Abweichung: Empfang 02.10.2026, feste Dauer 30 Tage, letzter gezählter Tag 01.11.2026, Fristablauf 02.11.2026. Als lokale Prüfrechnung gekennzeichnet, ohne Export."},
+    {"id": "B04", "passed": true, "evidence": "DE-Rechenspur geöffnet. Sichtbar: gezählte Tage, Sonntag/Feiertag als Endverschiebung, Feiertags-ID, Pfad ti-80-30 Revision 1, kantonale Feiertagsbindung, neuer Kandidatenrelease und amtliche Quellenlinks. Zusatzangaben liegen unter dem Resultat."},
+    {"id": "B05", "passed": true, "evidence": "TI, gleicher Pfad, Empfang 17.02.2027: kein definitiver Fristablauf, ausdrückliche Sperrmeldung zum neu beginnenden Stillstand. Diagnostisch 19.03.2027 und ungeklärter 21.03.2027, kein Ergebnis-Hero und kein Export."},
+    {"id": "B06", "passed": true, "evidence": "GR, ordentliches Gerichtsverfahren, Empfang 10.07.2027, keine ausdrückliche Dringlichkeitsverfügung: Fristablauf 10.09.2027 und 32 Stillstandstage. Sprachwechsel nach Französisch erhält das Resultat."},
+    {"id": "B07", "passed": true, "evidence": "FR: ausdrückliche gerichtliche Dringlichkeit gewählt. Das vorherige Resultat verschwand vor der Neuberechnung. Neues Resultat 09.08.2027 und 0 Stillstandstage, entsprechende automatische Parameter sichtbar."},
+    {"id": "B08", "passed": true, "evidence": "DE/TI und FR/GR in normaler Desktopbreite visuell kontrolliert. Eingaben, Aktionen und Resultatkacheln zweispaltig. Gemessene Eingabespalten 426px + 426px bei innerWidth 1045, document scrollWidth 1030. Kein horizontaler Überlauf."},
+    {"id": "B09", "passed": true, "evidence": "FR/GR bei 390x844 kontrolliert. Responsive einspaltige Darstellung mit vollständigen Umbrüchen, Eingabe und Aktionen lesbar. Gemessene Eingabespalte 317px, document scrollWidth 375, innerWidth 390. Kein horizontaler Überlauf. Temporäre Breitenvorgabe anschliessend zurückgesetzt."},
+    {"id": "B10", "passed": true, "evidence": "Vorschau wurde nach dem letzten UI-Build frisch geladen. D2-Beschriftung und Referenzwarnung in beiden Sprachen korrekt. Browser meldete bei der abschliessenden Abfrage keine erfassten Warnungen oder Fehler. Keine Defaults gespeichert, kein Kalenderexport und kein externer Aufruf einer Rechtsquelle ausgelöst."}
+  ],
+  "artifacts": [
+    {"path":"outputs/ap23d2-2026-10-15/ti-de-desktop.jpg","byteLength":149065,"sha256":"89210879d7d14da103b643bf1b6f72a00e3ef15a892e58f6bf112c4e1908d8de"},
+    {"path":"outputs/ap23d2-2026-10-15/ti-de-blocked.jpg","byteLength":197901,"sha256":"9757a653c45af3e2fd0c7fbea414577fc308470fdf1ae6d3c88222f6e52112f3"},
+    {"path":"outputs/ap23d2-2026-10-15/gr-fr-narrow.jpg","byteLength":130674,"sha256":"ca0ce9a6be351fe77db406c404d93d1da7ce1676843a00c5f8650398dcf6a262"},
+    {"path":"outputs/ap23d2-2026-10-15/gr-fr-desktop.jpg","byteLength":158429,"sha256":"0953918b1ab46dff6b5efaecc01a5abfe324f89db79af3eba58dc68da1db8a08"}
+  ],
+  "limitations": [
+    "Lokaler In-app-Browser, kein Nachweis für SharePoint, Teams, E/Q/P oder reale Mobilgeräte.",
+    "390px ist eine responsive Breitenprüfung, keine iOS-Geräteprüfung.",
+    "Quellenlinks als sichtbare Herkunft geprüft, keine erneute materielle Rechtsquellenprüfung.",
+    "Kalenderexport bleibt im tatsächlichen Referenzkandidaten gesperrt. Positive Exportfälle sind ausschliesslich durch separat gekennzeichnete synthetische Freigabekontexte in automatisierten Tests belegt.",
+    "Menschliche Abnahme von AP23D2 und jede spätere Quellen-/Releasefreigabe stehen noch aus."
+  ]
+}

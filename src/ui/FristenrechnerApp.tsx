@@ -13,22 +13,35 @@ import { applyDateInputCommits } from './dateFormCommit';
 import { primaryDateField, reconcilePrimaryDate } from './dateTransition';
 import { resolveBoundCalendar, type BoundCalendarRuntime } from '../core/calendarResolution';
 import { calculateCalendarBoundDeadline } from '../core/calculateCalendarBoundDeadline';
-import { CalendarContextFields, CalendarContextTrace, JanuaryComparisonTrace, contextForProfile, EMPTY_CALENDAR_CONTEXT, isBoundCalendarProfile } from './calendarContextUi';
+import { calculateRuntimeDeadline } from '../core/calculateDeadline';
+import { hasMatchingFormat8Runtime } from '../core/format8Runtime';
+import { CalendarContextFields, CalendarContextTrace, JanuaryComparisonTrace, effectiveCalendarContext, EMPTY_CALENDAR_CONTEXT, isBoundCalendarProfile } from './calendarContextUi';
 import { calendarCantonLabel, calendarText, calendarReason } from './calendarMessages';
+import { FriendlyCalendarEvidence, LegalTraceSources, TechnicalTraceDetails, catalogTraceSources,
+  profileTraceSources, traceReasonLabels, type TraceSources } from './tracePresentation';
+import type { CalendarRuleSet } from '../core/calendarRuleTypes';
 import { calculateSocialDeadline } from '../core/socialDeadline';
 import type { SocialDeadlineResult } from '../core/socialTypes';
+import { getVerifiedAdministrativeData, type ParsedFormat8Data } from '../core/releaseFormat8';
+import type { AdministrativeDeadlineInput, AdministrativeDeadlineResult } from '../core/administrativeDeadline';
+import { initializeAdministrativeDefaults, saveAdministrativeDefaults, resetAdministrativeDefaults,
+  type AdministrativePreferences } from './administrativeDefaults';
+import { AdministrativeProcedureFields, AdministrativeResultView, AdministrativeAutomaticParameters,
+  administrativeChoices, changeAdministrativeSelection, qualifyAdministrativeUiInput,
+  EMPTY_ADMINISTRATIVE_UI_STATE, type AdministrativeUiState } from './administrativeUi';
+import { administrativeText } from './administrativeMessages';
+import { calculateAdministrativeUiDeadline, createAdministrativeCalendarEntry } from './administrativeExport';
 import {
   EMPTY_SOCIAL_CONTEXT, SOCIAL_CANTONS, hasSocialUi, socialInputFromUi,
   socialJurisdictionLabel, socialJurisdictionDateLabel, socialNeedsJurisdictionDate, socialNeedsPartyDomicile, socialUsesDomicileScope, socialScopeKey, socialUiPath, socialUiSelection,
   type SocialUiContext, type SocialUiSelection
 } from './socialUi';
 
-import { calculateDeadline, calculateSpecialDeadline, parseIsoDate } from '../core';
+import { calculateSpecialDeadline, parseIsoDate } from '../core';
 import type {
   CalculatedDeadlineDefinition,
   CalculationData,
   CalculationResult,
-  CalendarTraceEvidence,
   DeadlineDefinition,
   FilingProfile,
   LegalProfile,
@@ -102,6 +115,8 @@ export interface FristenrechnerAppProps {
   readonly referenceOnlyAllCalculations?: boolean;
   /** Build-time label for a local UI review. Does not grant data or export rights. */
   readonly localReviewLabel?: string;
+  /** Separate issued Format-8 context. Never disguised as the legacy data prop. */
+  readonly administrativeContext?: ParsedFormat8Data;
 }
 
 interface UiValidation {
@@ -109,6 +124,7 @@ interface UiValidation {
 }
 
 type UiResult =
+  | { readonly kind: 'administrative'; readonly value: AdministrativeDeadlineResult; readonly input: AdministrativeDeadlineInput }
   | { readonly kind: 'general'; readonly value: CalculationResult }
   | { readonly kind: 'boundCalendar'; readonly value: ReturnType<typeof calculateCalendarBoundDeadline> }
   | { readonly kind: 'special'; readonly value: SpecialDeadlineResult }
@@ -176,6 +192,32 @@ function stateFromDefaults(
   };
 }
 
+/** Adapt stable preferences only. Dates and legal facts are never restored. */
+function legacyDefaultsFromV5(data: CalculationData, preferences: AdministrativePreferences, calendarActivation: boolean): StoredDefaults {
+  const base = initialDefaults(data, calendarActivation);
+  const profileId = preferences.procedureSelection?.kind === 'legacyProfile' ? preferences.procedureSelection.profileId : '';
+  const profile = data.profiles.get(profileId);
+  const resolved = resolveVrpgSelection(data, preferences.vrpgSelection);
+  return { ...base, locale: preferences.locale, authorityCode: preferences.authorityCode, profileId,
+    deadlineDays: preferences.deadlineDays,
+    selectors: { ...defaultSelectors(profile), ...preferences.legacySelectors,
+      deliveryMethod: preferences.deliveryMethod, specialLawStatus: '' },
+    calendarId: profile ? automaticCalendarId(data, profile) : '',
+    specialRegimeId: profileId === 'vrpg-be' ? resolved.regimeId : '',
+    specialDefinitionId: profileId === 'vrpg-be' ? resolved.definitionId : '',
+    vrpgSelection: preferences.vrpgSelection,
+    calendarContext: { ...preferences.calendarPreference, areaFacts: {} } };
+}
+
+const administrativeContextIds = new WeakMap<object, number>();
+let nextAdministrativeContextId = 1;
+function administrativeSessionId(context?: ParsedFormat8Data): string {
+  if (!context) return '';
+  let id = administrativeContextIds.get(context);
+  if (!id) { id = nextAdministrativeContextId++; administrativeContextIds.set(context, id); }
+  return String(id);
+}
+
 function formatIsoDate(value: string, locale: Locale): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
   if (!match) {
@@ -219,29 +261,13 @@ function specialDefinitionLabel(definition: DeadlineDefinition, locale: Locale):
   return definition.sourceRefs.map(source => source.locator).join(' · ') || definition.deadlineDefinitionId;
 }
 
-function CalendarEvidence({ evidence, locale }: {
-  readonly evidence: CalendarTraceEvidence;
-  readonly locale: Locale;
+function Trace({ step, locale, data, profile, calendars, range, holidayIds }: {
+  readonly step: TraceStep; readonly locale: Locale; readonly data: CalculationData;
+  readonly profile: LegalProfile | undefined; readonly calendars: readonly CalendarRuleSet[] | undefined;
+  readonly range: { from: string; to: string } | undefined; readonly holidayIds: readonly string[];
 }): React.ReactElement {
-  return (
-    <div className="fr-trace__calendar">
-      <p>
-        {translate(locale, 'trace.calendar')}: <code>{evidence.calendarId}</code>
-        {' · '}{translate(locale, 'trace.dataRelease')}: <code>{evidence.releaseId}</code>
-      </p>
-      <ul>
-        {evidence.applications.map(application => (
-          <li key={`${application.operation}-${application.ruleId}`}>
-            <code>{application.ruleId}</code>
-            {' · '}{application.sourceRefs.map(source => `${source.sourceId} ${source.locator}`).join(', ')}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function Trace({ step, locale }: { readonly step: TraceStep; readonly locale: Locale }): React.ReactElement {
+  const sources = profileTraceSources(profile, step.ruleIds);
+  const reasons = step.reasonKeys.flatMap(key => calendarReason(locale,key) ?? traceReasonLabels([key],locale,data,calendars));
   return (
     <li className="fr-trace__item">
       <div className="fr-trace__number" aria-hidden="true">{step.sequence}</div>
@@ -254,7 +280,7 @@ function Trace({ step, locale }: { readonly step: TraceStep; readonly locale: Lo
           </p>
         )}
         {step.reasonKeys.length > 0 && (
-          <p>{step.reasonKeys.map(key => calendarReason(locale,key) ?? translateReason(locale, key)).join(' · ')}</p>
+          <p>{reasons.join(' · ')}</p>
         )}
         {step.deadlineDays !== undefined && (
           <p>{translate(locale, 'trace.deadlineDays')}: {step.deadlineDays}</p>
@@ -262,15 +288,10 @@ function Trace({ step, locale }: { readonly step: TraceStep; readonly locale: Lo
         {step.skippedCalendarDays !== undefined && (
           <p>{translate(locale, 'trace.skippedCalendarDays')}: {step.skippedCalendarDays}</p>
         )}
-        {step.periodIds && step.periodIds.length > 0 && (
-          <p>{translate(locale, 'trace.periods')}: {step.periodIds.join(', ')}</p>
-        )}
-        {step.ruleIds.length > 0 && (
-          <p className="fr-trace__rules">
-            {translate(locale, 'trace.rules')}: {step.ruleIds.join(', ')}
-          </p>
-        )}
-        {step.calendarEvidence && <CalendarEvidence evidence={step.calendarEvidence} locale={locale} />}
+        {step.calendarEvidence && <FriendlyCalendarEvidence evidence={step.calendarEvidence} data={data} locale={locale}
+          calendars={calendars} range={range} resultIds={step.periodIds ?? (step.operation === 'shiftDeadlineEnd' ? holidayIds : [])}
+          includeTechnical={false} />}
+        {step.ruleIds.length > 0 && <LegalTraceSources evidence={sources} locale={locale} />}
       </div>
     </li>
   );
@@ -333,9 +354,13 @@ function CalendarExportTile({
   );
 }
 
-function ResultPanel({ result, locale, calendarReference, onCalendarReferenceChange, allowCalendarExport = true, referenceOnly = false, extraTrace, blockedMessage }: {
+function ResultPanel({ result, locale, data, profile, calendars, technicalContext, calendarReference, onCalendarReferenceChange, allowCalendarExport = true, referenceOnly = false, extraTrace, blockedMessage }: {
   readonly result: CalculationResult;
   readonly locale: Locale;
+  readonly data: CalculationData;
+  readonly profile: LegalProfile | undefined;
+  readonly calendars?: readonly CalendarRuleSet[];
+  readonly technicalContext?: { readonly calendarReleaseId: string; readonly catalogSha256: string };
   readonly calendarReference: string;
   readonly onCalendarReferenceChange: (value: string) => void;
   readonly allowCalendarExport?: boolean;
@@ -343,6 +368,8 @@ function ResultPanel({ result, locale, calendarReference, onCalendarReferenceCha
   readonly extraTrace?: React.ReactNode;
   readonly blockedMessage?: string;
 }): React.ReactElement {
+  const dates = result.trace.flatMap(step => [step.inputDate, step.outputDate].filter((date): date is string => Boolean(date))).sort();
+  const range = dates.length ? { from: dates[0]!, to: dates[dates.length-1]! } : undefined;
   return (
     <section className="fr-result" aria-labelledby="fr-result-heading">
       <h2 id="fr-result-heading">{referenceOnly ? calendarText(locale,'referenceResult') : translate(locale, 'result.heading')}</h2>
@@ -400,8 +427,13 @@ function ResultPanel({ result, locale, calendarReference, onCalendarReferenceCha
 
       <details className="fr-trace" open={result.outcome === 'blocked'}>
         <summary>{translate(locale, 'trace.heading')}</summary>
-        <ol>{result.trace.map(step => <Trace key={step.sequence} step={step} locale={locale} />)}</ol>
+        <ol>{result.trace.map(step => <Trace key={step.sequence} step={step} locale={locale}
+          data={data} profile={profile} calendars={calendars} range={range} holidayIds={result.endShift.holidayIds} />)}</ol>
         {extraTrace}
+        <TechnicalTraceDetails locale={locale}>
+          <pre>{JSON.stringify({ releaseId:data.releaseId, ...technicalContext, result,
+            sourceBindings:result.trace.map(step => ({ sequence:step.sequence, ...profileTraceSources(profile,step.ruleIds) })) },null,2)}</pre>
+        </TechnicalTraceDetails>
       </details>
     </section>
   );
@@ -409,11 +441,20 @@ function ResultPanel({ result, locale, calendarReference, onCalendarReferenceCha
 
 function SpecialTrace({
   step,
-  locale
+  locale,
+  data,
+  sources,
+  range
 }: {
   readonly step: SpecialTraceStep;
   readonly locale: Locale;
+  readonly data: CalculationData;
+  readonly sources: TraceSources | undefined;
+  readonly range: { from: string; to: string } | undefined;
 }): React.ReactElement {
+  const generatedIds = new Set(step.calendarEvidence?.applications.flatMap(application => application.generatedIds) ?? []);
+  const periodIds = step.operation === 'applySuspension' ? step.reasonKeys.filter(key => generatedIds.has(key)) : [];
+  const reasonKeys = step.reasonKeys.filter(key => !periodIds.includes(key));
   return (
     <li className="fr-trace__item">
       <div className="fr-trace__number" aria-hidden="true">{step.sequence}</div>
@@ -425,15 +466,12 @@ function SpecialTrace({
             {step.outputDate ? ` → ${formatIsoDate(step.outputDate, locale)}` : ''}
           </p>
         )}
-        {step.reasonKeys.length > 0 && (
-          <p>{step.reasonKeys.map(key => translateReason(locale, key)).join(' · ')}</p>
+        {reasonKeys.length > 0 && (
+          <p>{traceReasonLabels(reasonKeys, locale, data).join(' · ')}</p>
         )}
-        {step.ruleIds.length > 0 && (
-          <p className="fr-trace__rules">
-            {translate(locale, 'trace.rules')}: {step.ruleIds.join(', ')}
-          </p>
-        )}
-        {step.calendarEvidence && <CalendarEvidence evidence={step.calendarEvidence} locale={locale} />}
+        {step.calendarEvidence && <FriendlyCalendarEvidence evidence={step.calendarEvidence} data={data} locale={locale}
+          range={range} resultIds={periodIds} includeTechnical={false} />}
+        {sources && <LegalTraceSources evidence={sources} locale={locale} />}
       </div>
     </li>
   );
@@ -442,6 +480,7 @@ function SpecialTrace({
 function SpecialResultPanel({
   result,
   locale,
+  data,
   regime,
   definition,
   filingProfile,
@@ -453,6 +492,7 @@ function SpecialResultPanel({
 }: {
   readonly result: SpecialDeadlineResult;
   readonly locale: Locale;
+  readonly data: CalculationData;
   readonly regime?: SpecialRegime;
   readonly definition?: DeadlineDefinition;
   readonly filingProfile?: FilingProfile;
@@ -462,6 +502,27 @@ function SpecialResultPanel({
   readonly allowCalendarExport?: boolean;
   readonly referenceOnly?: boolean;
 }): React.ReactElement {
+  const catalog = socialSelection?.catalog ?? data.specialRegimeCatalogs.get(result.calculationContext?.catalogId ?? '');
+  const suspensionProfile = catalog?.suspensionProfiles.find(item => item.suspensionProfileId === result.calculationContext?.suspensionProfileId);
+  const dates = result.trace.flatMap(step => [...step.inputDates ?? [], ...step.outputDate ? [step.outputDate] : []]).sort();
+  const range = dates.length ? { from: dates[0]!, to: dates[dates.length-1]! } : undefined;
+  const stepSources = (step: SpecialTraceStep): TraceSources | undefined => {
+    if (!catalog) return undefined;
+    if (step.operation === 'applySuspension' && suspensionProfile) return catalogTraceSources(catalog, suspensionProfile.sourceRefs);
+    if (socialSelection && step.ruleIds.length > 0) return catalogTraceSources(catalog,
+      [...socialSelection.rule.sourceRefs, ...socialSelection.binding.sourceRefs]);
+    const special = data.specialRegimeCatalogs.get(result.calculationContext?.catalogId ?? '');
+    if (!special) return undefined;
+    const ids = new Set(step.ruleIds);
+    const refs = [
+      ...special.regimes.filter(row => ids.has(row.regimeId)),
+      ...special.deadlineDefinitions.filter(row => ids.has(row.deadlineDefinitionId)),
+      ...special.legalOverrides.filter(row => ids.has(row.overrideId)),
+      ...special.gates.filter(row => ids.has(row.gateId)),
+      ...special.filingProfiles.filter(row => ids.has(row.filingProfileId))
+    ].flatMap(row => row.sourceRefs);
+    return refs.length ? catalogTraceSources(special,refs) : undefined;
+  };
   const completed = result.outcome !== 'blocked';
   const messageType = result.outcome === 'blocked'
     ? MessageBarType.blocked
@@ -586,7 +647,8 @@ function SpecialResultPanel({
 
       <details className="fr-trace" open={!socialSelection && result.outcome === 'blocked'}>
         <summary>{translate(locale, 'trace.heading')}</summary>
-        <ol>{result.trace.map(step => <SpecialTrace key={step.sequence} step={step} locale={locale} />)}</ol>
+        <ol>{result.trace.map(step => <SpecialTrace key={step.sequence} step={step} locale={locale} data={data}
+          sources={stepSources(step)} range={range} />)}</ol>
         {socialSelection && (
           <div className="fr-trace__context">
             <h4>{translate(locale, 'social.scopeLabel')}</h4>
@@ -603,19 +665,16 @@ function SpecialResultPanel({
               {translate(locale, `social.document.${socialSelection.rule.law === 'ivg' && socialSelection.rule.action === 'appeal' ? 'ivg-appeal' : socialSelection.rule.action}`)}
             </p>
             <h4>{translate(locale, 'social.evidence')}</h4>
-            <p>{socialSelection.rule.labels[locale]} · <code>{socialSelection.rule.ruleId}</code>
-              {' · '}<code>{socialSelection.binding.bindingId}</code></p>
-            <p>{[...socialSelection.rule.sourceRefs, ...socialSelection.binding.sourceRefs]
-              .filter((ref, index, refs) => refs.findIndex(other => other.sourceId === ref.sourceId && other.locator === ref.locator) === index)
-              .map((ref, index) => {
-                const source = socialSelection.catalog.sources.find(item => item.sourceId === ref.sourceId);
-                return <React.Fragment key={`${ref.sourceId}-${ref.locator}`}>
-                  {index > 0 ? ' · ' : ''}
-                  {source ? <a href={source.url} target="_blank" rel="noopener noreferrer">{ref.locator}</a> : ref.locator}
-                </React.Fragment>;
-              })}</p>
+            <p>{socialSelection.rule.labels[locale]}</p>
+            <LegalTraceSources evidence={catalogTraceSources(socialSelection.catalog,
+              [...socialSelection.rule.sourceRefs, ...socialSelection.binding.sourceRefs])} locale={locale} />
           </div>
         )}
+        <TechnicalTraceDetails locale={locale}>
+          <pre>{JSON.stringify({releaseId:data.releaseId,result,
+            sourceBindings:result.trace.map(step => ({sequence:step.sequence,sources:stepSources(step)})),
+            ...(socialSelection ? {socialRuleId:socialSelection.rule.ruleId,socialBindingId:socialSelection.binding.bindingId} : {})},null,2)}</pre>
+        </TechnicalTraceDetails>
       </details>
     </section>
   );
@@ -641,9 +700,16 @@ function ValidationPanel({ validation, locale }: {
 }
 
 export function FristenrechnerApp(props: FristenrechnerAppProps): React.ReactElement {
+  if (props.data.formatVersion === '8.0.0'
+    && !hasMatchingFormat8Runtime(props.data, props.calendarRuntime, props.administrativeContext)) {
+    return <main className="fr-app"><MessageBar messageBarType={MessageBarType.error} delayedRender={false}>
+      Die Datenkontexte gehören nicht zu demselben geprüften Release. Keine Berechnung möglich.
+      {' / '}Les contextes de données ne correspondent pas à la même version vérifiée. Calcul impossible.
+    </MessageBar></main>;
+  }
   // A new immutable data release starts a fresh session. Never display an old
   // result beside the new release's parameters or evidence.
-  return <CalculatorSession key={`${props.data.releaseId}:${props.calendarRuntime?.releaseId??''}:${props.calendarRuntime?.catalogSha256??''}:${props.calendarRuntime?.referenceOnly??''}:${props.referenceOnlyAllCalculations??false}`} {...props} />;
+  return <CalculatorSession key={`${props.data.releaseId}:${props.calendarRuntime?.releaseId??''}:${props.calendarRuntime?.catalogSha256??''}:${props.calendarRuntime?.referenceOnly??''}:${props.referenceOnlyAllCalculations??false}:${administrativeSessionId(props.administrativeContext)}`} {...props} />;
 }
 
 function CalculatorSession({
@@ -651,12 +717,27 @@ function CalculatorSession({
   storage: explicitStorage,
   initialState,
   calendarRuntime,
-  referenceOnlyAllCalculations = false,
-  localReviewLabel
+  referenceOnlyAllCalculations: hostReferenceOnly = false,
+  localReviewLabel,
+  administrativeContext
 }: FristenrechnerAppProps): React.ReactElement {
+  // A local byte-validated context cannot become exportable merely because a
+  // host forgot its presentation flag. Existing D2 mixed contexts remain local.
+  const referenceOnlyAllCalculations = hostReferenceOnly
+    || (data.formatVersion === '8.0.0' && calendarRuntime?.referenceOnly === true)
+    || getVerifiedAdministrativeData(administrativeContext)?.referenceOnly === true;
   const storage = explicitStorage ?? browserStorage();
-  const loaded = React.useMemo(() => loadDefaults(data, storage, Boolean(calendarRuntime)), [data, storage, calendarRuntime]);
-  const initialForm = React.useMemo(() => stateFromDefaults(data, loaded, initialState), [data, loaded, initialState]);
+  const defaultsContext = React.useMemo(() => ({ legacyData: data, ...(administrativeContext ? { administrativeData: administrativeContext } : {}) }), [data, administrativeContext]);
+  const loadedV5 = React.useMemo(() => administrativeContext ? initializeAdministrativeDefaults(defaultsContext, storage) : undefined,
+    [administrativeContext, defaultsContext, storage]);
+  const loaded = React.useMemo(() => loadedV5 ? legacyDefaultsFromV5(data, loadedV5.preferences, Boolean(calendarRuntime))
+    : loadDefaults(data, storage, Boolean(calendarRuntime)), [data, storage, calendarRuntime, loadedV5]);
+  const initialForm = React.useMemo(() => ({ ...stateFromDefaults(data, loaded, initialState),
+    ...(loadedV5 ? { specialLawChecked: false } : {}) }), [data, loaded, initialState, loadedV5]);
+  const storedProcedure = loadedV5?.preferences.procedureSelection;
+  const [adminLawId, setAdminLawId] = React.useState(storedProcedure?.kind === 'cantonalAdministrative' ? storedProcedure.lawId : '');
+  const [adminState, setAdminState] = React.useState<AdministrativeUiState>(() => ({ ...EMPTY_ADMINISTRATIVE_UI_STATE,
+    ...(storedProcedure?.kind === 'cantonalAdministrative' ? { stage: storedProcedure.stage, pathId: storedProcedure.pathId } : {}) }));
   const [locale, setLocale] = React.useState<Locale>(loaded.locale);
   const [form, setForm] = React.useState<CalculatorFormState>(initialForm);
   // New case facts never come from local defaults, QA presets or old approvals.
@@ -671,12 +752,17 @@ function CalculatorSession({
   const dateInputs = useDateInputSession();
   const [dateResetEpoch, setDateResetEpoch] = React.useState(0);
 
+  const administrativeData = getVerifiedAdministrativeData(administrativeContext);
+  const adminCatalog = administrativeData?.catalog;
+  const adminMode = Boolean(adminLawId && adminCatalog);
+  const adminPath = adminCatalog && adminMode ? administrativeChoices(adminCatalog, adminLawId, adminState).path : undefined;
+
   const profile = data.profiles.get(form.profileId);
   const boundMode = Boolean(calendarRuntime) && isBoundCalendarProfile(form.profileId);
-  const calendarContext = contextForProfile(form.profileId,form.calendarContext);
+  const calendarContext = effectiveCalendarContext(form.profileId,form.calendarContext,form.authorityCode);
   const calendarResolution = React.useMemo(() => boundMode && calendarRuntime
     ? resolveBoundCalendar(form.profileId,calendarContext,calendarRuntime) : undefined,
-    [boundMode,calendarRuntime,form.profileId,form.calendarContext]);
+    [boundMode,calendarRuntime,form.profileId,form.calendarContext,form.authorityCode]);
   const availableProfiles = profilesForAuthority(data, form.authorityCode);
   const specialCatalog = specialCatalogForProfile(data, form.profileId);
   const vrpgMode = form.profileId === 'vrpg-be';
@@ -705,7 +791,7 @@ function CalculatorSession({
     : specialCatalog?.filingProfiles.find(item => item.filingProfileId === (
     specialRegime?.filingProfileId ?? specialDefinition?.filingProfileId
   ));
-  const generalMode = isGeneralCalculation(data, form);
+  const generalMode = !adminMode && (!loadedV5 || Boolean(profile)) && isGeneralCalculation(data, form);
   const calculatedDefinition = specialDefinition?.deadlineOrigin === 'CALCULATED'
     ? specialDefinition as CalculatedDeadlineDefinition
     : undefined;
@@ -734,7 +820,7 @@ function CalculatorSession({
     && additionalAnchor !== data.calendars.get(form.calendarId)?.jurisdiction.code;
   const hasValidationErrors = Object.keys(validation).length > 0;
   const visibleSelectors = generalMode
-    ? profile?.selectors.filter(definition => !(specialCatalog && definition.selectorId === 'specialLawStatus')) ?? []
+    ? profile?.selectors.filter(definition => !(specialCatalog && definition.selectorId === 'specialLawStatus' && !loadedV5)) ?? []
     : [];
 
   const mutateForm = (change: Partial<CalculatorFormState>): void => {
@@ -768,6 +854,16 @@ function CalculatorSession({
     const socialContext = committedSocialContext;
     const vrpgContext = form.vrpgContext ?? EMPTY_VRPG_CONTEXT;
     const errors: Record<string, string> = {};
+    if (adminMode && adminCatalog) {
+      const qualified = qualifyAdministrativeUiInput({ catalog: adminCatalog, lawId: adminLawId,
+        authorityCanton: form.authorityCode, inputDate: form.inputDate,
+        deadlineDays: adminPath?.duration.kind === 'statutoryDays' ? adminPath.duration.value : Number(form.deadlineDays), state: adminState });
+      return Object.fromEntries(Object.entries(qualified.errors).map(([key, reason]) => [key, administrativeText(translationLocale, reason)]));
+    }
+    if (loadedV5 && (!form.authorityCode || !profile)) {
+      errors.profile = translate(translationLocale, 'form.requiredSelection');
+      return errors;
+    }
     if (socialPath) {
       if (!parseIsoDate(form.inputDate)) errors.inputDate = translate(translationLocale, 'form.inputDate.required');
       if (socialPath.rule.calculation.durationInputId) {
@@ -892,10 +988,20 @@ function CalculatorSession({
       setResult(undefined);
       return;
     }
+    if (adminMode && adminCatalog && administrativeContext) {
+      const qualified = qualifyAdministrativeUiInput({ catalog: adminCatalog, lawId: adminLawId,
+        authorityCanton: submitted.form.authorityCode, inputDate: submitted.form.inputDate,
+        deadlineDays: adminPath?.duration.kind === 'statutoryDays' ? adminPath.duration.value : Number(submitted.form.deadlineDays), state: adminState });
+      if (qualified.input) setResult({ kind: 'administrative', input: qualified.input,
+        value: calculateAdministrativeUiDeadline(qualified.input, administrativeContext) });
+      else setResult(undefined);
+      return;
+    }
     if (generalMode) {
       if (boundMode && calendarRuntime) {
-        setResult({kind:'boundCalendar',value:calculateCalendarBoundDeadline(createCalculationInput(data,submitted.form),calendarContext,data,calendarRuntime)});
-      } else setResult({ kind: 'general', value: calculateDeadline(createCalculationInput(data, submitted.form), data) });
+        setResult({kind:'boundCalendar',value:calculateCalendarBoundDeadline(createCalculationInput(data,submitted.form),
+          effectiveCalendarContext(submitted.form.profileId,submitted.form.calendarContext,submitted.form.authorityCode),data,calendarRuntime)});
+      } else setResult({ kind: 'general', value: calculateRuntimeDeadline(createCalculationInput(data, submitted.form), data) });
       return;
     }
     if (socialSelection) {
@@ -918,7 +1024,10 @@ function CalculatorSession({
       return;
     }
     setSocialContext(EMPTY_SOCIAL_CONTEXT);
-    const profileId = reconcileProfileId(data, option.key, form.profileId);
+    setAdminLawId('');
+    setAdminState(EMPTY_ADMINISTRATIVE_UI_STATE);
+    const profileId = loadedV5 && (!form.profileId || adminMode || !option.key)
+      ? '' : reconcileProfileId(data, option.key, form.profileId);
     const nextProfile = data.profiles.get(profileId);
     const special = reconcileSpecialSelection(
       data,
@@ -929,7 +1038,9 @@ function CalculatorSession({
     mutateSelection({
       authorityCode: option.key,
       profileId,
-      ...(calendarRuntime && (profileId !== form.profileId || profileId === 'zpo') ? {calendarContext:contextForProfile(profileId,EMPTY_CALENDAR_CONTEXT)} : {}),
+      ...(calendarRuntime && (profileId !== form.profileId || profileId === 'zpo') ? {
+        calendarContext:effectiveCalendarContext(profileId,EMPTY_CALENDAR_CONTEXT,option.key)
+      } : {}),
       selectors: defaultSelectors(nextProfile),
       calendarId: automaticCalendarId(data, nextProfile),
       calendarOverrideReason: '',
@@ -955,6 +1066,21 @@ function CalculatorSession({
       return;
     }
     setSocialContext(EMPTY_SOCIAL_CONTEXT);
+    const lawId = option.key.startsWith('admin:') ? option.key.slice(6) : '';
+    if (lawId) {
+      if (!adminCatalog?.laws.some(law => law.lawId === lawId && law.canton === form.authorityCode)) return;
+      setAdminLawId(lawId);
+      setAdminState(changeAdministrativeSelection(adminCatalog, lawId, EMPTY_ADMINISTRATIVE_UI_STATE, 'stage', ''));
+      mutateSelection({ profileId: '', selectors: {}, calendarId: '', calendarOverrideReason: '',
+        additionalHolidayAnchor: '', holidayAnchorConfirmed: false, deliveryFictionConfirmed: false,
+        specialLawChecked: false, specialRegimeId: '', specialDefinitionId: '', vrpgSelection: EMPTY_VRPG_SELECTION,
+        vrpgContext: EMPTY_VRPG_CONTEXT, specialDateValues: {}, specialLocalTimeValues: {},
+        specialIntegerValues: {}, specialOverrideConfirmations: [], calendarContext: EMPTY_CALENDAR_CONTEXT });
+      setCalendarOverrideEnabled(false);
+      return;
+    }
+    setAdminLawId('');
+    setAdminState(EMPTY_ADMINISTRATIVE_UI_STATE);
     const nextProfile = data.profiles.get(option.key);
     const special = reconcileSpecialSelection(
       data,
@@ -964,7 +1090,7 @@ function CalculatorSession({
     );
     mutateSelection({
       profileId: option.key,
-      ...(calendarRuntime ? {calendarContext:contextForProfile(option.key,EMPTY_CALENDAR_CONTEXT)} : {}),
+      ...(calendarRuntime ? {calendarContext:effectiveCalendarContext(option.key,EMPTY_CALENDAR_CONTEXT,form.authorityCode)} : {}),
       selectors: defaultSelectors(nextProfile),
       calendarId: automaticCalendarId(data, nextProfile),
       calendarOverrideReason: '',
@@ -1027,6 +1153,21 @@ function CalculatorSession({
   };
 
   const onSaveDefaults = (): void => {
+    if (loadedV5) {
+      const saved = saveAdministrativeDefaults(defaultsContext, storage, {
+        locale, authorityCode: form.authorityCode,
+        deadlineDays: adminPath?.duration.kind === 'statutoryDays' ? adminPath.duration.value : Number(form.deadlineDays),
+        deliveryMethod: adminMode ? 'otherLegallyRelevantDate' : form.selectors.deliveryMethod,
+        procedureSelection: adminMode
+          ? { kind: 'cantonalAdministrative', lawId: adminLawId, pathId: adminState.pathId, revision: adminPath?.revision ?? 0, stage: adminState.stage }
+          : form.profileId ? { kind: 'legacyProfile', profileId: form.profileId } : null,
+        legacySelectors: form.selectors, vrpgSelection: vrpgState,
+        calendarPreference: { role: calendarContext.role, canton: calendarContext.canton }
+      });
+      setNotification({ type: saved.persistence === 'stored' ? MessageBarType.success : MessageBarType.error,
+        text: translate(locale, saved.persistence === 'stored' ? 'defaults.saved' : 'defaults.saveFailed') });
+      return;
+    }
     const defaults: StoredDefaults = {
       version: calendarRuntime ? 4 : 3,
       locale,
@@ -1048,6 +1189,22 @@ function CalculatorSession({
   };
 
   const onResetDefaults = (): void => {
+    if (loadedV5) {
+      const reset = resetAdministrativeDefaults(defaultsContext, storage);
+      if (reset.persistence === 'protected' || reset.persistence === 'rejected') {
+        setNotification({ type: MessageBarType.error, text: translate(locale, 'defaults.resetFailed') });
+        return;
+      }
+      setDateResetEpoch(current => current + 1);
+      setLocale(reset.preferences.locale);
+      setForm({ ...stateFromDefaults(data, legacyDefaultsFromV5(data, reset.preferences, Boolean(calendarRuntime))), specialLawChecked: false });
+      setAdminLawId(''); setAdminState(EMPTY_ADMINISTRATIVE_UI_STATE);
+      setSocialContext(EMPTY_SOCIAL_CONTEXT); setCalendarOverrideEnabled(false);
+      setResult(undefined); setCalendarReference(''); setValidation({});
+      setNotification({ type: reset.persistence === 'stored' ? MessageBarType.success : MessageBarType.error,
+        text: translate(reset.preferences.locale, reset.persistence === 'stored' ? 'defaults.reset' : 'defaults.resetFailed') });
+      return;
+    }
     setDateResetEpoch(current => current + 1);
     const removed = clearDefaults(storage);
     const defaults = initialDefaults(data,Boolean(calendarRuntime));
@@ -1195,7 +1352,10 @@ function CalculatorSession({
         <div>
           <div className="fr-badge">{localReviewLabel ?? translate(locale, 'app.badge')}</div>
           <h1>{translate(locale, 'app.title')}</h1>
-          <p>{referenceOnlyAllCalculations ? calendarText(locale, 'referenceAllIntro')
+          <p>{administrativeContext && referenceOnlyAllCalculations
+            ? (locale === 'de' ? 'Lokale Prüfung des kantonalen Verwaltungsverfahrens für Tessin und Graubünden.'
+              : 'Vérification locale de la procédure administrative cantonale pour le Tessin et les Grisons.')
+            : referenceOnlyAllCalculations ? calendarText(locale, 'referenceAllIntro')
             : calendarRuntime ? calendarText(locale, calendarRuntime.referenceOnly ? 'intro' : 'introApproved') : translate(locale, 'app.intro')}</p>
         </div>
         <Dropdown styles={calculatorDropdownStyles}
@@ -1223,8 +1383,18 @@ function CalculatorSession({
       <MessageBar className="fr-disclaimer" messageBarType={MessageBarType.warning}>
         {translate(locale, 'app.disclaimer')}
       </MessageBar>
+      {loadedV5?.persistence === 'protected' && <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
+        {locale === 'de' ? 'Die gespeicherten Standards sind mit diesem Datenstand nicht verwendbar. Sie bleiben unverändert geschützt. Bitte wählen Sie die Angaben für diesen Fall neu.'
+          : 'Les préférences enregistrées ne sont pas utilisables avec ces données. Elles restent protégées et inchangées. Veuillez saisir les données du cas actuel.'}
+      </MessageBar>}
       {(referenceOnlyAllCalculations || calendarRuntime?.referenceOnly) && <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
-        {calendarText(locale, referenceOnlyAllCalculations ? 'referenceAll' : 'reference')}
+        {administrativeContext && referenceOnlyAllCalculations
+          ? data.formatVersion === '8.0.0'
+            ? (locale === 'de' ? 'AP23D3: lokale Integrationsprüfung mit gemeinsamem Datenstand. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23D3 : vérification locale de l’intégration avec des données communes. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+            : (locale === 'de' ? 'AP23D2: lokale Referenzvorschau, noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt. Die bisherigen Verfahren verwenden weiterhin ihren getrennten MVP-0.7-Datenstand.'
+            : 'AP23D2 : aperçu local de référence, sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués. Les procédures existantes utilisent leurs données MVP 0.7 distinctes.')
+          : calendarText(locale, referenceOnlyAllCalculations ? 'referenceAll' : 'reference')}
       </MessageBar>}
       {data.releaseId.includes('-ap17c-candidate.') && (
         <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
@@ -1268,7 +1438,14 @@ function CalculatorSession({
                 onChange={value => mutateForm({ inputDate: value })}
               />
             )}
-            {socialPath ? socialPath.rule.calculation.duration ? (
+            {adminMode ? adminPath?.duration.kind === 'statutoryDays' ? (
+              <TextField readOnly label={translate(locale, 'vrpg.duration')}
+                value={`${adminPath.duration.value} ${translate(locale, 'vrpg.unit.day')}`} />
+            ) : (
+              <TextField required label={translate(locale, 'vrpg.orderedDays')} type="number" min={1} max={365} step={1}
+                value={form.deadlineDays} errorMessage={validation.deadlineDays ?? ''}
+                onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })} />
+            ) : socialPath ? socialPath.rule.calculation.duration ? (
               <TextField readOnly label={translate(locale, 'vrpg.duration')}
                 value={`${socialPath.rule.calculation.duration.value} ${translate(locale, 'vrpg.unit.day')}`} />
             ) : (
@@ -1313,20 +1490,28 @@ function CalculatorSession({
             <Dropdown styles={calculatorDropdownStyles}
               required
               label={calendarRuntime ? calendarText(locale,'authoritySeat') : translate(locale, 'form.authority')}
-              options={authorityOptions(data,Boolean(calendarRuntime)).map(option => ({
+              options={[...(loadedV5 ? [{ key: '', text: translate(locale, 'form.select') }] : []), ...authorityOptions(data,Boolean(calendarRuntime) || Boolean(adminCatalog)).map(option => ({
                 key: option.code,
                 text: calendarRuntime ? calendarCantonLabel(option.code,locale) : translate(locale, `authority.${option.code}`)
-              }))}
+              }))]}
               selectedKey={form.authorityCode}
               onChange={onAuthorityChange}
             />
             <Dropdown styles={calculatorDropdownStyles}
               required
               label={translate(locale, 'form.profile')}
-              options={availableProfiles.map(item => ({ key: item.profileId, text: profileLabel(item, locale) }))}
-              selectedKey={form.profileId}
+              options={[...(loadedV5 ? [{ key: '', text: translate(locale, 'form.select') }] : []),
+                ...availableProfiles.map(item => ({ key: item.profileId, text: profileLabel(item, locale) })),
+                ...(adminCatalog?.laws.filter(law => law.canton === form.authorityCode).map(law => ({ key: `admin:${law.lawId}`,
+                  text: law.lawId === 'lpamm-ti' ? 'LPAmm (TI)' : law.lawId === 'vrg-gr' ? 'VRG (GR)' : law.title })) ?? [])]}
+              selectedKey={adminMode ? `admin:${adminLawId}` : form.profileId}
+              disabled={Boolean(loadedV5 && !form.authorityCode)}
+              errorMessage={validation.profile ?? ''}
               onChange={onProfileChange}
             />
+            {adminMode && adminCatalog && <AdministrativeProcedureFields catalog={adminCatalog} lawId={adminLawId}
+              locale={locale} value={adminState} errors={validation}
+              onChange={next => { setAdminState(next); mutateForm({}); }} />}
             {vrpgMode && (
               <>
                 {renderVrpgChoice('area', 'vrpg.area', vrpgAreaOptions())}
@@ -1474,7 +1659,7 @@ function CalculatorSession({
             )}
             {visibleSelectors.filter(item => !vrpgMode || item.selectorId !== 'deliveryMethod').map(renderSelector)}
             {boundMode && visibleSelectors.length % 2 === 1 && <div className="fr-grid-spacer" aria-hidden="true" />}
-            {boundMode && <CalendarContextFields profileId={form.profileId} value={calendarContext} locale={locale}
+            {boundMode && <CalendarContextFields profileId={form.profileId} authorityCode={form.authorityCode} value={calendarContext} locale={locale}
               onChange={next=>mutateForm({calendarContext:next,calendarId:'',calendarOverrideReason:'',additionalHolidayAnchor:'',holidayAnchorConfirmed:false})} />}
             {!generalMode && calculatedDefinition?.anchors
               .filter(anchor => anchor !== primaryAnchor)
@@ -1552,18 +1737,31 @@ function CalculatorSession({
         <div className="fr-result-region" aria-live="polite">
           {hasValidationErrors
             ? <ValidationPanel validation={validation} locale={locale} />
+            : result?.kind === 'administrative' && adminCatalog && administrativeContext
+              ? <AdministrativeResultView result={result.value} input={result.input} context={administrativeContext}
+                  catalog={adminCatalog} locale={locale} calendarReference={calendarReference}
+                  onCalendarReferenceChange={setCalendarReference}
+                  {...(!referenceOnlyAllCalculations ? { onExport: () => {
+                    try { downloadDeadlineCalendarEntry(createAdministrativeCalendarEntry({ input: result.input,
+                      context: administrativeContext, result: result.value, locale, reference: calendarReference })); }
+                    catch { setNotification({ type: MessageBarType.error, text: translate(locale, 'calendar.downloadFailed') }); }
+                  } } : {})} />
             : result?.kind === 'boundCalendar' && calendarRuntime
-              ? <ResultPanel result={result.value} locale={locale} calendarReference={calendarReference} onCalendarReferenceChange={setCalendarReference}
+              ? <ResultPanel result={result.value} locale={locale} data={{...data,releaseId:calendarRuntime.releaseId}} profile={profile}
+                  calendars={calendarRuntime.calendars} calendarReference={calendarReference} onCalendarReferenceChange={setCalendarReference}
+                  technicalContext={{calendarReleaseId:calendarRuntime.releaseId,catalogSha256:calendarRuntime.catalogSha256}}
                   allowCalendarExport={!referenceOnlyAllCalculations && result.value.calendarExportAllowed} referenceOnly={referenceOnlyAllCalculations || result.value.referenceOnly}
                   blockedMessage={calendarText(locale,result.value.januaryComparison?.outcome==='different'?'januaryDifferent':result.value.januaryComparison?.outcome==='blocked'?'januaryBlocked':'blocked')}
-                  extraTrace={<><CalendarContextTrace profileId={form.profileId} context={calendarContext} runtime={calendarRuntime} locale={locale}/>
-                    {result.value.januaryComparison&&<JanuaryComparisonTrace comparison={result.value.januaryComparison} locale={locale}/>}
+                  extraTrace={<><CalendarContextTrace profileId={form.profileId} context={calendarContext} runtime={calendarRuntime} locale={locale} showTechnical={false}/>
+                    {result.value.januaryComparison&&<JanuaryComparisonTrace comparison={result.value.januaryComparison} locale={locale} showTechnical={false}/>}
                   </>} />
             : result?.kind === 'general'
               ? (
                 <ResultPanel
                   result={result.value}
                   locale={locale}
+                  data={data}
+                  profile={profile}
                   calendarReference={calendarReference}
                   onCalendarReferenceChange={setCalendarReference}
                   allowCalendarExport={!referenceOnlyAllCalculations}
@@ -1574,6 +1772,7 @@ function CalculatorSession({
                 <SpecialResultPanel
                   result={result.value}
                   locale={locale}
+                  data={data}
                   calendarReference={calendarReference}
                   onCalendarReferenceChange={setCalendarReference}
                   allowCalendarExport={!referenceOnlyAllCalculations}
@@ -1588,7 +1787,9 @@ function CalculatorSession({
 
         <section className="fr-automatic" aria-labelledby="fr-automatic-heading">
           <h2 id="fr-automatic-heading">{translate(locale, 'automatic.heading')}</h2>
-          {socialPath ? (
+          {adminMode && adminCatalog ? (
+            <AdministrativeAutomaticParameters catalog={adminCatalog} lawId={adminLawId} state={adminState} locale={locale} />
+          ) : loadedV5 && !profile ? <p>{translate(locale, 'form.requiredSelection')}</p> : socialPath ? (
             <dl className="fr-automatic__grid">
               <div><dt>{translate(locale, 'special.automatic.regime')}</dt><dd><strong>{socialPath.rule.labels[locale]}</strong></dd></div>
               <div><dt>{translate(locale, 'automatic.suspension')}</dt><dd><strong>{socialPath.catalog.suspensionProfiles.find(item => item.suspensionProfileId === socialPath.rule.suspensionProfileId)?.labels[locale] ?? '–'}</strong></dd></div>
@@ -1735,13 +1936,15 @@ function CalculatorSession({
       </form>
 
       <footer className="fr-data-status">
-        <span>{translate(locale, 'dataStatus.label')}: <code>{data.releaseId}</code></span>
-        {calendarRuntime&&<><span aria-hidden="true">·</span><span>{calendarText(locale, calendarRuntime.referenceOnly ? 'calendarData' : 'calendarDataApproved')}: <code>{calendarRuntime.releaseId}</code></span></>}
+        <span>{translate(locale, 'dataStatus.label')}: <code>{adminMode ? administrativeData?.releaseId : data.releaseId}</code></span>
+        {!adminMode && calendarRuntime&&<><span aria-hidden="true">·</span><span>{calendarText(locale, calendarRuntime.referenceOnly ? 'calendarData' : 'calendarDataApproved')}: <code>{calendarRuntime.releaseId}</code></span></>}
         <span aria-hidden="true">·</span>
         <span>
-          {boundMode && calendarRuntime?.referenceOnly ? calendarText(locale,'productCoverage') : translate(locale, 'dataStatus.coverage')}: {formatIsoDate(boundMode ? '2026-08-29' : data.coverage.from, locale)} – {data.coverage.to
+          {boundMode && calendarRuntime?.referenceOnly ? calendarText(locale,'productCoverage') : translate(locale, 'dataStatus.coverage')}: {adminMode
+            ? adminPath ? `${formatIsoDate(adminPath.temporalBinding.calculationCoverage.from, locale)} – ${formatIsoDate(adminPath.temporalBinding.calculationCoverage.to, locale)}` : '–'
+            : <>{formatIsoDate(boundMode ? '2026-08-29' : data.coverage.from, locale)} – {data.coverage.to
             ? formatIsoDate(data.coverage.to, locale)
-            : translate(locale, 'dataStatus.openEnded')}
+            : translate(locale, 'dataStatus.openEnded')}</>}
         </span>
       </footer>
     </main>

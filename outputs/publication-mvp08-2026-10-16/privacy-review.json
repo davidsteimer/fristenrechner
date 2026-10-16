@@ -1,0 +1,319 @@
+{
+  "kind": "mvp08-bounded-publication-review",
+  "checkedAt": "2026-10-16T13:42:06.083Z",
+  "passed": true,
+  "selectionAtReview": {
+    "files": 422,
+    "byteCount": 30505869,
+    "scope": "Selection before final report/manifest closure, not a final inventory hash"
+  },
+  "methods": [
+    "Bounded UTF-8 file patterns for personal roots, tenant/private-mail strings and narrow credential formats",
+    "Reviewed exact exclusions and the five selected binary archives/workbooks",
+    "Unchanged ZIP payload text review plus separate two-unique-icon review",
+    "Read-only XLSX XML/relationships/metadata review"
+  ],
+  "reviewedPatternHits": [
+    {
+      "path": "docs/betrieb/publikationspaket-mvp08.md",
+      "line": 83,
+      "category": "tenant-or-private-mail",
+      "classification": "Explicit disclosure of the existing Git author/committer metadata for separate human publication approval"
+    },
+    {
+      "path": "scripts/ap23a_workbook_links.py",
+      "line": 62,
+      "category": "personal-path",
+      "classification": "Literal negative assertion against user-home paths, no actual personal path"
+    },
+    {
+      "path": "scripts/prepare-r08c-proposal.mjs",
+      "line": 194,
+      "category": "tenant-or-private-mail",
+      "classification": "Literal negative assertion against an unintended tenant domain, not an active endpoint or credential"
+    }
+  ],
+  "unresolvedPatternHits": 0,
+  "excludedPaths": [
+    ".git",
+    ".venv",
+    ".work",
+    "Userinput",
+    "docs/betrieb/freigabe-publikation-und-p-mvp07.md",
+    "docs/betrieb/wwwroot-webbackup-pre-mvp06-2026-10-01",
+    "docs/betrieb/wwwroot-webbackup-pre-mvp06-2026-10-01.zip",
+    "fristenrechner-pre-mvp04-2026-09-22.zip",
+    "mftp_zip_2026_09_28_17_09_09.zip",
+    "node_modules",
+    "outputs/2026-08-28_Projekt-und-Realisierungsplan_Fristenrechner_Schweiz_V1.0.docx",
+    "outputs/ap23d2-2026-10-15/product-regression-initial-harness-failure.txt",
+    "outputs/ap23d3-2026-10-15/spfx-build.json",
+    "outputs/release-mvp08-2026-10-15/artifact-verification.json",
+    "outputs/release-mvp08-2026-10-15/build-inputs",
+    "outputs/release-mvp08-2026-10-15/local-completion.json",
+    "outputs/release-mvp08-2026-10-15/outlook-final-artifact-supplement.json",
+    "outputs/release-mvp08-2026-10-15/portability-standard-no-private-20261015-01",
+    "outputs/release-mvp08-2026-10-15/r08b-before-inputs",
+    "outputs/release-mvp08-2026-10-15/recovery-0.8.0.1",
+    "outputs/release-mvp08-2026-10-15/recovery-roundtrip",
+    "outputs/release-mvp08-2026-10-15/source-review-verification.json",
+    "outputs/release-mvp08-2026-10-15/sources/raw",
+    "scripts/verify-r08c-baseline.mjs",
+    "wwwroot-webbackup-pre-mvp04-2026-09-22.zip"
+  ],
+  "archiveReview": {
+    "original": {
+      "path": ".work/r08d-20261016/release-archive-text-check.private.json",
+      "byteLength": 2689,
+      "sha256": "dd5774c69b1353d04480d18ec70a6b862b1c7968b6a37c288c4f12409ac1bb0d",
+      "availability": "private-original-not-required"
+    },
+    "archives": [
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-0.8.0.0.sppkg",
+        "bytes": 311611,
+        "sha256": "d3d06adcd78176db66f8227d884fd66ca2fbcee0bffab66755789dd0cc29dc1a",
+        "entries": 18,
+        "textEntriesChecked": 16,
+        "binaryEntriesSkipped": [
+          {
+            "entry": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_color.png",
+            "bytes": 955
+          },
+          {
+            "entry": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_outline.png",
+            "bytes": 197
+          }
+        ],
+        "hits": [],
+        "unsafeEntryNames": []
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-steimer-web.zip",
+        "bytes": 635927,
+        "sha256": "0abbc23d691835e5b04b64975140afb36c4bfa89482ff872c0c76188673f4176",
+        "entries": 12,
+        "textEntriesChecked": 12,
+        "binaryEntriesSkipped": [],
+        "hits": [],
+        "unsafeEntryNames": []
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-sharepoint-mirror.zip",
+        "bytes": 225952,
+        "sha256": "81359611b5399b1b79c0f9dedb0d5ac540c9192a1382feb67095dadb8e89f8dd",
+        "entries": 42,
+        "textEntriesChecked": 42,
+        "binaryEntriesSkipped": [],
+        "hits": [],
+        "unsafeEntryNames": []
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-recovery-0.8.0.1.sppkg",
+        "bytes": 291892,
+        "sha256": "8e387297d43df28e2fe4d3c7c9ae239bb2cdc6a9e3216e4c59c928c50d950e7b",
+        "entries": 18,
+        "textEntriesChecked": 16,
+        "binaryEntriesSkipped": [
+          {
+            "entry": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_color.png",
+            "bytes": 955
+          },
+          {
+            "entry": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_outline.png",
+            "bytes": 197
+          }
+        ],
+        "hits": [],
+        "unsafeEntryNames": []
+      }
+    ],
+    "textEntriesChecked": 86,
+    "note": "Historical four skipped PNG entries are now covered separately by the icon review, not retrospectively rewritten."
+  },
+  "workbookReview": {
+    "original": {
+      "path": ".work/r08d-20261016/workbook-publication-review.private.json",
+      "byteLength": 32444,
+      "sha256": "696b2acc3d6d9e311e93be680df38a923e5cd915a547d7b03cba8029510b8c74",
+      "availability": "private-original-not-required"
+    },
+    "status": "passed-scoped-structural-review",
+    "workbooks": [
+      {
+        "file": {
+          "path": "outputs/ap23a-2026-10-12/2026-10-12_Verwaltungsverfahren_Schweiz_AP23A_V0.1.xlsx",
+          "byteLength": 53536,
+          "sha256": "4d161b5ce441910461cc4092aa0ef3bb898d3390034901faa3acdab97fc3857e"
+        },
+        "sheets": [
+          {
+            "name": "Kantonsübersicht",
+            "state": "visible"
+          },
+          {
+            "name": "Fristenregeln",
+            "state": "visible"
+          },
+          {
+            "name": "Vertiefung",
+            "state": "visible"
+          },
+          {
+            "name": "Quellen",
+            "state": "visible"
+          }
+        ],
+        "zipCrcPassed": true,
+        "comments": [],
+        "embedded": [],
+        "externalData": [],
+        "metadata": [],
+        "rowAndColumnVisibility": [
+          {
+            "entry": "xl/worksheets/sheet1.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          },
+          {
+            "entry": "xl/worksheets/sheet2.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          },
+          {
+            "entry": "xl/worksheets/sheet3.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          },
+          {
+            "entry": "xl/worksheets/sheet4.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          }
+        ],
+        "externalRelationshipCount": 37,
+        "externalLinksMatchRecordedSources": true
+      },
+      {
+        "file": {
+          "path": "outputs/ap23a-2026-10-12/referenz/2026-10-12_Verwaltungsverfahren_Schweiz_AP23A_V0.1.xlsx",
+          "byteLength": 53536,
+          "sha256": "4d161b5ce441910461cc4092aa0ef3bb898d3390034901faa3acdab97fc3857e"
+        },
+        "sheets": [
+          {
+            "name": "Kantonsübersicht",
+            "state": "visible"
+          },
+          {
+            "name": "Fristenregeln",
+            "state": "visible"
+          },
+          {
+            "name": "Vertiefung",
+            "state": "visible"
+          },
+          {
+            "name": "Quellen",
+            "state": "visible"
+          }
+        ],
+        "zipCrcPassed": true,
+        "comments": [],
+        "embedded": [],
+        "externalData": [],
+        "metadata": [],
+        "rowAndColumnVisibility": [
+          {
+            "entry": "xl/worksheets/sheet1.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          },
+          {
+            "entry": "xl/worksheets/sheet2.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          },
+          {
+            "entry": "xl/worksheets/sheet3.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          },
+          {
+            "entry": "xl/worksheets/sheet4.xml",
+            "hiddenRows": [],
+            "zeroHeightRows": [],
+            "hiddenColumnRanges": [],
+            "zeroWidthColumnRanges": [],
+            "defaultRowsHidden": false,
+            "sheetProtectionPresent": false
+          }
+        ],
+        "externalRelationshipCount": 37,
+        "externalLinksMatchRecordedSources": true
+      }
+    ],
+    "byteIdenticalToFinalVerification": true,
+    "visualQaReuse": "Final workbook bytes unchanged. Existing final visual QA reused, no new rendering/recalculation/export."
+  },
+  "iconReview": {
+    "original": {
+      "path": ".work/r08d-20261016/icons-review.private.json",
+      "byteLength": 4176,
+      "sha256": "e7bef336ee0ebea92be7ab15549619e69ec11bf5c737af7e9a2c3b4064430816",
+      "availability": "private-original-not-required"
+    },
+    "status": "passed-scoped-binary-and-visual-review",
+    "summary": {
+      "archiveMemberCopies": 4,
+      "uniqueImages": 2,
+      "sourceArchiveBytesModified": false,
+      "sourceMemberBytesModified": false,
+      "textChunksPresent": false,
+      "exifChunksPresent": false,
+      "iccOrOtherAncillaryMetadataChunksPresent": false,
+      "unexpectedChunksPresent": false,
+      "remainingScopedFindings": 0
+    },
+    "limitations": [
+      "Review covers only the four named icon members in the normal and recovery packages. No broader artifact scan is inferred from this report.",
+      "Visible image content and exact PNG chunk structure were inspected. This is not an exhaustive steganographic analysis or a proof that arbitrary secrets cannot be encoded in image pixels.",
+      "A passing local review neither authorizes publication nor changes the current release or operational approval state."
+    ]
+  },
+  "limitations": [
+    "No complete secret, malware or steganography clearance",
+    "Previously public repository history is not newly sanitised",
+    "No new external URL/legal/version or hosting check",
+    "No change to original reports, workbook or definitive artifacts",
+    "Publication and Git metadata exposure require explicit approval"
+  ]
+}

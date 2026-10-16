@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: C3 host forwards a validated Format-7 runtime automatically, never candidate approval options
+ok 1 - C3 host forwards a validated Format-7 runtime automatically, never candidate approval options
+  ---
+  duration_ms: 2.559667
+  type: 'test'
+  ...
+# Subtest: historical AP5 runtime retains its identity without a calendar context prop
+ok 2 - historical AP5 runtime retains its identity without a calendar context prop
+  ---
+  duration_ms: 0.73725
+  type: 'test'
+  ...
+# Subtest: same provider label on a different site hides the old result synchronously and reloads
+ok 3 - same provider label on a different site hides the old result synchronously and reloads
+  ---
+  duration_ms: 1.236208
+  type: 'test'
+  ...
+# Subtest: mirror-path change changes the React key even when release ID and provider label are identical
+ok 4 - mirror-path change changes the React key even when release ID and provider label are identical
+  ---
+  duration_ms: 0.623917
+  type: 'test'
+  ...
+# Subtest: new manifest bytes remount the session even if a release name was reused
+ok 5 - new manifest bytes remount the session even if a release name was reused
+  ---
+  duration_ms: 0.529959
+  type: 'test'
+  ...
+# Subtest: configuration errors immediately hide calculator, do not access cache, and show an error
+ok 6 - configuration errors immediately hide calculator, do not access cache, and show an error
+  ---
+  duration_ms: 0.470833
+  type: 'test'
+  ...
+# Subtest: an incorrectly bound configuration key cannot resurrect cached data
+ok 7 - an incorrectly bound configuration key cannot resurrect cached data
+  ---
+  duration_ms: 0.404167
+  type: 'test'
+  ...
+# Subtest: late response from old configuration and unmounted host never overwrites current state
+ok 8 - late response from old configuration and unmounted host never overwrites current state
+  ---
+  duration_ms: 0.532417
+  type: 'test'
+  ...
+# Subtest: invalid adapted data clears a valid local display rather than leaving it stale
+ok 9 - invalid adapted data clears a valid local display rather than leaving it stale
+  ---
+  duration_ms: 0.60375
+  type: 'test'
+  ...
+# Subtest: WebPart remounts by the real cache identity and does not expose a candidate control
+ok 10 - WebPart remounts by the real cache identity and does not expose a candidate control
+  ---
+  duration_ms: 1.21425
+  type: 'test'
+  ...
+# Subtest: AP23D3 actual host passes the shared Format8 contexts together without local-reference options
+ok 11 - AP23D3 actual host passes the shared Format8 contexts together without local-reference options
+  ---
+  duration_ms: 2.857833
+  type: 'test'
+  ...
+# Subtest: AP23D3 byte-identical cache to network refresh validates again without discarding the current administrative form
+ok 12 - AP23D3 byte-identical cache to network refresh validates again without discarding the current administrative form
+  ---
+  duration_ms: 0.876708
+  type: 'test'
+  ...
+# Subtest: AP23D3 byte-identical refresh updates fallback status and warning while preserving only the valid context
+ok 13 - AP23D3 byte-identical refresh updates fallback status and warning while preserving only the valid context
+  ---
+  duration_ms: 0.520875
+  type: 'test'
+  ...
+# Subtest: AP23D3 same hash never reuses mismatched unissued administrative context objects
+ok 14 - AP23D3 same hash never reuses mismatched unissued administrative context objects
+  ---
+  duration_ms: 0.927
+  type: 'test'
+  ...
+# Subtest: AP23D3 configuration changes immediately remove the old administrative result and export subtree
+ok 15 - AP23D3 configuration changes immediately remove the old administrative result and export subtree
+  ---
+  duration_ms: 0.668292
+  type: 'test'
+  ...
+# Subtest: AP23D3 new manifest hash remounts the calculator even under the same release name
+ok 16 - AP23D3 new manifest hash remounts the calculator even under the same release name
+  ---
+  duration_ms: 0.511542
+  type: 'test'
+  ...
+# Subtest: AP23D3 late old configuration response cannot replace the current administrative context
+ok 17 - AP23D3 late old configuration response cannot replace the current administrative context
+  ---
+  duration_ms: 0.682375
+  type: 'test'
+  ...
+# Subtest: AP23D3 invalid network adaptation clears all previously displayed local Format8 contexts
+ok 18 - AP23D3 invalid network adaptation clears all previously displayed local Format8 contexts
+  ---
+  duration_ms: 0.380625
+  type: 'test'
+  ...
+# Subtest: AP23D3 same-configuration fallback forwards only its revalidated administrative context
+ok 19 - AP23D3 same-configuration fallback forwards only its revalidated administrative context
+  ---
+  duration_ms: 0.564916
+  type: 'test'
+  ...
+# Subtest: AP23D3 returning to the historical AP5 host cannot retain a Format8 administrative context
+ok 20 - AP23D3 returning to the historical AP5 host cannot retain a Format8 administrative context
+  ---
+  duration_ms: 0.666916
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 137.517041

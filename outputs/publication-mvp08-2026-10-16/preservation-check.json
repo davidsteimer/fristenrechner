@@ -1,0 +1,98 @@
+{
+  "kind": "mvp08-publication-fresh-preservation",
+  "checkedAt": "2026-10-16T13:42:06.078Z",
+  "passed": true,
+  "originalSnapshot": {
+    "path": ".work/r08d-20261016/protected-artifacts-snapshot.private.json",
+    "byteLength": 796604,
+    "sha256": "8067f941112307cc065c3f5905ed5249256984889f6b03ed9fe01b48b45ef793",
+    "availability": "private-original-not-required"
+  },
+  "protectedFilesFreshlyVerified": 2569,
+  "productAndArchiveChecks": [
+    {
+      "check": "actual-build-input-closure",
+      "productInputs": 210,
+      "archivedInputs": 210,
+      "archivedFixtures": 599,
+      "runtimeFiles": 42,
+      "webFiles": 12,
+      "passed": true
+    },
+    {
+      "label": "normal-sppkg",
+      "entries": 18,
+      "directoryEntries": 3,
+      "allPayloadSizesAndHashesMatch": true
+    },
+    {
+      "label": "mirror-zip",
+      "entries": 42,
+      "directoryEntries": 0,
+      "allPayloadSizesAndHashesMatch": true
+    },
+    {
+      "label": "web-zip",
+      "entries": 12,
+      "directoryEntries": 0,
+      "allPayloadSizesAndHashesMatch": true
+    },
+    {
+      "check": "recovery-and-roundtrip-bindings",
+      "recoveryArchive": 729,
+      "protectedMvp07Files": 231,
+      "roundtripInputs": 101,
+      "roundtripArchivedFiles": 102,
+      "passed": true,
+      "roundtripRerun": false
+    }
+  ],
+  "definitiveArtifacts": [
+    {
+      "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-0.8.0.0.sppkg",
+      "byteLength": 311611,
+      "sha256": "d3d06adcd78176db66f8227d884fd66ca2fbcee0bffab66755789dd0cc29dc1a"
+    },
+    {
+      "path": "outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-sharepoint-mirror.zip",
+      "byteLength": 225952,
+      "sha256": "81359611b5399b1b79c0f9dedb0d5ac540c9192a1382feb67095dadb8e89f8dd"
+    },
+    {
+      "path": "outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-steimer-web.zip",
+      "byteLength": 635927,
+      "sha256": "0abbc23d691835e5b04b64975140afb36c4bfa89482ff872c0c76188673f4176"
+    },
+    {
+      "path": "outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-recovery-0.8.0.1.sppkg",
+      "byteLength": 291892,
+      "sha256": "8e387297d43df28e2fe4d3c7c9ae239bb2cdc6a9e3216e4c59c928c50d950e7b"
+    }
+  ],
+  "protectedDecisions": [
+    {
+      "path": "docs/betrieb/eq-installationsvorlage-mvp08.md",
+      "byteLength": 12809,
+      "sha256": "d52442d920587bc115a2f24031bade520baaa704694d73737f35fb6bc8a62606"
+    },
+    {
+      "path": "docs/betrieb/rueckfall-mvp08.md",
+      "byteLength": 7991,
+      "sha256": "11e6c89ade2e610024077d1f4b801478079cceb24cec1c2c8a4b52b97b59f854"
+    },
+    {
+      "path": "docs/betrieb/pruefmatrix-mvp08.md",
+      "byteLength": 13476,
+      "sha256": "1d856a8676070a671e7fc67badd0eb858d20c3ca37419a93c61c59eb5018ba2d"
+    }
+  ],
+  "personalWord": {
+    "path": "outputs/2026-08-28_Projekt-und-Realisierungsplan_Fristenrechner_Schweiz_V1.0.docx",
+    "excludedFromPublication": true,
+    "unchanged": true
+  },
+  "noProductOrLegalChanges": true,
+  "noDefinitiveRebuild": true,
+  "historicalOriginalsRewritten": false,
+  "note": "Fresh read-only byte comparison to the pre-cleanup snapshot. Prior structural archive checks reused after exact byte identity. No new host/recovery/Outlook run."
+}

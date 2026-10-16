@@ -1,0 +1,78 @@
+{
+  "kind": "ap23d2-ux-browser-evidence",
+  "date": "2026-10-15",
+  "status": "passed",
+  "scope": "local-preview",
+  "url": "http://127.0.0.1:8802/?candidate=ap23d2&ui=ux-nachtrag",
+  "browser": "Codex in-app browser",
+  "checks": [
+    {
+      "id": "B01",
+      "passed": true,
+      "description": "ZPO Bern: sechs Eingabefelder im unveränderten zweispaltigen Raster. Kein zusätzliches Feld Massgebender Feiertagskanton. 17.12.2026 plus fünf Fristtage ergibt 07.01.2027."
+    },
+    {
+      "id": "B02",
+      "passed": true,
+      "description": "ZPO-Rechenspur: lesbare Stillstandsperiode 18.12.2026–02.01.2027, Art. 145 Abs. 1 ZPO als tatsächliche Grundlage. Keine BGG-/VwVG-Generatorquellen in der fachlichen Stillstandsanzeige. Genau ein geschlossener technischer Aufklapper."
+    },
+    {
+      "id": "B03",
+      "passed": true,
+      "description": "Wechsel zu StPO entfernt das alte Ergebnis. Zustellung an eindeutig zustellungsberechtigte Vertretung zeigt Wohnsitz / Sitz der Vertretung – Kanton und die bestehende Rollenqualifikation."
+    },
+    {
+      "id": "B04",
+      "passed": true,
+      "description": "GR-Gerichtsverfahren, ordentliche Beschwerde, Normalfall ohne Dringlichkeitsverfügung: 17.12.2026 plus gebundene 30 Tage ergibt 01.02.2027. Sichtbare Rechenspur zeigt tatsächlichen Empfang, kalendermässigen Beginn, ersten Zähltag, Periode und passende VRG-GR-/Ruhetagsnormen. Keine Kennungen in der fachlichen Rechenspur."
+    },
+    {
+      "id": "B05",
+      "passed": true,
+      "description": "DE/FR-Umschaltung erhält Ergebnis und vollständige Fallauswahl. Deutsche Desktopansichten ZPO und GR visuell geprüft und gesichert. Layoutbreite und scrollWidth jeweils 1030 Pixel."
+    },
+    {
+      "id": "B06",
+      "passed": true,
+      "description": "FR-GR bei angefordertem Viewport 390×844: tatsächlich gemessene Inhaltsbreite 375 Pixel, scrollWidth ebenfalls 375. Bestehender einspaltiger Umbruch, lesbare Feldwerte und Normlinks, kein horizontaler Überlauf."
+    },
+    {
+      "id": "B07",
+      "passed": true,
+      "description": "Technische Nachweise in schmaler FR-Ansicht geöffnet: Rohtext vorhanden (5437 Zeichen einschliesslich Überschrift), clientWidth und scrollWidth weiterhin 375 Pixel. Anschliessend geschlossen, Viewportoverride entfernt, Deutsch und normales Layout wiederhergestellt."
+    },
+    {
+      "id": "B08",
+      "passed": true,
+      "description": "Lokale Referenzkennzeichnung und gesperrter Kalenderexport sichtbar. Keine Standards in der Browserprüfung gespeichert und keine operativen Hosts angesprochen."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/zpo-de.png",
+      "byteLength": 220768,
+      "sha256": "7bdb958470ed918ee1ffe3e41fe60cdb152f4789f612d134d9c210dadd257264"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/stpo-vertretung-de.png",
+      "byteLength": 127587,
+      "sha256": "5a70803f7a4a08c68418049eec277a3a8420797bd896c04d3b6780d5219f071f"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/gr-de.png",
+      "byteLength": 228085,
+      "sha256": "9c28950b19f188d78575c14e9aaeb0d6e028ae9bbf14d99863ce53d319e3e940"
+    },
+    {
+      "path": "outputs/ap23d2-ux-2026-10-15/gr-fr-390.png",
+      "byteLength": 197395,
+      "sha256": "fb4822115ff7238420888d2dd52f8791a78a33afb4aed5c2ea2d9a2f33863baa"
+    }
+  ],
+  "limitations": [
+    "Lokale Browserprüfung, keine neue SharePoint-/Teams-Installation.",
+    "Keine reale iOS-/Magic-Keyboard-Prüfung.",
+    "UI-Abnahme bleibt bei David Steimer. Kein AP23D3-Start.",
+    "Automatisierte Tests ergänzen die Browserstichproben um die übrigen TI-/GR-Pfade, ZPO-Bundesbehörde, Gebietsfragen, Defaults und AHVG."
+  ]
+}

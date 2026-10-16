@@ -1,0 +1,628 @@
+TAP version 13
+# Subtest: AP23D1 raw Format 8 cannot use the historical calculator entry point
+ok 1 - AP23D1 raw Format 8 cannot use the historical calculator entry point
+  ---
+  duration_ms: 1.380417
+  type: 'test'
+  ...
+# Subtest: AP23D1 common counter begins next day and extends Saturday through Sunday
+ok 2 - AP23D1 common counter begins next day and extends Saturday through Sunday
+  ---
+  duration_ms: 0.831167
+  type: 'test'
+  ...
+# Subtest: AP23D1 suspension-following Sunday is the first counted day, no extra day
+ok 3 - AP23D1 suspension-following Sunday is the first counted day, no extra day
+  ---
+  duration_ms: 0.274667
+  type: 'test'
+  ...
+# Subtest: AP23D1 coverage is checked for every skipped day, not only endpoints
+ok 4 - AP23D1 coverage is checked for every skipped day, not only endpoints
+  ---
+  duration_ms: 0.187833
+  type: 'test'
+  ...
+# Subtest: AP23D1 delivery outside coverage blocks before arithmetic
+ok 5 - AP23D1 delivery outside coverage blocks before arithmetic
+  ---
+  duration_ms: 0.084042
+  type: 'test'
+  ...
+# Subtest: AP23D1 end shift cannot leave the approved calculation window
+ok 6 - AP23D1 end shift cannot leave the approved calculation window
+  ---
+  duration_ms: 0.096708
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI-O2 returns diagnostic evidence but no definitive end date
+ok 7 - AP23D1 TI-O2 returns diagnostic evidence but no definitive end date
+  ---
+  duration_ms: 0.37525
+  type: 'test'
+  ...
+# Subtest: AP23D1 same physical end shift remains unchanged when TI guard is inapplicable
+ok 8 - AP23D1 same physical end shift remains unchanged when TI guard is inapplicable
+  ---
+  duration_ms: 0.203417
+  type: 'test'
+  ...
+# Subtest: AP23D1 overlapping suspension periods never double-count skipped calendar days
+ok 9 - AP23D1 overlapping suspension periods never double-count skipped calendar days
+  ---
+  duration_ms: 0.516708
+  type: 'test'
+  ...
+# Subtest: AP23D1 malformed arithmetic inputs fail closed
+ok 10 - AP23D1 malformed arithmetic inputs fail closed
+  ---
+  duration_ms: 0.475
+  type: 'test'
+  ...
+# Subtest: AP23D1 accepts the preserved AP23C twelve-path candidate without activation
+ok 11 - AP23D1 accepts the preserved AP23C twelve-path candidate without activation
+  ---
+  duration_ms: 46.514916
+  type: 'test'
+  ...
+# Subtest: technical contract approval alone neither promotes nor activates the candidate
+ok 12 - technical contract approval alone neither promotes nor activates the candidate
+  ---
+  duration_ms: 56.091791
+  type: 'test'
+  ...
+# Subtest: closed schema rejects unknown, executable and contradictory metadata
+ok 13 - closed schema rejects unknown, executable and contradictory metadata
+  ---
+  duration_ms: 21.627167
+  type: 'test'
+  ...
+# Subtest: all identity collections reject duplicates
+ok 14 - all identity collections reject duplicates
+  ---
+  duration_ms: 36.298667
+  type: 'test'
+  ...
+# Subtest: every source reference resolves, including nested policy and suspension sources
+ok 15 - every source reference resolves, including nested policy and suspension sources
+  ---
+  duration_ms: 40.783375
+  type: 'test'
+  ...
+# Subtest: foreign laws, cantons and cross-law components fail before calculation
+ok 16 - foreign laws, cantons and cross-law components fail before calculation
+  ---
+  duration_ms: 41.53825
+  type: 'test'
+  ...
+# Subtest: impossible recurring dates, absent winter offset and overlaps are rejected
+ok 17 - impossible recurring dates, absent winter offset and overlaps are rejected
+  ---
+  duration_ms: 23.580666
+  type: 'test'
+  ...
+# Subtest: date generator shares Gregorian Easter and preserves inclusive winter boundaries
+ok 18 - date generator shares Gregorian Easter and preserves inclusive winter boundaries
+  ---
+  duration_ms: 0.278209
+  type: 'test'
+  ...
+# Subtest: ordered duration limits and fixed-duration non-override are structural contracts
+ok 19 - ordered duration limits and fixed-duration non-override are structural contracts
+  ---
+  duration_ms: 9.281209
+  type: 'test'
+  ...
+# Subtest: urgency is limited to qualified GR judicial suspension contexts
+ok 20 - urgency is limited to qualified GR judicial suspension contexts
+  ---
+  duration_ms: 38.124166
+  type: 'test'
+  ...
+# Subtest: all temporal intervals use actual dates and the evaluated-day envelope is nested
+ok 21 - all temporal intervals use actual dates and the evaluated-day envelope is nested
+  ---
+  duration_ms: 50.557584
+  type: 'test'
+  ...
+# Subtest: eligibility is exhaustive, unique and revision-bound, never first-match
+ok 22 - eligibility is exhaustive, unique and revision-bound, never first-match
+  ---
+  duration_ms: 28.560417
+  type: 'test'
+  ...
+# Subtest: path, holiday and suspension hashes are recomputed from semantic objects
+ok 23 - path, holiday and suspension hashes are recomputed from semantic objects
+  ---
+  duration_ms: 34.081417
+  type: 'test'
+  ...
+# Subtest: physical references require canonical paths, identity union and consistent roles
+ok 24 - physical references require canonical paths, identity union and consistent roles
+  ---
+  duration_ms: 37.987458
+  type: 'test'
+  ...
+# Subtest: general catalog is not permanently restricted to two names or twelve paths
+ok 25 - general catalog is not permanently restricted to two names or twelve paths
+  ---
+  duration_ms: 16.191375
+  type: 'test'
+  ...
+# Subtest: released shape has explicit evidence and an exact per-path component set
+ok 26 - released shape has explicit evidence and an exact per-path component set
+  ---
+  duration_ms: 66.445292
+  type: 'test'
+  ...
+# Subtest: actual approved release binding rejects stale hashes, wrong release or missing components
+ok 27 - actual approved release binding rejects stale hashes, wrong release or missing components
+  ---
+  duration_ms: 58.388208
+  type: 'test'
+  ...
+# Subtest: local reference verifies identities but does not confuse baseline bytes with target bytes
+ok 28 - local reference verifies identities but does not confuse baseline bytes with target bytes
+  ---
+  duration_ms: 35.477959
+  type: 'test'
+  ...
+# Subtest: withdrawn release remains inspectable but cannot activate approved or local-reference modes
+ok 29 - withdrawn release remains inspectable but cannot activate approved or local-reference modes
+  ---
+  duration_ms: 37.98925
+  type: 'test'
+  ...
+# Subtest: implementation schema preserves the accepted structural contract exactly apart from its title
+ok 30 - implementation schema preserves the accepted structural contract exactly apart from its title
+  ---
+  duration_ms: 1.970208
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI01 runs the AP23B reference through the qualified shared product counter
+ok 31 - AP23D1 TI01 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 3.525625
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI02 runs the AP23B reference through the qualified shared product counter
+ok 32 - AP23D1 TI02 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.6225
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI03 runs the AP23B reference through the qualified shared product counter
+ok 33 - AP23D1 TI03 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.829292
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI04 runs the AP23B reference through the qualified shared product counter
+ok 34 - AP23D1 TI04 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 1.208375
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI05 runs the AP23B reference through the qualified shared product counter
+ok 35 - AP23D1 TI05 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 1.061208
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI06 runs the AP23B reference through the qualified shared product counter
+ok 36 - AP23D1 TI06 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.605167
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI07 runs the AP23B reference through the qualified shared product counter
+ok 37 - AP23D1 TI07 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 1.025958
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI08 runs the AP23B reference through the qualified shared product counter
+ok 38 - AP23D1 TI08 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.495084
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI09 runs the AP23B reference through the qualified shared product counter
+ok 39 - AP23D1 TI09 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 1.066458
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI10 runs the AP23B reference through the qualified shared product counter
+ok 40 - AP23D1 TI10 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 1.887042
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI11 runs the AP23B reference through the qualified shared product counter
+ok 41 - AP23D1 TI11 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.719708
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI12 runs the AP23B reference through the qualified shared product counter
+ok 42 - AP23D1 TI12 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 1.004667
+  type: 'test'
+  ...
+# Subtest: AP23D1 GR07 runs the AP23B reference through the qualified shared product counter
+ok 43 - AP23D1 GR07 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.923792
+  type: 'test'
+  ...
+# Subtest: AP23D1 GR08 runs the AP23B reference through the qualified shared product counter
+ok 44 - AP23D1 GR08 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.503541
+  type: 'test'
+  ...
+# Subtest: AP23D1 GR09 runs the AP23B reference through the qualified shared product counter
+ok 45 - AP23D1 GR09 runs the AP23B reference through the qualified shared product counter
+  ---
+  duration_ms: 0.609333
+  type: 'test'
+  ...
+# Subtest: AP23D1 all twelve TI/GR groups retain distinct path, revision and stage identities
+ok 46 - AP23D1 all twelve TI/GR groups retain distinct path, revision and stage identities
+  ---
+  duration_ms: 5.717291
+  type: 'test'
+  ...
+# Subtest: AP23D1 historical pre-window GR references remain blocked, not silently promoted to product coverage
+ok 47 - AP23D1 historical pre-window GR references remain blocked, not silently promoted to product coverage
+  ---
+  duration_ms: 0.24525
+  type: 'test'
+  ...
+# Subtest: AP23D1 GR court and administration retain distinct 2027 summer rules
+ok 48 - AP23D1 GR court and administration retain distinct 2027 summer rules
+  ---
+  duration_ms: 3.09975
+  type: 'test'
+  ...
+# Subtest: AP23D1 only an explicit GR judicial urgency order disables court suspensions
+ok 49 - AP23D1 only an explicit GR judicial urgency order disables court suspensions
+  ---
+  duration_ms: 1.270709
+  type: 'test'
+  ...
+# Subtest: AP23D1 own GR binding does not import federal GR-BASE-ONLY limitations or unrelated TI holidays
+ok 50 - AP23D1 own GR binding does not import federal GR-BASE-ONLY limitations or unrelated TI holidays
+  ---
+  duration_ms: 0.74825
+  type: 'test'
+  ...
+# Subtest: AP23D1 TI authority seat alone binds holidays, no party/representative TI confirmation is required
+ok 51 - AP23D1 TI authority seat alone binds holidays, no party/representative TI confirmation is required
+  ---
+  duration_ms: 0.579791
+  type: 'test'
+  ...
+# Subtest: AP23D1 statutory duration cannot be overridden and authority-ordered duration is required
+ok 52 - AP23D1 statutory duration cannot be overridden and authority-ordered duration is required
+  ---
+  duration_ms: 1.80075
+  type: 'test'
+  ...
+# Subtest: AP23D1 federal specials and explicit cantonal holiday exceptions never fall back to the seat rule
+ok 53 - AP23D1 federal specials and explicit cantonal holiday exceptions never fall back to the seat rule
+  ---
+  duration_ms: 0.105334
+  type: 'test'
+  ...
+# Subtest: AP23D1 fixed dates, evidence advances and deviating starts cannot masquerade as general day deadlines
+ok 54 - AP23D1 fixed dates, evidence advances and deviating starts cannot masquerade as general day deadlines
+  ---
+  duration_ms: 0.079208
+  type: 'test'
+  ...
+# Subtest: AP23D1 date and new-path coverage is checked during delivery, counting, suspensions and final shifts
+ok 55 - AP23D1 date and new-path coverage is checked during delivery, counting, suspensions and final shifts
+  ---
+  duration_ms: 0.979292
+  type: 'test'
+  ...
+# Subtest: AP23D1 final holiday/weekend shifting cannot escape a narrower bound path window
+ok 56 - AP23D1 final holiday/weekend shifting cannot escape a narrower bound path window
+  ---
+  duration_ms: 1551.401375
+  type: 'test'
+  ...
+# Subtest: AP23D1 law, revision, stage and competent seat are exact, NW is not activated
+ok 57 - AP23D1 law, revision, stage and competent seat are exact, NW is not activated
+  ---
+  duration_ms: 0.348834
+  type: 'test'
+  ...
+# Subtest: AP23D1 raw catalogues, maps, copied or serialized reader contexts cannot grant calculation permission
+ok 58 - AP23D1 raw catalogues, maps, copied or serialized reader contexts cannot grant calculation permission
+  ---
+  duration_ms: 11.343833
+  type: 'test'
+  ...
+# Subtest: AP23D1 results are immutable and approved-versus-reference export eligibility is preserved
+ok 59 - AP23D1 results are immutable and approved-versus-reference export eligibility is preserved
+  ---
+  duration_ms: 2032.381875
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader verifies 41 exact artifacts and preserves five profiles, 32 calendars and 44/50 social definitions
+ok 60 - AP23D1 reader verifies 41 exact artifacts and preserves five profiles, 32 calendars and 44/50 social definitions
+  ---
+  duration_ms: 4630.55175
+  type: 'test'
+  ...
+# Subtest: AP23D1 verified context is detached, deeply frozen and cannot be copied or serialized into a capability
+ok 61 - AP23D1 verified context is detached, deeply frozen and cannot be copied or serialized into a capability
+  ---
+  duration_ms: 1496.205666
+  type: 'test'
+  ...
+# Subtest: AP23D1 candidate and approved entry points are disjoint and old consumer 7 rejects manifest 8
+ok 62 - AP23D1 candidate and approved entry points are disjoint and old consumer 7 rejects manifest 8
+  ---
+  duration_ms: 17.720166
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects missing file
+ok 63 - AP23D1 reader rejects missing file
+  ---
+  duration_ms: 9.115708
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects extra file
+ok 64 - AP23D1 reader rejects extra file
+  ---
+  duration_ms: 9.762583
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects duplicate descriptor
+ok 65 - AP23D1 reader rejects duplicate descriptor
+  ---
+  duration_ms: 2.244834
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects duplicate identity
+ok 66 - AP23D1 reader rejects duplicate identity
+  ---
+  duration_ms: 18.82725
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects wrong minimum consumer
+ok 67 - AP23D1 reader rejects wrong minimum consumer
+  ---
+  duration_ms: 8.77875
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects unknown manifest field
+ok 68 - AP23D1 reader rejects unknown manifest field
+  ---
+  duration_ms: 17.926959
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects raw-byte whitespace tamper
+ok 69 - AP23D1 reader rejects raw-byte whitespace tamper
+  ---
+  duration_ms: 448.60775
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects wrong declared length
+ok 70 - AP23D1 reader rejects wrong declared length
+  ---
+  duration_ms: 6.561875
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects wrong declared hash
+ok 71 - AP23D1 reader rejects wrong declared hash
+  ---
+  duration_ms: 6.493125
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects role/schema mismatch
+ok 72 - AP23D1 reader rejects role/schema mismatch
+  ---
+  duration_ms: 6.593167
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects missing manifest source
+ok 73 - AP23D1 reader rejects missing manifest source
+  ---
+  duration_ms: 1154.203583
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects extra manifest source
+ok 74 - AP23D1 reader rejects extra manifest source
+  ---
+  duration_ms: 1436.453917
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects duplicate source union
+ok 75 - AP23D1 reader rejects duplicate source union
+  ---
+  duration_ms: 10.55475
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects unknown release state
+ok 76 - AP23D1 reader rejects unknown release state
+  ---
+  duration_ms: 10.411375
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects finite global coverage change
+ok 77 - AP23D1 reader rejects finite global coverage change
+  ---
+  duration_ms: 17.188875
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects traversal path
+ok 78 - AP23D1 reader rejects traversal path
+  ---
+  duration_ms: 9.238417
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed changed old profile rule
+ok 79 - AP23D1 reader rejects resealed changed old profile rule
+  ---
+  duration_ms: 1458.305625
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed conflicting source provenance
+ok 80 - AP23D1 reader rejects resealed conflicting source provenance
+  ---
+  duration_ms: 1507.288792
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed duplicate local source
+ok 81 - AP23D1 reader rejects resealed duplicate local source
+  ---
+  duration_ms: 1324.690125
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed wrong calendar source hash
+ok 82 - AP23D1 reader rejects resealed wrong calendar source hash
+  ---
+  duration_ms: 1091.590333
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed calendar inheritance loop
+ok 83 - AP23D1 reader rejects resealed calendar inheritance loop
+  ---
+  duration_ms: 1186.231416
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed source review pending in approved declaration
+ok 84 - AP23D1 reader rejects resealed source review pending in approved declaration
+  ---
+  duration_ms: 587.655458
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed administrative stale target hash
+ok 85 - AP23D1 reader rejects resealed administrative stale target hash
+  ---
+  duration_ms: 2205.875917
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed administrative different release
+ok 86 - AP23D1 reader rejects resealed administrative different release
+  ---
+  duration_ms: 2357.0775
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed administrative withdrawn contract
+ok 87 - AP23D1 reader rejects resealed administrative withdrawn contract
+  ---
+  duration_ms: 661.557208
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed administrative missing path approval
+ok 88 - AP23D1 reader rejects resealed administrative missing path approval
+  ---
+  duration_ms: 1928.038625
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed administrative serialised runtime authority
+ok 89 - AP23D1 reader rejects resealed administrative serialised runtime authority
+  ---
+  duration_ms: 526.241209
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed social stale component hash
+ok 90 - AP23D1 reader rejects resealed social stale component hash
+  ---
+  duration_ms: 1461.230125
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed social missing dependency
+ok 91 - AP23D1 reader rejects resealed social missing dependency
+  ---
+  duration_ms: 1453.726333
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed social foreign release
+ok 92 - AP23D1 reader rejects resealed social foreign release
+  ---
+  duration_ms: 1469.103666
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed social missing binding permission
+ok 93 - AP23D1 reader rejects resealed social missing binding permission
+  ---
+  duration_ms: 1438.503167
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed social missing route permission
+ok 94 - AP23D1 reader rejects resealed social missing route permission
+  ---
+  duration_ms: 482.197458
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed social extended coverage
+ok 95 - AP23D1 reader rejects resealed social extended coverage
+  ---
+  duration_ms: 1484.35075
+  type: 'test'
+  ...
+# Subtest: AP23D1 reader rejects resealed changed old holiday rule
+ok 96 - AP23D1 reader rejects resealed changed old holiday rule
+  ---
+  duration_ms: 725.168792
+  type: 'test'
+  ...
+# Subtest: AP23D1 rejected runtime flag and withdrawn contract also fail the local reference path
+ok 97 - AP23D1 rejected runtime flag and withdrawn contract also fail the local reference path
+  ---
+  duration_ms: 986.819958
+  type: 'test'
+  ...
+# Subtest: AP23D1 calendar physical binding cannot silently point to Bern, even with resealed definition hashes
+ok 98 - AP23D1 calendar physical binding cannot silently point to Bern, even with resealed definition hashes
+  ---
+  duration_ms: 1420.528709
+  type: 'test'
+  ...
+# Subtest: AP23D1 administrative candidate does not borrow federal procedure permission or need party locations
+ok 99 - AP23D1 administrative candidate does not borrow federal procedure permission or need party locations
+  ---
+  duration_ms: 1496.154375
+  type: 'test'
+  ...
+# Subtest: AP23D1 rejects every AI regional alternative without explicit area facts, including its base
+ok 100 - AP23D1 rejects every AI regional alternative without explicit area facts, including its base
+  ---
+  duration_ms: 3081.283458
+  type: 'test'
+  ...
+# Subtest: AP23D1 rejects every NE regional alternative without explicit area facts, including its base
+ok 101 - AP23D1 rejects every NE regional alternative without explicit area facts, including its base
+  ---
+  duration_ms: 2452.195583
+  type: 'test'
+  ...
+# Subtest: AP23D1 rejects a path window preceding its geographic scope even when norm and definition hashes are internally consistent
+ok 102 - AP23D1 rejects a path window preceding its geographic scope even when norm and definition hashes are internally consistent
+  ---
+  duration_ms: 1253.161
+  type: 'test'
+  ...
+# Subtest: AP23D1 fixtures retain the original AP23C bytes and create no release on disk
+ok 103 - AP23D1 fixtures retain the original AP23C bytes and create no release on disk
+  ---
+  duration_ms: 1207.703041
+  type: 'test'
+  ...
+1..103
+# tests 103
+# suites 0
+# pass 103
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44729.811417

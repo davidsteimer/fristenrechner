@@ -1,0 +1,528 @@
+{
+  "kind": "mvp08-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp08-2026-10-15/source-approval.json",
+  "selectedFields": [
+    "formatVersion",
+    "dataKind",
+    "approvalId",
+    "approvedOn",
+    "approvedBy",
+    "recordStatus",
+    "declaration",
+    "decisionRef",
+    "candidateReleaseId",
+    "permissions",
+    "scope",
+    "acceptedNormBridges",
+    "explicitBoundedReuse",
+    "retainedLimits",
+    "responsibility",
+    "nextGate"
+  ],
+  "omittedTopLevelFields": [
+    "retainedVersionBridges",
+    "acceptedSourceIds",
+    "evidence"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "formatVersion": "1.0.0",
+    "dataKind": "sourceReviewApproval",
+    "approvalId": "2026-10-15-mvp-08-source-approval.1",
+    "approvedOn": "2026-10-15",
+    "approvedBy": "David Steimer",
+    "recordStatus": "approved",
+    "declaration": "Ich nehme R08-A2 für MVP 0.8 einschliesslich der begründeten Wiederverwendung, der neuen Fassungsbefunde und der fortbestehenden Vorbehalte ab. Bitte bereite die konkrete Übernahme- und Buildvorlage R08-B vor.",
+    "decisionRef": "docs/fachrecht/abnahme-quellen-mvp08.md",
+    "candidateReleaseId": "2026-10-15-ap23d2-reference.1",
+    "permissions": {
+      "sourceReviewApproved": true,
+      "buildProposalPreparationAuthorized": true,
+      "localDataPromotionAuthorized": false,
+      "definitiveLocalBuildAuthorized": false,
+      "localCommitAuthorized": false,
+      "installationAuthorized": false,
+      "publicationAuthorized": false,
+      "hostingChangesAuthorized": false,
+      "operatingApproval": false,
+      "m365PermissionChangesAuthorized": false,
+      "testAppCleanupAuthorized": false
+    },
+    "scope": {
+      "sourceIds": 243,
+      "withFreshEvidence": 171,
+      "reusedWithoutFreshEvidence": 72,
+      "withExplicitReuse": 243,
+      "outcomes": {
+        "unchanged": 241,
+        "unclear": 2
+      },
+      "groups": {
+        "baseline": {
+          "sourceIds": 77,
+          "withFreshEvidence": 67,
+          "reusedWithoutFreshEvidence": 10,
+          "withExplicitReuse": 77,
+          "outcomes": {
+            "unchanged": 77
+          }
+        },
+        "calendar": {
+          "sourceIds": 155,
+          "withFreshEvidence": 93,
+          "reusedWithoutFreshEvidence": 62,
+          "withExplicitReuse": 155,
+          "outcomes": {
+            "unchanged": 153,
+            "unclear": 2
+          }
+        },
+        "administrative": {
+          "sourceIds": 11,
+          "withFreshEvidence": 11,
+          "reusedWithoutFreshEvidence": 0,
+          "withExplicitReuse": 11,
+          "outcomes": {
+            "unchanged": 11
+          }
+        }
+      },
+      "uniqueBoundEvidenceFiles": 541,
+      "protectedFilesUnchanged": 559,
+      "newlyPublishedActs": 5,
+      "affectedLawFamilies": 8,
+      "newIntermediateVersions": 5,
+      "sourceRowsWithNormDeltas": 18,
+      "changedUsedRules": 0,
+      "allOriginalsFreshlyRead": false,
+      "additionalCasesApproved": false,
+      "administrativePaths": 12,
+      "administrativeCoverage": {
+        "from": "2026-08-29",
+        "to": "2027-12-31"
+      },
+      "socialRules": 44,
+      "socialBindings": 50,
+      "socialOperativeCantons": [
+        "BE"
+      ],
+      "socialCoverage": {
+        "from": "2026-01-01",
+        "to": "2027-12-31"
+      }
+    },
+    "acceptedNormBridges": {
+      "AHVG": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/63/837_843_843",
+        "acts": [
+          "542"
+        ],
+        "changedProvisions": [
+          "Art. 2, 8, 10, 33ter, 34"
+        ],
+        "usedArticles": [
+          "1",
+          "84"
+        ],
+        "finding": "AS 2026 542 passt AHV-Beitragsskala, Mindestbeiträge, Renten und Indexstände an. Die allgemeine ATSG-Anwendung nach Art. 1 und die besondere Gerichtszuständigkeit nach Art. 84 werden nicht geändert. Eine unveränderte Gesamtfassung des AHVG wird ausdrücklich nicht behauptet.",
+        "existingSourceIds": [
+          "SRC-AP17C-AHVG-20260101",
+          "SRC-AP17C-AHVG-20270101"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-542.response",
+            "sha256": "6b13fa507def758431ad4bcf21b83a7d2640933b7e39013c9d458719cc40d3bf",
+            "byteLength": 13135,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/542/de/xml/fedlex-data-admin-ch-eli-oc-2026-542-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781189+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027."
+      },
+      "IVG": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1959/827_857_845",
+        "acts": [
+          "542"
+        ],
+        "changedProvisions": [
+          "Art. 3 Abs. 1bis, leistungsbetragsabhängige Anpassungen"
+        ],
+        "usedArticles": [
+          "1",
+          "57a",
+          "69"
+        ],
+        "finding": "AS 2026 542 Art. 5 und 6 betrifft Leistungen und den Mindestbeitrag der IV. ATSG-Verweis, Einwand nach Art. 57a und Rechtsmittel-/Zuständigkeitsregel nach Art. 69 bleiben ausserhalb der Änderung.",
+        "existingSourceIds": [
+          "SRC-AP17C-IVG-20260101",
+          "SRC-AP17C-IVG-20270101"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-542.response",
+            "sha256": "6b13fa507def758431ad4bcf21b83a7d2640933b7e39013c9d458719cc40d3bf",
+            "byteLength": 13135,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/542/de/xml/fedlex-data-admin-ch-eli-oc-2026-542-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781189+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027."
+      },
+      "IVV": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1961/29_29_29",
+        "acts": [
+          "544"
+        ],
+        "changedProvisions": [
+          "Art. 1bis",
+          "Art. 35bis Abs. 2ter",
+          "Art. 39f",
+          "Art. 66 Abs. 1ter"
+        ],
+        "usedArticles": [
+          "73bis",
+          "73ter"
+        ],
+        "newIntermediateVersion": "2027-01-01",
+        "finding": "AS 2026 544 betrifft Beiträge, Assistenzbeträge, die volle Hilflosenentschädigung für bestimmte minderjährige Versicherte und die Anmeldung für Hilfsmittel durch den Arbeitgeber. Art. 66 Abs. 1ter enthält eine vorgängig besprochene und von der versicherten Person unterzeichnete Leistungsanmeldung, keine neue prozessuale Empfangs-, Einwand- oder Rechtsmittelfrist. Die für den Rechner verwendeten Art. 73bis und 73ter werden nicht geändert.",
+        "existingSourceIds": [
+          "SRC-AP17C-IVV-20250601",
+          "SRC-AP17C-IVV-20270701"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-544.response",
+            "sha256": "54373667f0a7c3c07bf2b4fc8f746d942b46db35533a217e41398461030ad5f5",
+            "byteLength": 12203,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/544/de/xml/fedlex-data-admin-ch-eli-oc-2026-544-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781648+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027.",
+        "freshVersionIndexRow": {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1961/29_29_29",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1961/29_29_29/20270101",
+          "start": "2027-01-01",
+          "end": "2027-06-30"
+        },
+        "consolidatedXmlAvailableAtCheckedEndpoint": false,
+        "availabilityEvidence": {
+          "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/IVV-20270101-availability.response",
+          "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+          "byteLength": 77151,
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1961/29_29_29/20270101/de/xml/fedlex-data-admin-ch-eli-cc-1961-29_29_29-20270101-de-xml.xml",
+          "retrievedAt": "2026-10-15T17:38:28.147997+00:00",
+          "method": "fresh-availability-only-HTML-shell-not-norm-text",
+          "status": 200
+        },
+        "bridgeScope": "Die vollständige aktuelle Änderungskette trägt den engen Artikelfortgeltungsbefund. Kein vollständig neu konsolidierter 2027-Text wird vorgetäuscht. Neue Konsolidate beim nächsten Prüfauslöser oder spätestens vor Ablösung der Brücke erneut abrufen."
+      },
+      "EOG": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+        "acts": [
+          "542"
+        ],
+        "changedProvisions": [
+          "Art. 16a",
+          "Art. 16f",
+          "Art. 27"
+        ],
+        "usedArticles": [
+          "1",
+          "17",
+          "18",
+          "24",
+          "16mbis",
+          "16sbis",
+          "16x"
+        ],
+        "newIntermediateVersion": "2027-01-01",
+        "finding": "AS 2026 542 Art. 7 bis 9 passt EO-Höchstentschädigungen, Indexstand und Mindestbeitrag an. Die individuelle Leistungs-/Verfügungsqualifikation nach Art. 1, 17 und 18 sowie Art. 24 zur Zuständigkeit bleiben unberührt. Die bereits ab Juli 2027 gebundenen Ausschlüsse kantonaler Zusatzleistungen nach Art. 16mbis, 16sbis und 16x bleiben getrennt. Keine Betrags- oder Anspruchsberechnung wird aktiviert.",
+        "existingSourceIds": [
+          "SRC-AP20C1-EOG-20250128",
+          "SRC-AP20C1-EOG-20260601",
+          "SRC-AP20C1-EOG-20270701"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-542.response",
+            "sha256": "6b13fa507def758431ad4bcf21b83a7d2640933b7e39013c9d458719cc40d3bf",
+            "byteLength": 13135,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/542/de/xml/fedlex-data-admin-ch-eli-oc-2026-542-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781189+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027.",
+        "freshVersionIndexRow": {
+          "work": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050",
+          "version": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270101",
+          "start": "2027-01-01",
+          "end": "2027-06-30"
+        },
+        "consolidatedXmlAvailableAtCheckedEndpoint": false,
+        "availabilityEvidence": {
+          "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/EOG-20270101-availability.response",
+          "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+          "byteLength": 77151,
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20270101/de/xml/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20270101-de-xml.xml",
+          "retrievedAt": "2026-10-15T17:38:28.239292+00:00",
+          "method": "fresh-availability-only-HTML-shell-not-norm-text",
+          "status": 200
+        },
+        "bridgeScope": "Die vollständige aktuelle Änderungskette trägt den engen Artikelfortgeltungsbefund. Kein vollständig neu konsolidierter 2027-Text wird vorgetäuscht. Neue Konsolidate beim nächsten Prüfauslöser oder spätestens vor Ablösung der Brücke erneut abrufen."
+      },
+      "EOV": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+        "acts": [
+          "548"
+        ],
+        "changedProvisions": [
+          "Art. 19e Abs. 2",
+          "Art. 36"
+        ],
+        "usedArticles": [
+          "19",
+          "34",
+          "35i",
+          "35q"
+        ],
+        "newIntermediateVersion": "2027-01-01",
+        "finding": "AS 2026 548 betrifft die Löschung eingereichter Belege nach Bearbeitung der Anmeldung und die Beitragsskala. Art. 19e Abs. 2 ist keine Regel zum Beginn einer Rechtsmittelfrist und ersetzt keine förmliche Eröffnung. Die verwendeten Kassenzuständigkeiten nach Art. 19, 34, 35i und 35q bleiben unberührt.",
+        "existingSourceIds": [
+          "SRC-AP20C1-EOV-20250101",
+          "SRC-AP20C1-EOV-20260601",
+          "SRC-AP20C1-EOV-20270701"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-548.response",
+            "sha256": "95bcac8ca281bc994f7c2e7fc7f9175f68a6ba6fd5e69fa15726e3bcfaaad5a8",
+            "byteLength": 10056,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/548/de/xml/fedlex-data-admin-ch-eli-oc-2026-548-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781935+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027.",
+        "freshVersionIndexRow": {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2005/187",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2005/187/20270101",
+          "start": "2027-01-01",
+          "end": "2027-06-30"
+        },
+        "consolidatedXmlAvailableAtCheckedEndpoint": false,
+        "availabilityEvidence": {
+          "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/EOV-20270101-availability.response",
+          "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+          "byteLength": 77151,
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2005-187-20270101-de-xml.xml",
+          "retrievedAt": "2026-10-15T17:38:28.289789+00:00",
+          "method": "fresh-availability-only-HTML-shell-not-norm-text",
+          "status": 200
+        },
+        "bridgeScope": "Die vollständige aktuelle Änderungskette trägt den engen Artikelfortgeltungsbefund. Kein vollständig neu konsolidierter 2027-Text wird vorgetäuscht. Neue Konsolidate beim nächsten Prüfauslöser oder spätestens vor Ablösung der Brücke erneut abrufen."
+      },
+      "ELG": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2007/804",
+        "acts": [
+          "546"
+        ],
+        "changedProvisions": [
+          "Art. 10",
+          "Art. 17"
+        ],
+        "usedArticles": [
+          "1",
+          "2",
+          "3",
+          "14",
+          "15",
+          "16",
+          "21"
+        ],
+        "finding": "AS 2026 546 passt den allgemeinen Lebensbedarf, Mietzinsobergrenzen und Beiträge an gemeinnützige Institutionen an. Die verwendete Zuordnung individueller Leistungen, der ATSG-Anschluss sowie die kantonalen Durchführungsorgane nach Art. 21 Abs. 2 bleiben unberührt. Allgemeine Leistungsbeträge sind nicht Bestandteil des Fristenrechners.",
+        "existingSourceIds": [
+          "SRC-AP19C-ELG-20260101",
+          "SRC-AP19C-ELG-20270101",
+          "SRC-AP20C3-ELG-20260101",
+          "SRC-AP20C3-ELG-20270101"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-546.response",
+            "sha256": "ac77870a61531581f3e18181dc3770c67e702d37bf2854981cda039e3fcec02a",
+            "byteLength": 10508,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/546/de/xml/fedlex-data-admin-ch-eli-oc-2026-546-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781817+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027."
+      },
+      "UELG": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2021/373",
+        "acts": [
+          "546"
+        ],
+        "changedProvisions": [
+          "Art. 9"
+        ],
+        "usedArticles": [
+          "1",
+          "18",
+          "19"
+        ],
+        "newIntermediateVersion": "2027-01-01",
+        "finding": "AS 2026 546 passt Lebensbedarf und Mietzinsbeträge nach Art. 9 ÜLG an. ATSG-Anwendung nach Art. 1, die ausgeschlossene materielle Anspruchsfrist nach Art. 18 und die Verwaltungszuständigkeit nach Art. 19 bleiben unverändert. Dies ist kein Null-Delta des Gesamtgesetzes.",
+        "existingSourceIds": [
+          "SRC-AP20C3-UELG-20250101"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-546.response",
+            "sha256": "ac77870a61531581f3e18181dc3770c67e702d37bf2854981cda039e3fcec02a",
+            "byteLength": 10508,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/546/de/xml/fedlex-data-admin-ch-eli-oc-2026-546-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:27.781817+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027.",
+        "freshVersionIndexRow": {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2021/373",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2021/373/20270101",
+          "start": "2027-01-01",
+          "end": "2028-12-31"
+        },
+        "consolidatedXmlAvailableAtCheckedEndpoint": false,
+        "availabilityEvidence": {
+          "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/UELG-20270101-availability.response",
+          "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+          "byteLength": 77151,
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/373/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2021-373-20270101-de-xml.xml",
+          "retrievedAt": "2026-10-15T17:38:28.377042+00:00",
+          "method": "fresh-availability-only-HTML-shell-not-norm-text",
+          "status": 200
+        },
+        "bridgeScope": "Die vollständige aktuelle Änderungskette trägt den engen Artikelfortgeltungsbefund. Kein vollständig neu konsolidierter 2027-Text wird vorgetäuscht. Neue Konsolidate beim nächsten Prüfauslöser oder spätestens vor Ablösung der Brücke erneut abrufen."
+      },
+      "UELV": {
+        "work": "https://fedlex.data.admin.ch/eli/cc/2021/376",
+        "acts": [
+          "549"
+        ],
+        "changedProvisions": [
+          "Art. 8a",
+          "Art. 17",
+          "Art. 44 Abs. 2"
+        ],
+        "usedArticles": [
+          "38"
+        ],
+        "newIntermediateVersion": "2027-01-01",
+        "finding": "AS 2026 549 ändert Mietzinsaufteilung, Ermittlung des Erwerbseinkommens und Schwellen für eine Anpassung jährlicher Überbrückungsleistungen. Die Aussage zur grundsätzlich 90-tägigen Bearbeitungsfrist des Durchführungsorgans nach Art. 38 bleibt unverändert. Die neuen materiellen Berechnungsregeln werden nicht als prozessuale Tagesfristen modelliert.",
+        "existingSourceIds": [
+          "SRC-AP20C3-UELV-20250101"
+        ],
+        "reusedArticleInterpretationsRemainDated": "2026-10-08",
+        "humanApproval": false,
+        "sourceReleaseApproved": false,
+        "calculationRulesChanged": false,
+        "freshAmendmentEvidence": [
+          {
+            "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/AS-2026-549.response",
+            "sha256": "368f11df7613ee42091af6847433288ef0511bcb25fa75331a91bf6909bbc45e",
+            "byteLength": 8629,
+            "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/549/de/xml/fedlex-data-admin-ch-eli-oc-2026-549-de-xml.xml",
+            "retrievedAt": "2026-10-15T17:38:28.046293+00:00",
+            "method": "fresh-full-amending-act-content-read-and-relevance-assessment",
+            "status": 200
+          }
+        ],
+        "requiredR08BBinding": "Nach gesonderter Quellenabnahme und lokaler Übernahmefreigabe die neuen amtlichen Änderungsakte sowie Fassungsgrenzen ausdrücklich als neue ergänzende Nachweisbrücke an diese bestehenden Quellen- und Sozialfreigabebindungen anschliessen. Historische IDs, ursprüngliche Fassungs- und Prüfdaten sowie alte Originalbytes bleiben unverändert. Keine Änderung der Fachregeln, der 50 BE-Anbindungen oder des Freigabefensters 2026–2027.",
+        "freshVersionIndexRow": {
+          "work": "https://fedlex.data.admin.ch/eli/cc/2021/376",
+          "version": "https://fedlex.data.admin.ch/eli/cc/2021/376/20270101",
+          "start": "2027-01-01"
+        },
+        "consolidatedXmlAvailableAtCheckedEndpoint": false,
+        "availabilityEvidence": {
+          "path": ".work/mvp08-source-review-2026-10-15/baseline/supplement/UELV-20270101-availability.response",
+          "sha256": "6d8b53d01a0211ab573106928a6f891228aa355b527e327717788c8b7438d3d0",
+          "byteLength": 77151,
+          "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2021/376/20270101/de/xml/fedlex-data-admin-ch-eli-cc-2021-376-20270101-de-xml.xml",
+          "retrievedAt": "2026-10-15T17:38:28.438977+00:00",
+          "method": "fresh-availability-only-HTML-shell-not-norm-text",
+          "status": 200
+        },
+        "bridgeScope": "Die vollständige aktuelle Änderungskette trägt den engen Artikelfortgeltungsbefund. Kein vollständig neu konsolidierter 2027-Text wird vorgetäuscht. Neue Konsolidate beim nächsten Prüfauslöser oder spätestens vor Ablösung der Brücke erneut abrufen."
+      }
+    },
+    "explicitBoundedReuse": {
+      "vaudConsolidatedNormEvidenceDate": "2026-10-08",
+      "aiTreatmentUnchanged": true,
+      "frPracticeSupportingMirrorOnly": true,
+      "frPracticePositiveApproval": false,
+      "newFederalConsolidationsNotClaimedAvailable": true,
+      "glGovernmentNoticeFreshRetrievalFailed": true
+    },
+    "retainedLimits": [
+      "Coverage and hashes do not replace substantive reading or human approval.",
+      "A fresh source can be an index, excerpt or original. Counts are not full new legal readings.",
+      "Historical content keeps its actual date and narrowly supported scope. Reuse requires human source-review acceptance.",
+      "AI conflict, limited FR supplementary mirror, GR/NE reservations, January uncertainty, TI-O2, AVIV option B and OF-001 remain visible.",
+      "TI/GR scope remains 2026-08-29 through 2027-12-31. Social scope remains BE 2026–2027. No new operative path is created.",
+      "No exhaustive later-case-law search, unlimited future stability or operative data release is asserted.",
+      "Private raw sources and local evidence are not automatically public-publishing approved."
+    ],
+    "responsibility": {
+      "humanDecisionBy": "David Steimer",
+      "operatingModel": "personalUnion",
+      "formalFourEyes": false,
+      "documentedWith": "Codex"
+    },
+    "nextGate": "Separate authorization for controlled local data promotion, bounded local data commit and definitive local builds."
+  }
+}

@@ -1,15 +1,60 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, rm, lstat, symlink } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile, rm, lstat, symlink } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import test from 'node:test';
-import { approvalPath, requiredBindings, verifyMvp07SourceApproval } from '../../scripts/record-mvp07-source-approval.mjs';
-import { assertPublicMvp07Path, isPrivateMvp07Evidence, manifestPath, releasePath,
+import { root, hash, approvalPath, requiredBindings, verifyMvp07SourceApproval } from '../../scripts/record-mvp07-source-approval.mjs';
+import { approvalSha256, manifestSha256, assertPublicMvp07Path, isPrivateMvp07Evidence, manifestPath, releasePath,
   loadMvp07PublicIntegrityInputs, validateMvp07PublicIntegrity, verifyMvp07PublicIntegrity } from '../../scripts/verify-mvp07-public-integrity.mjs';
 import { privateMvp06Suites, privateMvp07Suites, selectStandardSuites } from '../../scripts/run-standard-tests.mjs';
 
-const original = await loadMvp07PublicIntegrityInputs();
+// The live register and index evolved for MVP08. Keep the original MVP07
+// verifier and its exact 98-file contract unchanged, using only the two public
+// historical governance byte fixtures at their original aliases in a temporary
+// root. This does not backdate the live register or reproduce a private audit.
+const historicalAliases = new Map([
+  ['data/source-reviews/source-register.json', { path: 'tests/fixtures/mvp07-public-integrity/source-register.json',
+    sha256: '4da56b5c2e6b02730a33e4eb74d2c0f1c6aa52188ff1bfe649204b58a4e4eb20' }],
+  ['data/source-reviews/index.json', { path: 'tests/fixtures/mvp07-public-integrity/index.json',
+    sha256: '8ffa79680dd02c29e10cedf81ca7b833e897d8b3c8274d7b0a8e6ee30fce797d' }]
+]);
+async function historicalPublicInputs() {
+  const directory = await mkdtemp(join(tmpdir(), 'mvp07-historical-public-inputs-'));
+  const copied = new Map();
+  async function copy(item) {
+    assertPublicMvp07Path(item.path);
+    const alias = historicalAliases.get(item.path);
+    if (alias) assert.equal(item.sha256, alias.sha256, `Unexpected historical alias: ${item.path}`);
+    const source = join(root, alias?.path ?? item.path);
+    const info = await lstat(source);
+    assert.ok(info.isFile() && !info.isSymbolicLink(), `Not a regular historical input: ${source}`);
+    const bytes = await readFile(source);
+    assert.equal(hash(bytes), item.sha256, `Changed historical public fixture: ${item.path}`);
+    if (item.byteLength !== undefined) assert.equal(bytes.length, item.byteLength);
+    if (copied.has(item.path)) assert.ok(copied.get(item.path).equals(bytes));
+    copied.set(item.path, bytes);
+    await mkdir(dirname(join(directory, item.path)), { recursive: true });
+    await writeFile(join(directory, item.path), bytes);
+    return bytes;
+  }
+  try {
+    const approved = JSON.parse(await copy({ path: approvalPath, sha256: approvalSha256 }));
+    const manifest = JSON.parse(await copy({ path: manifestPath, sha256: manifestSha256 }));
+    for (const item of approved.evidence.filter(item => !isPrivateMvp07Evidence(item)))
+      await copy({ ...item, path: item.archivedAt ?? item.path });
+    for (const item of manifest.artifacts) await copy({ ...item, path: `${releasePath}/${item.path}` });
+    const envelope = manifest.extensions['steimer.approval'];
+    const local = JSON.parse(await copy(envelope.localBuildApproval));
+    const adoption = JSON.parse(await copy(envelope.sourceGovernance));
+    await copy(envelope.sourceVersionBridges);
+    await copy(local.decision);
+    for (const item of adoption.evidence) await copy(item);
+    assert.equal(copied.size, 98);
+    return await loadMvp07PublicIntegrityInputs(directory);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+}
+const original = await historicalPublicInputs();
 const approval = JSON.parse(original.get(approvalPath));
 const fixture = () => new Map(original);
 async function portable(action) {
@@ -23,8 +68,8 @@ async function portable(action) {
   } finally { await rm(directory, { recursive: true, force: true }); }
 }
 
-test('MVP07 verifies the exact 42 public source files, 41 runtime files and bounded governance without inventing full audit', async () => {
-  const result = await verifyMvp07PublicIntegrity();
+test('MVP07 verifies the exact 42 public source files, 41 runtime files and bounded governance without inventing full audit', () => portable(async directory => {
+  const result = await verifyMvp07PublicIntegrity(directory);
   assert.equal(result.verificationScope, 'public-integrity');
   assert.equal(result.publicSourceEvidenceFilesVerified, 42);
   assert.equal(result.privateSourceEvidenceFilesBoundButNotRechecked, 541);
@@ -35,7 +80,7 @@ test('MVP07 verifies the exact 42 public source files, 41 runtime files and boun
   for (const key of ['historicalFrPracticePositiveCaseApproval', 'privateRawEvidenceRechecked', 'completeSourceAuditReproduced',
     'privateAcceptanceArchivesRechecked', 'newApprovalGranted', 'promotionPerformed', 'installationAuthorized',
     'publicationAuthorized', 'operatingApproval']) assert.equal(result[key], false);
-});
+}));
 test('real public-only copy succeeds without private scratch, Git, dependencies or acceptance TAR', () => portable(async directory => {
   for (const absent of ['.work', '.git', 'node_modules', 'outputs/ap21-abnahme-2026-10-08'])
     await assert.rejects(lstat(join(directory, absent)), { code: 'ENOENT' });

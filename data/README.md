@@ -1,5 +1,17 @@
 # Regel- und Kalenderdaten
 
+## Aktueller Datenstand für MVP 0.8
+
+Stand: 16. Oktober 2026. Der freigegebene Datenrelease [`2026-10-15-mvp-08-approved.1`](releases/2026-10-15-mvp-08-approved.1/manifest.json) ist lokal übernommen und auf den vier bestehenden E-/Q-Instanzen installiert. [Q-Abnahme](../docs/betrieb/abnahme-q-mvp08.md) und [E-/Q-Vollzug](../docs/betrieb/eq-vollzugsnachweis-mvp08.md) sind dokumentiert. GitHub- und P-Bereitstellung von MVP 0.8 bleiben davon getrennt. Öffentlich ist zuletzt MVP 0.7 dokumentiert.
+
+Manifest und Mindestconsumer verwenden Format `8.0.0`. Neu ist der [Kantonalverfahrenskatalog](releases/2026-10-15-mvp-08-approved.1/administrative-procedures/ch-cantonal-administrative-procedures.json) `1.0.0`. Regelkalender `3.0.0`, Feiertagskatalog `2.0.0`, Rechtsprofile `1.0.0`, Spezialregimekatalog `3.0.0` und Sozialverfahrenskatalog `2.0.0` behalten ihre Formate. 41 Nutzartefakte plus Manifest ergeben genau 42 Mirrordateien mit zusammen 2’425’056 Bytes. Die verbindlichen Prüfsummen stehen im [Releaseartefaktnachweis](../docs/betrieb/releaseartefakte-mvp-08.md).
+
+Der neue Katalog umfasst fünf Tessiner und sieben Bündner Verwaltungsverfahrenspfade. Die operative Abdeckung ist auf den 29. August 2026 bis 31. Dezember 2027 begrenzt und muss sämtliche berechnungsrelevanten Tage umfassen. Nicht modellierte Spezialkonstellationen bleiben gesperrt. Die TI-O2-Sperre betrifft den Übergang durch Endverschiebung in einen neuen Fristenstillstand. Die 44 nationalen Sozialregeln und 50 Berner Anbindungen bleiben auf ihre bestehende Freigabe für Bern und 2026–2027 begrenzt. Die schweizweiten Feiertagsbindungen sowie deren bestätigte Grenzen werden nicht pauschal erweitert. [Releasehinweise MVP 0.8](../docs/betrieb/release-notes-mvp08.md)
+
+Die [Quellenabnahme R08-A2](../docs/fachrecht/abnahme-quellen-mvp08.md), Datenfreigabe und Betriebsfreigaben sind eigenständige Nachweise. Historische Releases und Kandidaten bleiben unverändert. Die nachfolgenden Abschnitte halten deren damaligen Entwicklungs- und Freigabestand fest.
+
+## Historische Entwicklung
+
 Der [AP18C1-Fachkandidat aus der abgenommenen Arbeitsmappe V0.12](candidates/2026-09-22-ap18c-workbook/README.md) liegt ausserhalb der Releases. Er bewahrt die schweizweite Feiertagsgrundlage vollständig, aktiviert aber weder ein neues Produktkalenderformat noch zusätzliche Fristenprofile.
 
 Darauf baut der [AP18C-Integrationskandidat](releases/2026-09-22-ap18c-candidate.1/README.md) gemäss beschlossenem [DEC-2026-023](../docs/entscheidungen/DEC-2026-023-schweizweiter-feiertagskatalog.md) auf. David Steimer hat AP18C am 22. September 2026 [abgenommen und den Release gestartet](../docs/fachrecht/abnahme-ap18c.md). Der eigene [MVP-0.4-Datenstand](releases/2026-09-22-mvp-04-approved.1/README.md) dokumentiert diese Abnahme, der historische Kandidat bleibt unverändert. Vollständiger Feiertagsbestand, operative Ableitung weiterhin nur CH/BE. Veröffentlichung und produktive Aktivierung sind davon getrennt.
@@ -35,7 +47,7 @@ Der freigegebene MVP-0.3-Datenstand [`2026-08-31-mvp-03-approved.1`](releases/20
 - Alle Nutzartefakte müssen im Manifest gelistet sein.
 - GitHub, SharePoint-Mirror und manueller Import liefern exakt dieselben Bytes.
 - Ein Release wird erst nach vollständiger Schema-, Referenz-, Konsistenz- und Prüfsummenprüfung aktiviert.
-- Fehler führen zum vollständigen Verwerfen des neuen Stands. Der letzte validierte Stand bleibt aktiv.
+- Fehler führen zum vollständigen Verwerfen des neuen Stands. Ein zuletzt validierter Cache darf nur für die tatsächlich identische Datenkonfiguration verwendet werden. Ohne passenden validierten Stand bleibt die Berechnung gesperrt. Ein anderer Mirror, Releasepfad oder GitHub-Pin ist kein stiller Ersatz.
 - Bereits publizierte Releaseverzeichnisse werden nicht überschrieben.
 - Quellenprüfereignisse werden nach ihrer Freigabe ebenfalls nicht überschrieben. Der daraus erzeugte Index ist eine erneuerbare Sicht.
 - Amtliche oder fremde Inhalte werden nicht allein durch ihre Aufnahme unter CC BY-SA 4.0 gestellt.

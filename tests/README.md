@@ -1,5 +1,34 @@
 # Tests
 
+## Aktueller Prüfweg für MVP 0.8
+
+Stand: 16. Oktober 2026. Die folgenden Befehle prüfen den aktuellen Quell- und Datenstand. Die weiter unten beschriebenen AP- und Releaseabschnitte dokumentieren die jeweiligen historischen Testverträge und damaligen Testzahlen.
+
+Voraussetzungen sind Node.js 22, installierte npm-Abhängigkeiten und die Python-Umgebung gemäss [CONTRIBUTING](../CONTRIBUTING.md). Der gebundene Releasebau verwendet Node.js `22.23.2`. Nach `npm ci` und Einrichtung von `.venv` mit `requirements-data.txt`:
+
+```bash
+npm run typecheck
+npm run check:integrity:mvp08
+npm test
+npm run test:source-reviews
+```
+
+Die Integritätsprüfung liest 42 Runtime- und sieben Schemadateien. Sie benötigt weder private Quellenoriginale noch Gitmetadaten und ersetzt keine inhaltliche Rechtsprüfung. Produkt- und Governance-Tests dürfen ihre vorgesehenen temporären beziehungsweise lokalen Testausgaben erzeugen. `npm run check` baut zusätzlich UI und Webanwendung. Solche Läufe gehören in eine Arbeitskopie und sind kein Ersatz für die Prüfung bereits gebundener Releaseartefakte.
+
+Die [frische lokale Publikationsvorprüfung](../docs/betrieb/publikationsvorpruefung-mvp08.md) dokumentiert 2’541 bestandene Produkttests, 225 Node-Governance-Tests und 34 Python-Governance-Tests ohne übersprungene Fälle. Der Quellenvalidator prüfte zusätzlich acht Negativvarianten. Diese Zahlen bezeichnen den dort gebundenen Lauf, nicht eine Zusage für spätere Quellstände. Die tatsächlichen [E-/Q-Hostprüfungen](../docs/betrieb/eq-vollzugsnachweis-mvp08.md) und die [menschliche Q-Abnahme](../docs/betrieb/abnahme-q-mvp08.md) bleiben davon getrennt.
+
+Die private Quellenprüfung `npm run test:source-reviews:private:mvp08` setzt die privaten Originalbelege voraus. Fehlende Originale werden nicht durch einen erfolgreichen öffentlichen Testlauf ersetzt. Auch der vollständige historische Recovery-Bau-/Archivnachweis bleibt ein lokaler privater Prüfweg.
+
+Der zusätzliche lesende Publikationsprüfer wird mit der finalen Positivliste im [Publikationspaket](../docs/betrieb/publikationspaket-mvp08.md) gebunden. Erst sobald `outputs/publication-mvp08-2026-10-16/publication-package.json` vorliegt, ist dieser zusätzliche Lauf ausführbar:
+
+```bash
+node scripts/verify-mvp08-publication.mjs
+```
+
+Er prüft den konkret ausgewählten öffentlichen Bestand, ohne Datenpromotion, Neubau oder Commit. Sein Ergebnis ist nicht mit einem vollständigen Audit ausgeschlossener privater Archive gleichzusetzen.
+
+## Historische Testverträge
+
 Dieser Bereich nimmt die automatisierten Qualitätsnachweise auf. Vorgesehen sind:
 
 - Unit Tests des Rechenkerns
@@ -61,7 +90,7 @@ Die Suite [`ui/calendar-export.test.ts`](ui/calendar-export.test.ts) prüft den 
 - fehlende Netzwerk-, Graph- und Browserspeicherzugriffe
 - Platzierung in der sechsten Resultatkachel
 
-Die produktive Importprüfung in Outlook Web und Outlook Desktop bleibt bis zur nächsten M365-Testmatrix offen.
+Die damalige Importprüfung wurde in späteren Releases getrennt durchgeführt. Für MVP 0.8 sind acht frisch aus E/Q gespeicherte Kalenderdateien geprüft. Die [ausdrücklich bestätigte begrenzte Wiederverwendung](../docs/betrieb/outlook-wiederverwendung-mvp08.md) früherer Outlook-Importnachweise gilt nur für den unveränderten Terminvertrag. Es gab keinen neuen Outlook-Import und keinen übernommenen Outlook-Nachweis für die neuen TI-/GR-Herkunftsfelder.
 
 ## AP6-Golden-Case-Validierung
 

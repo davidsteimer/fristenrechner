@@ -1,5 +1,11 @@
 # Entscheidungsregister
 
+**Aktuell, 15. Oktober 2026:** [AP23D2 samt UX-Nachtrag ist abgenommen](../fachrecht/abnahme-ap23d2.md), [AP23D3 ist ausdrücklich gestartet](../architektur/verwaltungsintegration-ap23d3.md). Der bestehende Beschluss DEC-2026-032 wird umgesetzt und nicht geändert. Kein neuer Architekturentscheid, keine Quellenrelease- oder Bereitstellungsfreigabe. Die nachfolgenden datierten Absätze bleiben historische Entscheidungsstände.
+
+**UX-Nachtrag AP23D2, 15. Oktober 2026:** Der ausdrücklich freigegebene [UX-Nachtrag](../architektur/verwaltungsintegration-ap23d2-ux.md) ist lokal umgesetzt. Beschlossen sind unveränderte fachliche Rechenregeln und der bestehende zweispaltige Aufbau. UI-Abnahme offen. AP23D3 folgt erst nach dieser Abnahme. DEC-2026-032 und die bisherigen Nachweise bleiben unverändert.
+
+**15. Oktober 2026:** [AP23D1 ist abgenommen](../fachrecht/abnahme-ap23d1.md). Die ausdrücklich beauftragte [AP23D2-Umsetzung](../architektur/verwaltungsintegration-ap23d2.md) liegt lokal zur Teilpaketabnahme vor. DEC-2026-032 bleibt unverändert. AP23D3, Quellenrelease und operative Bereitstellung sind nicht freigegeben. Die datierten älteren Einträge bleiben historische Entscheidungsstände.
+
 Dieses Verzeichnis ist der dauerhafte Nachweis für materielle und architektonische Projektentscheide. Die freigegebenen Word- und PDF-Grundlagen bleiben unverändert. Die DEC-Dateien machen deren Entscheide einzeln auffindbar, vergleichbar und ablösbar.
 
 ## Verbindlichkeit und Pflege
@@ -33,6 +39,8 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 
 ## Laufende Ergänzungen
 
+**14. Oktober 2026:** [AP23B ist mit Ergänzung abgenommen](../fachrecht/abnahme-ap23b.md). [DEC-2026-031](DEC-2026-031-behoerdensitz-kantonale-verwaltungsverfahren.md), Klasse A, dokumentiert die beschlossene allgemeine Behördenanknüpfung im kantonalen Verwaltungsrecht mit Vorrang von Bundes-/Spezialrecht und ausdrücklich abweichenden Verfahrensnormen. Anschliessend sind [AP23C abgenommen](../fachrecht/abnahme-ap23c.md) und [DEC-2026-032](DEC-2026-032-beschluss.md), Klasse B, ausdrücklich bestätigt worden. Die unveränderte Vertragsvorlage bleibt historisch erhalten. Die beauftragte [AP23D1-Kernintegration](../architektur/verwaltungsintegration-ap23d1.md) liegt lokal zur technischen Teilpaketabnahme vor. Keine operative Erweiterung von MVP 0.7.
+
 **AP22B und AP22C1, 8. Oktober 2026:** David Steimer hat den Daten- und Migrationsplan einschliesslich sämtlicher acht Eckpunkte ausdrücklich bestätigt. [AP22B ist abgenommen](../fachrecht/abnahme-ap22b.md) und [DEC-2026-030 beschlossen](DEC-2026-030-beschluss.md). Katalog 2.0.0, Kalender 3.0.0, Manifest/Mindestconsumer 7.0.0, konkrete Zeitabdeckung und Migration sind bestätigt. Der prüfsummengebundene Entwurf bleibt unverändert. Der anschliessende ausdrückliche Startauftrag führt zur [lokalen AP22C1-Umsetzung](../architektur/kalenderintegration-ap22c1.md), die technisch geprüft und zur Teilpaketabnahme bereit ist. Kein neuer Vertragsentscheid, keine Produktaktivierung. AP22C2 ist noch nicht gestartet.
 
 **8. Oktober 2026:** [DEC-2026-029](DEC-2026-029-begrenzte-behandlung-zweiter-januar.md), Klasse A, bestätigt die ergebnisabhängig begrenzte Behandlung des 2. Januar für SH/StPO und SG/StPO, SG/BGG, SG/VwVG. [AP22A ist damit abgeschlossen](../fachrecht/abschluss-ap22a.md). Die übrige Fachfreigabe nach DEC-2026-028 bleibt unverändert. AP22B folgt als gesonderter Vertragsauftrag. Keine Produktaktivierung oder Veröffentlichung. Der nachstehende Eintrag vom 2. Oktober dokumentiert den damaligen Zwischenstand.
@@ -58,6 +66,8 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | [DEC-2026-028](DEC-2026-028-operative-freigabe-kalenderzuordnungen.md) | A | beschlossen | Offene Kalenderzuordnungen fachlich zur operativen Verwendung freigegeben. GR bewusst begrenzt, SO-Prozessliste eingeschlossen, konkrete Wirkungsdefinitionen und technische Aktivierung getrennt | – |
 | [DEC-2026-029](DEC-2026-029-begrenzte-behandlung-zweiter-januar.md) | A | beschlossen | Vier Jan.-2-Verbindungen bleiben verwendbar, bei Ergebnisunterschied Einzelfallklärung statt definitivem automatischem Fristresultat. AP22A abgeschlossen, Umsetzung separat | – |
 | [DEC-2026-030](DEC-2026-030-beschluss.md) | B | beschlossen | Katalog 2, Kalender 3 und Manifest/Consumer 7 mit expliziten Verfahrensbindungen, Januarvergleich, Zeitabdeckung und kontrollierter Migration. Gebundener Entwurf bleibt erhalten | – |
+| [DEC-2026-031](DEC-2026-031-behoerdensitz-kantonale-verwaltungsverfahren.md) | A | beschlossen | Feiertagsanknüpfung im kantonalen Verwaltungsrecht am zuständigen Behördensitz, besondere Bundesregeln und ausdrückliche Verfahrensabweichungen vorbehalten. Keine pauschale Kantonsfreigabe | – |
+| [DEC-2026-032](DEC-2026-032-beschluss.md) | B | beschlossen | Kantonalverfahrenskatalog 1, Manifest/Mindestconsumer 8 und geschützte Defaults 5 für die zwölf TI-/GR-Pfadgruppen. Bestandskomponenten erhalten, operative Freigabe getrennt | David Steimer, 14.10.2026 |
 
 ## Abnahme AP20B und Beschluss DEC-2026-026
 

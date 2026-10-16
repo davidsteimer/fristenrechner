@@ -1,0 +1,506 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-lu-55514cd91f06",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "LU"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-LU-JUSG-260-20260101",
+      "sourceType": "officialDossier",
+      "title": "Justizgesetz, JusG",
+      "authority": "CH-LU",
+      "url": "https://srl.lu.ch/data/260/de",
+      "documentVersionDate": "2026-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-ALL-SAINTS-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-ASCENSION-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-ASSUMPTION-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-BERCHTOLD-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-CHRISTMAS-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-CORPUS-CHRISTI-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-EASTER-MONDAY-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-GOOD-FRIDAY-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-IMMACULATE-CONCEPTION-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-NATIONAL-DAY-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-NEW-YEAR-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-ST-STEPHEN-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "LU-CAL-LU-JUSG-ART76-DAY-WHIT-MONDAY-55514CD91F06C7F0",
+      "calendarId": "ap22-lu-55514cd91f06",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "LU"
+      },
+      "labelKey": "holiday.lu.LU-JUSG-ART76-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-LU-JUSG-260-20260101",
+          "locator": "§ 76"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "LU-JUSG-ART76-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-55514cd91f06c7f0",
+    "sourceHash": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81"
+  }
+}

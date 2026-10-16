@@ -15,6 +15,8 @@ export interface DeadlineCalendarEntryOptions {
   readonly reference?: string;
   readonly uid?: string;
   readonly createdAt?: Date;
+  /** Optional verified provenance supplied by a qualified calculation adapter. */
+  readonly descriptionAppendix?: string;
 }
 
 export interface DeadlineCalendarArtifact {
@@ -97,6 +99,7 @@ export function createDeadlineCalendarEntry(
   const summary = reference ? `${subjectBase} (${reference})` : subjectBase;
   const uid = options.uid?.trim() || createUid(deadlineDate);
   const createdAt = options.createdAt ?? new Date();
+  const description = [translate(options.locale, 'calendar.description'), options.descriptionAppendix].filter(Boolean).join('\n\n');
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -109,7 +112,7 @@ export function createDeadlineCalendarEntry(
     `DTSTART;VALUE=DATE:${compactDate(deadlineDate)}`,
     `DTEND;VALUE=DATE:${compactDate(endDate)}`,
     `SUMMARY:${escapeText(summary)}`,
-    `DESCRIPTION:${escapeText(translate(options.locale, 'calendar.description'))}`,
+    `DESCRIPTION:${escapeText(description)}`,
     'TRANSP:TRANSPARENT',
     'X-MICROSOFT-CDO-BUSYSTATUS:FREE',
     `CATEGORIES:${OUTLOOK_CATEGORY}`,
