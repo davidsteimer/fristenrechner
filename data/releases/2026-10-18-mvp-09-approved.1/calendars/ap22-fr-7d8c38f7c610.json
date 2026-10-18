@@ -1,0 +1,576 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-fr-7d8c38f7c610",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "FR"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-FR-JG-1301-V7926",
+      "sourceType": "officialDossier",
+      "title": "Justizgesetz, JG",
+      "authority": "CH-FR",
+      "url": "https://bdlf.fr.ch/api/de/versions/7926/pdf_file",
+      "documentVersionDate": "2024-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-ALL-SAINTS-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-ASCENSION-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-ASSUMPTION-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-BERCHTOLD-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Lendemain du Nouvel-An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-CHRISTMAS-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-CORPUS-CHRISTI-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-EASTER-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-EASTER",
+      "labels": {
+        "de": "Ostern",
+        "fr": "Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 0
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-EASTER"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-EASTER-MONDAY-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-GOOD-FRIDAY-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-IMMACULATE-CONCEPTION-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-NATIONAL-DAY-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-NEW-YEAR-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-PENTECOST-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-PENTECOST",
+      "labels": {
+        "de": "Pfingsten",
+        "fr": "Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 49
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-PENTECOST"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-ST-STEPHEN-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Lendemain de Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "FR-CAL-FR-JG-ALL-DAY-WHIT-MONDAY-7D8C38F7C610E2AA",
+      "calendarId": "ap22-fr-7d8c38f7c610",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "FR"
+      },
+      "labelKey": "holiday.fr.FR-JG-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-FR-JG-1301-V7926",
+          "locator": "Art. 121 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "FR-JG-ALL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-7d8c38f7c610e2aa",
+    "sourceHash": "67c9e5e2153b878af92f46ccd2f25e5669c9116fa54862b45d2c51128fa5c112"
+  }
+}

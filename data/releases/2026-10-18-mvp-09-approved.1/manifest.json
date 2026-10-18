@@ -1,0 +1,632 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/release-manifest-v9.schema.json",
+  "formatVersion": "9.0.0",
+  "dataKind": "releaseManifest",
+  "releaseId": "2026-10-18-mvp-09-approved.1",
+  "releaseStatus": "approved",
+  "createdOn": "2026-10-18",
+  "immutable": true,
+  "coverage": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "profileIds": [
+    "stpo",
+    "zpo",
+    "bgg",
+    "vwvg",
+    "vrpg-be"
+  ],
+  "calendarIds": [
+    "ap22-ag-21d6f2634ce0",
+    "ap22-ai-5d4e5a68e106",
+    "ap22-ai-f507435d8aa8",
+    "ap22-ar-88bb22c08a22",
+    "ap22-bl-72f1a7e0fcf8",
+    "ap22-bs-39a64bdfc0fe",
+    "ap22-fr-7d8c38f7c610",
+    "ap22-ge-a36ff7926d08",
+    "ap22-gl-87c11e156541",
+    "ap22-gr-bf0366c8eda2",
+    "ap22-ju-b096c09f506c",
+    "ap22-lu-55514cd91f06",
+    "ap22-lu-b879eb8eb04f",
+    "ap22-ne-027ceadbf103",
+    "ap22-ne-21f519039621",
+    "ap22-nw-5dfca484e4af",
+    "ap22-ow-76c151dccf1f",
+    "ap22-sg-79009d6d6021",
+    "ap22-sg-f95068e3b162",
+    "ap22-sh-1ccc70f9897a",
+    "ap22-sh-ec7d0988145a",
+    "ap22-so-3f5f7b7f54f5",
+    "ap22-sz-ec9f2c557fe4",
+    "ap22-tg-3d6514fbabb1",
+    "ap22-ti-944ed0286e9a",
+    "ap22-ur-67275ff3e872",
+    "ap22-vd-26f452ff34ee",
+    "ap22-vs-6c002f32b1b0",
+    "ap22-zg-860e0f8e0e1a",
+    "ap22-zh-5aa2974cffee",
+    "be-public-holidays",
+    "ch-federal-calendar"
+  ],
+  "specialRegimeCatalogIds": [
+    "vrpg-be-special-regimes-rest"
+  ],
+  "holidayCatalogIds": [
+    "ch-holiday-catalog"
+  ],
+  "socialProcedureCatalogIds": [
+    "ch-social-procedures"
+  ],
+  "sourceSummary": {
+    "latestReviewedOn": "2026-10-18",
+    "legalBasisReviewStatus": "verified",
+    "technicalValidationStatus": "passed",
+    "sourceIds": [
+      "JUD-AP17C-BGER-8C-767-2008-20090112",
+      "JUD-AP17C-VGER-BE-100-2024-8-20240404",
+      "JUD-AP17C-VGER-BE-200-2017-814-20180117",
+      "JUD-AP23B-GR-STAGE-JUD",
+      "JUD-AP23B-GR-START-JUD",
+      "JUD-AP23B-TI-ADVANCE-JUD",
+      "JUD-AP23B-TI-PROVISIONAL-JUD",
+      "JUD-AP23E1-LU-5A-872-2020",
+      "JUD-BE-VG-100-2016-347",
+      "JUD-BE-VG-100-2017-270",
+      "JUD-BE-VG-100-2021-189",
+      "JUD-BE-VG-200-2026-421",
+      "JUD-BGER-1C-275-2009",
+      "JUD-BGER-8C-620-2007",
+      "JUD-BGER-9C-757-2007",
+      "SRC-AG-EGZPO",
+      "SRC-AI-RTG-822200-V1327",
+      "SRC-AP17C-AHVG-20260101",
+      "SRC-AP17C-AHVG-20270101",
+      "SRC-AP17C-ATSG-20240101",
+      "SRC-AP17C-FRG-BE-20210401",
+      "SRC-AP17C-IVG-20260101",
+      "SRC-AP17C-IVG-20270101",
+      "SRC-AP17C-IVOEB-20220201",
+      "SRC-AP17C-IVOEB-OLD-20100701",
+      "SRC-AP17C-IVOEBG-20220201",
+      "SRC-AP17C-IVOEBV-20240901",
+      "SRC-AP17C-IVV-20250601",
+      "SRC-AP17C-IVV-20270701",
+      "SRC-AP17C-UVG-20260101",
+      "SRC-AP17C-VRPG-BE-20260901",
+      "SRC-AP19C-EGELG-BE-20250101",
+      "SRC-AP19C-ELG-20260101",
+      "SRC-AP19C-ELG-20270101",
+      "SRC-AP19C-GSOG-BE",
+      "SRC-AP19C2-AMG-BE-ART35",
+      "SRC-AP19C2-AVIG-20260101",
+      "SRC-AP19C2-AVIV-20260101",
+      "SRC-AP19C2-AVIV-20260801",
+      "SRC-AP19C2-AVIV-20270101",
+      "SRC-AP19C2-AVIV-AS-2025-814",
+      "SRC-AP19C2-AVIV-AS-2026-258",
+      "SRC-AP19C2-AVIV-FUTURE-INDEX-20260928",
+      "SRC-AP19C3-KVG-20260101",
+      "SRC-AP19C3-KVG-20260701",
+      "SRC-AP19C3-KVG-FUTURE-INDEX-20260928",
+      "SRC-AP20C1-EOG-20250128",
+      "SRC-AP20C1-EOG-20260601",
+      "SRC-AP20C1-EOG-20270701",
+      "SRC-AP20C1-EOV-20250101",
+      "SRC-AP20C1-EOV-20260601",
+      "SRC-AP20C1-EOV-20270701",
+      "SRC-AP20C1-GSOG-BE-20260101",
+      "SRC-AP20C1-GSOG-BE-20260501",
+      "SRC-AP20C1-VRPG-BE-20230801",
+      "SRC-AP20C1-VRPG-BE-20260901",
+      "SRC-AP20C2-FAMZG-20260101",
+      "SRC-AP20C2-FLG-20240101",
+      "SRC-AP20C2-FLG-20270701",
+      "SRC-AP20C2-FLV-20140423",
+      "SRC-AP20C2-KFAMZG-BE-20201101",
+      "SRC-AP20C3-EGELG-BE-20250101",
+      "SRC-AP20C3-EGKUMV-BE-20220101",
+      "SRC-AP20C3-EGKUMV-BE-20260901",
+      "SRC-AP20C3-ELG-20260101",
+      "SRC-AP20C3-ELG-20270101",
+      "SRC-AP20C3-MVG-20240101",
+      "SRC-AP20C3-MVV-20260101",
+      "SRC-AP20C3-UELG-20250101",
+      "SRC-AP20C3-UELV-20250101",
+      "SRC-AP22-SO-GS201463",
+      "SRC-AP23B-CH-HOL",
+      "SRC-AP23B-GR-MATERIAL",
+      "SRC-AP23B-GR-RTG",
+      "SRC-AP23B-GR-VRG",
+      "SRC-AP23B-TI-HOL",
+      "SRC-AP23B-TI-LPAMM",
+      "SRC-AP23B-TI-MATERIAL",
+      "SRC-AP23E1-AR-ARGV-20160101",
+      "SRC-AP23E1-AR-MATERIAL-20180703",
+      "SRC-AP23E1-AR-VRPG-20200101",
+      "SRC-AP23E1-LU-RTG-20260927",
+      "SRC-AP23E1-LU-VRG-20210901",
+      "SRC-AP23E1-ZG-COURT-GUIDANCE",
+      "SRC-AP23E1-ZG-VRG-20251017",
+      "SRC-AR-ARGV-82211-V1058",
+      "SRC-ATSG-20240101",
+      "SRC-BGG-20260401",
+      "SRC-BL-RTG-547-20191201",
+      "SRC-BPR-20221023",
+      "SRC-BS-RLG-811100-20200701",
+      "SRC-BUNDESFEIERTAG-19940701",
+      "SRC-FR-JG-1301-V7926",
+      "SRC-FRG-BE-20210401",
+      "SRC-GE-LJF-J145-19910101",
+      "SRC-GL-RTG-IXB211-20190701",
+      "SRC-GR-RUHETAGE-520100-20160101",
+      "SRC-JU-LJF-5551-20230101",
+      "SRC-LU-JUSG-260-20260101",
+      "SRC-LU-RLG-855-20200501",
+      "SRC-LU-VRG-40-20210901",
+      "SRC-NE-ADJF-941020-20250527",
+      "SRC-NE-LDJF-94102-20100101",
+      "SRC-NE-LPA-152130-20260101",
+      "SRC-NW-RTG-9211-20160101",
+      "SRC-OW-RTG-9752-20090801",
+      "SRC-PRG-BE-CURRENT",
+      "SRC-PRG-MATERIALS-2018",
+      "SRC-PRV-BE-CURRENT",
+      "SRC-RRB-498-2024",
+      "SRC-SG-KGER-FS20121-20120329",
+      "SRC-SG-RLG-5521-V228",
+      "SRC-SH-OGE-4020181K-20180824",
+      "SRC-SH-RTG-900200-V1886",
+      "SRC-STPO-20250401",
+      "SRC-SZ-RTG-545110-20180701",
+      "SRC-TG-RTG-8229-V2949",
+      "SRC-TI-FEIERTAGE-843200",
+      "SRC-UR-LSG-701421-20030101",
+      "SRC-VD-LEMP-82211-20120401",
+      "SRC-VPR-20220701",
+      "SRC-VRPG-BE-20230801",
+      "SRC-VS-RPFLG-1731-20240101",
+      "SRC-VS-RUHEREG-822200-19661202",
+      "SRC-VWVG-20220701",
+      "SRC-ZG-VRG-1621-20251017",
+      "SRC-ZH-GOG-2111-N131",
+      "SRC-ZPO-20260701"
+    ]
+  },
+  "providerContract": {
+    "pathMode": "manifestRelative",
+    "byteIdentityRequired": true,
+    "supportedProviders": [
+      "github",
+      "sharepointMirror",
+      "manualImport"
+    ],
+    "networkFallback": "lastVerifiedRelease"
+  },
+  "compatibility": {
+    "minimumConsumerFormatVersion": "9.0.0",
+    "unknownMajorVersionHandling": "reject",
+    "unknownCoreFieldHandling": "reject",
+    "extensionsHandling": "ignoreNamespaced"
+  },
+  "checksumAlgorithm": "sha256",
+  "artifacts": [
+    {
+      "path": "profiles/bgg.json",
+      "role": "legalProfile",
+      "contentId": "bgg",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "profiles/stpo.json",
+      "role": "legalProfile",
+      "contentId": "stpo",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "profiles/vrpg-be.json",
+      "role": "legalProfile",
+      "contentId": "vrpg-be",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "profiles/vwvg.json",
+      "role": "legalProfile",
+      "contentId": "vwvg",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "profiles/zpo.json",
+      "role": "legalProfile",
+      "contentId": "zpo",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "special-regimes/vrpg-be.json",
+      "role": "specialRegimeCatalog",
+      "contentId": "vrpg-be-special-regimes-rest",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/special-regime-catalog-v3.schema.json",
+      "byteLength": 114845,
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+    },
+    {
+      "path": "holiday-catalogs/ch-holiday-catalog.json",
+      "role": "holidayCatalog",
+      "contentId": "ch-holiday-catalog",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/holiday-catalog-v2.schema.json",
+      "byteLength": 1183838,
+      "sha256": "67c9e5e2153b878af92f46ccd2f25e5669c9116fa54862b45d2c51128fa5c112"
+    },
+    {
+      "path": "calendars/ap22-ag-21d6f2634ce0.json",
+      "role": "calendar",
+      "contentId": "ap22-ag-21d6f2634ce0",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13915,
+      "sha256": "84d107e21e48849f966e42c5428c4885526e0d9097b240e5523972a595a47aea"
+    },
+    {
+      "path": "calendars/ap22-ai-5d4e5a68e106.json",
+      "role": "calendar",
+      "contentId": "ap22-ai-5d4e5a68e106",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 16090,
+      "sha256": "ff2b7e2b9303a24f99919c2271e822faef792167f7062b063d36811bd0fd4489"
+    },
+    {
+      "path": "calendars/ap22-ai-f507435d8aa8.json",
+      "role": "calendar",
+      "contentId": "ap22-ai-f507435d8aa8",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 17067,
+      "sha256": "d9aa7d530dbb9c9373560f38e38234d46d9b9feccdb72b690c3b8b85389a903d"
+    },
+    {
+      "path": "calendars/ap22-ar-88bb22c08a22.json",
+      "role": "calendar",
+      "contentId": "ap22-ar-88bb22c08a22",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 9127,
+      "sha256": "82c1b8387f7595f74e80359c13d77a5671f69ba68f7b0d393ac6e9233454a40d"
+    },
+    {
+      "path": "calendars/ap22-bl-72f1a7e0fcf8.json",
+      "role": "calendar",
+      "contentId": "ap22-bl-72f1a7e0fcf8",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 12983,
+      "sha256": "508651eac0b2e6a5112b5b5347137ea6758e5ce8ce257e85d12f5700c85eb15c"
+    },
+    {
+      "path": "calendars/ap22-bs-39a64bdfc0fe.json",
+      "role": "calendar",
+      "contentId": "ap22-bs-39a64bdfc0fe",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13035,
+      "sha256": "b804792ee81a02b1367a78c900f14fab519bd7bfc6dc89db55a8382232f0e1f9"
+    },
+    {
+      "path": "calendars/ap22-fr-7d8c38f7c610.json",
+      "role": "calendar",
+      "contentId": "ap22-fr-7d8c38f7c610",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 15085,
+      "sha256": "bc1f6ea0caf23ca41b53877ef644360677c0a298382da2b8aa0814d5652d3ed7"
+    },
+    {
+      "path": "calendars/ap22-ge-a36ff7926d08.json",
+      "role": "calendar",
+      "contentId": "ap22-ge-a36ff7926d08",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 9635,
+      "sha256": "9973becbb643d6c4c07477ab4c612be629aa58b05ff28216558648add400ae38"
+    },
+    {
+      "path": "calendars/ap22-gl-87c11e156541.json",
+      "role": "calendar",
+      "contentId": "ap22-gl-87c11e156541",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 14049,
+      "sha256": "c0d8563eb80ec24d72dc2df635cc7fd8f257d2fdc1319bd5c4a21b907a12e121"
+    },
+    {
+      "path": "calendars/ap22-gr-bf0366c8eda2.json",
+      "role": "calendar",
+      "contentId": "ap22-gr-bf0366c8eda2",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 11851,
+      "sha256": "60073e0e95b96b1d57b213e7464fc21c7aa8837f7bd2ec1af40a49d105447f3a"
+    },
+    {
+      "path": "calendars/ap22-ju-b096c09f506c.json",
+      "role": "calendar",
+      "contentId": "ap22-ju-b096c09f506c",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 15841,
+      "sha256": "3b2b357166a9660985f40633f3c5cfdc99b56ede6b5ac43e63f91cac751573ef"
+    },
+    {
+      "path": "calendars/ap22-lu-55514cd91f06.json",
+      "role": "calendar",
+      "contentId": "ap22-lu-55514cd91f06",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13337,
+      "sha256": "28fa55a334fa9d946e210524c640cbe8b6350a3465a092551ccc31829b6a599f"
+    },
+    {
+      "path": "calendars/ap22-lu-b879eb8eb04f.json",
+      "role": "calendar",
+      "contentId": "ap22-lu-b879eb8eb04f",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 17114,
+      "sha256": "c7fa5ab98057b7c8d786dcdf11d6100f4b0689003158f706ac2e4290635d6111"
+    },
+    {
+      "path": "calendars/ap22-ne-027ceadbf103.json",
+      "role": "calendar",
+      "contentId": "ap22-ne-027ceadbf103",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 18918,
+      "sha256": "a952d8ad9b88e39c394cca3f7f52fa743b1edf790c2de660633f5b2c0895eb92"
+    },
+    {
+      "path": "calendars/ap22-ne-21f519039621.json",
+      "role": "calendar",
+      "contentId": "ap22-ne-21f519039621",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 20285,
+      "sha256": "7d2d7ae746c2d247409b2750fbd944da4eec186b818bd23660dac082ae2660e6"
+    },
+    {
+      "path": "calendars/ap22-nw-5dfca484e4af.json",
+      "role": "calendar",
+      "contentId": "ap22-nw-5dfca484e4af",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13874,
+      "sha256": "bbd2e2ed615f62db581314536d2b2b188344d394b44131622469c9cbed848e1f"
+    },
+    {
+      "path": "calendars/ap22-ow-76c151dccf1f.json",
+      "role": "calendar",
+      "contentId": "ap22-ow-76c151dccf1f",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13907,
+      "sha256": "2a1f41ccb4f10d1cf9aef66328ee494a942781d7b2ae7001d13164ee73b384f1"
+    },
+    {
+      "path": "calendars/ap22-sg-79009d6d6021.json",
+      "role": "calendar",
+      "contentId": "ap22-sg-79009d6d6021",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 12814,
+      "sha256": "2d778c600932f408e630d1c41c5979cdd76443a5de890170ee9ed83eb4d02d2d"
+    },
+    {
+      "path": "calendars/ap22-sg-f95068e3b162.json",
+      "role": "calendar",
+      "contentId": "ap22-sg-f95068e3b162",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 14210,
+      "sha256": "e5104cbb62619722ee7a07e1a1f194522fe4bbd76d3a6b5f88891e812f1fb7aa"
+    },
+    {
+      "path": "calendars/ap22-sh-1ccc70f9897a.json",
+      "role": "calendar",
+      "contentId": "ap22-sh-1ccc70f9897a",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 12964,
+      "sha256": "bb867dac5a1e7bfef860de16a709f5b3437857b87e30ef0394e0ab0cfbd6e556"
+    },
+    {
+      "path": "calendars/ap22-sh-ec7d0988145a.json",
+      "role": "calendar",
+      "contentId": "ap22-sh-ec7d0988145a",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 14324,
+      "sha256": "b45c3d2ae6c879f598a80895fdfdd333e0a361b539b7b57f97bfdf114cd7d8d5"
+    },
+    {
+      "path": "calendars/ap22-so-3f5f7b7f54f5.json",
+      "role": "calendar",
+      "contentId": "ap22-so-3f5f7b7f54f5",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13343,
+      "sha256": "fde6b55f82ba0fbdcb6e37a60a96edca821f50d6f853d73ccd81d3a63788ccd2"
+    },
+    {
+      "path": "calendars/ap22-sz-ec9f2c557fe4.json",
+      "role": "calendar",
+      "contentId": "ap22-sz-ec9f2c557fe4",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 17610,
+      "sha256": "c759bffe4a094b66029e5c43a181bf59c71602e003b4c8a300721e2a881917aa"
+    },
+    {
+      "path": "calendars/ap22-tg-3d6514fbabb1.json",
+      "role": "calendar",
+      "contentId": "ap22-tg-3d6514fbabb1",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 13688,
+      "sha256": "ddfcbd51358a560fe2b770e547839f1d1b7ae46e5cf265823967ab9b74d556b1"
+    },
+    {
+      "path": "calendars/ap22-ti-944ed0286e9a.json",
+      "role": "calendar",
+      "contentId": "ap22-ti-944ed0286e9a",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 14966,
+      "sha256": "d10489d27bca8961966fb7cefd98e582f825640e364e44cac57b4c84229e972a"
+    },
+    {
+      "path": "calendars/ap22-ur-67275ff3e872.json",
+      "role": "calendar",
+      "contentId": "ap22-ur-67275ff3e872",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 14826,
+      "sha256": "18c8709e0ea5b66bbf245a3aea622eecbb012c340da30c2056d370812f153743"
+    },
+    {
+      "path": "calendars/ap22-vd-26f452ff34ee.json",
+      "role": "calendar",
+      "contentId": "ap22-vd-26f452ff34ee",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 10199,
+      "sha256": "8c978cc507dfc2313ead6becc429f644875005f8dc89250e49c862b625d8e3aa"
+    },
+    {
+      "path": "calendars/ap22-vs-6c002f32b1b0.json",
+      "role": "calendar",
+      "contentId": "ap22-vs-6c002f32b1b0",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 14071,
+      "sha256": "8d225f727e73f98efe669e9747904846381d4e48da60aa81869d9cc84f4f8b15"
+    },
+    {
+      "path": "calendars/ap22-zg-860e0f8e0e1a.json",
+      "role": "calendar",
+      "contentId": "ap22-zg-860e0f8e0e1a",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 16382,
+      "sha256": "e8e3d02d85e40dafb50ceb919b179f0c8fd16cb9cbf7ca53844592b5d4f86101"
+    },
+    {
+      "path": "calendars/ap22-zh-5aa2974cffee.json",
+      "role": "calendar",
+      "contentId": "ap22-zh-5aa2974cffee",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 10518,
+      "sha256": "20de38870da8ae9b78112f0ccd5946d59322a73f1fe04e20dccf80be643ec4d2"
+    },
+    {
+      "path": "calendars/be-public-holidays.json",
+      "role": "calendar",
+      "contentId": "be-public-holidays",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 10824,
+      "sha256": "4d60941ac2c4454a25b6030af9ec7c334b79132770b4ba558eae3cb1cb8e350f"
+    },
+    {
+      "path": "calendars/ch-federal-calendar.json",
+      "role": "calendar",
+      "contentId": "ch-federal-calendar",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+      "byteLength": 7457,
+      "sha256": "b457c0185a16c1e54770148bdaa4516fa017843a753e76099d130cfb2932a4b9"
+    },
+    {
+      "path": "social-procedures/ch-social-procedures.json",
+      "role": "socialProcedureCatalog",
+      "contentId": "ch-social-procedures",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/social-procedure-catalog-v2.schema.json",
+      "byteLength": 553237,
+      "sha256": "89e75518f3ac0cf18c99f8218dc308a8158f7792073827d73e896221c8ce34cc"
+    },
+    {
+      "path": "administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "role": "administrativeProcedureCatalog",
+      "contentId": "ch-cantonal-administrative-procedures",
+      "mediaType": "application/json",
+      "schemaId": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog-v2.schema.json",
+      "byteLength": 144912,
+      "sha256": "dc38ce060ef46720b0a833efab54dc569f2ded4397fef9eaa7874b88a6927115"
+    }
+  ],
+  "extensions": {
+    "steimer.approval": {
+      "approvedBy": "David Steimer",
+      "approvedOn": "2026-10-18",
+      "decisionRef": "docs/betrieb/freigabe-r09-b.md",
+      "approvalScope": "mvp09LocalDataAndReleaseArtifacts",
+      "contractDecision": "DEC-2026-033",
+      "candidateReleaseId": "2026-10-18-ap23e3-reference.1",
+      "candidateManifestSha256": "4c9f6025b7e29f577f760d2c9381066a176486983e0bae6997ac8738661ffa31",
+      "sourceReviewRef": {
+        "reviewId": "MVP09-SOURCE-APPROVAL-20261018",
+        "sha256": "4a05e80c0324573f83c88463ba78d20970d0d2152b76f15766bd848bc13a9c68"
+      },
+      "sourceReviewPath": "outputs/release-mvp09-2026-10-18/source-approval.json",
+      "sourceApprovalId": "2026-10-18-mvp-09-source-approval.1",
+      "localBuildApproval": {
+        "path": "outputs/release-mvp09-2026-10-18/r09b-execution-approval.json",
+        "sha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3"
+      },
+      "sourceGovernance": {
+        "path": "outputs/release-mvp09-2026-10-18/source-governance-adoption.json",
+        "sha256": "59157237a1a15c86238e675c61f6f7c08984a57927704bc12059b8eb7670ca6e"
+      },
+      "sourceVersionBridges": {
+        "path": "outputs/release-mvp09-2026-10-18/source-version-bridges.json",
+        "sha256": "3f79a6e6d1b934438137420f624c531c288873ac9305212ee905239a8bf9d4ca"
+      },
+      "administrativeReferenceSuite": {
+        "path": "outputs/release-mvp09-2026-10-18/administrative-reference-suite.json",
+        "sha256": "a16be9c4cab6f886983cbe948fff15eaf32af73e48a6031c25f4db2f4c5156d5"
+      },
+      "historicalSourceMetadataUnchanged": true
+    },
+    "steimer.release-preparation": {
+      "preparedOn": "2026-10-18",
+      "appVersion": "0.9.0",
+      "sourceRefresh": "acceptedWithDocumentedReuseAndReservations",
+      "publicationApproved": false,
+      "deploymentApproved": false,
+      "productionActivation": false,
+      "operatingApproval": "requiresSeparateDecision"
+    }
+  },
+  "administrativeProcedureCatalogIds": [
+    "ch-cantonal-administrative-procedures"
+  ]
+}
