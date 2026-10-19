@@ -2,6 +2,7 @@
 import { assertHolidayCatalogV2, isHolidayActivationReleased } from './holidayActivation';
 import { isIssuedFormat7Runtime } from './format7Runtime';
 import { isIssuedFormat8CalendarRuntime } from './format8Runtime';
+import { isIssuedFormat9CalendarRuntime } from './format9Runtime';
 import type { CalendarRuleSet } from './calendarRuleTypes';
 import type { CalendarProcedureBinding, CalendarProjectionRecipe, HolidayCatalogV2 } from './holidayActivationTypes';
 
@@ -48,7 +49,7 @@ export function resolveBoundCalendar(profileId: string, context: CalendarContext
   if (Object.entries(context.areaFacts).some(([key, value]) => !AREA_FACTS.has(key)
     || (value !== undefined && typeof value !== 'boolean'))) return reject('calendarBinding.invalidAreaFact');
   try {
-    const byteValidated = isIssuedFormat7Runtime(runtime) || isIssuedFormat8CalendarRuntime(runtime);
+    const byteValidated = isIssuedFormat7Runtime(runtime) || isIssuedFormat8CalendarRuntime(runtime) || isIssuedFormat9CalendarRuntime(runtime);
     // Issued runtimes were fully checked and deeply frozen by the factory.
     // Rechecking the complete 479-rule archive on every keystroke adds no
     // assurance to an immutable object and needlessly stalls all host UIs.

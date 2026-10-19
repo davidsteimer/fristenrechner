@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: R09 recovery derives exactly two package fields from actual MVP08 archive
+ok 1 - R09 recovery derives exactly two package fields from actual MVP08 archive
+  ---
+  duration_ms: 2.903625
+  type: 'test'
+  ...
+# Subtest: R09 recovery rejects a different predecessor or identity
+ok 2 - R09 recovery rejects a different predecessor or identity
+  ---
+  duration_ms: 1.179333
+  type: 'test'
+  ...
+# Subtest: R09 recovery adjusts only the two exact package-version test assertions
+ok 3 - R09 recovery adjusts only the two exact package-version test assertions
+  ---
+  duration_ms: 0.483042
+  type: 'test'
+  ...
+# Subtest: R09 recovery never rewrites arbitrary product content
+ok 4 - R09 recovery never rewrites arbitrary product content
+  ---
+  duration_ms: 0.089041
+  type: 'test'
+  ...
+# Subtest: R09 recovery normalization cannot remove content or permissions
+ok 5 - R09 recovery normalization cannot remove content or permissions
+  ---
+  duration_ms: 0.297375
+  type: 'test'
+  ...
+# Subtest: R09 recovery requires complete successful TAP logs
+ok 6 - R09 recovery requires complete successful TAP logs
+  ---
+  duration_ms: 5.125541
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 63.447959

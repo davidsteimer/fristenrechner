@@ -1,0 +1,1648 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog.schema.json",
+  "title": "AP23D1 Kantonalverfahrenskatalog 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "dataKind",
+    "catalogId",
+    "contractStatus",
+    "runtimeActive",
+    "contractDecision",
+    "projectDecisions",
+    "review",
+    "holidayResolutionPolicy",
+    "sources",
+    "laws",
+    "suspensionProfiles",
+    "holidayBindings",
+    "paths",
+    "releaseBinding",
+    "excludedPaths",
+    "preserved"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog.schema.json"
+    },
+    "formatVersion": {
+      "const": "1.0.0"
+    },
+    "dataKind": {
+      "const": "administrativeProcedureCatalog"
+    },
+    "catalogId": {
+      "const": "ch-cantonal-administrative-procedures"
+    },
+    "contractStatus": {
+      "enum": [
+        "proposed",
+        "approved",
+        "withdrawn"
+      ]
+    },
+    "runtimeActive": {
+      "const": false
+    },
+    "contractDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "on"
+      ],
+      "properties": {
+        "id": {
+          "const": "DEC-2026-032"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "approved",
+            "withdrawn"
+          ]
+        },
+        "on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "projectDecisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "decisionId",
+          "kind",
+          "status",
+          "on",
+          "by"
+        ],
+        "properties": {
+          "decisionId": {
+            "const": "DEC-2026-031"
+          },
+          "kind": {
+            "const": "projectLegalDecisionNotStatute"
+          },
+          "status": {
+            "const": "approved"
+          },
+          "on": {
+            "const": "2026-10-14"
+          },
+          "by": {
+            "const": "David Steimer"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "sourceReview",
+        "checkedOn"
+      ],
+      "properties": {
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceReview": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checkedOn": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "holidayResolutionPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "precedence",
+        "unknownHandling",
+        "federalSpecialHandling",
+        "exceptionHandling",
+        "fallbackMeaning"
+      ],
+      "properties": {
+        "precedence": {
+          "const": [
+            "applicableFederalSpecialLaw",
+            "verifiedExplicitProceduralException",
+            "authoritySeat"
+          ]
+        },
+        "unknownHandling": {
+          "const": "block"
+        },
+        "federalSpecialHandling": {
+          "const": "routeOnlyToSeparatelyQualifiedReleasedSpecialPath"
+        },
+        "exceptionHandling": {
+          "const": "requiresExplicitReviewedBinding"
+        },
+        "fallbackMeaning": {
+          "const": "onlyReviewedAndReleasedCantonalProcedurePaths"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "laws": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/law"
+      }
+    },
+    "suspensionProfiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/suspension"
+      }
+    },
+    "holidayBindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/holidayBinding"
+      }
+    },
+    "paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/path"
+      }
+    },
+    "releaseBinding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "releaseId",
+            "approval",
+            "targetComponentRefs",
+            "sourceReviewRef",
+            "referenceSuiteRef",
+            "pathEligibility",
+            "promotionRequirement"
+          ],
+          "properties": {
+            "status": {
+              "const": "candidate"
+            },
+            "releaseId": {
+              "type": "null"
+            },
+            "approval": {
+              "type": "null"
+            },
+            "targetComponentRefs": {
+              "type": "array",
+              "maxItems": 0
+            },
+            "sourceReviewRef": {
+              "type": "null"
+            },
+            "referenceSuiteRef": {
+              "type": "null"
+            },
+            "pathEligibility": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/candidatePathEligibility"
+              }
+            },
+            "promotionRequirement": {
+              "const": "rebindExactTargetReleaseBytesAndApproveBeforeActivation"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "releaseId",
+            "approval",
+            "targetComponentRefs",
+            "sourceReviewRef",
+            "referenceSuiteRef",
+            "pathEligibility",
+            "promotionRequirement"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "approved",
+                "withdrawn"
+              ]
+            },
+            "releaseId": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+            },
+            "approval": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "approvedBy",
+                "approvedOn",
+                "decisionRef"
+              ],
+              "properties": {
+                "approvedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "approvedOn": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "decisionRef": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "targetComponentRefs": {
+              "type": "array",
+              "minItems": 3,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "role",
+                  "contentId",
+                  "sha256"
+                ],
+                "properties": {
+                  "role": {
+                    "enum": [
+                      "calendar",
+                      "holidayCatalog"
+                    ]
+                  },
+                  "contentId": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]*$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                }
+              }
+            },
+            "sourceReviewRef": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "sha256"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]*$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            },
+            "referenceSuiteRef": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "sha256"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]*$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            },
+            "pathEligibility": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/releasedPathEligibility"
+              }
+            },
+            "promotionRequirement": {
+              "const": "rebindExactTargetReleaseBytesAndApproveBeforeActivation"
+            }
+          }
+        }
+      ]
+    },
+    "excludedPaths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/exclusion"
+      }
+    },
+    "preserved": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/preserved"
+      }
+    }
+  },
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "to": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceId",
+          "locator"
+        ],
+        "properties": {
+          "sourceId": {
+            "type": "string",
+            "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "physicalReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "contentId",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "calendar",
+            "holidayCatalog"
+          ]
+        },
+        "contentId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9./-]*\\.json$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "kind",
+        "url",
+        "versionDescription",
+        "reviewedOn",
+        "reviewBasis",
+        "locators"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+        },
+        "kind": {
+          "enum": [
+            "statute",
+            "officialMaterials",
+            "judgment"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "versionDescription": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewedOn": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "reviewBasis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locators": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "law": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lawId",
+        "canton",
+        "title",
+        "holidayPolicyReview",
+        "sourceRefs"
+      ],
+      "properties": {
+        "lawId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "canton": {
+          "enum": [
+            "ZH",
+            "BE",
+            "LU",
+            "UR",
+            "SZ",
+            "OW",
+            "NW",
+            "GL",
+            "ZG",
+            "FR",
+            "SO",
+            "BS",
+            "BL",
+            "SH",
+            "AR",
+            "AI",
+            "SG",
+            "GR",
+            "AG",
+            "TG",
+            "TI",
+            "VD",
+            "VS",
+            "NE",
+            "GE",
+            "JU"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "holidayPolicyReview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "explicitDeviation",
+            "sourceRefs",
+            "projectDecisionRef"
+          ],
+          "properties": {
+            "explicitDeviation": {
+              "const": "noneIdentifiedInReviewedGeneralLaw"
+            },
+            "sourceRefs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "sourceId",
+                  "locator"
+                ],
+                "properties": {
+                  "sourceId": {
+                    "type": "string",
+                    "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+                  },
+                  "locator": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "projectDecisionRef": {
+              "const": "DEC-2026-031"
+            }
+          }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "locator"
+            ],
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "periodId",
+        "start",
+        "end",
+        "inclusive"
+      ],
+      "properties": {
+        "periodId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "start": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "month",
+                "day",
+                "yearOffset"
+              ],
+              "properties": {
+                "type": {
+                  "const": "fixedMonthDay"
+                },
+                "month": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 12
+                },
+                "day": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 31
+                },
+                "yearOffset": {
+                  "enum": [
+                    0,
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "days",
+                "yearOffset"
+              ],
+              "properties": {
+                "type": {
+                  "const": "easterOffset"
+                },
+                "days": {
+                  "type": "integer",
+                  "minimum": -7,
+                  "maximum": 7
+                },
+                "yearOffset": {
+                  "const": 0
+                }
+              }
+            }
+          ]
+        },
+        "end": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "month",
+                "day",
+                "yearOffset"
+              ],
+              "properties": {
+                "type": {
+                  "const": "fixedMonthDay"
+                },
+                "month": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 12
+                },
+                "day": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 31
+                },
+                "yearOffset": {
+                  "enum": [
+                    0,
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "days",
+                "yearOffset"
+              ],
+              "properties": {
+                "type": {
+                  "const": "easterOffset"
+                },
+                "days": {
+                  "type": "integer",
+                  "minimum": -7,
+                  "maximum": 7
+                },
+                "yearOffset": {
+                  "const": 0
+                }
+              }
+            }
+          ]
+        },
+        "inclusive": {
+          "const": true
+        }
+      }
+    },
+    "suspension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "suspensionProfileId",
+        "lawId",
+        "periods",
+        "sourceRefs"
+      ],
+      "properties": {
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "lawId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "periods": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/$defs/period"
+          }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "locator"
+            ],
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "duration": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "value",
+            "overridable"
+          ],
+          "properties": {
+            "kind": {
+              "const": "statutoryDays"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 365
+            },
+            "overridable": {
+              "const": false
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "minimum",
+            "maximum",
+            "boundMeaning"
+          ],
+          "properties": {
+            "kind": {
+              "const": "authorityOrderedDays"
+            },
+            "minimum": {
+              "const": 1
+            },
+            "maximum": {
+              "const": 365
+            },
+            "boundMeaning": {
+              "const": "technicalSafetyLimitNotLegalMaximum"
+            }
+          }
+        }
+      ]
+    },
+    "path": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pathId",
+        "researchRef",
+        "lawId",
+        "action",
+        "stages",
+        "duration",
+        "suspensionProfileId",
+        "holidayBindingId",
+        "urgencyPolicy",
+        "endShiftPolicy",
+        "endShiftGuard",
+        "qualification",
+        "temporalBinding",
+        "sourceRefs",
+        "revision"
+      ],
+      "properties": {
+        "pathId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "researchRef": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lawId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "action": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "stages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "administration",
+              "administrativeAppeal",
+              "court"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "duration": {
+          "$ref": "#/$defs/duration"
+        },
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "holidayBindingId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "urgencyPolicy": {
+          "enum": [
+            "notApplicable",
+            "explicitGRJudicialUrgencyOrder"
+          ]
+        },
+        "endShiftPolicy": {
+          "const": "nextWorkingDay"
+        },
+        "endShiftGuard": {
+          "enum": [
+            "none",
+            "blockWhenEnteringApplicableSuspension"
+          ]
+        },
+        "qualification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "delivery",
+            "authorityLevel",
+            "generalRoute",
+            "specialLaw",
+            "fixedEndDate",
+            "deviatingStart",
+            "evidenceAdvance"
+          ],
+          "properties": {
+            "delivery": {
+              "const": "qualifiedActualDelivery"
+            },
+            "authorityLevel": {
+              "const": "cantonal"
+            },
+            "generalRoute": {
+              "const": "qualified"
+            },
+            "specialLaw": {
+              "const": "excluded"
+            },
+            "fixedEndDate": {
+              "const": false
+            },
+            "deviatingStart": {
+              "const": false
+            },
+            "evidenceAdvance": {
+              "const": false
+            }
+          }
+        },
+        "temporalBinding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "caseCoverage",
+            "calculationCoverage",
+            "sourceCoverage",
+            "normVersionCoverage",
+            "evaluation",
+            "futureNormAssumption"
+          ],
+          "properties": {
+            "caseCoverage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "to": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                }
+              }
+            },
+            "calculationCoverage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "to": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                }
+              }
+            },
+            "sourceCoverage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "to": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                }
+              }
+            },
+            "evaluation": {
+              "const": "eachEvaluatedDayIncludingEndShift"
+            },
+            "normVersionCoverage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "to": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                }
+              }
+            },
+            "futureNormAssumption": {
+              "const": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+            }
+          }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "locator"
+            ],
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "holidayBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "holidayBindingId",
+        "lawId",
+        "authoritySeatCanton",
+        "authorityLevel",
+        "anchor",
+        "physicalBaseline",
+        "legalBinding"
+      ],
+      "properties": {
+        "holidayBindingId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "lawId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "authoritySeatCanton": {
+          "enum": [
+            "ZH",
+            "BE",
+            "LU",
+            "UR",
+            "SZ",
+            "OW",
+            "NW",
+            "GL",
+            "ZG",
+            "FR",
+            "SO",
+            "BS",
+            "BL",
+            "SH",
+            "AR",
+            "AI",
+            "SG",
+            "GR",
+            "AG",
+            "TG",
+            "TI",
+            "VD",
+            "VS",
+            "NE",
+            "GE",
+            "JU"
+          ]
+        },
+        "authorityLevel": {
+          "const": "cantonal"
+        },
+        "anchor": {
+          "const": "authoritySeat"
+        },
+        "physicalBaseline": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "releaseId",
+            "calendarId",
+            "projectionId",
+            "references",
+            "eligibilityMeaning"
+          ],
+          "properties": {
+            "releaseId": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*\\.[0-9]+$"
+            },
+            "calendarId": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "projectionId": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "references": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "role",
+                  "contentId",
+                  "path",
+                  "sha256"
+                ],
+                "properties": {
+                  "role": {
+                    "enum": [
+                      "calendar",
+                      "holidayCatalog"
+                    ]
+                  },
+                  "contentId": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9-]*$"
+                  },
+                  "path": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9][a-z0-9./-]*\\.json$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                }
+              },
+              "maxItems": 3
+            },
+            "eligibilityMeaning": {
+              "const": "physicalSourceOnlyNotFederalProcedurePermission"
+            }
+          }
+        },
+        "legalBinding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sourceRefs",
+            "projectDecisionRef",
+            "roleUnion",
+            "partyOrRepresentativeRequired"
+          ],
+          "properties": {
+            "sourceRefs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "sourceId",
+                  "locator"
+                ],
+                "properties": {
+                  "sourceId": {
+                    "type": "string",
+                    "pattern": "^(SRC|JUD)-[A-Z0-9-]+$"
+                  },
+                  "locator": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "projectDecisionRef": {
+              "const": "DEC-2026-031"
+            },
+            "roleUnion": {
+              "const": false
+            },
+            "partyOrRepresentativeRequired": {
+              "const": false
+            }
+          }
+        }
+      }
+    },
+    "exclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exclusionId",
+        "scope",
+        "reason"
+      ],
+      "properties": {
+        "exclusionId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "preserved": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "candidatePathEligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "pathId",
+        "pathSha256",
+        "holidayBindingId",
+        "holidayBindingSha256",
+        "suspensionProfileId",
+        "suspensionProfileSha256",
+        "caseCoverage",
+        "calculationCoverage",
+        "targetComponentRefs",
+        "sourceReviewRef",
+        "referenceSuiteRef",
+        "pathRevision"
+      ],
+      "properties": {
+        "status": {
+          "const": "candidate"
+        },
+        "pathId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "pathSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "holidayBindingId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "holidayBindingSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "suspensionProfileSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "caseCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "calculationCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "targetComponentRefs": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "sourceReviewRef": {
+          "type": "null"
+        },
+        "referenceSuiteRef": {
+          "type": "null"
+        },
+        "pathRevision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "releasedPathEligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "pathId",
+        "pathSha256",
+        "holidayBindingId",
+        "holidayBindingSha256",
+        "suspensionProfileId",
+        "suspensionProfileSha256",
+        "caseCoverage",
+        "calculationCoverage",
+        "targetComponentRefs",
+        "sourceReviewRef",
+        "referenceSuiteRef",
+        "pathRevision"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "approved",
+            "withdrawn"
+          ]
+        },
+        "pathId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "pathSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "holidayBindingId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "holidayBindingSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "suspensionProfileId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "suspensionProfileSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "caseCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "calculationCoverage": {
+          "$ref": "#/$defs/interval"
+        },
+        "targetComponentRefs": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "contentId",
+              "sha256"
+            ],
+            "properties": {
+              "role": {
+                "enum": [
+                  "calendar",
+                  "holidayCatalog"
+                ]
+              },
+              "contentId": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          }
+        },
+        "sourceReviewRef": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "sha256"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "referenceSuiteRef": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "sha256"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "pathRevision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "contractStatus": {
+            "const": "proposed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "contractDecision": {
+            "properties": {
+              "status": {
+                "const": "proposed"
+              },
+              "on": {
+                "type": "null"
+              }
+            }
+          },
+          "releaseBinding": {
+            "properties": {
+              "status": {
+                "const": "candidate"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "contractStatus": {
+            "const": "approved"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "contractDecision": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              },
+              "on": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "contractStatus": {
+            "const": "withdrawn"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "contractDecision": {
+            "properties": {
+              "status": {
+                "const": "withdrawn"
+              },
+              "on": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
+          "releaseBinding": {
+            "properties": {
+              "status": {
+                "const": "withdrawn"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "releaseBinding": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "contractStatus": {
+            "const": "approved"
+          },
+          "releaseBinding": {
+            "properties": {
+              "pathEligibility": {
+                "items": {
+                  "properties": {
+                    "status": {
+                      "const": "approved"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "releaseBinding": {
+            "properties": {
+              "status": {
+                "const": "withdrawn"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "releaseBinding": {
+            "properties": {
+              "pathEligibility": {
+                "items": {
+                  "properties": {
+                    "status": {
+                      "const": "withdrawn"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

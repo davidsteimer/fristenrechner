@@ -1,0 +1,92 @@
+{
+  "kind": "mvp09-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp09-2026-10-18/recovery-roundtrip/verification.json",
+  "selectedFields": [
+    "kind",
+    "startedAt",
+    "status",
+    "authority",
+    "normalPackage",
+    "recoveryPackage",
+    "functionalSequence",
+    "cases",
+    "limitation",
+    "subsequentRealMvp09PackageMustExceed",
+    "installationAuthorized",
+    "actualDeploymentPerformed",
+    "publicationAuthorized",
+    "browserDataResetPerformed",
+    "steps",
+    "finishedAt"
+  ],
+  "omittedTopLevelFields": [
+    "stage",
+    "inputs",
+    "archivedFiles"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp09-actual-package-recovery-roundtrip",
+    "startedAt": "2026-10-18T21:33:50.429Z",
+    "status": "passed",
+    "authority": {
+      "path": "outputs/release-mvp09-2026-10-18/r09b-execution-approval.json",
+      "sha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3"
+    },
+    "normalPackage": {
+      "path": "outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-0.9.0.0.sppkg",
+      "byteLength": 327130,
+      "sha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331"
+    },
+    "recoveryPackage": {
+      "path": "outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-recovery-0.9.0.1.sppkg",
+      "byteLength": 311609,
+      "sha256": "08c5e67e535cd3e04d962698e7dcb6bbe989f098d75f2b21aebe3226d95db94d"
+    },
+    "functionalSequence": [
+      "MVP09 0.9.0.0 / Format9",
+      "MVP08 recovery 0.9.0.1 / Format8",
+      "MVP09 0.9.0.0 / own cached Format9"
+    ],
+    "cases": [
+      "LU administrative V5",
+      "ZG administrative V5",
+      "AR five-day administrative V5",
+      "corrupt V5 slot",
+      "future V5 slot",
+      "V5 reset marker",
+      "compatible federal V5"
+    ],
+    "limitation": "Real unchanged AMD code with simulated React hooks, IndexedDB, browser storage and byte transport. Not an M365 installation, browser DOM or live downgrade. The last package reload proves code/data compatibility, not permission or ability to reinstall a lower version.",
+    "subsequentRealMvp09PackageMustExceed": "0.9.0.1",
+    "installationAuthorized": false,
+    "actualDeploymentPerformed": false,
+    "publicationAuthorized": false,
+    "browserDataResetPerformed": false,
+    "steps": [
+      {
+        "id": "actual-package-roundtrip",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=1",
+          "--test-timeout=60000",
+          "recovery-mvp09-roundtrip/lu.test.cjs",
+          "recovery-mvp09-roundtrip/zg.test.cjs",
+          "recovery-mvp09-roundtrip/ar.test.cjs",
+          "recovery-mvp09-roundtrip/corrupt.test.cjs",
+          "recovery-mvp09-roundtrip/future.test.cjs",
+          "recovery-mvp09-roundtrip/reset.test.cjs",
+          "recovery-mvp09-roundtrip/legacy.test.cjs"
+        ],
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-roundtrip-IAQ8vd/roundtrip.log",
+        "sha256": "542e6bedb8716bb9f191a724189544b48b03baf6f8eaa52f1f8a8c18eed3e20d",
+        "tests": 7
+      }
+    ],
+    "finishedAt": "2026-10-18T21:36:22.744Z"
+  }
+}

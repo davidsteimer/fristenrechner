@@ -1,0 +1,105 @@
+{
+  "kind": "mvp09-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp09-2026-10-18/source-review-verification.json",
+  "selectedFields": [
+    "verificationId",
+    "checkedOn",
+    "startedAt",
+    "completedAt",
+    "technicalValidationPassed",
+    "humanApproval",
+    "sourceReleaseApproved",
+    "dataPromotionApproved",
+    "publicationApproved",
+    "productDataChanged",
+    "deploymentPerformed",
+    "counts",
+    "tests",
+    "humanReadableReport",
+    "localReportLinksChecked",
+    "limitations"
+  ],
+  "omittedTopLevelFields": [
+    "acceptedArchive",
+    "bindings"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "verificationId": "MVP09-R09A2-LOCAL-VERIFICATION-20261018",
+    "checkedOn": "2026-10-18",
+    "startedAt": "2026-10-18T20:34:32.380Z",
+    "completedAt": "2026-10-18T20:34:35.022Z",
+    "technicalValidationPassed": true,
+    "humanApproval": false,
+    "sourceReleaseApproved": false,
+    "dataPromotionApproved": false,
+    "publicationApproved": false,
+    "productDataChanged": false,
+    "deploymentPerformed": false,
+    "counts": {
+      "sourceIds": 251,
+      "withFreshEvidence": 192,
+      "reusedWithoutFreshEvidence": 59,
+      "withExplicitReuse": 251,
+      "outcomes": {
+        "unchanged": 249,
+        "unclear": 2
+      },
+      "groups": {
+        "baseline": {
+          "sourceIds": 77,
+          "withFreshEvidence": 67,
+          "reusedWithoutFreshEvidence": 10,
+          "withExplicitReuse": 77,
+          "outcomes": {
+            "unchanged": 77
+          }
+        },
+        "calendar": {
+          "sourceIds": 155,
+          "withFreshEvidence": 106,
+          "reusedWithoutFreshEvidence": 49,
+          "withExplicitReuse": 155,
+          "outcomes": {
+            "unchanged": 153,
+            "unclear": 2
+          }
+        },
+        "administrative": {
+          "sourceIds": 19,
+          "withFreshEvidence": 19,
+          "reusedWithoutFreshEvidence": 0,
+          "withExplicitReuse": 19,
+          "outcomes": {
+            "unchanged": 19
+          }
+        }
+      },
+      "uniqueBoundEvidenceFiles": 784,
+      "protectedFilesUnchanged": 624,
+      "referenceEdges": 2136,
+      "newReferenceEdges": 58
+    },
+    "tests": {
+      "command": "node --test tests/governance/ap23e3-acceptance.test.mjs tests/governance/mvp09-source-inventory.test.mjs tests/governance/mvp09-source-coverage.test.mjs",
+      "node": "v22.23.2",
+      "tests": 68,
+      "pass": 68,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "logPath": "outputs/release-mvp09-2026-10-18/source-review-tests.txt"
+    },
+    "humanReadableReport": "docs/fachrecht/quellenabgleich-mvp09.md",
+    "localReportLinksChecked": 6,
+    "limitations": [
+      "Evidence integrity and coverage are not legal or human acceptance.",
+      "Fresh content, version-screen evidence and historical reuse remain distinguishable.",
+      "No product regression has been relabelled as newly executed in A2.",
+      "No product data, builds, pins, commits, uploads, external writes or deployments."
+    ]
+  }
+}

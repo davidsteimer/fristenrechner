@@ -6,9 +6,10 @@ import { MessageBar, MessageBarType, Spinner } from '@fluentui/react';
 import { ReleaseService } from '../../../core/ReleaseService';
 import { getProviderCacheIdentity } from '../../../core/cacheIdentity';
 import type { IReleaseActivationResult, IValidatedRelease } from '../../../core/types';
-import { createCalculatorRuntime, hasMatchingFormat8Runtime, type CalculationData } from '../../../product/core';
+import { createCalculatorRuntime, hasMatchingFormat8Runtime, hasMatchingFormat9Runtime, type CalculationData } from '../../../product/core';
 import type { BoundCalendarRuntime } from '../../../product/core/calendarResolution';
 import type { ParsedFormat8Data } from '../../../product/core/releaseFormat8';
+import type { ParsedFormat9Data } from '../../../product/core/releaseFormat9';
 import { FristenrechnerApp } from '../../../product/ui';
 import '../../../product/ui/styles.module.scss';
 import styles from './Fristenrechner.module.scss';
@@ -19,7 +20,7 @@ type RuntimeStatus = 'loading' | 'local' | 'ready' | 'fallback' | 'error';
 interface IFristenrechnerState {
   readonly calculationData?: CalculationData;
   readonly calendarRuntime?: BoundCalendarRuntime;
-  readonly administrativeContext?: ParsedFormat8Data;
+  readonly administrativeContext?: ParsedFormat8Data | ParsedFormat9Data;
   readonly loadedConfigurationKey?: string;
   readonly manifestSha256?: string;
   readonly message?: string;
@@ -195,11 +196,15 @@ export default class Fristenrechner extends React.Component<
     // Revalidate network bytes first. An unchanged, fully qualified cache-to-
     // network transition must not replace the administrative identity and
     // reset input entered while the network request was still pending.
-    if (runtime.data.formatVersion === '8.0.0' && this.isCurrentConfiguration()
+    if (['8.0.0', '9.0.0'].includes(runtime.data.formatVersion) && this.isCurrentConfiguration()
       && this.state.loadedConfigurationKey === this.props.configurationKey
       && this.state.manifestSha256 === release.manifestSha256
       && this.state.calculationData
-      && hasMatchingFormat8Runtime(this.state.calculationData, this.state.calendarRuntime, this.state.administrativeContext)) {
+      && (runtime.data.formatVersion === '9.0.0'
+        ? hasMatchingFormat9Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext as ParsedFormat9Data | undefined)
+        : hasMatchingFormat8Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext as ParsedFormat8Data | undefined))) {
       return { calculationData: this.state.calculationData, calendarRuntime: this.state.calendarRuntime,
         administrativeContext: this.state.administrativeContext, manifestSha256: release.manifestSha256 };
     }

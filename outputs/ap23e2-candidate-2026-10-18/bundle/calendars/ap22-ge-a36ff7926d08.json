@@ -1,0 +1,365 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-ge-a36ff7926d08",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "GE"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-GE-LJF-J145-19910101",
+      "sourceType": "officialDossier",
+      "title": "Loi sur les jours fériés, LJF",
+      "authority": "CH-GE",
+      "url": "https://silgeneve.ch/legis/data/rsg_j1_45.htm",
+      "documentVersionDate": "1991-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-ASCENSION-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. d"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-CHRISTMAS-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. h"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-EASTER-MONDAY-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-GENEVA-FAST-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-GENEVA-FAST",
+      "labels": {
+        "de": "Genfer Bettag",
+        "fr": "Jeûne genevois"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. g und Fussnote a"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOffsetDays",
+        "month": 9,
+        "offsetDays": 4,
+        "isoWeekday": 7,
+        "occurrence": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-GENEVA-FAST"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-GOOD-FRIDAY-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-NATIONAL-DAY-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. f"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-NEW-YEAR-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. a"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-RESTORATION-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-RESTORATION",
+      "labels": {
+        "de": "Wiederherstellung der Republik",
+        "fr": "Restauration de la République"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. i"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 31
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-RESTORATION"
+      }
+    },
+    {
+      "ruleId": "GE-CAL-GE-CAL-DAY-WHIT-MONDAY-A36FF7926D08ECF0",
+      "calendarId": "ap22-ge-a36ff7926d08",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GE"
+      },
+      "labelKey": "holiday.ge.GE-CAL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GE-LJF-J145-19910101",
+          "locator": "Art. 1 Abs. 1 Bst. e"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GE-CAL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-a36ff7926d08ecf0",
+    "sourceHash": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+  }
+}

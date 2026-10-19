@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-// Actual minified normal-entry browser assets, not a test re-bundle.
+// Immutable published MVP08 browser ZIP. Historical coverage never rebuilds today's entry.
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -9,19 +10,36 @@ import { before, test } from 'node:test';
 import { promisify } from 'node:util';
 const require = createRequire(import.meta.url);
 const { JSDOM } = require('jsdom');
-const output = resolve('.work/public-app');
+const archive = resolve('outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-steimer-web.zip');
+const archiveSha256 = '0abbc23d691835e5b04b64975140afb36c4bfa89482ff872c0c76188673f4176';
+const archivedFiles = new Map<string, string>();
+function archivedText(name: string): string {
+  const value = archivedFiles.get(name.replace(/^\.\//, ''));
+  assert.notEqual(value, undefined, `Missing bound historical ZIP entry ${name}`);
+  return value!;
+}
 const exportDirectory = resolve('.work/mvp08-web-exports');
 const releaseId = '2026-10-15-mvp-08-approved.1';
 let manifest: any, javascript: string;
 before(async () => {
-  await promisify(execFile)(process.execPath, ['scripts/build-public-app.mjs'], {
-    cwd: process.cwd(), env: { ...process.env, FRISTENRECHNER_DATA_CANDIDATE: '' }, maxBuffer: 8 * 1024 * 1024 });
-  manifest = JSON.parse(await readFile(resolve(output, 'build-manifest.json'), 'utf8'));
-  javascript = await readFile(resolve(output, manifest.assets.javascript), 'utf8');
+  assert.equal(createHash('sha256').update(await readFile(archive)).digest('hex'), archiveSha256);
+  const execute = promisify(execFile);
+  const { stdout: listing } = await execute('unzip', ['-Z1', archive], { encoding: 'utf8' });
+  const names = listing.trim().split('\n');
+  assert.equal(new Set(names).size, names.length);
+  assert.equal(names.length, 12);
+  for (const name of names) {
+    assert.match(name, /^[a-zA-Z0-9._/-]+$/);
+    assert.ok(!name.startsWith('/') && !name.split('/').includes('..'));
+    const { stdout } = await execute('unzip', ['-p', archive, name], { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
+    archivedFiles.set(name, stdout);
+  }
+  manifest = JSON.parse(archivedText('build-manifest.json'));
+  javascript = archivedText(manifest.assets.javascript);
   await mkdir(exportDirectory, { recursive: true });
 });
 async function page(seed?: Record<string, string>): Promise<any> {
-  const dom = new JSDOM(await readFile(resolve(output, 'index.html'), 'utf8'), {
+  const dom = new JSDOM(archivedText('index.html'), {
     url: 'https://mvp08.invalid/fristenrechner/?qa=untrusted&candidate=ap23d3', pretendToBeVisual: true, runScripts: 'outside-only' });
   const { window } = dom;
   window.TextEncoder = TextEncoder; window.TextDecoder = TextDecoder; window.Blob = Blob;
@@ -33,7 +51,7 @@ async function page(seed?: Record<string, string>): Promise<any> {
   window.HTMLAnchorElement.prototype.click = function () { downloads.push(this.download); };
   for (const [key, value] of Object.entries(seed ?? {})) window.localStorage.setItem(key, value);
   for (const asset of [manifest.assets.vendors.react, manifest.assets.vendors.reactDom, manifest.assets.vendors.fluentUiReact])
-    window.eval(await readFile(resolve(output, asset), 'utf8'));
+    window.eval(archivedText(asset));
   window.eval(javascript);
   // Fluent UI MessageBar and dropdown labels complete their mount on animation frames.
   await new Promise(resolve => window.requestAnimationFrame(() => window.requestAnimationFrame(resolve)));
@@ -90,12 +108,12 @@ async function exportCalendar(p: any, label: string, date: string, nextDate: str
   if (admin) { assert.ok(unfolded.includes(`releaseId: ${releaseId}`)); assert.ok(unfolded.includes('pathId: ti-80-30')); }
   await writeFile(resolve(exportDirectory, `${label}.ics`), content, 'utf8');
 }
-test('MVP08 normal static entry contains the approved runtime, no QA activation and unchanged hosting bytes', async () => {
+test('historical byte-bound MVP08 static entry contains the approved runtime, no QA activation and unchanged hosting bytes', async () => {
   assert.equal(manifest.version, '0.8.0'); assert.equal(manifest.dataReleaseId, releaseId);
   assert.notEqual(manifest.status, 'candidate');
   assert.ok(javascript.includes(releaseId));
   assert.doesNotMatch(javascript, /qaPresets|SYNTHETIC AMD TEST|\bfetch\s*\(|new XMLHttpRequest/);
-  assert.equal(await readFile(resolve(output, '.htaccess'), 'utf8'), await readFile('public-app/.htaccess', 'utf8'));
+  assert.equal(archivedText('.htaccess'), await readFile('public-app/.htaccess', 'utf8'));
 });
 test('actual static DE StPO export and immediate invalidation on input change', async () => {
   const p = await page();

@@ -56,6 +56,8 @@ OFFICIAL_HOSTS = {
     "bstger.weblaw.ch", "www.bstger.ch", "bvger.weblaw.ch", "www.bvger.ch",
     # R08-B: official GR judgment originals checked in R08-A2, not the mirror.
     "entscheidsuche.gr.ch",
+    # R09-B supplement: exact AR materials host checked in accepted R09-A2.
+    "ar.ch",
 }
 IDENTIFIER_KEYS = (
     "ruleId",

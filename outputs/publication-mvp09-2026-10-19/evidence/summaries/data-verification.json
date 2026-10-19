@@ -1,0 +1,255 @@
+{
+  "kind": "mvp09-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp09-2026-10-18/data-verification.json",
+  "selectedFields": [
+    "kind",
+    "releaseId",
+    "manifestSha256",
+    "sourceApproval",
+    "executionApproval",
+    "passed",
+    "inputsUnchanged",
+    "sourcesAndHistoricalEvidenceReverified",
+    "inputFiles",
+    "steps",
+    "sourceReviewAccepted",
+    "runtimeFiles",
+    "localDataCommitPerformed",
+    "externalDeploymentAuthorized",
+    "installationPerformed",
+    "uploaded",
+    "published"
+  ],
+  "omittedTopLevelFields": [
+    "inputs"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp09IndependentLocalDataVerification",
+    "releaseId": "2026-10-18-mvp-09-approved.1",
+    "manifestSha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265",
+    "sourceApproval": {
+      "approvalId": "2026-10-18-mvp-09-source-approval.1",
+      "evidenceFiles": 803,
+      "archivedInputs": 21,
+      "permissions": {
+        "sourceReviewApproved": true,
+        "buildProposalPreparationAuthorized": true,
+        "localDataPromotionAuthorized": false,
+        "definitiveLocalBuildAuthorized": false,
+        "localCommitAuthorized": false,
+        "installationAuthorized": false,
+        "publicationAuthorized": false,
+        "hostingChangesAuthorized": false,
+        "operatingApproval": false,
+        "m365PermissionChangesAuthorized": false,
+        "testAppCleanupAuthorized": false
+      },
+      "approvalSha256": "4a05e80c0324573f83c88463ba78d20970d0d2152b76f15766bd848bc13a9c68",
+      "approvalByteLength": 208405
+    },
+    "executionApproval": {
+      "path": "outputs/release-mvp09-2026-10-18/r09b-execution-approval.json",
+      "sha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3"
+    },
+    "passed": true,
+    "inputsUnchanged": true,
+    "sourcesAndHistoricalEvidenceReverified": true,
+    "inputFiles": 176,
+    "steps": [
+      {
+        "id": "approved-reader",
+        "command": [
+          "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+          "--import",
+          "tsx",
+          "scripts/promote-mvp09-release.ts"
+        ],
+        "startedAt": "2026-10-18T20:52:54.769Z",
+        "finishedAt": "2026-10-18T20:53:01.425Z",
+        "exitCode": 0,
+        "log": {
+          "path": "outputs/release-mvp09-2026-10-18/data-approved-reader.log",
+          "byteLength": 2280,
+          "sha256": "13405b5d0d0eed329f147b33a1e1d8c63daa7ba305a85d502b20635c1249b194"
+        },
+        "passed": true,
+        "result": {
+          "kind": "mvp09LocalDataPromotion",
+          "preparedOn": "2026-10-18",
+          "releaseId": "2026-10-18-mvp-09-approved.1",
+          "dataStatus": "approved",
+          "publicationApproved": false,
+          "deploymentApproved": false,
+          "productionActivation": false,
+          "sourceReviewAccepted": true,
+          "implementationAccepted": true,
+          "manifestSha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265",
+          "candidateManifestSha256": "4c9f6025b7e29f577f760d2c9381066a176486983e0bae6997ac8738661ffa31",
+          "candidatePath": "outputs/ap23e3-candidate-2026-10-18/bundle",
+          "candidateReleaseId": "2026-10-18-ap23e3-reference.1",
+          "sourceReviewRef": {
+            "reviewId": "MVP09-SOURCE-APPROVAL-20261018",
+            "sha256": "4a05e80c0324573f83c88463ba78d20970d0d2152b76f15766bd848bc13a9c68"
+          },
+          "localBuildApproval": {
+            "path": "outputs/release-mvp09-2026-10-18/r09b-execution-approval.json",
+            "sha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3"
+          },
+          "sourceGovernance": {
+            "path": "outputs/release-mvp09-2026-10-18/source-governance-adoption.json",
+            "sha256": "59157237a1a15c86238e675c61f6f7c08984a57927704bc12059b8eb7670ca6e"
+          },
+          "sourceVersionBridges": {
+            "path": "outputs/release-mvp09-2026-10-18/source-version-bridges.json",
+            "sha256": "3f79a6e6d1b934438137420f624c531c288873ac9305212ee905239a8bf9d4ca"
+          },
+          "administrativeReferenceSuite": {
+            "path": "outputs/release-mvp09-2026-10-18/administrative-reference-suite.json",
+            "sha256": "a16be9c4cab6f886983cbe948fff15eaf32af73e48a6031c25f4db2f4c5156d5"
+          },
+          "counts": {
+            "artifacts": 41,
+            "runtimeFiles": 42,
+            "unchangedArtifacts": 6,
+            "calendars": 32,
+            "catalogRules": 479,
+            "supplementalRules": 12,
+            "provenanceDecisions": 198,
+            "terminalBindings": 104,
+            "federalRules": 44,
+            "cantonalBindings": 50,
+            "approvedSocialEligibility": 50,
+            "administrativePaths": 25,
+            "tiPaths": 5,
+            "grPaths": 7,
+            "luPaths": 4,
+            "zgPaths": 4,
+            "arPaths": 5,
+            "administrativeTargetComponents": 7,
+            "manifestSources": 128
+          },
+          "legalContentUnchanged": true,
+          "historicalSourceMetadataUnchanged": true,
+          "validation": {
+            "approvedReader": "passed",
+            "narrowSemanticDelta": "passed",
+            "independentValidator": "requiredBeforeDataCommit"
+          }
+        }
+      },
+      {
+        "id": "independent-validator",
+        "command": [
+          "<REPO_ROOT>/.venv/bin/python",
+          "tests/data/validate_mvp09_release.py",
+          "data/releases/2026-10-18-mvp-09-approved.1"
+        ],
+        "startedAt": "2026-10-18T20:53:01.425Z",
+        "finishedAt": "2026-10-18T20:53:03.285Z",
+        "exitCode": 0,
+        "log": {
+          "path": "outputs/release-mvp09-2026-10-18/data-independent-validator.log",
+          "byteLength": 1019,
+          "sha256": "7b90ec440d29cf8130eb73a692a27bac19b069c6096fa0dfebb6874204466792"
+        },
+        "passed": true,
+        "result": {
+          "status": "passed",
+          "releaseId": "2026-10-18-mvp-09-approved.1",
+          "manifestSha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265",
+          "runtimeFiles": 42,
+          "validatedArtifacts": 41,
+          "unchangedNormativeFiles": 6,
+          "calendars": 32,
+          "catalogRules": 479,
+          "additionalSoProceduralRules": 12,
+          "provenanceDecisions": 198,
+          "terminalBindings": 104,
+          "unchangedSocialRules": 44,
+          "reboundBernSocialPermissions": 50,
+          "administrativePaths": 25,
+          "tiPaths": 5,
+          "grPaths": 7,
+          "luPaths": 4,
+          "zgPaths": 4,
+          "arPaths": 5,
+          "sourceApprovalSha256": "4a05e80c0324573f83c88463ba78d20970d0d2152b76f15766bd848bc13a9c68",
+          "localBuildApprovalSha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3",
+          "historicalSourceMetadataPreserved": true,
+          "externalDeploymentAuthorized": false,
+          "registeredSources": 255,
+          "reviewedSources": 251,
+          "sourceEdges": 2136,
+          "newAdministrativeSourceEdges": 58,
+          "historicalProvenanceEdges": 713,
+          "sourceEvents": 7,
+          "retainedAmendingActs": 5,
+          "amendmentLawFamilies": 8,
+          "newNormDeltas": 0
+        }
+      },
+      {
+        "id": "public-data-tests",
+        "command": [
+          "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+          "--import",
+          "tsx",
+          "--test",
+          "tests/core/mvp09-promotion-delta.test.ts",
+          "tests/governance/mvp09-impact-mapping.test.mjs"
+        ],
+        "startedAt": "2026-10-18T20:53:03.285Z",
+        "finishedAt": "2026-10-18T20:53:03.552Z",
+        "exitCode": 0,
+        "log": {
+          "path": "outputs/release-mvp09-2026-10-18/data-public-data-tests.log",
+          "byteLength": 4274,
+          "sha256": "150a59c85ca05d21c5149bceeea257ac9a2f16e079f8db4c5c4f0b5d10916182"
+        },
+        "passed": true,
+        "counts": {
+          "tests": 24,
+          "pass": 24,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        }
+      },
+      {
+        "id": "independent-negative-tests",
+        "command": [
+          "<REPO_ROOT>/.venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests/data",
+          "-p",
+          "test_mvp09_promotion.py",
+          "-v"
+        ],
+        "startedAt": "2026-10-18T20:53:03.553Z",
+        "finishedAt": "2026-10-18T20:53:55.845Z",
+        "exitCode": 0,
+        "log": {
+          "path": "outputs/release-mvp09-2026-10-18/data-independent-negative-tests.log",
+          "byteLength": 8020,
+          "sha256": "bab71714eb958fe098fb32b5714d4a2872f8f315bdcde700b676b0bc5380db33"
+        },
+        "passed": true,
+        "tests": 62
+      }
+    ],
+    "sourceReviewAccepted": true,
+    "runtimeFiles": 42,
+    "localDataCommitPerformed": false,
+    "externalDeploymentAuthorized": false,
+    "installationPerformed": false,
+    "uploaded": false,
+    "published": false
+  }
+}

@@ -7,10 +7,12 @@ import { dirname, resolve } from 'node:path';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { describe, it } from 'node:test';
+import { createRequire } from 'node:module';
 
 const execFileAsync = promisify(execFile);
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const outputDirectory = resolve(repositoryRoot, '.work/public-app');
+const { JSDOM } = createRequire(import.meta.url)('jsdom');
 
 async function buildCandidate(candidate = '') {
   await execFileAsync(process.execPath, [resolve(repositoryRoot, 'scripts/build-public-app.mjs')], {
@@ -19,7 +21,7 @@ async function buildCandidate(candidate = '') {
   });
 }
 
-describe('Lokaler statischer Releasebuild für MVP 0.8, ohne P-Bereitstellung', () => {
+describe('Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung', () => {
   it('erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest', async () => {
     await buildCandidate();
 
@@ -27,8 +29,8 @@ describe('Lokaler statischer Releasebuild für MVP 0.8, ohne P-Bereitstellung', 
     const manifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
 
     assert.equal(manifest.application, 'fristenrechner-public');
-    assert.equal(manifest.version, '0.8.0');
-    assert.equal(manifest.dataReleaseId, '2026-10-15-mvp-08-approved.1');
+    assert.equal(manifest.version, '0.9.0');
+    assert.equal(manifest.dataReleaseId, '2026-10-18-mvp-09-approved.1');
     assert.notEqual(manifest.status, 'candidate');
     assert.equal(manifest.basePath, '/fristenrechner/');
     assert.match(manifest.assets.javascript, /^\.\/assets\/app-[A-Z0-9]+\.js$/);
@@ -61,7 +63,7 @@ describe('Lokaler statischer Releasebuild für MVP 0.8, ohne P-Bereitstellung', 
     assert.doesNotMatch(completeOutput, /\.map$/m);
     assert.doesNotMatch(javascript, /stpo-weekend|vrpg-special-gate|qaPresets/);
     assert.doesNotMatch(javascript, /\bfetch\s*\(|new XMLHttpRequest\b|new WebSocket\b|new EventSource\b/);
-    assert.match(javascript, /2026-10-15-mvp-08-approved\.1/);
+    assert.match(javascript, /2026-10-18-mvp-09-approved\.1/);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-dom-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/fluent-ui-MIT.txt'))).size > 0);
@@ -106,6 +108,7 @@ describe('Lokaler statischer Releasebuild für MVP 0.8, ohne P-Bereitstellung', 
 
   for (const candidate of ['ap17c', 'ap18c']) {
     it(`hält den historischen ${candidate}-Prüfkandidaten vom normalen Releasebuild getrennt`, async () => {
+      const normalManifestBefore = await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8');
       await buildCandidate(candidate);
       const candidateDirectory = resolve(repositoryRoot, `.work/public-${candidate}`);
       const manifest = JSON.parse(await readFile(resolve(candidateDirectory, 'build-manifest.json'), 'utf8'));
@@ -116,10 +119,35 @@ describe('Lokaler statischer Releasebuild für MVP 0.8, ohne P-Bereitstellung', 
       assert.equal(manifest.status, 'candidate');
       assert.equal(manifest.deployable, false);
       assert.ok(javascript.includes(manifest.dataReleaseId));
-      assert.doesNotMatch(javascript, /2026-10-15-mvp-08-approved\.1/);
+      // A shared Format-9 validator legitimately contains historical provenance
+      // identity. Its mere presence is not an active data pin. Check the exact
+      // historical entry plus the running minified page's displayed data source.
+      const entry = await readFile(resolve(repositoryRoot, `src/public-app/${candidate}-main.tsx`), 'utf8');
+      assert.match(entry, new RegExp(`import \\{ ${candidate}CandidateCalculationData \\} from '../release/${candidate}CandidateData'`));
+      assert.match(entry, new RegExp(`<FristenrechnerApp data=\\{${candidate}CandidateCalculationData\\}`));
+      assert.doesNotMatch(entry, /mvp08Runtime|mvp09Runtime|ap23e3Candidate|createFormat9CalculationData|URLSearchParams/);
+      const dom = new JSDOM(await readFile(resolve(candidateDirectory, 'index.html'), 'utf8'), {
+        url: `https://${candidate}.invalid/fristenrechner/`, pretendToBeVisual: true, runScripts: 'outside-only'
+      });
+      try {
+        const { window } = dom;
+        window.TextEncoder = TextEncoder;
+        window.TextDecoder = TextDecoder;
+        window.matchMedia = (query: string) => ({ matches: false, media: query, onchange: null,
+          addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {}, dispatchEvent: () => false });
+        for (const asset of [manifest.assets.vendors.react, manifest.assets.vendors.reactDom, manifest.assets.vendors.fluentUiReact]) {
+          window.eval(await readFile(resolve(candidateDirectory, asset), 'utf8'));
+        }
+        window.eval(javascript);
+        const status = window.document.querySelector('.fr-data-status');
+        assert.ok(status, 'Actual historical browser bundle must render a data status');
+        assert.match(status.textContent, new RegExp(manifest.dataReleaseId.replace('.', '\\.')));
+        assert.doesNotMatch(status.textContent, /2026-10-18-mvp-09-approved\.1|2026-10-18-ap23e3-reference\.1/);
+      } finally { dom.window.close(); }
+      assert.equal(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'), normalManifestBefore);
       const approvedManifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
-      assert.equal(approvedManifest.version, '0.8.0');
-      assert.equal(approvedManifest.dataReleaseId, '2026-10-15-mvp-08-approved.1');
+      assert.equal(approvedManifest.version, '0.9.0');
+      assert.equal(approvedManifest.dataReleaseId, '2026-10-18-mvp-09-approved.1');
     });
   }
 

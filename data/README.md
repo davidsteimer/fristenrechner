@@ -1,14 +1,14 @@
 # Regel- und Kalenderdaten
 
-## Aktueller Datenstand für MVP 0.8
+## Aktueller Datenstand für MVP 0.9
 
-Stand: 16. Oktober 2026. Der freigegebene Datenrelease [`2026-10-15-mvp-08-approved.1`](releases/2026-10-15-mvp-08-approved.1/manifest.json) ist lokal übernommen und auf den vier bestehenden E-/Q-Instanzen installiert. [Q-Abnahme](../docs/betrieb/abnahme-q-mvp08.md) und [E-/Q-Vollzug](../docs/betrieb/eq-vollzugsnachweis-mvp08.md) sind dokumentiert. GitHub- und P-Bereitstellung von MVP 0.8 bleiben davon getrennt. Öffentlich ist zuletzt MVP 0.7 dokumentiert.
+Stand: 19. Oktober 2026. [`2026-10-18-mvp-09-approved.1`](releases/2026-10-18-mvp-09-approved.1/manifest.json) ist auf den vier bestehenden E-/Q-Instanzen übernommen und [abgenommen](../docs/betrieb/abnahme-q-mvp09.md). Öffentlich bleibt zuletzt MVP 0.8 dokumentiert. Der neue lokale Datencommit `0ccc4b9178503ede051964149a4b17efab8d0cf9` ist noch nicht veröffentlicht oder öffentlich bytegeprüft.
 
-Manifest und Mindestconsumer verwenden Format `8.0.0`. Neu ist der [Kantonalverfahrenskatalog](releases/2026-10-15-mvp-08-approved.1/administrative-procedures/ch-cantonal-administrative-procedures.json) `1.0.0`. Regelkalender `3.0.0`, Feiertagskatalog `2.0.0`, Rechtsprofile `1.0.0`, Spezialregimekatalog `3.0.0` und Sozialverfahrenskatalog `2.0.0` behalten ihre Formate. 41 Nutzartefakte plus Manifest ergeben genau 42 Mirrordateien mit zusammen 2’425’056 Bytes. Die verbindlichen Prüfsummen stehen im [Releaseartefaktnachweis](../docs/betrieb/releaseartefakte-mvp-08.md).
+Manifest und Mindestconsumer verwenden `9.0.0`, der Verwaltungsverfahrenskatalog `2.0.0`. Alle übrigen Komponentenformate bleiben unverändert. Der Mirror umfasst 42 Dateien mit zusammen 2’508’592 Bytes. Manifest SHA-256: `3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265`. [Definitive Artefakte](../docs/betrieb/releaseartefakte-mvp-09.md).
 
-Der neue Katalog umfasst fünf Tessiner und sieben Bündner Verwaltungsverfahrenspfade. Die operative Abdeckung ist auf den 29. August 2026 bis 31. Dezember 2027 begrenzt und muss sämtliche berechnungsrelevanten Tage umfassen. Nicht modellierte Spezialkonstellationen bleiben gesperrt. Die TI-O2-Sperre betrifft den Übergang durch Endverschiebung in einen neuen Fristenstillstand. Die 44 nationalen Sozialregeln und 50 Berner Anbindungen bleiben auf ihre bestehende Freigabe für Bern und 2026–2027 begrenzt. Die schweizweiten Feiertagsbindungen sowie deren bestätigte Grenzen werden nicht pauschal erweitert. [Releasehinweise MVP 0.8](../docs/betrieb/release-notes-mvp08.md)
+MVP 0.9 umfasst 25 kantonale Verwaltungswege: TI fünf, GR sieben, LU vier, ZG vier und AR fünf. LU ist ab 27.09.2026, ZG und AR ab 29.08.2026 gedeckt, jeweils einschliesslich aller benötigten Berechnungstage bis 31.12.2027. Die bisherigen TI-/GR-Fenster und TI-O2 bleiben erhalten. AR-O1 sperrt die vorbehaltene Konstellation. Die 44 Sozialregeln und 50 BE-Anbindungen bleiben ausschliesslich für Bern und 2026–2027 freigegeben.
 
-Die [Quellenabnahme R08-A2](../docs/fachrecht/abnahme-quellen-mvp08.md), Datenfreigabe und Betriebsfreigaben sind eigenständige Nachweise. Historische Releases und Kandidaten bleiben unverändert. Die nachfolgenden Abschnitte halten deren damaligen Entwicklungs- und Freigabestand fest.
+Die Kalenderbindungen, Januargrenzen, AI-Behandlung, GR-/NE-Vorbehalte und der ergänzende Freiburger Praxisbeleg werden nicht erweitert. Eigenständiges kommunales Recht bleibt ausgeschlossen. [Releasehinweise](../docs/betrieb/release-notes-mvp09.md), [Quellenabnahme](../docs/fachrecht/abnahme-quellen-mvp09.md) und [Publikationspaket](../docs/betrieb/publikationspaket-mvp09.md) trennen Rechtsfreigabe, Betrieb und Öffentlichkeit.
 
 ## Historische Entwicklung
 

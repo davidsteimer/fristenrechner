@@ -1,6 +1,6 @@
 {
   "name": "fristenrechner-schweiz",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "description": "Hostneutraler Rechenkern und MVP-Oberfläche des Fristenrechners Schweiz",
   "license": "AGPL-3.0-only",
@@ -10,6 +10,10 @@
   },
   "packageManager": "npm@10.9.8",
   "scripts": {
+    "build:data:ap23e3:candidate": "node --import tsx scripts/build-ap23e3-candidate.ts --write",
+    "build:public:ap23e3": "node scripts/build-ap23e3-public.mjs",
+    "preview:ap23e3": "FRISTENRECHNER_DATA_CANDIDATE=ap23e3 PUBLIC_APP_PORT=8802 node scripts/public-app-server.mjs",
+    "test:ap23e3:spfx": "node scripts/build-ap23e3-spfx.mjs",
     "check:integrity:mvp08": "node scripts/verify-mvp08-public-integrity.mjs",
     "test:source-reviews:private:mvp08": "node scripts/run-standard-tests.mjs private-mvp08 && .venv/bin/python -m unittest discover -s tests/data -p test_mvp08_promotion.py",
     "build:artifacts:mvp08": "node scripts/build-mvp08-artifacts.mjs && .venv/bin/python scripts/prepare_mvp08_artifacts.py",

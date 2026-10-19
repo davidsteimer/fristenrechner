@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: actual recovery keeps AP5 and Format8 caches separate and rejects unknown provider fallback
+ok 1 - actual recovery keeps AP5 and Format8 caches separate and rejects unknown provider fallback
+  ---
+  duration_ms: 4020.3265
+  type: 'test'
+  ...
+# Subtest: actual recovery fails closed for Format9 rather than using unrelated Format8 cache
+ok 2 - actual recovery fails closed for Format9 rather than using unrelated Format8 cache
+  ---
+  duration_ms: 4258.393792
+  type: 'test'
+  ...
+# Subtest: MVP08 recovery protects LU V5 raw bytes through load, save and reset
+ok 3 - MVP08 recovery protects LU V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 3976.081791
+  type: 'test'
+  ...
+# Subtest: MVP08 recovery protects ZG V5 raw bytes through load, save and reset
+ok 4 - MVP08 recovery protects ZG V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 3881.808292
+  type: 'test'
+  ...
+# Subtest: MVP08 recovery protects AR V5 raw bytes through load, save and reset
+ok 5 - MVP08 recovery protects AR V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 3896.764417
+  type: 'test'
+  ...
+# Subtest: MVP08 recovery protects corrupt V5 raw bytes through load, save and reset
+ok 6 - MVP08 recovery protects corrupt V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 3831.834458
+  type: 'test'
+  ...
+# Subtest: MVP08 recovery protects future V5 raw bytes through load, save and reset
+ok 7 - MVP08 recovery protects future V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 3900.88375
+  type: 'test'
+  ...
+# Subtest: actual recovery and original MVP08 have identical Bundesprofile outcomes and traces
+ok 8 - actual recovery and original MVP08 have identical Bundesprofile outcomes and traces
+  ---
+  duration_ms: 8039.284125
+  type: 'test'
+  ...
+# Subtest: actual recovery has 0.9.0.1 package but MVP08 component, pin, identities, hosts and permissions
+ok 9 - actual recovery has 0.9.0.1 package but MVP08 component, pin, identities, hosts and permissions
+  ---
+  duration_ms: 5.546625
+  type: 'test'
+  ...
+# Subtest: actual recovery loads all 42 Format8 files and keeps the September reference and own cache
+ok 10 - actual recovery loads all 42 Format8 files and keeps the September reference and own cache
+  ---
+  duration_ms: 10921.566417
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 46932.366875

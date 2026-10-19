@@ -23,7 +23,7 @@ const bundle = await build({ stdin: { contents: `
           : args.path.endsWith('/cacheIdentity')
             ? `export function getProviderCacheIdentity(provider) { return JSON.stringify(provider.cacheConfiguration); }`
             : args.path.endsWith('/product/core')
-              ? `import {control} from 'ap23d3-host-test-control'; export function createCalculatorRuntime(release, options) {
+              ? `import {control} from 'ap23d3-host-test-control'; export const hasMatchingFormat9Runtime = () => false; export function createCalculatorRuntime(release, options) {
                   control.factories.push([release, options]); if (release.invalid) throw Error('invalid full Format8 context'); return release.runtime;
                 } export function hasMatchingFormat8Runtime(data, calendarRuntime, administrativeContext) {
                   return control.factories.some(([release]) => !release.invalid && release.runtime.data === data

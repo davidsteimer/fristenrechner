@@ -253,7 +253,7 @@ export function assertSocialProcedureCatalog(value: unknown): asserts value is S
 export function validateSocialCatalogReferences(catalog: SocialProcedureCatalog, data: CalculationData, artifactRefs: readonly ReleaseArtifactReference[] = data.releaseArtifactRefs ?? []): void {
   assertSocialProcedureCatalog(catalog);
   if ((catalog.formatVersion === '1.0.0' && data.formatVersion !== '5.0.0')
-    || (catalog.formatVersion === '2.0.0' && !['6.0.0', '7.0.0', '8.0.0'].includes(data.formatVersion))) fail('Social component and manifest version mismatch');
+    || (catalog.formatVersion === '2.0.0' && !['6.0.0', '7.0.0', '8.0.0', '9.0.0'].includes(data.formatVersion))) fail('Social component and manifest version mismatch');
   distinct(artifactRefs.map(r => `${r.role}:${r.contentId}`));
   for (const binding of catalog.cantonalBindings) {
     if (!data.profiles.has(binding.entryProfileId)) fail('Entry profile missing');

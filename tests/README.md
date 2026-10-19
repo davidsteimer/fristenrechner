@@ -1,31 +1,23 @@
 # Tests
 
-## Aktueller Prüfweg für MVP 0.8
+## Aktueller Prüfweg für MVP 0.9
 
-Stand: 16. Oktober 2026. Die folgenden Befehle prüfen den aktuellen Quell- und Datenstand. Die weiter unten beschriebenen AP- und Releaseabschnitte dokumentieren die jeweiligen historischen Testverträge und damaligen Testzahlen.
-
-Voraussetzungen sind Node.js 22, installierte npm-Abhängigkeiten und die Python-Umgebung gemäss [CONTRIBUTING](../CONTRIBUTING.md). Der gebundene Releasebau verwendet Node.js `22.23.2`. Nach `npm ci` und Einrichtung von `.venv` mit `requirements-data.txt`:
+Stand: 19. Oktober 2026. Node.js `22.23.2`, bestehende npm-Abhängigkeiten und die Python-Umgebung gemäss [CONTRIBUTING](../CONTRIBUTING.md). Nach eigener Einrichtung mit `npm ci` und `requirements-data.txt`:
 
 ```bash
 npm run typecheck
-npm run check:integrity:mvp08
+node scripts/verify-mvp09-public-integrity.mjs
 npm test
 npm run test:source-reviews
+node scripts/prepare-mvp09-public-evidence.mjs --verify
+node scripts/verify-mvp09-publication.mjs
 ```
 
-Die Integritätsprüfung liest 42 Runtime- und sieben Schemadateien. Sie benötigt weder private Quellenoriginale noch Gitmetadaten und ersetzt keine inhaltliche Rechtsprüfung. Produkt- und Governance-Tests dürfen ihre vorgesehenen temporären beziehungsweise lokalen Testausgaben erzeugen. `npm run check` baut zusätzlich UI und Webanwendung. Solche Läufe gehören in eine Arbeitskopie und sind kein Ersatz für die Prüfung bereits gebundener Releaseartefakte.
+Der Integritätsprüfer bindet 42 Runtime- und sieben Schemadateien. Der Publikationsprüfer benötigt die [konkrete Positivliste](../outputs/publication-mvp09-2026-10-19/publication-package.json). Öffentliche Nachweiskopien können ohne private Originale geprüft werden. Die vollständigen historischen Quellen-/Recovery-Audits bleiben privat. Keine dieser Prüfungen erteilt eine Freigabe oder erstellt einen Commit.
 
-Die [frische lokale Publikationsvorprüfung](../docs/betrieb/publikationsvorpruefung-mvp08.md) dokumentiert 2’541 bestandene Produkttests, 225 Node-Governance-Tests und 34 Python-Governance-Tests ohne übersprungene Fälle. Der Quellenvalidator prüfte zusätzlich acht Negativvarianten. Diese Zahlen bezeichnen den dort gebundenen Lauf, nicht eine Zusage für spätere Quellstände. Die tatsächlichen [E-/Q-Hostprüfungen](../docs/betrieb/eq-vollzugsnachweis-mvp08.md) und die [menschliche Q-Abnahme](../docs/betrieb/abnahme-q-mvp08.md) bleiben davon getrennt.
+Die [ursprüngliche R09-D-Vorprüfung](../docs/betrieb/publikationsvorpruefung-mvp09.md) bestand 2’671 Produkt-/UI-, 289 Node-Governance-, 42 Python- und acht Schema-Negativtests. Der spätere tatsächliche Exportlauf einschliesslich neuer Publikationstests wird separat im [Publikationspaket](../docs/betrieb/publikationspaket-mvp09.md) dokumentiert. Überlappende Gruppen werden nicht addiert. Bestehende Abhängigkeiten wurden für die lokalen Läufe wiederverwendet, kein frisches `npm ci` und kein neuer Liveclone behauptet.
 
-Die private Quellenprüfung `npm run test:source-reviews:private:mvp08` setzt die privaten Originalbelege voraus. Fehlende Originale werden nicht durch einen erfolgreichen öffentlichen Testlauf ersetzt. Auch der vollständige historische Recovery-Bau-/Archivnachweis bleibt ein lokaler privater Prüfweg.
-
-Der zusätzliche lesende Publikationsprüfer wird mit der finalen Positivliste im [Publikationspaket](../docs/betrieb/publikationspaket-mvp08.md) gebunden. Erst sobald `outputs/publication-mvp08-2026-10-16/publication-package.json` vorliegt, ist dieser zusätzliche Lauf ausführbar:
-
-```bash
-node scripts/verify-mvp08-publication.mjs
-```
-
-Er prüft den konkret ausgewählten öffentlichen Bestand, ohne Datenpromotion, Neubau oder Commit. Sein Ergebnis ist nicht mit einem vollständigen Audit ausgeschlossener privater Archive gleichzusetzen.
+Tests dürfen eigene Vorschau-/Testausgaben erstellen und gehören in eine Arbeitskopie. `npm run check` baut zusätzliche Vorschauen. Definitive Auslieferungsartefakte bleiben unverändert. [E-/Q-Nachweis](../docs/betrieb/eq-vollzugsnachweis-mvp09.md) und [menschliche Q-Abnahme](../docs/betrieb/abnahme-q-mvp09.md) sind davon getrennt.
 
 ## Historische Testverträge
 

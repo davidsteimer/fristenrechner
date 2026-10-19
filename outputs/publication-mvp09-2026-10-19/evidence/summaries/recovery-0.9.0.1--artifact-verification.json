@@ -1,0 +1,280 @@
+{
+  "kind": "mvp09-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/artifact-verification.json",
+  "selectedFields": [
+    "kind",
+    "startedAt",
+    "packageVersion",
+    "applicationVersion",
+    "functionalBaseline",
+    "authority",
+    "installationAuthorized",
+    "deploymentPerformed",
+    "publicationAuthorized",
+    "liveHostVerified",
+    "browserResetAuthorized",
+    "roundTripMvp09Pending",
+    "steps",
+    "limitations",
+    "priorFailedAttempt",
+    "packageAudit",
+    "packageSha256",
+    "packageByteLength",
+    "passed",
+    "finishedAt"
+  ],
+  "omittedTopLevelFields": [
+    "stage",
+    "basis",
+    "inputDerivation",
+    "implementation",
+    "protectedFiles",
+    "archivedFiles"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp09LocalRecoveryBuild",
+    "startedAt": "2026-10-18T20:56:21.711Z",
+    "packageVersion": "0.9.0.1",
+    "applicationVersion": "0.8.0",
+    "functionalBaseline": "MVP 0.8",
+    "authority": {
+      "path": "outputs/release-mvp09-2026-10-18/r09b-execution-approval.json",
+      "sha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3"
+    },
+    "installationAuthorized": false,
+    "deploymentPerformed": false,
+    "publicationAuthorized": false,
+    "liveHostVerified": false,
+    "browserResetAuthorized": false,
+    "roundTripMvp09Pending": true,
+    "steps": [
+      {
+        "id": "tool-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "tests/governance/mvp09-recovery.test.mjs"
+        ],
+        "cwd": "",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/tool-tests.log",
+        "sha256": "a8a8b34faa986bc5e39a78c7218c81cf8106f4ed09fe316e261c862f907986a1",
+        "tests": 6,
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/tool-tests.log"
+      },
+      {
+        "id": "sync",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/lib/node_modules/npm/bin/npm-cli.js",
+          "run",
+          "sync"
+        ],
+        "cwd": ".work/mvp09-recovery-LXoxny/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/sync.log",
+        "sha256": "b09161c434779a2c3c967982921a9ec1ea86a269810c0c7c7aa309bac942c593",
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/sync.log"
+      },
+      {
+        "id": "source-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--import",
+          "tsx",
+          "--test",
+          "--test-concurrency=2",
+          "--test-timeout=60000",
+          "test/ap20c1-loader.test.ts",
+          "test/ap20c2-loader.test.ts",
+          "test/ap20c3-loader.test.ts",
+          "test/ap22c3-cache.test.ts",
+          "test/ap22c3-format7.test.ts",
+          "test/ap23d3-format8-cache.test.ts",
+          "test/ap23d3-format8.test.ts",
+          "test/avig-release-contract.test.ts",
+          "test/holiday-release-contract.test.ts",
+          "test/kvg-release-contract.test.ts",
+          "test/mvp05-release-contract.test.ts",
+          "test/mvp06-release-contract.test.ts",
+          "test/product-integration.test.ts",
+          "test/qualified-release-contract.test.ts",
+          "test/release-service.test.ts",
+          "test/social-release-contract.test.ts"
+        ],
+        "cwd": ".work/mvp09-recovery-LXoxny/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/source-tests.log",
+        "sha256": "20f74032e1f6ee58b241a2ecb8526368c5e3343ce3363c837684e7dc4b362835",
+        "tests": 204,
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/source-tests.log"
+      },
+      {
+        "id": "compile",
+        "command": "<REPO_ROOT>/.work/mvp09-recovery-LXoxny/spfx/node_modules/.bin/heft",
+        "args": [
+          "test",
+          "--clean",
+          "--production"
+        ],
+        "cwd": ".work/mvp09-recovery-LXoxny/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/compile.log",
+        "sha256": "e4713f7d34dac1e11edec1e4f8d91226a33a93735913e857054fe9075db1a74d",
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/compile.log"
+      },
+      {
+        "id": "css-audit",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "scripts/audit-product-css.mjs"
+        ],
+        "cwd": ".work/mvp09-recovery-LXoxny/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/css-audit.log",
+        "sha256": "be9fe3a888db654f7f0b44a84c4ba0e764af4ba8e3d23fb31bd43c966a823d73",
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/css-audit.log"
+      },
+      {
+        "id": "package",
+        "command": "<REPO_ROOT>/.work/mvp09-recovery-LXoxny/spfx/node_modules/.bin/heft",
+        "args": [
+          "package-solution",
+          "--production"
+        ],
+        "cwd": ".work/mvp09-recovery-LXoxny/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/package.log",
+        "sha256": "a553e53e3f1d51362ebf17591d46e938c7ea445b307aa1c0d7d0a5bac18982af",
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/package.log"
+      },
+      {
+        "id": "built-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=2",
+          "--test-timeout=60000",
+          "test-build/ap20c1.test.cjs",
+          "test-build/ap20c2.test.cjs",
+          "test-build/ap20c3.test.cjs",
+          "test-build/ap21.test.cjs",
+          "test-build/ap22c3.test.cjs",
+          "test-build/ap23d3.test.cjs",
+          "test-build/avig-consumer.test.cjs",
+          "test-build/consumer-regression.test.cjs",
+          "test-build/kvg-consumer.test.cjs",
+          "test-build/mvp05-consumer.test.cjs",
+          "test-build/mvp06-consumer.test.cjs",
+          "test-build/mvp07-consumer.test.cjs",
+          "test-build/mvp08-consumer.test.cjs",
+          "test-build/mvp08-export.test.cjs",
+          "test-build/mvp08-gr-administration.test.cjs",
+          "test-build/mvp08-gr-court.test.cjs",
+          "test-build/mvp08-ti-appeals.test.cjs",
+          "test-build/mvp08-ti-ordered.test.cjs",
+          "test-build/social-consumer.test.cjs"
+        ],
+        "cwd": ".work/mvp09-recovery-LXoxny/spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/built-tests.log",
+        "sha256": "1e98939d2f0e77ec23730cf7cfff1096b521eee0f0cc02aed6655ea7f6068836",
+        "tests": 107,
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/built-tests.log"
+      },
+      {
+        "id": "recovery-tests",
+        "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "args": [
+          "--test",
+          "--test-concurrency=1",
+          "--test-timeout=60000",
+          "recovery-mvp09/recovery-package.test.cjs",
+          "recovery-mvp09/recovery-defaults.test.cjs",
+          "recovery-mvp09/recovery-cache.test.cjs",
+          "recovery-mvp09/recovery-equivalence.test.cjs"
+        ],
+        "cwd": "spfx",
+        "exitCode": 0,
+        "log": ".work/mvp09-recovery-LXoxny/recovery-tests.log",
+        "sha256": "60b8620b81ae09870aa6bea73b385e42eab51638afeac8ff23e6969511dd95ce",
+        "tests": 10,
+        "archivedLog": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/recovery-tests.log"
+      }
+    ],
+    "limitations": [
+      "Real AMD package tests use simulated browser hooks, local storage, IndexedDB and transport, not real M365/devices.",
+      "MVP09 to Recovery to MVP09 requires a separate supplemental proof bound to the definitive MVP09 package.",
+      "Recovery removes LU/ZG/AR administrative paths and the UX field-height correction. No selective newer functionality included."
+    ],
+    "priorFailedAttempt": {
+      "path": ".work/mvp09-recovery-nZlVPA/verification.json",
+      "sha256": "1a2cc30cd53436333b851d09106da5c9c27b7b939f08db922cd3c3df0528e21f",
+      "reason": "The new test incorrectly looked for a useMemo result among useState slots. It now checks the actual visible guard and form and exercises save/reset. The new ZIP auditor now validates directory entry names with their trailing slash removed. No product source, normative input or test timeout changed.",
+      "sourceTestsPassed": 204,
+      "builtTestsPassed": 107,
+      "recoveryTestsPassed": 5,
+      "recoveryHarnessFailures": 5,
+      "productChanged": false
+    },
+    "packageAudit": {
+      "packageVersion": "0.9.0.1",
+      "componentVersion": "0.8.0",
+      "functionalBaseline": "MVP 0.8",
+      "solutionId": "13090feb-a6bf-40fa-9d3c-ec8d90516a60",
+      "featureId": "3edf1509-41e9-4a2f-8005-df510eec43b6",
+      "webPartId": "596c7f1c-4d3e-4da8-a7be-27a96024f37c",
+      "additionalApiPermissions": [],
+      "defaultGithubBaseUrl": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/10a99419eaabb3e96d2acccf0c7a93e2fe6472cb/data/releases/2026-10-15-mvp-08-approved.1",
+      "normalizedBundleByteIdentical": true,
+      "scopedCssMappings": [
+        {
+          "field": "host",
+          "before": "host_57253225",
+          "after": "host_8d49f082",
+          "count": 2
+        },
+        {
+          "field": "startup",
+          "before": "startup_57253225",
+          "after": "startup_8d49f082",
+          "count": 5
+        },
+        {
+          "field": "badge",
+          "before": "badge_57253225",
+          "after": "badge_8d49f082",
+          "count": 2
+        },
+        {
+          "field": "runtimeMessage",
+          "before": "runtimeMessage_57253225",
+          "after": "runtimeMessage_8d49f082",
+          "count": 3
+        },
+        {
+          "field": "runtimeStatus",
+          "before": "runtimeStatus_57253225",
+          "after": "runtimeStatus_8d49f082",
+          "count": 5
+        }
+      ],
+      "normalization": [
+        "solution and feature versions only",
+        "bundle/own-license filenames",
+        "five host SCSS suffixes with equal occurrences",
+        "two generated AppPartConfig UUIDs",
+        "generated ClientSideAssets feature UUID"
+      ],
+      "bundlePath": "ClientSideAssets/fristenrechner-web-part_70a48eb4a7448386daf2.js",
+      "bundleSha256": "e6dd12bd3882e2e9c3c7c59be626df2ad37fa0bcd978170de8f1eca06f5c9ad2"
+    },
+    "packageSha256": "08c5e67e535cd3e04d962698e7dcb6bbe989f098d75f2b21aebe3226d95db94d",
+    "packageByteLength": 311609,
+    "passed": true,
+    "finishedAt": "2026-10-18T21:00:56.457Z"
+  }
+}

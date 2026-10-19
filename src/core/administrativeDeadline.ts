@@ -3,7 +3,8 @@ import { parseIsoDate } from './date';
 import { countDayDeadline } from './dayDeadlineArithmetic';
 import { generateCalendarFromRules } from './generateCalendar';
 import { administrativeIntervalContains, administrativePeriodDate } from './administrativeCatalog';
-import { getVerifiedAdministrativeData } from './releaseFormat8';
+import { getVerifiedAdministrativeContext } from './administrativeContext';
+import type { AdministrativeCaseQualification } from './administrativeTypesV2';
 import type { AdministrativeInterval, AdministrativePath, AdministrativeSourceRef } from './administrativeTypes';
 import type { CalendarRuleSet } from './calendarRuleTypes';
 import type { Holiday } from './types';
@@ -34,6 +35,7 @@ export interface AdministrativeDeadlineInput {
     readonly evidenceAdvance: boolean;
   };
   readonly urgency: 'none' | 'explicitJudicialUrgencyOrder' | 'unknown';
+  readonly caseQualification?: AdministrativeCaseQualification;
 }
 
 export interface AdministrativeProvenance {
@@ -52,6 +54,7 @@ export interface AdministrativeProvenance {
   readonly suspensionProfileId: string;
   readonly urgencyApplied: boolean;
   readonly sourceRefs: readonly AdministrativeSourceRef[];
+  readonly qualificationPolicySha256?: string;
 }
 
 export type AdministrativeDeadlineResult = {
@@ -89,8 +92,11 @@ function closed(value: unknown, required: readonly string[], optional: readonly 
     && required.every(key => own(value, key))
     && Object.keys(value).every(key => required.includes(key) || optional.includes(key));
 }
-function validInput(input: AdministrativeDeadlineInput): boolean {
-  if (!closed(input, ['selection', 'authoritySeat', 'inputDate', 'qualification', 'urgency'], ['deadlineDays'])) return false;
+function validInput(input: AdministrativeDeadlineInput, format9: boolean): boolean {
+  if (!closed(input, ['selection', 'authoritySeat', 'inputDate', 'qualification', 'urgency'],
+    format9 ? ['deadlineDays', 'caseQualification'] : ['deadlineDays'])) return false;
+  if (own(input, 'caseQualification') && !closed(input.caseQualification,
+    ['action', 'decisionKind', 'unit', 'direction', 'opening', 'notice', 'termChange'])) return false;
   const selection = input.selection;
   if (!closed(selection, ['kind', 'lawId', 'pathId', 'revision', 'stage'])
     || selection.kind !== 'cantonalAdministrative'
@@ -158,9 +164,9 @@ function calendarDependencies(calendars: readonly CalendarRuleSet[], calendarId:
  */
 export function calculateAdministrativeDeadline(input: AdministrativeDeadlineInput, context: unknown): AdministrativeDeadlineResult {
   try {
-    const data = getVerifiedAdministrativeData(context);
+    const data = getVerifiedAdministrativeContext(context);
     if (!data) return blocked('administrative.untrustedRelease');
-    if (!validInput(input)) return blocked('administrative.inputContractInvalid');
+    if (!validInput(input, data.catalog.formatVersion === '2.0.0')) return blocked('administrative.inputContractInvalid');
     const q = input.qualification;
     if (q.specialLaw === 'applicableFederalSpecialLaw') return blocked('administrative.separatelyQualifiedFederalPathRequired');
     if (q.specialLaw !== 'excluded') return blocked('administrative.specialLawUnresolved');
@@ -172,6 +178,27 @@ export function calculateAdministrativeDeadline(input: AdministrativeDeadlineInp
       && candidate.revision === selection.revision);
     if (!path) return blocked('administrative.unknownPath');
     if (!path.stages.some(stage => stage === selection.stage)) return blocked('administrative.stageMismatch');
+    const policy = catalog.formatVersion === '2.0.0'
+      ? catalog.qualificationPolicies.find(candidate => candidate.pathId === path.pathId && candidate.pathRevision === path.revision)
+      : undefined;
+    if (catalog.formatVersion === '2.0.0') {
+      if (!policy) return blocked('administrative.qualificationPolicyMissing');
+      if (policy.mode === 'legacyV1') {
+        // Preserve the historical case contract. Do not ignore new, conflicting
+        // assertions attached to an old route.
+        if (own(input, 'caseQualification')) return blocked('administrative.inputContractInvalid');
+      } else {
+        const facts = input.caseQualification, required = policy.requirements;
+        if (!facts) return blocked('administrative.caseQualificationRequired');
+        if (facts.direction !== 'forward' || facts.unit !== required.unit) return blocked('administrative.unsupportedProcedure');
+        if (facts.action !== required.action) return blocked('administrative.actionMismatch');
+        if (facts.decisionKind !== required.decisionKind) return blocked('administrative.decisionNotQualified');
+        if (facts.opening !== required.opening) return blocked('administrative.openingNotQualified');
+        if (facts.notice !== required.notice) return blocked('administrative.noticeNotQualified');
+        if (facts.termChange !== required.termChange) return blocked('administrative.termChanged');
+        if (input.urgency !== required.urgency) return blocked('administrative.unsupportedUrgency');
+      }
+    }
     const law = catalog.laws.find(candidate => candidate.lawId === path.lawId)!;
     const binding = catalog.holidayBindings.find(candidate => candidate.holidayBindingId === path.holidayBindingId)!;
     if (law.canton !== input.authoritySeat.canton || binding.authoritySeatCanton !== input.authoritySeat.canton) return blocked('administrative.authoritySeatMismatch');
@@ -207,6 +234,8 @@ export function calculateAdministrativeDeadline(input: AdministrativeDeadlineInp
       holidayBindingId: binding.holidayBindingId, calendarId: binding.physicalBaseline.calendarId,
       projectionId: binding.physicalBaseline.projectionId, holidayRole: 'authoritySeat', authoritySeatCanton: law.canton,
       suspensionProfileId: suspension.suspensionProfileId, urgencyApplied: urgent,
+      ...('qualificationPolicySha256' in eligibility && typeof eligibility.qualificationPolicySha256 === 'string'
+        ? { qualificationPolicySha256: eligibility.qualificationPolicySha256 } : {}),
       sourceRefs: uniqueRefs([...law.sourceRefs, ...path.sourceRefs, ...binding.legalBinding.sourceRefs, ...suspension.sourceRefs])
     };
     const result = countDayDeadline({legallyRelevantDate: input.inputDate, deadlineDays: days, periods,

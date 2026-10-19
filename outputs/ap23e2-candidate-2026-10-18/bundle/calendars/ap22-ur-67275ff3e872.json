@@ -1,0 +1,552 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-ur-67275ff3e872",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "UR"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-UR-LSG-701421-20030101",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über den Ladenschluss und die Sonntagsruhe, LSG",
+      "authority": "CH-UR",
+      "url": "https://rechtsbuch.ur.ch/api/de/versions/963/pdf_file",
+      "documentVersionDate": "2003-01-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-ALL-SAINTS-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-ASCENSION-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-ASSUMPTION-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-CHRISTMAS-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-CORPUS-CHRISTI-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-EASTER-MONDAY-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-EPIPHANY-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-EPIPHANY",
+      "labels": {
+        "de": "Heilige Drei Könige",
+        "fr": "Épiphanie"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 6
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-EPIPHANY"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-GOOD-FRIDAY-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-IMMACULATE-CONCEPTION-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-NATIONAL-DAY-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "SR 116 Art. 1, neue offene Anwendung auf dieses Geltungsprofil"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-NEW-YEAR-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-ST-JOSEPH-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-ST-JOSEPH",
+      "labels": {
+        "de": "Josefstag",
+        "fr": "Saint-Joseph"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 3,
+        "day": 19
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-ST-JOSEPH"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-ST-STEPHEN-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "UR-CAL-UR-LSG-ALL-DAY-WHIT-MONDAY-67275FF3E8726A32",
+      "calendarId": "ap22-ur-67275ff3e872",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "UR"
+      },
+      "labelKey": "holiday.ur.UR-LSG-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-UR-LSG-701421-20030101",
+          "locator": "Art. 9 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "UR-LSG-ALL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-67275ff3e8726a32",
+    "sourceHash": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+  }
+}

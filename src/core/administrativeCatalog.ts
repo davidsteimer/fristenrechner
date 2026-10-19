@@ -6,6 +6,7 @@ import { assertSchema } from './schemaContract';
 import { canonicalSocialJson, socialObjectSha256 } from './socialCatalog';
 import type { AdministrativeComponentRef, AdministrativeInterval, AdministrativePeriodExpression,
   AdministrativeProcedureCatalog, AdministrativeSourceRef } from './administrativeTypes';
+import type { AdministrativeProcedureCatalogV2 } from './administrativeTypesV2';
 
 export class AdministrativeCatalogError extends Error {
   constructor(message: string) { super(message); this.name = 'AdministrativeCatalogError'; Object.setPrototypeOf(this, AdministrativeCatalogError.prototype); }
@@ -49,7 +50,11 @@ export function administrativePeriodDate(expression: AdministrativePeriodExpress
 export function assertAdministrativeProcedureCatalog(value: unknown): asserts value is AdministrativeProcedureCatalog {
   try { assertSchema(value, schema); }
   catch (error) { return fail(`Administrative schema: ${error instanceof Error ? error.message : String(error)}`); }
-  const catalog = value as AdministrativeProcedureCatalog;
+  assertAdministrativeCatalogStructure(value as AdministrativeProcedureCatalog);
+}
+
+/** Shared invariant checks only. No format relabelling or runtime registration. */
+export function assertAdministrativeCatalogStructure(catalog: AdministrativeProcedureCatalog | AdministrativeProcedureCatalogV2): void {
   const sources = unique(catalog.sources, source => source.sourceId, 'source ID');
   const laws = unique(catalog.laws, law => law.lawId, 'law ID');
   const profiles = unique(catalog.suspensionProfiles, profile => profile.suspensionProfileId, 'suspension ID');

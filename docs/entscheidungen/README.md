@@ -1,5 +1,13 @@
 # Entscheidungsregister
 
+**Aktuell, 19. Oktober 2026:** DEC-2026-033 ist umgesetzt, AP23E3 und R09-A2 sind abgenommen. R09-B und der technische E-/Q-Vollzug sind abgeschlossen. David hat [Q, Geräte, Gastzugriff und begrenzte Outlook-Wiederverwendung bestätigt](../betrieb/abnahme-q-mvp09.md). Das [Publikationspaket MVP 0.9](../betrieb/publikationspaket-mvp09.md) liegt zur gesonderten Freigabe vor. Keine neue P-Freigabe und keine Änderung früherer Entscheide. Die folgenden Einträge bewahren ihre historischen Statusstände.
+
+**AP23E2-Abnahme und AP23E3, 18. Oktober 2026:** Die [technische Teilpaketabnahme](../fachrecht/abnahme-ap23e2.md) ist erteilt. [DEC-2026-033](DEC-2026-033-beschluss.md) wird im [lokalen E3-Kandidaten](../architektur/verwaltungsintegration-ap23e3.md) umgesetzt. Es ist kein zusätzlicher Vertragsentscheid erforderlich. Die lokale Implementierung, die noch ausstehende menschliche E3-Abnahme und eine spätere Quellen-/Betriebsfreigabe bleiben getrennt. Frühere Statusabsätze werden nicht rückwirkend umgeschrieben.
+
+**Beschluss und technische Prüfung AP23E2, 18. Oktober 2026:** David Steimer hat [DEC-2026-033 ausdrücklich bestätigt](DEC-2026-033-beschluss.md). Katalog 2 und Manifest/Mindestconsumer 9 sind damit beschlossen. Die anschliessende [technische Abnahmeprüfung](../architektur/technische-abnahmepruefung-ap23e2.md) ist ohne offenen Blocker bestanden und liegt zur menschlichen Teilpaketabnahme vor. AP23E3 ist nicht gestartet. Die gebundenen Vorlagen und Prüfberichte bleiben unverändert. Die nachfolgenden datierten Absätze dokumentieren frühere Entscheidungsstände.
+
+**AP23E2, 18. Oktober 2026:** [AP23E1 ist einschliesslich AR-Fünftagesrekurs, Zeitfenstern und AR-O1 fachlich abgenommen](../fachrecht/abnahme-ap23e1.md). Der ausdrücklich gestartete AP23E2-Vertragscheck weist eine Lücke in der ausdrücklichen Fallqualifikation nach. [DEC-2026-033](DEC-2026-033-qualifizierte-kantonalverfahren-v2.md), Klasse B, schlägt Katalog 2 und Manifest/Mindestconsumer 9 vor. Status **vorgeschlagen**, noch nicht beschlossen. Die bisherigen Beschlüsse bleiben für den bestehenden Produktbestand gültig. Keine neue Produkt- oder Betriebsfreigabe.
+
 **Aktuell, 15. Oktober 2026:** [AP23D2 samt UX-Nachtrag ist abgenommen](../fachrecht/abnahme-ap23d2.md), [AP23D3 ist ausdrücklich gestartet](../architektur/verwaltungsintegration-ap23d3.md). Der bestehende Beschluss DEC-2026-032 wird umgesetzt und nicht geändert. Kein neuer Architekturentscheid, keine Quellenrelease- oder Bereitstellungsfreigabe. Die nachfolgenden datierten Absätze bleiben historische Entscheidungsstände.
 
 **UX-Nachtrag AP23D2, 15. Oktober 2026:** Der ausdrücklich freigegebene [UX-Nachtrag](../architektur/verwaltungsintegration-ap23d2-ux.md) ist lokal umgesetzt. Beschlossen sind unveränderte fachliche Rechenregeln und der bestehende zweispaltige Aufbau. UI-Abnahme offen. AP23D3 folgt erst nach dieser Abnahme. DEC-2026-032 und die bisherigen Nachweise bleiben unverändert.
@@ -68,6 +76,7 @@ Die Klassen wurden bei der Übernahme des Startbestands anhand der im Projekt- u
 | [DEC-2026-030](DEC-2026-030-beschluss.md) | B | beschlossen | Katalog 2, Kalender 3 und Manifest/Consumer 7 mit expliziten Verfahrensbindungen, Januarvergleich, Zeitabdeckung und kontrollierter Migration. Gebundener Entwurf bleibt erhalten | – |
 | [DEC-2026-031](DEC-2026-031-behoerdensitz-kantonale-verwaltungsverfahren.md) | A | beschlossen | Feiertagsanknüpfung im kantonalen Verwaltungsrecht am zuständigen Behördensitz, besondere Bundesregeln und ausdrückliche Verfahrensabweichungen vorbehalten. Keine pauschale Kantonsfreigabe | – |
 | [DEC-2026-032](DEC-2026-032-beschluss.md) | B | beschlossen | Kantonalverfahrenskatalog 1, Manifest/Mindestconsumer 8 und geschützte Defaults 5 für die zwölf TI-/GR-Pfadgruppen. Bestandskomponenten erhalten, operative Freigabe getrennt | David Steimer, 14.10.2026 |
+| [DEC-2026-033](DEC-2026-033-beschluss.md) | B | beschlossen | Katalog 2 und Manifest/Mindestconsumer 9 mit expliziter pfadgebundener Fallqualifikation. Zwölf TI-/GR-Wege erhalten, 13 neue Wege getrennt qualifizieren. Defaults 5 unverändert | David Steimer, 18.10.2026 |
 
 ## Abnahme AP20B und Beschluss DEC-2026-026
 

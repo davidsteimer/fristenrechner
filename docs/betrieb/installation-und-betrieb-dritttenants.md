@@ -3,13 +3,13 @@
 | Merkmal | Stand |
 | --- | --- |
 | Dokumentzweck | Freischaltungsentscheid, Installation und Betrieb durch eine Microsoft-365-IT |
-| Interner Produktstand | MVP 0.8, Paket `0.8.0.0`, vier bestehende E-/Q-Instanzen. Q, Geräteprüfung, Gastzugriff und begrenzte Outlook-Wiederverwendung am 16. Oktober 2026 bestätigt |
-| Letzter dokumentierter öffentlicher Betriebsstand | MVP 0.7 gemäss Produktionsnachweis vom 9. Oktober 2026, keine neue Liveinventur |
-| Publikationsstatus MVP 0.8 | Lokale Vorbereitung. GitHub und P bleiben gesondert freizugeben |
-| Stand | 16. Oktober 2026 |
+| Interner Produktstand | MVP 0.9, Paket `0.9.0.0`, vier bestehende E-/Q-Instanzen. Q, Geräteprüfung, Gastzugriff und begrenzte Outlook-Wiederverwendung am 19. Oktober 2026 bestätigt |
+| Letzter dokumentierter öffentlicher Betriebsstand | MVP 0.8 gemäss Produktionsnachweis vom 16. Oktober 2026, keine neue Liveinventur |
+| Publikationsstatus MVP 0.9 | Lokale Vorbereitung. GitHub und P bleiben gesondert freizugeben |
+| Stand | 19. Oktober 2026 |
 | Zielplattform | SharePoint Online, optional Microsoft Teams |
 
-Diese Anleitung bindet das abgenommene E-/Q-Paket und seinen Format-8-Mirror. Sie ist kein Nachweis eines geprüften Dritt-Tenants und erteilt keine Installations-, Berechtigungs- oder Publikationsfreigabe. [Vollzugsnachweis](eq-vollzugsnachweis-mvp08.md) und [Q-Abnahme](abnahme-q-mvp08.md) dokumentieren den bestehenden steimer.ch-E-/Q-Betrieb. Der [öffentliche Produktionsnachweis](produktionsbereitstellung-mvp07-2026-10-09.md) betrifft MVP 0.7.
+Diese Anleitung bindet das abgenommene E-/Q-Paket und seinen Format-9-Mirror. Sie ist kein Nachweis eines geprüften Dritt-Tenants und erteilt keine Installations-, Berechtigungs- oder Publikationsfreigabe. [Vollzugsnachweis](eq-vollzugsnachweis-mvp09.md) und [Q-Abnahme](abnahme-q-mvp09.md) dokumentieren den bestehenden steimer.ch-E-/Q-Betrieb. Der [öffentliche Produktionsnachweis](produktionsbereitstellung-mvp08-2026-10-16.md) betrifft MVP 0.8.
 
 ## 1 Entscheid für die IT
 
@@ -43,26 +43,26 @@ Für SharePoint und Teams gemeinsam wird ein Tenant-App-Katalog empfohlen. Bei r
 
 | Merkmal | Wert |
 | --- | --- |
-| Paket | [`fristenrechner-schweiz-0.8.0.0.sppkg`](../../outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-0.8.0.0.sppkg) |
-| Anwendung / Paketversion | `0.8.0` / `0.8.0.0` |
-| Grösse | 311’611 Bytes |
-| SHA-256 | `d3d06adcd78176db66f8227d884fd66ca2fbcee0bffab66755789dd0cc29dc1a` |
+| Paket | [`fristenrechner-schweiz-0.9.0.0.sppkg`](../../outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-0.9.0.0.sppkg) |
+| Anwendung / Paketversion | `0.9.0` / `0.9.0.0` |
+| Grösse | 327’130 Bytes |
+| SHA-256 | `7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331` |
 | Solution-ID | `13090feb-a6bf-40fa-9d3c-ec8d90516a60` |
 | Component-ID | `596c7f1c-4d3e-4da8-a7be-27a96024f37c` |
 
 Prüfung unter macOS oder Linux:
 
 ```bash
-shasum -a 256 outputs/release-mvp08-2026-10-15/fristenrechner-schweiz-0.8.0.0.sppkg
+shasum -a 256 outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-0.9.0.0.sppkg
 ```
 
 Prüfung unter Windows PowerShell:
 
 ```powershell
-Get-FileHash .\outputs\release-mvp08-2026-10-15\fristenrechner-schweiz-0.8.0.0.sppkg -Algorithm SHA256
+Get-FileHash .\outputs\release-mvp09-2026-10-18\fristenrechner-schweiz-0.9.0.0.sppkg -Algorithm SHA256
 ```
 
-Bei abweichender Version, Identität, Grösse oder Prüfsumme anhalten. Ein späterer Neubau ist nicht automatisch dieses Artefakt. Der [MVP08-Artefaktnachweis](releaseartefakte-mvp-08.md) bindet die tatsächlichen Paketbytes. Der Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` ist kein Ersatz für diesen Nachweis und kein Rückfallpaket.
+Bei abweichender Version, Identität, Grösse oder Prüfsumme anhalten. Ein späterer Neubau ist nicht automatisch dieses Artefakt. Der [MVP09-Artefaktnachweis](releaseartefakte-mvp-09.md) bindet die tatsächlichen Paketbytes. Der Standardpfad `spfx/sharepoint/solution/fristenrechner-schweiz.sppkg` ist kein Ersatz für diesen Nachweis und kein Rückfallpaket.
 
 ## 4. Installation in SharePoint Online
 
@@ -92,10 +92,10 @@ Eine SharePoint-Seite in der Teams-App `SharePoint` ist nur eine alternative Ein
 
 ### 6.1 Variante A öffentlicher GitHub-Release
 
-Die MVP08-Standardkonfiguration bindet den vollständigen lokalen Datencommit:
+Die MVP09-Standardkonfiguration bindet den vollständigen lokalen Datencommit:
 
 ```text
-https://raw.githubusercontent.com/davidsteimer/fristenrechner/10a99419eaabb3e96d2acccf0c7a93e2fe6472cb/data/releases/2026-10-15-mvp-08-approved.1
+https://raw.githubusercontent.com/davidsteimer/fristenrechner/0ccc4b9178503ede051964149a4b17efab8d0cf9/data/releases/2026-10-18-mvp-09-approved.1
 ```
 
 **Der neue Datenpin ist noch nicht veröffentlicht und nicht öffentlich als abrufbar bestätigt.** Vor Aktivierung sind die gesonderte Freigabe, Veröffentlichung und der Rohbytevergleich aller 42 Laufzeitdateien erforderlich. Ein freigegebener eigener Mirror ermöglicht eine Installation vor der GitHub-Publikation. Ein unerreichbarer Pin rechtfertigt weder `main` noch einen fremden oder alten Cache als Ersatz.
@@ -106,12 +106,12 @@ Im GitHub-Modus muss das Zielnetz HTTPS zu `raw.githubusercontent.com` erlauben.
 
 Der Mirror muss auf derselben SharePoint-Website liegen wie die Instanz. Bei einer direkten Teams-Registerkarte ist dies die SharePoint-Website des Teams. Cross-Site-Pfade sind unzulässig.
 
-Release `2026-10-15-mvp-08-approved.1` verwendet Manifest/Mindestconsumer `8.0.0`, Verwaltungsverfahrenskatalog `1.0.0`, Kalender `3.0.0`, Feiertagskatalog `2.0.0`, Rechtsprofile `1.0.0`, Spezialregimekatalog `3.0.0` und Sozialverfahrenskatalog `2.0.0`. Manifest SHA-256: `2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4`.
+Release `2026-10-18-mvp-09-approved.1` verwendet Manifest/Mindestconsumer `9.0.0`, Verwaltungsverfahrenskatalog `2.0.0`, Kalender `3.0.0`, Feiertagskatalog `2.0.0`, Rechtsprofile `1.0.0`, Spezialregimekatalog `3.0.0` und Sozialverfahrenskatalog `2.0.0`. Manifest SHA-256: `3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265`.
 
 Beispiel eines zielbezogen freizugebenden Releaseordners:
 
 ```text
-/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-10-15-mvp-08-approved.1
+/sites/Rechtsdienst/Freigegebene Dokumente/Fristenrechner/releases/2026-10-18-mvp-09-approved.1
 ```
 
 Der vollständige Mirror enthält **42 Dateien**: Manifest, 32 Kalender, fünf Profile und vier Kataloge. Die gegen das tatsächliche Manifest geprüften relativen Pfade lauten:
@@ -161,12 +161,12 @@ social-procedures/ch-social-procedures.json
 special-regimes/vrpg-be.json
 ```
 
-Das [Mirror-ZIP](../../outputs/release-mvp08-2026-10-15/fristenrechner-mvp08-sharepoint-mirror.zip) umfasst 225’952 Bytes, SHA-256 `81359611b5399b1b79c0f9dedb0d5ac540c9192a1382feb67095dadb8e89f8dd`. Es enthält die 42 Dateien direkt ab Archivwurzel, entpackt zusammen 2’425’056 Bytes. Das ZIP wird in den neuen Releaseordner entpackt, nicht als Laufzeitquelle eingetragen. `README.md`, Rohbelege und Governance-Dateien gehören nicht in den Laufzeitmirror. Ein Git-Push erzeugt keinen GitHub-Release-Anhang.
+Das [Mirror-ZIP](../../outputs/release-mvp09-2026-10-18/fristenrechner-mvp09-sharepoint-mirror.zip) umfasst 235’314 Bytes, SHA-256 `13ef7f69f555604d987385132eb4ca38ef62b3e7572023ec2310b41de817c73a`. Es enthält die 42 Dateien direkt ab Archivwurzel, entpackt zusammen 2’508’592 Bytes. Das ZIP wird in den neuen Releaseordner entpackt, nicht als Laufzeitquelle eingetragen. `README.md`, Rohbelege und Governance-Dateien gehören nicht in den Laufzeitmirror. Ein Git-Push erzeugt keinen GitHub-Release-Anhang.
 
 1. Neuen versionsbezogenen Ordner in einer Bibliothek der Zielwebsite anlegen. Bestehende Releases erhalten.
 2. Alle 42 Dateien mit exakten Namen und relativen Pfaden hochladen. Keine Katalogauszüge oder Mischung alter und neuer Komponenten.
 3. Hochgeladene Rohbytes vollständig zurücklesen und mit Manifest sowie freigegebenem Inventar vergleichen. Leserechte auf Dateien und erforderlichen Ordnern prüfen.
-4. Bei bereits Format-8-fähigem Paket den `Aktiven Provider` auf `SharePoint-Mirror` und den `SharePoint-Mirrorpfad` auf den neuen Ordner setzen. Den echten Bibliotheks-URL-Pfad verwenden, nicht einen übersetzten Anzeigenamen.
+4. Bei bereits Format-9-fähigem Paket den `Aktiven Provider` auf `SharePoint-Mirror` und den `SharePoint-Mirrorpfad` auf den neuen Ordner setzen. Den echten Bibliotheks-URL-Pfad verwenden, nicht einen übersetzten Anzeigenamen.
 5. Speichern, nötigenfalls Seite publizieren und neu laden. Sichtbaren Provider/Release und tatsächlichen Erstabruf aller 42 Dateien aus genau diesem Mirror prüfen.
 
 Zulässig sind serverrelative Pfade ab `/` oder HTTPS-Adressen desselben Ursprungs innerhalb der aktuellen Website. Zugangsdaten, Queryparameter, Fragmente, Punktsegmente, andere Ursprünge und andere Sites werden abgewiesen. Aktiviert wird nur der vollständig schema-, referenz-, grössen- und hashgeprüfte Release.
@@ -175,19 +175,19 @@ Der Cache bindet die tatsächliche Provider-/Datenkonfiguration. Eine neue Quell
 
 ### 6.3 Mirror-Update und kontrollierter Rückfall
 
-Ein MVP07-Consumer kann Format 8 nicht lesen. Die Reihenfolge lautet:
+Ein MVP08-Consumer kann Format 9 nicht lesen. Die Reihenfolge lautet:
 
 1. Bestand, verbundene Verbraucher und Konfigurationen frisch sichern. Konkreten Rückfall freigeben.
 2. Vollständige neue Mirrors hochladen und Rohbytes sowie Rechte prüfen.
-3. Das freigegebene Format-8-fähige Paket kontrolliert bereitstellen. Die gemeinsame Codewirkung berücksichtigen.
+3. Das freigegebene Format-9-fähige Paket kontrolliert bereitstellen. Die gemeinsame Codewirkung berücksichtigen.
 4. Je freigegebener Instanz nur den gebundenen Datenpfad umstellen und speichern beziehungsweise publizieren.
 5. Tatsächliche Hostprüfung und manuelle Abnahme durchführen. Frühere Daten und Sicherungen erhalten.
 
-Der bestehende steimer.ch-Rückfall ist durch [Freigabe](freigabe-r08-c.md) und [Rückfallvorlage](rueckfall-mvp08.md) gebunden. Er verwendet **`fristenrechner-schweiz-recovery-0.8.0.1.sppkg`**, SHA-256 `8e387297d43df28e2fe4d3c7c9ae239bb2cdc6a9e3216e4c59c928c50d950e7b`, und stellt MVP07-Funktionalität wieder her. Die gesicherten Format-7-Mirrors enthalten `2026-10-08-mvp-07-approved.1`, je 41 Dateien, Manifest SHA-256 `fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597`.
+Der bestehende steimer.ch-Rückfall ist durch [Freigabe](freigabe-r09-c.md) und [Rückfallvorlage](rueckfall-mvp09.md) gebunden. Er verwendet **`fristenrechner-schweiz-recovery-0.9.0.1.sppkg`**, SHA-256 `08c5e67e535cd3e04d962698e7dcb6bbe989f098d75f2b21aebe3226d95db94d`, und stellt MVP08-Funktionalität wieder her. Die gesicherten Format-8-Mirrors enthalten `2026-10-15-mvp-08-approved.1`, je 42 Dateien, Manifest SHA-256 `2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4`.
 
-**Zuerst alle bereits umgestellten aktuellen Ansichten unter dem regulären MVP08-Code auf ihre eigenen Format-7-Pfade zurückführen.** Erst nach Bestätigung, dass keine dieser Ansichten mehr Format 8 benötigt, das höhere Recoverypaket kontrolliert einsetzen. AP5-Pins bleiben erhalten. Danach Paket, Bundle, aktuelle Hosts, AP5 und Standardschutz prüfen. Keine Deinstallation, kein Browserdatenreset und kein ungeprüfter Paketdowngrade.
+**Zuerst alle bereits umgestellten aktuellen Ansichten unter dem regulären MVP09-Code auf ihre eigenen Format-8-Pfade zurückführen.** Erst nach Bestätigung, dass keine dieser Ansichten mehr Format 9 benötigt, das höhere Recoverypaket kontrolliert einsetzen. AP5-Pins bleiben erhalten. Danach Paket, Bundle, aktuelle Hosts, AP5 und Standardschutz prüfen. Keine Deinstallation, kein Browserdatenreset und kein ungeprüfter Paketdowngrade.
 
-Recovery wurde nicht eingesetzt. Eine reguläre MVP08-Wiederaufnahme braucht danach einen höheren geprüften Paketstand, mindestens `0.8.0.2`, keinen Downgrade auf `0.8.0.0`. Die steimer.ch-Freigabe ist keine Vollzugserlaubnis in einem Dritt-Tenant. Bestand, Rechte, Sicherungen und Rückfall sind dort neu zu binden.
+Recovery wurde nicht eingesetzt. Eine reguläre MVP09-Wiederaufnahme braucht danach einen höheren geprüften Paketstand, mindestens `0.9.0.2`, keinen Downgrade auf `0.9.0.0`. Die steimer.ch-Freigabe ist keine Vollzugserlaubnis in einem Dritt-Tenant. Bestand, Rechte, Sicherungen und Rückfall sind dort neu zu binden.
 
 ### 6.4 Governance separat spiegeln
 
@@ -197,31 +197,33 @@ Quellenregister, Prüfindex und unveränderliche Prüfereignisse können separat
 
 Der Betrieb umfasst Quellenverfügbarkeit, kontrollierte Releaseübernahme, jährliche fachliche Quellenprüfung spätestens am 15. November sowie anlassbezogene Prüfungen, Zuständigkeiten und Zielumgebungstests. Keine automatische jährliche Publikation oder Mirrorsynchronisation. Eine Prüfung ohne Regeländerung erzeugt keinen neuen Datenrelease. [AP13-Prozess](periodische-quellenpruefung-ap13.md) und [Release-Checkliste](release-checkliste.md) bleiben massgebend.
 
-MVP 0.8 ergänzt fünf TI- und sieben GR-Verfahrenspfade für den Zeitraum 29. August 2026 bis 31. Dezember 2027. Alle berechnungsrelevanten Tage müssen abgedeckt sein. Fehlende Fallqualifikation und nicht modelliertes Spezialrecht sperren Ergebnis und Export. Die TI-O2-Sperre betrifft die Konstellation, in der eine Endverschiebung in einen neuen Fristenstillstand führt. GR-Verwaltung und Gericht sowie ausdrückliche gerichtliche Dringlichkeit werden unterschieden. Die Feiertagsanknüpfung wird aus dem Sitz der zuständigen kantonalen Stelle bestimmt.
+MVP 0.9 umfasst 25 kantonale Verwaltungswege: TI fünf, GR sieben, LU vier, ZG vier und AR fünf. LU ist ab 27.09.2026, ZG und AR ab 29.08.2026 gedeckt, jeweils einschliesslich aller benötigten Berechnungstage bis 31.12.2027. Die bisherigen TI-/GR-Fenster und TI-O2 bleiben erhalten. AR-O1 sperrt die vorbehaltene Konstellation. Die 44 Sozialregeln und 50 BE-Anbindungen bleiben ausschliesslich für Bern und 2026–2027 freigegeben. Alle berechnungsrelevanten Tage müssen abgedeckt sein. Fehlende Fallqualifikation und nicht modelliertes Spezialrecht sperren Ergebnis und Export. Die TI-O2-Sperre betrifft die Konstellation, in der eine Endverschiebung in einen neuen Fristenstillstand führt. GR-Verwaltung und Gericht sowie ausdrückliche gerichtliche Dringlichkeit werden unterschieden. Die Feiertagsanknüpfung wird aus dem Sitz der zuständigen kantonalen Stelle bestimmt.
 
-Die 32 Kalender, 104 Bundesverfahrensbindungen und 491 Feiertagsregeln bleiben erhalten. Die nationale Abdeckung betrifft unterstützte Bundesverfahren, nicht jedes kantonale Verfahren. 44 Sozialregeln und 50 BE-Anbindungen bleiben ausschliesslich für Bern und 2026–2027 freigegeben. Januargrenzen, AI-Behandlung, GR-/NE-Vorbehalte und begrenzter Freiburger Praxisbeleg bleiben bestehen. Eigenständiges kommunales Recht bleibt ausgeschlossen. DE/FR sind die Produktsprachen. Einzelheiten stehen in den [Releasehinweisen](release-notes-mvp08.md).
+Die 32 Kalender, 104 Bundesverfahrensbindungen und 491 Feiertagsregeln bleiben erhalten. Die nationale Abdeckung betrifft unterstützte Bundesverfahren, nicht jedes kantonale Verfahren. 44 Sozialregeln und 50 BE-Anbindungen bleiben ausschliesslich für Bern und 2026–2027 freigegeben. Januargrenzen, AI-Behandlung, GR-/NE-Vorbehalte und begrenzter Freiburger Praxisbeleg bleiben bestehen. Eigenständiges kommunales Recht bleibt ausgeschlossen. DE/FR sind die Produktsprachen. Einzelheiten stehen in den [Releasehinweisen](release-notes-mvp09.md).
 
-Bei Format 8 werden Standards v4 ohne erfundene Fallfakten nach v5 migriert, möglicherweise bereits beim ersten Laden. Der ältere Schlüssel bleibt erhalten. Datum, Referenz, Resultat, konkrete Qualifikation und Dringlichkeit werden nicht gespeichert. Ein v5-Resetmarker verhindert Wiederaufleben alter Standards. Vor Tests beide Schlüssel im tatsächlichen Speicherkontext sichern. Nur eigene Testwerte bereinigen, fremde Präferenzen schützen.
+Bei Format 9 werden Standards v4 ohne erfundene Fallfakten nach v5 migriert, möglicherweise bereits beim ersten Laden. Der ältere Schlüssel bleibt erhalten. Datum, Referenz, Resultat, konkrete Qualifikation und Dringlichkeit werden nicht gespeichert. Ein v5-Resetmarker verhindert Wiederaufleben alter Standards. Vor Tests beide Schlüssel im tatsächlichen Speicherkontext sichern. Nur eigene Testwerte bereinigen, fremde Präferenzen schützen.
 
 ## 8 Zielbezogener Abnahmetest
 
-Die folgende Liste ist eine Installationshilfe, keine Abnahme des Zieltenants. Vollständige Fälle und Sollwerte stehen in der [MVP08-Matrix](pruefmatrix-mvp08.md). Deren ursprünglicher Vorlagenstatus wird durch [Vollzug](eq-vollzugsnachweis-mvp08.md) und [Q-Abnahme](abnahme-q-mvp08.md) ergänzt.
+Die folgende Liste ist eine Installationshilfe, keine Abnahme des Zieltenants. Vollständige Fälle und Sollwerte stehen in der [MVP09-Matrix](pruefmatrix-mvp09.md). Deren ursprünglicher Vorlagenstatus wird durch [Vollzug](eq-vollzugsnachweis-mvp09.md) und [Q-Abnahme](abnahme-q-mvp09.md) ergänzt.
 
 - [ ] Paketidentität, Bytes, Katalog-/Site-Appversion und Fehlerfreiheit stimmen. Keine zusätzliche API-Zustimmung.
 - [ ] Provider, Release und alle 42 neuen Rohdateien je Instanz sind korrekt. Erstabruf nicht mit warmem oder fremdem Cache verwechseln.
-- [ ] Zwölf TI-/GR-Pfade und zusätzliche zulässige Stadien gemäss A01–A12. Beispiel A01: TI, LPAmm, Verwaltungsbeschwerde, ordentlich, allgemeiner Fall mit tatsächlichem Empfang 02.10.2026 → 02.11.2026.
-- [ ] TI-O2, GR-Stillstand/Dringlichkeit, fehlende Fallfakten, gesetzliche/freie Dauer und Zeitgrenzen gemäss B01–B07.
+- [ ] 25 TI-/GR-/LU-/ZG-/AR-Pfade und zusätzliche zulässige Stadien gemäss A01–A25. Beispiel A01: TI, LPAmm, Verwaltungsbeschwerde, ordentlich, allgemeiner Fall mit tatsächlichem Empfang 02.10.2026 → 02.11.2026.
+- [ ] TI-O2, GR-Stillstand/Dringlichkeit, fehlende Fallfakten, gesetzliche/freie Dauer und Zeitgrenzen und AR-O1 gemäss B01–B11.
 - [ ] Bestandsfälle C01–C06 einschliesslich BE/StPO 16.09.2026 plus zehn Tage → 28.09.2026 bei Partei ohne Vertretung in BE. Rollen, regionale Antworten und Sozialfakten ausdrücklich setzen.
 - [ ] Feiertagsbindung automatisch beziehungsweise rollenbezogen. Verständliche Normlinks in der Rechenspur, technische IDs erst in technischen Details.
 - [ ] DE/FR, frühe Datumseingabe, Kurzformen, Enter/Tab/Blur, ungültige Daten und sofortige Entfernung veralteter Resultate/Exporte.
 - [ ] v4→v5-Migration, Speichern/Reload, Resetmarker/Reload und gezielte Wiederherstellung eigener Testwerte. Kein Datum, keine Referenz und keine Fallqualifikation persistiert.
 - [ ] Breite zweispaltige und schmale Ansicht, lange Texte, tatsächlicher 200-Prozent-Zoom und sichtbarer Tastaturfokus. Geräteprüfung separat.
 - [ ] Direkte Teams-Registerkarte und notwendiger Gastzugriff mit der freigegebenen Identität tatsächlich geprüft.
-- [ ] Je Host A01 DE/FR mit synthetischer Referenz tatsächlich als ICS speichern. Beginn 02.11.2026, exklusives Ende 03.11.2026, frei, Kategorie `Fristablauf`, `-PT112H`, administrative Herkunft, UTF-8/CRLF und Faltung stimmen.
+- [ ] Je Host den gebundenen Exportfall DE/FR mit synthetischer Referenz tatsächlich als ICS speichern. Die Daten des jeweiligen Referenzfalls, frei, Kategorie `Fristablauf`, `-PT112H`, administrative Herkunft, UTF-8/CRLF und Faltung stimmen.
 - [ ] Gezielter lokaler Manifestfehler sperrt neue Quelle ohne fremden Fallback. Testbedingung entfernen und vollständigen Wiederanlauf prüfen. Keine Mirrordateien manipulieren.
 - [ ] Historische Ansichten behalten Pins und Daten. Eigene Netzregeln, Zoom- und Testzustände gezielt zurücknehmen.
 
-Auf steimer.ch-E/Q sind acht tatsächliche ICS-Dateien geprüft. Die [begrenzte Outlook-Wiederverwendung ist bestätigt](abnahme-q-mvp08.md), ohne neuen Import. Sie belegt den unveränderten Terminvertrag, nicht die aktuelle Darstellung zusätzlicher Herkunftstexte, Erinnerungszustellung, Sommerzeitverhalten oder Kategorienfarbe. Neue Outlookimporte brauchen einen gesonderten Auftrag. Menschliche Geräte-/Gastbestätigung wird nicht in zusätzliche VoiceOver- oder Einzelgerätebelege umgedeutet.
+Auf steimer.ch-E/Q sind acht tatsächliche ICS-Dateien geprüft. Die [begrenzte Outlook-Wiederverwendung ist bestätigt](abnahme-q-mvp09.md), ohne neuen Import. Sie belegt den unveränderten Terminvertrag, nicht die aktuelle Darstellung zusätzlicher Herkunftstexte, Erinnerungszustellung, Sommerzeitverhalten oder Kategorienfarbe. Neue Outlookimporte brauchen einen gesonderten Auftrag. Menschliche Geräte-/Gastbestätigung wird nicht in zusätzliche VoiceOver- oder Einzelgerätebelege umgedeutet.
+
+T06-H01 und B11-H01 bleiben begrenzt akzeptierte Darstellungsbefunde für den Folgerelease. Ergebnis- und Exportsperren funktionieren dabei korrekt. Die T07-Zeitpunktabweichung ist gesondert akzeptiert. Die [Releasehinweise](release-notes-mvp09.md) nennen die Grenzen, ohne diese Befunde als behoben auszugeben.
 
 ## 9. Vor Produktivsetzung festzulegen
 
@@ -239,10 +241,10 @@ Der bestehende steimer.ch-Q-Betrieb folgt dem [gruppenbasierten Zugriffsmodell](
 - [Microsoft SPFx in Teams](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/deployment-spfx-teams-solutions)
 - [Microsoft benutzerdefinierte Teams-Apps](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 - [Technische Kurzdokumentation](../architektur/technische-kurzdokumentation.md)
-- [MVP08-Deploymentplan](deployment-mvp-08.md)
-- [Gebundene MVP08-Artefakte](releaseartefakte-mvp-08.md)
-- [Installationsvorlage](eq-installationsvorlage-mvp08.md) und [Rückfallweg](rueckfall-mvp08.md)
-- [E-/Q-Vollzug](eq-vollzugsnachweis-mvp08.md) und [Q-Abnahme](abnahme-q-mvp08.md)
-- [Quellenabnahme MVP 0.8](../fachrecht/abnahme-quellen-mvp08.md)
-- [Letzter dokumentierter öffentlicher Stand MVP 0.7](produktionsbereitstellung-mvp07-2026-10-09.md)
+- [MVP09-Deploymentplan](deployment-mvp-09.md)
+- [Gebundene MVP09-Artefakte](releaseartefakte-mvp-09.md)
+- [Installationsvorlage](eq-installationsvorlage-mvp09.md) und [Rückfallweg](rueckfall-mvp09.md)
+- [E-/Q-Vollzug](eq-vollzugsnachweis-mvp09.md) und [Q-Abnahme](abnahme-q-mvp09.md)
+- [Quellenabnahme MVP 0.9](../fachrecht/abnahme-quellen-mvp09.md)
+- [Letzter dokumentierter öffentlicher Stand MVP 0.8](produktionsbereitstellung-mvp08-2026-10-16.md)
 - [Sicherheitsrichtlinie](../../SECURITY.md)

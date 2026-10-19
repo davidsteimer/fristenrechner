@@ -14,6 +14,7 @@ import releaseManifestV5Schema from './schemas/release-manifest-v5.schema.json';
 import releaseManifestV6Schema from './schemas/release-manifest-v6.schema.json';
 import releaseManifestV7Schema from './schemas/release-manifest-v7.schema.json';
 import releaseManifestV8Schema from './schemas/release-manifest-v8.schema.json';
+import releaseManifestV9Schema from './schemas/release-manifest-v9.schema.json';
 import socialProcedureCatalogSchema from './schemas/social-procedure-catalog.schema.json';
 import socialProcedureCatalogV2Schema from './schemas/social-procedure-catalog-v2.schema.json';
 import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
@@ -27,6 +28,7 @@ import {
   createCalculationData,
   createFormat7CalculationData,
   createFormat8CalculationData,
+  createFormat9CalculationData,
   generateCalendarFromRules,
   type CalendarRuleSet
 } from '../product/core';
@@ -138,6 +140,7 @@ export class ReleaseValidator {
   private readonly manifestV6Validator: ValidateFunction;
   private readonly manifestV7Validator: ValidateFunction;
   private readonly manifestV8Validator: ValidateFunction;
+  private readonly manifestV9Validator: ValidateFunction;
   private readonly socialProcedureCatalogValidator: ValidateFunction;
   private readonly socialProcedureCatalogV2Validator: ValidateFunction;
   private readonly legalProfileValidator: ValidateFunction;
@@ -168,6 +171,7 @@ export class ReleaseValidator {
     const format8Ajv = new Ajv2020({ allErrors: true, strict: true, strictRequired: false, strictTypes: false });
     addFormats(format8Ajv, ['date', 'uri']);
     this.manifestV8Validator = format8Ajv.compile(releaseManifestV8Schema);
+    this.manifestV9Validator = format8Ajv.compile(releaseManifestV9Schema);
     this.legalProfileValidator = ajv.compile(legalProfileSchema);
     this.calendarValidator = ajv.compile(calendarSchema);
     this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
@@ -181,6 +185,10 @@ export class ReleaseValidator {
   public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
     const manifestBytes = await provider.fetchBytes('manifest.json');
     const manifestValue = decodeJson(manifestBytes, 'Manifest');
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '9.0.0') {
+      return this.validateFormat9Provider(provider, manifestBytes, manifestValue);
+    }
 
     if (isObject(manifestValue) && manifestValue.formatVersion === '8.0.0') {
       return this.validateFormat8Provider(provider, manifestBytes, manifestValue);
@@ -307,6 +315,41 @@ export class ReleaseValidator {
       formatVersion: '8.0.0',
       coverageFrom: manifest.coverage.from,
       coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat9Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // The operating host never accepts a local-reference schema or URL flag.
+    // Candidate rejection precedes all component requests and cache activation.
+    assertSchema(this.manifestV9Validator, value, 'Format-9-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 41) {
+      throw new Error('Format 9 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat9CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '9.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
       profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
       specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
       holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],

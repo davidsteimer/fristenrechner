@@ -33,6 +33,6 @@ test('C2 runtime remains an explicit local reference candidate without a release
   assert.doesNotMatch(readFileSync('src/release/mvp06ReleaseData.ts', 'utf8'), /ap22c2|calendarRuntime/);
   const currentEntry = readFileSync('src/public-app/main.tsx', 'utf8');
   assert.doesNotMatch(currentEntry, /ap22c2|ap22c2CalendarRuntime/);
-  assert.match(currentEntry, /import \{ mvp08Runtime \} from '\.\.\/release\/mvp08ReleaseData'/);
-  assert.match(currentEntry, /<FristenrechnerApp \{\.\.\.mvp08Runtime\} \/>/);
+  assert.match(currentEntry, /import \{ mvp09Runtime \} from '\.\.\/release\/mvp09ReleaseData'/);
+  assert.match(currentEntry, /<FristenrechnerApp \{\.\.\.mvp09Runtime\} \/>/);
 });

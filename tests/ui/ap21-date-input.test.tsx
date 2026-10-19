@@ -180,6 +180,7 @@ test('registry uses one instant for all fields and old cleanup cannot unregister
 test('iOS styling is left-aligned 16px with a 44px touch target and no native date picker dependency', () => {
   const css = readFileSync('src/ui/styles.css', 'utf8');
   const source = readFileSync('src/ui/DateInput.tsx', 'utf8');
-  assert.match(css, /font: 16px/); assert.match(css, /text-align: left/); assert.match(css, /pointer: coarse/);
+  assert.match(css, /@media \(pointer: coarse\)\s*\{\s*\.fr-date-input input\s*\{[^}]*font-size: 16px/);
+  assert.match(css, /text-align: left/); assert.match(css, /pointer: coarse/);
   assert.match(css, /height: 44px/); assert.doesNotMatch(source, /showPicker|type="date"/);
 });

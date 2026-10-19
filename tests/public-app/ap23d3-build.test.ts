@@ -120,9 +120,9 @@ test('AP23D3 actual minified browser bundle calculates TI and preserves the TI12
 });
 
 test('AP23D3 keeps approved entries, default pin and existing package version untouched', async () => {
-  assert.match(await readFile('src/public-app/main.tsx', 'utf8'), /mvp08Runtime/);
-  assert.match(await readFile('spfx/src/core/config.ts', 'utf8'), /[a-f0-9]{40}\/data\/releases\/2026-10-15-mvp-08-approved\.1/);
+  assert.match(await readFile('src/public-app/main.tsx', 'utf8'), /mvp09Runtime/);
+  assert.match(await readFile('spfx/src/core/config.ts', 'utf8'), /[a-f0-9]{40}\/data\/releases\/2026-10-18-mvp-09-approved\.1/);
   const solution = JSON.parse(await readFile('spfx/config/package-solution.json', 'utf8'));
-  assert.equal(solution.solution.version, '0.8.0.0');
+  assert.equal(solution.solution.version, '0.9.0.0');
   assert.doesNotMatch(await readFile('src/public-app/ap23d3-main.tsx', 'utf8'), /URLSearchParams|window\.location/);
 });

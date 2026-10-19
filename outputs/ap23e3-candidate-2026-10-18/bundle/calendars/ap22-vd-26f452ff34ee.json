@@ -1,0 +1,375 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-vd-26f452ff34ee",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "VD"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-VD-LEMP-82211-20120401",
+      "sourceType": "officialDossier",
+      "title": "Loi sur l’emploi, LEmp",
+      "authority": "CH-VD",
+      "url": "https://prestations.vd.ch/pub/blv-publication/actes/consolide/822.11?id=c3ef83f5-e736-490d-90a7-1753b31d5ef3",
+      "documentVersionDate": "2012-04-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-ASCENSION-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-BERCHTOLD-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "2. Januar",
+        "fr": "2 janvier"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-CHRISTMAS-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-EASTER-MONDAY-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-FEDERAL-FAST-MONDAY-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-FEDERAL-FAST-MONDAY",
+      "labels": {
+        "de": "Bettagsmontag",
+        "fr": "Lundi du Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOffsetDays",
+        "month": 9,
+        "offsetDays": 1,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-FEDERAL-FAST-MONDAY"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-GOOD-FRIDAY-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-NATIONAL-DAY-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "SR 116 Art. 1, neue Anwendung auf VD-LEMP-ALL. Kantonaler Bezug Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-NEW-YEAR-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "VD-CAL-VD-LEMP-ALL-DAY-WHIT-MONDAY-26F452FF34EE3E73",
+      "calendarId": "ap22-vd-26f452ff34ee",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "VD"
+      },
+      "labelKey": "holiday.vd.VD-LEMP-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-VD-LEMP-82211-20120401",
+          "locator": "Art. 47 Abs. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "VD-LEMP-ALL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-26f452ff34ee3e73",
+    "sourceHash": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81"
+  }
+}

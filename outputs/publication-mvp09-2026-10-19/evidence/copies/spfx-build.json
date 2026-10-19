@@ -1,0 +1,164 @@
+{
+  "workPackage": "AP23E3",
+  "status": "passed",
+  "localOnly": true,
+  "deployable": false,
+  "purpose": "Isolated SPFx integration build and actual SPPKG tests. No release or installation authority.",
+  "compiler": {
+    "configuration": {
+      "path": "spfx/tsconfig.json",
+      "byteLength": 289,
+      "sha256": "8e244b71409da3c87f0d6e84ff075712b583fa31604ec4b7e3300c94e3a5408f"
+    },
+    "target": "es2015",
+    "reason": "TypeScript lowers native private fields to private WeakMaps without removing the accepted runtime capability boundary. Existing Map/WeakMap/Promise runtime requirements remain."
+  },
+  "stage": ".work/ap23e3-spfx-build-56BL4q",
+  "operatingPackagePreserved": true,
+  "protectedBefore": [
+    {
+      "path": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 202616,
+      "sha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346"
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "byteLength": 1334,
+      "sha256": "749fc6c9ea3427fdd3d1b8118ba35d5d8c7ea451cc8e9d6f1ed21c70a5142360"
+    },
+    {
+      "path": "spfx/package.json",
+      "byteLength": 2238,
+      "sha256": "eae7de925afcf1d07f69ebed14df4547d3a9be34430491e2de96be30f913b2d3"
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "byteLength": 233,
+      "sha256": "dcb36e98b3032abb08e37e585f26d025fd06739f556c7f2672c0c0229b5f257c"
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "byteLength": 696,
+      "sha256": "f39c73fb8a4052ca92407eea2ca853e834630153066aa37349fb10fdfa7a1294"
+    },
+    {
+      "path": "src/release/mvp08ReleaseData.ts",
+      "byteLength": 2692225,
+      "sha256": "f308de0723ef9745161ccbb47420cd2edc14e0725ea30b0b2081beb7372fdd90"
+    },
+    {
+      "path": "outputs/ap23e3-candidate-2026-10-18/bundle/manifest.json",
+      "byteLength": 24687,
+      "sha256": "4c9f6025b7e29f577f760d2c9381066a176486983e0bae6997ac8738661ffa31"
+    }
+  ],
+  "protectedAfter": [
+    {
+      "path": "spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 202616,
+      "sha256": "9f31513cbc56f0ee2bb178e1db9336252d0266527643bebc2fb1348820711346"
+    },
+    {
+      "path": "spfx/config/package-solution.json",
+      "byteLength": 1334,
+      "sha256": "749fc6c9ea3427fdd3d1b8118ba35d5d8c7ea451cc8e9d6f1ed21c70a5142360"
+    },
+    {
+      "path": "spfx/package.json",
+      "byteLength": 2238,
+      "sha256": "eae7de925afcf1d07f69ebed14df4547d3a9be34430491e2de96be30f913b2d3"
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "byteLength": 233,
+      "sha256": "dcb36e98b3032abb08e37e585f26d025fd06739f556c7f2672c0c0229b5f257c"
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "byteLength": 696,
+      "sha256": "f39c73fb8a4052ca92407eea2ca853e834630153066aa37349fb10fdfa7a1294"
+    },
+    {
+      "path": "src/release/mvp08ReleaseData.ts",
+      "byteLength": 2692225,
+      "sha256": "f308de0723ef9745161ccbb47420cd2edc14e0725ea30b0b2081beb7372fdd90"
+    },
+    {
+      "path": "outputs/ap23e3-candidate-2026-10-18/bundle/manifest.json",
+      "byteLength": 24687,
+      "sha256": "4c9f6025b7e29f577f760d2c9381066a176486983e0bae6997ac8738661ffa31"
+    }
+  ],
+  "steps": [
+    {
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23e3-spfx-build-56BL4q/step-1.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23e3-spfx-build-56BL4q/spfx/node_modules/.bin/heft",
+      "args": [
+        "test",
+        "--clean",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23e3-spfx-build-56BL4q/step-2.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "scripts/audit-product-css.mjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23e3-spfx-build-56BL4q/step-3.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/ap23e3-spfx-build-56BL4q/spfx/node_modules/.bin/heft",
+      "args": [
+        "package-solution",
+        "--production"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23e3-spfx-build-56BL4q/step-4.log"
+    },
+    {
+      "command": "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+      "args": [
+        "--test",
+        "--test-concurrency=2",
+        "--test-timeout=60000",
+        "test-build/ap20c1.test.cjs",
+        "test-build/ap20c2.test.cjs",
+        "test-build/ap20c3.test.cjs",
+        "test-build/ap21.test.cjs",
+        "test-build/ap22c3.test.cjs",
+        "test-build/ap23d3.test.cjs",
+        "test-build/ap23e3.test.cjs",
+        "test-build/avig-consumer.test.cjs",
+        "test-build/consumer-regression.test.cjs",
+        "test-build/kvg-consumer.test.cjs",
+        "test-build/mvp05-consumer.test.cjs",
+        "test-build/mvp06-consumer.test.cjs",
+        "test-build/mvp07-consumer.test.cjs",
+        "test-build/mvp08-consumer.test.cjs",
+        "test-build/mvp08-export.test.cjs",
+        "test-build/mvp08-gr-administration.test.cjs",
+        "test-build/mvp08-gr-court.test.cjs",
+        "test-build/mvp08-ti-appeals.test.cjs",
+        "test-build/mvp08-ti-ordered.test.cjs",
+        "test-build/social-consumer.test.cjs"
+      ],
+      "exitCode": 0,
+      "log": ".work/ap23e3-spfx-build-56BL4q/step-5.log"
+    }
+  ],
+  "testPackage": {
+    "path": ".work/ap23e3-spfx-build-56BL4q/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+    "byteLength": 327126,
+    "sha256": "edb4031a485d573e9f4c77c30ec4fd223951c06a0815acd381ee051859ef886d"
+  }
+}

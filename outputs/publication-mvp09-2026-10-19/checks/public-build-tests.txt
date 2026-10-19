@@ -1,0 +1,288 @@
+TAP version 13
+# Subtest: Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung
+    # Subtest: baut getrennt vom Standardrelease und kennzeichnet den Build als nicht bereitstellbar
+    ok 1 - baut getrennt vom Standardrelease und kennzeichnet den Build als nicht bereitstellbar
+      ---
+      duration_ms: 4.379083
+      type: 'test'
+      ...
+    # Subtest: enthält nur lokale Laufzeitassets und keine QA-Vorgaben oder synthetischen Freigaben
+    ok 2 - enthält nur lokale Laufzeitassets und keine QA-Vorgaben oder synthetischen Freigaben
+      ---
+      duration_ms: 5.490167
+      type: 'test'
+      ...
+    # Subtest: belässt alle 28 eingebetteten Sozialpfade im Kandidatenstatus ohne berechnetes Enddatum
+    ok 3 - belässt alle 28 eingebetteten Sozialpfade im Kandidatenstatus ohne berechnetes Enddatum
+      ---
+      duration_ms: 360.342792
+      type: 'test'
+      ...
+    # Subtest: bleibt vom inzwischen freigegebenen lokalen MVP-0.9-Einstieg und seinem Commit-Pin getrennt
+    ok 4 - bleibt vom inzwischen freigegebenen lokalen MVP-0.9-Einstieg und seinem Commit-Pin getrennt
+      ---
+      duration_ms: 2.076875
+      type: 'test'
+      ...
+    # Subtest: weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück
+    ok 5 - weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück
+      ---
+      duration_ms: 66.416167
+      type: 'test'
+      ...
+    1..5
+ok 1 - Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung
+  ---
+  duration_ms: 557.92775
+  type: 'suite'
+  ...
+# Subtest: AP21 is a separate non-deployable UI build on the unchanged accepted C3 reference bundle
+ok 2 - AP21 is a separate non-deployable UI build on the unchanged accepted C3 reference bundle
+  ---
+  duration_ms: 160.716125
+  type: 'test'
+  ...
+# Subtest: historical AP21 candidate remains separate from the approved local MVP09 entry and package
+ok 3 - historical AP21 candidate remains separate from the approved local MVP09 entry and package
+  ---
+  duration_ms: 1.855083
+  type: 'test'
+  ...
+# Subtest: C3 builds as a separate non-deployable static reference bundle with 32-calendar runtime
+ok 4 - C3 builds as a separate non-deployable static reference bundle with 32-calendar runtime
+  ---
+  duration_ms: 150.748958
+  type: 'test'
+  ...
+# Subtest: historical C3 candidate stays separate from the approved local MVP09 entry, pin and package
+ok 5 - historical C3 candidate stays separate from the approved local MVP09 entry, pin and package
+  ---
+  duration_ms: 1.5465
+  type: 'test'
+  ...
+# Subtest: AP23D3 builds separately with the unchanged accepted Format-8 source and no deployment claim
+ok 6 - AP23D3 builds separately with the unchanged accepted Format-8 source and no deployment claim
+  ---
+  duration_ms: 156.678458
+  type: 'test'
+  ...
+# Subtest: AP23D3 actual minified browser bundle calculates the legacy StPO branch from the same Format-8 release without export
+ok 7 - AP23D3 actual minified browser bundle calculates the legacy StPO branch from the same Format-8 release without export
+  ---
+  duration_ms: 5196.719208
+  type: 'test'
+  ...
+# Subtest: AP23D3 actual minified browser bundle calculates TI and preserves the TI12 block without export
+ok 8 - AP23D3 actual minified browser bundle calculates TI and preserves the TI12 block without export
+  ---
+  duration_ms: 5217.851333
+  type: 'test'
+  ...
+# Subtest: AP23D3 keeps approved entries, default pin and existing package version untouched
+ok 9 - AP23D3 keeps approved entries, default pin and existing package version untouched
+  ---
+  duration_ms: 1.1115
+  type: 'test'
+  ...
+# Subtest: AP23E3 builds separately with the bound Format-9 candidate and no deployment claim
+ok 10 - AP23E3 builds separately with the bound Format-9 candidate and no deployment claim
+  ---
+  duration_ms: 122.962584
+  type: 'test'
+  ...
+# Subtest: AP23E3 actual minified browser bundle calculates the legacy StPO branch from the same Format-9 candidate without export
+ok 11 - AP23E3 actual minified browser bundle calculates the legacy StPO branch from the same Format-9 candidate without export
+  ---
+  duration_ms: 2975.738541
+  type: 'test'
+  ...
+# Subtest: AP23E3 actual minified browser bundle calculates TI and preserves the TI12 block without export
+ok 12 - AP23E3 actual minified browser bundle calculates TI and preserves the TI12 block without export
+  ---
+  duration_ms: 2957.413834
+  type: 'test'
+  ...
+# Subtest: AP23E3 actual minified browser bundle qualifies LU only after the current case choice and preserves early date entry
+ok 13 - AP23E3 actual minified browser bundle qualifies LU only after the current case choice and preserves early date entry
+  ---
+  duration_ms: 2878.260625
+  type: 'test'
+  ...
+# Subtest: AP23E3 actual minified browser bundle calculates the qualified Zug 20-day administrative appeal without export
+ok 14 - AP23E3 actual minified browser bundle calculates the qualified Zug 20-day administrative appeal without export
+  ---
+  duration_ms: 2843.0525
+  type: 'test'
+  ...
+# Subtest: AP23E3 actual minified browser bundle calculates AR five-day execution and blocks AR-O1 after fresh court qualification
+ok 15 - AP23E3 actual minified browser bundle calculates AR five-day execution and blocks AR-O1 after fresh court qualification
+  ---
+  duration_ms: 3138.27725
+  type: 'test'
+  ...
+# Subtest: AP23E3 keeps approved entries, default pin and existing package version untouched
+ok 16 - AP23E3 keeps approved entries, default pin and existing package version untouched
+  ---
+  duration_ms: 1.783084
+  type: 'test'
+  ...
+# Subtest: Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung
+    # Subtest: erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest
+    ok 1 - erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest
+      ---
+      duration_ms: 121.210042
+      type: 'test'
+      ...
+    # Subtest: enthält keine Quellkarten, QA-Presets oder externen Laufzeitprovider
+    ok 2 - enthält keine Quellkarten, QA-Presets oder externen Laufzeitprovider
+      ---
+      duration_ms: 127.030958
+      type: 'test'
+      ...
+    # Subtest: führt kanonische Metadaten, private Anbieterabgrenzung und lokale Assets
+    ok 3 - führt kanonische Metadaten, private Anbieterabgrenzung und lokale Assets
+      ---
+      duration_ms: 128.391666
+      type: 'test'
+      ...
+    # Subtest: liefert die vorbereiteten Sicherheits- und Cacheregeln aus
+    ok 4 - liefert die vorbereiteten Sicherheits- und Cacheregeln aus
+      ---
+      duration_ms: 118.757458
+      type: 'test'
+      ...
+    # Subtest: hält den historischen ap17c-Prüfkandidaten vom normalen Releasebuild getrennt
+    ok 5 - hält den historischen ap17c-Prüfkandidaten vom normalen Releasebuild getrennt
+      ---
+      duration_ms: 247.817333
+      type: 'test'
+      ...
+    # Subtest: hält den historischen ap18c-Prüfkandidaten vom normalen Releasebuild getrennt
+    ok 6 - hält den historischen ap18c-Prüfkandidaten vom normalen Releasebuild getrennt
+      ---
+      duration_ms: 587.232583
+      type: 'test'
+      ...
+    # Subtest: weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen
+    ok 7 - weist unbekannte Kandidaten zurück, statt einen anderen Datenstand zu bauen
+      ---
+      duration_ms: 52.645875
+      type: 'test'
+      ...
+    1..7
+ok 17 - Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung
+  ---
+  duration_ms: 1383.960833
+  type: 'suite'
+  ...
+# Subtest: historical byte-bound MVP08 static entry contains the approved runtime, no QA activation and unchanged hosting bytes
+ok 18 - historical byte-bound MVP08 static entry contains the approved runtime, no QA activation and unchanged hosting bytes
+  ---
+  duration_ms: 67.69525
+  type: 'test'
+  ...
+# Subtest: actual static DE StPO export and immediate invalidation on input change
+ok 19 - actual static DE StPO export and immediate invalidation on input change
+  ---
+  duration_ms: 2870.812333
+  type: 'test'
+  ...
+# Subtest: actual static TI de export with bound provenance and TI-O2 block
+ok 20 - actual static TI de export with bound provenance and TI-O2 block
+  ---
+  duration_ms: 2822.772292
+  type: 'test'
+  ...
+# Subtest: actual static TI fr export with bound provenance and TI-O2 block
+ok 21 - actual static TI fr export with bound provenance and TI-O2 block
+  ---
+  duration_ms: 2860.796958
+  type: 'test'
+  ...
+# Subtest: actual static bundle protects corrupt and future v5 preferences without replacing stored bytes
+ok 22 - actual static bundle protects corrupt and future v5 preferences without replacing stored bytes
+  ---
+  duration_ms: 5043.788292
+  type: 'test'
+  ...
+# Subtest: MVP09 normal static entry contains the approved runtime, no QA activation and unchanged hosting bytes
+ok 23 - MVP09 normal static entry contains the approved runtime, no QA activation and unchanged hosting bytes
+  ---
+  duration_ms: 121.328042
+  type: 'test'
+  ...
+# Subtest: actual static DE StPO export and immediate invalidation on input change
+ok 24 - actual static DE StPO export and immediate invalidation on input change
+  ---
+  duration_ms: 2919.680834
+  type: 'test'
+  ...
+# Subtest: actual static TI de export with bound provenance and TI-O2 block
+ok 25 - actual static TI de export with bound provenance and TI-O2 block
+  ---
+  duration_ms: 2865.478792
+  type: 'test'
+  ...
+# Subtest: actual static TI fr export with bound provenance and TI-O2 block
+ok 26 - actual static TI fr export with bound provenance and TI-O2 block
+  ---
+  duration_ms: 2914.911166
+  type: 'test'
+  ...
+# Subtest: actual static bundle protects corrupt and future v5 preferences without replacing stored bytes
+ok 27 - actual static bundle protects corrupt and future v5 preferences without replacing stored bytes
+  ---
+  duration_ms: 5198.977958
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static bundle qualifies lu-admin-30, exports de and clears changed facts
+ok 28 - actual normal MVP09 static bundle qualifies lu-admin-30, exports de and clears changed facts
+  ---
+  duration_ms: 2825.628917
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static bundle qualifies lu-admin-30, exports fr and clears changed facts
+ok 29 - actual normal MVP09 static bundle qualifies lu-admin-30, exports fr and clears changed facts
+  ---
+  duration_ms: 2891.045292
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static bundle qualifies zg-admin-20, exports de and clears changed facts
+ok 30 - actual normal MVP09 static bundle qualifies zg-admin-20, exports de and clears changed facts
+  ---
+  duration_ms: 2782.822958
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static bundle qualifies zg-admin-20, exports fr and clears changed facts
+ok 31 - actual normal MVP09 static bundle qualifies zg-admin-20, exports fr and clears changed facts
+  ---
+  duration_ms: 2838.739333
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static bundle qualifies ar-execution-5, exports de and clears changed facts
+ok 32 - actual normal MVP09 static bundle qualifies ar-execution-5, exports de and clears changed facts
+  ---
+  duration_ms: 2798.975791
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static bundle qualifies ar-execution-5, exports fr and clears changed facts
+ok 33 - actual normal MVP09 static bundle qualifies ar-execution-5, exports fr and clears changed facts
+  ---
+  duration_ms: 2884.050708
+  type: 'test'
+  ...
+# Subtest: actual normal MVP09 static AR-O1 blocks the shifted end without definitive result or export
+ok 34 - actual normal MVP09 static AR-O1 blocks the shifted end without definitive result or export
+  ---
+  duration_ms: 3076.792292
+  type: 'test'
+  ...
+1..34
+# tests 44
+# suites 2
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 78525.968583

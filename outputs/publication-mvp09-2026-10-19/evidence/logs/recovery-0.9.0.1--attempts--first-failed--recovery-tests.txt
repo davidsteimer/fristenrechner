@@ -1,0 +1,155 @@
+TAP version 13
+# Subtest: actual recovery keeps AP5 and Format8 caches separate and rejects unknown provider fallback
+ok 1 - actual recovery keeps AP5 and Format8 caches separate and rejects unknown provider fallback
+  ---
+  duration_ms: 4947.950208
+  type: 'test'
+  ...
+# Subtest: actual recovery fails closed for Format9 rather than using unrelated Format8 cache
+ok 2 - actual recovery fails closed for Format9 rather than using unrelated Format8 cache
+  ---
+  duration_ms: 5740.13075
+  type: 'test'
+  ...
+# Subtest: MVP08 recovery protects LU V5 raw bytes through load, save and reset
+not ok 3 - MVP08 recovery protects LU V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 7125.34975
+  type: 'test'
+  location: '<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:5:55'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(protectedState)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    <REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:8:96
+    Object.inspectCalculator (<REPO_ROOT>/spfx/recovery-mvp07/package-harness.cjs:193:14)
+    TestContext.<anonymous> (<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:7:11)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: MVP08 recovery protects ZG V5 raw bytes through load, save and reset
+not ok 4 - MVP08 recovery protects ZG V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 5687.232
+  type: 'test'
+  location: '<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:5:55'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(protectedState)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    <REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:8:96
+    Object.inspectCalculator (<REPO_ROOT>/spfx/recovery-mvp07/package-harness.cjs:193:14)
+    TestContext.<anonymous> (<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:7:11)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: MVP08 recovery protects AR V5 raw bytes through load, save and reset
+not ok 5 - MVP08 recovery protects AR V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 4854.288458
+  type: 'test'
+  location: '<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:5:55'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(protectedState)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    <REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:8:96
+    Object.inspectCalculator (<REPO_ROOT>/spfx/recovery-mvp07/package-harness.cjs:193:14)
+    TestContext.<anonymous> (<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:7:11)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: MVP08 recovery protects corrupt V5 raw bytes through load, save and reset
+not ok 6 - MVP08 recovery protects corrupt V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 4705.176
+  type: 'test'
+  location: '<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:5:55'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(protectedState)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    <REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:8:96
+    Object.inspectCalculator (<REPO_ROOT>/spfx/recovery-mvp07/package-harness.cjs:193:14)
+    TestContext.<anonymous> (<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:7:11)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: MVP08 recovery protects future V5 raw bytes through load, save and reset
+not ok 7 - MVP08 recovery protects future V5 raw bytes through load, save and reset
+  ---
+  duration_ms: 4707.539875
+  type: 'test'
+  location: '<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:5:55'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(protectedState)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    <REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:8:96
+    Object.inspectCalculator (<REPO_ROOT>/spfx/recovery-mvp07/package-harness.cjs:193:14)
+    TestContext.<anonymous> (<REPO_ROOT>/spfx/recovery-mvp09/recovery-defaults.test.cjs:7:11)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: actual recovery and original MVP08 have identical Bundesprofile outcomes and traces
+ok 8 - actual recovery and original MVP08 have identical Bundesprofile outcomes and traces
+  ---
+  duration_ms: 8474.590375
+  type: 'test'
+  ...
+# Subtest: actual recovery has 0.9.0.1 package but MVP08 component, pin, identities, hosts and permissions
+ok 9 - actual recovery has 0.9.0.1 package but MVP08 component, pin, identities, hosts and permissions
+  ---
+  duration_ms: 5.932208
+  type: 'test'
+  ...
+# Subtest: actual recovery loads all 42 Format8 files and keeps the September reference and own cache
+ok 10 - actual recovery loads all 42 Format8 files and keeps the September reference and own cache
+  ---
+  duration_ms: 11240.60475
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 5
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57743.707417

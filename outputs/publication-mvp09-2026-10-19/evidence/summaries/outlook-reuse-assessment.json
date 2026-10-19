@@ -1,0 +1,1410 @@
+{
+  "kind": "mvp09-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp09-2026-10-18/outlook-reuse-assessment.json",
+  "selectedFields": [
+    "kind",
+    "status",
+    "proposalOnly",
+    "releaseId",
+    "manifestSha256",
+    "applicationVersion",
+    "packageVersion",
+    "buildProof",
+    "artifactVerification",
+    "definitiveArtifacts",
+    "actualPackageProvenance",
+    "historicalEvidenceUnchanged",
+    "sourceComparisons",
+    "unchangedSourceBlocks",
+    "administrativeAdapter",
+    "browserProof",
+    "browserVersion",
+    "browserExports",
+    "packagedAmdExports",
+    "packagedHarnessInputs",
+    "excludedOlderSavedCalendarDiagnostics",
+    "actualBrowserDownloads",
+    "simulatedPackagedDownloads",
+    "unchangedAppointmentContract",
+    "proposedReuseScope",
+    "newProvenanceNotCoveredByOldImport",
+    "humanReuseAccepted",
+    "noOutlookImport",
+    "noM365",
+    "outlookImportsPerformed",
+    "mailboxOrCalendarChanged",
+    "newBrowserSessionPerformedByThisScript",
+    "newTestsPerformedByThisScript",
+    "publicProductionHostTestsPerformed",
+    "actualDeviceTestsPerformed",
+    "installationAuthorized",
+    "publicationAuthorized",
+    "operatingApproval",
+    "retainedLimits",
+    "parser",
+    "script"
+  ],
+  "omittedTopLevelFields": [
+    "inputs"
+  ],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp09-outlook-reuse-proposal",
+    "status": "local-evidence-passed-human-reuse-decision-open",
+    "proposalOnly": true,
+    "releaseId": "2026-10-18-mvp-09-approved.1",
+    "manifestSha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265",
+    "applicationVersion": "0.9.0",
+    "packageVersion": "0.9.0.0",
+    "buildProof": {
+      "path": "outputs/release-mvp09-2026-10-18/product-build.json",
+      "byteLength": 523918,
+      "sha256": "9b1d4312f9fbb0e8256f4208ded9c6dacd0c57705ebf018db53fdfbbd7786105"
+    },
+    "artifactVerification": {
+      "path": "outputs/release-mvp09-2026-10-18/artifact-verification.json",
+      "byteLength": 15677,
+      "sha256": "7e623a62275ab6faa3fdde6a9c49ab4360232b16228c877ddbade545f12d14f2"
+    },
+    "definitiveArtifacts": [
+      {
+        "path": "outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-0.9.0.0.sppkg",
+        "byteLength": 327130,
+        "sha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331"
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/fristenrechner-mvp09-steimer-web.zip",
+        "byteLength": 658325,
+        "sha256": "f7d112b015833251d3d41a5fe418e9f8063fe85aa46e48c1dafbf053031516d3"
+      }
+    ],
+    "actualPackageProvenance": {
+      "packagePath": "<REPO_ROOT>/outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-0.9.0.0.sppkg",
+      "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+      "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+      "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+    },
+    "historicalEvidenceUnchanged": [
+      {
+        "path": "outputs/release-mvp08-2026-10-15/product-build.json",
+        "byteLength": 444197,
+        "sha256": "1638becba091b1fccc3924ad477476d6bfb8fb0fd5245d115923c6e4ebe98bd6"
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/artifact-verification.json",
+        "byteLength": 15676,
+        "sha256": "5307901a72a32537ffc8f05cefa250341c42a5d21fc387a64df04ea2c1e369c2"
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/outlook-reuse-assessment-v2.json",
+        "byteLength": 8234,
+        "sha256": "d0f358fc0095b51f59e2f2aa77fa5598ede4593de15c9b1d70f1a9b4f0ae5e0c"
+      },
+      {
+        "path": "outputs/release-mvp08-2026-10-15/outlook-final-artifact-supplement.json",
+        "byteLength": 8894,
+        "sha256": "91c281872265198d322e84b57d3fc8efa22b6c42d0e46edacdf670b102d327bc"
+      },
+      {
+        "path": "docs/betrieb/outlook-pruefung-mvp05.md",
+        "byteLength": 3889,
+        "sha256": "45208e2672e19a272cef28231c6cae7ab89639fe5926becc07a901250695144a"
+      }
+    ],
+    "sourceComparisons": [
+      {
+        "path": "src/ui/calendarExport.ts",
+        "old": {
+          "path": "src/ui/calendarExport.ts",
+          "byteLength": 5153,
+          "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89",
+          "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/ui/calendarExport.ts"
+        },
+        "current": {
+          "path": "src/ui/calendarExport.ts",
+          "byteLength": 5153,
+          "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89",
+          "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/ui/calendarExport.ts"
+        },
+        "byteIdentical": true
+      },
+      {
+        "path": "src/core/date.ts",
+        "old": {
+          "path": "src/core/date.ts",
+          "byteLength": 4847,
+          "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc",
+          "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/core/date.ts"
+        },
+        "current": {
+          "path": "src/core/date.ts",
+          "byteLength": 4847,
+          "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc",
+          "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/core/date.ts"
+        },
+        "byteIdentical": true
+      },
+      {
+        "path": "src/ui/i18n.ts",
+        "old": {
+          "path": "src/ui/i18n.ts",
+          "byteLength": 51804,
+          "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369",
+          "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/ui/i18n.ts"
+        },
+        "current": {
+          "path": "src/ui/i18n.ts",
+          "byteLength": 51804,
+          "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369",
+          "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/ui/i18n.ts"
+        },
+        "byteIdentical": true
+      }
+    ],
+    "unchangedSourceBlocks": [
+      {
+        "name": "CalendarExportTile",
+        "byteLength": 1700,
+        "sha256": "17560baee30d827fbd1c4f3f6e4bee549dbd917ad7eb0951fdab2dc84bd8f07b",
+        "byteIdentical": true,
+        "oldSource": {
+          "path": "src/ui/FristenrechnerApp.tsx",
+          "byteLength": 105814,
+          "sha256": "717af8df852227fc0b7acce226bccc2b1a7d38f24a16cf7cdf2b93440ffba759",
+          "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/ui/FristenrechnerApp.tsx"
+        },
+        "currentSource": {
+          "path": "src/ui/FristenrechnerApp.tsx",
+          "byteLength": 106897,
+          "sha256": "65f08b72a2cf60160872e556dd2c7951cb669e20caf3c4af19f5a9f90404b486",
+          "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/ui/FristenrechnerApp.tsx"
+        }
+      },
+      {
+        "name": "ResultPanel",
+        "byteLength": 4415,
+        "sha256": "47dc8e0c351301f7d15eaff8971aa0e78a66c76b425bfe41076a0309b94d97b5",
+        "byteIdentical": true,
+        "oldSource": {
+          "path": "src/ui/FristenrechnerApp.tsx",
+          "byteLength": 105814,
+          "sha256": "717af8df852227fc0b7acce226bccc2b1a7d38f24a16cf7cdf2b93440ffba759",
+          "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/ui/FristenrechnerApp.tsx"
+        },
+        "currentSource": {
+          "path": "src/ui/FristenrechnerApp.tsx",
+          "byteLength": 106897,
+          "sha256": "65f08b72a2cf60160872e556dd2c7951cb669e20caf3c4af19f5a9f90404b486",
+          "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/ui/FristenrechnerApp.tsx"
+        }
+      },
+      {
+        "name": "SpecialResultPanel",
+        "byteLength": 10517,
+        "sha256": "a123b7516751d53244903cc5ec005c128b8bcdae29e586ad52e919816817f280",
+        "byteIdentical": true,
+        "oldSource": {
+          "path": "src/ui/FristenrechnerApp.tsx",
+          "byteLength": 105814,
+          "sha256": "717af8df852227fc0b7acce226bccc2b1a7d38f24a16cf7cdf2b93440ffba759",
+          "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/ui/FristenrechnerApp.tsx"
+        },
+        "currentSource": {
+          "path": "src/ui/FristenrechnerApp.tsx",
+          "byteLength": 106897,
+          "sha256": "65f08b72a2cf60160872e556dd2c7951cb669e20caf3c4af19f5a9f90404b486",
+          "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/ui/FristenrechnerApp.tsx"
+        }
+      }
+    ],
+    "administrativeAdapter": {
+      "old": {
+        "path": "src/ui/administrativeExport.ts",
+        "byteLength": 4342,
+        "sha256": "b4b8e6769a782829f9a25da19c7a2b1a3cd9eecb60dae19c49dac6d3f59df836",
+        "archivedAt": "outputs/release-mvp08-2026-10-15/build-evidence/inputs/src/ui/administrativeExport.ts"
+      },
+      "current": {
+        "path": "src/ui/administrativeExport.ts",
+        "byteLength": 4480,
+        "sha256": "6247d3f211eac2a31b97c89cbbe599e586e4013d4fc05ba44cc7c85a20cd1326",
+        "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/src/ui/administrativeExport.ts"
+      },
+      "byteIdentical": false,
+      "onlyDeclaredDeltaVerified": true,
+      "changes": [
+        "Verified Format-8/9 context accessor import",
+        "Matching verified context accessor call",
+        "Optional qualificationPolicySha256 line within escaped event DESCRIPTION"
+      ],
+      "unchangedGuards": [
+        "Exact actual input/context/result binding",
+        "Fresh calculation before export",
+        "Recomputed result equality"
+      ],
+      "newProvenanceNotCoveredByOldImport": true
+    },
+    "browserProof": {
+      "path": "outputs/release-mvp09-2026-10-18/browser-definitive-20261018-02/verification-1792359318158.json",
+      "byteLength": 7662,
+      "sha256": "85a3737cefdf0d16d5e28387f6caa0bc7362560427bab3ad8875e64fbbc7eefa"
+    },
+    "browserVersion": "155.0.8059.84",
+    "browserExports": [
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/browser/de-ti.ics",
+        "byteLength": 2263,
+        "sha256": "00807ca1a36508666bfc718e134bc01c0fbd4aacd9a094b21080e6b55fd8a4c4",
+        "original": {
+          "path": "outputs/release-mvp09-2026-10-18/browser-definitive-20261018-02/de-ti.ics",
+          "byteLength": 2263,
+          "sha256": "00807ca1a36508666bfc718e134bc01c0fbd4aacd9a094b21080e6b55fd8a4c4"
+        },
+        "locale": "de",
+        "pathId": "ti-80-30",
+        "summary": "Fristablauf (QA-MVP09-BROWSER-DE-TI)",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "e3f39b12d2d3e5667a52209df3cd46bcf9e6714f9198e8eddad7a71db12af9dd",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "lpamm-ti",
+            "pathId": "ti-80-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "ti-authority-seat",
+            "calendarId": "ap22-ti-944ed0286e9a",
+            "projectionId": "projection-944ed0286e9a6d9f",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "TI",
+            "suspensionProfileId": "ti-three",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "6bb41a0cf231214864b271effb8d6462ea8470d70fe40610ef54ccaab533fed0"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 1, 13–16"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13, 16, 68 Abs. 1, 80"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1 und Schlussfussnote"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-MATERIAL",
+              "locator": "S. 11 Ziff. 3.1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13 Abs. 3"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 16 Abs. 1"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "evidenceScope": "actualHeadlessLocalBrowserDownload",
+        "realBrowserDownload": true,
+        "simulatedDownloadBoundary": false,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/browser/fr-ti.ics",
+        "byteLength": 2304,
+        "sha256": "8d7e8a6b2f3739ea36a656707d45f2a299350811cda2ca2aae5b8432c43ee4e7",
+        "original": {
+          "path": "outputs/release-mvp09-2026-10-18/browser-definitive-20261018-02/fr-ti.ics",
+          "byteLength": 2304,
+          "sha256": "8d7e8a6b2f3739ea36a656707d45f2a299350811cda2ca2aae5b8432c43ee4e7"
+        },
+        "locale": "fr",
+        "pathId": "ti-80-30",
+        "summary": "Échéance du délai (QA-MVP09-BROWSER-FR-TI)",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "b3cc7ee4d4bf0de13848c57979e41d4b6f31d028d36010b665443c626c510dd2",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "lpamm-ti",
+            "pathId": "ti-80-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "ti-authority-seat",
+            "calendarId": "ap22-ti-944ed0286e9a",
+            "projectionId": "projection-944ed0286e9a6d9f",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "TI",
+            "suspensionProfileId": "ti-three",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "6bb41a0cf231214864b271effb8d6462ea8470d70fe40610ef54ccaab533fed0"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 1, 13–16"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13, 16, 68 Abs. 1, 80"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1 und Schlussfussnote"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-MATERIAL",
+              "locator": "S. 11 Ziff. 3.1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13 Abs. 3"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 16 Abs. 1"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "evidenceScope": "actualHeadlessLocalBrowserDownload",
+        "realBrowserDownload": true,
+        "simulatedDownloadBoundary": false,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      }
+    ],
+    "packagedAmdExports": [
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/de-ar-execution-5.ics",
+        "byteLength": 2382,
+        "sha256": "6e41226abe94233e64e0daa2f4f4583eedef18d3d6c90c7bba9a2a0c347a166c",
+        "locale": "de",
+        "pathId": "ar-execution-5",
+        "summary": "Fristablauf",
+        "start": "2026-10-07",
+        "exclusiveEnd": "2026-10-08",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "1be47908872fe8ef68b2a7219c82378ff567908283f2a2d0d0d97969c2317639",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrpg-ar",
+            "pathId": "ar-execution-5",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "ar-authority-seat",
+            "calendarId": "ap22-ar-88bb22c08a22",
+            "projectionId": "projection-88bb22c08a22e382",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "AR",
+            "suspensionProfileId": "ar-none",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "602bec552343ae46f68a144051988f5c5d7838b04fe71e8b61812fc6ac2e8f8f"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 1, 4–7, 31a, 34, 54–55, 59, 63"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 4–6, 33 Abs. 1 und 63 Abs. 4"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+              "locator": "Art.7 und9"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 5"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+              "locator": "Art. 7"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 4–7, systematische Beschränkung von Art. 7 auf Gerichtsverfahren"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "de",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-de-7mtnoH/fristablauf-2026-10-07.ics",
+          "sha256": "6e41226abe94233e64e0daa2f4f4583eedef18d3d6c90c7bba9a2a0c347a166c",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/fr-ar-execution-5.ics",
+        "byteLength": 2421,
+        "sha256": "aa7a55220745274fe6201dcd80be2ea4cfe08fb0df203a166493959d7cba2f91",
+        "locale": "fr",
+        "pathId": "ar-execution-5",
+        "summary": "Échéance du délai",
+        "start": "2026-10-07",
+        "exclusiveEnd": "2026-10-08",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "f29831ae20e83c7739a40ba77f9c55db5cdb7a504901b8659a3adcfa254d42f7",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrpg-ar",
+            "pathId": "ar-execution-5",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "ar-authority-seat",
+            "calendarId": "ap22-ar-88bb22c08a22",
+            "projectionId": "projection-88bb22c08a22e382",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "AR",
+            "suspensionProfileId": "ar-none",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "602bec552343ae46f68a144051988f5c5d7838b04fe71e8b61812fc6ac2e8f8f"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 1, 4–7, 31a, 34, 54–55, 59, 63"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 4–6, 33 Abs. 1 und 63 Abs. 4"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+              "locator": "Art.7 und9"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 5"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+              "locator": "Art. 7"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+              "locator": "Art. 4–7, systematische Beschränkung von Art. 7 auf Gerichtsverfahren"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "fr",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-fr-XWnW0G/fristablauf-2026-10-07.ics",
+          "sha256": "aa7a55220745274fe6201dcd80be2ea4cfe08fb0df203a166493959d7cba2f91",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/de-gr-52-30.ics",
+        "byteLength": 2435,
+        "sha256": "6de4dc04bf7cc2a9cea68e8607128d4f9abf9d7ed4a43b424e2ecf09a2bb4f19",
+        "locale": "de",
+        "pathId": "gr-52-30",
+        "summary": "Fristablauf",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "5ba2b0769569d5ad2d5da4bd1e70fa689a27e1afd219f0b27607d94cfb083e3c",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrg-gr",
+            "pathId": "gr-52-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "gr-authority-seat",
+            "calendarId": "ap22-gr-bf0366c8eda2",
+            "projectionId": "projection-bf0366c8eda26257",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "GR",
+            "suspensionProfileId": "gr-three",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "39ad094e73008988bd84c6f93d22118f22c75fffd1fdfa4a4c0f85e805942939"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 1, 7–9, 28–52"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 7, 39, 49, 52 Abs. 1"
+            },
+            {
+              "sourceId": "JUD-AP23B-GR-START-JUD",
+              "locator": "E. 3a, S. 4–5"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-RTG",
+              "locator": "Art. 1–3"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-MATERIAL",
+              "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 7 Abs. 2"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-RTG",
+              "locator": "Art. 2"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-MATERIAL",
+              "locator": "Gedruckte S. 540, Art. 7"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 39 Abs. 1"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "de",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-de-31PpIC/fristablauf-2026-11-02.ics",
+          "sha256": "6de4dc04bf7cc2a9cea68e8607128d4f9abf9d7ed4a43b424e2ecf09a2bb4f19",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/fr-gr-52-30.ics",
+        "byteLength": 2478,
+        "sha256": "717d6a0e32ba1c668bceff5d612eba4faa9124b95d757e59df32642e52e91bda",
+        "locale": "fr",
+        "pathId": "gr-52-30",
+        "summary": "Échéance du délai",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "ec89ce3a8830100b1a228f6024c901d4cdc13ac8550fdd670e40d1ef2561b1ca",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrg-gr",
+            "pathId": "gr-52-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "gr-authority-seat",
+            "calendarId": "ap22-gr-bf0366c8eda2",
+            "projectionId": "projection-bf0366c8eda26257",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "GR",
+            "suspensionProfileId": "gr-three",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "39ad094e73008988bd84c6f93d22118f22c75fffd1fdfa4a4c0f85e805942939"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 1, 7–9, 28–52"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 7, 39, 49, 52 Abs. 1"
+            },
+            {
+              "sourceId": "JUD-AP23B-GR-START-JUD",
+              "locator": "E. 3a, S. 4–5"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-RTG",
+              "locator": "Art. 1–3"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-MATERIAL",
+              "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 7 Abs. 2"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-RTG",
+              "locator": "Art. 2"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-MATERIAL",
+              "locator": "Gedruckte S. 540, Art. 7"
+            },
+            {
+              "sourceId": "SRC-AP23B-GR-VRG",
+              "locator": "Art. 39 Abs. 1"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "fr",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-fr-n3iR4a/fristablauf-2026-11-02.ics",
+          "sha256": "717d6a0e32ba1c668bceff5d612eba4faa9124b95d757e59df32642e52e91bda",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/de-lu-admin-30.ics",
+        "byteLength": 2296,
+        "sha256": "f12874b7653f5a155f0ca84f0a8ffa85ae9b7a4423344f80f389f241907591bd",
+        "locale": "de",
+        "pathId": "lu-admin-30",
+        "summary": "Fristablauf",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "1a07585733d8d1dc9bc52a3262d65273cdb2d5713fb916133f9f63e0cfc2cbfb",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrg-lu",
+            "pathId": "lu-admin-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "lu-authority-seat",
+            "calendarId": "ap22-lu-b879eb8eb04f",
+            "projectionId": "projection-b879eb8eb04f9540",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "LU",
+            "suspensionProfileId": "lu-none",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "68fd4a6d56008a88f5afcbd1ee980b92718d71b73b651cc7004ffbb64f4f02e7"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§§ 6–9, 31–36, 127–130, 135–136, 142–150"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§§ 31–35, 130, 142–143"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+              "locator": "§1a"
+            },
+            {
+              "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+              "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§ 34"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+              "locator": "§ 1a"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§§ 31–36"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "de",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-de-oq8SCh/fristablauf-2026-11-02.ics",
+          "sha256": "f12874b7653f5a155f0ca84f0a8ffa85ae9b7a4423344f80f389f241907591bd",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/fr-lu-admin-30.ics",
+        "byteLength": 2335,
+        "sha256": "b56d070994c8ddb038c99a3da8c7b4d52418352d7b1f91ad3d848e505813f25c",
+        "locale": "fr",
+        "pathId": "lu-admin-30",
+        "summary": "Échéance du délai",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "f71e7931cbbe9bba0f736676e4f366b91d25fd8cf850944697f64cd0f9d4fcfa",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrg-lu",
+            "pathId": "lu-admin-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "lu-authority-seat",
+            "calendarId": "ap22-lu-b879eb8eb04f",
+            "projectionId": "projection-b879eb8eb04f9540",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "LU",
+            "suspensionProfileId": "lu-none",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "68fd4a6d56008a88f5afcbd1ee980b92718d71b73b651cc7004ffbb64f4f02e7"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§§ 6–9, 31–36, 127–130, 135–136, 142–150"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§§ 31–35, 130, 142–143"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+              "locator": "§1a"
+            },
+            {
+              "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+              "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§ 34"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+              "locator": "§ 1a"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+              "locator": "§§ 31–36"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "fr",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-fr-xwaa5Z/fristablauf-2026-11-02.ics",
+          "sha256": "b56d070994c8ddb038c99a3da8c7b4d52418352d7b1f91ad3d848e505813f25c",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/de-ti-80-30.ics",
+        "byteLength": 2213,
+        "sha256": "5da38d107e0a7eab946abbf71fe259a16c1a07b8c2c9bcda68bcc38a87525406",
+        "locale": "de",
+        "pathId": "ti-80-30",
+        "summary": "Fristablauf",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "e3f39b12d2d3e5667a52209df3cd46bcf9e6714f9198e8eddad7a71db12af9dd",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "lpamm-ti",
+            "pathId": "ti-80-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "ti-authority-seat",
+            "calendarId": "ap22-ti-944ed0286e9a",
+            "projectionId": "projection-944ed0286e9a6d9f",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "TI",
+            "suspensionProfileId": "ti-three",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "6bb41a0cf231214864b271effb8d6462ea8470d70fe40610ef54ccaab533fed0"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 1, 13–16"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13, 16, 68 Abs. 1, 80"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1 und Schlussfussnote"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-MATERIAL",
+              "locator": "S. 11 Ziff. 3.1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13 Abs. 3"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 16 Abs. 1"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "de",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-de-IzHuQR/fristablauf-2026-11-02.ics",
+          "sha256": "5da38d107e0a7eab946abbf71fe259a16c1a07b8c2c9bcda68bcc38a87525406",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/fr-ti-80-30.ics",
+        "byteLength": 2254,
+        "sha256": "b75974dbbbfbcfd10d64087377d4a30d61fbf40ca86aa1a232b671e8e9e4f81e",
+        "locale": "fr",
+        "pathId": "ti-80-30",
+        "summary": "Échéance du délai",
+        "start": "2026-11-02",
+        "exclusiveEnd": "2026-11-03",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "b3cc7ee4d4bf0de13848c57979e41d4b6f31d028d36010b665443c626c510dd2",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "lpamm-ti",
+            "pathId": "ti-80-30",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "ti-authority-seat",
+            "calendarId": "ap22-ti-944ed0286e9a",
+            "projectionId": "projection-944ed0286e9a6d9f",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "TI",
+            "suspensionProfileId": "ti-three",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "6bb41a0cf231214864b271effb8d6462ea8470d70fe40610ef54ccaab533fed0"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 1, 13–16"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13, 16, 68 Abs. 1, 80"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1 und Schlussfussnote"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-MATERIAL",
+              "locator": "S. 11 Ziff. 3.1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 13 Abs. 3"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-HOL",
+              "locator": "Art. 1"
+            },
+            {
+              "sourceId": "SRC-AP23B-TI-LPAMM",
+              "locator": "Art. 16 Abs. 1"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "fr",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-fr-XtQugm/fristablauf-2026-11-02.ics",
+          "sha256": "b75974dbbbfbcfd10d64087377d4a30d61fbf40ca86aa1a232b671e8e9e4f81e",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/de-zg-admin-20.ics",
+        "byteLength": 2187,
+        "sha256": "47e8dcf291a6afa6eb2d615e488b75b793a01ffffa7bd9ed294dcf7f7a133f6b",
+        "locale": "de",
+        "pathId": "zg-admin-20",
+        "summary": "Fristablauf",
+        "start": "2026-10-22",
+        "exclusiveEnd": "2026-10-23",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "d6418a66b056161f8c1923a972f6e0d2c0bdbdb8afd38da0c65be143c76e8cca",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrg-zg",
+            "pathId": "zg-admin-20",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "zg-authority-seat",
+            "calendarId": "ap22-zg-860e0f8e0e1a",
+            "projectionId": "projection-860e0f8e0e1a2dfc",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "ZG",
+            "suspensionProfileId": "zg-none",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "d1646eebc0df737e2f91a186720fd20b34490353b9264f69f8bb807937cd3e73"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§§ 1–3, 10–11, 32, 43–44, 46, 64–65, 67–68"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§§ 10–11, 39–43"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+              "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§ 10 Abs. 3/4"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§§ 10–11"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "de",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-de-Je0cUD/fristablauf-2026-10-22.ics",
+          "sha256": "47e8dcf291a6afa6eb2d615e488b75b793a01ffffa7bd9ed294dcf7f7a133f6b",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-evidence/packaged-amd/fr-zg-admin-20.ics",
+        "byteLength": 2229,
+        "sha256": "60623606869495243c209b40cda1886683b80f06b408a1a317a8152b038fa476",
+        "locale": "fr",
+        "pathId": "zg-admin-20",
+        "summary": "Échéance du délai",
+        "start": "2026-10-22",
+        "exclusiveEnd": "2026-10-23",
+        "allDay": true,
+        "freeAvailability": true,
+        "category": "Fristablauf",
+        "trigger": "-PT112H",
+        "utf8Crlf75OctetFoldingVerified": true,
+        "unexpectedProperties": [],
+        "description": {
+          "sha256": "af1e55ae4b2959e0cc864714779006c02fc58d812f40c1e0a9c4839a7900587e",
+          "legalFields": {
+            "kind": "cantonalAdministrative",
+            "lawId": "vrg-zg",
+            "pathId": "zg-admin-20",
+            "revision": "1",
+            "releaseId": "2026-10-18-mvp-09-approved.1",
+            "catalogId": "ch-cantonal-administrative-procedures",
+            "holidayBindingId": "zg-authority-seat",
+            "calendarId": "ap22-zg-860e0f8e0e1a",
+            "projectionId": "projection-860e0f8e0e1a2dfc",
+            "holidayRole": "authoritySeat",
+            "authoritySeatCanton": "ZG",
+            "suspensionProfileId": "zg-none",
+            "urgencyApplied": "false",
+            "qualificationPolicySha256": "d1646eebc0df737e2f91a186720fd20b34490353b9264f69f8bb807937cd3e73"
+          },
+          "sourceRefs": [
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§§ 1–3, 10–11, 32, 43–44, 46, 64–65, 67–68"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§§ 10–11, 39–43"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+              "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§ 10 Abs. 3/4"
+            },
+            {
+              "sourceId": "SRC-AP23B-CH-HOL",
+              "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+            },
+            {
+              "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+              "locator": "§§ 10–11"
+            }
+          ],
+          "currentReleaseProvenanceVerified": true,
+          "coveredByHistoricalOutlookImport": false
+        },
+        "outlookImported": false,
+        "sourceDiagnostic": {
+          "locale": "fr",
+          "savedCalendar": "<SYSTEM_TEMP>/fristenrechner-mvp09-amd-fr-2qMwKN/fristablauf-2026-10-22.ics",
+          "sha256": "60623606869495243c209b40cda1886683b80f06b408a1a317a8152b038fa476",
+          "package": {
+            "packagePath": "<REPO_ROOT>/.work/mvp09-product-build-g8pU5R/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+            "packageSha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331",
+            "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+            "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+          },
+          "diagnosticLog": {
+            "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+            "byteLength": 56431,
+            "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef"
+          }
+        },
+        "evidenceScope": "actualPackagedAmdWithSimulatedDomAndDownloadBoundary",
+        "realBrowserDownload": false,
+        "simulatedDownloadBoundary": true,
+        "m365HostExport": false,
+        "publicProductionHostExport": false
+      }
+    ],
+    "packagedHarnessInputs": [
+      {
+        "path": "spfx/test-build/package-harness.cjs",
+        "byteLength": 13735,
+        "sha256": "826444399ea2e8a72a6ad06924b6c05a44ea71413ca34b2dc63c4f51c0b5547d",
+        "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/spfx/test-build/package-harness.cjs"
+      },
+      {
+        "path": "spfx/test-build/mvp09-harness.cjs",
+        "byteLength": 16017,
+        "sha256": "bc100a4a1469fe3c6d7321b0b83e4ce4482e18543971c895897368792e6a3442",
+        "archivedAt": "outputs/release-mvp09-2026-10-18/build-evidence/inputs/spfx/test-build/mvp09-harness.cjs"
+      }
+    ],
+    "excludedOlderSavedCalendarDiagnostics": [
+      {
+        "locale": "de",
+        "temporaryDirectoryName": "fristenrechner-mvp08-amd-de-y6NhSs",
+        "excludedFromMvp09Evidence": true
+      },
+      {
+        "locale": "fr",
+        "temporaryDirectoryName": "fristenrechner-mvp08-amd-fr-9EdvD2",
+        "excludedFromMvp09Evidence": true
+      }
+    ],
+    "actualBrowserDownloads": 2,
+    "simulatedPackagedDownloads": 10,
+    "unchangedAppointmentContract": {
+      "allDay": true,
+      "exclusiveFollowingEndDate": true,
+      "freeAvailability": true,
+      "category": "Fristablauf",
+      "reminder": "-PT112H",
+      "crlfUtf8Maximum75Octets": true,
+      "exactlyOneEventAndDisplayAlarm": true,
+      "localIcsDownload": true,
+      "noAdditionalProperties": true,
+      "noAttendees": true,
+      "noOrganizer": true,
+      "noRecurrence": true,
+      "noAttachment": true
+    },
+    "proposedReuseScope": "Only historical Outlook interpretation of the unchanged appointment fields. New legal provenance, qualification, calculation and host behavior require their separately scoped evidence.",
+    "newProvenanceNotCoveredByOldImport": true,
+    "humanReuseAccepted": false,
+    "noOutlookImport": true,
+    "noM365": true,
+    "outlookImportsPerformed": false,
+    "mailboxOrCalendarChanged": false,
+    "newBrowserSessionPerformedByThisScript": false,
+    "newTestsPerformedByThisScript": false,
+    "publicProductionHostTestsPerformed": false,
+    "actualDeviceTestsPerformed": false,
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "operatingApproval": false,
+    "retainedLimits": [
+      "No new Outlook version or reminder delivery observation",
+      "No new daylight-saving-time observation",
+      "Category name does not enforce account-specific colour",
+      "Historical Desktop confirmation retains its original detail level",
+      "Extended legal DESCRIPTION rendering is not covered by historical import evidence"
+    ],
+    "parser": {
+      "typescriptVersion": "5.8.3"
+    },
+    "script": {
+      "path": "scripts/prepare-mvp09-outlook-reuse.mjs",
+      "byteLength": 24055,
+      "sha256": "1fef3850877ea5be56d7fce37a6d82c6ad58f992c6ed57ec2fffbf3a13f2758a"
+    }
+  }
+}

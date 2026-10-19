@@ -15,6 +15,7 @@ import { resolveBoundCalendar, type BoundCalendarRuntime } from '../core/calenda
 import { calculateCalendarBoundDeadline } from '../core/calculateCalendarBoundDeadline';
 import { calculateRuntimeDeadline } from '../core/calculateDeadline';
 import { hasMatchingFormat8Runtime } from '../core/format8Runtime';
+import { hasMatchingFormat9Runtime } from '../core/format9Runtime';
 import { CalendarContextFields, CalendarContextTrace, JanuaryComparisonTrace, effectiveCalendarContext, EMPTY_CALENDAR_CONTEXT, isBoundCalendarProfile } from './calendarContextUi';
 import { calendarCantonLabel, calendarText, calendarReason } from './calendarMessages';
 import { FriendlyCalendarEvidence, LegalTraceSources, TechnicalTraceDetails, catalogTraceSources,
@@ -22,7 +23,7 @@ import { FriendlyCalendarEvidence, LegalTraceSources, TechnicalTraceDetails, cat
 import type { CalendarRuleSet } from '../core/calendarRuleTypes';
 import { calculateSocialDeadline } from '../core/socialDeadline';
 import type { SocialDeadlineResult } from '../core/socialTypes';
-import { getVerifiedAdministrativeData, type ParsedFormat8Data } from '../core/releaseFormat8';
+import { getVerifiedAdministrativeContext, type ParsedAdministrativeContext } from '../core/administrativeContext';
 import type { AdministrativeDeadlineInput, AdministrativeDeadlineResult } from '../core/administrativeDeadline';
 import { initializeAdministrativeDefaults, saveAdministrativeDefaults, resetAdministrativeDefaults,
   type AdministrativePreferences } from './administrativeDefaults';
@@ -116,7 +117,7 @@ export interface FristenrechnerAppProps {
   /** Build-time label for a local UI review. Does not grant data or export rights. */
   readonly localReviewLabel?: string;
   /** Separate issued Format-8 context. Never disguised as the legacy data prop. */
-  readonly administrativeContext?: ParsedFormat8Data;
+  readonly administrativeContext?: ParsedAdministrativeContext;
 }
 
 interface UiValidation {
@@ -211,7 +212,7 @@ function legacyDefaultsFromV5(data: CalculationData, preferences: Administrative
 
 const administrativeContextIds = new WeakMap<object, number>();
 let nextAdministrativeContextId = 1;
-function administrativeSessionId(context?: ParsedFormat8Data): string {
+function administrativeSessionId(context?: ParsedAdministrativeContext): string {
   if (!context) return '';
   let id = administrativeContextIds.get(context);
   if (!id) { id = nextAdministrativeContextId++; administrativeContextIds.set(context, id); }
@@ -700,8 +701,10 @@ function ValidationPanel({ validation, locale }: {
 }
 
 export function FristenrechnerApp(props: FristenrechnerAppProps): React.ReactElement {
-  if (props.data.formatVersion === '8.0.0'
-    && !hasMatchingFormat8Runtime(props.data, props.calendarRuntime, props.administrativeContext)) {
+  if ((props.data.formatVersion === '8.0.0'
+    && !hasMatchingFormat8Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '9.0.0'
+      && !hasMatchingFormat9Runtime(props.data, props.calendarRuntime, props.administrativeContext))) {
     return <main className="fr-app"><MessageBar messageBarType={MessageBarType.error} delayedRender={false}>
       Die Datenkontexte gehören nicht zu demselben geprüften Release. Keine Berechnung möglich.
       {' / '}Les contextes de données ne correspondent pas à la même version vérifiée. Calcul impossible.
@@ -724,8 +727,8 @@ function CalculatorSession({
   // A local byte-validated context cannot become exportable merely because a
   // host forgot its presentation flag. Existing D2 mixed contexts remain local.
   const referenceOnlyAllCalculations = hostReferenceOnly
-    || (data.formatVersion === '8.0.0' && calendarRuntime?.referenceOnly === true)
-    || getVerifiedAdministrativeData(administrativeContext)?.referenceOnly === true;
+    || (['8.0.0', '9.0.0'].includes(data.formatVersion) && calendarRuntime?.referenceOnly === true)
+    || getVerifiedAdministrativeContext(administrativeContext)?.referenceOnly === true;
   const storage = explicitStorage ?? browserStorage();
   const defaultsContext = React.useMemo(() => ({ legacyData: data, ...(administrativeContext ? { administrativeData: administrativeContext } : {}) }), [data, administrativeContext]);
   const loadedV5 = React.useMemo(() => administrativeContext ? initializeAdministrativeDefaults(defaultsContext, storage) : undefined,
@@ -752,7 +755,7 @@ function CalculatorSession({
   const dateInputs = useDateInputSession();
   const [dateResetEpoch, setDateResetEpoch] = React.useState(0);
 
-  const administrativeData = getVerifiedAdministrativeData(administrativeContext);
+  const administrativeData = getVerifiedAdministrativeContext(administrativeContext);
   const adminCatalog = administrativeData?.catalog;
   const adminMode = Boolean(adminLawId && adminCatalog);
   const adminPath = adminCatalog && adminMode ? administrativeChoices(adminCatalog, adminLawId, adminState).path : undefined;
@@ -1353,8 +1356,11 @@ function CalculatorSession({
           <div className="fr-badge">{localReviewLabel ?? translate(locale, 'app.badge')}</div>
           <h1>{translate(locale, 'app.title')}</h1>
           <p>{administrativeContext && referenceOnlyAllCalculations
-            ? (locale === 'de' ? 'Lokale Prüfung des kantonalen Verwaltungsverfahrens für Tessin und Graubünden.'
-              : 'Vérification locale de la procédure administrative cantonale pour le Tessin et les Grisons.')
+            ? data.formatVersion === '9.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Luzern, Zug und Appenzell Ausserrhoden mit unverändertem Umfang für Tessin und Graubünden.'
+                : 'Vérification locale des procédures administratives de Lucerne, Zoug et Appenzell Rhodes-Extérieures, avec maintien du périmètre du Tessin et des Grisons.')
+              : (locale === 'de' ? 'Lokale Prüfung des kantonalen Verwaltungsverfahrens für Tessin und Graubünden.'
+                : 'Vérification locale de la procédure administrative cantonale pour le Tessin et les Grisons.')
             : referenceOnlyAllCalculations ? calendarText(locale, 'referenceAllIntro')
             : calendarRuntime ? calendarText(locale, calendarRuntime.referenceOnly ? 'intro' : 'introApproved') : translate(locale, 'app.intro')}</p>
         </div>
@@ -1389,7 +1395,10 @@ function CalculatorSession({
       </MessageBar>}
       {(referenceOnlyAllCalculations || calendarRuntime?.referenceOnly) && <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
         {administrativeContext && referenceOnlyAllCalculations
-          ? data.formatVersion === '8.0.0'
+          ? data.formatVersion === '9.0.0'
+            ? (locale === 'de' ? 'AP23E3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23E3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+            : data.formatVersion === '8.0.0'
             ? (locale === 'de' ? 'AP23D3: lokale Integrationsprüfung mit gemeinsamem Datenstand. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
               : 'AP23D3 : vérification locale de l’intégration avec des données communes. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
             : (locale === 'de' ? 'AP23D2: lokale Referenzvorschau, noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt. Die bisherigen Verfahren verwenden weiterhin ihren getrennten MVP-0.7-Datenstand.'
@@ -1503,7 +1512,8 @@ function CalculatorSession({
               options={[...(loadedV5 ? [{ key: '', text: translate(locale, 'form.select') }] : []),
                 ...availableProfiles.map(item => ({ key: item.profileId, text: profileLabel(item, locale) })),
                 ...(adminCatalog?.laws.filter(law => law.canton === form.authorityCode).map(law => ({ key: `admin:${law.lawId}`,
-                  text: law.lawId === 'lpamm-ti' ? 'LPAmm (TI)' : law.lawId === 'vrg-gr' ? 'VRG (GR)' : law.title })) ?? [])]}
+                  text: law.lawId === 'lpamm-ti' ? 'LPAmm (TI)' : law.lawId === 'vrg-gr' ? 'VRG (GR)'
+                    : administrativeText(locale, `law.${law.lawId}`) })) ?? [])]}
               selectedKey={adminMode ? `admin:${adminLawId}` : form.profileId}
               disabled={Boolean(loadedV5 && !form.authorityCode)}
               errorMessage={validation.profile ?? ''}

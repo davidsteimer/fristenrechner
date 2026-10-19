@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/candidates/ap23e2/administrative-input-v2.schema.json",
+  "title": "AP23E2 proposed explicit current-case input, never stored qualification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "pathRevision",
+    "stage",
+    "authoritySeatCanton",
+    "trigger",
+    "days",
+    "unit",
+    "direction",
+    "action",
+    "decisionKind",
+    "opening",
+    "notice",
+    "specialLaw",
+    "authorityLevel",
+    "holidayAnchor",
+    "explicitHolidayException",
+    "urgency",
+    "fixedEndDate",
+    "deviatingStart",
+    "termChange"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "pathRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "stage": {
+      "enum": [
+        "administration",
+        "administrativeAppeal",
+        "court",
+        "unknown"
+      ]
+    },
+    "authoritySeatCanton": {
+      "enum": [
+        "ZH",
+        "BE",
+        "LU",
+        "UR",
+        "SZ",
+        "OW",
+        "NW",
+        "GL",
+        "ZG",
+        "FR",
+        "SO",
+        "BS",
+        "BL",
+        "SH",
+        "AR",
+        "AI",
+        "SG",
+        "GR",
+        "AG",
+        "TG",
+        "TI",
+        "VD",
+        "VS",
+        "NE",
+        "GE",
+        "JU",
+        "CH",
+        "unknown"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "unit": {
+      "enum": [
+        "day",
+        "hour",
+        "month",
+        "year",
+        "fixedDate",
+        "unknown"
+      ]
+    },
+    "direction": {
+      "enum": [
+        "forward",
+        "backward",
+        "unknown"
+      ]
+    },
+    "action": {
+      "enum": [
+        "ordinaryAppeal",
+        "proceduralSubmission",
+        "executionAppeal",
+        "objection",
+        "reasonRequest",
+        "costAdvance",
+        "payment",
+        "materialPerformance",
+        "mainCaseAppeal",
+        "schkgAppeal",
+        "unknown"
+      ]
+    },
+    "decisionKind": {
+      "enum": [
+        "finalDecision",
+        "qualifiedVRPGArt63Order",
+        "notApplicable",
+        "interimDecision",
+        "paymentReminder",
+        "schkgOrder",
+        "mainDecision",
+        "unknown"
+      ]
+    },
+    "opening": {
+      "enum": [
+        "qualifiedCompleteActualDelivery",
+        "oralAwaitingWrittenConfirmation",
+        "dispositiveOnly",
+        "fiction",
+        "publication",
+        "unknown"
+      ]
+    },
+    "notice": {
+      "enum": [
+        "uncontested",
+        "missing",
+        "incorrect",
+        "disputed",
+        "unknown"
+      ]
+    },
+    "specialLaw": {
+      "enum": [
+        "excluded",
+        "building",
+        "tax",
+        "socialInsurance",
+        "procurement",
+        "politicalRights",
+        "childAdultProtection",
+        "applicableFederalSpecialLaw",
+        "other",
+        "unknown"
+      ]
+    },
+    "authorityLevel": {
+      "enum": [
+        "cantonal",
+        "municipal",
+        "federal",
+        "unknown"
+      ]
+    },
+    "holidayAnchor": {
+      "enum": [
+        "qualifiedTargetAuthority",
+        "issuingAuthority",
+        "party",
+        "representative",
+        "unknown"
+      ]
+    },
+    "explicitHolidayException": {
+      "enum": [
+        "none",
+        "present",
+        "unknown"
+      ]
+    },
+    "urgency": {
+      "enum": [
+        "none",
+        "shortened",
+        "explicitJudicialUrgencyOrder",
+        "unknown"
+      ]
+    },
+    "fixedEndDate": {
+      "type": "boolean"
+    },
+    "deviatingStart": {
+      "type": "boolean"
+    },
+    "termChange": {
+      "enum": [
+        "none",
+        "extension",
+        "reinstatement",
+        "shortened",
+        "other",
+        "unknown"
+      ]
+    }
+  }
+}

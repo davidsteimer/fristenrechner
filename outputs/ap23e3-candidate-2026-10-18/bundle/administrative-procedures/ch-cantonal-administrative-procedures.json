@@ -1,0 +1,3617 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/administrative-procedure-catalog-v2.schema.json",
+  "formatVersion": "2.0.0",
+  "dataKind": "administrativeProcedureCatalog",
+  "catalogId": "ch-cantonal-administrative-procedures",
+  "contractStatus": "approved",
+  "runtimeActive": false,
+  "contractDecision": {
+    "id": "DEC-2026-033",
+    "status": "approved",
+    "on": "2026-10-18"
+  },
+  "projectDecisions": [
+    {
+      "decisionId": "DEC-2026-031",
+      "kind": "projectLegalDecisionNotStatute",
+      "status": "approved",
+      "on": "2026-10-14",
+      "by": "David Steimer"
+    }
+  ],
+  "review": {
+    "basis": "AP23E1 fachlich und AP23E2 technisch abgenommen. Die unveränderte E2-Vorlage bleibt historisch erhalten. Technischer Beschluss: docs/entscheidungen/DEC-2026-033-beschluss.md, SHA-256 8a669f031ad213c04f67c4160dab86cc59e9d574444ec61d7766b9cf9e704cf8. Teilpaketabnahme: docs/fachrecht/abnahme-ap23e2.md, SHA-256 189eda49c59a5d45a11c6a4ab4d00ede7955c753881c706eea9b0a91f17b3449. Keine neue Quellen- oder Datenreleasefreigabe.",
+    "sourceReview": "AP23E1-Quellenprüfung vom 18.10.2026 für die neue Tranche. Bestehende MVP08-Nachweise unverändert wiederverwendet. Keine zusammengeführte neue Releasequellenprüfung oder Datenfreigabe.",
+    "checkedOn": "2026-10-18"
+  },
+  "holidayResolutionPolicy": {
+    "precedence": [
+      "applicableFederalSpecialLaw",
+      "verifiedExplicitProceduralException",
+      "authoritySeat"
+    ],
+    "unknownHandling": "block",
+    "federalSpecialHandling": "routeOnlyToSeparatelyQualifiedReleasedSpecialPath",
+    "exceptionHandling": "requiresExplicitReviewedBinding",
+    "fallbackMeaning": "onlyReviewedAndReleasedCantonalProcedurePaths"
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-AP23B-TI-LPAMM",
+      "kind": "statute",
+      "url": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/pdfatto/atto/11221",
+      "versionDescription": "2025-06-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1, 6, 10, 13–17, 47, 68, 73, 75, 80, 84, 113, 115"
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-HOL",
+      "kind": "statute",
+      "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+      "versionDescription": "Inkrafttreten 2010-02-09",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1 und Schlussfussnote"
+    },
+    {
+      "sourceId": "SRC-AP23B-TI-MATERIAL",
+      "kind": "officialMaterials",
+      "url": "https://www4.ti.ch/fileadmin/POTERI/GC/allegati/odg-mes/pdf/M6645.pdf",
+      "versionDescription": "2012-05-23",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "S. 11 Ziff. 3.1"
+    },
+    {
+      "sourceId": "JUD-AP23B-TI-ADVANCE-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/CH_BGer/CH_BGer_002_2C-422-2019_2019-05-28.html",
+      "versionDescription": "2019-05-28",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "E. 2.3–2.5"
+    },
+    {
+      "sourceId": "JUD-AP23B-TI-PROVISIONAL-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/TI_Gerichte/TI_TCA_001_52-2025-281_2025-08-13.html",
+      "versionDescription": "2025-08-13",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Erwägungen zur 15-Tage-Frist und Art. 16 Abs. 3"
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-VRG",
+      "kind": "statute",
+      "url": "https://www.gr-lex.gr.ch/api/de/versions/3521/pdf_file",
+      "versionDescription": "2025-01-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1–2, 7–9, 28–29, 32, 39, 42, 49, 52"
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-RTG",
+      "kind": "statute",
+      "url": "https://www.gr-lex.gr.ch/api/de/versions/2604/pdf_file",
+      "versionDescription": "2016-01-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1–3"
+    },
+    {
+      "sourceId": "SRC-AP23B-GR-MATERIAL",
+      "kind": "officialMaterials",
+      "url": "https://www.gr.ch/Botschaften/2006/6-2006.pdf#page=92",
+      "versionDescription": "2006-05-30",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+    },
+    {
+      "sourceId": "JUD-AP23B-GR-START-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/GR_Gerichte/GR_VG_001_U-2016-15_2016-02-18.pdf",
+      "versionDescription": "2016-02-18",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "E. 3a, S. 4–5"
+    },
+    {
+      "sourceId": "JUD-AP23B-GR-STAGE-JUD",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/GR_Gerichte/GR_KG_005_SK2-2010-7_2010-03-03.pdf",
+      "versionDescription": "2010-03-03",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "E. 2c/bb, S. 5. Nur systematische VRG-Aussage des historischen Strafverweises."
+    },
+    {
+      "sourceId": "SRC-AP23B-CH-HOL",
+      "kind": "statute",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de#art_1",
+      "versionDescription": "1994-07-01",
+      "reviewedOn": "2026-10-12",
+      "reviewBasis": "AP23B-2026-10-12",
+      "locators": "Art. 1"
+    },
+    {
+      "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+      "kind": "statute",
+      "url": "https://srl.lu.ch/api/de/versions/3793/pdf_file",
+      "versionDescription": "2021-09-01",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "§§6–9,31–36,111,119,127–130,135–136,142–150"
+    },
+    {
+      "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+      "kind": "statute",
+      "url": "https://srl.lu.ch/api/de/versions/4916/pdf_file",
+      "versionDescription": "2026-09-27",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "§1a"
+    },
+    {
+      "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+      "kind": "judgment",
+      "url": "https://entscheidsuche.ch/docs/CH_BGer/CH_BGer_005_5A-872-2020_2020-10-28.html",
+      "versionDescription": "2020-10-28",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+    },
+    {
+      "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+      "kind": "statute",
+      "url": "https://bgs.zg.ch/api/de/versions/2740/pdf_file",
+      "versionDescription": "2025-10-17",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "§§1–3,10–11,15,20–21,32,35–36,43–44,46,64–65,67–68"
+    },
+    {
+      "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+      "kind": "officialMaterials",
+      "url": "https://zg.ch/de/recht-justiz/verwaltungsgerichtsverfahren/einleitung-verwaltungsgerichtsverfahren/rechtsmittelfrist",
+      "versionDescription": "laufende amtliche Erläuterung geprüft2026-10-18",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+    },
+    {
+      "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+      "kind": "statute",
+      "url": "https://ar.clex.ch/api/de/versions/1285/pdf_file",
+      "versionDescription": "2020-01-01",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "Art.1,4–7,16,18,21,31a,34,54–55,59,63"
+    },
+    {
+      "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+      "kind": "statute",
+      "url": "https://ar.clex.ch/api/de/versions/1058/pdf_file",
+      "versionDescription": "2016-01-01",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "Art.7 und9"
+    },
+    {
+      "sourceId": "SRC-AP23E1-AR-MATERIAL-20180703",
+      "kind": "officialMaterials",
+      "url": "https://ar.ch/fileadmin/user_upload/Kantonskanzlei/Rechtsdienst/Volksrechte/Vernehmlassungen/2018_VRPG/Erlaeuternder_Bericht.pdf",
+      "versionDescription": "2018-07-03",
+      "reviewedOn": "2026-10-18",
+      "reviewBasis": "AP23E1-2026-10-18, neue Verwaltungsverwendung getrennt von historischen Feiertagsmetadaten",
+      "locators": "S.4, zeitliche Anpassung und Tagesfristen"
+    }
+  ],
+  "laws": [
+    {
+      "lawId": "lpamm-ti",
+      "canton": "TI",
+      "title": "Legge sulla procedura amministrativa, RL 165.100",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-TI-LPAMM",
+            "locator": "Art. 13 Abs. 3"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 1, 13–16"
+        }
+      ]
+    },
+    {
+      "lawId": "vrg-gr",
+      "canton": "GR",
+      "title": "Gesetz über die Verwaltungsrechtspflege, BR 370.100",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-GR-VRG",
+            "locator": "Art. 7 Abs. 2"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 1, 7–9, 28–52"
+        }
+      ]
+    },
+    {
+      "lawId": "vrg-lu",
+      "canton": "LU",
+      "title": "Gesetz über die Verwaltungsrechtspflege, SRL 40",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+            "locator": "§ 34"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+          "locator": "§§ 6–9, 31–36, 127–130, 135–136, 142–150"
+        }
+      ]
+    },
+    {
+      "lawId": "vrg-zg",
+      "canton": "ZG",
+      "title": "Gesetz über den Rechtsschutz in Verwaltungssachen, BGS 162.1",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+            "locator": "§ 10 Abs. 3/4"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+          "locator": "§§ 1–3, 10–11, 32, 43–44, 46, 64–65, 67–68"
+        }
+      ]
+    },
+    {
+      "lawId": "vrpg-ar",
+      "canton": "AR",
+      "title": "Gesetz über die Verwaltungsrechtspflege, bGS 143.1",
+      "holidayPolicyReview": {
+        "explicitDeviation": "noneIdentifiedInReviewedGeneralLaw",
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+            "locator": "Art. 5"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 1, 4–7, 31a, 34, 54–55, 59, 63"
+        }
+      ]
+    }
+  ],
+  "suspensionProfiles": [
+    {
+      "suspensionProfileId": "ti-none",
+      "lawId": "lpamm-ti",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 16 Abs. 3, 47 Abs. 3/4"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "ti-three",
+      "lawId": "lpamm-ti",
+      "periods": [
+        {
+          "periodId": "ti-easter",
+          "start": {
+            "type": "easterOffset",
+            "days": -7,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "easterOffset",
+            "days": 7,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "ti-summer",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 7,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 8,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "ti-winter",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 12,
+            "day": 18,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 1,
+            "day": 2,
+            "yearOffset": 1
+          },
+          "inclusive": true
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 16 Abs. 1"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "gr-none",
+      "lawId": "vrg-gr",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Kapitel 2/3, Art. 39 Abs. 2"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "gr-three",
+      "lawId": "vrg-gr",
+      "periods": [
+        {
+          "periodId": "gr-easter",
+          "start": {
+            "type": "easterOffset",
+            "days": -7,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "easterOffset",
+            "days": 7,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "gr-summer",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 7,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 8,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "gr-winter",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 12,
+            "day": 18,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 1,
+            "day": 2,
+            "yearOffset": 1
+          },
+          "inclusive": true
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 39 Abs. 1"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "lu-none",
+      "lawId": "vrg-lu",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+          "locator": "§§ 31–36"
+        },
+        {
+          "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+          "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "zg-none",
+      "lawId": "vrg-zg",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+          "locator": "§§ 10–11"
+        },
+        {
+          "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+          "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "ar-none",
+      "lawId": "vrpg-ar",
+      "periods": [],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 4–7, systematische Beschränkung von Art. 7 auf Gerichtsverfahren"
+        }
+      ]
+    },
+    {
+      "suspensionProfileId": "ar-three",
+      "lawId": "vrpg-ar",
+      "periods": [
+        {
+          "periodId": "ar-easter",
+          "start": {
+            "type": "easterOffset",
+            "days": -7,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "easterOffset",
+            "days": 7,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "ar-summer",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 7,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 8,
+            "day": 15,
+            "yearOffset": 0
+          },
+          "inclusive": true
+        },
+        {
+          "periodId": "ar-winter",
+          "start": {
+            "type": "fixedMonthDay",
+            "month": 12,
+            "day": 18,
+            "yearOffset": 0
+          },
+          "end": {
+            "type": "fixedMonthDay",
+            "month": 1,
+            "day": 2,
+            "yearOffset": 1
+          },
+          "inclusive": true
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 7"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-MATERIAL-20180703",
+          "locator": "S.4, zeitliche Anpassung und Tagesfristen"
+        }
+      ]
+    }
+  ],
+  "holidayBindings": [
+    {
+      "holidayBindingId": "ti-authority-seat",
+      "lawId": "lpamm-ti",
+      "authoritySeatCanton": "TI",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-18-ap23e3-reference.1",
+        "calendarId": "ap22-ti-944ed0286e9a",
+        "projectionId": "projection-944ed0286e9a6d9f",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ti-944ed0286e9a",
+            "sha256": "d6f374a325a5dedae372332e0c6a5ea3b321475bfb9ff0c7ca77db37a767f855",
+            "path": "calendars/ap22-ti-944ed0286e9a.json"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "30e9782dc759792dda59c27dcc227855cefc9bce609cb71019200bca7bb0d159",
+            "path": "calendars/ch-federal-calendar.json"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81",
+            "path": "holiday-catalogs/ch-holiday-catalog.json"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-TI-LPAMM",
+            "locator": "Art. 13 Abs. 3"
+          },
+          {
+            "sourceId": "SRC-AP23B-TI-HOL",
+            "locator": "Art. 1"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    },
+    {
+      "holidayBindingId": "gr-authority-seat",
+      "lawId": "vrg-gr",
+      "authoritySeatCanton": "GR",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-18-ap23e3-reference.1",
+        "calendarId": "ap22-gr-bf0366c8eda2",
+        "projectionId": "projection-bf0366c8eda26257",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-gr-bf0366c8eda2",
+            "sha256": "d4ad0cd986f46689746bf3763a4d7c44bc23cd7f06594e3ca8a095b16b6efe1c",
+            "path": "calendars/ap22-gr-bf0366c8eda2.json"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "30e9782dc759792dda59c27dcc227855cefc9bce609cb71019200bca7bb0d159",
+            "path": "calendars/ch-federal-calendar.json"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81",
+            "path": "holiday-catalogs/ch-holiday-catalog.json"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23B-GR-VRG",
+            "locator": "Art. 7 Abs. 2"
+          },
+          {
+            "sourceId": "SRC-AP23B-GR-RTG",
+            "locator": "Art. 2"
+          },
+          {
+            "sourceId": "SRC-AP23B-GR-MATERIAL",
+            "locator": "Gedruckte S. 540, Art. 7"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    },
+    {
+      "holidayBindingId": "lu-authority-seat",
+      "lawId": "vrg-lu",
+      "authoritySeatCanton": "LU",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-18-ap23e3-reference.1",
+        "calendarId": "ap22-lu-b879eb8eb04f",
+        "projectionId": "projection-b879eb8eb04f9540",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-lu-b879eb8eb04f",
+            "sha256": "da028e7943ad72f9ca59612105f4023f6727e60c9a0e808e9054fbcaec06fbcc",
+            "path": "calendars/ap22-lu-b879eb8eb04f.json"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "30e9782dc759792dda59c27dcc227855cefc9bce609cb71019200bca7bb0d159",
+            "path": "calendars/ch-federal-calendar.json"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81",
+            "path": "holiday-catalogs/ch-holiday-catalog.json"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+            "locator": "§ 34"
+          },
+          {
+            "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+            "locator": "§ 1a"
+          },
+          {
+            "sourceId": "SRC-AP23B-CH-HOL",
+            "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    },
+    {
+      "holidayBindingId": "zg-authority-seat",
+      "lawId": "vrg-zg",
+      "authoritySeatCanton": "ZG",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-18-ap23e3-reference.1",
+        "calendarId": "ap22-zg-860e0f8e0e1a",
+        "projectionId": "projection-860e0f8e0e1a2dfc",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-zg-860e0f8e0e1a",
+            "sha256": "46a67bd86b467a3df9ea0e9f19edd22cbb63d78075b7b39c3db84c7fbbe0ade5",
+            "path": "calendars/ap22-zg-860e0f8e0e1a.json"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "30e9782dc759792dda59c27dcc227855cefc9bce609cb71019200bca7bb0d159",
+            "path": "calendars/ch-federal-calendar.json"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81",
+            "path": "holiday-catalogs/ch-holiday-catalog.json"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+            "locator": "§ 10 Abs. 3/4"
+          },
+          {
+            "sourceId": "SRC-AP23B-CH-HOL",
+            "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    },
+    {
+      "holidayBindingId": "ar-authority-seat",
+      "lawId": "vrpg-ar",
+      "authoritySeatCanton": "AR",
+      "authorityLevel": "cantonal",
+      "anchor": "authoritySeat",
+      "physicalBaseline": {
+        "releaseId": "2026-10-18-ap23e3-reference.1",
+        "calendarId": "ap22-ar-88bb22c08a22",
+        "projectionId": "projection-88bb22c08a22e382",
+        "references": [
+          {
+            "role": "calendar",
+            "contentId": "ap22-ar-88bb22c08a22",
+            "sha256": "a6876bd81b69bdfd4e31253eb7fd62404e3262743de3e3f012bcc69fb1549705",
+            "path": "calendars/ap22-ar-88bb22c08a22.json"
+          },
+          {
+            "role": "calendar",
+            "contentId": "ch-federal-calendar",
+            "sha256": "30e9782dc759792dda59c27dcc227855cefc9bce609cb71019200bca7bb0d159",
+            "path": "calendars/ch-federal-calendar.json"
+          },
+          {
+            "role": "holidayCatalog",
+            "contentId": "ch-holiday-catalog",
+            "sha256": "e6ed02029f4fc6df1bee6648aeae9d6975ec2c7218458f257db50680b581db81",
+            "path": "holiday-catalogs/ch-holiday-catalog.json"
+          }
+        ],
+        "eligibilityMeaning": "physicalSourceOnlyNotFederalProcedurePermission"
+      },
+      "legalBinding": {
+        "sourceRefs": [
+          {
+            "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+            "locator": "Art. 5"
+          },
+          {
+            "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+            "locator": "Art. 7"
+          },
+          {
+            "sourceId": "SRC-AP23B-CH-HOL",
+            "locator": "Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe"
+          }
+        ],
+        "projectDecisionRef": "DEC-2026-031",
+        "roleUnion": false,
+        "partyOrRepresentativeRequired": false
+      }
+    }
+  ],
+  "paths": [
+    {
+      "pathId": "ti-80-30",
+      "researchRef": "TI-80-30",
+      "lawId": "lpamm-ti",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "ti-three",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16, 68 Abs. 1, 80"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-MATERIAL",
+          "locator": "S. 11 Ziff. 3.1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-84-30",
+      "researchRef": "TI-84-30",
+      "lawId": "lpamm-ti",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "ti-three",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16, 68 Abs. 1, 84"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-MATERIAL",
+          "locator": "S. 11 Ziff. 3.1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-reply",
+      "researchRef": "TI-REPLY",
+      "lawId": "lpamm-ti",
+      "action": "ordered-reply",
+      "stages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "ti-three",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16, 73, 75"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-provisional-15",
+      "researchRef": "TI-PROVISIONAL-15",
+      "lawId": "lpamm-ti",
+      "action": "provisional-measure-appeal",
+      "stages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 15,
+        "overridable": false
+      },
+      "suspensionProfileId": "ti-none",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13, 16 Abs. 3, 68 Abs. 2"
+        },
+        {
+          "sourceId": "JUD-AP23B-TI-PROVISIONAL-JUD",
+          "locator": "Erwägungen zur 15-Tage-Frist und Art. 16 Abs. 3"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "ti-advance",
+      "researchRef": "TI-ADVANCE",
+      "lawId": "lpamm-ti",
+      "action": "process-cost-advance",
+      "stages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "ti-none",
+      "holidayBindingId": "ti-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-06-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-TI-LPAMM",
+          "locator": "Art. 13 Abs. 5, 47 Abs. 3/4"
+        },
+        {
+          "sourceId": "JUD-AP23B-TI-ADVANCE-JUD",
+          "locator": "E. 2.3–2.5"
+        },
+        {
+          "sourceId": "SRC-AP23B-TI-HOL",
+          "locator": "Art. 1 und Schlussfussnote"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-32-30",
+      "researchRef": "GR-32-30",
+      "lawId": "vrg-gr",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-none",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 28, 32 Abs. 1"
+        },
+        {
+          "sourceId": "JUD-AP23B-GR-STAGE-JUD",
+          "locator": "E. 2c/bb, S. 5. Nur systematische VRG-Aussage des historischen Strafverweises."
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-32-10",
+      "researchRef": "GR-32-10",
+      "lawId": "vrg-gr",
+      "action": "administrative-procedural-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 10,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-none",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 29, 32 Abs. 2"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-admin-ordered",
+      "researchRef": "GR-ADMIN-ORDERED",
+      "lawId": "vrg-gr",
+      "action": "ordered-administrative-days",
+      "stages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "gr-none",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7–9, Kapitel 2/3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-52-30",
+      "researchRef": "GR-52-30",
+      "lawId": "vrg-gr",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 39, 49, 52 Abs. 1"
+        },
+        {
+          "sourceId": "JUD-AP23B-GR-START-JUD",
+          "locator": "E. 3a, S. 4–5"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-52-10",
+      "researchRef": "GR-52-10",
+      "lawId": "vrg-gr",
+      "action": "court-procedural-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 10,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 39, 49 Abs. 4, 52 Abs. 2"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-42-10",
+      "researchRef": "GR-42-10",
+      "lawId": "vrg-gr",
+      "action": "court-process-complaint",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 10,
+        "overridable": false
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 39, 42"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "gr-court-ordered",
+      "researchRef": "GR-COURT-ORDERED",
+      "lawId": "vrg-gr",
+      "action": "ordered-court-days",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "gr-three",
+      "holidayBindingId": "gr-authority-seat",
+      "urgencyPolicy": "explicitGRJudicialUrgencyOrder",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23B-GR-VRG",
+          "locator": "Art. 7, 9, 39"
+        },
+        {
+          "sourceId": "JUD-AP23B-GR-START-JUD",
+          "locator": "E. 3a, S. 4–5"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-RTG",
+          "locator": "Art. 1–3"
+        },
+        {
+          "sourceId": "SRC-AP23B-GR-MATERIAL",
+          "locator": "Gedruckte S. 540, Art. 7, Entwurf S. 618. Aktueller Art. 7 Abs. 2 unverändert."
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art. 1"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "pathId": "lu-admin-30",
+      "revision": 1,
+      "researchRef": "LU-ADMIN-30",
+      "lawId": "vrg-lu",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "lu-none",
+      "holidayBindingId": "lu-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2026-09-27",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+          "locator": "§§ 31–35, 130, 142–143"
+        },
+        {
+          "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+          "locator": "§1a"
+        },
+        {
+          "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+          "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+        }
+      ]
+    },
+    {
+      "pathId": "lu-court-30",
+      "revision": 1,
+      "researchRef": "LU-COURT-30",
+      "lawId": "vrg-lu",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "lu-none",
+      "holidayBindingId": "lu-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2026-09-27",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+          "locator": "§§ 31–35, 130, 148–150"
+        },
+        {
+          "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+          "locator": "§1a"
+        },
+        {
+          "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+          "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+        }
+      ]
+    },
+    {
+      "pathId": "lu-admin-ordered",
+      "revision": 1,
+      "researchRef": "LU-ADMIN-ORDERED",
+      "lawId": "vrg-lu",
+      "action": "ordered-administrative-submission",
+      "stages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "lu-none",
+      "holidayBindingId": "lu-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2026-09-27",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+          "locator": "§§ 31–35, je nach Handlung §§ 135–136"
+        },
+        {
+          "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+          "locator": "§1a"
+        },
+        {
+          "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+          "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+        }
+      ]
+    },
+    {
+      "pathId": "lu-court-ordered",
+      "revision": 1,
+      "researchRef": "LU-COURT-ORDERED",
+      "lawId": "vrg-lu",
+      "action": "ordered-court-submission",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "lu-none",
+      "holidayBindingId": "lu-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2026-09-27",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-LU-VRG-20210901",
+          "locator": "§§ 31–35, 135–136"
+        },
+        {
+          "sourceId": "SRC-AP23E1-LU-RTG-20260927",
+          "locator": "§1a"
+        },
+        {
+          "sourceId": "JUD-AP23E1-LU-5A-872-2020",
+          "locator": "E.5 nur VRG-Fristenordnung, keine KESB-Freigabe"
+        }
+      ]
+    },
+    {
+      "pathId": "zg-admin-20",
+      "revision": 1,
+      "researchRef": "ZG-ADMIN-20",
+      "lawId": "vrg-zg",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 20,
+        "overridable": false
+      },
+      "suspensionProfileId": "zg-none",
+      "holidayBindingId": "zg-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-10-17",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+          "locator": "§§ 10–11, 39–43"
+        },
+        {
+          "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+          "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+        }
+      ]
+    },
+    {
+      "pathId": "zg-court-30",
+      "revision": 1,
+      "researchRef": "ZG-COURT-30",
+      "lawId": "vrg-zg",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "zg-none",
+      "holidayBindingId": "zg-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-10-17",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+          "locator": "§§ 10–11, 61, 64"
+        },
+        {
+          "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+          "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+        }
+      ]
+    },
+    {
+      "pathId": "zg-admin-ordered",
+      "revision": 1,
+      "researchRef": "ZG-ADMIN-ORDERED",
+      "lawId": "vrg-zg",
+      "action": "ordered-administrative-submission",
+      "stages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "zg-none",
+      "holidayBindingId": "zg-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-10-17",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+          "locator": "§§ 10–11, 15, 32, 44, 46"
+        },
+        {
+          "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+          "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+        }
+      ]
+    },
+    {
+      "pathId": "zg-court-ordered",
+      "revision": 1,
+      "researchRef": "ZG-COURT-ORDERED",
+      "lawId": "vrg-zg",
+      "action": "ordered-court-submission",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "zg-none",
+      "holidayBindingId": "zg-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2025-10-17",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-ZG-VRG-20251017",
+          "locator": "§§ 10–11, 65, 67–68"
+        },
+        {
+          "sourceId": "SRC-AP23E1-ZG-COURT-GUIDANCE",
+          "locator": "Fristenlauf, Ausnahme Fristenstillstand, Fristgerechtes Handeln"
+        }
+      ]
+    },
+    {
+      "pathId": "ar-admin-20",
+      "revision": 1,
+      "researchRef": "AR-ADMIN-20",
+      "lawId": "vrpg-ar",
+      "action": "ordinary-administrative-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 20,
+        "overridable": false
+      },
+      "suspensionProfileId": "ar-none",
+      "holidayBindingId": "ar-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2020-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 4–6, 30–31a"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+          "locator": "Art.7 und9"
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+        }
+      ]
+    },
+    {
+      "pathId": "ar-execution-5",
+      "revision": 1,
+      "researchRef": "AR-EXECUTION-5",
+      "lawId": "vrpg-ar",
+      "action": "execution-order-appeal",
+      "stages": [
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 5,
+        "overridable": false
+      },
+      "suspensionProfileId": "ar-none",
+      "holidayBindingId": "ar-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2020-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 4–6, 33 Abs. 1 und 63 Abs. 4"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+          "locator": "Art.7 und9"
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+        }
+      ]
+    },
+    {
+      "pathId": "ar-admin-ordered",
+      "revision": 1,
+      "researchRef": "AR-ADMIN-ORDERED",
+      "lawId": "vrpg-ar",
+      "action": "ordered-administrative-submission",
+      "stages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "ar-none",
+      "holidayBindingId": "ar-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "none",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2020-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 4–6, 13, 35 Abs. 3 und 39"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+          "locator": "Art.7 und9"
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+        }
+      ]
+    },
+    {
+      "pathId": "ar-court-30",
+      "revision": 1,
+      "researchRef": "AR-COURT-30",
+      "lawId": "vrpg-ar",
+      "action": "ordinary-court-appeal",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "statutoryDays",
+        "value": 30,
+        "overridable": false
+      },
+      "suspensionProfileId": "ar-three",
+      "holidayBindingId": "ar-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2020-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 4–7, 54–55, 59"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+          "locator": "Art.7 und9"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-MATERIAL-20180703",
+          "locator": "S.4, zeitliche Anpassung und Tagesfristen"
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+        }
+      ]
+    },
+    {
+      "pathId": "ar-court-ordered",
+      "revision": 1,
+      "researchRef": "AR-COURT-ORDERED",
+      "lawId": "vrpg-ar",
+      "action": "ordered-court-submission",
+      "stages": [
+        "court"
+      ],
+      "duration": {
+        "kind": "authorityOrderedDays",
+        "minimum": 1,
+        "maximum": 365,
+        "boundMeaning": "technicalSafetyLimitNotLegalMaximum"
+      },
+      "suspensionProfileId": "ar-three",
+      "holidayBindingId": "ar-authority-seat",
+      "urgencyPolicy": "notApplicable",
+      "endShiftPolicy": "nextWorkingDay",
+      "endShiftGuard": "blockWhenEnteringApplicableSuspension",
+      "qualification": {
+        "delivery": "qualifiedActualDelivery",
+        "authorityLevel": "cantonal",
+        "generalRoute": "qualified",
+        "specialLaw": "excluded",
+        "fixedEndDate": false,
+        "deviatingStart": false,
+        "evidenceAdvance": false
+      },
+      "temporalBinding": {
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "sourceCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "evaluation": "eachEvaluatedDayIncludingEndShift",
+        "normVersionCoverage": {
+          "from": "2020-01-01",
+          "to": null
+        },
+        "futureNormAssumption": "proposalAssumingContinuedApplicabilityNotFutureLegalVerification"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23E1-AR-VRPG-20200101",
+          "locator": "Art. 4–7, 59 und konkrete Verfahrenshandlung"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-ARGV-20160101",
+          "locator": "Art.7 und9"
+        },
+        {
+          "sourceId": "SRC-AP23E1-AR-MATERIAL-20180703",
+          "locator": "S.4, zeitliche Anpassung und Tagesfristen"
+        },
+        {
+          "sourceId": "SRC-AP23B-CH-HOL",
+          "locator": "Art.1, Wiederverwendung des gebundenen MVP08-Bundesfeiertagsnachweises"
+        }
+      ]
+    }
+  ],
+  "releaseBinding": {
+    "status": "candidate",
+    "releaseId": null,
+    "approval": null,
+    "targetComponentRefs": [],
+    "sourceReviewRef": null,
+    "referenceSuiteRef": null,
+    "promotionRequirement": "rebindExactTargetReleaseBytesAndApproveBeforeActivation",
+    "pathEligibility": [
+      {
+        "status": "candidate",
+        "pathId": "ti-80-30",
+        "pathRevision": 1,
+        "pathSha256": "4df727a155db2ea935f36693fd7529dbfa3835eea726a2c5f6c958239cc2d87f",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "c9c43145b1b09650fc237f963123e6331bf71b9d9ba44dcf24d7187112c4bc9a",
+        "suspensionProfileId": "ti-three",
+        "suspensionProfileSha256": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+        "qualificationPolicySha256": "6bb41a0cf231214864b271effb8d6462ea8470d70fe40610ef54ccaab533fed0",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ti-84-30",
+        "pathRevision": 1,
+        "pathSha256": "8727e179dbafed4668efa540bd27745f99822677165d3901ce37d34dad07161d",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "c9c43145b1b09650fc237f963123e6331bf71b9d9ba44dcf24d7187112c4bc9a",
+        "suspensionProfileId": "ti-three",
+        "suspensionProfileSha256": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+        "qualificationPolicySha256": "6f6930ca20525b5634e18379c0e73ec0aa37dc2848ddf5822bddc75994b7cc8f",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ti-reply",
+        "pathRevision": 1,
+        "pathSha256": "5c3164e2244ac2abdacaa71c8bef21861ac52b31c2af22b40676e6d36b2ba202",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "c9c43145b1b09650fc237f963123e6331bf71b9d9ba44dcf24d7187112c4bc9a",
+        "suspensionProfileId": "ti-three",
+        "suspensionProfileSha256": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+        "qualificationPolicySha256": "68a31120a1a6998f682317db4a719d36b1d1f6c435d9b503e60bbb22ddae2ee2",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ti-provisional-15",
+        "pathRevision": 1,
+        "pathSha256": "ca8f6e76ac3d33dcdc03d6c238ea183a94df1536d3bb2bcc1b9a619edb8fc67d",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "c9c43145b1b09650fc237f963123e6331bf71b9d9ba44dcf24d7187112c4bc9a",
+        "suspensionProfileId": "ti-none",
+        "suspensionProfileSha256": "6823c9142dc2f5f375cad6f8526a10afb19e2a2850d0bff1a06c56219c59c59c",
+        "qualificationPolicySha256": "e2c0cd7e807998e24ad46ab339d40afd8218c063948346a719616d4a02f5ba3a",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ti-advance",
+        "pathRevision": 1,
+        "pathSha256": "f5ae0692d028622bd21256b189d757fd12b5acd5de14782d60b0c8c922aa879b",
+        "holidayBindingId": "ti-authority-seat",
+        "holidayBindingSha256": "c9c43145b1b09650fc237f963123e6331bf71b9d9ba44dcf24d7187112c4bc9a",
+        "suspensionProfileId": "ti-none",
+        "suspensionProfileSha256": "6823c9142dc2f5f375cad6f8526a10afb19e2a2850d0bff1a06c56219c59c59c",
+        "qualificationPolicySha256": "97228c9bb260661a7ad15b833f3e481f37ebc2336591f999f9944ea04872c8b1",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-32-30",
+        "pathRevision": 1,
+        "pathSha256": "5c4305ab100d8a9a3bde63a9e24f2c829feb12a5b59860619d7342e0c1d17d46",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-none",
+        "suspensionProfileSha256": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+        "qualificationPolicySha256": "017ad489710db2d6eead55f4d9b5a545adb94387c450bc8a76dc25e6e6234a6b",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-32-10",
+        "pathRevision": 1,
+        "pathSha256": "87e074107b5a4128453c3c6c70f45e11c4211f845065cae4313931f56ef6d756",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-none",
+        "suspensionProfileSha256": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+        "qualificationPolicySha256": "97d82d6d0e7f8da3eef5b249ac79172b22e2ba59f94e9f101120b11cd62b1b31",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-admin-ordered",
+        "pathRevision": 1,
+        "pathSha256": "d6f0add375ee92b762c902b906ee6aee24e8431a726ed75c0640ecc6f1bb0697",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-none",
+        "suspensionProfileSha256": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+        "qualificationPolicySha256": "98dde04a83b23e6edf8b486a2c561463368485fdda48d5eab52285758221a3ae",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-52-30",
+        "pathRevision": 1,
+        "pathSha256": "da8cce834fc705b952266ee35921c29af59589bc4b612234f6e4384a20838128",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "qualificationPolicySha256": "39ad094e73008988bd84c6f93d22118f22c75fffd1fdfa4a4c0f85e805942939",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-52-10",
+        "pathRevision": 1,
+        "pathSha256": "4d6ac3eeb84434c94a8b817188103113f771b42de8d9c0120a1506117415a91b",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "qualificationPolicySha256": "d2aa81d02a1aea36931bde22fbc7d9d65e6c9ff966039ff38a6452c86bf9f7b6",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-42-10",
+        "pathRevision": 1,
+        "pathSha256": "638e5ff1d74e7ef7eb35d18e9a9765e159f470f12ab583492a767c3b9cc6f56a",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "qualificationPolicySha256": "2113d88c35d212c7ba2b47d91f21746ea325f854e14a02976f494e89a3cd328f",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "gr-court-ordered",
+        "pathRevision": 1,
+        "pathSha256": "4d9c015f741dcae7d19fa3c54d0a98d5d27e444ed499d101486053e9ba6b8f2f",
+        "holidayBindingId": "gr-authority-seat",
+        "holidayBindingSha256": "9aff26a2d36fa7eeb358cb05526421cff0704e5589bb4b20505cc525465fc7e8",
+        "suspensionProfileId": "gr-three",
+        "suspensionProfileSha256": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+        "qualificationPolicySha256": "d8b080dc4fadc9092cd51996261a7f5662b7fee793850782182c3aebad27e97d",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "lu-admin-30",
+        "pathRevision": 1,
+        "pathSha256": "51f118dfd8acecca421936098760b6c7ab9b14bc21bcdb4727b65c9eea1c04b8",
+        "holidayBindingId": "lu-authority-seat",
+        "holidayBindingSha256": "e56ac0c504d14f4807b168de1f4ee1023fb98e8221ce0feb369283abfe023bb5",
+        "suspensionProfileId": "lu-none",
+        "suspensionProfileSha256": "96ae2547902c2a7fa1b458cd2ee9efaf65f899a7d172120456d158a315fa72f0",
+        "qualificationPolicySha256": "68fd4a6d56008a88f5afcbd1ee980b92718d71b73b651cc7004ffbb64f4f02e7",
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "lu-court-30",
+        "pathRevision": 1,
+        "pathSha256": "3759a4b77610e55c8d26542443962030a0e6cc787b980a3ce5f484496c2c1018",
+        "holidayBindingId": "lu-authority-seat",
+        "holidayBindingSha256": "e56ac0c504d14f4807b168de1f4ee1023fb98e8221ce0feb369283abfe023bb5",
+        "suspensionProfileId": "lu-none",
+        "suspensionProfileSha256": "96ae2547902c2a7fa1b458cd2ee9efaf65f899a7d172120456d158a315fa72f0",
+        "qualificationPolicySha256": "81e73374ea09e8a8f12553fde39ddea76d90af6a46e9776c0455055d5291070d",
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "lu-admin-ordered",
+        "pathRevision": 1,
+        "pathSha256": "a4e2b6651fbb3c978d3096197da11329bd3f073303798da46ea3bb31e5e99b22",
+        "holidayBindingId": "lu-authority-seat",
+        "holidayBindingSha256": "e56ac0c504d14f4807b168de1f4ee1023fb98e8221ce0feb369283abfe023bb5",
+        "suspensionProfileId": "lu-none",
+        "suspensionProfileSha256": "96ae2547902c2a7fa1b458cd2ee9efaf65f899a7d172120456d158a315fa72f0",
+        "qualificationPolicySha256": "36a25006c5b818a9e345acde99798b62cdc623b3fc99a929011399bff35d4f1e",
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "lu-court-ordered",
+        "pathRevision": 1,
+        "pathSha256": "4a6cc6412ea26be0ad4ea79b0a44f534eb0d81021d3a7304982ceb81015ced2e",
+        "holidayBindingId": "lu-authority-seat",
+        "holidayBindingSha256": "e56ac0c504d14f4807b168de1f4ee1023fb98e8221ce0feb369283abfe023bb5",
+        "suspensionProfileId": "lu-none",
+        "suspensionProfileSha256": "96ae2547902c2a7fa1b458cd2ee9efaf65f899a7d172120456d158a315fa72f0",
+        "qualificationPolicySha256": "383c11d626155ed65201a46e44ae74ed31f7cf270c3064abb84328efc8490226",
+        "caseCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-09-27",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "zg-admin-20",
+        "pathRevision": 1,
+        "pathSha256": "719667f0e68a14b055a90fb91de4a7b16ecc505c0727b4c27f9aa817898e4152",
+        "holidayBindingId": "zg-authority-seat",
+        "holidayBindingSha256": "0a23fd4b15ee5d63cd46aa5c06cecdc9d1cfb124cf1b3ba0c7359a5eab16b1cc",
+        "suspensionProfileId": "zg-none",
+        "suspensionProfileSha256": "ef0d800d6112739820d612127d40ce0851c7aa2bb760003bd413a0bc6d18e1f0",
+        "qualificationPolicySha256": "d1646eebc0df737e2f91a186720fd20b34490353b9264f69f8bb807937cd3e73",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "zg-court-30",
+        "pathRevision": 1,
+        "pathSha256": "31caa67ea9d1840501b47ee00ece12bca989e734c57c3b284737b22228a06b05",
+        "holidayBindingId": "zg-authority-seat",
+        "holidayBindingSha256": "0a23fd4b15ee5d63cd46aa5c06cecdc9d1cfb124cf1b3ba0c7359a5eab16b1cc",
+        "suspensionProfileId": "zg-none",
+        "suspensionProfileSha256": "ef0d800d6112739820d612127d40ce0851c7aa2bb760003bd413a0bc6d18e1f0",
+        "qualificationPolicySha256": "2e12cb0754fe966e58a72b4e0c71d1c9c7df517b9bc08228b7eb43bf34c15389",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "zg-admin-ordered",
+        "pathRevision": 1,
+        "pathSha256": "a0a71b261b345872b2206bbb6775aee82c5ac4cac13316e5e78a82a51261edcf",
+        "holidayBindingId": "zg-authority-seat",
+        "holidayBindingSha256": "0a23fd4b15ee5d63cd46aa5c06cecdc9d1cfb124cf1b3ba0c7359a5eab16b1cc",
+        "suspensionProfileId": "zg-none",
+        "suspensionProfileSha256": "ef0d800d6112739820d612127d40ce0851c7aa2bb760003bd413a0bc6d18e1f0",
+        "qualificationPolicySha256": "0fbd767e80e70e9edba95e989f8eac7806aa29964455813a0594b3c2d6ae02a6",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "zg-court-ordered",
+        "pathRevision": 1,
+        "pathSha256": "dce20aea404a587cd2408226e9eb40e1cc35b0667fdda91381f7151482b5aca8",
+        "holidayBindingId": "zg-authority-seat",
+        "holidayBindingSha256": "0a23fd4b15ee5d63cd46aa5c06cecdc9d1cfb124cf1b3ba0c7359a5eab16b1cc",
+        "suspensionProfileId": "zg-none",
+        "suspensionProfileSha256": "ef0d800d6112739820d612127d40ce0851c7aa2bb760003bd413a0bc6d18e1f0",
+        "qualificationPolicySha256": "576098c92bc5d5e5eb5905d115eb7d918b8250890bdb2dde65757205e9812b9e",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ar-admin-20",
+        "pathRevision": 1,
+        "pathSha256": "3be2bc0268ac944a284831170aa6f09635f58b6fa5b83ee406b3d1d0d1741474",
+        "holidayBindingId": "ar-authority-seat",
+        "holidayBindingSha256": "c16a5d25172c95383afd230f659611d1a9166d0e65a6872e24ad0c90fbd5f368",
+        "suspensionProfileId": "ar-none",
+        "suspensionProfileSha256": "12b775aec3485994c6aba42370dad7da02472c5908be9e15809122674f157a7f",
+        "qualificationPolicySha256": "373713afd517cae43dfa0505a30250b8190647bba731db3cc091c1863624226c",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ar-execution-5",
+        "pathRevision": 1,
+        "pathSha256": "1a891de8c606e3017ab12e5a09cfe2b55bf0ef08fa36e0172b91b561ee956186",
+        "holidayBindingId": "ar-authority-seat",
+        "holidayBindingSha256": "c16a5d25172c95383afd230f659611d1a9166d0e65a6872e24ad0c90fbd5f368",
+        "suspensionProfileId": "ar-none",
+        "suspensionProfileSha256": "12b775aec3485994c6aba42370dad7da02472c5908be9e15809122674f157a7f",
+        "qualificationPolicySha256": "602bec552343ae46f68a144051988f5c5d7838b04fe71e8b61812fc6ac2e8f8f",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ar-admin-ordered",
+        "pathRevision": 1,
+        "pathSha256": "0108d33bfb113ef0a5bfb5a645cf3521ccad84d0eabbd79a74cac849f74731fa",
+        "holidayBindingId": "ar-authority-seat",
+        "holidayBindingSha256": "c16a5d25172c95383afd230f659611d1a9166d0e65a6872e24ad0c90fbd5f368",
+        "suspensionProfileId": "ar-none",
+        "suspensionProfileSha256": "12b775aec3485994c6aba42370dad7da02472c5908be9e15809122674f157a7f",
+        "qualificationPolicySha256": "0f861695d4690258d28f23969567ea2de454ebd6b69d85993a308d7b1ad97f83",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ar-court-30",
+        "pathRevision": 1,
+        "pathSha256": "8511671e7ad5708912683460419f819eec3388d747e4c1da39e8e5805b4bb43e",
+        "holidayBindingId": "ar-authority-seat",
+        "holidayBindingSha256": "c16a5d25172c95383afd230f659611d1a9166d0e65a6872e24ad0c90fbd5f368",
+        "suspensionProfileId": "ar-three",
+        "suspensionProfileSha256": "77c0df45d955ee0286f5a815d99ce3c151bd25cca3194993b02d6008a37815fc",
+        "qualificationPolicySha256": "646fb70239c19c10cd636dfe08bf33f6426d171a19a42a88789a0f6e9ba2da1c",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      },
+      {
+        "status": "candidate",
+        "pathId": "ar-court-ordered",
+        "pathRevision": 1,
+        "pathSha256": "a617f28d6ea5d1b838de0350348c2419685cc28ac88f5d57cec8b08f4846cb5d",
+        "holidayBindingId": "ar-authority-seat",
+        "holidayBindingSha256": "c16a5d25172c95383afd230f659611d1a9166d0e65a6872e24ad0c90fbd5f368",
+        "suspensionProfileId": "ar-three",
+        "suspensionProfileSha256": "77c0df45d955ee0286f5a815d99ce3c151bd25cca3194993b02d6008a37815fc",
+        "qualificationPolicySha256": "025a0000e65b95aad0bbbb5eaec9d1f117aa8a4f349f004304f72d7e9560ebcd",
+        "caseCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "calculationCoverage": {
+          "from": "2026-08-29",
+          "to": "2027-12-31"
+        },
+        "targetComponentRefs": [],
+        "sourceReviewRef": null,
+        "referenceSuiteRef": null
+      }
+    ]
+  },
+  "excludedPaths": [
+    {
+      "exclusionId": "nw-contrast-only",
+      "scope": "Nidwalden",
+      "reason": "Nur AP23B-Kontrastprobe, keine positive Kandidatenbindung oder operative Freigabe."
+    },
+    {
+      "exclusionId": "federal-and-cantonal-special-law",
+      "scope": "Sozial-, Steuer-, Beschaffungs- und politische Spezialverfahren",
+      "reason": "Allgemeiner Pfad ausgeschlossen. Bundesrechtliches Spezialrecht nur über eigenständig qualifizierten und freigegebenen Pfad."
+    },
+    {
+      "exclusionId": "unsupported-delivery-and-time-units",
+      "scope": "Publikation, Kenntnis, Zustellfiktion, Monats-/Jahresfrist, Fixtermin, Wiederherstellung und Erstreckung",
+      "reason": "Nicht vom Pilot modelliert."
+    },
+    {
+      "exclusionId": "municipal-regional-and-evidence-advance",
+      "scope": "Kommunale/regionale Verfahren und TI Art. 47 Abs. 5",
+      "reason": "Nicht vom Pilot freigegeben."
+    },
+    {
+      "exclusionId": "ap23e1-lu-zg-ar-non-final-ordinary-appeals",
+      "scope": "Nur neue ordentliche LU-/ZG-/AR-Rechtsmittelwege",
+      "reason": "Nur Endentscheide positiv qualifiziert. Bestehende TI-/GR-Zwischenentscheidspfade bleiben unverändert."
+    },
+    {
+      "exclusionId": "ap23e1-lu-zg-ar-payment-and-performance",
+      "scope": "Nur neue angeordnete LU-/ZG-/AR-Verfahrenseingaben",
+      "reason": "Keine Kostenvorschüsse, Zahlungs- oder materiellen Erfüllungsfristen. Der bestehende TI-Kostenvorschusspfad bleibt erhalten."
+    },
+    {
+      "exclusionId": "ap23e1-lu-objection-and-reason-request",
+      "scope": "LU Einsprache und Begründungsverlangen",
+      "reason": "Eigene Verfahren und Eröffnungsschritte, nicht als ordentliche 30-Tage-Beschwerde freigegeben."
+    },
+    {
+      "exclusionId": "ap23e1-zg-shortened-or-unconfirmed-opening",
+      "scope": "ZG verkürzte Dringlichkeitsfrist und mündliche Eröffnung ohne vollständige schriftliche Bestätigung",
+      "reason": "Nicht als gewöhnliche vollständig eröffnete 20-/30-Tage-Frist qualifiziert."
+    },
+    {
+      "exclusionId": "ap23e1-ar-notice-special-law-and-execution-scope",
+      "scope": "Neue AR-Wege, insbesondere fehlende Belehrung, Bau-/Steuer-/Beschaffungsrecht und unqualifizierte Vollstreckung",
+      "reason": "Keine Umdeutung einer Zwei-Monatsregel in Tage. Art. 63 nur für die qualifizierte VRPG-Vollstreckungsanordnung, nicht für SchKG, blosse Mahnung oder nachfolgenden Gerichtsschritt."
+    },
+    {
+      "exclusionId": "ap23e1-ar-o1-end-shift-into-suspension",
+      "scope": "Neue AR-Gerichtswege mit tatsächlich anwendbarem Stillstand",
+      "reason": "Abgenommene begrenzte Sperre bei Endverschiebung in neu beginnenden Stillstand. Kein definitives Fristresultat oder Kalenderexport."
+    }
+  ],
+  "preserved": [
+    {
+      "path": "docs/fachrecht/verwaltungsverfahren-ap23a.md",
+      "sha256": "c31b36622774216c45448fbc3951b1518afeea23bf0d7047fbd1f17ff7ccaded"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap23a.md",
+      "sha256": "bfce47a0065183c62a4c2b1111cd674a6ff7fbb470b5ffc4c12b8246bf742bed"
+    },
+    {
+      "path": "outputs/ap23a-2026-10-12/referenz/2026-10-12_Verwaltungsverfahren_Schweiz_AP23A_V0.1.xlsx",
+      "sha256": "4d161b5ce441910461cc4092aa0ef3bb898d3390034901faa3acdab97fc3857e"
+    },
+    {
+      "path": "schemas/legal-profile.schema.json",
+      "sha256": "e1b87a82247f3f09c52aae1629e5a0d4db4de2dd6a493524746427073e2e6145"
+    },
+    {
+      "path": "schemas/release-manifest-v7.schema.json",
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "sha256": "30c8bfd13ea943cf5f1fde87d2af628dcfe37d56408cf38b5c2dc9e5c0305aef"
+    },
+    {
+      "path": "src/core/calendarResolution.ts",
+      "sha256": "b69a4e8dde0fd20cfe23cbb6ae6082840e2523de015109c050dde6fafad9d68e"
+    },
+    {
+      "path": "src/core/holidayActivation.ts",
+      "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/manifest.json",
+      "sha256": "fe1dfa0a241ac1c0e083998f05fb43e058f3c1be223f35cd276d3df436941597"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-ti-944ed0286e9a.json",
+      "sha256": "dec40c2b5cc5c67a35c1ae492caeb022ee75a9b77f370890c1e867b3dc77a8ce"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-gr-bf0366c8eda2.json",
+      "sha256": "f3d73d31e9315a081e5aa16162d121b848d879adc19beeb40757cd86510b4f56"
+    },
+    {
+      "path": "data/releases/2026-10-08-mvp-07-approved.1/calendars/ap22-nw-5dfca484e4af.json",
+      "sha256": "44c4f6fcff97f9fbcf6208bdaaa44b152c83f4cb464c52f59afd5ca9c303229a"
+    },
+    {
+      "path": "docs/fachrecht/verwaltungsverfahren-ap23b.md",
+      "sha256": "d27db556347dc5fe441e4cb155c00303d4af7ec1977944db8567356a5f0b6568"
+    },
+    {
+      "path": "docs/fachrecht/quellenpruefung-ap23b.md",
+      "sha256": "619f99fa7df2a650467e41ce58d443758263e30f54167aacaf096be7a1e7b3af"
+    },
+    {
+      "path": "docs/fachrecht/referenzfaelle-ap23b.md",
+      "sha256": "4ab3f0e1725001a1eff084ae73c10ebcea0e34cd99c52378fa67e20fa0975a60"
+    },
+    {
+      "path": "tests/golden/candidates/ap23b-administrative.json",
+      "sha256": "a795a22a07945e02369f917dcea4d047a7bb3bb897e198a1fe1ffbea4a65a5d1"
+    },
+    {
+      "path": "scripts/check-ap23b-references.mjs",
+      "sha256": "69ab68b9ff8ef68aabd78a1faa60a0ad98a38aadd7ee6ae4366f70504553523e"
+    },
+    {
+      "path": "outputs/ap23b-2026-10-12/QA-AP23B.json",
+      "sha256": "6ce8d3d089d17da7db280a40d2047957c57643f56ccdf2fdd79e6d6e84922ea4"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/manifest.json",
+      "sha256": "2461f06c0a7d79dcd6a177fc116f08fcc0efa62e03b38ba6ac87964457c19aa4"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/profiles/bgg.json",
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/profiles/stpo.json",
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/profiles/vrpg-be.json",
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/profiles/vwvg.json",
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/profiles/zpo.json",
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/special-regimes/vrpg-be.json",
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/holiday-catalogs/ch-holiday-catalog.json",
+      "sha256": "b93ea400b5988964b21a0c288700ba69d07327347327624c293c50a5dffc1b0d"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ag-21d6f2634ce0.json",
+      "sha256": "2c53e4c982b65141b9c53ce6e2239e64b754d530931cbe9c0ce9730245108c76"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ai-5d4e5a68e106.json",
+      "sha256": "96809391d0f130b39603ad34c4fe1dde4391c0f604cf279c8beb8b34eefdf4ab"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ai-f507435d8aa8.json",
+      "sha256": "1c59e4716b97d143b1a3f615f9a1acb143ca3ed6827511ea016f4848d41b76ca"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ar-88bb22c08a22.json",
+      "sha256": "c5e6ee18cbcac3710769c4594572ecacde6bbc1507348ef93ce0063bad60560d"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "sha256": "ee07f7b4051c72e5de8fc1cd081f4eedb184abcbad49697e3a8591a0c383d22a"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-bs-39a64bdfc0fe.json",
+      "sha256": "2cfd3de60e89bd2b82323d0ba89468ca08b284c9614349d1d7786c30e21eb838"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-fr-7d8c38f7c610.json",
+      "sha256": "0f70bce9f64db255fc2182e85fd5b6cea7f59457e397ec4604629e6542581f84"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ge-a36ff7926d08.json",
+      "sha256": "3a7fd3eb02c5a8717714ada69939859fd1646ac5c085b3d9d3194a3815d87fad"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-gl-87c11e156541.json",
+      "sha256": "636b88bddfaa8a8a42be8c079dfc95f973dc776fc36676b189e0a89438e1e56a"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-gr-bf0366c8eda2.json",
+      "sha256": "dae881e918ec10984bda4f2d396c12c4320c189563fc3fa181b9fc798ea3a529"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ju-b096c09f506c.json",
+      "sha256": "793419fbec9cf4ddc72fb799f1060247955b28bb1953ca2f9b6c41797ab113e8"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-lu-55514cd91f06.json",
+      "sha256": "0772b9b3dadc63561f58963214a23a790e1e3744c54a7f369a802449c97c8db7"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-lu-b879eb8eb04f.json",
+      "sha256": "3cd90d5e1acbf3833ff91d42409f7e6fa3bac4e91be3e467baa6ed1b23924859"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ne-027ceadbf103.json",
+      "sha256": "36d9b8c67c9914a3158882f5abd306aac2792cf0e744ecadfce04ac7b139a8b6"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ne-21f519039621.json",
+      "sha256": "b074d86d7daac121264de5fbb75c2b07d4fef234847bd11a67ef1d347c2d0629"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-nw-5dfca484e4af.json",
+      "sha256": "41c51ecc7b2824189241e38ffbc1a6fce69cbcaeb35e212549265a7a55e54139"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ow-76c151dccf1f.json",
+      "sha256": "0e72edaa9cf5c4745da31d1a4e80be59e36c7f5ac3b764f2bb56b7f35b9be8de"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-sg-79009d6d6021.json",
+      "sha256": "1ffbc12114f772d6600944a0a01bb4cd49a22fa55e73751e4334991d6cd29312"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-sg-f95068e3b162.json",
+      "sha256": "61d36ff327bb2e1aebf9091cd881fac632ade184605ecfec0c55fe1234c09eb9"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-sh-1ccc70f9897a.json",
+      "sha256": "f2f2e6f01180b4a91ceaa9a98d1605af8045ed16c4b9a3df41f5f1b1e681316e"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-sh-ec7d0988145a.json",
+      "sha256": "c151064f62f212907b4d6f02f8c796ba7d30f7474ded397b95885127914ce5c1"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-so-3f5f7b7f54f5.json",
+      "sha256": "b99878e40d1c2dcd5d44b2e7b4648f314f9d543871a6badab0281388c0a7f8e3"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-sz-ec9f2c557fe4.json",
+      "sha256": "3aeb03ca48e4e562ba8465d906fed6cfd8b998c391dd15306616a6e4d97b433d"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-tg-3d6514fbabb1.json",
+      "sha256": "61dfb84e58f5807533d7577bf67196f67f653d212edd62fde9bcedbd3db243b9"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ti-944ed0286e9a.json",
+      "sha256": "eab52c93e077362bb224d1233a9bf827f04a6e3382e92a2a1974078172b31d80"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-ur-67275ff3e872.json",
+      "sha256": "cf63735a368b5f85223a057ae70e49af4120953cd04e141b8ca0f0e7cc37382c"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-vd-26f452ff34ee.json",
+      "sha256": "c182a5baa37fc1168a03869214140c04def9d49e59af5262ad8f1e4d51082666"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-vs-6c002f32b1b0.json",
+      "sha256": "5c5d39c68096d42c9ee4d37d41f213de8755091bee4aaa87d1b6e8cd947a2e1c"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-zg-860e0f8e0e1a.json",
+      "sha256": "ab70b48c622bfdcf7b30b5d84ac0617e207f2d14250fbeea3b8224bdbdac2fb4"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ap22-zh-5aa2974cffee.json",
+      "sha256": "d91888122410d26cb7c3e9ce6a77c3a754f3daf003c0832238933c19d66fef86"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/be-public-holidays.json",
+      "sha256": "a7967142f1ee3d9f1b7032eb1eec987337444f5bad8fab957c7d28dc055f58c5"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/calendars/ch-federal-calendar.json",
+      "sha256": "e478cf29a560b0889c32ca6921270a25899eb1762fbfbf3142d42c31e1992460"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/social-procedures/ch-social-procedures.json",
+      "sha256": "8a91b43c6a0b7c3f6507177b2bc068f2103436d8e484aa772e1f75275cdf0aa7"
+    },
+    {
+      "path": "data/releases/2026-10-15-mvp-08-approved.1/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "sha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+    },
+    {
+      "path": "tests/golden/candidates/ap23e1-administrative.json",
+      "sha256": "769e9c7db0d63b768909a5042bd1446b708f5e0ed6be7bb92abe7f33669d7ddb"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap23e1.md",
+      "sha256": "20bdf2f5050d9c902f21fc921d8b640131cc7a45a81a10b108ca69202fbc8418"
+    }
+  ],
+  "qualificationPolicies": [
+    {
+      "pathId": "ti-80-30",
+      "pathRevision": 1,
+      "pathSha256": "4df727a155db2ea935f36693fd7529dbfa3835eea726a2c5f6c958239cc2d87f",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "ti-84-30",
+      "pathRevision": 1,
+      "pathSha256": "8727e179dbafed4668efa540bd27745f99822677165d3901ce37d34dad07161d",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "ti-reply",
+      "pathRevision": 1,
+      "pathSha256": "5c3164e2244ac2abdacaa71c8bef21861ac52b31c2af22b40676e6d36b2ba202",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "ti-provisional-15",
+      "pathRevision": 1,
+      "pathSha256": "ca8f6e76ac3d33dcdc03d6c238ea183a94df1536d3bb2bcc1b9a619edb8fc67d",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "ti-advance",
+      "pathRevision": 1,
+      "pathSha256": "f5ae0692d028622bd21256b189d757fd12b5acd5de14782d60b0c8c922aa879b",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-32-30",
+      "pathRevision": 1,
+      "pathSha256": "5c4305ab100d8a9a3bde63a9e24f2c829feb12a5b59860619d7342e0c1d17d46",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-32-10",
+      "pathRevision": 1,
+      "pathSha256": "87e074107b5a4128453c3c6c70f45e11c4211f845065cae4313931f56ef6d756",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-admin-ordered",
+      "pathRevision": 1,
+      "pathSha256": "d6f0add375ee92b762c902b906ee6aee24e8431a726ed75c0640ecc6f1bb0697",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-52-30",
+      "pathRevision": 1,
+      "pathSha256": "da8cce834fc705b952266ee35921c29af59589bc4b612234f6e4384a20838128",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-52-10",
+      "pathRevision": 1,
+      "pathSha256": "4d6ac3eeb84434c94a8b817188103113f771b42de8d9c0120a1506117415a91b",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-42-10",
+      "pathRevision": 1,
+      "pathSha256": "638e5ff1d74e7ef7eb35d18e9a9765e159f470f12ab583492a767c3b9cc6f56a",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "gr-court-ordered",
+      "pathRevision": 1,
+      "pathSha256": "4d9c015f741dcae7d19fa3c54d0a98d5d27e444ed499d101486053e9ba6b8f2f",
+      "mode": "legacyV1",
+      "baseline": {
+        "releaseId": "2026-10-15-mvp-08-approved.1",
+        "catalogSha256": "2f434968628c951a2e15eb62c5f3e0d5d906fa476b1c66387076a3e9727ce3f7"
+      }
+    },
+    {
+      "pathId": "lu-admin-30",
+      "pathRevision": 1,
+      "pathSha256": "51f118dfd8acecca421936098760b6c7ab9b14bc21bcdb4727b65c9eea1c04b8",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "ordinaryAppeal",
+        "decisionKind": "finalDecision",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "lu-court-30",
+      "pathRevision": 1,
+      "pathSha256": "3759a4b77610e55c8d26542443962030a0e6cc787b980a3ce5f484496c2c1018",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "ordinaryAppeal",
+        "decisionKind": "finalDecision",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "lu-admin-ordered",
+      "pathRevision": 1,
+      "pathSha256": "a4e2b6651fbb3c978d3096197da11329bd3f073303798da46ea3bb31e5e99b22",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "proceduralSubmission",
+        "decisionKind": "notApplicable",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "lu-court-ordered",
+      "pathRevision": 1,
+      "pathSha256": "4a6cc6412ea26be0ad4ea79b0a44f534eb0d81021d3a7304982ceb81015ced2e",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "proceduralSubmission",
+        "decisionKind": "notApplicable",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "zg-admin-20",
+      "pathRevision": 1,
+      "pathSha256": "719667f0e68a14b055a90fb91de4a7b16ecc505c0727b4c27f9aa817898e4152",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "ordinaryAppeal",
+        "decisionKind": "finalDecision",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "zg-court-30",
+      "pathRevision": 1,
+      "pathSha256": "31caa67ea9d1840501b47ee00ece12bca989e734c57c3b284737b22228a06b05",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "ordinaryAppeal",
+        "decisionKind": "finalDecision",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "zg-admin-ordered",
+      "pathRevision": 1,
+      "pathSha256": "a0a71b261b345872b2206bbb6775aee82c5ac4cac13316e5e78a82a51261edcf",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "proceduralSubmission",
+        "decisionKind": "notApplicable",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "zg-court-ordered",
+      "pathRevision": 1,
+      "pathSha256": "dce20aea404a587cd2408226e9eb40e1cc35b0667fdda91381f7151482b5aca8",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "proceduralSubmission",
+        "decisionKind": "notApplicable",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "ar-admin-20",
+      "pathRevision": 1,
+      "pathSha256": "3be2bc0268ac944a284831170aa6f09635f58b6fa5b83ee406b3d1d0d1741474",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "ordinaryAppeal",
+        "decisionKind": "finalDecision",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "ar-execution-5",
+      "pathRevision": 1,
+      "pathSha256": "1a891de8c606e3017ab12e5a09cfe2b55bf0ef08fa36e0172b91b561ee956186",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "executionAppeal",
+        "decisionKind": "qualifiedVRPGArt63Order",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "ar-admin-ordered",
+      "pathRevision": 1,
+      "pathSha256": "0108d33bfb113ef0a5bfb5a645cf3521ccad84d0eabbd79a74cac849f74731fa",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "proceduralSubmission",
+        "decisionKind": "notApplicable",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "ar-court-30",
+      "pathRevision": 1,
+      "pathSha256": "8511671e7ad5708912683460419f819eec3388d747e4c1da39e8e5805b4bb43e",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "ordinaryAppeal",
+        "decisionKind": "finalDecision",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    },
+    {
+      "pathId": "ar-court-ordered",
+      "pathRevision": 1,
+      "pathSha256": "a617f28d6ea5d1b838de0350348c2419685cc28ac88f5d57cec8b08f4846cb5d",
+      "mode": "qualifiedDayProcedure",
+      "requirements": {
+        "action": "proceduralSubmission",
+        "decisionKind": "notApplicable",
+        "unit": "day",
+        "opening": "qualifiedCompleteActualDelivery",
+        "notice": "uncontested",
+        "termChange": "none",
+        "urgency": "none"
+      }
+    }
+  ]
+}

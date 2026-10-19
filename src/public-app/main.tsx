@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { mvp08Runtime } from '../release/mvp08ReleaseData';
+import { mvp09Runtime } from '../release/mvp09ReleaseData';
 import { FristenrechnerApp } from '../ui';
 import { initializeBrowserAppearance } from '../ui/browserAppearance';
 import '../ui/styles.css';
@@ -20,7 +20,7 @@ if (!root) {
 ReactDOM.render(
   <React.StrictMode>
     <PublicShell>
-      <FristenrechnerApp {...mvp08Runtime} />
+      <FristenrechnerApp {...mvp09Runtime} />
     </PublicShell>
   </React.StrictMode>,
   root

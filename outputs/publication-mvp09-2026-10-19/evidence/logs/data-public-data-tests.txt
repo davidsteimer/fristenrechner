@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: exact original state has no forbidden semantic delta
+ok 1 - exact original state has no forbidden semantic delta
+  ---
+  duration_ms: 2.071375
+  type: 'test'
+  ...
+# Subtest: calendar source hash alone is rebindable
+ok 2 - calendar source hash alone is rebindable
+  ---
+  duration_ms: 0.570042
+  type: 'test'
+  ...
+# Subtest: calendar rule edits are rejected
+ok 3 - calendar rule edits are rejected
+  ---
+  duration_ms: 4.266209
+  type: 'test'
+  ...
+# Subtest: catalog release envelope alone is rebindable
+ok 4 - catalog release envelope alone is rebindable
+  ---
+  duration_ms: 0.484375
+  type: 'test'
+  ...
+# Subtest: catalog source rules are immutable
+ok 5 - catalog source rules are immutable
+  ---
+  duration_ms: 1.017792
+  type: 'test'
+  ...
+# Subtest: social rule identity and scope cannot be rewritten
+ok 6 - social rule identity and scope cannot be rewritten
+  ---
+  duration_ms: 0.450875
+  type: 'test'
+  ...
+# Subtest: all fifty social eligibility rows are retained
+ok 7 - all fifty social eligibility rows are retained
+  ---
+  duration_ms: 0.415083
+  type: 'test'
+  ...
+# Subtest: all twenty-five administrative paths are retained
+ok 8 - all twenty-five administrative paths are retained
+  ---
+  duration_ms: 0.478166
+  type: 'test'
+  ...
+# Subtest: administrative path hashes cannot change
+ok 9 - administrative path hashes cannot change
+  ---
+  duration_ms: 0.845083
+  type: 'test'
+  ...
+# Subtest: runtimeActive remains false even in released data
+ok 10 - runtimeActive remains false even in released data
+  ---
+  duration_ms: 0.8575
+  type: 'test'
+  ...
+# Subtest: ordinary profile bytes remain identical, not merely equivalent JSON
+ok 11 - ordinary profile bytes remain identical, not merely equivalent JSON
+  ---
+  duration_ms: 0.64025
+  type: 'test'
+  ...
+# Subtest: no extra runtime file may appear
+ok 12 - no extra runtime file may appear
+  ---
+  duration_ms: 0.420708
+  type: 'test'
+  ...
+# Subtest: physical provenance hashes may change without changing legal binding
+ok 13 - physical provenance hashes may change without changing legal binding
+  ---
+  duration_ms: 0.402
+  type: 'test'
+  ...
+# Subtest: the semantic holiday binding hash alone may be rebound
+ok 14 - the semantic holiday binding hash alone may be rebound
+  ---
+  duration_ms: 0.363834
+  type: 'test'
+  ...
+# Subtest: physical calendar identity cannot change
+ok 15 - physical calendar identity cannot change
+  ---
+  duration_ms: 0.459167
+  type: 'test'
+  ...
+# Subtest: legal holiday basis cannot change
+ok 16 - legal holiday basis cannot change
+  ---
+  duration_ms: 0.4665
+  type: 'test'
+  ...
+# Subtest: qualification policy hash cannot change during promotion
+ok 17 - qualification policy hash cannot change during promotion
+  ---
+  duration_ms: 0.419292
+  type: 'test'
+  ...
+# Subtest: complete source graph is required, not only manifest IDs
+ok 18 - complete source graph is required, not only manifest IDs
+  ---
+  duration_ms: 2.900667
+  type: 'test'
+  ...
+# Subtest: explicit mapping retains all administrative component identities
+ok 19 - explicit mapping retains all administrative component identities
+  ---
+  duration_ms: 6.359542
+  type: 'test'
+  ...
+# Subtest: the additional graph does not discard inherited rule and eligibility relations
+ok 20 - the additional graph does not discard inherited rule and eligibility relations
+  ---
+  duration_ms: 3.379125
+  type: 'test'
+  ...
+# Subtest: unresolved social eligibility is rejected
+ok 21 - unresolved social eligibility is rejected
+  ---
+  duration_ms: 1.91675
+  type: 'test'
+  ...
+# Subtest: supporting mirror without an edge gains no invented positive relationship
+ok 22 - supporting mirror without an edge gains no invented positive relationship
+  ---
+  duration_ms: 2.5785
+  type: 'test'
+  ...
+# Subtest: duplicate graph edge cannot masquerade as complete coverage
+ok 23 - duplicate graph edge cannot masquerade as complete coverage
+  ---
+  duration_ms: 0.968375
+  type: 'test'
+  ...
+# Subtest: qualification identity is not discarded from explicit graph edges
+ok 24 - qualification identity is not discarded from explicit graph edges
+  ---
+  duration_ms: 3.569709
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 217.766333

@@ -14,6 +14,8 @@ const schemaNames = [
   'release-manifest.schema.json',
   'release-manifest-v5.schema.json',
   'release-manifest-v6.schema.json',
+  'release-manifest-v9.schema.json',
+  'administrative-procedure-catalog-v2.schema.json',
   'social-procedure-catalog.schema.json',
   'social-procedure-catalog-v2.schema.json',
   'legal-profile.schema.json',
@@ -44,7 +46,8 @@ const implementationSchemas = [
   'ap22c3/local-reference-manifest-v7.schema.json',
   'ap23d1/release-manifest-v8.schema.json',
   'ap23d1/local-reference-manifest-v8.schema.json',
-  'ap23d1/administrative-procedure-catalog.schema.json'
+  'ap23d1/administrative-procedure-catalog.schema.json',
+  'ap23e3/local-reference-manifest-v9.schema.json'
 ];
 for (const name of implementationSchemas) {
   const target = resolve(productSchemaDirectory, 'implementation', name);

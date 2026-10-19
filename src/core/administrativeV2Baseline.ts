@@ -1,0 +1,95 @@
+// SPDX-License-Identifier: AGPL-3.0-only
+// Accepted AP23E1 definitions and AP23E2 contract, DEC-2026-033.
+// Exact revision hashes prevent relabelling new routes as the legacy branch.
+export const ADMINISTRATIVE_V2_BASELINE = {
+  "paths": {
+    "ti-80-30": "4df727a155db2ea935f36693fd7529dbfa3835eea726a2c5f6c958239cc2d87f",
+    "ti-84-30": "8727e179dbafed4668efa540bd27745f99822677165d3901ce37d34dad07161d",
+    "ti-reply": "5c3164e2244ac2abdacaa71c8bef21861ac52b31c2af22b40676e6d36b2ba202",
+    "ti-provisional-15": "ca8f6e76ac3d33dcdc03d6c238ea183a94df1536d3bb2bcc1b9a619edb8fc67d",
+    "ti-advance": "f5ae0692d028622bd21256b189d757fd12b5acd5de14782d60b0c8c922aa879b",
+    "gr-32-30": "5c4305ab100d8a9a3bde63a9e24f2c829feb12a5b59860619d7342e0c1d17d46",
+    "gr-32-10": "87e074107b5a4128453c3c6c70f45e11c4211f845065cae4313931f56ef6d756",
+    "gr-admin-ordered": "d6f0add375ee92b762c902b906ee6aee24e8431a726ed75c0640ecc6f1bb0697",
+    "gr-52-30": "da8cce834fc705b952266ee35921c29af59589bc4b612234f6e4384a20838128",
+    "gr-52-10": "4d6ac3eeb84434c94a8b817188103113f771b42de8d9c0120a1506117415a91b",
+    "gr-42-10": "638e5ff1d74e7ef7eb35d18e9a9765e159f470f12ab583492a767c3b9cc6f56a",
+    "gr-court-ordered": "4d9c015f741dcae7d19fa3c54d0a98d5d27e444ed499d101486053e9ba6b8f2f",
+    "lu-admin-30": "51f118dfd8acecca421936098760b6c7ab9b14bc21bcdb4727b65c9eea1c04b8",
+    "lu-court-30": "3759a4b77610e55c8d26542443962030a0e6cc787b980a3ce5f484496c2c1018",
+    "lu-admin-ordered": "a4e2b6651fbb3c978d3096197da11329bd3f073303798da46ea3bb31e5e99b22",
+    "lu-court-ordered": "4a6cc6412ea26be0ad4ea79b0a44f534eb0d81021d3a7304982ceb81015ced2e",
+    "zg-admin-20": "719667f0e68a14b055a90fb91de4a7b16ecc505c0727b4c27f9aa817898e4152",
+    "zg-court-30": "31caa67ea9d1840501b47ee00ece12bca989e734c57c3b284737b22228a06b05",
+    "zg-admin-ordered": "a0a71b261b345872b2206bbb6775aee82c5ac4cac13316e5e78a82a51261edcf",
+    "zg-court-ordered": "dce20aea404a587cd2408226e9eb40e1cc35b0667fdda91381f7151482b5aca8",
+    "ar-admin-20": "3be2bc0268ac944a284831170aa6f09635f58b6fa5b83ee406b3d1d0d1741474",
+    "ar-execution-5": "1a891de8c606e3017ab12e5a09cfe2b55bf0ef08fa36e0172b91b561ee956186",
+    "ar-admin-ordered": "0108d33bfb113ef0a5bfb5a645cf3521ccad84d0eabbd79a74cac849f74731fa",
+    "ar-court-30": "8511671e7ad5708912683460419f819eec3388d747e4c1da39e8e5805b4bb43e",
+    "ar-court-ordered": "a617f28d6ea5d1b838de0350348c2419685cc28ac88f5d57cec8b08f4846cb5d"
+  },
+  "qualificationPolicies": {
+    "ti-80-30": "6bb41a0cf231214864b271effb8d6462ea8470d70fe40610ef54ccaab533fed0",
+    "ti-84-30": "6f6930ca20525b5634e18379c0e73ec0aa37dc2848ddf5822bddc75994b7cc8f",
+    "ti-reply": "68a31120a1a6998f682317db4a719d36b1d1f6c435d9b503e60bbb22ddae2ee2",
+    "ti-provisional-15": "e2c0cd7e807998e24ad46ab339d40afd8218c063948346a719616d4a02f5ba3a",
+    "ti-advance": "97228c9bb260661a7ad15b833f3e481f37ebc2336591f999f9944ea04872c8b1",
+    "gr-32-30": "017ad489710db2d6eead55f4d9b5a545adb94387c450bc8a76dc25e6e6234a6b",
+    "gr-32-10": "97d82d6d0e7f8da3eef5b249ac79172b22e2ba59f94e9f101120b11cd62b1b31",
+    "gr-admin-ordered": "98dde04a83b23e6edf8b486a2c561463368485fdda48d5eab52285758221a3ae",
+    "gr-52-30": "39ad094e73008988bd84c6f93d22118f22c75fffd1fdfa4a4c0f85e805942939",
+    "gr-52-10": "d2aa81d02a1aea36931bde22fbc7d9d65e6c9ff966039ff38a6452c86bf9f7b6",
+    "gr-42-10": "2113d88c35d212c7ba2b47d91f21746ea325f854e14a02976f494e89a3cd328f",
+    "gr-court-ordered": "d8b080dc4fadc9092cd51996261a7f5662b7fee793850782182c3aebad27e97d",
+    "lu-admin-30": "68fd4a6d56008a88f5afcbd1ee980b92718d71b73b651cc7004ffbb64f4f02e7",
+    "lu-court-30": "81e73374ea09e8a8f12553fde39ddea76d90af6a46e9776c0455055d5291070d",
+    "lu-admin-ordered": "36a25006c5b818a9e345acde99798b62cdc623b3fc99a929011399bff35d4f1e",
+    "lu-court-ordered": "383c11d626155ed65201a46e44ae74ed31f7cf270c3064abb84328efc8490226",
+    "zg-admin-20": "d1646eebc0df737e2f91a186720fd20b34490353b9264f69f8bb807937cd3e73",
+    "zg-court-30": "2e12cb0754fe966e58a72b4e0c71d1c9c7df517b9bc08228b7eb43bf34c15389",
+    "zg-admin-ordered": "0fbd767e80e70e9edba95e989f8eac7806aa29964455813a0594b3c2d6ae02a6",
+    "zg-court-ordered": "576098c92bc5d5e5eb5905d115eb7d918b8250890bdb2dde65757205e9812b9e",
+    "ar-admin-20": "373713afd517cae43dfa0505a30250b8190647bba731db3cc091c1863624226c",
+    "ar-execution-5": "602bec552343ae46f68a144051988f5c5d7838b04fe71e8b61812fc6ac2e8f8f",
+    "ar-admin-ordered": "0f861695d4690258d28f23969567ea2de454ebd6b69d85993a308d7b1ad97f83",
+    "ar-court-30": "646fb70239c19c10cd636dfe08bf33f6426d171a19a42a88789a0f6e9ba2da1c",
+    "ar-court-ordered": "025a0000e65b95aad0bbbb5eaec9d1f117aa8a4f349f004304f72d7e9560ebcd"
+  },
+  "laws": {
+    "lpamm-ti": "d3a0e3a93e6adce12134470ee673267c90bc6aafc8dfe977e8851e0a8a75ef1e",
+    "vrg-gr": "e4f20cbea3926d007adcf9385d559a2f8e5f55fe32b0419e3b834f8453432118",
+    "vrg-lu": "0a776f92d12aae63d8cefae559f42e6d9400e11e5c498a5c1e8ed41817a371bc",
+    "vrg-zg": "855445deddc53afebf7cc0c2452ff486216ffdd1165bbcca73363e0000e3a8d9",
+    "vrpg-ar": "f7bbacbc9eb68d5158ad863a3dbdf74cd40e5260cb17807a44a11cadf1cb8ff7"
+  },
+  "suspensionProfiles": {
+    "ti-none": "6823c9142dc2f5f375cad6f8526a10afb19e2a2850d0bff1a06c56219c59c59c",
+    "ti-three": "abc59f43f024442d9631770d5548710accbfe70be9363d6f96d6a37fb6e0d17a",
+    "gr-none": "80bb00fd8a95915ac1160db230e4181e0a8f5b23d7dbf8a474f7919fd08059c2",
+    "gr-three": "1efeb91558ff939c3b0ad88ae78d394093e6d2d31723f3b3f06757031c0632cf",
+    "lu-none": "96ae2547902c2a7fa1b458cd2ee9efaf65f899a7d172120456d158a315fa72f0",
+    "zg-none": "ef0d800d6112739820d612127d40ce0851c7aa2bb760003bd413a0bc6d18e1f0",
+    "ar-none": "12b775aec3485994c6aba42370dad7da02472c5908be9e15809122674f157a7f",
+    "ar-three": "77c0df45d955ee0286f5a815d99ce3c151bd25cca3194993b02d6008a37815fc"
+  },
+  "excludedPaths": {
+    "nw-contrast-only": "39ad6e087ac9cce517ec8e723142da38f0b38e99d53e12ec21fe8b0a948f953d",
+    "federal-and-cantonal-special-law": "1c1b44f70baf92a76963429df00a2c628cbb508c6692cf795bb6b50355fe4029",
+    "unsupported-delivery-and-time-units": "185d09d3bf0f7985b529d4bc0fbd18d16788b224cb7f07e815d78597416e842b",
+    "municipal-regional-and-evidence-advance": "0dc3b3c546c921421b79574d59dbfce769d120415aff05bd8e3c7d1934e15a06",
+    "ap23e1-lu-zg-ar-non-final-ordinary-appeals": "127bd597fb55c4e2bef7ab136127204ac188af59f50bb92b5d321f48c6f5ff79",
+    "ap23e1-lu-zg-ar-payment-and-performance": "c5c551be8322c48c6f99d4b921203bca3e567aa35310603d5f0c2e9a53249c4b",
+    "ap23e1-lu-objection-and-reason-request": "47b11460c2472799198beab01d82e348e061115b5f4e4bf5f2a9ba57409c879c",
+    "ap23e1-zg-shortened-or-unconfirmed-opening": "b477673e93489bc0a41c568b7d6a192c6e844ca31b698f1084f1b489bfa8fa4a",
+    "ap23e1-ar-notice-special-law-and-execution-scope": "becd82ae690a54e9e0a6adf077277b12d0210a8e3e2c802cae8aedcf916c9d60",
+    "ap23e1-ar-o1-end-shift-into-suspension": "e6dd5cbdd401efad649c34cbafbddeabfcbccc1c41302d1114561700ab996075"
+  },
+  "holidayBindings": {
+    "ti-authority-seat": "6a4a965a3a6a65366b95aef8dadcc2cc1fef67ce5ecfa00b64fdb9ece0c5fa85",
+    "gr-authority-seat": "efe1b3038297abfdc7f7babb27ac045fe8dd2d7b213e6033ed7b3ecd86f8388e",
+    "lu-authority-seat": "2a7102bbe31ec76c7cd41008ffdc679a974ef67de7da7197720329a1fae27f6f",
+    "zg-authority-seat": "1f7a063ded08132687ef95ebcb78242560fb9b2794792150019ba777a21c4a41",
+    "ar-authority-seat": "689589d491b8cc74c76bf0c501739b35860be1da7ad742439b1ec30d4882ec79"
+  }
+} as const;

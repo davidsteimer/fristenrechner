@@ -1,0 +1,473 @@
+{
+  "kind": "mvp09-public-historical-evidence-summary",
+  "sourceRecordStatusIsHistorical": true,
+  "sourcePath": "outputs/release-mvp09-2026-10-18/artifact-verification.json",
+  "selectedFields": [
+    "kind",
+    "status",
+    "releaseId",
+    "applicationVersion",
+    "packageVersion",
+    "localDataCommit",
+    "manifestSha256",
+    "authority",
+    "buildProof",
+    "buildAudit",
+    "packageAudit",
+    "mirrorFiles",
+    "webFiles",
+    "artifacts",
+    "installationAuthorized",
+    "publicationAuthorized",
+    "operatingApproval",
+    "remotePinVerified",
+    "realM365TestsPerformed"
+  ],
+  "omittedTopLevelFields": [],
+  "limitation": "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+  "historicalStatusNotice": "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+  "data": {
+    "kind": "mvp09-local-artifact-sealing",
+    "status": "passed",
+    "releaseId": "2026-10-18-mvp-09-approved.1",
+    "applicationVersion": "0.9.0",
+    "packageVersion": "0.9.0.0",
+    "localDataCommit": "0ccc4b9178503ede051964149a4b17efab8d0cf9",
+    "manifestSha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265",
+    "authority": {
+      "path": "outputs/release-mvp09-2026-10-18/r09b-execution-approval.json",
+      "byteLength": 205047,
+      "sha256": "87d64bc998f2003cf21ea5fe4eb20abefa2b8eb056f46f5ca26f7733f8fadcd3"
+    },
+    "buildProof": {
+      "path": "outputs/release-mvp09-2026-10-18/product-build.json",
+      "byteLength": 523918,
+      "sha256": "9b1d4312f9fbb0e8256f4208ded9c6dacd0c57705ebf018db53fdfbbd7786105"
+    },
+    "buildAudit": {
+      "status": "passed",
+      "steps": 7,
+      "productInputs": 241,
+      "fixtures": 714,
+      "runtimeFiles": 42,
+      "testCounts": {
+        "source-tests": {
+          "tests": 215,
+          "pass": 215,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "built-tests": {
+          "tests": 170,
+          "pass": 170,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        }
+      }
+    },
+    "packageAudit": {
+      "solutionVersion": "0.9.0.0",
+      "featureVersion": "0.9.0.0",
+      "webpartVersion": "0.9.0",
+      "solutionId": "13090feb-a6bf-40fa-9d3c-ec8d90516a60",
+      "featureId": "3edf1509-41e9-4a2f-8005-df510eec43b6",
+      "webpartId": "596c7f1c-4d3e-4da8-a7be-27a96024f37c",
+      "additionalApiPermissions": [],
+      "defaultGithubBaseUrl": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/0ccc4b9178503ede051964149a4b17efab8d0cf9/data/releases/2026-10-18-mvp-09-approved.1",
+      "bundlePath": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+      "bundleSha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f",
+      "entries": [
+        {
+          "path": "3edf1509-41e9-4a2f-8005-df510eec43b6/WebPart_596c7f1c-4d3e-4da8-a7be-27a96024f37c.xml",
+          "byteLength": 3546,
+          "sha256": "cf6bbecd431de0016af3ac0e7b271d6cf85d85f7a407e96a841084f971cf44b3"
+        },
+        {
+          "path": "AppManifest.xml",
+          "byteLength": 1125,
+          "sha256": "79cc87372014551d80da52a3bd32dd49ace322570d9f2d2ffa155d9c8c3ca062"
+        },
+        {
+          "path": "ClientSideAssets.xml",
+          "byteLength": 312,
+          "sha256": "51ff89e1c9b30c3590bdc9a1dec564681e1f440f036d6b2e13a5aef96e67010f"
+        },
+        {
+          "path": "ClientSideAssets.xml.config.xml",
+          "byteLength": 189,
+          "sha256": "571c33dee59f799f89b72237ac9869eace557b708da29fc0f49258f0def5c3d5"
+        },
+        {
+          "path": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_color.png",
+          "byteLength": 955,
+          "sha256": "a039384a25d219a3b9ec8834cd4f471c2d61a27401a3374c774177282c101e61"
+        },
+        {
+          "path": "ClientSideAssets/596c7f1c-4d3e-4da8-a7be-27a96024f37c_outline.png",
+          "byteLength": 197,
+          "sha256": "c9148d51492dee870752161b17dd272ce10b26766276ea07d82176bad00af649"
+        },
+        {
+          "path": "ClientSideAssets/FristenrechnerWebPartStrings_de-de_2ee9bac8a3d4e2c2ea9299b6969ccbbb.js",
+          "byteLength": 654,
+          "sha256": "260a77a81c5344c36fdf822f66506eb18f0dcae828c87593e58b8567611a740e"
+        },
+        {
+          "path": "ClientSideAssets/FristenrechnerWebPartStrings_en-us_9e448a9afa5ea1af267b7ee268f85d63.js",
+          "byteLength": 640,
+          "sha256": "7fc735b3fbf276a1fe957d7fe920dc11fcd1b0650e11aba55b4b993d9ac43d85"
+        },
+        {
+          "path": "ClientSideAssets/FristenrechnerWebPartStrings_fr-fr_70c468d87117e6f7a8bd265fbc669e1c.js",
+          "byteLength": 691,
+          "sha256": "3ca55e20aadf5126c29ad9a4609f2637b9a950a25b4eee3c3c81cb78ced3157c"
+        },
+        {
+          "path": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js",
+          "byteLength": 1311386,
+          "sha256": "bd7c01bc27868c5d72ad2f92b8468540e46b04b4875cb33dda9e0f3c0adad76f"
+        },
+        {
+          "path": "ClientSideAssets/fristenrechner-web-part_472586d6f229161d90a6.js.LICENSE.txt",
+          "byteLength": 821,
+          "sha256": "d267720e13a0e64f3c112753bc87a157ef071165ed1bc268803316ed0d231d31"
+        },
+        {
+          "path": "[Content_Types].xml",
+          "byteLength": 1035,
+          "sha256": "ca75c17e110c16fd9f5641eb4feeaedaaaf16baedb8a3bf06517663f7b7cb497"
+        },
+        {
+          "path": "_rels/.rels",
+          "byteLength": 288,
+          "sha256": "6bd2b17457aadb66d210e6bddb93c88d49a6f526d48308f1a84bc6e0e6bddb0a"
+        },
+        {
+          "path": "_rels/AppManifest.xml.rels",
+          "byteLength": 486,
+          "sha256": "4c75854b56909d30185553ae4a52cf419d2a31538c7330a3a65a9ff57496b04c"
+        },
+        {
+          "path": "_rels/ClientSideAssets.xml.rels",
+          "byteLength": 1773,
+          "sha256": "486190b6fd6b2e6f072b93dcd8b01dd902b485b66759f726c3241bcbbcfa2959"
+        },
+        {
+          "path": "_rels/feature_3edf1509-41e9-4a2f-8005-df510eec43b6.xml.rels",
+          "byteLength": 560,
+          "sha256": "0384ee8e1cfd74db5c0c3f66b1366d7d07b7857771884d3e5dca86ddde06cc84"
+        },
+        {
+          "path": "feature_3edf1509-41e9-4a2f-8005-df510eec43b6.xml",
+          "byteLength": 304,
+          "sha256": "b680550f2c355c12d6ed8e2c1d28861bfb16965aae5460ad42ed4bd03a72f3f9"
+        },
+        {
+          "path": "feature_3edf1509-41e9-4a2f-8005-df510eec43b6.xml.config.xml",
+          "byteLength": 189,
+          "sha256": "0c40d83effef0c1416077db2162e183d33891fcb960129ae2b895c061e2bd2af"
+        }
+      ]
+    },
+    "mirrorFiles": [
+      {
+        "path": "administrative-procedures/ch-cantonal-administrative-procedures.json",
+        "byteLength": 144912,
+        "sha256": "dc38ce060ef46720b0a833efab54dc569f2ded4397fef9eaa7874b88a6927115"
+      },
+      {
+        "path": "calendars/ap22-ag-21d6f2634ce0.json",
+        "byteLength": 13915,
+        "sha256": "84d107e21e48849f966e42c5428c4885526e0d9097b240e5523972a595a47aea"
+      },
+      {
+        "path": "calendars/ap22-ai-5d4e5a68e106.json",
+        "byteLength": 16090,
+        "sha256": "ff2b7e2b9303a24f99919c2271e822faef792167f7062b063d36811bd0fd4489"
+      },
+      {
+        "path": "calendars/ap22-ai-f507435d8aa8.json",
+        "byteLength": 17067,
+        "sha256": "d9aa7d530dbb9c9373560f38e38234d46d9b9feccdb72b690c3b8b85389a903d"
+      },
+      {
+        "path": "calendars/ap22-ar-88bb22c08a22.json",
+        "byteLength": 9127,
+        "sha256": "82c1b8387f7595f74e80359c13d77a5671f69ba68f7b0d393ac6e9233454a40d"
+      },
+      {
+        "path": "calendars/ap22-bl-72f1a7e0fcf8.json",
+        "byteLength": 12983,
+        "sha256": "508651eac0b2e6a5112b5b5347137ea6758e5ce8ce257e85d12f5700c85eb15c"
+      },
+      {
+        "path": "calendars/ap22-bs-39a64bdfc0fe.json",
+        "byteLength": 13035,
+        "sha256": "b804792ee81a02b1367a78c900f14fab519bd7bfc6dc89db55a8382232f0e1f9"
+      },
+      {
+        "path": "calendars/ap22-fr-7d8c38f7c610.json",
+        "byteLength": 15085,
+        "sha256": "bc1f6ea0caf23ca41b53877ef644360677c0a298382da2b8aa0814d5652d3ed7"
+      },
+      {
+        "path": "calendars/ap22-ge-a36ff7926d08.json",
+        "byteLength": 9635,
+        "sha256": "9973becbb643d6c4c07477ab4c612be629aa58b05ff28216558648add400ae38"
+      },
+      {
+        "path": "calendars/ap22-gl-87c11e156541.json",
+        "byteLength": 14049,
+        "sha256": "c0d8563eb80ec24d72dc2df635cc7fd8f257d2fdc1319bd5c4a21b907a12e121"
+      },
+      {
+        "path": "calendars/ap22-gr-bf0366c8eda2.json",
+        "byteLength": 11851,
+        "sha256": "60073e0e95b96b1d57b213e7464fc21c7aa8837f7bd2ec1af40a49d105447f3a"
+      },
+      {
+        "path": "calendars/ap22-ju-b096c09f506c.json",
+        "byteLength": 15841,
+        "sha256": "3b2b357166a9660985f40633f3c5cfdc99b56ede6b5ac43e63f91cac751573ef"
+      },
+      {
+        "path": "calendars/ap22-lu-55514cd91f06.json",
+        "byteLength": 13337,
+        "sha256": "28fa55a334fa9d946e210524c640cbe8b6350a3465a092551ccc31829b6a599f"
+      },
+      {
+        "path": "calendars/ap22-lu-b879eb8eb04f.json",
+        "byteLength": 17114,
+        "sha256": "c7fa5ab98057b7c8d786dcdf11d6100f4b0689003158f706ac2e4290635d6111"
+      },
+      {
+        "path": "calendars/ap22-ne-027ceadbf103.json",
+        "byteLength": 18918,
+        "sha256": "a952d8ad9b88e39c394cca3f7f52fa743b1edf790c2de660633f5b2c0895eb92"
+      },
+      {
+        "path": "calendars/ap22-ne-21f519039621.json",
+        "byteLength": 20285,
+        "sha256": "7d2d7ae746c2d247409b2750fbd944da4eec186b818bd23660dac082ae2660e6"
+      },
+      {
+        "path": "calendars/ap22-nw-5dfca484e4af.json",
+        "byteLength": 13874,
+        "sha256": "bbd2e2ed615f62db581314536d2b2b188344d394b44131622469c9cbed848e1f"
+      },
+      {
+        "path": "calendars/ap22-ow-76c151dccf1f.json",
+        "byteLength": 13907,
+        "sha256": "2a1f41ccb4f10d1cf9aef66328ee494a942781d7b2ae7001d13164ee73b384f1"
+      },
+      {
+        "path": "calendars/ap22-sg-79009d6d6021.json",
+        "byteLength": 12814,
+        "sha256": "2d778c600932f408e630d1c41c5979cdd76443a5de890170ee9ed83eb4d02d2d"
+      },
+      {
+        "path": "calendars/ap22-sg-f95068e3b162.json",
+        "byteLength": 14210,
+        "sha256": "e5104cbb62619722ee7a07e1a1f194522fe4bbd76d3a6b5f88891e812f1fb7aa"
+      },
+      {
+        "path": "calendars/ap22-sh-1ccc70f9897a.json",
+        "byteLength": 12964,
+        "sha256": "bb867dac5a1e7bfef860de16a709f5b3437857b87e30ef0394e0ab0cfbd6e556"
+      },
+      {
+        "path": "calendars/ap22-sh-ec7d0988145a.json",
+        "byteLength": 14324,
+        "sha256": "b45c3d2ae6c879f598a80895fdfdd333e0a361b539b7b57f97bfdf114cd7d8d5"
+      },
+      {
+        "path": "calendars/ap22-so-3f5f7b7f54f5.json",
+        "byteLength": 13343,
+        "sha256": "fde6b55f82ba0fbdcb6e37a60a96edca821f50d6f853d73ccd81d3a63788ccd2"
+      },
+      {
+        "path": "calendars/ap22-sz-ec9f2c557fe4.json",
+        "byteLength": 17610,
+        "sha256": "c759bffe4a094b66029e5c43a181bf59c71602e003b4c8a300721e2a881917aa"
+      },
+      {
+        "path": "calendars/ap22-tg-3d6514fbabb1.json",
+        "byteLength": 13688,
+        "sha256": "ddfcbd51358a560fe2b770e547839f1d1b7ae46e5cf265823967ab9b74d556b1"
+      },
+      {
+        "path": "calendars/ap22-ti-944ed0286e9a.json",
+        "byteLength": 14966,
+        "sha256": "d10489d27bca8961966fb7cefd98e582f825640e364e44cac57b4c84229e972a"
+      },
+      {
+        "path": "calendars/ap22-ur-67275ff3e872.json",
+        "byteLength": 14826,
+        "sha256": "18c8709e0ea5b66bbf245a3aea622eecbb012c340da30c2056d370812f153743"
+      },
+      {
+        "path": "calendars/ap22-vd-26f452ff34ee.json",
+        "byteLength": 10199,
+        "sha256": "8c978cc507dfc2313ead6becc429f644875005f8dc89250e49c862b625d8e3aa"
+      },
+      {
+        "path": "calendars/ap22-vs-6c002f32b1b0.json",
+        "byteLength": 14071,
+        "sha256": "8d225f727e73f98efe669e9747904846381d4e48da60aa81869d9cc84f4f8b15"
+      },
+      {
+        "path": "calendars/ap22-zg-860e0f8e0e1a.json",
+        "byteLength": 16382,
+        "sha256": "e8e3d02d85e40dafb50ceb919b179f0c8fd16cb9cbf7ca53844592b5d4f86101"
+      },
+      {
+        "path": "calendars/ap22-zh-5aa2974cffee.json",
+        "byteLength": 10518,
+        "sha256": "20de38870da8ae9b78112f0ccd5946d59322a73f1fe04e20dccf80be643ec4d2"
+      },
+      {
+        "path": "calendars/be-public-holidays.json",
+        "byteLength": 10824,
+        "sha256": "4d60941ac2c4454a25b6030af9ec7c334b79132770b4ba558eae3cb1cb8e350f"
+      },
+      {
+        "path": "calendars/ch-federal-calendar.json",
+        "byteLength": 7457,
+        "sha256": "b457c0185a16c1e54770148bdaa4516fa017843a753e76099d130cfb2932a4b9"
+      },
+      {
+        "path": "holiday-catalogs/ch-holiday-catalog.json",
+        "byteLength": 1183838,
+        "sha256": "67c9e5e2153b878af92f46ccd2f25e5669c9116fa54862b45d2c51128fa5c112"
+      },
+      {
+        "path": "manifest.json",
+        "byteLength": 25420,
+        "sha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265"
+      },
+      {
+        "path": "profiles/bgg.json",
+        "byteLength": 8529,
+        "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+      },
+      {
+        "path": "profiles/stpo.json",
+        "byteLength": 6652,
+        "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+      },
+      {
+        "path": "profiles/vrpg-be.json",
+        "byteLength": 8616,
+        "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+      },
+      {
+        "path": "profiles/vwvg.json",
+        "byteLength": 8002,
+        "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+      },
+      {
+        "path": "profiles/zpo.json",
+        "byteLength": 10232,
+        "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+      },
+      {
+        "path": "social-procedures/ch-social-procedures.json",
+        "byteLength": 553237,
+        "sha256": "89e75518f3ac0cf18c99f8218dc308a8158f7792073827d73e896221c8ce34cc"
+      },
+      {
+        "path": "special-regimes/vrpg-be.json",
+        "byteLength": 114845,
+        "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+      }
+    ],
+    "webFiles": [
+      {
+        "path": ".htaccess",
+        "byteLength": 1165,
+        "sha256": "22b8447d9ecc5f709ee0362ba23e813b2ca124bd563b2cf62e57961aaae6b4e8"
+      },
+      {
+        "path": "assets/app-BN2ZJTIL.js",
+        "byteLength": 3135615,
+        "sha256": "e41aa8fed60a008510e4e728a86cb7c8eb23dc8acf94b4e4693c0acd042ab192"
+      },
+      {
+        "path": "assets/app-PQFJG2Q2.css",
+        "byteLength": 12322,
+        "sha256": "98f8f3ef52215ea1b1380f8def7281c715bd0ccebc551825087bf64d33404cb4"
+      },
+      {
+        "path": "assets/fluent-ui-react-cb8d08006f10.js",
+        "byteLength": 977920,
+        "sha256": "cb8d08006f10a51b94a692f12590cbb3a9e0f1660c8d1529cedfce03ac6113fc"
+      },
+      {
+        "path": "assets/react-020d164dcf31.js",
+        "byteLength": 11440,
+        "sha256": "020d164dcf3116ccc2268d6a6e44caa77c0131d8e98e882c6430219d281eef8e"
+      },
+      {
+        "path": "assets/react-dom-93cb736921fc.js",
+        "byteLength": 120585,
+        "sha256": "93cb736921fcb9c3f06ec1c43b85a4e6ccc4f73111355cf75d0ca77f24fae8ed"
+      },
+      {
+        "path": "build-manifest.json",
+        "byteLength": 518,
+        "sha256": "51726c30a06e2df70d879ed2c39cd3ad50cc7ac79570f71a5747aa72cb7edc1d"
+      },
+      {
+        "path": "favicon.svg",
+        "byteLength": 251,
+        "sha256": "5af536ea74422fc2141911b6d512ff423083ebf0e954188ab2026645bc6a1a4e"
+      },
+      {
+        "path": "index.html",
+        "byteLength": 2152,
+        "sha256": "7a2a3d5890902c89ec39f9909fb71b186d467efef65434d8360dccdf81dfeab6"
+      },
+      {
+        "path": "licenses/fluent-ui-MIT.txt",
+        "byteLength": 1251,
+        "sha256": "8348b76df1cbdbf9ec6bca8c2d3313b68c7b33ba5e5696ab07de8c01462a8f0f"
+      },
+      {
+        "path": "licenses/react-MIT.txt",
+        "byteLength": 1086,
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      },
+      {
+        "path": "licenses/react-dom-MIT.txt",
+        "byteLength": 1086,
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "outputs/release-mvp09-2026-10-18/fristenrechner-schweiz-0.9.0.0.sppkg",
+        "byteLength": 327130,
+        "sha256": "7a88f0f8f579c050e8354f8e741921251135bff804318f86dc1b34c1a12cc331"
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/fristenrechner-mvp09-sharepoint-mirror.zip",
+        "byteLength": 235314,
+        "sha256": "13ef7f69f555604d987385132eb4ca38ef62b3e7572023ec2310b41de817c73a"
+      },
+      {
+        "path": "outputs/release-mvp09-2026-10-18/fristenrechner-mvp09-steimer-web.zip",
+        "byteLength": 658325,
+        "sha256": "f7d112b015833251d3d41a5fe418e9f8063fe85aa46e48c1dafbf053031516d3"
+      }
+    ],
+    "installationAuthorized": false,
+    "publicationAuthorized": false,
+    "operatingApproval": false,
+    "remotePinVerified": false,
+    "realM365TestsPerformed": false
+  }
+}

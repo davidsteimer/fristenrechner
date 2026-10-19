@@ -4,9 +4,9 @@ import { PrimaryButton, Dropdown, MessageBar, MessageBarType, TextField } from '
 import { parseIsoDate } from '../core/date';
 import { administrativePeriodDate } from '../core/administrativeCatalog';
 import { generateCalendarFromRules } from '../core/generateCalendar';
-import { getVerifiedAdministrativeData } from '../core/releaseFormat8';
+import { getVerifiedAdministrativeContext } from '../core/administrativeContext';
 import type { AdministrativeDeadlineInput, AdministrativeDeadlineResult } from '../core/administrativeDeadline';
-import type { AdministrativePath, AdministrativeProcedureCatalog, AdministrativeSourceRef, AdministrativeStage } from '../core/administrativeTypes';
+import type { AdministrativePath, AdministrativeProcedureCatalog, AdministrativeProcedureCatalogV2, AdministrativeSourceRef, AdministrativeStage } from '../core/administrativeTypes';
 import { calculatorDropdownStyles } from './dropdownStyles';
 import { administrativeText } from './administrativeMessages';
 import { administrativeExportAvailable } from './administrativeExport';
@@ -22,8 +22,22 @@ export interface AdministrativeUiState {
   readonly urgency: '' | 'none' | 'explicitJudicialUrgencyOrder' | 'unknown';
 }
 export const EMPTY_ADMINISTRATIVE_UI_STATE: AdministrativeUiState = Object.freeze({ stage: '', pathId: '', qualification: '', urgency: '' });
+export type AdministrativeUiCatalog = AdministrativeProcedureCatalog | AdministrativeProcedureCatalogV2;
 
-export function administrativeChoices(catalog: AdministrativeProcedureCatalog, lawId: string, state: AdministrativeUiState): {
+/** Only a current, explicit case choice may confirm the bound path requirements. */
+function qualificationPolicy(catalog: AdministrativeUiCatalog, path?: AdministrativePath) {
+  return catalog.formatVersion === '2.0.0' && path
+    ? catalog.qualificationPolicies.find(policy => policy.pathId === path.pathId && policy.pathRevision === path.revision)
+    : undefined;
+}
+
+export function administrativeQualificationPresentation(catalog: AdministrativeUiCatalog, path?: AdministrativePath) {
+  const policy = qualificationPolicy(catalog, path);
+  const kind = policy?.mode === 'qualifiedDayProcedure' ? policy.requirements.action : undefined;
+  return { choiceKey: kind ? `case.${kind}` : 'generalActualReceipt', scopeKey: kind ? `scope.${kind}` : 'scope' };
+}
+
+export function administrativeChoices(catalog: AdministrativeUiCatalog, lawId: string, state: AdministrativeUiState): {
   readonly stages: readonly AdministrativeStage[]; readonly paths: readonly AdministrativePath[]; readonly path?: AdministrativePath;
 } {
   const available = catalog.paths.filter(path => path.lawId === lawId);
@@ -35,13 +49,13 @@ export function administrativeChoices(catalog: AdministrativeProcedureCatalog, l
 }
 
 /** Only real one-value choices are fixed. No case fact is inferred by this step. */
-export function settleAdministrativeUiState(catalog: AdministrativeProcedureCatalog, lawId: string, state: AdministrativeUiState): AdministrativeUiState {
+export function settleAdministrativeUiState(catalog: AdministrativeUiCatalog, lawId: string, state: AdministrativeUiState): AdministrativeUiState {
   const choices = administrativeChoices(catalog, lawId, state);
   const stage = state.stage || (choices.stages.length === 1 ? choices.stages[0]! : '');
   return { ...state, stage, pathId: state.pathId || choices.path?.pathId || '' };
 }
 
-export function changeAdministrativeSelection(catalog: AdministrativeProcedureCatalog, lawId: string, state: AdministrativeUiState,
+export function changeAdministrativeSelection(catalog: AdministrativeUiCatalog, lawId: string, state: AdministrativeUiState,
   field: 'stage' | 'pathId', value: string): AdministrativeUiState {
   return settleAdministrativeUiState(catalog, lawId, {
     ...state, [field]: value, ...(field === 'stage' ? { pathId: '' } : {}), qualification: '', urgency: ''
@@ -49,7 +63,7 @@ export function changeAdministrativeSelection(catalog: AdministrativeProcedureCa
 }
 
 export interface QualifyAdministrativeUiOptions {
-  readonly catalog: AdministrativeProcedureCatalog;
+  readonly catalog: AdministrativeUiCatalog;
   readonly lawId: string;
   readonly authorityCanton: string;
   readonly inputDate: string;
@@ -72,6 +86,8 @@ export function qualifyAdministrativeUiInput(options: QualifyAdministrativeUiOpt
     ? 'validation.unsupported' : 'validation.qualification';
   if (!parseIsoDate(inputDate)) errors.inputDate = 'validation.inputDate';
   const path = choices.path;
+  const policy = qualificationPolicy(catalog, path);
+  if (catalog.formatVersion === '2.0.0' && path && !policy) errors.qualification = 'validation.qualification';
   if (path?.duration.kind === 'statutoryDays') {
     if (deadlineDays !== undefined && deadlineDays !== path.duration.value) errors.deadlineDays = 'validation.durationMismatch';
   } else if (typeof deadlineDays !== 'number' || !Number.isInteger(deadlineDays) || deadlineDays < 1 || deadlineDays > 365) {
@@ -86,6 +102,11 @@ export function qualifyAdministrativeUiInput(options: QualifyAdministrativeUiOpt
     inputDate, deadlineDays: path.duration.kind === 'statutoryDays' ? path.duration.value : deadlineDays!,
     qualification: { delivery: 'qualifiedActualDelivery', generalRoute: 'qualified', specialLaw: 'excluded',
       explicitHolidayException: 'none', fixedEndDate: false, deviatingStart: false, evidenceAdvance: false },
+    ...(policy?.mode === 'qualifiedDayProcedure' ? { caseQualification: {
+      action: policy.requirements.action, decisionKind: policy.requirements.decisionKind,
+      unit: policy.requirements.unit, direction: 'forward' as const, opening: policy.requirements.opening,
+      notice: policy.requirements.notice, termChange: policy.requirements.termChange
+    } } : {}),
     urgency: urgencyRelevant ? state.urgency as 'none' | 'explicitJudicialUrgencyOrder' : 'none'
   } };
 }
@@ -96,7 +117,7 @@ function FixedValue({ label, value }: { readonly label: string; readonly value: 
 }
 
 export interface AdministrativeProcedureFieldsProps {
-  readonly catalog: AdministrativeProcedureCatalog;
+  readonly catalog: AdministrativeUiCatalog;
   readonly lawId: string;
   readonly locale: Locale;
   readonly value: AdministrativeUiState;
@@ -109,6 +130,7 @@ export function AdministrativeProcedureFields({ catalog, lawId, locale, value, o
   const text = (key: string): string => administrativeText(locale, key);
   const state = settleAdministrativeUiState(catalog, lawId, value);
   const { stages, paths, path } = administrativeChoices(catalog, lawId, state);
+  const qualification = administrativeQualificationPresentation(catalog, path);
   const error = (key: string): string => errors[key] ? text(errors[key]!) : '';
   const stageLabel = text('stage');
   const actionLabel = text('action');
@@ -128,8 +150,8 @@ export function AdministrativeProcedureFields({ catalog, lawId, locale, value, o
             if (typeof option?.key === 'string') onChange(changeAdministrativeSelection(catalog, lawId, state, 'pathId', option.key));
           }} />}
     <Dropdown styles={calculatorDropdownStyles} required label={text('qualification')} selectedKey={state.qualification}
-      title={text('scope')} aria-describedby="fr-administrative-scope" disabled={!path} errorMessage={error('qualification')}
-      options={[{ key: '', text: text('choose') }, { key: 'generalActualReceipt', text: text('generalActualReceipt') },
+      title={text(qualification.scopeKey)} aria-describedby="fr-administrative-scope" disabled={!path} errorMessage={error('qualification')}
+      options={[{ key: '', text: text('choose') }, { key: 'generalActualReceipt', text: text(qualification.choiceKey) },
         { key: 'specialOrDeviating', text: text('specialOrDeviating') }, { key: 'unknown', text: text('unknown') }]}
       onChange={(_event, option) => {
         if (option?.key === '' || option?.key === 'generalActualReceipt' || option?.key === 'specialOrDeviating' || option?.key === 'unknown') {
@@ -150,7 +172,7 @@ export function AdministrativeProcedureFields({ catalog, lawId, locale, value, o
 }
 
 export function AdministrativeAutomaticParameters({ catalog, lawId, state, locale }: {
-  readonly catalog: AdministrativeProcedureCatalog; readonly lawId: string; readonly state: AdministrativeUiState; readonly locale: Locale;
+  readonly catalog: AdministrativeUiCatalog; readonly lawId: string; readonly state: AdministrativeUiState; readonly locale: Locale;
 }): React.ReactElement {
   const text = (key: string): string => administrativeText(locale, key);
   const { path } = administrativeChoices(catalog, lawId, state);
@@ -164,7 +186,7 @@ export function AdministrativeAutomaticParameters({ catalog, lawId, state, local
   return <><dl className="fr-automatic__grid">
     <div><dt>{text('holiday')}</dt><dd>{binding ? `${binding.authoritySeatCanton} · ${text('authority')}` : text('unresolved')}</dd></div>
     <div><dt>{text('suspension')}</dt><dd>{suspensionText}</dd></div>
-  </dl><details className="fr-trace"><summary>{text('scopeHeading')}</summary><p id="fr-administrative-scope">{text('scope')}</p></details></>;
+  </dl><details className="fr-trace"><summary>{text('scopeHeading')}</summary><p id="fr-administrative-scope">{text(administrativeQualificationPresentation(catalog, path).scopeKey)}</p></details></>;
 }
 
 function date(value: string): string { return value.split('-').reverse().join('.'); }
@@ -173,16 +195,24 @@ function date(value: string): string { return value.split('-').reverse().join('.
 const administrativeSourceNames: Readonly<Record<string, { readonly de: string; readonly fr: string }>> = {
   'SRC-AP23B-TI-HOL': { de: 'Gesetz über die offiziellen Feiertage TI', fr: 'Loi sur les jours fériés officiels TI' },
   'SRC-AP23B-GR-RTG': { de: 'Gesetz über die öffentlichen Ruhetage GR', fr: 'Loi sur les jours de repos publics GR' },
+  'SRC-AP23E1-LU-RTG-20260927': { de: 'Ruhetags- und Ladenschlussgesetz LU', fr: 'Loi sur les jours de repos et la fermeture des magasins LU' },
+  'SRC-AP23E1-AR-ARGV-20160101': { de: 'Ruhetagsgesetz AR', fr: 'Loi sur les jours de repos AR' },
   'SRC-AP23B-CH-HOL': { de: 'Bundesgesetz über den Bundesfeiertag', fr: 'Loi fédérale sur la fête nationale' }
 };
 const administrativePeriodNames: Readonly<Record<string, string>> = {
-  'ti-easter': 'period.easter', 'gr-easter': 'period.easter',
-  'ti-summer': 'period.summer', 'gr-summer': 'period.summer',
-  'ti-winter': 'period.winter', 'gr-winter': 'period.winter'
+  'ti-easter': 'period.easter', 'gr-easter': 'period.easter', 'ar-easter': 'period.easter',
+  'ti-summer': 'period.summer', 'gr-summer': 'period.summer', 'ar-summer': 'period.summer',
+  'ti-winter': 'period.winter', 'gr-winter': 'period.winter', 'ar-winter': 'period.winter'
 };
 
+/** The archived review annotation remains in technical provenance, not in a legal article label. */
+function readableNormLocator(ref: AdministrativeSourceRef): string {
+  return ref.sourceId === 'SRC-AP23B-CH-HOL' && ref.locator === 'Art. 1, historische Wiederverwendung ohne neue Quellenfreigabe'
+    ? 'Art. 1' : ref.locator;
+}
+
 function AdministrativeNorms({ refs, catalog, locale }: {
-  readonly refs: readonly AdministrativeSourceRef[]; readonly catalog: AdministrativeProcedureCatalog; readonly locale: Locale;
+  readonly refs: readonly AdministrativeSourceRef[]; readonly catalog: AdministrativeUiCatalog; readonly locale: Locale;
 }): React.ReactElement | null {
   const statutes = refs.filter((ref, index) => refs.findIndex(other => other.sourceId === ref.sourceId && other.locator === ref.locator) === index)
     .flatMap(ref => {
@@ -194,13 +224,13 @@ function AdministrativeNorms({ refs, catalog, locale }: {
     });
   return statutes.length ? <p className="fr-trace__sources">{administrativeText(locale, 'legalBasis')}: {statutes.map(({ ref, source, name, title }, index) =>
     <React.Fragment key={`${ref.sourceId}:${ref.locator}`}>{index ? ' · ' : ''}<a href={source.url} title={title}
-      target="_blank" rel="noopener noreferrer">{name}: {ref.locator}</a></React.Fragment>)}</p> : null;
+      target="_blank" rel="noopener noreferrer">{name}: {readableNormLocator(ref)}</a></React.Fragment>)}</p> : null;
 }
 
 /** Resolve only the exact result bindings. This is presentation of an existing result, never another deadline calculation. */
 function administrativeTracePresentation(result: AdministrativeDeadlineResult, input: AdministrativeDeadlineInput,
-  context: unknown, catalog: AdministrativeProcedureCatalog, locale: Locale) {
-  const data = getVerifiedAdministrativeData(context);
+  context: unknown, catalog: AdministrativeUiCatalog, locale: Locale) {
+  const data = getVerifiedAdministrativeContext(context);
   const provenance = result.provenance;
   if (!data || data.catalog !== catalog || !provenance || provenance.releaseId !== data.releaseId) return undefined;
   const path = catalog.paths.find(value => value.pathId === provenance.pathId && value.revision === provenance.revision && value.lawId === provenance.lawId);
@@ -260,7 +290,7 @@ export interface AdministrativeResultViewProps {
   readonly result: AdministrativeDeadlineResult;
   readonly input: AdministrativeDeadlineInput;
   readonly context: unknown;
-  readonly catalog: AdministrativeProcedureCatalog;
+  readonly catalog: AdministrativeUiCatalog;
   readonly locale: Locale;
   readonly calendarReference: string;
   readonly onCalendarReferenceChange: (value: string) => void;
@@ -272,6 +302,8 @@ export function AdministrativeResultView({ result, input, context, catalog, loca
   const provenance = result.provenance;
   const presentation = React.useMemo(() => administrativeTracePresentation(result, input, context, catalog, locale), [result, input, context, catalog, locale]);
   const exportAvailable = administrativeExportAvailable(input, context, result);
+  const reason = (key: string): string => key === 'endShiftIntoSuspensionUnresolved' && provenance?.lawId === 'vrpg-ar'
+    ? text('endShiftIntoSuspensionUnresolvedAR') : text(key);
   return <section className="fr-result" aria-labelledby="fr-administrative-result-heading">
     <h2 id="fr-administrative-result-heading">{text(calculated && result.referenceOnly ? 'referenceResult' : 'result')}</h2>
     <MessageBar messageBarType={calculated ? MessageBarType.success : MessageBarType.blocked}>{text(calculated ? 'calculated' : 'blocked')}</MessageBar>
@@ -286,7 +318,7 @@ export function AdministrativeResultView({ result, input, context, catalog, loca
           onChange={(_event, value) => onCalendarReferenceChange(value ?? '')} /><p className="fr-calendar-export__privacy">{translate(locale, 'calendar.privacy')}</p></dd></div>
         : <div><dt>{text(result.referenceOnly ? 'noExport' : 'exportUnavailable')}</dt></div>}
     </dl>}
-    {!calculated && <div className="fr-result__messages"><ul>{result.blockReasonKeys.map(key => <li key={key}>{text(key)}</li>)}</ul></div>}
+    {!calculated && <div className="fr-result__messages"><ul>{result.blockReasonKeys.map(key => <li key={key}>{reason(key)}</li>)}</ul></div>}
     <details className="fr-trace" open={!calculated}><summary>{text('trace')}</summary>
       <div data-testid="administrative-readable-trace">
       <dl>
@@ -314,7 +346,7 @@ export function AdministrativeResultView({ result, input, context, catalog, loca
         <AdministrativeNorms refs={presentation.binding.legalBinding.sourceRefs} catalog={catalog} locale={locale} />
       </>}
       {(!presentation || presentation.unresolvedNames) && <p>{text('traceDetailsUnavailable')}</p>}
-      <h4>{text('scopeHeading')}</h4><p>{text('scope')}</p>
+      <h4>{text('scopeHeading')}</h4><p>{text(administrativeQualificationPresentation(catalog, presentation?.path).scopeKey)}</p>
       </div>
       <div data-testid="administrative-technical-evidence"><TechnicalTraceDetails locale={locale}>
       <dl>

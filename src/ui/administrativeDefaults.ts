@@ -2,7 +2,7 @@
 // AP23D2: preferences are visible choices, never case facts or release authority.
 import type { CalculationData } from '../core';
 import type { AdministrativeDeadlineInput } from '../core/administrativeDeadline';
-import { getVerifiedAdministrativeData, type ParsedFormat8Data } from '../core/releaseFormat8';
+import { getVerifiedAdministrativeContext, type ParsedAdministrativeContext } from '../core/administrativeContext';
 import { canonicalSocialJson } from '../core/socialCatalog';
 import type { Locale } from './i18n';
 import { DEFAULTS_STORAGE_KEY } from './defaults';
@@ -15,7 +15,7 @@ export type AdministrativeProcedureSelection =
   | AdministrativeDeadlineInput['selection'];
 export interface AdministrativeDefaultsContext {
   readonly legacyData: CalculationData;
-  readonly administrativeData?: ParsedFormat8Data | undefined;
+  readonly administrativeData?: ParsedAdministrativeContext | undefined;
 }
 export interface AdministrativePreferences {
   readonly locale: Locale;
@@ -70,7 +70,7 @@ function selection(context: AdministrativeDefaultsContext, value: unknown, autho
   if (value.kind !== 'cantonalAdministrative'
     || !Object.keys(value).every(key => ['kind', 'lawId', 'pathId', 'revision', 'stage'].includes(key))) return null;
   // Serializing a context or catalog does not create an issued reader capability.
-  const verified = getVerifiedAdministrativeData(context.administrativeData);
+  const verified = getVerifiedAdministrativeContext(context.administrativeData);
   const law = verified?.catalog.laws.find(item => item.lawId === value.lawId && item.canton === authority);
   const path = verified?.catalog.paths.find(item => item.lawId === law?.lawId && item.pathId === value.pathId
     && item.revision === value.revision && item.stages.some(stage => stage === value.stage));
@@ -127,7 +127,7 @@ function invalidSelection(context: AdministrativeDefaultsContext, raw: unknown, 
   }
   if (clean.procedureSelection?.kind === 'cantonalAdministrative') {
     const selected = clean.procedureSelection;
-    const duration = getVerifiedAdministrativeData(context.administrativeData)?.catalog.paths.find(path => path.pathId === selected.pathId)?.duration;
+    const duration = getVerifiedAdministrativeContext(context.administrativeData)?.catalog.paths.find(path => path.pathId === selected.pathId)?.duration;
     if (duration?.kind === 'statutoryDays' && clean.deadlineDays !== duration.value) return 'unsupportedDuration';
   }
   return undefined;

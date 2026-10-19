@@ -133,5 +133,5 @@ test('only the local preview has a query candidate selector, public entries rema
   const normal = readFileSync('src/public-app/main.tsx', 'utf8');
   assert.match(entry, /ap22c3CandidateRuntime/); assert.match(entry, /referenceOnlyAllCalculations/);
   assert.doesNotMatch(entry, /URLSearchParams|location\.search|initialState|qaPreset/);
-  assert.match(normal, /mvp08Runtime/); assert.doesNotMatch(normal, /ap22c3|referenceOnlyAllCalculations/);
+  assert.match(normal, /mvp09Runtime/); assert.doesNotMatch(normal, /ap22c3|referenceOnlyAllCalculations/);
 });

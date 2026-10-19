@@ -16,7 +16,7 @@ import {
 } from './data';
 import { CalendarGenerationError } from './generateCalendar';
 import { hasQualifiedCalendarPath, trustedFormat7Runtime } from './format7Runtime';
-import { trustedFormat8Runtime } from './format8Runtime';
+import { trustedModernRuntime } from './modernRuntime';
 import { countDayDeadline } from './dayDeadlineArithmetic';
 import type {
   BlockedDeadlineResult,
@@ -379,18 +379,18 @@ function isCalculationResult(value: DateResolution | SuspensionConfiguration | C
 }
 
 export function calculateDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
-  // Format 8 has a separate, byte-issued qualification boundary. A caller may
+  // Formats 8 and 9 have separate byte-issued qualification boundaries. A caller may
   // not smuggle an invented old profile through this historical entry point.
-  if (data.formatVersion === '8.0.0') {
+  if (['8.0.0', '9.0.0'].includes(data.formatVersion)) {
     return blocked({ reasons: ['administrativeProcedure.qualifiedContextRequired'] });
   }
   return calculateLegacyProfile(input, data);
 }
 
-/** Shared host entry. Format 8 is qualified without masquerading as Format 7. */
+/** Shared host entry. Each native format retains its own issued capability. */
 export function calculateRuntimeDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
-  if (data.formatVersion !== '8.0.0') return calculateDeadline(input, data);
-  if (!trustedFormat8Runtime(data)
+  if (!['8.0.0', '9.0.0'].includes(data.formatVersion)) return calculateDeadline(input, data);
+  if (!trustedModernRuntime(data)
     || (['stpo', 'zpo', 'bgg', 'vwvg'].includes(input.profileId) && !hasQualifiedCalendarPath(data))
     || (input.profileId === 'vrpg-be' && input.calendarId !== 'be-public-holidays')) {
     return blocked({ reasons: ['calendarBinding.qualifiedContextRequired'] });

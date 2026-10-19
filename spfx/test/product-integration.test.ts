@@ -24,7 +24,7 @@ const RELEASE_ROOT = resolve(
 );
 
 const EXPECTED_PINNED_RELEASE_URL =
-  'https://raw.githubusercontent.com/davidsteimer/fristenrechner/10a99419eaabb3e96d2acccf0c7a93e2fe6472cb/data/releases/2026-10-15-mvp-08-approved.1';
+  'https://raw.githubusercontent.com/davidsteimer/fristenrechner/0ccc4b9178503ede051964149a4b17efab8d0cf9/data/releases/2026-10-18-mvp-09-approved.1';
 
 class DirectoryProvider implements IReleaseProvider {
   public readonly id = 'fixture:mvp04';
@@ -35,7 +35,7 @@ class DirectoryProvider implements IReleaseProvider {
   }
 }
 
-test('pinnt den MVP-0.8-Datenrelease auf den tatsächlichen lokalen Datencommit ohne Publikationsbehauptung', () => {
+test('pinnt den MVP-0.9-Datenrelease auf den tatsächlichen lokalen Datencommit ohne Publikationsbehauptung', () => {
   assert.equal(PINNED_GITHUB_RELEASE_URL, EXPECTED_PINNED_RELEASE_URL);
 });
 
@@ -113,8 +113,8 @@ test('exponiert dasselbe WebPart in SharePoint und Teams ohne zusätzliche API-F
   assert.deepEqual(manifest.supportedHosts, ['SharePointWebPart', 'TeamsTab']);
   assert.equal(manifest.id, '596c7f1c-4d3e-4da8-a7be-27a96024f37c');
   assert.equal(packageSolution.solution.includeClientSideAssets, true);
-  assert.equal(packageSolution.solution.version, '0.8.0.0');
-  assert.equal(packageSolution.solution.features[0].version, '0.8.0.0');
+  assert.equal(packageSolution.solution.version, '0.9.0.0');
+  assert.equal(packageSolution.solution.features[0].version, '0.9.0.0');
   assert.equal(manifest.preconfiguredEntries[0].properties.githubBaseUrl, PINNED_GITHUB_RELEASE_URL);
   assert.equal('webApiPermissionRequests' in packageSolution.solution, false);
 });

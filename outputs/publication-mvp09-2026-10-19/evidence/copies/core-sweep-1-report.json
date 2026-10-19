@@ -1,0 +1,1280 @@
+{
+  "scope": "AP23E3 local product and AP5 differential regression",
+  "node": "v22.23.2",
+  "beforeTreeSha256": "ced4384521c647c43aad4b30695d390d66a5ec1031474419156923c4871cb745",
+  "afterTreeSha256": "ced4384521c647c43aad4b30695d390d66a5ec1031474419156923c4871cb745",
+  "checkedFiles": 244,
+  "changedDuringRun": [],
+  "allCommandsPassed": true,
+  "runs": [
+    {
+      "command": [
+        "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "exitCode": 0,
+      "log": "core-sweep-1-product.txt",
+      "sha256": "eeca0c0227a413a140ed6277707bfaa8b2356776248b1741ea87c1a9748dce59",
+      "tests": 2654,
+      "pass": 2654,
+      "fail": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    {
+      "command": [
+        "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "--import",
+        "tsx",
+        "scripts/check-ap23d1-legacy-equivalence.mjs"
+      ],
+      "exitCode": 0,
+      "log": "core-sweep-1-legacy.txt",
+      "sha256": "52edaf9c5e1bd67dda3c3c8bade70f164319120922997da8329c4a58022fe065",
+      "tests": 0,
+      "pass": 0,
+      "fail": 0,
+      "skipped": 0,
+      "todo": 0,
+      "comparisons": 1584
+    },
+    {
+      "command": [
+        "<REPO_ROOT>/.work/toolchains/node-v22.23.2-darwin-arm64/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "log": "core-sweep-1-types.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 0,
+      "pass": 0,
+      "fail": 0,
+      "skipped": 0,
+      "todo": 0
+    }
+  ],
+  "afterFiles": [
+    {
+      "path": "package.json",
+      "byteLength": 12622,
+      "sha256": "ce754821f45a4e81fcd1e93bb4ff41df4705c643073fa4f805a1349654913394"
+    },
+    {
+      "path": "schemas/README.md",
+      "byteLength": 8064,
+      "sha256": "46f8e508cf8588327fdaea6573d096d94e3e916c4282835cd1025551c328d1ce"
+    },
+    {
+      "path": "schemas/administrative-procedure-catalog-v2.schema.json",
+      "byteLength": 45568,
+      "sha256": "cbedc3757fd1e5919b1c8c2a4969597e697df56bcf147c14fa6b81e30cd161e0"
+    },
+    {
+      "path": "schemas/administrative-procedure-catalog.schema.json",
+      "byteLength": 40051,
+      "sha256": "c89cf5739b1ec4ca238f15b2d1b0a696e7b3b6c81824b0b4075fdeb43a2f7010"
+    },
+    {
+      "path": "schemas/calendar-rule-reference-suite.schema.json",
+      "byteLength": 7146,
+      "sha256": "410bf475ed3bf70e7075d83744032ebba8af66ab8a4a80b91ef9834d274fe125"
+    },
+    {
+      "path": "schemas/calendar-rules-v2.schema.json",
+      "byteLength": 12885,
+      "sha256": "a01a220c6df09cd932ca7407f0a04bad2217acb6e0a45dec06b9358926caca98"
+    },
+    {
+      "path": "schemas/calendar-rules-v3.schema.json",
+      "byteLength": 21707,
+      "sha256": "86ec46d639e703cc30dfb1b51fc9cbdb573c911e11920acf503babebec85ca57"
+    },
+    {
+      "path": "schemas/calendar.schema.json",
+      "byteLength": 4242,
+      "sha256": "9f25cf222b0cf3ef758389736362ebf5c43cd857cd50e6c089c8f218fed096b2"
+    },
+    {
+      "path": "schemas/candidates/ap22b/calendar-rules-v3.schema.json",
+      "byteLength": 21707,
+      "sha256": "86ec46d639e703cc30dfb1b51fc9cbdb573c911e11920acf503babebec85ca57"
+    },
+    {
+      "path": "schemas/candidates/ap22b/holiday-catalog-v2.schema.json",
+      "byteLength": 53957,
+      "sha256": "b1ef62006968380731209bdf31a952222ea2779811264cc492727bcca3122069"
+    },
+    {
+      "path": "schemas/candidates/ap22b/release-manifest-v7.schema.json",
+      "byteLength": 12255,
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "schemas/candidates/ap23c/administrative-procedure-catalog.schema.json",
+      "byteLength": 40058,
+      "sha256": "a9bb3aa220c6f6612f092d97c9dc199563aaa2e6b87b6687939c3cfdc4ecabea"
+    },
+    {
+      "path": "schemas/candidates/ap23c/release-manifest-v8.schema.json",
+      "byteLength": 13844,
+      "sha256": "535d8f9754758900f9952a2b7a676824190efb58ecee6a437510853fc3316fb2"
+    },
+    {
+      "path": "schemas/candidates/ap23e2/administrative-input-v2.schema.json",
+      "byteLength": 4039,
+      "sha256": "5e488869d660dc78f22ef182159fd306f84c5be7fa3387da14dd31bd339075eb"
+    },
+    {
+      "path": "schemas/candidates/ap23e2/administrative-procedure-catalog-v2.schema.json",
+      "byteLength": 45616,
+      "sha256": "2e55da9b01a147cad6591c8277a91ab70d1ccfc0bb07d4c8720cdb046d542372"
+    },
+    {
+      "path": "schemas/candidates/ap23e2/local-reference-manifest-v9.schema.json",
+      "byteLength": 13792,
+      "sha256": "59a4aadb232f060346fe2c9aae93bcc6080d0dfc8cb3d1a0af9f278c912d47ec"
+    },
+    {
+      "path": "schemas/candidates/ap23e2/release-manifest-v9.schema.json",
+      "byteLength": 13780,
+      "sha256": "c9e6650ac318f504057960e5e04dd28231e3e37a6d2fe9961b3fa17be28261f2"
+    },
+    {
+      "path": "schemas/common.schema.json",
+      "byteLength": 4935,
+      "sha256": "a3616757f84b5f5ab5c2c671abf628e643303cb4c8ffd3afd01751b82f6ef1f8"
+    },
+    {
+      "path": "schemas/deadline-definition.schema.json",
+      "byteLength": 10112,
+      "sha256": "7d3a654a930624bb9b386dfb8ca38ca124f9967df8ecc3de07eb40a9110bae8c"
+    },
+    {
+      "path": "schemas/deadline-rule.schema.json",
+      "byteLength": 8118,
+      "sha256": "af42e162bebb1079d877aeafd9602c10161f20803e692861d4d8be295b3e7749"
+    },
+    {
+      "path": "schemas/filing-profile.schema.json",
+      "byteLength": 5707,
+      "sha256": "f40ed45d6c12693163fb91d61539a4bb70bc950de5517e5e635cb7c31fabaa0a"
+    },
+    {
+      "path": "schemas/golden-case-suite.schema.json",
+      "byteLength": 10092,
+      "sha256": "8558b6394d1c88c387d841fc530cce56d77ee94cc21f54214b49c5ce489f1e2f"
+    },
+    {
+      "path": "schemas/holiday-catalog-v1.schema.json",
+      "byteLength": 27593,
+      "sha256": "03af4aabdfcd34d9f73f14dc01322ce1c77ad34f45e47bddb63cb5f3b58db0a4"
+    },
+    {
+      "path": "schemas/holiday-catalog-v2.schema.json",
+      "byteLength": 53957,
+      "sha256": "b1ef62006968380731209bdf31a952222ea2779811264cc492727bcca3122069"
+    },
+    {
+      "path": "schemas/implementation/ap22c1/calendar-rules-v3.schema.json",
+      "byteLength": 21707,
+      "sha256": "86ec46d639e703cc30dfb1b51fc9cbdb573c911e11920acf503babebec85ca57"
+    },
+    {
+      "path": "schemas/implementation/ap22c1/holiday-catalog-v2.schema.json",
+      "byteLength": 53957,
+      "sha256": "b1ef62006968380731209bdf31a952222ea2779811264cc492727bcca3122069"
+    },
+    {
+      "path": "schemas/implementation/ap22c1/release-manifest-v7.schema.json",
+      "byteLength": 12255,
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "schemas/implementation/ap22c3/local-reference-manifest-v7.schema.json",
+      "byteLength": 12171,
+      "sha256": "a0ccbbc1317891488adc86c9a0586a15c6d7e5f0f13ae578bf743824cedc8c4a"
+    },
+    {
+      "path": "schemas/implementation/ap23d1/administrative-procedure-catalog.schema.json",
+      "byteLength": 40051,
+      "sha256": "c89cf5739b1ec4ca238f15b2d1b0a696e7b3b6c81824b0b4075fdeb43a2f7010"
+    },
+    {
+      "path": "schemas/implementation/ap23d1/local-reference-manifest-v8.schema.json",
+      "byteLength": 13722,
+      "sha256": "174f7731e14f435e57a3138d30c4ce0e68f18d7f341c6f59fef779557fc61d59"
+    },
+    {
+      "path": "schemas/implementation/ap23d1/release-manifest-v8.schema.json",
+      "byteLength": 13703,
+      "sha256": "65a8f8e63a013209b57d8802a4c1dc34760c861b8a5cd78b8fb0264aca13fd8a"
+    },
+    {
+      "path": "schemas/implementation/ap23e3/local-reference-manifest-v9.schema.json",
+      "byteLength": 13715,
+      "sha256": "ecbe2fc25a1026cd53b810a86196d7bc68038f9a7da50a7881236a604eaff569"
+    },
+    {
+      "path": "schemas/legal-profile.schema.json",
+      "byteLength": 12886,
+      "sha256": "e1b87a82247f3f09c52aae1629e5a0d4db4de2dd6a493524746427073e2e6145"
+    },
+    {
+      "path": "schemas/release-manifest-v5.schema.json",
+      "byteLength": 13074,
+      "sha256": "650e40b34b1a897d87c0e0ea67907b4c8c103ca31c93da63a8619df5252a6dd8"
+    },
+    {
+      "path": "schemas/release-manifest-v6.schema.json",
+      "byteLength": 13080,
+      "sha256": "c6ea5582d47db4fbc8fceec1819af2648c6aaaf1f9f169caf2e301d5f22b4825"
+    },
+    {
+      "path": "schemas/release-manifest-v7.schema.json",
+      "byteLength": 12255,
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "schemas/release-manifest-v8.schema.json",
+      "byteLength": 13703,
+      "sha256": "65a8f8e63a013209b57d8802a4c1dc34760c861b8a5cd78b8fb0264aca13fd8a"
+    },
+    {
+      "path": "schemas/release-manifest-v9.schema.json",
+      "byteLength": 13693,
+      "sha256": "1b489a9cc4efad7751586c5f9bdfa198a0ea6396f4737db9c363e98089c12333"
+    },
+    {
+      "path": "schemas/release-manifest.schema.json",
+      "byteLength": 13826,
+      "sha256": "40dd8dc433fa8f56aa69b5d298faed87ccaf6b405e05004dcf4004bf838feb80"
+    },
+    {
+      "path": "schemas/social-procedure-catalog-v2.schema.json",
+      "byteLength": 27806,
+      "sha256": "16bf46bfe0eeb88fe4015800e903c9b749eb8bb69b74a4e4474f9f5aa0186203"
+    },
+    {
+      "path": "schemas/social-procedure-catalog.schema.json",
+      "byteLength": 26655,
+      "sha256": "d5474577cde47ab4dd3a7e28b2ba2cfd428db2f9ecd80999e3bfd007c1eb4aa0"
+    },
+    {
+      "path": "schemas/source-register.schema.json",
+      "byteLength": 4514,
+      "sha256": "227b44cb6d03b829ea8ab87b6c77018b57197a9813cfdbd28cc6cbf1191c6c6f"
+    },
+    {
+      "path": "schemas/source-review-event.schema.json",
+      "byteLength": 7900,
+      "sha256": "1c4e2c6f79f367958319ee3b812ae34a84989a4b83142731bd0493cb09cc0eba"
+    },
+    {
+      "path": "schemas/source-review-index.schema.json",
+      "byteLength": 4177,
+      "sha256": "4a0691a905af45726415a20546308db95eb07c470327dade6ab994a27418e0df"
+    },
+    {
+      "path": "schemas/special-golden-case-suite.schema.json",
+      "byteLength": 11593,
+      "sha256": "1cab64dc11281ad0ce60b09cf35a4618d576d1bf341161dc9785b4cdb8d83732"
+    },
+    {
+      "path": "schemas/special-regime-catalog-v2.schema.json",
+      "byteLength": 10127,
+      "sha256": "1e326d5d70b788e866551e0f8e3252b2666006a96b463d9adc23d416e5af3324"
+    },
+    {
+      "path": "schemas/special-regime-catalog-v3.schema.json",
+      "byteLength": 5787,
+      "sha256": "50f8cb02b8e5b5bebffdb97594b9f3c51b89bb58b2ec26c487baea92f3a1854e"
+    },
+    {
+      "path": "schemas/special-regime-catalog.schema.json",
+      "byteLength": 9939,
+      "sha256": "6897f6ff1137b308808b10059f939e59492546750462afdf29944b277a4a8bf9"
+    },
+    {
+      "path": "scripts/check-ap23d1-legacy-equivalence.mjs",
+      "byteLength": 2620,
+      "sha256": "c3819f6db4b6043352a41fe0825ba98b5f6a6dd95a39bef0deef0fe9458c8471"
+    },
+    {
+      "path": "scripts/run-standard-tests.mjs",
+      "byteLength": 2917,
+      "sha256": "135b32c3f3e87849b8d0452cd535ea322937da75340098ddf7228822ea04b268"
+    },
+    {
+      "path": "src/README.md",
+      "byteLength": 899,
+      "sha256": "d9f3bef436ff05620ef5a7577240164c97017d30b36ebbde39d6a78557209f27"
+    },
+    {
+      "path": "src/core/README.md",
+      "byteLength": 9358,
+      "sha256": "73af97628193e5de7028bb0cc700ceb609ab54405c2fc6853a85b5b2e3ea921c"
+    },
+    {
+      "path": "src/core/administrativeCatalog.ts",
+      "byteLength": 13066,
+      "sha256": "90a71bea6bdff4e341803bf635a45530f9361788efa229e33ca1f1d3b03a8ec7"
+    },
+    {
+      "path": "src/core/administrativeCatalogV2.ts",
+      "byteLength": 6043,
+      "sha256": "ca5b3fe7e7aae6e961142e8aa20520cddb1c9817ec058347962ed307622df4ff"
+    },
+    {
+      "path": "src/core/administrativeContext.ts",
+      "byteLength": 749,
+      "sha256": "2fe50d676d72b8bd5786571ee7375df08a418adfa81d0ccb6d97b163d3e6f111"
+    },
+    {
+      "path": "src/core/administrativeDeadline.ts",
+      "byteLength": 15325,
+      "sha256": "058f666020ecdf901114a3209888335857a568f8513c3ec434c938ccd8b18d4b"
+    },
+    {
+      "path": "src/core/administrativeTypes.ts",
+      "byteLength": 7987,
+      "sha256": "1ff1ad326ad35978dc3a7731a855f941579f3854ba364edc88095f0f0d479c0b"
+    },
+    {
+      "path": "src/core/administrativeTypesV2.ts",
+      "byteLength": 2845,
+      "sha256": "30283d0bcdf88342cc6db7add96336086462e0cf2366c9b5cc169fd6f9a6bf34"
+    },
+    {
+      "path": "src/core/administrativeV2Baseline.ts",
+      "byteLength": 7461,
+      "sha256": "eb2252b582a2257dda23226e5755cf4d123f121f536c24af13550a3d7ce110aa"
+    },
+    {
+      "path": "src/core/calculateCalendarBoundDeadline.ts",
+      "byteLength": 13227,
+      "sha256": "d71a2945267226f1537320039155362d60b829e55145d5ed43d025d7061b7523"
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "byteLength": 25353,
+      "sha256": "f0080bc73f136ef08f6253414024e9b37a6daf0a48b6f284e17f4e324fdacbd2"
+    },
+    {
+      "path": "src/core/calculateQualifiedSpecialDeadline.ts",
+      "byteLength": 963,
+      "sha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530"
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "byteLength": 31011,
+      "sha256": "58afd57ac033d4d5352dc4a4a7b584e9072e9c335869870f7bf8721bdae5343c"
+    },
+    {
+      "path": "src/core/calculatorRuntime.ts",
+      "byteLength": 12923,
+      "sha256": "4804f644e02f2f3b7ff800241b5b499223971b95e4988bed6722107afb12ae49"
+    },
+    {
+      "path": "src/core/calendarMigration.ts",
+      "byteLength": 1867,
+      "sha256": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3"
+    },
+    {
+      "path": "src/core/calendarResolution.ts",
+      "byteLength": 6705,
+      "sha256": "70355b6be18ec2978f976d3b3f25a32fdc487335c4ef4fc2f6c6c5829625c4e3"
+    },
+    {
+      "path": "src/core/calendarRuleTypes.ts",
+      "byteLength": 5750,
+      "sha256": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952"
+    },
+    {
+      "path": "src/core/data.ts",
+      "byteLength": 20131,
+      "sha256": "fe32faeaad982296c919b2ea091d5be27ba0a50dfa5ef4748ef9d368b620e037"
+    },
+    {
+      "path": "src/core/date.ts",
+      "byteLength": 4847,
+      "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc"
+    },
+    {
+      "path": "src/core/dayDeadlineArithmetic.ts",
+      "byteLength": 6233,
+      "sha256": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895"
+    },
+    {
+      "path": "src/core/format7Baseline.ts",
+      "byteLength": 496,
+      "sha256": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb"
+    },
+    {
+      "path": "src/core/format7Runtime.ts",
+      "byteLength": 1435,
+      "sha256": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2"
+    },
+    {
+      "path": "src/core/format8CalculationData.ts",
+      "byteLength": 5519,
+      "sha256": "e3e388ef5e2b4b9a1b89b275fe3aee1db21e302889868fc97a2fc7fa924ce33a"
+    },
+    {
+      "path": "src/core/format8Runtime.ts",
+      "byteLength": 2706,
+      "sha256": "05e14603823da33ec457f179156123be4404caf702914940bc7f0ca3cd713acf"
+    },
+    {
+      "path": "src/core/format9CalculationData.ts",
+      "byteLength": 5523,
+      "sha256": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e"
+    },
+    {
+      "path": "src/core/format9Runtime.ts",
+      "byteLength": 3252,
+      "sha256": "fcf2ed9e20172a83098b9937117e894c16f6dcd70240b3a4ad4bd39f5ad2c570"
+    },
+    {
+      "path": "src/core/generateCalendar.ts",
+      "byteLength": 37002,
+      "sha256": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218"
+    },
+    {
+      "path": "src/core/holidayActivation.ts",
+      "byteLength": 18481,
+      "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4"
+    },
+    {
+      "path": "src/core/holidayActivationTypes.ts",
+      "byteLength": 4801,
+      "sha256": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5"
+    },
+    {
+      "path": "src/core/holidayCatalog.ts",
+      "byteLength": 40025,
+      "sha256": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9"
+    },
+    {
+      "path": "src/core/holidayCatalogTypes.ts",
+      "byteLength": 7059,
+      "sha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338"
+    },
+    {
+      "path": "src/core/index.ts",
+      "byteLength": 3206,
+      "sha256": "03851a8baf94900bc7d1b7b910a1348a0bcd2b41b249c998f1bfe154a3623ef0"
+    },
+    {
+      "path": "src/core/modernRuntime.ts",
+      "byteLength": 958,
+      "sha256": "a5d9f3d5815624ac923d983e0465ecb75d35866eb58853f3bd6b25ea55374795"
+    },
+    {
+      "path": "src/core/qualifiedApplicability.ts",
+      "byteLength": 8794,
+      "sha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5"
+    },
+    {
+      "path": "src/core/qualifiedTypes.ts",
+      "byteLength": 2537,
+      "sha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48"
+    },
+    {
+      "path": "src/core/releaseFormat7.ts",
+      "byteLength": 9915,
+      "sha256": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268"
+    },
+    {
+      "path": "src/core/releaseFormat8.ts",
+      "byteLength": 19922,
+      "sha256": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6"
+    },
+    {
+      "path": "src/core/releaseFormat9.ts",
+      "byteLength": 20076,
+      "sha256": "e099d01ed314ced7dbda4f53a4cc7f44f6d3203a04b00b4401ad63f21d398034"
+    },
+    {
+      "path": "src/core/schemaContract.ts",
+      "byteLength": 9320,
+      "sha256": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643"
+    },
+    {
+      "path": "src/core/socialCatalog.ts",
+      "byteLength": 27163,
+      "sha256": "51a6164e68c4001e84ce6d8704a047e6fd53efcbe4acb997ad4c80a7d8710643"
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "byteLength": 15663,
+      "sha256": "42f36e402b2176099514698bd3fbdbf05e4abb9862d85d4bd85519ee0a1a8d0d"
+    },
+    {
+      "path": "src/core/socialTypes.ts",
+      "byteLength": 7785,
+      "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370"
+    },
+    {
+      "path": "src/core/specialTypes.ts",
+      "byteLength": 10491,
+      "sha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89"
+    },
+    {
+      "path": "src/core/types.ts",
+      "byteLength": 8327,
+      "sha256": "cd1a435a6a366836daec5820a0ba56f585df9f95a9f562ad678243e4ba8520e8"
+    },
+    {
+      "path": "src/public-app/PublicShell.tsx",
+      "byteLength": 1682,
+      "sha256": "3404723c74ce0b330e2a6b6bc07912f28d0965cb450fd940c7642bd83042e4c8"
+    },
+    {
+      "path": "src/public-app/ap17c-main.tsx",
+      "byteLength": 794,
+      "sha256": "df14deac50fe27a2f6b22d68915315dc6c41f1311a7570bd0c99671899bc11bf"
+    },
+    {
+      "path": "src/public-app/ap18c-main.tsx",
+      "byteLength": 781,
+      "sha256": "18122d4029d0ccdd9f540c2e12fbe08493916c9374f4542c6106ee5d628c4c7b"
+    },
+    {
+      "path": "src/public-app/ap19c3-main.tsx",
+      "byteLength": 785,
+      "sha256": "8680176fc699e8c4b75e04077ffa7ff0e9dff656f6b216aff945e9cbf9beb7a6"
+    },
+    {
+      "path": "src/public-app/ap21-main.tsx",
+      "byteLength": 956,
+      "sha256": "08fe3bdd0b323267531ff3619f2cf33cd8711b1bcc5a632237c92f102d1d3224"
+    },
+    {
+      "path": "src/public-app/ap22c3-main.tsx",
+      "byteLength": 886,
+      "sha256": "5d295a66f01672cc00cfe4921e3a7663314edbf8f9ca80ab9536d5aaa3b977de"
+    },
+    {
+      "path": "src/public-app/ap23d3-main.tsx",
+      "byteLength": 876,
+      "sha256": "9c9720cbefcdc38d7d202367cc64d6d979c6e161fc41b02b08205c5aaa3971dc"
+    },
+    {
+      "path": "src/public-app/ap23e3-main.tsx",
+      "byteLength": 859,
+      "sha256": "645a2f5dc2f6c0b31603c1f54198bbb42a02c238046ba2344704be3fccc33504"
+    },
+    {
+      "path": "src/public-app/main.tsx",
+      "byteLength": 696,
+      "sha256": "f39c73fb8a4052ca92407eea2ca853e834630153066aa37349fb10fdfa7a1294"
+    },
+    {
+      "path": "src/public-app/public.css",
+      "byteLength": 3727,
+      "sha256": "742c9debca8abda3f938223bca04871797ef507de462414bb8441c3beb04858a"
+    },
+    {
+      "path": "src/release/ap17cCandidateData.ts",
+      "byteLength": 2014,
+      "sha256": "27474ab1a3f851039a75c70378d04373ce1804f833741873133f0192e42805d5"
+    },
+    {
+      "path": "src/release/ap18cCandidateData.ts",
+      "byteLength": 2232,
+      "sha256": "14d30978c7a92e859c21932cfd87c649806dc779873c77cbdf0ec488315909b6"
+    },
+    {
+      "path": "src/release/ap19c2CandidateData.ts",
+      "byteLength": 2374,
+      "sha256": "d587741b140b357111fa1ec18244146dd60e067eb4998e71c8004e9bb2587aa8"
+    },
+    {
+      "path": "src/release/ap19c3CandidateData.ts",
+      "byteLength": 2378,
+      "sha256": "bd0963c19109ac430861ca6f4eb5d6fbf236df8ab558bf8c564440d2d8a0abef"
+    },
+    {
+      "path": "src/release/ap19cCandidateData.ts",
+      "byteLength": 2368,
+      "sha256": "3469e306e5c6719c28c5a9053ef3398fe3fd9270845a61a5001e71464fe3f5a5"
+    },
+    {
+      "path": "src/release/ap20c1CandidateData.ts",
+      "byteLength": 2375,
+      "sha256": "0cc971039ab7a2a6db5503500cf6d0c42b3b0e9d397535e6388d606f0ba886ca"
+    },
+    {
+      "path": "src/release/ap20c2CandidateData.ts",
+      "byteLength": 2378,
+      "sha256": "95317450ad9a0420fd7636374b955730a94c4949fc631bf4dc7bdcf85f6f52b3"
+    },
+    {
+      "path": "src/release/ap20c3CandidateData.ts",
+      "byteLength": 2377,
+      "sha256": "400dc0817eeae5f3cfe7ac5a9518fc0d73fb8e37d89edfa8552a24fa73a5da6c"
+    },
+    {
+      "path": "src/release/ap22c2CandidateData.ts",
+      "byteLength": 4127,
+      "sha256": "ae60d6c3c350f493283177b17d27633acdad765a1a9c889e4aad1d56dd9f4d33"
+    },
+    {
+      "path": "src/release/ap22c3CandidateData.ts",
+      "byteLength": 2613702,
+      "sha256": "a11e5d83a7a7a0b04c5f1512acbadd5b2c2d87c8f6613650fe285114f9b4ad8f"
+    },
+    {
+      "path": "src/release/ap23d2CandidateData.ts",
+      "byteLength": 2670096,
+      "sha256": "09d8b20e268d030e28e6c00fec665992588a39368b1c661a35ea5029075c33b1"
+    },
+    {
+      "path": "src/release/ap23d3CandidateData.ts",
+      "byteLength": 403,
+      "sha256": "5e8e609138710116951bd61c1c26dd4e311ae742df91a3285c9378cc3833ada1"
+    },
+    {
+      "path": "src/release/ap23e3CandidateData.ts",
+      "byteLength": 2749732,
+      "sha256": "312fa7bddf86230353077b3d140c47fc4f94c476215399b6ec2c290d10ae6cb1"
+    },
+    {
+      "path": "src/release/approvedMvp03Data.ts",
+      "byteLength": 1961,
+      "sha256": "38cf659dba6f564843f3aced84dfeb701d6cfe5b03fa5fb480433447301d858f"
+    },
+    {
+      "path": "src/release/mvp04ReleaseData.ts",
+      "byteLength": 2142,
+      "sha256": "061c5c89ee42183c2419a4296b26eaf2e2e4c4d317880ae5c9bb79139e1671ba"
+    },
+    {
+      "path": "src/release/mvp05ReleaseData.ts",
+      "byteLength": 2392,
+      "sha256": "82e1975ff14e77a4398a0d59529ce62ca301c7308538fce14800910d82147afc"
+    },
+    {
+      "path": "src/release/mvp06ReleaseData.ts",
+      "byteLength": 2392,
+      "sha256": "4490c58d3191d2d9356ea0cdac3fdab6925f77b5d2be5e697e76ceda07ab238b"
+    },
+    {
+      "path": "src/release/mvp07ReleaseData.ts",
+      "byteLength": 2622882,
+      "sha256": "61b66959bde680186612bcf35ea1d455044ceae6001abfdd56971d0a6e47c88b"
+    },
+    {
+      "path": "src/release/mvp08ReleaseData.ts",
+      "byteLength": 2692225,
+      "sha256": "f308de0723ef9745161ccbb47420cd2edc14e0725ea30b0b2081beb7372fdd90"
+    },
+    {
+      "path": "src/ui/DateInput.tsx",
+      "byteLength": 13122,
+      "sha256": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4"
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "byteLength": 106897,
+      "sha256": "65f08b72a2cf60160872e556dd2c7951cb669e20caf3c4af19f5a9f90404b486"
+    },
+    {
+      "path": "src/ui/README.md",
+      "byteLength": 20466,
+      "sha256": "45be0082342a68665944975ab2b20eef6bc604e842ff3fde904219fe58cb22e2"
+    },
+    {
+      "path": "src/ui/administrativeDefaults.ts",
+      "byteLength": 14832,
+      "sha256": "3c093045208cdd91c346bdea98cd880787593f3d27be3bed3b0f7f631743be80"
+    },
+    {
+      "path": "src/ui/administrativeExport.ts",
+      "byteLength": 4480,
+      "sha256": "6247d3f211eac2a31b97c89cbbe599e586e4013d4fc05ba44cc7c85a20cd1326"
+    },
+    {
+      "path": "src/ui/administrativeMessages.ts",
+      "byteLength": 21243,
+      "sha256": "83f06b546344305262748cab6ec990a00ef6a10698c9a48ed19fa61d69d6a6b1"
+    },
+    {
+      "path": "src/ui/administrativeUi.tsx",
+      "byteLength": 27724,
+      "sha256": "92e81f7251f9e80d5c7a927e922d9fead78b20336938ac9a6ebdb22738a4fe8d"
+    },
+    {
+      "path": "src/ui/browserAppearance.tsx",
+      "byteLength": 2991,
+      "sha256": "2857123fde2647ace56866f0ae59450ba96bf2ecddb8e2d0ad274c985d3a93dc"
+    },
+    {
+      "path": "src/ui/calendarContextUi.tsx",
+      "byteLength": 10905,
+      "sha256": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6"
+    },
+    {
+      "path": "src/ui/calendarExport.ts",
+      "byteLength": 5153,
+      "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89"
+    },
+    {
+      "path": "src/ui/calendarMessages.ts",
+      "byteLength": 12322,
+      "sha256": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb"
+    },
+    {
+      "path": "src/ui/dateEntry.ts",
+      "byteLength": 2889,
+      "sha256": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683"
+    },
+    {
+      "path": "src/ui/dateFormCommit.ts",
+      "byteLength": 1722,
+      "sha256": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983"
+    },
+    {
+      "path": "src/ui/dateInputSession.ts",
+      "byteLength": 1310,
+      "sha256": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79"
+    },
+    {
+      "path": "src/ui/dateTransition.ts",
+      "byteLength": 3384,
+      "sha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc"
+    },
+    {
+      "path": "src/ui/defaults.ts",
+      "byteLength": 8095,
+      "sha256": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9"
+    },
+    {
+      "path": "src/ui/dropdownStyles.ts",
+      "byteLength": 1036,
+      "sha256": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808"
+    },
+    {
+      "path": "src/ui/holidayConnectionDropdown.ts",
+      "byteLength": 261,
+      "sha256": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368"
+    },
+    {
+      "path": "src/ui/i18n.ts",
+      "byteLength": 51804,
+      "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369"
+    },
+    {
+      "path": "src/ui/index.ts",
+      "byteLength": 1126,
+      "sha256": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757"
+    },
+    {
+      "path": "src/ui/model.ts",
+      "byteLength": 14853,
+      "sha256": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e"
+    },
+    {
+      "path": "src/ui/preview/data.ts",
+      "byteLength": 142,
+      "sha256": "023f731428bcc56eef63d16f5bd90631336b52bfd3f2d472195b069ab4886b33"
+    },
+    {
+      "path": "src/ui/preview/main.tsx",
+      "byteLength": 2951,
+      "sha256": "5233a9cc0dc7b074dc682f3eeadb8e21c6ae6e0718df88af656d43fbf8b1c37d"
+    },
+    {
+      "path": "src/ui/preview/preview.css",
+      "byteLength": 218,
+      "sha256": "602125ac26970c8101e370a5c7d531872ed8e977b7e106f9c904a146528eb67d"
+    },
+    {
+      "path": "src/ui/preview/qaPresets.ts",
+      "byteLength": 3234,
+      "sha256": "ffad8021bc2780257d6e406487b41ea80da45a5b03c3f97193e69e30739d6759"
+    },
+    {
+      "path": "src/ui/qualifiedMessages.ts",
+      "byteLength": 9525,
+      "sha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645"
+    },
+    {
+      "path": "src/ui/socialMessages.ts",
+      "byteLength": 33653,
+      "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "byteLength": 11578,
+      "sha256": "72c251f705eef079c0b949062be58059548b4f3dab18ba062c9960ca4afb609b"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "byteLength": 11549,
+      "sha256": "98d503207f4ae43c22c9ed241a4fb4e34177b624750f0cc8868b85614ba4b6be"
+    },
+    {
+      "path": "src/ui/tracePresentation.tsx",
+      "byteLength": 12130,
+      "sha256": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace"
+    },
+    {
+      "path": "src/ui/vrpgQualification.ts",
+      "byteLength": 8554,
+      "sha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef"
+    },
+    {
+      "path": "src/ui/vrpgSelection.ts",
+      "byteLength": 20547,
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+    },
+    {
+      "path": "tests/core/ap12c-release.test.ts",
+      "byteLength": 6701,
+      "sha256": "1f4c881a47d3cdb174ca471f8d98fdc6a645de701137892e7b2e5abaa46bda95"
+    },
+    {
+      "path": "tests/core/ap17c-qualified.test.ts",
+      "byteLength": 20282,
+      "sha256": "838c79e7745fb2a33c1f400ced9e6b7cb45a62f4ea8e5323d13060b3d407e940"
+    },
+    {
+      "path": "tests/core/ap18c-integration.test.ts",
+      "byteLength": 8808,
+      "sha256": "1ffa575dea4e65cafc22968c5589db595b448f391fbd4242479762850f8a0af8"
+    },
+    {
+      "path": "tests/core/ap19c-builder.test.ts",
+      "byteLength": 2838,
+      "sha256": "25120b60e0c5f32d1bb2bca5c551368bff9f53dd11bbc77388a75d90b83c05f7"
+    },
+    {
+      "path": "tests/core/ap19c-integration.test.ts",
+      "byteLength": 10118,
+      "sha256": "209dbfdcab1e5f0110f78482afc8b81a45ab1ec5aeb0d2dfdb8efd06377e24ad"
+    },
+    {
+      "path": "tests/core/ap19c-social.test.ts",
+      "byteLength": 19351,
+      "sha256": "a64e8485ee8ccba8e2efb940e4705d7b04bc8a1ed7ed7b74912c62b0fb7d8ffa"
+    },
+    {
+      "path": "tests/core/ap19c2-builder.test.ts",
+      "byteLength": 7336,
+      "sha256": "9b5849207aed07e21aa269ab8ff0d583a910b852a25d5fe88da9952df25720ec"
+    },
+    {
+      "path": "tests/core/ap19c2-integration.test.ts",
+      "byteLength": 19178,
+      "sha256": "785c248fadefee9950aee6c06928cd0b4adb554bc92fa44b4fc9e85730f864ed"
+    },
+    {
+      "path": "tests/core/ap19c3-builder.test.ts",
+      "byteLength": 7626,
+      "sha256": "e1b8770e2658a58618f6d30fd655d61a5588042a98f650b6de44a97119357fd4"
+    },
+    {
+      "path": "tests/core/ap19c3-integration.test.ts",
+      "byteLength": 21437,
+      "sha256": "97de8f50ec1ca0f43f058c0af72fd06c92f0a8b5178e5b5054cf087f52c882da"
+    },
+    {
+      "path": "tests/core/ap20b-compatibility.test.ts",
+      "byteLength": 2084,
+      "sha256": "98ad06874e24ff3be174d9919f956214a9220137a0fe92abfeec2b48fd05f081"
+    },
+    {
+      "path": "tests/core/ap20c1-consumer.test.ts",
+      "byteLength": 7906,
+      "sha256": "0b82e3d94ac0ee7fa8ad6901fe0ef77358e3192b7b01a1e07e599865f0259bae"
+    },
+    {
+      "path": "tests/core/ap20c1-eog.test.ts",
+      "byteLength": 17106,
+      "sha256": "b29b6c68e6c34d5f10836ecea4b01bff81deb316c952843e061d68184e5aa7bf"
+    },
+    {
+      "path": "tests/core/ap20c2-family.test.ts",
+      "byteLength": 22773,
+      "sha256": "619ecbf907bf4813d47041e42a068fae7f86d7a9c0a2c113f5856d6e0b7bc79f"
+    },
+    {
+      "path": "tests/core/ap20c3-mvg-uelg.test.ts",
+      "byteLength": 27045,
+      "sha256": "1f23d9214d4b4ccc587890257b17a156c57b5b7eb295363beecd36001d0d046f"
+    },
+    {
+      "path": "tests/core/ap22c1-calendar.test.ts",
+      "byteLength": 11940,
+      "sha256": "0de4eaab54154a49224ae7f2c7ca77c6529eeaac2b596bd7f5579a26a7645e80"
+    },
+    {
+      "path": "tests/core/ap22c1-projection.test.ts",
+      "byteLength": 8715,
+      "sha256": "a37c48cb2eb3afed1ae5f3ce503f3ab6dd1b87211fd6cfe0685eb6239f190eda"
+    },
+    {
+      "path": "tests/core/ap22c1-release.test.ts",
+      "byteLength": 7624,
+      "sha256": "feca12cbd248cc2f00f23a17bef9d14b7894f4227ec8fc756a708c48fb305f67"
+    },
+    {
+      "path": "tests/core/ap22c1-schema.test.ts",
+      "byteLength": 5057,
+      "sha256": "f98172341ed69e5187e015332915a30bea5cc5fd0680318632eb9d9c62da7acf"
+    },
+    {
+      "path": "tests/core/ap22c2-calendar.test.ts",
+      "byteLength": 16151,
+      "sha256": "a4c22e9a568bd31b1af86308e7b6516a5d2bf58db6687d532694e209252c6de0"
+    },
+    {
+      "path": "tests/core/ap22c3-runtime.test.ts",
+      "byteLength": 14316,
+      "sha256": "d5967e1bc4c2b345ab7107eff69830a7c4239c7749f0bb0c3a145fc8e5d11c1c"
+    },
+    {
+      "path": "tests/core/ap23d1-arithmetic.test.ts",
+      "byteLength": 5399,
+      "sha256": "4675dea7b6df6e49dfd0c44697b2ad3ed7256dc7a1823792f91fb4acd619e88e"
+    },
+    {
+      "path": "tests/core/ap23d1-catalog.test.ts",
+      "byteLength": 17251,
+      "sha256": "d1c168badd72ecae71c2a7d20291b6b4cc5bec5a4ce82d1602c5ffff2b0e6058"
+    },
+    {
+      "path": "tests/core/ap23d1-deadline.test.ts",
+      "byteLength": 14712,
+      "sha256": "a9d89ac2600057d05c20e6367497322feb754aadafb9d8cd574d11d6829a60d0"
+    },
+    {
+      "path": "tests/core/ap23d1-reader.test.ts",
+      "byteLength": 13224,
+      "sha256": "4306c0f30d1da5d1714035219e0cbf8971eb2ebe867654f22ee9d6120e8a7005"
+    },
+    {
+      "path": "tests/core/ap23d1Fixtures.ts",
+      "byteLength": 8615,
+      "sha256": "6a38a3e6934ec1d0d422c17972e8ebd92b4b4dd0abd12494440b78939b31801b"
+    },
+    {
+      "path": "tests/core/ap23d2-data.test.ts",
+      "byteLength": 12614,
+      "sha256": "11e700ea79b0e8b130ced9ba4db9748c32feacbd858f0ab56088e383d637705f"
+    },
+    {
+      "path": "tests/core/ap23d3-runtime.test.ts",
+      "byteLength": 16977,
+      "sha256": "64b2a7139383659d08b1fd0ba422b7a366fbc12a93575494ad656f2f276ac20e"
+    },
+    {
+      "path": "tests/core/ap23e3-candidate.test.ts",
+      "byteLength": 11717,
+      "sha256": "ab73fde44eefc1f4fead649815d644a465d6d08aa9e63c7ab77d997698c13242"
+    },
+    {
+      "path": "tests/core/ap23e3-core.test.ts",
+      "byteLength": 15362,
+      "sha256": "7962b4e309f16d386b8b882733b193ae5ec359f11c4141db348e13273aed3e17"
+    },
+    {
+      "path": "tests/core/ap23e3-runtime.test.ts",
+      "byteLength": 16790,
+      "sha256": "71384660d9757b44501c4f7e57b8120c31ec3bc1bd24e3b6809565fcd52cdb3e"
+    },
+    {
+      "path": "tests/core/ap23e3Fixtures.ts",
+      "byteLength": 5481,
+      "sha256": "98c6977b76a6006c21f1d48595163c2980b158b225eb0de3112d55f201b577f5"
+    },
+    {
+      "path": "tests/core/calendar-rules.test.ts",
+      "byteLength": 14275,
+      "sha256": "150c80e750842b52345e0fc912e610260dfabdb0c70106fc780674355a3f62b6"
+    },
+    {
+      "path": "tests/core/date.test.ts",
+      "byteLength": 1272,
+      "sha256": "fd8b53520ccbab15918c27fc81a3c3c0433077533c9b2f2553b40925c72fc5ab"
+    },
+    {
+      "path": "tests/core/fixtures.ts",
+      "byteLength": 2242,
+      "sha256": "bae0aa789c29eb1a043e52639d58ea0facd93be3f95ce997877234f297e89adb"
+    },
+    {
+      "path": "tests/core/golden-cases.test.ts",
+      "byteLength": 3066,
+      "sha256": "52606677e23493b01f361ac56370fad8228e13645172bfe2e17744aeabb7f45c"
+    },
+    {
+      "path": "tests/core/holiday-catalog.test.ts",
+      "byteLength": 18627,
+      "sha256": "881d8ef2f174dd3f7aa36305eed1aa2236f507a87b0a9d0a53b3f131da7725d7"
+    },
+    {
+      "path": "tests/core/mvp05-promotion.test.ts",
+      "byteLength": 12484,
+      "sha256": "974c0ce505e5296ba0953f49257f6e18e8215f71b5c30a7df0eb4a402be48c2b"
+    },
+    {
+      "path": "tests/core/mvp06-release-promotion.test.ts",
+      "byteLength": 6281,
+      "sha256": "bca0a523a639e2c33e7faa71266ba43d9dc6c138d82f42da952f26015f63c541"
+    },
+    {
+      "path": "tests/core/mvp06-release.test.ts",
+      "byteLength": 15791,
+      "sha256": "31507c226b1fbbfb644989f38fc7d006f3db1283c4b899690997269436aadc69"
+    },
+    {
+      "path": "tests/core/mvp07-release.test.ts",
+      "byteLength": 17776,
+      "sha256": "b2ff0ed57335a5211bdab0b6a94ee3d0b992fad3cc070d827cc24e3932a06815"
+    },
+    {
+      "path": "tests/core/mvp08-promotion-delta.test.ts",
+      "byteLength": 3320,
+      "sha256": "3629262697af396928104cee35316a8138e21f19f67c8b8828ca55ea1e446ea8"
+    },
+    {
+      "path": "tests/core/safety.test.ts",
+      "byteLength": 4854,
+      "sha256": "ba42d8e8ec7490bec728e942d405ad3c308718d64fe06c060a2c74b13837291d"
+    },
+    {
+      "path": "tests/core/special-golden-cases.test.ts",
+      "byteLength": 1316,
+      "sha256": "687c928e7effd4087c0605b76b827f508d4c57e4a22661ea54aeec51074475bf"
+    },
+    {
+      "path": "tests/core/special-rule-families.test.ts",
+      "byteLength": 3528,
+      "sha256": "b9c270f99eb4ea864d7e914c391ebaeb534a026ccf8ff524d9cabbe7e9c56827"
+    },
+    {
+      "path": "tests/core/special-safety.test.ts",
+      "byteLength": 5760,
+      "sha256": "ab92c720721ccb87644099ed8f6a2d4b8d4ea4efee49bf060d2c848ff1380f24"
+    },
+    {
+      "path": "tests/core/specialFixtures.ts",
+      "byteLength": 2326,
+      "sha256": "51849cc9e031220222cca09923667a4a6ba3b3ba4132d244b38cc76bf88261bc"
+    },
+    {
+      "path": "tests/ui/ap12c.test.ts",
+      "byteLength": 1664,
+      "sha256": "934f747164e1c86f1e20283a6d082ffbc4547da045369875a4dda41634e0859c"
+    },
+    {
+      "path": "tests/ui/ap17c-qualified.test.ts",
+      "byteLength": 11765,
+      "sha256": "62a48c9b0832169a25c89076d6da79df74b08bd5ed930601af9498aac607d25b"
+    },
+    {
+      "path": "tests/ui/ap18c-preview.test.ts",
+      "byteLength": 3823,
+      "sha256": "17b326359bc029ae6878a3d4c7f8ce05db3ff413ecf9d74ba834cbddbadcbe6e"
+    },
+    {
+      "path": "tests/ui/ap19c-social.test.ts",
+      "byteLength": 18253,
+      "sha256": "2bd33e971ac27ea5a2ddcc406d30abd5acf2e6217afe719136a54f3bfaf80ca3"
+    },
+    {
+      "path": "tests/ui/ap19c2-social.test.ts",
+      "byteLength": 11604,
+      "sha256": "0e455d8ed53716ca70e58c6a6494875662c58ecc61f8a40d7daafb7448d9cc4d"
+    },
+    {
+      "path": "tests/ui/ap19c3-social.test.ts",
+      "byteLength": 14950,
+      "sha256": "caa02908bc919c86d5b0d1ce4e89a624f46aff9966bfea4c3294aad97d67fe51"
+    },
+    {
+      "path": "tests/ui/ap20c1-eog.test.ts",
+      "byteLength": 12706,
+      "sha256": "a14950f5f2ab1b19ace476df65bc32a26943f30f997f5a68e6c2ee4ef19e2ed1"
+    },
+    {
+      "path": "tests/ui/ap20c2-family.test.ts",
+      "byteLength": 11071,
+      "sha256": "f749edb90867db57e04383c2583b37fbbceade3090ed55f135a72fedb25bdf54"
+    },
+    {
+      "path": "tests/ui/ap20c3-mvg-uelg.test.ts",
+      "byteLength": 12804,
+      "sha256": "cfcfe71a563e543c4ea8b37da2dbb5f20e1ff90355103f0145d8343b6ea7cbbd"
+    },
+    {
+      "path": "tests/ui/ap21-app.test.tsx",
+      "byteLength": 14029,
+      "sha256": "f967425921411db3549f807d45f30f2a90627c1f7574923e398f772bfdc1bddc"
+    },
+    {
+      "path": "tests/ui/ap21-date-entry.test.ts",
+      "byteLength": 9745,
+      "sha256": "0dbb9831be629ae5fa22ac4145d93aa306a3bb8f1b8219a537a1439e1fd66bcf"
+    },
+    {
+      "path": "tests/ui/ap21-date-input.test.tsx",
+      "byteLength": 10658,
+      "sha256": "28980d8610b1dbfbbce0d35671fe5640273489d2118f30da903b71983e04387d"
+    },
+    {
+      "path": "tests/ui/ap21-form-commit.test.ts",
+      "byteLength": 4587,
+      "sha256": "d5e3180efbc0011df5a56fb7e98a55418c0228ead6b53667e28221a68a554aad"
+    },
+    {
+      "path": "tests/ui/ap22c2-candidate.test.ts",
+      "byteLength": 2354,
+      "sha256": "00117fac3a066ed0a964cd4ad9b9f314326d3f82f1cc2ef8ec1f9c7d63871c4c"
+    },
+    {
+      "path": "tests/ui/ap22c2-defaults.test.ts",
+      "byteLength": 10463,
+      "sha256": "67971ac1beed43488e29a931a249cde51ec663559e315c8f003fc9c603683d09"
+    },
+    {
+      "path": "tests/ui/ap22c2-ui.test.tsx",
+      "byteLength": 11559,
+      "sha256": "c0ee14b422333f830abc6c0e01ab111a24f1abc9eff4e2783802980c7bd59833"
+    },
+    {
+      "path": "tests/ui/ap22c3-host-policy.test.tsx",
+      "byteLength": 9087,
+      "sha256": "053ee0fe978f60df14dda5e76c77329a9717d1856c56ee2c78f6aa1c004b68af"
+    },
+    {
+      "path": "tests/ui/ap23d2-administrative.test.tsx",
+      "byteLength": 13556,
+      "sha256": "b9f98ba107a3cf25f20893c44b8650c0ecb969c9feae313b0a952efd102ea31a"
+    },
+    {
+      "path": "tests/ui/ap23d2-app.test.tsx",
+      "byteLength": 10829,
+      "sha256": "789b9f6094aacea35307517118a197b53356a8ff6d2e3052ee94ef9cc50be6f2"
+    },
+    {
+      "path": "tests/ui/ap23d2-defaults.test.ts",
+      "byteLength": 21356,
+      "sha256": "defdb1aa073b734c3f3da980be56a3905310417a44c8bfe9f925f4c59368ae50"
+    },
+    {
+      "path": "tests/ui/ap23d2-reference-policy.test.tsx",
+      "byteLength": 5310,
+      "sha256": "c4a84f77bfa5a9b62d269f7595bb75f0be3091b644d16c0c63b6fbcb6e1b13ed"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-admin.test.tsx",
+      "byteLength": 12191,
+      "sha256": "59d3b38fba0b2ec37a1da165e4a1172b5d93a87ed73cd1178bcdb99263f2e97d"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-app.test.tsx",
+      "byteLength": 11344,
+      "sha256": "988da748a45c3ed0cda66516491c5ab3f51f21bdc84f7385827b268843b0fa47"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-context.test.tsx",
+      "byteLength": 9421,
+      "sha256": "c1bff426500aa4330dc720746eafcc6b715f484cd7bbc0aca9eef202600bc3fd"
+    },
+    {
+      "path": "tests/ui/ap23d2-ux-trace.test.tsx",
+      "byteLength": 12278,
+      "sha256": "447017b255cf41c8f67199c80e6e3ebde55c1b5b55019fb647f6854783b9b4dd"
+    },
+    {
+      "path": "tests/ui/ap23d3-app.test.tsx",
+      "byteLength": 13965,
+      "sha256": "f55eda54399131a948e9eba75ec3e3f3e89657a5ec07177c1ebe07dbbcbec7e1"
+    },
+    {
+      "path": "tests/ui/ap23e3-administrative.test.tsx",
+      "byteLength": 10541,
+      "sha256": "6e23ea29569b397ae3638d536829cb23caab08831a3fc190b4b4ac3a4d458b58"
+    },
+    {
+      "path": "tests/ui/ap23e3-app.test.tsx",
+      "byteLength": 12992,
+      "sha256": "54f7426d34200bcc2fd8d54954130c5c05f0d468c6abeef49a62a29900f861a7"
+    },
+    {
+      "path": "tests/ui/calendar-export.test.ts",
+      "byteLength": 7419,
+      "sha256": "c4a075dd61bcce6488474329c7dd53eca7c26ad86d82daddb2995ff3110ad662"
+    },
+    {
+      "path": "tests/ui/date-transition.test.ts",
+      "byteLength": 17093,
+      "sha256": "4e93b04f5efdeae9e739b6131909e214e0a55e1ac7a24af6be8e3774f0c466ac"
+    },
+    {
+      "path": "tests/ui/defaults.test.ts",
+      "byteLength": 4565,
+      "sha256": "18a9fd8dd430df7e78fc17aa65ebc497bc73491f114b458683d3fba33d1ad21e"
+    },
+    {
+      "path": "tests/ui/dropdown-wrapping.test.tsx",
+      "byteLength": 8364,
+      "sha256": "dc4ecb5b676317477c9fce735b2c15406b5242563eb996db4d5c9ffa63467637"
+    },
+    {
+      "path": "tests/ui/holiday-connection-dropdown.test.ts",
+      "byteLength": 2480,
+      "sha256": "9075272e339f7aebae9ede60e8eaf1b4bf97cdea50e27d64c3e02accdaf9b0a1"
+    },
+    {
+      "path": "tests/ui/i18n.test.ts",
+      "byteLength": 9234,
+      "sha256": "52540ed19efb423d902fca32d01a7315fe297803934775f40b5b717a42d67c4c"
+    },
+    {
+      "path": "tests/ui/issue50-date-field-height.test.ts",
+      "byteLength": 3095,
+      "sha256": "35292ac01bed1d298af38b243add3876ff721feb8fbbfd336ea01656c0027074"
+    },
+    {
+      "path": "tests/ui/model.test.ts",
+      "byteLength": 4010,
+      "sha256": "0f22002a5485a2dab5d079f249b6d0e8c5a2507a7c9c570f77fce92b06b7a263"
+    },
+    {
+      "path": "tests/ui/mvp04-release.test.ts",
+      "byteLength": 6161,
+      "sha256": "12e00850bcd47a564e99b25311326439e22bf0a32c48cd168e7db672b341fb17"
+    },
+    {
+      "path": "tests/ui/mvp05-release.test.ts",
+      "byteLength": 6875,
+      "sha256": "5daff2caaa8d68b5b6ac22d783c101c3f9f03d89423cf73eaa98c475514ed8a9"
+    },
+    {
+      "path": "tests/ui/preview.test.ts",
+      "byteLength": 4770,
+      "sha256": "d2e65e72aee51f7300838afcc26a562194e919f5eced10f800cc0ab5472f0e39"
+    },
+    {
+      "path": "tests/ui/special.test.ts",
+      "byteLength": 5918,
+      "sha256": "f501513da11edf7bc4d29929d141deef4aa2d7edc84023195c17f97c7d0f2436"
+    },
+    {
+      "path": "tests/ui/vrpg-integration.test.ts",
+      "byteLength": 18267,
+      "sha256": "f2e39b39ff2f528b9c80ef1becdb2ae9bd98d6fa76cd8ec1201de3dd4d2703e1"
+    },
+    {
+      "path": "tests/ui/vrpg-selection.test.ts",
+      "byteLength": 22042,
+      "sha256": "c768c4634ec2fb8aeaad7f7358018a3bfe88f9a93305d70d6c001e07b98a386a"
+    }
+  ]
+}

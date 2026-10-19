@@ -25,7 +25,7 @@ export function trustedFormat8Runtime(data: CalculationData): BoundCalendarRunti
 export function isIssuedFormat8CalendarRuntime(runtime: BoundCalendarRuntime): boolean { return calendars.has(runtime); }
 export function isFormat8ReferenceData(data: CalculationData): boolean { return trustedFormat8Runtime(data)?.referenceOnly === true; }
 export function hasMatchingFormat8Runtime(data: CalculationData, calendarRuntime: BoundCalendarRuntime | undefined,
-  administrativeContext: ParsedFormat8Data | undefined): boolean {
+  administrativeContext: unknown): boolean {
   const capability = issued.get(data);
   return !!capability && trustedFormat8Runtime(data) === calendarRuntime
     && capability.administrativeContext === administrativeContext;

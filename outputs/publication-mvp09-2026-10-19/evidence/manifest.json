@@ -1,0 +1,2180 @@
+{
+  "formatVersion": "1.0.0",
+  "kind": "mvp09-public-evidence-manifest",
+  "preparedOn": "2026-10-19",
+  "releaseId": "2026-10-18-mvp-09-approved.1",
+  "evidenceFileCount": 50,
+  "status": "local-publication-preparation-not-publication-approval",
+  "generator": {
+    "path": "scripts/prepare-mvp09-public-evidence.mjs",
+    "sha256": "14a637849f10b2677b9a41be69afa23dacd8e9cf7c5ef3ab5c8c019d6dd56d2c",
+    "byteLength": 36183
+  },
+  "scope": {
+    "publicCopyIntegrityOnly": true,
+    "originalsRequiredForPublicVerification": false,
+    "fullArchiveReproductionClaimed": false,
+    "originalReportsChanged": false,
+    "rawLegalSourcesIncluded": false,
+    "newTestsOfProductClaimed": false,
+    "publicationAuthorizedByThisManifest": false
+  },
+  "redactionRules": [
+    "repo-file-uri-to-placeholder",
+    "repo-root-to-placeholder",
+    "other-user-home-to-placeholder",
+    "macos-temp-root-to-placeholder",
+    "temporary-root-to-placeholder"
+  ],
+  "entries": [
+    {
+      "id": "01",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/source-review-verification.json",
+        "sha256": "3120eced83895a732a41f7eec32bb4b2486873d108a5a0ab1ce3adee94b579c7",
+        "byteLength": 6216,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/source-review-verification.json",
+        "sha256": "de0e02cff6779ce32497c72ba4a54894b732887524658ef3e6297de8beb7cecd",
+        "byteLength": 3529
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "verificationId",
+          "checkedOn",
+          "startedAt",
+          "completedAt",
+          "technicalValidationPassed",
+          "humanApproval",
+          "sourceReleaseApproved",
+          "dataPromotionApproved",
+          "publicationApproved",
+          "productDataChanged",
+          "deploymentPerformed",
+          "counts",
+          "tests",
+          "humanReadableReport",
+          "localReportLinksChecked",
+          "limitations"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "02",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/data-verification.json",
+        "sha256": "dbbb954179639d69226bf0e04887f1bdbff130618d91eaa235a768b68c8628df",
+        "byteLength": 44376,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/data-verification.json",
+        "sha256": "05959bb7fbebce9bd852deac3bf3a8b479135b821634108497fe306b46ed7f6c",
+        "byteLength": 9572
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "releaseId",
+          "manifestSha256",
+          "sourceApproval",
+          "executionApproval",
+          "passed",
+          "inputsUnchanged",
+          "sourcesAndHistoricalEvidenceReverified",
+          "inputFiles",
+          "steps",
+          "sourceReviewAccepted",
+          "runtimeFiles",
+          "localDataCommitPerformed",
+          "externalDeploymentAuthorized",
+          "installationPerformed",
+          "uploaded",
+          "published"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 4,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "03",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/product-build.json",
+        "sha256": "9b1d4312f9fbb0e8256f4208ded9c6dacd0c57705ebf018db53fdfbbd7786105",
+        "byteLength": 523918,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/product-build.json",
+        "sha256": "224d3a75f0ac57962b452e4c66384147ff92895b2c3d6e677624ade16c932b56",
+        "byteLength": 29644
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "startedAt",
+          "status",
+          "authority",
+          "releaseId",
+          "manifest",
+          "localDataPin",
+          "embedded",
+          "applicationVersion",
+          "packageVersion",
+          "runtimeFiles",
+          "oldPackage",
+          "steps",
+          "installationAuthorized",
+          "publicationAuthorized",
+          "actualM365TestsPerformed",
+          "remotePinPublicationVerified",
+          "package",
+          "webFiles",
+          "finishedAt"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "04",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/artifact-verification.json",
+        "sha256": "7e623a62275ab6faa3fdde6a9c49ab4360232b16228c877ddbade545f12d14f2",
+        "byteLength": 15677,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/artifact-verification.json",
+        "sha256": "c93a889377db5d7ff5790e6e13f915b186f74f59e7d7dde7e2563c62dd24c1af",
+        "byteLength": 17627
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "status",
+          "releaseId",
+          "applicationVersion",
+          "packageVersion",
+          "localDataCommit",
+          "manifestSha256",
+          "authority",
+          "buildProof",
+          "buildAudit",
+          "packageAudit",
+          "mirrorFiles",
+          "webFiles",
+          "artifacts",
+          "installationAuthorized",
+          "publicationAuthorized",
+          "operatingApproval",
+          "remotePinVerified",
+          "realM365TestsPerformed"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "05",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/local-completion.json",
+        "sha256": "e94353ac31cc4be6c2168ba4895e619f57f390e3a3c6d53c7d1d9ebaa1eec60f",
+        "byteLength": 149169,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/local-completion.json",
+        "sha256": "75e8e1d032dc38c745727dd3557a677b156da582ce4bca65e1c3739e8764d119",
+        "byteLength": 156381
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "recordedAt",
+          "status",
+          "authority",
+          "closureTool",
+          "releaseId",
+          "applicationVersion",
+          "packageVersion",
+          "recoveryPackageVersion",
+          "recoveryFunctionality",
+          "dataCommit",
+          "parent",
+          "additionalCommits",
+          "dataManifest",
+          "artifacts",
+          "wiring",
+          "publicIntegrity",
+          "buildCounts",
+          "recoveryCounts",
+          "builtProductAndFixturesUnchanged",
+          "postBuildFixtureExceptions",
+          "finalChecks",
+          "installationPerformed",
+          "uploadsPerformed",
+          "githubPushPerformed",
+          "outlookImportsPerformed",
+          "operationalApprovalGranted",
+          "realM365TestsPerformed",
+          "realDeviceTestsPerformed",
+          "localBrowserSettingsZoomPerformed",
+          "remoteDataPinPublicationVerified",
+          "remaining"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "06",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/outlook-reuse-assessment.json",
+        "sha256": "bac1216d343fb10798eccb50a361b351a78cad11df7690c8c4af1167a44c1b38",
+        "byteLength": 64392,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/outlook-reuse-assessment.json",
+        "sha256": "cd102b84f1a2177104d88d4aeb808bc888bb0fd5a9b22534436a84339ada55d3",
+        "byteLength": 58822
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "status",
+          "proposalOnly",
+          "releaseId",
+          "manifestSha256",
+          "applicationVersion",
+          "packageVersion",
+          "buildProof",
+          "artifactVerification",
+          "definitiveArtifacts",
+          "actualPackageProvenance",
+          "historicalEvidenceUnchanged",
+          "sourceComparisons",
+          "unchangedSourceBlocks",
+          "administrativeAdapter",
+          "browserProof",
+          "browserVersion",
+          "browserExports",
+          "packagedAmdExports",
+          "packagedHarnessInputs",
+          "excludedOlderSavedCalendarDiagnostics",
+          "actualBrowserDownloads",
+          "simulatedPackagedDownloads",
+          "unchangedAppointmentContract",
+          "proposedReuseScope",
+          "newProvenanceNotCoveredByOldImport",
+          "humanReuseAccepted",
+          "noOutlookImport",
+          "noM365",
+          "outlookImportsPerformed",
+          "mailboxOrCalendarChanged",
+          "newBrowserSessionPerformedByThisScript",
+          "newTestsPerformedByThisScript",
+          "publicProductionHostTestsPerformed",
+          "actualDeviceTestsPerformed",
+          "installationAuthorized",
+          "publicationAuthorized",
+          "operatingApproval",
+          "retainedLimits",
+          "parser",
+          "script"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 11,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 10,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "07",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/artifact-verification.json",
+        "sha256": "3d16f6e36e7e9fd1b8035cecbd634dd7636f956b963a0b8c45d38ca3d754376c",
+        "byteLength": 912144,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/recovery-0.9.0.1--artifact-verification.json",
+        "sha256": "338aae0461fc01570d66adf18beab1c50e0724535891a109dd26a31691725a99",
+        "byteLength": 11269
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "startedAt",
+          "packageVersion",
+          "applicationVersion",
+          "functionalBaseline",
+          "authority",
+          "installationAuthorized",
+          "deploymentPerformed",
+          "publicationAuthorized",
+          "liveHostVerified",
+          "browserResetAuthorized",
+          "roundTripMvp09Pending",
+          "steps",
+          "limitations",
+          "priorFailedAttempt",
+          "packageAudit",
+          "packageSha256",
+          "packageByteLength",
+          "passed",
+          "finishedAt"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 9,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "08",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-roundtrip/verification.json",
+        "sha256": "f109e22af10660e964d9e0f8d7e1dd0e0923e732e0aad643908a2f23c21b3d0c",
+        "byteLength": 57053,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/recovery-roundtrip--verification.json",
+        "sha256": "6e747db7e323a52ac9bce1966f85a3b95f1e80fdf38713ed6a21f2337529dfff",
+        "byteLength": 3637
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "startedAt",
+          "status",
+          "authority",
+          "normalPackage",
+          "recoveryPackage",
+          "functionalSequence",
+          "cases",
+          "limitation",
+          "subsequentRealMvp09PackageMustExceed",
+          "installationAuthorized",
+          "actualDeploymentPerformed",
+          "publicationAuthorized",
+          "browserDataResetPerformed",
+          "steps",
+          "finishedAt"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 1,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "09",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/portability-standard-no-private-20261018-05/report.json",
+        "sha256": "6bbfe0aad22f39488bed10c14664dd3949acd42faf3b2753bce94a3dbbdfa89a",
+        "byteLength": 21033,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/portability-standard-no-private-20261018-05--report.json",
+        "sha256": "69ada9907641dcf65bcf7106b2e6bf996fe03edc428c9f9fc587ce598614b728",
+        "byteLength": 22693
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "passed",
+          "scope",
+          "inputInventory",
+          "inputCount",
+          "suites",
+          "isolatedInputBytesVerifiedBeforeAndAfter",
+          "absentAfterExecution",
+          "currentR09ArchivesPresent",
+          "privateRawSourceOriginalsPresent",
+          "gitPresent",
+          "hostingBackupsPresent",
+          "noOfficialFullTextsClaimed",
+          "retainedHistoricalPublicFullTextFixture",
+          "noTestsSkipped",
+          "standardSuiteSelectionUnchanged",
+          "executions",
+          "testGeneratedScratch",
+          "limits",
+          "installationPerformed",
+          "uploaded",
+          "published"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 4,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "10",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/browser-zoom-native-20261018-03/verification.json",
+        "sha256": "1d422f88b23dad750baf7ce0bc9f0618edb255e4c782ef389469407ce7de56bf",
+        "byteLength": 10162,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/browser-zoom-native-20261018-03--verification.json",
+        "sha256": "7bafd734287aebebed0543d678c5a56c509b536eb7a19c8f12a9607c44a14843",
+        "byteLength": 12113
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "status",
+          "startedAt",
+          "browser",
+          "temporaryProfile",
+          "method",
+          "browserSettingsZoomExercised",
+          "realM365Testing",
+          "realDeviceTesting",
+          "existingBrowserProfilesTouched",
+          "installationPerformed",
+          "uploaded",
+          "published",
+          "outlookImports",
+          "webFiles",
+          "buildProof",
+          "script",
+          "checks",
+          "screenshots",
+          "pageErrors",
+          "externalRequests",
+          "originalSetting",
+          "before",
+          "appliedSetting",
+          "afterRestore",
+          "temporaryProfileZoomRestored",
+          "finishedAt"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "11",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/browser-definitive-20261018-02/verification-1792359318158.json",
+        "sha256": "85a3737cefdf0d16d5e28387f6caa0bc7362560427bab3ad8875e64fbbc7eefa",
+        "byteLength": 7662,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/browser-definitive-20261018-02--verification-1792359318158.json",
+        "sha256": "1d2333a2badd154b8d408996a3a637eda2ba9eb1b819e46d1d519d5735e5dd3f",
+        "byteLength": 9161
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "startedAt",
+          "browser",
+          "webFiles",
+          "checks",
+          "diagnostics",
+          "exports",
+          "screenshots",
+          "externalRequests",
+          "pageErrors",
+          "actualM365Testing",
+          "actualDeviceTesting",
+          "actualBrowserMenuZoomTesting",
+          "outlookImports",
+          "status",
+          "finishedAt"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "12",
+      "category": "historical-bounded-summary",
+      "evidenceType": "selected-field-summary",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/verification.json",
+        "sha256": "1a2cc30cd53436333b851d09106da5c9c27b7b939f08db922cd3c3df0528e21f",
+        "byteLength": 694896,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/summaries/recovery-0.9.0.1--attempts--first-failed--verification.json",
+        "sha256": "396e4fc4148ed340e0e16536f87c6d36bb8c5d84ab566863a0930e41747b7ce4",
+        "byteLength": 723052
+      },
+      "transformation": {
+        "kind": "selected-field-summary-with-path-redaction",
+        "selectedFields": [
+          "kind",
+          "startedAt",
+          "packageVersion",
+          "applicationVersion",
+          "functionalBaseline",
+          "stage",
+          "authority",
+          "basis",
+          "installationAuthorized",
+          "deploymentPerformed",
+          "publicationAuthorized",
+          "liveHostVerified",
+          "browserResetAuthorized",
+          "roundTripMvp09Pending",
+          "inputDerivation",
+          "implementation",
+          "protectedFiles",
+          "steps",
+          "limitations",
+          "error",
+          "passed",
+          "finishedAt"
+        ],
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 2,
+          "repo-root-to-placeholder": 9,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "13",
+      "category": "historical-diagnostic-copy",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/ap23e3-2026-10-18/QA-AP23E3.json",
+        "sha256": "fa564603394ed40a6eebc6a587b5e11111f4f37e75c9930b4a04d1d889991c80",
+        "byteLength": 79981,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/copies/QA-AP23E3.json",
+        "sha256": "59aaaafbb247ddc2dedad57ee55a54b0129f86b0d1b0bd6e9fe5ce2098684b10",
+        "byteLength": 79288
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 7,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "14",
+      "category": "historical-diagnostic-copy",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/ap23e3-2026-10-18/spfx-build.json",
+        "sha256": "0a20e0717ca0f7db0937936a5c8efd518d08b8db7add6a58c6019ee7eebc4216",
+        "byteLength": 5914,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/copies/spfx-build.json",
+        "sha256": "2abba442e53cf95a2400f3e07ab37c3ba54a550f6db5f039c9342146b68d2f45",
+        "byteLength": 5518
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 4,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "15",
+      "category": "historical-diagnostic-copy",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/ap23e3-2026-10-18/core-sweep-1-report.json",
+        "sha256": "e8d313793650e0a7412e24894df8ec15a1c9e6d2007e12b5ac4046e754a3cf9a",
+        "byteLength": 44344,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/copies/core-sweep-1-report.json",
+        "sha256": "15c6a54313f42476baa770a4c09c070fab1ccb9d77381c5b6cbef6b6d5d68df8",
+        "byteLength": 44047
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 3,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "16",
+      "category": "historical-diagnostic-copy",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/ap23e3-2026-10-18/spfx-initial-provider-tests.txt",
+        "sha256": "dc24716ce531db62838e386bf4935dd117c1a6c71f3e3d08383b413bc44e5a66",
+        "byteLength": 773463,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/copies/spfx-initial-provider-tests.txt",
+        "sha256": "02c3e72a9e07b21b7bea4dd311670c04233131d7f7ef8c1786a5bc7b8549be18",
+        "byteLength": 772572
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 9,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "17",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-built-tests.log",
+        "sha256": "196a673584edcb284239bcd22ab039ff0ed5d324ee2f65344a4bb3127ed7abef",
+        "byteLength": 56431,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-built-tests.txt",
+        "sha256": "d485b7f686b155f6c7295b9988667ec0b94d11a04e80a0eecf9b2e692ab21b2f",
+        "byteLength": 53239
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 28,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 12,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "18",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-compile.log",
+        "sha256": "0ca13833c3efe4a304fb47673cfe0b2e73cfbadb5dfcc987a06ddbe239745539",
+        "byteLength": 11822,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-compile.txt",
+        "sha256": "0ca13833c3efe4a304fb47673cfe0b2e73cfbadb5dfcc987a06ddbe239745539",
+        "byteLength": 11822
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "19",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-css-audit.log",
+        "sha256": "ca6200c68ec090373cf4d20daa3edf48f437509fb335dd063fc73dac96818c60",
+        "byteLength": 69,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-css-audit.txt",
+        "sha256": "ca6200c68ec090373cf4d20daa3edf48f437509fb335dd063fc73dac96818c60",
+        "byteLength": 69
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "20",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-package.log",
+        "sha256": "e3c5ef985506bd020d6a5871d7103c204777ee05bcc7ca38575c006a703dae8b",
+        "byteLength": 6227,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-package.txt",
+        "sha256": "a4f89eac9e2f3644d18e5a51673dac3058387f119a7027e2d7ca44223308975d",
+        "byteLength": 4148
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 21,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "21",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-source-tests.log",
+        "sha256": "5ec155226e3809240c663d05c3a59c8982563b94f93381e5f5ade27f8edb4a22",
+        "byteLength": 46547,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-source-tests.txt",
+        "sha256": "5ec155226e3809240c663d05c3a59c8982563b94f93381e5f5ade27f8edb4a22",
+        "byteLength": 46547
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "22",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-sync.log",
+        "sha256": "676b347c0cc6758a20bc9ca830810bd276d4475ff4fe4104b5927fe37aeb52d6",
+        "byteLength": 197,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-sync.txt",
+        "sha256": "676b347c0cc6758a20bc9ca830810bd276d4475ff4fe4104b5927fe37aeb52d6",
+        "byteLength": 197
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "23",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/build-evidence/logs/mvp09-product-build-g8pU5R-web-build.log",
+        "sha256": "5ce19732a398836a95dba18f9c33dafd34ddf404895b3115b82a13ef6e9b1f48",
+        "byteLength": 128,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/build-evidence--logs--mvp09-product-build-g8pU5R-web-build.txt",
+        "sha256": "5ce19732a398836a95dba18f9c33dafd34ddf404895b3115b82a13ef6e9b1f48",
+        "byteLength": 128
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "24",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/built-tests.log",
+        "sha256": "1e98939d2f0e77ec23730cf7cfff1096b521eee0f0cc02aed6655ea7f6068836",
+        "byteLength": 34664,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--built-tests.txt",
+        "sha256": "9a565ec445fe23091035d097ff528dcf1142c6ac331bdc0c0c99e35e15992ac7",
+        "byteLength": 33010
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 16,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 2,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "25",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/compile.log",
+        "sha256": "e4713f7d34dac1e11edec1e4f8d91226a33a93735913e857054fe9075db1a74d",
+        "byteLength": 8906,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--compile.txt",
+        "sha256": "e4713f7d34dac1e11edec1e4f8d91226a33a93735913e857054fe9075db1a74d",
+        "byteLength": 8906
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "26",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/css-audit.log",
+        "sha256": "be9fe3a888db654f7f0b44a84c4ba0e764af4ba8e3d23fb31bd43c966a823d73",
+        "byteLength": 69,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--css-audit.txt",
+        "sha256": "be9fe3a888db654f7f0b44a84c4ba0e764af4ba8e3d23fb31bd43c966a823d73",
+        "byteLength": 69
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "27",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/package.log",
+        "sha256": "a553e53e3f1d51362ebf17591d46e938c7ea445b307aa1c0d7d0a5bac18982af",
+        "byteLength": 6121,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--package.txt",
+        "sha256": "0a9ebdb3c30163859baa7fc59bbc9a4a9efbfe94e5653d8c5bf82b689dbe44b0",
+        "byteLength": 4042
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 21,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "28",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/recovery-tests.log",
+        "sha256": "60b8620b81ae09870aa6bea73b385e42eab51638afeac8ff23e6969511dd95ce",
+        "byteLength": 2440,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--recovery-tests.txt",
+        "sha256": "60b8620b81ae09870aa6bea73b385e42eab51638afeac8ff23e6969511dd95ce",
+        "byteLength": 2440
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "29",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/source-tests.log",
+        "sha256": "20f74032e1f6ee58b241a2ecb8526368c5e3343ce3363c837684e7dc4b362835",
+        "byteLength": 43976,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--source-tests.txt",
+        "sha256": "20f74032e1f6ee58b241a2ecb8526368c5e3343ce3363c837684e7dc4b362835",
+        "byteLength": 43976
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "30",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/sync.log",
+        "sha256": "b09161c434779a2c3c967982921a9ec1ea86a269810c0c7c7aa309bac942c593",
+        "byteLength": 197,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--sync.txt",
+        "sha256": "b09161c434779a2c3c967982921a9ec1ea86a269810c0c7c7aa309bac942c593",
+        "byteLength": 197
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "31",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/logs/tool-tests.log",
+        "sha256": "a8a8b34faa986bc5e39a78c7218c81cf8106f4ed09fe316e261c862f907986a1",
+        "byteLength": 1274,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--logs--tool-tests.txt",
+        "sha256": "a8a8b34faa986bc5e39a78c7218c81cf8106f4ed09fe316e261c862f907986a1",
+        "byteLength": 1274
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "32",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/built-tests.log",
+        "sha256": "e49fe4bfd54f2e1565b516c619b9953ef76c43c16037bee0742f385356a0a201",
+        "byteLength": 34683,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--built-tests.txt",
+        "sha256": "da261587d98a25f54d7a62424198f3855d07a1dcd6c7697967e1389af788238b",
+        "byteLength": 33029
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 16,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 2,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "33",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/compile.log",
+        "sha256": "f933ea239e91411bc657249d0ec1c2a87a371d972e1aa2b4067307c14ac92b3c",
+        "byteLength": 8905,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--compile.txt",
+        "sha256": "f933ea239e91411bc657249d0ec1c2a87a371d972e1aa2b4067307c14ac92b3c",
+        "byteLength": 8905
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "34",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/css-audit.log",
+        "sha256": "e88fbea09aca51c7826ce1f5833f712a195855e6a3d49bba28d0536783fb68c8",
+        "byteLength": 69,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--css-audit.txt",
+        "sha256": "e88fbea09aca51c7826ce1f5833f712a195855e6a3d49bba28d0536783fb68c8",
+        "byteLength": 69
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "35",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/package.log",
+        "sha256": "a74adaa5579fef54725aa3973f96bb20ef453c2379a9dce3c91f18fde043c60f",
+        "byteLength": 6122,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--package.txt",
+        "sha256": "c245fa87aba7e20b75f8c32d715dadbcf0abaf9f8bd534cc039bb80bcd5e26b0",
+        "byteLength": 4043
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 21,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "36",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/recovery-tests.log",
+        "sha256": "21a660c4e0b5d8cce0af0e2b2b6057f46fc156c0e67836a6cadef3d826581ea9",
+        "byteLength": 7910,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--recovery-tests.txt",
+        "sha256": "7226fe62dc5aca4209a4cc2664efd616230547d0d53804735d6a281667becd16",
+        "byteLength": 5930
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 20,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "37",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/source-tests.log",
+        "sha256": "0ff96e61cfb743ff6f7c2d3e0ed73f76863bcb5a1b56605930eb82aa45f9a19b",
+        "byteLength": 43990,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--source-tests.txt",
+        "sha256": "0ff96e61cfb743ff6f7c2d3e0ed73f76863bcb5a1b56605930eb82aa45f9a19b",
+        "byteLength": 43990
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "38",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/sync.log",
+        "sha256": "b09161c434779a2c3c967982921a9ec1ea86a269810c0c7c7aa309bac942c593",
+        "byteLength": 197,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--sync.txt",
+        "sha256": "b09161c434779a2c3c967982921a9ec1ea86a269810c0c7c7aa309bac942c593",
+        "byteLength": 197
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "39",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/recovery-0.9.0.1/attempts/first-failed/tool-tests.log",
+        "sha256": "df4adec25fb995974c38bae1bb48e31f2a34b34aea6241eebffa55dca5ffa773",
+        "byteLength": 1276,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/recovery-0.9.0.1--attempts--first-failed--tool-tests.txt",
+        "sha256": "df4adec25fb995974c38bae1bb48e31f2a34b34aea6241eebffa55dca5ffa773",
+        "byteLength": 1276
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "40",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/portability-standard-no-private-20261018-05/governance-node.log",
+        "sha256": "f1d2184d537524a0d484c8ad97424f7a996073d931b2e06824dd4004aaac8c09",
+        "byteLength": 61720,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/portability-standard-no-private-20261018-05--governance-node.txt",
+        "sha256": "f1d2184d537524a0d484c8ad97424f7a996073d931b2e06824dd4004aaac8c09",
+        "byteLength": 61720
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "41",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/portability-standard-no-private-20261018-05/governance-python.log",
+        "sha256": "c064e6c95ce96f3fb00e968b10efa90223181316926ab7bad1e4d1b4b5c95ad1",
+        "byteLength": 142,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/portability-standard-no-private-20261018-05--governance-python.txt",
+        "sha256": "c064e6c95ce96f3fb00e968b10efa90223181316926ab7bad1e4d1b4b5c95ad1",
+        "byteLength": 142
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "42",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/portability-standard-no-private-20261018-05/governance-schema.log",
+        "sha256": "abe674c462fe8e2d414edf9def1c288a1c0b13eb620c5498b2884a748e691582",
+        "byteLength": 117,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/portability-standard-no-private-20261018-05--governance-schema.txt",
+        "sha256": "abe674c462fe8e2d414edf9def1c288a1c0b13eb620c5498b2884a748e691582",
+        "byteLength": 117
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "43",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/portability-standard-no-private-20261018-05/product.log",
+        "sha256": "d7e8b8b597cefa1237f9a69367cbf88dc0c759835473f6482aafb7f044db15e9",
+        "byteLength": 633983,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/portability-standard-no-private-20261018-05--product.txt",
+        "sha256": "d7e8b8b597cefa1237f9a69367cbf88dc0c759835473f6482aafb7f044db15e9",
+        "byteLength": 633983
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "44",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/validator-supplement/exact-host-tests.log",
+        "sha256": "ea133491bd13ef1fb07617a072c9a20681385202f4d3bcc43c0e38f9e50fa5d0",
+        "byteLength": 107,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/validator-supplement--exact-host-tests.txt",
+        "sha256": "ea133491bd13ef1fb07617a072c9a20681385202f4d3bcc43c0e38f9e50fa5d0",
+        "byteLength": 107
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "45",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/validator-supplement/python-governance.log",
+        "sha256": "335d0ddc23650d59aa29b785f807532dec9094d61898ef3b2dd1c7158604e68a",
+        "byteLength": 142,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/validator-supplement--python-governance.txt",
+        "sha256": "335d0ddc23650d59aa29b785f807532dec9094d61898ef3b2dd1c7158604e68a",
+        "byteLength": 142
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "46",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/validator-supplement/source-semantic-schema.log",
+        "sha256": "abe674c462fe8e2d414edf9def1c288a1c0b13eb620c5498b2884a748e691582",
+        "byteLength": 117,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/validator-supplement--source-semantic-schema.txt",
+        "sha256": "abe674c462fe8e2d414edf9def1c288a1c0b13eb620c5498b2884a748e691582",
+        "byteLength": 117
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "47",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/data-approved-reader.log",
+        "sha256": "13405b5d0d0eed329f147b33a1e1d8c63daa7ba305a85d502b20635c1249b194",
+        "byteLength": 2280,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/data-approved-reader.txt",
+        "sha256": "13405b5d0d0eed329f147b33a1e1d8c63daa7ba305a85d502b20635c1249b194",
+        "byteLength": 2280
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "48",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/data-independent-negative-tests.log",
+        "sha256": "bab71714eb958fe098fb32b5714d4a2872f8f315bdcde700b676b0bc5380db33",
+        "byteLength": 8020,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/data-independent-negative-tests.txt",
+        "sha256": "bab71714eb958fe098fb32b5714d4a2872f8f315bdcde700b676b0bc5380db33",
+        "byteLength": 8020
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "49",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/data-independent-validator.log",
+        "sha256": "7b90ec440d29cf8130eb73a692a27bac19b069c6096fa0dfebb6874204466792",
+        "byteLength": 1019,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/data-independent-validator.txt",
+        "sha256": "7b90ec440d29cf8130eb73a692a27bac19b069c6096fa0dfebb6874204466792",
+        "byteLength": 1019
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    },
+    {
+      "id": "50",
+      "category": "historical-complete-log",
+      "evidenceType": "path-redacted-copy",
+      "source": {
+        "path": "outputs/release-mvp09-2026-10-18/data-public-data-tests.log",
+        "sha256": "150a59c85ca05d21c5149bceeea257ac9a2f16e079f8db4c5c4f0b5d10916182",
+        "byteLength": 4274,
+        "availability": "private-original-not-required"
+      },
+      "output": {
+        "path": "outputs/publication-mvp09-2026-10-19/evidence/logs/data-public-data-tests.txt",
+        "sha256": "150a59c85ca05d21c5149bceeea257ac9a2f16e079f8db4c5c4f0b5d10916182",
+        "byteLength": 4274
+      },
+      "transformation": {
+        "kind": "path-redaction-only",
+        "rules": [
+          "repo-file-uri-to-placeholder",
+          "repo-root-to-placeholder",
+          "other-user-home-to-placeholder",
+          "macos-temp-root-to-placeholder",
+          "temporary-root-to-placeholder"
+        ],
+        "redactionCounts": {
+          "repo-file-uri-to-placeholder": 0,
+          "repo-root-to-placeholder": 0,
+          "other-user-home-to-placeholder": 0,
+          "macos-temp-root-to-placeholder": 0,
+          "temporary-root-to-placeholder": 0
+        }
+      },
+      "limitations": [
+        "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+        "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest."
+      ]
+    }
+  ],
+  "limitations": [
+    "Historical source status, dates, failures and permission flags are retained. This copy does not assert current approval or repeat the original tests.",
+    "Only the selected public copies are verifiable here. Original reports, omitted fields, full archives and raw legal sources are not required or reproduced. The external publication positive list must pin this manifest.",
+    "Selected-field summaries omit explicitly listed top-level fields. Complete copied logs retain all text apart from path substitutions.",
+    "No raw legal documents, HARs, screenshots, personal Word changes, backups, complete input archives or tenant targets are included.",
+    "Pattern screening is limited and is not a general guarantee that arbitrary binary or secret data cannot exist."
+  ]
+}
