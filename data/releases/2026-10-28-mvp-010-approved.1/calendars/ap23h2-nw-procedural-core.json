@@ -1,0 +1,185 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap23h2-nw-procedural-core",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "NW"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": "2027-12-31"
+  },
+  "inherits": [
+    "ap22-nw-5dfca484e4af"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-22",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP23H1 H1-D fachlich abgenommen. Isolierte H2-Projektion, keine gemeinsame Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-AP23H1-NW-VRG-20260801",
+      "sourceType": "officialDossier",
+      "title": "VRG, Art. 34",
+      "authority": "CH-NW",
+      "url": "https://gesetze.nw.ch/api/de/versions/1519/pdf_file",
+      "documentVersionDate": "2026-08-01",
+      "reviewedOn": "2026-10-22",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "NW-CAL-NW-PROCEDURAL-ALL-DAY-BERCHTOLD",
+      "calendarId": "ap23h2-nw-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NW"
+      },
+      "labelKey": "holiday.nw.NW-PROCEDURAL-ALL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-08-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-NW-VRG-20260801",
+          "locator": "Art. 34 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NW-PROCEDURAL-ALL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "NW-CAL-NW-PROCEDURAL-ALL-DAY-EASTER-MONDAY",
+      "calendarId": "ap23h2-nw-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NW"
+      },
+      "labelKey": "holiday.nw.NW-PROCEDURAL-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-08-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-NW-VRG-20260801",
+          "locator": "Art. 34 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NW-PROCEDURAL-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "NW-CAL-NW-PROCEDURAL-ALL-DAY-WHIT-MONDAY",
+      "calendarId": "ap23h2-nw-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NW"
+      },
+      "labelKey": "holiday.nw.NW-PROCEDURAL-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-08-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-NW-VRG-20260801",
+          "locator": "Art. 34 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NW-PROCEDURAL-ALL-DAY-WHIT-MONDAY"
+      }
+    },
+    {
+      "ruleId": "NW-CAL-NW-PROCEDURAL-ALL-DAY-ST-STEPHEN",
+      "calendarId": "ap23h2-nw-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "NW"
+      },
+      "labelKey": "holiday.nw.NW-PROCEDURAL-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-08-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-NW-VRG-20260801",
+          "locator": "Art. 34 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "NW-PROCEDURAL-ALL-DAY-ST-STEPHEN"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-ap23h2-nw-procedural-core",
+    "sourceHash": "0ab1cf025132c76e54f17db21047ab627ab60a3997a7e3e3d3bbde3492736e3b"
+  }
+}
