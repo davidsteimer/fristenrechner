@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/candidates/ap23g2/administrative-input-v4.schema.json",
+  "title": "AP23G2 explicit current research facts not persistent defaults",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "pathRevision",
+    "authoritySeatCanton",
+    "stage",
+    "trigger",
+    "days",
+    "action",
+    "opening",
+    "holidayAnchor",
+    "authorityLevel",
+    "specialLaw",
+    "termChange",
+    "unit",
+    "direction",
+    "notice",
+    "suspensionContext",
+    "serviceContext",
+    "materialPerformance",
+    "fixedEndDate",
+    "deviatingStart",
+    "coordinatedDecision",
+    "shortenedRekurs",
+    "sameIssuingCourt",
+    "targetCourt",
+    "openingOrigin",
+    "priorReasonsRequest",
+    "localHolidayEffect",
+    "urOpeningConsequence"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "pathRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "authoritySeatCanton": {
+      "enum": [
+        "UR",
+        "SO",
+        "SH",
+        "BE",
+        "CH",
+        "unknown"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "administration",
+        "court",
+        "unknown"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "action": {
+      "enum": [
+        "ordinaryAdministrativeAppeal",
+        "ordinaryAdministrativeCourtAppeal",
+        "ordinaryAdministrativeRekurs",
+        "orderedProceduralSubmission",
+        "requestAdministrativeReasons",
+        "requestCourtReasons",
+        "unknown",
+        "other"
+      ]
+    },
+    "opening": {
+      "enum": [
+        "completeReasonedAdministrativeDecision",
+        "orderedForwardDayPeriod",
+        "lawfullyUnreasonedAdministrativeDecision",
+        "lawfullyUnreasonedAdministrativeDecisionWithExpressReasonsOffer",
+        "legallyQualifiedCourtDispositiveOrOralOpening",
+        "unknown",
+        "other",
+        "unreasonedFullAllowanceWithoutReasonsOffer"
+      ]
+    },
+    "holidayAnchor": {
+      "enum": [
+        "targetAuthoritySeat",
+        "issuingAuthoritySeat",
+        "courtSeat",
+        "unknown",
+        "other",
+        "partyOrRepresentativeSeat"
+      ]
+    },
+    "authorityLevel": {
+      "enum": [
+        "cantonal",
+        "unknown",
+        "other",
+        "municipal",
+        "federal"
+      ]
+    },
+    "specialLaw": {
+      "enum": [
+        "excluded",
+        "unknown",
+        "other",
+        "ATSG",
+        "tax",
+        "procurement",
+        "politicalRights",
+        "childAdultProtection"
+      ]
+    },
+    "termChange": {
+      "enum": [
+        "none",
+        "unknown",
+        "other",
+        "restorationRequested"
+      ]
+    },
+    "unit": {
+      "enum": [
+        "day",
+        "unknown",
+        "other",
+        "hour",
+        "month",
+        "year",
+        "fixedDate"
+      ]
+    },
+    "direction": {
+      "enum": [
+        "forward",
+        "unknown",
+        "other",
+        "backward"
+      ]
+    },
+    "notice": {
+      "enum": [
+        "uncontested",
+        "unknown",
+        "other",
+        "missing",
+        "incorrect",
+        "disputed"
+      ]
+    },
+    "suspensionContext": {
+      "enum": [
+        "ordinaryNoException",
+        "unknown",
+        "other",
+        "taxCase"
+      ]
+    },
+    "serviceContext": {
+      "enum": [
+        "effectiveLegalTriggerKnown",
+        "unknown",
+        "other",
+        "oralOpeningDateUnclear"
+      ]
+    },
+    "materialPerformance": {
+      "type": "boolean"
+    },
+    "fixedEndDate": {
+      "type": "boolean"
+    },
+    "deviatingStart": {
+      "type": "boolean"
+    },
+    "coordinatedDecision": {
+      "type": "boolean"
+    },
+    "shortenedRekurs": {
+      "type": "boolean"
+    },
+    "sameIssuingCourt": {
+      "type": "boolean"
+    },
+    "targetCourt": {
+      "enum": [
+        "notApplicable",
+        "UR-Obergericht",
+        "SO-Verwaltungsgericht",
+        "SH-Obergericht",
+        "lowerSpecialAdministrativeCourt",
+        "unknown"
+      ]
+    },
+    "openingOrigin": {
+      "enum": [
+        "originalReasoned",
+        "reasonedFollowingRequest",
+        "notApplicable",
+        "unknown"
+      ]
+    },
+    "priorReasonsRequest": {
+      "enum": [
+        "timelyEstablished",
+        "notApplicable",
+        "late",
+        "unknown"
+      ]
+    },
+    "localHolidayEffect": {
+      "enum": [
+        "noAdditionalRelevantLocalHoliday",
+        "concretePotentialEndChangeUnresolved",
+        "unknown"
+      ]
+    },
+    "urOpeningConsequence": {
+      "enum": [
+        "ordinaryEffectiveOpening",
+        "specialPostponementClaimed",
+        "unknown"
+      ]
+    }
+  }
+}

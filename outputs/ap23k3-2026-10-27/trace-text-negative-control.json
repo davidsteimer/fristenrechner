@@ -1,0 +1,30 @@
+{
+  "workPackage": "AP23K3",
+  "kind": "deliberate-negative-control-against-pre-correction-package",
+  "asOf": "2026-10-27",
+  "status": "old-package-rejected-as-expected",
+  "method": "The strengthened actual-AMD regression was deliberately run against the still-bound successful pre-correction SPFx build, before replacement of its build report. This is not the final corrected package test.",
+  "command": ["node", "--import", "tsx", "--test", "--test-name-pattern=Fasnacht comparison", "tests/hosts/ap23k3-packaged.test.ts"],
+  "oldPackage": {
+    "path": ".work/ap23k3-spfx-build-yesUGs/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+    "byteLength": 652290,
+    "sha256": "95d430d8674ebcf163d59144072520157d5ede6b8ac500594539c174a36b132f"
+  },
+  "test": {
+    "path": ".work/ap23k3-before-trace-text-correction-20261027/ap23k3-packaged-negative-control.test.ts",
+    "byteLength": 14398,
+    "sha256": "a8d0702b21013b3ef7d11a49792e1b4d6cce40160b837894aeed8e96abce6816"
+  },
+  "observedExitCode": 1,
+  "testsSelected": 1,
+  "failure": {
+    "code": "ERR_ASSERTION",
+    "operator": "strictEqual",
+    "expectedOccurrencesOfCorrectedTraceText": 2,
+    "actualOccurrencesInOldBundle": 0
+  },
+  "interpretation": "The new regression detects the old wording defect in the actual compiled component. The final corrected package must pass this same assertion in both languages within its complete actual-package run.",
+  "humanAcceptance": false,
+  "sourceReleaseApproved": false,
+  "operatingChanges": false
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/legal-profile.schema.json",
+  "formatVersion": "1.0.0",
+  "dataKind": "legalProfile",
+  "profileId": "stpo",
+  "lawCode": "StPO",
+  "jurisdiction": {
+    "level": "federal",
+    "code": "CH"
+  },
+  "validity": {
+    "dataValidFrom": "2026-08-29",
+    "dataValidTo": null
+  },
+  "review": {
+    "reviewedOn": "2026-08-31",
+    "status": "verified",
+    "reviewedBy": "David Steimer",
+    "basis": "AP12C am 31. August 2026 fachlich-technisch abgenommen. Format-3-Datenrelease mit ewigem Kalender für MVP 0.3 im Rahmen der Release-2-Finalisierung freigegeben."
+  },
+  "calculationContract": {
+    "acceptedDeadlineUnits": [
+      "day"
+    ],
+    "dateInputSemantics": "legallyRelevantDeliveryOrEventDate",
+    "timeModel": "dateOnlyNoTimezone",
+    "unknownSpecialLawHandling": "block",
+    "unsupportedInputHandling": "block"
+  },
+  "calendarPolicy": {
+    "holidayAnchor": "partyOrCounselCanton",
+    "jurisdictionSelection": "explicit",
+    "conflictHandling": "requireConfirmation",
+    "manualOverride": true,
+    "overrideReasonRequired": true
+  },
+  "selectors": [
+    {
+      "selectorId": "deliveryMethod",
+      "required": false,
+      "selectionMode": "explicit",
+      "unknownHandling": "warn",
+      "options": [
+        {
+          "value": "registeredMailUncollected",
+          "labelKey": "selector.deliveryMethod.registeredMailUncollected"
+        },
+        {
+          "value": "otherLegallyRelevantDate",
+          "labelKey": "selector.deliveryMethod.otherLegallyRelevantDate"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "SRC-STPO-20250401",
+      "sourceType": "statute",
+      "title": "Schweizerische Strafprozessordnung, SR 312.0",
+      "authority": "Schweizerische Eidgenossenschaft",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2010/267/de",
+      "documentVersionDate": "2025-04-01",
+      "reviewedOn": "2026-08-29",
+      "reviewStatus": "verified"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "STPO-DELIV-001",
+      "phase": "delivery",
+      "priority": 10,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [
+        {
+          "selector": "deliveryMethod",
+          "operator": "in",
+          "values": [
+            "registeredMailUncollected"
+          ]
+        }
+      ],
+      "effect": {
+        "type": "deliveryDate",
+        "mode": "seventhDayAfterFailedAttempt",
+        "daysAfterFailedAttempt": 7,
+        "requiresConfirmation": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 85 Abs. 4 Bst. a"
+        }
+      ],
+      "warningKey": "warning.deliveryFiction.confirmApplicability"
+    },
+    {
+      "ruleId": "STPO-START-001",
+      "phase": "start",
+      "priority": 100,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineStart",
+        "offsetCalendarDays": 1
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 90 Abs. 1"
+        }
+      ]
+    },
+    {
+      "ruleId": "STPO-COUNT-001",
+      "phase": "count",
+      "priority": 200,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "counting",
+        "mode": "calendarDays"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 90 in Verbindung mit Art. 89 Abs. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "STPO-SUSP-001",
+      "phase": "count",
+      "priority": 210,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "suspension",
+        "mode": "none"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 89 Abs. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "STPO-END-001",
+      "phase": "end",
+      "priority": 300,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "deadlineEnd",
+        "shift": "nextWorkingDay",
+        "nonWorkingDays": [
+          "saturday",
+          "sunday",
+          "publicHoliday"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 90 Abs. 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "STPO-HOL-001",
+      "phase": "end",
+      "priority": 310,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null,
+        "legalEffectiveFrom": "2011-01-01"
+      },
+      "conditions": [],
+      "effect": {
+        "type": "holidayAnchor",
+        "anchor": "partyOrCounselCanton"
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 90 Abs. 2"
+        }
+      ],
+      "warningKey": "warning.holidayAnchor.confirmJurisdiction"
+    },
+    {
+      "ruleId": "STPO-COMP-001",
+      "phase": "compliance",
+      "priority": 400,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "submission",
+        "timing": "onOrBeforeLastDay",
+        "channels": [
+          "competentAuthority",
+          "swissPost",
+          "swissDiplomaticMission",
+          "detentionFacilityManagement"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 91 Abs. 1 und 2"
+        }
+      ]
+    },
+    {
+      "ruleId": "STPO-EXT-001",
+      "phase": "guardrail",
+      "priority": 500,
+      "status": "active",
+      "validity": {
+        "dataValidFrom": "2026-08-29",
+        "dataValidTo": null
+      },
+      "conditions": [],
+      "effect": {
+        "type": "extension",
+        "statutoryDeadlineExtendable": false,
+        "authoritySetDeadlineExtendable": true,
+        "requiresTimelyReasonedRequest": true
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-STPO-20250401",
+          "locator": "Art. 89 Abs. 1 und Art. 92"
+        }
+      ],
+      "warningKey": "warning.extension.noAutomaticExtension"
+    }
+  ]
+}

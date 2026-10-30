@@ -1,0 +1,373 @@
+{
+  "workPackage": "AP23H3",
+  "status": "passed",
+  "kind": "separate-ai-technical-countercheck",
+  "humanFourEyesReview": false,
+  "professionalAcceptance": false,
+  "operatingPermission": false,
+  "tests": {
+    "tests": 13,
+    "pass": 13,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "log": {
+      "path": "outputs/ap23h3-2026-10-22/independent-core-review-tests.txt",
+      "byteLength": 3612,
+      "sha256": "c8a78fe767473d8fa19a50be35e127c481b6545217439adf7a3d929d7a4475c7"
+    }
+  },
+  "cases": {
+    "mandatoryFactRemovals": 389,
+    "contextForgeries": 6,
+    "coercionValuesPerOwOpening": 9,
+    "federalComparisons": 104,
+    "bernSocialBindings": 50,
+    "priorAdministrativePaths": 58,
+    "priorAdministrativeComparisons": 290
+  },
+  "fixedDuringImplementation": [
+    {
+      "finding": "V5 opening-origin coercion must not accept boxed or coercible objects",
+      "resolution": "Explicit primitive equality. Both original and timely-request branches reject non-string facts."
+    }
+  ],
+  "bindings": [
+    {
+      "path": "src/core/administrativeTypesV5.ts",
+      "byteLength": 2643,
+      "sha256": "a9fc29bc5c656e02cd57b7ef91c29bdca227ff59634d18588f9510f8ac5cdcd2"
+    },
+    {
+      "path": "src/core/administrativeCatalogV5.ts",
+      "byteLength": 5215,
+      "sha256": "2baf3741a99f079f71896d56040910279b9b3051488c71c56d81f920a0bf777e"
+    },
+    {
+      "path": "src/core/administrativeV5Baseline.ts",
+      "byteLength": 33538,
+      "sha256": "c9b203c340fffa1e7d753754970767fcd05ad690062093e1c2e83227d9e301b7"
+    },
+    {
+      "path": "src/core/format12Baseline.ts",
+      "byteLength": 499736,
+      "sha256": "3a4c66daa56e1caa5db5473de27f5e776908264e551c8b3a3c368688abcf1159"
+    },
+    {
+      "path": "src/core/releaseFormat12.ts",
+      "byteLength": 21957,
+      "sha256": "282b9eff88dd575bfd26dd13d42490897e15ab26e6f2fdbbfb1cf0ad59135622"
+    },
+    {
+      "path": "src/core/format12CalculationData.ts",
+      "byteLength": 5554,
+      "sha256": "41c6c084583650bd5cbb4f0fce2ef0e6d6631234fad02c266f4ef5c6aae67cc4"
+    },
+    {
+      "path": "src/core/format12Runtime.ts",
+      "byteLength": 3273,
+      "sha256": "b5b5b27df9ca39694e86da2e13cf86998520688673b0984571177ea49adbc18c"
+    },
+    {
+      "path": "src/core/holidayActivationV12.ts",
+      "byteLength": 2714,
+      "sha256": "7178f240a0138e466954041212d24a1793a0bea908b3b24280adee63df84a280"
+    },
+    {
+      "path": "src/core/administrativeDeadline.ts",
+      "byteLength": 26400,
+      "sha256": "d8e35cdf30243faf2d53f7b21923e285a2372b3a6959a33d971faa82fe61fe69"
+    },
+    {
+      "path": "src/core/administrativeCatalog.ts",
+      "byteLength": 14208,
+      "sha256": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb"
+    },
+    {
+      "path": "src/core/administrativeContext.ts",
+      "byteLength": 1517,
+      "sha256": "24fc74014ff6f1b79b8068bb5466241a04df10be01004eb1e89399c18046af59"
+    },
+    {
+      "path": "src/core/modernRuntime.ts",
+      "byteLength": 1796,
+      "sha256": "dd1af4b2b9c77ed1a0a0f233f2edce119c205113324d975888aba9656874bdcf"
+    },
+    {
+      "path": "src/core/calendarResolution.ts",
+      "byteLength": 7044,
+      "sha256": "da999cbb76f57264c9e55a28f054365aa2e55fedab545e28af3b9b3f2048100b"
+    },
+    {
+      "path": "src/core/calculateCalendarBoundDeadline.ts",
+      "byteLength": 13317,
+      "sha256": "e73f465a484ad068f53ee96ef94533d20d5f33eec37e443fe46573138b8ce4ce"
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "byteLength": 25413,
+      "sha256": "242715faf2f2d0181e03fa517900f05d3ed14d8526484020138da5eb1d6f4f49"
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "byteLength": 15751,
+      "sha256": "80ac43f254f98a7928bc31b9d5803cfaa033b8a01dd4e008eb068191cdd56c9a"
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "byteLength": 31070,
+      "sha256": "c0b72a378f88f68d50bb5c6c2ee8968d6589a77e41db0dc1ccba3b468a86f602"
+    },
+    {
+      "path": "src/release/ap23h3CandidateData.ts",
+      "byteLength": 3223200,
+      "sha256": "ffed7ed8e8fe795497993b8734e118d7e0dd79e746d94b369804997636ebb046"
+    },
+    {
+      "path": "tests/core/ap23h3Fixtures.ts",
+      "byteLength": 6521,
+      "sha256": "82a051fa9cf36bb14fd92af2eadf7cbf2f4b56c7b59b33bfdec43fd509af17a6"
+    },
+    {
+      "path": "tests/core/ap23h3-independent.test.ts",
+      "byteLength": 7677,
+      "sha256": "51b6216ddebd2f198b9053acd984d90fde841f98fe8a2bdfed65df22f01ba0a9"
+    },
+    {
+      "path": "tests/core/ap23h3-runtime.test.ts",
+      "byteLength": 9024,
+      "sha256": "55a4346421a1d67c2f744d1afdda42b3e8cbababc648aa68880f559c5101698d"
+    },
+    {
+      "path": "scripts/check-ap23h3-review.mjs",
+      "byteLength": 5210,
+      "sha256": "7d351de8b9095c5cfcb9745b1ebabda1fa0d4ea2397b8eb1d1e0a8a10f5dcc88"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/manifest.json",
+      "byteLength": 27398,
+      "sha256": "14f60a83ed2f13e3f176f303e444ea43a606bae6980033e3d875093c63a5d429"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/profiles/bgg.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/profiles/stpo.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/profiles/vrpg-be.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/profiles/vwvg.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/profiles/zpo.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/special-regimes/vrpg-be.json",
+      "byteLength": 114845,
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/holiday-catalogs/ch-holiday-catalog.json",
+      "byteLength": 1194427,
+      "sha256": "c5701e47df0d07bb288719b26d55c31b84fe83ea539578d9192e292e08602570"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ag-21d6f2634ce0.json",
+      "byteLength": 13915,
+      "sha256": "35d0358f4b5888aded961b40f8245ccbe96b3ac885cc6fbd6638cee3a7c1e051"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ai-5d4e5a68e106.json",
+      "byteLength": 16090,
+      "sha256": "cf4172c597d49a60123a5a1358fa2b3849fa0dc40c815adf58f1793b1fb44936"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ai-f507435d8aa8.json",
+      "byteLength": 17067,
+      "sha256": "f5f52c43411fffb6fb1cfbc2545ee3694f1c9036c299ee26c0b19cc2dece6997"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ar-88bb22c08a22.json",
+      "byteLength": 9127,
+      "sha256": "fd158652ad99bf95b8369516bf8f0c9117b8b18fefaa4cb81cbd640c2b4af51b"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "byteLength": 12983,
+      "sha256": "b4c0f095b4b3863fcbebb505094df4ad037bbc13f9978aec0ec6bb10056e9e0a"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-bs-39a64bdfc0fe.json",
+      "byteLength": 13035,
+      "sha256": "e9b79ecc23284487d5d3bcc1bfbaf1eb0919db6af17b2b814d675bbd0ac29e05"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-fr-7d8c38f7c610.json",
+      "byteLength": 15085,
+      "sha256": "a5e33d1e0494af6b8e8e7062bc988b1fe3680a9ec47045a673562f7f95ac8b8d"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ge-a36ff7926d08.json",
+      "byteLength": 9635,
+      "sha256": "ff83a6a213b7577bbbe5b8efd3e48d80c865118526ebc6209feb14ec2a13c13e"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-gl-87c11e156541.json",
+      "byteLength": 14049,
+      "sha256": "f510c466a1c7755fa63a06fbef41bec760b672833f6284af0818cb044d7a2b65"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-gr-bf0366c8eda2.json",
+      "byteLength": 11851,
+      "sha256": "43d05cf624902e1be6d6b474866fff2e4a0f7973d2b46c20b443e7769ba4988a"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ju-b096c09f506c.json",
+      "byteLength": 15841,
+      "sha256": "d9a2093c242bc9b20a797366ba358032fda9b183409e7d267ee1c78afdd1dd73"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-lu-55514cd91f06.json",
+      "byteLength": 13337,
+      "sha256": "c14a54aea5ee8ddbaef68fa8ae5df9ba137869940ee7eebf39dbd334fd671c8f"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-lu-b879eb8eb04f.json",
+      "byteLength": 17114,
+      "sha256": "adeb8a4a1b62adabd950f3f24273052da706e7e2e7bb05db06f81084c53f4bee"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ne-027ceadbf103.json",
+      "byteLength": 18918,
+      "sha256": "eac3780158ac0ac97beb5b9189c7e06f2f533dcd0a6b059652dd0256ef2773c7"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ne-21f519039621.json",
+      "byteLength": 20285,
+      "sha256": "b9b4a8af503fa3b191819bd7c1d4988e27af2ef46c77c29c8f91dd8355404a30"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-nw-5dfca484e4af.json",
+      "byteLength": 13874,
+      "sha256": "23942a3f51ebcefba1f7d69d37ce5b8344c8540eb38883a77115eb971c89ee5d"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ow-76c151dccf1f.json",
+      "byteLength": 13907,
+      "sha256": "5ddd66239b306e05cfdedea29ea7648836723e90e38e08c61cd55b705c061869"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-sg-79009d6d6021.json",
+      "byteLength": 12814,
+      "sha256": "29df1b8824b20b18e80b831582e6bd841946c6e80d5314eebf52dae53bf8e8fe"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-sg-f95068e3b162.json",
+      "byteLength": 14210,
+      "sha256": "3e18a90084e3b6c06f0af42d63daf0c195df02cd4165c3919ec2975e89fff618"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-sh-1ccc70f9897a.json",
+      "byteLength": 12964,
+      "sha256": "93b2ca218213b5a2402506a2026e689694bce5b2bb638cf8f2a66df813ca8748"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-sh-ec7d0988145a.json",
+      "byteLength": 14324,
+      "sha256": "047155621b90bc75836025524b7e056f2e9c65f800fe5a35a5a4b0bb2fbec5d3"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-so-3f5f7b7f54f5.json",
+      "byteLength": 13343,
+      "sha256": "ee3064ddffdc4074632e2617a16b4bf9a92888eaea6cc6fc60920a68ec9ec3be"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-sz-ec9f2c557fe4.json",
+      "byteLength": 17610,
+      "sha256": "b44dd218545d8516052a368b145f06c782d9f94f4177790adc7c9af9d2122341"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-tg-3d6514fbabb1.json",
+      "byteLength": 13688,
+      "sha256": "5e32298fcc0264c1380a100fe88d6ef4a4be9898fee520de043b12f1e4ee11c2"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ti-944ed0286e9a.json",
+      "byteLength": 14966,
+      "sha256": "fbad9d860f4d2d799a1a18c935304d4cffc1bfb30d21da440f7175d7f3b45021"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-ur-67275ff3e872.json",
+      "byteLength": 14826,
+      "sha256": "269f5430aa59833e1fda478ca423839bc1072967e4ed5377c38a052a85cf7670"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-vd-26f452ff34ee.json",
+      "byteLength": 10199,
+      "sha256": "678156037de59e553e300d349ca05f6266e12cb96b8459d5bd22b4c9920778c9"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-vs-6c002f32b1b0.json",
+      "byteLength": 14071,
+      "sha256": "58c6809cb414abacde56cdb4cbb6b73a05bc2b4bd92ec714b208de1d41fb034a"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-zg-860e0f8e0e1a.json",
+      "byteLength": 16382,
+      "sha256": "8dadc47e1db83fc2d9db095908626f3592f7db2ab3e886055e7a5cd19c867391"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap22-zh-5aa2974cffee.json",
+      "byteLength": 10518,
+      "sha256": "0e7626e858dbedce75854c8b96271219b67d0b1455b438547d21a37e368d67e3"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/be-public-holidays.json",
+      "byteLength": 10824,
+      "sha256": "01a8e2b1fbb24d5d28318f7a179a0cd45967df1d9974b35eca7a2a4c424cd9c6"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ch-federal-calendar.json",
+      "byteLength": 7457,
+      "sha256": "d42ffcee4510c5abd6949c6dc7496df2a9ee25d9b7583350c2675d6de86cdaa7"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/social-procedures/ch-social-procedures.json",
+      "byteLength": 546538,
+      "sha256": "747547b1dcef0ea81839f85a3321c9190cd97f50c893ba27a29628a75ce072be"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "byteLength": 517091,
+      "sha256": "2d6a3894f162a25a4483ec7daf1fc8c5b5e70aed3bab83e544f60fea87782f05"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap23f2-zh-rlg-nine.json",
+      "byteLength": 9975,
+      "sha256": "8634fd97dd8d40532aa3525198907610a28b26dccc553dd38349739683d75817"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap23h2-ow-procedural-core.json",
+      "byteLength": 5055,
+      "sha256": "39c65a3600d691cbc2ba295c4979aa572aea06a4ef99117d9bcb3f1e15251be1"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23h3/calendars/ap23h2-nw-procedural-core.json",
+      "byteLength": 5025,
+      "sha256": "e573d4a369e618e428aba2aaaf6d9e08583fc51064c0262fd4c3a159a8473106"
+    }
+  ]
+}

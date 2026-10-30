@@ -1,0 +1,94 @@
+{
+  "workPackage": "AP23L3",
+  "status": "passed",
+  "localOnly": true,
+  "method": "Observed interaction through the in-app browser on the actual built local application. Screenshots visually inspected. Accessibility text is captured from that browser, not synthesized from product sources.",
+  "url": "http://127.0.0.1:8810/fristenrechner/",
+  "dataReleaseId": "2026-10-27-ap23l3-candidate.1",
+  "cases": [
+    {
+      "id": "B-L3-AI-TRACKING-DE",
+      "physicalReceipt": "2026-09-19",
+      "qualifiedLegalOpening": "2026-09-21",
+      "firstCountedDay": "2026-09-22",
+      "days": 10,
+      "finalEnd": "2026-10-01",
+      "correctedNextDayCaptionObserved": true,
+      "exportDenied": true
+    },
+    {
+      "id": "B-L3-DATE-MEANING-RESET",
+      "transition": "trackingPhysicalReceipt -> unselected",
+      "inputDateCleared": true,
+      "currentQualificationCleared": true,
+      "oldResultRemoved": true
+    },
+    {
+      "id": "B-L3-SZ-MARTINSTAG-FR",
+      "qualifiedOpening": "2026-11-01",
+      "firstCountedDay": "2026-11-02",
+      "days": 10,
+      "lastCountedDay": "2026-11-11",
+      "finalEnd": "2026-11-12",
+      "martinstagEndShiftOnly": true,
+      "readableFrenchSources": true,
+      "exportDenied": true
+    }
+  ],
+  "visualChecks": {
+    "twoColumns": true,
+    "staticSeatLabel": true,
+    "buttonsTwoRows": true,
+    "earlyDateEntry": true,
+    "readableGermanAndFrenchTrace": true,
+    "stylesheetsChanged": false
+  },
+  "actualIcsFilesSaved": 0,
+  "outlookImports": 0,
+  "realDeviceOrM365Test": false,
+  "professionalTechnicalAcceptance": false,
+  "sourceReleaseApproved": false,
+  "operatingChanges": false,
+  "evidence": [
+    {
+      "path": "outputs/ap23l3-2026-10-27/browser-ai-tracking.ax.txt",
+      "byteLength": 11601,
+      "sha256": "db2ef555f8f889c886094a343d5947c994f7f1ac6a0042040c7ac475bde4a576"
+    },
+    {
+      "path": "outputs/ap23l3-2026-10-27/browser-ai-tracking.jpg",
+      "byteLength": 112091,
+      "sha256": "06b5e68209c742c1c34f851e22f0b9f3d590d4a767ad4a439f1fc8d35c6667aa"
+    },
+    {
+      "path": "outputs/ap23l3-2026-10-27/browser-opening-reset.ax.txt",
+      "byteLength": 6161,
+      "sha256": "6ea67019a5afdc3a141f2d27f0b9a075e81757f872f8eff4f7cc90a3804cc5a9"
+    },
+    {
+      "path": "outputs/ap23l3-2026-10-27/browser-sz-martinstag-fr.ax.txt",
+      "byteLength": 12527,
+      "sha256": "b5741e46e18de5e356c9bc4c3388b0666833fa39674612f592952a07af349da3"
+    },
+    {
+      "path": "outputs/ap23l3-2026-10-27/browser-sz-martinstag-fr.jpg",
+      "byteLength": 118164,
+      "sha256": "b289ce44db530f3705219aef064bedb5e1535b3c00f2ae83108addaad56a306b"
+    },
+    {
+      "path": "outputs/ap23l3-2026-10-27/browser-sz-form-de.jpg",
+      "byteLength": 111335,
+      "sha256": "ee0695ab23b45d250ae6e6a6d4f0e4e81f04752036c6f38392f05c1d7830d9de"
+    },
+    {
+      "path": ".work/public-ap23l3/index.html",
+      "byteLength": 2152,
+      "sha256": "b5e32eed623dff873358b44e93231e83179e2468a6c1c5b46ab2f98c1410206c"
+    },
+    {
+      "path": ".work/public-ap23l3/assets/app-RQVQUQRL.js",
+      "byteLength": 6312579,
+      "sha256": "5234ddf122e4d3621913e85241b8e02bd2bd2541fe3d795bda024c1767e78115"
+    }
+  ]
+}

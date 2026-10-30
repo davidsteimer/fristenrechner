@@ -1,0 +1,4446 @@
+{
+  "workPackage": "AP23L2",
+  "acceptedResearch": "docs/fachrecht/ap23l1/referenzfaelle.json",
+  "originalCaseCount": 83,
+  "caseFactsAreCurrentNotDefaults": true,
+  "paths": [
+    {
+      "researchId": "AI-ADMIN-ORDERED",
+      "pathId": "ai-admin-ordered",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "initialAdministration",
+      "technicalStages": [
+        "administration"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-ADMIN-WRITTEN-7",
+      "pathId": "ai-admin-written-7",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "initialAdministration",
+      "technicalStages": [
+        "administration"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "oralDecisionWrittenOpeningRequest",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "AI-B-ORAL-TRIGGER"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "oralDecisionWrittenOpeningRequest",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "AI-B-ORAL-TRIGGER",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-APPEAL-30",
+      "pathId": "ai-internal-appeal-30",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryRecourse",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryRecourse",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-BUILDING-10",
+      "pathId": "ai-internal-building-10",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "buildingApplicationDecisionRecourse",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "buildingApplicationDecisionRecourse",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-SCHOOL-10",
+      "pathId": "ai-internal-school-10",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "enumeratedCantonalSchoolRecourse",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "enumeratedCantonalSchoolRecourse",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-ORDERED",
+      "pathId": "ai-internal-ordered",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-DENIAL-30",
+      "pathId": "ai-internal-denial-30",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalSupervision",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalSupervision",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedDenialNotDelayNoOrdinaryRemedy",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "AI-B-KNOWLEDGE-TRIGGER"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalSupervision",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedDenialNotDelayNoOrdinaryRemedy",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "AI-B-KNOWLEDGE-TRIGGER",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-APPEAL-30",
+      "pathId": "ai-court-appeal-30",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryCourtAppeal",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryCourtAppeal",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-INTERIM-7",
+      "pathId": "ai-court-interim-7",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleInterimOrProvisionalNotExecution",
+          "reason": "AI-O1-EXECUTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleInterimOrProvisionalNotExecution",
+          "reason": "AI-O1-EXECUTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-ORDERED",
+      "pathId": "ai-court-ordered",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-FULL-30",
+      "pathId": "ai-court-full-30",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtDecisionFollowup",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtDecisionFollowup",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "unreasonedJudgmentFullDecisionRequest",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtDecisionFollowup",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "unreasonedJudgmentFullDecisionRequest",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-INTERPRET-7",
+      "pathId": "ai-court-interpret-7",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtDecisionFollowup",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtDecisionFollowup",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedJudgmentInterpretation",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtDecisionFollowup",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedJudgmentInterpretation",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-PRESIDENT-7",
+      "pathId": "ai-court-president-7",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedGog42PresidentialDecision",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedGog42PresidentialDecision",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-PERSONNEL-10",
+      "pathId": "ai-court-personnel-10",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtPersonnelCommission",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtPersonnelCommission",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedJudicialPresidentPersonnelDecision",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtPersonnelCommission",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedJudicialPresidentPersonnelDecision",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-NOTICE-30",
+      "pathId": "ai-internal-notice-30",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleRecourseWithQualifiedNoticeDefect",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "defectiveNoLongerEffectiveInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleRecourseWithQualifiedNoticeDefect",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "defectiveNoLongerEffectiveInstruction",
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE",
+          "explanation": "Aktuelle Fachqualifikation ordinaryStatutoryDays."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-INTERNAL-NOTICE-LONG",
+      "pathId": "ai-internal-notice-long",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "internalAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleRecourseWithEffectiveLongerInstruction",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "effectiveLongerInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        },
+        {
+          "key": "longerInstructionQualification",
+          "value": "aboveBothStatutoryAndThirty",
+          "reason": "AI-O3-NOTICE-PRIORITY"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleRecourseWithEffectiveLongerInstruction",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "effectiveLongerInstruction",
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE",
+          "explanation": "Aktuelle Fachqualifikation ordinaryStatutoryDays."
+        },
+        {
+          "key": "longerInstructionQualification",
+          "value": "aboveBothStatutoryAndThirty",
+          "reason": "AI-O3-NOTICE-PRIORITY",
+          "explanation": "Aktuelle Fachqualifikation longerInstructionQualification."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-NOTICE-30",
+      "pathId": "ai-court-notice-30",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAppealWithQualifiedNoticeDefect",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "defectiveNoLongerEffectiveInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            7,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAppealWithQualifiedNoticeDefect",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "defectiveNoLongerEffectiveInstruction",
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            7,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE",
+          "explanation": "Aktuelle Fachqualifikation ordinaryStatutoryDays."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "AI-COURT-NOTICE-LONG",
+      "pathId": "ai-court-notice-long",
+      "lawId": "ai-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAppealWithEffectiveLongerInstruction",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "effectiveLongerInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            7,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        },
+        {
+          "key": "longerInstructionQualification",
+          "value": "aboveBothStatutoryAndThirty",
+          "reason": "AI-O3-NOTICE-PRIORITY"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR",
+          "explanation": "Aktuelle Fachqualifikation authorityRegion."
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS",
+          "explanation": "Aktuelle Fachqualifikation caseUnit."
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation specialRule."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAppealWithEffectiveLongerInstruction",
+          "reason": "AI-B-ACTION",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "effectiveLongerInstruction",
+          "reason": "AI-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            7,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE",
+          "explanation": "Aktuelle Fachqualifikation ordinaryStatutoryDays."
+        },
+        {
+          "key": "longerInstructionQualification",
+          "value": "aboveBothStatutoryAndThirty",
+          "reason": "AI-O3-NOTICE-PRIORITY",
+          "explanation": "Aktuelle Fachqualifikation longerInstructionQualification."
+        }
+      ],
+      "openingKind": "aiQualifiedOrTrackingPost",
+      "holidayBindingId": "ai-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-ORDERED",
+      "pathId": "sz-admin-ordered",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "initialAdministration",
+      "technicalStages": [
+        "administration"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-ORDERED-EXEMPT",
+      "pathId": "sz-admin-ordered-exempt",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "initialAdministration",
+      "technicalStages": [
+        "administration"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "urgentProvisionalMeasure"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "urgentProvisionalMeasure"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-APPEAL-20",
+      "pathId": "sz-admin-appeal-20",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "administrativeAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralAdministrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralAdministrativeAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-APPEAL-20-EXEMPT",
+      "pathId": "sz-admin-appeal-20-exempt",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "administrativeAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralAdministrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralAdministrativeAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-APPEAL-ORDERED",
+      "pathId": "sz-admin-appeal-ordered",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "administrativeAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-APPEAL-ORDERED-EXEMPT",
+      "pathId": "sz-admin-appeal-ordered-exempt",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "administrativeAppeal",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw",
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw",
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-ADMIN-PROVISIONAL-OPPOSITION",
+      "pathId": "sz-admin-provisional-opposition",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "provisionalOpposition",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "provisionalOpposition",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "actual23Paragraph2OppositionOrder",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "urgentProvisionalMeasure"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "provisionalOpposition",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "actual23Paragraph2OppositionOrder",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "urgentProvisionalMeasure"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-COURT-APPEAL-20",
+      "pathId": "sz-court-appeal-20",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-COURT-APPEAL-20-EXEMPT",
+      "pathId": "sz-court-appeal-20-exempt",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-COURT-EXECUTION-10",
+      "pathId": "sz-court-execution-10",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleSelfStandingGeneralExecutionAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleSelfStandingGeneralExecutionAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-COURT-ORDERED",
+      "pathId": "sz-court-ordered",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "courtProceeding",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtProceeding",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "courtProceeding",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-COURT-ORDERED-EXEMPT",
+      "pathId": "sz-court-ordered-exempt",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "courtProceeding",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtProceeding",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw",
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "courtProceeding",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw",
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    },
+    {
+      "researchId": "SZ-COURT-EXECUTION-10-EXEMPT",
+      "pathId": "sz-court-execution-10-exempt",
+      "lawId": "sz-general-administrative",
+      "sourceStage": "courtAppeal",
+      "technicalStages": [
+        "court"
+      ],
+      "originalRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleSelfStandingGeneralExecutionAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleSelfStandingConstructionExecutionRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "projectedRequirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityScope."
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation authorityCanton."
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1",
+          "explanation": "Aktuelle Fachqualifikation authorityMunicipality."
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation applicability."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING",
+          "explanation": "Aktuelle Fachqualifikation openingMode."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE",
+          "explanation": "Aktuelle Fachqualifikation noticeStatus."
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation submissionMode."
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST",
+          "explanation": "Aktuelle Fachqualifikation postUseStatus."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation stage."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleSelfStandingGeneralExecutionAppeal",
+          "reason": "SZ-B-SPECIAL",
+          "explanation": "Aktuelle Fachqualifikation actionQualification."
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionQualification."
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleSelfStandingConstructionExecutionRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION",
+          "explanation": "Aktuelle Fachqualifikation exceptionCategory."
+        }
+      ],
+      "openingKind": "qualifiedCurrentTrigger",
+      "holidayBindingId": "sz-qualified-authority-seat",
+      "noImplicitCaseFacts": true
+    }
+  ]
+}

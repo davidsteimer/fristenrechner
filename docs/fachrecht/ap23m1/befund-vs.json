@@ -1,0 +1,2010 @@
+{
+  "workPackage": "AP23M1",
+  "canton": "VS",
+  "jurisdiction": "CH-VS",
+  "reviewedOn": "2026-10-27",
+  "status": "research-proposal-not-accepted-not-operative",
+  "researchWindow": {
+    "from": "2026-08-29",
+    "through": "2027-12-31",
+    "appliesTo": "actual trigger, qualified legal opening, every counted and shifted day"
+  },
+  "sourceBindingIndex": "docs/fachrecht/ap23m1/quellen-vs.json",
+  "sourceChronology": [
+    {
+      "id": "VS-VVRG-WINDOW",
+      "sourceId": "M1-VS-LPJA-FR-API",
+      "versionId": 3359,
+      "validFrom": "2025-01-01",
+      "decisionDate": "2023-11-16",
+      "futureVersionsObserved": [],
+      "finding": "Amtliche aktuelle Fassung und deutsche Parallelfassung vollständig gesichtet. Der tatsächliche Änderungserlass 2024-095 betrifft Art. 37 Abs. 2. Arrêté 2024-094 Art. 1 belegt die Wirksamkeit ab 01.01.2025. Keine neue Zustellwochenendregel im aktuellen VVRG."
+    },
+    {
+      "id": "VS-LOJ-WINDOW",
+      "sourceId": "M1-VS-LOJ-API",
+      "versionId": 3260,
+      "validFrom": "2024-01-01",
+      "futureVersionsObserved": [],
+      "finding": "Art. 37 enthält denselben verfahrensrechtlichen Feiertagszusatz. Historischer LOJ-Art.-32-Verweis wird nicht als aktuelle Samstagsnorm verwendet."
+    },
+    {
+      "id": "VS-REST-WINDOW",
+      "sourceId": "M1-VS-RUHEREG-API",
+      "versionId": 2108,
+      "validFrom": "1966-12-02",
+      "futureVersionsObserved": [],
+      "finding": "Art. 1 enthält die acht kirchlichen Feiertage. Der zusätzliche verfahrensrechtliche Katalog steht in VVRG Art. 15 Abs. 2 lit. c."
+    }
+  ],
+  "temporalFinding": "Keine zukünftige Fassung in den gesichteten amtlichen Registern ist keine Garantie unveränderter Rechtslage bis Ende 2027. Vor späterer Datenübernahme erneuter Quellenabgleich.",
+  "calendarProposals": [
+    {
+      "id": "VS-PROCEDURAL",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "existingCalendar": "data/candidates/2026-10-27-ap23l3/calendars/ap22-vs-6c002f32b1b0.json",
+      "role": "authoritySeat",
+      "fixedCanton": "VS",
+      "sourceIds": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-LOJ-API",
+        "M1-VS-RUHEREG-API"
+      ],
+      "ruleSpec": {
+        "fixed": [
+          "01-01",
+          "01-02",
+          "03-19",
+          "08-01",
+          "08-15",
+          "11-01",
+          "12-08",
+          "12-25",
+          "12-26"
+        ],
+        "easterOffsets": [
+          1,
+          39,
+          50,
+          60
+        ]
+      },
+      "finding": "Bestehender verfahrensrechtlicher VS-Kalender einschliesslich vier LPJA-Zusatztagen. Karfreitag ist hier kein allgemeiner verfahrensrechtlicher VS-Feiertag. Sitzanknüpfung nach DEC-2026-031, keine unbeschränkte Parteienkalenderwahl und keine kommunalen Zusätze."
+    }
+  ],
+  "openingPolicy": {
+    "qualifiedLegalOpening": "Nur aktuell rechtlich bestimmter Eröffnungstag. Bei qualifiziertem Posteingang kann bereits die Ablage in Briefkasten oder Postfach massgebend sein. Samstag als Eröffnung wird nicht auf Montag verschoben. Keine automatische Fiktion aus einem blossen Trackingdatum.",
+    "trackingPhysicalReceipt": "Keine gesonderte Rohdatumsautomatik vorgeschlagen. VVRG Art. 29 und die geprüfte Rechtsprechung rechtfertigen keine pauschale Übernahme der NE-/VD-Neuregelung.",
+    "excludedAutomations": [
+      "Sieben-Tage-Fiktion ohne aktuelle qualifizierte Zustelltatsachen",
+      "Übernahme bundesrechtlicher oder anderer kantonaler Wochenendzustellregeln",
+      "Erfundene Folgefrist aus einem mündlichen Bestätigungs- oder Begründungsverlangen",
+      "Allgemeine elektronische Plattformzustellung aus einer CPC-Verweisung"
+    ]
+  },
+  "noticePolicy": {
+    "regular": "Ordentliche Frist einschliesslich einer lediglich kürzeren Belehrung. Fehlende oder mangelhafte Eröffnung nach Art. 31 verlangt Einzelfallqualifikation und wird nicht automatisch als 30-Tage-Neustart behandelt.",
+    "longer": "Art. 14 Abs. 2 schützt eine konkret wirksame irrtümlich längere Frist. Der positive Tagesweg setzt die aktuell qualifizierte normale Basis von zehn oder 30 Tagen, eine darüber liegende tatsächliche Tagesbelehrung und deren rechtliche Wirksamkeit voraus. Keine freie Übersetzung eines fixen Datums oder falschen Bezugspunkts."
+  },
+  "suspensionFinding": {
+    "administration": "Kein allgemeiner Art.-79a-Stillstand im Erst-, Einsprache- oder verwaltungsinternen Beschwerdeverfahren. KGE A1 23 199 E. 3 bestätigt die systematische Trennung.",
+    "court": "VVRG Art. 79a für gesetzliche und richterliche Fristen: Ostern ± sieben Tage, 15. Juli–15. August, 18. Dezember–5. Januar. Der ausdrückliche Text enthält keine pauschale Kurz-, Dringlichkeits- oder Vorsorglich-Ausnahme. Art. 81 erlaubt keine Verdrängung der speziellen Stillstandsnorm durch ZPO-Ausnahmen.",
+    "special": "Abweichendes Bundes-, Steuer-, Sozial-, Beschaffungs- oder anderes Spezialrecht vor positivem allgemeinen Weg aktuell ausschliessen. Keine ausserbernische Sozialfreigabe."
+  },
+  "saturdayFinding": {
+    "status": "resolved-by-current-text-plus-primary-judicial-interpretation",
+    "sourceId": "M1-VS-SATURDAY-CASE",
+    "locator": "A1 15 225 E. 1.1–1.3, S. 6–8",
+    "finding": "Das Gericht prüft ausdrücklich den Wegfall des alten Samstagssatzes ab 2011 und lehnt eine dadurch beabsichtigte Rechtsänderung ab. Es bestätigt den nächsten Werktag unter Heranziehung von Art. 15 Abs. 4 und OR 77 ff. Die Begründung erfasst die gemeinsame administrative und gerichtliche Fristberechnung. Das ist ausgewiesene Auslegung, kein wörtlicher heutiger Samstagssatz."
+  },
+  "pathProposals": [
+    {
+      "id": "VS-ADMIN-ORDERED",
+      "title": "Angeordnete Eingabe im Erstverfahren",
+      "stage": "initialAdministration",
+      "actionQualification": "validCurrentDayCountOrder",
+      "days": null,
+      "durationType": "currentOrderedDays",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedCurrentOrderOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 12 Abs. 2, 13 und 15",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-WRITTEN-5",
+      "title": "Schriftliche Bestätigung nach mündlicher Verfügung verlangen",
+      "stage": "initialAdministration",
+      "actionQualification": "informedOralDecisionWrittenRequest",
+      "days": 5,
+      "durationType": "statutory",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "informedOralDecisionWrittenRequest",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "informedOralOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 29 Abs. 2 und 4, 15",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-OPPOSITION-30",
+      "title": "Gesetzlich eröffnete administrative Einsprache oder Reklamation",
+      "stage": "opposition",
+      "actionQualification": "legallyAvailableAdministrativeOpposition",
+      "days": 30,
+      "durationType": "statutory",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "opposition",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "legallyAvailableAdministrativeOpposition",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 34a–34g, 15",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-APPEAL-30",
+      "title": "Ordentliche Verwaltungsbeschwerde",
+      "stage": "internalAppeal",
+      "actionQualification": "admissibleOrdinaryAdministrativeAppeal",
+      "days": 30,
+      "durationType": "statutory",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryAdministrativeAppeal",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 41, 43 und 46 Abs. 1",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-INTERLOCUTORY-10",
+      "title": "Selbstständig anfechtbarer Zwischenentscheid an Verwaltungsinstanz",
+      "stage": "internalAppeal",
+      "actionQualification": "independentlyAppealableInterlocutoryDecision",
+      "days": 10,
+      "durationType": "statutory",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "independentlyAppealableInterlocutoryDecision",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 41–42 und 46 Abs. 1",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-APPEAL-ORDERED",
+      "title": "Angeordnete Eingabe im Verwaltungsbeschwerdeverfahren",
+      "stage": "internalAppeal",
+      "actionQualification": "validCurrentDayCountOrder",
+      "days": null,
+      "durationType": "currentOrderedDays",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedCurrentOrderOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 12–15, 49–50 und 54–56",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-FULL-30",
+      "title": "Vollständigen Verwaltungsbeschwerdeentscheid nach Dispositiv verlangen",
+      "stage": "internalAppeal",
+      "actionQualification": "writtenJudicatumFullReasonsRequest",
+      "days": 30,
+      "durationType": "statutory",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "writtenJudicatumFullReasonsRequest",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenJudicatum",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 60 Abs. 2, 15",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-ADMIN-NOTICE-LONG",
+      "title": "Verwaltungsbeschwerde nach wirksamer längerer Tagesbelehrung",
+      "stage": "internalAppeal",
+      "actionQualification": "qualifiedEffectiveLongerDayInstruction",
+      "days": null,
+      "durationType": "currentQualifiedLongerDays",
+      "suspension": "none",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedEffectiveLongerDayInstruction",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "qualifiedEffectiveLongerDays",
+          "reason": "VS-B-NOTICE"
+        },
+        {
+          "key": "ordinaryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "VS-B-NOTICE-BASE"
+        }
+      ],
+      "durationFact": "actualInstructionDays",
+      "durationBaseFact": "ordinaryDays",
+      "locator": "VVRG/LPJA Art. 14 Abs. 2, 46 Abs. 3",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE",
+        "M1-VS-RECESS-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-COURT-APPEAL-30",
+      "title": "Ordentliche Verwaltungsgerichtsbeschwerde",
+      "stage": "courtAppeal",
+      "actionQualification": "admissibleOrdinaryJudicialAppeal",
+      "days": 30,
+      "durationType": "statutory",
+      "suspension": "threeWinterJan5",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryJudicialAppeal",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 72–77a, 79a und 80 Abs. 1 lit. b i.V.m. 46",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-COURT-INTERLOCUTORY-10",
+      "title": "Selbstständig anfechtbarer Zwischenentscheid an Kantonsgericht",
+      "stage": "courtAppeal",
+      "actionQualification": "independentlyAppealableInterlocutoryDecision",
+      "days": 10,
+      "durationType": "statutory",
+      "suspension": "threeWinterJan5",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "independentlyAppealableInterlocutoryDecision",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 77 lit. a, 79a und 80 Abs. 1 lit. b i.V.m. 41–42 und 46",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-COURT-ORDERED",
+      "title": "Gerichtlich angeordnete Eingabe",
+      "stage": "courtAppeal",
+      "actionQualification": "validCurrentDayCountOrder",
+      "days": null,
+      "durationType": "currentOrderedDays",
+      "suspension": "threeWinterJan5",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedCurrentOrderOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 12–15, 79a, 80 Abs. 1 lit. c–d",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-COURT-FULL-30",
+      "title": "Vollständigen Gerichtsentscheid nach Dispositiv verlangen",
+      "stage": "courtAppeal",
+      "actionQualification": "writtenJudicatumFullReasonsRequest",
+      "days": 30,
+      "durationType": "statutory",
+      "suspension": "threeWinterJan5",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "writtenJudicatumFullReasonsRequest",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenJudicatum",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 79a und 80 Abs. 1 lit. e i.V.m. 60 Abs. 2",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-COURT-WRITTEN-5",
+      "title": "Schriftliche Bestätigung nach qualifiziert mündlichem Gerichtsentscheid verlangen",
+      "stage": "courtAppeal",
+      "actionQualification": "informedOralDecisionWrittenRequest",
+      "days": 5,
+      "durationType": "statutory",
+      "suspension": "threeWinterJan5",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "informedOralDecisionWrittenRequest",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "informedOralOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "VS-B-NOTICE"
+        }
+      ],
+      "locator": "VVRG/LPJA Art. 79a, 80 Abs. 2 i.V.m. 29 Abs. 2 und 4",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE"
+      ],
+      "syntheticFacts": {}
+    },
+    {
+      "id": "VS-COURT-NOTICE-LONG",
+      "title": "Verwaltungsgerichtsbeschwerde nach wirksamer längerer Tagesbelehrung",
+      "stage": "courtAppeal",
+      "actionQualification": "qualifiedEffectiveLongerDayInstruction",
+      "days": null,
+      "durationType": "currentQualifiedLongerDays",
+      "suspension": "threeWinterJan5",
+      "calendarId": "ap22-vs-6c002f32b1b0",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "VS-PROCEDURAL"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupported"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "VS-B-SCOPE"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "VS",
+          "reason": "VS-B-ANCHOR"
+        },
+        {
+          "key": "applicability",
+          "value": "generalVsConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "VS-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "VS-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "VS-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedEffectiveLongerDayInstruction",
+          "reason": "VS-B-ACTION"
+        },
+        {
+          "key": "triggerQualification",
+          "value": "qualifiedWrittenDecisionOpening",
+          "reason": "VS-B-TRIGGER"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "VS-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "qualifiedEffectiveLongerDays",
+          "reason": "VS-B-NOTICE"
+        },
+        {
+          "key": "ordinaryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "VS-B-NOTICE-BASE"
+        }
+      ],
+      "durationFact": "actualInstructionDays",
+      "durationBaseFact": "ordinaryDays",
+      "locator": "VVRG/LPJA Art. 14 Abs. 2, 79a, 80 Abs. 1 lit. b i.V.m. 46 Abs. 3",
+      "legalBasis": [
+        "M1-VS-LPJA-FR-API",
+        "M1-VS-SATURDAY-CASE"
+      ],
+      "syntheticFacts": {}
+    }
+  ],
+  "inventory": [
+    {
+      "locator": "Art. 11 Abs. 2, 19 Abs. 2, 49–50, 54–56",
+      "treatment": "Aktuell angeordnete Tagesdauer in passendem Verfahrensstadium. Kurz oder genügend ist keine gesetzlich fixierte Anzahl."
+    },
+    {
+      "locator": "Art. 12 Abs. 3",
+      "treatment": "Zehntägiges Wiederherstellungsgesuch erfasst, aber als ausserordentlicher hindernis- und verschuldensabhängiger Weg nicht positiv in die allgemeine Empfangsrechnung aufgenommen."
+    },
+    {
+      "locator": "Art. 29 Abs. 2 und 4, 60 Abs. 2, 80",
+      "treatment": "Eigenständiges Fünf- oder Dreissigtagesverlangen positiv. Die anschliessende Rechtsmittelfrist beginnt erst mit tatsächlich erfolgter qualifizierter schriftlicher Eröffnung, nicht mit dem Verlangensdatum."
+    },
+    {
+      "locator": "Art. 33–34",
+      "treatment": "Wiedererwägung und Rechtsverzögerung ohne allgemeine fixe Tagesfrist. Keine erfundene 30-Tage-Frist und kein automatisches Stoppen laufender Rechtsmittel."
+    },
+    {
+      "locator": "Art. 34h–34n",
+      "treatment": "Verwaltungsstrafrecht mit eigenständiger StPO-Verweisung. Nicht allgemeiner administrativer 30-Tage-Beschwerdeweg."
+    },
+    {
+      "locator": "Art. 38–40, 61a",
+      "treatment": "Vollstreckung, materielle Rückforderung mit Jahres-/Zehnjahresgrenze und behördliche Sechsmonatsfrist nicht allgemeine positive Empfangs-Tagesrechnung."
+    },
+    {
+      "locator": "Art. 62–63",
+      "treatment": "Revision 90 Tage ab Entdeckung plus absolute Zehnjahresgrenze und Ausnahme. Vollständig inventarisiert, nicht allein durch eine 90-Tage-Zahl positiv freigegeben."
+    },
+    {
+      "locator": "Art. 64 und 80 Abs. 1 lit. f",
+      "treatment": "Erläuterung und Berichtigung ohne allgemeine Antrags-Tagesfrist. Allfälliger neuer Weiterzug erst ab qualifizierter tatsächlicher Erläuterung, keine Automatikkette."
+    },
+    {
+      "locator": "Art. 81a–87a, 88–90",
+      "treatment": "Steuer-/Sozialwege, Klagen und Zahlungen gesondert. Gesetzliche 30-Tage-Vorschussfrist Art. 90 ist nicht erstreckbare freie behördliche Eingabe. Zahlungsfristen bleiben bewusst abgegrenzt."
+    }
+  ],
+  "openPoints": [
+    {
+      "id": "M1-END-SUSPENSION",
+      "finding": "Erst eine reguläre Endverschiebung führt in einen neu beginnenden Stillstand. Bis zum ausdrücklichen Fachentscheid kein definitives Ergebnis oder Export in genau dieser Kollision, kein pauschales Sperren sämtlicher Ferienfälle."
+    },
+    {
+      "id": "VS-O1",
+      "finding": "Mangeleröffnung oder streitige Vertrauensgrundlage über die ausdrücklich qualifizierte längere Tagesbelehrung hinaus bleibt fachlich zu bestimmen. Keine automatische Fristverlängerung allein aus der Behauptung eines Mangels."
+    }
+  ],
+  "uiGuardrails": [
+    "zweispaltig",
+    "frueheDatumseingabe",
+    "statischerSitzDerZustaendigenStelle",
+    "festeEinzelwerte",
+    "nurBerechnungsrelevanteAlternativen",
+    "ruhigeDEFRRechenspur"
+  ],
+  "localReferenceCases": [
+    {
+      "id": "M1-VS-ADMIN-ORDERED-BASE",
+      "path": "VS-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-WRITTEN-5-BASE",
+      "path": "VS-ADMIN-WRITTEN-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "informedOralDecisionWrittenRequest",
+        "triggerQualification": "informedOralOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-OPPOSITION-30-BASE",
+      "path": "VS-ADMIN-OPPOSITION-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "opposition",
+        "actionQualification": "legallyAvailableAdministrativeOpposition",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-APPEAL-30-BASE",
+      "path": "VS-ADMIN-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryAdministrativeAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-INTERLOCUTORY-10-BASE",
+      "path": "VS-ADMIN-INTERLOCUTORY-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "independentlyAppealableInterlocutoryDecision",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-APPEAL-ORDERED-BASE",
+      "path": "VS-ADMIN-APPEAL-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-FULL-30-BASE",
+      "path": "VS-ADMIN-FULL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "writtenJudicatumFullReasonsRequest",
+        "triggerQualification": "qualifiedWrittenJudicatum",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-NOTICE-LONG-BASE",
+      "path": "VS-ADMIN-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 40,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "qualifiedEffectiveLongerDayInstruction",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "qualifiedEffectiveLongerDays",
+        "ordinaryDays": 30,
+        "actualInstructionDays": 40
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-11"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-APPEAL-30-BASE",
+      "path": "VS-COURT-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryJudicialAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-INTERLOCUTORY-10-BASE",
+      "path": "VS-COURT-INTERLOCUTORY-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "independentlyAppealableInterlocutoryDecision",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-ORDERED-BASE",
+      "path": "VS-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-FULL-30-BASE",
+      "path": "VS-COURT-FULL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "writtenJudicatumFullReasonsRequest",
+        "triggerQualification": "qualifiedWrittenJudicatum",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-WRITTEN-5-BASE",
+      "path": "VS-COURT-WRITTEN-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "informedOralDecisionWrittenRequest",
+        "triggerQualification": "informedOralOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-NOTICE-LONG-BASE",
+      "path": "VS-COURT-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 40,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "qualifiedEffectiveLongerDayInstruction",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "qualifiedEffectiveLongerDays",
+        "ordinaryDays": 30,
+        "actualInstructionDays": 40
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-11"
+      }
+    },
+    {
+      "id": "M1-VS-ADMIN-WINTER",
+      "path": "VS-ADMIN-APPEAL-30",
+      "trigger": "2026-12-10",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryAdministrativeAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-11"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-WINTER",
+      "path": "VS-COURT-APPEAL-30",
+      "trigger": "2026-12-10",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryJudicialAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-28"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-WINTER-SHORT",
+      "path": "VS-COURT-INTERLOCUTORY-10",
+      "trigger": "2026-12-10",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "independentlyAppealableInterlocutoryDecision",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-08"
+      }
+    },
+    {
+      "id": "M1-VS-COURT-ORAL-WINTER",
+      "path": "VS-COURT-WRITTEN-5",
+      "trigger": "2026-12-17",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "informedOralDecisionWrittenRequest",
+        "triggerQualification": "informedOralOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-11"
+      }
+    },
+    {
+      "id": "M1-VS-DEC8",
+      "path": "VS-ADMIN-ORDERED",
+      "trigger": "2026-12-07",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      }
+    },
+    {
+      "id": "M1-VS-GOOD-FRIDAY-NOT-HOLIDAY",
+      "path": "VS-ADMIN-ORDERED",
+      "trigger": "2027-03-25",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-26"
+      }
+    },
+    {
+      "id": "M1-VS-SATURDAY-END",
+      "path": "VS-ADMIN-ORDERED",
+      "trigger": "2026-10-09",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "M1-VS-SATURDAY-QUALIFIED-OPENING",
+      "path": "VS-ADMIN-ORDERED",
+      "trigger": "2026-10-03",
+      "days": 2,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-05",
+        "legalOpening": "2026-10-03"
+      }
+    },
+    {
+      "id": "M1-VS-END-RECESS-COLLISION",
+      "path": "VS-COURT-ORDERED",
+      "trigger": "2027-03-19",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "M1-END-SUSPENSION"
+      }
+    },
+    {
+      "id": "M1-VS-OUTSIDE",
+      "path": "VS-COURT-APPEAL-30",
+      "trigger": "2027-12-01",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryJudicialAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "M1-VS-NO-RAW-TRACKING",
+      "path": "VS-ADMIN-ORDERED",
+      "trigger": "2026-10-03",
+      "days": 2,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "triggerQualification": "qualifiedCurrentOrderOpening",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "VS-B-OPENING"
+      }
+    },
+    {
+      "id": "M1-VS-NO-SPECIAL-IMPORT",
+      "path": "VS-COURT-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "atsg",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryJudicialAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "VS-B-SPECIAL"
+      }
+    },
+    {
+      "id": "M1-VS-NO-WRONG-STAGE",
+      "path": "VS-COURT-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "admissibleOrdinaryJudicialAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "VS-B-STAGE"
+      }
+    },
+    {
+      "id": "M1-VS-NO-MUNICIPAL",
+      "path": "VS-ADMIN-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "communal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryAdministrativeAppeal",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "VS-B-SCOPE"
+      }
+    },
+    {
+      "id": "M1-VS-NO-FALSE-DURATION",
+      "path": "VS-ADMIN-INTERLOCUTORY-10",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "independentlyAppealableInterlocutoryDecision",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "M1-VS-NO-NOT-LONGER",
+      "path": "VS-ADMIN-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "qualifiedEffectiveLongerDayInstruction",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "qualifiedEffectiveLongerDays",
+        "ordinaryDays": 30,
+        "actualInstructionDays": 30
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "noticeDurationNotQualified"
+      }
+    },
+    {
+      "id": "M1-VS-NO-ORAL-APPEAL-AUTOMATION",
+      "path": "VS-ADMIN-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryAdministrativeAppeal",
+        "triggerQualification": "informedOralOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "VS-B-TRIGGER"
+      }
+    },
+    {
+      "id": "M1-VS-SHORTER-NOTICE-NO-SHORTENING",
+      "path": "VS-ADMIN-INTERLOCUTORY-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "VS",
+        "applicability": "generalVsConfirmed",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "independentlyAppealableInterlocutoryDecision",
+        "triggerQualification": "qualifiedWrittenDecisionOpening",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "shorterInstructionUsesStatutory"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      }
+    }
+  ],
+  "professionalAcceptance": false,
+  "sourceReleaseApproved": false,
+  "operatingChanges": false,
+  "runtimeActive": false,
+  "formatDecision": false,
+  "implementationStarted": false
+}

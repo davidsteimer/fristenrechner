@@ -1,0 +1,517 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-gl-87c11e156541",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "GL"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+      "sourceType": "officialDossier",
+      "title": "Verordnung über den Bundesfeiertag, SR 116",
+      "authority": "CH",
+      "url": "https://www.fedlex.admin.ch/eli/cc/1994/1340_1340_1340/de",
+      "documentVersionDate": "1994-07-01",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    },
+    {
+      "sourceId": "SRC-GL-RTG-IXB211-20190701",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über die öffentlichen Ruhetage, Ruhetagsgesetz",
+      "authority": "CH-GL",
+      "url": "https://gesetze.gl.ch/api/de/versions/2110/pdf_file",
+      "documentVersionDate": "2019-07-01",
+      "reviewedOn": "2026-09-22",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-ALL-SAINTS-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-ASCENSION-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-CHRISTMAS-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-EASTER-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-EASTER",
+      "labels": {
+        "de": "Ostern",
+        "fr": "Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 0
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-EASTER"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-EASTER-MONDAY-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-FEDERAL-FAST-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-FEDERAL-FAST",
+      "labels": {
+        "de": "Eidgenössischer Dank-, Buss- und Bettag",
+        "fr": "Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-FEDERAL-FAST"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-GOOD-FRIDAY-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-NAEFELSER-FAHRT-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-NAEFELSER-FAHRT",
+      "labels": {
+        "de": "Näfelser Fahrt",
+        "fr": "Commémoration de la bataille de Näfels"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b. Datumsregel gemäss Regierungsratsmitteilung 06.01.2026, fachlich bestätigt 22.09.2026"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 4,
+        "isoWeekday": 4,
+        "occurrence": 1
+      },
+      "condition": "shiftHolyThursdayBy7Days",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-NAEFELSER-FAHRT"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-NATIONAL-DAY-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-BUNDESFEIERTAG-19940701",
+          "locator": "SR 116 Art. 1, neue offene Anwendung auf dieses Geltungsprofil"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-NEW-YEAR-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-PENTECOST-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-PENTECOST",
+      "labels": {
+        "de": "Pfingsten",
+        "fr": "Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. c"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 49
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-PENTECOST"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-ST-STEPHEN-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "GL-CAL-GL-RTG-ALL-DAY-WHIT-MONDAY-87C11E1565410A77",
+      "calendarId": "ap22-gl-87c11e156541",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "GL"
+      },
+      "labelKey": "holiday.gl.GL-RTG-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-GL-RTG-IXB211-20190701",
+          "locator": "Art. 2 Abs. 1 Bst. b"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "GL-RTG-ALL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-87c11e1565410a77",
+    "sourceHash": "67c9e5e2153b878af92f46ccd2f25e5669c9116fa54862b45d2c51128fa5c112"
+  }
+}

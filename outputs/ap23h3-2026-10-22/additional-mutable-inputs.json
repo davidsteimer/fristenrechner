@@ -1,0 +1,18 @@
+{
+  "workPackage": "AP23H3",
+  "purpose": "Two additional existing registry dispatch files need an explicit format-12 branch. The original frozen inventory is retained, not refreshed.",
+  "authorizedWithin": "User-commissioned local AP23H3 implementation of DEC-2026-037",
+  "productOperatingChanges": false,
+  "files": {
+    "src/core/administrativeContext.ts": {
+      "beforeSha256": "a7f0c55c2af56e64ab2677e425b8518aba5f85b2f6241e91d0406dcb05da6512",
+      "byteLength": 1261,
+      "changeBoundary": "Add native format-12 context getter and type without changing old registries or coercing identities."
+    },
+    "src/core/modernRuntime.ts": {
+      "beforeSha256": "c232ececf4efa4f2ac26fde8a6e0875a3da41c366c7129c5bdb91194dfab008e",
+      "byteLength": 1522,
+      "changeBoundary": "Add native format-12 registry dispatch and scoped calculation branch. Old 8-11 branches remain independent."
+    }
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "workPackage": "R10-U1",
+  "status": "passed",
+  "head": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "localOnly": true,
+  "sourceReleaseApproved": false,
+  "installationPerformed": false,
+  "githubPushPerformed": false,
+  "steps": [
+    {
+      "id": "preservation-before",
+      "command": "node",
+      "args": [
+        "scripts/check-r10-u1-preservation.mjs",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/preservation-before.txt",
+      "byteLength": 7348,
+      "sha256": "fdb15f8329de85570196a8b05c4f0682bba95bb1913b64bbb6a6a78ea4ded337",
+      "counts": {}
+    },
+    {
+      "id": "typecheck",
+      "command": "node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/typecheck.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {}
+    },
+    {
+      "id": "product-regression",
+      "command": "node",
+      "args": [
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/product-regression.txt",
+      "byteLength": 920836,
+      "sha256": "08762be189961d35b1caa10018f27e3f064bcd5a67f7e98cd3ca9dd9ff9fbb6a",
+      "counts": {
+        "tests": 4006,
+        "pass": 4006,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "host-lifecycle",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "tests/hosts/ap23e3-spfx-host.test.ts",
+        "tests/hosts/ap23f3-spfx-host.test.ts",
+        "tests/hosts/ap23g3-spfx-host.test.ts",
+        "tests/hosts/ap23h3-spfx-host.test.ts",
+        "tests/hosts/ap23i3-spfx-host.test.ts",
+        "tests/hosts/ap23j3-spfx-host.test.ts",
+        "tests/hosts/ap23k3-spfx-host.test.ts",
+        "tests/hosts/ap23l3-spfx-host.test.ts",
+        "tests/hosts/ap23m3-spfx-host.test.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/host-lifecycle.txt",
+      "byteLength": 23217,
+      "sha256": "78c4337c556c124d1cd747280d30c0ea11f52383eed74037f91bb8775d4c5094",
+      "counts": {
+        "tests": 90,
+        "pass": 90,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "actual-web-bundle",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "--test-timeout=900000",
+        "tests/public-app/r10-u1-build.test.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/actual-web-bundle.txt",
+      "byteLength": 3142,
+      "sha256": "f54c52e014b776b998ef9291fc4d07ea2fefd3e230e5aa027b5c3c24ed909a63",
+      "counts": {
+        "tests": 11,
+        "pass": 11,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "accepted-m3-archive",
+      "command": "node",
+      "args": [
+        "scripts/archive-ap23m3-acceptance.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/accepted-m3-archive.txt",
+      "byteLength": 413,
+      "sha256": "3aa2059b3b685883c88933c6089b468ea09fe24e459eaa9bf2cfb8562d2e37de",
+      "counts": {}
+    },
+    {
+      "id": "governance",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "tests/governance/r10-u1-completion.test.mjs",
+        "tests/governance/r10-u1-preservation.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/governance.txt",
+      "byteLength": 22004,
+      "sha256": "bea0f5c911c16aad95fa25755f791d791203795648206f52c3b3600a42771678",
+      "counts": {
+        "tests": 117,
+        "pass": 117,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "web-build",
+      "command": "node",
+      "args": [
+        "scripts/build-r10-u1-public.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/web-build.txt",
+      "byteLength": 134,
+      "sha256": "53afbf0d8cd90100b83a3a5ed1df339604ab61f48ab3e80334fb67a8afcf8782",
+      "counts": {}
+    },
+    {
+      "id": "preservation-after",
+      "command": "node",
+      "args": [
+        "scripts/check-r10-u1-preservation.mjs",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/preservation-after.txt",
+      "byteLength": 7348,
+      "sha256": "714d335788922abb38e9e8af53f4128830635746e21431b3a6511d36ccb02d0d",
+      "counts": {}
+    },
+    {
+      "id": "whitespace",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/r10-u1-2026-10-28/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {}
+    }
+  ],
+  "inputsBefore": [
+    {
+      "path": "package.json",
+      "byteLength": 16709,
+      "sha256": "642df9e35db69f30d7e9b525516af7418338d927c3c441f5a2818c5dd1870ba0"
+    },
+    {
+      "path": "scripts/build-public-app.mjs",
+      "byteLength": 6802,
+      "sha256": "20b549a8d984ab449d973fc248937b0e4ee66b77add4c892b6262bd8d2f1b6b9"
+    },
+    {
+      "path": "scripts/build-r10-u1-layout.mjs",
+      "byteLength": 17174,
+      "sha256": "3207cbf4e04dba8ee8cfd2affde34aa928f7c293ca9552d236f14078a0d8eb55"
+    },
+    {
+      "path": "scripts/build-r10-u1-public.mjs",
+      "byteLength": 1948,
+      "sha256": "8ef1d098af35ac047213a937047b3aa13f08a2645badc21f04a61419189d7066"
+    },
+    {
+      "path": "scripts/build-r10-u1-spfx.mjs",
+      "byteLength": 4898,
+      "sha256": "42935e6fda4f9cccef64854a26b3b375232e67565561aaf7c99a3cc62f61e2f0"
+    },
+    {
+      "path": "scripts/check-r10-u1-package.mjs",
+      "byteLength": 1881,
+      "sha256": "6e4f922e2822c630d9b727ce461f1e8730f3283c522ba0fd763833d0e8f9c067"
+    },
+    {
+      "path": "scripts/check-r10-u1-preservation.mjs",
+      "byteLength": 6902,
+      "sha256": "4a22ada66bcaa324b92d587bb39e5f3a92e199a444f6af842c15b63d2471f622"
+    },
+    {
+      "path": "scripts/check-r10-u1.mjs",
+      "byteLength": 4450,
+      "sha256": "5adc65f5a99998ad483a37f5153a6acfe1d8cd2e2412a7199d97bb7929893f18"
+    },
+    {
+      "path": "scripts/finalize-r10-u1.mjs",
+      "byteLength": 13945,
+      "sha256": "e9515f0d7157f99db5cb99695e1ddba796415e30d576a2dbc40110bfecbca893"
+    },
+    {
+      "path": "scripts/record-r10-u1-browser.mjs",
+      "byteLength": 4049,
+      "sha256": "25989cbf84c7f0d3215244332da047faffa17e21576ec108b7601b26552d5643"
+    },
+    {
+      "path": "scripts/run-standard-tests.mjs",
+      "byteLength": 5477,
+      "sha256": "fde0060330c9ce3534923404be129755706723b138e1bfdadc49b51af9f8a203"
+    },
+    {
+      "path": "scripts/serve-r10-u1-built.mjs",
+      "byteLength": 1621,
+      "sha256": "319a2fff81c7db6a99560e3989bd668efa116a94015df43f3cddd0d14fb92f4f"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeMessages.ts",
+      "byteLength": 90141,
+      "sha256": "1b2be59534cf63c078dba343821d7dd059824e0ba918284415bbdb0edfd9f8d4"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeUi.tsx",
+      "byteLength": 83248,
+      "sha256": "a42789c5cb21da70e4e628a8addcef2ba3a51e96d6491c123277cbe218436d10"
+    },
+    {
+      "path": "spfx/src/product/ui/socialUi.ts",
+      "byteLength": 11658,
+      "sha256": "354f68554193d03a6e2e394e6e86f1a5440547f6455fe7426a70ed81d45f5484"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.module.scss",
+      "byteLength": 1336,
+      "sha256": "8745045f7b7b3f6de0d40c825b1be2a30a98e2366ed4db84dd873bedaa3cd46e"
+    },
+    {
+      "path": "src/public-app/r10-u1-main.tsx",
+      "byteLength": 841,
+      "sha256": "7b38fba26312488a1d9864ce22d3fb3b3de3d73349dbc8b93b311e33e63125a6"
+    },
+    {
+      "path": "src/ui/administrativeMessages.ts",
+      "byteLength": 90141,
+      "sha256": "1b2be59534cf63c078dba343821d7dd059824e0ba918284415bbdb0edfd9f8d4"
+    },
+    {
+      "path": "src/ui/administrativeUi.tsx",
+      "byteLength": 83248,
+      "sha256": "a42789c5cb21da70e4e628a8addcef2ba3a51e96d6491c123277cbe218436d10"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "byteLength": 11658,
+      "sha256": "354f68554193d03a6e2e394e6e86f1a5440547f6455fe7426a70ed81d45f5484"
+    },
+    {
+      "path": "tests/governance/r10-u1-completion.test.mjs",
+      "byteLength": 14140,
+      "sha256": "344fc202834e3ec02e7f7549b8fe4c7df0dede203ad5d8e9add80ebc24f5c492"
+    },
+    {
+      "path": "tests/governance/r10-u1-preservation.test.mjs",
+      "byteLength": 11736,
+      "sha256": "6f1e30aa9a5111a95cb331b1d3e753f8e87fb18979d73d75223135e49467dc75"
+    },
+    {
+      "path": "tests/hosts/r10-u1-layout.test.ts",
+      "byteLength": 11064,
+      "sha256": "90e0e8dfbfbf131bbda8aa77f86a7536c475ae0f482c4e25b0938e3bc2d4219f"
+    },
+    {
+      "path": "tests/hosts/r10-u1-packaged.test.ts",
+      "byteLength": 8323,
+      "sha256": "01a1c1e49a2af94794527fe4e375f253cb66a5dd35741894dbde71f0fce1d471"
+    },
+    {
+      "path": "tests/hosts/r10-u1-social-packaged.test.ts",
+      "byteLength": 6568,
+      "sha256": "c1131193e510a261f3d20bf79db7bbbbcc7c900660e88b26540b2f620edf4a14"
+    },
+    {
+      "path": "tests/public-app/r10-u1-build.test.ts",
+      "byteLength": 15948,
+      "sha256": "fe0b850f076bdb018386183dc62197ced40a9e7ec504498ae5bf9bae7cebca92"
+    },
+    {
+      "path": "tests/ui/r10-u1-social-app.test.tsx",
+      "byteLength": 7477,
+      "sha256": "cefd905ef7562e93ea9b95be816e6607ee01ce823d7581b30c73556e481cdd84"
+    },
+    {
+      "path": "tests/ui/r10-u1-social-fixtures.ts",
+      "byteLength": 2763,
+      "sha256": "7795b24fb81d164102efb737bffa2d02a5d8dc935f12a85d7862494fb314e44e"
+    },
+    {
+      "path": "tests/ui/r10-u1-social-ui.test.ts",
+      "byteLength": 9714,
+      "sha256": "53c6fcd5fa92d30f9353b1561c7c71d95930ed7023cd5cf4e1b519597f01b705"
+    },
+    {
+      "path": "tests/ui/r10-u1-trace-before-provenance.test.tsx",
+      "byteLength": 12825,
+      "sha256": "92cf0958892f06a2c772180048987d0ebb946a36feb868b0ae89b281f51bc63d"
+    },
+    {
+      "path": "tsconfig.json",
+      "byteLength": 611,
+      "sha256": "3586610bb75843e662d091b142a3c9bf852ecb97d6ee7258706962b93c705383"
+    }
+  ],
+  "inputsAfter": [
+    {
+      "path": "package.json",
+      "byteLength": 16709,
+      "sha256": "642df9e35db69f30d7e9b525516af7418338d927c3c441f5a2818c5dd1870ba0"
+    },
+    {
+      "path": "scripts/build-public-app.mjs",
+      "byteLength": 6802,
+      "sha256": "20b549a8d984ab449d973fc248937b0e4ee66b77add4c892b6262bd8d2f1b6b9"
+    },
+    {
+      "path": "scripts/build-r10-u1-layout.mjs",
+      "byteLength": 17174,
+      "sha256": "3207cbf4e04dba8ee8cfd2affde34aa928f7c293ca9552d236f14078a0d8eb55"
+    },
+    {
+      "path": "scripts/build-r10-u1-public.mjs",
+      "byteLength": 1948,
+      "sha256": "8ef1d098af35ac047213a937047b3aa13f08a2645badc21f04a61419189d7066"
+    },
+    {
+      "path": "scripts/build-r10-u1-spfx.mjs",
+      "byteLength": 4898,
+      "sha256": "42935e6fda4f9cccef64854a26b3b375232e67565561aaf7c99a3cc62f61e2f0"
+    },
+    {
+      "path": "scripts/check-r10-u1-package.mjs",
+      "byteLength": 1881,
+      "sha256": "6e4f922e2822c630d9b727ce461f1e8730f3283c522ba0fd763833d0e8f9c067"
+    },
+    {
+      "path": "scripts/check-r10-u1-preservation.mjs",
+      "byteLength": 6902,
+      "sha256": "4a22ada66bcaa324b92d587bb39e5f3a92e199a444f6af842c15b63d2471f622"
+    },
+    {
+      "path": "scripts/check-r10-u1.mjs",
+      "byteLength": 4450,
+      "sha256": "5adc65f5a99998ad483a37f5153a6acfe1d8cd2e2412a7199d97bb7929893f18"
+    },
+    {
+      "path": "scripts/finalize-r10-u1.mjs",
+      "byteLength": 13945,
+      "sha256": "e9515f0d7157f99db5cb99695e1ddba796415e30d576a2dbc40110bfecbca893"
+    },
+    {
+      "path": "scripts/record-r10-u1-browser.mjs",
+      "byteLength": 4049,
+      "sha256": "25989cbf84c7f0d3215244332da047faffa17e21576ec108b7601b26552d5643"
+    },
+    {
+      "path": "scripts/run-standard-tests.mjs",
+      "byteLength": 5477,
+      "sha256": "fde0060330c9ce3534923404be129755706723b138e1bfdadc49b51af9f8a203"
+    },
+    {
+      "path": "scripts/serve-r10-u1-built.mjs",
+      "byteLength": 1621,
+      "sha256": "319a2fff81c7db6a99560e3989bd668efa116a94015df43f3cddd0d14fb92f4f"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeMessages.ts",
+      "byteLength": 90141,
+      "sha256": "1b2be59534cf63c078dba343821d7dd059824e0ba918284415bbdb0edfd9f8d4"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeUi.tsx",
+      "byteLength": 83248,
+      "sha256": "a42789c5cb21da70e4e628a8addcef2ba3a51e96d6491c123277cbe218436d10"
+    },
+    {
+      "path": "spfx/src/product/ui/socialUi.ts",
+      "byteLength": 11658,
+      "sha256": "354f68554193d03a6e2e394e6e86f1a5440547f6455fe7426a70ed81d45f5484"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.module.scss",
+      "byteLength": 1336,
+      "sha256": "8745045f7b7b3f6de0d40c825b1be2a30a98e2366ed4db84dd873bedaa3cd46e"
+    },
+    {
+      "path": "src/public-app/r10-u1-main.tsx",
+      "byteLength": 841,
+      "sha256": "7b38fba26312488a1d9864ce22d3fb3b3de3d73349dbc8b93b311e33e63125a6"
+    },
+    {
+      "path": "src/ui/administrativeMessages.ts",
+      "byteLength": 90141,
+      "sha256": "1b2be59534cf63c078dba343821d7dd059824e0ba918284415bbdb0edfd9f8d4"
+    },
+    {
+      "path": "src/ui/administrativeUi.tsx",
+      "byteLength": 83248,
+      "sha256": "a42789c5cb21da70e4e628a8addcef2ba3a51e96d6491c123277cbe218436d10"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "byteLength": 11658,
+      "sha256": "354f68554193d03a6e2e394e6e86f1a5440547f6455fe7426a70ed81d45f5484"
+    },
+    {
+      "path": "tests/governance/r10-u1-completion.test.mjs",
+      "byteLength": 14140,
+      "sha256": "344fc202834e3ec02e7f7549b8fe4c7df0dede203ad5d8e9add80ebc24f5c492"
+    },
+    {
+      "path": "tests/governance/r10-u1-preservation.test.mjs",
+      "byteLength": 11736,
+      "sha256": "6f1e30aa9a5111a95cb331b1d3e753f8e87fb18979d73d75223135e49467dc75"
+    },
+    {
+      "path": "tests/hosts/r10-u1-layout.test.ts",
+      "byteLength": 11064,
+      "sha256": "90e0e8dfbfbf131bbda8aa77f86a7536c475ae0f482c4e25b0938e3bc2d4219f"
+    },
+    {
+      "path": "tests/hosts/r10-u1-packaged.test.ts",
+      "byteLength": 8323,
+      "sha256": "01a1c1e49a2af94794527fe4e375f253cb66a5dd35741894dbde71f0fce1d471"
+    },
+    {
+      "path": "tests/hosts/r10-u1-social-packaged.test.ts",
+      "byteLength": 6568,
+      "sha256": "c1131193e510a261f3d20bf79db7bbbbcc7c900660e88b26540b2f620edf4a14"
+    },
+    {
+      "path": "tests/public-app/r10-u1-build.test.ts",
+      "byteLength": 15948,
+      "sha256": "fe0b850f076bdb018386183dc62197ced40a9e7ec504498ae5bf9bae7cebca92"
+    },
+    {
+      "path": "tests/ui/r10-u1-social-app.test.tsx",
+      "byteLength": 7477,
+      "sha256": "cefd905ef7562e93ea9b95be816e6607ee01ce823d7581b30c73556e481cdd84"
+    },
+    {
+      "path": "tests/ui/r10-u1-social-fixtures.ts",
+      "byteLength": 2763,
+      "sha256": "7795b24fb81d164102efb737bffa2d02a5d8dc935f12a85d7862494fb314e44e"
+    },
+    {
+      "path": "tests/ui/r10-u1-social-ui.test.ts",
+      "byteLength": 9714,
+      "sha256": "53c6fcd5fa92d30f9353b1561c7c71d95930ed7023cd5cf4e1b519597f01b705"
+    },
+    {
+      "path": "tests/ui/r10-u1-trace-before-provenance.test.tsx",
+      "byteLength": 12825,
+      "sha256": "92cf0958892f06a2c772180048987d0ebb946a36feb868b0ae89b281f51bc63d"
+    },
+    {
+      "path": "tsconfig.json",
+      "byteLength": 611,
+      "sha256": "3586610bb75843e662d091b142a3c9bf852ecb97d6ee7258706962b93c705383"
+    }
+  ]
+}

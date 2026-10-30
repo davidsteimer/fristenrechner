@@ -1,0 +1,1328 @@
+{
+  "workPackage": "AP23K1",
+  "asOf": "2026-10-27",
+  "status": "passedResearchComparison",
+  "fixtureSha256": "2f107ec6898a2748a462299f9b514a5ad635c3ed09f9a00d4d31fa3ae4fa0549",
+  "checkerSha256": "591b050b24c98f73c0e4dbefcf424d855f951de867b21db6ae406cf9c43bb6e6",
+  "runtimeActive": false,
+  "productTest": false,
+  "exportTest": false,
+  "legalApproval": false,
+  "paths": 16,
+  "referenceCases": 67,
+  "handSpecifiedReferences": 67,
+  "counts": {
+    "datedResearchValue": 42,
+    "qualificationBoundaryProposed": 18,
+    "unresolvedBoundaryProposed": 2,
+    "researchWindowBoundary": 5
+  },
+  "registeredSources": 69,
+  "registeredSourceBytes": 23008627,
+  "calendarComparisons": [
+    {
+      "calendar": "BS",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-27-ap23j3/calendars/ap22-bs-39a64bdfc0fe.json",
+      "sourceSha256": "e9b79ecc23284487d5d3bcc1bfbaf1eb0919db6af17b2b814d675bbd0ac29e05",
+      "rawRules": 12,
+      "weekdayDateSetsEqual": true,
+      "daysCompared": 365,
+      "officeClosuresExcluded": true
+    },
+    {
+      "calendar": "BS",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-27-ap23j3/calendars/ap22-bs-39a64bdfc0fe.json",
+      "sourceSha256": "e9b79ecc23284487d5d3bcc1bfbaf1eb0919db6af17b2b814d675bbd0ac29e05",
+      "rawRules": 12,
+      "weekdayDateSetsEqual": true,
+      "daysCompared": 365,
+      "officeClosuresExcluded": true
+    },
+    {
+      "calendar": "BL",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-27-ap23j3/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "sourceSha256": "b4c0f095b4b3863fcbebb505094df4ad037bbc13f9978aec0ec6bb10056e9e0a",
+      "rawRules": 12,
+      "weekdayDateSetsEqual": true,
+      "daysCompared": 365,
+      "officeClosuresExcluded": true
+    },
+    {
+      "calendar": "BL",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-27-ap23j3/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "sourceSha256": "b4c0f095b4b3863fcbebb505094df4ad037bbc13f9978aec0ec6bb10056e9e0a",
+      "rawRules": 12,
+      "weekdayDateSetsEqual": true,
+      "daysCompared": 365,
+      "officeClosuresExcluded": true
+    },
+    {
+      "calendar": "TI",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-27-ap23j3/calendars/ap22-ti-944ed0286e9a.json",
+      "sourceSha256": "fbad9d860f4d2d799a1a18c935304d4cffc1bfb30d21da440f7175d7f3b45021",
+      "rawRules": 15,
+      "weekdayDateSetsEqual": true,
+      "daysCompared": 365,
+      "officeClosuresExcluded": true
+    },
+    {
+      "calendar": "TI",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-27-ap23j3/calendars/ap22-ti-944ed0286e9a.json",
+      "sourceSha256": "fbad9d860f4d2d799a1a18c935304d4cffc1bfb30d21da440f7175d7f3b45021",
+      "rawRules": 15,
+      "weekdayDateSetsEqual": true,
+      "daysCompared": 365,
+      "officeClosuresExcluded": true
+    }
+  ],
+  "calendarProbes": 11,
+  "discrepancies": [],
+  "results": [
+    {
+      "id": "K1-BS-R01",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R02",
+      "path": "BS-INTERNAL-REASONS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R03",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R04",
+      "path": "BS-COURT-REASONS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R05",
+      "path": "BS-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R06",
+      "path": "BS-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28",
+        "endShiftDays": 3,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R07",
+      "path": "BS-INTERNAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-30",
+        "ordinaryStart": "2026-12-31",
+        "nominalEnd": "2027-01-01",
+        "end": "2027-01-04",
+        "endShiftDays": 3,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R08",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-15",
+        "ordinaryStart": "2026-12-16",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28",
+        "endShiftDays": 3,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R09",
+      "path": "BS-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R10",
+      "path": "BS-COURT-JOINDER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-18"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-07",
+        "ordinaryStart": "2027-05-08",
+        "nominalEnd": "2027-05-17",
+        "end": "2027-05-18",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R11",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-18",
+        "ordinaryStart": "2027-03-19",
+        "nominalEnd": "2027-03-28",
+        "end": "2027-03-30",
+        "endShiftDays": 2,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R12",
+      "path": "BS-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-07"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-05",
+        "ordinaryStart": "2027-05-06",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-07",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R13",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-08"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R14",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "TI",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R15",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-08"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R16",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-15"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R17",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-15"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R18",
+      "path": "BS-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R19",
+      "path": "BS-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-17"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-07",
+        "ordinaryStart": "2026-11-08",
+        "nominalEnd": "2026-11-17",
+        "end": "2026-11-17",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R20",
+      "path": "BS-INTERNAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-20",
+        "ordinaryStart": "2026-10-21",
+        "nominalEnd": "2026-11-04",
+        "end": "2026-11-04",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-ADMIN-WINDOW"
+        ]
+      }
+    },
+    {
+      "id": "K1-BS-R21",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "legalAnchorQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R22",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "legalAnchorQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R23",
+      "path": "BS-INTERNAL-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R24",
+      "path": "BS-INTERNAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R25",
+      "path": "BS-COURT-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R26",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+      }
+    },
+    {
+      "id": "K1-BS-R27",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+      }
+    },
+    {
+      "id": "K1-BS-R28",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+      }
+    },
+    {
+      "id": "K1-BS-R29",
+      "path": "BS-COURT-JOINDER-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R30",
+      "path": "BS-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "K1-BS-R31",
+      "path": "BS-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "K1-BS-R32",
+      "path": "BS-COURT-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionQualificationNotQualified"
+      }
+    },
+    {
+      "id": "K1-BS-R33",
+      "path": "BS-COURT-REGISTER-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-05"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-26",
+        "ordinaryStart": "2026-12-27",
+        "nominalEnd": "2027-01-05",
+        "end": "2027-01-05",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BS",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BS-VWVG-2026",
+          "BS-VWVG-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R01",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-14"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-12",
+        "end": "2026-09-14",
+        "endShiftDays": 2,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R02",
+      "path": "BL-COURT-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R03",
+      "path": "BL-COURT-OBJECTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R04",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-22",
+        "end": "2026-09-22",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R05",
+      "path": "BL-ADMIN-REASONS-GRANTED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-30",
+        "ordinaryStart": "2026-12-01",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04",
+        "endShiftDays": 5,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2026-12-30",
+          "2026-12-31"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026",
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R06",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04",
+        "endShiftDays": 11,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2026-12-24",
+          "2026-12-28",
+          "2026-12-29",
+          "2026-12-30",
+          "2026-12-31"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026",
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R07",
+      "path": "BL-COURT-OBJECTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-25",
+        "end": "2027-01-04",
+        "endShiftDays": 10,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2026-12-28",
+          "2026-12-29",
+          "2026-12-30",
+          "2026-12-31"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026",
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R08",
+      "path": "BL-COURT-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04",
+        "endShiftDays": 5,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2026-12-30",
+          "2026-12-31"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026",
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R09",
+      "path": "BL-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-24",
+        "ordinaryStart": "2026-12-25",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026",
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R10",
+      "path": "BL-ADMIN-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-11"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-01",
+        "ordinaryStart": "2026-12-02",
+        "nominalEnd": "2026-12-11",
+        "end": "2026-12-11",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R11",
+      "path": "BL-COURT-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-15",
+        "ordinaryStart": "2027-03-16",
+        "nominalEnd": "2027-03-25",
+        "end": "2027-03-30",
+        "endShiftDays": 5,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2027-03-25"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R12",
+      "path": "BL-COURT-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-20",
+        "ordinaryStart": "2027-03-21",
+        "nominalEnd": "2027-03-30",
+        "end": "2027-03-30",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R13",
+      "path": "BL-COURT-OBJECTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-10"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-01",
+        "ordinaryStart": "2027-05-02",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-10",
+        "endShiftDays": 4,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2027-05-07"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R14",
+      "path": "BL-COURT-REASONS-SET",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-10"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-06",
+        "ordinaryStart": "2027-05-07",
+        "nominalEnd": "2027-05-07",
+        "end": "2027-05-10",
+        "endShiftDays": 3,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2027-05-07"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R15",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT",
+        "legalOpening": "2027-01-30",
+        "nominalEnd": "2027-02-09",
+        "endWithoutOptionalClosure": "2027-02-09",
+        "endWithOptionalClosure": "2027-02-10"
+      }
+    },
+    {
+      "id": "K1-BL-R16",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT",
+        "legalOpening": "2027-02-01",
+        "nominalEnd": "2027-02-09",
+        "endWithoutOptionalClosure": "2027-02-09",
+        "endWithOptionalClosure": "2027-02-10"
+      }
+    },
+    {
+      "id": "K1-BL-R17",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-01",
+        "ordinaryStart": "2027-02-02",
+        "nominalEnd": "2027-02-09",
+        "end": "2027-02-09",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R18",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-10"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-01",
+        "ordinaryStart": "2027-02-02",
+        "nominalEnd": "2027-02-09",
+        "end": "2027-02-10",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [
+          "2027-02-09"
+        ],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R19",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-08"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-02",
+        "ordinaryStart": "2027-02-03",
+        "nominalEnd": "2027-02-08",
+        "end": "2027-02-08",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R20",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-10"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-01-31",
+        "ordinaryStart": "2027-02-01",
+        "nominalEnd": "2027-02-10",
+        "end": "2027-02-10",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R21",
+      "path": "BL-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R22",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31",
+        "endShiftDays": 1,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2026"
+        ]
+      }
+    },
+    {
+      "id": "K1-BL-R23",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+      }
+    },
+    {
+      "id": "K1-BL-R24",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+      }
+    },
+    {
+      "id": "K1-BL-R25",
+      "path": "BL-ADMIN-REASONS-GRANTED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Frist wurde tatsächlich auf Gesuch gewährt. Blosses Gesuch genügt nicht."
+      }
+    },
+    {
+      "id": "K1-BL-R26",
+      "path": "BL-COURT-REASONS-SET",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Aktueller Tagesfristentenor und Auslöser sind positiv festgestellt."
+      }
+    },
+    {
+      "id": "K1-BL-R27",
+      "path": "BL-COURT-OBJECTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Abschliessende § 7(2)-Liste."
+      }
+    },
+    {
+      "id": "K1-BL-R28",
+      "path": "BL-COURT-OBJECTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gesetzliche zusätzliche Voraussetzung der Fünftageseinsprache."
+      }
+    },
+    {
+      "id": "K1-BL-R29",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+      }
+    },
+    {
+      "id": "K1-BL-R30",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "K1-BL-R31",
+      "path": "BL-COURT-APPEAL-10",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "K1-BL-R32",
+      "path": "BL-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "K1-BL-R33",
+      "path": "BL-COURT-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Aktueller Tagesfristentenor und Auslöser sind positiv festgestellt."
+      }
+    },
+    {
+      "id": "K1-BL-R34",
+      "path": "BL-ADMIN-APPEAL-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-11"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-08-01",
+        "ordinaryStart": "2027-08-02",
+        "nominalEnd": "2027-08-11",
+        "end": "2027-08-11",
+        "endShiftDays": 0,
+        "suspension": "none",
+        "calendar": "BL",
+        "officeClosureDays": [],
+        "temporalBindings": [
+          "BL-NORMS-CLOSURES-2027"
+        ]
+      }
+    }
+  ]
+}

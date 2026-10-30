@@ -1,0 +1,4933 @@
+{
+  "formatVersion": "ap23l1-research-references-1",
+  "asOf": "2026-10-27",
+  "runtimeActive": false,
+  "productTest": false,
+  "legalApproval": false,
+  "exportTest": false,
+  "factPolicy": "explicitCaseFactsOnly",
+  "window": {
+    "from": "2026-08-29",
+    "to": "2027-12-31"
+  },
+  "easter": {
+    "2026": "2026-04-05",
+    "2027": "2027-03-28"
+  },
+  "sourceModels": [
+    {
+      "path": "docs/fachrecht/ap23l1/befund-ai.json",
+      "sha256": "1ba720bf92f06a1190cdb8c645b3115ef8c9f6f796f99e7701723d8ca7976620",
+      "cantonFindings": true
+    },
+    {
+      "path": "docs/fachrecht/ap23l1/quellen-ai.json",
+      "sha256": "daf21037c68083455e5bacae64e6564bc7b14116f54c3ec32ae28d2c3961f271",
+      "sourceRegister": true
+    },
+    {
+      "path": "docs/fachrecht/ap23l1/befund-sz.json",
+      "sha256": "34c30b48d3c7d8d1f6b3c3d87918c4536aab4e61c1f977f91ba5d294e56ceef2",
+      "cantonFindings": true
+    },
+    {
+      "path": "docs/fachrecht/ap23l1/quellen-sz.json",
+      "sha256": "fa78a11ec595fe7c539c1553b117c3aa2e61dd26cc393e683ae764debe5a0143",
+      "sourceRegister": true
+    }
+  ],
+  "calendars": {
+    "AI-INNER": {
+      "fixed": [
+        "01-01",
+        "08-01",
+        "08-15",
+        "09-22",
+        "11-01",
+        "12-08",
+        "12-25"
+      ],
+      "easterOffsets": [
+        -2,
+        0,
+        1,
+        39,
+        49,
+        50,
+        60
+      ],
+      "federalFast": true,
+      "stephenAvoidThreeConsecutiveRestDays": true
+    },
+    "SZ-SCHWYZ-AUTHORITY": {
+      "fixed": [
+        "01-01",
+        "01-06",
+        "03-19",
+        "08-01",
+        "08-15",
+        "11-01",
+        "11-11",
+        "12-08",
+        "12-25",
+        "12-26"
+      ],
+      "easterOffsets": [
+        -2,
+        0,
+        1,
+        39,
+        49,
+        50,
+        60
+      ],
+      "federalFast": true
+    },
+    "AI-OUTER": {
+      "fixed": [
+        "01-01",
+        "08-01",
+        "08-15",
+        "11-01",
+        "12-08",
+        "12-25"
+      ],
+      "easterOffsets": [
+        -2,
+        0,
+        1,
+        39,
+        49,
+        50,
+        60
+      ],
+      "federalFast": true,
+      "stephenAvoidThreeConsecutiveRestDays": true
+    }
+  },
+  "calendarBaselines": [
+    {
+      "calendar": "AI-INNER",
+      "path": "data/candidates/2026-10-27-ap23k3/calendars/ap22-ai-f507435d8aa8.json",
+      "sha256": "f5f52c43411fffb6fb1cfbc2545ee3694f1c9036c299ee26c0b19cc2dece6997"
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "path": "data/candidates/2026-10-27-ap23k3/calendars/ap22-sz-ec9f2c557fe4.json",
+      "sha256": "b44dd218545d8516052a368b145f06c782d9f94f4177790adc7c9af9d2122341",
+      "researchAdditionalDates": [
+        "2026-11-11",
+        "2027-11-11"
+      ]
+    },
+    {
+      "calendar": "AI-OUTER",
+      "path": "data/candidates/2026-10-27-ap23k3/calendars/ap22-ai-5d4e5a68e106.json",
+      "sha256": "cf4172c597d49a60123a5a1358fa2b3849fa0dc40c815adf58f1793b1fb44936"
+    }
+  ],
+  "calendarProbes": [
+    {
+      "calendar": "AI-INNER",
+      "date": "2026-09-22",
+      "isHoliday": true
+    },
+    {
+      "calendar": "AI-OUTER",
+      "date": "2026-09-22",
+      "isHoliday": false
+    },
+    {
+      "calendar": "AI-INNER",
+      "date": "2026-12-26",
+      "isHoliday": false
+    },
+    {
+      "calendar": "AI-INNER",
+      "date": "2027-12-26",
+      "isHoliday": true
+    },
+    {
+      "calendar": "AI-INNER",
+      "date": "2027-01-02",
+      "isHoliday": false
+    },
+    {
+      "calendar": "AI-INNER",
+      "date": "2027-03-26",
+      "isHoliday": true
+    },
+    {
+      "calendar": "AI-INNER",
+      "date": "2027-05-27",
+      "isHoliday": true
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "date": "2026-11-11",
+      "isHoliday": true
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "date": "2027-11-11",
+      "isHoliday": true
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "date": "2027-01-02",
+      "isHoliday": false
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "date": "2026-09-20",
+      "isHoliday": true
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "date": "2027-09-19",
+      "isHoliday": true
+    },
+    {
+      "calendar": "SZ-SCHWYZ-AUTHORITY",
+      "date": "2027-09-14",
+      "isHoliday": false
+    }
+  ],
+  "paths": [
+    {
+      "id": "AI-ADMIN-ORDERED",
+      "canton": "AI",
+      "stage": "initialAdministration",
+      "days": null,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-ADMIN-WRITTEN-7",
+      "canton": "AI",
+      "stage": "initialAdministration",
+      "days": 7,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupportedForOralAction",
+        "expectedServiceFact": "expectedService"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "oralDecisionWrittenOpeningRequest",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "AI-B-ORAL-TRIGGER"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-APPEAL-30",
+      "canton": "AI",
+      "stage": "internalAppeal",
+      "days": 30,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryRecourse",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-BUILDING-10",
+      "canton": "AI",
+      "stage": "internalAppeal",
+      "days": 10,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "buildingApplicationDecisionRecourse",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-SCHOOL-10",
+      "canton": "AI",
+      "stage": "internalAppeal",
+      "days": 10,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "enumeratedCantonalSchoolRecourse",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-ORDERED",
+      "canton": "AI",
+      "stage": "internalAppeal",
+      "days": null,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-DENIAL-30",
+      "canton": "AI",
+      "stage": "internalSupervision",
+      "days": 30,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "notSupportedForKnowledgeAction",
+        "expectedServiceFact": "expectedService"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalSupervision",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedDenialNotDelayNoOrdinaryRemedy",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "AI-B-KNOWLEDGE-TRIGGER"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-APPEAL-30",
+      "canton": "AI",
+      "stage": "courtAppeal",
+      "days": 30,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryCourtAppeal",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-INTERIM-7",
+      "canton": "AI",
+      "stage": "courtAppeal",
+      "days": 7,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleInterimOrProvisionalNotExecution",
+          "reason": "AI-O1-EXECUTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-ORDERED",
+      "canton": "AI",
+      "stage": "courtAppeal",
+      "days": null,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-FULL-30",
+      "canton": "AI",
+      "stage": "courtDecisionFollowup",
+      "days": 30,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtDecisionFollowup",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "unreasonedJudgmentFullDecisionRequest",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-INTERPRET-7",
+      "canton": "AI",
+      "stage": "courtDecisionFollowup",
+      "days": 7,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtDecisionFollowup",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedJudgmentInterpretation",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-PRESIDENT-7",
+      "canton": "AI",
+      "stage": "courtAppeal",
+      "days": 7,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedGog42PresidentialDecision",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-GOG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-PERSONNEL-10",
+      "canton": "AI",
+      "stage": "courtPersonnelCommission",
+      "days": 10,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtPersonnelCommission",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedJudicialPresidentPersonnelDecision",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "oneOf": [
+            "regularNoDeviation",
+            "shorterInstructionUsesStatutory"
+          ],
+          "reason": "AI-B-NOTICE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-NOTICE-30",
+      "canton": "AI",
+      "stage": "internalAppeal",
+      "days": 30,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleRecourseWithQualifiedNoticeDefect",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "defectiveNoLongerEffectiveInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-INTERNAL-NOTICE-LONG",
+      "canton": "AI",
+      "stage": "internalAppeal",
+      "days": null,
+      "minimumDays": 31,
+      "durationFact": "actualLongerInstructionDays",
+      "durationBaseFact": "ordinaryStatutoryDays",
+      "longerThanDays": 0,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleRecourseWithEffectiveLongerInstruction",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "effectiveLongerInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            10,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        },
+        {
+          "key": "longerInstructionQualification",
+          "value": "aboveBothStatutoryAndThirty",
+          "reason": "AI-O3-NOTICE-PRIORITY"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWVG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-NOTICE-30",
+      "canton": "AI",
+      "stage": "courtAppeal",
+      "days": 30,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAppealWithQualifiedNoticeDefect",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "defectiveNoLongerEffectiveInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            7,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "AI-COURT-NOTICE-LONG",
+      "canton": "AI",
+      "stage": "courtAppeal",
+      "days": null,
+      "minimumDays": 31,
+      "durationFact": "actualLongerInstructionDays",
+      "durationBaseFact": "ordinaryStatutoryDays",
+      "longerThanDays": 0,
+      "suspension": "three",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "AI-INNER"
+      },
+      "opening": {
+        "modeFact": "openingMode",
+        "qualifiedValue": "qualifiedLegalOpening",
+        "trackingValue": "trackingPhysicalReceipt",
+        "expectedServiceFact": "expectedService",
+        "trackingRequirements": [
+          {
+            "key": "entryIntoSphere",
+            "value": "verified",
+            "reason": "AI-B-TRACKING-ENTRY"
+          },
+          {
+            "key": "receiptHolidayRegime",
+            "value": "sameAsBoundAuthorityCalendar",
+            "reason": "AI-B-TRACKING-PLACE"
+          }
+        ]
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "AI-B-SCOPE"
+        },
+        {
+          "key": "applicability",
+          "value": "generalAiConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "AI",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "authorityRegion",
+          "value": "innerCanton",
+          "reason": "AI-B-ANCHOR"
+        },
+        {
+          "key": "caseUnit",
+          "value": "forwardDays",
+          "reason": "AI-B-UNITS"
+        },
+        {
+          "key": "specialRule",
+          "value": "noneConfirmed",
+          "reason": "AI-B-SPECIAL"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "AI-B-STAGE"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAppealWithEffectiveLongerInstruction",
+          "reason": "AI-B-ACTION"
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "trackingPhysicalReceipt"
+          ],
+          "reason": "AI-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "effectiveLongerInstruction",
+          "reason": "AI-B-NOTICE"
+        },
+        {
+          "key": "ordinaryStatutoryDays",
+          "oneOf": [
+            7,
+            30
+          ],
+          "reason": "AI-B-NOTICE-BASE"
+        },
+        {
+          "key": "longerInstructionQualification",
+          "value": "aboveBothStatutoryAndThirty",
+          "reason": "AI-O3-NOTICE-PRIORITY"
+        }
+      ],
+      "sourceIds": [
+        "L1-AI-VERWGG",
+        "L1-AI-FRIG"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-ORDERED",
+      "canton": "SZ",
+      "stage": "initialAdministration",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "szThree",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-ORDERED-EXEMPT",
+      "canton": "SZ",
+      "stage": "initialAdministration",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "urgentProvisionalMeasure"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-APPEAL-20",
+      "canton": "SZ",
+      "stage": "administrativeAppeal",
+      "days": 20,
+      "suspension": "szThree",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralAdministrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-APPEAL-20-EXEMPT",
+      "canton": "SZ",
+      "stage": "administrativeAppeal",
+      "days": 20,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralAdministrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-APPEAL-ORDERED",
+      "canton": "SZ",
+      "stage": "administrativeAppeal",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "szThree",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-APPEAL-ORDERED-EXEMPT",
+      "canton": "SZ",
+      "stage": "administrativeAppeal",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw",
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-ADMIN-PROVISIONAL-OPPOSITION",
+      "canton": "SZ",
+      "stage": "provisionalOpposition",
+      "days": null,
+      "minimumDays": 1,
+      "maximumDays": 10,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "provisionalOpposition",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "actual23Paragraph2OppositionOrder",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "urgentProvisionalMeasure"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-COURT-APPEAL-20",
+      "canton": "SZ",
+      "stage": "courtAppeal",
+      "days": 20,
+      "suspension": "szThree",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-COURT-APPEAL-20-EXEMPT",
+      "canton": "SZ",
+      "stage": "courtAppeal",
+      "days": 20,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-COURT-EXECUTION-10",
+      "canton": "SZ",
+      "stage": "courtAppeal",
+      "days": 10,
+      "suspension": "szThree",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleSelfStandingGeneralExecutionAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-COURT-ORDERED",
+      "canton": "SZ",
+      "stage": "courtProceeding",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "szThree",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtProceeding",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "noneConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-COURT-ORDERED-EXEMPT",
+      "canton": "SZ",
+      "stage": "courtProceeding",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtProceeding",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder",
+          "reason": "SZ-B-ORDER"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "actualPartyAgreementToThisPeriod",
+            "qualifiedGeneralProvisionalRemedyWithoutDifferentSpecialLaw",
+            "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    },
+    {
+      "id": "SZ-COURT-EXECUTION-10-EXEMPT",
+      "canton": "SZ",
+      "stage": "courtAppeal",
+      "days": 10,
+      "suspension": "none",
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "SZ-SCHWYZ-AUTHORITY"
+      },
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityCanton",
+          "value": "SZ",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "authorityMunicipality",
+          "value": "Schwyz",
+          "reason": "SZ-O1"
+        },
+        {
+          "key": "applicability",
+          "value": "generalSzConfirmed",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "SZ-B-OPENING"
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "SZ-B-NOTICE"
+        },
+        {
+          "key": "submissionMode",
+          "value": "ordinaryPhysicalSubmission",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "postUseStatus",
+          "value": "ordinaryNoAdditionalInterruption",
+          "reason": "SZ-B-POST"
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleSelfStandingGeneralExecutionAppeal",
+          "reason": "SZ-B-SPECIAL"
+        },
+        {
+          "key": "exceptionQualification",
+          "value": "explicit157ExceptionConfirmed",
+          "reason": "SZ-B-EXCEPTION"
+        },
+        {
+          "key": "exceptionCategory",
+          "oneOf": [
+            "admissibleSelfStandingConstructionExecutionRemedyWithoutDifferentSpecialLaw"
+          ],
+          "reason": "SZ-B-EXCEPTION"
+        }
+      ],
+      "sourceIds": [
+        "L1-SZ-VRP-20260701",
+        "L1-SZ-JG-20260701"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "L1-AI-R01",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R02",
+      "path": "AI-ADMIN-WRITTEN-7",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "oralDecisionWrittenOpeningRequest",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R03",
+      "path": "AI-INTERNAL-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRecourse",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R04",
+      "path": "AI-INTERNAL-BUILDING-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "buildingApplicationDecisionRecourse",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R05",
+      "path": "AI-INTERNAL-SCHOOL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "enumeratedCantonalSchoolRecourse",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R06",
+      "path": "AI-INTERNAL-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 15,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-19"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R07",
+      "path": "AI-INTERNAL-DENIAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalSupervision",
+        "actionQualification": "qualifiedDenialNotDelayNoOrdinaryRemedy",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R08",
+      "path": "AI-COURT-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryCourtAppeal",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R09",
+      "path": "AI-COURT-INTERIM-7",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleInterimOrProvisionalNotExecution",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R10",
+      "path": "AI-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R11",
+      "path": "AI-COURT-FULL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtDecisionFollowup",
+        "actionQualification": "unreasonedJudgmentFullDecisionRequest",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R12",
+      "path": "AI-COURT-INTERPRET-7",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtDecisionFollowup",
+        "actionQualification": "qualifiedJudgmentInterpretation",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R13",
+      "path": "AI-COURT-PRESIDENT-7",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "qualifiedGog42PresidentialDecision",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R14",
+      "path": "AI-COURT-PERSONNEL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtPersonnelCommission",
+        "actionQualification": "qualifiedJudicialPresidentPersonnelDecision",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R15",
+      "path": "AI-INTERNAL-NOTICE-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleRecourseWithQualifiedNoticeDefect",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "defectiveNoLongerEffectiveInstruction",
+        "ordinaryStatutoryDays": 10
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R16",
+      "path": "AI-INTERNAL-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 45,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleRecourseWithEffectiveLongerInstruction",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "effectiveLongerInstruction",
+        "ordinaryStatutoryDays": 10,
+        "actualLongerInstructionDays": 45,
+        "longerInstructionQualification": "aboveBothStatutoryAndThirty"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-16"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R17",
+      "path": "AI-COURT-NOTICE-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleAppealWithQualifiedNoticeDefect",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "defectiveNoLongerEffectiveInstruction",
+        "ordinaryStatutoryDays": 7
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R18",
+      "path": "AI-COURT-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 45,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleAppealWithEffectiveLongerInstruction",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "effectiveLongerInstruction",
+        "ordinaryStatutoryDays": 7,
+        "actualLongerInstructionDays": 45,
+        "longerInstructionQualification": "aboveBothStatutoryAndThirty"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-16"
+      },
+      "note": "Händisch vorgegebener Grundfall der qualifizierten Handlung, nicht aus Produktlogik abgeleitet.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R19",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-21",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-23"
+      },
+      "note": "22. September ist am qualifizierten Sitz im inneren Landesteil St. Mauritius. Nur das Ende verschiebt sich.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R20",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-22",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-02"
+      },
+      "note": "Rechtlich bereits qualifizierte Eröffnung am lokalen Feiertag bleibt unverändert. Feiertage im Innern zählen.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R21",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-19",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-29",
+        "legalOpening": "2026-09-19"
+      },
+      "note": "Bereits rechtlich qualifizierte Samstageröffnung. Keine zweite Zustellverschiebung.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R22",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-19",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-01",
+        "legalOpening": "2026-09-21"
+      },
+      "note": "Erfasste Trackingsendung am Samstag, Erwartbarkeit und Eingang bestätigt. Montag 21. September ist Eröffnung, Dienstag erster Zähltag.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R23",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-22",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-30",
+        "legalOpening": "2026-09-23"
+      },
+      "note": "Erfasste Trackingsendung am Mauritiustag. Eingangsort liegt bestätigt im selben Feiertagsregime, rechtliche Eröffnung 23. September.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R24",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-12-26",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-07",
+        "legalOpening": "2026-12-28"
+      },
+      "note": "Trackingeingang am Samstag wird auf Montag 28. Dezember verschoben. Kein Verwaltungsstillstand.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R25",
+      "path": "AI-COURT-ORDERED",
+      "trigger": "2026-12-26",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-12",
+        "legalOpening": "2026-12-28"
+      },
+      "note": "Gleiche Trackingsendung, aber gerichtlicher Stillstand bis 2. Januar. 3. Januar erster Zähltag.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R26",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2027-07-14",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-21"
+      },
+      "note": "Kein Sommerstillstand vor Verwaltungsbehörde.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R27",
+      "path": "AI-COURT-ORDERED",
+      "trigger": "2027-07-14",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-23"
+      },
+      "note": "15. Juli bis 15. August still. Siebter Zähltag 22. August Sonntag, Ende Montag.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R28",
+      "path": "AI-COURT-INTERIM-7",
+      "trigger": "2027-07-14",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleInterimOrProvisionalNotExecution",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-23"
+      },
+      "note": "Art. 65 enthält keine pauschale Ausnahme für kurze oder vorsorgliche Beschwerden. Keine importierte ZPO-Ausnahme. Abweichendes Spezialrecht ist aktuell ausgeschlossen.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R29",
+      "path": "AI-COURT-APPEAL-30",
+      "trigger": "2027-07-15",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryCourtAppeal",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-14"
+      },
+      "note": "Eröffnung während Ferien, erster Zähltag 16. August. Keine 30-Tage-Eröffnungskette.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R30",
+      "path": "AI-ADMIN-WRITTEN-7",
+      "trigger": "2027-03-20",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "oralDecisionWrittenOpeningRequest",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "note": "Kein Verwaltungsstillstand. Siebter Tag Karsamstag 27. März, Wochenende und Ostermontag verschieben auf Dienstag.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R31",
+      "path": "AI-COURT-INTERPRET-7",
+      "trigger": "2027-03-20",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtDecisionFollowup",
+        "actionQualification": "qualifiedJudgmentInterpretation",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "note": "Gerichtlicher Stillstand 21. März bis 4. April. Siebter Zähltag Sonntag 11. April.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R32",
+      "path": "AI-INTERNAL-BUILDING-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "buildingApplicationDecisionRecourse",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "shorterInstructionUsesStatutory"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Zu kurze Belehrung reduziert die gesetzliche Zehntagesfrist nicht.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R33",
+      "path": "AI-INTERNAL-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 15,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleRecourseWithEffectiveLongerInstruction",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "effectiveLongerInstruction",
+        "ordinaryStatutoryDays": 10,
+        "actualLongerInstructionDays": 15,
+        "longerInstructionQualification": "betweenStatutoryAndThirtyUnresolved"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-O3-NOTICE-PRIORITY"
+      },
+      "note": "Ausdrücklich längere 15-Tagebelehrung bei gesetzlicher Zehntagesfrist. Verhältnis von spezieller längerer Belehrung zur allgemeinen 30-Tage-Mangelregel ist offen. Keine automatische Wahl von 15 oder 30.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R34",
+      "path": "AI-COURT-NOTICE-30",
+      "trigger": "2027-07-14",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleAppealWithQualifiedNoticeDefect",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "defectiveNoLongerEffectiveInstruction",
+        "ordinaryStatutoryDays": 7
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-14"
+      },
+      "note": "Qualifizierter Belehrungsmangel beim Siebentagesweg ergibt 30 Tage mit gerichtlichem Stillstand, ohne längere wirksame Belehrung.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R35",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-19",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": false,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "trackingExpectedServiceNotQualified"
+      },
+      "note": "Rawtracking ohne bestätigte Erwartbarkeit.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R36",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-19",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "unknown",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-TRACKING-ENTRY"
+      },
+      "note": "Kein verifizierter Eintritt in Machtsphäre.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R37",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-09-19",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "unknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-TRACKING-PLACE"
+      },
+      "note": "Abweichendes oder ungeklärtes Empfangsfeiertagsregime wird nicht durch Behördensitz ersetzt.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R38",
+      "path": "AI-COURT-INTERIM-7",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "executionMeasure",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-O1-EXECUTION"
+      },
+      "note": "Art. 16 Abs. 3 heilt die Zulässigkeitsgrenze von Art. 11 Abs. 2 lit. c nicht.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R39",
+      "path": "AI-COURT-INTERIM-7",
+      "trigger": "2026-10-02",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "finalVerwgg19PresidentialOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-O1-EXECUTION"
+      },
+      "note": "Endgültige gerichtliche Verfügung nach Art. 19 Abs. 2 wird nicht als zulässige Siebentagesbeschwerde behandelt.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R40",
+      "path": "AI-INTERNAL-SCHOOL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "municipal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "enumeratedCantonalSchoolRecourse",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-SCOPE"
+      },
+      "note": "Rekurs an einen kommunalen Schulrat ist nicht als kantonaler Zielweg freigegeben.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R41",
+      "path": "AI-INTERNAL-NOTICE-LONG",
+      "trigger": "2026-10-02",
+      "days": 45,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleRecourseWithEffectiveLongerInstruction",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "effectiveLongerInstruction",
+        "ordinaryStatutoryDays": 10,
+        "actualLongerInstructionDays": 10,
+        "longerInstructionQualification": "aboveBothStatutoryAndThirty"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "noticeDurationNotQualified"
+      },
+      "note": "Behauptete längere Tagesdauer 45 stimmt nicht mit den aktuell angegebenen zehn Tagen der Belehrung überein. Der Dauerwiderspruch wird nicht durch die Auswahl geheilt.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R42",
+      "path": "AI-COURT-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "ATSG",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryCourtAppeal",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-SPECIAL"
+      },
+      "note": "ATSG-Verfahren wird nicht über den allgemeinen VerwGG-Weg freigegeben.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R43",
+      "path": "AI-COURT-APPEAL-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryCourtAppeal",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "unknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-NOTICE"
+      },
+      "note": "Ungeklärte Belehrung wird nicht als regulärer Dreissigtagesfall unterstellt.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R44",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2026-08-28",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "note": "Trigger liegt vor bestätigtem Fenster.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R45",
+      "path": "AI-COURT-ORDERED",
+      "trigger": "2027-12-17",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "note": "Gerichtlicher Stillstand würde alle Zähltage ins Jahr 2028 verlegen.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R46",
+      "path": "AI-ADMIN-ORDERED",
+      "trigger": "2027-12-31",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "note": "Ende reicht über vollständiges Fenster.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R47",
+      "path": "AI-COURT-ORDERED",
+      "trigger": "2027-12-16",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-12-17"
+      },
+      "note": "Positiver Nachbarfall vor Jahresendstillstand.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R48",
+      "path": "AI-COURT-INTERIM-7",
+      "trigger": "2027-03-13",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleInterimOrProvisionalNotExecution",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation"
+      },
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "L1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Ungeklärte Kollision: siebter Zähltag Samstag vor Beginn der Osterferien, reguläre Endverschiebung hinein in den Stillstand. Kein definitives Enddatum.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R49",
+      "path": "AI-ADMIN-WRITTEN-7",
+      "trigger": "2026-09-19",
+      "days": 7,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "initialAdministration",
+        "actionQualification": "oralDecisionWrittenOpeningRequest",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-ORAL-TRIGGER"
+      },
+      "note": "Das Verlangen nach schriftlicher Eröffnung knüpft an die mündliche Eröffnung an. Ein Trackingeingang ist dafür kein austauschbarer Auslöser.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-AI-R50",
+      "path": "AI-INTERNAL-DENIAL-30",
+      "trigger": "2026-09-19",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalAiConfirmed",
+        "authorityCanton": "AI",
+        "authorityRegion": "innerCanton",
+        "caseUnit": "forwardDays",
+        "specialRule": "noneConfirmed",
+        "stage": "internalSupervision",
+        "actionQualification": "qualifiedDenialNotDelayNoOrdinaryRemedy",
+        "openingMode": "trackingPhysicalReceipt",
+        "noticeStatus": "regularNoDeviation",
+        "expectedService": true,
+        "entryIntoSphere": "verified",
+        "receiptHolidayRegime": "sameAsBoundAuthorityCalendar"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "AI-B-KNOWLEDGE-TRIGGER"
+      },
+      "note": "Der rechtlich bestimmte Kenntnistag einer Rechtsverweigerung wird nicht automatisch aus dem Eingang einer Trackingsendung rekonstruiert.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-ai.json"
+    },
+    {
+      "id": "L1-SZ-R01",
+      "path": "SZ-ADMIN-APPEAL-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleGeneralAdministrativeAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "3.–22. Oktober ergeben 20 Tage. Kein Oktoberstillstand.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R02",
+      "path": "SZ-COURT-APPEAL-20",
+      "trigger": "2026-12-15",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleGeneralCourtAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-25"
+      },
+      "note": "16./17. Dezember ergeben zwei Tage. Stillstand vom 18. Dezember bis 7. Januar. 8.–25. Januar ergeben weitere 18 Tage.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R03",
+      "path": "SZ-COURT-APPEAL-20-EXEMPT",
+      "trigger": "2026-12-15",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleGeneralCourtAppeal",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "16.–31. Dezember ergeben 16 Tage. 1.–4. Januar ergeben vier Tage. Die ausdrücklich qualifizierte Ausnahme schliesst den Stillstand aus.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R04",
+      "path": "SZ-ADMIN-ORDERED",
+      "trigger": "2026-12-23",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-08"
+      },
+      "note": "Die Verweisung nach VRP § 4 Abs. 1 erfasst den Stillstand auch im Erstverfahren. Erster Zähltag ist der 8. Januar.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R05",
+      "path": "SZ-ADMIN-ORDERED-EXEMPT",
+      "trigger": "2026-12-23",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "actualPartyAgreementToThisPeriod"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "note": "Aktuell im Einvernehmen angesetzte Frist ohne Winterstillstand. 24. Dezember ist kein allgemeiner SZ-Ruhetag.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R06",
+      "path": "SZ-ADMIN-APPEAL-ORDERED",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "administrativeAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31"
+      },
+      "note": "11.–14. Juli ergeben vier Tage. 16.–31. August ergeben weitere 16 Tage.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R07",
+      "path": "SZ-ADMIN-APPEAL-ORDERED-EXEMPT",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "administrativeAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "actualPartyAgreementToThisPeriod"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "note": "11.–30. Juli ergeben 20 Kalendertage. Die Einvernehmensausnahme ist eine aktuelle Falltatsache.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R08",
+      "path": "SZ-ADMIN-PROVISIONAL-OPPOSITION",
+      "trigger": "2026-12-23",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "provisionalOpposition",
+        "actionQualification": "actual23Paragraph2OppositionOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "urgentProvisionalMeasure"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "note": "Aktuell angeordnete fünf Tage innerhalb des gesetzlichen Maximums von zehn Tagen. 24.–28. Dezember werden gezählt. Feiertage im Fristinnern stoppen die Zählung nicht.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R09",
+      "path": "SZ-COURT-EXECUTION-10",
+      "trigger": "2026-11-01",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleSelfStandingGeneralExecutionAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-12"
+      },
+      "note": "2.–11. November ergeben zehn Tage. Martinstag am rechtlich massgebenden Sitz Schwyz verschiebt das Ende auf den 12. November. Kein Rückfall auf den kantonsweiten Basiskalender.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R10",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2027-03-18",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-22"
+      },
+      "note": "19./20. März sind zwei Zähltage, obwohl Josefstag und Samstag im Fristinnern liegen. Ostern ist am 28. März. Stillstand vom 21. März bis 4. April. 5.–22. April ergeben weitere 18 Tage.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R11",
+      "path": "SZ-COURT-ORDERED-EXEMPT",
+      "trigger": "2027-03-18",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "actualPartyAgreementToThisPeriod"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-07"
+      },
+      "note": "19.–31. März ergeben 13 Tage. 1.–7. April ergeben weitere sieben Tage.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R12",
+      "path": "SZ-ADMIN-APPEAL-20-EXEMPT",
+      "trigger": "2026-12-15",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleGeneralAdministrativeAppeal",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "admissibleGeneralPlanningBuildingRemedyWithoutDifferentSpecialDuration"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Auch vor dem Regierungsrat gibt es bei der qualifizierten Ausnahme keinen Stillstand. Kein Ersatz für ein Steuer- oder anderes Spezialverfahren.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R13",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2027-01-05",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-08"
+      },
+      "note": "Der Winterstillstand endet am 7. Januar, nicht am 2. Januar.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R14",
+      "path": "SZ-COURT-ORDERED-EXEMPT",
+      "trigger": "2027-01-05",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "actualPartyAgreementToThisPeriod"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-07"
+      },
+      "note": "Tag eins ist Dreikönige am 6. Januar. Ohne Stillstand verschiebt nur der Feiertag das Ende auf den 7. Januar.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R15",
+      "path": "SZ-ADMIN-APPEAL-20",
+      "trigger": "2026-09-05",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleGeneralAdministrativeAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-25"
+      },
+      "note": "Die bereits rechtlich qualifizierte Samstagseröffnung bleibt am 5. September. 6.–25. September ergeben 20 Tage. Kein AI-Trackingautomatismus.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R16",
+      "path": "SZ-ADMIN-ORDERED",
+      "trigger": "2026-08-29",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "note": "Fensterbeginn am Samstag, 29. August. Tag eins ist Sonntag. Ende am Montag, 31. August.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R17",
+      "path": "SZ-ADMIN-PROVISIONAL-OPPOSITION",
+      "trigger": "2027-12-30",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "provisionalOpposition",
+        "actionQualification": "actual23Paragraph2OppositionOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "urgentProvisionalMeasure"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-12-31"
+      },
+      "note": "Letzter vollständig im Fenster abwickelbarer Eintagesfall ohne Stillstand.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R18",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2027-12-16",
+      "days": 2,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "note": "Der zweite Zähltag liegt nach dem 7. Januar 2028. Die Rechnung darf nicht auf den 31. Dezember 2027 gekürzt werden.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R19",
+      "path": "SZ-ADMIN-ORDERED",
+      "trigger": "2026-08-28",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "note": "Ein Auslöser vor dem Fenster bleibt ausgeschlossen.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R20",
+      "path": "SZ-ADMIN-PROVISIONAL-OPPOSITION",
+      "trigger": "2026-12-23",
+      "days": 11,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "provisionalOpposition",
+        "actionQualification": "actual23Paragraph2OppositionOrder",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "urgentProvisionalMeasure"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "note": "VRP § 23 Abs. 2 gestattet höchstens zehn Tage. Elf Tage sind in diesem Weg nicht positiv qualifiziert.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R21",
+      "path": "SZ-ADMIN-APPEAL-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Ingenbohl",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleGeneralAdministrativeAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-O1"
+      },
+      "note": "Ein anderer tatsächlicher rechtlicher Sitz braucht eine eigene positive Kalenderbindung. Ein Postfach in Schwyz genügt nicht.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R22",
+      "path": "SZ-COURT-APPEAL-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "socialATSG",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleGeneralCourtAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-SPECIAL"
+      },
+      "note": "Keine ausserbernische Sozialfreigabe.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R23",
+      "path": "SZ-COURT-APPEAL-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "electronicInvitationOnly",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleGeneralCourtAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-OPENING"
+      },
+      "note": "Eine E-Mail-Abholeinladung ist keine qualifizierte Eröffnung. Der elektronische Gerichtskanal ist zudem nicht für sämtliche allgemeinen Verfahren zugelassen.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R24",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "extensionRequestedOnly",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-ORDER"
+      },
+      "note": "Ein Erstreckungsgesuch ist noch keine Bewilligung.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R25",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "unknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-EXCEPTION"
+      },
+      "note": "Eine unklare Stillstandsausnahme darf nicht als normaler Fall behandelt werden.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R26",
+      "path": "SZ-COURT-APPEAL-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "defectiveRemedyInstruction",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleGeneralCourtAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-NOTICE"
+      },
+      "note": "Vertrauensschutz und Anfechtbarkeit bei mangelhafter Belehrung werden nicht durch eine freie Zwanzigtagesrechnung geklärt.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R27",
+      "path": "SZ-COURT-APPEAL-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "assertedExceptionalPostalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleGeneralCourtAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-POST"
+      },
+      "note": "Eine ausserordentlich erschwerte Postbenutzung benötigt eine Sachverhaltsprüfung und keinen beliebigen Kalender-Override.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R28",
+      "path": "SZ-COURT-EXECUTION-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "arbitraryInterimOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-SPECIAL"
+      },
+      "note": "VRP § 56 Abs. 2 ist keine generelle Zehntagesfrist für Zwischenentscheide.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R29",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2026-12-16",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-17"
+      },
+      "note": "Letzter ordentlicher Zähltag vor dem Winterstillstand.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R30",
+      "path": "SZ-COURT-ORDERED",
+      "trigger": "2027-03-18",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtProceeding",
+        "actionQualification": "validCurrentDayCountOrder",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "L1-END-SUSPENSION"
+      },
+      "note": "Tag eins ist Josefstag am Freitag, 19. März 2027. Das folgende Wochenende führt die Endverschiebung in den am 21. März beginnenden Osterstillstand. Ohne Kollisionsentscheid kein definitives Ende.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R31",
+      "path": "SZ-COURT-EXECUTION-10-EXEMPT",
+      "trigger": "2026-12-15",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleSelfStandingGeneralExecutionAppeal",
+        "exceptionQualification": "explicit157ExceptionConfirmed",
+        "exceptionCategory": "admissibleSelfStandingConstructionExecutionRemedyWithoutDifferentSpecialLaw"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "note": "16.–25. Dezember ergeben zehn Tage ohne Stillstand. Weihnachten, Stephanstag und Sonntag verschieben das Ende auf den 28. Dezember. Die Ausnahme ist für die konkrete Vollstreckungssache positiv qualifiziert.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R32",
+      "path": "SZ-COURT-EXECUTION-10",
+      "trigger": "2026-12-15",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleSelfStandingGeneralExecutionAppeal",
+        "exceptionQualification": "noneConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "note": "16./17. Dezember ergeben zwei Tage. Nach dem Stillstand folgen 8.–15. Januar als weitere acht Tage. Gegenprobe zur ausdrücklich ausgenommenen Vollstreckungssache.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    },
+    {
+      "id": "L1-SZ-R33",
+      "path": "SZ-COURT-EXECUTION-10-EXEMPT",
+      "trigger": "2026-12-15",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "authorityCanton": "SZ",
+        "authorityMunicipality": "Schwyz",
+        "applicability": "generalSzConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "submissionMode": "ordinaryPhysicalSubmission",
+        "postUseStatus": "ordinaryNoAdditionalInterruption",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleSelfStandingGeneralExecutionAppeal",
+        "exceptionQualification": "unknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "SZ-B-EXCEPTION"
+      },
+      "note": "Der Titel Vollstreckung beweist weder das Vorliegen noch das Fehlen einer Stillstandsausnahme. Bei unklarer Ausnahme gibt es kein definitives Ergebnis.",
+      "analystSource": "docs/fachrecht/ap23l1/befund-sz.json"
+    }
+  ],
+  "note": "Static analyst expectations assembled without modification. Research calculations are not product tests, a legal approval, a data release or export permission."
+}

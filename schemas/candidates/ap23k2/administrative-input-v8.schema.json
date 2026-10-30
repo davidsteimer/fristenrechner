@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/candidates/ap23k2/administrative-input-v8.schema.json",
+  "title": "AP23K2 current legal opening and qualified holiday anchor facts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "pathRevision",
+    "authoritySeatCanton",
+    "trigger",
+    "days",
+    "facts"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "pathRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "authoritySeatCanton": {
+      "enum": [
+        "BS",
+        "BL",
+        "BE",
+        "CH",
+        "unknown"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "authorityScope": {
+          "enum": [
+            "cantonal",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "applicability": {
+          "enum": [
+            "generalBsConfirmed",
+            "generalBlConfirmed",
+            "ATSGSpecialProcedure",
+            "atsgSpecialProcedure",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "openingMode": {
+          "enum": [
+            "qualifiedLegalOpening",
+            "physicalReceiptUnqualified",
+            "physicalPickupWithUnresolvedFiction",
+            "unknownThirdPartyKnowledge",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "noticeStatus": {
+          "enum": [
+            "regularNoDeviation",
+            "defectiveRemedyInstruction",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "stage": {
+          "enum": [
+            "initialAdministration",
+            "internalAppeal",
+            "courtAppeal",
+            "administrativeAppeal",
+            "administrativeCourt",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "actionQualification": {
+          "enum": [
+            "validCurrentDayCountOrder",
+            "admissibleOrdinaryRegistration",
+            "originalReasonsPeriodFromDecisionOpening",
+            "applicantAppealAgainstJoinderRefusal",
+            "currentDayCountSubmissionOrder",
+            "admissibleAdministrativeAppeal",
+            "currentGrantedReasonsDayCountOrder",
+            "admissibleGeneralCourtAppeal",
+            "currentSetReasonsDayCountOrder",
+            "qualifiedSection7Objection",
+            "reasonsFromRegistrationDate",
+            "extensionRequestedOnly",
+            "reasonsFromTransferNotice",
+            "otherJudicialProceduralOrder",
+            "fixedEndDateOnly",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "legalAnchorQualification": {
+          "enum": [
+            "establishedPartyOrRepresentative",
+            "unknown",
+            "authoritySeatOnly",
+            "other",
+            null
+          ]
+        },
+        "orderStatus": {
+          "enum": [
+            "currentOrder",
+            "grantedReasonsOrder",
+            "setReasonsOrder",
+            "requestPending",
+            "notSet",
+            "fixedCalendarDateOnly",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "courtOrderCategory": {
+          "enum": [
+            "competence",
+            "recusal",
+            "informationOrProductionDuty",
+            "deniedFileAccess",
+            "endangeredEvidenceRefused",
+            "interimMeasuresOrSuspensiveEffect",
+            "deniedLegalAid",
+            "ordinaryScheduling",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "chamberDecidesFinal": {
+          "enum": [
+            true,
+            false,
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "legalAnchorCanton": {
+          "enum": [
+            "ZH",
+            "BE",
+            "LU",
+            "UR",
+            "SZ",
+            "OW",
+            "NW",
+            "GL",
+            "ZG",
+            "FR",
+            "SO",
+            "BS",
+            "BL",
+            "SH",
+            "AR",
+            "AI",
+            "SG",
+            "GR",
+            "AG",
+            "TG",
+            "TI",
+            "VD",
+            "VS",
+            "NE",
+            "GE",
+            "JU",
+            "unknown",
+            "other",
+            null
+          ]
+        }
+      }
+    },
+    "areaFacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "AI-RTG-INNER-ADDITIONAL": {
+          "type": "boolean"
+        },
+        "NE-LANDERON-ADDITIONAL": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

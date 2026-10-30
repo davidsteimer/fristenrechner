@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: AGPL-3.0-only
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateGovernanceTap} from '../../scripts/finalize-r10-a2.mjs';
+const summary=()=>['# tests 100','# pass 100','# fail 0','# cancelled 0','# skipped 0','# todo 0'].join('\n')+'\n';
+const tap=()=>['TAP version 13',...Array.from({length:100},(_,i)=>'ok '+(i+1)+' - test '+(i+1)),'1..100'].join('\n')+'\n'+summary();
+test('A complete successful TAP summary is parsed without treating it as legal acceptance',()=>assert.deepEqual(validateGovernanceTap(tap(),100),{tests:100,pass:100,fail:0,cancelled:0,skipped:0,todo:0}));
+test('A failed test cannot be hidden behind a successful process label',()=>assert.throws(()=>validateGovernanceTap(tap().replace('# fail 0','# fail 1'),100)));
+test('A truncated test report is rejected',()=>assert.throws(()=>validateGovernanceTap(tap().replace('# pass 100',''),100)));
+test('Skipped tests do not count as full proof',()=>assert.throws(()=>validateGovernanceTap(tap().replace('# skipped 0','# skipped 1'),100)));
+test('A smaller executed suite is rejected',()=>assert.throws(()=>validateGovernanceTap(tap(),101)));
+test('Conflicting duplicate summaries are rejected',()=>assert.throws(()=>validateGovernanceTap(tap()+'# pass 100\n',100)));
+test('Summary comments alone are not evidence of executed tests',()=>assert.throws(()=>validateGovernanceTap(summary(),100)));
+test('A not-ok point contradicting successful summary comments is rejected',()=>assert.throws(()=>validateGovernanceTap(tap().replace('ok 1 -','not ok 1 -'),100)));
+test('A bailout cannot be hidden by successful summary comments',()=>assert.throws(()=>validateGovernanceTap(tap()+'Bail out! stopped\n',100)));
+test('Missing test points cannot borrow a complete summary count',()=>assert.throws(()=>validateGovernanceTap(tap().replace('ok 10 - test 10\n',''),100)));
+test('Duplicate point numbers are rejected',()=>assert.throws(()=>validateGovernanceTap(tap().replace('ok 10 - test 10','ok 9 - test 10'),100)));
+test('Out-of-order point numbers are rejected',()=>assert.throws(()=>validateGovernanceTap(tap().replace('ok 10 - test 10','ok 110 - test 10'),100)));
+test('Missing, inconsistent and duplicated plans are rejected',()=>{for(const invalid of [tap().replace('1..100\n',''),tap().replace('1..100','1..99'),tap()+'1..100\n'])assert.throws(()=>validateGovernanceTap(invalid,100));});
+test('SKIP and TODO directives cannot count as complete passed proof',()=>{for(const directive of ['SKIP','TODO'])assert.throws(()=>validateGovernanceTap(tap().replace('ok 10 - test 10','ok 10 - test 10 # '+directive),100));});
+test('Nested test points are outside the accepted flat Node report contract',()=>assert.throws(()=>validateGovernanceTap(tap().replace('ok 10 - test 10','    ok 10 - test 10'),100)));
+test('Malformed numbered points cannot count as valid test points',()=>assert.throws(()=>validateGovernanceTap(tap().replace('ok 10 - test 10','ok 10'),100)));
+test('A plan preceding the test points is not the actual flat Node report shape',()=>assert.throws(()=>validateGovernanceTap(tap().replace('1..100\n','').replace('TAP version 13\n','TAP version 13\n1..100\n'),100)));

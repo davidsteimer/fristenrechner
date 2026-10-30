@@ -1,0 +1,88 @@
+{
+  "workPackage": "AP23H3",
+  "status": "passed",
+  "actualLocalBuild": true,
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "method": "Actual in-app browser through CUA. Observed form selections, rendered dates, read-only DOM layout measurements and screenshots. This script binds that evidence, not a new browser run.",
+  "url": "http://127.0.0.1:8805/fristenrechner/",
+  "asset": {
+    "path": ".work/public-ap23h3/assets/app-P36VNTVA.js",
+    "byteLength": 4114207,
+    "sha256": "5d95cb989bb88e3a4b792e85f8b7797e5af234d5cf4c03e008e1371c860f6f8e"
+  },
+  "layout": {
+    "viewportWidth": 1240,
+    "viewportHeight": 1073,
+    "documentWidth": 1240,
+    "formGridColumns": [
+      "487px",
+      "487px"
+    ],
+    "horizontalOverflow": false
+  },
+  "observedCases": [
+    {
+      "canton": "OW",
+      "pathId": "ow-admin-20",
+      "date": "2026-10-02",
+      "positiveOpening": "originalReasoned",
+      "finalEnd": "2026-10-22",
+      "firstCounted": "2026-10-03",
+      "suspendedDays": 0,
+      "languages": [
+        "de",
+        "fr"
+      ]
+    },
+    {
+      "canton": "NW",
+      "pathId": "nw-einwendung-ordered",
+      "date": "2026-12-10",
+      "days": 20,
+      "finalEnd": "2027-01-15",
+      "firstCounted": "2026-12-11",
+      "suspendedDays": 16,
+      "stillstand": "winterOnly",
+      "language": "fr"
+    }
+  ],
+  "checked": [
+    "Early editable date, without waiting for all selections",
+    "Actual two-column form and two equal-width button rows",
+    "Changing canton resets incompatible law and current-case qualification",
+    "Readable source links and separate actual-period norm references",
+    "OW administrative GOG interpretation identified explicitly",
+    "NW winter-only parameter displayed",
+    "No calendar export control"
+  ],
+  "realDeviceTest": false,
+  "realM365HostTest": false,
+  "narrowViewportVisualTest": false,
+  "screenshots": [
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-ow-de.png",
+      "byteLength": 98149,
+      "sha256": "66a4d442f049256bf11cdba825794e92a929ba9da8f9afe7f8e44e4c025bca10"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-ow-result-de.png",
+      "byteLength": 131888,
+      "sha256": "ca363235f82e6c7c417b9dc3408e758ab9631f44a38b68fee7713dc9a12d4172"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-ow-fr.png",
+      "byteLength": 101678,
+      "sha256": "214a30269f6222cd7f7898a72433528f60f3ca729ae18bc209d7d96a18149c33"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-nw-winter-fr.png",
+      "byteLength": 86936,
+      "sha256": "21712734f58d6dcd89cf0abcc56918728d147bf287cdbda8b742868dffc47b39"
+    }
+  ],
+  "sourceReleaseApproved": false,
+  "operatingPermission": false
+}

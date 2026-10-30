@@ -1,0 +1,613 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-zg-860e0f8e0e1a",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "ZG"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-ZG-VRG-1621-20251017",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über den Rechtsschutz in Verwaltungssachen, VRG",
+      "authority": "CH-ZG",
+      "url": "https://bgs.zg.ch/app/de/texts_of_law/162.1/versions/2740",
+      "documentVersionDate": "2025-10-17",
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-ALL-SAINTS-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-ASCENSION-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-ASSUMPTION-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-BERCHTOLD-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-CHRISTMAS-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-CORPUS-CHRISTI-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-EASTER-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-EASTER",
+      "labels": {
+        "de": "Ostern",
+        "fr": "Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 0
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-EASTER"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-EASTER-MONDAY-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-FEDERAL-FAST-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-FEDERAL-FAST",
+      "labels": {
+        "de": "Eidgenössischer Dank-, Buss- und Bettag",
+        "fr": "Jeûne fédéral"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "nthWeekdayOfMonth",
+        "month": 9,
+        "isoWeekday": 7,
+        "occurrence": 3
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-FEDERAL-FAST"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-GOOD-FRIDAY-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-GOOD-FRIDAY",
+      "labels": {
+        "de": "Karfreitag",
+        "fr": "Vendredi saint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": -2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-GOOD-FRIDAY"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-IMMACULATE-CONCEPTION-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-NATIONAL-DAY-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-NEW-YEAR-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-PENTECOST-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-PENTECOST",
+      "labels": {
+        "de": "Pfingsten",
+        "fr": "Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 49
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-PENTECOST"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-ST-STEPHEN-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "ZG-CAL-ZG-VRG-ART10-DAY-WHIT-MONDAY-860E0F8E0E1A2DFC",
+      "calendarId": "ap22-zg-860e0f8e0e1a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "ZG"
+      },
+      "labelKey": "holiday.zg.ZG-VRG-ART10-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-ZG-VRG-1621-20251017",
+          "locator": "§ 10 Abs. 3 und 4"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "proceduralEquivalentDay",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "ZG-VRG-ART10-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-860e0f8e0e1a2dfc",
+    "sourceHash": "67c9e5e2153b878af92f46ccd2f25e5669c9116fa54862b45d2c51128fa5c112"
+  }
+}

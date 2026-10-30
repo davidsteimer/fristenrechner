@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 import { calculateAdministrativeDeadline } from '../core/administrativeDeadline';
 import type { AdministrativeDeadlineInput, AdministrativeDeadlineResult } from '../core/administrativeDeadline';
-import { getVerifiedAdministrativeData } from '../core/releaseFormat8';
+import { getVerifiedAdministrativeContext } from '../core/administrativeContext';
 import { createDeadlineCalendarEntry } from './calendarExport';
 import type { DeadlineCalendarArtifact, DeadlineCalendarEntryOptions } from './calendarExport';
 import { administrativeText } from './administrativeMessages';
@@ -41,7 +41,7 @@ export function createAdministrativeCalendarEntry(options: AdministrativeCalenda
   if (fresh.outcome !== 'calculated' || fresh.referenceOnly || !fresh.calendarExportAllowed || signature(fresh) !== signature(result)) {
     throw new Error('administrative.calendarExportNoLongerEligible');
   }
-  const verified = getVerifiedAdministrativeData(context);
+  const verified = getVerifiedAdministrativeContext(context);
   const provenance = fresh.provenance;
   const law = verified?.catalog.laws.find(item => item.lawId === provenance.lawId);
   if (!verified || !law) throw new Error('administrative.calendarExportProvenanceMissing');
@@ -67,7 +67,18 @@ export function createAdministrativeCalendarEntry(options: AdministrativeCalenda
     `holidayRole: ${provenance.holidayRole}`,
     `authoritySeatCanton: ${provenance.authoritySeatCanton}`,
     `suspensionProfileId: ${provenance.suspensionProfileId}`,
+    ...(provenance.suspensionSelectionSha256 ? [`suspensionSelectionSha256: ${provenance.suspensionSelectionSha256}`] : []),
+    ...(provenance.suspensionProfileSha256 ? [`suspensionProfileSha256: ${provenance.suspensionProfileSha256}`] : []),
+    ...(provenance.permittedSuspensionProfiles ? [`permittedSuspensionProfiles: ${signature(provenance.permittedSuspensionProfiles)}`] : []),
+    ...(provenance.suspensionSelectionFact ? [`suspensionSelectionFact: ${provenance.suspensionSelectionFact.key}=${provenance.suspensionSelectionFact.value}`] : []),
+    ...(provenance.openingResolution ? [`openingResolution: ${signature(provenance.openingResolution)}`] : []),
+    ...(provenance.calendarResolution ? [`calendarResolution: ${signature(provenance.calendarResolution)}`] : []),
+    ...(provenance.annualEndShiftResolution ? [`annualEndShiftResolution: ${signature(provenance.annualEndShiftResolution)}`] : []),
+    ...(provenance.proceduralCalendarSupplementResolution ? [`proceduralCalendarSupplementResolution: ${signature(provenance.proceduralCalendarSupplementResolution)}`] : []),
+    ...(provenance.durationPolicySha256 ? [`durationPolicySha256: ${provenance.durationPolicySha256}`] : []),
+    ...(provenance.durationResolution ? [`durationResolution: ${signature(provenance.durationResolution)}`] : []),
     `urgencyApplied: ${provenance.urgencyApplied}`,
+    ...(provenance.qualificationPolicySha256 ? [`qualificationPolicySha256: ${provenance.qualificationPolicySha256}`] : []),
     ...sourceLines
   ].join('\n');
   return createDeadlineCalendarEntry({ ...calendarOptions, deadlineDate: fresh.finalEnd, descriptionAppendix });

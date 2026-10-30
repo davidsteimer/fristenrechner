@@ -1,0 +1,318 @@
+{
+  "kind": "ap23j2-structural-contract-candidate",
+  "releaseId": "2026-10-27-ap23j2-reference.1",
+  "contractStatus": "proposed",
+  "referenceOnly": true,
+  "runtimeReadable": false,
+  "productionActivation": false,
+  "calendarExportEnabled": false,
+  "sourceReview": "pending",
+  "counts": {
+    "artifacts": 44,
+    "totalFilesIncludingManifest": 45,
+    "unchangedRawArtifacts": 43,
+    "changedBaselineArtifacts": 1,
+    "newArtifacts": 0,
+    "preservedPaths": 113,
+    "newPaths": 36,
+    "totalPaths": 149,
+    "qualificationPolicies": 149,
+    "laws": 18,
+    "suspensionProfiles": 35,
+    "holidayBindings": 27,
+    "newSources": 19,
+    "totalSources": 85,
+    "physicalCalendars": 35,
+    "totalHolidayRules": 499,
+    "newHolidayRules": 0,
+    "socialRules": 44,
+    "socialBernBindings": 50
+  },
+  "basedOn": [
+    {
+      "path": "outputs/ap23j2-2026-10-27/protected-inputs.json",
+      "sha256": "1d65ba6006db51cea44198a52cb61def7830b67887e6f502aa8445a3f0cb6b17"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23i3/manifest.json",
+      "sha256": "0d25a8b6272234e4affd93b9610cedca885436d1acb60855e31d51923e1e120b"
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23i3/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "sha256": "2578fff9ccafefff04fdcc2ee080d929e3cc758d67d8f32ecb38d60194ab1f8c"
+    },
+    {
+      "path": "docs/fachrecht/ap23j1/referenzfaelle.json",
+      "sha256": "c3a74818fc9bb1e7358cf94dd1044ec40c587cf871242ea88e6d3c38cf3873f6"
+    },
+    {
+      "path": "outputs/ap23j1-2026-10-27/local-completion.json",
+      "sha256": "36ae92089986a63dab51b23b15829f45467e3bc2c75a413fea4cca0338f12fdc"
+    },
+    {
+      "path": "outputs/ap23j1-abnahme-2026-10-27/receipt.json",
+      "sha256": "4006caa0def152ac398a9a69bf5fa81f2c6b03cb7aa58f6545c13136675ac207"
+    },
+    {
+      "path": "docs/fachrecht/ap23j1/befund-fr.json",
+      "sha256": "f9842feb403bc0e6edd3558ba1b64188f35b44e1042788c5c3a9c859e232a5c9"
+    },
+    {
+      "path": "outputs/ap23j1-2026-10-27/sources/fr/source-bindings.json",
+      "sha256": "1833f312f413403956f6d645f994b57f9d4cce67cfe4b75a82d121472f8b16c9"
+    },
+    {
+      "path": "docs/fachrecht/ap23j1/befund-ge.json",
+      "sha256": "3d1b6fe1ff8037e0cdd688961ab1b7c3058df5e28cae8ea623cd3a88176aacad"
+    },
+    {
+      "path": "outputs/ap23j1-2026-10-27/sources/ge/source-bindings.json",
+      "sha256": "6b315a92112651b0969c2aef4c48370834fe928e6431d03236d8caf82d78bee7"
+    },
+    {
+      "path": "docs/fachrecht/ap23j1/befund-ju.json",
+      "sha256": "653e2d0d01fe17e2e3ac7e373da56ef86f368a956d1e0e77fdacf2c1dfabd123"
+    },
+    {
+      "path": "outputs/ap23j1-2026-10-27/sources/ju/source-bindings.json",
+      "sha256": "3edddcb69e0835a25c8c26454c934e0f625144073c988a9c225265e4833a0992"
+    }
+  ],
+  "manifest": {
+    "path": "outputs/ap23j2-candidate-2026-10-27/bundle/manifest.json",
+    "byteLength": 28248,
+    "sha256": "8022429f3ffbf1c8f6a8bdbacf6389d11ccc5db2362b8d99930ca95adce9fa1e"
+  },
+  "sourceCrosswalk": {
+    "path": "outputs/ap23j2-candidate-2026-10-27/source-crosswalk.json",
+    "byteLength": 27733,
+    "sha256": "20a56e3c641ab3243afaf8ae3f18626ecea3d43d464c7fe510936105dee099b1"
+  },
+  "researchMap": {
+    "path": "outputs/ap23j2-candidate-2026-10-27/research-map.json",
+    "byteLength": 121409,
+    "sha256": "9910bb1a0a49c83dca9df95fc2c88f826be9c109e3d6b3d59005eaf923b74a42"
+  },
+  "artifacts": [
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/profiles/bgg.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/profiles/stpo.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/profiles/vrpg-be.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/profiles/vwvg.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/profiles/zpo.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/special-regimes/vrpg-be.json",
+      "byteLength": 114845,
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/holiday-catalogs/ch-holiday-catalog.json",
+      "byteLength": 1194427,
+      "sha256": "c5701e47df0d07bb288719b26d55c31b84fe83ea539578d9192e292e08602570"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ag-21d6f2634ce0.json",
+      "byteLength": 13915,
+      "sha256": "35d0358f4b5888aded961b40f8245ccbe96b3ac885cc6fbd6638cee3a7c1e051"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ai-5d4e5a68e106.json",
+      "byteLength": 16090,
+      "sha256": "cf4172c597d49a60123a5a1358fa2b3849fa0dc40c815adf58f1793b1fb44936"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ai-f507435d8aa8.json",
+      "byteLength": 17067,
+      "sha256": "f5f52c43411fffb6fb1cfbc2545ee3694f1c9036c299ee26c0b19cc2dece6997"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ar-88bb22c08a22.json",
+      "byteLength": 9127,
+      "sha256": "fd158652ad99bf95b8369516bf8f0c9117b8b18fefaa4cb81cbd640c2b4af51b"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "byteLength": 12983,
+      "sha256": "b4c0f095b4b3863fcbebb505094df4ad037bbc13f9978aec0ec6bb10056e9e0a"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-bs-39a64bdfc0fe.json",
+      "byteLength": 13035,
+      "sha256": "e9b79ecc23284487d5d3bcc1bfbaf1eb0919db6af17b2b814d675bbd0ac29e05"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-fr-7d8c38f7c610.json",
+      "byteLength": 15085,
+      "sha256": "a5e33d1e0494af6b8e8e7062bc988b1fe3680a9ec47045a673562f7f95ac8b8d"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ge-a36ff7926d08.json",
+      "byteLength": 9635,
+      "sha256": "ff83a6a213b7577bbbe5b8efd3e48d80c865118526ebc6209feb14ec2a13c13e"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-gl-87c11e156541.json",
+      "byteLength": 14049,
+      "sha256": "f510c466a1c7755fa63a06fbef41bec760b672833f6284af0818cb044d7a2b65"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-gr-bf0366c8eda2.json",
+      "byteLength": 11851,
+      "sha256": "43d05cf624902e1be6d6b474866fff2e4a0f7973d2b46c20b443e7769ba4988a"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ju-b096c09f506c.json",
+      "byteLength": 15841,
+      "sha256": "d9a2093c242bc9b20a797366ba358032fda9b183409e7d267ee1c78afdd1dd73"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-lu-55514cd91f06.json",
+      "byteLength": 13337,
+      "sha256": "c14a54aea5ee8ddbaef68fa8ae5df9ba137869940ee7eebf39dbd334fd671c8f"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-lu-b879eb8eb04f.json",
+      "byteLength": 17114,
+      "sha256": "adeb8a4a1b62adabd950f3f24273052da706e7e2e7bb05db06f81084c53f4bee"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ne-027ceadbf103.json",
+      "byteLength": 18918,
+      "sha256": "eac3780158ac0ac97beb5b9189c7e06f2f533dcd0a6b059652dd0256ef2773c7"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ne-21f519039621.json",
+      "byteLength": 20285,
+      "sha256": "b9b4a8af503fa3b191819bd7c1d4988e27af2ef46c77c29c8f91dd8355404a30"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-nw-5dfca484e4af.json",
+      "byteLength": 13874,
+      "sha256": "23942a3f51ebcefba1f7d69d37ce5b8344c8540eb38883a77115eb971c89ee5d"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ow-76c151dccf1f.json",
+      "byteLength": 13907,
+      "sha256": "5ddd66239b306e05cfdedea29ea7648836723e90e38e08c61cd55b705c061869"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-sg-79009d6d6021.json",
+      "byteLength": 12814,
+      "sha256": "29df1b8824b20b18e80b831582e6bd841946c6e80d5314eebf52dae53bf8e8fe"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-sg-f95068e3b162.json",
+      "byteLength": 14210,
+      "sha256": "3e18a90084e3b6c06f0af42d63daf0c195df02cd4165c3919ec2975e89fff618"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-sh-1ccc70f9897a.json",
+      "byteLength": 12964,
+      "sha256": "93b2ca218213b5a2402506a2026e689694bce5b2bb638cf8f2a66df813ca8748"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-sh-ec7d0988145a.json",
+      "byteLength": 14324,
+      "sha256": "047155621b90bc75836025524b7e056f2e9c65f800fe5a35a5a4b0bb2fbec5d3"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-so-3f5f7b7f54f5.json",
+      "byteLength": 13343,
+      "sha256": "ee3064ddffdc4074632e2617a16b4bf9a92888eaea6cc6fc60920a68ec9ec3be"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-sz-ec9f2c557fe4.json",
+      "byteLength": 17610,
+      "sha256": "b44dd218545d8516052a368b145f06c782d9f94f4177790adc7c9af9d2122341"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-tg-3d6514fbabb1.json",
+      "byteLength": 13688,
+      "sha256": "5e32298fcc0264c1380a100fe88d6ef4a4be9898fee520de043b12f1e4ee11c2"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ti-944ed0286e9a.json",
+      "byteLength": 14966,
+      "sha256": "fbad9d860f4d2d799a1a18c935304d4cffc1bfb30d21da440f7175d7f3b45021"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-ur-67275ff3e872.json",
+      "byteLength": 14826,
+      "sha256": "269f5430aa59833e1fda478ca423839bc1072967e4ed5377c38a052a85cf7670"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-vd-26f452ff34ee.json",
+      "byteLength": 10199,
+      "sha256": "678156037de59e553e300d349ca05f6266e12cb96b8459d5bd22b4c9920778c9"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-vs-6c002f32b1b0.json",
+      "byteLength": 14071,
+      "sha256": "58c6809cb414abacde56cdb4cbb6b73a05bc2b4bd92ec714b208de1d41fb034a"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-zg-860e0f8e0e1a.json",
+      "byteLength": 16382,
+      "sha256": "8dadc47e1db83fc2d9db095908626f3592f7db2ab3e886055e7a5cd19c867391"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap22-zh-5aa2974cffee.json",
+      "byteLength": 10518,
+      "sha256": "0e7626e858dbedce75854c8b96271219b67d0b1455b438547d21a37e368d67e3"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/be-public-holidays.json",
+      "byteLength": 10824,
+      "sha256": "01a8e2b1fbb24d5d28318f7a179a0cd45967df1d9974b35eca7a2a4c424cd9c6"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ch-federal-calendar.json",
+      "byteLength": 7457,
+      "sha256": "d42ffcee4510c5abd6949c6dc7496df2a9ee25d9b7583350c2675d6de86cdaa7"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/social-procedures/ch-social-procedures.json",
+      "byteLength": 546538,
+      "sha256": "84cda6a3761f85d8b1d7866077e1e589abb44c490779fec2f6640c2ed2287196"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "byteLength": 1143856,
+      "sha256": "6b4f610ebd52a4c2b07dce8f56902b301c97acb91906cfb8cb7b673dc3257764"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap23f2-zh-rlg-nine.json",
+      "byteLength": 9975,
+      "sha256": "8634fd97dd8d40532aa3525198907610a28b26dccc553dd38349739683d75817"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap23h2-ow-procedural-core.json",
+      "byteLength": 5055,
+      "sha256": "39c65a3600d691cbc2ba295c4979aa572aea06a4ef99117d9bcb3f1e15251be1"
+    },
+    {
+      "path": "outputs/ap23j2-candidate-2026-10-27/bundle/calendars/ap23h2-nw-procedural-core.json",
+      "byteLength": 5025,
+      "sha256": "e573d4a369e618e428aba2aaaf6d9e08583fc51064c0262fd4c3a159a8473106"
+    }
+  ]
+}

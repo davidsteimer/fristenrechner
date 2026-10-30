@@ -1,0 +1,213 @@
+{
+  "workPackage": "AP23K3",
+  "status": "passed",
+  "asOf": "2026-10-27",
+  "method": "CUA interaction and visual inspection of the actual final static build in the desktop in-app browser. AX captures are persisted observations, not a simulated browser.",
+  "url": "http://127.0.0.1:8808/fristenrechner/",
+  "cases": [
+    {
+      "id": "BS-BL-no-closure-inheritance",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bs-bl.ax.txt"
+    },
+    {
+      "id": "BS-TI-holiday-anchor",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bs-ti.ax.txt"
+    },
+    {
+      "id": "BS-BS-counterfactual-anchor",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bs-bs.ax.txt"
+    },
+    {
+      "id": "BS-readable-norm-trace",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bs-ti-trace.ax.txt"
+    },
+    {
+      "id": "BL-year-end-closures",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bl-yearend.ax.txt"
+    },
+    {
+      "id": "BL-uncertainty-blocks-definitive-result",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bl-collision.ax.txt"
+    },
+    {
+      "id": "BL-French-blocked-trace",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bl-collision-fr.ax.txt"
+    },
+    {
+      "id": "BL-French-result",
+      "status": "observed-matching",
+      "capture": "outputs/ap23k3-2026-10-27/browser-bl-fr.ax.txt"
+    }
+  ],
+  "visualObservations": [
+    "Two-column desktop form and two-by-two action buttons preserved.",
+    "Date field and other inputs visually aligned.",
+    "DE and FR result and automatic-parameter panels readable without visible clipping.",
+    "Only qualified party canton shown where legally required, no free closure override.",
+    "Norm labels and source links readable in the expanded trace."
+  ],
+  "limitations": [
+    "Desktop viewport only. No new narrow-viewport or real iOS/Android/M365 host inspection in this local step.",
+    "Does not replace human professional and technical AP23K3 acceptance.",
+    "Candidate export remains blocked. No calendar file saved and no Outlook import."
+  ],
+  "realDeviceOrM365Test": false,
+  "humanAcceptance": false,
+  "sourceReleaseApproved": false,
+  "operatingChanges": false,
+  "screenshots": 7,
+  "evidence": [
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-collision-fr.ax.txt",
+      "byteLength": 12846,
+      "sha256": "32300d76172e2ea2cbb56a390b6f6e4401b43b31aabdccfb421f8cb3f2cb2aba"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-collision-fr.png",
+      "byteLength": 112697,
+      "sha256": "80061e18de5d79c6b4904b4ef72124dfecbb60baee2b4dfef9be33df1a54756c"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-collision.ax.txt",
+      "byteLength": 11998,
+      "sha256": "08e764b9a8217b90175ffa33de50adca0ee3fcd0906d3908d8046dd708e355a6"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-collision.png",
+      "byteLength": 112770,
+      "sha256": "f9fe5f794b70c428e707dafd797aa0e9e62cd94283a0ae927859d94bdda80a07"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-fr.ax.txt",
+      "byteLength": 7005,
+      "sha256": "d2740aa5f4b6e409cff53b5706e09d761ea42cd639c2be2f4912b9e4b43a812d"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-fr.png",
+      "byteLength": 87781,
+      "sha256": "97c81ad7feee5d6ef63d91d4b815e6802bfc2f11188ce5b47ed66083da40504a"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-yearend.ax.txt",
+      "byteLength": 6534,
+      "sha256": "dc885174bf569b136b948c2888716ed2309253b77c0914965d65d58593c4e745"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bl-yearend.png",
+      "byteLength": 91625,
+      "sha256": "8c6f7989d901a7607d93ec735ce83d2c98c39e53d1b29035f137c35ded17092e"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bs-bl.ax.txt",
+      "byteLength": 7137,
+      "sha256": "aac7b193112735ae069989cf3a7753a814a55afaa0951abf09d4c8ff2700c0d1"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bs-bl.png",
+      "byteLength": 91875,
+      "sha256": "791fa4906c00b39fadac9a9e8c60d817e44bf44e5546999da8606946c24f145b"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bs-bs.ax.txt",
+      "byteLength": 7117,
+      "sha256": "172eccd78b8de7bb81a63f5aeb751cb48ac2461a5f9c9b6af678195c32dcb70c"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bs-ti-trace.ax.txt",
+      "byteLength": 11806,
+      "sha256": "ea468ce38e6041e8ace155537e732445175207591bab26f39b705863c5d091ff"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bs-ti-trace.png",
+      "byteLength": 117292,
+      "sha256": "6cd8d05738cc2662d0f28ae591043d8c29dec87d78fc54c2c2083ccbfd525240"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-bs-ti.ax.txt",
+      "byteLength": 7097,
+      "sha256": "56e04a28782f6956092eb00ae7b678e9b5c206dd6bf4ecd364a87dc1f9d40ea6"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-final.ax.txt",
+      "byteLength": 6616,
+      "sha256": "cba28d4587a77830c8a2fb419994c429c3a11d3bfae44497d2abd4f208c7a089"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/browser-form-de.png",
+      "byteLength": 99301,
+      "sha256": "e27e82b48012cc4dccb2f3e071b110bcaa9abf7a5260d9c2af8d5b4a87b9a192"
+    },
+    {
+      "path": ".work/public-ap23k3/.htaccess",
+      "byteLength": 1165,
+      "sha256": "22b8447d9ecc5f709ee0362ba23e813b2ca124bd563b2cf62e57961aaae6b4e8"
+    },
+    {
+      "path": ".work/public-ap23k3/assets/app-PQFJG2Q2.css",
+      "byteLength": 12322,
+      "sha256": "98f8f3ef52215ea1b1380f8def7281c715bd0ccebc551825087bf64d33404cb4"
+    },
+    {
+      "path": ".work/public-ap23k3/assets/app-RED3SANJ.js",
+      "byteLength": 5619714,
+      "sha256": "bfc387a19cc516a3ba72fca6634d7402cc7ca994181e3111d460dd06d3dd8b26"
+    },
+    {
+      "path": ".work/public-ap23k3/assets/fluent-ui-react-cb8d08006f10.js",
+      "byteLength": 977920,
+      "sha256": "cb8d08006f10a51b94a692f12590cbb3a9e0f1660c8d1529cedfce03ac6113fc"
+    },
+    {
+      "path": ".work/public-ap23k3/assets/react-020d164dcf31.js",
+      "byteLength": 11440,
+      "sha256": "020d164dcf3116ccc2268d6a6e44caa77c0131d8e98e882c6430219d281eef8e"
+    },
+    {
+      "path": ".work/public-ap23k3/assets/react-dom-93cb736921fc.js",
+      "byteLength": 120585,
+      "sha256": "93cb736921fcb9c3f06ec1c43b85a4e6ccc4f73111355cf75d0ca77f24fae8ed"
+    },
+    {
+      "path": ".work/public-ap23k3/build-manifest.json",
+      "byteLength": 584,
+      "sha256": "e2b0a5804376d73ca8d15035b497df0403d6857b830f72b4861962788312673d"
+    },
+    {
+      "path": ".work/public-ap23k3/favicon.svg",
+      "byteLength": 251,
+      "sha256": "5af536ea74422fc2141911b6d512ff423083ebf0e954188ab2026645bc6a1a4e"
+    },
+    {
+      "path": ".work/public-ap23k3/index.html",
+      "byteLength": 2152,
+      "sha256": "032e4c40ece77345e802cb72c27d2e84b61457ff865840140d20c2510ce716cb"
+    },
+    {
+      "path": ".work/public-ap23k3/licenses/fluent-ui-MIT.txt",
+      "byteLength": 1251,
+      "sha256": "8348b76df1cbdbf9ec6bca8c2d3313b68c7b33ba5e5696ab07de8c01462a8f0f"
+    },
+    {
+      "path": ".work/public-ap23k3/licenses/react-dom-MIT.txt",
+      "byteLength": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": ".work/public-ap23k3/licenses/react-MIT.txt",
+      "byteLength": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "scripts/record-ap23k3-browser.mjs",
+      "byteLength": 4434,
+      "sha256": "7eb03ef5d7883a66703045b79b1f30b1908b90cac35587d69be2c308aed5d9c3"
+    }
+  ]
+}

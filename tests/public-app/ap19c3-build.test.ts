@@ -91,14 +91,14 @@ describe('Lokaler statischer AP19C3-Kandidat zur Releasevorbereitung', () => {
     }
   });
 
-  it('bleibt vom inzwischen freigegebenen lokalen MVP-0.9-Einstieg und seinem Commit-Pin getrennt', async () => {
+  it('bleibt vom lokal übernommenen MVP-0.10-Einstieg und seinem Commit-Pin getrennt', async () => {
     const entry = await readFile(resolve(root, 'src/public-app/main.tsx'), 'utf8');
     const build = await readFile(resolve(root, 'scripts/build-public-app.mjs'), 'utf8');
     const pin = await readFile(resolve(root, 'spfx/src/core/config.ts'), 'utf8');
-    assert.match(entry, /mvp09Runtime/);
+    assert.match(entry, /mvp10Runtime/);
     assert.doesNotMatch(entry, /ap19c3/);
-    assert.match(build, /isCandidate \? `\$\{candidateName\}-local-candidate` : '0\.9\.0'/);
-    assert.match(pin, /[a-f0-9]{40}\/data\/releases\/2026-10-18-mvp-09-approved\.1/);
+    assert.match(build, /isCandidate \? `\$\{candidateName\}-local-candidate` : '0\.10\.0'/);
+    assert.match(pin, /[a-f0-9]{40}\/data\/releases\/2026-10-28-mvp-010-approved\.1/);
   });
 
   it('weist nicht unterstützte Kandidaten weiterhin ohne Umdeutung zurück', async () => {

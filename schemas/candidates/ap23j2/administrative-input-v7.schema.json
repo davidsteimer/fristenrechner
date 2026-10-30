@@ -1,0 +1,653 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/candidates/ap23j2/administrative-input-v7.schema.json",
+  "title": "AP23J2 current qualified trigger facts, never persistent defaults",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "pathRevision",
+    "authoritySeatCanton",
+    "trigger",
+    "days",
+    "facts"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "pathRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "authoritySeatCanton": {
+      "enum": [
+        "FR",
+        "GE",
+        "JU",
+        "BE",
+        "CH",
+        "unknown"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "enum": [
+            "day",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "forward",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "authorityLevel": {
+          "enum": [
+            "cantonal",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "generalCpjaApplies": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "qualifiedOpening": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "deadlineMethod": {
+          "enum": [
+            "daysForward",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "specialLaw": {
+          "enum": [
+            "noneOrSpecificallyQualifiedCpjaFallback",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "currentFacts": {
+          "enum": [
+            "mustBeRequalified",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "currentStage": {
+          "enum": [
+            "nonTC",
+            "tribunalCantonal",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "orderedInDays": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "payment": {
+          "enum": [
+            false,
+            null,
+            true,
+            "unknown",
+            "other"
+          ]
+        },
+        "qualifiedNonTCRemedy": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "qualifiedFinalDecision": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "qualifiedSeparatelyAppealableInterimDecision": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "tcRemedyCurrentlyCompetent": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "timelyExtensionRequestRefused": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "triggerIsQualifiedRefusalCommunication": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "originalLegalDeadlineExpired": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "noLongerSurvivingDeadline": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "submissionNotPayment": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "tcDispositifOnly": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "requestFullReasons": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "reclamationBasis": {
+          "enum": [
+            "article148Costs",
+            "specificStatutoryOpening",
+            "none",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "reclamationBasisCurrentlyQualified": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "finalDecisionOrFinalCostsOnly": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "noDivergentSpecialProcedure": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "notSocialInsurance": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "costsOnlyUnderArticle148": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "authorityScope": {
+          "enum": [
+            "cantonal",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "applicability": {
+          "enum": [
+            "generalLpaConfirmed",
+            "ATSGSpecialProcedure",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "openingMode": {
+          "enum": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt",
+            "unknown",
+            null,
+            "other"
+          ]
+        },
+        "noticeStatus": {
+          "enum": [
+            "regularNoDeviation",
+            "longerErroneousNotice",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "initialAdministration",
+            "reclamation",
+            "administrativeAppeal",
+            "costsReclamation",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "actionQualification": {
+          "enum": [
+            "currentDayCountSubmissionOrder",
+            "statutorilyOpenedReclamation",
+            "admissibleFinalOrCompetenceAppeal",
+            "admissibleOtherDecisionAppeal",
+            "judicialCostsReclamation",
+            "enforcementMeasure",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "subjectCase": {
+          "enum": [
+            "generalNo63Exception",
+            "LPFiscProcedures",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "authoritySeat": {
+          "enum": [
+            "JU",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "competenceQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "generalCpaApplies": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "noDifferentSpecialDeadlineRule": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "currentProceduralLawQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "sourceDocumentQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "triggerDateQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "forwardDayPeriod": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "notPaymentOrFixedDate": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "noArticle6Exception": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "noKnownIrregularOrLongerInstruction": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "orderedDurationQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "notExtensionChain": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "differentOrderedStart": {
+          "enum": [
+            false,
+            null,
+            true,
+            "unknown",
+            "other"
+          ]
+        },
+        "qualifiedLegalOpening": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "oppositionRequiredAndAdmissible": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "article95ExceptionAbsent": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "laterAppealDurationDoesNotDiffer": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "genuineProvisionalProcedure": {
+          "enum": [
+            false,
+            true,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "finalDecision": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "separatelyAdmissibleInterimDecision": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "reviewTargetQualified": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "precedingOppositionOrExceptionQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "currentReviewAdmissibilityQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "executionDecisionQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "noOppositionRequiredUnder95j": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "lawfulActualOralOpening": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "actionIsWrittenConfirmationRequest": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "currentOppositionOrReviewFunctionQualified": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "fullyGrantsAllPartiesRequests": {
+          "enum": [
+            true,
+            false,
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "lawfulAbbreviatedOpeningUnder86_3": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        },
+        "actionIsMotivationRequest": {
+          "enum": [
+            true,
+            null,
+            false,
+            "unknown",
+            "other"
+          ]
+        }
+      }
+    }
+  }
+}

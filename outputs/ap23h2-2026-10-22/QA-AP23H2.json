@@ -1,0 +1,5614 @@
+{
+  "workPackage": "AP23H2",
+  "status": "passed",
+  "runtimeActive": false,
+  "productIntegrationTest": false,
+  "sourceReleaseApproved": false,
+  "calendarExportEnabled": false,
+  "paths": 79,
+  "newPaths": 21,
+  "preservedPaths": 58,
+  "physicalCalendars": 35,
+  "artifacts": 44,
+  "unchangedRawArtifacts": 40,
+  "referenceCases": 118,
+  "counts": {
+    "datedResearchValue": 58,
+    "unresolvedBoundaryProposed": 18,
+    "qualificationBoundaryProposed": 38,
+    "researchWindowBoundary": 4
+  },
+  "calendarProbes": 20,
+  "calendarAnnualChecks": 4,
+  "calendarEndEligibilityComparisons": 1460,
+  "readerNegatives": [
+    "native-catalog4-rejects-catalog5",
+    "approved-format11-rejects-format12",
+    "local-format11-rejects-format12",
+    "relabelled-catalog4-rejects-new-semantics",
+    "rehashed-format11-relabel-rejected",
+    "native-v10-activation-rejects-schema2-valid-expanded-holiday-catalog"
+  ],
+  "oldNativeReferenceCalculations": 58,
+  "forgedContextBlocks": 174,
+  "negativeCatalogMutations": 78,
+  "allCatalogMutationsResealed": true,
+  "negativeInputMutations": 36,
+  "results": [
+    {
+      "id": "B01",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B02",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B03",
+      "input": {
+        "path": "ow-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B04",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B05",
+      "input": {
+        "path": "ow-admin-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "requestAdministrativeReasons",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingAuthority": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B06",
+      "input": {
+        "path": "ow-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "requestCourtReasons",
+          "holidayAnchor": "issuingCourtSeat",
+          "opening": "lawfullyUnreasonedCourtDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingCourt": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B07",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "provisionalMeasureAnalogy",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B08",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B09",
+      "input": {
+        "path": "nw-court-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B10",
+      "input": {
+        "path": "nw-einsprache-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "qualifiedEinsprache",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "decisionSubjectToStatutorilyAdmissibleEinsprache",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B11",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B12",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B13",
+      "input": {
+        "path": "nw-einsprache-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinspracheSubmission",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinsprache",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B14",
+      "input": {
+        "path": "nw-appeal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedAdministrativeAppealSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriodInAppeal",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B15",
+      "input": {
+        "path": "nw-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B16",
+      "input": {
+        "path": "nw-admin-vernehmlassung-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryVERNEHMLASSUNG",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B17",
+      "input": {
+        "path": "nw-court-vernehmlassung-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryVERNEHMLASSUNG",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B18",
+      "input": {
+        "path": "nw-admin-replik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryREPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "vernehmlassungServedForReply",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B19",
+      "input": {
+        "path": "nw-court-replik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryREPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "vernehmlassungServedForReply",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B20",
+      "input": {
+        "path": "nw-admin-duplik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryDUPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "replikServedForDuplik",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "B21",
+      "input": {
+        "path": "nw-court-duplik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryDUPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "replikServedForDuplik",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW01",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW02",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-10",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-25",
+        "end": "2027-01-25",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW03",
+      "input": {
+        "path": "ow-admin-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-23",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "requestAdministrativeReasons",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingAuthority": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-24",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-02-01",
+        "end": "2027-02-01",
+        "skippedDays": 10,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW04",
+      "input": {
+        "path": "ow-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-23",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "requestCourtReasons",
+          "holidayAnchor": "issuingCourtSeat",
+          "opening": "lawfullyUnreasonedCourtDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingCourt": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-24",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-02-01",
+        "end": "2027-02-01",
+        "skippedDays": 10,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW05",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-23",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "provisionalMeasureAnalogy",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-24",
+        "firstCountedDay": "2026-12-24",
+        "nominalEnd": "2026-12-28",
+        "end": "2026-12-28",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW06",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-07-14",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "provisionalMeasureAnalogy",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-15",
+        "firstCountedDay": "2027-07-15",
+        "nominalEnd": "2027-07-19",
+        "end": "2027-07-19",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW07",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-07-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-08-31",
+        "end": "2027-08-31",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW08",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-07-10",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-09-10",
+        "end": "2027-09-10",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW09",
+      "input": {
+        "path": "ow-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-09-24",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-09-25",
+        "firstCountedDay": "2026-09-25",
+        "nominalEnd": "2026-09-25",
+        "end": "2026-09-28",
+        "skippedDays": 0,
+        "endShiftDays": 3,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW10",
+      "input": {
+        "path": "ow-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-05-26",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-05-27",
+        "firstCountedDay": "2027-05-27",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-28",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW11",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-07",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-08",
+        "firstCountedDay": "2026-12-08",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW12",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-03-20",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-21",
+        "firstCountedDay": "2027-04-05",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW13",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-03-01",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-02",
+        "firstCountedDay": "2027-03-02",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW14",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-03-18",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-19",
+        "firstCountedDay": "2027-03-19",
+        "nominalEnd": "2027-03-19",
+        "end": "2027-03-19",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW15",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-12-30",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-31",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "skippedDays": 3,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "OW16",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-16",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "reasonedFollowingTimelyRequest",
+          "priorReasonsRequest": "timelyEstablished",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-17",
+        "firstCountedDay": "2026-10-17",
+        "nominalEnd": "2026-11-05",
+        "end": "2026-11-05",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW01",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2026-12-30",
+        "end": "2026-12-30",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW02",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW03",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-07-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW04",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-20",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-21",
+        "firstCountedDay": "2027-03-21",
+        "nominalEnd": "2027-03-21",
+        "end": "2027-03-22",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW05",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-07-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-08-31",
+        "end": "2027-08-31",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW06",
+      "input": {
+        "path": "nw-einsprache-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "qualifiedEinsprache",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "decisionSubjectToStatutorilyAdmissibleEinsprache",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW07",
+      "input": {
+        "path": "nw-court-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-01",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-02",
+        "firstCountedDay": "2027-03-02",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW08",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-18",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-19",
+        "firstCountedDay": "2027-03-19",
+        "nominalEnd": "2027-03-19",
+        "end": "2027-03-22",
+        "skippedDays": 0,
+        "endShiftDays": 3,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW09",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-28",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-29",
+        "firstCountedDay": "2027-03-29",
+        "nominalEnd": "2027-03-29",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW10",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-05-16",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-05-17",
+        "firstCountedDay": "2027-05-17",
+        "nominalEnd": "2027-05-17",
+        "end": "2027-05-18",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW11",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-31",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-01-01",
+        "firstCountedDay": "2027-01-01",
+        "nominalEnd": "2027-01-01",
+        "end": "2027-01-04",
+        "skippedDays": 0,
+        "endShiftDays": 3,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW12",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-25",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-26",
+        "firstCountedDay": "2026-12-26",
+        "nominalEnd": "2026-12-26",
+        "end": "2026-12-28",
+        "skippedDays": 0,
+        "endShiftDays": 2,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW13",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-07",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-08",
+        "firstCountedDay": "2026-12-08",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW14",
+      "input": {
+        "path": "nw-appeal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-30",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedAdministrativeAppealSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriodInAppeal",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-31",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "skippedDays": 3,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW15",
+      "input": {
+        "path": "nw-admin-vernehmlassung-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-07-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryVERNEHMLASSUNG",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-08-31",
+        "end": "2027-08-31",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW16",
+      "input": {
+        "path": "nw-court-replik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-10",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryREPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "vernehmlassungServedForReply",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW17",
+      "input": {
+        "path": "nw-admin-duplik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-01",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryDUPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "replikServedForDuplik",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-02",
+        "firstCountedDay": "2027-03-02",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "NW18",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-12-30",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-31",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "skippedDays": 3,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C01",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C02",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-02-18",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C03",
+      "input": {
+        "path": "ow-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-03-10",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C04",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-03-10",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C05",
+      "input": {
+        "path": "ow-admin-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-02-18",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "requestAdministrativeReasons",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingAuthority": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C06",
+      "input": {
+        "path": "ow-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-02-18",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "requestCourtReasons",
+          "holidayAnchor": "issuingCourtSeat",
+          "opening": "lawfullyUnreasonedCourtDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingCourt": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C07",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C08",
+      "input": {
+        "path": "nw-court-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C09",
+      "input": {
+        "path": "nw-einsprache-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "qualifiedEinsprache",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "decisionSubjectToStatutorilyAdmissibleEinsprache",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C10",
+      "input": {
+        "path": "nw-einsprache-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-10",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinspracheSubmission",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinsprache",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C11",
+      "input": {
+        "path": "nw-appeal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-10",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedAdministrativeAppealSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriodInAppeal",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C12",
+      "input": {
+        "path": "nw-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-03-10",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C13",
+      "input": {
+        "path": "nw-admin-vernehmlassung-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryVERNEHMLASSUNG",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C14",
+      "input": {
+        "path": "nw-court-vernehmlassung-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryVERNEHMLASSUNG",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C15",
+      "input": {
+        "path": "nw-admin-replik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryREPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "vernehmlassungServedForReply",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C16",
+      "input": {
+        "path": "nw-court-replik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryREPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "vernehmlassungServedForReply",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C17",
+      "input": {
+        "path": "nw-admin-duplik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryDUPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "replikServedForDuplik",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "C18",
+      "input": {
+        "path": "nw-court-duplik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-02-28",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryDUPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "replikServedForDuplik",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W01",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-08-28",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "provisionalMeasureAnalogy",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W02",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-08-29",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-08-30",
+        "firstCountedDay": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W03",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-12-30",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-12-31",
+        "firstCountedDay": "2027-12-31",
+        "nominalEnd": "2027-12-31",
+        "end": "2027-12-31",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W04",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-12-31",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W05",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-12-17",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W06",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2027-12-17",
+        "days": 1,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "W07",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-12-26",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "provisionalMeasureAnalogy",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-12-27",
+        "firstCountedDay": "2027-12-27",
+        "nominalEnd": "2027-12-31",
+        "end": "2027-12-31",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ],
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N01",
+      "input": {
+        "path": "unknown",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchPath",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N02",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "inventedFact": true
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchFact",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N03",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2027-02-30",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "invalidResearchDate",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N04",
+      "input": {
+        "path": "nw-court-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "stageDoesNotMatchPath",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N05",
+      "input": {
+        "path": "ow-admin-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingAuthority": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N06",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "municipal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetOutsideScope",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N07",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "partyOrRepresentativeSeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "holidayAnchorNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N08",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "ATSG",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "specialLawNotExcluded",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N09",
+      "input": {
+        "path": "ow-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": true,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "materialPerformanceOutsideScope",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N10",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": true,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N11",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": true,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N12",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "restorationRequested",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "termChangeNeedsIndividualReview",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N13",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "month",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N14",
+      "input": {
+        "path": "ow-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "backward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedProceduralSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N15",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "disputed",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "noticeNeedsIndividualReview",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N16",
+      "input": {
+        "path": "nw-court-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "serviceFictionUnknown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "serviceFictionNotCalculated",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N17",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "concretePotentialEndChangeUnresolved",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N18",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "concretePotentialEndChangeUnresolved",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N19",
+      "input": {
+        "path": "nw-appeal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedAdministrativeAppealSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriodInAppeal",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "agreedWithParties"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "agreedDeadlineOutsidePositiveScope",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N20",
+      "input": {
+        "path": "nw-court-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "procurement",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N21",
+      "input": {
+        "path": "nw-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": null,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedInitialAdministrativeSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "orderedForwardDayPeriod",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "dayDurationNotSpecified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N22",
+      "input": {
+        "path": "nw-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N23",
+      "input": {
+        "path": "ow-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "requestCourtReasons",
+          "holidayAnchor": "issuingCourtSeat",
+          "opening": "lawfullyUnreasonedCourtDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingCourt": true,
+          "reasonsContext": "qualifiedRequestUnderBGG112",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N24",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "provisionalMeasureAnalogy",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "Bundesgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetCourtNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N25",
+      "input": {
+        "path": "nw-einsprache-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "qualifiedEinsprache",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "decisionSubjectToStatutorilyAdmissibleEinsprache",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "unknown",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N26",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "originalReasoned",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N27",
+      "input": {
+        "path": "ow-admin-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "reasonedFollowingTimelyRequest",
+          "priorReasonsRequest": "late",
+          "stage": "administration",
+          "action": "ordinaryAdministrativeAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N28",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "unknown",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingOriginNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N29",
+      "input": {
+        "path": "ow-admin-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "requestAdministrativeReasons",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingAuthority": false,
+          "reasonsContext": "qualifiedRequestUnderBGG112"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N30",
+      "input": {
+        "path": "ow-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "requestCourtReasons",
+          "holidayAnchor": "issuingCourtSeat",
+          "opening": "lawfullyUnreasonedCourtDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingCourt": false,
+          "reasonsContext": "qualifiedRequestUnderBGG112",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N31",
+      "input": {
+        "path": "nw-einwendung-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinwendungSubmission",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinwendungsverfahren",
+          "durationBasis": "generalStatutory20",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationBasisNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N32",
+      "input": {
+        "path": "nw-court-replik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryREPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N33",
+      "input": {
+        "path": "ow-court-suspensive-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 5,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "reviewPresidentialSuspensiveEffectDecision",
+          "holidayAnchor": "sameCourtSeat",
+          "opening": "presidentialSuspensiveEffectDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "suspensiveReviewContext": "sameOverallCourt",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N34",
+      "input": {
+        "path": "nw-admin-vernehmlassung-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 25,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "statutoryVERNEHMLASSUNG",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "appealServedForComments",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N35",
+      "input": {
+        "path": "nw-einsprache-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "orderedEinspracheSubmission",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "qualifiedDayOrderInEinsprache",
+          "durationBasis": "concreteDayOrder",
+          "suspensionException": "ordinaryNoException",
+          "einspracheAdmissibility": "anySpecialEinsprache",
+          "deadlineAgreement": "notByAgreement"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N36",
+      "input": {
+        "path": "nw-court-duplik-20",
+        "pathRevision": 1,
+        "authoritySeatCanton": "NW",
+        "trigger": "2026-10-02",
+        "days": 20,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "court",
+          "action": "statutoryDUPLIK",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "vernehmlassungServedForReply",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "deadlineAgreement": "notByAgreement",
+          "targetCourt": "NW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N37",
+      "input": {
+        "path": "ow-admin-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "notApplicable",
+          "priorReasonsRequest": "notApplicable",
+          "stage": "administration",
+          "action": "requestAdministrativeReasons",
+          "holidayAnchor": "issuingAuthoritySeat",
+          "opening": "lawfullyUnreasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "sameIssuingAuthority": true,
+          "reasonsContext": "missingReasoningDespiteRequiredFullDecision"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsContextNotQualified",
+        "exportAllowed": false
+      }
+    },
+    {
+      "id": "N38",
+      "input": {
+        "path": "ow-court-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "OW",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityLevel": "cantonal",
+          "specialLaw": "excluded",
+          "materialPerformance": false,
+          "fixedEndDate": false,
+          "deviatingStart": false,
+          "termChange": "none",
+          "unit": "day",
+          "direction": "forward",
+          "notice": "uncontested",
+          "serviceContext": "effectiveLegalTriggerKnown",
+          "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+          "openingOrigin": "reasonedFollowingTimelyRequest",
+          "priorReasonsRequest": null,
+          "stage": "court",
+          "action": "ordinaryAdministrativeCourtAppeal",
+          "holidayAnchor": "targetAuthoritySeat",
+          "opening": "completeReasonedAdministrativeDecision",
+          "durationBasis": "specifiedStatutoryRule",
+          "suspensionException": "ordinaryNoException",
+          "targetCourt": "OW-Verwaltungsgericht"
+        }
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished",
+        "exportAllowed": false
+      }
+    }
+  ],
+  "annual": [
+    {
+      "canton": "OW",
+      "year": 2026,
+      "rawProjectedDates": 17,
+      "independentlyNamedDates": 14
+    },
+    {
+      "canton": "OW",
+      "year": 2027,
+      "rawProjectedDates": 17,
+      "independentlyNamedDates": 14
+    },
+    {
+      "canton": "NW",
+      "year": 2026,
+      "rawProjectedDates": 17,
+      "independentlyNamedDates": 14
+    },
+    {
+      "canton": "NW",
+      "year": 2027,
+      "rawProjectedDates": 17,
+      "independentlyNamedDates": 14
+    }
+  ],
+  "probes": [
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-01-02",
+      "isHoliday": true,
+      "note": "Prozessuale Ergänzung",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-03-29",
+      "isHoliday": true,
+      "note": "Ostermontag",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-05-17",
+      "isHoliday": true,
+      "note": "Pfingstmontag",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2026-12-26",
+      "isHoliday": true,
+      "note": "Stefanstag",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-05-27",
+      "isHoliday": true,
+      "note": "Fronleichnam",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2026-12-08",
+      "isHoliday": true,
+      "note": "Maria Empfängnis",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-05-01",
+      "isHoliday": false,
+      "note": "Kein 1. Mai aus fremder Liste",
+      "actual": false
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-01-06",
+      "isHoliday": false,
+      "note": "Kein Dreikönigstag aus fremder Liste",
+      "actual": false
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-01-02",
+      "isHoliday": true,
+      "note": "Prozessuale Ergänzung",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-03-29",
+      "isHoliday": true,
+      "note": "Ostermontag",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-05-17",
+      "isHoliday": true,
+      "note": "Pfingstmontag",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2026-12-26",
+      "isHoliday": true,
+      "note": "Stefanstag",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-05-27",
+      "isHoliday": true,
+      "note": "Fronleichnam",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2026-12-08",
+      "isHoliday": true,
+      "note": "Maria Empfängnis",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-05-01",
+      "isHoliday": false,
+      "note": "Kein 1. Mai aus fremder Liste",
+      "actual": false
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-01-06",
+      "isHoliday": false,
+      "note": "Kein Dreikönigstag aus fremder Liste",
+      "actual": false
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2026-09-25",
+      "isHoliday": true,
+      "note": "Bruderklausenfest",
+      "actual": true
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2026-09-25",
+      "isHoliday": false,
+      "note": "Kein Bruderklausenfest in NW",
+      "actual": false
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-03-19",
+      "isHoliday": true,
+      "note": "Josefstag",
+      "actual": true
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-03-19",
+      "isHoliday": false,
+      "note": "Kein Josefstag in OW",
+      "actual": false
+    }
+  ],
+  "calendarComparisons": [
+    {
+      "canton": "OW",
+      "year": 2026,
+      "compared": 365,
+      "differences": 0
+    },
+    {
+      "canton": "OW",
+      "year": 2027,
+      "compared": 365,
+      "differences": 0
+    },
+    {
+      "canton": "NW",
+      "year": 2026,
+      "compared": 365,
+      "differences": 0
+    },
+    {
+      "canton": "NW",
+      "year": 2027,
+      "compared": 365,
+      "differences": 0
+    }
+  ],
+  "oldResults": [
+    {
+      "pathId": "ti-80-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ti-84-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ti-reply",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ti-provisional-15",
+      "end": "2026-10-19",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ti-advance",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-32-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-32-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-52-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-52-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-42-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "gr-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "lu-admin-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "lu-court-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "lu-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "lu-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zg-admin-20",
+      "end": "2026-10-22",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zg-court-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zg-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zg-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ar-admin-20",
+      "end": "2026-10-22",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ar-execution-5",
+      "end": "2026-10-07",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ar-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ar-court-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ar-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zh-rekurs-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zh-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zh-court-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "zh-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ag-admin-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ag-court-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ag-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ag-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ag-execution-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-admin-14",
+      "end": "2026-10-16",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-vrk-14",
+      "end": "2026-10-16",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-court-14",
+      "end": "2026-10-16",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-admin-measures-5",
+      "end": "2026-10-07",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-court-interim-5",
+      "end": "2026-10-07",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-vrk-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sg-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ur-admin-20",
+      "end": "2026-10-22",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ur-court-20",
+      "end": "2026-10-22",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ur-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ur-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "ur-admin-reasons-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "so-admin-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "so-court-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "so-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "so-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "so-admin-reasons-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sh-admin-20",
+      "end": "2026-10-22",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sh-court-20",
+      "end": "2026-10-22",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sh-admin-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sh-court-ordered",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sh-admin-reasons-10",
+      "end": "2026-10-12",
+      "fakeContextsBlocked": 3
+    },
+    {
+      "pathId": "sh-court-reasons-30",
+      "end": "2026-11-02",
+      "fakeContextsBlocked": 3
+    }
+  ],
+  "mutations": [
+    "missing-new-group",
+    "duplicate-new-group",
+    "old-path-changed",
+    "old-policy-changed",
+    "forged-runtime",
+    "forged-contract-approval",
+    "wrong-decision",
+    "forged-release-approval",
+    "forged-source-review",
+    "extension-fake-activation",
+    "extension-fake-source-approval",
+    "extension-fake-export",
+    "extension-not-structural",
+    "manifest-fake-source-check",
+    "manifest-wrong-existing-role",
+    "manifest-missing-source-identity",
+    "wrong-statutory-duration",
+    "reasons-zpo10-duration",
+    "suspensive-ordinary30-duration",
+    "suspensive-generic-action",
+    "suspensive-generic-policy",
+    "suspensive-unqualified-ferienfreiheit",
+    "suspensive-three-periods",
+    "winter-path-three-periods",
+    "first-instance-three-periods",
+    "missing-consent-fact",
+    "missing-einsprache-admissibility",
+    "exchange-ordinary-ordered-duration",
+    "exchange-wrong-document",
+    "exchange-transferred-to-einsprache",
+    "reasons-wrong-admin-recipient",
+    "reasons-wrong-court-recipient",
+    "wrong-target-court",
+    "drop-opening-chain",
+    "drop-local-policy",
+    "drop-local-requirement",
+    "drop-end-shift-guard",
+    "empty-requirements",
+    "duplicate-requirement",
+    "wrong-stage",
+    "broadened-window",
+    "post-receipt-norm-gap",
+    "overlapping-norm-sections",
+    "wrong-temporal-label",
+    "future-source-replaced-by-current",
+    "current-source-replaced-by-future",
+    "forged-source-url",
+    "forged-source-version",
+    "forged-source-pinpoint",
+    "forged-path-pinpoint",
+    "forged-timeline-pinpoint",
+    "foreign-law-source",
+    "foreign-law-holiday-review",
+    "foreign-profile-law",
+    "foreign-profile-source",
+    "foreign-binding-law",
+    "renamed-new-law",
+    "wrong-suspension-boundary",
+    "missing-suspension-source",
+    "ow-admin-direct-gog-claim",
+    "ow-court-administrative-transfer-claim",
+    "foreign-binding-source",
+    "fake-party-calendar-union",
+    "missing-active-parent",
+    "forged-baseline-parent-hash",
+    "forged-physical-projection-id",
+    "wrong-inheritance-parent",
+    "free-calendar-union",
+    "existing-parent-payload-changed",
+    "old-holiday-rule-changed",
+    "wrong-new-rule-date",
+    "halfday-new-rule",
+    "foreign-new-rule-source",
+    "wrong-new-calendar-rule",
+    "foreign-new-calendar-rule-source",
+    "missing-projection-supplement",
+    "foreign-projection-rule-id",
+    "wrong-active-parent-hash-after-dependent-reseal"
+  ],
+  "inputMutations": [
+    "missing:path",
+    "missing:pathRevision",
+    "missing:authoritySeatCanton",
+    "missing:trigger",
+    "missing:days",
+    "missing:facts",
+    "missing-current-fact:authorityLevel",
+    "missing-current-fact:specialLaw",
+    "missing-current-fact:materialPerformance",
+    "missing-current-fact:fixedEndDate",
+    "missing-current-fact:deviatingStart",
+    "missing-current-fact:termChange",
+    "missing-current-fact:unit",
+    "missing-current-fact:direction",
+    "missing-current-fact:notice",
+    "missing-current-fact:serviceContext",
+    "missing-current-fact:localHolidayEffect",
+    "missing-current-fact:stage",
+    "missing-current-fact:action",
+    "missing-current-fact:holidayAnchor",
+    "missing-current-fact:opening",
+    "missing-current-fact:durationBasis",
+    "missing-current-fact:suspensionException",
+    "changed:pathRevision",
+    "changed:authoritySeatCanton",
+    "changed:days",
+    "NW-EINSPRACHE-20:einspracheAdmissibility",
+    "NW-APPEAL-ORDERED:deadlineAgreement",
+    "OW-ADMIN-REASONS-30:sameIssuingAuthority",
+    "OW-COURT-REASONS-30:sameIssuingCourt",
+    "OW-COURT-SUSPENSIVE-5:suspensiveReviewContext",
+    "NW-COURT-REPLIK-20:opening",
+    "NW-COURT-DUPLIK-20:opening",
+    "OW-COURT-30:localHolidayEffect",
+    "actual-calculation-norm-gap",
+    "actual-calculation-norm-overlap"
+  ],
+  "evidence": [
+    {
+      "path": "scripts/check-ap23h2-contract.mjs",
+      "byteLength": 46211,
+      "sha256": "855c9662ce82358b4e5940bb0ea64c0d7257a8046799275173edcd23d2675add"
+    },
+    {
+      "path": "scripts/build-ap23h2-candidate.mjs",
+      "byteLength": 22503,
+      "sha256": "ee21a2a82fddc41ec94a7ece3346096d7a21be7fe9a8fba7b2866a6e0cb23f3f"
+    },
+    {
+      "path": "scripts/build-ap23h2-schemas.mjs",
+      "byteLength": 7185,
+      "sha256": "8dca4d8b4019b608eed1aa31a5b8ed1ca7ccb320c95cdf1da4e4016c9e1e2f6a"
+    },
+    {
+      "path": "schemas/candidates/ap23h2/administrative-procedure-catalog-v5.schema.json",
+      "byteLength": 156336,
+      "sha256": "0840debc2b59f1dcfeeebb59a86513a00d43eba23a6bc36398f6b59358ef7628"
+    },
+    {
+      "path": "schemas/candidates/ap23h2/release-manifest-v12.schema.json",
+      "byteLength": 13767,
+      "sha256": "d79ca721fd41618c0c5a2345bc08db38d4061e31c33dcf868a823b8ac1e772ee"
+    },
+    {
+      "path": "schemas/candidates/ap23h2/local-reference-manifest-v12.schema.json",
+      "byteLength": 13789,
+      "sha256": "05837c8baf773e8a9f7d7e59ff64684e5b20537cb32a912eb90978c25f2d1f3f"
+    },
+    {
+      "path": "schemas/candidates/ap23h2/administrative-input-v5.schema.json",
+      "byteLength": 7338,
+      "sha256": "86faacdf36cf10ca72da3bcfd2e739de778fb0ccf3b77226ad7ebd8d4965ead5"
+    },
+    {
+      "path": "outputs/ap23h2-candidate-2026-10-22/candidate-integrity.json",
+      "byteLength": 11622,
+      "sha256": "abbe17ce3e8cac66aa48ab663d5459e408f27771dc77d8fb73cacbdc2a5d7bf0"
+    },
+    {
+      "path": "outputs/ap23h2-candidate-2026-10-22/bundle/manifest.json",
+      "byteLength": 27127,
+      "sha256": "221491b96c330e46919248e569ade16a46d3a84ca7ea5df7cd6c91d148f687de"
+    },
+    {
+      "path": "outputs/ap23h2-candidate-2026-10-22/bundle/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "byteLength": 516815,
+      "sha256": "637bdfa32d191ee540b2e8b2192a32ab13d84f55ac9a2d301de732f140705792"
+    }
+  ]
+}

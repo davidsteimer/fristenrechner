@@ -6,6 +6,10 @@ import { assertSchema } from './schemaContract';
 import { canonicalSocialJson, socialObjectSha256 } from './socialCatalog';
 import type { AdministrativeComponentRef, AdministrativeInterval, AdministrativePeriodExpression,
   AdministrativeProcedureCatalog, AdministrativeSourceRef } from './administrativeTypes';
+import type { AdministrativeProcedureCatalogV2 } from './administrativeTypesV2';
+import type { AdministrativeProcedureCatalogV3 } from './administrativeTypesV3';
+import type { AdministrativeProcedureCatalogV4 } from './administrativeTypesV4';
+import type { AdministrativeProcedureCatalogV5 } from './administrativeTypesV5';
 
 export class AdministrativeCatalogError extends Error {
   constructor(message: string) { super(message); this.name = 'AdministrativeCatalogError'; Object.setPrototypeOf(this, AdministrativeCatalogError.prototype); }
@@ -49,7 +53,11 @@ export function administrativePeriodDate(expression: AdministrativePeriodExpress
 export function assertAdministrativeProcedureCatalog(value: unknown): asserts value is AdministrativeProcedureCatalog {
   try { assertSchema(value, schema); }
   catch (error) { return fail(`Administrative schema: ${error instanceof Error ? error.message : String(error)}`); }
-  const catalog = value as AdministrativeProcedureCatalog;
+  assertAdministrativeCatalogStructure(value as AdministrativeProcedureCatalog);
+}
+
+/** Shared invariant checks only. No format relabelling or runtime registration. */
+export function assertAdministrativeCatalogStructure(catalog: AdministrativeProcedureCatalog | AdministrativeProcedureCatalogV2 | AdministrativeProcedureCatalogV3 | AdministrativeProcedureCatalogV4 | AdministrativeProcedureCatalogV5): void {
   const sources = unique(catalog.sources, source => source.sourceId, 'source ID');
   const laws = unique(catalog.laws, law => law.lawId, 'law ID');
   const profiles = unique(catalog.suspensionProfiles, profile => profile.suspensionProfileId, 'suspension ID');
@@ -99,7 +107,7 @@ export function assertAdministrativeProcedureCatalog(value: unknown): asserts va
     refs(binding.legalBinding.sourceRefs);
     const physical = binding.physicalBaseline;
     const physicalRefs = unique(physical.references, ref => ref.contentId, 'physical component ID');
-    equalIds([...physicalRefs.keys()], [physical.calendarId, 'ch-federal-calendar', 'ch-holiday-catalog'], 'Physical component inventory');
+    equalIds([...physicalRefs.keys()], [physical.calendarId, ...('projectionEvidence' in binding ? [binding.projectionEvidence.baselineCalendarId] : []), 'ch-federal-calendar', 'ch-holiday-catalog'], 'Physical component inventory');
     for (const ref of physical.references) {
       canonicalPath(ref.path);
       const expectedRole = ref.contentId === 'ch-holiday-catalog' ? 'holidayCatalog' : 'calendar';
@@ -118,10 +126,22 @@ export function assertAdministrativeProcedureCatalog(value: unknown): asserts va
       && (law.canton !== 'GR' || path.stages.length !== 1 || path.stages[0] !== 'court' || !profile.periods.length)) fail('GR urgency outside judicial suspension context');
     if (path.endShiftGuard === 'blockWhenEnteringApplicableSuspension' && !profile.periods.length) fail('Suspension guard without suspension');
     const temporal = path.temporalBinding;
-    for (const coverage of [temporal.caseCoverage, temporal.calculationCoverage, temporal.sourceCoverage, temporal.normVersionCoverage]) interval(coverage);
+    for (const coverage of [temporal.caseCoverage, temporal.calculationCoverage, temporal.sourceCoverage]) interval(coverage);
     if (!encloses(temporal.calculationCoverage, temporal.caseCoverage)
-      || !encloses(temporal.sourceCoverage, temporal.calculationCoverage)
-      || !encloses(temporal.normVersionCoverage, temporal.calculationCoverage)) fail('Temporal coverage not nested');
+      || !encloses(temporal.sourceCoverage, temporal.calculationCoverage)) fail('Temporal coverage not nested');
+    if ('normTimeline' in path) {
+      if (!path.normTimeline.length) fail('Missing norm timeline');
+      let expectedFrom = temporal.calculationCoverage.from;
+      for (const segment of path.normTimeline) {
+        interval(segment.interval); refs(segment.sourceRefs);
+        if (!segment.sourceRefs.length || segment.interval.from !== expectedFrom) fail('Norm timeline gap or overlap');
+        expectedFrom = addCalendarDays(segment.interval.to, 1);
+      }
+      if (path.normTimeline.at(-1)!.interval.to !== temporal.calculationCoverage.to) fail('Norm timeline does not cover calculation range');
+    } else {
+      interval(path.temporalBinding.normVersionCoverage);
+      if (!encloses(path.temporalBinding.normVersionCoverage, temporal.calculationCoverage)) fail('Norm coverage not nested');
+    }
     if (Number(temporal.calculationCoverage.from.slice(0, 4)) < 1584 || Number(temporal.calculationCoverage.to.slice(0, 4)) > 9998) fail('Unsupported calculation year');
   }
   const release = catalog.releaseBinding;

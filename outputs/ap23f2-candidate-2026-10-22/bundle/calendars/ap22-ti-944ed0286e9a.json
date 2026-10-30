@@ -1,0 +1,579 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap22-ti-944ed0286e9a",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "TI"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": null
+  },
+  "inherits": [
+    "ch-federal-calendar"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-08",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP22C1 Datenkandidat auf Grundlage von DEC-2026-030. Keine Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-TI-FEIERTAGE-843200",
+      "sourceType": "officialDossier",
+      "title": "Legge concernente i giorni festivi ufficiali nel Cantone Ticino",
+      "authority": "CH-TI",
+      "url": "https://www3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/568",
+      "documentVersionDate": null,
+      "reviewedOn": "2026-09-13",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-ALL-SAINTS-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-ALL-SAINTS",
+      "labels": {
+        "de": "Allerheiligen",
+        "fr": "Toussaint"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 11,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-ALL-SAINTS"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-ASCENSION-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-ASCENSION",
+      "labels": {
+        "de": "Auffahrt",
+        "fr": "Ascension"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 39
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-ASCENSION"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-ASSUMPTION-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-ASSUMPTION",
+      "labels": {
+        "de": "Mariä Himmelfahrt",
+        "fr": "Assomption"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 15
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-ASSUMPTION"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-CHRISTMAS-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-CHRISTMAS",
+      "labels": {
+        "de": "Weihnachten",
+        "fr": "Noël"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 25
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-CHRISTMAS"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-CORPUS-CHRISTI-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-CORPUS-CHRISTI",
+      "labels": {
+        "de": "Fronleichnam",
+        "fr": "Fête-Dieu"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 60
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-CORPUS-CHRISTI"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-EASTER-MONDAY-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-EPIPHANY-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-EPIPHANY",
+      "labels": {
+        "de": "Heilige Drei Könige",
+        "fr": "Épiphanie"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 6
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-EPIPHANY"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-IMMACULATE-CONCEPTION-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-IMMACULATE-CONCEPTION",
+      "labels": {
+        "de": "Mariä Empfängnis",
+        "fr": "Immaculée Conception"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 8
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-IMMACULATE-CONCEPTION"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-MAY1-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-MAY1",
+      "labels": {
+        "de": "Tag der Arbeit (1. Mai)",
+        "fr": "Fête du travail (1er mai)"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 5,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-MAY1"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-NATIONAL-DAY-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-NATIONAL-DAY",
+      "labels": {
+        "de": "Bundesfeiertag",
+        "fr": "Fête nationale"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 8,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-NATIONAL-DAY"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-NEW-YEAR-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-NEW-YEAR",
+      "labels": {
+        "de": "Neujahr",
+        "fr": "Nouvel An"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-NEW-YEAR"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-ST-JOSEPH-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-ST-JOSEPH",
+      "labels": {
+        "de": "Josefstag",
+        "fr": "Saint-Joseph"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 3,
+        "day": 19
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-ST-JOSEPH"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-ST-PETER-PAUL-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-ST-PETER-PAUL",
+      "labels": {
+        "de": "Peter und Paul",
+        "fr": "Saints Pierre et Paul"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 6,
+        "day": 29
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-ST-PETER-PAUL"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-ST-STEPHEN-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-ST-STEPHEN"
+      }
+    },
+    {
+      "ruleId": "TI-CAL-TI-CAL-DAY-WHIT-MONDAY-944ED0286E9A6D9F",
+      "calendarId": "ap22-ti-944ed0286e9a",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "TI"
+      },
+      "labelKey": "holiday.ti.TI-CAL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2026-01-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-TI-FEIERTAGE-843200",
+          "locator": "Art. 1"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "TI-CAL-DAY-WHIT-MONDAY"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-944ed0286e9a6d9f",
+    "sourceHash": "67c9e5e2153b878af92f46ccd2f25e5669c9116fa54862b45d2c51128fa5c112"
+  }
+}

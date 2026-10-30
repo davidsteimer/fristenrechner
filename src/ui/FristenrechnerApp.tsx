@@ -16,6 +16,14 @@ import { calculateCalendarBoundDeadline } from '../core/calculateCalendarBoundDe
 import { calculateRuntimeDeadline } from '../core/calculateDeadline';
 import { hasMatchingFormat8Runtime } from '../core/format8Runtime';
 import { hasMatchingFormat9Runtime } from '../core/format9Runtime';
+import { hasMatchingFormat10Runtime } from '../core/format10Runtime';
+import { hasMatchingFormat11Runtime } from '../core/format11Runtime';
+import { hasMatchingFormat12Runtime } from '../core/format12Runtime';
+import { hasMatchingFormat13Runtime } from '../core/format13Runtime';
+import { hasMatchingFormat14Runtime } from '../core/format14Runtime';
+import { hasMatchingFormat15Runtime } from '../core/format15Runtime';
+import { hasMatchingFormat16Runtime } from '../core/format16Runtime';
+import { hasMatchingFormat17Runtime } from '../core/format17Runtime';
 import { CalendarContextFields, CalendarContextTrace, JanuaryComparisonTrace, effectiveCalendarContext, EMPTY_CALENDAR_CONTEXT, isBoundCalendarProfile } from './calendarContextUi';
 import { calendarCantonLabel, calendarText, calendarReason } from './calendarMessages';
 import { FriendlyCalendarEvidence, LegalTraceSources, TechnicalTraceDetails, catalogTraceSources,
@@ -26,9 +34,10 @@ import type { SocialDeadlineResult } from '../core/socialTypes';
 import { getVerifiedAdministrativeContext, type ParsedAdministrativeContext } from '../core/administrativeContext';
 import type { AdministrativeDeadlineInput, AdministrativeDeadlineResult } from '../core/administrativeDeadline';
 import { initializeAdministrativeDefaults, saveAdministrativeDefaults, resetAdministrativeDefaults,
+  requiresCurrentAdministrativeDuration,
   type AdministrativePreferences } from './administrativeDefaults';
 import { AdministrativeProcedureFields, AdministrativeResultView, AdministrativeAutomaticParameters,
-  administrativeChoices, changeAdministrativeSelection, qualifyAdministrativeUiInput,
+  administrativeChoices, administrativeDateMeaning, changeAdministrativeSelection, qualifyAdministrativeUiInput,
   EMPTY_ADMINISTRATIVE_UI_STATE, type AdministrativeUiState } from './administrativeUi';
 import { administrativeText } from './administrativeMessages';
 import { calculateAdministrativeUiDeadline, createAdministrativeCalendarEntry } from './administrativeExport';
@@ -704,7 +713,23 @@ export function FristenrechnerApp(props: FristenrechnerAppProps): React.ReactEle
   if ((props.data.formatVersion === '8.0.0'
     && !hasMatchingFormat8Runtime(props.data, props.calendarRuntime, props.administrativeContext))
     || (props.data.formatVersion === '9.0.0'
-      && !hasMatchingFormat9Runtime(props.data, props.calendarRuntime, props.administrativeContext))) {
+      && !hasMatchingFormat9Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '10.0.0'
+      && !hasMatchingFormat10Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '11.0.0'
+      && !hasMatchingFormat11Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '12.0.0'
+      && !hasMatchingFormat12Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '13.0.0'
+      && !hasMatchingFormat13Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '14.0.0'
+      && !hasMatchingFormat14Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '15.0.0'
+      && !hasMatchingFormat15Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '16.0.0'
+      && !hasMatchingFormat16Runtime(props.data, props.calendarRuntime, props.administrativeContext))
+    || (props.data.formatVersion === '17.0.0'
+      && !hasMatchingFormat17Runtime(props.data, props.calendarRuntime, props.administrativeContext))) {
     return <main className="fr-app"><MessageBar messageBarType={MessageBarType.error} delayedRender={false}>
       Die Datenkontexte gehören nicht zu demselben geprüften Release. Keine Berechnung möglich.
       {' / '}Les contextes de données ne correspondent pas à la même version vérifiée. Calcul impossible.
@@ -727,7 +752,7 @@ function CalculatorSession({
   // A local byte-validated context cannot become exportable merely because a
   // host forgot its presentation flag. Existing D2 mixed contexts remain local.
   const referenceOnlyAllCalculations = hostReferenceOnly
-    || (['8.0.0', '9.0.0'].includes(data.formatVersion) && calendarRuntime?.referenceOnly === true)
+    || (['8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion) && calendarRuntime?.referenceOnly === true)
     || getVerifiedAdministrativeContext(administrativeContext)?.referenceOnly === true;
   const storage = explicitStorage ?? browserStorage();
   const defaultsContext = React.useMemo(() => ({ legacyData: data, ...(administrativeContext ? { administrativeData: administrativeContext } : {}) }), [data, administrativeContext]);
@@ -735,8 +760,13 @@ function CalculatorSession({
     [administrativeContext, defaultsContext, storage]);
   const loaded = React.useMemo(() => loadedV5 ? legacyDefaultsFromV5(data, loadedV5.preferences, Boolean(calendarRuntime))
     : loadDefaults(data, storage, Boolean(calendarRuntime)), [data, storage, calendarRuntime, loadedV5]);
-  const initialForm = React.useMemo(() => ({ ...stateFromDefaults(data, loaded, initialState),
-    ...(loadedV5 ? { specialLawChecked: false } : {}) }), [data, loaded, initialState, loadedV5]);
+  const initialForm = React.useMemo(() => {
+    const stored = loadedV5?.preferences.procedureSelection;
+    const currentDurationRequired = stored?.kind === 'cantonalAdministrative'
+      && requiresCurrentAdministrativeDuration(getVerifiedAdministrativeContext(administrativeContext)?.catalog.paths.find(path => path.pathId === stored.pathId));
+    return { ...stateFromDefaults(data, loaded, initialState),
+      ...(loadedV5 ? { specialLawChecked: false } : {}), ...(currentDurationRequired ? { deadlineDays: '' } : {}) };
+  }, [data, loaded, initialState, loadedV5, administrativeContext]);
   const storedProcedure = loadedV5?.preferences.procedureSelection;
   const [adminLawId, setAdminLawId] = React.useState(storedProcedure?.kind === 'cantonalAdministrative' ? storedProcedure.lawId : '');
   const [adminState, setAdminState] = React.useState<AdministrativeUiState>(() => ({ ...EMPTY_ADMINISTRATIVE_UI_STATE,
@@ -836,7 +866,10 @@ function CalculatorSession({
 
   const mutateSelection = (change: Partial<CalculatorFormState>): void => {
     const transition = reconcilePrimaryDate(data, form, { ...form, ...change });
-    mutateForm({ ...change, inputDate: transition.inputDate, specialDateValues: transition.specialDateValues });
+    const leavingAdministrativeMeaning = administrativeDateMeaning(adminPath, adminState) !== undefined
+      && (Object.hasOwn(change, 'authorityCode') || Object.hasOwn(change, 'profileId'));
+    if (leavingAdministrativeMeaning) setDateResetEpoch(epoch => epoch + 1);
+    mutateForm({ ...change, inputDate: leavingAdministrativeMeaning ? '' : transition.inputDate, specialDateValues: transition.specialDateValues });
     if (transition.cleared) {
       setNotification({ type: MessageBarType.info,
         text: `${translate(locale, 'form.inputDate.changed')} ${translate(locale, transition.field.labelKey)}.` });
@@ -1040,6 +1073,7 @@ function CalculatorSession({
     );
     mutateSelection({
       authorityCode: option.key,
+      ...(requiresCurrentAdministrativeDuration(adminPath) ? { deadlineDays: '' } : {}),
       profileId,
       ...(calendarRuntime && (profileId !== form.profileId || profileId === 'zpo') ? {
         calendarContext:effectiveCalendarContext(profileId,EMPTY_CALENDAR_CONTEXT,option.key)
@@ -1075,6 +1109,7 @@ function CalculatorSession({
       setAdminLawId(lawId);
       setAdminState(changeAdministrativeSelection(adminCatalog, lawId, EMPTY_ADMINISTRATIVE_UI_STATE, 'stage', ''));
       mutateSelection({ profileId: '', selectors: {}, calendarId: '', calendarOverrideReason: '',
+        ...(requiresCurrentAdministrativeDuration(adminPath) ? { deadlineDays: '' } : {}),
         additionalHolidayAnchor: '', holidayAnchorConfirmed: false, deliveryFictionConfirmed: false,
         specialLawChecked: false, specialRegimeId: '', specialDefinitionId: '', vrpgSelection: EMPTY_VRPG_SELECTION,
         vrpgContext: EMPTY_VRPG_CONTEXT, specialDateValues: {}, specialLocalTimeValues: {},
@@ -1093,6 +1128,7 @@ function CalculatorSession({
     );
     mutateSelection({
       profileId: option.key,
+      ...(requiresCurrentAdministrativeDuration(adminPath) ? { deadlineDays: '' } : {}),
       ...(calendarRuntime ? {calendarContext:effectiveCalendarContext(option.key,EMPTY_CALENDAR_CONTEXT,form.authorityCode)} : {}),
       selectors: defaultSelectors(nextProfile),
       calendarId: automaticCalendarId(data, nextProfile),
@@ -1356,7 +1392,31 @@ function CalculatorSession({
           <div className="fr-badge">{localReviewLabel ?? translate(locale, 'app.badge')}</div>
           <h1>{translate(locale, 'app.title')}</h1>
           <p>{administrativeContext && referenceOnlyAllCalculations
-            ? data.formatVersion === '9.0.0'
+            ? data.formatVersion === '17.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Neuenburg, Waadt und Wallis mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives de Neuchâtel, de Vaud et du Valais, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '16.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Appenzell Innerrhoden und Schwyz mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives d’Appenzell Rhodes-Intérieures et de Schwyz, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '15.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Basel-Stadt und Basel-Landschaft mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives de Bâle-Ville et de Bâle-Campagne, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '14.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Freiburg, Genf und Jura mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives de Fribourg, de Genève et du Jura, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '13.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Glarus und Thurgau mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives de Glaris et de Thurgovie, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '12.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Obwalden und Nidwalden mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives d’Obwald et de Nidwald, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '11.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Uri, Solothurn und Schaffhausen mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives d’Uri, de Soleure et de Schaffhouse, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '10.0.0'
+              ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Zürich, Aargau und St. Gallen mit unverändertem Umfang der bisherigen Verfahren.'
+                : 'Vérification locale des procédures administratives de Zurich, d’Argovie et de Saint-Gall, avec maintien du périmètre des procédures existantes.')
+            : data.formatVersion === '9.0.0'
               ? (locale === 'de' ? 'Lokale Prüfung der Verwaltungsverfahren für Luzern, Zug und Appenzell Ausserrhoden mit unverändertem Umfang für Tessin und Graubünden.'
                 : 'Vérification locale des procédures administratives de Lucerne, Zoug et Appenzell Rhodes-Extérieures, avec maintien du périmètre du Tessin et des Grisons.')
               : (locale === 'de' ? 'Lokale Prüfung des kantonalen Verwaltungsverfahrens für Tessin und Graubünden.'
@@ -1395,7 +1455,31 @@ function CalculatorSession({
       </MessageBar>}
       {(referenceOnlyAllCalculations || calendarRuntime?.referenceOnly) && <MessageBar className="fr-selection-notice" messageBarType={MessageBarType.warning}>
         {administrativeContext && referenceOnlyAllCalculations
-          ? data.formatVersion === '9.0.0'
+          ? data.formatVersion === '17.0.0'
+            ? (locale === 'de' ? 'AP23M3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23M3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '16.0.0'
+            ? (locale === 'de' ? 'AP23L3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23L3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '15.0.0'
+            ? (locale === 'de' ? 'AP23K3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23K3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '14.0.0'
+            ? (locale === 'de' ? 'AP23J3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23J3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '13.0.0'
+            ? (locale === 'de' ? 'AP23I3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23I3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '12.0.0'
+            ? (locale === 'de' ? 'AP23H3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23H3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '11.0.0'
+            ? (locale === 'de' ? 'AP23G3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23G3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '10.0.0'
+            ? (locale === 'de' ? 'AP23F3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
+              : 'AP23F3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
+          : data.formatVersion === '9.0.0'
             ? (locale === 'de' ? 'AP23E3: lokale Integrationsprüfung. Noch keine operative Freigabe. Sämtliche Kalenderexporte sind gesperrt.'
               : 'AP23E3 : vérification locale de l’intégration. Sans autorisation opérationnelle. Tous les exports de calendrier sont bloqués.')
             : data.formatVersion === '8.0.0'
@@ -1441,7 +1525,11 @@ function CalculatorSession({
                 key="general-input-date"
                 name="inputDate" locale={locale} resetKey={`${dateResetEpoch}:${primaryDate.role}`}
                 onDraftChange={() => mutateForm({})}
-                label={translate(locale, primaryDate.labelKey)}
+                label={adminPath && 'contractFamily' in adminPath && adminPath.contractFamily === 'qualifiedDayProcedureV10'
+                  ? administrativeText(locale, adminState.currentValues?.openingMode === 'vdUnsignedPostalReceipt' ? 'v10.physicalReceipt' : 'v10.qualifiedDate')
+                  : adminPath && 'contractFamily' in adminPath && adminPath.contractFamily === 'qualifiedDayProcedureV9'
+                  ? administrativeText(locale, adminState.currentValues?.openingMode === 'trackingPhysicalReceipt' ? 'v9.physicalReceipt' : 'v9.qualifiedDate')
+                  : translate(locale, primaryDate.labelKey)}
                 value={form.inputDate}
                 {...(validation.inputDate ? { errorMessage: validation.inputDate } : {})}
                 onChange={value => mutateForm({ inputDate: value })}
@@ -1450,6 +1538,19 @@ function CalculatorSession({
             {adminMode ? adminPath?.duration.kind === 'statutoryDays' ? (
               <TextField readOnly label={translate(locale, 'vrpg.duration')}
                 value={`${adminPath.duration.value} ${translate(locale, 'vrpg.unit.day')}`} />
+            ) : adminPath?.duration.kind === 'concretisedStatutoryDays' ? (
+              <TextField required label={administrativeText(locale, 'concretisedDays')} type="number"
+                min={adminPath.duration.minimum} max={adminPath.duration.maximum} step={1}
+                description={`${administrativeText(locale, 'concretisedRange')}: ${adminPath.duration.minimum}–${adminPath.duration.maximum} ${translate(locale, 'vrpg.unit.day')}.`}
+                value={form.deadlineDays} errorMessage={validation.deadlineDays ?? ''}
+                onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })} />
+            ) : adminPath && 'contractFamily' in adminPath && (adminPath.contractFamily === 'qualifiedDayProcedureV9' || adminPath.contractFamily === 'qualifiedDayProcedureV10') ? (
+              <TextField required label={administrativeText(locale, adminPath.contractFamily === 'qualifiedDayProcedureV10'
+                ? adminPath.duration.kind === 'qualifiedVsLongerNoticeDays' ? 'v10.longerDays' : 'v10.currentDays'
+                : adminPath.duration.kind === 'qualifiedLongerNoticeDays' ? 'v9.longerDays' : 'v9.currentDays')}
+                type="number" min={adminPath.duration.minimum} max={adminPath.duration.maximum} step={1}
+                value={form.deadlineDays} errorMessage={validation.deadlineDays ?? ''}
+                onChange={(_event, value) => mutateForm({ deadlineDays: value ?? '' })} />
             ) : (
               <TextField required label={translate(locale, 'vrpg.orderedDays')} type="number" min={1} max={365} step={1}
                 value={form.deadlineDays} errorMessage={validation.deadlineDays ?? ''}
@@ -1521,7 +1622,17 @@ function CalculatorSession({
             />
             {adminMode && adminCatalog && <AdministrativeProcedureFields catalog={adminCatalog} lawId={adminLawId}
               locale={locale} value={adminState} errors={validation}
-              onChange={next => { setAdminState(next); mutateForm({}); }} />}
+              onChange={next => {
+                const nextPath = administrativeChoices(adminCatalog, adminLawId, next).path;
+                const changedPath = nextPath?.pathId !== adminPath?.pathId;
+                const currentDurationRequired = changedPath && (requiresCurrentAdministrativeDuration(nextPath) || requiresCurrentAdministrativeDuration(adminPath));
+                const previousMeaning = administrativeDateMeaning(adminPath, adminState);
+                const openingMeaningChanged = previousMeaning !== undefined && previousMeaning !== administrativeDateMeaning(nextPath, next);
+                // Also discard uncommitted DateInput drafts when a previously explicit
+                // meaning is cleared or a path change removes its mode altogether.
+                if (openingMeaningChanged) setDateResetEpoch(epoch => epoch + 1);
+                setAdminState(next); mutateForm({ ...(currentDurationRequired ? { deadlineDays: '' } : {}), ...(openingMeaningChanged ? { inputDate: '' } : {}) });
+              }} />}
             {vrpgMode && (
               <>
                 {renderVrpgChoice('area', 'vrpg.area', vrpgAreaOptions())}
@@ -1798,7 +1909,7 @@ function CalculatorSession({
         <section className="fr-automatic" aria-labelledby="fr-automatic-heading">
           <h2 id="fr-automatic-heading">{translate(locale, 'automatic.heading')}</h2>
           {adminMode && adminCatalog ? (
-            <AdministrativeAutomaticParameters catalog={adminCatalog} lawId={adminLawId} state={adminState} locale={locale} />
+            <AdministrativeAutomaticParameters catalog={adminCatalog} lawId={adminLawId} state={adminState} locale={locale} context={administrativeContext} />
           ) : loadedV5 && !profile ? <p>{translate(locale, 'form.requiredSelection')}</p> : socialPath ? (
             <dl className="fr-automatic__grid">
               <div><dt>{translate(locale, 'special.automatic.regime')}</dt><dd><strong>{socialPath.rule.labels[locale]}</strong></dd></div>

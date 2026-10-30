@@ -1,23 +1,25 @@
 # Tests
 
-## Aktueller Prüfweg für MVP 0.9
+## Aktueller Prüfweg für MVP 0.10
 
-Stand: 19. Oktober 2026. Node.js `22.23.2`, bestehende npm-Abhängigkeiten und die Python-Umgebung gemäss [CONTRIBUTING](../CONTRIBUTING.md). Nach eigener Einrichtung mit `npm ci` und `requirements-data.txt`:
+Stand: 30. Oktober 2026. Node.js `22.23.2`, npm `10.9.8` und Python-Umgebung gemäss [CONTRIBUTING](../CONTRIBUTING.md). Nach eigener Einrichtung mit `npm ci` und `requirements-data.txt`:
 
 ```bash
 npm run typecheck
-node scripts/verify-mvp09-public-integrity.mjs
+node scripts/verify-mvp10-public-integrity.mjs --runtime-only
 npm test
+npm run test:public
 npm run test:source-reviews
-node scripts/prepare-mvp09-public-evidence.mjs --verify
-node scripts/verify-mvp09-publication.mjs
+node scripts/verify-mvp10-publication.mjs
 ```
 
-Der Integritätsprüfer bindet 42 Runtime- und sieben Schemadateien. Der Publikationsprüfer benötigt die [konkrete Positivliste](../outputs/publication-mvp09-2026-10-19/publication-package.json). Öffentliche Nachweiskopien können ohne private Originale geprüft werden. Die vollständigen historischen Quellen-/Recovery-Audits bleiben privat. Keine dieser Prüfungen erteilt eine Freigabe oder erstellt einen Commit.
+Der Laufzeitprüfer bindet 45 Daten- und sieben Schemadateien. Der Publikationsprüfer benötigt die [konkrete Positivliste](../outputs/publication-mvp10-2026-10-30/publication-package.json) und prüft zusätzlich deren ausgewählte Artefakte. Beide sind lesend, ohne Git, private Originale oder Netzwerk. Der Integritätsaufruf **ohne** `--runtime-only` ist ein gesonderter lokaler Vollnachweis mit Git- und ursprünglichen Bauarchiven, kein öffentlicher Standardaufruf.
 
-Die [ursprüngliche R09-D-Vorprüfung](../docs/betrieb/publikationsvorpruefung-mvp09.md) bestand 2’671 Produkt-/UI-, 289 Node-Governance-, 42 Python- und acht Schema-Negativtests. Der spätere tatsächliche Exportlauf einschliesslich neuer Publikationstests wird separat im [Publikationspaket](../docs/betrieb/publikationspaket-mvp09.md) dokumentiert. Überlappende Gruppen werden nicht addiert. Bestehende Abhängigkeiten wurden für die lokalen Läufe wiederverwendet, kein frisches `npm ci` und kein neuer Liveclone behauptet.
+**P10-04 / R10B-CLI-H01:** Der neue Alias führt zuerst den aktuellen Indexselbsttest aus, danach sämtliche 45 Pythonmethoden (32 aktuelle und 13 historische), zuletzt die vollständige Node-Governance. Historische Methoden laufen mit dem bytegebundenen bereits öffentlichen MVP09-Validator in einer abgeleiteten Kopie. Keine Methode oder Assertion wird ausgelassen. Der öffentliche Kontext enthält nur die erforderlichen vorhandenen JSON-Referenzen, aktuelle Daten/Schemata, sämtliche Python-Tests und die historische Validatorfixture. Er benötigt kein privates Portabilitätsinventar. Jeder fehlerhafte Teilschritt beendet den Aufruf mit Fehler.
 
-Tests dürfen eigene Vorschau-/Testausgaben erstellen und gehören in eine Arbeitskopie. `npm run check` baut zusätzliche Vorschauen. Definitive Auslieferungsartefakte bleiben unverändert. [E-/Q-Nachweis](../docs/betrieb/eq-vollzugsnachweis-mvp09.md) und [menschliche Q-Abnahme](../docs/betrieb/abnahme-q-mvp09.md) sind davon getrennt.
+Die [Publikationsvorprüfung](../docs/betrieb/publikationsvorpruefung-mvp10.md) und der spätere [tatsächliche Exportnachtest](../docs/betrieb/publikationspaket-mvp10.md) sind getrennte Nachweise. Überlappende Testzahlen werden nicht addiert. Bestehende Abhängigkeiten werden lokal wiederverwendet, kein frisches `npm ci` und kein neuer Liveclone behauptet.
+
+Tests können eigene Vorschau-/Testausgaben erzeugen und gehören in eine Arbeitskopie. Definitive Auslieferungsartefakte bleiben unverändert. Private historische Quellen-, Bau- und Hostaudits sind ausdrücklich nicht öffentlich reproduzierbar. Historische Positivlisten sind gegen ihren jeweiligen Stand zu prüfen, nicht gegen später geänderte Einstiegstexte. [E-/Q-Nachweis](../docs/betrieb/eq-vollzugsnachweis-mvp10.md) und [Q-Abnahme](../docs/betrieb/abnahme-q-mvp10.md) sind davon getrennt.
 
 ## Historische Testverträge
 

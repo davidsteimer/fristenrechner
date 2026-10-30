@@ -1,0 +1,4139 @@
+{
+  "workPackage": "AP23I1",
+  "asOf": "2026-10-22",
+  "status": "passedResearchComparison",
+  "fixtureSha256": "5ac2b60af93ee9ee329b75484356c3442c6a93baf20ac26e4971c208d5d298c8",
+  "checkerSha256": "51cc22ae149f9ccfa7c9f26d77124b618bc5b7f3133ede234853aaed12e5591f",
+  "runtimeActive": false,
+  "productTest": false,
+  "exportTest": false,
+  "legalApproval": false,
+  "paths": 34,
+  "referenceCases": 249,
+  "counts": {
+    "datedResearchValue": 110,
+    "unresolvedBoundaryProposed": 16,
+    "qualificationBoundaryProposed": 117,
+    "researchWindowBoundary": 6
+  },
+  "calendarProbes": 15,
+  "calendarComparisons": [
+    {
+      "calendar": "GL-RESEARCH",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-22-ap23h3/calendars/ap22-gl-87c11e156541.json",
+      "sourceSha256": "f510c466a1c7755fa63a06fbef41bec760b672833f6284af0818cb044d7a2b65",
+      "rawRules": 13,
+      "namedResearchDates": 10,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    },
+    {
+      "calendar": "GL-RESEARCH",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-22-ap23h3/calendars/ap22-gl-87c11e156541.json",
+      "sourceSha256": "f510c466a1c7755fa63a06fbef41bec760b672833f6284af0818cb044d7a2b65",
+      "rawRules": 13,
+      "namedResearchDates": 10,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    },
+    {
+      "calendar": "TG-RESEARCH",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-22-ap23h3/calendars/ap22-tg-3d6514fbabb1.json",
+      "sourceSha256": "5e32298fcc0264c1380a100fe88d6ef4a4be9898fee520de043b12f1e4ee11c2",
+      "rawRules": 13,
+      "namedResearchDates": 10,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    },
+    {
+      "calendar": "TG-RESEARCH",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-22-ap23h3/calendars/ap22-tg-3d6514fbabb1.json",
+      "sourceSha256": "5e32298fcc0264c1380a100fe88d6ef4a4be9898fee520de043b12f1e4ee11c2",
+      "rawRules": 13,
+      "namedResearchDates": 10,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    }
+  ],
+  "discrepancies": [],
+  "results": [
+    {
+      "id": "GL-ADMIN-30-BASIC",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-WINTER",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-29"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-29",
+        "end": "2027-01-29",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EASTER",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-03"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-05-03",
+        "end": "2027-05-03",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-COLLISION",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-OLD-LAW",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-WRONG-DURATION",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EXCEPTION-BASIC",
+      "path": "GL-ADMIN-30-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EXCEPTION-WINTER",
+      "path": "GL-ADMIN-30-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-13",
+        "end": "2027-01-13",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EXCEPTION-EASTER",
+      "path": "GL-ADMIN-30-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-18",
+        "end": "2027-04-19",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EXCEPTION-OLD-LAW",
+      "path": "GL-ADMIN-30-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EXCEPTION-WRONG-DURATION",
+      "path": "GL-ADMIN-30-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-BASIC",
+      "path": "GL-ADMIN-INTERIM-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-WINTER",
+      "path": "GL-ADMIN-INTERIM-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-11"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-09",
+        "end": "2027-01-11",
+        "skippedDays": 16,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-EASTER",
+      "path": "GL-ADMIN-INTERIM-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-13",
+        "end": "2027-04-13",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-COLLISION",
+      "path": "GL-ADMIN-INTERIM-10",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-OLD-LAW",
+      "path": "GL-ADMIN-INTERIM-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-WRONG-DURATION",
+      "path": "GL-ADMIN-INTERIM-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-EXCEPTION-BASIC",
+      "path": "GL-ADMIN-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-EXCEPTION-WINTER",
+      "path": "GL-ADMIN-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-EXCEPTION-EASTER",
+      "path": "GL-ADMIN-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-29",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-EXCEPTION-OLD-LAW",
+      "path": "GL-ADMIN-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-INTERIM-10-EXCEPTION-WRONG-DURATION",
+      "path": "GL-ADMIN-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-BASIC",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-WINTER",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EASTER",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-10",
+        "end": "2027-04-12",
+        "skippedDays": 15,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-COLLISION",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-OLD-LAW",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-NO-SHORTENING",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-BELOW-MIN",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-ABOVE-MAX",
+      "path": "GL-ADMIN-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-BASIC",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-WINTER",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-EASTER",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-OLD-LAW",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-NO-SHORTENING",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-BELOW-MIN",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-END-EXCEPTION-ABOVE-MAX",
+      "path": "GL-ADMIN-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-BASIC",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-WINTER",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EASTER",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-10",
+        "end": "2027-04-12",
+        "skippedDays": 15,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-COLLISION",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-OLD-LAW",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-NO-SHORTENING",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-BELOW-MIN",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-ABOVE-MAX",
+      "path": "GL-ADMIN-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-BASIC",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-WINTER",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-EASTER",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-OLD-LAW",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-NO-SHORTENING",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-BELOW-MIN",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION-ABOVE-MAX",
+      "path": "GL-ADMIN-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-30-BASIC",
+      "path": "GL-COURT-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-30-WINTER",
+      "path": "GL-COURT-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-29"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-29",
+        "end": "2027-01-29",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-30-EASTER",
+      "path": "GL-COURT-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-03"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-05-03",
+        "end": "2027-05-03",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-30-COLLISION",
+      "path": "GL-COURT-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-COURT-30-OLD-LAW",
+      "path": "GL-COURT-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-30-WRONG-DURATION",
+      "path": "GL-COURT-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-COURT-30-EXCEPTION-BASIC",
+      "path": "GL-COURT-30-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-30-EXCEPTION-WINTER",
+      "path": "GL-COURT-30-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-13",
+        "end": "2027-01-13",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-30-EXCEPTION-EASTER",
+      "path": "GL-COURT-30-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-18",
+        "end": "2027-04-19",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-30-EXCEPTION-OLD-LAW",
+      "path": "GL-COURT-30-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-30-EXCEPTION-WRONG-DURATION",
+      "path": "GL-COURT-30-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-BASIC",
+      "path": "GL-COURT-INTERIM-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-WINTER",
+      "path": "GL-COURT-INTERIM-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-11"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-09",
+        "end": "2027-01-11",
+        "skippedDays": 16,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-EASTER",
+      "path": "GL-COURT-INTERIM-10",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-13",
+        "end": "2027-04-13",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-COLLISION",
+      "path": "GL-COURT-INTERIM-10",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-OLD-LAW",
+      "path": "GL-COURT-INTERIM-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-WRONG-DURATION",
+      "path": "GL-COURT-INTERIM-10",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-EXCEPTION-BASIC",
+      "path": "GL-COURT-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-EXCEPTION-WINTER",
+      "path": "GL-COURT-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-EXCEPTION-EASTER",
+      "path": "GL-COURT-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-29",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-EXCEPTION-OLD-LAW",
+      "path": "GL-COURT-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-INTERIM-10-EXCEPTION-WRONG-DURATION",
+      "path": "GL-COURT-INTERIM-10-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-BASIC",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-WINTER",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EASTER",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-10",
+        "end": "2027-04-12",
+        "skippedDays": 15,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-COLLISION",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-OLD-LAW",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-NO-SHORTENING",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-BELOW-MIN",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-ABOVE-MAX",
+      "path": "GL-COURT-SHORTENED-END",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-BASIC",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-WINTER",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-EASTER",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-OLD-LAW",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-NO-SHORTENING",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-BELOW-MIN",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-END-EXCEPTION-ABOVE-MAX",
+      "path": "GL-COURT-SHORTENED-END-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-BASIC",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-WINTER",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EASTER",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-10",
+        "end": "2027-04-12",
+        "skippedDays": 15,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-COLLISION",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-OLD-LAW",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-NO-SHORTENING",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-BELOW-MIN",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-ABOVE-MAX",
+      "path": "GL-COURT-SHORTENED-INTERIM",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-BASIC",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-WINTER",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-EASTER",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-OLD-LAW",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-NO-SHORTENING",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Gültige konkrete Verkürzung der Rechtsmittelfrist nach Art. 89 Abs. 2 mit bestimmter Tagesdauer liegt vor. Keine freie Fristwahl."
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-BELOW-MIN",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-COURT-SHORTENED-INTERIM-EXCEPTION-ABOVE-MAX",
+      "path": "GL-COURT-SHORTENED-INTERIM-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "GL-ADMIN-INITIAL-ORDERED-BASIC",
+      "path": "GL-ADMIN-INITIAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INITIAL-ORDERED-WINTER",
+      "path": "GL-ADMIN-INITIAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INITIAL-ORDERED-EASTER",
+      "path": "GL-ADMIN-INITIAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-INITIAL-ORDERED-OLD-LAW",
+      "path": "GL-ADMIN-INITIAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-ADMIN-APPEAL-ORDERED-BASIC",
+      "path": "GL-ADMIN-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-APPEAL-ORDERED-WINTER",
+      "path": "GL-ADMIN-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-APPEAL-ORDERED-EASTER",
+      "path": "GL-ADMIN-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-APPEAL-ORDERED-OLD-LAW",
+      "path": "GL-ADMIN-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "GL-COURT-ORDERED-BASIC",
+      "path": "GL-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-ORDERED-WINTER",
+      "path": "GL-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-ORDERED-EASTER",
+      "path": "GL-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "GL-COURT-ORDERED-OLD-LAW",
+      "path": "GL-COURT-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Art. 140a VRG greift für die aktuell betroffene Instanz nicht. Kein unter früherem Recht weiterzuführendes Altverfahren."
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-BASIC",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-WINTER",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-EASTER",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-OLD-LAW",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-REKURS-30-BASIC",
+      "path": "TG-REKURS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-30-WINTER",
+      "path": "TG-REKURS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-13",
+        "end": "2027-01-13",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-30-EASTER",
+      "path": "TG-REKURS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-18",
+        "end": "2027-04-19",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-30-OLD-LAW",
+      "path": "TG-REKURS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-REKURS-30-WRONG-DURATION",
+      "path": "TG-REKURS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-BASIC",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-WINTER",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-EASTER",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-OLD-LAW",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-NO-SHORTENING",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-BELOW-MIN",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-REKURS-SHORTENED-ABOVE-MAX",
+      "path": "TG-REKURS-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-REKURS-ORDERED-BASIC",
+      "path": "TG-REKURS-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-ORDERED-WINTER",
+      "path": "TG-REKURS-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-ORDERED-EASTER",
+      "path": "TG-REKURS-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-REKURS-ORDERED-OLD-LAW",
+      "path": "TG-REKURS-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-RR-30-BASIC",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-30-WINTER",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-13",
+        "end": "2027-01-13",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-30-EASTER",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-18",
+        "end": "2027-04-19",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-30-OLD-LAW",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-RR-30-WRONG-DURATION",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-BASIC",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-WINTER",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-EASTER",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-OLD-LAW",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-NO-SHORTENING",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-BELOW-MIN",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-RR-SHORTENED-ABOVE-MAX",
+      "path": "TG-RR-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-RR-ORDERED-BASIC",
+      "path": "TG-RR-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-ORDERED-WINTER",
+      "path": "TG-RR-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-ORDERED-EASTER",
+      "path": "TG-RR-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-RR-ORDERED-OLD-LAW",
+      "path": "TG-RR-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-30-BASIC",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-30-WINTER",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-29"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-29",
+        "end": "2027-01-29",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-30-EASTER",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-03"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-05-03",
+        "end": "2027-05-03",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-30-COLLISION",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-30-OLD-LAW",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-30-WRONG-DURATION",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-BASIC",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-WINTER",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-EASTER",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-10",
+        "end": "2027-04-12",
+        "skippedDays": 15,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-COLLISION",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-OLD-LAW",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-NO-SHORTENING",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-BELOW-MIN",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-VG-SHORTENED-ABOVE-MAX",
+      "path": "TG-VG-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-VG-ORDERED-BASIC",
+      "path": "TG-VG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-ORDERED-WINTER",
+      "path": "TG-VG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-ORDERED-EASTER",
+      "path": "TG-VG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-10",
+        "end": "2027-04-12",
+        "skippedDays": 15,
+        "endShiftDays": 2,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-ORDERED-COLLISION",
+      "path": "TG-VG-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-ORDERED-OLD-LAW",
+      "path": "TG-VG-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-BASIC",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-WINTER",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-13"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-13",
+        "end": "2027-01-13",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-EASTER",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-04-18",
+        "end": "2027-04-19",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-COLLISION",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-NOTICE-ABSENT",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-29"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-29",
+        "end": "2027-01-29",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-NOTICE-INCOMPLETE",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-NOTICE-DISPUTED",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-OLD-LAW",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30-WRONG-DURATION",
+      "path": "TG-VG-PROVISIONAL-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-BASIC",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-WINTER",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-EASTER",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-COLLISION",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-NOTICE-ABSENT",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-NOTICE-INCOMPLETE",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-NOTICE-DISPUTED",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-OLD-LAW",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-NO-SHORTENING",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.specificShorteningQualifiedNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-BELOW-MIN",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED-ABOVE-MAX",
+      "path": "TG-VG-PROVISIONAL-SHORTENED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationOutsideQualifiedRange"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-BASIC",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-WINTER",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-EASTER",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-COLLISION",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-NOTICE-ABSENT",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-NOTICE-INCOMPLETE",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-NOTICE-DISPUTED",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-OLD-LAW",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-BASIC",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-WINTER",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-19",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 2,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-EASTER",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-24"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-24",
+        "end": "2027-03-24",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-COLLISION",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-NOTICE-ABSENT",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-04",
+        "end": "2027-01-04",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-NOTICE-INCOMPLETE",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-NOTICE-DISPUTED",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-OLD-LAW",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-WRONG-DURATION",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-BASIC",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-WINTER",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-21"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2026-12-21",
+        "end": "2026-12-21",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-EASTER",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-20",
+        "firstCountedDay": "2027-03-20",
+        "nominalEnd": "2027-03-26",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 4,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-COLLISION",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "I1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-NOTICE-ABSENT",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-06"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-15",
+        "firstCountedDay": "2026-12-15",
+        "nominalEnd": "2027-01-06",
+        "end": "2027-01-06",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "suspension": "three",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-NOTICE-INCOMPLETE",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-NOTICE-DISPUTED",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "exceptionNoticeUnresolved"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED-OLD-LAW",
+      "path": "TG-VG-EXECUTION-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-currentProceduralLawQualified"
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-WINDOW-BEFORE",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-WINDOW-AFTER",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-WINDOW-END-CROSSING",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-WINDOW-BEFORE",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-WINDOW-AFTER",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-WINDOW-END-CROSSING",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "GL-COURT-ORDERED-FAHRT",
+      "path": "GL-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-04-01",
+        "firstCountedDay": "2027-04-01",
+        "nominalEnd": "2027-04-01",
+        "end": "2027-04-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "GL-CURRENT-2395"
+        ]
+      }
+    },
+    {
+      "id": "TG-ADMIN-ORDERED-NO-GL-FAHRT",
+      "path": "TG-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-01"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-04-01",
+        "firstCountedDay": "2027-04-01",
+        "nominalEnd": "2027-04-01",
+        "end": "2027-04-01",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-AUTHORITYLEVEL",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Nur kantonale Zielstelle im Kanton Glarus."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Nur kantonale Zielstelle im Kanton Glarus."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-SPECIALLAW",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Kein ungeklärter Steuer-, Beschaffungs-, Sozial-, politischer oder sonstiger Spezialweg."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Kein ungeklärter Steuer-, Beschaffungs-, Sozial-, politischer oder sonstiger Spezialweg."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-QUALIFIEDOPENING",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Rechtlich massgebende qualifizierte schriftliche Eröffnung, keine ungeklärte Fiktion, Publikation oder mangelhafte Eröffnung."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Rechtlich massgebende qualifizierte schriftliche Eröffnung, keine ungeklärte Fiktion, Publikation oder mangelhafte Eröffnung."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-OPENINGMODE",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Direkte qualifizierte schriftliche Eröffnung oder schriftliche Bestätigung nach unverzüglichem Verlangen gemäss Art. 76 Abs. 2–3. Keine ungeklärte elektronische Plattform-Eröffnung nach Art. 32 Abs. 1a."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Direkte qualifizierte schriftliche Eröffnung oder schriftliche Bestätigung nach unverzüglichem Verlangen gemäss Art. 76 Abs. 2–3. Keine ungeklärte elektronische Plattform-Eröffnung nach Art. 32 Abs. 1a."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-DEADLINEMETHOD",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Vorwärts laufende Tagesfrist, kein fixer Termin und keine rückwärts laufende Frist."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Vorwärts laufende Tagesfrist, kein fixer Termin und keine rückwärts laufende Frist."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-PAYMENTORFIXEDAPPOINTMENT",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Eine Eingabe oder Beschwerde, keine Zahlung und kein wahrzunehmender Termin."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Eine Eingabe oder Beschwerde, keine Zahlung und kein wahrzunehmender Termin."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-TARGETAUTHORITY",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Beschwerdeziel ist ein zuständiges kantonales Departement oder der Regierungsrat nach Art. 103 VRG."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Beschwerdeziel ist ein zuständiges kantonales Departement oder der Regierungsrat nach Art. 103 VRG."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-DECISIONTYPE",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Ordentliches End-/Nichteintretensobjekt, kein falsch qualifizierter Zwischenentscheid."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Ordentliches End-/Nichteintretensobjekt, kein falsch qualifizierter Zwischenentscheid."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-QUAL-ART90EXCEPTION",
+      "path": "GL-ADMIN-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Keine Ausnahme nach Art. 90 Abs. 3. Insbesondere ist nicht jede kurze oder dringliche Frist ferienfrei."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Keine Ausnahme nach Art. 90 Abs. 3. Insbesondere ist nicht jede kurze oder dringliche Frist ferienfrei."
+      }
+    },
+    {
+      "id": "GL-ADMIN-30-EXCEPTION-QUAL-ART90EXCEPTION",
+      "path": "GL-ADMIN-30-EXCEPTION",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Unmittelbare ernste Gefahr nach Art. 90 Abs. 3, nicht lediglich besondere Dringlichkeit. Die übrigen dort genannten Objekte sind als Zwischenentscheid zu qualifizieren."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Unmittelbare ernste Gefahr nach Art. 90 Abs. 3, nicht lediglich besondere Dringlichkeit. Die übrigen dort genannten Objekte sind als Zwischenentscheid zu qualifizieren."
+      }
+    },
+    {
+      "id": "GL-COURT-ORDERED-QUAL-DURATIONBASIS",
+      "path": "GL-COURT-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Genaue tatsächlich angeordnete Tagesdauer, keine als Eingabefrist verdeckte verkürzte gesetzliche Beschwerdefrist."
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "Genaue tatsächlich angeordnete Tagesdauer, keine als Eingabefrist verdeckte verkürzte gesetzliche Beschwerdefrist."
+      }
+    },
+    {
+      "id": "TG-REKURS-30-QUAL-NODIFFERENTSPECIALDEADLINERULE",
+      "path": "TG-REKURS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-noDifferentSpecialDeadlineRule"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-noDifferentSpecialDeadlineRule"
+      }
+    },
+    {
+      "id": "TG-VG-30-QUAL-NOTINSURANCECOURT",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notInsuranceCourtNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notInsuranceCourtNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-30-QUAL-HOLIDAYEXCEPTION",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.holidayExceptionNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.holidayExceptionNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-30-QUAL-LEGALLYEFFECTIVEWRITTENSERVICE",
+      "path": "TG-VG-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-legallyEffectiveWrittenService"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "I1-TG-legallyEffectiveWrittenService"
+      }
+    },
+    {
+      "id": "TG-RR-30-QUAL-REGIERUNGSRATCOMPETENCEBASIS",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.regierungsratCompetenceBasisNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.regierungsratCompetenceBasisNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-QUAL-NOTICEAPPLIESTOCURRENTORDER",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.noticeAppliesToCurrentOrderNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.noticeAppliesToCurrentOrderNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED-QUAL-NOTICEDOCUMENTQUALIFIED",
+      "path": "TG-VG-PROVISIONAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.noticeDocumentQualifiedNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.noticeDocumentQualifiedNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-QUAL-ACTUALENFORCEMENTDECISION",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.actualEnforcementDecisionNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.actualEnforcementDecisionNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-QUAL-NOTMEREWARNING",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notMereWarningNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notMereWarningNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-QUAL-NOTORIGINALSUBSTANTIVEDECISION",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notOriginalSubstantiveDecisionNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notOriginalSubstantiveDecisionNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-QUAL-NOCONFLICTINGPERIODINFORMATION",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.noConflictingPeriodInformationNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.noConflictingPeriodInformationNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-QUAL-NOTSCHKGMONEYENFORCEMENT",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notSchkgMoneyEnforcementNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.notSchkgMoneyEnforcementNotQualified"
+      }
+    },
+    {
+      "id": "TG-VG-EXECUTION-5-QUAL-QUALIFIEDENFORCEMENTREVIEWSCOPE",
+      "path": "TG-VG-EXECUTION-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.enforcementReviewScopeNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "tg.enforcementReviewScopeNotQualified"
+      }
+    },
+    {
+      "id": "TG-RR-30-SECOND-QUALIFIED-COMPETENCE",
+      "path": "TG-RR-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "suspension": "none",
+        "temporalBindings": [
+          "TG-CURRENT-2774"
+        ]
+      }
+    }
+  ]
+}

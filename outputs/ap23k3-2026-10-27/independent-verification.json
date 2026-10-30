@@ -1,0 +1,5749 @@
+{
+  "workPackage": "AP23K3",
+  "status": "passedIndependentNativeComparison",
+  "referenceCases": 65,
+  "diagnosticBranchOracleCases": 2,
+  "syntheticCases": 46,
+  "nativeComparisons": 111,
+  "oldNativeArithmeticComparisons": 149,
+  "branchOverrideRejections": 2,
+  "counts": {
+    "datedResearchValue": 40,
+    "qualificationBoundaryProposed": 18,
+    "researchWindowBoundary": 5,
+    "unresolvedBoundaryProposed": 2
+  },
+  "provenanceComparisons": 77,
+  "sourceByteBindings": 27,
+  "unchangedRawArtifacts": 42,
+  "preservedPaths": 149,
+  "newPaths": 16,
+  "physicalCalendars": 35,
+  "physicalProjectionRules": 431,
+  "holidayRules": 499,
+  "socialRules": 44,
+  "socialBernBindings": 50,
+  "sgJanuaryCalendarDiagnostics": [
+    {
+      "year": 2027,
+      "days": 1,
+      "withoutJanuaryRule": "2027-01-04",
+      "withJanuaryRule": "2027-01-04",
+      "different": false,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": false,
+      "legalApproval": false,
+      "exportAllowed": false
+    },
+    {
+      "year": 2028,
+      "days": 1,
+      "withoutJanuaryRule": "2028-01-03",
+      "withJanuaryRule": "2028-01-03",
+      "different": false,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": true,
+      "legalApproval": false,
+      "exportAllowed": false
+    },
+    {
+      "year": 2029,
+      "days": 1,
+      "withoutJanuaryRule": "2029-01-02",
+      "withJanuaryRule": "2029-01-03",
+      "different": true,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": true,
+      "legalApproval": false,
+      "exportAllowed": false
+    },
+    {
+      "year": 2029,
+      "days": 3,
+      "withoutJanuaryRule": "2029-01-04",
+      "withJanuaryRule": "2029-01-04",
+      "different": false,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": true,
+      "legalApproval": false,
+      "exportAllowed": false
+    }
+  ],
+  "physicalCalendarDiagnostics": [
+    {
+      "calendarId": "ap22-ar-88bb22c08a22",
+      "date": "2026-12-26",
+      "expected": false,
+      "actual": false,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-ar-88bb22c08a22",
+      "date": "2027-12-26",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-ai-5d4e5a68e106",
+      "date": "2026-12-26",
+      "expected": false,
+      "actual": false,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-ai-5d4e5a68e106",
+      "date": "2027-12-26",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-gl-87c11e156541",
+      "date": "2026-04-02",
+      "expected": false,
+      "actual": false,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": false,
+      "probeMeaning": "formulaOnlyNotAnEligibleCalendarDate"
+    },
+    {
+      "calendarId": "ap22-gl-87c11e156541",
+      "date": "2026-04-09",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": false,
+      "probeMeaning": "formulaOnlyNotAnEligibleCalendarDate"
+    },
+    {
+      "calendarId": "ap22-gl-87c11e156541",
+      "date": "2027-04-01",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    }
+  ],
+  "sourceReleaseApproved": false,
+  "calendarExportEnabled": false,
+  "operatingChanges": false,
+  "discrepancies": [],
+  "schemaValidator": "jsonschema 4.25.1",
+  "method": "Immutable K2 Python oracle reused read-only. Independent Python calendar-day enumeration and schema/byte validation precede comparison with actual native Format15 results. No Node evaluation or product imports.",
+  "results": [
+    {
+      "id": "K1-BS-R01",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "K1-BS-R02",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "K1-BS-R03",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "K1-BS-R04",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "K1-BS-R05",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24"
+      }
+    },
+    {
+      "id": "K1-BS-R06",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28"
+      }
+    },
+    {
+      "id": "K1-BS-R07",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-30",
+        "ordinaryStart": "2026-12-31",
+        "nominalEnd": "2027-01-01",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-30",
+        "ordinaryStart": "2026-12-31",
+        "nominalEnd": "2027-01-01",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BS-R08",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-15",
+        "ordinaryStart": "2026-12-16",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-15",
+        "ordinaryStart": "2026-12-16",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28"
+      }
+    },
+    {
+      "id": "K1-BS-R09",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30"
+      }
+    },
+    {
+      "id": "K1-BS-R10",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-07",
+        "ordinaryStart": "2027-05-08",
+        "nominalEnd": "2027-05-17",
+        "end": "2027-05-18"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-07",
+        "ordinaryStart": "2027-05-08",
+        "nominalEnd": "2027-05-17",
+        "end": "2027-05-18"
+      }
+    },
+    {
+      "id": "K1-BS-R11",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-18",
+        "ordinaryStart": "2027-03-19",
+        "nominalEnd": "2027-03-28",
+        "end": "2027-03-30"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-18",
+        "ordinaryStart": "2027-03-19",
+        "nominalEnd": "2027-03-28",
+        "end": "2027-03-30"
+      }
+    },
+    {
+      "id": "K1-BS-R12",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-05",
+        "ordinaryStart": "2027-05-06",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-07"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-05",
+        "ordinaryStart": "2027-05-06",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-07"
+      }
+    },
+    {
+      "id": "K1-BS-R13",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08"
+      }
+    },
+    {
+      "id": "K1-BS-R14",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09"
+      }
+    },
+    {
+      "id": "K1-BS-R15",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08"
+      }
+    },
+    {
+      "id": "K1-BS-R16",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15"
+      }
+    },
+    {
+      "id": "K1-BS-R17",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15"
+      }
+    },
+    {
+      "id": "K1-BS-R18",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31"
+      }
+    },
+    {
+      "id": "K1-BS-R19",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-07",
+        "ordinaryStart": "2026-11-08",
+        "nominalEnd": "2026-11-17",
+        "end": "2026-11-17"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-07",
+        "ordinaryStart": "2026-11-08",
+        "nominalEnd": "2026-11-17",
+        "end": "2026-11-17"
+      }
+    },
+    {
+      "id": "K1-BS-R20",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-20",
+        "ordinaryStart": "2026-10-21",
+        "nominalEnd": "2026-11-04",
+        "end": "2026-11-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-20",
+        "ordinaryStart": "2026-10-21",
+        "nominalEnd": "2026-11-04",
+        "end": "2026-11-04"
+      }
+    },
+    {
+      "id": "K1-BS-R21",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedLegalAnchorQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R22",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedLegalAnchorQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R23",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedActionQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R24",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedActionQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R25",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedActionQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R26",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedApplicability"
+      }
+    },
+    {
+      "id": "K1-BS-R27",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedOpeningMode"
+      }
+    },
+    {
+      "id": "K1-BS-R28",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedNoticeStatus"
+      }
+    },
+    {
+      "id": "K1-BS-R29",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedActionQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R30",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "dataCoverageExceeded"
+      }
+    },
+    {
+      "id": "K1-BS-R31",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "administrative.outsideCaseCoverage"
+      }
+    },
+    {
+      "id": "K1-BS-R32",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedActionQualification"
+      }
+    },
+    {
+      "id": "K1-BS-R33",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-26",
+        "ordinaryStart": "2026-12-27",
+        "nominalEnd": "2027-01-05",
+        "end": "2027-01-05"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-26",
+        "ordinaryStart": "2026-12-27",
+        "nominalEnd": "2027-01-05",
+        "end": "2027-01-05"
+      }
+    },
+    {
+      "id": "K1-BL-R01",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-12",
+        "end": "2026-09-14"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-12",
+        "end": "2026-09-14"
+      }
+    },
+    {
+      "id": "K1-BL-R02",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "K1-BL-R03",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07"
+      }
+    },
+    {
+      "id": "K1-BL-R04",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-22",
+        "end": "2026-09-22"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-22",
+        "end": "2026-09-22"
+      }
+    },
+    {
+      "id": "K1-BL-R05",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-30",
+        "ordinaryStart": "2026-12-01",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-30",
+        "ordinaryStart": "2026-12-01",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R06",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R07",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-25",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-25",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R08",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R09",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-24",
+        "ordinaryStart": "2026-12-25",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-24",
+        "ordinaryStart": "2026-12-25",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R10",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-01",
+        "ordinaryStart": "2026-12-02",
+        "nominalEnd": "2026-12-11",
+        "end": "2026-12-11"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-01",
+        "ordinaryStart": "2026-12-02",
+        "nominalEnd": "2026-12-11",
+        "end": "2026-12-11"
+      }
+    },
+    {
+      "id": "K1-BL-R11",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-15",
+        "ordinaryStart": "2027-03-16",
+        "nominalEnd": "2027-03-25",
+        "end": "2027-03-30"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-15",
+        "ordinaryStart": "2027-03-16",
+        "nominalEnd": "2027-03-25",
+        "end": "2027-03-30"
+      }
+    },
+    {
+      "id": "K1-BL-R12",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-20",
+        "ordinaryStart": "2027-03-21",
+        "nominalEnd": "2027-03-30",
+        "end": "2027-03-30"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-20",
+        "ordinaryStart": "2027-03-21",
+        "nominalEnd": "2027-03-30",
+        "end": "2027-03-30"
+      }
+    },
+    {
+      "id": "K1-BL-R13",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-01",
+        "ordinaryStart": "2027-05-02",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-10"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-01",
+        "ordinaryStart": "2027-05-02",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-10"
+      }
+    },
+    {
+      "id": "K1-BL-R14",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-06",
+        "ordinaryStart": "2027-05-07",
+        "nominalEnd": "2027-05-07",
+        "end": "2027-05-10"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-06",
+        "ordinaryStart": "2027-05-07",
+        "nominalEnd": "2027-05-07",
+        "end": "2027-05-10"
+      }
+    },
+    {
+      "id": "K1-BL-R15",
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "nativeNormalized": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "administrative.blOfficeClosureClarificationRequired"
+      }
+    },
+    {
+      "id": "K1-BL-R16",
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "nativeNormalized": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "administrative.blOfficeClosureClarificationRequired"
+      }
+    },
+    {
+      "id": "K1-BL-R19",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-02",
+        "ordinaryStart": "2027-02-03",
+        "nominalEnd": "2027-02-08",
+        "end": "2027-02-08"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-02",
+        "ordinaryStart": "2027-02-03",
+        "nominalEnd": "2027-02-08",
+        "end": "2027-02-08"
+      }
+    },
+    {
+      "id": "K1-BL-R20",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-01-31",
+        "ordinaryStart": "2027-02-01",
+        "nominalEnd": "2027-02-10",
+        "end": "2027-02-10"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-01-31",
+        "ordinaryStart": "2027-02-01",
+        "nominalEnd": "2027-02-10",
+        "end": "2027-02-10"
+      }
+    },
+    {
+      "id": "K1-BL-R21",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30"
+      }
+    },
+    {
+      "id": "K1-BL-R22",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31"
+      }
+    },
+    {
+      "id": "K1-BL-R23",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedOpeningMode"
+      }
+    },
+    {
+      "id": "K1-BL-R24",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedApplicability"
+      }
+    },
+    {
+      "id": "K1-BL-R25",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedOrderStatus"
+      }
+    },
+    {
+      "id": "K1-BL-R26",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedOrderStatus"
+      }
+    },
+    {
+      "id": "K1-BL-R27",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedCourtOrderCategory"
+      }
+    },
+    {
+      "id": "K1-BL-R28",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedChamberDecidesFinal"
+      }
+    },
+    {
+      "id": "K1-BL-R29",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedOpeningMode"
+      }
+    },
+    {
+      "id": "K1-BL-R30",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "dataCoverageExceeded"
+      }
+    },
+    {
+      "id": "K1-BL-R31",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "dataCoverageExceeded"
+      }
+    },
+    {
+      "id": "K1-BL-R32",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "administrative.outsideCaseCoverage"
+      }
+    },
+    {
+      "id": "K1-BL-R33",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedOrderStatus"
+      }
+    },
+    {
+      "id": "K1-BL-R34",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-08-01",
+        "ordinaryStart": "2027-08-02",
+        "nominalEnd": "2027-08-11",
+        "end": "2027-08-11"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-08-01",
+        "ordinaryStart": "2027-08-02",
+        "nominalEnd": "2027-08-11",
+        "end": "2027-08-11"
+      }
+    },
+    {
+      "id": "bs-court-bl-anchor-no-bl-office-closure",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24"
+      }
+    },
+    {
+      "id": "bl-procedure-uses-annual-closure-chain",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-ZH",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-BE",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-LU",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-UR",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SZ",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-OW",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-NW",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-GL",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-ZG",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-FR",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SO",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-BS",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-BL",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SH",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-AR",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-AI",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SG",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-GR",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-AG",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-TG",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-TI",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-VD",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-VS",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-NE",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-GE",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-JU",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-AI-missing-current-area",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "areaQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.holidayAnchorNotQualified"
+      }
+    },
+    {
+      "id": "bs-AI-explicit-positive-area",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-NE-missing-current-area",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "areaQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.holidayAnchorNotQualified"
+      }
+    },
+    {
+      "id": "bs-NE-explicit-positive-area",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-ai-september-region-false",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-12",
+        "ordinaryStart": "2027-09-13",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-22"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-12",
+        "ordinaryStart": "2027-09-13",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-22"
+      }
+    },
+    {
+      "id": "bs-ai-september-region-true",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-12",
+        "ordinaryStart": "2027-09-13",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-23"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-12",
+        "ordinaryStart": "2027-09-13",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-23"
+      }
+    },
+    {
+      "id": "bs-ne-corpus-christi-region-false",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-17",
+        "ordinaryStart": "2027-05-18",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-27"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-17",
+        "ordinaryStart": "2027-05-18",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-27"
+      }
+    },
+    {
+      "id": "bs-ne-corpus-christi-region-true",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-17",
+        "ordinaryStart": "2027-05-18",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-28"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-17",
+        "ordinaryStart": "2027-05-18",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-28"
+      }
+    },
+    {
+      "id": "bs-sg-bound-january-comparison",
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2027-01-02",
+        "end": "2027-01-04"
+      },
+      "nativeNormalized": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2027-01-02",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "bs-missing-anchor",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.holidayAnchorNotQualified"
+      }
+    },
+    {
+      "id": "bs-multiple-anchors",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.holidayAnchorNotQualified"
+      }
+    },
+    {
+      "id": "bs-authority-anchor-only",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.currentFactNotQualifiedLegalAnchorQualification"
+      }
+    },
+    {
+      "id": "bs-unknown-area-key",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.inputContractInvalid"
+      }
+    },
+    {
+      "id": "bs-foreign-role-input",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownInputProperty"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.inputContractInvalid"
+      }
+    },
+    {
+      "id": "bl-consumer-override-forbidden-noOptionalFullClosure",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownCaseFact"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.inputContractInvalid"
+      }
+    },
+    {
+      "id": "bl-consumer-override-forbidden-confirmedFullClosure",
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownCaseFact"
+      },
+      "nativeNormalized": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "administrative.inputContractInvalid"
+      }
+    },
+    {
+      "id": "complete-window-2026-08-28",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "administrative.outsideCaseCoverage"
+      }
+    },
+    {
+      "id": "complete-window-2027-12-31",
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      },
+      "nativeNormalized": {
+        "outcome": "researchWindowBoundary",
+        "reason": "dataCoverageExceeded"
+      }
+    }
+  ],
+  "diagnosticResults": [
+    {
+      "id": "K1-BL-R17",
+      "originalInput": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-02-01",
+        "days": 8,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-01",
+        "ordinaryStart": "2027-02-02",
+        "nominalEnd": "2027-02-09",
+        "end": "2027-02-09"
+      },
+      "annotations": {
+        "regionalOfficeMode": "noOptionalFullClosure"
+      }
+    },
+    {
+      "id": "K1-BL-R18",
+      "originalInput": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-02-01",
+        "days": 8,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-01",
+        "ordinaryStart": "2027-02-02",
+        "nominalEnd": "2027-02-09",
+        "end": "2027-02-10"
+      },
+      "annotations": {
+        "regionalOfficeMode": "confirmedFullClosure"
+      }
+    }
+  ],
+  "oldResults": [
+    {
+      "pathId": "ti-80-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ti-84-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ti-reply",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ti-provisional-15",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-17",
+        "end": "2026-10-19",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17"
+        ]
+      }
+    },
+    {
+      "pathId": "ti-advance",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-32-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-32-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-52-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-52-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-42-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gr-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "lu-admin-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "lu-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "lu-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "lu-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "zg-admin-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "zg-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "zg-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "zg-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ar-admin-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "ar-execution-5",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "ar-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ar-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ar-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "zh-rekurs-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "zh-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "zh-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "zh-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ag-admin-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ag-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ag-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ag-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ag-execution-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-admin-14",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-16",
+        "end": "2026-10-16",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-vrk-14",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-16",
+        "end": "2026-10-16",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-court-14",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-16",
+        "end": "2026-10-16",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-admin-measures-5",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-court-interim-5",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-vrk-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "sg-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ur-admin-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "ur-court-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "ur-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ur-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ur-admin-reasons-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "so-admin-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "so-court-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "so-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "so-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "so-admin-reasons-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "sh-admin-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "sh-court-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "sh-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "sh-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "sh-admin-reasons-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "sh-court-reasons-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-admin-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-admin-reasons-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-court-reasons-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ow-court-suspensive-5",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-admin-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-court-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-einsprache-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-einwendung-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-einsprache-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-appeal-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-admin-vernehmlassung-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-court-vernehmlassung-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-admin-replik-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-court-replik-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-admin-duplik-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "nw-court-duplik-20",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-30-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-interim-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-interim-10-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-shortened-end",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-shortened-end-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-shortened-interim",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-shortened-interim-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-30-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-interim-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-interim-10-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-shortened-end",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-shortened-end-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-shortened-interim",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-shortened-interim-exception",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-initial-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-admin-appeal-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "gl-court-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-rekurs-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-rekurs-shortened",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-rekurs-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-rr-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-rr-shortened",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-rr-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-shortened",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-provisional-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-provisional-shortened",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-provisional-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-execution-5",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "tg-vg-execution-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-nontc-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-nontc-recours-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-nontc-recours-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-tc-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-tc-recours-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-tc-recours-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-nontc-nachfrist-3",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-05",
+        "end": "2026-10-05",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-tc-nachfrist-3",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-05",
+        "end": "2026-10-05",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-tc-begruendung-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-nontc-reclamation-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "fr-tc-cost-reclamation-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-reclamation-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-reclamation-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-recours-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-recours-10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-recours-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ge-costs-reclamation-30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-admin-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-opposition-final30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-opposition-interim10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-opposition-provisional10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-opposition-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-opposition-provisional-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-review-final30",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-review-interim10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-review-enforcement10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-review-provisional10",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-review-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-review-provisional-ordered",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-09",
+        "end": "2026-10-09",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-confirmation-request5-initial",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-confirmation-request5-review",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-confirmation-request5-provisional",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-motivation-request30-initial",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-motivation-request30-review",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    },
+    {
+      "pathId": "ju-motivation-request30-provisional",
+      "independent": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "countedDates": [
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-18",
+          "2026-10-19",
+          "2026-10-20",
+          "2026-10-21",
+          "2026-10-22",
+          "2026-10-23",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-10-31",
+          "2026-11-01"
+        ]
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "scripts/check_ap23k3_independent.py",
+      "byteLength": 21610,
+      "sha256": "cdb0f53d180efe6a33d191ec791dae8aa8b733d8011e2d036b5aaa47f44dea79"
+    },
+    {
+      "path": "tests/data/test_ap23k3_contract.py",
+      "byteLength": 20503,
+      "sha256": "47cd99909586f45929371833a1e986f05c248fa40eff4a5df3a0045304ef81ca"
+    },
+    {
+      "path": "scripts/check_ap23k2_independent.py",
+      "byteLength": 45477,
+      "sha256": "e49f04336b04a15fb1b6d74b0b34c3c7142e25d0b84ca6bf9e5fb3bb55b321cc"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/protected-inputs.json",
+      "byteLength": 1099723,
+      "sha256": "23f5406ec3218aa30d0fb1ac95c0aff507106523f1c7645125020bf127738ce1"
+    },
+    {
+      "path": "outputs/ap23k3-2026-10-27/native-reference-verification.json",
+      "byteLength": 2772808,
+      "sha256": "796716b3b1211f38bbae660f23937f2003954ffafa721f3523a714f8fa77b595"
+    },
+    {
+      "path": "outputs/ap23k2-candidate-2026-10-27/QA-AP23K2.json",
+      "byteLength": 967481,
+      "sha256": "c60fc0fd693de41bcdd2400e2d03ee559f33341bb9e68f616636f86eca54351a"
+    },
+    {
+      "path": "docs/fachrecht/ap23k1/referenzfaelle.json",
+      "byteLength": 99883,
+      "sha256": "2f107ec6898a2748a462299f9b514a5ad635c3ed09f9a00d4d31fa3ae4fa0549"
+    },
+    {
+      "path": "data/candidates/2026-10-27-ap23k3/manifest.json",
+      "byteLength": 29215,
+      "sha256": "5089b30b2f40e137c9f4266e472b75c7aaf348d2354224246d4de2431464e63f"
+    },
+    {
+      "path": "data/candidates/2026-10-27-ap23k3/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "byteLength": 1381854,
+      "sha256": "e1a7b261a907262f7979075e6b587fd415817af4213d9be492735f37411bcfeb"
+    },
+    {
+      "path": "schemas/administrative-procedure-catalog-v8.schema.json",
+      "byteLength": 451563,
+      "sha256": "70cce3447e1016585fddb4eeca9d82fef7406b73325b4b13748644aeecf8cdd3"
+    },
+    {
+      "path": "schemas/release-manifest-v15.schema.json",
+      "byteLength": 13683,
+      "sha256": "f9d30f394caa9ca9afd6da80ec7b5e993766e0f6e8fd7c972e4fa281f0d16dae"
+    },
+    {
+      "path": "schemas/implementation/ap23k3/local-reference-manifest-v15.schema.json",
+      "byteLength": 13761,
+      "sha256": "6f8c3a6fcc166adef26b0be154e11e5b5da54be4a43f1b5eafa8a4b7046415f3"
+    }
+  ]
+}

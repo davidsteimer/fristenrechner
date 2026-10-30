@@ -1,0 +1,112 @@
+{
+  "workPackage": "AP23M2",
+  "status": "technical-planning-inputs-preserved",
+  "gitHead": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "protectedInputSha256": "af68d4b6c0fb33d731c50f99b3ca3c63bc1c573d5635d259798a5ed28953c3b1",
+  "protectedFilesVerified": 11414,
+  "composition": {
+    "previousProtected": 11212,
+    "currentAcceptedM1": 103,
+    "archivedM1Payload": 110,
+    "archivedM1Receipt": 1,
+    "additionalGovernance": 8,
+    "existingTreeFiles": 2044
+  },
+  "acceptedM1Archive": {
+    "verified": true,
+    "target": "outputs/ap23m1-abnahme-2026-10-28",
+    "mode": "archive-reverified",
+    "files": 110,
+    "originalBindings": 109,
+    "explicitTransitiveCalendarPayloads": 0,
+    "sourceFiles": 64,
+    "sourceBytes": 22234913,
+    "payloadBytes": 25644304,
+    "historicalProtectedInputsNotRecopied": 11212,
+    "receiptSha256": "2e917edb88f914671ed17bbabca42f5d2993bf7dd3b1511cf640f0b9055154f6",
+    "receiptByteLength": 23208
+  },
+  "livingStatus": [
+    {
+      "path": "README.md",
+      "atStart": "0a12924d5715156418708f83827936bd7736ae4ecdb7bc30e8d4ff9edcc83713",
+      "current": "ff7eda6581d5036b166ac589077ee8d383aa39ae9dc3db5c76cf0ce0ca86b2e9",
+      "changed": true
+    },
+    {
+      "path": "docs/README.md",
+      "atStart": "5cd8b6a68ecec4795cfbfc9ad865b190906eeb8d42a49080886aef37701e756f",
+      "current": "22c0e457177cf293284ba691adfa6aa01eee7941bb4b4f8e4e0a675475388afd",
+      "changed": true
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "atStart": "8d02d878f1393ede17434061335123506c5b44d8748c6d9d7762fd54871faeb2",
+      "current": "3d47b1eb46759c30f309d5721097081fc5f7bb1a349cbc7cc603e559065bb68e",
+      "changed": true
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "atStart": "d745166c70f209352178e376c17e237667a44f966e0521edce42b55fa9a52352",
+      "current": "b5a9d5ba060cebf0a0acef90d0e4e794624675809c72d5f60d667e4992abb6ac",
+      "changed": true
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "atStart": "cd8e91e974c4ff3bc15900e53a7b830718b819d88c56699eebc3759f8379dd93",
+      "current": "b64db67ffc9bfc8bb9a4cbf761d15bcfadc09ef503765f682c57df0e2ce8e752",
+      "changed": true
+    },
+    {
+      "path": "docs/planung/fortsetzung-verwaltungsverfahren-mvp09.md",
+      "atStart": "cb1ae88a47db60f14cd68ad97171cb1597a102f6e30e07d9d48d90c6cb5ad49e",
+      "current": "d154e687a6aba62868632e5ee065360f95dd8aeb5d6dd9bf0c988d29142a9d7e",
+      "changed": true
+    },
+    {
+      "path": "docs/planung/schweizausbau-nach-mvp09.md",
+      "atStart": "de4bd3ad3b59312d5b3e1d0906f56d4345f1791ec6812ae715d515eba60174f7",
+      "current": "8e8e83961e88d4c95c9cc86708b7caeed8c7440c3ee45e8261ffaa5cda2ea89a",
+      "changed": true
+    }
+  ],
+  "isolatedSchemaCandidateAdditions": [
+    "schemas/candidates/ap23m2/administrative-input-v10.schema.json",
+    "schemas/candidates/ap23m2/administrative-procedure-catalog-v10.schema.json",
+    "schemas/candidates/ap23m2/local-reference-manifest-v17.schema.json",
+    "schemas/candidates/ap23m2/release-manifest-v17.schema.json"
+  ],
+  "isolatedGovernanceTestAdditions": [
+    "tests/governance/ap23m2-contract.test.mjs",
+    "tests/governance/ap23m2-finalizer.test.mjs",
+    "tests/governance/ap23m2-independent.test.mjs",
+    "tests/governance/ap23m2-native.test.mjs",
+    "tests/governance/ap23m2-preservation.test.mjs",
+    "tests/governance/ap23m2-schemas.test.mjs"
+  ],
+  "isolatedScriptAdditions": [
+    "scripts/build-ap23m2-candidate.mjs",
+    "scripts/build-ap23m2-schemas.mjs",
+    "scripts/check-ap23m2-contract.mjs",
+    "scripts/check-ap23m2-native.mjs",
+    "scripts/check-ap23m2-preservation.mjs",
+    "scripts/check_ap23m2_independent.py",
+    "scripts/finalize-ap23m2.mjs",
+    "scripts/prepare-ap23m2.mjs"
+  ],
+  "productCodeChanged": false,
+  "nativeSchemasChanged": false,
+  "acceptedLegalDataChanged": false,
+  "existingTestsChanged": false,
+  "acceptedM1ResearchChanged": false,
+  "historicalEvidenceChanged": false,
+  "userDocumentChanged": false,
+  "formatDecision": false,
+  "sourceReleaseApproved": false,
+  "runtimeActivation": false,
+  "releaseBuildPerformed": false,
+  "commitCreated": false,
+  "sourcePushPerformed": false,
+  "operatingChanges": false,
+  "note": "Original M2 start bindings are unchanged. Only isolated new M2 candidate schemas, governance tests and helper scripts may be added in protected trees. Seven living status texts are separate. No native integration or operating permission."
+}

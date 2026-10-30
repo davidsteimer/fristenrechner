@@ -1,14 +1,14 @@
 # Regel- und Kalenderdaten
 
-## Aktueller Datenstand für MVP 0.9
+## Aktueller Datenstand für MVP 0.10
 
-Stand: 19. Oktober 2026. [`2026-10-18-mvp-09-approved.1`](releases/2026-10-18-mvp-09-approved.1/manifest.json) ist auf den vier bestehenden E-/Q-Instanzen übernommen und [abgenommen](../docs/betrieb/abnahme-q-mvp09.md). Öffentlich bleibt zuletzt MVP 0.8 dokumentiert. Der neue lokale Datencommit `0ccc4b9178503ede051964149a4b17efab8d0cf9` ist noch nicht veröffentlicht oder öffentlich bytegeprüft.
+Stand: 30. Oktober 2026. [`2026-10-28-mvp-010-approved.1`](releases/2026-10-28-mvp-010-approved.1/manifest.json) ist auf den vier bestehenden E-/Q-Instanzen übernommen und [abgenommen](../docs/betrieb/abnahme-q-mvp10.md). Letzter dokumentierter öffentlicher Betriebsstand bleibt MVP 0.9. Der lokale Datencommit `01bbd96a296b0fc4d64cd554acc8cb122c3017a3` ist noch nicht veröffentlicht oder remote bytegeprüft.
 
-Manifest und Mindestconsumer verwenden `9.0.0`, der Verwaltungsverfahrenskatalog `2.0.0`. Alle übrigen Komponentenformate bleiben unverändert. Der Mirror umfasst 42 Dateien mit zusammen 2’508’592 Bytes. Manifest SHA-256: `3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265`. [Definitive Artefakte](../docs/betrieb/releaseartefakte-mvp-09.md).
+Manifest und Mindestconsumer verwenden `17.0.0`, der Verwaltungskatalog `10.0.0`. 45 Laufzeitdateien umfassen Manifest, 35 Kalender, fünf Rechtsprofile und vier Kataloge. Manifest SHA-256: `7562597cee45ad1e4995989f7f31b2e8d0619baaf1f9618355ca870c8426a016`.
 
-MVP 0.9 umfasst 25 kantonale Verwaltungswege: TI fünf, GR sieben, LU vier, ZG vier und AR fünf. LU ist ab 27.09.2026, ZG und AR ab 29.08.2026 gedeckt, jeweils einschliesslich aller benötigten Berechnungstage bis 31.12.2027. Die bisherigen TI-/GR-Fenster und TI-O2 bleiben erhalten. AR-O1 sperrt die vorbehaltene Konstellation. Die 44 Sozialregeln und 50 BE-Anbindungen bleiben ausschliesslich für Bern und 2026–2027 freigegeben.
+245 ausserbernische Verwaltungspfade in 25 Kantonen ergänzen das getrennte BE-Profil. Kantonale Fall-/Zeit-/Ortsqualifikationen bleiben erforderlich. Keine Vollabdeckung sämtlicher Spezialgesetze. 44 Sozialregeln und 50 BE-Anbindungen bleiben nur für Bern und 2026–2027 freigegeben. Kalenderformat 3, Feiertagskatalog 2, Rechtsprofile 1, Spezialregime 3 und Sozialkatalog 2 bleiben unverändert. 479 Grundregeln und 20 Prozessregeln ergeben 499 Katalogregeln.
 
-Die Kalenderbindungen, Januargrenzen, AI-Behandlung, GR-/NE-Vorbehalte und der ergänzende Freiburger Praxisbeleg werden nicht erweitert. Eigenständiges kommunales Recht bleibt ausgeschlossen. [Releasehinweise](../docs/betrieb/release-notes-mvp09.md), [Quellenabnahme](../docs/fachrecht/abnahme-quellen-mvp09.md) und [Publikationspaket](../docs/betrieb/publikationspaket-mvp09.md) trennen Rechtsfreigabe, Betrieb und Öffentlichkeit.
+AI-Behandlung, Januargrenzen, FR-/GR-/NE-Vorbehalte und der ergänzende Freiburger Praxisbeleg bleiben qualifiziert. Eigenständiges kommunales Recht bleibt ausgeschlossen. [Releasehinweise](../docs/betrieb/release-notes-mvp10.md), [Quellenabnahme](../docs/fachrecht/abnahme-r10-a2.md) und [Publikationspaket](../docs/betrieb/publikationspaket-mvp10.md) trennen Rechtsfreigabe, Betrieb und Öffentlichkeit.
 
 ## Historische Entwicklung
 

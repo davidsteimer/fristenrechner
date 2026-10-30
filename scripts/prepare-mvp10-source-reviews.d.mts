@@ -1,0 +1,20 @@
+/// <reference types="node" />
+export const root:string;
+export const prefix:string;
+export const releaseId:string;
+export const candidateRoot:string;
+export const candidateHash:string;
+export const sourceApprovalPath:string;
+export const authorityPath:string;
+export const decisionPath:string;
+export const bridgePath:string;
+export const adoptionPath:string;
+export const suitePath:string;
+export function hash(bytes:Uint8Array):string;
+export function encode(value:unknown):Buffer;
+export function readRegular(repository:string,path:string,optional?:false):Promise<Buffer>;
+export function readRegular(repository:string,path:string,optional:true):Promise<Buffer|undefined>;
+export function writeExclusive(repository:string,path:string,bytes:Uint8Array):Promise<void>;
+export function requireAuthority(repository?:string):Promise<{path:string;sha256:string;record:Record<string,unknown>}>;
+export function getSourceApprovalBinding(repository?:string):Promise<{path:string;byteLength:number;sha256:string;sourceReviewRef:{reviewId:string;sha256:string};adminSourceReviewRef:{id:string;sha256:string}}>;
+export function verifyGovernance(repository?:string):Promise<unknown>;

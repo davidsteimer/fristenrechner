@@ -1,0 +1,2957 @@
+{
+  "formatVersion": "ap23k1-research-references-1",
+  "workPackage": "AP23K1",
+  "asOf": "2026-10-27",
+  "status": "local-research-not-human-accepted-not-operative",
+  "runtimeActive": false,
+  "productTest": false,
+  "exportTest": false,
+  "legalApproval": false,
+  "window": {
+    "from": "2026-08-29",
+    "to": "2027-12-31"
+  },
+  "factPolicy": "explicitCaseFactsOnly",
+  "sharedSyntheticFacts": {},
+  "sharedRequirements": [],
+  "allowedFactKeys": [
+    "actionQualification",
+    "applicability",
+    "authorityCanton",
+    "authorityScope",
+    "chamberDecidesFinal",
+    "courtOrderCategory",
+    "legalAnchorCanton",
+    "legalAnchorQualification",
+    "noticeStatus",
+    "openingMode",
+    "openingProvenance",
+    "orderProvenance",
+    "orderStatus",
+    "partyCanton",
+    "regionalOfficeMode",
+    "stage"
+  ],
+  "easter": {
+    "2026": "2026-04-05",
+    "2027": "2027-03-28"
+  },
+  "calendars": {
+    "BS": {
+      "fixed": [
+        "01-01",
+        "05-01",
+        "08-01",
+        "12-25",
+        "12-26"
+      ],
+      "easterOffsets": [
+        -2,
+        0,
+        1,
+        39,
+        49,
+        50
+      ],
+      "nthWeekdays": [
+        {
+          "month": 9,
+          "isoWeekday": 7,
+          "occurrence": 3
+        }
+      ]
+    },
+    "BL": {
+      "fixed": [
+        "01-01",
+        "05-01",
+        "08-01",
+        "12-25",
+        "12-26"
+      ],
+      "easterOffsets": [
+        -2,
+        0,
+        1,
+        39,
+        49,
+        50
+      ],
+      "nthWeekdays": [
+        {
+          "month": 9,
+          "isoWeekday": 7,
+          "occurrence": 3
+        }
+      ]
+    },
+    "TI": {
+      "fixed": [
+        "01-01",
+        "01-06",
+        "03-19",
+        "05-01",
+        "06-29",
+        "08-01",
+        "08-15",
+        "11-01",
+        "12-08",
+        "12-25",
+        "12-26"
+      ],
+      "easterOffsets": [
+        1,
+        39,
+        50,
+        60
+      ],
+      "nthWeekdays": [],
+      "sourceId": "K1-BS-TI-ANCHOR-COUNTERPROBE",
+      "scope": "Holiday anchor counterexample in BS court procedure only. No TI administrative release."
+    }
+  },
+  "officeClosures": {
+    "BL-ANNUAL": {
+      "dates": [
+        "2026-12-24",
+        "2026-12-28",
+        "2026-12-29",
+        "2026-12-30",
+        "2026-12-31",
+        "2027-03-25",
+        "2027-05-07",
+        "2027-12-24",
+        "2027-12-27",
+        "2027-12-28",
+        "2027-12-29",
+        "2027-12-30",
+        "2027-12-31"
+      ],
+      "role": "wholeDayCantonalAdministrationOfficeClosureEndOnly",
+      "sourceIds": [
+        "K1-BL-GOG-20200101",
+        "K1-BL-RTG-20191201",
+        "K1-BL-RRB2025-51",
+        "K1-BL-OVERVIEW2026",
+        "K1-BL-RRB2026-217",
+        "K1-BL-OVERVIEW2027"
+      ],
+      "uncertainty": {
+        "fact": "regionalOfficeMode",
+        "dates": [
+          "2027-02-09"
+        ],
+        "reason": "BL-B-FASNACHT",
+        "closedValue": "confirmedFullClosure",
+        "openValues": [
+          "noOptionalFullClosure"
+        ],
+        "unknownValue": "unknown",
+        "scope": "Optional 2027 Birseck/Laufen closure remains legally unresolved. Modes are externally established research counterfacts, not proposed GUI choices."
+      }
+    }
+  },
+  "temporalBindings": {
+    "BS-admin": [
+      {
+        "id": "BS-ADMIN-WINDOW",
+        "from": "2026-08-29",
+        "to": "2027-12-31",
+        "sourceIds": [
+          "K1-BS-OG-20210101",
+          "K1-BS-RLG-20200701",
+          "K1-BS-EUFRUEB-20110101",
+          "K1-BS-STG-20260101"
+        ],
+        "basis": "OG administrative context and recorded StG analogy, not wholesale VwVG incorporation."
+      }
+    ],
+    "BS-court": [
+      {
+        "id": "BS-VWVG-2026",
+        "from": "2026-08-29",
+        "to": "2026-12-31",
+        "sourceIds": [
+          "K1-BS-VRPG-20210101",
+          "K1-BS-GOG-20250615",
+          "K1-BS-VWVG-20220701"
+        ]
+      },
+      {
+        "id": "BS-VWVG-2027",
+        "from": "2027-01-01",
+        "to": "2027-12-31",
+        "sourceIds": [
+          "K1-BS-VRPG-20210101",
+          "K1-BS-GOG-20250615",
+          "K1-BS-VWVG-20270101"
+        ]
+      }
+    ],
+    "BL": [
+      {
+        "id": "BL-NORMS-CLOSURES-2026",
+        "from": "2026-08-29",
+        "to": "2026-12-31",
+        "sourceIds": [
+          "K1-BL-VWVG-20240801",
+          "K1-BL-VPO-20240101",
+          "K1-BL-GOG-20200101",
+          "K1-BL-RTG-20191201",
+          "K1-BL-RRB2025-51",
+          "K1-BL-OVERVIEW2026"
+        ]
+      },
+      {
+        "id": "BL-NORMS-CLOSURES-2027",
+        "from": "2027-01-01",
+        "to": "2027-12-31",
+        "sourceIds": [
+          "K1-BL-VWVG-20240801",
+          "K1-BL-VPO-20240101",
+          "K1-BL-GOG-20200101",
+          "K1-BL-RTG-20191201",
+          "K1-BL-RRB2026-217",
+          "K1-BL-OVERVIEW2027"
+        ]
+      }
+    ]
+  },
+  "sourceModels": [
+    {
+      "path": "docs/fachrecht/ap23k1/befund-bs.json",
+      "sha256": "d6d3b2a2fa82d0b4197c7b69e1078342734e2c8c65cb15f8d87e504080ae1ced",
+      "cantonFindings": true
+    },
+    {
+      "path": "docs/fachrecht/ap23k1/befund-bl.json",
+      "sha256": "2124a0d4684337cc535ba2fb2082e2e51460b0c37487133d21426c9de0274e97",
+      "cantonFindings": true
+    },
+    {
+      "path": "outputs/ap23k1-2026-10-27/sources/bs/source-bindings.json",
+      "sha256": "0e4fc612df9bca818b3c8f24de49ae0de2b1bf8cfa468fa1b0791504df37e3ec",
+      "sourceRegister": true
+    },
+    {
+      "path": "outputs/ap23k1-2026-10-27/sources/bl/source-bindings.json",
+      "sha256": "aa1d77dbe8b8bacdea7772461ab4fd8530f7112473342e18f8200eded45f23ef",
+      "sourceRegister": true
+    }
+  ],
+  "paths": [
+    {
+      "id": "BS-ADMIN-ORDERED",
+      "canton": "BS",
+      "label": "Angeordnete Tagesfrist im Erstverfahren",
+      "stage": "initialAdministration",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BS",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BS-admin",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-INTERNAL-REGISTER-10",
+      "canton": "BS",
+      "label": "Verwaltungsinterner Rekurs anmelden",
+      "stage": "internalAppeal",
+      "days": 10,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryRegistration"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BS",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BS-admin",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-INTERNAL-REASONS-30",
+      "canton": "BS",
+      "label": "Verwaltungsinternen Rekurs begründen",
+      "stage": "internalAppeal",
+      "days": 30,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "originalReasonsPeriodFromDecisionOpening"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BS",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BS-admin",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-INTERNAL-ORDERED",
+      "canton": "BS",
+      "label": "Angeordnete Eingabe im verwaltungsinternen Rekurs",
+      "stage": "internalAppeal",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "internalAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BS",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BS-admin",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-COURT-REGISTER-10",
+      "canton": "BS",
+      "label": "Rekurs beim Verwaltungsgericht anmelden",
+      "stage": "courtAppeal",
+      "days": 10,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOrdinaryRegistration"
+        },
+        {
+          "key": "legalAnchorQualification",
+          "value": "establishedPartyOrRepresentative"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fact",
+        "fact": "legalAnchorCanton",
+        "allowed": [
+          "BS",
+          "TI"
+        ],
+        "role": "partyOrRepresentative",
+        "nativeProbeScopeOnly": true
+      },
+      "temporalBindingKey": "BS-court",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-COURT-REASONS-30",
+      "canton": "BS",
+      "label": "Rekurs beim Verwaltungsgericht begründen",
+      "stage": "courtAppeal",
+      "days": 30,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "originalReasonsPeriodFromDecisionOpening"
+        },
+        {
+          "key": "legalAnchorQualification",
+          "value": "establishedPartyOrRepresentative"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fact",
+        "fact": "legalAnchorCanton",
+        "allowed": [
+          "BS",
+          "TI"
+        ],
+        "role": "partyOrRepresentative",
+        "nativeProbeScopeOnly": true
+      },
+      "temporalBindingKey": "BS-court",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-COURT-ORDERED",
+      "canton": "BS",
+      "label": "Gerichtlich angeordnete Tagesfrist",
+      "stage": "courtAppeal",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "validCurrentDayCountOrder"
+        },
+        {
+          "key": "legalAnchorQualification",
+          "value": "establishedPartyOrRepresentative"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fact",
+        "fact": "legalAnchorCanton",
+        "allowed": [
+          "BS",
+          "TI"
+        ],
+        "role": "partyOrRepresentative",
+        "nativeProbeScopeOnly": true
+      },
+      "temporalBindingKey": "BS-court",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BS-COURT-JOINDER-10",
+      "canton": "BS",
+      "label": "Abweisung eines Beiladungsantrags anfechten",
+      "stage": "courtAppeal",
+      "days": 10,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only existing general procedures before cantonal bodies. Independent municipal legislation remains excluded."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBsConfirmed",
+          "reason": "No different federal/cantonal special procedural rule. No tax, procurement, social, political-rights or constitutional-review positive release."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Legal opening is positively established outside the calculator. Mere physical receipt cannot reconstruct representation, fiction, publication admissibility or defective notice."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved defective or misleading remedy notice, pending restitution or already interrupted/replaced period."
+        },
+        {
+          "key": "stage",
+          "value": "courtAppeal"
+        },
+        {
+          "key": "actionQualification",
+          "value": "applicantAppealAgainstJoinderRefusal"
+        },
+        {
+          "key": "legalAnchorQualification",
+          "value": "establishedPartyOrRepresentative"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fact",
+        "fact": "legalAnchorCanton",
+        "allowed": [
+          "BS",
+          "TI"
+        ],
+        "role": "partyOrRepresentative",
+        "nativeProbeScopeOnly": true
+      },
+      "temporalBindingKey": "BS-court",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "BL-ADMIN-ORDERED",
+      "canton": "BL",
+      "label": "Angeordnete Tagesfrist im Verwaltungsverfahren",
+      "stage": "initialAdministration",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentDayCountSubmissionOrder",
+          "reason": "VwVG BL §§ 5(1,3), 12(2), 15(2), 25–26"
+        },
+        {
+          "key": "orderStatus",
+          "value": "currentOrder",
+          "reason": "Aktueller Tagesfristentenor und Auslöser sind positiv festgestellt."
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-ADMIN-APPEAL-10",
+      "canton": "BL",
+      "label": "Allgemeine Verwaltungsbeschwerde",
+      "stage": "administrativeAppeal",
+      "days": 10,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleAdministrativeAppeal",
+          "reason": "VwVG BL §§ 15, 27–33"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-ADMIN-REASONS-GRANTED",
+      "canton": "BL",
+      "label": "Ausdrücklich gewährte nachträgliche Beschwerdebegründung",
+      "stage": "administrativeAppeal",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentGrantedReasonsDayCountOrder",
+          "reason": "VwVG BL § 33(3), § 5(1,3)"
+        },
+        {
+          "key": "orderStatus",
+          "value": "grantedReasonsOrder",
+          "reason": "Frist wurde tatsächlich auf Gesuch gewährt. Blosses Gesuch genügt nicht."
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-ADMIN-APPEAL-ORDERED",
+      "canton": "BL",
+      "label": "Angeordnete Eingabe im Verwaltungsbeschwerdeverfahren",
+      "stage": "administrativeAppeal",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentDayCountSubmissionOrder",
+          "reason": "VwVG BL §§ 5(1,3), 15(2), 35–36"
+        },
+        {
+          "key": "orderStatus",
+          "value": "currentOrder",
+          "reason": "Aktueller Tagesfristentenor und Auslöser sind positiv festgestellt."
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-COURT-APPEAL-10",
+      "canton": "BL",
+      "label": "Allgemeine Verwaltungsgerichtsbeschwerde",
+      "stage": "administrativeCourt",
+      "days": 10,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeCourt",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleGeneralCourtAppeal",
+          "reason": "VPO §§ 5(1), 43–48"
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-COURT-REASONS-SET",
+      "canton": "BL",
+      "label": "Gerichtlich festgesetzte Begründungsfrist",
+      "stage": "administrativeCourt",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeCourt",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentSetReasonsDayCountOrder",
+          "reason": "VPO § 5(2), allgemeiner Verwaltungszweig"
+        },
+        {
+          "key": "orderStatus",
+          "value": "setReasonsOrder",
+          "reason": "Aktueller Tagesfristentenor und Auslöser sind positiv festgestellt."
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-COURT-ORDERED",
+      "canton": "BL",
+      "label": "Angeordnete Eingabe im Verwaltungsgerichtsverfahren",
+      "stage": "administrativeCourt",
+      "days": null,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeCourt",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentDayCountSubmissionOrder",
+          "reason": "VPO §§ 5(3), 7(1), 10, 18(2), GOG § 44"
+        },
+        {
+          "key": "orderStatus",
+          "value": "currentOrder",
+          "reason": "Aktueller Tagesfristentenor und Auslöser sind positiv festgestellt."
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "BL-COURT-OBJECTION-5",
+      "canton": "BL",
+      "label": "Qualifizierte Einsprache gegen verfahrensleitende gerichtliche Verfügung",
+      "stage": "administrativeCourt",
+      "days": 5,
+      "minimumDays": 1,
+      "suspension": "none",
+      "opening": "qualifiedLegalOpening",
+      "syntheticFacts": {},
+      "requirements": [
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor kantonalen Stellen. Keine selbständige Freigabe kommunaler Erlasse."
+        },
+        {
+          "key": "applicability",
+          "value": "generalBlConfirmed",
+          "reason": "Allgemeines VwVG-BL-/VPO-Verfahren, keine abweichende Spezialnorm."
+        },
+        {
+          "key": "openingMode",
+          "value": "qualifiedLegalOpening",
+          "reason": "Rechtlich massgebende Eröffnung der aktuellen Entscheidung oder Tagesfrist ist bereits festgestellt. Kein Rückschluss aus späterem Abholdatum."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "Keine ungeklärte abweichende Belehrung, Publikation, Drittkenntnis oder unregelmässige Eröffnung."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeCourt",
+          "reason": "Aktuelles Verfahrensstadium und Instanz."
+        },
+        {
+          "key": "actionQualification",
+          "value": "qualifiedSection7Objection",
+          "reason": "VPO § 7(2)(a–g), Kammer zum Endentscheid zuständig"
+        },
+        {
+          "key": "courtOrderCategory",
+          "oneOf": [
+            "competence",
+            "recusal",
+            "informationOrProductionDuty",
+            "deniedFileAccess",
+            "endangeredEvidenceRefused",
+            "interimMeasuresOrSuspensiveEffect",
+            "deniedLegalAid"
+          ],
+          "reason": "Abschliessende § 7(2)-Liste."
+        },
+        {
+          "key": "chamberDecidesFinal",
+          "value": true,
+          "reason": "Gesetzliche zusätzliche Voraussetzung der Fünftageseinsprache."
+        }
+      ],
+      "calendarBinding": {
+        "type": "fixed",
+        "calendar": "BL",
+        "role": "authoritySeat"
+      },
+      "temporalBindingKey": "BL",
+      "officeClosure": "BL-ANNUAL",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    }
+  ],
+  "cases": [
+    {
+      "id": "K1-BS-R01",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "3.–12. Oktober ergeben zehn volle Tage.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R02",
+      "path": "BS-INTERNAL-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "originalReasonsPeriodFromDecisionOpening",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "3.–31. Oktober ergeben 29 Tage. Tag 30 ist Sonntag, 1. November. Ende am 2. November. Nicht zehn plus dreissig.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R03",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Gerichtliche Anmeldung innert zehn Tagen mit ausdrücklich qualifiziertem BS-Partei- oder Vertretungsanker.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R04",
+      "path": "BS-COURT-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "originalReasonsPeriodFromDecisionOpening",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Gerichtliche Begründung innert 30 Tagen ab derselben Eröffnung, nicht ab Anmeldung.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R05",
+      "path": "BS-ADMIN-ORDERED",
+      "trigger": "2026-12-23",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "note": "Heiligabend ist kein allgemeiner BS-RLG-Feiertag.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R06",
+      "path": "BS-ADMIN-ORDERED",
+      "trigger": "2026-12-23",
+      "days": 2,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "note": "Tag 2 ist Weihnachten, 25. Dezember. Es folgen Samstag und Sonntag. Ende am Montag, 28. Dezember. Kein Weihnachtsstillstand.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R07",
+      "path": "BS-INTERNAL-ORDERED",
+      "trigger": "2026-12-30",
+      "days": 2,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "31. Dezember ist Tag 1, Neujahr Tag 2. Es folgt das Wochenende vom 2./3. Januar. Ende am 4. Januar.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R08",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2026-12-15",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "note": "16.–25. Dezember ergeben zehn Tage. Weihnachten und das Wochenende verschieben das Ende auf den 28. Dezember. Keine Gerichtsferien.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R09",
+      "path": "BS-COURT-ORDERED",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "note": "11.–30. Juli ergeben zwanzig Kalendertage. Keine VwVG-Sommerpause wegen VRPG § 21 Abs. 2.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R10",
+      "path": "BS-COURT-JOINDER-10",
+      "trigger": "2027-05-07",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "applicantAppealAgainstJoinderRefusal",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-18"
+      },
+      "note": "8.–17. Mai ergeben zehn Tage. Tag 10 ist Pfingstmontag. Ende am Dienstag, 18. Mai.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-18"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R11",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2027-03-18",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "note": "Tag 10 ist Ostersonntag, 28. März. Es folgt Ostermontag. Ende am 30. März. Keine Osterpause im Fristinnern.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R12",
+      "path": "BS-ADMIN-ORDERED",
+      "trigger": "2027-05-05",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-07"
+      },
+      "note": "6. Mai ist Auffahrt. Ende am 7. Mai.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-07"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R13",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-11-28",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-08"
+      },
+      "note": "29./30. November ergeben zwei Tage, 1.–8. Dezember weitere acht. 8. Dezember ist in BS kein Feiertag.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-08"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R14",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-11-28",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "TI"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "note": "Gleicher BS-Gerichtsweg mit positiv qualifiziertem TI-Partei- oder Vertretungsanker. 8. Dezember ist Mariä Empfängnis. Ende am 9. Dezember. Keine TI-Verwaltungsfreigabe.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R15",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2026-11-28",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS",
+        "partyCanton": "TI"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-08"
+      },
+      "note": "Intern bleibt der BS-Sitzanker massgebend. Ein TI-Parteiwert ändert ihn nicht. Die StG-Analogie ist kein pauschaler VwVG-Verweis.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-08"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R16",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2026-09-05",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS",
+        "openingProvenance": "lawfulPublicationConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-15"
+      },
+      "note": "Bestätigte rechtmässige Publikation am Samstag, 5. September. Start am 6. September, Tag 10 am 15. September. Eröffnungstag wird nicht mitgezählt.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-15"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R17",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-09-05",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS",
+        "openingProvenance": "lawfulPublicationConfirmed"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-15"
+      },
+      "note": "Auch bei Publikation nach VRPG § 16 Abs. 1 gilt der Folgetag. Der Tag der Bekanntmachung wird nicht wörtlich mitgezählt.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-15"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R18",
+      "path": "BS-ADMIN-ORDERED",
+      "trigger": "2026-08-29",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "note": "Fensterbeginn am Samstag, 29. August. Tag 1 ist Sonntag, 30. August. Ende am Montag, 31. August.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R19",
+      "path": "BS-COURT-ORDERED",
+      "trigger": "2026-11-07",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS",
+        "openingProvenance": "actualSaturdayReceiptLegallyEstablished"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-17"
+      },
+      "note": "Rechtlich bestätigte Samstagseröffnung bleibt am 7. November. Start am 8. November, Tag 10 am 17. November. Kein GE-Montagsautomatismus.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-17"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R20",
+      "path": "BS-INTERNAL-ORDERED",
+      "trigger": "2026-10-20",
+      "days": 15,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS",
+        "orderProvenance": "reasonsExtensionActuallyGrantedWithFresh15DayTerms"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-04"
+      },
+      "note": "Nur aktuell gewährte 15 Tage ab Mitteilung am 20. Oktober. Elf verbleibende Oktobertage plus vier Novembertage. Nicht zur ursprünglichen Dreissigtagesfrist addieren.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R21",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-11-28",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "unknown",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Ein blosser BS-Wert ohne bestätigten Partei- oder Vertretungsanker genügt nicht.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-COURT-ANCHOR"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R22",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-11-28",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "authoritySeatOnly",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Der Gerichtsstand allein beantwortet die Anknüpfung nach VwVG Art. 20 Abs. 3 nicht.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-COURT-ANCHOR"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R23",
+      "path": "BS-INTERNAL-REASONS-30",
+      "trigger": "2026-10-12",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "reasonsFromRegistrationDate",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "30 Tage ab Anmeldung statt Originaleröffnung wären fachlich falsch.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-SAME-TRIGGER"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R24",
+      "path": "BS-INTERNAL-ORDERED",
+      "trigger": "2026-10-20",
+      "days": 15,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "extensionRequestedOnly",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Fristerstreckung wurde nur beantragt, nicht gewährt.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-EXTENSION"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R25",
+      "path": "BS-COURT-REASONS-30",
+      "trigger": "2026-10-20",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "reasonsFromTransferNotice",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Die Überweisung ist kein automatisch neuer Dreissigtage-Auslöser.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-SAME-TRIGGER"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R26",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "ATSGSpecialProcedure",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Keine ausserbernische Sozialfreigabe und kein VRPG-Ersatz für ATSG.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-SPECIAL"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R27",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "physicalReceiptUnqualified",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Physischer Empfang kann hinter einer früheren Fiktion oder Vertreterzustellung liegen.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-OPENING"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R28",
+      "path": "BS-INTERNAL-REGISTER-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "defectiveRemedyInstruction",
+        "stage": "internalAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Fehlerhafte Belehrung wird nicht mit freien Dauerwerten geheilt.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-NOTICE"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R29",
+      "path": "BS-COURT-JOINDER-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "otherJudicialProceduralOrder",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "VRPG § 23 Abs. 1 ist keine allgemeine Rechtsmittelfrist für alle verfahrensleitenden Anordnungen.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-SPECIAL"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R30",
+      "path": "BS-ADMIN-ORDERED",
+      "trigger": "2027-12-30",
+      "days": 2,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Empfang im Fenster genügt nicht, wenn die Berechnung ins Jahr 2028 reicht.",
+      "analystExpected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "All counted and shifted days must remain at or before 31.12.2027."
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R31",
+      "path": "BS-ADMIN-ORDERED",
+      "trigger": "2026-08-28",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "initialAdministration",
+        "actionQualification": "validCurrentDayCountOrder",
+        "authorityCanton": "BS"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Keine rückwirkende Freigabe allein wegen Nähe zum Fensterbeginn.",
+      "analystExpected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "Qualified opening is earlier than 29.08.2026."
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R32",
+      "path": "BS-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "fixedEndDateOnly",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Ein fixes Enddatum bietet keinen Mehrwert als eigener Rechenweg.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BS-B-UNITS"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BS-R33",
+      "path": "BS-COURT-REGISTER-10",
+      "trigger": "2026-12-26",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBsConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "stage": "courtAppeal",
+        "actionQualification": "admissibleOrdinaryRegistration",
+        "legalAnchorQualification": "establishedPartyOrRepresentative",
+        "legalAnchorCanton": "BS"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-05"
+      },
+      "note": "27.–31. Dezember ergeben fünf Tage, 1.–5. Januar weitere fünf. Neujahr im Inneren zählt. Kein Jahresendstillstand. VwVG-Fassungswechsel ändert Art. 20 nicht.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-05"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bs.json"
+    },
+    {
+      "id": "K1-BL-R01",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2026-09-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-14"
+      },
+      "note": "Tag10Samstag12.,VerschiebungMontag14.September.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-14"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R02",
+      "path": "BL-COURT-APPEAL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "admissibleGeneralCourtAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "3.–12.OktoberzehnTage,keinStillstand.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R03",
+      "path": "BL-COURT-OBJECTION-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "qualifiedSection7Objection",
+        "courtOrderCategory": "deniedFileAccess",
+        "chamberDecidesFinal": true
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      },
+      "note": "3.–7.OktoberfünfTage,qualifizierteAkteneinsichtsverweigerung.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R04",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2026-09-02",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-22"
+      },
+      "note": "3.–22.SeptemberzwanzigTage.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-22"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R05",
+      "path": "BL-ADMIN-REASONS-GRANTED",
+      "trigger": "2026-11-30",
+      "days": 30,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "currentGrantedReasonsDayCountOrder",
+        "orderStatus": "grantedReasonsOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Tag30am30.Dezember,gebundeneSchliessung30./31.,NeujahrundWochenendeführen4.Januar.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R06",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2026-12-14",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Tag10am24.Dezember,beideHalbtagezusammenganzgeschlossen,fortgesetzteEndverschiebung.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R07",
+      "path": "BL-COURT-OBJECTION-5",
+      "trigger": "2026-12-20",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "qualifiedSection7Objection",
+        "courtOrderCategory": "deniedFileAccess",
+        "chamberDecidesFinal": true
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Tag5Weihnachten,auchgerichtlicheFristnutztGOG-Verwaltungsbüroskriterium.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R08",
+      "path": "BL-COURT-APPEAL-10",
+      "trigger": "2026-12-20",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "admissibleGeneralCourtAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Tag10am30.Dezembergeschlossen.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R09",
+      "path": "BL-COURT-ORDERED",
+      "trigger": "2026-12-24",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "25.DezemberTag1,3.JanuarTag10amSonntag,keineWinterpause.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R10",
+      "path": "BL-ADMIN-APPEAL-ORDERED",
+      "trigger": "2026-12-01",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-11"
+      },
+      "note": "2.–11.DezemberzehnTage.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-11"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R11",
+      "path": "BL-COURT-APPEAL-10",
+      "trigger": "2027-03-15",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "admissibleGeneralCourtAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "note": "Tag10Gründonnerstag25.Märzgeschlossen,dannKarfreitagWochenendeOstermontag.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R12",
+      "path": "BL-COURT-APPEAL-10",
+      "trigger": "2027-03-20",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "admissibleGeneralCourtAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "note": "21.–30.MärzzehnTage,ganzeOsterzeitinnenzählt.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R13",
+      "path": "BL-COURT-OBJECTION-5",
+      "trigger": "2027-05-01",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "qualifiedSection7Objection",
+        "courtOrderCategory": "deniedFileAccess",
+        "chamberDecidesFinal": true
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-10"
+      },
+      "note": "Tag5Auffahrt6.Mai,7.MaiBüroschluss,dannWochenende.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-10"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R14",
+      "path": "BL-COURT-REASONS-SET",
+      "trigger": "2027-05-06",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "currentSetReasonsDayCountOrder",
+        "orderStatus": "setReasonsOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-10"
+      },
+      "note": "Tag1am7.MaiistvollerBüroschluss.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-10"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R15",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2027-01-30",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "note": "Tag10am9.Februar.MitoptionalemSchluss10.Februar,ohne9.Februar.",
+      "analystExpected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R16",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2027-02-01",
+      "days": 8,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "note": "Endtag9.FebruaristnurbeiResultatrelevanzzuqualifizieren.",
+      "analystExpected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R17",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2027-02-01",
+      "days": 8,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "noOptionalFullClosure",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-09"
+      },
+      "note": "Forschungsgegenprobe:rechtlichbestätigtkeinzusätzlicherganzerSchliesstag.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-09"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R18",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2027-02-01",
+      "days": 8,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "confirmedFullClosure",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-10"
+      },
+      "note": "Forschungsgegenprobe:rechtlichbestätigteganzeSchliessung9.Februar.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-10"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R19",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2027-02-02",
+      "days": 6,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-08"
+      },
+      "note": "Tag6am8.Februar,vordemunsicherenTag,keineSperre.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-08"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R20",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2027-01-31",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-10"
+      },
+      "note": "9.Februarliegtinnen,beideRechnungenidentisch,keineSperre.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-10"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R21",
+      "path": "BL-COURT-ORDERED",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "note": "11.–30.JulizwanzigTage,keineSommerpause.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R22",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2026-08-29",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "note": "Tag1Sonntag30.August,EndeMontag31.August.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R23",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "physicalPickupWithUnresolvedFiction",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "BlossesAbholdatum/ungeklärteFiktionliefertkeinequalifizierteEröffnung.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-OPENING"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R24",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "atsgSpecialProcedure",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "ATSGSpezialverfahrennichtalsallgemeineBL-Verwaltungsbeschwerde.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-SPECIAL"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R25",
+      "path": "BL-ADMIN-REASONS-GRANTED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "currentGrantedReasonsDayCountOrder",
+        "orderStatus": "requestPending"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "BlossesBegründungsgesuchlöstkeinegewährteNachfrist.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-ORDER"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R26",
+      "path": "BL-COURT-REASONS-SET",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "currentSetReasonsDayCountOrder",
+        "orderStatus": "notSet"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "OhneaktuellegerichtlicheAnordnungkeinautomatischerzweiterZehntageslauf.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-ORDER"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R27",
+      "path": "BL-COURT-OBJECTION-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "qualifiedSection7Objection",
+        "courtOrderCategory": "ordinaryScheduling",
+        "chamberDecidesFinal": true
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "NichtjedeverfahrensleitendeVerfügungistfünftägiganfechtbar.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-OBJECTION"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R28",
+      "path": "BL-COURT-OBJECTION-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "qualifiedSection7Objection",
+        "courtOrderCategory": "deniedFileAccess",
+        "chamberDecidesFinal": false
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "KammermusszumEndentscheidzuständigsein.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-OBJECTION"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R29",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "unknownThirdPartyKnowledge",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "UnbekannterDrittermitKenntnisundSechsmonatsgrenzeistseparaterTrigger.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-OPENING"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R30",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2027-12-20",
+      "days": 4,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Tag4am24.Dezembergeschlossen,Endverschiebungwürde2028benötigen.",
+      "analystExpected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "BL-B-WINDOW"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R31",
+      "path": "BL-COURT-APPEAL-10",
+      "trigger": "2027-12-31",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "admissibleGeneralCourtAppeal"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "SchonZähltag1ausserhalbdesFensters.",
+      "analystExpected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "BL-B-WINDOW"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R32",
+      "path": "BL-ADMIN-ORDERED",
+      "trigger": "2026-08-28",
+      "days": 1,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "initialAdministration",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "currentOrder"
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "EröffnungliegtvordemfreizugebendenFenster.",
+      "analystExpected": {
+        "outcome": "researchWindowBoundary",
+        "reason": "BL-B-WINDOW"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R33",
+      "path": "BL-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 12,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeCourt",
+        "actionQualification": "currentDayCountSubmissionOrder",
+        "orderStatus": "fixedCalendarDateOnly"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "note": "Fixtermin14.Oktoberwirdnichtin12Tagerückgerechnet.",
+      "analystExpected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "BL-B-ORDER"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    },
+    {
+      "id": "K1-BL-R34",
+      "path": "BL-ADMIN-APPEAL-10",
+      "trigger": "2027-08-01",
+      "days": 10,
+      "facts": {
+        "authorityScope": "cantonal",
+        "applicability": "generalBlConfirmed",
+        "openingMode": "qualifiedLegalOpening",
+        "noticeStatus": "regularNoDeviation",
+        "regionalOfficeMode": "unknown",
+        "stage": "administrativeAppeal",
+        "actionQualification": "admissibleAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-11"
+      },
+      "note": "RechtlichbestätigteEröffnungamFeiertagwirdnichtvorneverschoben.",
+      "analystExpected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-11"
+      },
+      "provenance": "canton-analyst-static-reference",
+      "analystSource": "docs/fachrecht/ap23k1/befund-bl.json"
+    }
+  ],
+  "calendarBaselines": [
+    {
+      "calendar": "BS",
+      "path": "data/candidates/2026-10-27-ap23j3/calendars/ap22-bs-39a64bdfc0fe.json",
+      "sha256": "e9b79ecc23284487d5d3bcc1bfbaf1eb0919db6af17b2b814d675bbd0ac29e05"
+    },
+    {
+      "calendar": "BL",
+      "path": "data/candidates/2026-10-27-ap23j3/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "sha256": "b4c0f095b4b3863fcbebb505094df4ad037bbc13f9978aec0ec6bb10056e9e0a"
+    },
+    {
+      "calendar": "TI",
+      "path": "data/candidates/2026-10-27-ap23j3/calendars/ap22-ti-944ed0286e9a.json",
+      "sha256": "fbad9d860f4d2d799a1a18c935304d4cffc1bfb30d21da440f7175d7f3b45021"
+    }
+  ],
+  "calendarProbes": [
+    {
+      "calendar": "BS",
+      "date": "2026-12-08",
+      "isHoliday": false
+    },
+    {
+      "calendar": "TI",
+      "date": "2026-12-08",
+      "isHoliday": true
+    },
+    {
+      "calendar": "BS",
+      "date": "2026-12-24",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BL",
+      "date": "2026-12-24",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BL",
+      "date": "2027-03-25",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BL",
+      "date": "2027-05-07",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BL",
+      "date": "2027-02-09",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BS",
+      "date": "2027-01-02",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BL",
+      "date": "2027-01-02",
+      "isHoliday": false
+    },
+    {
+      "calendar": "TI",
+      "date": "2027-03-26",
+      "isHoliday": false
+    },
+    {
+      "calendar": "BS",
+      "date": "2027-03-26",
+      "isHoliday": true
+    }
+  ],
+  "interpretationLimit": "The static source expectations are preserved independently. Arithmetic agreement is not legal acceptance. Native BS/TI anchor probes do not promise exhaustive national anchor coverage."
+}

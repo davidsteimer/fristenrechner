@@ -1,0 +1,19 @@
+{
+  "workPackage": "AP23I3",
+  "kind": "closedGeneratedSchemaCopySupplement",
+  "originalGuard": {
+    "path": "outputs/ap23i3-2026-10-22/protected-inputs.json",
+    "sha256": "372502e34101a319f172de9042baa4a98e0ed7a9298a47d8f98443a80f2a55bd"
+  },
+  "reason": "The regular local SPFx schema sync needs exactly five new copies of the already commissioned native format-13/catalog-6 contracts. The original guard is never refreshed.",
+  "technicalScopeConfirmedByRoot": true,
+  "newOperatingAuthority": false,
+  "existingSchemaChangesAllowed": false,
+  "copies": [
+    {"path": "spfx/src/core/schemas/administrative-procedure-catalog-v6.schema.json", "source": "schemas/administrative-procedure-catalog-v6.schema.json"},
+    {"path": "spfx/src/core/schemas/release-manifest-v13.schema.json", "source": "schemas/release-manifest-v13.schema.json"},
+    {"path": "spfx/src/schemas/administrative-procedure-catalog-v6.schema.json", "source": "schemas/administrative-procedure-catalog-v6.schema.json"},
+    {"path": "spfx/src/schemas/release-manifest-v13.schema.json", "source": "schemas/release-manifest-v13.schema.json"},
+    {"path": "spfx/src/schemas/implementation/ap23i3/local-reference-manifest-v13.schema.json", "source": "schemas/implementation/ap23i3/local-reference-manifest-v13.schema.json"}
+  ]
+}

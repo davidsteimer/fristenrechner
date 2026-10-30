@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "asOf": "2026-10-22",
+  "method": "CUA interactions, accessibility observations, read-only rendered DOM and visual screenshot inspection",
+  "actualLocalBuild": true,
+  "url": "http://127.0.0.1:8806/fristenrechner/",
+  "languages": [
+    "de",
+    "fr"
+  ],
+  "realDeviceTest": false,
+  "realM365HostTest": false,
+  "viewport": {
+    "height": 1073,
+    "width": 1255
+  },
+  "horizontalOverflow": false,
+  "twoColumnLayout": true,
+  "earlyDateEntryVerified": true,
+  "staticAuthorityLabel": true,
+  "noAdditionalDocumentOrHolidayDropdown": true,
+  "actualExportEnabled": false,
+  "cases": [
+    {
+      "id": "GL-30-DE",
+      "receipt": "2026-10-02",
+      "days": 30,
+      "result": "2026-11-02"
+    },
+    {
+      "id": "GL-SHORT-DE",
+      "receipt": "2026-10-02",
+      "durationInitiallyBlank": true,
+      "days": 7,
+      "result": "2026-10-09"
+    },
+    {
+      "id": "TG-86-GIVEN-DE",
+      "receipt": "2026-12-14",
+      "days": 5,
+      "result": "2026-12-21",
+      "suspendedDays": 0
+    },
+    {
+      "id": "TG-86-ABSENT-DE",
+      "receipt": "2026-12-14",
+      "days": 5,
+      "result": "2027-01-04",
+      "suspendedDays": 16
+    },
+    {
+      "id": "TG-86-UNCLEAR-DE",
+      "definitiveResult": false,
+      "automaticSuspension": "unresolved"
+    },
+    {
+      "id": "TG-86-ABSENT-FR",
+      "receipt": "2026-12-14",
+      "days": 5,
+      "result": "2027-01-04",
+      "suspendedDays": 16
+    }
+  ],
+  "asset": {
+    "path": ".work/public-ap23i3/assets/app-ZPFH7HWO.js",
+    "byteLength": 4588006,
+    "sha256": "0834e98ddbb21e3dbb0bd20a798989b2e231567e87bac6bb45b1501993a77600"
+  },
+  "domObservation": {
+    "path": "outputs/ap23i3-2026-10-22/browser-dom-observation.json",
+    "byteLength": 2188,
+    "sha256": "a072c64eeb3cee2cc8b4490a83ae0b37c0cfca61330fcf7e3e4eb5bca890d661"
+  },
+  "accessibility": [
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-de-ax.txt",
+      "byteLength": 7146,
+      "sha256": "eff7da4bfc50575a66c83d8c81a9c200fcc0dd4009508a3122d6da82977f87bf"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-fr-ax.txt",
+      "byteLength": 7492,
+      "sha256": "24deaaeca94b55f13b4b07301dcec1621b9ee00771acc6f6c89d3be758b60c77"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-trace-de-ax.txt",
+      "byteLength": 10704,
+      "sha256": "e2f2f2f0e2afb97ebbdd8fe5d0ca33d3e1de25c7002079b672cfddb9a8824d6b"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-gl-de.jpg",
+      "byteLength": 96856,
+      "sha256": "38c080bd7a803703da77c30d165a5d67bea0bca7b329cb8f53aea9edf7483fc0"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-de.jpg",
+      "byteLength": 100937,
+      "sha256": "e292bb01ff23cad4da9bcba11e953e3b0d87d6e46d019f3b97cca174cdac6ed0"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-fr.jpg",
+      "byteLength": 108996,
+      "sha256": "6ab1b577a0ffefab154c3c3d204c222288e17134df7a56fedf85eae7b00ad646"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-fr-full.jpg",
+      "byteLength": 195979,
+      "sha256": "3378fd00042bb236146117ecb19f362ef9607c144048f2bb32ad71884de48d30"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-de-final.jpg",
+      "byteLength": 98544,
+      "sha256": "83b50845cce330e218e7eca062162cbc4a243e3330f9015edd3160b3653bf1a6"
+    },
+    {
+      "path": "outputs/ap23i3-2026-10-22/browser-tg-de-full.jpg",
+      "byteLength": 185852,
+      "sha256": "9cca05480975d72c5d8d7a8918c3d36f6eca644351cfdd074c7e841d4f0c9ba0"
+    }
+  ],
+  "limitations": "Desktop in-app browser only. No real iOS, M365, guest, download or Outlook test. Defaults and all-path coverage are separately tested against the actual minified Web bundle."
+}

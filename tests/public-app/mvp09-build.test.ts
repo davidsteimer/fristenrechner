@@ -9,13 +9,14 @@ import { before, test } from 'node:test';
 import { promisify } from 'node:util';
 const require = createRequire(import.meta.url);
 const { JSDOM } = require('jsdom');
-const output = resolve('.work/public-app');
+let output: string;
 const exportDirectory = resolve('.work/mvp09-web-exports');
 const releaseId = '2026-10-18-mvp-09-approved.1';
 let manifest: any, javascript: string;
 before(async () => {
-  await promisify(execFile)(process.execPath, ['scripts/build-public-app.mjs'], {
+  const historical = await promisify(execFile)(process.execPath, ['scripts/check-mvp10-historical-source-tests.mjs', '--mvp09-web'], {
     cwd: process.cwd(), env: { ...process.env, FRISTENRECHNER_DATA_CANDIDATE: '' }, maxBuffer: 8 * 1024 * 1024 });
+  output = JSON.parse(historical.stdout.trim().split('\n').at(-1)!).output;
   manifest = JSON.parse(await readFile(resolve(output, 'build-manifest.json'), 'utf8'));
   javascript = await readFile(resolve(output, manifest.assets.javascript), 'utf8');
   await mkdir(exportDirectory, { recursive: true });

@@ -1,0 +1,3043 @@
+{
+  "formatVersion": "ap23h1-research-references-1",
+  "asOf": "2026-10-22",
+  "runtimeActive": false,
+  "productTest": false,
+  "legalApproval": false,
+  "expectedPathCount": 21,
+  "referenceWindow": {
+    "from": "2026-08-29",
+    "to": "2027-12-31"
+  },
+  "easter": {
+    "2024": "2024-03-31",
+    "2026": "2026-04-05",
+    "2027": "2027-03-28"
+  },
+  "sharedSyntheticFacts": {
+    "authorityLevel": "cantonal",
+    "specialLaw": "excluded",
+    "materialPerformance": false,
+    "fixedEndDate": false,
+    "deviatingStart": false,
+    "termChange": "none",
+    "unit": "day",
+    "direction": "forward",
+    "notice": "uncontested",
+    "serviceContext": "effectiveLegalTriggerKnown",
+    "localHolidayEffect": "noAdditionalRelevantLocalHoliday",
+    "openingOrigin": "notApplicable",
+    "priorReasonsRequest": "notApplicable"
+  },
+  "sharedRequirements": [
+    {
+      "key": "authorityLevel",
+      "value": "cantonal",
+      "reason": "targetOutsideScope"
+    },
+    {
+      "key": "specialLaw",
+      "value": "excluded",
+      "reason": "specialLawNotExcluded"
+    },
+    {
+      "key": "materialPerformance",
+      "value": false,
+      "reason": "materialPerformanceOutsideScope"
+    },
+    {
+      "key": "fixedEndDate",
+      "value": false,
+      "reason": "fixedDateOrDeviatingStart"
+    },
+    {
+      "key": "deviatingStart",
+      "value": false,
+      "reason": "fixedDateOrDeviatingStart"
+    },
+    {
+      "key": "termChange",
+      "value": "none",
+      "reason": "termChangeNeedsIndividualReview"
+    },
+    {
+      "key": "unit",
+      "value": "day",
+      "reason": "unsupportedUnitOrDirection"
+    },
+    {
+      "key": "direction",
+      "value": "forward",
+      "reason": "unsupportedUnitOrDirection"
+    },
+    {
+      "key": "notice",
+      "value": "uncontested",
+      "reason": "noticeNeedsIndividualReview"
+    },
+    {
+      "key": "serviceContext",
+      "value": "effectiveLegalTriggerKnown",
+      "reason": "serviceFictionNotCalculated"
+    },
+    {
+      "key": "localHolidayEffect",
+      "value": "noAdditionalRelevantLocalHoliday",
+      "reason": "localHolidayEffectUnresolved"
+    }
+  ],
+  "temporalBindings": {
+    "OW": [
+      {
+        "id": "OW-STVG-1917",
+        "from": "2026-08-29",
+        "to": "2026-12-31",
+        "basis": "StVG1917 + VGV1659 + VwVV1658 + GOG1792 + RTG103 + ZPO20260701/BGG20260401 scoped chain"
+      },
+      {
+        "id": "OW-STVG-2031",
+        "from": "2027-01-01",
+        "to": "2027-12-31",
+        "basis": "StVG2031 unchanged64/67 + unchanged auxiliary sources"
+      }
+    ],
+    "NW": [
+      {
+        "id": "NW-VRG-1519",
+        "from": "2026-08-29",
+        "to": "2027-12-31",
+        "basis": "VRG1519 since20260801 + RTG668 + Bundesfeiertag"
+      }
+    ]
+  },
+  "calendarDefinitions": {
+    "OW-PROCESS": {
+      "fixed": [
+        "01-01",
+        "01-02",
+        "08-01",
+        "08-15",
+        "09-25",
+        "11-01",
+        "12-08",
+        "12-25",
+        "12-26"
+      ],
+      "easterOffsets": [
+        -2,
+        1,
+        39,
+        50,
+        60
+      ],
+      "expectedAnnualRuleCount": 14
+    },
+    "NW-PROCESS": {
+      "fixed": [
+        "01-01",
+        "01-02",
+        "03-19",
+        "08-01",
+        "08-15",
+        "11-01",
+        "12-08",
+        "12-25",
+        "12-26"
+      ],
+      "easterOffsets": [
+        -2,
+        1,
+        39,
+        50,
+        60
+      ],
+      "expectedAnnualRuleCount": 14
+    }
+  },
+  "calendarBaselines": [
+    {
+      "path": "data/candidates/2026-10-22-ap23g3/calendars/ap22-ow-76c151dccf1f.json",
+      "sha256": "0a7f5740b79d30331ebdb58b6a54da76aeba1ab0048298d26be0ae3ca7348807",
+      "researchCalendar": "OW-PROCESS",
+      "additionalFixed": [
+        "01-02",
+        "12-26"
+      ],
+      "additionalEasterOffsets": [
+        1,
+        50
+      ]
+    },
+    {
+      "path": "data/candidates/2026-10-22-ap23g3/calendars/ap22-nw-5dfca484e4af.json",
+      "sha256": "263e37a8c6409c41bc03f9ea7af6a74d24d3b5c4e7c13f58380641847d95cae0",
+      "researchCalendar": "NW-PROCESS",
+      "additionalFixed": [
+        "01-02",
+        "12-26"
+      ],
+      "additionalEasterOffsets": [
+        1,
+        50
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "id": "OW-ADMIN-20",
+      "canton": "OW",
+      "stage": "administration",
+      "action": "ordinaryAdministrativeAppeal",
+      "days": 20,
+      "calendar": "OW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": true,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "ordinaryAdministrativeAppeal",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "completeReasonedAdministrativeDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "openingOrigin": "originalReasoned"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "ordinaryAdministrativeAppeal",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "completeReasonedAdministrativeDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "OW-COURT-30",
+      "canton": "OW",
+      "stage": "court",
+      "action": "ordinaryAdministrativeCourtAppeal",
+      "days": 30,
+      "calendar": "OW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": true,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "ordinaryAdministrativeCourtAppeal",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "completeReasonedAdministrativeDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "targetCourt": "OW-Verwaltungsgericht",
+        "openingOrigin": "originalReasoned"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "ordinaryAdministrativeCourtAppeal",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "completeReasonedAdministrativeDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "targetCourt",
+          "value": "OW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "OW-ADMIN-ORDERED",
+      "canton": "OW",
+      "stage": "administration",
+      "action": "orderedProceduralSubmission",
+      "days": null,
+      "calendar": "OW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "orderedProceduralSubmission",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "orderedForwardDayPeriod",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedProceduralSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "orderedForwardDayPeriod",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "OW-COURT-ORDERED",
+      "canton": "OW",
+      "stage": "court",
+      "action": "orderedProceduralSubmission",
+      "days": null,
+      "calendar": "OW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "orderedProceduralSubmission",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "orderedForwardDayPeriod",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException",
+        "targetCourt": "OW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedProceduralSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "orderedForwardDayPeriod",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "targetCourt",
+          "value": "OW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "OW-ADMIN-REASONS-30",
+      "canton": "OW",
+      "stage": "administration",
+      "action": "requestAdministrativeReasons",
+      "days": 30,
+      "calendar": "OW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "requestAdministrativeReasons",
+        "holidayAnchor": "issuingAuthoritySeat",
+        "opening": "lawfullyUnreasonedAdministrativeDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "sameIssuingAuthority": true,
+        "reasonsContext": "qualifiedRequestUnderBGG112"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "requestAdministrativeReasons",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "issuingAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "lawfullyUnreasonedAdministrativeDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "sameIssuingAuthority",
+          "value": true,
+          "reason": "reasonsWrongRecipient"
+        },
+        {
+          "key": "reasonsContext",
+          "value": "qualifiedRequestUnderBGG112",
+          "reason": "reasonsContextNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "OW-COURT-REASONS-30",
+      "canton": "OW",
+      "stage": "court",
+      "action": "requestCourtReasons",
+      "days": 30,
+      "calendar": "OW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "requestCourtReasons",
+        "holidayAnchor": "issuingCourtSeat",
+        "opening": "lawfullyUnreasonedCourtDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "sameIssuingCourt": true,
+        "reasonsContext": "qualifiedRequestUnderBGG112",
+        "targetCourt": "OW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "requestCourtReasons",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "issuingCourtSeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "lawfullyUnreasonedCourtDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "sameIssuingCourt",
+          "value": true,
+          "reason": "reasonsWrongRecipient"
+        },
+        {
+          "key": "reasonsContext",
+          "value": "qualifiedRequestUnderBGG112",
+          "reason": "reasonsContextNotQualified"
+        },
+        {
+          "key": "targetCourt",
+          "value": "OW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "OW-COURT-SUSPENSIVE-5",
+      "canton": "OW",
+      "stage": "court",
+      "action": "reviewPresidentialSuspensiveEffectDecision",
+      "days": 5,
+      "calendar": "OW-PROCESS",
+      "suspension": "none",
+      "endShiftCollision": "notApplicable",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "reviewPresidentialSuspensiveEffectDecision",
+        "holidayAnchor": "sameCourtSeat",
+        "opening": "presidentialSuspensiveEffectDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "provisionalMeasureAnalogy",
+        "suspensiveReviewContext": "sameOverallCourt",
+        "targetCourt": "OW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "reviewPresidentialSuspensiveEffectDecision",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "sameCourtSeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "presidentialSuspensiveEffectDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "provisionalMeasureAnalogy",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "suspensiveReviewContext",
+          "value": "sameOverallCourt",
+          "reason": "suspensiveReviewNotQualified"
+        },
+        {
+          "key": "targetCourt",
+          "value": "OW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "NW-ADMIN-20",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "ordinaryAdministrativeAppeal",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "ordinaryAdministrativeAppeal",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "completeReasonedAdministrativeDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "ordinaryAdministrativeAppeal",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "completeReasonedAdministrativeDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-COURT-20",
+      "canton": "NW",
+      "stage": "court",
+      "action": "ordinaryAdministrativeCourtAppeal",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "ordinaryAdministrativeCourtAppeal",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "completeReasonedAdministrativeDecision",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement",
+        "targetCourt": "NW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "ordinaryAdministrativeCourtAppeal",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "completeReasonedAdministrativeDecision",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        },
+        {
+          "key": "targetCourt",
+          "value": "NW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "NW-EINSPRACHE-20",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "qualifiedEinsprache",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "qualifiedEinsprache",
+        "holidayAnchor": "issuingAuthoritySeat",
+        "opening": "decisionSubjectToStatutorilyAdmissibleEinsprache",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "qualifiedEinsprache",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "issuingAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "decisionSubjectToStatutorilyAdmissibleEinsprache",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "einspracheAdmissibility",
+          "value": "establishedNoDeviatingSpecialRule",
+          "reason": "einspracheAdmissibilityNotEstablished"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-ADMIN-ORDERED",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "orderedInitialAdministrativeSubmission",
+      "days": null,
+      "calendar": "NW-PROCESS",
+      "suspension": "none",
+      "endShiftCollision": "notApplicable",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "orderedInitialAdministrativeSubmission",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "orderedForwardDayPeriod",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedInitialAdministrativeSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "orderedForwardDayPeriod",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-EINWENDUNG-ORDERED",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "orderedEinwendungSubmission",
+      "days": null,
+      "calendar": "NW-PROCESS",
+      "suspension": "winter",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "orderedEinwendungSubmission",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "qualifiedDayOrderInEinwendungsverfahren",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedEinwendungSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "qualifiedDayOrderInEinwendungsverfahren",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-EINSPRACHE-ORDERED",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "orderedEinspracheSubmission",
+      "days": null,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "orderedEinspracheSubmission",
+        "holidayAnchor": "issuingAuthoritySeat",
+        "opening": "qualifiedDayOrderInEinsprache",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException",
+        "einspracheAdmissibility": "establishedNoDeviatingSpecialRule",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedEinspracheSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "issuingAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "qualifiedDayOrderInEinsprache",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "einspracheAdmissibility",
+          "value": "establishedNoDeviatingSpecialRule",
+          "reason": "einspracheAdmissibilityNotEstablished"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-APPEAL-ORDERED",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "orderedAdministrativeAppealSubmission",
+      "days": null,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "orderedAdministrativeAppealSubmission",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "orderedForwardDayPeriodInAppeal",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedAdministrativeAppealSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "orderedForwardDayPeriodInAppeal",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-COURT-ORDERED",
+      "canton": "NW",
+      "stage": "court",
+      "action": "orderedProceduralSubmission",
+      "days": null,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "orderedProceduralSubmission",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "orderedForwardDayPeriod",
+        "durationBasis": "concreteDayOrder",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement",
+        "targetCourt": "NW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "orderedProceduralSubmission",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "orderedForwardDayPeriod",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "concreteDayOrder",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        },
+        {
+          "key": "targetCourt",
+          "value": "NW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "statutoryVERNEHMLASSUNG",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "statutoryVERNEHMLASSUNG",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "appealServedForComments",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "statutoryVERNEHMLASSUNG",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "appealServedForComments",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-COURT-VERNEHMLASSUNG-20",
+      "canton": "NW",
+      "stage": "court",
+      "action": "statutoryVERNEHMLASSUNG",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "statutoryVERNEHMLASSUNG",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "appealServedForComments",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement",
+        "targetCourt": "NW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "statutoryVERNEHMLASSUNG",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "appealServedForComments",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        },
+        {
+          "key": "targetCourt",
+          "value": "NW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "NW-ADMIN-REPLIK-20",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "statutoryREPLIK",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "statutoryREPLIK",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "vernehmlassungServedForReply",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "statutoryREPLIK",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "vernehmlassungServedForReply",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-COURT-REPLIK-20",
+      "canton": "NW",
+      "stage": "court",
+      "action": "statutoryREPLIK",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "statutoryREPLIK",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "vernehmlassungServedForReply",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement",
+        "targetCourt": "NW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "statutoryREPLIK",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "vernehmlassungServedForReply",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        },
+        {
+          "key": "targetCourt",
+          "value": "NW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    },
+    {
+      "id": "NW-ADMIN-DUPLIK-20",
+      "canton": "NW",
+      "stage": "administration",
+      "action": "statutoryDUPLIK",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "administration",
+        "action": "statutoryDUPLIK",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "replikServedForDuplik",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "administration",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "statutoryDUPLIK",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "replikServedForDuplik",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        }
+      ]
+    },
+    {
+      "id": "NW-COURT-DUPLIK-20",
+      "canton": "NW",
+      "stage": "court",
+      "action": "statutoryDUPLIK",
+      "days": 20,
+      "calendar": "NW-PROCESS",
+      "suspension": "three",
+      "endShiftCollision": "proposedBoundary",
+      "openingChain": false,
+      "syntheticFacts": {
+        "stage": "court",
+        "action": "statutoryDUPLIK",
+        "holidayAnchor": "targetAuthoritySeat",
+        "opening": "replikServedForDuplik",
+        "durationBasis": "specifiedStatutoryRule",
+        "suspensionException": "ordinaryNoException",
+        "deadlineAgreement": "notByAgreement",
+        "targetCourt": "NW-Verwaltungsgericht"
+      },
+      "requirements": [
+        {
+          "key": "stage",
+          "value": "court",
+          "reason": "stageDoesNotMatchPath"
+        },
+        {
+          "key": "action",
+          "value": "statutoryDUPLIK",
+          "reason": "actionNotQualified"
+        },
+        {
+          "key": "holidayAnchor",
+          "value": "targetAuthoritySeat",
+          "reason": "holidayAnchorNotQualified"
+        },
+        {
+          "key": "opening",
+          "value": "replikServedForDuplik",
+          "reason": "openingNotQualified"
+        },
+        {
+          "key": "durationBasis",
+          "value": "specifiedStatutoryRule",
+          "reason": "durationBasisNotQualified"
+        },
+        {
+          "key": "suspensionException",
+          "value": "ordinaryNoException",
+          "reason": "suspensionExceptionNotQualified"
+        },
+        {
+          "key": "deadlineAgreement",
+          "value": "notByAgreement",
+          "reason": "agreedDeadlineOutsidePositiveScope"
+        },
+        {
+          "key": "targetCourt",
+          "value": "NW-Verwaltungsgericht",
+          "reason": "targetCourtNotQualified"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "B01",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B02",
+      "path": "OW-COURT-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B03",
+      "path": "OW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B04",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B05",
+      "path": "OW-ADMIN-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B06",
+      "path": "OW-COURT-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B07",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B08",
+      "path": "NW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B09",
+      "path": "NW-COURT-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B10",
+      "path": "NW-EINSPRACHE-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B11",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B12",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B13",
+      "path": "NW-EINSPRACHE-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B14",
+      "path": "NW-APPEAL-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B15",
+      "path": "NW-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B16",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B17",
+      "path": "NW-COURT-VERNEHMLASSUNG-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B18",
+      "path": "NW-ADMIN-REPLIK-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B19",
+      "path": "NW-COURT-REPLIK-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B20",
+      "path": "NW-ADMIN-DUPLIK-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "B21",
+      "path": "NW-COURT-DUPLIK-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "note": "Positiver Grundfall der eigenständigen Forschungsgruppe"
+    },
+    {
+      "id": "OW01",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-12-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      },
+      "note": "Verwaltung mit Winterstillstand und echter Normfassungsgrenze"
+    },
+    {
+      "id": "OW02",
+      "path": "OW-COURT-30",
+      "trigger": "2026-12-10",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-25"
+      },
+      "note": "Gerichtlicher Dreissigtageweg über Winterstillstand"
+    },
+    {
+      "id": "OW03",
+      "path": "OW-ADMIN-REASONS-30",
+      "trigger": "2026-12-23",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-01"
+      },
+      "note": "Verwaltungsbegründungsverlangen mit vorgeschlagenem kantonalem Stillstand"
+    },
+    {
+      "id": "OW04",
+      "path": "OW-COURT-REASONS-30",
+      "trigger": "2026-12-23",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-01"
+      },
+      "note": "Gerichtsbegründungsverlangen, kein Bundesgerichtsweiterzug"
+    },
+    {
+      "id": "OW05",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2026-12-23",
+      "days": 5,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "note": "Fünftagesweiterzug ohne Ferienpause, Feiertage innerhalb der Zählung zählen"
+    },
+    {
+      "id": "OW06",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2027-07-14",
+      "days": 5,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-19"
+      },
+      "note": "Kein Sommerstillstand im qualifizierten Fünftagespfad"
+    },
+    {
+      "id": "OW07",
+      "path": "OW-ADMIN-20",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31",
+        "skippedDays": 32
+      },
+      "note": "Verwaltung mit Sommerstillstand"
+    },
+    {
+      "id": "OW08",
+      "path": "OW-COURT-30",
+      "trigger": "2027-07-10",
+      "days": 30,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-10"
+      },
+      "note": "30 Tage Gericht, vier Tage vor und 26 nach Sommerstillstand"
+    },
+    {
+      "id": "OW09",
+      "path": "OW-ADMIN-ORDERED",
+      "trigger": "2026-09-24",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-28"
+      },
+      "note": "Bruderklausenfest am Freitag, danach Wochenende"
+    },
+    {
+      "id": "OW10",
+      "path": "OW-ADMIN-ORDERED",
+      "trigger": "2027-05-26",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-28"
+      },
+      "note": "Fronleichnam als Endtag"
+    },
+    {
+      "id": "OW11",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2026-12-07",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "note": "Mariä Empfängnis als Endtag"
+    },
+    {
+      "id": "OW12",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2027-03-20",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "note": "Eröffnung vor Osterstillstand, erster Zähltag nach dessen Ende"
+    },
+    {
+      "id": "OW13",
+      "path": "OW-ADMIN-20",
+      "trigger": "2027-03-01",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "note": "Osterstillstand tritt bei noch laufender Zählung ein"
+    },
+    {
+      "id": "OW14",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2027-03-18",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-19"
+      },
+      "note": "OW hat im benannten Kern keinen Josefstag"
+    },
+    {
+      "id": "OW15",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2026-12-30",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04",
+        "firstCountedDay": "2027-01-03"
+      },
+      "note": "Erster Zähltag ist 03.01.2027 Sonntag, Endverschiebung Montag"
+    },
+    {
+      "id": "OW16",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-16",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-05"
+      },
+      "note": "Spätere begründete Eröffnung nach nachweislich rechtzeitigem Verlangen",
+      "facts": {
+        "openingOrigin": "reasonedFollowingTimelyRequest",
+        "priorReasonsRequest": "timelyEstablished"
+      }
+    },
+    {
+      "id": "NW01",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-12-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-30"
+      },
+      "note": "Allgemeines erstinstanzliches Verfahren ohne Winterstillstand"
+    },
+    {
+      "id": "NW02",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2026-12-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "note": "Einwendung mit Winterstillstand"
+    },
+    {
+      "id": "NW03",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "note": "Einwendung ohne Sommerstillstand"
+    },
+    {
+      "id": "NW04",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2027-03-20",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-22"
+      },
+      "note": "Einwendung ohne Osterstillstand"
+    },
+    {
+      "id": "NW05",
+      "path": "NW-ADMIN-20",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31"
+      },
+      "note": "Ordentliche Verwaltungsbeschwerde mit Sommerstillstand"
+    },
+    {
+      "id": "NW06",
+      "path": "NW-EINSPRACHE-20",
+      "trigger": "2026-12-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "note": "Gesetzlich zulässige Einsprache mit Winterstillstand"
+    },
+    {
+      "id": "NW07",
+      "path": "NW-COURT-20",
+      "trigger": "2027-03-01",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "note": "Gericht mit Osterstillstand bei laufender Zählung"
+    },
+    {
+      "id": "NW08",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2027-03-18",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-22"
+      },
+      "note": "Josefstag und Wochenende, ohne Ferienpause"
+    },
+    {
+      "id": "NW09",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2027-03-28",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "note": "Ostermontag ist zusätzlicher Prozesstag"
+    },
+    {
+      "id": "NW10",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2027-05-16",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-18"
+      },
+      "note": "Pfingstmontag ist zusätzlicher Prozesstag"
+    },
+    {
+      "id": "NW11",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-12-31",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Berchtoldstag ist prozessual arbeitsfrei, hier auch Samstag"
+    },
+    {
+      "id": "NW12",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-12-25",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "note": "Stefanstag und Wochenende"
+    },
+    {
+      "id": "NW13",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-12-07",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "note": "Maria Empfängnis als Endtag"
+    },
+    {
+      "id": "NW14",
+      "path": "NW-APPEAL-ORDERED",
+      "trigger": "2026-12-30",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04",
+        "firstCountedDay": "2027-01-03"
+      },
+      "note": "Ein Sonntag kann erster gezählter Tag sein"
+    },
+    {
+      "id": "NW15",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "trigger": "2027-07-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31"
+      },
+      "note": "Gesetzlicher erster Schriftenwechsel mit Sommerstillstand"
+    },
+    {
+      "id": "NW16",
+      "path": "NW-COURT-REPLIK-20",
+      "trigger": "2026-12-10",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "note": "Replik ab Zustellung der Vernehmlassung, Winterstillstand"
+    },
+    {
+      "id": "NW17",
+      "path": "NW-ADMIN-DUPLIK-20",
+      "trigger": "2027-03-01",
+      "days": 20,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "note": "Duplik ab Zustellung der Replik, Osterstillstand"
+    },
+    {
+      "id": "NW18",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2026-12-30",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "note": "Nur Winterstillstand, Sonntag erster Zähltag"
+    },
+    {
+      "id": "C01",
+      "path": "OW-ADMIN-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C02",
+      "path": "OW-COURT-30",
+      "trigger": "2027-02-18",
+      "days": 30,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C03",
+      "path": "OW-ADMIN-ORDERED",
+      "trigger": "2027-03-10",
+      "days": 10,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C04",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2027-03-10",
+      "days": 10,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C05",
+      "path": "OW-ADMIN-REASONS-30",
+      "trigger": "2027-02-18",
+      "days": 30,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C06",
+      "path": "OW-COURT-REASONS-30",
+      "trigger": "2027-02-18",
+      "days": 30,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C07",
+      "path": "NW-ADMIN-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C08",
+      "path": "NW-COURT-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C09",
+      "path": "NW-EINSPRACHE-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C10",
+      "path": "NW-EINSPRACHE-ORDERED",
+      "trigger": "2027-03-10",
+      "days": 10,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C11",
+      "path": "NW-APPEAL-ORDERED",
+      "trigger": "2027-03-10",
+      "days": 10,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C12",
+      "path": "NW-COURT-ORDERED",
+      "trigger": "2027-03-10",
+      "days": 10,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C13",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C14",
+      "path": "NW-COURT-VERNEHMLASSUNG-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C15",
+      "path": "NW-ADMIN-REPLIK-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C16",
+      "path": "NW-COURT-REPLIK-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C17",
+      "path": "NW-ADMIN-DUPLIK-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "C18",
+      "path": "NW-COURT-DUPLIK-20",
+      "trigger": "2027-02-28",
+      "days": 20,
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "note": "Eigene begrenzte Forschungsgrenze: blosse Endverschiebung in neu beginnenden Osterstillstand"
+    },
+    {
+      "id": "W01",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2026-08-28",
+      "days": 5,
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Auslöser vor dem vorgeschlagenen vollständigen Fenster"
+    },
+    {
+      "id": "W02",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-08-29",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "note": "Erster gedeckter Auslöser mit Wochenende"
+    },
+    {
+      "id": "W03",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2027-12-30",
+      "days": 1,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-12-31"
+      },
+      "note": "Letzter gedeckter Endtag"
+    },
+    {
+      "id": "W04",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2027-12-31",
+      "days": 1,
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Auslöser gedeckt, Zähltag nicht mehr gedeckt"
+    },
+    {
+      "id": "W05",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2027-12-17",
+      "days": 1,
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Winterstillstand führt aus dem gedeckten Fenster"
+    },
+    {
+      "id": "W06",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2027-12-17",
+      "days": 1,
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "note": "Winter-only ist ebenfalls vollständig zeitlich zu decken"
+    },
+    {
+      "id": "W07",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2027-12-26",
+      "days": 5,
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-12-31"
+      },
+      "note": "Fünftagesweg ohne Winterstillstand noch vollständig gedeckt"
+    },
+    {
+      "id": "N01",
+      "path": "UNKNOWN",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {},
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchPath"
+      },
+      "note": "Keine unbekannte Handlung raten"
+    },
+    {
+      "id": "N02",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "inventedFact": true
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchFact"
+      },
+      "note": "Unbekannte zusätzliche Tatsachen nicht als qualifiziert ausgeben"
+    },
+    {
+      "id": "N03",
+      "path": "OW-ADMIN-20",
+      "trigger": "2027-02-30",
+      "days": 20,
+      "facts": {},
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "invalidResearchDate"
+      },
+      "note": "Ungültiger Kalendertag"
+    },
+    {
+      "id": "N04",
+      "path": "NW-COURT-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "stage": "administration"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "stageDoesNotMatchPath"
+      },
+      "note": "Verwaltung und Gericht nicht vertauschen"
+    },
+    {
+      "id": "N05",
+      "path": "OW-ADMIN-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "action": "ordinaryAdministrativeAppeal"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionNotQualified"
+      },
+      "note": "Begründungsverlangen ist kein ordentliches Rechtsmittel"
+    },
+    {
+      "id": "N06",
+      "path": "NW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "authorityLevel": "municipal"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetOutsideScope"
+      },
+      "note": "Keine pauschale Freigabe kommunaler Zielstellen"
+    },
+    {
+      "id": "N07",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "holidayAnchor": "partyOrRepresentativeSeat"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "holidayAnchorNotQualified"
+      },
+      "note": "Keine freie Partei-/Vertretungsortliste"
+    },
+    {
+      "id": "N08",
+      "path": "NW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "specialLaw": "ATSG"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "specialLawNotExcluded"
+      },
+      "note": "Keine neue ausserbernische Sozialfreigabe"
+    },
+    {
+      "id": "N09",
+      "path": "OW-COURT-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "materialPerformance": true
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "materialPerformanceOutsideScope"
+      },
+      "note": "Zahlung ist keine gewöhnliche Verfahrenseingabe"
+    },
+    {
+      "id": "N10",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "fixedEndDate": true
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart"
+      },
+      "note": "Fixtermin ist keine Tagesfrist"
+    },
+    {
+      "id": "N11",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "deviatingStart": true
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart"
+      },
+      "note": "Abweichend angeordneter Fristbeginn separat zu klären"
+    },
+    {
+      "id": "N12",
+      "path": "OW-COURT-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "termChange": "restorationRequested"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "termChangeNeedsIndividualReview"
+      },
+      "note": "Wiederherstellung nicht automatisch berechnen"
+    },
+    {
+      "id": "N13",
+      "path": "NW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "unit": "month"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection"
+      },
+      "note": "Keine Monatsfrist in Tage umdeuten"
+    },
+    {
+      "id": "N14",
+      "path": "OW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "direction": "backward"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection"
+      },
+      "note": "Keine Rückwärtsberechnung"
+    },
+    {
+      "id": "N15",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "notice": "disputed"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "noticeNeedsIndividualReview"
+      },
+      "note": "Ungeklärte Rechtsmittelbelehrung"
+    },
+    {
+      "id": "N16",
+      "path": "NW-COURT-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "serviceContext": "serviceFictionUnknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "serviceFictionNotCalculated"
+      },
+      "note": "Keine Zustellfiktion erfinden"
+    },
+    {
+      "id": "N17",
+      "path": "OW-COURT-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "localHolidayEffect": "concretePotentialEndChangeUnresolved"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved"
+      },
+      "note": "Konkret mögliche örtliche Zusatzwirkung ungeklärt"
+    },
+    {
+      "id": "N18",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "localHolidayEffect": "concretePotentialEndChangeUnresolved"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved"
+      },
+      "note": "RTG-Verweis nicht als irrelevant deklarieren"
+    },
+    {
+      "id": "N19",
+      "path": "NW-APPEAL-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "deadlineAgreement": "agreedWithParties"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "agreedDeadlineOutsidePositiveScope"
+      },
+      "note": "Einvernehmliche Fristansetzung ohne Ferien ist nicht der Normalpfad"
+    },
+    {
+      "id": "N20",
+      "path": "NW-COURT-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "suspensionException": "procurement"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified"
+      },
+      "note": "Spezialrechtlicher Ferienausschluss"
+    },
+    {
+      "id": "N21",
+      "path": "NW-ADMIN-ORDERED",
+      "trigger": "2026-10-02",
+      "days": null,
+      "facts": {},
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "dayDurationNotSpecified"
+      },
+      "note": "Keine angeordnete Dauer erfinden"
+    },
+    {
+      "id": "N22",
+      "path": "NW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {},
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "note": "Keine zehn statt zwanzig gesetzlicher Tage"
+    },
+    {
+      "id": "N23",
+      "path": "OW-COURT-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {},
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "note": "Keine zehntägige ZPO239-Anforderung"
+    },
+    {
+      "id": "N24",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "targetCourt": "Bundesgericht"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetCourtNotQualified"
+      },
+      "note": "Fünftageshandlung geht ans kantonale Gesamtgericht"
+    },
+    {
+      "id": "N25",
+      "path": "NW-EINSPRACHE-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "einspracheAdmissibility": "unknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished"
+      },
+      "note": "Keine gesetzliche Einsprachezulässigkeit aus Kalender ableiten"
+    },
+    {
+      "id": "N26",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "opening": "lawfullyUnreasonedAdministrativeDecision"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      },
+      "note": "Unbegründetes Dispositiv gehört nicht direkt ins ordentliche Rechtsmittel"
+    },
+    {
+      "id": "N27",
+      "path": "OW-ADMIN-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "openingOrigin": "reasonedFollowingTimelyRequest",
+        "priorReasonsRequest": "late"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished"
+      },
+      "note": "Keine neue Frist aus verspätetem Verlangen ableiten"
+    },
+    {
+      "id": "N28",
+      "path": "OW-COURT-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "openingOrigin": "unknown"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingOriginNotQualified"
+      },
+      "note": "Keine unbekannte Eröffnungskette aus Standards ergänzen"
+    },
+    {
+      "id": "N29",
+      "path": "OW-ADMIN-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "sameIssuingAuthority": false
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient"
+      },
+      "note": "Verlangen bei der bisherigen Stelle, kein Behördenweiterzug"
+    },
+    {
+      "id": "N30",
+      "path": "OW-COURT-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "sameIssuingCourt": false
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient"
+      },
+      "note": "Verlangen beim bisherigen Gericht"
+    },
+    {
+      "id": "N31",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "durationBasis": "generalStatutory20"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationBasisNotQualified"
+      },
+      "note": "Keine allgemeine gesetzliche Zwanzigtage-Einwendungsfrist"
+    },
+    {
+      "id": "N32",
+      "path": "NW-COURT-REPLIK-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "opening": "appealServedForComments"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      },
+      "note": "Replik knüpft an die Vernehmlassung, nicht an die ursprüngliche Beschwerde an"
+    },
+    {
+      "id": "N33",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "trigger": "2026-10-02",
+      "days": 5,
+      "facts": {
+        "suspensionException": "ordinaryNoException"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified"
+      },
+      "note": "Kurzer Weiterzug setzt den qualifizierten Massnahmekontext voraus"
+    },
+    {
+      "id": "N34",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "trigger": "2026-10-02",
+      "days": 25,
+      "facts": {},
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "note": "Verlängerte oder verkürzte gesetzliche Stellungnahme nicht als unveränderte Zwanzigtagehandlung"
+    },
+    {
+      "id": "N35",
+      "path": "NW-EINSPRACHE-ORDERED",
+      "trigger": "2026-10-02",
+      "days": 10,
+      "facts": {
+        "einspracheAdmissibility": "anySpecialEinsprache"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished"
+      },
+      "note": "Kein generischer Import sämtlicher spezialgesetzlicher Einsprachen"
+    },
+    {
+      "id": "N36",
+      "path": "NW-COURT-DUPLIK-20",
+      "trigger": "2026-10-02",
+      "days": 20,
+      "facts": {
+        "opening": "vernehmlassungServedForReply"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      },
+      "note": "Duplik beginnt nicht schon bei der Vernehmlassung"
+    },
+    {
+      "id": "N37",
+      "path": "OW-ADMIN-REASONS-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "reasonsContext": "missingReasoningDespiteRequiredFullDecision"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsContextNotQualified"
+      },
+      "note": "Mangelhafte Begründung nicht mit zulässig unbegründeter Eröffnung gleichsetzen"
+    },
+    {
+      "id": "N38",
+      "path": "OW-COURT-30",
+      "trigger": "2026-10-02",
+      "days": 30,
+      "facts": {
+        "openingOrigin": "reasonedFollowingTimelyRequest",
+        "priorReasonsRequest": null
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished"
+      },
+      "note": "Rechtzeitigkeit muss im zweiten Handlungsschritt feststehen"
+    }
+  ],
+  "isolatedPracticeProbes": [
+    {
+      "id": "P-VA24-19",
+      "sourceRef": "NW Verwaltungsgericht VA 24/19 vom 06.01.2025 E. 1.3, amtliches PDF https://www.nw.ch/_rte/publikation/37864",
+      "sourceSha256": "65b0d6b31a80883412bcfec4e4fe3dc3abb65deac9ff1ea9f358aec2c5a596f6",
+      "sourcePath": "outputs/ap23h1-2026-10-22/sources/nw/va-24-19-amtlich.pdf",
+      "path": "NW-COURT-20",
+      "trigger": "2024-07-05",
+      "days": 20,
+      "productScope": false,
+      "normReleaseApproval": false,
+      "arithmeticWindow": {"from": "2024-01-01", "to": "2024-12-31"},
+      "expected": {"outcome": "datedResearchValue", "end": "2024-08-26", "skippedDays": 32}
+    }
+  ],
+  "calendarProbes": [
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-01-02",
+      "isHoliday": true,
+      "note": "Prozessuale Ergänzung"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-03-29",
+      "isHoliday": true,
+      "note": "Ostermontag"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-05-17",
+      "isHoliday": true,
+      "note": "Pfingstmontag"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2026-12-26",
+      "isHoliday": true,
+      "note": "Stefanstag"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-05-27",
+      "isHoliday": true,
+      "note": "Fronleichnam"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2026-12-08",
+      "isHoliday": true,
+      "note": "Maria Empfängnis"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-05-01",
+      "isHoliday": false,
+      "note": "Kein 1. Mai aus fremder Liste"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-01-06",
+      "isHoliday": false,
+      "note": "Kein Dreikönigstag aus fremder Liste"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-01-02",
+      "isHoliday": true,
+      "note": "Prozessuale Ergänzung"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-03-29",
+      "isHoliday": true,
+      "note": "Ostermontag"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-05-17",
+      "isHoliday": true,
+      "note": "Pfingstmontag"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2026-12-26",
+      "isHoliday": true,
+      "note": "Stefanstag"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-05-27",
+      "isHoliday": true,
+      "note": "Fronleichnam"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2026-12-08",
+      "isHoliday": true,
+      "note": "Maria Empfängnis"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-05-01",
+      "isHoliday": false,
+      "note": "Kein 1. Mai aus fremder Liste"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-01-06",
+      "isHoliday": false,
+      "note": "Kein Dreikönigstag aus fremder Liste"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2026-09-25",
+      "isHoliday": true,
+      "note": "Bruderklausenfest"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2026-09-25",
+      "isHoliday": false,
+      "note": "Kein Bruderklausenfest in NW"
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "date": "2027-03-19",
+      "isHoliday": true,
+      "note": "Josefstag"
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "date": "2027-03-19",
+      "isHoliday": false,
+      "note": "Kein Josefstag in OW"
+    }
+  ]
+}

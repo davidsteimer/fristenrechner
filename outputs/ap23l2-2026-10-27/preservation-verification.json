@@ -1,0 +1,113 @@
+{
+  "workPackage": "AP23L2",
+  "status": "technical-planning-inputs-preserved",
+  "gitHead": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "protectedInputSha256": "6b8540b694a67a1fffd292486a7480728eca06f37f53f490f8df75fad2786bb1",
+  "protectedFilesVerified": 9048,
+  "composition": {
+    "previousProtected": 8649,
+    "currentAcceptedL1": 59,
+    "archivedL1Payload": 66,
+    "archivedL1Receipt": 1,
+    "additionalGovernance": 8,
+    "existingTreeFiles": 1897
+  },
+  "acceptedL1Archive": {
+    "verified": true,
+    "target": "outputs/ap23l1-abnahme-2026-10-27",
+    "mode": "archive-reverified",
+    "files": 66,
+    "originalBindings": 62,
+    "explicitTransitiveCalendarPayloads": 3,
+    "sourceFiles": 31,
+    "sourceBytes": 9196390,
+    "payloadBytes": 11332014,
+    "historicalProtectedInputsNotRecopied": 8649,
+    "receiptSha256": "028e05ee3a514a3465dc9c91e95d48fd1dad3d9a19d27423da57add33122de77",
+    "receiptByteLength": 14477
+  },
+  "livingStatus": [
+    {
+      "path": "README.md",
+      "atStart": "53604cad105b67bce911fd25951ca14b53642e285ac89cecc6adb5ea2cca1c60",
+      "current": "3d36ca60be00a8fa6e087446bd73886f5440ccdbdc71546c87881fbeea4f0a33",
+      "changed": true
+    },
+    {
+      "path": "docs/README.md",
+      "atStart": "0ddded0b3586f164c97f932c16e8372875c77e05bcc8c1c3627f3a863babe2e5",
+      "current": "15d6b0b56c5eda04c66325a6223e3174a3056052b2bf3b6849e233b74813db52",
+      "changed": true
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "atStart": "b0070b459c69d44d95ccea511566978bb09fe8b299b95a8605767ad04bac7abe",
+      "current": "6f4125967b8acdbad7487f97be6109a9bd614cb5d31808a2781d4635e50097dc",
+      "changed": true
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "atStart": "8a1fecc67aea1a80686a9b37ec4b3338a931690032b375e88cdb4fbd0f71c911",
+      "current": "43d04c2f15745437b2b8f9dba20fb126b5f3a6b425b47c1ff245a4b3f8b63fd8",
+      "changed": true
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "atStart": "83d1ddcc20aaffb379f32fe1f0257d2e5ef1f7acb6e9a3d9775c0759190130a1",
+      "current": "e6b94c5ed65f4285113f84372bc56c769622dfc4ff57cfb1d2eb7c5540ca62a1",
+      "changed": true
+    },
+    {
+      "path": "docs/planung/fortsetzung-verwaltungsverfahren-mvp09.md",
+      "atStart": "e7360732e400cd6fe1164ef13d86d210db5a2b3c3fb24de4bad880a4c0d83034",
+      "current": "229b7ddc4ff76103802a3579ad4f8dfbd0ad8e120a57aa7a165679a526dbf479",
+      "changed": true
+    },
+    {
+      "path": "docs/planung/schweizausbau-nach-mvp09.md",
+      "atStart": "3627805983894846f3bb1e6893c778f7ea4dc755085b0fe236bf1a8c9a9df418",
+      "current": "ee76bd18d00949457b856f61a0aa03e930c89b1f4454c2fd13cdd56b5743a13b",
+      "changed": true
+    }
+  ],
+  "isolatedSchemaCandidateAdditions": [
+    "schemas/candidates/ap23l2/administrative-input-v9.schema.json",
+    "schemas/candidates/ap23l2/administrative-procedure-catalog-v9.schema.json",
+    "schemas/candidates/ap23l2/local-reference-manifest-v16.schema.json",
+    "schemas/candidates/ap23l2/release-manifest-v16.schema.json"
+  ],
+  "isolatedGovernanceTestAdditions": [
+    "tests/governance/ap23l2-candidate.test.mjs",
+    "tests/governance/ap23l2-contract.test.mjs",
+    "tests/governance/ap23l2-finalizer.test.mjs",
+    "tests/governance/ap23l2-independent.test.mjs",
+    "tests/governance/ap23l2-native.test.mjs",
+    "tests/governance/ap23l2-preservation.test.mjs",
+    "tests/governance/ap23l2-schemas.test.mjs"
+  ],
+  "isolatedScriptAdditions": [
+    "scripts/build-ap23l2-candidate.mjs",
+    "scripts/build-ap23l2-schemas.mjs",
+    "scripts/check-ap23l2-contract.mjs",
+    "scripts/check-ap23l2-native.mjs",
+    "scripts/check-ap23l2-preservation.mjs",
+    "scripts/check_ap23l2_independent.py",
+    "scripts/finalize-ap23l2.mjs",
+    "scripts/prepare-ap23l2.mjs"
+  ],
+  "productCodeChanged": false,
+  "nativeSchemasChanged": false,
+  "acceptedLegalDataChanged": false,
+  "existingTestsChanged": false,
+  "acceptedL1ResearchChanged": false,
+  "historicalEvidenceChanged": false,
+  "userDocumentChanged": false,
+  "formatDecision": false,
+  "sourceReleaseApproved": false,
+  "runtimeActivation": false,
+  "releaseBuildPerformed": false,
+  "commitCreated": false,
+  "sourcePushPerformed": false,
+  "operatingChanges": false,
+  "note": "All original L2 start bindings stay unchanged. Seven living status files are separate. Only newly created isolated L2 schema candidates, governance tests and L2 helper scripts are permitted in protected trees. No native integration, data release or operating permission."
+}

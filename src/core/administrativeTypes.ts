@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // AP23C/DEC-2026-032. These are data contracts, never runtime authority.
 export type { AdministrativeProcedureCatalogV2, AdministrativeQualificationPolicy, AdministrativeCaseQualification } from './administrativeTypesV2';
+export type { AdministrativeProcedureCatalogV3, AdministrativePathV3, AdministrativeCaseQualificationV3 } from './administrativeTypesV3';
+export type { AdministrativeProcedureCatalogV4, AdministrativePathV4, AdministrativeCaseQualificationV4 } from './administrativeTypesV4';
 export type AdministrativeStage = 'administration' | 'administrativeAppeal' | 'court';
 export type AdministrativeCanton = 'ZH' | 'BE' | 'LU' | 'UR' | 'SZ' | 'OW' | 'NW' | 'GL' | 'ZG' | 'FR' | 'SO' | 'BS' | 'BL' | 'SH' | 'AR' | 'AI' | 'SG' | 'GR' | 'AG' | 'TG' | 'TI' | 'VD' | 'VS' | 'NE' | 'GE' | 'JU';
 export interface AdministrativeInterval { readonly from: string; readonly to: string | null }

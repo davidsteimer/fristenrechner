@@ -1,0 +1,2177 @@
+{
+  "workPackage": "AP23M3",
+  "status": "protected-integration-baselines-preserved",
+  "head": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "inventorySha256": "999058873565d1395f04767d040ca218ec8da04303b899f23d7f80cbcd7227f9",
+  "protectedFilesVerified": 11540,
+  "intendedMutableInputs": [
+    {
+      "path": "package.json",
+      "before": "8ff631ba8cb5ac50de1baff8620fcb4f5a09c4ef6cac3909eaed6dfe09731af6",
+      "current": "05c6a87b1fe88d9281e1989be4ea484d140ff78e52ee69a8f64ec91d33f1faa6",
+      "changed": true
+    },
+    {
+      "path": "scripts/build-public-app.mjs",
+      "before": "387819e5871e193b456dc78c2626f213bab28c2c805b89a866a032f45a009645",
+      "current": "516dc18d90569b83cfb63a0f27a939bb75b67afc06b3c6a0dee1627e81868804",
+      "changed": true
+    },
+    {
+      "path": "spfx/scripts/sync-schemas.mjs",
+      "before": "9082fb727037b5904fc02b4e5bfc0ddd04e8dd16d6f1bbdcab3b3fd0c933b62b",
+      "current": "bb1a06d8df3e570f63f868e25820dee1b1a428260f8dd22ec2b7e4c9d1bb323b",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/core/ReleaseValidator.ts",
+      "before": "ce36451afe621ff37ee4f184aa4bbf4594a7288ca8629d350bdc8a58d662faa1",
+      "current": "b4d34f231b8e9a34bf313d9bea8062e328ffeb79a4b66aeb11e82c8c80a9f52e",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalog.ts",
+      "before": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb",
+      "current": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV2.ts",
+      "before": "ca5b3fe7e7aae6e961142e8aa20520cddb1c9817ec058347962ed307622df4ff",
+      "current": "ca5b3fe7e7aae6e961142e8aa20520cddb1c9817ec058347962ed307622df4ff",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV3.ts",
+      "before": "d0c2e28c0f43132d94bf9fa0ee053e3c01e35157d61a92894c5e7b04de7e399d",
+      "current": "d0c2e28c0f43132d94bf9fa0ee053e3c01e35157d61a92894c5e7b04de7e399d",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV4.ts",
+      "before": "253a6068933657b8ca4038fee30abb2a9ae0357c9fb25b86c0797f9d3ccc3bbe",
+      "current": "253a6068933657b8ca4038fee30abb2a9ae0357c9fb25b86c0797f9d3ccc3bbe",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV5.ts",
+      "before": "2baf3741a99f079f71896d56040910279b9b3051488c71c56d81f920a0bf777e",
+      "current": "2baf3741a99f079f71896d56040910279b9b3051488c71c56d81f920a0bf777e",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV6.ts",
+      "before": "f73ae0c37df13abd4d9a49b6c3b64349a15239e63665b2eb08a3729ccd7868d3",
+      "current": "f73ae0c37df13abd4d9a49b6c3b64349a15239e63665b2eb08a3729ccd7868d3",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV7.ts",
+      "before": "564127e4c5f37131adb67321081e149030f24a3abb803d6b577a77676ad87019",
+      "current": "564127e4c5f37131adb67321081e149030f24a3abb803d6b577a77676ad87019",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV8.ts",
+      "before": "5486b866a3847f260f0d8727f00acefaf33b2e9c963b3c9ac187b13749ad5b0e",
+      "current": "5486b866a3847f260f0d8727f00acefaf33b2e9c963b3c9ac187b13749ad5b0e",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV9.ts",
+      "before": "f4e14fe5677d1b295645046d3645f62fa077eae474f8d157b55365a4c51fbf7b",
+      "current": "f4e14fe5677d1b295645046d3645f62fa077eae474f8d157b55365a4c51fbf7b",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeContext.ts",
+      "before": "36d58bae0a71382b1337cde591e759198433d53eb942c3b1c3588c39e0f0dac7",
+      "current": "9d2ba4c00a8696336293b521353dbbd001589a96b1c890ff738750a5e23a87b9",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadline.ts",
+      "before": "75390930c253784229da823d098771274bad48348f8a08e8a432e3c1d684a9a6",
+      "current": "2f2f66a78d6af691ef6536bc4db608f2a19b510af301cafd8cf6250df85c1e60",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV6.ts",
+      "before": "b0af455581931b1272ad43e85e8346e1535567d6d936f99a4444c9bbe8151e98",
+      "current": "b0af455581931b1272ad43e85e8346e1535567d6d936f99a4444c9bbe8151e98",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV7.ts",
+      "before": "357ce09945d2b02203e907eab5b71a8ba2792dd4405cba0731d01460cf66d37b",
+      "current": "357ce09945d2b02203e907eab5b71a8ba2792dd4405cba0731d01460cf66d37b",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV8.ts",
+      "before": "33fa813a34585cca4b73dfa463499a1226ec1284cf03f5cf659c2548bda458fb",
+      "current": "33fa813a34585cca4b73dfa463499a1226ec1284cf03f5cf659c2548bda458fb",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV9.ts",
+      "before": "74a564715f7d3fbb1509940da3d5d399c706bd49804d4f9a98a6d6c35bccf66f",
+      "current": "74a564715f7d3fbb1509940da3d5d399c706bd49804d4f9a98a6d6c35bccf66f",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypes.ts",
+      "before": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1",
+      "current": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV2.ts",
+      "before": "30283d0bcdf88342cc6db7add96336086462e0cf2366c9b5cc169fd6f9a6bf34",
+      "current": "30283d0bcdf88342cc6db7add96336086462e0cf2366c9b5cc169fd6f9a6bf34",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV3.ts",
+      "before": "9e39e6710315ed2b8b257951b2e9dc66102e3154914a0878f49530b24e386626",
+      "current": "9e39e6710315ed2b8b257951b2e9dc66102e3154914a0878f49530b24e386626",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV4.ts",
+      "before": "07a6234232a22d5d023ad67e9bca6a80ad5a72eadf28956347db09a7fab5864d",
+      "current": "07a6234232a22d5d023ad67e9bca6a80ad5a72eadf28956347db09a7fab5864d",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV5.ts",
+      "before": "a9fc29bc5c656e02cd57b7ef91c29bdca227ff59634d18588f9510f8ac5cdcd2",
+      "current": "a9fc29bc5c656e02cd57b7ef91c29bdca227ff59634d18588f9510f8ac5cdcd2",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV6.ts",
+      "before": "ad28f64b0de3da41279a23c0cd9d92373c4bfdb5d221cc3d96048d2edf6d2825",
+      "current": "ad28f64b0de3da41279a23c0cd9d92373c4bfdb5d221cc3d96048d2edf6d2825",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV7.ts",
+      "before": "6ab6e6bb60eb46c81ebca1bdcf2263f8de5fa8b1626a18274eb2c8926933d209",
+      "current": "6ab6e6bb60eb46c81ebca1bdcf2263f8de5fa8b1626a18274eb2c8926933d209",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV8.ts",
+      "before": "2bc7b0ef53fb4c75e646fcf38f621b932cb2e69c1933feb63613f5ede66e7fef",
+      "current": "2bc7b0ef53fb4c75e646fcf38f621b932cb2e69c1933feb63613f5ede66e7fef",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV9.ts",
+      "before": "17e7adb5efcf1768f6fb2a49f8fb4d77a06393cb22888c790cc9d84d1526aeab",
+      "current": "17e7adb5efcf1768f6fb2a49f8fb4d77a06393cb22888c790cc9d84d1526aeab",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV2Baseline.ts",
+      "before": "eb2252b582a2257dda23226e5755cf4d123f121f536c24af13550a3d7ce110aa",
+      "current": "eb2252b582a2257dda23226e5755cf4d123f121f536c24af13550a3d7ce110aa",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV3Baseline.ts",
+      "before": "4ff232095b7f54813516e1e1f621a0de9dcbf8068602971bf5b3207aa4c2ca0b",
+      "current": "4ff232095b7f54813516e1e1f621a0de9dcbf8068602971bf5b3207aa4c2ca0b",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV4Baseline.ts",
+      "before": "a2b1421f5c405c2cd970087ccbfad153fbd64fe763c268e9709f27f83fc7d9d8",
+      "current": "a2b1421f5c405c2cd970087ccbfad153fbd64fe763c268e9709f27f83fc7d9d8",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV5Baseline.ts",
+      "before": "c9b203c340fffa1e7d753754970767fcd05ad690062093e1c2e83227d9e301b7",
+      "current": "c9b203c340fffa1e7d753754970767fcd05ad690062093e1c2e83227d9e301b7",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV6Baseline.ts",
+      "before": "97ebe0a8265b267ddd7bd356a2a38e999842da707afff5624994e32affd96a8f",
+      "current": "97ebe0a8265b267ddd7bd356a2a38e999842da707afff5624994e32affd96a8f",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV7Baseline.ts",
+      "before": "70d5bfd5c90f6eeaad31a636a80599e43e8025f8fa4b3d49805156a3005a481e",
+      "current": "70d5bfd5c90f6eeaad31a636a80599e43e8025f8fa4b3d49805156a3005a481e",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV8Baseline.ts",
+      "before": "87a36e0a70e302698e4eb00d38fd31acd58e017faade22b39065f8afc98f63d5",
+      "current": "87a36e0a70e302698e4eb00d38fd31acd58e017faade22b39065f8afc98f63d5",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV9Baseline.ts",
+      "before": "de96596f84adcdf6d2f492f74eff3d7140ff960fe9ecc2a8f05ce0c8da1f19fe",
+      "current": "de96596f84adcdf6d2f492f74eff3d7140ff960fe9ecc2a8f05ce0c8da1f19fe",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/calculateCalendarBoundDeadline.ts",
+      "before": "7dd68ad3b23422fd5532d5df72c879d23db49adfdf940bce49a73caef4243061",
+      "current": "0b2095eded625d97dd99385adc2a6181e0e1241d635983d4b10df392dcbbe84d",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/calculateDeadline.ts",
+      "before": "af5a6c2ab5ba66e98ae6e2c6e049437adaf0a55e95c2c0e85be7639cb587eef4",
+      "current": "7de8d4b90987d11cb9e1ef363cf84127eccae6dbde26ca1787022bc638ff3952",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/calculateQualifiedSpecialDeadline.ts",
+      "before": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530",
+      "current": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/calculateSpecialDeadline.ts",
+      "before": "c46294f2cbdea2be85e9ce5baaf540ff1e6c3ad6b63944d30703d16f3e3d26fb",
+      "current": "bcf5921bf5865bbcbf9d4d975ac2c07ac07bae991cc58eae6a055d6374aa5acc",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/calculatorRuntime.ts",
+      "before": "d34573a1eccb38071f4daf5730684226a6960aaa7e751d0aaa0d8db894e5add4",
+      "current": "f972bf0fb8224aa7d88ef69b2023cc88c898931f7587331eaa73689f1e55273b",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/calendarMigration.ts",
+      "before": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3",
+      "current": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/calendarResolution.ts",
+      "before": "733e0dab5dfa0b83be0308bd4aad32e55c960a84428083cbafa7df2a00aa49fb",
+      "current": "047925b53273ce93f68f4cb32cba315a450fdaf3bd6772525b84c0b93a4de217",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/calendarRuleTypes.ts",
+      "before": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952",
+      "current": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/data.ts",
+      "before": "fe32faeaad982296c919b2ea091d5be27ba0a50dfa5ef4748ef9d368b620e037",
+      "current": "fe32faeaad982296c919b2ea091d5be27ba0a50dfa5ef4748ef9d368b620e037",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/date.ts",
+      "before": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc",
+      "current": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/dayDeadlineArithmetic.ts",
+      "before": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895",
+      "current": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format10Baseline.ts",
+      "before": "66cb7fc813bee3c69d3abb6534e7e5cfec79264eacbc05e24f172ffbe2901bdc",
+      "current": "66cb7fc813bee3c69d3abb6534e7e5cfec79264eacbc05e24f172ffbe2901bdc",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format10CalculationData.ts",
+      "before": "0d46c3ba393c7f27d046412d724925639f01b11530f8b7fdda5c5b5849435c17",
+      "current": "0d46c3ba393c7f27d046412d724925639f01b11530f8b7fdda5c5b5849435c17",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format10Runtime.ts",
+      "before": "548726e2f1adda24c0c4508d863ef02398838d36ef7233956452ea7f6536e134",
+      "current": "548726e2f1adda24c0c4508d863ef02398838d36ef7233956452ea7f6536e134",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format11Baseline.ts",
+      "before": "7418eec8c776ee2a5a2ab5c77d01381ec3de2b3b64b102cc20c1cae7de85a9ab",
+      "current": "7418eec8c776ee2a5a2ab5c77d01381ec3de2b3b64b102cc20c1cae7de85a9ab",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format11CalculationData.ts",
+      "before": "266a3c2e8f481eff7df6c7844e8b8ea060fc76b8c87752ebb8989dcc2f4118d0",
+      "current": "266a3c2e8f481eff7df6c7844e8b8ea060fc76b8c87752ebb8989dcc2f4118d0",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format11Runtime.ts",
+      "before": "f7a9c7a226049e81752e158fc7e8b8ce97dea324b4662d410e7f27166c943b3c",
+      "current": "f7a9c7a226049e81752e158fc7e8b8ce97dea324b4662d410e7f27166c943b3c",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format12Baseline.ts",
+      "before": "3a4c66daa56e1caa5db5473de27f5e776908264e551c8b3a3c368688abcf1159",
+      "current": "3a4c66daa56e1caa5db5473de27f5e776908264e551c8b3a3c368688abcf1159",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format12CalculationData.ts",
+      "before": "41c6c084583650bd5cbb4f0fce2ef0e6d6631234fad02c266f4ef5c6aae67cc4",
+      "current": "41c6c084583650bd5cbb4f0fce2ef0e6d6631234fad02c266f4ef5c6aae67cc4",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format12Runtime.ts",
+      "before": "b5b5b27df9ca39694e86da2e13cf86998520688673b0984571177ea49adbc18c",
+      "current": "b5b5b27df9ca39694e86da2e13cf86998520688673b0984571177ea49adbc18c",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format13Baseline.ts",
+      "before": "cabbcc0ae7564b21fc6428cb2d0f8f86a0eba6974e501a907190ad06eb3b82c1",
+      "current": "cabbcc0ae7564b21fc6428cb2d0f8f86a0eba6974e501a907190ad06eb3b82c1",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format13CalculationData.ts",
+      "before": "e8e16812e7c65bd235a809a1c3d1f9e936640ed55dd97aee241243be01b785eb",
+      "current": "e8e16812e7c65bd235a809a1c3d1f9e936640ed55dd97aee241243be01b785eb",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format13Runtime.ts",
+      "before": "df5eb86044347fb8e895f207921ba70e9861423df9e302a30e1fd7f941b46e04",
+      "current": "df5eb86044347fb8e895f207921ba70e9861423df9e302a30e1fd7f941b46e04",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format14Baseline.ts",
+      "before": "1a183dd815cc7972c8777708f4030a7187c512118356b90549132e803d8e1f02",
+      "current": "1a183dd815cc7972c8777708f4030a7187c512118356b90549132e803d8e1f02",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format14CalculationData.ts",
+      "before": "c5bf98e7421ae8f50afdf2414d299e945e838d2165ade83db60889c9357ab87f",
+      "current": "c5bf98e7421ae8f50afdf2414d299e945e838d2165ade83db60889c9357ab87f",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format14Runtime.ts",
+      "before": "b46462fa9a9f3d001bec16913a4dd9274450eb944b302c927a672060c94e66eb",
+      "current": "b46462fa9a9f3d001bec16913a4dd9274450eb944b302c927a672060c94e66eb",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format15Baseline.ts",
+      "before": "18d1df55adedd0adcd6754e7e376c17b4d09cb12b9e6112f040b50ff53d0c80a",
+      "current": "18d1df55adedd0adcd6754e7e376c17b4d09cb12b9e6112f040b50ff53d0c80a",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format15CalculationData.ts",
+      "before": "e7fe268526bdc9b97d04d285840b684f84b4e2ddfdd96dda6e99b9c54e555315",
+      "current": "e7fe268526bdc9b97d04d285840b684f84b4e2ddfdd96dda6e99b9c54e555315",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format15Runtime.ts",
+      "before": "63ec19fc02374c215fca9dd1df8a370999f61f57b9a22afa5588e5630ebd1c81",
+      "current": "63ec19fc02374c215fca9dd1df8a370999f61f57b9a22afa5588e5630ebd1c81",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format16Baseline.ts",
+      "before": "c742e21ec5932a6b95447fd24af994dff3ad9bdbf873aab8fa00ad89c38487c3",
+      "current": "c742e21ec5932a6b95447fd24af994dff3ad9bdbf873aab8fa00ad89c38487c3",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format16CalculationData.ts",
+      "before": "82cbbf59be11f068719103be573d1cc776effc7a0100733233e3ac3a09544910",
+      "current": "82cbbf59be11f068719103be573d1cc776effc7a0100733233e3ac3a09544910",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format16Runtime.ts",
+      "before": "72ec5a8c870501f2e4eec36c5a24306a3d84bdb85ebbf5b38cae0edec8d0eef6",
+      "current": "72ec5a8c870501f2e4eec36c5a24306a3d84bdb85ebbf5b38cae0edec8d0eef6",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format7Baseline.ts",
+      "before": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb",
+      "current": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format7Runtime.ts",
+      "before": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2",
+      "current": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format8CalculationData.ts",
+      "before": "e3e388ef5e2b4b9a1b89b275fe3aee1db21e302889868fc97a2fc7fa924ce33a",
+      "current": "e3e388ef5e2b4b9a1b89b275fe3aee1db21e302889868fc97a2fc7fa924ce33a",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format8Runtime.ts",
+      "before": "05e14603823da33ec457f179156123be4404caf702914940bc7f0ca3cd713acf",
+      "current": "05e14603823da33ec457f179156123be4404caf702914940bc7f0ca3cd713acf",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format9CalculationData.ts",
+      "before": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e",
+      "current": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/format9Runtime.ts",
+      "before": "fcf2ed9e20172a83098b9937117e894c16f6dcd70240b3a4ad4bd39f5ad2c570",
+      "current": "fcf2ed9e20172a83098b9937117e894c16f6dcd70240b3a4ad4bd39f5ad2c570",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/generateCalendar.ts",
+      "before": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218",
+      "current": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivation.ts",
+      "before": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4",
+      "current": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationTypes.ts",
+      "before": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5",
+      "current": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV10.ts",
+      "before": "ed41ef100fda3d8404bb9b2aae6eed2b6ee73eb85eb907573e7ebad13d89d747",
+      "current": "ed41ef100fda3d8404bb9b2aae6eed2b6ee73eb85eb907573e7ebad13d89d747",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV12.ts",
+      "before": "7178f240a0138e466954041212d24a1793a0bea908b3b24280adee63df84a280",
+      "current": "7178f240a0138e466954041212d24a1793a0bea908b3b24280adee63df84a280",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV13.ts",
+      "before": "11491139d9e223b1c7c6a0ad7f423ddecd4c88df27d3725bdc940c46eb5f6dd0",
+      "current": "11491139d9e223b1c7c6a0ad7f423ddecd4c88df27d3725bdc940c46eb5f6dd0",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV14.ts",
+      "before": "e95c2e16fe41427d5be47f5ef13e494f9c6765691e45a8e63d1765e27adf1ce9",
+      "current": "e95c2e16fe41427d5be47f5ef13e494f9c6765691e45a8e63d1765e27adf1ce9",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV15.ts",
+      "before": "380dab5e6f489ebb0e1d9258c4636aa124361cbd1ad94e4c13d070a063c65eee",
+      "current": "380dab5e6f489ebb0e1d9258c4636aa124361cbd1ad94e4c13d070a063c65eee",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV16.ts",
+      "before": "970cf38e52d3a967c8609b2ea1aac825a3085650064ca2108a226d270eb89cf7",
+      "current": "970cf38e52d3a967c8609b2ea1aac825a3085650064ca2108a226d270eb89cf7",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayCatalog.ts",
+      "before": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9",
+      "current": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/holidayCatalogTypes.ts",
+      "before": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338",
+      "current": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/index.ts",
+      "before": "47fdb40f3a21162a9a55ea0c609c57fde1fb27f20ee28913823f067b3e02395f",
+      "current": "63d2e51792e8a4c75b5f6f83d94334afebaf9409445f06d9fa558508e84cac5a",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/modernRuntime.ts",
+      "before": "d2d6ee410449f7ba8ef8a8be9a3e89e59663f9157e93af8f7fb4350d9adabe60",
+      "current": "0c492be81d97e63fa16b0f5db5f3084becc51e5a003abe7d05a56dc2a2d9dfc2",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/qualifiedApplicability.ts",
+      "before": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5",
+      "current": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/qualifiedTypes.ts",
+      "before": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48",
+      "current": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat10.ts",
+      "before": "7b17bc1c1051353cc67eee72aa6814f581ab423206d5969f7425ea1313608ce2",
+      "current": "7b17bc1c1051353cc67eee72aa6814f581ab423206d5969f7425ea1313608ce2",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat11.ts",
+      "before": "abee0ba1dc93606a7bd4e76c437bdd514cb8d45692ec7303df1709c51200440c",
+      "current": "abee0ba1dc93606a7bd4e76c437bdd514cb8d45692ec7303df1709c51200440c",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat12.ts",
+      "before": "282b9eff88dd575bfd26dd13d42490897e15ab26e6f2fdbbfb1cf0ad59135622",
+      "current": "282b9eff88dd575bfd26dd13d42490897e15ab26e6f2fdbbfb1cf0ad59135622",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat13.ts",
+      "before": "a40220710b44dc587b660d1f420d69b53c5cbd7e2034423b672352ae487bf145",
+      "current": "a40220710b44dc587b660d1f420d69b53c5cbd7e2034423b672352ae487bf145",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat14.ts",
+      "before": "66961ef13e9c8820bd4cc6e5211edb0bc8cdefffa34f47cd1ab9104f25ecaa0f",
+      "current": "66961ef13e9c8820bd4cc6e5211edb0bc8cdefffa34f47cd1ab9104f25ecaa0f",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat15.ts",
+      "before": "30cb6addd43cbf1914850d2a3ceb6730a06ecef0b92aea8ef558082d50f22966",
+      "current": "30cb6addd43cbf1914850d2a3ceb6730a06ecef0b92aea8ef558082d50f22966",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat16.ts",
+      "before": "79ef301de510a9bb5d1823bd60af57a21c837ad7934336bc59620f629019b223",
+      "current": "79ef301de510a9bb5d1823bd60af57a21c837ad7934336bc59620f629019b223",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat7.ts",
+      "before": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268",
+      "current": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat8.ts",
+      "before": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6",
+      "current": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat9.ts",
+      "before": "e099d01ed314ced7dbda4f53a4cc7f44f6d3203a04b00b4401ad63f21d398034",
+      "current": "e099d01ed314ced7dbda4f53a4cc7f44f6d3203a04b00b4401ad63f21d398034",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/schemaContract.ts",
+      "before": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643",
+      "current": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/socialCatalog.ts",
+      "before": "dcad69b20f6ff0779712bd6577475937dddbc24934d7e35fabbc4944b742f52e",
+      "current": "6249381c9724b244aad0bf217aa318b030e75f2dec574633ad5ceab0ab34a295",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/socialDeadline.ts",
+      "before": "4b247cd770fe91bfd94540d4bd6091016233c2cb485326b905885ac595a4d350",
+      "current": "ffe5be89a455fca4a172d4d531116ff84470a6d35ce5d1896e9fcbc3bf044971",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/core/socialTypes.ts",
+      "before": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370",
+      "current": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/specialTypes.ts",
+      "before": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89",
+      "current": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/core/types.ts",
+      "before": "cd1a435a6a366836daec5820a0ba56f585df9f95a9f562ad678243e4ba8520e8",
+      "current": "cd1a435a6a366836daec5820a0ba56f585df9f95a9f562ad678243e4ba8520e8",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeDefaults.ts",
+      "before": "baa95b7169f1f6ba11d18863048adbd73f9f35e5387def5b2af080fbad1c5b21",
+      "current": "e860b87c0fc51a26375a77c40274f3ad99ae5d945c65fe81d55f6f0806da3c4c",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeExport.ts",
+      "before": "e61e6d274b95930241d00e3a313a691d6111b55c67226100c59899fe4606e129",
+      "current": "e61e6d274b95930241d00e3a313a691d6111b55c67226100c59899fe4606e129",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeMessages.ts",
+      "before": "0928679362fd687bb38b800a76273efdc8a543105eac6d922591cd9770f21dc0",
+      "current": "1879f2631be55ea3a97cd2d23aa570f9e8d2af1ae7d34c2100b798f813da3563",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeUi.tsx",
+      "before": "363bfc4922841466a2b27f1586962873ed79173910d4aacee10056ff2dd6ad2e",
+      "current": "0791d7d200fd3a90b940544372cb0872f4577e072ae9e053c284d7aee5360453",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/ui/ap23i3Messages.ts",
+      "before": "3ecb187466595a20e89c9338b42ee18269e82dcedf65cb43800ffb6ccff9549b",
+      "current": "3ecb187466595a20e89c9338b42ee18269e82dcedf65cb43800ffb6ccff9549b",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/ap23j3Messages.ts",
+      "before": "045d61375b0f4d18f478dfbb51881704721cec1b65781fd0a91260fb53ac9064",
+      "current": "045d61375b0f4d18f478dfbb51881704721cec1b65781fd0a91260fb53ac9064",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/ap23k3Messages.ts",
+      "before": "47c369c371f813ef5e9d22a75f96f3d527e7a040f0d17f4d7171d0938ec24c19",
+      "current": "47c369c371f813ef5e9d22a75f96f3d527e7a040f0d17f4d7171d0938ec24c19",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/ap23l3Messages.ts",
+      "before": "2f1e5693877015153a30beeb14f6f41c7069697dd907f487a8d5bc746e890184",
+      "current": "2f1e5693877015153a30beeb14f6f41c7069697dd907f487a8d5bc746e890184",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/browserAppearance.tsx",
+      "before": "2857123fde2647ace56866f0ae59450ba96bf2ecddb8e2d0ad274c985d3a93dc",
+      "current": "2857123fde2647ace56866f0ae59450ba96bf2ecddb8e2d0ad274c985d3a93dc",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/calendarContextUi.tsx",
+      "before": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6",
+      "current": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/calendarExport.ts",
+      "before": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89",
+      "current": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/calendarMessages.ts",
+      "before": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb",
+      "current": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/dateEntry.ts",
+      "before": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683",
+      "current": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/dateFormCommit.ts",
+      "before": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983",
+      "current": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/DateInput.tsx",
+      "before": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4",
+      "current": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/dateInputSession.ts",
+      "before": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79",
+      "current": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/dateTransition.ts",
+      "before": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc",
+      "current": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/defaults.ts",
+      "before": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9",
+      "current": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/dropdownStyles.ts",
+      "before": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808",
+      "current": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/FristenrechnerApp.tsx",
+      "before": "dc0f4255743371bc3a2286b3413ac195506e9e0572618a9d1a60661c6964abbc",
+      "current": "b38164136e48c5f5e894f20de70a52b22069cdbd550fce20b24d2ff42a58dbd1",
+      "changed": true
+    },
+    {
+      "path": "spfx/src/product/ui/holidayConnectionDropdown.ts",
+      "before": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368",
+      "current": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/i18n.ts",
+      "before": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369",
+      "current": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/index.ts",
+      "before": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757",
+      "current": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/model.ts",
+      "before": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e",
+      "current": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/qualifiedMessages.ts",
+      "before": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645",
+      "current": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/socialMessages.ts",
+      "before": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f",
+      "current": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/socialUi.ts",
+      "before": "473794daa6b6657fe569baa62a3f62468f6e8fea87e056e41edc7a4bbcef8a3e",
+      "current": "473794daa6b6657fe569baa62a3f62468f6e8fea87e056e41edc7a4bbcef8a3e",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/styles.css",
+      "before": "98d503207f4ae43c22c9ed241a4fb4e34177b624750f0cc8868b85614ba4b6be",
+      "current": "98d503207f4ae43c22c9ed241a4fb4e34177b624750f0cc8868b85614ba4b6be",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/styles.module.scss",
+      "before": "3d13d384983ff32a78833918eac632ef11c545f00dbed4bf8d2f77a6c0e2a260",
+      "current": "3d13d384983ff32a78833918eac632ef11c545f00dbed4bf8d2f77a6c0e2a260",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/tracePresentation.tsx",
+      "before": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace",
+      "current": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/vrpgQualification.ts",
+      "before": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef",
+      "current": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/product/ui/vrpgSelection.ts",
+      "before": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d",
+      "current": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d",
+      "changed": false
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.tsx",
+      "before": "b4eea2df187102ba0d9885de33ee6349fa441b2d17ebf1c540e037f184173a2b",
+      "current": "4e3cfb99ad3a5542bced5dee82394179049a10bbe7e91f9c1789c5450e5c4a95",
+      "changed": true
+    },
+    {
+      "path": "src/core/administrativeCatalog.ts",
+      "before": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb",
+      "current": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb",
+      "changed": false
+    },
+    {
+      "path": "src/core/administrativeContext.ts",
+      "before": "36d58bae0a71382b1337cde591e759198433d53eb942c3b1c3588c39e0f0dac7",
+      "current": "9d2ba4c00a8696336293b521353dbbd001589a96b1c890ff738750a5e23a87b9",
+      "changed": true
+    },
+    {
+      "path": "src/core/administrativeDeadline.ts",
+      "before": "75390930c253784229da823d098771274bad48348f8a08e8a432e3c1d684a9a6",
+      "current": "2f2f66a78d6af691ef6536bc4db608f2a19b510af301cafd8cf6250df85c1e60",
+      "changed": true
+    },
+    {
+      "path": "src/core/administrativeTypes.ts",
+      "before": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1",
+      "current": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1",
+      "changed": false
+    },
+    {
+      "path": "src/core/calculateCalendarBoundDeadline.ts",
+      "before": "7dd68ad3b23422fd5532d5df72c879d23db49adfdf940bce49a73caef4243061",
+      "current": "0b2095eded625d97dd99385adc2a6181e0e1241d635983d4b10df392dcbbe84d",
+      "changed": true
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "before": "af5a6c2ab5ba66e98ae6e2c6e049437adaf0a55e95c2c0e85be7639cb587eef4",
+      "current": "7de8d4b90987d11cb9e1ef363cf84127eccae6dbde26ca1787022bc638ff3952",
+      "changed": true
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "before": "c46294f2cbdea2be85e9ce5baaf540ff1e6c3ad6b63944d30703d16f3e3d26fb",
+      "current": "bcf5921bf5865bbcbf9d4d975ac2c07ac07bae991cc58eae6a055d6374aa5acc",
+      "changed": true
+    },
+    {
+      "path": "src/core/calculatorRuntime.ts",
+      "before": "d34573a1eccb38071f4daf5730684226a6960aaa7e751d0aaa0d8db894e5add4",
+      "current": "f972bf0fb8224aa7d88ef69b2023cc88c898931f7587331eaa73689f1e55273b",
+      "changed": true
+    },
+    {
+      "path": "src/core/calendarResolution.ts",
+      "before": "733e0dab5dfa0b83be0308bd4aad32e55c960a84428083cbafa7df2a00aa49fb",
+      "current": "047925b53273ce93f68f4cb32cba315a450fdaf3bd6772525b84c0b93a4de217",
+      "changed": true
+    },
+    {
+      "path": "src/core/index.ts",
+      "before": "47fdb40f3a21162a9a55ea0c609c57fde1fb27f20ee28913823f067b3e02395f",
+      "current": "63d2e51792e8a4c75b5f6f83d94334afebaf9409445f06d9fa558508e84cac5a",
+      "changed": true
+    },
+    {
+      "path": "src/core/modernRuntime.ts",
+      "before": "d2d6ee410449f7ba8ef8a8be9a3e89e59663f9157e93af8f7fb4350d9adabe60",
+      "current": "0c492be81d97e63fa16b0f5db5f3084becc51e5a003abe7d05a56dc2a2d9dfc2",
+      "changed": true
+    },
+    {
+      "path": "src/core/socialCatalog.ts",
+      "before": "dcad69b20f6ff0779712bd6577475937dddbc24934d7e35fabbc4944b742f52e",
+      "current": "6249381c9724b244aad0bf217aa318b030e75f2dec574633ad5ceab0ab34a295",
+      "changed": true
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "before": "4b247cd770fe91bfd94540d4bd6091016233c2cb485326b905885ac595a4d350",
+      "current": "ffe5be89a455fca4a172d4d531116ff84470a6d35ce5d1896e9fcbc3bf044971",
+      "changed": true
+    },
+    {
+      "path": "src/ui/administrativeDefaults.ts",
+      "before": "baa95b7169f1f6ba11d18863048adbd73f9f35e5387def5b2af080fbad1c5b21",
+      "current": "e860b87c0fc51a26375a77c40274f3ad99ae5d945c65fe81d55f6f0806da3c4c",
+      "changed": true
+    },
+    {
+      "path": "src/ui/administrativeExport.ts",
+      "before": "e61e6d274b95930241d00e3a313a691d6111b55c67226100c59899fe4606e129",
+      "current": "e61e6d274b95930241d00e3a313a691d6111b55c67226100c59899fe4606e129",
+      "changed": false
+    },
+    {
+      "path": "src/ui/administrativeMessages.ts",
+      "before": "0928679362fd687bb38b800a76273efdc8a543105eac6d922591cd9770f21dc0",
+      "current": "1879f2631be55ea3a97cd2d23aa570f9e8d2af1ae7d34c2100b798f813da3563",
+      "changed": true
+    },
+    {
+      "path": "src/ui/administrativeUi.tsx",
+      "before": "363bfc4922841466a2b27f1586962873ed79173910d4aacee10056ff2dd6ad2e",
+      "current": "0791d7d200fd3a90b940544372cb0872f4577e072ae9e053c284d7aee5360453",
+      "changed": true
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "before": "dc0f4255743371bc3a2286b3413ac195506e9e0572618a9d1a60661c6964abbc",
+      "current": "b38164136e48c5f5e894f20de70a52b22069cdbd550fce20b24d2ff42a58dbd1",
+      "changed": true
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "before": "473794daa6b6657fe569baa62a3f62468f6e8fea87e056e41edc7a4bbcef8a3e",
+      "current": "473794daa6b6657fe569baa62a3f62468f6e8fea87e056e41edc7a4bbcef8a3e",
+      "changed": false
+    }
+  ],
+  "livingStatus": [
+    {
+      "path": "README.md",
+      "before": "ff7eda6581d5036b166ac589077ee8d383aa39ae9dc3db5c76cf0ce0ca86b2e9",
+      "current": "41581941a5c2b26ab448211972f44fcbf1fc7c347ba844b5ff15f3393611d6ea",
+      "changed": true
+    },
+    {
+      "path": "docs/README.md",
+      "before": "22c0e457177cf293284ba691adfa6aa01eee7941bb4b4f8e4e0a675475388afd",
+      "current": "caad10b103267bdaa46f114872e669f169c5c6f73b96b08c675f34a2f485440c",
+      "changed": true
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "before": "3d47b1eb46759c30f309d5721097081fc5f7bb1a349cbc7cc603e559065bb68e",
+      "current": "1b5974a038b0ff505291355b6a96d8dbb711d0f0872195eab5bab8039c2a0989",
+      "changed": true
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "before": "b5a9d5ba060cebf0a0acef90d0e4e794624675809c72d5f60d667e4992abb6ac",
+      "current": "868e9d425a189facdf18bee9e0384fb4c7172a5e77c0515cbad6f0d0e815d85b",
+      "changed": true
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "before": "b64db67ffc9bfc8bb9a4cbf761d15bcfadc09ef503765f682c57df0e2ce8e752",
+      "current": "cc9e2dbf4451f2d0c732ba8fb5291e82505e6b8f5cda68396b68079f91f2b0b6",
+      "changed": true
+    },
+    {
+      "path": "docs/planung/fortsetzung-verwaltungsverfahren-mvp09.md",
+      "before": "d154e687a6aba62868632e5ee065360f95dd8aeb5d6dd9bf0c988d29142a9d7e",
+      "current": "c18cd7f3f9e9172e778cde1eaf42e87c74df743c6b5107cb0207cf125ac2736c",
+      "changed": true
+    },
+    {
+      "path": "docs/planung/schweizausbau-nach-mvp09.md",
+      "before": "8e8e83961e88d4c95c9cc86708b7caeed8c7440c3ee45e8261ffaa5cda2ea89a",
+      "current": "eaabfe43714c0462662a3d85693befe2667a08471a39dbd55afde9cbf85bba87",
+      "changed": true
+    }
+  ],
+  "newIntegrationFiles": [
+    "data/candidates/2026-10-28-ap23m3/administrative-procedures/ch-cantonal-administrative-procedures.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ag-21d6f2634ce0.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ai-5d4e5a68e106.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ai-f507435d8aa8.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ar-88bb22c08a22.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-bl-72f1a7e0fcf8.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-bs-39a64bdfc0fe.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-fr-7d8c38f7c610.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ge-a36ff7926d08.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-gl-87c11e156541.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-gr-bf0366c8eda2.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ju-b096c09f506c.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-lu-55514cd91f06.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-lu-b879eb8eb04f.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ne-027ceadbf103.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ne-21f519039621.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-nw-5dfca484e4af.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ow-76c151dccf1f.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-sg-79009d6d6021.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-sg-f95068e3b162.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-sh-1ccc70f9897a.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-sh-ec7d0988145a.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-so-3f5f7b7f54f5.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-sz-ec9f2c557fe4.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-tg-3d6514fbabb1.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ti-944ed0286e9a.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-ur-67275ff3e872.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-vd-26f452ff34ee.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-vs-6c002f32b1b0.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-zg-860e0f8e0e1a.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap22-zh-5aa2974cffee.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap23f2-zh-rlg-nine.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap23h2-nw-procedural-core.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ap23h2-ow-procedural-core.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/be-public-holidays.json",
+    "data/candidates/2026-10-28-ap23m3/calendars/ch-federal-calendar.json",
+    "data/candidates/2026-10-28-ap23m3/holiday-catalogs/ch-holiday-catalog.json",
+    "data/candidates/2026-10-28-ap23m3/manifest.json",
+    "data/candidates/2026-10-28-ap23m3/profiles/bgg.json",
+    "data/candidates/2026-10-28-ap23m3/profiles/stpo.json",
+    "data/candidates/2026-10-28-ap23m3/profiles/vrpg-be.json",
+    "data/candidates/2026-10-28-ap23m3/profiles/vwvg.json",
+    "data/candidates/2026-10-28-ap23m3/profiles/zpo.json",
+    "data/candidates/2026-10-28-ap23m3/social-procedures/ch-social-procedures.json",
+    "data/candidates/2026-10-28-ap23m3/special-regimes/vrpg-be.json",
+    "schemas/administrative-procedure-catalog-v10.schema.json",
+    "schemas/implementation/ap23m3/administrative-input-v10.schema.json",
+    "schemas/implementation/ap23m3/local-reference-manifest-v17.schema.json",
+    "schemas/release-manifest-v17.schema.json",
+    "scripts/build-ap23m3-candidate.ts",
+    "scripts/build-ap23m3-public.mjs",
+    "scripts/build-ap23m3-schemas.mjs",
+    "scripts/build-ap23m3-spfx.mjs",
+    "scripts/check-ap23m3-export.mjs",
+    "scripts/check-ap23m3-inherited-references.ts",
+    "scripts/check-ap23m3-package.mjs",
+    "scripts/check-ap23m3-preservation.mjs",
+    "scripts/check-ap23m3-references.ts",
+    "scripts/check-ap23m3.mjs",
+    "scripts/check_ap23m3_independent.py",
+    "scripts/finalize-ap23m3.mjs",
+    "scripts/record-ap23m3-browser.mjs",
+    "scripts/serve-ap23m3-built.mjs",
+    "spfx/src/core/schemas/administrative-procedure-catalog-v10.schema.json",
+    "spfx/src/core/schemas/release-manifest-v17.schema.json",
+    "spfx/src/product/core/administrativeCatalogV10.ts",
+    "spfx/src/product/core/administrativeDeadlineV10.ts",
+    "spfx/src/product/core/administrativeDeadlineV9InV10.ts",
+    "spfx/src/product/core/administrativeTypesV10.ts",
+    "spfx/src/product/core/administrativeV10Baseline.ts",
+    "spfx/src/product/core/format17Baseline.ts",
+    "spfx/src/product/core/format17CalculationData.ts",
+    "spfx/src/product/core/format17Runtime.ts",
+    "spfx/src/product/core/holidayActivationV17.ts",
+    "spfx/src/product/core/releaseFormat17.ts",
+    "spfx/src/product/ui/ap23m3Messages.ts",
+    "spfx/src/schemas/administrative-procedure-catalog-v10.schema.json",
+    "spfx/src/schemas/implementation/ap23m3/administrative-input-v10.schema.json",
+    "spfx/src/schemas/implementation/ap23m3/local-reference-manifest-v17.schema.json",
+    "spfx/src/schemas/release-manifest-v17.schema.json",
+    "spfx/test/ap23m3-fixture.ts",
+    "spfx/test/ap23m3-format17.test.ts",
+    "src/core/administrativeCatalogV10.ts",
+    "src/core/administrativeDeadlineV10.ts",
+    "src/core/administrativeDeadlineV9InV10.ts",
+    "src/core/administrativeTypesV10.ts",
+    "src/core/administrativeV10Baseline.ts",
+    "src/core/format17Baseline.ts",
+    "src/core/format17CalculationData.ts",
+    "src/core/format17Runtime.ts",
+    "src/core/holidayActivationV17.ts",
+    "src/core/releaseFormat17.ts",
+    "src/public-app/ap23m3-main.tsx",
+    "src/release/ap23m3CandidateData.ts",
+    "src/ui/ap23m3Messages.ts",
+    "tests/core/ap23m3-core.test.ts",
+    "tests/core/ap23m3-data.test.ts",
+    "tests/core/ap23m3Fixtures.ts",
+    "tests/governance/ap23m3-acceptance-archive.test.mjs",
+    "tests/governance/ap23m3-completion.test.mjs",
+    "tests/governance/ap23m3-independent.test.mjs",
+    "tests/governance/ap23m3-preservation.test.mjs",
+    "tests/hosts/ap23m3-packaged.test.ts",
+    "tests/hosts/ap23m3-spfx-host.test.ts",
+    "tests/public-app/ap23m3-build.test.ts",
+    "tests/ui/ap23m3-administrative.test.tsx"
+  ],
+  "generatedProductCopiesVerified": [
+    {
+      "path": "spfx/src/product/core/administrativeCatalog.ts",
+      "source": "src/core/administrativeCatalog.ts",
+      "derived": false,
+      "byteLength": 14208,
+      "sha256": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV2.ts",
+      "source": "src/core/administrativeCatalogV2.ts",
+      "derived": false,
+      "byteLength": 6043,
+      "sha256": "ca5b3fe7e7aae6e961142e8aa20520cddb1c9817ec058347962ed307622df4ff"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV3.ts",
+      "source": "src/core/administrativeCatalogV3.ts",
+      "derived": false,
+      "byteLength": 7616,
+      "sha256": "d0c2e28c0f43132d94bf9fa0ee053e3c01e35157d61a92894c5e7b04de7e399d"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV4.ts",
+      "source": "src/core/administrativeCatalogV4.ts",
+      "derived": false,
+      "byteLength": 5740,
+      "sha256": "253a6068933657b8ca4038fee30abb2a9ae0357c9fb25b86c0797f9d3ccc3bbe"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV5.ts",
+      "source": "src/core/administrativeCatalogV5.ts",
+      "derived": false,
+      "byteLength": 5215,
+      "sha256": "2baf3741a99f079f71896d56040910279b9b3051488c71c56d81f920a0bf777e"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV6.ts",
+      "source": "src/core/administrativeCatalogV6.ts",
+      "derived": false,
+      "byteLength": 9837,
+      "sha256": "f73ae0c37df13abd4d9a49b6c3b64349a15239e63665b2eb08a3729ccd7868d3"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV7.ts",
+      "source": "src/core/administrativeCatalogV7.ts",
+      "derived": false,
+      "byteLength": 10255,
+      "sha256": "564127e4c5f37131adb67321081e149030f24a3abb803d6b577a77676ad87019"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV8.ts",
+      "source": "src/core/administrativeCatalogV8.ts",
+      "derived": false,
+      "byteLength": 13127,
+      "sha256": "5486b866a3847f260f0d8727f00acefaf33b2e9c963b3c9ac187b13749ad5b0e"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV9.ts",
+      "source": "src/core/administrativeCatalogV9.ts",
+      "derived": false,
+      "byteLength": 13812,
+      "sha256": "f4e14fe5677d1b295645046d3645f62fa077eae474f8d157b55365a4c51fbf7b"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeContext.ts",
+      "source": "src/core/administrativeContext.ts",
+      "derived": false,
+      "byteLength": 2786,
+      "sha256": "9d2ba4c00a8696336293b521353dbbd001589a96b1c890ff738750a5e23a87b9"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadline.ts",
+      "source": "src/core/administrativeDeadline.ts",
+      "derived": false,
+      "byteLength": 33764,
+      "sha256": "2f2f66a78d6af691ef6536bc4db608f2a19b510af301cafd8cf6250df85c1e60"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV6.ts",
+      "source": "src/core/administrativeDeadlineV6.ts",
+      "derived": false,
+      "byteLength": 12591,
+      "sha256": "b0af455581931b1272ad43e85e8346e1535567d6d936f99a4444c9bbe8151e98"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV7.ts",
+      "source": "src/core/administrativeDeadlineV7.ts",
+      "derived": false,
+      "byteLength": 15060,
+      "sha256": "357ce09945d2b02203e907eab5b71a8ba2792dd4405cba0731d01460cf66d37b"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV8.ts",
+      "source": "src/core/administrativeDeadlineV8.ts",
+      "derived": false,
+      "byteLength": 26608,
+      "sha256": "33fa813a34585cca4b73dfa463499a1226ec1284cf03f5cf659c2548bda458fb"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV9.ts",
+      "source": "src/core/administrativeDeadlineV9.ts",
+      "derived": false,
+      "byteLength": 42640,
+      "sha256": "74a564715f7d3fbb1509940da3d5d399c706bd49804d4f9a98a6d6c35bccf66f"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypes.ts",
+      "source": "src/core/administrativeTypes.ts",
+      "derived": false,
+      "byteLength": 8263,
+      "sha256": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV2.ts",
+      "source": "src/core/administrativeTypesV2.ts",
+      "derived": false,
+      "byteLength": 2845,
+      "sha256": "30283d0bcdf88342cc6db7add96336086462e0cf2366c9b5cc169fd6f9a6bf34"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV3.ts",
+      "source": "src/core/administrativeTypesV3.ts",
+      "derived": false,
+      "byteLength": 3395,
+      "sha256": "9e39e6710315ed2b8b257951b2e9dc66102e3154914a0878f49530b24e386626"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV4.ts",
+      "source": "src/core/administrativeTypesV4.ts",
+      "derived": false,
+      "byteLength": 6389,
+      "sha256": "07a6234232a22d5d023ad67e9bca6a80ad5a72eadf28956347db09a7fab5864d"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV5.ts",
+      "source": "src/core/administrativeTypesV5.ts",
+      "derived": false,
+      "byteLength": 2643,
+      "sha256": "a9fc29bc5c656e02cd57b7ef91c29bdca227ff59634d18588f9510f8ac5cdcd2"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV6.ts",
+      "source": "src/core/administrativeTypesV6.ts",
+      "derived": false,
+      "byteLength": 3686,
+      "sha256": "ad28f64b0de3da41279a23c0cd9d92373c4bfdb5d221cc3d96048d2edf6d2825"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV7.ts",
+      "source": "src/core/administrativeTypesV7.ts",
+      "derived": false,
+      "byteLength": 3939,
+      "sha256": "6ab6e6bb60eb46c81ebca1bdcf2263f8de5fa8b1626a18274eb2c8926933d209"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV8.ts",
+      "source": "src/core/administrativeTypesV8.ts",
+      "derived": false,
+      "byteLength": 7703,
+      "sha256": "2bc7b0ef53fb4c75e646fcf38f621b932cb2e69c1933feb63613f5ede66e7fef"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV9.ts",
+      "source": "src/core/administrativeTypesV9.ts",
+      "derived": false,
+      "byteLength": 5931,
+      "sha256": "17e7adb5efcf1768f6fb2a49f8fb4d77a06393cb22888c790cc9d84d1526aeab"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV2Baseline.ts",
+      "source": "src/core/administrativeV2Baseline.ts",
+      "derived": false,
+      "byteLength": 7461,
+      "sha256": "eb2252b582a2257dda23226e5755cf4d123f121f536c24af13550a3d7ce110aa"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV3Baseline.ts",
+      "source": "src/core/administrativeV3Baseline.ts",
+      "derived": false,
+      "byteLength": 15633,
+      "sha256": "4ff232095b7f54813516e1e1f621a0de9dcbf8068602971bf5b3207aa4c2ca0b"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV4Baseline.ts",
+      "source": "src/core/administrativeV4Baseline.ts",
+      "derived": false,
+      "byteLength": 25974,
+      "sha256": "a2b1421f5c405c2cd970087ccbfad153fbd64fe763c268e9709f27f83fc7d9d8"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV5Baseline.ts",
+      "source": "src/core/administrativeV5Baseline.ts",
+      "derived": false,
+      "byteLength": 33538,
+      "sha256": "c9b203c340fffa1e7d753754970767fcd05ad690062093e1c2e83227d9e301b7"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV6Baseline.ts",
+      "source": "src/core/administrativeV6Baseline.ts",
+      "derived": false,
+      "byteLength": 54951,
+      "sha256": "97ebe0a8265b267ddd7bd356a2a38e999842da707afff5624994e32affd96a8f"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV7Baseline.ts",
+      "source": "src/core/administrativeV7Baseline.ts",
+      "derived": false,
+      "byteLength": 72358,
+      "sha256": "70d5bfd5c90f6eeaad31a636a80599e43e8025f8fa4b3d49805156a3005a481e"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV8Baseline.ts",
+      "source": "src/core/administrativeV8Baseline.ts",
+      "derived": false,
+      "byteLength": 84563,
+      "sha256": "87a36e0a70e302698e4eb00d38fd31acd58e017faade22b39065f8afc98f63d5"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV9Baseline.ts",
+      "source": "src/core/administrativeV9Baseline.ts",
+      "derived": false,
+      "byteLength": 99637,
+      "sha256": "de96596f84adcdf6d2f492f74eff3d7140ff960fe9ecc2a8f05ce0c8da1f19fe"
+    },
+    {
+      "path": "spfx/src/product/core/calculateCalendarBoundDeadline.ts",
+      "source": "src/core/calculateCalendarBoundDeadline.ts",
+      "derived": false,
+      "byteLength": 13467,
+      "sha256": "0b2095eded625d97dd99385adc2a6181e0e1241d635983d4b10df392dcbbe84d"
+    },
+    {
+      "path": "spfx/src/product/core/calculateDeadline.ts",
+      "source": "src/core/calculateDeadline.ts",
+      "derived": false,
+      "byteLength": 25513,
+      "sha256": "7de8d4b90987d11cb9e1ef363cf84127eccae6dbde26ca1787022bc638ff3952"
+    },
+    {
+      "path": "spfx/src/product/core/calculateQualifiedSpecialDeadline.ts",
+      "source": "src/core/calculateQualifiedSpecialDeadline.ts",
+      "derived": false,
+      "byteLength": 963,
+      "sha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530"
+    },
+    {
+      "path": "spfx/src/product/core/calculateSpecialDeadline.ts",
+      "source": "src/core/calculateSpecialDeadline.ts",
+      "derived": false,
+      "byteLength": 31170,
+      "sha256": "bcf5921bf5865bbcbf9d4d975ac2c07ac07bae991cc58eae6a055d6374aa5acc"
+    },
+    {
+      "path": "spfx/src/product/core/calculatorRuntime.ts",
+      "source": "src/core/calculatorRuntime.ts",
+      "derived": false,
+      "byteLength": 16442,
+      "sha256": "f972bf0fb8224aa7d88ef69b2023cc88c898931f7587331eaa73689f1e55273b"
+    },
+    {
+      "path": "spfx/src/product/core/calendarMigration.ts",
+      "source": "src/core/calendarMigration.ts",
+      "derived": false,
+      "byteLength": 1867,
+      "sha256": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3"
+    },
+    {
+      "path": "spfx/src/product/core/calendarResolution.ts",
+      "source": "src/core/calendarResolution.ts",
+      "derived": false,
+      "byteLength": 7603,
+      "sha256": "047925b53273ce93f68f4cb32cba315a450fdaf3bd6772525b84c0b93a4de217"
+    },
+    {
+      "path": "spfx/src/product/core/calendarRuleTypes.ts",
+      "source": "src/core/calendarRuleTypes.ts",
+      "derived": false,
+      "byteLength": 5750,
+      "sha256": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952"
+    },
+    {
+      "path": "spfx/src/product/core/data.ts",
+      "source": "src/core/data.ts",
+      "derived": false,
+      "byteLength": 20131,
+      "sha256": "fe32faeaad982296c919b2ea091d5be27ba0a50dfa5ef4748ef9d368b620e037"
+    },
+    {
+      "path": "spfx/src/product/core/date.ts",
+      "source": "src/core/date.ts",
+      "derived": false,
+      "byteLength": 4847,
+      "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc"
+    },
+    {
+      "path": "spfx/src/product/core/dayDeadlineArithmetic.ts",
+      "source": "src/core/dayDeadlineArithmetic.ts",
+      "derived": false,
+      "byteLength": 6233,
+      "sha256": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895"
+    },
+    {
+      "path": "spfx/src/product/core/format10Baseline.ts",
+      "source": "src/core/format10Baseline.ts",
+      "derived": false,
+      "byteLength": 812,
+      "sha256": "66cb7fc813bee3c69d3abb6534e7e5cfec79264eacbc05e24f172ffbe2901bdc"
+    },
+    {
+      "path": "spfx/src/product/core/format10CalculationData.ts",
+      "source": "src/core/format10CalculationData.ts",
+      "derived": false,
+      "byteLength": 5556,
+      "sha256": "0d46c3ba393c7f27d046412d724925639f01b11530f8b7fdda5c5b5849435c17"
+    },
+    {
+      "path": "spfx/src/product/core/format10Runtime.ts",
+      "source": "src/core/format10Runtime.ts",
+      "derived": false,
+      "byteLength": 3274,
+      "sha256": "548726e2f1adda24c0c4508d863ef02398838d36ef7233956452ea7f6536e134"
+    },
+    {
+      "path": "spfx/src/product/core/format11Baseline.ts",
+      "source": "src/core/format11Baseline.ts",
+      "derived": false,
+      "byteLength": 813,
+      "sha256": "7418eec8c776ee2a5a2ab5c77d01381ec3de2b3b64b102cc20c1cae7de85a9ab"
+    },
+    {
+      "path": "spfx/src/product/core/format11CalculationData.ts",
+      "source": "src/core/format11CalculationData.ts",
+      "derived": false,
+      "byteLength": 5556,
+      "sha256": "266a3c2e8f481eff7df6c7844e8b8ea060fc76b8c87752ebb8989dcc2f4118d0"
+    },
+    {
+      "path": "spfx/src/product/core/format11Runtime.ts",
+      "source": "src/core/format11Runtime.ts",
+      "derived": false,
+      "byteLength": 3275,
+      "sha256": "f7a9c7a226049e81752e158fc7e8b8ce97dea324b4662d410e7f27166c943b3c"
+    },
+    {
+      "path": "spfx/src/product/core/format12Baseline.ts",
+      "source": "src/core/format12Baseline.ts",
+      "derived": false,
+      "byteLength": 499736,
+      "sha256": "3a4c66daa56e1caa5db5473de27f5e776908264e551c8b3a3c368688abcf1159"
+    },
+    {
+      "path": "spfx/src/product/core/format12CalculationData.ts",
+      "source": "src/core/format12CalculationData.ts",
+      "derived": false,
+      "byteLength": 5554,
+      "sha256": "41c6c084583650bd5cbb4f0fce2ef0e6d6631234fad02c266f4ef5c6aae67cc4"
+    },
+    {
+      "path": "spfx/src/product/core/format12Runtime.ts",
+      "source": "src/core/format12Runtime.ts",
+      "derived": false,
+      "byteLength": 3273,
+      "sha256": "b5b5b27df9ca39694e86da2e13cf86998520688673b0984571177ea49adbc18c"
+    },
+    {
+      "path": "spfx/src/product/core/format13Baseline.ts",
+      "source": "src/core/format13Baseline.ts",
+      "derived": false,
+      "byteLength": 499729,
+      "sha256": "cabbcc0ae7564b21fc6428cb2d0f8f86a0eba6974e501a907190ad06eb3b82c1"
+    },
+    {
+      "path": "spfx/src/product/core/format13CalculationData.ts",
+      "source": "src/core/format13CalculationData.ts",
+      "derived": false,
+      "byteLength": 5555,
+      "sha256": "e8e16812e7c65bd235a809a1c3d1f9e936640ed55dd97aee241243be01b785eb"
+    },
+    {
+      "path": "spfx/src/product/core/format13Runtime.ts",
+      "source": "src/core/format13Runtime.ts",
+      "derived": false,
+      "byteLength": 3274,
+      "sha256": "df5eb86044347fb8e895f207921ba70e9861423df9e302a30e1fd7f941b46e04"
+    },
+    {
+      "path": "spfx/src/product/core/format14Baseline.ts",
+      "source": "src/core/format14Baseline.ts",
+      "derived": false,
+      "byteLength": 499729,
+      "sha256": "1a183dd815cc7972c8777708f4030a7187c512118356b90549132e803d8e1f02"
+    },
+    {
+      "path": "spfx/src/product/core/format14CalculationData.ts",
+      "source": "src/core/format14CalculationData.ts",
+      "derived": false,
+      "byteLength": 5557,
+      "sha256": "c5bf98e7421ae8f50afdf2414d299e945e838d2165ade83db60889c9357ab87f"
+    },
+    {
+      "path": "spfx/src/product/core/format14Runtime.ts",
+      "source": "src/core/format14Runtime.ts",
+      "derived": false,
+      "byteLength": 3275,
+      "sha256": "b46462fa9a9f3d001bec16913a4dd9274450eb944b302c927a672060c94e66eb"
+    },
+    {
+      "path": "spfx/src/product/core/format15Baseline.ts",
+      "source": "src/core/format15Baseline.ts",
+      "derived": false,
+      "byteLength": 419,
+      "sha256": "18d1df55adedd0adcd6754e7e376c17b4d09cb12b9e6112f040b50ff53d0c80a"
+    },
+    {
+      "path": "spfx/src/product/core/format15CalculationData.ts",
+      "source": "src/core/format15CalculationData.ts",
+      "derived": false,
+      "byteLength": 5555,
+      "sha256": "e7fe268526bdc9b97d04d285840b684f84b4e2ddfdd96dda6e99b9c54e555315"
+    },
+    {
+      "path": "spfx/src/product/core/format15Runtime.ts",
+      "source": "src/core/format15Runtime.ts",
+      "derived": false,
+      "byteLength": 3273,
+      "sha256": "63ec19fc02374c215fca9dd1df8a370999f61f57b9a22afa5588e5630ebd1c81"
+    },
+    {
+      "path": "spfx/src/product/core/format16Baseline.ts",
+      "source": "src/core/format16Baseline.ts",
+      "derived": false,
+      "byteLength": 405,
+      "sha256": "c742e21ec5932a6b95447fd24af994dff3ad9bdbf873aab8fa00ad89c38487c3"
+    },
+    {
+      "path": "spfx/src/product/core/format16CalculationData.ts",
+      "source": "src/core/format16CalculationData.ts",
+      "derived": false,
+      "byteLength": 5554,
+      "sha256": "82cbbf59be11f068719103be573d1cc776effc7a0100733233e3ac3a09544910"
+    },
+    {
+      "path": "spfx/src/product/core/format16Runtime.ts",
+      "source": "src/core/format16Runtime.ts",
+      "derived": false,
+      "byteLength": 3273,
+      "sha256": "72ec5a8c870501f2e4eec36c5a24306a3d84bdb85ebbf5b38cae0edec8d0eef6"
+    },
+    {
+      "path": "spfx/src/product/core/format7Baseline.ts",
+      "source": "src/core/format7Baseline.ts",
+      "derived": false,
+      "byteLength": 496,
+      "sha256": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb"
+    },
+    {
+      "path": "spfx/src/product/core/format7Runtime.ts",
+      "source": "src/core/format7Runtime.ts",
+      "derived": false,
+      "byteLength": 1435,
+      "sha256": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2"
+    },
+    {
+      "path": "spfx/src/product/core/format8CalculationData.ts",
+      "source": "src/core/format8CalculationData.ts",
+      "derived": false,
+      "byteLength": 5519,
+      "sha256": "e3e388ef5e2b4b9a1b89b275fe3aee1db21e302889868fc97a2fc7fa924ce33a"
+    },
+    {
+      "path": "spfx/src/product/core/format8Runtime.ts",
+      "source": "src/core/format8Runtime.ts",
+      "derived": false,
+      "byteLength": 2706,
+      "sha256": "05e14603823da33ec457f179156123be4404caf702914940bc7f0ca3cd713acf"
+    },
+    {
+      "path": "spfx/src/product/core/format9CalculationData.ts",
+      "source": "src/core/format9CalculationData.ts",
+      "derived": false,
+      "byteLength": 5523,
+      "sha256": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e"
+    },
+    {
+      "path": "spfx/src/product/core/format9Runtime.ts",
+      "source": "src/core/format9Runtime.ts",
+      "derived": false,
+      "byteLength": 3252,
+      "sha256": "fcf2ed9e20172a83098b9937117e894c16f6dcd70240b3a4ad4bd39f5ad2c570"
+    },
+    {
+      "path": "spfx/src/product/core/generateCalendar.ts",
+      "source": "src/core/generateCalendar.ts",
+      "derived": false,
+      "byteLength": 37002,
+      "sha256": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivation.ts",
+      "source": "src/core/holidayActivation.ts",
+      "derived": false,
+      "byteLength": 18481,
+      "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationTypes.ts",
+      "source": "src/core/holidayActivationTypes.ts",
+      "derived": false,
+      "byteLength": 4801,
+      "sha256": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV10.ts",
+      "source": "src/core/holidayActivationV10.ts",
+      "derived": false,
+      "byteLength": 21705,
+      "sha256": "ed41ef100fda3d8404bb9b2aae6eed2b6ee73eb85eb907573e7ebad13d89d747"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV12.ts",
+      "source": "src/core/holidayActivationV12.ts",
+      "derived": false,
+      "byteLength": 2714,
+      "sha256": "7178f240a0138e466954041212d24a1793a0bea908b3b24280adee63df84a280"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV13.ts",
+      "source": "src/core/holidayActivationV13.ts",
+      "derived": false,
+      "byteLength": 2715,
+      "sha256": "11491139d9e223b1c7c6a0ad7f423ddecd4c88df27d3725bdc940c46eb5f6dd0"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV14.ts",
+      "source": "src/core/holidayActivationV14.ts",
+      "derived": false,
+      "byteLength": 2716,
+      "sha256": "e95c2e16fe41427d5be47f5ef13e494f9c6765691e45a8e63d1765e27adf1ce9"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV15.ts",
+      "source": "src/core/holidayActivationV15.ts",
+      "derived": false,
+      "byteLength": 2714,
+      "sha256": "380dab5e6f489ebb0e1d9258c4636aa124361cbd1ad94e4c13d070a063c65eee"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV16.ts",
+      "source": "src/core/holidayActivationV16.ts",
+      "derived": false,
+      "byteLength": 2714,
+      "sha256": "970cf38e52d3a967c8609b2ea1aac825a3085650064ca2108a226d270eb89cf7"
+    },
+    {
+      "path": "spfx/src/product/core/holidayCatalog.ts",
+      "source": "src/core/holidayCatalog.ts",
+      "derived": false,
+      "byteLength": 40025,
+      "sha256": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9"
+    },
+    {
+      "path": "spfx/src/product/core/holidayCatalogTypes.ts",
+      "source": "src/core/holidayCatalogTypes.ts",
+      "derived": false,
+      "byteLength": 7059,
+      "sha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338"
+    },
+    {
+      "path": "spfx/src/product/core/index.ts",
+      "source": "src/core/index.ts",
+      "derived": false,
+      "byteLength": 6416,
+      "sha256": "63d2e51792e8a4c75b5f6f83d94334afebaf9409445f06d9fa558508e84cac5a"
+    },
+    {
+      "path": "spfx/src/product/core/modernRuntime.ts",
+      "source": "src/core/modernRuntime.ts",
+      "derived": false,
+      "byteLength": 3154,
+      "sha256": "0c492be81d97e63fa16b0f5db5f3084becc51e5a003abe7d05a56dc2a2d9dfc2"
+    },
+    {
+      "path": "spfx/src/product/core/qualifiedApplicability.ts",
+      "source": "src/core/qualifiedApplicability.ts",
+      "derived": false,
+      "byteLength": 8794,
+      "sha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5"
+    },
+    {
+      "path": "spfx/src/product/core/qualifiedTypes.ts",
+      "source": "src/core/qualifiedTypes.ts",
+      "derived": false,
+      "byteLength": 2537,
+      "sha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat10.ts",
+      "source": "src/core/releaseFormat10.ts",
+      "derived": false,
+      "byteLength": 20150,
+      "sha256": "7b17bc1c1051353cc67eee72aa6814f581ab423206d5969f7425ea1313608ce2"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat11.ts",
+      "source": "src/core/releaseFormat11.ts",
+      "derived": false,
+      "byteLength": 21300,
+      "sha256": "abee0ba1dc93606a7bd4e76c437bdd514cb8d45692ec7303df1709c51200440c"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat12.ts",
+      "source": "src/core/releaseFormat12.ts",
+      "derived": false,
+      "byteLength": 21957,
+      "sha256": "282b9eff88dd575bfd26dd13d42490897e15ab26e6f2fdbbfb1cf0ad59135622"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat13.ts",
+      "source": "src/core/releaseFormat13.ts",
+      "derived": false,
+      "byteLength": 21958,
+      "sha256": "a40220710b44dc587b660d1f420d69b53c5cbd7e2034423b672352ae487bf145"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat14.ts",
+      "source": "src/core/releaseFormat14.ts",
+      "derived": false,
+      "byteLength": 21959,
+      "sha256": "66961ef13e9c8820bd4cc6e5211edb0bc8cdefffa34f47cd1ab9104f25ecaa0f"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat15.ts",
+      "source": "src/core/releaseFormat15.ts",
+      "derived": false,
+      "byteLength": 24825,
+      "sha256": "30cb6addd43cbf1914850d2a3ceb6730a06ecef0b92aea8ef558082d50f22966"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat16.ts",
+      "source": "src/core/releaseFormat16.ts",
+      "derived": false,
+      "byteLength": 25125,
+      "sha256": "79ef301de510a9bb5d1823bd60af57a21c837ad7934336bc59620f629019b223"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat7.ts",
+      "source": "src/core/releaseFormat7.ts",
+      "derived": false,
+      "byteLength": 9915,
+      "sha256": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat8.ts",
+      "source": "src/core/releaseFormat8.ts",
+      "derived": false,
+      "byteLength": 19922,
+      "sha256": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat9.ts",
+      "source": "src/core/releaseFormat9.ts",
+      "derived": false,
+      "byteLength": 20076,
+      "sha256": "e099d01ed314ced7dbda4f53a4cc7f44f6d3203a04b00b4401ad63f21d398034"
+    },
+    {
+      "path": "spfx/src/product/core/schemaContract.ts",
+      "source": "src/core/schemaContract.ts",
+      "derived": false,
+      "byteLength": 9320,
+      "sha256": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643"
+    },
+    {
+      "path": "spfx/src/product/core/socialCatalog.ts",
+      "source": "src/core/socialCatalog.ts",
+      "derived": false,
+      "byteLength": 27243,
+      "sha256": "6249381c9724b244aad0bf217aa318b030e75f2dec574633ad5ceab0ab34a295"
+    },
+    {
+      "path": "spfx/src/product/core/socialDeadline.ts",
+      "source": "src/core/socialDeadline.ts",
+      "derived": false,
+      "byteLength": 15901,
+      "sha256": "ffe5be89a455fca4a172d4d531116ff84470a6d35ce5d1896e9fcbc3bf044971"
+    },
+    {
+      "path": "spfx/src/product/core/socialTypes.ts",
+      "source": "src/core/socialTypes.ts",
+      "derived": false,
+      "byteLength": 7785,
+      "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370"
+    },
+    {
+      "path": "spfx/src/product/core/specialTypes.ts",
+      "source": "src/core/specialTypes.ts",
+      "derived": false,
+      "byteLength": 10491,
+      "sha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89"
+    },
+    {
+      "path": "spfx/src/product/core/types.ts",
+      "source": "src/core/types.ts",
+      "derived": false,
+      "byteLength": 8327,
+      "sha256": "cd1a435a6a366836daec5820a0ba56f585df9f95a9f562ad678243e4ba8520e8"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeDefaults.ts",
+      "source": "src/ui/administrativeDefaults.ts",
+      "derived": false,
+      "byteLength": 15793,
+      "sha256": "e860b87c0fc51a26375a77c40274f3ad99ae5d945c65fe81d55f6f0806da3c4c"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeExport.ts",
+      "source": "src/ui/administrativeExport.ts",
+      "derived": false,
+      "byteLength": 5793,
+      "sha256": "e61e6d274b95930241d00e3a313a691d6111b55c67226100c59899fe4606e129"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeMessages.ts",
+      "source": "src/ui/administrativeMessages.ts",
+      "derived": false,
+      "byteLength": 89794,
+      "sha256": "1879f2631be55ea3a97cd2d23aa570f9e8d2af1ae7d34c2100b798f813da3563"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeUi.tsx",
+      "source": "src/ui/administrativeUi.tsx",
+      "derived": false,
+      "byteLength": 82955,
+      "sha256": "0791d7d200fd3a90b940544372cb0872f4577e072ae9e053c284d7aee5360453"
+    },
+    {
+      "path": "spfx/src/product/ui/ap23i3Messages.ts",
+      "source": "src/ui/ap23i3Messages.ts",
+      "derived": false,
+      "byteLength": 39241,
+      "sha256": "3ecb187466595a20e89c9338b42ee18269e82dcedf65cb43800ffb6ccff9549b"
+    },
+    {
+      "path": "spfx/src/product/ui/ap23j3Messages.ts",
+      "source": "src/ui/ap23j3Messages.ts",
+      "derived": false,
+      "byteLength": 43422,
+      "sha256": "045d61375b0f4d18f478dfbb51881704721cec1b65781fd0a91260fb53ac9064"
+    },
+    {
+      "path": "spfx/src/product/ui/ap23k3Messages.ts",
+      "source": "src/ui/ap23k3Messages.ts",
+      "derived": false,
+      "byteLength": 21364,
+      "sha256": "47c369c371f813ef5e9d22a75f96f3d527e7a040f0d17f4d7171d0938ec24c19"
+    },
+    {
+      "path": "spfx/src/product/ui/ap23l3Messages.ts",
+      "source": "src/ui/ap23l3Messages.ts",
+      "derived": false,
+      "byteLength": 21512,
+      "sha256": "2f1e5693877015153a30beeb14f6f41c7069697dd907f487a8d5bc746e890184"
+    },
+    {
+      "path": "spfx/src/product/ui/browserAppearance.tsx",
+      "source": "src/ui/browserAppearance.tsx",
+      "derived": false,
+      "byteLength": 2991,
+      "sha256": "2857123fde2647ace56866f0ae59450ba96bf2ecddb8e2d0ad274c985d3a93dc"
+    },
+    {
+      "path": "spfx/src/product/ui/calendarContextUi.tsx",
+      "source": "src/ui/calendarContextUi.tsx",
+      "derived": false,
+      "byteLength": 10905,
+      "sha256": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6"
+    },
+    {
+      "path": "spfx/src/product/ui/calendarExport.ts",
+      "source": "src/ui/calendarExport.ts",
+      "derived": false,
+      "byteLength": 5153,
+      "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89"
+    },
+    {
+      "path": "spfx/src/product/ui/calendarMessages.ts",
+      "source": "src/ui/calendarMessages.ts",
+      "derived": false,
+      "byteLength": 12322,
+      "sha256": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb"
+    },
+    {
+      "path": "spfx/src/product/ui/dateEntry.ts",
+      "source": "src/ui/dateEntry.ts",
+      "derived": false,
+      "byteLength": 2889,
+      "sha256": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683"
+    },
+    {
+      "path": "spfx/src/product/ui/dateFormCommit.ts",
+      "source": "src/ui/dateFormCommit.ts",
+      "derived": false,
+      "byteLength": 1722,
+      "sha256": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983"
+    },
+    {
+      "path": "spfx/src/product/ui/DateInput.tsx",
+      "source": "src/ui/DateInput.tsx",
+      "derived": false,
+      "byteLength": 13122,
+      "sha256": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4"
+    },
+    {
+      "path": "spfx/src/product/ui/dateInputSession.ts",
+      "source": "src/ui/dateInputSession.ts",
+      "derived": false,
+      "byteLength": 1310,
+      "sha256": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79"
+    },
+    {
+      "path": "spfx/src/product/ui/dateTransition.ts",
+      "source": "src/ui/dateTransition.ts",
+      "derived": false,
+      "byteLength": 3384,
+      "sha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc"
+    },
+    {
+      "path": "spfx/src/product/ui/defaults.ts",
+      "source": "src/ui/defaults.ts",
+      "derived": false,
+      "byteLength": 8095,
+      "sha256": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9"
+    },
+    {
+      "path": "spfx/src/product/ui/dropdownStyles.ts",
+      "source": "src/ui/dropdownStyles.ts",
+      "derived": false,
+      "byteLength": 1036,
+      "sha256": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808"
+    },
+    {
+      "path": "spfx/src/product/ui/FristenrechnerApp.tsx",
+      "source": "src/ui/FristenrechnerApp.tsx",
+      "derived": false,
+      "byteLength": 118503,
+      "sha256": "b38164136e48c5f5e894f20de70a52b22069cdbd550fce20b24d2ff42a58dbd1"
+    },
+    {
+      "path": "spfx/src/product/ui/holidayConnectionDropdown.ts",
+      "source": "src/ui/holidayConnectionDropdown.ts",
+      "derived": false,
+      "byteLength": 261,
+      "sha256": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368"
+    },
+    {
+      "path": "spfx/src/product/ui/i18n.ts",
+      "source": "src/ui/i18n.ts",
+      "derived": false,
+      "byteLength": 51804,
+      "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369"
+    },
+    {
+      "path": "spfx/src/product/ui/index.ts",
+      "source": "src/ui/index.ts",
+      "derived": false,
+      "byteLength": 1126,
+      "sha256": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757"
+    },
+    {
+      "path": "spfx/src/product/ui/model.ts",
+      "source": "src/ui/model.ts",
+      "derived": false,
+      "byteLength": 14853,
+      "sha256": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e"
+    },
+    {
+      "path": "spfx/src/product/ui/qualifiedMessages.ts",
+      "source": "src/ui/qualifiedMessages.ts",
+      "derived": false,
+      "byteLength": 9525,
+      "sha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645"
+    },
+    {
+      "path": "spfx/src/product/ui/socialMessages.ts",
+      "source": "src/ui/socialMessages.ts",
+      "derived": false,
+      "byteLength": 33653,
+      "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f"
+    },
+    {
+      "path": "spfx/src/product/ui/socialUi.ts",
+      "source": "src/ui/socialUi.ts",
+      "derived": false,
+      "byteLength": 11648,
+      "sha256": "473794daa6b6657fe569baa62a3f62468f6e8fea87e056e41edc7a4bbcef8a3e"
+    },
+    {
+      "path": "spfx/src/product/ui/styles.css",
+      "source": "src/ui/styles.css",
+      "derived": false,
+      "byteLength": 11549,
+      "sha256": "98d503207f4ae43c22c9ed241a4fb4e34177b624750f0cc8868b85614ba4b6be"
+    },
+    {
+      "path": "spfx/src/product/ui/styles.module.scss",
+      "source": "src/ui/styles.css",
+      "derived": true,
+      "byteLength": 11562,
+      "sha256": "3d13d384983ff32a78833918eac632ef11c545f00dbed4bf8d2f77a6c0e2a260"
+    },
+    {
+      "path": "spfx/src/product/ui/tracePresentation.tsx",
+      "source": "src/ui/tracePresentation.tsx",
+      "derived": false,
+      "byteLength": 12130,
+      "sha256": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace"
+    },
+    {
+      "path": "spfx/src/product/ui/vrpgQualification.ts",
+      "source": "src/ui/vrpgQualification.ts",
+      "derived": false,
+      "byteLength": 8554,
+      "sha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef"
+    },
+    {
+      "path": "spfx/src/product/ui/vrpgSelection.ts",
+      "source": "src/ui/vrpgSelection.ts",
+      "derived": false,
+      "byteLength": 20547,
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV10.ts",
+      "source": "src/core/administrativeCatalogV10.ts",
+      "derived": false,
+      "byteLength": 14676,
+      "sha256": "4cebc720e2debbb2ed1199f5c4aa83f8bba40085e551e3de3809da7c242d98fb"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV10.ts",
+      "source": "src/core/administrativeDeadlineV10.ts",
+      "derived": false,
+      "byteLength": 22712,
+      "sha256": "0ac21afcdb893b2d11f518acf9af33d7ec390c009e36fe3edf6662e08f529d9b"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadlineV9InV10.ts",
+      "source": "src/core/administrativeDeadlineV9InV10.ts",
+      "derived": false,
+      "byteLength": 43187,
+      "sha256": "d982b552e29a9931bd3040fe47101505c3064fd0cc84f597f2ac069acdf4499c"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV10.ts",
+      "source": "src/core/administrativeTypesV10.ts",
+      "derived": false,
+      "byteLength": 5839,
+      "sha256": "80178f141d3f2772d1909ffae4b399ecb86c61e54dda8e3f560f872bf7cbb75f"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV10Baseline.ts",
+      "source": "src/core/administrativeV10Baseline.ts",
+      "derived": false,
+      "byteLength": 124624,
+      "sha256": "be81444ab4c5d4c218bfb4e50786bec76f8b7f385fd59aba5f94829fd8a9dd96"
+    },
+    {
+      "path": "spfx/src/product/core/format17Baseline.ts",
+      "source": "src/core/format17Baseline.ts",
+      "derived": false,
+      "byteLength": 420,
+      "sha256": "cc4599f65fbc7402596d7a8f188937488d3dc96cb364a5d291f9b1f0a00cf6e1"
+    },
+    {
+      "path": "spfx/src/product/core/format17CalculationData.ts",
+      "source": "src/core/format17CalculationData.ts",
+      "derived": false,
+      "byteLength": 5555,
+      "sha256": "275ab66f5f8325944788257e9bb47674624048c6c9213be0bb3bf2ffc4b036fc"
+    },
+    {
+      "path": "spfx/src/product/core/format17Runtime.ts",
+      "source": "src/core/format17Runtime.ts",
+      "derived": false,
+      "byteLength": 3274,
+      "sha256": "eaa862ac337f888013ffa462cb4946f7bc109e6b36a817cc8b4dbf6c653fa739"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV17.ts",
+      "source": "src/core/holidayActivationV17.ts",
+      "derived": false,
+      "byteLength": 2715,
+      "sha256": "f083cdecb0d1c4dbc250b752cb64c3e9133bc1635f833e70e597320e3729cbfc"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat17.ts",
+      "source": "src/core/releaseFormat17.ts",
+      "derived": false,
+      "byteLength": 25501,
+      "sha256": "90a59e9e752d8659d2bef4c9eb8bae752754a87ddf212a2cdabd6f8ab0495956"
+    },
+    {
+      "path": "spfx/src/product/ui/ap23m3Messages.ts",
+      "source": "src/ui/ap23m3Messages.ts",
+      "derived": false,
+      "byteLength": 29513,
+      "sha256": "b243f110bd3bc89cc662475b6ff1492bf1c68ccfaad23a84b79beefcbcf63f73"
+    }
+  ],
+  "generatedSchemaCopiesVerified": [
+    {
+      "path": "spfx/src/core/schemas/administrative-procedure-catalog-v10.schema.json",
+      "source": "schemas/administrative-procedure-catalog-v10.schema.json",
+      "byteLength": 693727,
+      "sha256": "4d786b56f4a90eecdb20980bd797e1fe21e460d402a9b65182552aa4a4d0083f"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v17.schema.json",
+      "source": "schemas/release-manifest-v17.schema.json",
+      "byteLength": 13685,
+      "sha256": "ac562b3943db115986895fbd1d7e9a4c34ab583352136c3ad17e6985668dfa05"
+    },
+    {
+      "path": "spfx/src/schemas/administrative-procedure-catalog-v10.schema.json",
+      "source": "schemas/administrative-procedure-catalog-v10.schema.json",
+      "byteLength": 693727,
+      "sha256": "4d786b56f4a90eecdb20980bd797e1fe21e460d402a9b65182552aa4a4d0083f"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23m3/administrative-input-v10.schema.json",
+      "source": "schemas/implementation/ap23m3/administrative-input-v10.schema.json",
+      "byteLength": 16656,
+      "sha256": "2ce5158405a1ef7db79bebc8d44b03989a54137b4e79d91013d63bc8b9668d4d"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23m3/local-reference-manifest-v17.schema.json",
+      "source": "schemas/implementation/ap23m3/local-reference-manifest-v17.schema.json",
+      "byteLength": 13762,
+      "sha256": "217db137cac69124a31abb10f167a66a9491308b7a8763ebcba3e43f104ba205"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v17.schema.json",
+      "source": "schemas/release-manifest-v17.schema.json",
+      "byteLength": 13685,
+      "sha256": "ac562b3943db115986895fbd1d7e9a4c34ab583352136c3ad17e6985668dfa05"
+    }
+  ],
+  "exactAdditionalDerivedSchemaRule": {
+    "path": "spfx/src/schemas/implementation/ap23m3/administrative-input-v10.schema.json",
+    "source": "schemas/implementation/ap23m3/administrative-input-v10.schema.json"
+  },
+  "acceptedM2Archive": {
+    "verified": true,
+    "target": "outputs/ap23m2-abnahme-2026-10-28",
+    "mode": "archive-reverified",
+    "files": 181,
+    "payloadBytes": 40539986,
+    "protectedInputsNotRecopied": 11414,
+    "receiptSha256": "6d8b5a648a54dab7b3d06aeab5d4200f55613e01e14b5572d656663744d899dc",
+    "receiptByteLength": 37323
+  },
+  "oldReaderAndArithmeticBytesPreserved": true,
+  "acceptedLegalDataChanged": false,
+  "existingTestsChanged": false,
+  "acceptedResearchChanged": false,
+  "historicalEvidenceChanged": false,
+  "userModifiedDocxChanged": false,
+  "stylesheetChanged": false,
+  "sourceReleaseApproved": false,
+  "commitCreated": false,
+  "sourcePushPerformed": false,
+  "operatingChanges": false,
+  "note": "Immutable pre-integration bytes are unchanged. Only enumerated dispatchers, UI, hosts and byte-checked generated copies may change locally. New native V10 / Format17 files and M3 tests remain separate. No source release or operating approval."
+}

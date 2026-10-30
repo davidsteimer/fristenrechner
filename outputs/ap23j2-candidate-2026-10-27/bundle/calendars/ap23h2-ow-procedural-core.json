@@ -1,0 +1,185 @@
+{
+  "$schema": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/calendar-rules-v3.schema.json",
+  "formatVersion": "3.0.0",
+  "dataKind": "calendar",
+  "calendarId": "ap23h2-ow-procedural-core",
+  "jurisdiction": {
+    "level": "cantonal",
+    "code": "OW"
+  },
+  "validity": {
+    "from": "2026-08-29",
+    "to": "2027-12-31"
+  },
+  "inherits": [
+    "ap22-ow-76c151dccf1f"
+  ],
+  "review": {
+    "reviewedOn": "2026-10-22",
+    "status": "candidate",
+    "reviewedBy": "Codex",
+    "basis": "AP23H1 H1-D fachlich abgenommen. Isolierte H2-Projektion, keine gemeinsame Quellen- oder Betriebsfreigabe."
+  },
+  "sources": [
+    {
+      "sourceId": "SRC-AP23H1-OW-GOG-20220401",
+      "sourceType": "officialDossier",
+      "title": "Gesetz über die Gerichtsorganisation, Art. 28",
+      "authority": "CH-OW",
+      "url": "https://gdb.ow.ch/api/de/versions/1792/pdf_file",
+      "documentVersionDate": "2022-04-01",
+      "reviewedOn": "2026-10-22",
+      "reviewStatus": "monitored"
+    }
+  ],
+  "rules": [
+    {
+      "ruleId": "OW-CAL-OW-PROCEDURAL-ALL-DAY-BERCHTOLD",
+      "calendarId": "ap23h2-ow-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "OW"
+      },
+      "labelKey": "holiday.ow.OW-PROCEDURAL-ALL-DAY-BERCHTOLD",
+      "labels": {
+        "de": "Berchtoldstag",
+        "fr": "Saint-Berchtold"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2022-04-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-OW-GOG-20220401",
+          "locator": "Art. 28 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 1,
+        "day": 2
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "OW-PROCEDURAL-ALL-DAY-BERCHTOLD"
+      }
+    },
+    {
+      "ruleId": "OW-CAL-OW-PROCEDURAL-ALL-DAY-EASTER-MONDAY",
+      "calendarId": "ap23h2-ow-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "OW"
+      },
+      "labelKey": "holiday.ow.OW-PROCEDURAL-ALL-DAY-EASTER-MONDAY",
+      "labels": {
+        "de": "Ostermontag",
+        "fr": "Lundi de Pâques"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2022-04-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-OW-GOG-20220401",
+          "locator": "Art. 28 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 1
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "OW-PROCEDURAL-ALL-DAY-EASTER-MONDAY"
+      }
+    },
+    {
+      "ruleId": "OW-CAL-OW-PROCEDURAL-ALL-DAY-WHIT-MONDAY",
+      "calendarId": "ap23h2-ow-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "OW"
+      },
+      "labelKey": "holiday.ow.OW-PROCEDURAL-ALL-DAY-WHIT-MONDAY",
+      "labels": {
+        "de": "Pfingstmontag",
+        "fr": "Lundi de Pentecôte"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2022-04-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-OW-GOG-20220401",
+          "locator": "Art. 28 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "easterOffsetDays",
+        "offsetDays": 50
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "OW-PROCEDURAL-ALL-DAY-WHIT-MONDAY"
+      }
+    },
+    {
+      "ruleId": "OW-CAL-OW-PROCEDURAL-ALL-DAY-ST-STEPHEN",
+      "calendarId": "ap23h2-ow-procedural-core",
+      "jurisdiction": {
+        "level": "cantonal",
+        "code": "OW"
+      },
+      "labelKey": "holiday.ow.OW-PROCEDURAL-ALL-DAY-ST-STEPHEN",
+      "labels": {
+        "de": "Stephanstag",
+        "fr": "Saint-Étienne"
+      },
+      "priority": 100,
+      "validity": {
+        "from": "2022-04-01",
+        "to": null
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "SRC-AP23H1-OW-GOG-20220401",
+          "locator": "Art. 28 Abs. 2"
+        }
+      ],
+      "calculation": {
+        "type": "fixedMonthDay",
+        "month": 12,
+        "day": 26
+      },
+      "condition": "always",
+      "effect": {
+        "type": "holiday",
+        "kind": "cantonalPublicHoliday",
+        "legalEffect": "nonWorkingDayEquivalentToSunday",
+        "resultIdSuffix": "OW-PROCEDURAL-ALL-DAY-ST-STEPHEN"
+      }
+    }
+  ],
+  "projection": {
+    "catalogId": "ch-holiday-catalog",
+    "catalogFormatVersion": "2.0.0",
+    "projectionId": "projection-ap23h2-ow-procedural-core",
+    "sourceHash": "c5701e47df0d07bb288719b26d55c31b84fe83ea539578d9192e292e08602570"
+  }
+}

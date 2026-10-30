@@ -1,0 +1,140 @@
+{
+  "canton": "UR",
+  "checkedOn": "2026-10-22",
+  "status": "fachlicher Vorschlag zur gemeinsamen AP23G1-Abnahme, keine Produktfreigabe",
+  "laws": [
+    {
+      "id": "UR-G1-L01",
+      "title": "Verordnung über die Verwaltungsrechtspflege",
+      "abbreviation": "VRPV",
+      "systematicNumber": "2.2345",
+      "url": "https://rechtsbuch.ur.ch/api/de/versions/641/pdf_file",
+      "metadataUrl": "https://rechtsbuch.ur.ch/api/de/texts_of_law/2.2345",
+      "versionId": 641,
+      "versionDate": "2016-03-01",
+      "enactmentDate": "1995-06-01",
+      "currentVersionConfirmed": true,
+      "futureVersions": [],
+      "changeDocuments": [],
+      "oldVersionCorrection": { "versionId": 63, "correctedOn": "2025-08-05", "kind": "formlos, kein neues materielles Fassungsdatum" },
+      "access": "amtlicher PDF-Volltext und amtliche API-Originalmetadaten frisch abgerufen",
+      "articles": ["1", "5", "19", "20", "21", "22", "29", "30", "43", "44", "48", "54", "59", "62", "63", "64"],
+      "sourceEvidence": [
+        { "file": "outputs/ap23g1-2026-10-22/sources/ur/vrpv-version-641-original.pdf", "sha256": "bafff1d6e8f467e455808c5bb5f75fec24b1509e324dd5bf084d0646daaa51fc" },
+        { "file": "outputs/ap23g1-2026-10-22/sources/ur/vrpv-2.2345-metadata-original.json", "sha256": "f952ffb46fef1be60b31006b9672b2aba6277a80c0f0dabaded3b66040bc7d66" }
+      ]
+    },
+    {
+      "id": "UR-G1-L02",
+      "title": "Gesetz über den Ladenschluss und die Sonntagsruhe",
+      "abbreviation": "LSG",
+      "systematicNumber": "70.1421",
+      "url": "https://rechtsbuch.ur.ch/api/de/versions/963/pdf_file",
+      "metadataUrl": "https://rechtsbuch.ur.ch/api/de/texts_of_law/70.1421",
+      "versionId": 963,
+      "versionDate": "2003-01-01",
+      "decisionDate": "2003-02-09",
+      "dateNote": "Amtliche ungewöhnliche Datumsfolge unverändert übernommen",
+      "currentVersionConfirmed": true,
+      "futureVersions": [],
+      "changeDocuments": [],
+      "oldVersionCorrection": { "versionId": 24, "correctedOn": "2025-08-20", "kind": "formlos" },
+      "access": "amtlicher PDF-Volltext und amtliche API-Originalmetadaten frisch abgerufen",
+      "articles": ["1", "2", "9", "10"],
+      "sourceEvidence": [
+        { "file": "outputs/ap23g1-2026-10-22/sources/ur/lsg-version-963-original.pdf", "sha256": "3c9bc910fda3d89f2987803aa13cf2da5d77a136dc987f98eca371c1e743e3ce" },
+        { "file": "outputs/ap23g1-2026-10-22/sources/ur/lsg-70.1421-metadata-original.json", "sha256": "5d298139cb26a70b591aabfe21eb1f691607e6f3811141a5d97498d4c9444e6c" }
+      ]
+    },
+    {
+      "id": "UR-G1-L03",
+      "title": "Zivilprozessordnung",
+      "systematicNumber": "272",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_145",
+      "versionDate": "2026-07-01",
+      "articles": ["142", "145", "146"],
+      "access": "Artikelvolltext Swiss-Caselaw-Fedlex-Spiegel, direkte Fedlex-Webansicht nur JavaScript-Hinweis",
+      "sourceEvidence": "Normtext gelesen, kein neu bestätigter direkter Fedlex-PDF-Abruf"
+    },
+    {
+      "id": "UR-G1-L04",
+      "title": "Bundesgerichtsgesetz",
+      "systematicNumber": "173.110",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_112",
+      "versionDate": "2026-04-01",
+      "articles": ["112"],
+      "access": "Artikelvolltext Swiss-Caselaw-Fedlex-Spiegel",
+      "sourceEvidence": "Nur Abgrenzung unbegründeter Obergerichtsentscheid, keine neue Bundesfreigabe"
+    }
+  ],
+  "pathProposals": [
+    { "id": "UR-ADMIN-20", "action": "Ordentliche Verwaltungsbeschwerde", "days": 20, "basis": ["VRPV 48(1)", "VRPV 21", "VRPV 29"], "suspension": "none", "qualify": ["fully-reasoned-single-administrative-decision", "ordinary-appeal", "no-special-law", "not-coordinated"] },
+    { "id": "UR-COURT-20", "action": "Ordentliche Verwaltungsgerichtsbeschwerde", "days": 20, "basis": ["VRPV 59", "VRPV 29", "VRPV 63-64", "ZPO 145-146 analog"], "suspension": "zpo-court-holidays-qualified", "qualify": ["fully-reasoned-single-decision", "ordinary-court-appeal", "no-special-law-or-holiday-exception", "not-coordinated"] },
+    { "id": "UR-ADMIN-ORDERED", "action": "Angeordnete Verfahrenseingabe vor Verwaltung", "days": "positive-whole-days-from-order", "basis": ["VRPV 29-30"], "suspension": "none", "qualify": ["forward-day-deadline", "no-fixed-end-date-or-hours", "no-special-order-or-special-law"] },
+    { "id": "UR-COURT-ORDERED", "action": "Angeordnete Verfahrenseingabe vor Verwaltungsgericht", "days": "positive-whole-days-from-order", "basis": ["VRPV 29-30", "VRPV 63-64", "ZPO 145-146 analog"], "suspension": "zpo-court-holidays-qualified", "qualify": ["ordinary-court-proceeding", "forward-day-deadline", "no-special-law-or-holiday-exception"] },
+    { "id": "UR-ADMIN-REASONS-10", "action": "Begründung einer unbegründeten Verwaltungsverfügung verlangen", "days": 10, "basis": ["VRPV 20", "VRPV 29(1)-(4)"], "suspension": "none", "qualify": ["genuinely-unreasoned-administrative-decision", "request-to-issuing-administrative-authority", "29(4)-applies", "no-special-law", "not-unreasoned-Obergericht-judgment", "not-only-insufficient-reasoning"] }
+  ],
+  "calendarProposal": {
+    "candidateId": "ap22-ur-67275ff3e872",
+    "catalogCategory": "UR-LSG-ALL",
+    "basis": ["VRPV 29(3)", "LSG 9(1)(b)", "LSG 10 distinguishes ArG subset", "DEC-2026-031"],
+    "holidayRole": "competent-authority-seat",
+    "partyOrRepresentativeSeat": false,
+    "courtZpo142Import": false,
+    "holidayCountIncludingNationalDay": 14,
+    "holidays": ["Neujahr", "Dreikönigen", "Sankt-Josefs-Tag", "Karfreitag", "Ostermontag", "Auffahrt", "Pfingstmontag", "Fronleichnam", "1. August", "Mariä Himmelfahrt", "Allerheiligen", "Mariä Empfängnis", "Weihnachten", "Sankt-Stefans-Tag"],
+    "regionalScope": "kantonsweiter Kern, eigenständige Gemeindebezeichnungen nicht modelliert",
+    "localBoundary": "LSG 9(1)(c) nicht als rechtlich irrelevant behaupten. Bei konkret behaupteter entscheidender lokaler Endtagswirkung keine abschliessende positive Berechnung.",
+    "sourceCalendarRead": "data/candidates/2026-10-22-ap23f3/calendars/ap22-ur-67275ff3e872.json"
+  },
+  "factsRequired": [
+    "competent-authority-and-stage",
+    "specific-action-and-general-VRPV-applicability",
+    "legally-relevant-written-opening-date",
+    "fully-reasoned-or-genuinely-unreasoned-decision",
+    "not-coordinated-single-decision-for-ordinary-appeals",
+    "no-applicable-federal-or-cantonal-special-rule",
+    "known-positive-whole-day-duration-if-ordered",
+    "timely-prior-reasons-request-if-appealing-later-reasoned-opening",
+    "no-concrete-asserted-unresolved-local-holiday-or-opening-effect"
+  ],
+  "openQuestions": [
+    {
+      "id": "G1-UR-01",
+      "subject": "Tatsächliche Eröffnung während Art.-22-Soll-Zeiten",
+      "evidence": "Art21(3),22,29,63 frisch gelesen, keine direkte veröffentlichte Entscheidung zur besonderen Rechtsfolge gefunden",
+      "proposedTreatment": "Positive Berechnung ab tatsächlichem qualifiziertem schriftlichem Eröffnungsdatum mit Hinweis. Kein verschobener Empfang und keine zusätzliche Ferienpause. Konkreten Eröffnungsmangel oder behauptete Sonderwirkung gesondert sperren.",
+      "classification": "begründete Auslegung zur gemeinsamen Fachabnahme"
+    },
+    {
+      "id": "G1-UR-02",
+      "subject": "Begründungsverlangen und Koordination",
+      "proposedTreatment": "Eigene Begründungsanforderung mit zehn Tagen vor Verwaltung aufnehmen. Rechtzeitiges Gesuch führt zu voller neuer Rechtsmittelfrist ab begründeter Eröffnung. Unbegründetes Obergerichtsurteil und koordinierte Verfügungen nicht im gewöhnlichen Zwanzigtageweg modellieren.",
+      "classification": "Normbefund plus begrenzter Umfangsvorschlag"
+    },
+    {
+      "id": "G1-UR-03",
+      "subject": "Zusätzliche Gemeindefeiertage nach LSG9(1)(c)",
+      "evidence": "14 kantonsweite Tage belegt, Tragweite kommunaler Bezeichnungen unter VRPV Art. 29 Abs. 3 nicht durch direkte Rechtsprechung geklärt",
+      "proposedTreatment": "14-Tage-Kernkalender mit sichtbarer lokaler Grenze. Keine Gemeindefeiertagsvereinigung und keine unbedingte Behauptung ihrer Unbeachtlichkeit.",
+      "classification": "begrenzter Kalenderumfang zur Fachabnahme"
+    },
+    {
+      "id": "G1-UR-04",
+      "subject": "Endverschiebung in neu beginnende Gerichtsferien",
+      "basis": ["VRPV29(3)", "VRPV63", "ZPO145(1)"],
+      "proposedTreatment": "Nur Gericht20 und Gericht-angeordnet bei dieser konkreten Kollision ohne definitives Resultat oder Export. Kein Transfer auf Verwaltungswege ohne Stillstand oder auf blosse Art22-Eröffnungszeiten.",
+      "classification": "enge Produktsicherung bei ungelöster Kollision, keine gesetzliche Sperrnorm"
+    }
+  ],
+  "temporalSegments": [
+    { "from": "2026-08-29", "to": "2027-12-31", "kind": "proposed-full-case-window", "appliesTo": "five-proposed-groups", "condition": "opening-counted-days-suspension-final-end-all-within-window", "basis": "VRPV 641 and LSG 963 current with no announced successor on 2026-10-22, ZPO reference remains subject to version monitoring", "operativelyApproved": false }
+  ],
+  "caseEvidence": [
+    { "id": "OG V 25 4", "decisionDate": "2025-04-04", "url": "https://www.ur.ch/_rte/publikation/38761", "read": "vollständiger vierzehnseitiger Entscheid, relevante E. 1.3 zusätzlich am amtlichen PDF abgeglichen", "supports": "Zwanzig Tage, Winterstillstand Art. 63 / ZPO Art. 145 Abs. 1 lit. c, nicht tatsächliche Eröffnung am 18.12 oder Art.-22-Rechtsfolge", "file": "outputs/ap23g1-2026-10-22/sources/ur/og-v-25-4-20250404-original.pdf", "sha256": "b2e30caf7833009c091a5f48e44e8f3a3cc6861e4ba6125a5abc9412bc7619e8" },
+    { "id": "OG V 23 28/29/30", "decisionDate": "2024-03-15", "url": "https://www.ur.ch/_rte/publikation/35305", "read": "Volltext erhalten und amtliches PDF gespeichert, fristenrelevante E. 1.4 gelesen", "supports": "Sommerstillstand Art. 63 / ZPO Art. 145 Abs. 1 lit. b, keine Art.-22- oder Kollisionsrechtsfolge", "file": "outputs/ap23g1-2026-10-22/sources/ur/og-v-23-28-20240315-original.pdf", "sha256": "c80b2dd7de083045663a880b858150a7ba65c01e28c31f7c336b9598ad661a3d" },
+    { "id": "OG V 23 45", "decisionDateFromDocument": "2024-01-12", "dateInSearchMetadata": "2024-05-17", "url": "https://entscheidsuche.ch/docs/UR_Gerichte/UR_OG_004_2024-OG-V-23-45-Verg_2024-05-17.pdf", "read": "vollständiger sechsseitiger Text", "supports": "Nur Spezialrechtsgrenze IVöB Art. 56 Abs. 2, Datumswiderspruch bleibt sichtbar" },
+    { "id": "OG V 12 27", "decisionDate": "2012-08-31", "url": "https://www.ur.ch/_doc/40995", "read": "nur Regeste, amtlicher Download 404", "supports": "nichttragender Recherchehinweis, kein Volltextbeleg für aktuelle Steuerregel" }
+  ],
+  "researchLimits": ["Kein einschlägiger Originalbericht 1994 erlangt", "Keine direkte Art.-22-, lokale Feiertags- oder Endverschiebungskollisionsentscheidung gefunden", "Keine unabhängige Referenzfalltabelle in diesem Teilauftrag gerechnet", "Kein Produktcode, Runtime, approved-Daten, Commit, GitHub oder Betrieb verändert"]
+}

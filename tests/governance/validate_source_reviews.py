@@ -58,6 +58,10 @@ OFFICIAL_HOSTS = {
     "entscheidsuche.gr.ch",
     # R09-B supplement: exact AR materials host checked in accepted R09-A2.
     "ar.ch",
+    # R10-B: exactly the nine accepted A2 original repositories. No wildcard.
+    "rechtsprechung.tg.ch", "relevancy.bger.ch", "justice.ge.ch", "bl.swisslex.ch",
+    "rechtsprechung.gerichte.bs.ch", "www.ai.ch", "api-justsearche.vs.ch",
+    "decwork.ag.ch", "grgeko.tg.ch",
 }
 IDENTIFIER_KEYS = (
     "ruleId",
@@ -66,7 +70,37 @@ IDENTIFIER_KEYS = (
     "regimeId",
     "suspensionSetId",
     "bindingId", "contextRouteId", "calendarBindingId", "eligibilityId", "excludedPathId",
+    "pathId", "lawId", "holidayBindingId", "suspensionProfileId", "qualificationPolicyId",
 )
+
+# Exact source identity plus exact HTTPS mirror, never generic mirror officiality.
+R10_SUPPORTING_MIRRORS = {
+    "JUD-AP23J1-JU-ADM121-2017": ("JU", "https://entscheidsuche.ch/docs/JU_Gerichte/JU_TC_005_ADM-2017-121_2017-11-09.pdf"),
+    "JUD-AP23J1-JU-ADM77-2021": ("JU", "https://entscheidsuche.ch/docs/JU_Gerichte/JU_TC_005_ADM-2021-77_2021-08-30.pdf"),
+    "JUD-K1-BL-KGE81024153-20240730": ("BL", "https://entscheidsuche.ch/docs/BL_Gerichte/BL_KG_003_810-2024-153_2024-07-30.pdf"),
+    "JUD-L1-SZ-VGE-III202118": ("SZ", "https://entscheidsuche.ch/docs/SZ_Verwaltungsgericht/SZ_VG_001_III-2021-18_2021-05-31.pdf"),
+    "JUD-AP23J1-JU-BGER2D55-2010": ("CH", "https://mcp.opencaselaw.ch/entscheid/bger_2D_55_2010"),
+}
+
+
+def bound_r10_supporting_mirror(source: dict[str, Any], events: list[dict[str, Any]]) -> bool:
+    identity = R10_SUPPORTING_MIRRORS.get(source.get("sourceId"))
+    if identity is None:
+        return False
+    jurisdiction, url = identity
+    expected = {"sourceType": "caseLaw", "jurisdiction": jurisdiction,
+                "usageStatus": "supporting", "officialUrl": None, "retrievalUrl": url}
+    if any(source.get(key) != value for key, value in expected.items()):
+        return False
+    event = next((item for item in events if item.get("reviewEventId") == "2026-10-28-mvp-010-prerelease.1"), None)
+    if not event or event.get("recordStatus") != "approved":
+        return False
+    entries = [entry for item in events for entry in item.get("entries", [])
+               if entry.get("sourceId") == source["sourceId"]]
+    return bool(entries and all(entry.get("affected", {}).get("resolutionMode") == "explicit"
+                               and all(entry["affected"].get(key) == []
+                                       for key in ("profileIds", "calendarIds", "componentIds"))
+                               for entry in entries))
 
 
 def bound_ti_http_original(source: dict[str, Any], register: dict[str, Any], events: list[dict[str, Any]]) -> bool:
@@ -329,6 +363,8 @@ def semantic_errors(
         if source["usageStatus"] == "productive"
     }
     for source in register["sources"]:
+        if source["sourceId"] in R10_SUPPORTING_MIRRORS and not bound_r10_supporting_mirror(source, events):
+            errors.append(f"{source['sourceId']}: R10-Spiegelausnahme verlangt exakte Identität, URL, supporting und null Auswirkungen")
         official_url = source["officialUrl"]
         if official_url:
             host = (urlparse(official_url).hostname or "").lower()
@@ -342,9 +378,9 @@ def semantic_errors(
             and source["jurisdiction"] == "FR"
             and source["usageStatus"] == "supporting"
             and source["retrievalUrl"] == "https://entscheidsuche.ch/docs/FR_Gerichte/FR_TC_001_101-2012-89_2012-04-25.pdf"
-        ) and not bound_ti_http_original(source, register, events):
+        ) and not bound_ti_http_original(source, register, events) and not bound_r10_supporting_mirror(source, events):
             errors.append(
-                f"{source['sourceId']}: fehlende amtliche URL ist nur bei bernischer Rechtsprechung, dem ausdrücklich begrenzten FR-Spiegel oder dem exakt gebundenen TI-HTTP-Original zulässig"
+                f"{source['sourceId']}: fehlende amtliche URL ist nur bei bernischer Rechtsprechung, dem ausdrücklich begrenzten FR-Spiegel, dem exakt gebundenen TI-HTTP-Original oder einer exakten R10-Nullkantenausnahme zulässig"
             )
 
     event_duplicates = duplicate_values(events, "reviewEventId")
@@ -436,6 +472,8 @@ def semantic_errors(
     for source_id in sorted(productive_ids - referenced_sources):
         errors.append(f"Quellenregister: als produktiv markierte Quelle hat keine Referenz in einem deklarierten Release {source_id}")
     for source_id in sorted(referenced_sources.intersection(sources_by_id)):
+        if source_id in R10_SUPPORTING_MIRRORS:
+            errors.append(f"{source_id}: R10-Nullkantenspiegel darf keine Releaseverwendung haben")
         if sources_by_id[source_id]["usageStatus"] == "monitoring":
             errors.append(f"Quellenregister: referenzierte Quelle darf nicht ausschliesslich als Monitoring geführt werden {source_id}")
 

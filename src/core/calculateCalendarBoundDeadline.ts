@@ -154,7 +154,7 @@ export function calculateCalendarBoundDeadline(input: CalculationInput, context:
   if (data.formatVersion === '7.0.0' && trustedFormat7Runtime(data) !== runtime) {
     return block(input, unresolvedCalendar(context, 'calendarBinding.invalidRuntime'), false, 'calendarBinding.invalidRuntime');
   }
-  if (['8.0.0', '9.0.0'].includes(data.formatVersion) && trustedModernRuntime(data) !== runtime) {
+  if (['8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion) && trustedModernRuntime(data) !== runtime) {
     return block(input, unresolvedCalendar(context, 'calendarBinding.invalidRuntime'), false, 'calendarBinding.invalidRuntime');
   }
   const resolution = resolveBoundCalendar(input.profileId, context, runtime);
@@ -163,10 +163,10 @@ export function calculateCalendarBoundDeadline(input: CalculationInput, context:
   }
   if (!runtime.referenceOnly && runtime.releaseId !== data.releaseId) return block(input, resolution, false, 'calendarBinding.releaseMismatch');
   try {
-    const legacy = ['7.0.0', '8.0.0', '9.0.0'].includes(data.formatVersion) ? FORMAT7_LEGACY_CALENDAR_BASELINE
+    const legacy = ['7.0.0', '8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion) ? FORMAT7_LEGACY_CALENDAR_BASELINE
       : ['ch-federal-calendar', 'be-public-holidays'].map(id => data.calendarRuleSets.get(id));
     if (legacy.some(calendar => !calendar || calendar.formatVersion !== '2.0.0')) return block(input, resolution, runtime.referenceOnly, 'calendarBinding.baselineMissing');
-    if (!['7.0.0', '8.0.0', '9.0.0'].includes(data.formatVersion)) assertActivatedCalendarProjection(runtime.catalog, runtime.catalogSha256, runtime.calendars, legacy as CalendarRuleSet[]);
+    if (!['7.0.0', '8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion)) assertActivatedCalendarProjection(runtime.catalog, runtime.catalogSha256, runtime.calendars, legacy as CalendarRuleSet[]);
     const first = completePath(input, data, runtime, resolution, resolution.projection);
     let comparison: JanuaryComparison | undefined;
     if (resolution.alternativeProjection) {

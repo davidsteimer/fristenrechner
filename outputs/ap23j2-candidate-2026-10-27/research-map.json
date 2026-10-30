@@ -1,0 +1,3530 @@
+{
+  "workPackage": "AP23J2",
+  "acceptedResearch": "docs/fachrecht/ap23j1/referenzfaelle.json",
+  "mappingOnly": true,
+  "caseFactsAreCurrentNotDefaults": true,
+  "stageCrosswalk": {
+    "cantonalAdministrationOrNonTribunalCantonalRemedy": [
+      "administration",
+      "administrativeAppeal"
+    ],
+    "nonTribunalCantonalAdministrativeRemedy": [
+      "administrativeAppeal"
+    ],
+    "nonTribunalCantonalReclamation": [
+      "administrativeAppeal"
+    ],
+    "tribunalCantonal": [
+      "court"
+    ],
+    "tribunalCantonalJudgmentReasonsRequest": [
+      "court"
+    ],
+    "tribunalCantonalCostsReclamation": [
+      "court"
+    ],
+    "initialAdministration": [
+      "administration"
+    ],
+    "reclamation": [
+      "administrativeAppeal"
+    ],
+    "costsReclamation": [
+      "administrativeAppeal",
+      "court"
+    ],
+    "administrativeAppeal": [
+      "administrativeAppeal",
+      "court"
+    ],
+    "administrativeFirstInstance": [
+      "administration"
+    ],
+    "opposition": [
+      "administrativeAppeal"
+    ],
+    "oppositionProvisional": [
+      "administrativeAppeal"
+    ],
+    "administrativeReview": [
+      "administrativeAppeal",
+      "court"
+    ],
+    "administrativeReviewProvisional": [
+      "administrativeAppeal",
+      "court"
+    ],
+    "oppositionOrAdministrativeReview": [
+      "administrativeAppeal",
+      "court"
+    ],
+    "oppositionOrAdministrativeReviewProvisional": [
+      "administrativeAppeal",
+      "court"
+    ]
+  },
+  "stageMeaning": "Three existing technical stages. Mixed accepted functions retain explicit current target qualification, no new groups invented.",
+  "paths": [
+    {
+      "researchId": "FR-NONTC-ORDERED",
+      "pathId": "fr-nontc-ordered",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "sourceStage": "cantonalAdministrationOrNonTribunalCantonalRemedy",
+      "calendarBindingId": "fr-nontc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "nonTC",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "orderedInDays",
+          "value": true,
+          "reason": "FR-OTHER-TIME-METHODS"
+        },
+        {
+          "key": "payment",
+          "value": false,
+          "reason": "FR-PAYMENT"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-NONTC-RECOURS-30",
+      "pathId": "fr-nontc-recours-30",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "nonTribunalCantonalAdministrativeRemedy",
+      "calendarBindingId": "fr-nontc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "nonTC",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "qualifiedNonTCRemedy",
+          "value": true,
+          "reason": "FR-SPECIAL-LAW"
+        },
+        {
+          "key": "qualifiedFinalDecision",
+          "value": true,
+          "reason": "FR-EXECUTION"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-NONTC-RECOURS-10",
+      "pathId": "fr-nontc-recours-10",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "nonTribunalCantonalAdministrativeRemedy",
+      "calendarBindingId": "fr-nontc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "nonTC",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "qualifiedNonTCRemedy",
+          "value": true,
+          "reason": "FR-SPECIAL-LAW"
+        },
+        {
+          "key": "qualifiedSeparatelyAppealableInterimDecision",
+          "value": true,
+          "reason": "FR-INTERIM-ADMISSIBILITY"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-TC-ORDERED",
+      "pathId": "fr-tc-ordered",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "court"
+      ],
+      "sourceStage": "tribunalCantonal",
+      "calendarBindingId": "fr-tc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "tribunalCantonal",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "orderedInDays",
+          "value": true,
+          "reason": "FR-OTHER-TIME-METHODS"
+        },
+        {
+          "key": "payment",
+          "value": false,
+          "reason": "FR-PAYMENT"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-TC-RECOURS-30",
+      "pathId": "fr-tc-recours-30",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "court"
+      ],
+      "sourceStage": "tribunalCantonal",
+      "calendarBindingId": "fr-tc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "tribunalCantonal",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "tcRemedyCurrentlyCompetent",
+          "value": true,
+          "reason": "FR-SPECIAL-LAW"
+        },
+        {
+          "key": "qualifiedFinalDecision",
+          "value": true,
+          "reason": "FR-EXECUTION"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-TC-RECOURS-10",
+      "pathId": "fr-tc-recours-10",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "court"
+      ],
+      "sourceStage": "tribunalCantonal",
+      "calendarBindingId": "fr-tc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "tribunalCantonal",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "tcRemedyCurrentlyCompetent",
+          "value": true,
+          "reason": "FR-SPECIAL-LAW"
+        },
+        {
+          "key": "qualifiedSeparatelyAppealableInterimDecision",
+          "value": true,
+          "reason": "FR-INTERIM-ADMISSIBILITY"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-NONTC-NACHFRIST-3",
+      "pathId": "fr-nontc-nachfrist-3",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "administration",
+        "administrativeAppeal"
+      ],
+      "sourceStage": "cantonalAdministrationOrNonTribunalCantonalRemedy",
+      "calendarBindingId": "fr-nontc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedExtensionRefusalAfterExpiredDeadline",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "nonTC",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "timelyExtensionRequestRefused",
+          "value": true,
+          "reason": "FR-LATE-EXTENSION"
+        },
+        {
+          "key": "triggerIsQualifiedRefusalCommunication",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "originalLegalDeadlineExpired",
+          "value": true,
+          "reason": "FR-REFUSAL-BEFORE-EXPIRY"
+        },
+        {
+          "key": "noLongerSurvivingDeadline",
+          "value": true,
+          "reason": "FR-REFUSAL-BEFORE-EXPIRY"
+        },
+        {
+          "key": "submissionNotPayment",
+          "value": true,
+          "reason": "FR-PAYMENT"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-TC-NACHFRIST-3",
+      "pathId": "fr-tc-nachfrist-3",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "court"
+      ],
+      "sourceStage": "tribunalCantonal",
+      "calendarBindingId": "fr-tc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedExtensionRefusalAfterExpiredDeadline",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "tribunalCantonal",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "timelyExtensionRequestRefused",
+          "value": true,
+          "reason": "FR-LATE-EXTENSION"
+        },
+        {
+          "key": "triggerIsQualifiedRefusalCommunication",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "originalLegalDeadlineExpired",
+          "value": true,
+          "reason": "FR-REFUSAL-BEFORE-EXPIRY"
+        },
+        {
+          "key": "noLongerSurvivingDeadline",
+          "value": true,
+          "reason": "FR-REFUSAL-BEFORE-EXPIRY"
+        },
+        {
+          "key": "submissionNotPayment",
+          "value": true,
+          "reason": "FR-PAYMENT"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-TC-BEGRUENDUNG-30",
+      "pathId": "fr-tc-begruendung-30",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "court"
+      ],
+      "sourceStage": "tribunalCantonalJudgmentReasonsRequest",
+      "calendarBindingId": "fr-tc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedTcDispositifOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637",
+        "SRC-AP23J1-FR-ROF-2014-103"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "tribunalCantonal",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "tcDispositifOnly",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "requestFullReasons",
+          "value": true,
+          "reason": "FR-FEDERAL-APPEAL"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-NONTC-RECLAMATION-30",
+      "pathId": "fr-nontc-reclamation-30",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "nonTribunalCantonalReclamation",
+      "calendarBindingId": "fr-nontc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "nonTC",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "reclamationBasis",
+          "oneOf": [
+            "article148Costs",
+            "specificStatutoryOpening"
+          ],
+          "reason": "FR-UNQUALIFIED-RECLAMATION"
+        },
+        {
+          "key": "reclamationBasisCurrentlyQualified",
+          "value": true,
+          "reason": "FR-UNQUALIFIED-RECLAMATION"
+        },
+        {
+          "key": "finalDecisionOrFinalCostsOnly",
+          "value": true,
+          "reason": "FR-INTERIM-ADMISSIBILITY"
+        },
+        {
+          "key": "noDivergentSpecialProcedure",
+          "value": true,
+          "reason": "FR-SPECIAL-LAW"
+        },
+        {
+          "key": "notSocialInsurance",
+          "value": true,
+          "reason": "FR-SOCIAL-COSTS"
+        }
+      ]
+    },
+    {
+      "researchId": "FR-TC-COST-RECLAMATION-30",
+      "pathId": "fr-tc-cost-reclamation-30",
+      "lawId": "cpja-fr",
+      "technicalStages": [
+        "court"
+      ],
+      "sourceStage": "tribunalCantonalCostsReclamation",
+      "calendarBindingId": "fr-tc-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-FR-CPJA-7947",
+        "SRC-AP23J1-FR-CPJA-8637"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityLevel",
+          "value": "cantonal",
+          "reason": "Nur Verfahren vor zuständigen kantonalen Stellen in Freiburg. Kommunale Eigenordnungen bleiben ausgeschlossen."
+        },
+        {
+          "key": "generalCpjaApplies",
+          "value": true,
+          "reason": "Art. 1–7 CPJA, keine ausgeschlossene Erstinstanz und keine abweichende spezielle oder bundesrechtliche Verfahrensordnung."
+        },
+        {
+          "key": "qualifiedOpening",
+          "value": true,
+          "reason": "FR-OPENING"
+        },
+        {
+          "key": "deadlineMethod",
+          "value": "daysForward",
+          "reason": "Vorwärts laufende Eingabefrist, kein fixer Kalendertag, keine Monate, Stunden, Zahlung oder Vorladung."
+        },
+        {
+          "key": "specialLaw",
+          "value": "noneOrSpecificallyQualifiedCpjaFallback",
+          "reason": "Art. 7 und 79 Abs. 3 bleiben vorbehalten. Keine automatische Freigabe für Steuern, Sozialversicherung, Beschaffung, politische Rechte oder andere Spezialmaterien."
+        },
+        {
+          "key": "currentFacts",
+          "value": "mustBeRequalified",
+          "reason": "Dokumentart, Fristqualität, aktuelle Zuständigkeit, Eröffnung und positive Spezialqualifikation sind keine gespeicherten Fallfakten."
+        },
+        {
+          "key": "currentStage",
+          "value": "tribunalCantonal",
+          "reason": "FR-STAGE"
+        },
+        {
+          "key": "reclamationBasis",
+          "value": "article148Costs",
+          "reason": "FR-UNQUALIFIED-RECLAMATION"
+        },
+        {
+          "key": "costsOnlyUnderArticle148",
+          "value": true,
+          "reason": "FR-UNQUALIFIED-RECLAMATION"
+        },
+        {
+          "key": "finalDecisionOrFinalCostsOnly",
+          "value": true,
+          "reason": "FR-INTERIM-ADMISSIBILITY"
+        },
+        {
+          "key": "notSocialInsurance",
+          "value": true,
+          "reason": "FR-SOCIAL-COSTS"
+        }
+      ]
+    },
+    {
+      "researchId": "GE-ADMIN-ORDERED",
+      "pathId": "ge-admin-ordered",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administration"
+      ],
+      "sourceStage": "initialAdministration",
+      "calendarBindingId": "ge-initial-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "initialAdministration",
+          "reason": "Not an appeal or a statutorily opened reclamation."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentDayCountSubmissionOrder",
+          "reason": "Current forward-day submission, not payment or fixed appointment."
+        }
+      ]
+    },
+    {
+      "researchId": "GE-RECLAMATION-30",
+      "pathId": "ge-reclamation-30",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "reclamation",
+      "calendarBindingId": "ge-review-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "reclamation",
+          "reason": "Reclamation actually opened by law, not a free reconsideration request."
+        },
+        {
+          "key": "actionQualification",
+          "value": "statutorilyOpenedReclamation",
+          "reason": "Current enabling legal provision confirmed, no special duration."
+        },
+        {
+          "key": "subjectCase",
+          "value": "generalNo63Exception",
+          "reason": "Each of the six Art. 63(2) exclusions has been assessed and does not apply."
+        }
+      ]
+    },
+    {
+      "researchId": "GE-RECLAMATION-ORDERED",
+      "pathId": "ge-reclamation-ordered",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "reclamation",
+      "calendarBindingId": "ge-review-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "reclamation",
+          "reason": "Current procedure is a legally opened Art. 50/51 reclamation."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentDayCountSubmissionOrder",
+          "reason": "Current ordered forward-day submission."
+        },
+        {
+          "key": "subjectCase",
+          "value": "generalNo63Exception",
+          "reason": "No Art. 63(2) subject exception or other special procedural rule."
+        }
+      ]
+    },
+    {
+      "researchId": "GE-RECOURS-30",
+      "pathId": "ge-recours-30",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeAppeal",
+      "calendarBindingId": "ge-review-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101",
+        "JUD-J1-GE-ATA436-20240326"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "Current target acts as administrative jurisdiction under Art. 6, irrespective of institutional label."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleFinalOrCompetenceAppeal",
+          "reason": "Appealability and actual final/competence classification confirmed, no preliminary reclamation instead."
+        },
+        {
+          "key": "subjectCase",
+          "value": "generalNo63Exception",
+          "reason": "No one of the six Art. 63(2) exceptions."
+        }
+      ]
+    },
+    {
+      "researchId": "GE-RECOURS-10",
+      "pathId": "ge-recours-10",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeAppeal",
+      "calendarBindingId": "ge-review-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "Qualified administrative jurisdiction."
+        },
+        {
+          "key": "actionQualification",
+          "value": "admissibleOtherDecisionAppeal",
+          "reason": "Separate appealability confirmed. Enforcement measure excluded by Art. 59(b), not turned into ten-day appeal."
+        },
+        {
+          "key": "subjectCase",
+          "value": "generalNo63Exception",
+          "reason": "No Art. 63(2) subject exception."
+        }
+      ]
+    },
+    {
+      "researchId": "GE-RECOURS-ORDERED",
+      "pathId": "ge-recours-ordered",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeAppeal",
+      "calendarBindingId": "ge-review-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "administrativeAppeal",
+          "reason": "Current general administrative appeal procedure."
+        },
+        {
+          "key": "actionQualification",
+          "value": "currentDayCountSubmissionOrder",
+          "reason": "Current forward-day submission, not payment or fixed appointment."
+        },
+        {
+          "key": "subjectCase",
+          "value": "generalNo63Exception",
+          "reason": "No Art. 63(2) or other special suspension exception."
+        }
+      ]
+    },
+    {
+      "researchId": "GE-COSTS-RECLAMATION-30",
+      "pathId": "ge-costs-reclamation-30",
+      "lawId": "lpa-ge",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "costsReclamation",
+      "calendarBindingId": "ge-review-authority-seat",
+      "openingPolicyKind": "geQualifiedOrOrdinaryPost",
+      "triggerKind": null,
+      "sourceIds": [
+        "SRC-J1-GE-LPA-20250601",
+        "SRC-J1-GE-LJF-19910101",
+        "JUD-J1-GE-ATA520-20260526"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authorityScope",
+          "value": "cantonal",
+          "reason": "Only procedures before cantonal authorities are in J1 scope."
+        },
+        {
+          "key": "applicability",
+          "value": "generalLpaConfirmed",
+          "reason": "LPA applies and no differing federal/cantonal special procedural duration, trigger, holiday or suspension rule is applicable. No additional social release."
+        },
+        {
+          "key": "openingMode",
+          "oneOf": [
+            "qualifiedLegalOpening",
+            "ordinaryPostPhysicalReceipt"
+          ],
+          "reason": "Explicitly distinguish legal opening already established from physical receipt of normal post under Art. 17(6). Unknown mode cannot be normalised silently."
+        },
+        {
+          "key": "noticeStatus",
+          "value": "regularNoDeviation",
+          "reason": "No unresolved irregular service, misleading longer notice, publication, knowledge-only trigger or reconstruction of fiction. Relevant law remains documented, not negated."
+        },
+        {
+          "key": "stage",
+          "value": "costsReclamation",
+          "reason": "Actual Art. 87(4) costs/fees/indemnity remedy, not payment of amount."
+        },
+        {
+          "key": "actionQualification",
+          "value": "judicialCostsReclamation",
+          "reason": "Costs fixed by a competent cantonal administrative jurisdiction."
+        },
+        {
+          "key": "subjectCase",
+          "value": "generalNo63Exception",
+          "reason": "Underlying procedure not subject to Art. 63(2) or other special law."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-ADMIN-ORDERED",
+      "pathId": "ju-admin-ordered",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administration"
+      ],
+      "sourceStage": "administrativeFirstInstance",
+      "calendarBindingId": "ju-initial-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "ju.orderedDurationQualifiedNotQualified",
+          "explanation": "Positive Tageszahl und vorwärts laufender Beginn aus aktueller Anordnung."
+        },
+        {
+          "key": "notExtensionChain",
+          "value": true,
+          "reason": "ju.notExtensionChainNotQualified",
+          "explanation": "Keine Erstreckung nach Art. 47 Abs. 3 mit Beginn ab altem Ablauf."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "ju.differentOrderedStartNotQualified",
+          "explanation": "Keine abweichende konkrete Beginnanordnung."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-OPPOSITION-FINAL30",
+      "pathId": "ju-opposition-final30",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "opposition",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "oppositionRequiredAndAdmissible",
+          "value": true,
+          "reason": "ju.oppositionRequiredAndAdmissibleNotQualified",
+          "explanation": "Aktuell erforderliche und zulässige Opposition nach Art. 94 und 96."
+        },
+        {
+          "key": "article95ExceptionAbsent",
+          "value": true,
+          "reason": "ju.article95ExceptionAbsentNotQualified",
+          "explanation": "Keine konkret einschlägige Ausnahme nach Art. 95. Insbesondere kein Entzug der aufschiebenden Wirkung, keine Kompetenz-/Ausstandsentscheidung und keine Vollstreckung."
+        },
+        {
+          "key": "laterAppealDurationDoesNotDiffer",
+          "value": true,
+          "reason": "ju.laterAppealDurationDoesNotDifferNotQualified",
+          "explanation": "Art. 98 Abs. 1 übernimmt im Übrigen die Dauer des späteren Rekurses. Keine abweichende Spezialdauer."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "finalDecision",
+          "value": true,
+          "reason": "ju.finalDecisionNotQualified",
+          "explanation": "Allgemeine Endentscheidung."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-OPPOSITION-INTERIM10",
+      "pathId": "ju-opposition-interim10",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "opposition",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "oppositionRequiredAndAdmissible",
+          "value": true,
+          "reason": "ju.oppositionRequiredAndAdmissibleNotQualified",
+          "explanation": "Aktuell erforderliche und zulässige Opposition nach Art. 94 und 96."
+        },
+        {
+          "key": "article95ExceptionAbsent",
+          "value": true,
+          "reason": "ju.article95ExceptionAbsentNotQualified",
+          "explanation": "Keine konkret einschlägige Ausnahme nach Art. 95. Insbesondere kein Entzug der aufschiebenden Wirkung, keine Kompetenz-/Ausstandsentscheidung und keine Vollstreckung."
+        },
+        {
+          "key": "laterAppealDurationDoesNotDiffer",
+          "value": true,
+          "reason": "ju.laterAppealDurationDoesNotDifferNotQualified",
+          "explanation": "Art. 98 Abs. 1 übernimmt im Übrigen die Dauer des späteren Rekurses. Keine abweichende Spezialdauer."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "separatelyAdmissibleInterimDecision",
+          "value": true,
+          "reason": "ju.separatelyAdmissibleInterimDecisionNotQualified",
+          "explanation": "Separat zulässige Opposition gegen Zwischenentscheid, keine Art.-95-Ausnahme."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-OPPOSITION-PROVISIONAL10",
+      "pathId": "ju-opposition-provisional10",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "oppositionProvisional",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "oppositionRequiredAndAdmissible",
+          "value": true,
+          "reason": "ju.oppositionRequiredAndAdmissibleNotQualified",
+          "explanation": "Aktuell erforderliche und zulässige Opposition nach Art. 94 und 96."
+        },
+        {
+          "key": "article95ExceptionAbsent",
+          "value": true,
+          "reason": "ju.article95ExceptionAbsentNotQualified",
+          "explanation": "Keine konkret einschlägige Ausnahme nach Art. 95. Insbesondere kein Entzug der aufschiebenden Wirkung, keine Kompetenz-/Ausstandsentscheidung und keine Vollstreckung."
+        },
+        {
+          "key": "laterAppealDurationDoesNotDiffer",
+          "value": true,
+          "reason": "ju.laterAppealDurationDoesNotDifferNotQualified",
+          "explanation": "Art. 98 Abs. 1 übernimmt im Übrigen die Dauer des späteren Rekurses. Keine abweichende Spezialdauer."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": true,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft tatsächlich das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen nach Art. 44a Abs. 2."
+        },
+        {
+          "key": "separatelyAdmissibleInterimDecision",
+          "value": true,
+          "reason": "ju.separatelyAdmissibleInterimDecisionNotQualified",
+          "explanation": "Vorsorglicher Zwischenentscheid mit aktuell qualifizierter Oppositionspflicht."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-OPPOSITION-ORDERED",
+      "pathId": "ju-opposition-ordered",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "opposition",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "oppositionRequiredAndAdmissible",
+          "value": true,
+          "reason": "ju.oppositionRequiredAndAdmissibleNotQualified",
+          "explanation": "Aktuell erforderliche und zulässige Opposition nach Art. 94 und 96."
+        },
+        {
+          "key": "article95ExceptionAbsent",
+          "value": true,
+          "reason": "ju.article95ExceptionAbsentNotQualified",
+          "explanation": "Keine konkret einschlägige Ausnahme nach Art. 95. Insbesondere kein Entzug der aufschiebenden Wirkung, keine Kompetenz-/Ausstandsentscheidung und keine Vollstreckung."
+        },
+        {
+          "key": "laterAppealDurationDoesNotDiffer",
+          "value": true,
+          "reason": "ju.laterAppealDurationDoesNotDifferNotQualified",
+          "explanation": "Art. 98 Abs. 1 übernimmt im Übrigen die Dauer des späteren Rekurses. Keine abweichende Spezialdauer."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "ju.orderedDurationQualifiedNotQualified",
+          "explanation": "Positive Tageszahl und vorwärts laufender Beginn aus aktueller Anordnung."
+        },
+        {
+          "key": "notExtensionChain",
+          "value": true,
+          "reason": "ju.notExtensionChainNotQualified",
+          "explanation": "Keine Erstreckung nach Art. 47 Abs. 3 mit Beginn ab altem Ablauf."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "ju.differentOrderedStartNotQualified",
+          "explanation": "Keine abweichende konkrete Beginnanordnung."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-OPPOSITION-PROVISIONAL-ORDERED",
+      "pathId": "ju-opposition-provisional-ordered",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal"
+      ],
+      "sourceStage": "oppositionProvisional",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "oppositionRequiredAndAdmissible",
+          "value": true,
+          "reason": "ju.oppositionRequiredAndAdmissibleNotQualified",
+          "explanation": "Aktuell erforderliche und zulässige Opposition nach Art. 94 und 96."
+        },
+        {
+          "key": "article95ExceptionAbsent",
+          "value": true,
+          "reason": "ju.article95ExceptionAbsentNotQualified",
+          "explanation": "Keine konkret einschlägige Ausnahme nach Art. 95. Insbesondere kein Entzug der aufschiebenden Wirkung, keine Kompetenz-/Ausstandsentscheidung und keine Vollstreckung."
+        },
+        {
+          "key": "laterAppealDurationDoesNotDiffer",
+          "value": true,
+          "reason": "ju.laterAppealDurationDoesNotDifferNotQualified",
+          "explanation": "Art. 98 Abs. 1 übernimmt im Übrigen die Dauer des späteren Rekurses. Keine abweichende Spezialdauer."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "ju.orderedDurationQualifiedNotQualified",
+          "explanation": "Positive Tageszahl und vorwärts laufender Beginn aus aktueller Anordnung."
+        },
+        {
+          "key": "notExtensionChain",
+          "value": true,
+          "reason": "ju.notExtensionChainNotQualified",
+          "explanation": "Keine Erstreckung nach Art. 47 Abs. 3 mit Beginn ab altem Ablauf."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "ju.differentOrderedStartNotQualified",
+          "explanation": "Keine abweichende konkrete Beginnanordnung."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": true,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft tatsächlich das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen nach Art. 44a Abs. 2."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-REVIEW-FINAL30",
+      "pathId": "ju-review-final30",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeReview",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "reviewTargetQualified",
+          "value": true,
+          "reason": "ju.reviewTargetQualifiedNotQualified",
+          "explanation": "Ordentliche kantonale Verwaltungsjustiz oder konkret subsidiärer Gouvernement-Rekurs nach Art. 172. Keine ungebundene Sonderkommission."
+        },
+        {
+          "key": "precedingOppositionOrExceptionQualified",
+          "value": true,
+          "reason": "ju.precedingOppositionOrExceptionQualifiedNotQualified",
+          "explanation": "Vorgelagerte Opposition oder konkret einschlägige Ausnahme positiv geklärt."
+        },
+        {
+          "key": "currentReviewAdmissibilityQualified",
+          "value": true,
+          "reason": "ju.currentReviewAdmissibilityQualifiedNotQualified",
+          "explanation": "Zulässigkeit des gegenwärtigen Rechtsmittels einschliesslich Art. 119 aktuell geklärt."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "finalDecision",
+          "value": true,
+          "reason": "ju.finalDecisionNotQualified",
+          "explanation": "Allgemeine Endentscheidung."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-REVIEW-INTERIM10",
+      "pathId": "ju-review-interim10",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeReview",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "reviewTargetQualified",
+          "value": true,
+          "reason": "ju.reviewTargetQualifiedNotQualified",
+          "explanation": "Ordentliche kantonale Verwaltungsjustiz oder konkret subsidiärer Gouvernement-Rekurs nach Art. 172. Keine ungebundene Sonderkommission."
+        },
+        {
+          "key": "precedingOppositionOrExceptionQualified",
+          "value": true,
+          "reason": "ju.precedingOppositionOrExceptionQualifiedNotQualified",
+          "explanation": "Vorgelagerte Opposition oder konkret einschlägige Ausnahme positiv geklärt."
+        },
+        {
+          "key": "currentReviewAdmissibilityQualified",
+          "value": true,
+          "reason": "ju.currentReviewAdmissibilityQualifiedNotQualified",
+          "explanation": "Zulässigkeit des gegenwärtigen Rechtsmittels einschliesslich Art. 119 aktuell geklärt."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "separatelyAdmissibleInterimDecision",
+          "value": true,
+          "reason": "ju.separatelyAdmissibleInterimDecisionNotQualified",
+          "explanation": "Art. 119 Abs. 2 oder 3 im konkreten Fall erfüllt."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-REVIEW-ENFORCEMENT10",
+      "pathId": "ju-review-enforcement10",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeReview",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "reviewTargetQualified",
+          "value": true,
+          "reason": "ju.reviewTargetQualifiedNotQualified",
+          "explanation": "Ordentliche kantonale Verwaltungsjustiz oder konkret subsidiärer Gouvernement-Rekurs nach Art. 172. Keine ungebundene Sonderkommission."
+        },
+        {
+          "key": "precedingOppositionOrExceptionQualified",
+          "value": true,
+          "reason": "ju.precedingOppositionOrExceptionQualifiedNotQualified",
+          "explanation": "Vorgelagerte Opposition oder konkret einschlägige Ausnahme positiv geklärt."
+        },
+        {
+          "key": "currentReviewAdmissibilityQualified",
+          "value": true,
+          "reason": "ju.currentReviewAdmissibilityQualifiedNotQualified",
+          "explanation": "Zulässigkeit des gegenwärtigen Rechtsmittels einschliesslich Art. 119 aktuell geklärt."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "executionDecisionQualified",
+          "value": true,
+          "reason": "ju.executionDecisionQualifiedNotQualified",
+          "explanation": "Vollstreckungsentscheidung nach Art. 108–112 und 121 Abs. 1."
+        },
+        {
+          "key": "noOppositionRequiredUnder95j",
+          "value": true,
+          "reason": "ju.noOppositionRequiredUnder95jNotQualified",
+          "explanation": "Art. 95 Bst. j schliesst die vorgelagerte Opposition aus."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-REVIEW-PROVISIONAL10",
+      "pathId": "ju-review-provisional10",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeReviewProvisional",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "reviewTargetQualified",
+          "value": true,
+          "reason": "ju.reviewTargetQualifiedNotQualified",
+          "explanation": "Ordentliche kantonale Verwaltungsjustiz oder konkret subsidiärer Gouvernement-Rekurs nach Art. 172. Keine ungebundene Sonderkommission."
+        },
+        {
+          "key": "precedingOppositionOrExceptionQualified",
+          "value": true,
+          "reason": "ju.precedingOppositionOrExceptionQualifiedNotQualified",
+          "explanation": "Vorgelagerte Opposition oder konkret einschlägige Ausnahme positiv geklärt."
+        },
+        {
+          "key": "currentReviewAdmissibilityQualified",
+          "value": true,
+          "reason": "ju.currentReviewAdmissibilityQualifiedNotQualified",
+          "explanation": "Zulässigkeit des gegenwärtigen Rechtsmittels einschliesslich Art. 119 aktuell geklärt."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": true,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft tatsächlich das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen nach Art. 44a Abs. 2."
+        },
+        {
+          "key": "separatelyAdmissibleInterimDecision",
+          "value": true,
+          "reason": "ju.separatelyAdmissibleInterimDecisionNotQualified",
+          "explanation": "Art. 51 und 119 im konkreten Fall erfüllt."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-REVIEW-ORDERED",
+      "pathId": "ju-review-ordered",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeReview",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "reviewTargetQualified",
+          "value": true,
+          "reason": "ju.reviewTargetQualifiedNotQualified",
+          "explanation": "Ordentliche kantonale Verwaltungsjustiz oder konkret subsidiärer Gouvernement-Rekurs nach Art. 172. Keine ungebundene Sonderkommission."
+        },
+        {
+          "key": "precedingOppositionOrExceptionQualified",
+          "value": true,
+          "reason": "ju.precedingOppositionOrExceptionQualifiedNotQualified",
+          "explanation": "Vorgelagerte Opposition oder konkret einschlägige Ausnahme positiv geklärt."
+        },
+        {
+          "key": "currentReviewAdmissibilityQualified",
+          "value": true,
+          "reason": "ju.currentReviewAdmissibilityQualifiedNotQualified",
+          "explanation": "Zulässigkeit des gegenwärtigen Rechtsmittels einschliesslich Art. 119 aktuell geklärt."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "ju.orderedDurationQualifiedNotQualified",
+          "explanation": "Positive Tageszahl und vorwärts laufender Beginn aus aktueller Anordnung."
+        },
+        {
+          "key": "notExtensionChain",
+          "value": true,
+          "reason": "ju.notExtensionChainNotQualified",
+          "explanation": "Keine Erstreckung nach Art. 47 Abs. 3 mit Beginn ab altem Ablauf."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "ju.differentOrderedStartNotQualified",
+          "explanation": "Keine abweichende konkrete Beginnanordnung."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-REVIEW-PROVISIONAL-ORDERED",
+      "pathId": "ju-review-provisional-ordered",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "administrativeReviewProvisional",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedWrittenOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "reviewTargetQualified",
+          "value": true,
+          "reason": "ju.reviewTargetQualifiedNotQualified",
+          "explanation": "Ordentliche kantonale Verwaltungsjustiz oder konkret subsidiärer Gouvernement-Rekurs nach Art. 172. Keine ungebundene Sonderkommission."
+        },
+        {
+          "key": "precedingOppositionOrExceptionQualified",
+          "value": true,
+          "reason": "ju.precedingOppositionOrExceptionQualifiedNotQualified",
+          "explanation": "Vorgelagerte Opposition oder konkret einschlägige Ausnahme positiv geklärt."
+        },
+        {
+          "key": "currentReviewAdmissibilityQualified",
+          "value": true,
+          "reason": "ju.currentReviewAdmissibilityQualifiedNotQualified",
+          "explanation": "Zulässigkeit des gegenwärtigen Rechtsmittels einschliesslich Art. 119 aktuell geklärt."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "ju.orderedDurationQualifiedNotQualified",
+          "explanation": "Positive Tageszahl und vorwärts laufender Beginn aus aktueller Anordnung."
+        },
+        {
+          "key": "notExtensionChain",
+          "value": true,
+          "reason": "ju.notExtensionChainNotQualified",
+          "explanation": "Keine Erstreckung nach Art. 47 Abs. 3 mit Beginn ab altem Ablauf."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "ju.differentOrderedStartNotQualified",
+          "explanation": "Keine abweichende konkrete Beginnanordnung."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": true,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft tatsächlich das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen nach Art. 44a Abs. 2."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-CONFIRMATION-REQUEST5-INITIAL",
+      "pathId": "ju-confirmation-request5-initial",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administration"
+      ],
+      "sourceStage": "administrativeFirstInstance",
+      "calendarBindingId": "ju-initial-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedOralDecisionOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "lawfulActualOralOpening",
+          "value": true,
+          "reason": "ju.lawfulActualOralOpeningNotQualified",
+          "explanation": "Tatsächliche mündliche Eröffnung nach Art. 87 Abs. 2 mit rechtlich geklärtem Datum."
+        },
+        {
+          "key": "actionIsWrittenConfirmationRequest",
+          "value": true,
+          "reason": "ju.actionIsWrittenConfirmationRequestNotQualified",
+          "explanation": "Berechnet wird ausschliesslich das eigene Begehren um schriftliche Bestätigung, nicht eine fiktive spätere Rechtsmittelfrist."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-CONFIRMATION-REQUEST5-REVIEW",
+      "pathId": "ju-confirmation-request5-review",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "oppositionOrAdministrativeReview",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedOralDecisionOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "lawfulActualOralOpening",
+          "value": true,
+          "reason": "ju.lawfulActualOralOpeningNotQualified",
+          "explanation": "Tatsächliche mündliche Eröffnung nach Art. 87 Abs. 2 mit rechtlich geklärtem Datum."
+        },
+        {
+          "key": "actionIsWrittenConfirmationRequest",
+          "value": true,
+          "reason": "ju.actionIsWrittenConfirmationRequestNotQualified",
+          "explanation": "Berechnet wird ausschliesslich das eigene Begehren um schriftliche Bestätigung, nicht eine fiktive spätere Rechtsmittelfrist."
+        },
+        {
+          "key": "currentOppositionOrReviewFunctionQualified",
+          "value": true,
+          "reason": "ju.currentOppositionOrReviewFunctionQualifiedNotQualified",
+          "explanation": "Tatsächliche Oppositions- oder ordentliche/besondere Rechtsmittelfunktion nach Art. 4 und 44a Abs. 1."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-CONFIRMATION-REQUEST5-PROVISIONAL",
+      "pathId": "ju-confirmation-request5-provisional",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "oppositionOrAdministrativeReviewProvisional",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedOralDecisionOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "lawfulActualOralOpening",
+          "value": true,
+          "reason": "ju.lawfulActualOralOpeningNotQualified",
+          "explanation": "Tatsächliche mündliche Eröffnung nach Art. 87 Abs. 2 mit rechtlich geklärtem Datum."
+        },
+        {
+          "key": "actionIsWrittenConfirmationRequest",
+          "value": true,
+          "reason": "ju.actionIsWrittenConfirmationRequestNotQualified",
+          "explanation": "Berechnet wird ausschliesslich das eigene Begehren um schriftliche Bestätigung, nicht eine fiktive spätere Rechtsmittelfrist."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": true,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft tatsächlich das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen nach Art. 44a Abs. 2."
+        },
+        {
+          "key": "currentOppositionOrReviewFunctionQualified",
+          "value": true,
+          "reason": "J1-JU-REVIEW-TARGET",
+          "explanation": "Diese Ferienausnahmegruppe betrifft tatsächlich Opposition oder Verwaltungsjustiz. Erstinstanzliche Begehren verbleiben im INITIAL-Weg ohne allgemeine Ferien."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-MOTIVATION-REQUEST30-INITIAL",
+      "pathId": "ju-motivation-request30-initial",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administration"
+      ],
+      "sourceStage": "administrativeFirstInstance",
+      "calendarBindingId": "ju-initial-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedFullyFavourableAbbreviatedOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "fullyGrantsAllPartiesRequests",
+          "value": true,
+          "reason": "ju.fullyGrantsAllPartiesRequestsNotQualified",
+          "explanation": "Sämtlichen Parteibegehren wird vollständig entsprochen."
+        },
+        {
+          "key": "lawfulAbbreviatedOpeningUnder86_3",
+          "value": true,
+          "reason": "ju.lawfulAbbreviatedOpeningUnder86_3NotQualified",
+          "explanation": "Gültige verkürzte Eröffnung nach Art. 86 Abs. 3, nicht bloss belastende Entscheidung mit Begründungsmangel."
+        },
+        {
+          "key": "actionIsMotivationRequest",
+          "value": true,
+          "reason": "ju.actionIsMotivationRequestNotQualified",
+          "explanation": "Berechnet wird nur das dreissigtägige Begründungsverlangen."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-MOTIVATION-REQUEST30-REVIEW",
+      "pathId": "ju-motivation-request30-review",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "oppositionOrAdministrativeReview",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedFullyFavourableAbbreviatedOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "fullyGrantsAllPartiesRequests",
+          "value": true,
+          "reason": "ju.fullyGrantsAllPartiesRequestsNotQualified",
+          "explanation": "Sämtlichen Parteibegehren wird vollständig entsprochen."
+        },
+        {
+          "key": "lawfulAbbreviatedOpeningUnder86_3",
+          "value": true,
+          "reason": "ju.lawfulAbbreviatedOpeningUnder86_3NotQualified",
+          "explanation": "Gültige verkürzte Eröffnung nach Art. 86 Abs. 3, nicht bloss belastende Entscheidung mit Begründungsmangel."
+        },
+        {
+          "key": "actionIsMotivationRequest",
+          "value": true,
+          "reason": "ju.actionIsMotivationRequestNotQualified",
+          "explanation": "Berechnet wird nur das dreissigtägige Begründungsverlangen."
+        },
+        {
+          "key": "currentOppositionOrReviewFunctionQualified",
+          "value": true,
+          "reason": "ju.currentOppositionOrReviewFunctionQualifiedNotQualified",
+          "explanation": "Tatsächliche Oppositions- oder ordentliche/besondere Rechtsmittelfunktion nach Art. 4 und 44a Abs. 1."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": false,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft nicht das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        }
+      ]
+    },
+    {
+      "researchId": "JU-MOTIVATION-REQUEST30-PROVISIONAL",
+      "pathId": "ju-motivation-request30-provisional",
+      "lawId": "cpa-ju",
+      "technicalStages": [
+        "administrativeAppeal",
+        "court"
+      ],
+      "sourceStage": "oppositionOrAdministrativeReviewProvisional",
+      "calendarBindingId": "ju-review-authority-seat",
+      "openingPolicyKind": "qualifiedCurrentTrigger",
+      "triggerKind": "qualifiedFullyFavourableAbbreviatedOpening",
+      "sourceIds": [
+        "SRC-AP23J1-JU-CPA-20240101",
+        "SRC-AP23J1-JU-LJF-20230101"
+      ],
+      "currentRequirements": [
+        {
+          "key": "unit",
+          "value": "day",
+          "reason": "J1-UNIT"
+        },
+        {
+          "key": "direction",
+          "value": "forward",
+          "reason": "J1-DIRECTION"
+        },
+        {
+          "key": "authoritySeat",
+          "value": "JU",
+          "reason": "ju.authoritySeatNotQualified"
+        },
+        {
+          "key": "competenceQualified",
+          "value": true,
+          "reason": "ju.competenceQualifiedNotQualified"
+        },
+        {
+          "key": "generalCpaApplies",
+          "value": true,
+          "reason": "ju.generalCpaAppliesNotQualified"
+        },
+        {
+          "key": "noDifferentSpecialDeadlineRule",
+          "value": true,
+          "reason": "ju.noDifferentSpecialDeadlineRuleNotQualified"
+        },
+        {
+          "key": "currentProceduralLawQualified",
+          "value": true,
+          "reason": "ju.currentProceduralLawQualifiedNotQualified"
+        },
+        {
+          "key": "sourceDocumentQualified",
+          "value": true,
+          "reason": "ju.sourceDocumentQualifiedNotQualified"
+        },
+        {
+          "key": "triggerDateQualified",
+          "value": true,
+          "reason": "ju.triggerDateQualifiedNotQualified"
+        },
+        {
+          "key": "forwardDayPeriod",
+          "value": true,
+          "reason": "ju.forwardDayPeriodNotQualified"
+        },
+        {
+          "key": "notPaymentOrFixedDate",
+          "value": true,
+          "reason": "ju.notPaymentOrFixedDateNotQualified"
+        },
+        {
+          "key": "noArticle6Exception",
+          "value": true,
+          "reason": "ju.noArticle6ExceptionNotQualified"
+        },
+        {
+          "key": "noKnownIrregularOrLongerInstruction",
+          "value": true,
+          "reason": "ju.noKnownIrregularOrLongerInstructionNotQualified"
+        },
+        {
+          "key": "fullyGrantsAllPartiesRequests",
+          "value": true,
+          "reason": "ju.fullyGrantsAllPartiesRequestsNotQualified",
+          "explanation": "Sämtlichen Parteibegehren wird vollständig entsprochen."
+        },
+        {
+          "key": "lawfulAbbreviatedOpeningUnder86_3",
+          "value": true,
+          "reason": "ju.lawfulAbbreviatedOpeningUnder86_3NotQualified",
+          "explanation": "Gültige verkürzte Eröffnung nach Art. 86 Abs. 3, nicht bloss belastende Entscheidung mit Begründungsmangel."
+        },
+        {
+          "key": "actionIsMotivationRequest",
+          "value": true,
+          "reason": "ju.actionIsMotivationRequestNotQualified",
+          "explanation": "Berechnet wird nur das dreissigtägige Begründungsverlangen."
+        },
+        {
+          "key": "genuineProvisionalProcedure",
+          "value": true,
+          "reason": "ju.genuineProvisionalProcedureNotQualified",
+          "explanation": "Die berechnete Handlung betrifft tatsächlich das Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen nach Art. 44a Abs. 2."
+        },
+        {
+          "key": "qualifiedLegalOpening",
+          "value": true,
+          "reason": "J1-JU-OPENING",
+          "explanation": "Aktuelles rechtlich massgebendes schriftliches oder bereits gleichwertig rechtlich geklärtes Eröffnungsdatum. Keine bloss mündliche Mitteilung anstelle einer erforderlichen schriftlichen Bestätigung."
+        },
+        {
+          "key": "currentOppositionOrReviewFunctionQualified",
+          "value": true,
+          "reason": "J1-JU-REVIEW-TARGET",
+          "explanation": "Diese Ferienausnahmegruppe betrifft tatsächlich Opposition oder Verwaltungsjustiz. Erstinstanzliche Begehren verbleiben im INITIAL-Weg ohne allgemeine Ferien."
+        }
+      ]
+    }
+  ]
+}

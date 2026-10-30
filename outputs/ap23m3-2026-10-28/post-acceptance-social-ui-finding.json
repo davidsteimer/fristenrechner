@@ -1,0 +1,163 @@
+{
+  "kind": "ap23m3-post-acceptance-social-ui-finding",
+  "id": "social-ui-format17-disabled",
+  "gate": "R10-H01",
+  "status": "confirmed-release-blocker",
+  "checkedOn": "2026-10-28",
+  "localOnly": true,
+  "legalRulesChanged": false,
+  "knownAfterHumanAcceptance": true,
+  "humanAcceptanceOfFinding": false,
+  "fixImplemented": false,
+  "sourceReleaseApproved": false,
+  "operatingChanges": false,
+  "scope": "Read-only reproduction through actual native data contexts and UI helper. No UI render, installation or production assertion.",
+  "observation": "hasSocialUi explicitly enumerates formats 5 through 16 and omits format 17. socialUiPath therefore returns undefined before resolving preserved Bern social paths.",
+  "current": {
+    "name": "genuine-ap23m3-native-local-reference",
+    "formatVersion": "17.0.0",
+    "releaseId": "2026-10-28-ap23m3-candidate.1",
+    "socialCatalogs": 1,
+    "federalRules": 44,
+    "bernBindings": 50,
+    "hasSocialUi": false,
+    "selections": [
+      {
+        "input": {
+          "area": "social",
+          "law": "ivg",
+          "action": "preliminary-objection",
+          "stage": ""
+        },
+        "defined": false,
+        "ruleId": null,
+        "bindings": 0
+      },
+      {
+        "input": {
+          "area": "social",
+          "law": "ahvg",
+          "action": "objection",
+          "stage": ""
+        },
+        "defined": false,
+        "ruleId": null,
+        "bindings": 0
+      },
+      {
+        "input": {
+          "area": "social",
+          "law": "mvg",
+          "action": "objection",
+          "stage": ""
+        },
+        "defined": false,
+        "ruleId": null,
+        "bindings": 0
+      }
+    ]
+  },
+  "prior": {
+    "name": "genuine-approved-mvp09",
+    "formatVersion": "9.0.0",
+    "releaseId": "2026-10-18-mvp-09-approved.1",
+    "socialCatalogs": 1,
+    "federalRules": 44,
+    "bernBindings": 50,
+    "hasSocialUi": true,
+    "selections": [
+      {
+        "input": {
+          "area": "social",
+          "law": "ivg",
+          "action": "preliminary-objection",
+          "stage": ""
+        },
+        "defined": true,
+        "ruleId": "CH-SOC-IVG-PRE",
+        "bindings": 1
+      },
+      {
+        "input": {
+          "area": "social",
+          "law": "ahvg",
+          "action": "objection",
+          "stage": ""
+        },
+        "defined": true,
+        "ruleId": "CH-SOC-AHVG-OBJ",
+        "bindings": 1
+      },
+      {
+        "input": {
+          "area": "social",
+          "law": "mvg",
+          "action": "objection",
+          "stage": ""
+        },
+        "defined": true,
+        "ruleId": "CH-SOC-MVG-OBJ",
+        "bindings": 1
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "path": "scripts/check-ap23m3-social-ui-regression.ts",
+      "byteLength": 5056,
+      "sha256": "433e505ca4c6e7a0652a082fa88dddbcba866b3bd08e3b303971315ff6f7b1ef"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "byteLength": 11648,
+      "sha256": "473794daa6b6657fe569baa62a3f62468f6e8fea87e056e41edc7a4bbcef8a3e"
+    },
+    {
+      "path": "src/ui/vrpgSelection.ts",
+      "byteLength": 20547,
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+    },
+    {
+      "path": "src/release/ap23m3CandidateData.ts",
+      "byteLength": 5240845,
+      "sha256": "ee1cbef5cbd907aabedc28bcf74ba4c73fde1787c7ed60d6c9e6e80f52801bf7"
+    },
+    {
+      "path": "src/release/mvp09ReleaseData.ts",
+      "byteLength": 2783811,
+      "sha256": "6ce32c53d251f77238d6cf9a21abbe7f75439a8d23630e696847e0ca7604ec70"
+    },
+    {
+      "path": "src/core/format17CalculationData.ts",
+      "byteLength": 5555,
+      "sha256": "275ab66f5f8325944788257e9bb47674624048c6c9213be0bb3bf2ffc4b036fc"
+    },
+    {
+      "path": "src/core/format9CalculationData.ts",
+      "byteLength": 5523,
+      "sha256": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e"
+    },
+    {
+      "path": "data/candidates/2026-10-28-ap23m3/manifest.json",
+      "byteLength": 30299,
+      "sha256": "4519b40136fd533600b7cda85d941c87dfc14826325a5e542534e5257cedddad"
+    },
+    {
+      "path": "data/releases/2026-10-18-mvp-09-approved.1/manifest.json",
+      "byteLength": 25420,
+      "sha256": "3c929779803ceb6bcbf56d44d9a2aad8ece730d916a39ab44016c118bcec2265"
+    },
+    {
+      "path": "data/candidates/2026-10-28-ap23m3/social-procedures/ch-social-procedures.json",
+      "byteLength": 546538,
+      "sha256": "bf2c4d672304095c8b3162b6f82fc643e45f9001325d54f8e4d968d6e44331de"
+    },
+    {
+      "path": "data/releases/2026-10-18-mvp-09-approved.1/social-procedures/ch-social-procedures.json",
+      "byteLength": 553237,
+      "sha256": "89e75518f3ac0cf18c99f8218dc308a8158f7792073827d73e896221c8ce34cc"
+    }
+  ],
+  "assertionsPassed": true,
+  "reportDoesNotAuthorizeFix": true
+}

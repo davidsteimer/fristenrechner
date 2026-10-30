@@ -52,11 +52,11 @@ function timeReason(input: SocialDeadlineInput, norms: readonly SocialNormBindin
 /** Candidates calculate only in the non-serializable local reference runtime. */
 export function resolveSocialDeadline(input: SocialDeadlineInput, data: CalculationData): SocialResolution {
   try {
-    if (!validInput(input, ['6.0.0','7.0.0','8.0.0','9.0.0'].includes(data.formatVersion) ? '2.0.0' : '1.0.0')) return blocked('input-contract-invalid');
+    if (!validInput(input, ['6.0.0','7.0.0','8.0.0','9.0.0','10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion) ? '2.0.0' : '1.0.0')) return blocked('input-contract-invalid');
     const catalogs = [...(data.socialProcedureCatalogs?.values() ?? [])];
-    if (catalogs.length !== 1 || !['5.0.0','6.0.0','7.0.0','8.0.0','9.0.0'].includes(data.formatVersion)) return blocked('unknown-rule');
+    if (catalogs.length !== 1 || !['5.0.0','6.0.0','7.0.0','8.0.0','9.0.0','10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion)) return blocked('unknown-rule');
     if (data.formatVersion === '7.0.0' && !trustedFormat7Runtime(data)) return blocked('not-released');
-    if (['8.0.0', '9.0.0'].includes(data.formatVersion) && !trustedModernRuntime(data)) return blocked('not-released');
+    if (['8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion) && !trustedModernRuntime(data)) return blocked('not-released');
     const catalog = catalogs[0]!;
     validateSocialCatalogReferences(catalog, data);
     const candidates = catalog.federalRules.filter(r => r.ruleId === input.ruleId && socialIntervalContains(r.caseCoverage, input.legalTriggerDate));

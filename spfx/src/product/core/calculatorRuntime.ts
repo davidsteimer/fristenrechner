@@ -1,3 +1,9 @@
+import {createFormat17CalculationData} from './format17CalculationData';
+import type {ParsedFormat17Data} from './releaseFormat17';
+import {createFormat16CalculationData} from './format16CalculationData';
+import type {ParsedFormat16Data} from './releaseFormat16';
+import {createFormat15CalculationData} from './format15CalculationData';
+import type {ParsedFormat15Data} from './releaseFormat15';
 // SPDX-License-Identifier: AGPL-3.0-only
 import { createCalculationData, CoreDataError } from './data';
 import { FORMAT7_LEGACY_CALENDAR_BASELINE } from './format7Baseline';
@@ -9,13 +15,37 @@ import type { CalculationData, CalendarData, LegalProfile, ValidatedReleaseLike 
 import type { SpecialRegimeCatalog } from './specialTypes';
 import { createFormat8CalculationData } from './format8CalculationData';
 import type { ParsedFormat8Data } from './releaseFormat8';
+import { createFormat9CalculationData } from './format9CalculationData';
+import type { ParsedFormat9Data } from './releaseFormat9';
+import { createFormat10CalculationData } from './format10CalculationData';
+import type { ParsedFormat10Data } from './releaseFormat10';
+import { createFormat11CalculationData } from './format11CalculationData';
+import { createFormat12CalculationData } from './format12CalculationData';
+import { createFormat14CalculationData } from './format14CalculationData';
+import type { ParsedFormat14Data } from './releaseFormat14';
+import { createFormat13CalculationData } from './format13CalculationData';
+import type { ParsedFormat13Data } from './releaseFormat13';
+import type { ParsedFormat12Data } from './releaseFormat12';
+import type { ParsedFormat11Data } from './releaseFormat11';
 export { createFormat8CalculationData } from './format8CalculationData';
 export type { Format8CalculatorRuntime, Format8RuntimeOptions } from './format8CalculationData';
+export { createFormat9CalculationData } from './format9CalculationData';
+export type { Format9CalculatorRuntime, Format9RuntimeOptions } from './format9CalculationData';
+export { createFormat10CalculationData } from './format10CalculationData';
+export type { Format10CalculatorRuntime, Format10RuntimeOptions } from './format10CalculationData';
+export { createFormat11CalculationData } from './format11CalculationData';
+export { createFormat12CalculationData } from './format12CalculationData';
+export { createFormat14CalculationData } from './format14CalculationData';
+export type { Format14CalculatorRuntime, Format14RuntimeOptions } from './format14CalculationData';
+export { createFormat13CalculationData } from './format13CalculationData';
+export type { Format13CalculatorRuntime, Format13RuntimeOptions } from './format13CalculationData';
+export type { Format12CalculatorRuntime, Format12RuntimeOptions } from './format12CalculationData';
+export type { Format11CalculatorRuntime, Format11RuntimeOptions } from './format11CalculationData';
 
 export interface CalculatorRuntime {
   readonly data: CalculationData;
   readonly calendarRuntime?: BoundCalendarRuntime;
-  readonly administrativeContext?: ParsedFormat8Data;
+  readonly administrativeContext?: ParsedFormat8Data | ParsedFormat9Data | ParsedFormat10Data | ParsedFormat11Data | ParsedFormat12Data | ParsedFormat13Data | ParsedFormat14Data | ParsedFormat15Data | ParsedFormat16Data | ParsedFormat17Data;
 }
 export interface Format7RuntimeOptions { readonly mode: 'approved' | 'localReference' }
 export interface ByteBoundReleaseLike extends ValidatedReleaseLike {
@@ -139,8 +169,8 @@ export function createFormat7CalculationData(
 
 /** Provider caches are transport, not a validation capability. Recheck bytes. */
 export function createCalculatorRuntime(release: ByteBoundReleaseLike, options?: Format7RuntimeOptions): CalculatorRuntime {
-  if (!['7.0.0', '8.0.0'].includes(release.formatVersion)) return { data: createCalculationData(release) };
-  const format = release.formatVersion === '8.0.0' ? 'Format 8' : 'Format 7';
+  if (!['7.0.0', '8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(release.formatVersion)) return { data: createCalculationData(release) };
+  const format = 'Format ' + release.formatVersion.split('.')[0];
   if (!release.manifestBytes) fail(`${format} benötigt die vollständigen Manifestbytes.`);
   const decoder = new TextDecoder('utf-8', { fatal: true });
   const manifestText = decoder.decode(release.manifestBytes);
@@ -150,8 +180,14 @@ export function createCalculatorRuntime(release: ByteBoundReleaseLike, options?:
     if (!artifact.bytes || !artifact.descriptor.path || files.has(artifact.descriptor.path)) fail(`${format} benötigt eindeutige vollständige Artefaktbytes.`);
     files.set(artifact.descriptor.path!, decoder.decode(artifact.bytes));
   }
-  const runtime: CalculatorRuntime = release.formatVersion === '8.0.0'
-    ? createFormat8CalculationData(manifestText, files, options) : createFormat7CalculationData(manifestText, files, options);
+  const runtime: CalculatorRuntime = release.formatVersion === '17.0.0' ? createFormat17CalculationData(manifestText, files, options) : release.formatVersion === '16.0.0' ? createFormat16CalculationData(manifestText, files, options) : release.formatVersion === '15.0.0' ? createFormat15CalculationData(manifestText, files, options) : release.formatVersion === '14.0.0' ? createFormat14CalculationData(manifestText, files, options) : release.formatVersion === '13.0.0' ? createFormat13CalculationData(manifestText, files, options) : release.formatVersion === '12.0.0' ? createFormat12CalculationData(manifestText, files, options) : release.formatVersion === '11.0.0'
+    ? createFormat11CalculationData(manifestText, files, options)
+    : release.formatVersion === '10.0.0'
+    ? createFormat10CalculationData(manifestText, files, options)
+    : release.formatVersion === '9.0.0'
+    ? createFormat9CalculationData(manifestText, files, options)
+    : release.formatVersion === '8.0.0'
+      ? createFormat8CalculationData(manifestText, files, options) : createFormat7CalculationData(manifestText, files, options);
   if (runtime.data.releaseId !== release.releaseId || runtime.data.coverage.from !== release.coverageFrom
     || runtime.data.coverage.to !== release.coverageTo || runtime.data.formatVersion !== release.formatVersion) fail(`${format}-Transportmetadaten stimmen nicht mit dem Manifest überein.`);
   for (const [claimed, actual] of [
@@ -163,3 +199,11 @@ export function createCalculatorRuntime(release: ByteBoundReleaseLike, options?:
   ] as const) if (canonicalSocialJson([...claimed].sort()) !== canonicalSocialJson([...actual].sort())) fail(`${format}-Transportinventar stimmt nicht mit dem Manifest überein.`);
   return runtime;
 }
+
+export {createFormat16CalculationData} from './format16CalculationData';
+export type {Format16CalculatorRuntime,Format16RuntimeOptions} from './format16CalculationData';
+export {createFormat15CalculationData} from './format15CalculationData';
+export type {Format15CalculatorRuntime,Format15RuntimeOptions} from './format15CalculationData';
+
+export {createFormat17CalculationData} from './format17CalculationData';
+export type {Format17CalculatorRuntime,Format17RuntimeOptions} from './format17CalculationData';

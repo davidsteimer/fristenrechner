@@ -5,6 +5,7 @@ import { readdir } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {privateMvp10HistoricalResearchSuites,privateMvp10HistoricalRoutingSuites} from './check-mvp10-portability.mjs';
 
 export const privateMvp05Suites = Object.freeze([
   'tests/governance/mvp05-source-approval.test.mjs',
@@ -42,22 +43,33 @@ export const privateMvp09ExecutionPlan = Object.freeze({
   historicalSuites: Object.freeze(privateMvp09Suites.slice(0, 4)),
   currentSuites: Object.freeze(privateMvp09Suites.slice(4))
 });
+export const privateMvp10Suites = Object.freeze([
+  'tests/core/mvp10-promotion-delta.test.ts',
+  'tests/governance/mvp10-source-inventory.test.mjs',
+  'tests/governance/mvp10-source-approval.test.mjs',
+  'tests/governance/mvp10-source-coverage.test.mjs',
+  'tests/governance/mvp10-recovery.test.mjs',
+  'tests/governance/mvp10-execution-boundary.test.mjs'
+]);
+export const privateMvp10HistoricalWebSuites = Object.freeze(['tests/public-app/mvp09-build.test.ts']);
 export function selectStandardSuites(paths) {
   return paths.filter(path => !privateMvp05Suites.includes(path) && !privateMvp06Suites.includes(path) && !privateMvp07Suites.includes(path)
-    && !privateMvp08Suites.includes(path) && !privateMvp09Suites.includes(path));
+    && !privateMvp08Suites.includes(path) && !privateMvp09Suites.includes(path) && !privateMvp10Suites.includes(path)
+    && !privateMvp10HistoricalResearchSuites.includes(path) && !privateMvp10HistoricalRoutingSuites.includes(path) && !privateMvp10HistoricalWebSuites.includes(path));
 }
 const root = fileURLToPath(new URL('../', import.meta.url));
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const scope = process.argv[2];
   assert.equal(process.argv.length, 3);
-  assert.ok(['product', 'governance', 'private-mvp05', 'private-mvp06', 'private-mvp07', 'private-mvp08', 'private-mvp09'].includes(scope), 'Select an explicit test scope');
-  const directories = scope === 'product' ? ['tests/core', 'tests/ui'] : ['tests/governance'];
+  assert.ok(['product', 'governance', 'public', 'private-mvp05', 'private-mvp06', 'private-mvp07', 'private-mvp08', 'private-mvp09', 'private-mvp10', 'historical-mvp09-web'].includes(scope), 'Select an explicit test scope');
+  const directories = scope === 'product' ? ['tests/core', 'tests/ui'] : scope === 'public' ? ['tests/public-app'] : ['tests/governance'];
   const paths = scope === 'private-mvp05' ? privateMvp05Suites : scope === 'private-mvp06' ? privateMvp06Suites : scope === 'private-mvp07' ? privateMvp07Suites
-    : scope === 'private-mvp08' ? privateMvp08Suites : scope === 'private-mvp09' ? privateMvp09Suites : selectStandardSuites((await Promise.all(
+    : scope === 'private-mvp08' ? privateMvp08Suites : scope === 'private-mvp09' ? privateMvp09Suites
+    : scope === 'private-mvp10' ? privateMvp10Suites : scope === 'historical-mvp09-web' ? privateMvp10HistoricalWebSuites : selectStandardSuites((await Promise.all(
     directories.map(async directory => (await readdir(resolve(root, directory)))
       .filter(name => /\.test\.(?:tsx?|mjs)$/.test(name)).sort().map(name => `${directory}/${name}`)))).flat());
   assert.ok(paths.length, 'Empty test scope');
-  console.log(`Test scope: ${scope}. ${paths.length} suites. Private MVP05/MVP06/MVP07/MVP08/MVP09 audits are explicit separate commands.`);
+  console.log(`Test scope: ${scope}. ${paths.length} suites. Private MVP05–MVP10 source audits and historical MVP09 web tests are explicit separate commands. ${privateMvp10HistoricalResearchSuites.length} sealed historical research suites are not rerun against the changed release workspace. Their original evidence is separately verified.`);
   if (scope === 'private-mvp09') {
     // R09 A1/A2 expectations belong to the sealed 247-source input snapshot.
     // Never rerun them against the adopted 255-source register or rewrite them.

@@ -50,7 +50,8 @@ function sourceUsageForRelease(releaseId) {
     'filingProfileId',
     'regimeId',
     'suspensionSetId',
-    'bindingId', 'contextRouteId', 'calendarBindingId', 'eligibilityId', 'excludedPathId'
+    'bindingId', 'contextRouteId', 'calendarBindingId', 'eligibilityId', 'excludedPathId',
+    'pathId', 'lawId', 'holidayBindingId', 'suspensionProfileId', 'qualificationPolicyId'
   ];
 
   function addUsage(sourceId, context, locator) {

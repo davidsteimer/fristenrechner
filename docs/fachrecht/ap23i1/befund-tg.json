@@ -1,0 +1,2690 @@
+{
+  "canton": "TG",
+  "jurisdiction": "CH-TG",
+  "workPackage": "AP23I1",
+  "reviewedOn": "2026-10-22",
+  "status": "research-proposal-not-accepted-not-operative",
+  "humanApprovalBy": "David Steimer",
+  "windowProposal": {
+    "from": "2026-08-29",
+    "to": "2027-12-31",
+    "allTouchedDaysMustBeCovered": true
+  },
+  "interpretation": "Fachliche Vorschläge, keine Produktverträge oder Freigaben. Anforderungen sind kumulativ. Ein Fachstatus oder gespeicherter Default ersetzt keine aktuelle Falltatsache.",
+  "commonRequirements": {
+    "authoritySeat": "TG",
+    "competenceQualified": true,
+    "generalVrgApplies": true,
+    "noDifferentSpecialDeadlineRule": true,
+    "currentProceduralLawQualified": true,
+    "legallyEffectiveWrittenService": true,
+    "serviceDateQualified": true,
+    "forwardDayPeriod": true,
+    "notPaymentOrFixedDate": true,
+    "sourceDocumentQualified": true,
+    "originalWrittenOpeningQualified": true
+  },
+  "commonSourceIds": [
+    "AP23I1-TG-VRG-20240601",
+    "AP23I1-TG-RTG-20260101"
+  ],
+  "commonLocators": [
+    "§§ 1–5 VRG",
+    "§ 20 Abs. 1–3 VRG",
+    "§ 24 Abs. 1–3 VRG",
+    "§ 25 VRG",
+    "§ 129 VRG",
+    "§ 1 Abs. 1 RTG"
+  ],
+  "calendarProjectionProposal": "I1-TG-PROCEDURAL-CORE",
+  "pathProposals": [
+    {
+      "id": "TG-ADMIN-ORDERED",
+      "action": "orderedProceduralSubmission",
+      "stage": "administrativeFirstInstance",
+      "target": "competentCantonalAdministrativeAuthority",
+      "duration": {
+        "type": "ordered-days",
+        "days": null,
+        "basis": "konkrete aktuelle vorwärts laufende Tagesanordnung nach §§ 11–15 und 25 Abs. 2 VRG"
+      },
+      "suspension": "none",
+      "opening": "actualForwardDayOrder",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "tg.orderedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordered Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "tg.differentOrderedStartNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für different Ordered Start muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specialSubmissionRule",
+          "value": false,
+          "reason": "tg.specialSubmissionRuleNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für special Submission Rule muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601",
+        "AP23I1-TG-TVR2003-45"
+      ],
+      "locators": [
+        "§§ 11–15 und 24–25 VRG",
+        "§ 63 Abs. 1–2 VRG in gerichtlicher Systematik",
+        "TVR 2003 Nr. 45 E. 2.1–2.3 ergänzend"
+      ]
+    },
+    {
+      "id": "TG-REKURS-30",
+      "action": "ordinaryAdministrativeAppeal",
+      "stage": "administrativeAppeal",
+      "target": "competentCantonalRekursAuthority",
+      "duration": {
+        "type": "statutory-days",
+        "days": 30,
+        "basis": "§ 45 Abs. 1 VRG"
+      },
+      "suspension": "none",
+      "opening": "qualifiedAppealableDecision",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "rekursAdmissible",
+          "value": true,
+          "reason": "tg.rekursAdmissibleNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für rekurs Admissible muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "ordinaryUnchangedPeriod",
+          "value": true,
+          "reason": "tg.ordinaryUnchangedPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordinary Unchanged Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShortening",
+          "value": false,
+          "reason": "tg.specificShorteningNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specialSubmissionRule",
+          "value": false,
+          "reason": "tg.specialSubmissionRuleNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für special Submission Rule muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§§ 35 und 37–43 VRG",
+        "§ 45 Abs. 1 VRG",
+        "§ 53 VRG",
+        "§ 63 VRG systematisch nicht auf den Rekurs ausgedehnt"
+      ]
+    },
+    {
+      "id": "TG-REKURS-SHORTENED",
+      "action": "specificallyShortenedAdministrativeAppeal",
+      "stage": "administrativeAppeal",
+      "target": "competentCantonalRekursAuthority",
+      "duration": {
+        "type": "statutory-specifically-shortened-days",
+        "days": null,
+        "minimumDays": 5,
+        "maximumDays": 29,
+        "basis": "qualifizierte konkrete Verkürzung nach § 45 Abs. 3 VRG, keine gewöhnliche erstreckbare Eingabefrist"
+      },
+      "suspension": "none",
+      "opening": "qualifiedDecisionWithSpecificShortening",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "rekursAdmissible",
+          "value": true,
+          "reason": "tg.rekursAdmissibleNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für rekurs Admissible muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShorteningQualified",
+          "value": true,
+          "reason": "tg.specificShorteningQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "shorteningGround",
+          "oneOf": [
+            "provisionalMeasure",
+            "otherUrgentCase"
+          ],
+          "reason": "tg.shorteningGroundNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für shortening Ground muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "concreteShortenedDurationQualified",
+          "value": true,
+          "reason": "tg.concreteShortenedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für concrete Shortened Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noConflictingPeriodInformation",
+          "value": true,
+          "reason": "tg.noConflictingPeriodInformationNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Conflicting Period Information muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§ 45 Abs. 1 und 3 VRG",
+        "§ 25 Abs. 1 VRG"
+      ],
+      "technicalQuestionI2": "Eigene konkretisierte gesetzliche Dauerbasis mit Ganzzahlbereich 5–29. Nicht als ordered-days oder fixe Fünftagesfrist umdeuten."
+    },
+    {
+      "id": "TG-REKURS-ORDERED",
+      "action": "orderedProceduralSubmission",
+      "stage": "administrativeAppeal",
+      "target": "sameCompetentCantonalRekursAuthority",
+      "duration": {
+        "type": "ordered-days",
+        "days": null,
+        "basis": "konkrete Eingabeanordnung, insbesondere §§ 46 oder 49 in Verbindung mit §§ 24–25 und 53 VRG"
+      },
+      "suspension": "none",
+      "opening": "actualForwardDayOrder",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "rekursProceedingQualified",
+          "value": true,
+          "reason": "tg.rekursProceedingQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für rekurs Proceeding Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "sameIssuingAuthority",
+          "value": true,
+          "reason": "tg.sameIssuingAuthorityNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für same Issuing Authority muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "tg.orderedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordered Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "tg.differentOrderedStartNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für different Ordered Start muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notShortenedAppealPeriod",
+          "value": true,
+          "reason": "tg.notShortenedAppealPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Shortened Appeal Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specialSubmissionRule",
+          "value": false,
+          "reason": "tg.specialSubmissionRuleNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für special Submission Rule muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§§ 46 und 49 VRG",
+        "§§ 24–25 und 53 VRG"
+      ]
+    },
+    {
+      "id": "TG-RR-30",
+      "action": "ordinaryRegierungsratComplaint",
+      "stage": "regierungsratComplaint",
+      "target": "RegierungsratTG",
+      "duration": {
+        "type": "statutory-days",
+        "days": 30,
+        "basis": "§ 55 Abs. 2 in Verbindung mit § 45 Abs. 1 VRG"
+      },
+      "suspension": "none",
+      "opening": "qualifiedDecisionWithinRegierungsratJurisdiction",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "regierungsratCompetenceBasis",
+          "oneOf": [
+            "vrg55Abs1Nr8Qualified",
+            "vrg55Abs1Nr9Qualified"
+          ],
+          "reason": "tg.regierungsratCompetenceBasisNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für regierungsrat Competence Basis muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noDifferentSpecialProcedure",
+          "value": true,
+          "reason": "tg.noDifferentSpecialProcedureNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Different Special Procedure muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "ordinaryUnchangedPeriod",
+          "value": true,
+          "reason": "tg.ordinaryUnchangedPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordinary Unchanged Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShortening",
+          "value": false,
+          "reason": "tg.specificShorteningNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601",
+        "AP23I1-TG-TVR2003-45"
+      ],
+      "locators": [
+        "§ 55 Abs. 1 Ziff. 8–9 und Abs. 2 VRG",
+        "§ 45 Abs. 1 VRG",
+        "TVR 2003 Nr. 45 E. 2.1–2.3 ergänzend"
+      ],
+      "limit": "Keine allgemeine Regierungsratszuständigkeit und keine positive Mitfreigabe der übrigen Spezialgebiete des § 55 Abs. 1."
+    },
+    {
+      "id": "TG-RR-SHORTENED",
+      "action": "specificallyShortenedRegierungsratComplaint",
+      "stage": "regierungsratComplaint",
+      "target": "RegierungsratTG",
+      "duration": {
+        "type": "statutory-specifically-shortened-days",
+        "days": null,
+        "minimumDays": 5,
+        "maximumDays": 29,
+        "basis": "§ 55 Abs. 2 in Verbindung mit § 45 Abs. 3 VRG"
+      },
+      "suspension": "none",
+      "opening": "qualifiedDecisionWithSpecificShortening",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "regierungsratCompetenceBasis",
+          "oneOf": [
+            "vrg55Abs1Nr8Qualified",
+            "vrg55Abs1Nr9Qualified"
+          ],
+          "reason": "tg.regierungsratCompetenceBasisNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für regierungsrat Competence Basis muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noDifferentSpecialProcedure",
+          "value": true,
+          "reason": "tg.noDifferentSpecialProcedureNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Different Special Procedure muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShorteningQualified",
+          "value": true,
+          "reason": "tg.specificShorteningQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "shorteningGround",
+          "oneOf": [
+            "provisionalMeasure",
+            "otherUrgentCase"
+          ],
+          "reason": "tg.shorteningGroundNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für shortening Ground muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "concreteShortenedDurationQualified",
+          "value": true,
+          "reason": "tg.concreteShortenedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für concrete Shortened Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noConflictingPeriodInformation",
+          "value": true,
+          "reason": "tg.noConflictingPeriodInformationNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Conflicting Period Information muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§ 55 Abs. 1 Ziff. 8–9 und Abs. 2 VRG",
+        "§ 45 Abs. 3 VRG",
+        "§ 25 Abs. 1 VRG"
+      ],
+      "technicalQuestionI2": "Eigene konkretisierte gesetzliche Dauerbasis, nicht erstreckbare gewöhnliche Anordnung."
+    },
+    {
+      "id": "TG-RR-ORDERED",
+      "action": "orderedProceduralSubmission",
+      "stage": "regierungsratComplaint",
+      "target": "sameRegierungsratTG",
+      "duration": {
+        "type": "ordered-days",
+        "days": null,
+        "basis": "§ 55 Abs. 2 in Verbindung mit §§ 46, 49 und 53 sowie §§ 24–25 VRG"
+      },
+      "suspension": "none",
+      "opening": "actualForwardDayOrder",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "regierungsratCompetenceBasis",
+          "oneOf": [
+            "vrg55Abs1Nr8Qualified",
+            "vrg55Abs1Nr9Qualified"
+          ],
+          "reason": "tg.regierungsratCompetenceBasisNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für regierungsrat Competence Basis muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "sameIssuingAuthority",
+          "value": true,
+          "reason": "tg.sameIssuingAuthorityNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für same Issuing Authority muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noDifferentSpecialProcedure",
+          "value": true,
+          "reason": "tg.noDifferentSpecialProcedureNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Different Special Procedure muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "tg.orderedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordered Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "tg.differentOrderedStartNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für different Ordered Start muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notShortenedAppealPeriod",
+          "value": true,
+          "reason": "tg.notShortenedAppealPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Shortened Appeal Period muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601",
+        "AP23I1-TG-TVR2003-45"
+      ],
+      "locators": [
+        "§ 55 Abs. 2 VRG",
+        "§§ 46, 49 und 53 VRG",
+        "§§ 24–25 VRG",
+        "TVR 2003 Nr. 45 E. 2.1–2.3 ergänzend"
+      ]
+    },
+    {
+      "id": "TG-VG-30",
+      "action": "ordinaryAdministrativeCourtComplaint",
+      "stage": "administrativeCourtComplaint",
+      "target": "VerwaltungsgerichtTG",
+      "duration": {
+        "type": "statutory-days",
+        "days": 30,
+        "basis": "§ 57 Abs. 1 VRG"
+      },
+      "suspension": "three",
+      "opening": "qualifiedCourtAppealableDecision",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "none",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "ordinaryUnchangedPeriod",
+          "value": true,
+          "reason": "tg.ordinaryUnchangedPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordinary Unchanged Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShortening",
+          "value": false,
+          "reason": "tg.specificShorteningNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notInsuranceCourt",
+          "value": true,
+          "reason": "tg.notInsuranceCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Insurance Court muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§§ 54 und 57 Abs. 1 VRG",
+        "§ 63 Abs. 1–2 und 4–5 VRG"
+      ]
+    },
+    {
+      "id": "TG-VG-SHORTENED",
+      "action": "specificallyShortenedAdministrativeCourtComplaint",
+      "stage": "administrativeCourtComplaint",
+      "target": "VerwaltungsgerichtTG",
+      "duration": {
+        "type": "statutory-specifically-shortened-days",
+        "days": null,
+        "minimumDays": 5,
+        "maximumDays": 29,
+        "basis": "qualifizierte konkrete Verkürzung im sonstigen dringenden Fall nach § 57 Abs. 3 VRG"
+      },
+      "suspension": "three",
+      "opening": "qualifiedDecisionWithSpecificShortening",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "none",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShorteningQualified",
+          "value": true,
+          "reason": "tg.specificShorteningQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "shorteningGround",
+          "value": "otherUrgentCase",
+          "reason": "tg.shorteningGroundNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für shortening Ground muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "concreteShortenedDurationQualified",
+          "value": true,
+          "reason": "tg.concreteShortenedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für concrete Shortened Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noConflictingPeriodInformation",
+          "value": true,
+          "reason": "tg.noConflictingPeriodInformationNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Conflicting Period Information muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notInsuranceCourt",
+          "value": true,
+          "reason": "tg.notInsuranceCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Insurance Court muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§ 57 Abs. 3 VRG",
+        "§ 25 Abs. 1 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG"
+      ],
+      "limit": "Dringlichkeit allein ist keine zusätzliche Ferienausnahme. Gesetzliche Ausnahme muss gesondert qualifiziert werden."
+    },
+    {
+      "id": "TG-VG-ORDERED",
+      "action": "orderedProceduralSubmission",
+      "stage": "administrativeCourtComplaint",
+      "target": "sameVerwaltungsgerichtTG",
+      "duration": {
+        "type": "ordered-days",
+        "days": null,
+        "basis": "konkrete richterliche Tagesanordnung nach §§ 59–60 und 62 in Verbindung mit §§ 24–25, 46 oder 49 VRG"
+      },
+      "suspension": "three",
+      "opening": "actualForwardDayOrder",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "sameIssuingCourt",
+          "value": true,
+          "reason": "tg.sameIssuingCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für same Issuing Court muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "none",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "tg.orderedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordered Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "tg.differentOrderedStartNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für different Ordered Start muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notShortenedAppealPeriod",
+          "value": true,
+          "reason": "tg.notShortenedAppealPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Shortened Appeal Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notInsuranceCourt",
+          "value": true,
+          "reason": "tg.notInsuranceCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Insurance Court muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§§ 59–60 und 62 VRG",
+        "§§ 24–25, 46 und 49 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG"
+      ]
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-30",
+      "action": "provisionalProtectionCourtComplaint",
+      "stage": "administrativeCourtComplaint",
+      "target": "VerwaltungsgerichtTG",
+      "duration": {
+        "type": "statutory-days",
+        "days": 30,
+        "basis": "§ 57 Abs. 1 VRG, sofern keine konkrete Verkürzung nach Abs. 3"
+      },
+      "suspension": "tgNotice",
+      "opening": "qualifiedProvisionalDecision",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "provisionalProtection",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "exceptionNotice",
+          "oneOf": [
+            "given",
+            "absent"
+          ],
+          "reason": "exceptionNoticeUnresolved",
+          "explanation": "Aktuelle massgebende Belehrung als eindeutig vorhanden oder vollständig fehlend qualifizieren. Keine Vorauswahl und kein Ersatz durch Kenntnis oder Default.",
+          "dynamic": "tgNotice"
+        },
+        {
+          "key": "noticeDocumentQualified",
+          "value": true,
+          "reason": "tg.noticeDocumentQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Document Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noticeAppliesToCurrentDeadline",
+          "value": true,
+          "reason": "tg.noticeAppliesToCurrentDeadlineNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Applies To Current Deadline muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "ordinaryUnchangedPeriod",
+          "value": true,
+          "reason": "tg.ordinaryUnchangedPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordinary Unchanged Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShortening",
+          "value": false,
+          "reason": "tg.specificShorteningNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notInsuranceCourt",
+          "value": true,
+          "reason": "tg.notInsuranceCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Insurance Court muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§§ 11 und 54 VRG",
+        "§ 57 Abs. 1 VRG",
+        "§ 18 Abs. 1 Ziff. 5 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG"
+      ]
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-SHORTENED",
+      "action": "specificallyShortenedProvisionalCourtComplaint",
+      "stage": "administrativeCourtComplaint",
+      "target": "VerwaltungsgerichtTG",
+      "duration": {
+        "type": "statutory-specifically-shortened-days",
+        "days": null,
+        "minimumDays": 5,
+        "maximumDays": 29,
+        "basis": "konkrete Verkürzung nach § 57 Abs. 3 VRG bei vorsorglichen Massnahmen"
+      },
+      "suspension": "tgNotice",
+      "opening": "qualifiedProvisionalDecisionWithSpecificShortening",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "provisionalProtection",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "exceptionNotice",
+          "oneOf": [
+            "given",
+            "absent"
+          ],
+          "reason": "exceptionNoticeUnresolved",
+          "explanation": "Aktuelle massgebende Belehrung als eindeutig vorhanden oder vollständig fehlend qualifizieren. Keine Vorauswahl und kein Ersatz durch Kenntnis oder Default.",
+          "dynamic": "tgNotice"
+        },
+        {
+          "key": "noticeDocumentQualified",
+          "value": true,
+          "reason": "tg.noticeDocumentQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Document Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noticeAppliesToCurrentDeadline",
+          "value": true,
+          "reason": "tg.noticeAppliesToCurrentDeadlineNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Applies To Current Deadline muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "specificShorteningQualified",
+          "value": true,
+          "reason": "tg.specificShorteningQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für specific Shortening Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "shorteningGround",
+          "value": "provisionalMeasure",
+          "reason": "tg.shorteningGroundNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für shortening Ground muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "concreteShortenedDurationQualified",
+          "value": true,
+          "reason": "tg.concreteShortenedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für concrete Shortened Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noConflictingPeriodInformation",
+          "value": true,
+          "reason": "tg.noConflictingPeriodInformationNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Conflicting Period Information muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notInsuranceCourt",
+          "value": true,
+          "reason": "tg.notInsuranceCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Insurance Court muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§ 57 Abs. 3 VRG",
+        "§ 25 Abs. 1 VRG",
+        "§ 18 Abs. 1 Ziff. 5 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG"
+      ]
+    },
+    {
+      "id": "TG-VG-PROVISIONAL-ORDERED",
+      "action": "orderedProceduralSubmission",
+      "stage": "administrativeCourtComplaint",
+      "target": "sameVerwaltungsgerichtTG",
+      "duration": {
+        "type": "ordered-days",
+        "days": null,
+        "basis": "konkrete richterliche Tagesanordnung im qualifizierten Verfahren über aufschiebende Wirkung oder andere vorsorgliche Massnahmen"
+      },
+      "suspension": "tgNotice",
+      "opening": "actualForwardDayOrder",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "sameIssuingCourt",
+          "value": true,
+          "reason": "tg.sameIssuingCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für same Issuing Court muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "provisionalProtection",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "exceptionNotice",
+          "oneOf": [
+            "given",
+            "absent"
+          ],
+          "reason": "exceptionNoticeUnresolved",
+          "explanation": "Aktuelle massgebende Belehrung als eindeutig vorhanden oder vollständig fehlend qualifizieren. Keine Vorauswahl und kein Ersatz durch Kenntnis oder Default.",
+          "dynamic": "tgNotice"
+        },
+        {
+          "key": "noticeDocumentQualified",
+          "value": true,
+          "reason": "tg.noticeDocumentQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Document Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noticeAppliesToCurrentOrder",
+          "value": true,
+          "reason": "tg.noticeAppliesToCurrentOrderNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Applies To Current Order muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "tg.orderedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordered Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "tg.differentOrderedStartNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für different Ordered Start muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notShortenedAppealPeriod",
+          "value": true,
+          "reason": "tg.notShortenedAppealPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Shortened Appeal Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notInsuranceCourt",
+          "value": true,
+          "reason": "tg.notInsuranceCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Insurance Court muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§§ 59–60 und 62 VRG",
+        "§§ 24–25, 46 und 49 VRG",
+        "§ 18 Abs. 1 Ziff. 5 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG"
+      ],
+      "limit": "Nur eindeutig für die aktuelle Anordnung massgebende Belehrung. Eine frühere Belehrung wird nicht automatisch fortgeschrieben. Unklarer Fortwirkungs- oder Wiederholungsfall bleibt gesperrt."
+    },
+    {
+      "id": "TG-VG-EXECUTION-5",
+      "action": "nonMonetaryEnforcementCourtComplaint",
+      "stage": "administrativeCourtComplaint",
+      "target": "VerwaltungsgerichtTG",
+      "duration": {
+        "type": "statutory-days",
+        "days": 5,
+        "basis": "§ 86 Abs. 3 VRG"
+      },
+      "suspension": "tgNotice",
+      "opening": "qualifiedNonMonetaryEnforcementDecision",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "alreadyEnforceableUnderlyingDecision",
+          "value": true,
+          "reason": "tg.alreadyEnforceableUnderlyingDecisionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für already Enforceable Underlying Decision muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "actualEnforcementDecision",
+          "value": true,
+          "reason": "tg.actualEnforcementDecisionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für actual Enforcement Decision muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notMereWarning",
+          "value": true,
+          "reason": "tg.notMereWarningNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Mere Warning muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notOriginalSubstantiveDecision",
+          "value": true,
+          "reason": "tg.notOriginalSubstantiveDecisionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Original Substantive Decision muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "nonMonetaryEnforcement",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "exceptionNotice",
+          "oneOf": [
+            "given",
+            "absent"
+          ],
+          "reason": "exceptionNoticeUnresolved",
+          "explanation": "Aktuelle massgebende Belehrung als eindeutig vorhanden oder vollständig fehlend qualifizieren. Keine Vorauswahl und kein Ersatz durch Kenntnis oder Default.",
+          "dynamic": "tgNotice"
+        },
+        {
+          "key": "noticeDocumentQualified",
+          "value": true,
+          "reason": "tg.noticeDocumentQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Document Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noticeAppliesToCurrentDeadline",
+          "value": true,
+          "reason": "tg.noticeAppliesToCurrentDeadlineNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Applies To Current Deadline muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noConflictingPeriodInformation",
+          "value": true,
+          "reason": "tg.noConflictingPeriodInformationNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für no Conflicting Period Information muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notSchkgMoneyEnforcement",
+          "value": true,
+          "reason": "tg.notSchkgMoneyEnforcementNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Schkg Money Enforcement muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notZpoEnforcementUnder88",
+          "value": true,
+          "reason": "tg.notZpoEnforcementUnder88NotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Zpo Enforcement Under88 muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "qualifiedEnforcementReviewScope",
+          "value": true,
+          "reason": "tg.enforcementReviewScopeNotQualified",
+          "explanation": "Reiner Weiterzug gegen die Vollstreckungsverfügung, nicht erneute Anfechtung des Sachentscheids. Kein automatischer Ausschluss grundrechtlicher Mängel der Vollstreckungsverfügung selbst (TVR 2020 Nr. 7 E2.1.2)."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601",
+        "AP23I1-TG-BOTSCHAFT-20130625",
+        "AP23I1-TG-TVR2013-15",
+        "AP23I1-TG-TVR2020-7"
+      ],
+      "locators": [
+        "§§ 83–86 und 88 VRG",
+        "§ 18 Abs. 1 Ziff. 5 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG",
+        "Botschaft vom 25.06.2013 S. 8–9",
+        "TVR 2013 Nr. 15 E. 1–2.2 ergänzend",
+        "TVR 2020 Nr. 7 E. 1.1–2.2 ergänzend"
+      ],
+      "limit": "Nicht jede als Zwangsvollstreckung bezeichnete Verfügung ist dieser reine Weiterzug. Eine konkret widersprechende 30-Tage-Belehrung ist kein positiver Fünftagesfall und wird nicht automatisch nach Vertrauensschutz korrigiert."
+    },
+    {
+      "id": "TG-VG-EXECUTION-ORDERED",
+      "action": "orderedProceduralSubmission",
+      "stage": "administrativeCourtComplaint",
+      "target": "sameVerwaltungsgerichtTG",
+      "duration": {
+        "type": "ordered-days",
+        "days": null,
+        "basis": "konkrete richterliche Eingabeanordnung im bereits anhängigen qualifizierten Beschwerdeverfahren nach § 86 Abs. 3 VRG"
+      },
+      "suspension": "tgNotice",
+      "opening": "actualForwardDayOrder",
+      "commonRequirementsApply": true,
+      "requirements": [
+        {
+          "key": "vgCompetenceQualified",
+          "value": true,
+          "reason": "tg.vgCompetenceQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für vg Competence Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "sameIssuingCourt",
+          "value": true,
+          "reason": "tg.sameIssuingCourtNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für same Issuing Court muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "pendingQualified86Abs3Complaint",
+          "value": true,
+          "reason": "tg.pendingQualified86Abs3ComplaintNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für pending Qualified86 Abs. 3Complaint muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "holidayException",
+          "value": "nonMonetaryEnforcement",
+          "reason": "tg.holidayExceptionNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für holiday Exception muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "exceptionNotice",
+          "oneOf": [
+            "given",
+            "absent"
+          ],
+          "reason": "exceptionNoticeUnresolved",
+          "explanation": "Aktuelle massgebende Belehrung als eindeutig vorhanden oder vollständig fehlend qualifizieren. Keine Vorauswahl und kein Ersatz durch Kenntnis oder Default.",
+          "dynamic": "tgNotice"
+        },
+        {
+          "key": "noticeDocumentQualified",
+          "value": true,
+          "reason": "tg.noticeDocumentQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Document Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "noticeAppliesToCurrentOrder",
+          "value": true,
+          "reason": "tg.noticeAppliesToCurrentOrderNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für notice Applies To Current Order muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "orderedDurationQualified",
+          "value": true,
+          "reason": "tg.orderedDurationQualifiedNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für ordered Duration Qualified muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "differentOrderedStart",
+          "value": false,
+          "reason": "tg.differentOrderedStartNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für different Ordered Start muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notMaterialPerformancePeriod",
+          "value": true,
+          "reason": "tg.notMaterialPerformancePeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Material Performance Period muss den ausgewählten Weg tatsächlich tragen."
+        },
+        {
+          "key": "notShortenedAppealPeriod",
+          "value": true,
+          "reason": "tg.notShortenedAppealPeriodNotQualified",
+          "explanation": "Aktuelle Fallqualifikation für not Shortened Appeal Period muss den ausgewählten Weg tatsächlich tragen."
+        }
+      ],
+      "sourceIds": [
+        "AP23I1-TG-VRG-20240601"
+      ],
+      "locators": [
+        "§ 86 Abs. 3 VRG",
+        "§§ 59–60 und 62 VRG",
+        "§§ 24–25, 46 und 49 VRG",
+        "§ 18 Abs. 1 Ziff. 5 VRG",
+        "§ 63 Abs. 1–2 und 4 VRG"
+      ],
+      "limit": "Nur gerichtliche Eingabefrist, keine Vollstreckungs-, Erfüllungs-, Abbruch- oder Androhungsfrist. Unklare Fortwirkung einer früheren Rechtsmittelbelehrung bleibt gesperrt."
+    }
+  ],
+  "noticeSemantics": {
+    "given": "Eindeutiger für diese aktuelle Frist massgebender Hinweis auf die Nichtgeltung der Gerichtsferien nach § 63 Abs. 4 VRG. Ergebnis: kein Stillstand.",
+    "absent": "Vollständiges Fehlen dieses Hinweises in der eindeutig massgebenden Rechtsmittelbelehrung. Ergebnis: drei Stillstandsintervalle nach § 63 Abs. 1–2 VRG.",
+    "blocked": [
+      "incomplete",
+      "incorrect",
+      "disputed",
+      "unknown",
+      "governingNoticeDocumentUnknown",
+      "earlierNoticeContinuityUnclear",
+      "conflictingPeriodInformation"
+    ],
+    "noDefault": true,
+    "notApplicableToAdministrativeOrRegierungsratStages": true,
+    "limit": "Keine Berechnung des Vertrauensschutzes und keine automatische Auslegung eines unvollständigen Hinweises. Die Kenntnis der anwaltlich vertretenen Partei wird nicht als fiktiver Hinweis gesetzt."
+  },
+  "laws": [
+    {
+      "id": "AP23I1-TG-VRG-20240601",
+      "title": "Gesetz über die Verwaltungsrechtspflege",
+      "systematicNumber": "RB170.1",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2774/pdf_file",
+      "metadataUrl": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+      "versionId": 2774,
+      "versionFrom": "2024-06-01",
+      "decisionOn": "2023-11-22",
+      "currentVersionConfirmed": true,
+      "futureVersionsListed": [],
+      "historicalVersionsListed": [
+        {
+          "id": 2691,
+          "version_dates_str": "Version in Kraft von: 01.01.2022 bis: 31.05.2024 (Beschlussdatum: 24.03.2021)",
+          "structured_document_id": 13248,
+          "title": "Gesetz über die Verwaltungsrechtspflege"
+        },
+        {
+          "id": 1890,
+          "version_dates_str": "Version in Kraft von: 01.01.2018 bis: 31.12.2021 (Beschlussdatum: 06.12.2017)",
+          "structured_document_id": 8838,
+          "title": "Gesetz über die Verwaltungsrechtspflege"
+        },
+        {
+          "id": 1497,
+          "version_dates_str": "Version in Kraft von: 01.10.2014 bis: 31.12.2017 (Beschlussdatum: 23.04.2014)",
+          "structured_document_id": 5911,
+          "title": "Gesetz über die Verwaltungsrechtspflege"
+        },
+        {
+          "id": 1024,
+          "version_dates_str": "Version in Kraft von: 01.08.2014 bis: 30.09.2014 (Beschlussdatum: 12.02.2014)",
+          "structured_document_id": 3303,
+          "title": "Gesetz über die Verwaltungsrechtspflege"
+        },
+        {
+          "id": 538,
+          "version_dates_str": "Version in Kraft von: 01.01.2013 bis: 31.07.2014 (Beschlussdatum: 29.08.2012)",
+          "structured_document_id": 1679,
+          "title": "Gesetz über die Verwaltungsrechtspflege"
+        },
+        {
+          "id": 238,
+          "version_dates_str": "Version in Kraft von: 01.01.2011 bis: 31.12.2012 (Beschlussdatum: 17.06.2009)",
+          "structured_document_id": 756,
+          "title": "Gesetz über die Verwaltungsrechtspflege"
+        }
+      ],
+      "access": "Frische amtliche API, ausgewähltes XHTML und PDF. Vollständiger aktueller Artikeltext gelesen. Historische Versionen1890 und2691 hinsichtlich §§ 18/45/57/63/129 verglichen.",
+      "locators": [
+        "§§1–5",
+        "§§11–26",
+        "§§28–32",
+        "§§35–63",
+        "§§64–72a",
+        "§79",
+        "§§83–88",
+        "§§129–130"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-api-20261022.json",
+          "byteLength": 978120,
+          "sha256": "629db9c830a238a45083c55fbb245102bf4911c14b99e392c33c508c8e29d2c6",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:11.554Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v1890-historisch.pdf",
+          "byteLength": 732837,
+          "sha256": "fdc803516cb2328e62c43294f242f77055bccad3cbc6b7b1864331dcc38c7b83",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/1890/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": null
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2691-historisch.pdf",
+          "byteLength": 779274,
+          "sha256": "b98c268c08635f80e2e2cd13e90137d4c04882f026975ddae910da977985c6b1",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2691/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": null
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2774.pdf",
+          "byteLength": 782663,
+          "sha256": "71037f6b2362afc4608c22822af7e0de7d4b7a78806372612ee1d5ee24893d20",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2774/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:11.941Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2774.xhtml",
+          "byteLength": 182773,
+          "sha256": "eaf3ee93c2560bef1179cbedb0e46b14d0f5520d368d2277dcd2cea779733e69",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+          "evidenceType": "exact-selected-xhtml-extract",
+          "retrievedAt": null
+        }
+      ],
+      "limit": "Leere Folgefassungsliste am Prüftag ist kein Rechtsbeständigkeitsnachweis bis Ende 2027. Positive Fallverwendung und Abnahme bleiben getrennt."
+    },
+    {
+      "id": "AP23I1-TG-RTG-20260101",
+      "title": "Ruhetagsgesetz",
+      "systematicNumber": "RB822.9",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2949/pdf_file",
+      "metadataUrl": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/822.9",
+      "versionId": 2949,
+      "versionFrom": "2026-01-01",
+      "decisionOn": "2025-02-05",
+      "currentVersionConfirmed": true,
+      "futureVersionsListed": [],
+      "historicalVersionsListed": [
+        {
+          "id": 2270,
+          "version_dates_str": "Version in Kraft von: 01.01.2003 bis: 31.12.2025 (Beschlussdatum: 27.02.2002)",
+          "structured_document_id": 10489,
+          "title": "Gesetz über die öffentlichen Ruhetage"
+        }
+      ],
+      "access": "Frische amtliche API, ausgewähltes XHTML und PDF, §§ 1–6 vollständig gelesen.",
+      "locators": [
+        "§1Abs1",
+        "§§2–6"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-api-20261022.json",
+          "byteLength": 51560,
+          "sha256": "627673a674cb5b2f2c6ec3140721f2777cfa799e90078c9e8770ae20d3f71437",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/822.9",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.145Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-v2949.pdf",
+          "byteLength": 83105,
+          "sha256": "af62ac69fe38c4eda579d177c58cb0ddf5e279eb8c2f9487a23ee839b6a8c67c",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2949/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.302Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-v2949.xhtml",
+          "byteLength": 8286,
+          "sha256": "6ebbcd352247d7ded3bb9da9aa3304b48059069167ed0b8f7db3a1b50079ad93",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/822.9",
+          "evidenceType": "exact-selected-xhtml-extract",
+          "retrievedAt": null
+        }
+      ],
+      "limit": "Leere Folgefassungsliste am Prüftag ist kein Rechtsbeständigkeitsnachweis bis Ende 2027. Positive Fallverwendung und Abnahme bleiben getrennt. § 3Verwaltungsschliessung und§ 5kommunale Veranstaltungserlaubnis schaffen keine zusätzlichen allgemeinen Feiertage."
+    },
+    {
+      "id": "AP23I1-TG-VEU-20260328",
+      "title": "Verordnung betreffend die elektronische Übermittlung",
+      "systematicNumber": "RB170.15",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/3034/pdf_file",
+      "metadataUrl": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+      "versionId": 3034,
+      "versionFrom": "2026-03-28",
+      "decisionOn": "2026-03-24",
+      "currentVersionConfirmed": true,
+      "futureVersionsListed": [],
+      "historicalVersionsListed": [
+        {
+          "id": 2410,
+          "version_dates_str": "Version in Kraft von: 01.07.2015 bis: 27.03.2026 (Beschlussdatum: 12.05.2015)",
+          "structured_document_id": 10693,
+          "title": "Verordnung des Regierungsrates betreffend die elektronische Übermittlung im Rahmen von Verwaltungs-, Zivil-, Straf- sowie Schuldbetreibungs- und Konkursverfahren"
+        }
+      ],
+      "access": "Frische amtliche API, ausgewähltes XHTML und PDF, §§ 1–14 vollständig gelesen. Inkrafttreten am28.03.2026 gegen Änderungstext Ziff IV und amtliches Publikationsdatum27.03.2026 abgeglichen.",
+      "locators": [
+        "§§1–14",
+        "§§10–13"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-api-20261022.json",
+          "byteLength": 147968,
+          "sha256": "b15078d9ce5b88c87ecb95ebdf9e0b33723446613b6f24f872cfa87a08e515a4",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.547Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-v3034.pdf",
+          "byteLength": 165708,
+          "sha256": "ebcb0312a13cbe871ef174e1feb331d06cbe3d915a207d2cc463233db41018b7",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/3034/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.732Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-v3034.xhtml",
+          "byteLength": 26217,
+          "sha256": "11041cebb243173b28f3b4d0c7fdb66ce144ee645f6ad28e090b497c8d3cf39b",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+          "evidenceType": "exact-selected-xhtml-extract",
+          "retrievedAt": null
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-aenderung-20260324-abl13-2026.pdf",
+          "byteLength": 116054,
+          "sha256": "a34973d03a960aa4c83093dd6a41f5cc15570268e87350d5be6d42dc8c44fafd",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/change_documents/file_dictionaries/101/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.891Z"
+        }
+      ],
+      "limit": "Leere Folgefassungsliste am Prüftag ist kein Rechtsbeständigkeitsnachweis bis Ende 2027. Positive Fallverwendung und Abnahme bleiben getrennt. Keine neue automatische Zustellfiktion und keine stillschweigende Gleichsetzung von E-Mail, Bereitstellung, Login und Herunterladen."
+    }
+  ],
+  "practiceEvidence": [
+    {
+      "id": "AP23I1-TG-TVR2003-45",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2003-nr-45",
+      "court": "RegierungsratTG",
+      "decisionOn": "2003-01-14",
+      "locators": [
+        "E2.1–2.3"
+      ],
+      "access": "Amtlicher Volltext, tragende Erwägungen vollständig gelesen.",
+      "finding": "§ 55 Abs. 2 verweist auf Rekurs, § 63Gerichtsferien nicht allein wegen Handlungsbezeichnung Beschwerde vor RR anwendbar.",
+      "limit": "Historische20 Tage nicht aktuell. Keine Aussage zur seit 2022 geänderten Hinweissatzregel.",
+      "metadataCorrection": "MCP-Bezeichnung Obergericht ist falsch, amtlicher Footer nennt Regierungsrat.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2003-nr-45-amtlich.html",
+          "byteLength": 40968,
+          "sha256": "f44db25f2313176ed45628861e5d594a1259136453d5ea79853f230a55ecfd9e",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2003-nr-45",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:13.321Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-TVR2018-8",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2018-nr-8",
+      "court": "VerwaltungsgerichtTG",
+      "docket": "VG.2017.124/E",
+      "decisionOn": null,
+      "officialFooterDate": "2017-01-10",
+      "locators": [
+        "E3–4.5"
+      ],
+      "access": "Amtlicher Volltext, tragende Erwägungen vollständig gelesen.",
+      "finding": "Anlagenbewilligung umfasst auch Betriebsbewilligung. Keine Verengung der Ausnahme auf bauliche Bewilligungen.",
+      "limit": "Historische20 Tage und frühere§ 63Fassung. Keine heutige positive Baufallfreigabe oder Belehrungswirkung.",
+      "metadataCorrection": "Footer10.01.2017 widerspricht im Text enthaltenen Verfahrensereignissen bis31.08.2017. Widerspruch bleibt offen, kein vermutetes Ersatzdatum.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2018-nr-8-amtlich.html",
+          "byteLength": 44784,
+          "sha256": "9bb816ad5a72ed72685024724f7ece6fd1f6ca0398461742c0b285b5fe5c7583",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2018-nr-8",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:13.653Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-TVR2006-12",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2006-nr-12",
+      "court": "VerwaltungsgerichtTGundBundesgericht",
+      "decisionOn": "2005-03-16",
+      "federalReviewOn": "2005-09-05",
+      "federalDocket": "1P.272/2005",
+      "locators": [
+        "kantonalE1b",
+        "BGerE4–5"
+      ],
+      "access": "Amtlicher publizierter Volltext, tragende Ferien-/Sachgebiets-Erwägungen gelesen.",
+      "finding": "Nachträgliche Baubewilligung und damit zusammenhängender Beseitigungsbefehl historisch keine Gerichtsferien.",
+      "limit": "Kein Import alter20 Tage/Weihnachtsgrenzen oder damaliger Verlängerung bis nach Ferien. Nicht der reine§ 86(3)Weiterzug und kein aktueller Hinweisfall.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2006-nr-12-amtlich.html",
+          "byteLength": 44667,
+          "sha256": "ded5f4d2f129a5a0091bea552904a372bf2fab80d3fd945cdb96798b0566371e",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2006-nr-12",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:13.988Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-TVR2017-13",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2017-nr-13",
+      "court": "VerwaltungsgerichtTG",
+      "docket": "VG.2017.142/E",
+      "decisionOn": "2017-11-15",
+      "locators": [
+        "E2.5–2.7",
+        "E3.4"
+      ],
+      "access": "Amtlicher Volltext, bezeichnete Erwägungen gelesen.",
+      "finding": "Steuerstraf-/DBG-Sonderregeln, keine allgemeinen Gerichtsferien oder automatische Wiederherstellung aus Rechtsirrtum.",
+      "limit": "Keine allgemeine aktuelle VRG-Hinweisentscheidung, kein neuer positiver Steuerpfad.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2017-nr-13-amtlich.html",
+          "byteLength": 42333,
+          "sha256": "395d5df9d86d33e1c1021ba46c21320b88c326d4f1ab15a95468945e76b05550",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2017-nr-13",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:14.499Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-TVR2013-15",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2013-nr-15",
+      "court": "VerwaltungsgerichtTG",
+      "docket": "VG.2012.136/E",
+      "decisionOn": "2012-12-19",
+      "federalReviewOn": "2013-10-27",
+      "federalDocket": "2C_196/2013",
+      "locators": [
+        "E1–2.2"
+      ],
+      "access": "Amtlicher Volltext, tragende Zuständigkeits-/Vollstreckungserwägungen gelesen.",
+      "finding": "Sachentscheid und Vollstreckung sind getrennt. Kombination von Androhung und eigentlicher Vollstreckungsverfügung zulässig. Oberes Gericht erforderlich.",
+      "limit": "Damals anders formulierter Regierungsratsweg nicht heutige Zuständigkeitsnorm. Fünftagesweg heute eigenständig aus§ 86(3).",
+      "metadataCorrection": "Datum19.12.2012lautamtlichem Footer,27.10.2013istspäteres BGer Urteil. Suchmetadaten nicht ungeprüftübernehmen.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2013-nr-15-amtlich.html",
+          "byteLength": 46909,
+          "sha256": "9a37a26d11f92c765b81b330d704132c2b58c4c3b812f50dc4c873e499f219ab",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2013-nr-15",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:56:59.927Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-TVR2020-7",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2020-nr-7",
+      "court": "VerwaltungsgerichtTG",
+      "docket": "VG.2020.94/E",
+      "decisionOn": "2020-10-28",
+      "locators": [
+        "E1.1–2.2"
+      ],
+      "access": "Amtlicher Volltext, bezeichnete Erwägungen vollständig gelesen.",
+      "finding": "Fünf Tage direkt VG gegen späteren eigentlichen Vollstreckungsentscheid. Grundrechtsmängel der Vollstreckungsverfügung selbst können zusätzlich zu den gesetzlich aufgezählten Gründen vorgebracht werden.",
+      "limit": "Keine heutige positive Sachgebietsfreigabe des Baurechts und kein Beleg der erst2022 eingeführten Hinweisrückausnahme.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2020-nr-7-amtlich.html",
+          "byteLength": 57289,
+          "sha256": "d3095544913e145a08bf241cdbb930491cd22f7a4ed02559f75dc8e7616610ef",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2020-nr-7",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T19:00:41.072Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-TVR2022-6",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2022-nr-6",
+      "court": "VerwaltungsgerichtTG",
+      "docket": "VG.2022.16/E",
+      "decisionOn": "2022-04-20",
+      "locators": [
+        "E2.1–2.5"
+      ],
+      "access": "Amtlicher Volltext vollständig gelesen.",
+      "finding": "§ 129auchzur Revision01.01.2022 herangezogen. Rekurs/Beschwerde nach angefochtenem Entscheid, ursprüngliche Klage nach Einleitung. Keine aktuelle Verfahrenszuordnung allein aus späterem Empfangsdatum.",
+      "limit": "Konkreter Konzessionsklagefall, kein pauschaler Nachweis jeder denkbaren Übergangssituation. Nurpositiveaktuelle Qualifikationvorgeschlagen.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2022-nr-6-amtlich.html",
+          "byteLength": 44000,
+          "sha256": "494b653d7acf2cc60f7ea62bc0cdb55310016df1353edd58bfb0e4c8d07ff9eb",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2022-nr-6",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:56:59.317Z"
+        }
+      ]
+    }
+  ],
+  "evidenceInventory": [
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/botschaft-vrg-20130625-12-ge12-138.pdf",
+      "byteLength": 184945,
+      "sha256": "5447dfecf4a3d0d6083f61f05dbd72919ec384069c7865580ab612d057992873",
+      "url": "https://grgeko.tg.ch/o/grgeko-portlet/activity/321652/Botschaft%2Bvom%2B25.06.2013%2B%2812-GE%2B12-138%29.pdf",
+      "evidenceType": "official-historical-material-not-current-law",
+      "retrievedAt": "2026-10-22T18:57:00.612Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/entscheidsuche-endshift.json",
+      "byteLength": 8393,
+      "sha256": "52ada6a940dd4fd34fc252beae2b7ae6a30bec74fbd888f86bea67431584b4e2"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/entscheidsuche-execution.json",
+      "byteLength": 7448,
+      "sha256": "5c6fee44405417deacd4829fa463534eb70ff113a1f34b0cc12ed0c5d84c5712"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/entscheidsuche-notice.json",
+      "byteLength": 6001,
+      "sha256": "2901684be3b15d135635a97f0b0a92a99be178640182c691cfef0ed81d5c66ab"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/execution-practice-binding.json",
+      "byteLength": 297,
+      "sha256": "eecf992942dde493ab662fb3fa96a2b35322931c6709eb5b4201b5cd188d7172"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/fetch-execution-practice.mjs",
+      "byteLength": 1123,
+      "sha256": "8503c2d5ade554388ab6cb118fe7c80e57c69a986fd99e11c2a98c83a5e06f67"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/fetch-followup.mjs",
+      "byteLength": 2435,
+      "sha256": "0b7be1fa9334b9e3842370d9d8deecbca699420298cb87040e9eb9bad47d605e"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/fetch-sources.mjs",
+      "byteLength": 4079,
+      "sha256": "8adceafd3062146416d40589484a202d7b878242b17f41ea8b21cbfe202f8ab2"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/followup-source-bindings.json",
+      "byteLength": 2550,
+      "sha256": "f563494d4dd027fd3971def846336fc2fa4da6b4f797a6a41bcc75453f7a9186"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-api-20261022.json",
+      "byteLength": 51560,
+      "sha256": "627673a674cb5b2f2c6ec3140721f2777cfa799e90078c9e8770ae20d3f71437",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/822.9",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:12.145Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-v2949-articles.txt",
+      "byteLength": 2112,
+      "sha256": "180ff809f17b9c85246445aa832ea44566b252aa2a27e1bda48d0895b9ccdf91",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/822.9",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-v2949.pdf",
+      "byteLength": 83105,
+      "sha256": "af62ac69fe38c4eda579d177c58cb0ddf5e279eb8c2f9487a23ee839b6a8c67c",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2949/pdf_file",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:12.302Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/rtg-822.9-v2949.xhtml",
+      "byteLength": 8286,
+      "sha256": "6ebbcd352247d7ded3bb9da9aa3304b48059069167ed0b8f7db3a1b50079ad93",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/822.9",
+      "evidenceType": "exact-selected-xhtml-extract",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/source-bindings.json",
+      "byteLength": 13996,
+      "sha256": "495293a7538b46588c4c8c74ff80dbb8d6bbc18db3cd49fdf2e01e716773d572"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-endshift.json",
+      "byteLength": 4557,
+      "sha256": "1c86850db4e12fd452de40491a245a807ebe739bb4a11c4704ac6616ebc8d987"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-execution.json",
+      "byteLength": 162345,
+      "sha256": "d79d5b7146eb3ed24009d86e6cc41a7cab20c6e8884f4e529c5e4a3910e7fbea"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-notice-broad.json",
+      "byteLength": 126813,
+      "sha256": "557ce777db93859955228c02d9e21f6e5a13a9a6ee0ef7e393995e76ecf7a858"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-notice-phrase.json",
+      "byteLength": 344,
+      "sha256": "fd5fc5d34f9b63e0b90513eeaf1f13268449d63ee253bd33c2be37db8d749874"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2003-nr-45-amtlich.html",
+      "byteLength": 40968,
+      "sha256": "f44db25f2313176ed45628861e5d594a1259136453d5ea79853f230a55ecfd9e",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2003-nr-45",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:13.321Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2003-nr-45-amtlich.txt",
+      "byteLength": 6953,
+      "sha256": "d2ed5207ea9030efbb0453295a80312082a62d3f458461ffa2658823c63aceef",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2003-nr-45",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2006-nr-12-amtlich.html",
+      "byteLength": 44667,
+      "sha256": "ded5f4d2f129a5a0091bea552904a372bf2fab80d3fd945cdb96798b0566371e",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2006-nr-12",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:13.988Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2006-nr-12-amtlich.txt",
+      "byteLength": 11377,
+      "sha256": "25058f5362fe302ad4efecdf73781aa6ebb183c605c7ae709af0287bc29b2a99",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2006-nr-12",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2013-nr-15-amtlich.html",
+      "byteLength": 46909,
+      "sha256": "9a37a26d11f92c765b81b330d704132c2b58c4c3b812f50dc4c873e499f219ab",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2013-nr-15",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:56:59.927Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2017-nr-13-amtlich.html",
+      "byteLength": 42333,
+      "sha256": "395d5df9d86d33e1c1021ba46c21320b88c326d4f1ab15a95468945e76b05550",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2017-nr-13",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:14.499Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2017-nr-13-amtlich.txt",
+      "byteLength": 8399,
+      "sha256": "5e2b57aeef857111d18b91f6a8844c7e5474a3041f5918c878e4493519d30f75",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2017-nr-13",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2018-nr-8-amtlich.html",
+      "byteLength": 44784,
+      "sha256": "9bb816ad5a72ed72685024724f7ece6fd1f6ca0398461742c0b285b5fe5c7583",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2018-nr-8",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:13.653Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2018-nr-8-amtlich.txt",
+      "byteLength": 11083,
+      "sha256": "8affc568a365e7feef3bd838ffae04565ff778fba442c4c8f911716693dfd614",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2018-nr-8",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2020-nr-7-amtlich.html",
+      "byteLength": 57289,
+      "sha256": "d3095544913e145a08bf241cdbb930491cd22f7a4ed02559f75dc8e7616610ef",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2020-nr-7",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T19:00:41.072Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2022-nr-6-amtlich.html",
+      "byteLength": 44000,
+      "sha256": "494b653d7acf2cc60f7ea62bc0cdb55310016df1353edd58bfb0e4c8d07ff9eb",
+      "url": "https://rechtsprechung.tg.ch/vg/tvr-2022-nr-6",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:56:59.317Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-api-20261022.json",
+      "byteLength": 147968,
+      "sha256": "b15078d9ce5b88c87ecb95ebdf9e0b33723446613b6f24f872cfa87a08e515a4",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:12.547Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-v3034-articles.txt",
+      "byteLength": 6616,
+      "sha256": "0865ae358a272525df7e0807fdf7e8001aab8abbe73324068458df07f55fadfd",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-v3034.pdf",
+      "byteLength": 165708,
+      "sha256": "ebcb0312a13cbe871ef174e1feb331d06cbe3d915a207d2cc463233db41018b7",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/3034/pdf_file",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:12.732Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-v3034.xhtml",
+      "byteLength": 26217,
+      "sha256": "11041cebb243173b28f3b4d0c7fdb66ce144ee645f6ad28e090b497c8d3cf39b",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+      "evidenceType": "exact-selected-xhtml-extract",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-aenderung-20260324-abl13-2026.pdf",
+      "byteLength": 116054,
+      "sha256": "a34973d03a960aa4c83093dd6a41f5cc15570268e87350d5be6d42dc8c44fafd",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/change_documents/file_dictionaries/101/pdf_file",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:12.891Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-api-20261022.json",
+      "byteLength": 978120,
+      "sha256": "629db9c830a238a45083c55fbb245102bf4911c14b99e392c33c508c8e29d2c6",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:11.554Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v1890-historisch.pdf",
+      "byteLength": 732837,
+      "sha256": "fdc803516cb2328e62c43294f242f77055bccad3cbc6b7b1864331dcc38c7b83",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/1890/pdf_file",
+      "evidenceType": "official-original-response",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2691-historisch.pdf",
+      "byteLength": 779274,
+      "sha256": "b98c268c08635f80e2e2cd13e90137d4c04882f026975ddae910da977985c6b1",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2691/pdf_file",
+      "evidenceType": "official-original-response",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2774-articles.txt",
+      "byteLength": 45018,
+      "sha256": "4f535ca31c87b9c0fed71a73d814b28d79bc6eafbbc2f7d827ac4272c2dea0c6",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+      "evidenceType": "derived-readable-extract-not-original",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2774.pdf",
+      "byteLength": 782663,
+      "sha256": "71037f6b2362afc4608c22822af7e0de7d4b7a78806372612ee1d5ee24893d20",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2774/pdf_file",
+      "evidenceType": "official-original-response",
+      "retrievedAt": "2026-10-22T18:51:11.941Z"
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2774.xhtml",
+      "byteLength": 182773,
+      "sha256": "eaf3ee93c2560bef1179cbedb0e46b14d0f5520d368d2277dcd2cea779733e69",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+      "evidenceType": "exact-selected-xhtml-extract",
+      "retrievedAt": null
+    },
+    {
+      "path": "outputs/ap23i1-2026-10-22/sources/tg/vtg-newsletter-bwu-202304.pdf",
+      "byteLength": 478445,
+      "sha256": "3c5be8a760dd26213139637aa6b952a86dc67e1e42deaad238441c4a7f1e7404",
+      "url": "https://www.vtg.ch/media/7263/download/Report%20BWU%202023_04_03.pdf?inline=1&v=2",
+      "evidenceType": "non-authoritative-association-research-pointer",
+      "retrievedAt": "2026-10-22T18:57:00.332Z"
+    }
+  ],
+  "referenceCaseProposals": [
+    {
+      "id": "I1-TG-TG-ADMIN-ORDERED-BASE",
+      "pathId": "TG-ADMIN-ORDERED",
+      "receipt": "2026-10-02",
+      "days": 10,
+      "unadjusted": "2026-10-12",
+      "definitiveEnd": "2026-10-12",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-REKURS-30-BASE",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2026-10-02",
+      "days": 30,
+      "unadjusted": "2026-11-01",
+      "definitiveEnd": "2026-11-02",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-REKURS-SHORTENED-BASE",
+      "pathId": "TG-REKURS-SHORTENED",
+      "receipt": "2026-10-02",
+      "days": 7,
+      "unadjusted": "2026-10-09",
+      "definitiveEnd": "2026-10-09",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-REKURS-ORDERED-BASE",
+      "pathId": "TG-REKURS-ORDERED",
+      "receipt": "2026-10-02",
+      "days": 10,
+      "unadjusted": "2026-10-12",
+      "definitiveEnd": "2026-10-12",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-RR-30-BASE",
+      "pathId": "TG-RR-30",
+      "receipt": "2026-10-02",
+      "days": 30,
+      "unadjusted": "2026-11-01",
+      "definitiveEnd": "2026-11-02",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-RR-SHORTENED-BASE",
+      "pathId": "TG-RR-SHORTENED",
+      "receipt": "2026-10-02",
+      "days": 7,
+      "unadjusted": "2026-10-09",
+      "definitiveEnd": "2026-10-09",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-RR-ORDERED-BASE",
+      "pathId": "TG-RR-ORDERED",
+      "receipt": "2026-10-02",
+      "days": 10,
+      "unadjusted": "2026-10-12",
+      "definitiveEnd": "2026-10-12",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-30-BASE",
+      "pathId": "TG-VG-30",
+      "receipt": "2026-10-02",
+      "days": 30,
+      "unadjusted": "2026-11-01",
+      "definitiveEnd": "2026-11-02",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-SHORTENED-BASE",
+      "pathId": "TG-VG-SHORTENED",
+      "receipt": "2026-10-02",
+      "days": 7,
+      "unadjusted": "2026-10-09",
+      "definitiveEnd": "2026-10-09",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-ORDERED-BASE",
+      "pathId": "TG-VG-ORDERED",
+      "receipt": "2026-10-02",
+      "days": 10,
+      "unadjusted": "2026-10-12",
+      "definitiveEnd": "2026-10-12",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-PROVISIONAL-30-BASE",
+      "pathId": "TG-VG-PROVISIONAL-30",
+      "receipt": "2026-10-02",
+      "days": 30,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-11-01",
+      "definitiveEnd": "2026-11-02",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-PROVISIONAL-SHORTENED-BASE",
+      "pathId": "TG-VG-PROVISIONAL-SHORTENED",
+      "receipt": "2026-10-02",
+      "days": 7,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-10-09",
+      "definitiveEnd": "2026-10-09",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-PROVISIONAL-ORDERED-BASE",
+      "pathId": "TG-VG-PROVISIONAL-ORDERED",
+      "receipt": "2026-10-02",
+      "days": 10,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-10-12",
+      "definitiveEnd": "2026-10-12",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-EXECUTION-5-BASE",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-10-02",
+      "days": 5,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-10-07",
+      "definitiveEnd": "2026-10-07",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-TG-VG-EXECUTION-ORDERED-BASE",
+      "pathId": "TG-VG-EXECUTION-ORDERED",
+      "receipt": "2026-10-02",
+      "days": 10,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-10-12",
+      "definitiveEnd": "2026-10-12",
+      "basis": "Eigene Tageszählung ab 03.10.2026, keine berührte Ferienperiode, gesetzliche oder konkret qualifizierte Dauer, anschliessend TG-Werktagsende."
+    },
+    {
+      "id": "I1-TG-RR-WINTER",
+      "pathId": "TG-RR-30",
+      "receipt": "2026-12-10",
+      "days": 30,
+      "unadjusted": "2027-01-09",
+      "definitiveEnd": "2027-01-11",
+      "basis": "11.–31.12. sind 21 Tage, 01.–09.01. neun Tage. Der 09.01. ist Samstag, deshalb Ende am 11.01. Keine gerichtlichen Ferien beim Regierungsrat."
+    },
+    {
+      "id": "I1-TG-REKURS-WINTER",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2026-12-10",
+      "days": 30,
+      "unadjusted": "2027-01-09",
+      "definitiveEnd": "2027-01-11",
+      "basis": "Dieselben 30 Tage ohne Stillstand und mit Samstagsverschiebung wie bei der qualifizierten Regierungsratsbeschwerde."
+    },
+    {
+      "id": "I1-TG-VG-WINTER",
+      "pathId": "TG-VG-30",
+      "receipt": "2026-12-10",
+      "days": 30,
+      "unadjusted": "2027-01-25",
+      "definitiveEnd": "2027-01-25",
+      "basis": "11.–17.12. sind sieben Tage, 18.12.–02.01. Pause, 03.–25.01. weitere 23 Tage."
+    },
+    {
+      "id": "I1-TG-VG-RECEIPT-IN-WINTER",
+      "pathId": "TG-VG-30",
+      "receipt": "2026-12-23",
+      "days": 30,
+      "unadjusted": "2027-02-01",
+      "definitiveEnd": "2027-02-01",
+      "basis": "Erster zählbarer Tag ist der 03.01.2027, der dreissigste Tag ist der 01.02.2027."
+    },
+    {
+      "id": "I1-TG-PROVISIONAL-GIVEN",
+      "pathId": "TG-VG-PROVISIONAL-30",
+      "receipt": "2026-12-10",
+      "days": 30,
+      "exceptionNotice": "given",
+      "unadjusted": "2027-01-09",
+      "definitiveEnd": "2027-01-11",
+      "basis": "Eindeutiger massgebender Hinweis auf die Ferienausnahme. Keine Pause."
+    },
+    {
+      "id": "I1-TG-PROVISIONAL-ABSENT",
+      "pathId": "TG-VG-PROVISIONAL-30",
+      "receipt": "2026-12-10",
+      "days": 30,
+      "exceptionNotice": "absent",
+      "unadjusted": "2027-01-25",
+      "definitiveEnd": "2027-01-25",
+      "basis": "Vollständig fehlender Hinweis in der massgebenden Belehrung. Drei Stillstandsintervalle."
+    },
+    {
+      "id": "I1-TG-EXECUTION-GIVEN",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-12-23",
+      "days": 5,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-12-28",
+      "definitiveEnd": "2026-12-28",
+      "basis": "Fünf Tage vom 24. bis 28.12. Feiertage innerhalb der Frist zählen mit. Ende am Montag, 28.12."
+    },
+    {
+      "id": "I1-TG-EXECUTION-ABSENT",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-12-23",
+      "days": 5,
+      "exceptionNotice": "absent",
+      "unadjusted": "2027-01-07",
+      "definitiveEnd": "2027-01-07",
+      "basis": "Pause bis 02.01. Danach fünf Tage vom 03. bis 07.01."
+    },
+    {
+      "id": "I1-TG-SHORTENED-NO-AUTO-5",
+      "pathId": "TG-REKURS-SHORTENED",
+      "receipt": "2026-10-02",
+      "days": 7,
+      "unadjusted": "2026-10-09",
+      "definitiveEnd": "2026-10-09",
+      "basis": "Konkret angeordnete sieben Tage. Keine automatische Herabsetzung auf fünf Tage."
+    },
+    {
+      "id": "I1-TG-SHORTENED-URGENT-VG",
+      "pathId": "TG-VG-SHORTENED",
+      "receipt": "2026-12-15",
+      "days": 7,
+      "unadjusted": "2027-01-07",
+      "definitiveEnd": "2027-01-07",
+      "basis": "Dringlichkeit ohne Ferienausnahme. 16.–17.12. sind zwei Tage, 03.–07.01. weitere fünf Tage."
+    },
+    {
+      "id": "I1-TG-SHORTENED-PROVISIONAL-GIVEN",
+      "pathId": "TG-VG-PROVISIONAL-SHORTENED",
+      "receipt": "2026-12-15",
+      "days": 7,
+      "exceptionNotice": "given",
+      "unadjusted": "2026-12-22",
+      "definitiveEnd": "2026-12-22",
+      "basis": "Konkret angeordnete sieben Tage im vorsorglichen Ausnahmeverfahren mit eindeutigem massgebendem Hinweis."
+    },
+    {
+      "id": "I1-TG-SHORTENED-PROVISIONAL-ABSENT",
+      "pathId": "TG-VG-PROVISIONAL-SHORTENED",
+      "receipt": "2026-12-15",
+      "days": 7,
+      "exceptionNotice": "absent",
+      "unadjusted": "2027-01-07",
+      "definitiveEnd": "2027-01-07",
+      "basis": "Dieselbe konkrete Dauer bei vollständig fehlendem Hinweis in der massgebenden Belehrung."
+    },
+    {
+      "id": "I1-TG-ORDERED-SUMMER-VG",
+      "pathId": "TG-VG-ORDERED",
+      "receipt": "2027-07-10",
+      "days": 10,
+      "unadjusted": "2027-08-21",
+      "definitiveEnd": "2027-08-23",
+      "basis": "11.–14.07. sind vier Tage, 16.–21.08. weitere sechs Tage. Der 21.08. ist Samstag, deshalb Ende am 23.08."
+    },
+    {
+      "id": "I1-TG-ORDERED-SUMMER-REKURS",
+      "pathId": "TG-REKURS-ORDERED",
+      "receipt": "2027-07-10",
+      "days": 10,
+      "unadjusted": "2027-07-20",
+      "definitiveEnd": "2027-07-20",
+      "basis": "Zehn Tage ohne Gerichtsferien."
+    },
+    {
+      "id": "I1-TG-TG-EASTER-HOLIDAYS",
+      "pathId": "TG-ADMIN-ORDERED",
+      "receipt": "2027-03-25",
+      "days": 1,
+      "unadjusted": "2027-03-26",
+      "definitiveEnd": "2027-03-30",
+      "basis": "26.03. ist Karfreitag, 27.03. Samstag, 28.03. Sonntag und 29.03. Ostermontag. Ende am 30.03."
+    },
+    {
+      "id": "I1-TG-TG-MAY1",
+      "pathId": "TG-ADMIN-ORDERED",
+      "receipt": "2027-04-30",
+      "days": 1,
+      "unadjusted": "2027-05-01",
+      "definitiveEnd": "2027-05-03",
+      "basis": "01.05. ist öffentlicher Ruhetag und Samstag, 02.05. Sonntag. Ende am 03.05."
+    },
+    {
+      "id": "I1-TG-WRITTEN-NOT-ORAL",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2026-10-05",
+      "days": 30,
+      "unadjusted": "2026-11-04",
+      "definitiveEnd": "2026-11-04",
+      "basis": "Mündliche Mitteilung am 02.10., rechtlich wirksame schriftliche Zustellung am 05.10. Fristbeginn am 06.10., Ende am 04.11."
+    },
+    {
+      "id": "I1-TG-ENDSHIFT-COLLISION",
+      "pathId": "TG-VG-30",
+      "receipt": "2027-02-18",
+      "days": 30,
+      "unadjusted": "2027-03-20",
+      "definitiveEnd": null,
+      "reason": "TG-O1",
+      "basis": "Dreissigster Tag ist Samstag, 20.03. Am 21.03. beginnt ein neuer Osterstillstand. Begrenzte Sperre."
+    },
+    {
+      "id": "I1-TG-SAME-NO-COLLISION",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2027-02-18",
+      "days": 30,
+      "unadjusted": "2027-03-20",
+      "definitiveEnd": "2027-03-22",
+      "basis": "Dreissigster Tag ist Samstag, 20.03. Auf Sonntag, 21.03., folgt Montag, 22.03. Ohne Stillstand keine Kollision."
+    },
+    {
+      "id": "I1-TG-RECEIPT-IN-EASTER",
+      "pathId": "TG-VG-ORDERED",
+      "receipt": "2027-03-24",
+      "days": 1,
+      "unadjusted": "2027-04-05",
+      "definitiveEnd": "2027-04-05",
+      "basis": "Eröffnung während des bis 04.04. dauernden Stillstands. Erster zählbarer Tag ist der 05.04."
+    },
+    {
+      "id": "I1-TG-YEAR-END-COVERAGE",
+      "pathId": "TG-VG-30",
+      "receipt": "2027-12-10",
+      "days": 30,
+      "unadjusted": "2028-01-25",
+      "definitiveEnd": null,
+      "basis": "Rein mathematisches Ende im Jahr 2028. Es liegt ausserhalb des vorgeschlagenen Fensters, deshalb kein definitives Produktresultat.",
+      "mathematicalEndOutsideWindow": "2028-01-25",
+      "reason": "windowNotCovered"
+    },
+    {
+      "id": "I1-TG-NEG-NOTICE-PARTIAL",
+      "pathId": "TG-VG-PROVISIONAL-30",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "exceptionNotice": "incomplete"
+      },
+      "definitiveEnd": null,
+      "reason": "exceptionNoticeUnresolved",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-NOTICE-UNKNOWN",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "exceptionNotice": "unknown"
+      },
+      "definitiveEnd": null,
+      "reason": "exceptionNoticeUnresolved",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-NOTICE-LATER-ORDER",
+      "pathId": "TG-VG-EXECUTION-ORDERED",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "noticeAppliesToCurrentOrder": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.noticeAppliesToCurrentOrderNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-OLD-LAW",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "currentProceduralLawQualified": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.currentProceduralLawQualifiedNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-SHORTENED-NO-ORDER",
+      "pathId": "TG-REKURS-SHORTENED",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "specificShorteningQualified": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.specificShorteningQualifiedNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-SHORTENED-TO-4",
+      "pathId": "TG-VG-SHORTENED",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "days": 4
+      },
+      "definitiveEnd": null,
+      "reason": "shortenedDurationOutside5To29",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-EXECUTION-WARNING",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "actualEnforcementDecision": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.actualEnforcementDecisionNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-EXECUTION-SUBSTANTIVE",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "notOriginalSubstantiveDecision": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.notOriginalSubstantiveDecisionNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-EXECUTION-CONFLICTING30",
+      "pathId": "TG-VG-EXECUTION-5",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "noConflictingPeriodInformation": false,
+        "concreteNoticeDays": 30
+      },
+      "definitiveEnd": null,
+      "reason": "tg.noConflictingPeriodInformationNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-RR-UNQUALIFIED",
+      "pathId": "TG-RR-30",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "regierungsratCompetenceBasis": "unknown"
+      },
+      "definitiveEnd": null,
+      "reason": "tg.regierungsratCompetenceBasisNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-SOCIAL-NOT-NEW",
+      "pathId": "TG-VG-30",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "notInsuranceCourt": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.notInsuranceCourtNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-WRONG-WRITTEN-DATE",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "legallyEffectiveWrittenService": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.legallyEffectiveWrittenServiceNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-MATERIAL-EXECUTION-DEADLINE",
+      "pathId": "TG-VG-EXECUTION-ORDERED",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "notMaterialPerformancePeriod": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.notMaterialPerformancePeriodNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-SPECIAL-LAW",
+      "pathId": "TG-REKURS-30",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "noDifferentSpecialDeadlineRule": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.noDifferentSpecialDeadlineRuleNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    },
+    {
+      "id": "I1-TG-NEG-PAYMENT",
+      "pathId": "TG-ADMIN-ORDERED",
+      "receipt": "2026-10-02",
+      "mutation": {
+        "notPaymentOrFixedDate": false
+      },
+      "definitiveEnd": null,
+      "reason": "tg.notPaymentOrFixedDateNotQualified",
+      "basis": "Eine aktuelle Pfadvoraussetzung fehlt. Kein Ersatzpfad, erfundener Default oder Kalenderexport."
+    }
+  ],
+  "boundedQuestions": [
+    {
+      "id": "TG-O1",
+      "topic": "endShiftIntoNewSuspension",
+      "status": "bounded-proposed-block",
+      "rule": "Ist nur die Werktagsverschiebung des bereits ausgezählten Endes erstmals in einen neu beginnenden gerichtlichen Stillstand gerichtet, kein definitives Ergebnis/Export. Andere normale Stillstandsüberquerung bleibt berechenbar.",
+      "example": {
+        "receipt": "2027-02-18",
+        "days": 30,
+        "unadjusted": "2027-03-20",
+        "firstShiftedDay": "2027-03-21",
+        "easterSuspensionStarts": "2027-03-21",
+        "definitiveEnd": null
+      },
+      "reason": "Kein unmittelbar tragender aktueller TG-Kollisionsentscheid gefunden. Keine Übernahme einer fremden Kantonslösung."
+    },
+    {
+      "id": "TG-O2",
+      "topic": "noticeNotExactlyQualified",
+      "status": "bounded-proposed-block",
+      "rule": "Unvollständiger/unrichtiger/bestrittener/unklarer Hinweis und unklare Fortwirkung einer früheren Belehrung auf aktuelle richterliche Anordnung bleiben gesperrt. Eindeutig given/absent der massgebenden Belehrung sind positiv.",
+      "reason": "Aktuelle gesetzliche Rückausnahme belegt. Keine unmittelbar einschlägige aktuelle Praxis zur lückenhaften Teilbelehrung oder zur Fortwirkung festgestellt."
+    },
+    {
+      "id": "TG-O3",
+      "topic": "oldProceduralLaw",
+      "status": "bounded-proposed-block",
+      "rule": "Bekannter oder ungeklärter Altrechtsbezug nach § 129 und Änderungsgeltung. Kein positiver aktueller Pfad allein wegen eines Empfangs im Fenster. Keine historische Zwanzigtage-Ersatzrechnung.",
+      "reason": "Aktuelle Norm und TVR 2022 Nr. 6 E. 2.4. Kein pauschaler Ausschluss aller Gesamtverfahren mit frühem Beginn."
+    },
+    {
+      "id": "TG-O4",
+      "topic": "enforcementDecisionOrConflictingPeriod",
+      "status": "bounded-proposed-block",
+      "rule": "Materieller Sachentscheid, blosse Androhung, unklare Mischentscheidung oder konkret abweichende Dreissigtage-Belehrung beim vermeintlichen §-86-Abs.-3-Fall. Kein automatisches Fünftagesergebnis.",
+      "reason": "Aktueller § 86 Abs. 3, Botschaft 2013, TVR 2020 Nr. 7 und sekundärer VTG-Warnbeleg. Kein Vertrauensschutzalgorithmus."
+    }
+  ],
+  "excluded": [
+    "Kantonale Steuer-, Beschaffungs-, Baubewilligungs- und weitere Spezialfristenordnungen ohne eigene Fachfreigabe",
+    "Zusätzliche ausserbernische Sozialanbindungen und Versicherungsgericht als Sonderverfahren nach §§ 63 Abs. 5 und 69a–69b",
+    "Besondere obergerichtliche oder parlamentarische Rechtswege und besondere RR-Sachgebiete ausser positiv qualifizierten Fällen nach § 55 Abs. 1 Ziff. 8 oder 9",
+    "Eigenständige Klageeinleitung nach § 64 mit materieller Verjährung oder Verwirkung",
+    "Automatische Einsprachefrist oder Begründungsverlangen aus § 19 sowie ungeprüfte Brücke zu Art. 112 Abs. 2 BGG",
+    "Revision, Erläuterung, Aufsichtsbeschwerde, Wiederherstellung und Berechnung des Hinderniswegfalls",
+    "Geldzahlung, Kostenvorschuss, Sicherheitsleistung, fixe Termine und materielle Erfüllungs- oder Vollzugsfristen",
+    "Automatische Zustellfiktion, Publikationsbeginn sowie Plattformzulässigkeits- und Empfangsprüfung",
+    "Individuell anderer Fristbeginn, Stunden-, Wochen-, Monats- oder Rückwärtsfristen",
+    "Rechtmässigkeit der Verkürzungsanordnung, Vertrauensschutz und materielle Zulässigkeit einzelner Rechtsmittel oder Rügen"
+  ],
+  "amendmentEvidence": [
+    {
+      "id": "AP23I1-TG-VEU-AEND-20260324",
+      "url": "https://www.rechtsbuch.tg.ch/api/de/change_documents/file_dictionaries/101/pdf_file",
+      "decisionOn": "2026-03-24",
+      "publishedOn": "2026-03-27",
+      "effectiveOn": "2026-03-28",
+      "publication": "ABl13/2026",
+      "locators": [
+        "ZiffI undIV"
+      ],
+      "access": "Amtlicher Änderungstext gelesen, Ziff IV Folgetag nach Amtsblattpublikation. Publikationsdatum aus amtlicher API.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-170.15-api-20261022.json",
+          "byteLength": 147968,
+          "sha256": "b15078d9ce5b88c87ecb95ebdf9e0b33723446613b6f24f872cfa87a08e515a4",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.15",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.547Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/veu-aenderung-20260324-abl13-2026.pdf",
+          "byteLength": 116054,
+          "sha256": "a34973d03a960aa4c83093dd6a41f5cc15570268e87350d5be6d42dc8c44fafd",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/change_documents/file_dictionaries/101/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:12.891Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-VRG-AEND-20210324",
+      "decisionOn": "2021-03-24",
+      "effectiveOn": "2022-01-01",
+      "publication": "ABl13/2021S939ff und InkraftsetzungsnachweisABl45/2021S3363 gemässTVR2022Nr6",
+      "originalSeparateActRead": false,
+      "access": "Einzelner ursprünglicher Änderungsakt nicht separat aufgefunden. Vergleich amtlicher Konsolidate1890/2691, aktuelle Änderungstabelle und amtlicher Übergangsentscheid vollständig hinsichtlich der tragenden Punkte geprüft.",
+      "locators": [
+        "§18Abs1Ziff5",
+        "§45Abs1",
+        "§57Abs1",
+        "§63Abs4",
+        "§129",
+        "TVR2022Nr6E2.1 und2.4"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/tvr-2022-nr-6-amtlich.html",
+          "byteLength": 44000,
+          "sha256": "494b653d7acf2cc60f7ea62bc0cdb55310016df1353edd58bfb0e4c8d07ff9eb",
+          "url": "https://rechtsprechung.tg.ch/vg/tvr-2022-nr-6",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:56:59.317Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-api-20261022.json",
+          "byteLength": 978120,
+          "sha256": "629db9c830a238a45083c55fbb245102bf4911c14b99e392c33c508c8e29d2c6",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/texts_of_law/170.1",
+          "evidenceType": "official-original-response",
+          "retrievedAt": "2026-10-22T18:51:11.554Z"
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v1890-historisch.pdf",
+          "byteLength": 732837,
+          "sha256": "fdc803516cb2328e62c43294f242f77055bccad3cbc6b7b1864331dcc38c7b83",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/1890/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": null
+        },
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vrg-170.1-v2691-historisch.pdf",
+          "byteLength": 779274,
+          "sha256": "b98c268c08635f80e2e2cd13e90137d4c04882f026975ddae910da977985c6b1",
+          "url": "https://www.rechtsbuch.tg.ch/api/de/versions/2691/pdf_file",
+          "evidenceType": "official-original-response",
+          "retrievedAt": null
+        }
+      ],
+      "limit": "Keine behauptete Volltextprüfung des gesonderten Änderungsoriginals. Für aktuelle Normen und positive Altfallgrenze besteht ein gesonderter tragender amtlicher Nachweis."
+    }
+  ],
+  "additionalEvidence": [
+    {
+      "id": "AP23I1-TG-BOTSCHAFT-20130625",
+      "url": "https://grgeko.tg.ch/o/grgeko-portlet/activity/321652/Botschaft%2Bvom%2B25.06.2013%2B%2812-GE%2B12-138%29.pdf",
+      "date": "2013-06-25",
+      "evidenceType": "official-historical-material-not-current-law",
+      "locators": [
+        "S8–9"
+      ],
+      "finding": "Direkter gerichtlicher Fünftagesweg und keine zwischengeschaltete Departementsinstanz bewusst vorgesehen.",
+      "limit": "Botschaft ist nicht geltender Text. Andere damalige Entwurfspunkte werden nichtungeprüftimportiert.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/botschaft-vrg-20130625-12-ge12-138.pdf",
+          "byteLength": 184945,
+          "sha256": "5447dfecf4a3d0d6083f61f05dbd72919ec384069c7865580ab612d057992873",
+          "url": "https://grgeko.tg.ch/o/grgeko-portlet/activity/321652/Botschaft%2Bvom%2B25.06.2013%2B%2812-GE%2B12-138%29.pdf",
+          "evidenceType": "official-historical-material-not-current-law",
+          "retrievedAt": "2026-10-22T18:57:00.612Z"
+        }
+      ]
+    },
+    {
+      "id": "AP23I1-TG-VTG-202304",
+      "url": "https://www.vtg.ch/media/7263/download/Report%20BWU%202023_04_03.pdf?inline=1&v=2",
+      "date": "2023-04",
+      "evidenceType": "non-authoritative-association-research-pointer",
+      "locators": [
+        "S2"
+      ],
+      "access": "Dreitseitiger Verbandsnewsletter, relevanter Abschnitt vollständig gelesen.",
+      "finding": "Empfiehlt unter Berufung auf DBU-Rechtsdienst bei§ 86(3)genannten Entscheiden30 Tage. Keine klare Auflösung der Abweichung vonaktuellem Fünftageswortlaut.",
+      "limit": "Keinamtlicher Erlass/Entscheid. Keine Änderungdergesetzlichen Dauer. Konkreteabweichende Belehrungbleibtgesperrt,Vertrauensschutzkeinautomatischer Rechenzweig.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/vtg-newsletter-bwu-202304.pdf",
+          "byteLength": 478445,
+          "sha256": "3c5be8a760dd26213139637aa6b952a86dc67e1e42deaad238441c4a7f1e7404",
+          "url": "https://www.vtg.ch/media/7263/download/Report%20BWU%202023_04_03.pdf?inline=1&v=2",
+          "evidenceType": "non-authoritative-association-research-pointer",
+          "retrievedAt": "2026-10-22T18:57:00.332Z"
+        }
+      ]
+    }
+  ],
+  "calendarProposal": {
+    "id": "I1-TG-PROCEDURAL-CORE",
+    "anchor": "authoritySeat",
+    "anchorBasis": "DEC-2026-031 und geprüfte Normen § 24 VRG sowie § 1 RTG, ohne ausdrücklich abweichende Anknüpfung",
+    "jurisdiction": "CH-TG",
+    "rules": "publicRestDaysUnderRtg1",
+    "noAdditionalMunicipalitySelection": true,
+    "noFirstCalendarFallback": true,
+    "sourceIds": [
+      "AP23I1-TG-VRG-20240601",
+      "AP23I1-TG-RTG-20260101"
+    ],
+    "holidays": [
+      "Sunday",
+      "01-01",
+      "01-02",
+      "easter-2",
+      "easter+1",
+      "easter+39",
+      "easter+50",
+      "12-25",
+      "12-26",
+      "05-01",
+      "08-01"
+    ],
+    "limit": "Keine zusätzliche Freigabe anderer Verfahren oder kommunaler Erlasse. § 3 RTG zur Verwaltungsschliessung und § 2 RTG über hohe Feiertage bilden kein zweites frei vereinigtes Feiertagsset."
+  },
+  "commonRequirementEvidence": [
+    {
+      "key": "authoritySeat",
+      "value": "TG",
+      "reason": "tg.authoritySeatNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "competenceQualified",
+      "value": true,
+      "reason": "tg.competenceQualifiedNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "generalVrgApplies",
+      "value": true,
+      "reason": "tg.generalVrgAppliesNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "noDifferentSpecialDeadlineRule",
+      "value": true,
+      "reason": "tg.noDifferentSpecialDeadlineRuleNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "currentProceduralLawQualified",
+      "value": true,
+      "reason": "tg.currentProceduralLawQualifiedNotQualified",
+      "explanation": "Die konkrete Instanz und der angefochtene Entscheid beziehungsweise die aktuelle Anordnung müssen nach § 129 und gegebenenfalls Übergangsrecht der tragenden Änderungen tatsächlich dem aktuellen Recht unterstehen. Empfang2026allein genügt nicht."
+    },
+    {
+      "key": "legallyEffectiveWrittenService",
+      "value": true,
+      "reason": "tg.legallyEffectiveWrittenServiceNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "serviceDateQualified",
+      "value": true,
+      "reason": "tg.serviceDateQualifiedNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "forwardDayPeriod",
+      "value": true,
+      "reason": "tg.forwardDayPeriodNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "notPaymentOrFixedDate",
+      "value": true,
+      "reason": "tg.notPaymentOrFixedDateNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "sourceDocumentQualified",
+      "value": true,
+      "reason": "tg.sourceDocumentQualifiedNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    },
+    {
+      "key": "originalWrittenOpeningQualified",
+      "value": true,
+      "reason": "tg.originalWrittenOpeningQualifiedNotQualified",
+      "explanation": "Aktuelle kumulative Fallqualifikation des allgemeinen kantonalen VRG-Wegs, keine persönliche Standardannahme."
+    }
+  ],
+  "referenceMethod": {
+    "kind": "independent-research-civil-day-enumeration",
+    "productCalculatorUsed": false,
+    "productCodeImported": false,
+    "dates": "UTC-Ziviltage ohne Sommerzeitabhängigkeit. Der Eröffnungstag wird nicht gezählt.",
+    "easterDates": {
+      "2026": "2026-04-05",
+      "2027": "2027-03-28"
+    },
+    "holidayBasis": "Öffentliche Ruhetage nach § 1 RTG und Samstag nach § 24 Abs. 2 VRG",
+    "claim": "Sollvorschläge für die Fachabnahme, keine Produktfreigabe. Zusätzlich mit den getrennten zentralen I1-Forschungsorakeln und manueller Zählspur prüfen."
+  },
+  "researchLog": [
+    {
+      "source": "Entscheidsuche",
+      "query": "Gerichtsferien AND Rechtsmittelbelehrung",
+      "hierarchy": [
+        "TG"
+      ],
+      "reportedTotal": 2,
+      "scope": "Trefferliste geprüft. Keine unmittelbar einschlägige aktuelle Teilbelehrungsentscheidung festgestellt.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/entscheidsuche-notice.json",
+          "byteLength": 6001,
+          "sha256": "2901684be3b15d135635a97f0b0a92a99be178640182c691cfef0ed81d5c66ab"
+        }
+      ]
+    },
+    {
+      "source": "Entscheidsuche",
+      "query": "Gerichtsferien AND (Samstag OR Endverschiebung OR Feiertag)",
+      "hierarchy": [
+        "TG"
+      ],
+      "reportedTotal": 3,
+      "scope": "Keine unmittelbar einschlägige aktuelle VRG-Endverschiebungskollision. SchKG, Strafrecht und historisches kantonales Strafrecht werden nicht übernommen.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/entscheidsuche-endshift.json",
+          "byteLength": 8393,
+          "sha256": "52ada6a940dd4fd34fc252beae2b7ae6a30bec74fbd888f86bea67431584b4e2"
+        }
+      ]
+    },
+    {
+      "source": "Entscheidsuche",
+      "query": "Zwangsvollstreckung AND (\"fünf Tagen\" OR \"30 Tagen\")",
+      "hierarchy": [
+        "TG"
+      ],
+      "reportedTotal": 3,
+      "scope": "TVR 2013 Nr. 15 auf amtlichen Volltext zurückgeführt. Andere SchKG- und LugÜ-Treffer abgegrenzt.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/entscheidsuche-execution.json",
+          "byteLength": 7448,
+          "sha256": "5c6fee44405417deacd4829fa463534eb70ff113a1f34b0cc12ed0c5d84c5712"
+        }
+      ]
+    },
+    {
+      "source": "SwissCaselaw",
+      "query": "\"Fehlt in der Rechtsmittelbelehrung\"",
+      "canton": "TG",
+      "reportedTotal": 0,
+      "scope": "Kein Treffer ist kein Beweis der Nichtexistenz von Rechtsprechung.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-notice-phrase.json",
+          "byteLength": 344,
+          "sha256": "fd5fc5d34f9b63e0b90513eeaf1f13268449d63ee253bd33c2be37db8d749874"
+        }
+      ]
+    },
+    {
+      "source": "SwissCaselaw",
+      "query": "\"Gerichtsferien\" AND \"unvollständige\" AND \"VRG\"",
+      "canton": "TG",
+      "reportedTotalLowerBound": 200,
+      "returned": 50,
+      "scope": "Breite, begrenzte Treffermenge, nicht vollständig ausgewertet. Tragende Funde auf amtlichen Volltext zurückgeführt.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-notice-broad.json",
+          "byteLength": 126813,
+          "sha256": "557ce777db93859955228c02d9e21f6e5a13a9a6ee0ef7e393995e76ecf7a858"
+        }
+      ]
+    },
+    {
+      "source": "SwissCaselaw",
+      "query": "\"§ 63\" AND \"Ende\" AND \"Samstag\"",
+      "canton": "TG",
+      "reportedTotal": 1,
+      "scope": "SchKG-Sonderfall, keine allgemeine VRG-Kollision.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-endshift.json",
+          "byteLength": 4557,
+          "sha256": "1c86850db4e12fd452de40491a245a807ebe739bb4a11c4704ac6616ebc8d987"
+        }
+      ]
+    },
+    {
+      "source": "SwissCaselaw",
+      "query": "\"Zwangsvollstreckung\" AND \"fünf\"",
+      "canton": "TG",
+      "reportedTotalLowerBound": 200,
+      "returned": 50,
+      "scope": "Breite, begrenzte Treffermenge, nicht vollständig ausgewertet. TVR 2020 Nr. 7 und TVR 2013 Nr. 15 amtlich gelesen.",
+      "evidence": [
+        {
+          "path": "outputs/ap23i1-2026-10-22/sources/tg/swiss-execution.json",
+          "byteLength": 162345,
+          "sha256": "d79d5b7146eb3ed24009d86e6cc41a7cab20c6e8884f4e529c5e4a3910e7fbea"
+        }
+      ]
+    }
+  ]
+}

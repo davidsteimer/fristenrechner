@@ -1,0 +1,4800 @@
+{
+  "workPackage": "AP23K2",
+  "status": "passedIndependentStructuralAndResearchComparison",
+  "method": "Independent Python candidate-byte/schema inspection and complete calendar-day enumeration. Node actual results are compared only after independent static expectations.",
+  "runtimeActive": false,
+  "sourceReleaseApproved": false,
+  "calendarExportEnabled": false,
+  "catalogPaths": 165,
+  "preservedPaths": 149,
+  "newPaths": 16,
+  "physicalCalendars": 35,
+  "physicalProjectionRules": 431,
+  "holidayRules": 499,
+  "artifacts": 44,
+  "unchangedRawArtifacts": 43,
+  "vwvgBindings": 26,
+  "vwvgVariants": 28,
+  "calendarProjections": 29,
+  "annualClosureDates": 13,
+  "referenceCases": 65,
+  "diagnosticBranchOracleCases": 2,
+  "counts": {
+    "datedResearchValue": 40,
+    "qualificationBoundaryProposed": 18,
+    "researchWindowBoundary": 5,
+    "unresolvedBoundaryProposed": 2
+  },
+  "independentSyntheticCases": 44,
+  "sgJanuaryCalendarDiagnosticCases": 4,
+  "physicalCalendarDiagnosticCases": 7,
+  "nodeConsumerComparisons": 65,
+  "nodeDiagnosticBranchComparisons": 2,
+  "parallelSyntheticComparisons": 46,
+  "sourceByteBindings": 27,
+  "discrepancies": [],
+  "nodeEvidenceSha256": "c60fc0fd693de41bcdd2400e2d03ee559f33341bb9e68f616636f86eca54351a",
+  "fixtureSha256": "2f107ec6898a2748a462299f9b514a5ad635c3ed09f9a00d4d31fa3ae4fa0549",
+  "schemaValidator": "jsonschema 4.25.1",
+  "results": [
+    {
+      "id": "K1-BS-R01",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "K1-BS-R02",
+      "input": {
+        "path": "bs-internal-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "originalReasonsPeriodFromDecisionOpening"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "K1-BS-R03",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "K1-BS-R04",
+      "input": {
+        "path": "bs-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 30,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "originalReasonsPeriodFromDecisionOpening",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02"
+      }
+    },
+    {
+      "id": "K1-BS-R05",
+      "input": {
+        "path": "bs-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-23",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24"
+      }
+    },
+    {
+      "id": "K1-BS-R06",
+      "input": {
+        "path": "bs-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-23",
+        "days": 2,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28"
+      }
+    },
+    {
+      "id": "K1-BS-R07",
+      "input": {
+        "path": "bs-internal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-30",
+        "days": 2,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-30",
+        "ordinaryStart": "2026-12-31",
+        "nominalEnd": "2027-01-01",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BS-R08",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-15",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-15",
+        "ordinaryStart": "2026-12-16",
+        "nominalEnd": "2026-12-25",
+        "end": "2026-12-28"
+      }
+    },
+    {
+      "id": "K1-BS-R09",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-07-10",
+        "days": 20,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30"
+      }
+    },
+    {
+      "id": "K1-BS-R10",
+      "input": {
+        "path": "bs-court-joinder-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-07",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "applicantAppealAgainstJoinderRefusal",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-07",
+        "ordinaryStart": "2027-05-08",
+        "nominalEnd": "2027-05-17",
+        "end": "2027-05-18"
+      }
+    },
+    {
+      "id": "K1-BS-R11",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-03-18",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-18",
+        "ordinaryStart": "2027-03-19",
+        "nominalEnd": "2027-03-28",
+        "end": "2027-03-30"
+      }
+    },
+    {
+      "id": "K1-BS-R12",
+      "input": {
+        "path": "bs-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-05",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-05",
+        "ordinaryStart": "2027-05-06",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-07"
+      }
+    },
+    {
+      "id": "K1-BS-R13",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-11-28",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08"
+      }
+    },
+    {
+      "id": "K1-BS-R14",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-11-28",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "TI"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09"
+      }
+    },
+    {
+      "id": "K1-BS-R15",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-11-28",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS",
+        "partyCanton": "TI"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-28",
+        "ordinaryStart": "2026-11-29",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-08"
+      }
+    },
+    {
+      "id": "K1-BS-R16",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-09-05",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS",
+        "openingProvenance": "lawfulPublicationConfirmed"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15"
+      }
+    },
+    {
+      "id": "K1-BS-R17",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-09-05",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {
+        "openingProvenance": "lawfulPublicationConfirmed"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-05",
+        "ordinaryStart": "2026-09-06",
+        "nominalEnd": "2026-09-15",
+        "end": "2026-09-15"
+      }
+    },
+    {
+      "id": "K1-BS-R18",
+      "input": {
+        "path": "bs-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-08-29",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31"
+      }
+    },
+    {
+      "id": "K1-BS-R19",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-11-07",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {
+        "openingProvenance": "actualSaturdayReceiptLegallyEstablished"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-07",
+        "ordinaryStart": "2026-11-08",
+        "nominalEnd": "2026-11-17",
+        "end": "2026-11-17"
+      }
+    },
+    {
+      "id": "K1-BS-R20",
+      "input": {
+        "path": "bs-internal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-20",
+        "days": 15,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS",
+        "orderProvenance": "reasonsExtensionActuallyGrantedWithFresh15DayTerms"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-20",
+        "ordinaryStart": "2026-10-21",
+        "nominalEnd": "2026-11-04",
+        "end": "2026-11-04"
+      }
+    },
+    {
+      "id": "K1-BS-R21",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-11-28",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "unknown",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R22",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-11-28",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "authoritySeatOnly",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R23",
+      "input": {
+        "path": "bs-internal-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-12",
+        "days": 30,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "reasonsFromRegistrationDate"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R24",
+      "input": {
+        "path": "bs-internal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-20",
+        "days": 15,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "extensionRequestedOnly"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R25",
+      "input": {
+        "path": "bs-court-reasons-30",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-20",
+        "days": 30,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "reasonsFromTransferNotice",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R26",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "ATSGSpecialProcedure",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R27",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "physicalReceiptUnqualified",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R28",
+      "input": {
+        "path": "bs-internal-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "defectiveRemedyInstruction",
+          "stage": "internalAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R29",
+      "input": {
+        "path": "bs-court-joinder-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "otherJudicialProceduralOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R30",
+      "input": {
+        "path": "bs-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-12-30",
+        "days": 2,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    },
+    {
+      "id": "K1-BS-R31",
+      "input": {
+        "path": "bs-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-08-28",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "validCurrentDayCountOrder"
+        }
+      },
+      "annotations": {
+        "authorityCanton": "BS"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    },
+    {
+      "id": "K1-BS-R32",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "fixedEndDateOnly",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BS-R33",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-26",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "annotations": {},
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-26",
+        "ordinaryStart": "2026-12-27",
+        "nominalEnd": "2027-01-05",
+        "end": "2027-01-05"
+      }
+    },
+    {
+      "id": "K1-BL-R01",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-09-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-12",
+        "end": "2026-09-14"
+      }
+    },
+    {
+      "id": "K1-BL-R02",
+      "input": {
+        "path": "bl-court-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "admissibleGeneralCourtAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "K1-BL-R03",
+      "input": {
+        "path": "bl-court-objection-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 5,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "qualifiedSection7Objection",
+          "courtOrderCategory": "deniedFileAccess",
+          "chamberDecidesFinal": true
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07"
+      }
+    },
+    {
+      "id": "K1-BL-R04",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-09-02",
+        "days": 20,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-09-02",
+        "ordinaryStart": "2026-09-03",
+        "nominalEnd": "2026-09-22",
+        "end": "2026-09-22"
+      }
+    },
+    {
+      "id": "K1-BL-R05",
+      "input": {
+        "path": "bl-admin-reasons-granted",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-11-30",
+        "days": 30,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "currentGrantedReasonsDayCountOrder",
+          "orderStatus": "grantedReasonsOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-11-30",
+        "ordinaryStart": "2026-12-01",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R06",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-12-14",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R07",
+      "input": {
+        "path": "bl-court-objection-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-12-20",
+        "days": 5,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "qualifiedSection7Objection",
+          "courtOrderCategory": "deniedFileAccess",
+          "chamberDecidesFinal": true
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-25",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R08",
+      "input": {
+        "path": "bl-court-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-12-20",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "admissibleGeneralCourtAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-20",
+        "ordinaryStart": "2026-12-21",
+        "nominalEnd": "2026-12-30",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R09",
+      "input": {
+        "path": "bl-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-12-24",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-24",
+        "ordinaryStart": "2026-12-25",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "K1-BL-R10",
+      "input": {
+        "path": "bl-admin-appeal-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-12-01",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-01",
+        "ordinaryStart": "2026-12-02",
+        "nominalEnd": "2026-12-11",
+        "end": "2026-12-11"
+      }
+    },
+    {
+      "id": "K1-BL-R11",
+      "input": {
+        "path": "bl-court-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-03-15",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "admissibleGeneralCourtAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-15",
+        "ordinaryStart": "2027-03-16",
+        "nominalEnd": "2027-03-25",
+        "end": "2027-03-30"
+      }
+    },
+    {
+      "id": "K1-BL-R12",
+      "input": {
+        "path": "bl-court-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-03-20",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "admissibleGeneralCourtAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-03-20",
+        "ordinaryStart": "2027-03-21",
+        "nominalEnd": "2027-03-30",
+        "end": "2027-03-30"
+      }
+    },
+    {
+      "id": "K1-BL-R13",
+      "input": {
+        "path": "bl-court-objection-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-05-01",
+        "days": 5,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "qualifiedSection7Objection",
+          "courtOrderCategory": "deniedFileAccess",
+          "chamberDecidesFinal": true
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-01",
+        "ordinaryStart": "2027-05-02",
+        "nominalEnd": "2027-05-06",
+        "end": "2027-05-10"
+      }
+    },
+    {
+      "id": "K1-BL-R14",
+      "input": {
+        "path": "bl-court-reasons-set",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-05-06",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "currentSetReasonsDayCountOrder",
+          "orderStatus": "setReasonsOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-06",
+        "ordinaryStart": "2027-05-07",
+        "nominalEnd": "2027-05-07",
+        "end": "2027-05-10"
+      }
+    },
+    {
+      "id": "K1-BL-R15",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-01-30",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      }
+    },
+    {
+      "id": "K1-BL-R16",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-02-01",
+        "days": 8,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "BL-B-FASNACHT"
+      }
+    },
+    {
+      "id": "K1-BL-R19",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-02-02",
+        "days": 6,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-02",
+        "ordinaryStart": "2027-02-03",
+        "nominalEnd": "2027-02-08",
+        "end": "2027-02-08"
+      }
+    },
+    {
+      "id": "K1-BL-R20",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-01-31",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-01-31",
+        "ordinaryStart": "2027-02-01",
+        "nominalEnd": "2027-02-10",
+        "end": "2027-02-10"
+      }
+    },
+    {
+      "id": "K1-BL-R21",
+      "input": {
+        "path": "bl-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-07-10",
+        "days": 20,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-07-10",
+        "ordinaryStart": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30"
+      }
+    },
+    {
+      "id": "K1-BL-R22",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-08-29",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-08-29",
+        "ordinaryStart": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31"
+      }
+    },
+    {
+      "id": "K1-BL-R23",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "physicalPickupWithUnresolvedFiction",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R24",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "atsgSpecialProcedure",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R25",
+      "input": {
+        "path": "bl-admin-reasons-granted",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "currentGrantedReasonsDayCountOrder",
+          "orderStatus": "requestPending"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R26",
+      "input": {
+        "path": "bl-court-reasons-set",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "currentSetReasonsDayCountOrder",
+          "orderStatus": "notSet"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R27",
+      "input": {
+        "path": "bl-court-objection-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 5,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "qualifiedSection7Objection",
+          "courtOrderCategory": "ordinaryScheduling",
+          "chamberDecidesFinal": true
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R28",
+      "input": {
+        "path": "bl-court-objection-5",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 5,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "qualifiedSection7Objection",
+          "courtOrderCategory": "deniedFileAccess",
+          "chamberDecidesFinal": false
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R29",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "unknownThirdPartyKnowledge",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R30",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-12-20",
+        "days": 4,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    },
+    {
+      "id": "K1-BL-R31",
+      "input": {
+        "path": "bl-court-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-12-31",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "admissibleGeneralCourtAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    },
+    {
+      "id": "K1-BL-R32",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-08-28",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    },
+    {
+      "id": "K1-BL-R33",
+      "input": {
+        "path": "bl-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-10-02",
+        "days": 12,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeCourt",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "fixedCalendarDateOnly"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "K1-BL-R34",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-08-01",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "unknown"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-08-01",
+        "ordinaryStart": "2027-08-02",
+        "nominalEnd": "2027-08-11",
+        "end": "2027-08-11"
+      }
+    }
+  ],
+  "diagnosticResults": [
+    {
+      "id": "K1-BL-R17",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-02-01",
+        "days": 8,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "noOptionalFullClosure"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-01",
+        "ordinaryStart": "2027-02-02",
+        "nominalEnd": "2027-02-09",
+        "end": "2027-02-09"
+      }
+    },
+    {
+      "id": "K1-BL-R18",
+      "input": {
+        "path": "bl-admin-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-02-01",
+        "days": 8,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "initialAdministration",
+          "actionQualification": "currentDayCountSubmissionOrder",
+          "orderStatus": "currentOrder"
+        }
+      },
+      "annotations": {
+        "regionalOfficeMode": "confirmedFullClosure"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-02-01",
+        "ordinaryStart": "2027-02-02",
+        "nominalEnd": "2027-02-09",
+        "end": "2027-02-10"
+      }
+    }
+  ],
+  "independentSyntheticResults": [
+    {
+      "id": "PY-K2-OCT-AG-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-AI-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-AI-1",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-AR-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-BE-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BE"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-BL-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BL"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-BS-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-FR-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "FR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-GE-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "GE"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-GL-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "GL"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-GR-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "GR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-JU-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "JU"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-LU-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "LU"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-NE-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-NE-1",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-NW-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NW"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-OW-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "OW"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-SG-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-SH-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SH"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-SO-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SO"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-SZ-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SZ"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-TG-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "TG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-TI-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "TI"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-UR-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "UR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-VD-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "VD"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-VS-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "VS"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-ZG-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "ZG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-OCT-ZH-0",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "ZH"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-AI-False",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-21",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-21",
+        "ordinaryStart": "2027-09-22",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-22"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-AI-True",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-21",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-23"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-21",
+        "ordinaryStart": "2027-09-22",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-23"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-AI-missing",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-21",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "areaQualificationMissing"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-AI-unqualified",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-21",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": "false"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-AI-foreign",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-21",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "unrecognised": false
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-NE-False",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-26",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-27"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-26",
+        "ordinaryStart": "2027-05-27",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-27"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-NE-True",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-26",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-26",
+        "ordinaryStart": "2027-05-27",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-28"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-NE-missing",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-26",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "areaQualificationMissing"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-NE-unqualified",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-26",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": "false"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "PY-K2-AREA-NE-foreign",
+      "input": {
+        "path": "bs-court-ordered",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-26",
+        "days": 1,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "validCurrentDayCountOrder",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "unrecognised": false
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "PY-K2-unknown-canton",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "XX"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "PY-K2-unqualified-anchor",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "notDetermined",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "PY-K2-role-invention",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS",
+          "representativeRole": "professional"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownCaseFact"
+      }
+    },
+    {
+      "id": "PY-K2-NO-OVERRIDE-regionalOfficeMode",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        },
+        "regionalOfficeMode": "confirmedFullClosure"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownInputProperty"
+      }
+    },
+    {
+      "id": "PY-K2-NO-OVERRIDE-officeClosureOverride",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        },
+        "officeClosureOverride": true
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownInputProperty"
+      }
+    },
+    {
+      "id": "PY-K2-NO-OVERRIDE-jurisdictionRole",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        },
+        "jurisdictionRole": "party"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownInputProperty"
+      }
+    }
+  ],
+  "sgJanuaryCalendarDiagnostics": [
+    {
+      "year": 2027,
+      "days": 1,
+      "withoutJanuaryRule": "2027-01-04",
+      "withJanuaryRule": "2027-01-04",
+      "different": false,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": false,
+      "legalApproval": false,
+      "exportAllowed": false
+    },
+    {
+      "year": 2028,
+      "days": 1,
+      "withoutJanuaryRule": "2028-01-03",
+      "withJanuaryRule": "2028-01-03",
+      "different": false,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": true,
+      "legalApproval": false,
+      "exportAllowed": false
+    },
+    {
+      "year": 2029,
+      "days": 1,
+      "withoutJanuaryRule": "2029-01-02",
+      "withJanuaryRule": "2029-01-03",
+      "different": true,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": true,
+      "legalApproval": false,
+      "exportAllowed": false
+    },
+    {
+      "year": 2029,
+      "days": 3,
+      "withoutJanuaryRule": "2029-01-04",
+      "withJanuaryRule": "2029-01-04",
+      "different": false,
+      "diagnosticCalendarArithmeticOnly": true,
+      "outsideK1Window": true,
+      "legalApproval": false,
+      "exportAllowed": false
+    }
+  ],
+  "physicalCalendarDiagnostics": [
+    {
+      "calendarId": "ap22-ar-88bb22c08a22",
+      "date": "2026-12-26",
+      "expected": false,
+      "actual": false,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-ar-88bb22c08a22",
+      "date": "2027-12-26",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-ai-5d4e5a68e106",
+      "date": "2026-12-26",
+      "expected": false,
+      "actual": false,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-ai-5d4e5a68e106",
+      "date": "2027-12-26",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    },
+    {
+      "calendarId": "ap22-gl-87c11e156541",
+      "date": "2026-04-02",
+      "expected": false,
+      "actual": false,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": false,
+      "probeMeaning": "formulaOnlyNotAnEligibleCalendarDate"
+    },
+    {
+      "calendarId": "ap22-gl-87c11e156541",
+      "date": "2026-04-09",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": false,
+      "probeMeaning": "formulaOnlyNotAnEligibleCalendarDate"
+    },
+    {
+      "calendarId": "ap22-gl-87c11e156541",
+      "date": "2027-04-01",
+      "expected": true,
+      "actual": true,
+      "calendarDataOnly": true,
+      "legalCaseWindowApplied": false,
+      "calendarActivationApplied": true,
+      "probeMeaning": "activatedCalendarData"
+    }
+  ],
+  "parallelSyntheticResults": [
+    {
+      "id": "bs-court-bl-anchor-no-bl-office-closure",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-14",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BL"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-24"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2026-12-24"
+      }
+    },
+    {
+      "id": "bl-procedure-uses-annual-closure-chain",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-12-14",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-14",
+        "ordinaryStart": "2026-12-15",
+        "nominalEnd": "2026-12-24",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-ZH",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "ZH"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-BE",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BE"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-LU",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "LU"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-UR",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "UR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SZ",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SZ"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-OW",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "OW"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-NW",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NW"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-GL",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "GL"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-ZG",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "ZG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-FR",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "FR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SO",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SO"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-BS",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-BL",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BL"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SH",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SH"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-AR",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-AI",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-SG",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-GR",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "GR"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-AG",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-TG",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "TG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-TI",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "TI"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-VD",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "VD"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-VS",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "VS"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-NE",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-GE",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "GE"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-qualified-national-anchor-JU",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "JU"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-AI-missing-current-area",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "areaQualificationMissing"
+      }
+    },
+    {
+      "id": "bs-AI-explicit-positive-area",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-NE-missing-current-area",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "areaQualificationMissing"
+      }
+    },
+    {
+      "id": "bs-NE-explicit-positive-area",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-10-02",
+        "ordinaryStart": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12"
+      }
+    },
+    {
+      "id": "bs-ai-september-region-false",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-12",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-12",
+        "ordinaryStart": "2027-09-13",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-22"
+      }
+    },
+    {
+      "id": "bs-ai-september-region-true",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-09-12",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "AI"
+        },
+        "areaFacts": {
+          "AI-RTG-INNER-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-23"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-09-12",
+        "ordinaryStart": "2027-09-13",
+        "nominalEnd": "2027-09-22",
+        "end": "2027-09-23"
+      }
+    },
+    {
+      "id": "bs-ne-corpus-christi-region-false",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-17",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": false
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-27"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-17",
+        "ordinaryStart": "2027-05-18",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-27"
+      }
+    },
+    {
+      "id": "bs-ne-corpus-christi-region-true",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2027-05-17",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "NE"
+        },
+        "areaFacts": {
+          "NE-LANDERON-ADDITIONAL": true
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2027-05-17",
+        "ordinaryStart": "2027-05-18",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-28"
+      }
+    },
+    {
+      "id": "bs-sg-bound-january-comparison",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-12-23",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "SG"
+        }
+      },
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "legalOpening": "2026-12-23",
+        "ordinaryStart": "2026-12-24",
+        "nominalEnd": "2027-01-02",
+        "end": "2027-01-04"
+      }
+    },
+    {
+      "id": "bs-missing-anchor",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": ""
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "bs-multiple-anchors",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": [
+            "BS",
+            "TI"
+          ]
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "bs-authority-anchor-only",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "authoritySeatOnly",
+          "legalAnchorCanton": "BS"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "currentQualificationMissing"
+      }
+    },
+    {
+      "id": "bs-unknown-area-key",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        },
+        "areaFacts": {
+          "unknown": true
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "inputContractInvalid"
+      }
+    },
+    {
+      "id": "bs-foreign-role-input",
+      "input": {
+        "path": "bs-court-register-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BS",
+        "trigger": "2026-10-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBsConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "courtAppeal",
+          "actionQualification": "admissibleOrdinaryRegistration",
+          "legalAnchorQualification": "establishedPartyOrRepresentative",
+          "legalAnchorCanton": "BS"
+        },
+        "role": "partyWithoutRepresentative"
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownInputProperty"
+      }
+    },
+    {
+      "id": "bl-consumer-override-forbidden-noOptionalFullClosure",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-09-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal",
+          "regionalOfficeMode": "noOptionalFullClosure"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownCaseFact"
+      }
+    },
+    {
+      "id": "bl-consumer-override-forbidden-confirmedFullClosure",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-09-02",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal",
+          "regionalOfficeMode": "confirmedFullClosure"
+        }
+      },
+      "expected": {
+        "outcome": "qualificationBoundaryProposed"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownCaseFact"
+      }
+    },
+    {
+      "id": "complete-window-2026-08-28",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2026-08-28",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    },
+    {
+      "id": "complete-window-2027-12-31",
+      "input": {
+        "path": "bl-admin-appeal-10",
+        "pathRevision": 1,
+        "authoritySeatCanton": "BL",
+        "trigger": "2027-12-31",
+        "days": 10,
+        "facts": {
+          "authorityScope": "cantonal",
+          "applicability": "generalBlConfirmed",
+          "openingMode": "qualifiedLegalOpening",
+          "noticeStatus": "regularNoDeviation",
+          "stage": "administrativeAppeal",
+          "actionQualification": "admissibleAdministrativeAppeal"
+        }
+      },
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "scripts/check_ap23k2_independent.py",
+      "byteLength": 45477,
+      "sha256": "e49f04336b04a15fb1b6d74b0b34c3c7142e25d0b84ca6bf9e5fb3bb55b321cc"
+    },
+    {
+      "path": "outputs/ap23k2-2026-10-27/protected-inputs.json",
+      "byteLength": 1061460,
+      "sha256": "87bce79b661302e4e94091d3664a77c922411782bed38c9f986d6a99f5d2492b"
+    },
+    {
+      "path": "docs/fachrecht/ap23k1/referenzfaelle.json",
+      "byteLength": 99883,
+      "sha256": "2f107ec6898a2748a462299f9b514a5ad635c3ed09f9a00d4d31fa3ae4fa0549"
+    },
+    {
+      "path": "outputs/ap23k2-candidate-2026-10-27/bundle/manifest.json",
+      "byteLength": 29072,
+      "sha256": "61eadcd096530c6ddb4474857cee11c06c3ff8606460c4f145afc62972d2b36e"
+    },
+    {
+      "path": "outputs/ap23k2-candidate-2026-10-27/bundle/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "byteLength": 1381607,
+      "sha256": "47c4f62942f33ac0150a6aa7969cfb46087fae6dd15f6ac0561a14210112aa1e"
+    },
+    {
+      "path": "schemas/candidates/ap23k2/administrative-procedure-catalog-v8.schema.json",
+      "byteLength": 451574,
+      "sha256": "afcc5fb6c6f668d844ce1b2b1a1dc05d64c92a51e4e188ed7feb71d93d53068a"
+    },
+    {
+      "path": "schemas/candidates/ap23k2/administrative-input-v8.schema.json",
+      "byteLength": 5126,
+      "sha256": "048d84010943513cc2675a3303f4c9fe69af02f40c7aa141a91aafcf779cc06b"
+    },
+    {
+      "path": "schemas/candidates/ap23k2/release-manifest-v15.schema.json",
+      "byteLength": 13767,
+      "sha256": "8b70cdb02eaa8670a963ea647955575d6f115810768e81267c92e1639fbd06cd"
+    },
+    {
+      "path": "schemas/candidates/ap23k2/local-reference-manifest-v15.schema.json",
+      "byteLength": 13789,
+      "sha256": "ac0f8df129762d44beab41a7b56c011b05ac3df2bf8aec1a7ab7ab011a92c090"
+    }
+  ]
+}

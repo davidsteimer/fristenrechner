@@ -1,0 +1,112 @@
+{
+  "workPackage": "AP23M3",
+  "status": "passed",
+  "localOnly": true,
+  "method": "Observed interaction through the in-app browser on the actual built local application. Screenshots visually inspected. Accessibility text captured from that browser, not synthesized from product sources.",
+  "url": "http://127.0.0.1:8811/fristenrechner/",
+  "dataReleaseId": "2026-10-28-ap23m3-candidate.1",
+  "cases": [
+    {
+      "id": "B-M3-NE-REGION-CONTRAST",
+      "qualifiedOpening": "2027-05-26",
+      "days": 1,
+      "generalEnd": "2027-05-27",
+      "leLanderonEnd": "2027-05-28",
+      "freshQualificationRequiredAfterRegionChange": true,
+      "exportDenied": true
+    },
+    {
+      "id": "B-M3-VD-UNSIGNED-DE",
+      "physicalReceipt": "2026-09-19",
+      "qualifiedLegalOpening": "2026-09-22",
+      "firstCountedDay": "2026-09-23",
+      "days": 3,
+      "finalEnd": "2026-09-25",
+      "bothCurrentRawConditionsVisible": true,
+      "noAiTrackingInference": true,
+      "exportDenied": true
+    },
+    {
+      "id": "B-M3-VD-DATE-MEANING-RESET",
+      "transition": "physicalUnsignedPostalReceiptDate -> qualifiedLegalOpeningDate",
+      "inputDateCleared": true,
+      "currentQualificationCleared": true,
+      "oldResultRemoved": true
+    },
+    {
+      "id": "B-M3-VS-WINTER-FR",
+      "qualifiedOpening": "2027-01-05",
+      "days": 1,
+      "finalEnd": "2027-01-06",
+      "winterBoundaryThroughJanuary5Visible": true,
+      "readableFrenchTraceAndLinks": true,
+      "exportDenied": true
+    }
+  ],
+  "visualChecks": {
+    "twoColumnsAtObservedDesktopWidth": true,
+    "staticSeatLabel": true,
+    "buttonsTwoRows": true,
+    "earlyDateEntry": true,
+    "readableGermanAndFrenchTrace": true,
+    "stylesheetsChanged": false
+  },
+  "actualIcsFilesSaved": 0,
+  "outlookImports": 0,
+  "realDeviceOrM365Test": false,
+  "professionalTechnicalAcceptance": false,
+  "sourceReleaseApproved": false,
+  "operatingChanges": false,
+  "evidence": [
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-ne-general.ax.txt",
+      "byteLength": 11197,
+      "sha256": "9637610ce689ad0e0912a761cd51d29e7e906d445a82c4884bcbf8ddace1244c"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-ne-landeron.ax.txt",
+      "byteLength": 6966,
+      "sha256": "bcf1714c73664445c6c6c9b4cb5575d1800cf8dff96ddb1e22cefdae292ac953"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-ne-landeron.jpg",
+      "byteLength": 103138,
+      "sha256": "ddd610b282462e3ac1b2d9f5f137e432c4cf458047fcf66b85fb39850b3cb1e1"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-vd-unsigned.ax.txt",
+      "byteLength": 11200,
+      "sha256": "60a32bbe99b6424946a6b528eefa908fe03db451bbcd25272f2e393837ea1b99"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-vd-unsigned.jpg",
+      "byteLength": 87947,
+      "sha256": "079d7c05eed15d41106255be0dcf8a16811af9aa4e6b5dd1f5daeac0a3d3ac30"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-vd-opening-reset.ax.txt",
+      "byteLength": 6001,
+      "sha256": "c033fa2b60d15057a049456ab3e8d2370cf8548551e3d7eaee2bfcd2c082700d"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-vs-winter-fr.ax.txt",
+      "byteLength": 10517,
+      "sha256": "a34010ceb91abc9e8db260b4c4199348c30965075bac424bc09c41879ab3f5bc"
+    },
+    {
+      "path": "outputs/ap23m3-2026-10-28/browser-vs-winter-fr.jpg",
+      "byteLength": 92039,
+      "sha256": "7bdf94d0b9a0a4552bc1980c3b7e820fa8231d1f109989711258ceb739668d85"
+    },
+    {
+      "path": ".work/public-ap23m3/index.html",
+      "byteLength": 2152,
+      "sha256": "336e0d3d1cee7ece08c64ebde3bebcff097cf1f9e73219b9995abef8b7ad0f0a"
+    },
+    {
+      "path": ".work/public-ap23m3/assets/app-YSBSSYO7.js",
+      "byteLength": 7276171,
+      "sha256": "9791b928473bdc731f7ee922065187ad07212e567a0eae8d73b77850ff139d02"
+    }
+  ]
+}

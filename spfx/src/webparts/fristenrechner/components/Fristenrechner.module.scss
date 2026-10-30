@@ -40,13 +40,26 @@
 }
 
 .runtimeStatus {
+  box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  min-width: 0;
+  max-width: 100%;
   width: min(1120px, calc(100% - 32px));
   margin: -18px auto 24px;
   gap: 8px;
   justify-content: flex-end;
   color: #566168;
   font-size: 12px;
+}
+
+.runtimeStatus > span,
+.runtimeStatus code {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .runtimeStatus code {

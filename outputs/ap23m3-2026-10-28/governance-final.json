@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "args": [
+    "--import",
+    "tsx",
+    "--test",
+    "tests/governance/ap23m3-acceptance-archive.test.mjs",
+    "tests/governance/ap23m3-completion.test.mjs",
+    "tests/governance/ap23m3-independent.test.mjs",
+    "tests/governance/ap23m3-preservation.test.mjs"
+  ],
+  "exitCode": 0,
+  "counts": {
+    "tests": 141,
+    "pass": 141,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "log": {
+    "path": "outputs/ap23m3-2026-10-28/governance-final.txt",
+    "byteLength": 26673,
+    "sha256": "cf22e0656d21e4011b1367860b53d51592153018a9679b0c73557e007c2044bb"
+  },
+  "inputs": [
+    {
+      "path": "scripts/finalize-ap23m3.mjs",
+      "byteLength": 22647,
+      "sha256": "278c08011e7d4b6a1ab8c025e401cad22171e177a7c8f9d5e2a48748ad4a23ab"
+    },
+    {
+      "path": "scripts/check-ap23m3.mjs",
+      "byteLength": 4683,
+      "sha256": "ea45845ae6580e52e622fa8f0d439eee3e4e89fc4c914140264ed97b083ccd91"
+    },
+    {
+      "path": "tests/governance/ap23m3-acceptance-archive.test.mjs",
+      "byteLength": 4618,
+      "sha256": "8aec8f3a5e96560a98e9ad5e27b756fcd7bfd8c43c4ae8575b81ee3ed930068a"
+    },
+    {
+      "path": "tests/governance/ap23m3-completion.test.mjs",
+      "byteLength": 11522,
+      "sha256": "4350e959b89e4a0a8f60231585f5c8eb3c91805c087959c19836d2609b6b0c70"
+    },
+    {
+      "path": "tests/governance/ap23m3-independent.test.mjs",
+      "byteLength": 14731,
+      "sha256": "d1631c66eab82a6e4ede71f74cc85ce58a0da44ee76a0db559e6250f5c846b4e"
+    },
+    {
+      "path": "tests/governance/ap23m3-preservation.test.mjs",
+      "byteLength": 13691,
+      "sha256": "a08a7806c3165f75894aa2208d2c01b51ca2de989b4ebe7408e01afba8bd0418"
+    }
+  ]
+}

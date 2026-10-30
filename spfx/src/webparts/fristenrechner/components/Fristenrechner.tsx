@@ -10,6 +10,22 @@ import { createCalculatorRuntime, hasMatchingFormat8Runtime, hasMatchingFormat9R
 import type { BoundCalendarRuntime } from '../../../product/core/calendarResolution';
 import type { ParsedFormat8Data } from '../../../product/core/releaseFormat8';
 import type { ParsedFormat9Data } from '../../../product/core/releaseFormat9';
+import type { ParsedFormat10Data } from '../../../product/core/releaseFormat10';
+import type { ParsedFormat11Data } from '../../../product/core/releaseFormat11';
+import type { ParsedFormat12Data } from '../../../product/core/releaseFormat12';
+import type { ParsedFormat13Data } from '../../../product/core/releaseFormat13';
+import type { ParsedFormat14Data } from '../../../product/core/releaseFormat14';
+import type { ParsedFormat15Data } from '../../../product/core/releaseFormat15';
+import type { ParsedFormat16Data } from '../../../product/core/releaseFormat16';
+import type { ParsedFormat17Data } from '../../../product/core/releaseFormat17';
+import { hasMatchingFormat10Runtime } from '../../../product/core/format10Runtime';
+import { hasMatchingFormat11Runtime } from '../../../product/core/format11Runtime';
+import { hasMatchingFormat12Runtime } from '../../../product/core/format12Runtime';
+import { hasMatchingFormat13Runtime } from '../../../product/core/format13Runtime';
+import { hasMatchingFormat14Runtime } from '../../../product/core/format14Runtime';
+import { hasMatchingFormat15Runtime } from '../../../product/core/format15Runtime';
+import { hasMatchingFormat16Runtime } from '../../../product/core/format16Runtime';
+import { hasMatchingFormat17Runtime } from '../../../product/core/format17Runtime';
 import { FristenrechnerApp } from '../../../product/ui';
 import '../../../product/ui/styles.module.scss';
 import styles from './Fristenrechner.module.scss';
@@ -20,7 +36,7 @@ type RuntimeStatus = 'loading' | 'local' | 'ready' | 'fallback' | 'error';
 interface IFristenrechnerState {
   readonly calculationData?: CalculationData;
   readonly calendarRuntime?: BoundCalendarRuntime;
-  readonly administrativeContext?: ParsedFormat8Data | ParsedFormat9Data;
+  readonly administrativeContext?: ParsedFormat8Data | ParsedFormat9Data | ParsedFormat10Data | ParsedFormat11Data | ParsedFormat12Data | ParsedFormat13Data | ParsedFormat14Data | ParsedFormat15Data | ParsedFormat16Data | ParsedFormat17Data;
   readonly loadedConfigurationKey?: string;
   readonly manifestSha256?: string;
   readonly message?: string;
@@ -196,11 +212,35 @@ export default class Fristenrechner extends React.Component<
     // Revalidate network bytes first. An unchanged, fully qualified cache-to-
     // network transition must not replace the administrative identity and
     // reset input entered while the network request was still pending.
-    if (['8.0.0', '9.0.0'].includes(runtime.data.formatVersion) && this.isCurrentConfiguration()
+    if (['8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(runtime.data.formatVersion) && this.isCurrentConfiguration()
       && this.state.loadedConfigurationKey === this.props.configurationKey
       && this.state.manifestSha256 === release.manifestSha256
       && this.state.calculationData
-      && (runtime.data.formatVersion === '9.0.0'
+      && (runtime.data.formatVersion === '17.0.0'
+        ? hasMatchingFormat17Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '16.0.0'
+        ? hasMatchingFormat16Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '15.0.0'
+        ? hasMatchingFormat15Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '14.0.0'
+        ? hasMatchingFormat14Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '13.0.0'
+        ? hasMatchingFormat13Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '12.0.0'
+        ? hasMatchingFormat12Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '11.0.0'
+        ? hasMatchingFormat11Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '10.0.0'
+        ? hasMatchingFormat10Runtime(this.state.calculationData, this.state.calendarRuntime,
+          this.state.administrativeContext)
+        : runtime.data.formatVersion === '9.0.0'
         ? hasMatchingFormat9Runtime(this.state.calculationData, this.state.calendarRuntime,
           this.state.administrativeContext as ParsedFormat9Data | undefined)
         : hasMatchingFormat8Runtime(this.state.calculationData, this.state.calendarRuntime,

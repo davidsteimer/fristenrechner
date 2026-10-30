@@ -1,0 +1,271 @@
+{
+  "workPackage": "AP23M3",
+  "status": "passed",
+  "localOnly": true,
+  "sourceReleaseApproved": false,
+  "installationPerformed": false,
+  "githubPushPerformed": false,
+  "head": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "sourceInventoryStableRequired": true,
+  "steps": [
+    {
+      "id": "preservation-before",
+      "command": "node",
+      "args": [
+        "scripts/check-ap23m3-preservation.mjs",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/preservation-before.txt",
+      "byteLength": 89609,
+      "sha256": "68a987233023681172e3ee4c216cb463ff23688a7fff79705a893aafd25ef2b1",
+      "counts": {}
+    },
+    {
+      "id": "typecheck",
+      "command": "node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/typecheck.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {}
+    },
+    {
+      "id": "native-schemas",
+      "command": "node",
+      "args": [
+        "scripts/build-ap23m3-schemas.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/native-schemas.txt",
+      "byteLength": 291,
+      "sha256": "20074034e90033c1f4e61ad41ad628ba46a99be31ccc28dbdfb8e1343409b39f",
+      "counts": {}
+    },
+    {
+      "id": "candidate",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/build-ap23m3-candidate.ts",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/candidate.txt",
+      "byteLength": 203,
+      "sha256": "9127fe8e9e0da54886b5342eb76235b01f7195ad9da8ea61b583c826a2166430",
+      "counts": {}
+    },
+    {
+      "id": "native-references",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/check-ap23m3-references.ts",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/native-references.txt",
+      "byteLength": 221,
+      "sha256": "d4c550665b77600e2cb762deb655561352186f4b1f74eef98aafceaec281d39c",
+      "counts": {}
+    },
+    {
+      "id": "inherited-references",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/check-ap23m3-inherited-references.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/inherited-references.txt",
+      "byteLength": 732,
+      "sha256": "37bfae3ec90d57ad18aa30f322f32f3d867bdec83b267eaef41a7495d5bc1b07",
+      "counts": {}
+    },
+    {
+      "id": "product-regression",
+      "command": "node",
+      "args": [
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/product-regression.txt",
+      "byteLength": 880361,
+      "sha256": "79dd26819c9d04cc3bebc7558657476807230a6cc72c199978fff58b3af8e9ce",
+      "counts": {
+        "tests": 3876,
+        "pass": 3876,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "host-lifecycle",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "tests/hosts/ap23e3-spfx-host.test.ts",
+        "tests/hosts/ap23f3-spfx-host.test.ts",
+        "tests/hosts/ap23g3-spfx-host.test.ts",
+        "tests/hosts/ap23h3-spfx-host.test.ts",
+        "tests/hosts/ap23i3-spfx-host.test.ts",
+        "tests/hosts/ap23j3-spfx-host.test.ts",
+        "tests/hosts/ap23k3-spfx-host.test.ts",
+        "tests/hosts/ap23l3-spfx-host.test.ts",
+        "tests/hosts/ap23m3-spfx-host.test.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/host-lifecycle.txt",
+      "byteLength": 23212,
+      "sha256": "bcf4e5d412999fd6dc981c91c9a6f5e580d24a770a0c387b457952763958674f",
+      "counts": {
+        "tests": 90,
+        "pass": 90,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "actual-web-bundle",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "--test-timeout=900000",
+        "tests/public-app/ap23m3-build.test.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/actual-web-bundle.txt",
+      "byteLength": 2567,
+      "sha256": "10dd3dfcde1392e9d40616decd1cb4fc9ea35cb8fdcb37db6b743ea2e98823e9",
+      "counts": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "independent-native",
+      "command": ".venv/bin/python",
+      "args": [
+        "scripts/check_ap23m3_independent.py",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/independent-native.txt",
+      "byteLength": 734,
+      "sha256": "e843d6c98c76c246e157e2444d79c6e4bfe95cd47073a4edcc22d0ec6820eaa9",
+      "counts": {}
+    },
+    {
+      "id": "calendar-export",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/check-ap23m3-export.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/calendar-export.txt",
+      "byteLength": 569,
+      "sha256": "299f2fd2a7c8b34b02ead7b227264a3a47db195ba6fada5ddf929b70ba2eb7b9",
+      "counts": {}
+    },
+    {
+      "id": "m2-archive",
+      "command": "node",
+      "args": [
+        "scripts/archive-ap23m2-acceptance.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/m2-archive.txt",
+      "byteLength": 304,
+      "sha256": "6abed5ffeb12b657101374e1b46641db15f023635050c47421eba4a648905f57",
+      "counts": {}
+    },
+    {
+      "id": "governance",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "tests/governance/ap23m3-acceptance-archive.test.mjs",
+        "tests/governance/ap23m3-completion.test.mjs",
+        "tests/governance/ap23m3-independent.test.mjs",
+        "tests/governance/ap23m3-preservation.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/governance.txt",
+      "byteLength": 26414,
+      "sha256": "fd1b543fc872c051be312dadc0111fe2d8b5f3a6cb22bd6d824eba01c628d8fa",
+      "counts": {
+        "tests": 140,
+        "pass": 140,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "web-build",
+      "command": "node",
+      "args": [
+        "scripts/build-ap23m3-public.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/web-build.txt",
+      "byteLength": 134,
+      "sha256": "20529d1aa6d70875f6554201c7b05b3ceff01e19761b6fc4885cf421a58238d0",
+      "counts": {}
+    },
+    {
+      "id": "preservation-after",
+      "command": "node",
+      "args": [
+        "scripts/check-ap23m3-preservation.mjs",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/preservation-after.txt",
+      "byteLength": 89609,
+      "sha256": "68a987233023681172e3ee4c216cb463ff23688a7fff79705a893aafd25ef2b1",
+      "counts": {}
+    },
+    {
+      "id": "whitespace",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23m3-2026-10-28/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {}
+    }
+  ]
+}

@@ -381,7 +381,7 @@ function isCalculationResult(value: DateResolution | SuspensionConfiguration | C
 export function calculateDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
   // Formats 8 and 9 have separate byte-issued qualification boundaries. A caller may
   // not smuggle an invented old profile through this historical entry point.
-  if (['8.0.0', '9.0.0'].includes(data.formatVersion)) {
+  if (['8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion)) {
     return blocked({ reasons: ['administrativeProcedure.qualifiedContextRequired'] });
   }
   return calculateLegacyProfile(input, data);
@@ -389,7 +389,7 @@ export function calculateDeadline(input: CalculationInput, data: CalculationData
 
 /** Shared host entry. Each native format retains its own issued capability. */
 export function calculateRuntimeDeadline(input: CalculationInput, data: CalculationData): CalculationResult {
-  if (!['8.0.0', '9.0.0'].includes(data.formatVersion)) return calculateDeadline(input, data);
+  if (!['8.0.0', '9.0.0', '10.0.0', '11.0.0', '12.0.0', '13.0.0', '14.0.0', '15.0.0', '16.0.0', '17.0.0'].includes(data.formatVersion)) return calculateDeadline(input, data);
   if (!trustedModernRuntime(data)
     || (['stpo', 'zpo', 'bgg', 'vwvg'].includes(input.profileId) && !hasQualifiedCalendarPath(data))
     || (input.profileId === 'vrpg-be' && input.calendarId !== 'be-public-holidays')) {

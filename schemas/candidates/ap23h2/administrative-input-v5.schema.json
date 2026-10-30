@@ -1,0 +1,313 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/davidsteimer/fristenrechner/main/schemas/candidates/ap23h2/administrative-input-v5.schema.json",
+  "title": "AP23H2 explicit current research facts not persistent defaults",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "pathRevision",
+    "authoritySeatCanton",
+    "trigger",
+    "days",
+    "facts"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "pathRevision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "authoritySeatCanton": {
+      "enum": [
+        "OW",
+        "NW",
+        "BE",
+        "CH",
+        "unknown"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "authorityLevel": {
+          "enum": [
+            "cantonal",
+            "municipal",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "specialLaw": {
+          "enum": [
+            "excluded",
+            "ATSG",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "materialPerformance": {
+          "enum": [
+            false,
+            true,
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "fixedEndDate": {
+          "enum": [
+            false,
+            true,
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "deviatingStart": {
+          "enum": [
+            false,
+            true,
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "termChange": {
+          "enum": [
+            "none",
+            "restorationRequested",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "unit": {
+          "enum": [
+            "day",
+            "month",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "direction": {
+          "enum": [
+            "forward",
+            "backward",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "notice": {
+          "enum": [
+            "uncontested",
+            "disputed",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "serviceContext": {
+          "enum": [
+            "effectiveLegalTriggerKnown",
+            "serviceFictionUnknown",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "localHolidayEffect": {
+          "enum": [
+            "noAdditionalRelevantLocalHoliday",
+            "concretePotentialEndChangeUnresolved",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "openingOrigin": {
+          "enum": [
+            "notApplicable",
+            "originalReasoned",
+            "reasonedFollowingTimelyRequest",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "priorReasonsRequest": {
+          "enum": [
+            "notApplicable",
+            "timelyEstablished",
+            "late",
+            null,
+            "unknown",
+            "other"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "administration",
+            "court",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "action": {
+          "enum": [
+            "ordinaryAdministrativeAppeal",
+            "ordinaryAdministrativeCourtAppeal",
+            "orderedProceduralSubmission",
+            "requestAdministrativeReasons",
+            "requestCourtReasons",
+            "reviewPresidentialSuspensiveEffectDecision",
+            "qualifiedEinsprache",
+            "orderedInitialAdministrativeSubmission",
+            "orderedEinwendungSubmission",
+            "orderedEinspracheSubmission",
+            "orderedAdministrativeAppealSubmission",
+            "statutoryVERNEHMLASSUNG",
+            "statutoryREPLIK",
+            "statutoryDUPLIK",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "holidayAnchor": {
+          "enum": [
+            "targetAuthoritySeat",
+            "issuingAuthoritySeat",
+            "issuingCourtSeat",
+            "sameCourtSeat",
+            "partyOrRepresentativeSeat",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "opening": {
+          "enum": [
+            "completeReasonedAdministrativeDecision",
+            "orderedForwardDayPeriod",
+            "lawfullyUnreasonedAdministrativeDecision",
+            "lawfullyUnreasonedCourtDecision",
+            "presidentialSuspensiveEffectDecision",
+            "decisionSubjectToStatutorilyAdmissibleEinsprache",
+            "qualifiedDayOrderInEinwendungsverfahren",
+            "qualifiedDayOrderInEinsprache",
+            "orderedForwardDayPeriodInAppeal",
+            "appealServedForComments",
+            "vernehmlassungServedForReply",
+            "replikServedForDuplik",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "durationBasis": {
+          "enum": [
+            "specifiedStatutoryRule",
+            "concreteDayOrder",
+            "generalStatutory20",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "suspensionException": {
+          "enum": [
+            "ordinaryNoException",
+            "provisionalMeasureAnalogy",
+            "procurement",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "targetCourt": {
+          "enum": [
+            "OW-Verwaltungsgericht",
+            "NW-Verwaltungsgericht",
+            "Bundesgericht",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "sameIssuingAuthority": {
+          "enum": [
+            true,
+            false,
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "reasonsContext": {
+          "enum": [
+            "qualifiedRequestUnderBGG112",
+            "missingReasoningDespiteRequiredFullDecision",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "sameIssuingCourt": {
+          "enum": [
+            true,
+            false,
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "suspensiveReviewContext": {
+          "enum": [
+            "sameOverallCourt",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "deadlineAgreement": {
+          "enum": [
+            "notByAgreement",
+            "agreedWithParties",
+            "unknown",
+            "other",
+            null
+          ]
+        },
+        "einspracheAdmissibility": {
+          "enum": [
+            "establishedNoDeviatingSpecialRule",
+            "unknown",
+            "anySpecialEinsprache",
+            "other",
+            null
+          ]
+        }
+      }
+    }
+  }
+}

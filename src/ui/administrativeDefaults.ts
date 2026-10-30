@@ -55,6 +55,13 @@ function record(value: unknown): value is Record<string, unknown> {
 }
 function same(left: unknown, right: unknown): boolean { return canonicalSocialJson(left) === canonicalSocialJson(right); }
 
+/** Stable selection is a preference, a current actual duration is not. */
+export function requiresCurrentAdministrativeDuration(path?: { readonly duration: { readonly kind: string }; readonly contractFamily?: string }): boolean {
+  return path?.duration.kind === 'concretisedStatutoryDays'
+    || (path?.contractFamily === 'qualifiedDayProcedureV9' || path?.contractFamily === 'qualifiedDayProcedureV10')
+      && path.duration.kind !== 'statutoryDays';
+}
+
 export function emptyAdministrativePreferences(): AdministrativePreferences {
   return { locale: 'de', authorityCode: '', deadlineDays: 10, deliveryMethod: '', procedureSelection: null,
     legacySelectors: {}, vrpgSelection: { ...EMPTY_VRPG_SELECTION }, calendarPreference: { role: '', canton: '' } };
@@ -88,6 +95,10 @@ export function sanitizeAdministrativePreferences(context: AdministrativeDefault
   const authorityCode = typeof raw.authorityCode === 'string' && (CANTONS.has(raw.authorityCode) || raw.authorityCode === 'CH')
     ? raw.authorityCode : '';
   const procedureSelection = selection(context, raw.procedureSelection, authorityCode);
+  // Keep V5's generic numeric preference shape, never the current legal shortening.
+  // The app always restores this kind with an empty current duration field.
+  const currentDurationRequired = procedureSelection?.kind === 'cantonalAdministrative'
+    && requiresCurrentAdministrativeDuration(getVerifiedAdministrativeContext(context.administrativeData)?.catalog.paths.find(path => path.pathId === procedureSelection.pathId));
   const profileId = procedureSelection?.kind === 'legacyProfile' ? procedureSelection.profileId : '';
   const profile = context.legacyData.profiles.get(profileId);
   const rawSelectors = record(raw.legacySelectors) ? raw.legacySelectors : {};
@@ -113,7 +124,7 @@ export function sanitizeAdministrativePreferences(context: AdministrativeDefault
   const canton = calendarEnabled && typeof calendar.canton === 'string' && CANTONS.has(calendar.canton) ? calendar.canton : '';
   return {
     locale: raw.locale === 'fr' ? 'fr' : 'de', authorityCode,
-    deadlineDays: typeof raw.deadlineDays === 'number' && Number.isInteger(raw.deadlineDays)
+    deadlineDays: currentDurationRequired ? emptyAdministrativePreferences().deadlineDays : typeof raw.deadlineDays === 'number' && Number.isInteger(raw.deadlineDays)
       && raw.deadlineDays >= 1 && raw.deadlineDays <= 365 ? raw.deadlineDays : 10,
     deliveryMethod, procedureSelection, legacySelectors,
     vrpgSelection: profileId === 'vrpg-be' ? sanitizeVrpgSelection(context.legacyData, raw.vrpgSelection) : { ...EMPTY_VRPG_SELECTION },

@@ -1,0 +1,263 @@
+{
+  "workPackage": "AP23K3",
+  "status": "passed",
+  "localOnly": true,
+  "sourceReleaseApproved": false,
+  "installationPerformed": false,
+  "githubPushPerformed": false,
+  "head": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "sourceInventoryStableRequired": true,
+  "steps": [
+    {
+      "id": "preservation-before",
+      "command": "node",
+      "args": [
+        "scripts/check-ap23k3-preservation.mjs",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/preservation-before.txt",
+      "byteLength": 77289,
+      "sha256": "48afc5681c445d0daf3f03b4314a6b261a6c269076f79ddbb6398c069d36a88d",
+      "counts": {}
+    },
+    {
+      "id": "typecheck",
+      "command": "node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/typecheck.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {}
+    },
+    {
+      "id": "native-schemas",
+      "command": "node",
+      "args": [
+        "scripts/build-ap23k3-schemas.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/native-schemas.txt",
+      "byteLength": 221,
+      "sha256": "5adeebee5e2e2bf680443cb368e523017e7e1703e6b2ca717172d9046bfcb483",
+      "counts": {}
+    },
+    {
+      "id": "candidate",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/build-ap23k3-candidate.ts",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/candidate.txt",
+      "byteLength": 203,
+      "sha256": "15041c8d860e7e9de63f9c6cd2065b45729c73e2245d3041cce55c7d361cde1f",
+      "counts": {}
+    },
+    {
+      "id": "native-references",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/check-ap23k3-references.ts",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/native-references.txt",
+      "byteLength": 257,
+      "sha256": "af3cec0991780a107dff8bdcb60d6870e97a8e741243bed2dc7688ef664a0f1f",
+      "counts": {}
+    },
+    {
+      "id": "inherited-references",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/check-ap23k3-inherited-references.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/inherited-references.txt",
+      "byteLength": 335,
+      "sha256": "f69df1d876bbf531763e23e506c28d16c377343e9eea01db6ae721a44b610642",
+      "counts": {}
+    },
+    {
+      "id": "product-regression",
+      "command": "node",
+      "args": [
+        "scripts/run-standard-tests.mjs",
+        "product"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/product-regression.txt",
+      "byteLength": 784823,
+      "sha256": "0d6916cad604a34d5ee39d04e8fbcd0fdd466e3cdbbf7b374805cf849aae1e9d",
+      "counts": {
+        "tests": 3379,
+        "pass": 3379,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "host-lifecycle",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "tests/hosts/ap23e3-spfx-host.test.ts",
+        "tests/hosts/ap23f3-spfx-host.test.ts",
+        "tests/hosts/ap23g3-spfx-host.test.ts",
+        "tests/hosts/ap23h3-spfx-host.test.ts",
+        "tests/hosts/ap23i3-spfx-host.test.ts",
+        "tests/hosts/ap23j3-spfx-host.test.ts",
+        "tests/hosts/ap23k3-spfx-host.test.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/host-lifecycle.txt",
+      "byteLength": 18080,
+      "sha256": "034ba09f78d4f5bec4cc26569db0fc130397532383d90c26f35a198c89ae01a6",
+      "counts": {
+        "tests": 70,
+        "pass": 70,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "actual-web-bundle",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "--test",
+        "--test-timeout=900000",
+        "tests/public-app/ap23k3-build.test.ts"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/actual-web-bundle.txt",
+      "byteLength": 9613,
+      "sha256": "74bed75edec53a1cdf29afc24a7d736fe9e38f85977681a2a25875acd56225dd",
+      "counts": {
+        "tests": 32,
+        "pass": 32,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "independent-native",
+      "command": ".venv/bin/python",
+      "args": [
+        "scripts/check_ap23k3_independent.py",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/independent-native.txt",
+      "byteLength": 4479,
+      "sha256": "cc41f2414a759e06e18048907562a07be627fcdb9224b274b84777b704835ba0",
+      "counts": {}
+    },
+    {
+      "id": "independent-contract",
+      "command": ".venv/bin/python",
+      "args": [
+        "tests/data/test_ap23k3_contract.py"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/independent-contract.txt",
+      "byteLength": 115,
+      "sha256": "0ba71d10e6749be2fc0dbf87152c04e27aec00048c22b10a7a2ca0d6952a42c5",
+      "counts": {}
+    },
+    {
+      "id": "k2-archive",
+      "command": "node",
+      "args": [
+        "scripts/archive-ap23k2-acceptance.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/k2-archive.txt",
+      "byteLength": 303,
+      "sha256": "314f7966f8a858d1c7f2a00b3dd660e619770cf1917b18fd9e9a7c76058e8b73",
+      "counts": {}
+    },
+    {
+      "id": "governance",
+      "command": "node",
+      "args": [
+        "--test",
+        "tests/governance/ap23k2-acceptance.test.mjs",
+        "tests/governance/ap23k3-preservation.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/governance.txt",
+      "byteLength": 14925,
+      "sha256": "9db339a6e638b64cfbfbcbeaa88854d8b3c493266052c87c9feb0d56bb0e891a",
+      "counts": {
+        "tests": 90,
+        "pass": 90,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "id": "web-build",
+      "command": "node",
+      "args": [
+        "scripts/build-ap23k3-public.mjs"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/web-build.txt",
+      "byteLength": 135,
+      "sha256": "8e7c384c5652235e4abad1dd7ef8bb332a8bb657182ef59c2ccf7e8bee1af950",
+      "counts": {}
+    },
+    {
+      "id": "preservation-after",
+      "command": "node",
+      "args": [
+        "scripts/check-ap23k3-preservation.mjs",
+        "--write"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/preservation-after.txt",
+      "byteLength": 77289,
+      "sha256": "48afc5681c445d0daf3f03b4314a6b261a6c269076f79ddbb6398c069d36a88d",
+      "counts": {}
+    },
+    {
+      "id": "whitespace",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "outputs/ap23k3-2026-10-27/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": {}
+    }
+  ]
+}

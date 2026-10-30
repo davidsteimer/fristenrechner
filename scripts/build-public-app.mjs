@@ -11,7 +11,7 @@ import { browserGlobalsPlugin } from './browser-globals-plugin.mjs';
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const publicSourceDirectory = resolve(repositoryRoot, 'public-app');
 const candidateName = process.env.FRISTENRECHNER_DATA_CANDIDATE;
-if (candidateName && !['ap17c', 'ap18c', 'ap19c3', 'ap22c3', 'ap21', 'ap23d3', 'ap23e3'].includes(candidateName)) throw new Error('Unbekannter lokaler Datenkandidat.');
+if (candidateName && !['ap17c', 'ap18c', 'ap19c3', 'ap22c3', 'ap21', 'ap23d3', 'ap23e3', 'ap23f3', 'ap23g3', 'ap23h3', 'ap23i3', 'ap23j3', 'ap23k3', 'ap23l3', 'ap23m3', 'r10-u1'].includes(candidateName)) throw new Error('Unbekannter lokaler Datenkandidat.');
 const isCandidate = Boolean(candidateName);
 const entryName = isCandidate ? `${candidateName}-main.tsx` : 'main.tsx';
 export const publicOutputDirectory = resolve(repositoryRoot, isCandidate ? `.work/public-${candidateName}` : '.work/public-app');
@@ -110,13 +110,21 @@ export async function buildPublicApp() {
       resolve(publicOutputDirectory, 'build-manifest.json'),
       `${JSON.stringify({
         application: 'fristenrechner-public',
-        version: isCandidate ? `${candidateName}-local-candidate` : '0.9.0',
-        dataReleaseId: candidateName === 'ap23e3' ? '2026-10-18-ap23e3-reference.1'
+        version: isCandidate ? `${candidateName}-local-candidate` : '0.10.0',
+        dataReleaseId: ['ap23m3', 'r10-u1'].includes(candidateName) ? '2026-10-28-ap23m3-candidate.1'
+          : candidateName === 'ap23l3' ? '2026-10-27-ap23l3-candidate.1'
+          : candidateName === 'ap23k3' ? '2026-10-27-ap23k3-candidate.1'
+          : candidateName === 'ap23j3' ? '2026-10-27-ap23j3-candidate.1'
+          : candidateName === 'ap23i3' ? '2026-10-22-ap23i3-candidate.1'
+          : candidateName === 'ap23h3' ? '2026-10-22-ap23h3-candidate.1'
+          : candidateName === 'ap23g3' ? '2026-10-22-ap23g3-candidate.1'
+          : candidateName === 'ap23f3' ? '2026-10-22-ap23f3-candidate.1'
+          : candidateName === 'ap23e3' ? '2026-10-18-ap23e3-reference.1'
           : candidateName === 'ap23d3' ? '2026-10-15-ap23d2-reference.1'
           : ['ap22c3', 'ap21'].includes(candidateName) ? '2026-10-08-ap22c3-reference.1'
           : candidateName === 'ap19c3' ? '2026-09-28-ap19c3-candidate.1'
           : candidateName === 'ap18c' ? '2026-09-22-ap18c-candidate.1'
-          : candidateName === 'ap17c' ? '2026-09-12-ap17c-candidate.1' : '2026-10-18-mvp-09-approved.1',
+          : candidateName === 'ap17c' ? '2026-09-12-ap17c-candidate.1' : '2026-10-28-mvp-010-approved.1',
         ...(isCandidate ? { status: 'candidate', deployable: false } : {}),
         canonicalUrl: 'https://www.steimer.ch/fristenrechner/',
         basePath: '/fristenrechner/',

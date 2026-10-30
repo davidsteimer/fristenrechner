@@ -15,6 +15,17 @@ import releaseManifestV6Schema from './schemas/release-manifest-v6.schema.json';
 import releaseManifestV7Schema from './schemas/release-manifest-v7.schema.json';
 import releaseManifestV8Schema from './schemas/release-manifest-v8.schema.json';
 import releaseManifestV9Schema from './schemas/release-manifest-v9.schema.json';
+import releaseManifestV10Schema from './schemas/release-manifest-v10.schema.json';
+import releaseManifestV11Schema from './schemas/release-manifest-v11.schema.json';
+import releaseManifestV12Schema from './schemas/release-manifest-v12.schema.json';
+import releaseManifestV13Schema from './schemas/release-manifest-v13.schema.json';
+import releaseManifestV15Schema from './schemas/release-manifest-v15.schema.json';
+import {createFormat15CalculationData} from '../product/core/format15CalculationData';
+import releaseManifestV16Schema from './schemas/release-manifest-v16.schema.json';
+import {createFormat16CalculationData} from '../product/core/format16CalculationData';
+import releaseManifestV17Schema from './schemas/release-manifest-v17.schema.json';
+import {createFormat17CalculationData} from '../product/core/format17CalculationData';
+import releaseManifestV14Schema from './schemas/release-manifest-v14.schema.json';
 import socialProcedureCatalogSchema from './schemas/social-procedure-catalog.schema.json';
 import socialProcedureCatalogV2Schema from './schemas/social-procedure-catalog-v2.schema.json';
 import specialRegimeCatalogSchema from './schemas/special-regime-catalog-v2.schema.json';
@@ -29,6 +40,11 @@ import {
   createFormat7CalculationData,
   createFormat8CalculationData,
   createFormat9CalculationData,
+  createFormat10CalculationData,
+  createFormat11CalculationData,
+  createFormat12CalculationData,
+  createFormat13CalculationData,
+  createFormat14CalculationData,
   generateCalendarFromRules,
   type CalendarRuleSet
 } from '../product/core';
@@ -141,6 +157,14 @@ export class ReleaseValidator {
   private readonly manifestV7Validator: ValidateFunction;
   private readonly manifestV8Validator: ValidateFunction;
   private readonly manifestV9Validator: ValidateFunction;
+  private readonly manifestV10Validator: ValidateFunction;
+  private readonly manifestV11Validator: ValidateFunction;
+  private readonly manifestV12Validator: ValidateFunction;
+  private readonly manifestV13Validator: ValidateFunction;
+  private readonly manifestV14Validator: ValidateFunction;
+  private readonly manifestV15Validator: ValidateFunction;
+  private readonly manifestV16Validator: ValidateFunction;
+  private readonly manifestV17Validator: ValidateFunction;
   private readonly socialProcedureCatalogValidator: ValidateFunction;
   private readonly socialProcedureCatalogV2Validator: ValidateFunction;
   private readonly legalProfileValidator: ValidateFunction;
@@ -172,6 +196,14 @@ export class ReleaseValidator {
     addFormats(format8Ajv, ['date', 'uri']);
     this.manifestV8Validator = format8Ajv.compile(releaseManifestV8Schema);
     this.manifestV9Validator = format8Ajv.compile(releaseManifestV9Schema);
+    this.manifestV10Validator = format8Ajv.compile(releaseManifestV10Schema);
+    this.manifestV11Validator = format8Ajv.compile(releaseManifestV11Schema);
+    this.manifestV12Validator = format8Ajv.compile(releaseManifestV12Schema);
+    this.manifestV13Validator = format8Ajv.compile(releaseManifestV13Schema);
+    this.manifestV14Validator = format8Ajv.compile(releaseManifestV14Schema);
+    this.manifestV15Validator = format8Ajv.compile(releaseManifestV15Schema);
+    this.manifestV16Validator = format8Ajv.compile(releaseManifestV16Schema);
+    this.manifestV17Validator = format8Ajv.compile(releaseManifestV17Schema);
     this.legalProfileValidator = ajv.compile(legalProfileSchema);
     this.calendarValidator = ajv.compile(calendarSchema);
     this.calendarRulesValidator = ajv.compile(calendarRulesSchema);
@@ -185,6 +217,35 @@ export class ReleaseValidator {
   public async validateProvider(provider: IReleaseProvider): Promise<IValidatedRelease> {
     const manifestBytes = await provider.fetchBytes('manifest.json');
     const manifestValue = decodeJson(manifestBytes, 'Manifest');
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '17.0.0') {
+      return this.validateFormat17Provider(provider, manifestBytes, manifestValue);
+    }
+    if (isObject(manifestValue) && manifestValue.formatVersion === '16.0.0') {
+      return this.validateFormat16Provider(provider, manifestBytes, manifestValue);
+    }
+    if (isObject(manifestValue) && manifestValue.formatVersion === '15.0.0') {
+      return this.validateFormat15Provider(provider, manifestBytes, manifestValue);
+    }
+    if (isObject(manifestValue) && manifestValue.formatVersion === '14.0.0') {
+      return this.validateFormat14Provider(provider, manifestBytes, manifestValue);
+    }
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '13.0.0') {
+      return this.validateFormat13Provider(provider, manifestBytes, manifestValue);
+    }
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '12.0.0') {
+      return this.validateFormat12Provider(provider, manifestBytes, manifestValue);
+    }
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '11.0.0') {
+      return this.validateFormat11Provider(provider, manifestBytes, manifestValue);
+    }
+
+    if (isObject(manifestValue) && manifestValue.formatVersion === '10.0.0') {
+      return this.validateFormat10Provider(provider, manifestBytes, manifestValue);
+    }
 
     if (isObject(manifestValue) && manifestValue.formatVersion === '9.0.0') {
       return this.validateFormat9Provider(provider, manifestBytes, manifestValue);
@@ -349,6 +410,284 @@ export class ReleaseValidator {
       { mode: 'approved' });
     return {
       releaseId: runtime.data.releaseId, formatVersion: '9.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat10Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // Operating providers reject local candidates before any component fetch.
+    assertSchema(this.manifestV10Validator, value, 'Format-10-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 42) {
+      throw new Error('Format 10 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat10CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '10.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat11Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // Candidates are rejected before component fetching and cache activation.
+    assertSchema(this.manifestV11Validator, value, 'Format-11-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 42) {
+      throw new Error('Format 11 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat11CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '11.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat12Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // Local candidates never acquire operating authority through a provider.
+    // Reject the manifest before following any supplied component path.
+    assertSchema(this.manifestV12Validator, value, 'Format-12-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 44) {
+      throw new Error('Format 12 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat12CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '12.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat13Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // The operating host never accepts local reference or synthetic URL flags.
+    // Candidate rejection precedes all component requests and cache activation.
+    assertSchema(this.manifestV13Validator, value, 'Format-13-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 44) {
+      throw new Error('Format 13 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat13CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '13.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat14Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // The operating host never accepts local reference or synthetic URL flags.
+    // Candidate rejection precedes all component requests and cache activation.
+    assertSchema(this.manifestV14Validator, value, 'Format-14-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 44) {
+      throw new Error('Format 14 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat14CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '14.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat15Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // The operating host never accepts local reference or synthetic URL flags.
+    // Candidate rejection precedes all component requests and cache activation.
+    assertSchema(this.manifestV15Validator, value, 'Format-15-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 44) {
+      throw new Error('Format 15 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat15CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '15.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat16Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // Local approval probes never widen the operating provider contract.
+    // Reject a candidate before requesting any component or activating a cache.
+    assertSchema(this.manifestV16Validator, value, 'Format-16-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 44) {
+      throw new Error('Format 16 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat16CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '16.0.0',
+      coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
+      profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
+      specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],
+      holidayCatalogIds: [...(manifest.holidayCatalogIds ?? [])],
+      socialProcedureCatalogIds: [...(manifest.socialProcedureCatalogIds ?? [])],
+      administrativeProcedureCatalogIds: [...(manifest.administrativeProcedureCatalogIds ?? [])],
+      manifestSha256: await sha256(manifestBytes), manifestBytes, artifacts,
+      validatedAt: new Date().toISOString()
+    };
+  }
+
+  private async validateFormat17Provider(
+    provider: IReleaseProvider,
+    manifestBytes: Uint8Array,
+    value: JsonObject
+  ): Promise<IValidatedRelease> {
+    // A local reference or a synthetic URL flag never grants operating authority.
+    // Reject candidates before fetching components or activating any cache.
+    assertSchema(this.manifestV17Validator, value, 'Format-17-Manifest');
+    if (value.releaseStatus !== 'approved' || !Array.isArray(value.artifacts)
+      || value.artifacts.length !== 44) {
+      throw new Error('Format 17 verlangt einen freigegebenen, vollständigen Release.');
+    }
+    const manifest = value as unknown as IReleaseManifest;
+    this.assertManifestContract(manifest);
+    const artifacts = await Promise.all(manifest.artifacts.map(async descriptor => {
+      const bytes = await provider.fetchBytes(descriptor.path);
+      return { descriptor, bytes, parsed: decodeJson(bytes, descriptor.path) };
+    }));
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const runtime = createFormat17CalculationData(decoder.decode(manifestBytes),
+      new Map(artifacts.map(artifact => [artifact.descriptor.path, decoder.decode(artifact.bytes)])),
+      { mode: 'approved' });
+    return {
+      releaseId: runtime.data.releaseId, formatVersion: '17.0.0',
       coverageFrom: manifest.coverage.from, coverageTo: manifest.coverage.to,
       profileIds: [...manifest.profileIds], calendarIds: [...manifest.calendarIds],
       specialRegimeCatalogIds: [...(manifest.specialRegimeCatalogIds ?? [])],

@@ -2,7 +2,7 @@
 // AP23D2: preferences are visible choices, never case facts or release authority.
 import type { CalculationData } from '../core';
 import type { AdministrativeDeadlineInput } from '../core/administrativeDeadline';
-import { getVerifiedAdministrativeData, type ParsedFormat8Data } from '../core/releaseFormat8';
+import { getVerifiedAdministrativeContext, type ParsedAdministrativeContext } from '../core/administrativeContext';
 import { canonicalSocialJson } from '../core/socialCatalog';
 import type { Locale } from './i18n';
 import { DEFAULTS_STORAGE_KEY } from './defaults';
@@ -15,7 +15,7 @@ export type AdministrativeProcedureSelection =
   | AdministrativeDeadlineInput['selection'];
 export interface AdministrativeDefaultsContext {
   readonly legacyData: CalculationData;
-  readonly administrativeData?: ParsedFormat8Data | undefined;
+  readonly administrativeData?: ParsedAdministrativeContext | undefined;
 }
 export interface AdministrativePreferences {
   readonly locale: Locale;
@@ -55,6 +55,13 @@ function record(value: unknown): value is Record<string, unknown> {
 }
 function same(left: unknown, right: unknown): boolean { return canonicalSocialJson(left) === canonicalSocialJson(right); }
 
+/** Stable selection is a preference, a current actual duration is not. */
+export function requiresCurrentAdministrativeDuration(path?: { readonly duration: { readonly kind: string }; readonly contractFamily?: string }): boolean {
+  return path?.duration.kind === 'concretisedStatutoryDays'
+    || (path?.contractFamily === 'qualifiedDayProcedureV9' || path?.contractFamily === 'qualifiedDayProcedureV10')
+      && path.duration.kind !== 'statutoryDays';
+}
+
 export function emptyAdministrativePreferences(): AdministrativePreferences {
   return { locale: 'de', authorityCode: '', deadlineDays: 10, deliveryMethod: '', procedureSelection: null,
     legacySelectors: {}, vrpgSelection: { ...EMPTY_VRPG_SELECTION }, calendarPreference: { role: '', canton: '' } };
@@ -70,7 +77,7 @@ function selection(context: AdministrativeDefaultsContext, value: unknown, autho
   if (value.kind !== 'cantonalAdministrative'
     || !Object.keys(value).every(key => ['kind', 'lawId', 'pathId', 'revision', 'stage'].includes(key))) return null;
   // Serializing a context or catalog does not create an issued reader capability.
-  const verified = getVerifiedAdministrativeData(context.administrativeData);
+  const verified = getVerifiedAdministrativeContext(context.administrativeData);
   const law = verified?.catalog.laws.find(item => item.lawId === value.lawId && item.canton === authority);
   const path = verified?.catalog.paths.find(item => item.lawId === law?.lawId && item.pathId === value.pathId
     && item.revision === value.revision && item.stages.some(stage => stage === value.stage));
@@ -88,6 +95,10 @@ export function sanitizeAdministrativePreferences(context: AdministrativeDefault
   const authorityCode = typeof raw.authorityCode === 'string' && (CANTONS.has(raw.authorityCode) || raw.authorityCode === 'CH')
     ? raw.authorityCode : '';
   const procedureSelection = selection(context, raw.procedureSelection, authorityCode);
+  // Keep V5's generic numeric preference shape, never the current legal shortening.
+  // The app always restores this kind with an empty current duration field.
+  const currentDurationRequired = procedureSelection?.kind === 'cantonalAdministrative'
+    && requiresCurrentAdministrativeDuration(getVerifiedAdministrativeContext(context.administrativeData)?.catalog.paths.find(path => path.pathId === procedureSelection.pathId));
   const profileId = procedureSelection?.kind === 'legacyProfile' ? procedureSelection.profileId : '';
   const profile = context.legacyData.profiles.get(profileId);
   const rawSelectors = record(raw.legacySelectors) ? raw.legacySelectors : {};
@@ -113,7 +124,7 @@ export function sanitizeAdministrativePreferences(context: AdministrativeDefault
   const canton = calendarEnabled && typeof calendar.canton === 'string' && CANTONS.has(calendar.canton) ? calendar.canton : '';
   return {
     locale: raw.locale === 'fr' ? 'fr' : 'de', authorityCode,
-    deadlineDays: typeof raw.deadlineDays === 'number' && Number.isInteger(raw.deadlineDays)
+    deadlineDays: currentDurationRequired ? emptyAdministrativePreferences().deadlineDays : typeof raw.deadlineDays === 'number' && Number.isInteger(raw.deadlineDays)
       && raw.deadlineDays >= 1 && raw.deadlineDays <= 365 ? raw.deadlineDays : 10,
     deliveryMethod, procedureSelection, legacySelectors,
     vrpgSelection: profileId === 'vrpg-be' ? sanitizeVrpgSelection(context.legacyData, raw.vrpgSelection) : { ...EMPTY_VRPG_SELECTION },
@@ -127,7 +138,7 @@ function invalidSelection(context: AdministrativeDefaultsContext, raw: unknown, 
   }
   if (clean.procedureSelection?.kind === 'cantonalAdministrative') {
     const selected = clean.procedureSelection;
-    const duration = getVerifiedAdministrativeData(context.administrativeData)?.catalog.paths.find(path => path.pathId === selected.pathId)?.duration;
+    const duration = getVerifiedAdministrativeContext(context.administrativeData)?.catalog.paths.find(path => path.pathId === selected.pathId)?.duration;
     if (duration?.kind === 'statutoryDays' && clean.deadlineDays !== duration.value) return 'unsupportedDuration';
   }
   return undefined;

@@ -1,0 +1,37 @@
+{
+  "workPackage": "AP23K3",
+  "kind": "development-partial-not-final-verification",
+  "status": "deliberately-interrupted",
+  "finalPublicAppGatePassed": false,
+  "reason": "Repeated full native browser bootstraps were too expensive. Superseded by one genuine browser session with normal GUI reset. Fresh DOMs retained for defaults rehydration. No product assertions suppressed.",
+  "earlierDevelopmentRuns": [
+    {
+      "observedSuccessfulSubtests": 7,
+      "completeRun": false,
+      "termination": "explicit SIGTERM of own runner 40043"
+    },
+    {
+      "observedSuccessfulSubtests": 10,
+      "completeRun": false,
+      "termination": "explicit SIGTERM of own runner 40555"
+    }
+  ],
+  "lastOutputChunks": [
+    {
+      "chunk_id": "bde39d",
+      "wall_time_seconds": 0.000008125,
+      "exit_code": 1,
+      "original_token_count": 71,
+      "output": "    # Subtest: AP23K3 actual minified bundle calculates the qualified AG execution case with court suspension\n    ok 7 - AP23K3 actual minified bundle calculates the qualified AG execution case with court suspension\n      ---\n      duration_ms: 29595.014\n      type: 'test'\n      ...\n"
+    },
+    {
+      "chunk_id": "bb850a",
+      "wall_time_seconds": 0.000007917,
+      "exit_code": 1,
+      "original_token_count": 363,
+      "output": "    # Subtest: AP23K3 actual minified browser bundle calculates AR five-day execution and blocks AR-O1 after fresh court qualification\n    ok 6 - AP23K3 actual minified browser bundle calculates AR five-day execution and blocks AR-O1 after fresh court qualification\n      ---\n      duration_ms: 26420.470791\n      type: 'test'\n      ...\n    # Subtest: AP23K3 actual minified bundle calculates the qualified AG execution case with court suspension\n    ok 7 - AP23K3 actual minified bundle calculates the qualified AG execution case with court suspension\n      ---\n      duration_ms: 24006.029666\n      type: 'test'\n      ...\n    # Subtest: AP23K3 actual minified bundle distinguishes SG document access and interim measures without redundant document inputs\n    ok 8 - AP23K3 actual minified bundle distinguishes SG document access and interim measures without redundant document inputs\n      ---\n      duration_ms: 21813.45475\n      type: 'test'\n      ...\n    # Subtest: AP23K3 actual minified bundle blocks the qualified ZH F1-O1 collision\n    ok 9 - AP23K3 actual minified bundle blocks the qualified ZH F1-O1 collision\n      ---\n      duration_ms: 15142.8675\n      type: 'test'\n      ...\n    # Subtest: AP23K3 keeps approved entries, default pin and existing package version untouched\n    ok 10 - AP23K3 keeps approved entries, default pin and existing package version untouched\n      ---\n      duration_ms: 3.248666\n      type: 'test'\n      ...\n"
+    }
+  ],
+  "notAnAttestationOfFinalTestBytes": true
+}
+

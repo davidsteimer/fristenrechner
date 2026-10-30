@@ -1,0 +1,1989 @@
+{
+  "workPackage": "AP23H3",
+  "status": "local-technical-verification-passed-awaiting-human-acceptance",
+  "head": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "professionalTechnicalAcceptance": false,
+  "sourceReleaseApproved": false,
+  "calendarExportEnabled": false,
+  "commitCreated": false,
+  "sourcePushPerformed": false,
+  "installationPerformed": false,
+  "regularIntermediateRelease": false,
+  "operatingPackagePreserved": true,
+  "protectedFiles": 1810,
+  "separatelyBoundRegistryChanges": 2,
+  "candidateManifest": {
+    "path": "data/candidates/2026-10-22-ap23h3/manifest.json",
+    "byteLength": 27398,
+    "sha256": "14f60a83ed2f13e3f176f303e444ea43a606bae6980033e3d875093c63a5d429"
+  },
+  "sourceBindings": [
+    {
+      "path": "README.md",
+      "byteLength": 27619,
+      "sha256": "e1869288e0d2fc2bdf1ee484d15fd5d0786d93fa3c4136a6698b01c1c931fb02"
+    },
+    {
+      "path": "docs/README.md",
+      "byteLength": 43724,
+      "sha256": "c29bd3315cbb19938ad177f56ab993bd83d9eae6f488af451e28fab63f0ad2ad"
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "byteLength": 26132,
+      "sha256": "4bbeea79219fd20d8ea05ec93c223c2486afc5cec8e7104d7d8aeb5955669ffd"
+    },
+    {
+      "path": "docs/architektur/verwaltungsintegration-ap23h3.md",
+      "byteLength": 15118,
+      "sha256": "c569a1f17f68051f607d40f29789d46854a393385688bd6bab7171d0cc2892b5"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-037-beschluss.md",
+      "byteLength": 1568,
+      "sha256": "910e9a661254add07798b50588ab4c7ef7d5123a8d971415f8efe171718d4064"
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "byteLength": 26303,
+      "sha256": "661fd6c8cb35b1cc5245bc99a253f812fedf8382f4468e0963615b39d7de5583"
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "byteLength": 30639,
+      "sha256": "11ad1306edadce38d1a2baa1c6409d40a2b0533c0b53a1f797ab18594c3cb8c3"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap23h2.md",
+      "byteLength": 5737,
+      "sha256": "8bb39c87e39f6557c3df3fd72aee72c13ab7efb9f06069a03ce353274a9affe5"
+    },
+    {
+      "path": "docs/planung/fortsetzung-verwaltungsverfahren-mvp09.md",
+      "byteLength": 13644,
+      "sha256": "2652919ac838a4f3f12c5921e93c18d8e379146b17c8941809b31c9a473493fa"
+    },
+    {
+      "path": "docs/planung/schweizausbau-nach-mvp09.md",
+      "byteLength": 9795,
+      "sha256": "b9fd8ff46611dd4c1e34309afb80ac31fba80127c31113ceefe054960dba27f0"
+    },
+    {
+      "path": "package.json",
+      "byteLength": 14017,
+      "sha256": "4c394702e973dda9a764ac23217761f098feadf25302dc5c45cc554b84893329"
+    },
+    {
+      "path": "schemas/administrative-procedure-catalog-v5.schema.json",
+      "byteLength": 156894,
+      "sha256": "dcd4a565042d007daab3e3f9f9ab6eb0d6302142a72f25fcb557203afc000321"
+    },
+    {
+      "path": "schemas/implementation/ap23h3/local-reference-manifest-v12.schema.json",
+      "byteLength": 13761,
+      "sha256": "a007c3d6478747a68fe486b5b84e433223e0b50dca5c36ec39bd7f69cc42c296"
+    },
+    {
+      "path": "schemas/release-manifest-v12.schema.json",
+      "byteLength": 13683,
+      "sha256": "5d22d17489ca822ac2275607231f5f94a4508a783b5417a7e9f4965e3f0b3824"
+    },
+    {
+      "path": "scripts/archive-ap23h2-acceptance.mjs",
+      "byteLength": 7599,
+      "sha256": "ab74778aa1f7675c996bccf4d9ef631f656201abbb1ca1b4d0854cdfcff809ba"
+    },
+    {
+      "path": "scripts/build-ap23h3-candidate.ts",
+      "byteLength": 14683,
+      "sha256": "54077be85b42260bb72e071a41e0d331d20694485f5298c28dc817f113a94e3a"
+    },
+    {
+      "path": "scripts/build-ap23h3-public.mjs",
+      "byteLength": 2183,
+      "sha256": "8f1a0829e50377b22673c97d39e5a71fdaba39a093ec3a7301e8f0c652f6da1f"
+    },
+    {
+      "path": "scripts/build-ap23h3-schemas.mjs",
+      "byteLength": 3414,
+      "sha256": "964553e47973543152a5cd5199a1719f454edc7217f89e739f68ad70d16ce329"
+    },
+    {
+      "path": "scripts/build-ap23h3-spfx.mjs",
+      "byteLength": 4570,
+      "sha256": "e73831674a91c326f819d43c925c95388934e77fa3ac2cf991518e32f4492d85"
+    },
+    {
+      "path": "scripts/build-public-app.mjs",
+      "byteLength": 6359,
+      "sha256": "51b16e02c6c79f91221bdf040d738e34c39b183f36ecf1b84f5e7ff44e83bde8"
+    },
+    {
+      "path": "scripts/check-ap23h3-browser-evidence.mjs",
+      "byteLength": 2731,
+      "sha256": "ccfc040aae23ae7443c2bdb557474831da5a7029a491134e2570d234eb32033c"
+    },
+    {
+      "path": "scripts/check-ap23h3-export.mjs",
+      "byteLength": 4025,
+      "sha256": "d75480b2ef13a7c79a1256b0f004bdd1ff4aec8956950b55ea9cc2ee0bb880b6"
+    },
+    {
+      "path": "scripts/check-ap23h3-package.mjs",
+      "byteLength": 1543,
+      "sha256": "e5203d83951519097dee7e3857448984049ecf9cca847eb001f57320bf2b38a9"
+    },
+    {
+      "path": "scripts/check-ap23h3-preservation.mjs",
+      "byteLength": 4441,
+      "sha256": "0d3d15ac79f826adccf69f8fe484cda52cf7ddf64b5a40fac412f4e0b3408688"
+    },
+    {
+      "path": "scripts/check-ap23h3-review.mjs",
+      "byteLength": 5210,
+      "sha256": "7d351de8b9095c5cfcb9745b1ebabda1fa0d4ea2397b8eb1d1e0a8a10f5dcc88"
+    },
+    {
+      "path": "scripts/check-ap23h3.mjs",
+      "byteLength": 3316,
+      "sha256": "3326506907624019b7d57340eb90878dde4ee6cb0f6ffcd2343ac249150ade9a"
+    },
+    {
+      "path": "scripts/finalize-ap23h3.mjs",
+      "byteLength": 11278,
+      "sha256": "4c5df97f644e7aaedef31e07428c8b677a5f8dc558efdbddc143625073597457"
+    },
+    {
+      "path": "scripts/prepare-ap23h3.mjs",
+      "byteLength": 5077,
+      "sha256": "c69215d39ea5896afb3176f4c6a7eed7b806d1c5241bf09827b2e76677a36659"
+    },
+    {
+      "path": "spfx/scripts/audit-product-css.mjs",
+      "byteLength": 875,
+      "sha256": "be84dfe6419b724b8f04cd5d89c264a1066aaaf3e53764c3ae5595b458c56109"
+    },
+    {
+      "path": "spfx/scripts/sync-product-source.mjs",
+      "byteLength": 1758,
+      "sha256": "655604653bcd57c2d4b304f86df7c2e83ff894feba00d1cfddd870d5b48f99cb"
+    },
+    {
+      "path": "spfx/scripts/sync-schemas.mjs",
+      "byteLength": 3216,
+      "sha256": "6d01f6bc0f3734b3d3cfd6f4fdb970a39cf45ffd9e8d3e4ace743822fcf9cc4b"
+    },
+    {
+      "path": "spfx/scripts/verify-github-provider.ts",
+      "byteLength": 954,
+      "sha256": "305cde0464010559265ebe477fef0399e2af6a7061ae24fdd52db92601f6656b"
+    },
+    {
+      "path": "spfx/src/core/ReleaseService.ts",
+      "byteLength": 3470,
+      "sha256": "395567382aaa848631504d8ce80e463624af249fa10a59fb1e97914c6de0d3b8"
+    },
+    {
+      "path": "spfx/src/core/ReleaseValidator.ts",
+      "byteLength": 34282,
+      "sha256": "caedbd29bd4bff4782b4ca7f77ffb4c58c9d7e79c0db6b4b0b114e5f4e44f337"
+    },
+    {
+      "path": "spfx/src/core/ValidatedReleaseStore.ts",
+      "byteLength": 5864,
+      "sha256": "9f866b06263be118ee3d6dccd1392318cfbe32e42e12b9eacf48cc48caf3bb9e"
+    },
+    {
+      "path": "spfx/src/core/cacheIdentity.ts",
+      "byteLength": 1960,
+      "sha256": "67637d7e250ed45559558eca712d06800b281cc891b66554d660953817814878"
+    },
+    {
+      "path": "spfx/src/core/config.ts",
+      "byteLength": 233,
+      "sha256": "539af38ddac5531b53634beffbf11c5b1a5bbf87d225bcae27edd366eeb10cd4"
+    },
+    {
+      "path": "spfx/src/core/path.ts",
+      "byteLength": 823,
+      "sha256": "faf7d1c368e35c73ba9eb619dbd14da80d786564ad821561a056fc3aac6a0598"
+    },
+    {
+      "path": "spfx/src/core/providers/GitHubReleaseProvider.ts",
+      "byteLength": 1206,
+      "sha256": "b2caab684eda82b43466775ce891cbb63f5358cc94bb775deac60c95e0d4990d"
+    },
+    {
+      "path": "spfx/src/core/providers/SharePointReleaseProvider.ts",
+      "byteLength": 1978,
+      "sha256": "23b9842514042c8b645fefe1427a762c6048b8c0324f12157ae9b7c813737ee6"
+    },
+    {
+      "path": "spfx/src/core/providers/sharePointPath.ts",
+      "byteLength": 2334,
+      "sha256": "467787abac490f3e16ab8770a4a36b000a47ed905f2000b2c0fae12534d71030"
+    },
+    {
+      "path": "spfx/src/core/schemas/administrative-procedure-catalog-v2.schema.json",
+      "byteLength": 45568,
+      "sha256": "cbedc3757fd1e5919b1c8c2a4969597e697df56bcf147c14fa6b81e30cd161e0"
+    },
+    {
+      "path": "spfx/src/core/schemas/administrative-procedure-catalog-v3.schema.json",
+      "byteLength": 65226,
+      "sha256": "b3868f83e8f0e7a32346dc66965b7a69fe26691f133cf068390de1e9b5fde0be"
+    },
+    {
+      "path": "spfx/src/core/schemas/administrative-procedure-catalog-v4.schema.json",
+      "byteLength": 93808,
+      "sha256": "8e32e989e36fbecdf361c93e06f1fbe1d61719d551580cf38dbdd6211f070d12"
+    },
+    {
+      "path": "spfx/src/core/schemas/administrative-procedure-catalog-v5.schema.json",
+      "byteLength": 156894,
+      "sha256": "dcd4a565042d007daab3e3f9f9ab6eb0d6302142a72f25fcb557203afc000321"
+    },
+    {
+      "path": "spfx/src/core/schemas/calendar-rules-v2.schema.json",
+      "byteLength": 12885,
+      "sha256": "a01a220c6df09cd932ca7407f0a04bad2217acb6e0a45dec06b9358926caca98"
+    },
+    {
+      "path": "spfx/src/core/schemas/calendar.schema.json",
+      "byteLength": 4242,
+      "sha256": "9f25cf222b0cf3ef758389736362ebf5c43cd857cd50e6c089c8f218fed096b2"
+    },
+    {
+      "path": "spfx/src/core/schemas/common.schema.json",
+      "byteLength": 4935,
+      "sha256": "a3616757f84b5f5ab5c2c671abf628e643303cb4c8ffd3afd01751b82f6ef1f8"
+    },
+    {
+      "path": "spfx/src/core/schemas/deadline-definition.schema.json",
+      "byteLength": 10112,
+      "sha256": "7d3a654a930624bb9b386dfb8ca38ca124f9967df8ecc3de07eb40a9110bae8c"
+    },
+    {
+      "path": "spfx/src/core/schemas/filing-profile.schema.json",
+      "byteLength": 5707,
+      "sha256": "f40ed45d6c12693163fb91d61539a4bb70bc950de5517e5e635cb7c31fabaa0a"
+    },
+    {
+      "path": "spfx/src/core/schemas/holiday-catalog-v1.schema.json",
+      "byteLength": 27593,
+      "sha256": "03af4aabdfcd34d9f73f14dc01322ce1c77ad34f45e47bddb63cb5f3b58db0a4"
+    },
+    {
+      "path": "spfx/src/core/schemas/legal-profile.schema.json",
+      "byteLength": 12886,
+      "sha256": "e1b87a82247f3f09c52aae1629e5a0d4db4de2dd6a493524746427073e2e6145"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v10.schema.json",
+      "byteLength": 13702,
+      "sha256": "e0826ed690f73c37a7e410070d6a5a9e716c0de01eb336d6152da9db8f0f38f8"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v11.schema.json",
+      "byteLength": 13683,
+      "sha256": "4afd02ea7701c1f747ee2def0cba7b012f36d405edbc72b6c5bb55f82f27a6a0"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v12.schema.json",
+      "byteLength": 13683,
+      "sha256": "5d22d17489ca822ac2275607231f5f94a4508a783b5417a7e9f4965e3f0b3824"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v5.schema.json",
+      "byteLength": 13074,
+      "sha256": "650e40b34b1a897d87c0e0ea67907b4c8c103ca31c93da63a8619df5252a6dd8"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v6.schema.json",
+      "byteLength": 13080,
+      "sha256": "c6ea5582d47db4fbc8fceec1819af2648c6aaaf1f9f169caf2e301d5f22b4825"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v7.schema.json",
+      "byteLength": 12255,
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v8.schema.json",
+      "byteLength": 13703,
+      "sha256": "65a8f8e63a013209b57d8802a4c1dc34760c861b8a5cd78b8fb0264aca13fd8a"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest-v9.schema.json",
+      "byteLength": 13693,
+      "sha256": "1b489a9cc4efad7751586c5f9bdfa198a0ea6396f4737db9c363e98089c12333"
+    },
+    {
+      "path": "spfx/src/core/schemas/release-manifest.schema.json",
+      "byteLength": 13826,
+      "sha256": "40dd8dc433fa8f56aa69b5d298faed87ccaf6b405e05004dcf4004bf838feb80"
+    },
+    {
+      "path": "spfx/src/core/schemas/social-procedure-catalog-v2.schema.json",
+      "byteLength": 27806,
+      "sha256": "16bf46bfe0eeb88fe4015800e903c9b749eb8bb69b74a4e4474f9f5aa0186203"
+    },
+    {
+      "path": "spfx/src/core/schemas/social-procedure-catalog.schema.json",
+      "byteLength": 26655,
+      "sha256": "d5474577cde47ab4dd3a7e28b2ba2cfd428db2f9ecd80999e3bfd007c1eb4aa0"
+    },
+    {
+      "path": "spfx/src/core/schemas/special-regime-catalog-v2.schema.json",
+      "byteLength": 10127,
+      "sha256": "1e326d5d70b788e866551e0f8e3252b2666006a96b463d9adc23d416e5af3324"
+    },
+    {
+      "path": "spfx/src/core/schemas/special-regime-catalog-v3.schema.json",
+      "byteLength": 5787,
+      "sha256": "50f8cb02b8e5b5bebffdb97594b9f3c51b89bb58b2ec26c487baea92f3a1854e"
+    },
+    {
+      "path": "spfx/src/core/types.ts",
+      "byteLength": 2910,
+      "sha256": "dcbd0a20d03b874bf5a64129b2b267762811a8b00ef3914007fd7803a0d3012f"
+    },
+    {
+      "path": "spfx/src/data/releases/2026-10-01-mvp-06-approved.1/calendars/be-public-holidays.json",
+      "byteLength": 9073,
+      "sha256": "6051094d6179f99276cb55cad0f88e562da02c2396dffcf213d0ac165807d121"
+    },
+    {
+      "path": "spfx/src/data/releases/2026-10-01-mvp-06-approved.1/calendars/ch-federal-calendar.json",
+      "byteLength": 7260,
+      "sha256": "c851d4839e06ad714aba988b6c92e9ae81c27a507cc004bf0f89046650a3c5c7"
+    },
+    {
+      "path": "spfx/src/declarations.d.ts",
+      "byteLength": 49,
+      "sha256": "1b1458ff3a56184a3402a82f61aceb5517dbc742303dbd34ee1d37547ebb4f92"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalog.ts",
+      "byteLength": 14208,
+      "sha256": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV2.ts",
+      "byteLength": 6043,
+      "sha256": "ca5b3fe7e7aae6e961142e8aa20520cddb1c9817ec058347962ed307622df4ff"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV3.ts",
+      "byteLength": 7616,
+      "sha256": "d0c2e28c0f43132d94bf9fa0ee053e3c01e35157d61a92894c5e7b04de7e399d"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV4.ts",
+      "byteLength": 5740,
+      "sha256": "253a6068933657b8ca4038fee30abb2a9ae0357c9fb25b86c0797f9d3ccc3bbe"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeCatalogV5.ts",
+      "byteLength": 5215,
+      "sha256": "2baf3741a99f079f71896d56040910279b9b3051488c71c56d81f920a0bf777e"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeContext.ts",
+      "byteLength": 1517,
+      "sha256": "24fc74014ff6f1b79b8068bb5466241a04df10be01004eb1e89399c18046af59"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeDeadline.ts",
+      "byteLength": 26400,
+      "sha256": "d8e35cdf30243faf2d53f7b21923e285a2372b3a6959a33d971faa82fe61fe69"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypes.ts",
+      "byteLength": 8263,
+      "sha256": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV2.ts",
+      "byteLength": 2845,
+      "sha256": "30283d0bcdf88342cc6db7add96336086462e0cf2366c9b5cc169fd6f9a6bf34"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV3.ts",
+      "byteLength": 3395,
+      "sha256": "9e39e6710315ed2b8b257951b2e9dc66102e3154914a0878f49530b24e386626"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV4.ts",
+      "byteLength": 6389,
+      "sha256": "07a6234232a22d5d023ad67e9bca6a80ad5a72eadf28956347db09a7fab5864d"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeTypesV5.ts",
+      "byteLength": 2643,
+      "sha256": "a9fc29bc5c656e02cd57b7ef91c29bdca227ff59634d18588f9510f8ac5cdcd2"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV2Baseline.ts",
+      "byteLength": 7461,
+      "sha256": "eb2252b582a2257dda23226e5755cf4d123f121f536c24af13550a3d7ce110aa"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV3Baseline.ts",
+      "byteLength": 15633,
+      "sha256": "4ff232095b7f54813516e1e1f621a0de9dcbf8068602971bf5b3207aa4c2ca0b"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV4Baseline.ts",
+      "byteLength": 25974,
+      "sha256": "a2b1421f5c405c2cd970087ccbfad153fbd64fe763c268e9709f27f83fc7d9d8"
+    },
+    {
+      "path": "spfx/src/product/core/administrativeV5Baseline.ts",
+      "byteLength": 33538,
+      "sha256": "c9b203c340fffa1e7d753754970767fcd05ad690062093e1c2e83227d9e301b7"
+    },
+    {
+      "path": "spfx/src/product/core/calculateCalendarBoundDeadline.ts",
+      "byteLength": 13317,
+      "sha256": "e73f465a484ad068f53ee96ef94533d20d5f33eec37e443fe46573138b8ce4ce"
+    },
+    {
+      "path": "spfx/src/product/core/calculateDeadline.ts",
+      "byteLength": 25413,
+      "sha256": "242715faf2f2d0181e03fa517900f05d3ed14d8526484020138da5eb1d6f4f49"
+    },
+    {
+      "path": "spfx/src/product/core/calculateQualifiedSpecialDeadline.ts",
+      "byteLength": 963,
+      "sha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530"
+    },
+    {
+      "path": "spfx/src/product/core/calculateSpecialDeadline.ts",
+      "byteLength": 31070,
+      "sha256": "c0b72a378f88f68d50bb5c6c2ee8968d6589a77e41db0dc1ccba3b468a86f602"
+    },
+    {
+      "path": "spfx/src/product/core/calculatorRuntime.ts",
+      "byteLength": 14262,
+      "sha256": "6fd1ea98676bd5f11f986c3d72a8810b2c98d6306588572a05d82df4da849c96"
+    },
+    {
+      "path": "spfx/src/product/core/calendarMigration.ts",
+      "byteLength": 1867,
+      "sha256": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3"
+    },
+    {
+      "path": "spfx/src/product/core/calendarResolution.ts",
+      "byteLength": 7044,
+      "sha256": "da999cbb76f57264c9e55a28f054365aa2e55fedab545e28af3b9b3f2048100b"
+    },
+    {
+      "path": "spfx/src/product/core/calendarRuleTypes.ts",
+      "byteLength": 5750,
+      "sha256": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952"
+    },
+    {
+      "path": "spfx/src/product/core/data.ts",
+      "byteLength": 20131,
+      "sha256": "fe32faeaad982296c919b2ea091d5be27ba0a50dfa5ef4748ef9d368b620e037"
+    },
+    {
+      "path": "spfx/src/product/core/date.ts",
+      "byteLength": 4847,
+      "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc"
+    },
+    {
+      "path": "spfx/src/product/core/dayDeadlineArithmetic.ts",
+      "byteLength": 6233,
+      "sha256": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895"
+    },
+    {
+      "path": "spfx/src/product/core/format10Baseline.ts",
+      "byteLength": 812,
+      "sha256": "66cb7fc813bee3c69d3abb6534e7e5cfec79264eacbc05e24f172ffbe2901bdc"
+    },
+    {
+      "path": "spfx/src/product/core/format10CalculationData.ts",
+      "byteLength": 5556,
+      "sha256": "0d46c3ba393c7f27d046412d724925639f01b11530f8b7fdda5c5b5849435c17"
+    },
+    {
+      "path": "spfx/src/product/core/format10Runtime.ts",
+      "byteLength": 3274,
+      "sha256": "548726e2f1adda24c0c4508d863ef02398838d36ef7233956452ea7f6536e134"
+    },
+    {
+      "path": "spfx/src/product/core/format11Baseline.ts",
+      "byteLength": 813,
+      "sha256": "7418eec8c776ee2a5a2ab5c77d01381ec3de2b3b64b102cc20c1cae7de85a9ab"
+    },
+    {
+      "path": "spfx/src/product/core/format11CalculationData.ts",
+      "byteLength": 5556,
+      "sha256": "266a3c2e8f481eff7df6c7844e8b8ea060fc76b8c87752ebb8989dcc2f4118d0"
+    },
+    {
+      "path": "spfx/src/product/core/format11Runtime.ts",
+      "byteLength": 3275,
+      "sha256": "f7a9c7a226049e81752e158fc7e8b8ce97dea324b4662d410e7f27166c943b3c"
+    },
+    {
+      "path": "spfx/src/product/core/format12Baseline.ts",
+      "byteLength": 499736,
+      "sha256": "3a4c66daa56e1caa5db5473de27f5e776908264e551c8b3a3c368688abcf1159"
+    },
+    {
+      "path": "spfx/src/product/core/format12CalculationData.ts",
+      "byteLength": 5554,
+      "sha256": "41c6c084583650bd5cbb4f0fce2ef0e6d6631234fad02c266f4ef5c6aae67cc4"
+    },
+    {
+      "path": "spfx/src/product/core/format12Runtime.ts",
+      "byteLength": 3273,
+      "sha256": "b5b5b27df9ca39694e86da2e13cf86998520688673b0984571177ea49adbc18c"
+    },
+    {
+      "path": "spfx/src/product/core/format7Baseline.ts",
+      "byteLength": 496,
+      "sha256": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb"
+    },
+    {
+      "path": "spfx/src/product/core/format7Runtime.ts",
+      "byteLength": 1435,
+      "sha256": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2"
+    },
+    {
+      "path": "spfx/src/product/core/format8CalculationData.ts",
+      "byteLength": 5519,
+      "sha256": "e3e388ef5e2b4b9a1b89b275fe3aee1db21e302889868fc97a2fc7fa924ce33a"
+    },
+    {
+      "path": "spfx/src/product/core/format8Runtime.ts",
+      "byteLength": 2706,
+      "sha256": "05e14603823da33ec457f179156123be4404caf702914940bc7f0ca3cd713acf"
+    },
+    {
+      "path": "spfx/src/product/core/format9CalculationData.ts",
+      "byteLength": 5523,
+      "sha256": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e"
+    },
+    {
+      "path": "spfx/src/product/core/format9Runtime.ts",
+      "byteLength": 3252,
+      "sha256": "fcf2ed9e20172a83098b9937117e894c16f6dcd70240b3a4ad4bd39f5ad2c570"
+    },
+    {
+      "path": "spfx/src/product/core/generateCalendar.ts",
+      "byteLength": 37002,
+      "sha256": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivation.ts",
+      "byteLength": 18481,
+      "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationTypes.ts",
+      "byteLength": 4801,
+      "sha256": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV10.ts",
+      "byteLength": 21705,
+      "sha256": "ed41ef100fda3d8404bb9b2aae6eed2b6ee73eb85eb907573e7ebad13d89d747"
+    },
+    {
+      "path": "spfx/src/product/core/holidayActivationV12.ts",
+      "byteLength": 2714,
+      "sha256": "7178f240a0138e466954041212d24a1793a0bea908b3b24280adee63df84a280"
+    },
+    {
+      "path": "spfx/src/product/core/holidayCatalog.ts",
+      "byteLength": 40025,
+      "sha256": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9"
+    },
+    {
+      "path": "spfx/src/product/core/holidayCatalogTypes.ts",
+      "byteLength": 7059,
+      "sha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338"
+    },
+    {
+      "path": "spfx/src/product/core/index.ts",
+      "byteLength": 3859,
+      "sha256": "1e45dc4e3293df1b84a16f92400b734c66b920b9c6e9565a426ff9bc0c8c20ce"
+    },
+    {
+      "path": "spfx/src/product/core/modernRuntime.ts",
+      "byteLength": 1796,
+      "sha256": "dd1af4b2b9c77ed1a0a0f233f2edce119c205113324d975888aba9656874bdcf"
+    },
+    {
+      "path": "spfx/src/product/core/qualifiedApplicability.ts",
+      "byteLength": 8794,
+      "sha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5"
+    },
+    {
+      "path": "spfx/src/product/core/qualifiedTypes.ts",
+      "byteLength": 2537,
+      "sha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat10.ts",
+      "byteLength": 20150,
+      "sha256": "7b17bc1c1051353cc67eee72aa6814f581ab423206d5969f7425ea1313608ce2"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat11.ts",
+      "byteLength": 21300,
+      "sha256": "abee0ba1dc93606a7bd4e76c437bdd514cb8d45692ec7303df1709c51200440c"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat12.ts",
+      "byteLength": 21957,
+      "sha256": "282b9eff88dd575bfd26dd13d42490897e15ab26e6f2fdbbfb1cf0ad59135622"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat7.ts",
+      "byteLength": 9915,
+      "sha256": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat8.ts",
+      "byteLength": 19922,
+      "sha256": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6"
+    },
+    {
+      "path": "spfx/src/product/core/releaseFormat9.ts",
+      "byteLength": 20076,
+      "sha256": "e099d01ed314ced7dbda4f53a4cc7f44f6d3203a04b00b4401ad63f21d398034"
+    },
+    {
+      "path": "spfx/src/product/core/schemaContract.ts",
+      "byteLength": 9320,
+      "sha256": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643"
+    },
+    {
+      "path": "spfx/src/product/core/socialCatalog.ts",
+      "byteLength": 27193,
+      "sha256": "6b7ec8b339edb4fd2528ae02ce68a8a39bf0e1306aae86d2b4d8bbc95bb87285"
+    },
+    {
+      "path": "spfx/src/product/core/socialDeadline.ts",
+      "byteLength": 15751,
+      "sha256": "80ac43f254f98a7928bc31b9d5803cfaa033b8a01dd4e008eb068191cdd56c9a"
+    },
+    {
+      "path": "spfx/src/product/core/socialTypes.ts",
+      "byteLength": 7785,
+      "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370"
+    },
+    {
+      "path": "spfx/src/product/core/specialTypes.ts",
+      "byteLength": 10491,
+      "sha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89"
+    },
+    {
+      "path": "spfx/src/product/core/types.ts",
+      "byteLength": 8327,
+      "sha256": "cd1a435a6a366836daec5820a0ba56f585df9f95a9f562ad678243e4ba8520e8"
+    },
+    {
+      "path": "spfx/src/product/ui/DateInput.tsx",
+      "byteLength": 13122,
+      "sha256": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4"
+    },
+    {
+      "path": "spfx/src/product/ui/FristenrechnerApp.tsx",
+      "byteLength": 109729,
+      "sha256": "3134bc1af750cb9d176cfda3d4d8873188358c00f7ef6fdf58a4b2f04c86d13d"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeDefaults.ts",
+      "byteLength": 14832,
+      "sha256": "3c093045208cdd91c346bdea98cd880787593f3d27be3bed3b0f7f631743be80"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeExport.ts",
+      "byteLength": 4480,
+      "sha256": "6247d3f211eac2a31b97c89cbbe599e586e4013d4fc05ba44cc7c85a20cd1326"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeMessages.ts",
+      "byteLength": 89159,
+      "sha256": "c5ee4d0c9f20d819e310b21648d6b8882fd8e710659bc15d45a8fe01036950fe"
+    },
+    {
+      "path": "spfx/src/product/ui/administrativeUi.tsx",
+      "byteLength": 44447,
+      "sha256": "6afe8534465b2c0733ddc535b02965a11c92aaef5ee0931d7b67de0d9af53605"
+    },
+    {
+      "path": "spfx/src/product/ui/browserAppearance.tsx",
+      "byteLength": 2991,
+      "sha256": "2857123fde2647ace56866f0ae59450ba96bf2ecddb8e2d0ad274c985d3a93dc"
+    },
+    {
+      "path": "spfx/src/product/ui/calendarContextUi.tsx",
+      "byteLength": 10905,
+      "sha256": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6"
+    },
+    {
+      "path": "spfx/src/product/ui/calendarExport.ts",
+      "byteLength": 5153,
+      "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89"
+    },
+    {
+      "path": "spfx/src/product/ui/calendarMessages.ts",
+      "byteLength": 12322,
+      "sha256": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb"
+    },
+    {
+      "path": "spfx/src/product/ui/dateEntry.ts",
+      "byteLength": 2889,
+      "sha256": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683"
+    },
+    {
+      "path": "spfx/src/product/ui/dateFormCommit.ts",
+      "byteLength": 1722,
+      "sha256": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983"
+    },
+    {
+      "path": "spfx/src/product/ui/dateInputSession.ts",
+      "byteLength": 1310,
+      "sha256": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79"
+    },
+    {
+      "path": "spfx/src/product/ui/dateTransition.ts",
+      "byteLength": 3384,
+      "sha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc"
+    },
+    {
+      "path": "spfx/src/product/ui/defaults.ts",
+      "byteLength": 8095,
+      "sha256": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9"
+    },
+    {
+      "path": "spfx/src/product/ui/dropdownStyles.ts",
+      "byteLength": 1036,
+      "sha256": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808"
+    },
+    {
+      "path": "spfx/src/product/ui/holidayConnectionDropdown.ts",
+      "byteLength": 261,
+      "sha256": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368"
+    },
+    {
+      "path": "spfx/src/product/ui/i18n.ts",
+      "byteLength": 51804,
+      "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369"
+    },
+    {
+      "path": "spfx/src/product/ui/index.ts",
+      "byteLength": 1126,
+      "sha256": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757"
+    },
+    {
+      "path": "spfx/src/product/ui/model.ts",
+      "byteLength": 14853,
+      "sha256": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e"
+    },
+    {
+      "path": "spfx/src/product/ui/qualifiedMessages.ts",
+      "byteLength": 9525,
+      "sha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645"
+    },
+    {
+      "path": "spfx/src/product/ui/socialMessages.ts",
+      "byteLength": 33653,
+      "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f"
+    },
+    {
+      "path": "spfx/src/product/ui/socialUi.ts",
+      "byteLength": 11608,
+      "sha256": "734b27d49940e381e70a9a7b19e8e5767c0daf22fdd2ce5b270e64ac17630787"
+    },
+    {
+      "path": "spfx/src/product/ui/styles.css",
+      "byteLength": 11549,
+      "sha256": "98d503207f4ae43c22c9ed241a4fb4e34177b624750f0cc8868b85614ba4b6be"
+    },
+    {
+      "path": "spfx/src/product/ui/styles.module.scss",
+      "byteLength": 11562,
+      "sha256": "3d13d384983ff32a78833918eac632ef11c545f00dbed4bf8d2f77a6c0e2a260"
+    },
+    {
+      "path": "spfx/src/product/ui/tracePresentation.tsx",
+      "byteLength": 12130,
+      "sha256": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace"
+    },
+    {
+      "path": "spfx/src/product/ui/vrpgQualification.ts",
+      "byteLength": 8554,
+      "sha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef"
+    },
+    {
+      "path": "spfx/src/product/ui/vrpgSelection.ts",
+      "byteLength": 20547,
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+    },
+    {
+      "path": "spfx/src/schemas/administrative-procedure-catalog-v2.schema.json",
+      "byteLength": 45568,
+      "sha256": "cbedc3757fd1e5919b1c8c2a4969597e697df56bcf147c14fa6b81e30cd161e0"
+    },
+    {
+      "path": "spfx/src/schemas/administrative-procedure-catalog-v3.schema.json",
+      "byteLength": 65226,
+      "sha256": "b3868f83e8f0e7a32346dc66965b7a69fe26691f133cf068390de1e9b5fde0be"
+    },
+    {
+      "path": "spfx/src/schemas/administrative-procedure-catalog-v4.schema.json",
+      "byteLength": 93808,
+      "sha256": "8e32e989e36fbecdf361c93e06f1fbe1d61719d551580cf38dbdd6211f070d12"
+    },
+    {
+      "path": "spfx/src/schemas/administrative-procedure-catalog-v5.schema.json",
+      "byteLength": 156894,
+      "sha256": "dcd4a565042d007daab3e3f9f9ab6eb0d6302142a72f25fcb557203afc000321"
+    },
+    {
+      "path": "spfx/src/schemas/calendar-rules-v2.schema.json",
+      "byteLength": 12885,
+      "sha256": "a01a220c6df09cd932ca7407f0a04bad2217acb6e0a45dec06b9358926caca98"
+    },
+    {
+      "path": "spfx/src/schemas/calendar.schema.json",
+      "byteLength": 4242,
+      "sha256": "9f25cf222b0cf3ef758389736362ebf5c43cd857cd50e6c089c8f218fed096b2"
+    },
+    {
+      "path": "spfx/src/schemas/common.schema.json",
+      "byteLength": 4935,
+      "sha256": "a3616757f84b5f5ab5c2c671abf628e643303cb4c8ffd3afd01751b82f6ef1f8"
+    },
+    {
+      "path": "spfx/src/schemas/deadline-definition.schema.json",
+      "byteLength": 10112,
+      "sha256": "7d3a654a930624bb9b386dfb8ca38ca124f9967df8ecc3de07eb40a9110bae8c"
+    },
+    {
+      "path": "spfx/src/schemas/filing-profile.schema.json",
+      "byteLength": 5707,
+      "sha256": "f40ed45d6c12693163fb91d61539a4bb70bc950de5517e5e635cb7c31fabaa0a"
+    },
+    {
+      "path": "spfx/src/schemas/holiday-catalog-v1.schema.json",
+      "byteLength": 27593,
+      "sha256": "03af4aabdfcd34d9f73f14dc01322ce1c77ad34f45e47bddb63cb5f3b58db0a4"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap22c1/calendar-rules-v3.schema.json",
+      "byteLength": 21707,
+      "sha256": "86ec46d639e703cc30dfb1b51fc9cbdb573c911e11920acf503babebec85ca57"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap22c1/holiday-catalog-v2.schema.json",
+      "byteLength": 53957,
+      "sha256": "b1ef62006968380731209bdf31a952222ea2779811264cc492727bcca3122069"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap22c1/release-manifest-v7.schema.json",
+      "byteLength": 12255,
+      "sha256": "3bf037fb3444bf9fab635735436d0de9317ca078bed0385253194a102cc9bca3"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap22c3/local-reference-manifest-v7.schema.json",
+      "byteLength": 12171,
+      "sha256": "a0ccbbc1317891488adc86c9a0586a15c6d7e5f0f13ae578bf743824cedc8c4a"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23d1/administrative-procedure-catalog.schema.json",
+      "byteLength": 40051,
+      "sha256": "c89cf5739b1ec4ca238f15b2d1b0a696e7b3b6c81824b0b4075fdeb43a2f7010"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23d1/local-reference-manifest-v8.schema.json",
+      "byteLength": 13722,
+      "sha256": "174f7731e14f435e57a3138d30c4ce0e68f18d7f341c6f59fef779557fc61d59"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23d1/release-manifest-v8.schema.json",
+      "byteLength": 13703,
+      "sha256": "65a8f8e63a013209b57d8802a4c1dc34760c861b8a5cd78b8fb0264aca13fd8a"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23e3/local-reference-manifest-v9.schema.json",
+      "byteLength": 13715,
+      "sha256": "ecbe2fc25a1026cd53b810a86196d7bc68038f9a7da50a7881236a604eaff569"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23f3/local-reference-manifest-v10.schema.json",
+      "byteLength": 13762,
+      "sha256": "74d702781e3914476cbc27efad730d6c2361c6873ba8b0ac7c85cc3b622b942d"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23g3/local-reference-manifest-v11.schema.json",
+      "byteLength": 13761,
+      "sha256": "61a7e05415f41ce30dc7a529bd7f104a4d480e22df561fe13d657f6d8afca75d"
+    },
+    {
+      "path": "spfx/src/schemas/implementation/ap23h3/local-reference-manifest-v12.schema.json",
+      "byteLength": 13761,
+      "sha256": "a007c3d6478747a68fe486b5b84e433223e0b50dca5c36ec39bd7f69cc42c296"
+    },
+    {
+      "path": "spfx/src/schemas/legal-profile.schema.json",
+      "byteLength": 12886,
+      "sha256": "e1b87a82247f3f09c52aae1629e5a0d4db4de2dd6a493524746427073e2e6145"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v10.schema.json",
+      "byteLength": 13702,
+      "sha256": "e0826ed690f73c37a7e410070d6a5a9e716c0de01eb336d6152da9db8f0f38f8"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v11.schema.json",
+      "byteLength": 13683,
+      "sha256": "4afd02ea7701c1f747ee2def0cba7b012f36d405edbc72b6c5bb55f82f27a6a0"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v12.schema.json",
+      "byteLength": 13683,
+      "sha256": "5d22d17489ca822ac2275607231f5f94a4508a783b5417a7e9f4965e3f0b3824"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v5.schema.json",
+      "byteLength": 13074,
+      "sha256": "650e40b34b1a897d87c0e0ea67907b4c8c103ca31c93da63a8619df5252a6dd8"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v6.schema.json",
+      "byteLength": 13080,
+      "sha256": "c6ea5582d47db4fbc8fceec1819af2648c6aaaf1f9f169caf2e301d5f22b4825"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest-v9.schema.json",
+      "byteLength": 13693,
+      "sha256": "1b489a9cc4efad7751586c5f9bdfa198a0ea6396f4737db9c363e98089c12333"
+    },
+    {
+      "path": "spfx/src/schemas/release-manifest.schema.json",
+      "byteLength": 13826,
+      "sha256": "40dd8dc433fa8f56aa69b5d298faed87ccaf6b405e05004dcf4004bf838feb80"
+    },
+    {
+      "path": "spfx/src/schemas/social-procedure-catalog-v2.schema.json",
+      "byteLength": 27806,
+      "sha256": "16bf46bfe0eeb88fe4015800e903c9b749eb8bb69b74a4e4474f9f5aa0186203"
+    },
+    {
+      "path": "spfx/src/schemas/social-procedure-catalog.schema.json",
+      "byteLength": 26655,
+      "sha256": "d5474577cde47ab4dd3a7e28b2ba2cfd428db2f9ecd80999e3bfd007c1eb4aa0"
+    },
+    {
+      "path": "spfx/src/schemas/special-regime-catalog-v2.schema.json",
+      "byteLength": 10127,
+      "sha256": "1e326d5d70b788e866551e0f8e3252b2666006a96b463d9adc23d416e5af3324"
+    },
+    {
+      "path": "spfx/src/schemas/special-regime-catalog-v3.schema.json",
+      "byteLength": 5787,
+      "sha256": "50f8cb02b8e5b5bebffdb97594b9f3c51b89bb58b2ec26c487baea92f3a1854e"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/FristenrechnerWebPart.manifest.json",
+      "byteLength": 1231,
+      "sha256": "394089a5a401a921ee19f042f47892c438f352084b5c43a2ca03ef2cf931a0d6"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/FristenrechnerWebPart.ts",
+      "byteLength": 4867,
+      "sha256": "61ecacfdc307b80f7f0e9c96d39163a18d90d44dbcbb5a0784eff238b8a67330"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.module.scss",
+      "byteLength": 1098,
+      "sha256": "826008edea3b6c2a76fd02e721be23edb87d7aa7ecb990a6fb6418f38f778d59"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/components/Fristenrechner.tsx",
+      "byteLength": 10663,
+      "sha256": "b04fc905f32a828eae3023b4914a8101c8892b5b0b6e01f244c51601dc8e3a85"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/components/IFristenrechnerProps.ts",
+      "byteLength": 426,
+      "sha256": "7d932830f292462503fd12ff3ef3ee85e2bd70120aa616f78f3868ac1e553487"
+    },
+    {
+      "path": "spfx/src/webparts/fristenrechner/loc/mystrings.d.ts",
+      "byteLength": 475,
+      "sha256": "c3089803ee3670d3142775f800e82ff71fb4209e3edfe4ac02111732fa204d01"
+    },
+    {
+      "path": "spfx/test/ap23h3-fixture.ts",
+      "byteLength": 2106,
+      "sha256": "4439a380bbf6358ffe5d89c89726d159fee2008c6b75393a0cd03aa2bfa26c7b"
+    },
+    {
+      "path": "spfx/test/ap23h3-format12.test.ts",
+      "byteLength": 5718,
+      "sha256": "46eba012307c4de6ca07aae0c69dffdf90c8acba283199f99f1fe1bbaff4edf3"
+    },
+    {
+      "path": "spfx/tsconfig.json",
+      "byteLength": 289,
+      "sha256": "8e244b71409da3c87f0d6e84ff075712b583fa31604ec4b7e3300c94e3a5408f"
+    },
+    {
+      "path": "src/core/administrativeCatalog.ts",
+      "byteLength": 14208,
+      "sha256": "1f4ebd86cad8f4c170bd8def35c23678618c97e59737f071b4f820c4838125bb"
+    },
+    {
+      "path": "src/core/administrativeCatalogV2.ts",
+      "byteLength": 6043,
+      "sha256": "ca5b3fe7e7aae6e961142e8aa20520cddb1c9817ec058347962ed307622df4ff"
+    },
+    {
+      "path": "src/core/administrativeCatalogV3.ts",
+      "byteLength": 7616,
+      "sha256": "d0c2e28c0f43132d94bf9fa0ee053e3c01e35157d61a92894c5e7b04de7e399d"
+    },
+    {
+      "path": "src/core/administrativeCatalogV4.ts",
+      "byteLength": 5740,
+      "sha256": "253a6068933657b8ca4038fee30abb2a9ae0357c9fb25b86c0797f9d3ccc3bbe"
+    },
+    {
+      "path": "src/core/administrativeCatalogV5.ts",
+      "byteLength": 5215,
+      "sha256": "2baf3741a99f079f71896d56040910279b9b3051488c71c56d81f920a0bf777e"
+    },
+    {
+      "path": "src/core/administrativeContext.ts",
+      "byteLength": 1517,
+      "sha256": "24fc74014ff6f1b79b8068bb5466241a04df10be01004eb1e89399c18046af59"
+    },
+    {
+      "path": "src/core/administrativeDeadline.ts",
+      "byteLength": 26400,
+      "sha256": "d8e35cdf30243faf2d53f7b21923e285a2372b3a6959a33d971faa82fe61fe69"
+    },
+    {
+      "path": "src/core/administrativeTypes.ts",
+      "byteLength": 8263,
+      "sha256": "e043b5b21d555b34c374aaa67437f35ccafe044ab3814d6fc42f7e49cbb19fd1"
+    },
+    {
+      "path": "src/core/administrativeTypesV2.ts",
+      "byteLength": 2845,
+      "sha256": "30283d0bcdf88342cc6db7add96336086462e0cf2366c9b5cc169fd6f9a6bf34"
+    },
+    {
+      "path": "src/core/administrativeTypesV3.ts",
+      "byteLength": 3395,
+      "sha256": "9e39e6710315ed2b8b257951b2e9dc66102e3154914a0878f49530b24e386626"
+    },
+    {
+      "path": "src/core/administrativeTypesV4.ts",
+      "byteLength": 6389,
+      "sha256": "07a6234232a22d5d023ad67e9bca6a80ad5a72eadf28956347db09a7fab5864d"
+    },
+    {
+      "path": "src/core/administrativeTypesV5.ts",
+      "byteLength": 2643,
+      "sha256": "a9fc29bc5c656e02cd57b7ef91c29bdca227ff59634d18588f9510f8ac5cdcd2"
+    },
+    {
+      "path": "src/core/administrativeV2Baseline.ts",
+      "byteLength": 7461,
+      "sha256": "eb2252b582a2257dda23226e5755cf4d123f121f536c24af13550a3d7ce110aa"
+    },
+    {
+      "path": "src/core/administrativeV3Baseline.ts",
+      "byteLength": 15633,
+      "sha256": "4ff232095b7f54813516e1e1f621a0de9dcbf8068602971bf5b3207aa4c2ca0b"
+    },
+    {
+      "path": "src/core/administrativeV4Baseline.ts",
+      "byteLength": 25974,
+      "sha256": "a2b1421f5c405c2cd970087ccbfad153fbd64fe763c268e9709f27f83fc7d9d8"
+    },
+    {
+      "path": "src/core/administrativeV5Baseline.ts",
+      "byteLength": 33538,
+      "sha256": "c9b203c340fffa1e7d753754970767fcd05ad690062093e1c2e83227d9e301b7"
+    },
+    {
+      "path": "src/core/calculateCalendarBoundDeadline.ts",
+      "byteLength": 13317,
+      "sha256": "e73f465a484ad068f53ee96ef94533d20d5f33eec37e443fe46573138b8ce4ce"
+    },
+    {
+      "path": "src/core/calculateDeadline.ts",
+      "byteLength": 25413,
+      "sha256": "242715faf2f2d0181e03fa517900f05d3ed14d8526484020138da5eb1d6f4f49"
+    },
+    {
+      "path": "src/core/calculateQualifiedSpecialDeadline.ts",
+      "byteLength": 963,
+      "sha256": "bb29f15aa90c75a5ce19c2450be38dce732108848641fa1fa945f4fb43aa9530"
+    },
+    {
+      "path": "src/core/calculateSpecialDeadline.ts",
+      "byteLength": 31070,
+      "sha256": "c0b72a378f88f68d50bb5c6c2ee8968d6589a77e41db0dc1ccba3b468a86f602"
+    },
+    {
+      "path": "src/core/calculatorRuntime.ts",
+      "byteLength": 14262,
+      "sha256": "6fd1ea98676bd5f11f986c3d72a8810b2c98d6306588572a05d82df4da849c96"
+    },
+    {
+      "path": "src/core/calendarMigration.ts",
+      "byteLength": 1867,
+      "sha256": "32c3101a2fd5037f87fc4cdf67b8a7b3c7ea27ceb13ad994d0c609a05145dcb3"
+    },
+    {
+      "path": "src/core/calendarResolution.ts",
+      "byteLength": 7044,
+      "sha256": "da999cbb76f57264c9e55a28f054365aa2e55fedab545e28af3b9b3f2048100b"
+    },
+    {
+      "path": "src/core/calendarRuleTypes.ts",
+      "byteLength": 5750,
+      "sha256": "ec7f1454da46373d20b0f9f0b3246e524d2d506d35b6747e1114d9749a015952"
+    },
+    {
+      "path": "src/core/data.ts",
+      "byteLength": 20131,
+      "sha256": "fe32faeaad982296c919b2ea091d5be27ba0a50dfa5ef4748ef9d368b620e037"
+    },
+    {
+      "path": "src/core/date.ts",
+      "byteLength": 4847,
+      "sha256": "0d8d57c2ae860df8f323191a6d0ae86734977d23474b00e18ac5abb6827074dc"
+    },
+    {
+      "path": "src/core/dayDeadlineArithmetic.ts",
+      "byteLength": 6233,
+      "sha256": "f6437562d0afc38b6d0a3e90c2a90a559e55e39f15a9f35fcbf7cff644d30895"
+    },
+    {
+      "path": "src/core/format10Baseline.ts",
+      "byteLength": 812,
+      "sha256": "66cb7fc813bee3c69d3abb6534e7e5cfec79264eacbc05e24f172ffbe2901bdc"
+    },
+    {
+      "path": "src/core/format10CalculationData.ts",
+      "byteLength": 5556,
+      "sha256": "0d46c3ba393c7f27d046412d724925639f01b11530f8b7fdda5c5b5849435c17"
+    },
+    {
+      "path": "src/core/format10Runtime.ts",
+      "byteLength": 3274,
+      "sha256": "548726e2f1adda24c0c4508d863ef02398838d36ef7233956452ea7f6536e134"
+    },
+    {
+      "path": "src/core/format11Baseline.ts",
+      "byteLength": 813,
+      "sha256": "7418eec8c776ee2a5a2ab5c77d01381ec3de2b3b64b102cc20c1cae7de85a9ab"
+    },
+    {
+      "path": "src/core/format11CalculationData.ts",
+      "byteLength": 5556,
+      "sha256": "266a3c2e8f481eff7df6c7844e8b8ea060fc76b8c87752ebb8989dcc2f4118d0"
+    },
+    {
+      "path": "src/core/format11Runtime.ts",
+      "byteLength": 3275,
+      "sha256": "f7a9c7a226049e81752e158fc7e8b8ce97dea324b4662d410e7f27166c943b3c"
+    },
+    {
+      "path": "src/core/format12Baseline.ts",
+      "byteLength": 499736,
+      "sha256": "3a4c66daa56e1caa5db5473de27f5e776908264e551c8b3a3c368688abcf1159"
+    },
+    {
+      "path": "src/core/format12CalculationData.ts",
+      "byteLength": 5554,
+      "sha256": "41c6c084583650bd5cbb4f0fce2ef0e6d6631234fad02c266f4ef5c6aae67cc4"
+    },
+    {
+      "path": "src/core/format12Runtime.ts",
+      "byteLength": 3273,
+      "sha256": "b5b5b27df9ca39694e86da2e13cf86998520688673b0984571177ea49adbc18c"
+    },
+    {
+      "path": "src/core/format7Baseline.ts",
+      "byteLength": 496,
+      "sha256": "a78cb322a2e4107ca42fac8109e00bcb9feb20f44b028b75dd39472f16b6fadb"
+    },
+    {
+      "path": "src/core/format7Runtime.ts",
+      "byteLength": 1435,
+      "sha256": "04fca37d15380f6760273e6e6f937a553cf360c1441765e2b4afa3bb2eb8e0d2"
+    },
+    {
+      "path": "src/core/format8CalculationData.ts",
+      "byteLength": 5519,
+      "sha256": "e3e388ef5e2b4b9a1b89b275fe3aee1db21e302889868fc97a2fc7fa924ce33a"
+    },
+    {
+      "path": "src/core/format8Runtime.ts",
+      "byteLength": 2706,
+      "sha256": "05e14603823da33ec457f179156123be4404caf702914940bc7f0ca3cd713acf"
+    },
+    {
+      "path": "src/core/format9CalculationData.ts",
+      "byteLength": 5523,
+      "sha256": "1b5c733bb85c8330649ed92b601ec3441cf4c7af3cba6a9cddd47ef646be5c9e"
+    },
+    {
+      "path": "src/core/format9Runtime.ts",
+      "byteLength": 3252,
+      "sha256": "fcf2ed9e20172a83098b9937117e894c16f6dcd70240b3a4ad4bd39f5ad2c570"
+    },
+    {
+      "path": "src/core/generateCalendar.ts",
+      "byteLength": 37002,
+      "sha256": "0a55ead6ad3a92a87db0a629be99be7d6387bc3d4d5459f89781730f9a0a6218"
+    },
+    {
+      "path": "src/core/holidayActivation.ts",
+      "byteLength": 18481,
+      "sha256": "60220f0489b615cb8ba910bcc9c3b9b914df97725c5ee522bcdf32c778654ac4"
+    },
+    {
+      "path": "src/core/holidayActivationTypes.ts",
+      "byteLength": 4801,
+      "sha256": "0b63466cd6d3a5adb0404f9f81c78b9e47f6eaec3acc5a5815b3c864946218a5"
+    },
+    {
+      "path": "src/core/holidayActivationV10.ts",
+      "byteLength": 21705,
+      "sha256": "ed41ef100fda3d8404bb9b2aae6eed2b6ee73eb85eb907573e7ebad13d89d747"
+    },
+    {
+      "path": "src/core/holidayActivationV12.ts",
+      "byteLength": 2714,
+      "sha256": "7178f240a0138e466954041212d24a1793a0bea908b3b24280adee63df84a280"
+    },
+    {
+      "path": "src/core/holidayCatalog.ts",
+      "byteLength": 40025,
+      "sha256": "00fbe296ddcccd8cf03e72084c9fdff1a28e653008054d822845f4b533531ef9"
+    },
+    {
+      "path": "src/core/holidayCatalogTypes.ts",
+      "byteLength": 7059,
+      "sha256": "fdaccea8b92fe89da39f4915eac043e9f60b8f830adaeb6a0a7358f253a62338"
+    },
+    {
+      "path": "src/core/index.ts",
+      "byteLength": 3859,
+      "sha256": "1e45dc4e3293df1b84a16f92400b734c66b920b9c6e9565a426ff9bc0c8c20ce"
+    },
+    {
+      "path": "src/core/modernRuntime.ts",
+      "byteLength": 1796,
+      "sha256": "dd1af4b2b9c77ed1a0a0f233f2edce119c205113324d975888aba9656874bdcf"
+    },
+    {
+      "path": "src/core/qualifiedApplicability.ts",
+      "byteLength": 8794,
+      "sha256": "da7c05b23a08bb71e6f7f7e283e6bf405b133f32c0af1b555e3085274d3087b5"
+    },
+    {
+      "path": "src/core/qualifiedTypes.ts",
+      "byteLength": 2537,
+      "sha256": "7c296de667eef68a0824892786c7e04fdff074fcde8c6157aa6cc726cc4faa48"
+    },
+    {
+      "path": "src/core/releaseFormat10.ts",
+      "byteLength": 20150,
+      "sha256": "7b17bc1c1051353cc67eee72aa6814f581ab423206d5969f7425ea1313608ce2"
+    },
+    {
+      "path": "src/core/releaseFormat11.ts",
+      "byteLength": 21300,
+      "sha256": "abee0ba1dc93606a7bd4e76c437bdd514cb8d45692ec7303df1709c51200440c"
+    },
+    {
+      "path": "src/core/releaseFormat12.ts",
+      "byteLength": 21957,
+      "sha256": "282b9eff88dd575bfd26dd13d42490897e15ab26e6f2fdbbfb1cf0ad59135622"
+    },
+    {
+      "path": "src/core/releaseFormat7.ts",
+      "byteLength": 9915,
+      "sha256": "2d6c39ae3ddeb5114bf5c695b40bccf00890c0a8f21ede84742c3289436bd268"
+    },
+    {
+      "path": "src/core/releaseFormat8.ts",
+      "byteLength": 19922,
+      "sha256": "52eba7044fc7a330221686e4ff63ef6e9a6c116e1ac3a9694b771b843f79d1a6"
+    },
+    {
+      "path": "src/core/releaseFormat9.ts",
+      "byteLength": 20076,
+      "sha256": "e099d01ed314ced7dbda4f53a4cc7f44f6d3203a04b00b4401ad63f21d398034"
+    },
+    {
+      "path": "src/core/schemaContract.ts",
+      "byteLength": 9320,
+      "sha256": "d54f4ab08eba82c5f6079210718c559b7a535d8a0acff2541bd423c52e725643"
+    },
+    {
+      "path": "src/core/socialCatalog.ts",
+      "byteLength": 27193,
+      "sha256": "6b7ec8b339edb4fd2528ae02ce68a8a39bf0e1306aae86d2b4d8bbc95bb87285"
+    },
+    {
+      "path": "src/core/socialDeadline.ts",
+      "byteLength": 15751,
+      "sha256": "80ac43f254f98a7928bc31b9d5803cfaa033b8a01dd4e008eb068191cdd56c9a"
+    },
+    {
+      "path": "src/core/socialTypes.ts",
+      "byteLength": 7785,
+      "sha256": "19b4ad2a769b70045cd96ebc5d98f487e698e5b685adb97e6bffe558a02db370"
+    },
+    {
+      "path": "src/core/specialTypes.ts",
+      "byteLength": 10491,
+      "sha256": "f619db2afdc0c0b75829ea027d2fd6daf485bfcb3c76cc5543cfce3fa567dd89"
+    },
+    {
+      "path": "src/core/types.ts",
+      "byteLength": 8327,
+      "sha256": "cd1a435a6a366836daec5820a0ba56f585df9f95a9f562ad678243e4ba8520e8"
+    },
+    {
+      "path": "src/public-app/ap23h3-main.tsx",
+      "byteLength": 845,
+      "sha256": "d9e3a5fdbb21ef4d85a6f7dba43c12bfd0def906f715f183b805258032fd1636"
+    },
+    {
+      "path": "src/release/ap23h3CandidateData.ts",
+      "byteLength": 3223200,
+      "sha256": "ffed7ed8e8fe795497993b8734e118d7e0dd79e746d94b369804997636ebb046"
+    },
+    {
+      "path": "src/ui/DateInput.tsx",
+      "byteLength": 13122,
+      "sha256": "1fdcd124a466ed95d2951fbd8a7011013d57b642f271d9aaebf7fd1e76a7dba4"
+    },
+    {
+      "path": "src/ui/FristenrechnerApp.tsx",
+      "byteLength": 109729,
+      "sha256": "3134bc1af750cb9d176cfda3d4d8873188358c00f7ef6fdf58a4b2f04c86d13d"
+    },
+    {
+      "path": "src/ui/administrativeDefaults.ts",
+      "byteLength": 14832,
+      "sha256": "3c093045208cdd91c346bdea98cd880787593f3d27be3bed3b0f7f631743be80"
+    },
+    {
+      "path": "src/ui/administrativeExport.ts",
+      "byteLength": 4480,
+      "sha256": "6247d3f211eac2a31b97c89cbbe599e586e4013d4fc05ba44cc7c85a20cd1326"
+    },
+    {
+      "path": "src/ui/administrativeMessages.ts",
+      "byteLength": 89159,
+      "sha256": "c5ee4d0c9f20d819e310b21648d6b8882fd8e710659bc15d45a8fe01036950fe"
+    },
+    {
+      "path": "src/ui/administrativeUi.tsx",
+      "byteLength": 44447,
+      "sha256": "6afe8534465b2c0733ddc535b02965a11c92aaef5ee0931d7b67de0d9af53605"
+    },
+    {
+      "path": "src/ui/browserAppearance.tsx",
+      "byteLength": 2991,
+      "sha256": "2857123fde2647ace56866f0ae59450ba96bf2ecddb8e2d0ad274c985d3a93dc"
+    },
+    {
+      "path": "src/ui/calendarContextUi.tsx",
+      "byteLength": 10905,
+      "sha256": "c60031060a54f1eb0043e943fffff6ab8bc761acc9fcf6d812bf5e39609473c6"
+    },
+    {
+      "path": "src/ui/calendarExport.ts",
+      "byteLength": 5153,
+      "sha256": "54ee1ef3c66924b026294f59459df59e390356ed9d86f0e8490790c1f85fec89"
+    },
+    {
+      "path": "src/ui/calendarMessages.ts",
+      "byteLength": 12322,
+      "sha256": "44c1488125c9a73441569ae79b98b2924184ebe834fdf077ba409ee79d3db3fb"
+    },
+    {
+      "path": "src/ui/dateEntry.ts",
+      "byteLength": 2889,
+      "sha256": "9964017a5f39203f42b18e90115ac1cf98f8f97dfb03fbe276e01d1e12594683"
+    },
+    {
+      "path": "src/ui/dateFormCommit.ts",
+      "byteLength": 1722,
+      "sha256": "64da75ac4666e519b1bb311f0ad2f170046d766f8fb3c0e7028887a14335b983"
+    },
+    {
+      "path": "src/ui/dateInputSession.ts",
+      "byteLength": 1310,
+      "sha256": "593690b1040ec21609ade20e588873faca8ff2da7d0ffa5ddebab8f8305ede79"
+    },
+    {
+      "path": "src/ui/dateTransition.ts",
+      "byteLength": 3384,
+      "sha256": "0fc819ddb9921d53fe98f484835a05a6d19572d99f474908bb17b77ea9b5b4bc"
+    },
+    {
+      "path": "src/ui/defaults.ts",
+      "byteLength": 8095,
+      "sha256": "0214b9b3dea616fce8c700e1bffe45d14b5b6eaf83ef6f14ba63611eb364cac9"
+    },
+    {
+      "path": "src/ui/dropdownStyles.ts",
+      "byteLength": 1036,
+      "sha256": "89e90402bdb0a7f3fe969ad5d7129da9b7f36494de73da9ccc6239db739fb808"
+    },
+    {
+      "path": "src/ui/holidayConnectionDropdown.ts",
+      "byteLength": 261,
+      "sha256": "4908d3325c665a1b7b1c2a4943e82becfc1a27bd552e1154cec24a4246056368"
+    },
+    {
+      "path": "src/ui/i18n.ts",
+      "byteLength": 51804,
+      "sha256": "edbb784f2089762e38545f351d915037b2b1cc4aa6ee2cfb55c1d0c44ff5d369"
+    },
+    {
+      "path": "src/ui/index.ts",
+      "byteLength": 1126,
+      "sha256": "0758c1b3009cb553a3d7c1860e162661bb701f7278da907f347618c2d2388757"
+    },
+    {
+      "path": "src/ui/model.ts",
+      "byteLength": 14853,
+      "sha256": "61c9671e02275107e0e9fa6c26804f18626fcb5678b867f94e7e9346f256769e"
+    },
+    {
+      "path": "src/ui/preview/data.ts",
+      "byteLength": 142,
+      "sha256": "023f731428bcc56eef63d16f5bd90631336b52bfd3f2d472195b069ab4886b33"
+    },
+    {
+      "path": "src/ui/preview/main.tsx",
+      "byteLength": 2951,
+      "sha256": "5233a9cc0dc7b074dc682f3eeadb8e21c6ae6e0718df88af656d43fbf8b1c37d"
+    },
+    {
+      "path": "src/ui/preview/preview.css",
+      "byteLength": 218,
+      "sha256": "602125ac26970c8101e370a5c7d531872ed8e977b7e106f9c904a146528eb67d"
+    },
+    {
+      "path": "src/ui/preview/qaPresets.ts",
+      "byteLength": 3234,
+      "sha256": "ffad8021bc2780257d6e406487b41ea80da45a5b03c3f97193e69e30739d6759"
+    },
+    {
+      "path": "src/ui/qualifiedMessages.ts",
+      "byteLength": 9525,
+      "sha256": "50960a18851b0d21772171d53306d367b816ad0cae741943c98bb21584fe4645"
+    },
+    {
+      "path": "src/ui/socialMessages.ts",
+      "byteLength": 33653,
+      "sha256": "586fcd09446ef43d15bba57efabdc68596c0c35b4b972d3a7e85ec303e1ec13f"
+    },
+    {
+      "path": "src/ui/socialUi.ts",
+      "byteLength": 11608,
+      "sha256": "734b27d49940e381e70a9a7b19e8e5767c0daf22fdd2ce5b270e64ac17630787"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "byteLength": 11549,
+      "sha256": "98d503207f4ae43c22c9ed241a4fb4e34177b624750f0cc8868b85614ba4b6be"
+    },
+    {
+      "path": "src/ui/tracePresentation.tsx",
+      "byteLength": 12130,
+      "sha256": "9781f4ec13be56961775d801d20d6b32d27b5e166bf65b7030e0802449c2cace"
+    },
+    {
+      "path": "src/ui/vrpgQualification.ts",
+      "byteLength": 8554,
+      "sha256": "8b7838ea78c601c5f0e67eeb928a7e9fdb2255a50bfe8b0ed9cd5469be6e34ef"
+    },
+    {
+      "path": "src/ui/vrpgSelection.ts",
+      "byteLength": 20547,
+      "sha256": "f5236303b809ca1ccffbf20b644152cf0ee37271f1f6ab099781a821fdad739d"
+    },
+    {
+      "path": "tests/core/ap23h3-core.test.ts",
+      "byteLength": 5200,
+      "sha256": "59a72284cc5acdbba7f7a8ac72eacdd853cee1952c24d83229884d9004a89be8"
+    },
+    {
+      "path": "tests/core/ap23h3-data.test.ts",
+      "byteLength": 7206,
+      "sha256": "44cbb23ebdbde9ad222a5d879ad449680b5389ef173c1ca6f607d08f09ffcc39"
+    },
+    {
+      "path": "tests/core/ap23h3-independent.test.ts",
+      "byteLength": 7677,
+      "sha256": "51b6216ddebd2f198b9053acd984d90fde841f98fe8a2bdfed65df22f01ba0a9"
+    },
+    {
+      "path": "tests/core/ap23h3-runtime.test.ts",
+      "byteLength": 9024,
+      "sha256": "55a4346421a1d67c2f744d1afdda42b3e8cbababc648aa68880f559c5101698d"
+    },
+    {
+      "path": "tests/core/ap23h3Fixtures.ts",
+      "byteLength": 6521,
+      "sha256": "82a051fa9cf36bb14fd92af2eadf7cbf2f4b56c7b59b33bfdec43fd509af17a6"
+    },
+    {
+      "path": "tests/data/test_ap23h3_contract.py",
+      "byteLength": 8699,
+      "sha256": "bd2ef9c80555e223e1140534658da1a8cc47d6b6f71fc29abc9883a8f932ddeb"
+    },
+    {
+      "path": "tests/governance/ap23h2-acceptance.test.mjs",
+      "byteLength": 5850,
+      "sha256": "e4fa734aa3f18a5d50c261c04a98dec2ba9088b1c79e32e629ff8b00af9cfd11"
+    },
+    {
+      "path": "tests/hosts/ap23h3-packaged.test.ts",
+      "byteLength": 9913,
+      "sha256": "5cd05d6b28ed06c17c06535725c476337eae865d217f9af4a3bc55d0fd3e2411"
+    },
+    {
+      "path": "tests/hosts/ap23h3-spfx-host.test.ts",
+      "byteLength": 12882,
+      "sha256": "24f71ad4fc0a95af1d86ec1246090dbbb44507ec8b7de17d405e67a7cd692947"
+    },
+    {
+      "path": "tests/public-app/ap23h3-build.test.ts",
+      "byteLength": 23106,
+      "sha256": "77bb71b4c057d174583cda3f5e0abf17fc8e02c037f999f1de26d5ae8376d126"
+    },
+    {
+      "path": "tests/ui/ap23h3-administrative.test.tsx",
+      "byteLength": 16558,
+      "sha256": "439df5bbc8639d0d56cc6980ffef56fd3a9b946f51e1f61398b68702fb2f880a"
+    },
+    {
+      "path": "tests/ui/ap23h3-app.test.tsx",
+      "byteLength": 13156,
+      "sha256": "1190a347a5461dc5b75fe209c9211ae278f870f34c8955b886e34733be4781e0"
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/spfx/sharepoint/solution/fristenrechner-schweiz.sppkg",
+      "byteLength": 439791,
+      "sha256": "c1d7d9f3ff9e5491e85caf1f9e1bf2690aeea8bda5dce74dd30a79f4abefd3f8"
+    },
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/step-1.log",
+      "byteLength": 54647,
+      "sha256": "77bc0a073a07550a010442c2f37b6400334292378a54aba68185df62958a8f5b"
+    },
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/step-2.log",
+      "byteLength": 19389,
+      "sha256": "cfb523c243343b2c4de6bcbcea3373de4b71ff35e7184769fc836831ae9723c5"
+    },
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/step-3.log",
+      "byteLength": 69,
+      "sha256": "a7cf24ee9319bea416ec11a903a3c23c54dc56cbe032940dd07e14cb12805767"
+    },
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/step-4.log",
+      "byteLength": 6185,
+      "sha256": "df160316765f8a3b3ee51fb3bb5e611491f0e1b3c51d4fb679208242f90a0b06"
+    },
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/step-5.log",
+      "byteLength": 56371,
+      "sha256": "66e1ab9d3a0151a123f72ee9ae0a327864338f3882f43fe3d276b18cc8d0a169"
+    },
+    {
+      "path": ".work/ap23h3-spfx-build-hNAGUh/verification.json",
+      "byteLength": 6928,
+      "sha256": "00d02a07b4f51aa2d2feb4454fedcf063f6ea2f4742c2187cc32bbb3aefeee32"
+    },
+    {
+      "path": ".work/public-ap23h3/.htaccess",
+      "byteLength": 1165,
+      "sha256": "22b8447d9ecc5f709ee0362ba23e813b2ca124bd563b2cf62e57961aaae6b4e8"
+    },
+    {
+      "path": ".work/public-ap23h3/assets/app-P36VNTVA.js",
+      "byteLength": 4114207,
+      "sha256": "5d95cb989bb88e3a4b792e85f8b7797e5af234d5cf4c03e008e1371c860f6f8e"
+    },
+    {
+      "path": ".work/public-ap23h3/assets/app-PQFJG2Q2.css",
+      "byteLength": 12322,
+      "sha256": "98f8f3ef52215ea1b1380f8def7281c715bd0ccebc551825087bf64d33404cb4"
+    },
+    {
+      "path": ".work/public-ap23h3/assets/fluent-ui-react-cb8d08006f10.js",
+      "byteLength": 977920,
+      "sha256": "cb8d08006f10a51b94a692f12590cbb3a9e0f1660c8d1529cedfce03ac6113fc"
+    },
+    {
+      "path": ".work/public-ap23h3/assets/react-020d164dcf31.js",
+      "byteLength": 11440,
+      "sha256": "020d164dcf3116ccc2268d6a6e44caa77c0131d8e98e882c6430219d281eef8e"
+    },
+    {
+      "path": ".work/public-ap23h3/assets/react-dom-93cb736921fc.js",
+      "byteLength": 120585,
+      "sha256": "93cb736921fcb9c3f06ec1c43b85a4e6ccc4f73111355cf75d0ca77f24fae8ed"
+    },
+    {
+      "path": ".work/public-ap23h3/build-manifest.json",
+      "byteLength": 584,
+      "sha256": "f2863e56cb95db5e6bbbb8bf855171ab4244c18d68388416c852907a070be662"
+    },
+    {
+      "path": ".work/public-ap23h3/favicon.svg",
+      "byteLength": 251,
+      "sha256": "5af536ea74422fc2141911b6d512ff423083ebf0e954188ab2026645bc6a1a4e"
+    },
+    {
+      "path": ".work/public-ap23h3/index.html",
+      "byteLength": 2152,
+      "sha256": "5dd9fe9d052e11a238a35ed0b525a2daa3f74ff856731ad4ef0ca12781ecaa00"
+    },
+    {
+      "path": ".work/public-ap23h3/licenses/fluent-ui-MIT.txt",
+      "byteLength": 1251,
+      "sha256": "8348b76df1cbdbf9ec6bca8c2d3313b68c7b33ba5e5696ab07de8c01462a8f0f"
+    },
+    {
+      "path": ".work/public-ap23h3/licenses/react-MIT.txt",
+      "byteLength": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": ".work/public-ap23h3/licenses/react-dom-MIT.txt",
+      "byteLength": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/QA-AP23H3.json",
+      "byteLength": 3522,
+      "sha256": "835585ddd3198f3eb99421ba63493fc886ed277264cc1b534f6e7563dd8511cb"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/actual-package.json",
+      "byteLength": 614,
+      "sha256": "ed1873b2cd4754854e333561eeda3dbeedf8f14077ec3968e019b0739e3e3bbb"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/actual-package.txt",
+      "byteLength": 2472,
+      "sha256": "29cc7f3a427493b472f921736be3a2171cd826638932a518266c1dad289539cb"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/actual-web-bundle.txt",
+      "byteLength": 4516,
+      "sha256": "4cd5126f2b5b76e9998e15bd122fb369f4534565b9c14e63658e8d9f24562016"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/additional-mutable-inputs.json",
+      "byteLength": 912,
+      "sha256": "69d40579218ae664ded8d1758c1fc916c8d973e052bde78a64000954eeef591a"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-nw-winter-fr.png",
+      "byteLength": 86936,
+      "sha256": "21712734f58d6dcd89cf0abcc56918728d147bf287cdbda8b742868dffc47b39"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-ow-de.png",
+      "byteLength": 98149,
+      "sha256": "66a4d442f049256bf11cdba825794e92a929ba9da8f9afe7f8e44e4c025bca10"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-ow-fr.png",
+      "byteLength": 101678,
+      "sha256": "214a30269f6222cd7f7898a72433528f60f3ca729ae18bc209d7d96a18149c33"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-ow-result-de.png",
+      "byteLength": 131888,
+      "sha256": "ca363235f82e6c7c417b9dc3408e758ab9631f44a38b68fee7713dc9a12d4172"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/browser-verification.json",
+      "byteLength": 2706,
+      "sha256": "85d0c5ab211935b27c1fbb8e442016db555bf7664ecc437379d8806950f5ae7b"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/bundle-integrity.json",
+      "byteLength": 15510,
+      "sha256": "b7e010a554e882a003d383795d395f34147486f3187df2be7fd625f2a4432dab"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/candidate-rebuild.txt",
+      "byteLength": 203,
+      "sha256": "27efb9368947a4fb9ffd27cfc806c59e569122429440771fde8c41be3de5f9b3"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/export-verification.json",
+      "byteLength": 1510,
+      "sha256": "fffaf3478f16932e9fdde1a2fd07df02fe9472d0d04cca640a95f789db97458e"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/h2-archive-tests.txt",
+      "byteLength": 4626,
+      "sha256": "1ffbf02db31b881380f8bbb7736141d3b372a935b9db27ec47d79b2e1141f486"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/h2-archive.txt",
+      "byteLength": 301,
+      "sha256": "b46f0ebaa6f52286186a97a5acc4bc6848e607e23f1fc7e4046609758135ce8e"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/host-lifecycle.txt",
+      "byteLength": 10373,
+      "sha256": "2a680150e4e9e26c4c33dc96f03fc7b4c332ff08ebd394321aa0d143735b7e44"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/independent-core-review-tests.txt",
+      "byteLength": 3612,
+      "sha256": "c8a78fe767473d8fa19a50be35e127c481b6545217439adf7a3d929d7a4475c7"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/independent-core-review.json",
+      "byteLength": 14236,
+      "sha256": "ed05b91c9cece79b49174af6a7f777711556d8b918a090a8d58538c1f46d7409"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/independent-core-review.md",
+      "byteLength": 1768,
+      "sha256": "815871ff0e54face53f78a666e4f1011826e46cb4a6476ec2e2c1f1796f4cec2"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/independent-schema.txt",
+      "byteLength": 1291,
+      "sha256": "6c1e0f343113f9bb9d3df7ba600dc6dbbcadda9445e85d8b6ebed19674be09e2"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/mutable-inputs.json",
+      "byteLength": 13428,
+      "sha256": "bf1d62b69a7b32af6dc21aef9ce9607609caf6d1c8974c34997fe849dd347b8b"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/native-schema-rebuild.txt",
+      "byteLength": 229,
+      "sha256": "986760e294c208cff65cb50ac6ded3410d6813df2deb719577df08ccf553a3f5"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/preservation-verification.json",
+      "byteLength": 31913,
+      "sha256": "cba302eb0643c9e7f2723ee90f761440b1a061855aabc323ec78208d998d14a9"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/product-regression.txt",
+      "byteLength": 713453,
+      "sha256": "16fab4d334c16d76ff11a7c1e177804b5904f940f8dfd51c99a99dbe7f15e050"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/protected-inputs.json",
+      "byteLength": 251012,
+      "sha256": "e5fbe27879725db1e23dd9b7be4dc285b7d153aa9e686ed0ad1eb72a0c62cda6"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/spfx-build.json",
+      "byteLength": 6928,
+      "sha256": "00d02a07b4f51aa2d2feb4454fedcf063f6ea2f4742c2187cc32bbb3aefeee32"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/typecheck-final.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/typecheck.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/web-build.json",
+      "byteLength": 3971,
+      "sha256": "dd71d820f9a32392118409e91b47e0fe7f25850973b9040e439292254b607c56"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/web-build.txt",
+      "byteLength": 134,
+      "sha256": "e36d3a1fcf162bf9562c467b1591eee4f7116f1e036ffc065f5a249874120e4c"
+    },
+    {
+      "path": "outputs/ap23h3-2026-10-22/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "spfx/tsconfig.json",
+      "byteLength": 289,
+      "sha256": "8e244b71409da3c87f0d6e84ff075712b583fa31604ec4b7e3300c94e3a5408f"
+    }
+  ],
+  "supplemental": [
+    {
+      "id": "typecheck-final",
+      "exitCode": 0,
+      "path": "outputs/ap23h3-2026-10-22/typecheck-final.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "whitespace",
+      "exitCode": 0,
+      "path": "outputs/ap23h3-2026-10-22/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "localLinksChecked": 768,
+  "formats": {
+    "manifest": "12.0.0",
+    "minimumConsumer": "12.0.0",
+    "administrativeCatalog": "5.0.0"
+  },
+  "counts": {
+    "artifacts": 44,
+    "totalFilesIncludingManifest": 45,
+    "calendars": 35,
+    "profiles": 5,
+    "administrativePaths": 79,
+    "preservedAdministrativePaths": 58,
+    "newAdministrativePaths": 21,
+    "qualificationPolicies": 79,
+    "laws": 13,
+    "suspensionProfiles": 25,
+    "holidayBindings": 17,
+    "basisHolidayRules": 479,
+    "supplementalSoRules": 12,
+    "newProceduralRules": 8,
+    "totalHolidayRules": 499,
+    "preservedSocialRules": 44,
+    "preservedBernSocialBindings": 50,
+    "rawUnchangedFromG3": 6
+  },
+  "browser": {
+    "workPackage": "AP23H3",
+    "status": "passed",
+    "actualLocalBuild": true,
+    "languages": [
+      "de",
+      "fr"
+    ],
+    "method": "Actual in-app browser through CUA. Observed form selections, rendered dates, read-only DOM layout measurements and screenshots. This script binds that evidence, not a new browser run.",
+    "url": "http://127.0.0.1:8805/fristenrechner/",
+    "asset": {
+      "path": ".work/public-ap23h3/assets/app-P36VNTVA.js",
+      "byteLength": 4114207,
+      "sha256": "5d95cb989bb88e3a4b792e85f8b7797e5af234d5cf4c03e008e1371c860f6f8e"
+    },
+    "layout": {
+      "viewportWidth": 1240,
+      "viewportHeight": 1073,
+      "documentWidth": 1240,
+      "formGridColumns": [
+        "487px",
+        "487px"
+      ],
+      "horizontalOverflow": false
+    },
+    "observedCases": [
+      {
+        "canton": "OW",
+        "pathId": "ow-admin-20",
+        "date": "2026-10-02",
+        "positiveOpening": "originalReasoned",
+        "finalEnd": "2026-10-22",
+        "firstCounted": "2026-10-03",
+        "suspendedDays": 0,
+        "languages": [
+          "de",
+          "fr"
+        ]
+      },
+      {
+        "canton": "NW",
+        "pathId": "nw-einwendung-ordered",
+        "date": "2026-12-10",
+        "days": 20,
+        "finalEnd": "2027-01-15",
+        "firstCounted": "2026-12-11",
+        "suspendedDays": 16,
+        "stillstand": "winterOnly",
+        "language": "fr"
+      }
+    ],
+    "checked": [
+      "Early editable date, without waiting for all selections",
+      "Actual two-column form and two equal-width button rows",
+      "Changing canton resets incompatible law and current-case qualification",
+      "Readable source links and separate actual-period norm references",
+      "OW administrative GOG interpretation identified explicitly",
+      "NW winter-only parameter displayed",
+      "No calendar export control"
+    ],
+    "realDeviceTest": false,
+    "realM365HostTest": false,
+    "narrowViewportVisualTest": false,
+    "screenshots": [
+      {
+        "path": "outputs/ap23h3-2026-10-22/browser-ow-de.png",
+        "byteLength": 98149,
+        "sha256": "66a4d442f049256bf11cdba825794e92a929ba9da8f9afe7f8e44e4c025bca10"
+      },
+      {
+        "path": "outputs/ap23h3-2026-10-22/browser-ow-result-de.png",
+        "byteLength": 131888,
+        "sha256": "ca363235f82e6c7c417b9dc3408e758ab9631f44a38b68fee7713dc9a12d4172"
+      },
+      {
+        "path": "outputs/ap23h3-2026-10-22/browser-ow-fr.png",
+        "byteLength": 101678,
+        "sha256": "214a30269f6222cd7f7898a72433528f60f3ca729ae18bc209d7d96a18149c33"
+      },
+      {
+        "path": "outputs/ap23h3-2026-10-22/browser-nw-winter-fr.png",
+        "byteLength": 86936,
+        "sha256": "21712734f58d6dcd89cf0abcc56918728d147bf287cdbda8b742868dffc47b39"
+      }
+    ],
+    "sourceReleaseApproved": false,
+    "operatingPermission": false
+  },
+  "toolchain": {
+    "node": "v22.23.2",
+    "npm": "10.9.8"
+  },
+  "warnings": {
+    "lint": 60,
+    "blocking": false,
+    "source": ".work/ap23h3-spfx-build-hNAGUh/step-2.log"
+  },
+  "scope": "Local native integration only. Synthetic approvals remain test-memory only. E/Q/P, AP5, AP21, mirrors, permissions, hosting and operating pins unchanged."
+}

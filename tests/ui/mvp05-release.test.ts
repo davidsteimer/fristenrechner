@@ -35,8 +35,8 @@ test('public entry uses approved MVP09 while the legacy preview and explicit his
   assert.match(preview, /candidate === 'ap17c' \? ap17cCandidateCalculationData/);
   assert.match(preview, /candidate === 'ap22c2' \? mvp06CalculationData : mvp07Runtime.data/);
   assert.doesNotMatch(preview, /from '\.\/data'/);
-  assert.match(publicEntry, /import \{ mvp09Runtime \} from '\.\.\/release\/mvp09ReleaseData'/);
-  assert.match(publicEntry, /<FristenrechnerApp \{\.\.\.mvp09Runtime\} \/>/);
+  assert.match(publicEntry, /import \{ mvp10Runtime \} from '\.\.\/release\/mvp10ReleaseData'/);
+  assert.match(publicEntry, /<FristenrechnerApp \{\.\.\.mvp10Runtime\} \/>/);
   assert.doesNotMatch(publicEntry, /ap19c|ap18c|ap17c|qaPreset|initialState|mvp04/i);
 });
 

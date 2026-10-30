@@ -1,0 +1,2094 @@
+{
+  "workPackage": "AP23H1",
+  "asOf": "2026-10-22",
+  "status": "passedResearchComparison",
+  "fixtureSha256": "d924f5e02b38ff3e594339d7c4cebc4c23478db7375ce1d97108451b5aefb094",
+  "checkerSha256": "57fa745b1d1da404743e4218e053182d2dbbb312aaae21a41dcc1a09a4240fcb",
+  "runtimeActive": false,
+  "productTest": false,
+  "exportTest": false,
+  "legalApproval": false,
+  "paths": 21,
+  "referenceCases": 118,
+  "counts": {
+    "datedResearchValue": 58,
+    "unresolvedBoundaryProposed": 18,
+    "qualificationBoundaryProposed": 38,
+    "researchWindowBoundary": 4
+  },
+  "calendarProbes": 20,
+  "calendarCountChecks": 4,
+  "calendarComparisons": [
+    {
+      "calendar": "OW-PROCESS",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-22-ap23g3/calendars/ap22-ow-76c151dccf1f.json",
+      "sourceSha256": "0a7f5740b79d30331ebdb58b6a54da76aeba1ab0048298d26be0ae3ca7348807",
+      "baselineRules": 13,
+      "proposedProjectionDates": 17,
+      "relevantNamedResearchDates": 14,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    },
+    {
+      "calendar": "OW-PROCESS",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-22-ap23g3/calendars/ap22-ow-76c151dccf1f.json",
+      "sourceSha256": "0a7f5740b79d30331ebdb58b6a54da76aeba1ab0048298d26be0ae3ca7348807",
+      "baselineRules": 13,
+      "proposedProjectionDates": 17,
+      "relevantNamedResearchDates": 14,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "year": 2026,
+      "sourcePath": "data/candidates/2026-10-22-ap23g3/calendars/ap22-nw-5dfca484e4af.json",
+      "sourceSha256": "263e37a8c6409c41bc03f9ea7af6a74d24d3b5c4e7c13f58380641847d95cae0",
+      "baselineRules": 13,
+      "proposedProjectionDates": 17,
+      "relevantNamedResearchDates": 14,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    },
+    {
+      "calendar": "NW-PROCESS",
+      "year": 2027,
+      "sourcePath": "data/candidates/2026-10-22-ap23g3/calendars/ap22-nw-5dfca484e4af.json",
+      "sourceSha256": "263e37a8c6409c41bc03f9ea7af6a74d24d3b5c4e7c13f58380641847d95cae0",
+      "baselineRules": 13,
+      "proposedProjectionDates": 17,
+      "relevantNamedResearchDates": 14,
+      "daysCompared": 365,
+      "endEligibilityDifferences": 0
+    }
+  ],
+  "isolatedPracticeResults": [
+    {
+      "id": "P-VA24-19",
+      "sourceRef": "NW Verwaltungsgericht VA 24/19 vom 06.01.2025 E. 1.3, amtliches PDF https://www.nw.ch/_rte/publikation/37864",
+      "sourcePath": "outputs/ap23h1-2026-10-22/sources/nw/va-24-19-amtlich.pdf",
+      "sourceSha256": "65b0d6b31a80883412bcfec4e4fe3dc3abb65deac9ff1ea9f358aec2c5a596f6",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2024-08-26",
+        "skippedDays": 32
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2024-07-06",
+        "firstCountedDay": "2024-07-06",
+        "nominalEnd": "2024-08-26",
+        "end": "2024-08-26",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "isolatedPracticeArithmeticOnly"
+        ],
+        "isolatedPracticeOnly": true,
+        "normReleaseApproval": false
+      }
+    }
+  ],
+  "discrepancies": [],
+  "results": [
+    {
+      "id": "B01",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B02",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B03",
+      "path": "OW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B04",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B05",
+      "path": "OW-ADMIN-REASONS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B06",
+      "path": "OW-COURT-REASONS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-02"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-11-01",
+        "end": "2026-11-02",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B07",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-07"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-07",
+        "end": "2026-10-07",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "B08",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B09",
+      "path": "NW-COURT-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B10",
+      "path": "NW-EINSPRACHE-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B11",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B12",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B13",
+      "path": "NW-EINSPRACHE-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B14",
+      "path": "NW-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B15",
+      "path": "NW-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-12"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-12",
+        "end": "2026-10-12",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B16",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B17",
+      "path": "NW-COURT-VERNEHMLASSUNG-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B18",
+      "path": "NW-ADMIN-REPLIK-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B19",
+      "path": "NW-COURT-REPLIK-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B20",
+      "path": "NW-ADMIN-DUPLIK-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "B21",
+      "path": "NW-COURT-DUPLIK-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-10-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-03",
+        "firstCountedDay": "2026-10-03",
+        "nominalEnd": "2026-10-22",
+        "end": "2026-10-22",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "OW01",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW02",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-25"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-25",
+        "end": "2027-01-25",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW03",
+      "path": "OW-ADMIN-REASONS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-01"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-24",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-02-01",
+        "end": "2027-02-01",
+        "skippedDays": 10,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW04",
+      "path": "OW-COURT-REASONS-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-02-01"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-24",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-02-01",
+        "end": "2027-02-01",
+        "skippedDays": 10,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW05",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-24",
+        "firstCountedDay": "2026-12-24",
+        "nominalEnd": "2026-12-28",
+        "end": "2026-12-28",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "OW06",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-15",
+        "firstCountedDay": "2027-07-15",
+        "nominalEnd": "2027-07-19",
+        "end": "2027-07-19",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW07",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31",
+        "skippedDays": 32
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-08-31",
+        "end": "2027-08-31",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW08",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-09-10"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-09-10",
+        "end": "2027-09-10",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW09",
+      "path": "OW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-09-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-09-25",
+        "firstCountedDay": "2026-09-25",
+        "nominalEnd": "2026-09-25",
+        "end": "2026-09-28",
+        "skippedDays": 0,
+        "endShiftDays": 3,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "OW10",
+      "path": "OW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-05-27",
+        "firstCountedDay": "2027-05-27",
+        "nominalEnd": "2027-05-27",
+        "end": "2027-05-28",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW11",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-08",
+        "firstCountedDay": "2026-12-08",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "OW12",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-21",
+        "firstCountedDay": "2027-04-05",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW13",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-02",
+        "firstCountedDay": "2027-03-02",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW14",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-19"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-19",
+        "firstCountedDay": "2027-03-19",
+        "nominalEnd": "2027-03-19",
+        "end": "2027-03-19",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW15",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04",
+        "firstCountedDay": "2027-01-03"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-31",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "skippedDays": 3,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "OW-STVG-1917",
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "OW16",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-11-05"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-10-17",
+        "firstCountedDay": "2026-10-17",
+        "nominalEnd": "2026-11-05",
+        "end": "2026-11-05",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-1917"
+        ]
+      }
+    },
+    {
+      "id": "NW01",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2026-12-30",
+        "end": "2026-12-30",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW02",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW03",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-07-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-07-30",
+        "end": "2027-07-30",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW04",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-21",
+        "firstCountedDay": "2027-03-21",
+        "nominalEnd": "2027-03-21",
+        "end": "2027-03-22",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW05",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-08-31",
+        "end": "2027-08-31",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW06",
+      "path": "NW-EINSPRACHE-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW07",
+      "path": "NW-COURT-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-02",
+        "firstCountedDay": "2027-03-02",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW08",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-22"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-19",
+        "firstCountedDay": "2027-03-19",
+        "nominalEnd": "2027-03-19",
+        "end": "2027-03-22",
+        "skippedDays": 0,
+        "endShiftDays": 3,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW09",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-03-30"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-29",
+        "firstCountedDay": "2027-03-29",
+        "nominalEnd": "2027-03-29",
+        "end": "2027-03-30",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW10",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-05-18"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-05-17",
+        "firstCountedDay": "2027-05-17",
+        "nominalEnd": "2027-05-17",
+        "end": "2027-05-18",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW11",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-01-01",
+        "firstCountedDay": "2027-01-01",
+        "nominalEnd": "2027-01-01",
+        "end": "2027-01-04",
+        "skippedDays": 0,
+        "endShiftDays": 3,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW12",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-28"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-26",
+        "firstCountedDay": "2026-12-26",
+        "nominalEnd": "2026-12-26",
+        "end": "2026-12-28",
+        "skippedDays": 0,
+        "endShiftDays": 2,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW13",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-12-09"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-08",
+        "firstCountedDay": "2026-12-08",
+        "nominalEnd": "2026-12-08",
+        "end": "2026-12-09",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW14",
+      "path": "NW-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04",
+        "firstCountedDay": "2027-01-03"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-31",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "skippedDays": 3,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW15",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-08-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-07-11",
+        "firstCountedDay": "2027-07-11",
+        "nominalEnd": "2027-08-31",
+        "end": "2027-08-31",
+        "skippedDays": 32,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW16",
+      "path": "NW-COURT-REPLIK-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-15"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-11",
+        "firstCountedDay": "2026-12-11",
+        "nominalEnd": "2027-01-15",
+        "end": "2027-01-15",
+        "skippedDays": 16,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW17",
+      "path": "NW-ADMIN-DUPLIK-20",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-04-05"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-03-02",
+        "firstCountedDay": "2027-03-02",
+        "nominalEnd": "2027-04-05",
+        "end": "2027-04-05",
+        "skippedDays": 15,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "NW18",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-01-04"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-12-31",
+        "firstCountedDay": "2027-01-03",
+        "nominalEnd": "2027-01-03",
+        "end": "2027-01-04",
+        "skippedDays": 3,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "C01",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C02",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C03",
+      "path": "OW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C04",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C05",
+      "path": "OW-ADMIN-REASONS-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C06",
+      "path": "OW-COURT-REASONS-30",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C07",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C08",
+      "path": "NW-COURT-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C09",
+      "path": "NW-EINSPRACHE-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C10",
+      "path": "NW-EINSPRACHE-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C11",
+      "path": "NW-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C12",
+      "path": "NW-COURT-ORDERED",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C13",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C14",
+      "path": "NW-COURT-VERNEHMLASSUNG-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C15",
+      "path": "NW-ADMIN-REPLIK-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C16",
+      "path": "NW-COURT-REPLIK-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C17",
+      "path": "NW-ADMIN-DUPLIK-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "C18",
+      "path": "NW-COURT-DUPLIK-20",
+      "expected": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      },
+      "actual": {
+        "outcome": "unresolvedBoundaryProposed",
+        "reason": "H1-END-SUSPENSION",
+        "nominalEnd": "2027-03-20",
+        "ordinaryShiftEnd": "2027-03-22",
+        "firstSuspendedShiftDate": "2027-03-21"
+      }
+    },
+    {
+      "id": "W01",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "W02",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2026-08-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2026-08-30",
+        "firstCountedDay": "2026-08-30",
+        "nominalEnd": "2026-08-30",
+        "end": "2026-08-31",
+        "skippedDays": 0,
+        "endShiftDays": 1,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "W03",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-12-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-12-31",
+        "firstCountedDay": "2027-12-31",
+        "nominalEnd": "2027-12-31",
+        "end": "2027-12-31",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "NW-VRG-1519"
+        ]
+      }
+    },
+    {
+      "id": "W04",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "W05",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "W06",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "researchWindowBoundary"
+      },
+      "actual": {
+        "outcome": "researchWindowBoundary",
+        "reason": "outsideReferenceWindow"
+      }
+    },
+    {
+      "id": "W07",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "datedResearchValue",
+        "end": "2027-12-31"
+      },
+      "actual": {
+        "outcome": "datedResearchValue",
+        "ordinaryStart": "2027-12-27",
+        "firstCountedDay": "2027-12-27",
+        "nominalEnd": "2027-12-31",
+        "end": "2027-12-31",
+        "skippedDays": 0,
+        "endShiftDays": 0,
+        "temporalBindings": [
+          "OW-STVG-2031"
+        ]
+      }
+    },
+    {
+      "id": "N01",
+      "path": "UNKNOWN",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchPath"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchPath"
+      }
+    },
+    {
+      "id": "N02",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchFact"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unknownResearchFact"
+      }
+    },
+    {
+      "id": "N03",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "invalidResearchDate"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "invalidResearchDate"
+      }
+    },
+    {
+      "id": "N04",
+      "path": "NW-COURT-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "stageDoesNotMatchPath"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "stageDoesNotMatchPath"
+      }
+    },
+    {
+      "id": "N05",
+      "path": "OW-ADMIN-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "actionNotQualified"
+      }
+    },
+    {
+      "id": "N06",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetOutsideScope"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetOutsideScope"
+      }
+    },
+    {
+      "id": "N07",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "holidayAnchorNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "holidayAnchorNotQualified"
+      }
+    },
+    {
+      "id": "N08",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "specialLawNotExcluded"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "specialLawNotExcluded"
+      }
+    },
+    {
+      "id": "N09",
+      "path": "OW-COURT-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "materialPerformanceOutsideScope"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "materialPerformanceOutsideScope"
+      }
+    },
+    {
+      "id": "N10",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart"
+      }
+    },
+    {
+      "id": "N11",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "fixedDateOrDeviatingStart"
+      }
+    },
+    {
+      "id": "N12",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "termChangeNeedsIndividualReview"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "termChangeNeedsIndividualReview"
+      }
+    },
+    {
+      "id": "N13",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection"
+      }
+    },
+    {
+      "id": "N14",
+      "path": "OW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "unsupportedUnitOrDirection"
+      }
+    },
+    {
+      "id": "N15",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "noticeNeedsIndividualReview"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "noticeNeedsIndividualReview"
+      }
+    },
+    {
+      "id": "N16",
+      "path": "NW-COURT-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "serviceFictionNotCalculated"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "serviceFictionNotCalculated"
+      }
+    },
+    {
+      "id": "N17",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved"
+      }
+    },
+    {
+      "id": "N18",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "localHolidayEffectUnresolved"
+      }
+    },
+    {
+      "id": "N19",
+      "path": "NW-APPEAL-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "agreedDeadlineOutsidePositiveScope"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "agreedDeadlineOutsidePositiveScope"
+      }
+    },
+    {
+      "id": "N20",
+      "path": "NW-COURT-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified"
+      }
+    },
+    {
+      "id": "N21",
+      "path": "NW-ADMIN-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "dayDurationNotSpecified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "dayDurationNotSpecified"
+      }
+    },
+    {
+      "id": "N22",
+      "path": "NW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "N23",
+      "path": "OW-COURT-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "N24",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetCourtNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "targetCourtNotQualified"
+      }
+    },
+    {
+      "id": "N25",
+      "path": "NW-EINSPRACHE-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished"
+      }
+    },
+    {
+      "id": "N26",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      }
+    },
+    {
+      "id": "N27",
+      "path": "OW-ADMIN-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished"
+      }
+    },
+    {
+      "id": "N28",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingOriginNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingOriginNotQualified"
+      }
+    },
+    {
+      "id": "N29",
+      "path": "OW-ADMIN-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient"
+      }
+    },
+    {
+      "id": "N30",
+      "path": "OW-COURT-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsWrongRecipient"
+      }
+    },
+    {
+      "id": "N31",
+      "path": "NW-EINWENDUNG-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationBasisNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "durationBasisNotQualified"
+      }
+    },
+    {
+      "id": "N32",
+      "path": "NW-COURT-REPLIK-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      }
+    },
+    {
+      "id": "N33",
+      "path": "OW-COURT-SUSPENSIVE-5",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "suspensionExceptionNotQualified"
+      }
+    },
+    {
+      "id": "N34",
+      "path": "NW-ADMIN-VERNEHMLASSUNG-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "statutoryDurationMismatch"
+      }
+    },
+    {
+      "id": "N35",
+      "path": "NW-EINSPRACHE-ORDERED",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "einspracheAdmissibilityNotEstablished"
+      }
+    },
+    {
+      "id": "N36",
+      "path": "NW-COURT-DUPLIK-20",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "openingNotQualified"
+      }
+    },
+    {
+      "id": "N37",
+      "path": "OW-ADMIN-REASONS-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsContextNotQualified"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "reasonsContextNotQualified"
+      }
+    },
+    {
+      "id": "N38",
+      "path": "OW-COURT-30",
+      "expected": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished"
+      },
+      "actual": {
+        "outcome": "qualificationBoundaryProposed",
+        "reason": "priorReasonsRequestNotEstablished"
+      }
+    }
+  ]
+}

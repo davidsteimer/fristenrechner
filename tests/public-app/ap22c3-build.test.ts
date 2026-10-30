@@ -27,8 +27,8 @@ test('C3 builds as a separate non-deployable static reference bundle with 32-cal
   assert.equal(await readFile(resolve(output, '.htaccess'), 'utf8'), await readFile('public-app/.htaccess', 'utf8'));
 });
 test('historical C3 candidate stays separate from the approved local MVP09 entry, pin and package', async () => {
-  assert.match(await readFile('src/public-app/main.tsx', 'utf8'), /mvp09Runtime/);
-  assert.match(await readFile('spfx/src/core/config.ts', 'utf8'), /[a-f0-9]{40}\/data\/releases\/2026-10-18-mvp-09-approved\.1/);
+  assert.match(await readFile('src/public-app/main.tsx', 'utf8'), /mvp10Runtime/);
+  assert.match(await readFile('spfx/src/core/config.ts', 'utf8'), /[a-f0-9]{40}\/data\/releases\/2026-10-28-mvp-010-approved\.1/);
   const packageSolution = JSON.parse(await readFile('spfx/config/package-solution.json', 'utf8'));
-  assert.equal(packageSolution.solution.version, '0.9.0.0');
+  assert.equal(packageSolution.solution.version, '0.10.0.0');
 });

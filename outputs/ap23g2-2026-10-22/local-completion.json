@@ -1,0 +1,575 @@
+{
+  "workPackage": "AP23G2",
+  "asOf": "2026-10-22",
+  "status": "passed-awaiting-technical-acceptance",
+  "head": "70ce67425e046a7a38a4fbe66acbd93c75ca5983",
+  "professionalG1Acceptance": true,
+  "technicalAcceptance": false,
+  "contractDecision": {
+    "id": "DEC-2026-036",
+    "status": "proposed"
+  },
+  "proposedFormats": {
+    "administrativeCatalog": "4.0.0",
+    "manifest": "11.0.0",
+    "minimumConsumer": "11.0.0"
+  },
+  "runtimeActive": false,
+  "productIntegration": false,
+  "sourceReleaseApproved": false,
+  "calendarExportEnabled": false,
+  "productCodeChanged": false,
+  "acceptedLegalDataChanged": false,
+  "commitCreated": false,
+  "sourcePushPerformed": false,
+  "releaseBuildPerformed": false,
+  "operatingChanges": false,
+  "issue48StatusUpdated": true,
+  "g3Started": false,
+  "counts": {
+    "paths": 58,
+    "newPaths": 16,
+    "preservedPaths": 42,
+    "calendars": 33,
+    "artifacts": 42,
+    "unchangedRawArtifacts": 41,
+    "cases": 115,
+    "catalogMutations": 43,
+    "inputNegatives": 38,
+    "nativeReaderNegatives": 6,
+    "oldNativeCalculations": 42,
+    "forgedContextBlocks": 126,
+    "archiveTests": 40
+  },
+  "manifest": {
+    "path": "outputs/ap23g2-candidate-2026-10-22/bundle/manifest.json",
+    "byteLength": 25814,
+    "sha256": "f7193786575ee9f58063859b3af2daca738b766d5a73bd9ddacf474310124187"
+  },
+  "steps": [
+    {
+      "id": "schemas",
+      "command": "node",
+      "args": [
+        "scripts/build-ap23g2-schemas.mjs"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/schemas.txt",
+      "byteLength": 1327,
+      "sha256": "ac653029ea88ff6b3c9babd2b70e5324fd718e05e1231d6397215ef8e6509ad9"
+    },
+    {
+      "id": "candidate",
+      "command": "node",
+      "args": [
+        "scripts/build-ap23g2-candidate.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/candidate.txt",
+      "byteLength": 459,
+      "sha256": "8471541e06e5a9dc96c4e2d610cbc8235d29f1ec08c12daf4459fee80edce448"
+    },
+    {
+      "id": "contract",
+      "command": "node",
+      "args": [
+        "--import",
+        "tsx",
+        "scripts/check-ap23g2-contract.mjs"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/contract.txt",
+      "byteLength": 1266,
+      "sha256": "93fc1ea31d2bbb69f3269e0a15bcf51babd28bdf09d3aee77831c0f5de5e321e"
+    },
+    {
+      "id": "independent",
+      "command": ".venv/bin/python",
+      "args": [
+        "scripts/check_ap23g2_independent.py"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/independent.txt",
+      "byteLength": 4496,
+      "sha256": "baf30ad5a63b6cf1af77bcddb539a26990594104ba3f1eec782648b7eea569e6"
+    },
+    {
+      "id": "g1-archive",
+      "command": "node",
+      "args": [
+        "scripts/archive-ap23g1-acceptance.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/g1-archive.txt",
+      "byteLength": 390,
+      "sha256": "fcbe19b99a80a7262ebf4d68845b4ad4a99623e4a776c1f177ca47ef8c8d105e"
+    },
+    {
+      "id": "archive-tests",
+      "command": "node",
+      "args": [
+        "--test",
+        "tests/governance/ap23g1-acceptance.test.mjs"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/archive-tests.txt",
+      "byteLength": 6547,
+      "sha256": "e46f916c004520973abdafa99ad41c8b86fca2882462f21f231b3ec3dfb0375b"
+    },
+    {
+      "id": "preservation",
+      "command": "node",
+      "args": [
+        "scripts/check-ap23g1-preservation.mjs"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/preservation.txt",
+      "byteLength": 589,
+      "sha256": "1b87d6a7aaa97618d7ffc2f4e3399575c74d4907cae2fa8262baf3ce213e9a50"
+    },
+    {
+      "id": "typecheck",
+      "command": "node",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/typecheck.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "whitespace",
+      "command": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "path": "outputs/ap23g2-2026-10-22/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "localLinksChecked": 749,
+  "bindings": [
+    {
+      "path": "README.md",
+      "byteLength": 27161,
+      "sha256": "559fb85c621cac14673c19b524df1a2d9f9df51c1ae8b2ad394eb31584ca26cd"
+    },
+    {
+      "path": "docs/README.md",
+      "byteLength": 42595,
+      "sha256": "3c5fc8cf5ae4c34dfc5f5e3987a4cbf35d180f54586f23f8dd1b3406be074005"
+    },
+    {
+      "path": "docs/architektur/README.md",
+      "byteLength": 25682,
+      "sha256": "b34653abc31232f15049b5543ab3794d3358410623fb9165900efb5ce5e7697f"
+    },
+    {
+      "path": "docs/architektur/verwaltungsverfahrensvertrag-ap23g2-pruefung.md",
+      "byteLength": 7516,
+      "sha256": "f39987150e488dc55af295beee382818b6fe2bead2b590aee0f4948ff00f9569"
+    },
+    {
+      "path": "docs/architektur/verwaltungsverfahrensvertrag-ap23g2.md",
+      "byteLength": 13119,
+      "sha256": "c3b0298d5cb8710718b4b59315c1150a967d00c4036d5d0ed8e46809ba7a5eba"
+    },
+    {
+      "path": "docs/entscheidungen/DEC-2026-036-eroeffnungsketten-und-begruendungsverlangen-v4.md",
+      "byteLength": 7064,
+      "sha256": "09fc67aa785ba06dc406db60528fc5e0301e0eec162d409f5853daf93f6297df"
+    },
+    {
+      "path": "docs/entscheidungen/README.md",
+      "byteLength": 25988,
+      "sha256": "8352d87a5d1963d2b513f891e7ea8e61b60ad99449793584033924d0656022ae"
+    },
+    {
+      "path": "docs/fachrecht/README.md",
+      "byteLength": 30573,
+      "sha256": "01d8bd5ac25c7a84d94e13ea8e173accc60b0f7f4f7ef119c8742370d9fa0b13"
+    },
+    {
+      "path": "docs/fachrecht/abnahme-ap23g1.md",
+      "byteLength": 5267,
+      "sha256": "bf6f15f128ab251b164d1a2e5e39a10ad3214c2395d69be1470986853d9c2701"
+    },
+    {
+      "path": "docs/fachrecht/ap23g1/referenzfaelle.json",
+      "byteLength": 35134,
+      "sha256": "3aa2cc7a3ffaacee3f5ac22bf5c4cce9f9227f5461b7de99f5a34dbea114726f"
+    },
+    {
+      "path": "docs/planung/fortsetzung-verwaltungsverfahren-mvp09.md",
+      "byteLength": 13708,
+      "sha256": "bb91ebaaaeeb74f0ffab255d42a1146b354d9df62dd746142a6528114ffd9884"
+    },
+    {
+      "path": "docs/planung/schweizausbau-nach-mvp09.md",
+      "byteLength": 8751,
+      "sha256": "3e68fb822d7a2b4cbe6bb0ddfb2222bd28f7b0a008fc788b4a18217b49d0c51a"
+    },
+    {
+      "path": "outputs/2026-08-28_Projekt-und-Realisierungsplan_Fristenrechner_Schweiz_V1.0.docx",
+      "byteLength": 85397,
+      "sha256": "46e7e3fc9e8eeeeca035c56dbb06eeb0c55f60c423a0bea5f4075bf61b4cac61"
+    },
+    {
+      "path": "outputs/ap23g1-2026-10-22/local-completion.json",
+      "byteLength": 7251,
+      "sha256": "89e3404125021d0f7ef2c140afb790d41a9907a31d549d13d388ac2d263ed240"
+    },
+    {
+      "path": "outputs/ap23g1-abnahme-2026-10-22/receipt.json",
+      "byteLength": 14377,
+      "sha256": "d075f55e3439d8480107129916b6f22052ad8cb5b0294f42ae1696eda702b443"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/QA-AP23G2-INDEPENDENT.json",
+      "byteLength": 39910,
+      "sha256": "eb230cb4f2e2292f5818ec7d4e4f163d8fb96eec67b3fe60d7b2b7df29a880d3"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/QA-AP23G2.json",
+      "byteLength": 177705,
+      "sha256": "eae5906223ed690349a4126bd04947094d4e201472fda4f333ca2fec6c4b9e1e"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/archive-tests.txt",
+      "byteLength": 6547,
+      "sha256": "e46f916c004520973abdafa99ad41c8b86fca2882462f21f231b3ec3dfb0375b"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/candidate.txt",
+      "byteLength": 459,
+      "sha256": "8471541e06e5a9dc96c4e2d610cbc8235d29f1ec08c12daf4459fee80edce448"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/contract-gap-review.md",
+      "byteLength": 24916,
+      "sha256": "0906013689fcc99b313a772eba25e1be5e84f8f71b0aae340ab91b66237f61dc"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/contract.txt",
+      "byteLength": 1266,
+      "sha256": "93fc1ea31d2bbb69f3269e0a15bcf51babd28bdf09d3aee77831c0f5de5e321e"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/g1-archive.txt",
+      "byteLength": 390,
+      "sha256": "fcbe19b99a80a7262ebf4d68845b4ad4a99623e4a776c1f177ca47ef8c8d105e"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/independent.txt",
+      "byteLength": 4496,
+      "sha256": "baf30ad5a63b6cf1af77bcddb539a26990594104ba3f1eec782648b7eea569e6"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/issue48-status.json",
+      "byteLength": 338,
+      "sha256": "b1d46d6b0bb93be267a3e436ee579068b0b97d6a6d21c359c9804a1011b576c1"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/preservation.txt",
+      "byteLength": 589,
+      "sha256": "1b87d6a7aaa97618d7ffc2f4e3399575c74d4907cae2fa8262baf3ce213e9a50"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/schemas.txt",
+      "byteLength": 1327,
+      "sha256": "ac653029ea88ff6b3c9babd2b70e5324fd718e05e1231d6397215ef8e6509ad9"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/typecheck.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/ap23g2-2026-10-22/whitespace.txt",
+      "byteLength": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/administrative-procedures/ch-cantonal-administrative-procedures.json",
+      "byteLength": 343336,
+      "sha256": "a17444b1e6c0b6092d1d48f2ca337096ab746f16290651dd9e5a4782cf72db87"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ag-21d6f2634ce0.json",
+      "byteLength": 13915,
+      "sha256": "3a2b1266c6950c00c8b41f71dc375a3e22465a9424904bd6475d0aa14ee0ac69"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ai-5d4e5a68e106.json",
+      "byteLength": 16090,
+      "sha256": "d46d8dd056ef929324f3d698141774f3268152ee0d86a7c4e468e81f89b0c804"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ai-f507435d8aa8.json",
+      "byteLength": 17067,
+      "sha256": "e697ec3b70f5ad8ce0056293f970174fd9d9ab5147c9ac923babc78575e17267"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ar-88bb22c08a22.json",
+      "byteLength": 9127,
+      "sha256": "f37e6501e882b92e760e69f3c014a5b647d154a50c9f1e0ce595d6e5815660dd"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-bl-72f1a7e0fcf8.json",
+      "byteLength": 12983,
+      "sha256": "d3bc598fef91c4b34eb95e11620b22f01280f3edbc420057e83dbb2c5e100722"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-bs-39a64bdfc0fe.json",
+      "byteLength": 13035,
+      "sha256": "34e173eaa87ad0c3fb4657064d6e077607ddf0c8675a0fb8330a74d8eb3104e6"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-fr-7d8c38f7c610.json",
+      "byteLength": 15085,
+      "sha256": "7aaed5b99c4afa10553ae65e5145c14debdd716a1f5f89f8e588d5b22868a489"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ge-a36ff7926d08.json",
+      "byteLength": 9635,
+      "sha256": "f6a804b2a30d62e0f58d020679b1f35b3fab5cc0a53296c314bdd1855d456bc0"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-gl-87c11e156541.json",
+      "byteLength": 14049,
+      "sha256": "3ee9a646f03908b708b32b6e68b4125cc067361d0cbba5bc38fb59144532790d"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-gr-bf0366c8eda2.json",
+      "byteLength": 11851,
+      "sha256": "9c929f7a12dbbaa7c4a7d6d6f0eac74d3e3827ee77c681c540623a3536d0a26e"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ju-b096c09f506c.json",
+      "byteLength": 15841,
+      "sha256": "5bfae22c7ca81dd460a983b14626ae44aefdd391ddabe5b3979616eb4984a06a"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-lu-55514cd91f06.json",
+      "byteLength": 13337,
+      "sha256": "c8a21807537cbb2a1416941ad693a109e8433650357560a52a28d80e159125a5"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-lu-b879eb8eb04f.json",
+      "byteLength": 17114,
+      "sha256": "8d31fbaa011ad0d7c73f58edbda40ad79b8aa3dfd381046665d64794a9ea0a26"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ne-027ceadbf103.json",
+      "byteLength": 18918,
+      "sha256": "c1caf09c9d9436ba82ecefdc29e495fe26cbeb2e19d93a1491748781b4dcef9b"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ne-21f519039621.json",
+      "byteLength": 20285,
+      "sha256": "c2ec2a6090cc5462b394effb4986c3c9979f38af4fd9c9b60bc734f7c5023ae0"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-nw-5dfca484e4af.json",
+      "byteLength": 13874,
+      "sha256": "263e37a8c6409c41bc03f9ea7af6a74d24d3b5c4e7c13f58380641847d95cae0"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ow-76c151dccf1f.json",
+      "byteLength": 13907,
+      "sha256": "0a7f5740b79d30331ebdb58b6a54da76aeba1ab0048298d26be0ae3ca7348807"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-sg-79009d6d6021.json",
+      "byteLength": 12814,
+      "sha256": "4954e70221854c2f7266299a5cece5d05edb8b6a7b34fabe0f16476b0fb6b673"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-sg-f95068e3b162.json",
+      "byteLength": 14210,
+      "sha256": "7fc1b19afda294f17af7e554c3160acdbd344f71da251f12fde7d5fa950fdd30"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-sh-1ccc70f9897a.json",
+      "byteLength": 12964,
+      "sha256": "107626e3ab12d880d598af3a8f889569be25eedbf92d61bb87eb8324a0439784"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-sh-ec7d0988145a.json",
+      "byteLength": 14324,
+      "sha256": "6d8a54e1c7d4101dffe56fa9af7f25565695096cb469ccbb04b1efc15f9de955"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-so-3f5f7b7f54f5.json",
+      "byteLength": 13343,
+      "sha256": "955dfa1d943852410c276b346f377348391d2ebaf5edb507a53459ee06696225"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-sz-ec9f2c557fe4.json",
+      "byteLength": 17610,
+      "sha256": "204dce938790781fd143fac226fdb383164ed912369a24758ba218caa3be769b"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-tg-3d6514fbabb1.json",
+      "byteLength": 13688,
+      "sha256": "f78c68cd79c3a8aebe9c393f46090d1aca652f05a5d5e99311342333c98d56c2"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ti-944ed0286e9a.json",
+      "byteLength": 14966,
+      "sha256": "8413e23b4d4029062c06323ddf69c746b39a00837ae3ebf84bb58da393d97543"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-ur-67275ff3e872.json",
+      "byteLength": 14826,
+      "sha256": "efaab4c4b729c61f02f4d256e2d8ddd4d9a44647bb895a16f197b18c1ab76759"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-vd-26f452ff34ee.json",
+      "byteLength": 10199,
+      "sha256": "78997755c1e9b866e982759e5b7cadec54f48f7d25ee7442c7a0d7016fe4c5c1"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-vs-6c002f32b1b0.json",
+      "byteLength": 14071,
+      "sha256": "9f39e071e36c83c28a2ab527768b0487abb97a6ba3ac9d48c76f1751d79d3191"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-zg-860e0f8e0e1a.json",
+      "byteLength": 16382,
+      "sha256": "e132f9225411fc792b36cf8670d986641d488120ffa1eb746c0e763935e3c7d7"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap22-zh-5aa2974cffee.json",
+      "byteLength": 10518,
+      "sha256": "511eab671be351481ee3d419f38f4943493e105c1fe3b222fd7e51839b36f65a"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ap23f2-zh-rlg-nine.json",
+      "byteLength": 9975,
+      "sha256": "1cd214e4d0d653817e4827105b21a3f78333d5466d652715fa0a8f985d064c5f"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/be-public-holidays.json",
+      "byteLength": 10824,
+      "sha256": "24bb5898c6fbf3d415a7055040c5e1dbda0a3867615fa0026896f28860b782d4"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/calendars/ch-federal-calendar.json",
+      "byteLength": 7457,
+      "sha256": "b672a796a4a08c54485d6af1e6eee7b246643726dc56845ae4b70b79462bbe78"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/holiday-catalogs/ch-holiday-catalog.json",
+      "byteLength": 1184212,
+      "sha256": "a5500b47cd7f2aad03d56f0eb16c738d0e75c56d14f8bb2cb56c85abc4b7cd45"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/manifest.json",
+      "byteLength": 25814,
+      "sha256": "f7193786575ee9f58063859b3af2daca738b766d5a73bd9ddacf474310124187"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/profiles/bgg.json",
+      "byteLength": 8529,
+      "sha256": "ed5c03face9d488dfa0d0edb79577b31efb92001e566d84f51c718927ee9322a"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/profiles/stpo.json",
+      "byteLength": 6652,
+      "sha256": "67b78504bb0d142ff17e8fafd11f7b381e973a0a7021801a86fe85b5d6762559"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/profiles/vrpg-be.json",
+      "byteLength": 8616,
+      "sha256": "e343e90fd3b3f498b8826c3db83c9880e8f7e8473fe918b1cc91b8e685b4b4e6"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/profiles/vwvg.json",
+      "byteLength": 8002,
+      "sha256": "84f1f9fdd3a60a5884b38c5ed5d1e3fb99cc405e9a5dcbf2abf06f87ba965ac6"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/profiles/zpo.json",
+      "byteLength": 10232,
+      "sha256": "04585aefd1f3f568ad2b548b48fc3e6fefdaa5acd1533855503f6aff329a79f5"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/social-procedures/ch-social-procedures.json",
+      "byteLength": 546538,
+      "sha256": "de5180fd41af63b95781512e276faf667de843204b7dc7f8893738c870e583bd"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/bundle/special-regimes/vrpg-be.json",
+      "byteLength": 114845,
+      "sha256": "454b54c0bca6f1f7d24a283ec4cb7a8dc0e8ddf0bd7313a9b459b82916239e2a"
+    },
+    {
+      "path": "outputs/ap23g2-candidate-2026-10-22/candidate-integrity.json",
+      "byteLength": 10824,
+      "sha256": "bc59c0966bf040fcdac707551b6226e67f8037b7458ad9a06c86d8755cc34244"
+    },
+    {
+      "path": "schemas/candidates/ap23g2/administrative-input-v4.schema.json",
+      "byteLength": 4945,
+      "sha256": "794f001138a9b41132242862976216134a22885a04437422175a5906a45f863e"
+    },
+    {
+      "path": "schemas/candidates/ap23g2/administrative-procedure-catalog-v4.schema.json",
+      "byteLength": 93823,
+      "sha256": "8cceae6a2407c1b28a7d4d020eb0772f94919d707eb019a5b44570efe2d96f7e"
+    },
+    {
+      "path": "schemas/candidates/ap23g2/local-reference-manifest-v11.schema.json",
+      "byteLength": 13789,
+      "sha256": "b0c09d2be9279c6940a7c0099d33fa98c6535c359c79be1de0dfba0ce6cc7e0c"
+    },
+    {
+      "path": "schemas/candidates/ap23g2/release-manifest-v11.schema.json",
+      "byteLength": 13767,
+      "sha256": "e34ae5bb84bc839233115b4e5b181ecfef770cfea195ea834e65fb9115ba7b21"
+    },
+    {
+      "path": "scripts/archive-ap23g1-acceptance.mjs",
+      "byteLength": 13208,
+      "sha256": "958296b77c055e231663fa80e1215e59df048c53c2a7b10e7c20da88fea391e9"
+    },
+    {
+      "path": "scripts/build-ap23g2-candidate.mjs",
+      "byteLength": 18388,
+      "sha256": "7aaee15633c5d1b2328bb8e773c6dba969e9e349df00e556344bdb3ce59af76b"
+    },
+    {
+      "path": "scripts/build-ap23g2-schemas.mjs",
+      "byteLength": 9484,
+      "sha256": "69db391b0f175167ee3c5bb723ada1fb5228136a3843f6d9d2b461e3f4f41073"
+    },
+    {
+      "path": "scripts/check-ap23g2-contract.mjs",
+      "byteLength": 33312,
+      "sha256": "a221969a20882b70153cc70744d14f1ff3f4cc82548847bc36b32d35093ee97d"
+    },
+    {
+      "path": "scripts/check_ap23g2_independent.py",
+      "byteLength": 40145,
+      "sha256": "b362350b6192924640eb5fbedb5040ff959aecff90768e0d3f7489c8bfda5d4b"
+    },
+    {
+      "path": "scripts/finalize-ap23g2.mjs",
+      "byteLength": 7177,
+      "sha256": "f5beb14fc7ef5f4064c731e264bb44b84252c952772fb40fdabbbb90424d267f"
+    },
+    {
+      "path": "tests/governance/ap23g1-acceptance.test.mjs",
+      "byteLength": 11782,
+      "sha256": "139e57b6c2bce4c8e9338ca4b9500777190135ac89336f7b3143dd35df19ead0"
+    }
+  ]
+}

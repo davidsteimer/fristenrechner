@@ -21,7 +21,7 @@ async function buildCandidate(candidate = '') {
   });
 }
 
-describe('Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung', () => {
+describe('Lokaler statischer Releasebuild für MVP 0.10, ohne P-Bereitstellung', () => {
   it('erzeugt inhaltsadressierte relative Assets und ein vollständiges Buildmanifest', async () => {
     await buildCandidate();
 
@@ -29,8 +29,8 @@ describe('Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung', 
     const manifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
 
     assert.equal(manifest.application, 'fristenrechner-public');
-    assert.equal(manifest.version, '0.9.0');
-    assert.equal(manifest.dataReleaseId, '2026-10-18-mvp-09-approved.1');
+    assert.equal(manifest.version, '0.10.0');
+    assert.equal(manifest.dataReleaseId, '2026-10-28-mvp-010-approved.1');
     assert.notEqual(manifest.status, 'candidate');
     assert.equal(manifest.basePath, '/fristenrechner/');
     assert.match(manifest.assets.javascript, /^\.\/assets\/app-[A-Z0-9]+\.js$/);
@@ -63,7 +63,7 @@ describe('Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung', 
     assert.doesNotMatch(completeOutput, /\.map$/m);
     assert.doesNotMatch(javascript, /stpo-weekend|vrpg-special-gate|qaPresets/);
     assert.doesNotMatch(javascript, /\bfetch\s*\(|new XMLHttpRequest\b|new WebSocket\b|new EventSource\b/);
-    assert.match(javascript, /2026-10-18-mvp-09-approved\.1/);
+    assert.match(javascript, /2026-10-28-mvp-010-approved\.1/);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/react-dom-MIT.txt'))).size > 0);
     assert.ok((await stat(resolve(outputDirectory, 'licenses/fluent-ui-MIT.txt'))).size > 0);
@@ -125,7 +125,7 @@ describe('Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung', 
       const entry = await readFile(resolve(repositoryRoot, `src/public-app/${candidate}-main.tsx`), 'utf8');
       assert.match(entry, new RegExp(`import \\{ ${candidate}CandidateCalculationData \\} from '../release/${candidate}CandidateData'`));
       assert.match(entry, new RegExp(`<FristenrechnerApp data=\\{${candidate}CandidateCalculationData\\}`));
-      assert.doesNotMatch(entry, /mvp08Runtime|mvp09Runtime|ap23e3Candidate|createFormat9CalculationData|URLSearchParams/);
+      assert.doesNotMatch(entry, /mvp08Runtime|mvp09Runtime|mvp10Runtime|ap23e3Candidate|createFormat9CalculationData|URLSearchParams/);
       const dom = new JSDOM(await readFile(resolve(candidateDirectory, 'index.html'), 'utf8'), {
         url: `https://${candidate}.invalid/fristenrechner/`, pretendToBeVisual: true, runScripts: 'outside-only'
       });
@@ -142,12 +142,12 @@ describe('Lokaler statischer Releasebuild für MVP 0.9, ohne P-Bereitstellung', 
         const status = window.document.querySelector('.fr-data-status');
         assert.ok(status, 'Actual historical browser bundle must render a data status');
         assert.match(status.textContent, new RegExp(manifest.dataReleaseId.replace('.', '\\.')));
-        assert.doesNotMatch(status.textContent, /2026-10-18-mvp-09-approved\.1|2026-10-18-ap23e3-reference\.1/);
+        assert.doesNotMatch(status.textContent, /2026-10-18-mvp-09-approved\.1|2026-10-28-mvp-010-approved\.1|2026-10-18-ap23e3-reference\.1/);
       } finally { dom.window.close(); }
       assert.equal(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'), normalManifestBefore);
       const approvedManifest = JSON.parse(await readFile(resolve(outputDirectory, 'build-manifest.json'), 'utf8'));
-      assert.equal(approvedManifest.version, '0.9.0');
-      assert.equal(approvedManifest.dataReleaseId, '2026-10-18-mvp-09-approved.1');
+      assert.equal(approvedManifest.version, '0.10.0');
+      assert.equal(approvedManifest.dataReleaseId, '2026-10-28-mvp-010-approved.1');
     });
   }
 

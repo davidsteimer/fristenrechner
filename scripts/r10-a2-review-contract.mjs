@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: AGPL-3.0-only
+// Completeness and integrity are not a legal opinion or human source approval.
+import assert from 'node:assert/strict';
+import {exact,hash,safe} from './archive-r10-u1-acceptance.mjs';
+export const inventoryPath='outputs/r10-a1-2026-10-28/sources/source-inventory.json';
+export const inventorySha256='e9949adea7ef5c0192ed5015ed8bfac7594bdb73c1417f4e81f0df3dee837ec6';
+export const falseFlags=['humanApproval','sourceReleaseApproved'];
+export const optionalFalseFlags=['dataPromotionApproved','publicationApproved','deploymentApproved','operatingApproval','buildPerformed','commitCreated','sourcePushPerformed','installationPerformed','operatingChanges','productChanges','registerChanges','completeCommonReview'];
+export const meaningful=value=>(typeof value==='string'&&value.trim().length>12)||(value&&typeof value==='object'&&JSON.stringify(value).length>20);
+export function isLogicalBundleReference(value){return value&&typeof value==='object'&&Object.keys(value).sort().join(',')==='contentId,path,role,sha256'&&['calendar','holidayCatalog'].includes(value.role)&&typeof value.contentId==='string'&&/^(?:calendars|holiday-catalogs)\/[a-z0-9-]+\.json$/u.test(value.path)&&/^[a-f0-9]{64}$/u.test(value.sha256);}
+export function collectDescriptors(value){if(!value||typeof value!=='object')return[];const own=typeof value.path==='string'&&typeof value.sha256==='string'&&!isLogicalBundleReference(value)?[value]:[];return[...own,...Object.values(value).flatMap(collectDescriptors)];}
+export async function verifyDescriptors(root,values){const unique=new Map();for(const row of values){safe(row.path);assert.match(row.sha256,/^[a-f0-9]{64}$/u);assert.ok(Number.isSafeInteger(row.byteLength)&&row.byteLength>=0,'Missing evidence length '+row.path);if(unique.has(row.path)){assert.equal(unique.get(row.path).sha256,row.sha256,'Conflicting evidence '+row.path);assert.equal(unique.get(row.path).byteLength,row.byteLength,'Conflicting evidence length '+row.path);}else unique.set(row.path,row);}for(const row of unique.values())await exact(root,row.path,row);return[...unique.values()].sort((a,b)=>a.path.localeCompare(b.path,'en'));}
+export async function descriptor(root,path){const bytes=await exact(root,path);return{path,byteLength:bytes.length,sha256:hash(bytes)};}
+export function validateSourcePartition(inventory,reports,{requiredLotIds=[],complete=false,resolvedCompanionSourceIds=[]}={}){
+ const byId=new Map(inventory.rows.map(row=>[row.sourceId,row])),seen=new Map(),result=[];
+ assert.equal(byId.size,inventory.rows.length,'Duplicate inventory ID');
+ for(const report of reports){for(const key of falseFlags)assert.equal(report[key],false,'Current report approval '+key);for(const key of optionalFalseFlags)assert.ok(report[key]===undefined||report[key]===false,'Unapproved report action '+key);assert.ok(Array.isArray(report.rows)&&report.rows.length,'Empty review report');
+  for(const row of report.rows){for(const key of falseFlags)assert.equal(row[key],false,'Fabricated current row approval '+row.sourceId+' '+key);for(const key of optionalFalseFlags)assert.ok(row[key]===undefined||row[key]===false,'Unapproved row action '+key);assert.equal(row.checkedOn??row.currentReviewOn??row.currentReviewDate??report.checkedOn??report.currentReviewDate,'2026-10-28','Original date is not a current R10 review decision '+row.sourceId);const source=byId.get(row.sourceId);assert.ok(source,'Foreign source '+row.sourceId);assert.equal(seen.has(row.sourceId),false,'Duplicate review source '+row.sourceId);seen.set(row.sourceId,row);assert.equal(row.ownerLotId,source.ownerLotId,'Wrong owner lot '+row.sourceId);
+   assert.deepEqual(row.referenceLocations,source.referenceLocations,'Changed or omitted actual uses '+row.sourceId);assert.ok(typeof row.outcome==='string'&&row.outcome.length>3,'Missing outcome '+row.sourceId);if(/\b(?:pending|incomplete|unreviewed|todo|not-reviewed|not-started|in-progress|awaiting-review)\b/iu.test(row.outcome))assert.ok(row.outcome==='historical-assertion-confirmed-pending-companion-norm-closure'&&resolvedCompanionSourceIds.includes(row.sourceId),'Non-terminal source outcome '+row.sourceId);assert.ok(meaningful(row.method),'Missing review method '+row.sourceId);
+   const provisions=row.relevantProvisions??row.usedAssertions;assert.ok(Array.isArray(provisions)&&provisions.length&&provisions.every(p=>typeof p==='string'&&p.trim().length>2),'Missing concrete provisions/assertions '+row.sourceId);
+   assert.ok(collectDescriptors(row).length>0,'No individually bound source evidence '+row.sourceId);
+   if(source.newReferenceLocations.length){assert.deepEqual(row.newReferenceLocations,source.newReferenceLocations,'Missing or changed explicit new uses '+row.sourceId);assert.ok(meaningful(row.newUseAssessment??row.newUsesAssessment??row.newUsesExplicitlyAssessed),'Unreviewed new use '+row.sourceId);}
+   result.push({sourceId:row.sourceId,ownerLotId:source.ownerLotId,referenceUse:source.referenceUse,referenceLocations:source.referenceLocations,newReferenceLocations:source.newReferenceLocations,outcome:row.outcome,method:row.method});
+  }
+ }
+ for(const id of requiredLotIds){const lot=inventory.reviewLots.find(l=>l.id===id);assert.ok(lot,'Unknown required lot');assert.deepEqual([...seen.keys()].filter(s=>byId.get(s).ownerLotId===id).sort(),[...lot.sourceIds].sort(),'Missing source in '+id);}
+ if(complete)assert.deepEqual([...seen.keys()].sort(),[...byId.keys()].sort(),'Incomplete common review');
+ return{sourceCount:seen.size,referenceCount:result.reduce((n,row)=>n+row.referenceLocations.length,0),newReferenceCount:result.reduce((n,row)=>n+row.newReferenceLocations.length,0),pendingSourceIds:[...byId.keys()].filter(id=>!seen.has(id)),rows:result.sort((a,b)=>a.sourceId.localeCompare(b.sourceId,'en'))};
+}

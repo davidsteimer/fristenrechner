@@ -1,0 +1,123 @@
+{
+  "workPackage": "AP23M2",
+  "gate": "NE-FASSUNG-LJU-JUSTITIA",
+  "reviewedOn": "2026-10-28",
+  "status": "fresh-official-evidence-no-new-relevant-commencement-observed",
+  "guard": {
+    "path": "outputs/ap23m2-2026-10-28/protected-inputs.json",
+    "sha256": "af68d4b6c0fb33d731c50f99b3ca3c63bc1c573d5635d259798a5ed28953c3b1"
+  },
+  "comparisonBaseline": "docs/fachrecht/ap23m1/quellen-ne.json",
+  "sourceBase": "outputs/ap23m2-2026-10-28/sources/ne",
+  "professionalAcceptance": false,
+  "sourceReleaseApproved": false,
+  "runtimeActive": false,
+  "operatingChanges": false,
+  "finding": "Die erneut abgerufenen amtlichen LPA-, OJN-, LJu-, Justitia- und Avenir-Nachweise ändern den abgenommenen M1-Fassungsbefund nicht. LPA Stand 01.01.2026 und OJN Stand 01.02.2026 sind als PDF byteidentisch. Das Avenir-Register führt LJu weiterhin als En attente promulgation. Die Beitrittsverordnung Justitia belegt keine allgemeine Inbetriebnahme der elektronischen LPA-Kommunikation.",
+  "temporalLimit": "Prüfbefund zum 28.10.2026, keine Garantie unveränderten künftigen Rechts. Vor einer späteren Freigabe bleibt ein frischer Inkraftsetzungsabgleich erforderlich.",
+  "scopeLimit": "Gezieltes obligatorisches Fassungs-/Inkraftsetzungsgate, keine neue vollständige NE-Fachanalyse und keine Öffnung der bestehenden Jahres- oder Regionalvorbehalte.",
+  "sources": [
+    {
+      "id": "M2-NE-LPA-PDF",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/152.130.pdf",
+      "file": "152.130.pdf",
+      "bytes": 310084,
+      "sha256": "b67771445345e9a31e646b3678f5312c5b9c66f25d056fa753d74b5f4c8d4417",
+      "m1ByteIdentical": true,
+      "version": "État au 1er janvier 2026",
+      "reading": "Titelseite erneut textlich geprüft. Relevante Art.35/37/133/134 und Inkraftsetzungsnotiz zusätzlich am aktuellen amtlichen HTML gelesen. Die byteidentische Gesamtdatei erlaubt die begründete Wiederverwendung der M1-Volltext-/Sichtprüfung."
+    },
+    {
+      "id": "M2-NE-OJN-PDF",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/pdf/161.1.pdf",
+      "file": "161.1.pdf",
+      "bytes": 239846,
+      "sha256": "4fa0f544b8e8e4ccfa21e9156e17c211b64b5890ed26844ff914b9c4c3ec269f",
+      "m1ByteIdentical": true,
+      "version": "Etat au 1er février 2026",
+      "reading": "Titelseite erneut textlich geprüft. Art.35 und47 zusätzlich am aktuellen amtlichen HTML gelesen. Keine neue LJu-Inkraftsetzung aus der aktuellen OJN-Fassung abgeleitet."
+    },
+    {
+      "id": "M2-NE-LPA-HTML",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/htm/152.130.htm",
+      "file": "lpa-current.html",
+      "bytes": 166865,
+      "sha256": "f4da0e09b195480fa50a6fa04d21cddc17696b16533858b7ce9ca46d4c70ff9f",
+      "baselinePrivateRawPath": ".work/research/AP23M1/ne/lpa-current.html",
+      "m1PrivateRawByteIdentical": true,
+      "reading": "Aktuelle amtliche Normseite mit Fassungsdatum, Dreitagesnachfrist, Stillstand und elektronischem Übergangsregime tatsächlich gelesen. Kein Suchsnippet als Normbeleg verwendet."
+    },
+    {
+      "id": "M2-NE-OJN-HTML",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/htm/161.1.htm",
+      "file": "ojn-current.html",
+      "bytes": 143272,
+      "sha256": "0abca66d7d56f913635a86272f88b64bd1d6e371bc8adbe7d2572c26b2458eb9",
+      "m1ByteIdentical": null,
+      "reading": "Aktuelle amtliche Normseite tatsächlich geöffnet. Art.35 bindet den Tribunalssitz an Neuchâtel, Art.47 die allgemeine öffentlich-rechtliche Gerichtszuständigkeit. Keine M1-HTML-Identität behauptet, da M1 hierfür das PDF bindet."
+    },
+    {
+      "id": "M2-NE-AVENIR",
+      "url": "https://rsn.ne.ch/DATA/program/books/rsne/avenir.htm",
+      "file": "rsn-future.html",
+      "bytes": 22385,
+      "sha256": "9292c959850ce0bec9a79aa9702db195e36e002a5e132883a67e56a7db2df40c",
+      "m1ByteIdentical": true,
+      "reading": "Vollständige kurze amtliche Zukunftstabelle erneut gelesen. LJu vom28.04.2026, FO2026 Nr.19, weiterhin En attente promulgation. Neuester in dieser Tabelle sichtbarer Erlassstand21.10.2026. Keine sichere Aussage über unveröffentlichte oder spätere Erlasse."
+    },
+    {
+      "id": "M2-NE-LJU-ADOPTED",
+      "url": "https://www.ne.ch/sites/default/files/2026-05/2-LJU.pdf",
+      "file": "lju-adopted-20260428.pdf",
+      "bytes": 488736,
+      "sha256": "ddb3cca426d7a8d75e310b88e1f169fe4dc25347e6d0259b7a90ba6c33424ab3",
+      "m1ByteIdentical": true,
+      "documentDate": "2026-04-28",
+      "publication": "FO19 vom08.05.2026",
+      "reading": "Amtlicher verabschiedeter Text frisch geöffnet. Art.206 nennt die spätere Aufhebung der OJN. Art.218 delegiert das Datum der Inkraftsetzung an den Conseil d’État und nennt selbst kein wirksames Datum. Die Verabschiedung wird nicht als Inkraftsetzung behandelt."
+    },
+    {
+      "id": "M2-NE-JUSTITIA-ADHESION",
+      "url": "https://www.ne.ch/sites/default/files/2026-08/FO35_01_2026_08_26_DSDC_502_ACE_AdhesionJustitia.pdf",
+      "file": "justitia-adhesion-20260826.pdf",
+      "bytes": 107858,
+      "sha256": "29384fb93d06be152e0099a62687c6582d43e1810c240f2fe21cdccd931bb185",
+      "m1ByteIdentical": true,
+      "documentDate": "2026-08-26",
+      "reading": "Einseitiger amtlicher Volltext erneut gelesen. Unmittelbare Inkraftsetzung bezieht sich auf den Beitrittsbeschluss. Sie ersetzt keinen kantonalen Nachweis der Umsetzung nach Art.133/134LPA und aktiviert keine neue Plattformautomatik."
+    },
+    {
+      "id": "M2-NE-CE-INDEX-2026",
+      "url": "https://www.ne.ch/it/node/4056",
+      "file": "fo-index-2026.html",
+      "bytes": 534079,
+      "sha256": "374d4f8423e3a69558b70b36d46eab106e5e2ef80118ad0de4017293a30169ff",
+      "m1ByteIdentical": false,
+      "legalIndexTextIdenticalM1": true,
+      "comparisonMethod": "HTMLParser ignoriert script/style. Nichtleere Textknoten werden mit zusammengezogenem Whitespace ab Octobre2026 bis Information et contact oder Dokumentende verglichen. JSON UTF-8, ensure_ascii=false, separators=comma/colon.",
+      "legalIndexTextNodes": 335,
+      "legalIndexTextSha256": "ddf97184fcf1b4230ff57e36a0875a104c62f34571d887022375feafc8e1c5f3",
+      "reading": "Frisch gesicherter amtlicher CE-Jahresindex bis FO43 vom23.10.2026, letzte angezeigte Adoption21.10.2026. M1 und M2 nutzen unterschiedliche Sprachalias-/Seitendarstellungen, deshalb keine Rohbyteidentität. Der extrahierte rechtliche Indexinhalt ist identisch. Keine LJu-Inkraftsetzung oder allgemeine LPCJ-Aktivierung als neuer Eintrag nachgewiesen."
+    },
+    {
+      "id": "M2-NE-GC-INDEX-2026",
+      "url": "https://www.ne.ch/themes/etat-droit-et-finances/droits-et-justice/legislation-et-jurisprudence/lois-et-decrets-du-grand-conseil-annee-2026",
+      "file": "gc-index-2026.html",
+      "bytes": 513189,
+      "sha256": "8fb95b7f84bcbf8b95b1f2680a199af1e8c19d1b811af7e8e8126e9dec1601ce",
+      "m1ByteIdentical": false,
+      "legalIndexTextIdenticalM1": true,
+      "comparisonMethod": "Gleiche begrenzte HTML-Textknotenextraktion wie beim CE-Index, Beginn Octobre2026.",
+      "legalIndexTextNodes": 107,
+      "legalIndexTextSha256": "201cb6a5032189b5732ec3ae7186de17f8da29054e22c04f64cab6e7a844b1b3",
+      "reading": "Aktueller amtlicher GC-Jahresindex tatsächlich gelesen und gesichert, neueste sichtbare Ausgabe FO41 vom09.10.2026. LJu weiterhin nur mit Adoption28.04.2026 und ohne Promulgations-/Inkraftsetzungsdatum aufgeführt. Extrahierter rechtlicher Indexinhalt identisch zum M1-Beleg."
+    }
+  ],
+  "implementationBoundaries": [
+    "NE bleibt bei qualifizierter rechtlich massgebender Eröffnung ohne Rohzustelltransformation.",
+    "Die zwei ausdrücklich gewählten Behördensitz-Endkalender sind keine freie Vereinigung und kein Eingangsfeiertagskalender.",
+    "Die Dreitagesnachfrist bleibt auf die angenommene aktuelle Qualifikation beschränkt. Sie kürzt keine noch laufende ursprüngliche Frist.",
+    "Die acht kantonalen prozessualen Kalenderzusätze sowie die bestehenden Jahres- und Le-Landeron-Vorbehalte werden nicht neu entschieden.",
+    "Künftige LJu-Inkraftsetzung und Umsetzung der elektronischen Kommunikation bleiben gesondert zu prüfen."
+  ]
+}
